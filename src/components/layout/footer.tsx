@@ -1,0 +1,186 @@
+import Link from "next/link";
+import { HeartPulse } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-slate-200 bg-slate-50">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <Link href="/" className="flex items-center gap-2">
+              <HeartPulse className="h-5 w-5 text-slate-800" />
+              <span className="text-base font-bold text-slate-900">
+                USCEHub
+              </span>
+            </Link>
+            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+              The largest structured database of clinical observership, externship,
+              and research opportunities for International Medical Graduates in the
+              United States.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">Platform</h3>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href="/browse"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  Browse Opportunities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/freida"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  IMG Resources
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/for-institutions"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  For Institutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/how-it-works"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">Resources</h3>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a
+                  href="https://www.ecfmg.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  ECFMG
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.usmle.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  USMLE
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.nrmp.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  NRMP
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://eras.aamc.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  ERAS
+                </a>
+              </li>
+              <li>
+                <Link
+                  href="/freida"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  FREIDA
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">Legal</h3>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href="/disclaimer"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-slate-500 hover:text-slate-700"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-slate-200 pt-6">
+          <p className="text-xs leading-relaxed text-slate-400">
+            USCEHub is an educational and informational platform. We are
+            not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong
+            to their respective owners. Listings are submitted by third-party
+            institutions and individuals. We do not guarantee the accuracy,
+            completeness, or validity of any listing. Users are advised to verify
+            all information independently before applying or making payments.
+          </p>
+          <p className="mt-3 text-xs text-slate-400">
+            &copy; {new Date().getFullYear()} USCEHub. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,121 @@
+import { prisma } from "@/lib/prisma";
+import { ListingFilters } from "@/components/listings/listing-filters";
+import { ListingCard } from "@/components/listings/listing-card";
+import { Suspense } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Browse Opportunities — USCEHub",
+  description: "Search and filter clinical observership, externship, and research opportunities for IMGs.",
+};
+
+interface BrowsePageProps {
+  searchParams: Promise<{
+    search?: string;
+    type?: string;
+    state?: string;
+    sort?: string;
+    free?: string;
+    visa?: string;
+  }>;
+}
+
+export default async function BrowsePage({ searchParams }: BrowsePageProps) {
+  const params = await searchParams;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const conditions: any[] = [{ status: "APPROVED" }];
+
+  if (params.search) {
+    conditions.push({
+      OR: [
+        { title: { contains: params.search } },
+        { shortDescription: { contains: params.search } },
+        { specialty: { contains: params.search } },
+        { city: { contains: params.search } },
+        { state: { contains: params.search } },
+      ],
+    });
+  }
+
+  if (params.type) {
+    if (params.type === "RESEARCH") {
+      conditions.push({ listingType: { in: ["RESEARCH", "POSTDOC"] } });
+    } else {
+      conditions.push({ listingType: params.type });
+    }
+  }
+
+  if (params.state) {
+    conditions.push({ state: params.state });
+  }
+
+  if (params.free === "true") {
+    conditions.push({
+      OR: [
+        { cost: { contains: "Free" } },
+        { cost: { contains: "free" } },
+        { cost: { contains: "$0" } },
+        { cost: { contains: "No fee" } },
+      ],
+    });
+  }
+
+  if (params.visa === "true") {
+    conditions.push({ visaSupport: true });
+  }
+
+  let orderBy: Record<string, string> = { createdAt: "desc" };
+  if (params.sort === "cost-low") orderBy = { cost: "asc" };
+  else if (params.sort === "cost-high") orderBy = { cost: "desc" };
+  else if (params.sort === "most-reviewed") orderBy = { views: "desc" };
+
+  const listings = await prisma.listing.findMany({
+    where: { AND: conditions },
+    orderBy,
+    include: {
+      reviews: {
+        where: { moderationStatus: "APPROVED" },
+        select: { overallRating: true },
+      },
+    },
+  });
+
+  return (
+    <div className="bg-white">
+      <div className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <h1 className="text-2xl font-bold text-slate-900">Browse Opportunities</h1>
+          <p className="mt-1 text-sm text-slate-500">
+            {listings.length} {listings.length === 1 ? "listing" : "listings"} found
+          </p>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100" />}>
+          <ListingFilters />
+        </Suspense>
+
+        <div className="mt-6">
+          {listings.length > 0 ? (
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {listings.map((listing) => (
+                <ListingCard key={listing.id} listing={listing} />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-slate-200 bg-slate-50 py-20 text-center">
+              <div className="mx-auto max-w-sm">
+                <p className="text-lg font-medium text-slate-900">No listings found</p>
+                <p className="mt-2 text-sm text-slate-500">
+                  Try adjusting your filters or search criteria.
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

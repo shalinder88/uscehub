@@ -1,0 +1,293 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  APPLICANT
+  POSTER
+  ADMIN
+}
+
+enum ListingType {
+  OBSERVERSHIP
+  EXTERNSHIP
+  RESEARCH
+  POSTDOC
+  ELECTIVE
+  VOLUNTEER
+}
+
+enum ListingStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  HIDDEN
+  PAUSED
+}
+
+enum ListingFormat {
+  IN_PERSON
+  HYBRID
+  REMOTE
+}
+
+enum ApplicationStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  ACCEPTED
+  REJECTED
+  COMPLETED
+  WITHDRAWN
+}
+
+enum VerificationStatus {
+  UNVERIFIED
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ModerationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  FLAGGED
+}
+
+enum FlagStatus {
+  OPEN
+  REVIEWED
+  RESOLVED
+  DISMISSED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String
+  role          UserRole  @default(APPLICANT)
+  emailVerified Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  applicantProfile ApplicantProfile?
+  posterProfile    PosterProfile?
+  organization     Organization?     @relation("OrganizationOwner")
+  listings         Listing[]
+  applications     Application[]
+  savedListings    SavedListing[]
+  comparedListings ComparedListing[]
+  reviews          Review[]
+  flagReports      FlagReport[]      @relation("FlagReporter")
+  adminActions     AdminActionLog[]
+
+  @@map("users")
+}
+
+model ApplicantProfile {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  country           String?
+  currentLocation   String?
+  medicalSchool     String?
+  graduationYear    String?
+  currentRole       String?
+  specialtyInterest String?
+  visaStatus        String?
+  usmleStep1        String?
+  usmleStep2        String?
+  ecfmgStatus       String?
+  shortBio          String?
+  cvUrl             String?
+  cvText            String?
+  linkedin          String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("applicant_profiles")
+}
+
+model PosterProfile {
+  id                 String             @id @default(cuid())
+  userId             String             @unique
+  user               User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  contactName        String?
+  phone              String?
+  npiNumber          String?
+  institutionalEmail String?
+  title              String?
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  adminNotes         String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  @@map("poster_profiles")
+}
+
+model Organization {
+  id                 String             @id @default(cuid())
+  ownerId            String             @unique
+  owner              User               @relation("OrganizationOwner", fields: [ownerId], references: [id], onDelete: Cascade)
+  name               String
+  type               String?
+  contactName        String?
+  contactEmail       String?
+  phone              String?
+  website            String?
+  city               String
+  state              String
+  description        String?
+  institutionalEmail Boolean            @default(false)
+  verificationStatus VerificationStatus @default(UNVERIFIED)
+  badges             String             @default("")
+  adminNotes         String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  listings Listing[]
+
+  @@map("organizations")
+}
+
+model Listing {
+  id                   String        @id @default(cuid())
+  organizationId       String?
+  organization         Organization? @relation(fields: [organizationId], references: [id])
+  posterId             String
+  poster               User          @relation(fields: [posterId], references: [id])
+  title                String
+  listingType          ListingType
+  specialty            String
+  city                 String
+  state                String
+  country              String        @default("USA")
+  format               ListingFormat @default(IN_PERSON)
+  shortDescription     String
+  fullDescription      String?
+  duration             String
+  cost                 String
+  applicationMethod    String        @default("platform")
+  contactEmail         String?
+  eligibilitySummary   String?
+  status               ListingStatus @default(PENDING)
+  startDate            String?
+  applicationDeadline  String?
+  certificateOffered   Boolean       @default(false)
+  lorPossible          Boolean       @default(false)
+  visaSupport          Boolean       @default(false)
+  housingSupport       String?
+  websiteUrl           String?
+  numberOfSpots        String?
+  supervisingPhysician String?
+  graduationYearPref   String?
+  stepRequirements     String?
+  ecfmgRequired        String?
+  logoUrl              String?
+  adminNotes           String?
+  views                Int           @default(0)
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  applications  Application[]
+  savedBy       SavedListing[]
+  comparedBy    ComparedListing[]
+  reviews       Review[]
+
+  @@index([status, listingType])
+  @@index([state])
+  @@index([specialty])
+  @@map("listings")
+}
+
+model SavedListing {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listingId String
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, listingId])
+  @@map("saved_listings")
+}
+
+model ComparedListing {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listingId String
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, listingId])
+  @@map("compared_listings")
+}
+
+model Application {
+  id          String            @id @default(cuid())
+  listingId   String
+  listing     Listing           @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  applicantId String
+  applicant   User              @relation(fields: [applicantId], references: [id], onDelete: Cascade)
+  message     String?
+  status      ApplicationStatus @default(SUBMITTED)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@unique([listingId, applicantId])
+  @@map("applications")
+}
+
+model Review {
+  id               String           @id @default(cuid())
+  listingId        String
+  listing          Listing          @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  userId           String
+  user             User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  overallRating    Int
+  wasReal          Boolean          @default(true)
+  worthCost        Boolean          @default(true)
+  actualExposure   Int              @default(3)
+  wouldRecommend   Boolean          @default(true)
+  comment          String?
+  anonymous        Boolean          @default(false)
+  moderationStatus ModerationStatus @default(PENDING)
+  createdAt        DateTime         @default(now())
+
+  @@unique([listingId, userId])
+  @@map("reviews")
+}
+
+model FlagReport {
+  id         String     @id @default(cuid())
+  type       String
+  targetId   String
+  reporterId String
+  reporter   User       @relation("FlagReporter", fields: [reporterId], references: [id])
+  reason     String
+  status     FlagStatus @default(OPEN)
+  adminNotes String?
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@map("flag_reports")
+}
+
+model AdminActionLog {
+  id         String   @id @default(cuid())
+  adminId    String
+  admin      User     @relation(fields: [adminId], references: [id])
+  action     String
+  targetType String
+  targetId   String
+  notes      String?
+  createdAt  DateTime @default(now())
+
+  @@map("admin_action_logs")
+}
