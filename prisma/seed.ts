@@ -199,7 +199,7 @@ async function main() {
         duration: program.duration,
         cost: program.feeAmount,
         applicationMethod: finalUrl ? "external" : "platform",
-        eligibilitySummary: program.requirements,
+        eligibilitySummary: (program.requirements || '') + (program.visa ? ' | Visa: ' + program.visa : ''),
         status: "APPROVED",
         applicationDeadline: program.deadline,
         visaSupport: program.visa.includes("J1"),
