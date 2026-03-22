@@ -382,17 +382,29 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 <Separator className="my-4" />
 
                 {listing.websiteUrl ? (
-                  <a
-                    href={listing.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button className="w-full" size="lg">
-                      Apply Now
-                      <ExternalLink className="ml-1 h-4 w-4" />
-                    </Button>
-                  </a>
+                  <>
+                    <a
+                      href={listing.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full" size="lg">
+                        {listing.linkVerified ? "Apply Now" : "Visit Website"}
+                        <ExternalLink className="ml-1 h-4 w-4" />
+                      </Button>
+                    </a>
+                    {listing.linkVerified ? (
+                      <p className="mt-2 text-center text-xs text-green-600 flex items-center justify-center gap-1">
+                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        Verified program link
+                      </p>
+                    ) : (
+                      <p className="mt-2 text-center text-xs text-slate-400">
+                        Links to hospital website — contact GME office for program details
+                      </p>
+                    )}
+                  </>
                 ) : listing.contactEmail ? (
                   <a href={`mailto:${listing.contactEmail}`}>
                     <Button className="w-full" size="lg">

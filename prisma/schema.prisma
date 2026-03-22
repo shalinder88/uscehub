@@ -185,6 +185,7 @@ model Listing {
   visaSupport          Boolean       @default(false)
   housingSupport       String?
   websiteUrl           String?
+  linkVerified         Boolean       @default(false)
   numberOfSpots        String?
   supervisingPhysician String?
   graduationYearPref   String?

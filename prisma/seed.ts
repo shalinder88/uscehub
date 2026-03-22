@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { hash } from "bcryptjs";
 import * as fs from "fs";
 import * as path from "path";
+import { VERIFIED_LINKS } from "./verified-links";
 
 const prisma = new PrismaClient();
 
@@ -303,6 +304,11 @@ async function main() {
     const { city } = parseCityState(program.location);
     const posterIndex = i % 2;
 
+    // Check if this program has a verified link
+    const verifiedEntry = VERIFIED_LINKS[program.name];
+    const finalUrl = verifiedEntry ? verifiedEntry.url : program.link;
+    const isVerified = verifiedEntry ? verifiedEntry.verified : false;
+
     const listing = await prisma.listing.create({
       data: {
         title: program.name,
@@ -316,12 +322,13 @@ async function main() {
         fullDescription: program.description,
         duration: program.duration,
         cost: program.feeAmount,
-        applicationMethod: program.link ? "external" : "platform",
+        applicationMethod: finalUrl ? "external" : "platform",
         eligibilitySummary: program.requirements,
         status: "APPROVED",
         applicationDeadline: program.deadline,
         visaSupport: program.visa.includes("J1"),
-        websiteUrl: program.link,
+        websiteUrl: finalUrl,
+        linkVerified: isVerified,
         posterId: posterIds[posterIndex],
         organizationId: orgIds[posterIndex],
       },
