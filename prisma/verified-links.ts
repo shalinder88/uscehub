@@ -110,11 +110,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Allegheny International Services manages observerships. Strictly shadowing, no patient contact.",
   },
-  "University of Washington Medical Center": {
-    url: "https://medicine.uw.edu/education/observerships",
-    verified: true,
-    note: "UW does NOT generally offer IMG observerships. Exceptions: Pathology Global Observership (1 month, up to $2,500 stipend), Radiology (1 day to 4 weeks).",
-  },
+  // University of Washington — moved to "no observership" section (does NOT offer for IMGs)
   "University of Florida Health / Shands Hospital": {
     url: "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
     verified: true,
@@ -374,21 +370,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: false,
     note: "Explicitly states: does NOT offer observerships for international medical graduates. Exceptions: Pathology Global Observership and Radiology only.",
   },
-  "Penn Medicine (UPenn)": {
-    url: "https://www.pennmedicine.org/",
-    verified: false,
-    note: "Perelman School of Medicine does NOT sanction observerships, shadowing, or internships. No centralized program.",
-  },
-  "Yale-New Haven Hospital": {
-    url: "https://medicine.yale.edu/",
-    verified: false,
-    note: "Yale explicitly does NOT offer observerships or externships.",
-  },
-  "Wayne State University / Detroit Medical Center": {
-    url: "https://www.med.wayne.edu/",
-    verified: false,
-    note: "Multiple departments explicitly do NOT offer observerships.",
-  },
+  // Penn Medicine, Yale, Wayne State already listed above — no duplicates
   // Spectrum Health / Corewell - explicitly no observerships
   // Beaumont Hospital - now Corewell, no observerships
   // HCA Healthcare - no centralized observership across 72 hospitals
