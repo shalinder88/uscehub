@@ -123,6 +123,61 @@ export default function DisclaimerPage() {
 
           <section>
             <h2 className="mb-3 text-lg font-semibold text-slate-900">
+              Observership Swap Board
+            </h2>
+            <p>
+              USCEHub facilitates introductions between users seeking to swap
+              or transfer observership spots. The transfer or swap of any observership
+              position must be approved by the respective institution(s). USCEHub does
+              not guarantee that institutions will approve transfers. Users are solely
+              responsible for communicating with institutions and verifying that swaps
+              are permitted.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+              Physician & Clinic Listings
+            </h2>
+            <p>
+              Individual physicians and clinics may list observership opportunities on
+              this platform. USCEHub does not verify the clinical credentials, malpractice
+              coverage, or institutional standing of individual physician posters beyond
+              basic NPI verification. Observers are responsible for verifying the legitimacy
+              of any private practice opportunity, confirming appropriate insurance coverage,
+              and ensuring compliance with applicable state regulations.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+              Insurance & Visa
+            </h2>
+            <p>
+              USCEHub does not provide malpractice insurance, health insurance,
+              or visa sponsorship. Observers are responsible for obtaining appropriate
+              insurance coverage as required by the hosting institution. Most observership
+              programs require observers to carry health insurance valid in the United
+              States. Some programs require malpractice insurance even for observers.
+              Observers on B1/B2 visitor visas may observe only — no patient contact,
+              no clinical duties, no compensation.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+              User-Submitted Program Information
+            </h2>
+            <p>
+              Users may submit program information and tips through the community features.
+              All user submissions are reviewed by our admin team before publication, but
+              USCEHub does not guarantee the accuracy or currency of user-submitted
+              information. Always verify details directly with the institution.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-slate-900">
               Changes to This Disclaimer
             </h2>
             <p>
