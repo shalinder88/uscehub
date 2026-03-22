@@ -393,11 +393,15 @@ export default async function ListingPage({ params }: ListingPageProps) {
                       className="block"
                     >
                       <Button className="w-full" size="lg">
-                        {listing.linkVerified ? "Apply Now" : "Visit Website"}
+                        {listing.listingType === "RESEARCH" ? "Learn More" : listing.linkVerified ? "Apply Now" : "Visit Website"}
                         <ExternalLink className="ml-1 h-4 w-4" />
                       </Button>
                     </a>
-                    {listing.linkVerified ? (
+                    {listing.listingType === "RESEARCH" ? (
+                      <p className="mt-2 text-center text-xs text-slate-500">
+                        Research positions are typically found by cold-emailing faculty PIs directly. This link goes to the institution&apos;s postdoc page.
+                      </p>
+                    ) : listing.linkVerified ? (
                       <p className="mt-2 text-center text-xs text-green-600 flex items-center justify-center gap-1">
                         <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                         Verified program link
@@ -405,7 +409,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                     ) : (
                       <div className="mt-2 text-center">
                         <p className="text-xs text-amber-600">
-                          ⚠ Unverified — this program is listed based on its history of accepting observers. Observership availability may have changed. Contact the institution directly to confirm.
+                          ⚠ Unverified — listed based on history of accepting observers. Availability may have changed. Contact institution directly.
                         </p>
                       </div>
                     )}

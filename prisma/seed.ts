@@ -202,7 +202,7 @@ async function main() {
         eligibilitySummary: (program.requirements || '') + (program.visa ? ' | Visa: ' + program.visa : ''),
         status: "APPROVED",
         applicationDeadline: program.deadline,
-        visaSupport: program.visa && program.visa.length > 0 && program.visa !== "N/A",
+        visaSupport: !!(program.visa && program.visa.length > 0 && program.visa !== "N/A"),
         websiteUrl: finalUrl,
         linkVerified: isVerified,
         posterId: posterId,
