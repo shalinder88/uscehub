@@ -24,18 +24,18 @@ export async function ProgramSpotlight() {
   const listing = verifiedListings[dayIndex % verifiedListings.length];
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white dark:bg-slate-900 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <div className="mb-3 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-amber-600">
             <Star className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
             Featured Program
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm transition-shadow hover:shadow-md">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0 flex-1">
-                <h3 className="font-semibold text-slate-900">{listing.title}</h3>
-                <div className="mt-1.5 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{listing.title}</h3>
+                <div className="mt-1.5 flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3 w-3" />
                     {listing.city}, {listing.state}
@@ -44,11 +44,11 @@ export async function ProgramSpotlight() {
                     <DollarSign className="h-3 w-3" />
                     {listing.cost}
                   </span>
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">
+                  <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-400 dark:text-slate-400">
                     {LISTING_TYPE_LABELS[listing.listingType] || listing.listingType}
                   </span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   {listing.shortDescription}
                 </p>
               </div>

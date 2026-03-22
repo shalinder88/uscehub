@@ -89,13 +89,13 @@ const STEPS = [
 
 export function JourneyTimeline() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">
             IMG Journey to Residency
           </h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
             Your step-by-step roadmap from medical school to the Match
           </p>
         </div>
@@ -113,19 +113,19 @@ export function JourneyTimeline() {
                 return (
                   <div key={step.title} className="relative flex gap-4 pb-8 last:pb-0">
                     {/* Icon circle */}
-                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-slate-200 bg-white shadow-sm">
-                      <Icon className="h-4 w-4 text-slate-700" />
+                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
+                      <Icon className="h-4 w-4 text-slate-700 dark:text-slate-300 dark:text-slate-300" />
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:border-slate-300">
+                    <div className="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm transition-colors hover:border-slate-300">
                       <div className="flex flex-wrap items-start justify-between gap-2">
                         <div>
                           <div className="flex items-center gap-2">
                             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">
                               {index + 1}
                             </span>
-                            <h3 className="text-sm font-semibold text-slate-900">
+                            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
                               {step.title}
                             </h3>
                           </div>
@@ -137,14 +137,14 @@ export function JourneyTimeline() {
                         {step.link && (
                           <Link
                             href={step.link}
-                            className="shrink-0 rounded-md bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-200"
+                            className="shrink-0 rounded-md bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-200"
                           >
                             {step.linkLabel} &rarr;
                           </Link>
                         )}
                       </div>
 
-                      <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         {step.tip}
                       </p>
                     </div>

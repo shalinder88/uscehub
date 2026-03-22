@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AccordionSections } from "@/components/ui/accordion-section";
+import { JourneyTimeline } from "@/components/tools/journey-timeline";
 import {
   BookOpen, ExternalLink, ArrowRight, Star, Users,
   TrendingUp, MapPin, Award, CheckCircle2, AlertCircle,
@@ -912,6 +914,33 @@ function InsightsSection() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  JOURNEY COLLAPSIBLE                                                */
+/* ------------------------------------------------------------------ */
+
+function JourneyCollapsible() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="mb-8 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between px-5 py-4 text-left bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+      >
+        <div className="flex items-center gap-3">
+          <GraduationCap className="h-5 w-5 text-blue-500" />
+          <span className="font-semibold text-slate-900 dark:text-slate-100">IMG Journey to Residency — Step-by-Step Timeline</span>
+        </div>
+        <svg className={`h-5 w-5 text-slate-400 transition-transform ${open ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="m6 9 6 6 6-6" /></svg>
+      </button>
+      {open && (
+        <div className="border-t border-slate-200 dark:border-slate-700">
+          <JourneyTimeline />
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  MAIN COMPONENT                                                     */
 /* ------------------------------------------------------------------ */
 
@@ -1053,6 +1082,9 @@ export function FreidaContent() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        {/* Journey Timeline — collapsible */}
+        <JourneyCollapsible />
+
         <AccordionSections sections={sections} defaultOpenIndex={0} />
 
         {/* How FREIDA + USCEHub Work Together */}

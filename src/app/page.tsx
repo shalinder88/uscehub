@@ -5,10 +5,7 @@ import { Hero } from "@/components/home/hero";
 import { FeaturedListings } from "@/components/home/featured-listings";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { TrustSection } from "@/components/home/trust-section";
-import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { ProgramStats } from "@/components/seo/program-stats";
-import { JourneyTimeline } from "@/components/tools/journey-timeline";
-import { CostCalculatorSection } from "@/components/home/cost-calculator-section";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { ErasCountdown } from "@/components/home/eras-countdown";
 import { ActivityFeed } from "@/components/home/activity-feed";
@@ -139,10 +136,7 @@ export default async function HomePage() {
       <FeaturedListings />
       <ProgramSpotlight />
       <HowItWorks />
-      <JourneyTimeline />
-      <CostCalculatorSection />
       <ProgramStats />
-      <PeopleAlsoAsk />
       <MatchCounter />
     </>
   );

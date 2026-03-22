@@ -27,7 +27,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-slate-400">
               From medical school abroad to the ICU. This platform was made by
-              someone who went through every step of the IMG process.
+              Singh MD — someone who went through every step of the IMG process.
             </p>
           </div>
         </div>
@@ -77,6 +77,7 @@ export default function AboutPage() {
                 The process is hard, the uncertainty is real, but thousands of
                 IMGs have walked this path before you and matched. You can too.
               </p>
+              <p className="mt-3 text-xs text-slate-500">— Singh MD, Intensivist</p>
             </div>
           </div>
         </section>

@@ -245,11 +245,11 @@ export function CommunityTabs() {
       {/* ============================================================ */}
       <TabsContent value="community">
         <section className="mb-14">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
             <MessageSquare className="h-5 w-5 text-blue-600" />
             IMG Communities &amp; Forums
           </h2>
-          <p className="mt-1 text-sm text-slate-500">Active communities where IMGs share advice and experiences</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Active communities where IMGs share advice and experiences</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {communities.map((c) => (
               <a
@@ -257,16 +257,16 @@ export function CommunityTabs() {
                 href={c.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl border border-slate-200 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
+                className="group rounded-xl border border-slate-200 dark:border-slate-700 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
               >
                 <div className="flex items-start justify-between">
-                  <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-600">{c.name}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600">{c.name}</h3>
                   <ExternalLink className="h-3.5 w-3.5 text-slate-400" />
                 </div>
-                <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{c.desc}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{c.desc}</p>
                 <div className="mt-3 flex gap-2">
-                  <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600">{c.platform}</span>
-                  <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-medium text-blue-600">{c.members} members</span>
+                  <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-slate-600 dark:text-slate-400">{c.platform}</span>
+                  <span className="rounded-full bg-blue-50 dark:bg-blue-950/30 px-2 py-0.5 text-[10px] font-medium text-blue-600">{c.members} members</span>
                 </div>
               </a>
             ))}
@@ -274,11 +274,11 @@ export function CommunityTabs() {
         </section>
 
         <section className="mb-14">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
             <BookOpen className="h-5 w-5 text-violet-600" />
             Essential Resources
           </h2>
-          <p className="mt-1 text-sm text-slate-500">Official resources every IMG needs</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Official resources every IMG needs</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {resources.map((r) => (
               <a
@@ -286,21 +286,21 @@ export function CommunityTabs() {
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-lg border border-slate-200 p-4 transition-colors hover:border-blue-200 hover:bg-blue-50/30"
+                className="group rounded-lg border border-slate-200 dark:border-slate-700 p-4 transition-colors hover:border-blue-200 hover:bg-blue-50 dark:bg-blue-950/30/30"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-slate-900">{r.name}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{r.name}</h3>
                   <ExternalLink className="h-3 w-3 text-slate-400" />
                 </div>
-                <p className="mt-1 text-xs text-slate-500">{r.desc}</p>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{r.desc}</p>
               </a>
             ))}
           </div>
         </section>
 
-        <section className="rounded-xl bg-slate-50 p-8 text-center">
-          <h2 className="text-lg font-bold text-slate-900">Have questions about your IMG journey?</h2>
-          <p className="mt-2 text-sm text-slate-500">
+        <section className="rounded-xl bg-slate-50 dark:bg-slate-800 p-8 text-center">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Have questions about your IMG journey?</h2>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Check our comprehensive FREIDA &amp; Residency Programs guide for match stats, IMG-friendly programs, and application strategies.
           </p>
           <div className="mt-5 flex justify-center gap-3">
@@ -324,17 +324,17 @@ export function CommunityTabs() {
       {/* ============================================================ */}
       <TabsContent value="swap">
         <div className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
             <ArrowRightLeft className="h-5 w-5 text-blue-600" />
             Observership Swap Board
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Need to change your observership dates? Find another IMG willing to swap. Post your availability and what you&apos;re looking for.
           </p>
 
-          <div className="mt-4 flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4">
+          <div className="mt-4 flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 dark:bg-amber-950/30 p-4">
             <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-600" />
-            <p className="text-xs leading-relaxed text-amber-800">
+            <p className="text-xs leading-relaxed text-amber-800 dark:text-amber-200">
               USCEHub facilitates introductions only. Swap/transfer must be approved by respective institutions.
               USCEHub is not responsible for outcomes.
             </p>
@@ -350,8 +350,8 @@ export function CommunityTabs() {
 
         {/* Swap form */}
         {showSwapForm && (
-          <form onSubmit={handleSwapSubmit} className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="mb-4 text-sm font-semibold text-slate-900">Post a Swap Request</h3>
+          <form onSubmit={handleSwapSubmit} className="mb-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-6">
+            <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">Post a Swap Request</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               <Input
                 label="Your Name"
@@ -412,14 +412,14 @@ export function CommunityTabs() {
         {/* Swap posts */}
         <div className="grid gap-4">
           {swapPosts.map((post) => (
-            <div key={post.id} className="rounded-xl border border-slate-200 p-5 transition-all hover:border-slate-300 hover:shadow-sm">
+            <div key={post.id} className="rounded-xl border border-slate-200 dark:border-slate-700 p-5 transition-all hover:border-slate-300 hover:shadow-sm">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-700">
                     {post.userName.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">{post.userName}</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{post.userName}</p>
                     <p className="text-[10px] text-slate-400">Posted {post.createdAt}</p>
                   </div>
                 </div>
@@ -431,19 +431,19 @@ export function CommunityTabs() {
                   <p className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wider text-slate-400">
                     <MapPin className="h-3 w-3" /> Program They Have
                   </p>
-                  <p className="mt-0.5 text-sm text-slate-700">{post.programHave}</p>
+                  <p className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">{post.programHave}</p>
                 </div>
                 <div>
                   <p className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wider text-slate-400">
                     <Calendar className="h-3 w-3" /> Dates
                   </p>
-                  <p className="mt-0.5 text-sm text-slate-700">{post.dates}</p>
+                  <p className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">{post.dates}</p>
                 </div>
                 <div className="sm:col-span-2">
                   <p className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-wider text-slate-400">
                     <ArrowRightLeft className="h-3 w-3" /> Looking For
                   </p>
-                  <p className="mt-0.5 text-sm text-slate-700">{post.lookingFor}</p>
+                  <p className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">{post.lookingFor}</p>
                 </div>
               </div>
 
@@ -467,11 +467,11 @@ export function CommunityTabs() {
       {/* ============================================================ */}
       <TabsContent value="discussions">
         <div className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
             <MessageCircle className="h-5 w-5 text-blue-600" />
             Community Discussions
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Share experiences, ask questions, and connect with fellow IMGs navigating USCE opportunities.
           </p>
 
@@ -491,8 +491,8 @@ export function CommunityTabs() {
 
         {/* Discussion form */}
         {showDiscussionForm && (
-          <form onSubmit={handleDiscussionSubmit} className="mb-8 rounded-xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="mb-4 text-sm font-semibold text-slate-900">Start a New Discussion</h3>
+          <form onSubmit={handleDiscussionSubmit} className="mb-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-6">
+            <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">Start a New Discussion</h3>
             <div className="grid gap-4">
               <Input
                 label="Your Name"
@@ -536,13 +536,13 @@ export function CommunityTabs() {
           {discussions.map((d) => (
             <div
               key={d.id}
-              className="group rounded-xl border border-slate-200 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
+              className="group rounded-xl border border-slate-200 dark:border-slate-700 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-sm"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
-                  <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-600">{d.title}</h3>
-                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                    <span className="font-medium text-slate-600">{d.author}</span>
+                  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600">{d.title}</h3>
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="font-medium text-slate-600 dark:text-slate-400">{d.author}</span>
                     <span className="text-slate-300">|</span>
                     <span className="flex items-center gap-1">
                       <Clock className="h-3 w-3" />
@@ -563,10 +563,10 @@ export function CommunityTabs() {
 
         {/* Suggest a program card */}
         <Link href="/community/suggest-program" className="mt-6 block">
-          <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-6 text-center transition-colors hover:border-blue-300 hover:bg-blue-50/30">
+          <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 dark:bg-slate-800 p-6 text-center transition-colors hover:border-blue-300 hover:bg-blue-50 dark:bg-blue-950/30/30">
             <Lightbulb className="mx-auto h-6 w-6 text-blue-500" />
-            <h3 className="mt-2 text-sm font-semibold text-slate-900">Know a program that&apos;s not listed?</h3>
-            <p className="mt-1 text-xs text-slate-500">
+            <h3 className="mt-2 text-sm font-semibold text-slate-900 dark:text-slate-100">Know a program that&apos;s not listed?</h3>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
               Suggest a new observership, externship, or research program to help other IMGs.
             </p>
           </div>
@@ -613,8 +613,8 @@ export function SuggestProgramForm({ standalone = false }: { standalone?: boolea
     return (
       <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-8 text-center">
         <ThumbsUp className="mx-auto h-8 w-8 text-emerald-600" />
-        <h3 className="mt-3 text-lg font-semibold text-slate-900">Thank you for your submission!</h3>
-        <p className="mt-2 text-sm text-slate-600">
+        <h3 className="mt-3 text-lg font-semibold text-slate-900 dark:text-slate-100">Thank you for your submission!</h3>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Our admin team will review your program suggestion. Approved submissions will be added to the database.
         </p>
         <Button className="mt-5" variant="outline" onClick={() => { setSubmitted(false); setForm({ hospitalName: "", city: "", state: "", programType: "", url: "", experience: "", details: "" }); }}>
@@ -626,22 +626,22 @@ export function SuggestProgramForm({ standalone = false }: { standalone?: boolea
 
   return (
     <div>
-      <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900">
+      <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
         <Lightbulb className="h-5 w-5 text-blue-600" />
         Suggest a New Program
       </h2>
-      <p className="mt-1 text-sm text-slate-500">
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         Know of an observership, externship, or research program that&apos;s not in our database? Help other IMGs by submitting it for review.
       </p>
 
-      <div className="mt-4 flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 p-4">
+      <div className="mt-4 flex items-start gap-3 rounded-lg border border-blue-200 bg-blue-50 dark:bg-blue-950/30 p-4">
         <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
-        <p className="text-xs leading-relaxed text-blue-800">
+        <p className="text-xs leading-relaxed text-blue-800 dark:text-blue-200">
           All submissions are reviewed before publishing. USCEHub does not guarantee accuracy of user-submitted information.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-6">
+      <form onSubmit={handleSubmit} className="mt-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           <Input
             label="Hospital / Institution Name"

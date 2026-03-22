@@ -61,16 +61,16 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
     "$" + n.toLocaleString("en-US");
 
   return (
-    <div className={compact ? "" : "rounded-xl border border-slate-200 bg-white p-6 shadow-sm"}>
+    <div className={compact ? "" : "rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"}>
       {!compact && (
         <div className="mb-6">
           <div className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-slate-700" />
-            <h3 className="text-lg font-semibold text-slate-900">
+            <Calculator className="h-5 w-5 text-slate-700 dark:text-slate-300 dark:text-slate-300" />
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
               Cost Calculator
             </h3>
           </div>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
             Estimate the total cost of your clinical experience in the US
           </p>
         </div>
@@ -104,7 +104,7 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
         </Select>
 
         <div className="w-full">
-          <label className="mb-1.5 block text-sm font-medium text-slate-700">
+          <label className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300 dark:text-slate-300">
             Program Fee (optional)
           </label>
           <div className="relative">
@@ -114,7 +114,7 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
               placeholder="0"
               value={programFee}
               onChange={(e) => setProgramFee(e.target.value)}
-              className="flex h-10 w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+              className="flex h-10 w-full rounded-lg border border-slate-300 bg-white dark:bg-slate-900 pl-9 pr-3 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
             />
           </div>
         </div>
@@ -122,68 +122,68 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
 
       {showEstimate && (
         <div className="mt-6">
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-            <h4 className="mb-3 text-sm font-semibold text-slate-900">
+          <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-4">
+            <h4 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
               Estimated Cost Breakdown ({durationData.label} in {city})
             </h4>
 
             <div className="space-y-2.5">
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600">
+                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   <DollarSign className="h-3.5 w-3.5" />
                   Program Fee
                 </span>
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                   {fee > 0 ? formatUsd(fee) : "Varies"}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600">
+                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   <Home className="h-3.5 w-3.5" />
                   Housing
                 </span>
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                   {formatUsd(housing)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600">
+                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   <Utensils className="h-3.5 w-3.5" />
                   Food
                 </span>
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                   {formatUsd(food)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600">
+                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   <Bus className="h-3.5 w-3.5" />
                   Transportation
                 </span>
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                   {formatUsd(transport)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600">
+                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   <Shield className="h-3.5 w-3.5" />
                   Health Insurance
                 </span>
-                <span className="font-medium text-slate-900">
+                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                   {formatUsd(insuranceMin)} - {formatUsd(insuranceMax)}
                 </span>
               </div>
 
-              <div className="border-t border-slate-200 pt-2.5">
+              <div className="border-t border-slate-200 dark:border-slate-700 pt-2.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-slate-900">
+                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
                     Estimated Total
                   </span>
-                  <span className="text-lg font-bold text-slate-900">
+                  <span className="text-lg font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">
                     {formatUsd(totalMin)}
                     {totalMin !== totalMax && ` - ${formatUsd(totalMax)}`}
                   </span>

@@ -35,21 +35,9 @@ const institutionBenefits = [
   },
   {
     icon: ShieldCheck,
-    title: "Verified Listings",
+    title: "Verified & Trusted Listings",
     description:
       "Earn trust badges through our verification process, including NPI verification and institutional email confirmation.",
-  },
-  {
-    icon: Star,
-    title: "Build Reputation",
-    description:
-      "Collect verified reviews from past participants to build your program's reputation and attract top talent.",
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics Dashboard",
-    description:
-      "Track views, applications, and engagement metrics for your listings through a comprehensive poster dashboard.",
   },
   {
     icon: Globe,
@@ -58,10 +46,10 @@ const institutionBenefits = [
       "Your program is visible to IMGs worldwide who are searching for U.S. clinical experience opportunities.",
   },
   {
-    icon: Building2,
-    title: "Institutional Profile",
+    icon: Star,
+    title: "Community Reviews & Reputation",
     description:
-      "Create a detailed institutional profile that showcases your organization across all your listings.",
+      "Collect verified reviews from past participants to build your program's reputation and attract top talent.",
   },
 ];
 
@@ -137,7 +125,7 @@ export default function ForInstitutionsPage() {
               externships, and research positions.
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
-              <Link href="/register">
+              <Link href="/auth/signup">
                 <Button
                   size="lg"
                   className="bg-white text-slate-900 hover:bg-slate-100"
@@ -248,10 +236,10 @@ export default function ForInstitutionsPage() {
             </div>
 
             {/* Disclaimer — right after benefits, near "No Visa Sponsorship" */}
-            <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+            <div className="mt-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30 p-4">
               <div className="flex items-start gap-2">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
-                <div className="text-xs leading-relaxed text-amber-800">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+                <div className="text-xs leading-relaxed text-amber-800 dark:text-amber-200">
                   <p className="font-semibold">Important</p>
                   <p className="mt-1">Physicians are responsible for compliance with institutional policies, state regulations, and malpractice coverage. USCEHub does not provide visa sponsorship, insurance, or credentialing. Observers on B1/B2 visas may observe only — no patient contact.</p>
                 </div>
@@ -292,7 +280,7 @@ export default function ForInstitutionsPage() {
           </div>
 
           <div className="mt-10 text-center">
-            <Link href="/register">
+            <Link href="/auth/signup">
               <Button size="lg">
                 Start Listing Today
                 <ArrowRight className="ml-1 h-4 w-4" />

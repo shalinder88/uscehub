@@ -82,7 +82,7 @@ export function ListingCard({ listing }: ListingCardProps) {
             </div>
           </div>
 
-          <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-slate-500">
+          <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
             {truncate(listing.shortDescription, 120)}
           </p>
 

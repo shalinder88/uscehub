@@ -131,31 +131,31 @@ export default function ComparePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-800 dark:bg-slate-800">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex items-center gap-2">
-            <GitCompareArrows className="h-5 w-5 text-slate-700" />
-            <h1 className="text-2xl font-bold text-slate-900">Compare Programs</h1>
+            <GitCompareArrows className="h-5 w-5 text-slate-700 dark:text-slate-300 dark:text-slate-300" />
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">Compare Programs</h1>
           </div>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
             Select 2-3 programs to compare side by side
           </p>
         </div>
 
         {/* Selection */}
-        <div className="mb-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="mb-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
           <div className="flex flex-wrap items-end gap-3">
             {selectedIds.map((id, i) => (
               <div key={i} className="min-w-[200px] flex-1">
-                <label className="mb-1 block text-xs font-medium text-slate-500">
+                <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Program {i + 1}
                 </label>
                 <div className="flex gap-1">
                   <select
                     value={id}
                     onChange={(e) => handleSelect(i, e.target.value)}
-                    className="flex h-10 w-full appearance-none rounded-lg border border-slate-300 bg-white px-3 py-2 pr-8 text-sm text-slate-900 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                    className="flex h-10 w-full appearance-none rounded-lg border border-slate-300 bg-white dark:bg-slate-900 px-3 py-2 pr-8 text-sm text-slate-900 dark:text-slate-100 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
                   >
                     <option value="">Select a program...</option>
                     {allListings.map((l) => (
@@ -167,7 +167,7 @@ export default function ComparePage() {
                   {selectedIds.length > 2 && (
                     <button
                       onClick={() => removeSlot(i)}
-                      className="shrink-0 rounded-lg px-2 text-slate-400 hover:text-slate-600"
+                      className="shrink-0 rounded-lg px-2 text-slate-400 hover:text-slate-600 dark:text-slate-400 dark:text-slate-400"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -178,7 +178,7 @@ export default function ComparePage() {
             {selectedIds.length < 3 && (
               <button
                 onClick={addSlot}
-                className="h-10 rounded-lg border border-dashed border-slate-300 px-4 text-sm text-slate-500 hover:border-slate-400 hover:text-slate-700"
+                className="h-10 rounded-lg border border-dashed border-slate-300 px-4 text-sm text-slate-500 dark:text-slate-400 hover:border-slate-400 hover:text-slate-700 dark:text-slate-300 dark:text-slate-300"
               >
                 + Add
               </button>
@@ -195,11 +195,11 @@ export default function ComparePage() {
 
         {/* Comparison Table */}
         {compared.length >= 2 && (
-          <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50">
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
+                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 dark:bg-slate-800">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Attribute
                   </th>
                   {compared.map((l) => (
@@ -218,23 +218,23 @@ export default function ComparePage() {
                 {rows.map((row, i) => (
                   <tr
                     key={row.label}
-                    className={i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}
+                    className={i % 2 === 0 ? "bg-white dark:bg-slate-900 dark:bg-slate-900" : "bg-slate-50/50"}
                   >
-                    <td className="whitespace-nowrap px-4 py-3 text-xs font-medium text-slate-600">
+                    <td className="whitespace-nowrap px-4 py-3 text-xs font-medium text-slate-600 dark:text-slate-400 dark:text-slate-400">
                       {row.label}
                     </td>
                     {compared.map((l) => (
                       <td
                         key={l.id}
-                        className="px-4 py-3 text-center text-sm text-slate-700"
+                        className="px-4 py-3 text-center text-sm text-slate-700 dark:text-slate-300 dark:text-slate-300"
                       >
                         {row.render(l)}
                       </td>
                     ))}
                   </tr>
                 ))}
-                <tr className="border-t border-slate-200">
-                  <td className="px-4 py-3 text-xs font-medium text-slate-600">Details</td>
+                <tr className="border-t border-slate-200 dark:border-slate-700 dark:border-slate-700">
+                  <td className="px-4 py-3 text-xs font-medium text-slate-600 dark:text-slate-400 dark:text-slate-400">Details</td>
                   {compared.map((l) => (
                     <td key={l.id} className="px-4 py-3 text-center">
                       <Link
@@ -255,15 +255,15 @@ export default function ComparePage() {
         {compared.length >= 2 && (
           <div className="mt-6 space-y-4 sm:hidden">
             {compared.map((l) => (
-              <div key={l.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div key={l.id} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm">
                 <Link href={`/listing/${l.id}`} className="font-semibold text-blue-600 hover:text-blue-700">
                   {l.title}
                 </Link>
                 <dl className="mt-3 space-y-2 text-sm">
                   {rows.map((row) => (
                     <div key={row.label} className="flex items-center justify-between">
-                      <dt className="text-xs text-slate-500">{row.label}</dt>
-                      <dd className="text-slate-700">{row.render(l)}</dd>
+                      <dt className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">{row.label}</dt>
+                      <dd className="text-slate-700 dark:text-slate-300 dark:text-slate-300">{row.render(l)}</dd>
                     </div>
                   ))}
                 </dl>
