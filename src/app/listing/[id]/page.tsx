@@ -139,16 +139,19 @@ export default async function ListingPage({ params }: ListingPageProps) {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <TrustBadges
-              adminReviewed={listing.status === "APPROVED"}
-              verifiedPoster={
-                listing.organization?.verificationStatus === "APPROVED"
-              }
-              institutionalEmail={
-                listing.organization?.institutionalEmail || false
-              }
-              npiVerified={!!listing.poster?.posterProfile?.npiNumber}
-            />
+            {/* Only show trust badges for real posters, not system-seeded listings */}
+            {listing.organization?.name !== "USCEHub Directory" && (
+              <TrustBadges
+                adminReviewed={listing.status === "APPROVED"}
+                verifiedPoster={
+                  listing.organization?.verificationStatus === "APPROVED"
+                }
+                institutionalEmail={
+                  listing.organization?.institutionalEmail || false
+                }
+                npiVerified={!!listing.poster?.posterProfile?.npiNumber}
+              />
+            )}
 
             <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 p-5 sm:grid-cols-3">
               <div>
@@ -425,7 +428,8 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 )}
               </div>
 
-              {listing.organization && (
+              {/* Organization section - only show for real posters, not system account */}
+              {listing.organization && listing.organization.name !== "USCEHub Directory" && (
                 <div className="rounded-xl border border-slate-200 p-5">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
@@ -463,8 +467,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   </div>
                 </div>
               )}
-
-              {/* Posted by section removed */}
 
               <div className="rounded-xl border border-slate-200 p-5">
                 <ShareButtons title={listing.title} />
