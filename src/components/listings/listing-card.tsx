@@ -18,6 +18,7 @@ interface ListingCardProps {
     certificateOffered: boolean;
     lorPossible: boolean;
     visaSupport: boolean;
+    linkVerified?: boolean;
     reviews?: { overallRating: number }[];
   };
 }
@@ -105,6 +106,12 @@ export function ListingCard({ listing }: ListingCardProps) {
               <Badge variant="warning" className="text-xs">
                 <Globe className="mr-1 h-3 w-3" />
                 Visa
+              </Badge>
+            )}
+            {listing.linkVerified && (
+              <Badge variant="success" className="text-xs">
+                <svg className="mr-1 h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                Verified
               </Badge>
             )}
           </div>

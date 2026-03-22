@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export async function FeaturedListings() {
   const listings = await prisma.listing.findMany({
     where: { status: "APPROVED" },
-    orderBy: { views: "desc" },
+    orderBy: [{ linkVerified: "desc" }, { views: "desc" }],
     take: 6,
     include: {
       reviews: {

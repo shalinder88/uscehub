@@ -16,6 +16,7 @@ export function ListingFilters() {
   const currentSort = searchParams.get("sort") || "newest";
   const currentFree = searchParams.get("free") === "true";
   const currentVisa = searchParams.get("visa") === "true";
+  const currentVerified = searchParams.get("verified") === "true";
 
   const updateParam = useCallback(
     (key: string, value: string) => {
@@ -116,6 +117,19 @@ export function ListingFilters() {
             className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
           />
           <span className="font-medium text-slate-700">Visa Support</span>
+        </label>
+
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm transition-colors hover:bg-slate-50 has-[:checked]:border-green-300 has-[:checked]:bg-green-50">
+          <input
+            type="checkbox"
+            checked={currentVerified}
+            onChange={() => toggleParam("verified")}
+            className="h-4 w-4 rounded border-slate-300 text-green-600 focus:ring-green-500"
+          />
+          <span className="font-medium text-slate-700">
+            <svg className="mr-1 inline h-3 w-3 text-green-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            Verified Links
+          </span>
         </label>
       </div>
     </div>

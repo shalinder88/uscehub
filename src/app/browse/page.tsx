@@ -18,6 +18,7 @@ interface BrowsePageProps {
     sort?: string;
     free?: string;
     visa?: string;
+    verified?: string;
   }>;
 }
 
@@ -66,10 +67,15 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     conditions.push({ visaSupport: true });
   }
 
-  let orderBy: Record<string, string> = { createdAt: "desc" };
-  if (params.sort === "cost-low") orderBy = { cost: "asc" };
-  else if (params.sort === "cost-high") orderBy = { cost: "desc" };
-  else if (params.sort === "most-reviewed") orderBy = { views: "desc" };
+  if (params.verified === "true") {
+    conditions.push({ linkVerified: true });
+  }
+
+  // Default sort: verified first, then by date
+  let orderBy: Record<string, string>[] = [{ linkVerified: "desc" }, { createdAt: "desc" }];
+  if (params.sort === "cost-low") orderBy = [{ linkVerified: "desc" }, { cost: "asc" }];
+  else if (params.sort === "cost-high") orderBy = [{ linkVerified: "desc" }, { cost: "desc" }];
+  else if (params.sort === "most-reviewed") orderBy = [{ linkVerified: "desc" }, { views: "desc" }];
 
   const listings = await prisma.listing.findMany({
     where: { AND: conditions },
