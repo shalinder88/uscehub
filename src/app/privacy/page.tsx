@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — USCEHub",
-  description: "Privacy policy for the USCEHub platform.",
+  title: "Privacy Policy",
+  description:
+    "USCEHub privacy policy. Learn how we collect, use, and protect your personal information when you use our IMG opportunities platform.",
+  alternates: {
+    canonical: "https://uscehub.com/privacy",
+  },
 };
 
 export default function PrivacyPage() {

@@ -4,10 +4,15 @@ import { ListingFilters } from "@/components/listings/listing-filters";
 import { ListingCard } from "@/components/listings/listing-card";
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 
 export const metadata: Metadata = {
-  title: "Browse Opportunities — USCEHub",
-  description: "Search and filter clinical observership, externship, and research opportunities for IMGs.",
+  title: "Browse Observership, Externship & Research Opportunities",
+  description:
+    "Search and filter clinical observerships, externships, and research positions for International Medical Graduates across all US states. Free database with verified listings.",
+  alternates: {
+    canonical: "https://uscehub.com/browse",
+  },
 };
 
 interface BrowsePageProps {
@@ -123,6 +128,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           )}
         </div>
       </div>
+
+      <PeopleAlsoAsk />
     </div>
   );
 }

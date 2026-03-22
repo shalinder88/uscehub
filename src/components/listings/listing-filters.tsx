@@ -1,10 +1,11 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
-import { Search } from "lucide-react";
+import { useCallback, useState } from "react";
+import { Search, Sparkles } from "lucide-react";
 import { Select } from "@/components/ui/select";
 import { US_STATES } from "@/lib/utils";
+import { parseSmartSearch } from "@/lib/smart-search";
 
 export function ListingFilters() {
   const router = useRouter();
@@ -17,6 +18,7 @@ export function ListingFilters() {
   const currentFree = searchParams.get("free") === "true";
   const currentVisa = searchParams.get("visa") === "true";
   const currentVerified = searchParams.get("verified") === "true";
+  const [smartMode, setSmartMode] = useState(false);
 
   const updateParam = useCallback(
     (key: string, value: string) => {
@@ -47,20 +49,51 @@ export function ListingFilters() {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="relative">
+        <div className="relative sm:col-span-2 lg:col-span-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
-            placeholder="Search hospitals, cities..."
+            placeholder={smartMode ? 'Try "free observerships in New York"...' : "Search hospitals, cities..."}
             defaultValue={currentSearch}
-            onChange={(e) => {
-              const timeout = setTimeout(() => {
-                updateParam("search", e.target.value);
-              }, 400);
-              return () => clearTimeout(timeout);
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && smartMode) {
+                const val = (e.target as HTMLInputElement).value;
+                if (val.trim()) {
+                  const filters = parseSmartSearch(val.trim());
+                  const params = new URLSearchParams();
+                  if (filters.search) params.set("search", filters.search);
+                  if (filters.type) params.set("type", filters.type);
+                  if (filters.state) params.set("state", filters.state);
+                  if (filters.sort) params.set("sort", filters.sort);
+                  if (filters.free) params.set("free", filters.free);
+                  if (filters.visa) params.set("visa", filters.visa);
+                  router.push(`/browse?${params.toString()}`);
+                }
+              }
             }}
-            className="flex h-10 w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+            onChange={(e) => {
+              if (!smartMode) {
+                const timeout = setTimeout(() => {
+                  updateParam("search", e.target.value);
+                }, 400);
+                return () => clearTimeout(timeout);
+              }
+            }}
+            className="flex h-10 w-full rounded-lg border border-slate-300 bg-white pl-9 pr-20 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
           />
+          <button
+            type="button"
+            onClick={() => setSmartMode(!smartMode)}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
+              smartMode
+                ? "bg-slate-900 text-white"
+                : "bg-slate-100 text-slate-500 hover:bg-slate-200"
+            }`}
+            title="Toggle smart search — parse natural language queries"
+          >
+            <Sparkles className="h-3 w-3" />
+            Smart
+          </button>
         </div>
 
         <Select

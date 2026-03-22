@@ -14,8 +14,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How It Works — USCEHub",
-  description: "Learn how USCEHub works for both applicants and institutions.",
+  title: "How It Works",
+  description:
+    "Learn how USCEHub works for IMG applicants and institutions. Browse opportunities, apply to programs, and manage listings — all in one free platform.",
+  alternates: {
+    canonical: "https://uscehub.com/how-it-works",
+  },
 };
 
 const applicantSteps = [

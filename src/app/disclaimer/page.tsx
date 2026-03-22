@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer — USCEHub",
-  description: "Legal disclaimer for the USCEHub platform.",
+  title: "Disclaimer",
+  description:
+    "Legal disclaimer for USCEHub. Read about our limitations of liability, accuracy of listings, and relationship with medical institutions and regulatory bodies.",
+  alternates: {
+    canonical: "https://uscehub.com/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {

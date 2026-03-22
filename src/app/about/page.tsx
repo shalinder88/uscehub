@@ -4,9 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "About Us — USCEHub",
+  title: "About Us",
   description:
-    "Built by an intensivist who lived the IMG journey. USCEHub is the largest structured database for IMG clinical opportunities in the United States.",
+    "Built by an intensivist who lived the IMG journey. USCEHub is the largest free database of clinical observership and externship opportunities for International Medical Graduates.",
+  alternates: {
+    canonical: "https://uscehub.com/about",
+  },
 };
 
 export default function AboutPage() {

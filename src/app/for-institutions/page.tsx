@@ -18,9 +18,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "For Institutions & Physicians — USCEHub",
+  title: "For Institutions & Physicians",
   description:
-    "List your clinical observership, externship, or research programs — or accept observers in your private practice. Join the largest IMG opportunities database.",
+    "List your clinical observership, externship, or research programs on USCEHub. Reach qualified IMGs, get verified, and manage applications — all free for institutions.",
+  alternates: {
+    canonical: "https://uscehub.com/for-institutions",
+  },
 };
 
 const institutionBenefits = [

@@ -6,8 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us — USCEHub",
-  description: "Get in touch with the USCEHub team.",
+  title: "Contact Us",
+  description:
+    "Get in touch with the USCEHub team. Questions about observership listings, partnerships, or platform features? We are here to help International Medical Graduates.",
+  alternates: {
+    canonical: "https://uscehub.com/contact",
+  },
 };
 
 export default function ContactPage() {

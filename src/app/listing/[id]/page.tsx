@@ -37,12 +37,24 @@ export async function generateMetadata({ params }: ListingPageProps): Promise<Me
   const { id } = await params;
   const listing = await prisma.listing.findUnique({
     where: { id },
-    select: { title: true, shortDescription: true },
+    select: { title: true, shortDescription: true, city: true, state: true, listingType: true },
   });
   if (!listing) return { title: "Listing Not Found — USCEHub" };
+  const description =
+    listing.shortDescription ||
+    `${listing.title} — ${LISTING_TYPE_LABELS[listing.listingType] || listing.listingType} opportunity in ${listing.city}, ${listing.state}. Browse details, eligibility, and reviews on USCEHub.`;
   return {
-    title: `${listing.title} — USCEHub`,
-    description: listing.shortDescription,
+    title: listing.title,
+    description,
+    openGraph: {
+      title: `${listing.title} — USCEHub`,
+      description,
+      url: `https://uscehub.com/listing/${id}`,
+      type: "website",
+    },
+    alternates: {
+      canonical: `https://uscehub.com/listing/${id}`,
+    },
   };
 }
 
@@ -89,8 +101,53 @@ export default async function ListingPage({ params }: ListingPageProps) {
     | "elective"
     | "volunteer";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    name: listing.title,
+    description: listing.fullDescription || listing.shortDescription,
+    provider: listing.organization
+      ? {
+          "@type": "MedicalOrganization",
+          name: listing.organization.name,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: listing.organization.city,
+            addressRegion: listing.organization.state,
+            addressCountry: "US",
+          },
+          ...(listing.organization.website
+            ? { url: listing.organization.website }
+            : {}),
+        }
+      : undefined,
+    occupationalCategory: listing.specialty,
+    timeToComplete: listing.duration,
+    offers: {
+      "@type": "Offer",
+      price: listing.cost,
+      priceCurrency: "USD",
+    },
+    url: `https://uscehub.com/listing/${id}`,
+    applicationStartDate: listing.startDate || undefined,
+    applicationDeadline: listing.applicationDeadline || undefined,
+    ...(avgRating !== null
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: avgRating.toFixed(1),
+            reviewCount: listing.reviews.length,
+          },
+        }
+      : {}),
+  };
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">

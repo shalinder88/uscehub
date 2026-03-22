@@ -3,9 +3,12 @@ import { Users } from "lucide-react";
 import { CommunityTabs } from "@/components/community/community-tabs";
 
 export const metadata: Metadata = {
-  title: "Community — USCEHub",
+  title: "IMG Community",
   description:
-    "Connect with fellow IMGs, share experiences, and find support in the USCEHub community.",
+    "Connect with fellow International Medical Graduates, share observership and externship experiences, ask questions, and find support on your USCE journey.",
+  alternates: {
+    canonical: "https://uscehub.com/community",
+  },
 };
 
 export default function CommunityPage() {

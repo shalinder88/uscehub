@@ -2,10 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Search, Building2, FlaskConical, Stethoscope, GraduationCap } from "lucide-react";
+import { Search, Building2, FlaskConical, Stethoscope, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { USMap } from "@/components/states/us-map";
 import Link from "next/link";
+import { parseSmartSearch, buildSearchUrl } from "@/lib/smart-search";
 
 interface HeroProps {
   listingCount: number;
@@ -22,7 +23,8 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (search.trim()) {
-      router.push(`/browse?search=${encodeURIComponent(search.trim())}`);
+      const filters = parseSmartSearch(search.trim());
+      router.push(buildSearchUrl(filters));
     } else {
       router.push("/browse");
     }
@@ -67,7 +69,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search by specialty, city, hospital, or keyword..."
+                  placeholder="Try &quot;free observerships in New York&quot; or &quot;pediatrics research&quot;..."
                   className="h-12 w-full rounded-lg border-0 bg-white pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>

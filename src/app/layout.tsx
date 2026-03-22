@@ -14,9 +14,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "USCEHub — The Largest IMG Opportunities Database",
+  metadataBase: new URL("https://uscehub.com"),
+  title: {
+    default: "USCEHub — The Largest IMG Opportunities Database",
+    template: "%s — USCEHub",
+  },
   description:
     "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+  keywords:
+    "observership, externship, IMG, international medical graduate, USCE, clinical experience, US hospitals, medical observership, residency preparation",
+  authors: [{ name: "USCEHub" }],
+  alternates: {
+    canonical: "https://uscehub.com",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "USCEHub",
+    title: "USCEHub — The Largest IMG Opportunities Database",
+    description:
+      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+    url: "https://uscehub.com",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "USCEHub — IMG Opportunities Database",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "USCEHub — The Largest IMG Opportunities Database",
+    description:
+      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+    images: ["/og-default.png"],
+  },
+  verification: {
+    google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

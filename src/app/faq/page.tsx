@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ — USCEHub",
-  description: "Frequently asked questions about clinical observerships, externships, and the USCEHub platform.",
+  title: "Frequently Asked Questions",
+  description:
+    "Answers to common questions about clinical observerships, externships, USCE requirements, and how to use USCEHub to find IMG opportunities in the United States.",
+  alternates: {
+    canonical: "https://uscehub.com/faq",
+  },
 };
 
 const faqs = [
@@ -99,8 +103,25 @@ const faqs = [
 ];
 
 export default function FAQPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900">
