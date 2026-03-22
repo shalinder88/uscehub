@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { Hero } from "@/components/home/hero";
 import { FeaturedListings } from "@/components/home/featured-listings";
