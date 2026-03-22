@@ -170,6 +170,51 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
   },
 
+  // ===== NEW VERIFIED PROGRAMS (March 2026 research round 2) =====
+
+  "Nazareth Hospital (Trinity Health) — Observership": {
+    url: "https://www.trinityhealthma.org/healthcare-professionals/gme/nazareth/clinical-observership-program",
+    verified: true,
+    note: "ECFMG certification required. Graduated within 5 years preferred. IM only.",
+  },
+  "Mercy Catholic Medical Center — Observership": {
+    url: "https://www.trinityhealthma.org/healthcare-professionals/gme/mcmc/clinical-observership-program",
+    verified: true,
+    note: "ECFMG certification required. IM focus.",
+  },
+  "UC San Diego — ACE Program": {
+    url: "https://hsi.ucsd.edu/education/physicians/enhanced-clinical-skills",
+    verified: true,
+    note: "Accelerated Clinical Experience for IMGs preparing for ERAS. 2-6 months. No hands-on (CA regulation).",
+  },
+  "Mobile Infirmary — Observer Program": {
+    url: "https://www.infirmaryhealth.org/careers/graduate-education/mobile-infirmary-internal-medicine-residency/visiting-observer-learning-opportunity-program/",
+    verified: true,
+    cost: "$100 non-refundable",
+    note: "2 or 4 weeks. USMLE Step 1 required. TOEFL 100+.",
+  },
+  "Hurley Medical Center (MSU) — Observership": {
+    url: "https://education.hurleymc.com/gme/residencies-and-fellowships/combined-internal-medicine-pediatrics/observerships/",
+    verified: true,
+    note: "Med/Peds only. Apps April 1 - June 30. 1-2 weeks outpatient. No LOR.",
+  },
+  "Ochsner Health — International Observership": {
+    url: "https://education.ochsner.org/clined/global-is-local/ochsner-international-observership-program/",
+    verified: true,
+    cost: "$500 non-refundable",
+    note: "Up to 90 days. Must have Ochsner faculty sponsor. Must be employed abroad. Apply 90+ days ahead.",
+  },
+  "Providence Swedish Medical Center — Observer Program": {
+    url: "https://gme.providence.org/washington/puget-sound/for-observers/observers-international-invited-guests/",
+    verified: true,
+    note: "Must have relationship with preceptor. Apply 6+ months ahead.",
+  },
+  "MSU Institute for Global Health — Observership": {
+    url: "https://ighealth.msu.edu/education/global-externship-program/",
+    verified: true,
+    note: "Multiple MI sites. Schedule 9+ months ahead.",
+  },
+
   // ===== THIRD-PARTY PLACEMENT SERVICES (NOT hospitals — demoted from verified) =====
   // These are paid services that place IMGs at partner hospitals
   // NOT verified as hospital programs — marked unverified so they don't appear as "verified" listings
@@ -344,9 +389,10 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: false,
     note: "Multiple departments explicitly do NOT offer observerships.",
   },
-  "University of Michigan Health": {
-    url: "https://medicine.umich.edu/",
-    verified: false,
-    note: "Visiting program restricted to partner institutions. NOT available to anyone who already holds an MD. Only Ophthalmology ($250) has observership.",
-  },
+  // Spectrum Health / Corewell - explicitly no observerships
+  // Beaumont Hospital - now Corewell, no observerships
+  // HCA Healthcare - no centralized observership across 72 hospitals
+  // Tenet Healthcare - no observership found
+  // CommonSpirit Health - no observership found
+  // Mercy Health St. Louis - no longer offers observerships
 };
