@@ -32,10 +32,16 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "MD Anderson Cancer Center": {
     url: "https://www.mdanderson.org/education-training/outreach-programs/observer-programs/other-observership-opportunities-at-md-anderson.html",
     verified: true,
+    note: "Observer Programs page — clinical observership, NOT postdoc research.",
   },
-  "Memorial Sloan Kettering — Research Fellowship": {
+  "MD Anderson Cancer Center — Observer Program": {
+    url: "https://www.mdanderson.org/education-training/outreach-programs/observer-programs/other-observership-opportunities-at-md-anderson.html",
+    verified: true,
+  },
+  "Memorial Sloan Kettering — Observership": {
     url: "https://www.mskcc.org/hcp-education-training/international/observership",
     verified: true,
+    note: "MSK International Observership Program in oncology.",
   },
   "UPMC (University of Pittsburgh Medical Center)": {
     url: "https://dom.pitt.edu/education/eop/",
@@ -113,6 +119,55 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
     verified: true,
     note: "General observer program — up to 6 months. Must find own sponsoring clinician. Anesthesiology $25 app fee.",
+  },
+
+  // ===== NEW VERIFIED PROGRAMS (from gomco/web research) =====
+
+  "University of Kansas Medical Center (KUMC)": {
+    url: "https://www.kumc.edu/academic-and-student-affairs/departments/office-of-international-programs/inbound-programs/information-for-irsd-observers-and-visitors/international-observership-program.html",
+    verified: true,
+    cost: "$3,000/month",
+  },
+  "UAB Hospital — International Medical Observers": {
+    url: "https://www.uab.edu/medicine/international/international-programs/observership",
+    verified: true,
+    cost: "$4,250 per 4-week slot",
+  },
+  "Children's Hospital of Philadelphia (CHOP)": {
+    url: "https://www.chop.edu/services/international-observership-program",
+    verified: true,
+    cost: "$750 admin fee + background screening",
+  },
+  "Griffin Hospital": {
+    url: "https://meded.griffinhealth.org/clinical-observership/",
+    verified: true,
+    cost: "$900/month (non-refundable)",
+  },
+  "St. Mary Medical Center (Trinity Health)": {
+    url: "https://www.trinityhealthma.org/healthcare-professionals/gme/st-mary/clinical-observership-program",
+    verified: true,
+  },
+  "UC Davis Health — International Observership": {
+    url: "https://health.ucdavis.edu/international-affiliations/observerships/index.html",
+    verified: true,
+    note: "For practicing clinicians ONLY — not for recent graduates or residency seekers.",
+  },
+  "USF Health — International Training": {
+    url: "https://health.usf.edu/medicine/ia/international-training-programs",
+    verified: true,
+  },
+  "Mount Sinai Medical Center — Miami Beach": {
+    url: "https://www.msmc.com/education/educational-courses-and-events/international-observership-courses/",
+    verified: true,
+    note: "International Post Graduate Observership. 4 weeks. Separate from Mount Sinai NYC.",
+  },
+  "Allegheny Health Network — Observership": {
+    url: "https://www.alleghenyinternational.org/observerships.html",
+    verified: true,
+  },
+  "Drexel University — International Observership": {
+    url: "https://drexel.edu/medicine/academics/continuing-education/physician-refresher-re-entry-program/for-prospective-students/international-students-observerships/",
+    verified: true,
   },
 
   // ===== THIRD-PARTY PLACEMENT SERVICES =====
