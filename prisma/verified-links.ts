@@ -370,6 +370,64 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: false,
     note: "Explicitly states: does NOT offer observerships for international medical graduates. Exceptions: Pathology Global Observership and Radiology only.",
   },
+  // ===== NEW VERIFIED PROGRAMS (round 3) =====
+  "Boston Children's Hospital — Observership": {
+    url: "https://bchapps.childrenshospital.org/observership/",
+    verified: true,
+  },
+  "Cincinnati Children's Hospital — International Visitor Program": {
+    url: "https://www.cincinnatichildrens.org/professional/resources/international-visitor-program",
+    verified: true,
+  },
+  "Texas Tech University HSC — Observership": {
+    url: "https://www.ttuhsc.edu/medicine/internal/observership/observership.aspx",
+    verified: true,
+    cost: "$250 + background check",
+  },
+  "University of Louisville — Medical Observership Program": {
+    url: "https://uoflhealth.org/careers/medical-observership-program-mop/",
+    verified: true,
+    cost: "$250",
+  },
+  "UTHealth Houston — Observer Program": {
+    url: "https://med.uth.edu/gme/trainee-resources/visiting-trainees/observers/",
+    verified: true,
+    cost: "$100 US / $775 foreign nationals",
+  },
+  "SAMS — Clinical Observership (Nonprofit)": {
+    url: "https://society.sams-usa.net/observership-program/",
+    verified: true,
+    note: "Nonprofit — free or minimal cost. Multiple states.",
+  },
+  "CommonSpirit Health International — Clinical Observation": {
+    url: "https://commonspiritinternational.org/education-programs/",
+    verified: true,
+    note: "159 hospitals nationwide. Institutional application.",
+  },
+  "MedStar Health — International Observer Program": {
+    url: "https://www.medstarhealth.org/education/other-educational-programs/international-observer-program",
+    verified: true,
+    note: "No rotation fee. Georgetown affiliated. DC area.",
+  },
+  "Georgetown / Ruesch Center — International GI Observership": {
+    url: "https://ruesch.georgetown.edu/internationalobservership/",
+    verified: true,
+  },
+  "UW Pathology — Global Observership (PAID STIPEND)": {
+    url: "https://dlmp.uw.edu/education/global-observership",
+    verified: true,
+    note: "FREE + up to $2,500 stipend. 1 position per cycle.",
+  },
+  "UCSD — Bridge to Residency Program": {
+    url: "https://hsi.ucsd.edu/education/physicians/bridge-to-residency-program-for-physicians",
+    verified: true,
+  },
+  "MSK MSO — Observership (San Diego)": {
+    url: "https://www.musculoskeletalmso.com/education/observership",
+    verified: true,
+    cost: "$1,000/month",
+  },
+
   // Penn Medicine, Yale, Wayne State already listed above — no duplicates
   // Spectrum Health / Corewell - explicitly no observerships
   // Beaumont Hospital - now Corewell, no observerships
