@@ -11,7 +11,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://my.clevelandclinic.org/departments/international-medical-education/international-programs/physician-observer",
     verified: true,
     cost: "$500 ($200 non-refundable + $300 balance)",
-    note: "International Physician Observer Program. 1 month. Open to international physicians, residents, fellows, medical students.",
+    note: "WARNING: NOT for IMGs seeking US residency — applications from residency-seeking IMGs will not be considered. For international physicians practicing abroad, residents, fellows, and medical students only.",
   },
   "Cleveland Clinic Florida": {
     url: "https://my.clevelandclinic.org/florida/medical-professionals/education/observerships",
@@ -41,7 +41,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "Memorial Sloan Kettering — Observership": {
     url: "https://www.mskcc.org/hcp-education-training/international/observership",
     verified: true,
-    note: "MSK International Observership Program in oncology.",
+    note: "WARNING: NOT for IMGs seeking US residency. Recent graduates and junior residents (PGY-1/2) not eligible. Medical students not eligible. Only for internationally employed physicians.",
   },
   "UPMC (University of Pittsburgh Medical Center)": {
     url: "https://dom.pitt.edu/education/eop/",
@@ -51,7 +51,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "Massachusetts General Hospital": {
     url: "https://www.massgeneral.org/education/international-observership",
     verified: true,
-    note: "International Observership Program via International Patient Center. 4-hour visits to multi-month programs. For practicing clinicians only. Requires IELTS/TOEFL. Certificate of attendance.",
+    note: "WARNING: NOT for medical students or recent graduates. Only for currently practicing physicians with MD/PhD/MBBS. Requires IELTS/TOEFL. Some countries ineligible.",
   },
   "UCLA Medical Center": {
     url: "https://www.uclahealth.org/international-services/medical-education-training/physicians/physician-observerships",
@@ -150,7 +150,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "UC Davis Health — International Observership": {
     url: "https://health.ucdavis.edu/international-affiliations/observerships/index.html",
     verified: true,
-    note: "For practicing clinicians ONLY — not for recent graduates or residency seekers.",
+    note: "WARNING: NOT for students, recent graduates (within 5 years), or those seeking residency/LORs.",
   },
   "USF Health — International Training": {
     url: "https://health.usf.edu/medicine/ia/international-training-programs",
@@ -314,11 +314,37 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Department-specific only (Radiology, Neurology, IM Visiting Scholar). Observerships limited to 2 weeks. International observers via J-1 visa.",
   },
 
-  // ===== PROGRAMS WITH NO OBSERVERSHIP =====
+  // ===== PROGRAMS THAT DO NOT OFFER OBSERVERSHIPS FOR IMGs =====
+  // These should show clear warnings on the listing page
 
   "Cook County Hospital (Stroger)": {
     url: "https://cookcountyhealth.org/",
     verified: false,
-    note: "Cook County Health explicitly does NOT offer observership or shadowing. Firm institutional policy.",
+    note: "DOES NOT offer observership or shadowing. Firm institutional policy.",
+  },
+  "University of Washington Medical Center": {
+    url: "https://medicine.uw.edu/education/observerships",
+    verified: false,
+    note: "Explicitly states: does NOT offer observerships for international medical graduates. Exceptions: Pathology Global Observership and Radiology only.",
+  },
+  "Penn Medicine (UPenn)": {
+    url: "https://www.pennmedicine.org/",
+    verified: false,
+    note: "Perelman School of Medicine does NOT sanction observerships, shadowing, or internships. No centralized program.",
+  },
+  "Yale-New Haven Hospital": {
+    url: "https://medicine.yale.edu/",
+    verified: false,
+    note: "Yale explicitly does NOT offer observerships or externships.",
+  },
+  "Wayne State University / Detroit Medical Center": {
+    url: "https://www.med.wayne.edu/",
+    verified: false,
+    note: "Multiple departments explicitly do NOT offer observerships.",
+  },
+  "University of Michigan Health": {
+    url: "https://medicine.umich.edu/",
+    verified: false,
+    note: "Visiting program restricted to partner institutions. NOT available to anyone who already holds an MD. Only Ophthalmology ($250) has observership.",
   },
 };
