@@ -452,17 +452,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 </div>
               )}
 
-              <div className="rounded-xl border border-slate-200 p-5">
-                <p className="mb-2 text-sm font-medium text-slate-700">
-                  Posted by
-                </p>
-                <div className="flex items-center gap-2">
-                  <Avatar name={listing.poster.name} size="sm" />
-                  <span className="text-sm text-slate-600">
-                    {listing.poster.name}
-                  </span>
-                </div>
-              </div>
+              {/* Posted by section removed */}
 
               <div className="rounded-xl border border-slate-200 p-5">
                 <ShareButtons title={listing.title} />
