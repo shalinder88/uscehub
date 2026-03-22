@@ -268,60 +268,6 @@ export default function ForInstitutionsPage() {
         </div>
       </div>
 
-        {/* How It Works */}
-        <div className="mt-16">
-          <h3 className="text-center text-xl font-bold text-slate-900">
-            How It Works
-          </h3>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {physicianSteps.map((s) => (
-              <div key={s.step} className="text-center">
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-700">
-                  {s.step}
-                </div>
-                <h4 className="mt-3 text-sm font-semibold text-slate-900">
-                  {s.title}
-                </h4>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                  {s.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* You set the rules */}
-        <div className="mt-12 rounded-xl border border-slate-200 bg-slate-50 p-6 text-center">
-          <ClipboardList className="mx-auto h-6 w-6 text-slate-700" />
-          <h3 className="mt-3 text-base font-semibold text-slate-900">
-            You Set the Rules
-          </h3>
-          <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-slate-600">
-            Fee or free. Duration. Specialty. Insurance requirements. You decide
-            every detail of how your observership program runs.
-          </p>
-        </div>
-
-        {/* Disclaimer */}
-        <div className="mt-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
-          <div className="flex items-start gap-3">
-            <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-            <div>
-              <h4 className="text-sm font-semibold text-amber-900">
-                Important Disclaimer
-              </h4>
-              <p className="mt-1 text-xs leading-relaxed text-amber-800">
-                Physicians listing on USCEHub are independently responsible for
-                compliance with institutional policies, state regulations, and
-                malpractice coverage. USCEHub does not provide visa sponsorship,
-                insurance, or credentialing services. Observers on B1/B2 visas
-                may observe only — no patient contact.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* ============================================================ */}
       {/* Listing Types                                                 */}
       {/* ============================================================ */}
