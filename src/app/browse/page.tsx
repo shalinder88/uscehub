@@ -5,6 +5,7 @@ import { ListingCard } from "@/components/listings/listing-card";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
+import { FloatingFinder } from "@/components/tools/floating-finder";
 
 export const metadata: Metadata = {
   title: "Browse Observership, Externship & Research Opportunities",
@@ -95,6 +96,7 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
 
   return (
     <div className="bg-white">
+      <FloatingFinder />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold text-slate-900">Browse Opportunities</h1>

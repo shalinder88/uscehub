@@ -30,7 +30,6 @@ export function Navbar() {
     { href: "/for-institutions", label: "For Institutions & Physicians" },
     { href: "/community", label: "Community" },
     { href: "/freida", label: "IMG Resources" },
-    { href: "/about", label: "About Us" },
   ];
 
   return (
@@ -91,6 +90,13 @@ export function Navbar() {
               </>
             )}
           </div>
+
+          <Link
+            href="/about"
+            className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+          >
+            About Us
+          </Link>
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">

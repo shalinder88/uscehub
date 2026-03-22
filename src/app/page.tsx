@@ -9,6 +9,7 @@ import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { ProgramStats } from "@/components/seo/program-stats";
 import { JourneyTimeline } from "@/components/tools/journey-timeline";
 import { CostCalculatorSection } from "@/components/home/cost-calculator-section";
+import { FloatingFinder } from "@/components/tools/floating-finder";
 
 export const metadata: Metadata = {
   title: "USCEHub — The Largest IMG Opportunities Database",
@@ -103,6 +104,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <FloatingFinder />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
