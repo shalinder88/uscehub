@@ -173,7 +173,7 @@ export default function ForInstitutionsPage() {
                 <Building2 className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-slate-900">For Hospitals &amp; Institutions</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white">For Hospitals &amp; Institutions</h2>
                 <p className="text-xs text-slate-500">List your programs — completely free</p>
               </div>
             </div>
@@ -182,14 +182,14 @@ export default function ForInstitutionsPage() {
               {institutionBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 p-4">
+                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100">
                         <Icon className="h-4 w-4 text-slate-700" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-slate-900">{benefit.title}</h3>
-                        <p className="mt-1 text-xs leading-relaxed text-slate-500">{benefit.description}</p>
+                        <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{benefit.title}</h3>
+                        <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{benefit.description}</p>
                       </div>
                     </div>
                   </div>
@@ -197,13 +197,13 @@ export default function ForInstitutionsPage() {
               })}
             </div>
 
-            <div className="mt-6 rounded-lg bg-slate-50 p-4">
+            <div className="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800 p-4">
               <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">What&apos;s Included</p>
               <div className="grid grid-cols-1 gap-2">
                 {institutionIncluded.map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="h-3.5 w-3.5 shrink-0 text-emerald-600" />
-                    <span className="text-xs text-slate-700">{item}</span>
+                    <span className="text-xs text-slate-700 dark:text-slate-300">{item}</span>
                   </div>
                 ))}
               </div>
@@ -223,7 +223,7 @@ export default function ForInstitutionsPage() {
                 <Stethoscope className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-slate-900">For Physicians &amp; Clinics</h2>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white">For Physicians &amp; Clinics</h2>
                 <p className="text-xs text-slate-500">Accept observers in your practice</p>
               </div>
             </div>
@@ -232,14 +232,14 @@ export default function ForInstitutionsPage() {
               {physicianBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 p-4">
+                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50">
                         <Icon className="h-4 w-4 text-emerald-700" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-slate-900">{benefit.title}</h3>
-                        <p className="mt-1 text-xs leading-relaxed text-slate-500">{benefit.description}</p>
+                        <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{benefit.title}</h3>
+                        <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{benefit.description}</p>
                       </div>
                     </div>
                   </div>
@@ -271,13 +271,13 @@ export default function ForInstitutionsPage() {
       {/* ============================================================ */}
       {/* Listing Types                                                 */}
       {/* ============================================================ */}
-      <div className="border-y border-slate-200 bg-slate-50">
+      <div className="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
               Listing Types
             </h2>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
               Choose the type that fits your program or practice
             </p>
           </div>

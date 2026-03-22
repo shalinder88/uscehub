@@ -44,18 +44,18 @@ const institutionSteps = [
 
 export function HowItWorks() {
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">How It Works</h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">How It Works</h2>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Simple steps for applicants and institutions
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <h3 className="mb-6 text-center text-lg font-semibold text-slate-800">
+            <h3 className="mb-6 text-center text-lg font-semibold text-slate-800 dark:text-slate-200">
               For Applicants
             </h3>
             <div className="space-y-6">
@@ -68,12 +68,12 @@ export function HowItWorks() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <Icon className="h-4 w-4 text-slate-600" />
-                        <h4 className="font-semibold text-slate-900">
+                        <Icon className="h-4 w-4 text-slate-600 dark:text-slate-400" />
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100">
                           {step.title}
                         </h4>
                       </div>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                         {step.description}
                       </p>
                     </div>
@@ -84,7 +84,7 @@ export function HowItWorks() {
           </div>
 
           <div>
-            <h3 className="mb-6 text-center text-lg font-semibold text-slate-800">
+            <h3 className="mb-6 text-center text-lg font-semibold text-slate-800 dark:text-slate-200">
               For Institutions
             </h3>
             <div className="space-y-6">
@@ -97,12 +97,12 @@ export function HowItWorks() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <Icon className="h-4 w-4 text-slate-600" />
-                        <h4 className="font-semibold text-slate-900">
+                        <Icon className="h-4 w-4 text-slate-600 dark:text-slate-400" />
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100">
                           {step.title}
                         </h4>
                       </div>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-500">
+                      <p className="mt-1 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                         {step.description}
                       </p>
                     </div>

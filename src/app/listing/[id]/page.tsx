@@ -143,12 +143,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="border-b border-slate-200 bg-slate-50">
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant={typeVariant}>
@@ -173,7 +173,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
               </Badge>
             )}
           </div>
-          <h1 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">
+          <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
             {listing.title}
           </h1>
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-slate-500">
@@ -210,12 +210,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
               />
             )}
 
-            <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 p-5 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 p-5 sm:grid-cols-3">
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                   Specialty
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900">
+                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                   {listing.specialty}
                 </p>
               </div>
@@ -223,7 +223,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                   Duration
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900">
+                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                   {listing.duration}
                 </p>
               </div>
@@ -231,7 +231,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                   Format
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900">
+                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                   {listing.format.replace("_", " ")}
                 </p>
               </div>
@@ -240,7 +240,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                     Spots Available
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900">
+                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                     {listing.numberOfSpots}
                   </p>
                 </div>
@@ -250,7 +250,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                     Start Date
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900">
+                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                     {listing.startDate}
                   </p>
                 </div>
@@ -260,7 +260,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                     Deadline
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900">
+                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
                     {listing.applicationDeadline}
                   </p>
                 </div>
@@ -269,10 +269,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
             {(listing.stepRequirements || listing.ecfmgRequired || listing.graduationYearPref || listing.eligibilitySummary) && (
               <div className="mt-6">
-                <h2 className="text-lg font-semibold text-slate-900">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Eligibility Requirements
                 </h2>
-                <div className="mt-3 space-y-2 text-sm text-slate-600">
+                <div className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
                   {listing.eligibilitySummary && (
                     <p>{listing.eligibilitySummary}</p>
                   )}
@@ -299,7 +299,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
             )}
 
             <div className="mt-6">
-              <h2 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                 Description
               </h2>
               <div className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-slate-600">
@@ -309,10 +309,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
             {listing.housingSupport && (
               <div className="mt-6">
-                <h2 className="text-lg font-semibold text-slate-900">
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Housing Support
                 </h2>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   {listing.housingSupport}
                 </p>
               </div>
@@ -321,7 +321,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <Separator className="my-8" />
 
             <div>
-              <h2 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                 Reviews
                 {listing.reviews.length > 0 && (
                   <span className="ml-2 text-sm font-normal text-slate-400">
@@ -355,7 +355,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   {listing.reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="rounded-lg border border-slate-200 p-4"
+                      className="rounded-lg border border-slate-200 dark:border-slate-700 p-4"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -368,7 +368,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                             size="sm"
                           />
                           <div>
-                            <p className="text-sm font-medium text-slate-900">
+                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
                               {review.anonymous
                                 ? "Anonymous"
                                 : review.user.name}
@@ -392,7 +392,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                         </div>
                       </div>
                       {review.comment && (
-                        <p className="mt-3 text-sm text-slate-600">
+                        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
                           {review.comment}
                         </p>
                       )}
@@ -429,12 +429,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-5">
-              <div className="rounded-xl border border-slate-200 p-5">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
                 <div className="text-center">
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                     Cost
                   </p>
-                  <p className="mt-1 text-2xl font-bold text-slate-900">
+                  <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
                     {listing.cost}
                   </p>
                 </div>
@@ -493,13 +493,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
               {/* Organization section - only show for real posters, not system account */}
               {listing.organization && listing.organization.name !== "USCEHub Directory" && (
-                <div className="rounded-xl border border-slate-200 p-5">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
-                      <Building2 className="h-5 w-5 text-slate-600" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700">
+                      <Building2 className="h-5 w-5 text-slate-600 dark:text-slate-300" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">
+                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
                         {listing.organization.name}
                       </p>
                       {listing.organization.type && (
@@ -531,7 +531,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 </div>
               )}
 
-              <div className="rounded-xl border border-slate-200 p-5">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
                 <ShareButtons title={listing.title} />
               </div>
             </div>

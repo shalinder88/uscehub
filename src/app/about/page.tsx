@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       {/* Hero */}
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -36,11 +36,11 @@ export default function AboutPage() {
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
         {/* Free forever — FIRST */}
         <section className="mb-10">
-          <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50/40 p-6 text-center sm:p-8">
-            <h2 className="text-lg font-bold text-slate-900">
+          <div className="rounded-xl border-2 border-emerald-200 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/30 p-6 text-center sm:p-8">
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
               This platform is and will remain free.
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
               No paywalls. No premium tiers. No hidden fees. Just honest,
               structured information for every IMG who needs it.
             </p>
@@ -49,8 +49,8 @@ export default function AboutPage() {
 
         {/* Personal Story */}
         <section className="mb-14">
-          <div className="rounded-xl border border-blue-100 bg-blue-50/30 p-6 sm:p-8">
-            <div className="space-y-4 text-sm leading-relaxed text-slate-600">
+          <div className="rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 p-6 sm:p-8">
+            <div className="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <p>
                 I built this platform because I remember. The confusion of
                 figuring out which exams to take and when. The expenses that
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         {/* What we understand */}
         <section className="mb-14">
-          <h2 className="text-lg font-bold text-slate-900 mb-4">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
             We understand what you&apos;re going through
           </h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -94,9 +94,9 @@ export default function AboutPage() {
               { title: "Finding Opportunities", desc: "Cold-emailing hospitals, scrolling forums, asking friends — finding legitimate programs shouldn't be this hard." },
               { title: "The Waiting", desc: "Waiting for exam results, waiting for visa appointments, waiting for Match Day. The uncertainty is the hardest part." },
             ].map((item) => (
-              <div key={item.title} className="rounded-lg border border-slate-200 p-4">
-                <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">{item.desc}</p>
+              <div key={item.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -105,33 +105,33 @@ export default function AboutPage() {
         {/* Mission / Vision / Trust */}
         <section className="mb-14">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
                 <Target className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900">Mission</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500">
+              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Mission</h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
                 Build the largest, most trustworthy database of clinical and
                 research opportunities for IMGs in the United States.
               </p>
             </div>
-            <div className="rounded-xl border border-slate-200 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
                 <Eye className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900">Vision</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500">
+              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Vision</h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
                 Every qualified IMG has transparent, equal access to
                 information about US clinical opportunities — no gatekeeping,
                 no scams, no confusion.
               </p>
             </div>
-            <div className="rounded-xl border border-slate-200 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
                 <Shield className="h-5 w-5 text-slate-700" />
               </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900">Trust</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500">
+              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Trust</h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
                 Every listing is reviewed. Posters are verified. Reviews are
                 moderated. We clearly label what is verified and what is not.
               </p>

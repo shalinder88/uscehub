@@ -61,22 +61,22 @@ export function ListingCard({ listing }: ListingCardProps) {
             )}
           </div>
 
-          <h3 className="mb-2 text-base font-semibold text-slate-900 group-hover:text-slate-700">
+          <h3 className="mb-2 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-white">
             {listing.title}
           </h3>
 
           <div className="mb-3 space-y-1.5">
-            <div className="flex items-center gap-1.5 text-sm text-slate-500">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <MapPin className="h-3.5 w-3.5 shrink-0" />
               <span>
                 {listing.city}, {listing.state}
               </span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-slate-500">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <Clock className="h-3.5 w-3.5 shrink-0" />
               <span>{listing.duration}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-slate-500">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <DollarSign className="h-3.5 w-3.5 shrink-0" />
               <span>{listing.cost}</span>
             </div>

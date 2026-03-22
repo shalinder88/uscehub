@@ -74,33 +74,33 @@ export function PeopleAlsoAsk() {
   };
 
   return (
-    <section className="border-t border-slate-200 bg-white py-16">
+    <section className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
             People Also Ask
           </h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Common questions from International Medical Graduates about clinical
             experiences in the USA
           </p>
         </div>
 
-        <div className="divide-y divide-slate-200 rounded-xl border border-slate-200">
+        <div className="divide-y divide-slate-200 dark:divide-slate-700 rounded-xl border border-slate-200 dark:border-slate-700">
           {paaQuestions.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <div key={index}>
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-slate-50"
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm font-medium text-slate-900">
+                  <span className="text-sm font-medium text-slate-900 dark:text-slate-100">
                     {item.question}
                   </span>
                   <ChevronDown
@@ -110,8 +110,8 @@ export function PeopleAlsoAsk() {
                   />
                 </button>
                 {isOpen && (
-                  <div className="border-t border-slate-100 bg-slate-50 px-5 py-4">
-                    <p className="text-sm leading-relaxed text-slate-600">
+                  <div className="border-t border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-5 py-4">
+                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                       {item.answer}
                     </p>
                   </div>

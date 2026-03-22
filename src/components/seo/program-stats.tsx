@@ -110,13 +110,13 @@ export async function ProgramStats() {
   ];
 
   return (
-    <section className="border-t border-slate-200 bg-slate-50 py-16">
+    <section className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-white">
             USCEHub by the Numbers
           </h2>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Real-time statistics from the largest IMG opportunities database
           </p>
         </div>
@@ -128,12 +128,12 @@ export async function ProgramStats() {
             return (
               <div
                 key={stat.label}
-                className="rounded-xl border border-slate-200 bg-white p-5 text-center"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center"
               >
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100">
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
                   <Icon className="h-5 w-5 text-slate-700" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900">
+                <div className="text-2xl font-bold text-slate-900 dark:text-white">
                   {stat.value}
                 </div>
                 <div className="mt-1 text-xs font-medium text-slate-500">
@@ -147,7 +147,7 @@ export async function ProgramStats() {
         {/* Type Breakdown and Top States */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Program Types */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
             <h3 className="mb-4 text-sm font-semibold text-slate-900">
               Programs by Type
             </h3>
@@ -195,7 +195,7 @@ export async function ProgramStats() {
           </div>
 
           {/* Top States */}
-          <div className="rounded-xl border border-slate-200 bg-white p-6">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
             <div className="mb-4 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-slate-500" />
               <h3 className="text-sm font-semibold text-slate-900">
@@ -209,7 +209,7 @@ export async function ProgramStats() {
                   maxCount > 0 ? Math.round((count / maxCount) * 100) : 0;
                 return (
                   <div key={state} className="flex items-center gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-600">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-semibold text-slate-600">
                       {index + 1}
                     </span>
                     <div className="min-w-0 flex-1">

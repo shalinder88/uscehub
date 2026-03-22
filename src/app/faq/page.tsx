@@ -117,17 +117,17 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="border-b border-slate-200 bg-slate-50">
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-slate-900">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
             Frequently Asked Questions
           </h1>
-          <p className="mt-2 text-base text-slate-500">
+          <p className="mt-2 text-base text-slate-500 dark:text-slate-400">
             Common questions about observerships, externships, and our platform
           </p>
         </div>
@@ -138,12 +138,12 @@ export default function FAQPage() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="rounded-xl border border-slate-200 p-6"
+              className="rounded-xl border border-slate-200 dark:border-slate-700 p-6"
             >
-              <h2 className="text-base font-semibold text-slate-900">
+              <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                 {faq.question}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {faq.answer}
               </p>
             </div>

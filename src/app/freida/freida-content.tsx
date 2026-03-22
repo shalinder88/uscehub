@@ -1022,9 +1022,9 @@ export function FreidaContent() {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       {/* Header */}
-      <div className="border-b border-slate-200 bg-slate-900 text-white">
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-widest text-slate-400">
             <BookOpen className="h-4 w-4" />
