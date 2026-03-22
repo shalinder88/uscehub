@@ -5,13 +5,13 @@
 
 export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; note?: string; cost?: string }> = {
 
-  // ===== CONFIRMED DEDICATED OBSERVERSHIP/OBSERVER PROGRAM PAGES =====
+  // ===== CONFIRMED DEDICATED OBSERVERSHIP PROGRAM PAGES =====
 
   "Cleveland Clinic": {
     url: "https://my.clevelandclinic.org/departments/international-medical-education/international-programs/physician-observer",
     verified: true,
     cost: "$500 ($200 non-refundable + $300 balance)",
-    note: "International Physician Observer Program. 1 month. Open to international physicians practicing abroad, residents, fellows, and medical students.",
+    note: "International Physician Observer Program. 1 month. Open to international physicians, residents, fellows, medical students.",
   },
   "Cleveland Clinic Florida": {
     url: "https://my.clevelandclinic.org/florida/medical-professionals/education/observerships",
@@ -21,13 +21,13 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.hopkinsmedicine.org/volunteer-services/observerships",
     verified: true,
     cost: "Free — must find own JHM physician sponsor",
-    note: "Max 100 hours over 12 months. Application portal at volunteerservices.jhmi.edu. Cannot provide visa documentation.",
+    note: "Max 100 hours over 12 months. Cannot provide visa documentation.",
   },
   "Houston Methodist Hospital": {
     url: "https://www.houstonmethodist.org/for-health-professionals/global-health-care-services/global-health-care-education/observerships/",
     verified: true,
     cost: "Contact program",
-    note: "2-4 weeks. Must be initiated by a Houston Methodist physician. Certificate of completion available. No direct patient care.",
+    note: "2-4 weeks. Must be initiated by a Houston Methodist physician. Certificate of completion. No direct patient care.",
   },
   "MD Anderson Cancer Center": {
     url: "https://www.mdanderson.org/education-training/outreach-programs/observer-programs/other-observership-opportunities-at-md-anderson.html",
@@ -40,29 +40,46 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "UPMC (University of Pittsburgh Medical Center)": {
     url: "https://dom.pitt.edu/education/eop/",
     verified: true,
-    note: "Enhanced Observership Program (EOP) — specifically for IMGs planning to apply to internal medicine residency. Requires USMLE Step 2 CK. 75% match rate for participants.",
+    note: "Enhanced Observership Program (EOP) for IMGs applying to IM residency. Requires Step 2 CK. 75% match rate.",
+  },
+  "Massachusetts General Hospital": {
+    url: "https://www.massgeneral.org/education/international-observership",
+    verified: true,
+    note: "International Observership Program via International Patient Center. 4-hour visits to multi-month programs. For practicing clinicians only. Requires IELTS/TOEFL. Certificate of attendance.",
+  },
+  "UCLA Medical Center": {
+    url: "https://www.uclahealth.org/international-services/medical-education-training/physicians/physician-observerships",
+    verified: true,
+    cost: "Fee required — contact program for amount",
+    note: "International Physician Observership. 1-3 months. Certificate of Participation. Requires B-1 visa (UCLA cannot assist with visas).",
+  },
+  "Stanford Health Care": {
+    url: "https://med.stanford.edu/shctv/education/observership.html",
+    verified: true,
+    cost: "$1,500 for practicing physicians (some departments); varies by department",
+    note: "Visiting Observer Program. Max 30 days in 12 months. Requires faculty host. Processing ~8 weeks. No visa sponsorship.",
+  },
+  "USC Keck Medical Center": {
+    url: "https://sites.usc.edu/healthcare-edu/observership/",
+    verified: true,
+    cost: "$300 application fee + tuition based on resources",
+    note: "International Physician Observership. Requires foreign medical license and employment by foreign health organization. Apply 30+ days before start. Contact: observership@med.usc.edu",
   },
   "University of Chicago Medicine": {
     url: "https://www.uchicagomedicine.org/international/international-collaboration/education-and-training",
     verified: true,
-    note: "Global Education & Training page for international physicians. Requires UChicago faculty sponsor. Max 30 days. No hands-on patient care.",
+    note: "Global Education & Training for international physicians. Requires faculty sponsor. Max 30 days. No hands-on patient care.",
   },
   "University of Illinois at Chicago (UIC)": {
     url: "https://medicine.uic.edu/education/international-education/observership-program/",
     verified: true,
-    note: "Limited to full-time medical students with prior professional relationship with UIC COM faculty. Not available to medical graduates.",
+    note: "LIMITED: Only for full-time medical students with prior professional relationship with UIC COM faculty. Not available to graduates.",
   },
-
-  // ===== CONFIRMED FROM USER-PROVIDED EXAMPLES =====
-
-  // Allegheny Health Network — not in our database yet, add if desired
-  // https://www.alleghenyinternational.org/observerships.html
-
-  // Mount Sinai Medical Center Miami Beach — not in our database yet
-  // https://www.msmc.com/education/educational-courses-and-events/international-observership-courses/
-
-  // UNMC — department-specific observer info
-  // https://www.unmc.edu/intmed/divisions/onchem/education/index.html
+  "BronxCare Health System": {
+    url: "https://www.bronxcare.org/our-services/psychiatry/residency-program/volunteer-and-observership-opportunities",
+    verified: true,
+    note: "Psychiatry-focused observership. 8-12 weeks, min 3 days/week. Application fee required. Covers Adult Inpatient, Addiction, C-L, Child & Adolescent.",
+  },
 
   // ===== THIRD-PARTY PLACEMENT SERVICES =====
 
@@ -82,58 +99,104 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Third-party clinical rotation placement service",
   },
 
-  // ===== DEPARTMENT-SPECIFIC OBSERVERSHIP PAGES (verified but not centralized) =====
-  // These hospitals don't have hospital-wide observership programs but specific departments do
+  // ===== DEPARTMENT-SPECIFIC ONLY (not centralized — marked unverified) =====
 
-  "Emory University Hospital": {
-    url: "https://med.emory.edu/departments/radiology/education/observer-program/index.html",
+  "Mount Sinai Hospital": {
+    url: "https://www.mountsinai.org/about/international/programs",
     verified: false,
-    note: "Radiology department observer program only. General observerships require credentialing office. Fee: $15 + $10 badge. Must find own sponsor.",
+    note: "International Observer Program currently SUSPENDED. Department-level observerships may be arranged with faculty sponsor.",
   },
-  "Duke University Hospital": {
-    url: "https://medschool.duke.edu/",
+  "NYU Langone Health": {
+    url: "https://med.nyu.edu/",
     verified: false,
-    note: "No centralized observership program. Department-specific only. Ophthalmology and Radiology ($1,900/week) have dedicated pages.",
+    note: "No centralized observership page. Department-specific only: Dermatology, Surgery (Long Island), Ortho, Plastic Surgery, ENT, Rusk Rehab each have own pages. Faculty sponsor required.",
   },
-  "Henry Ford Hospital": {
-    url: "https://www.henryford.com/",
+  "NewYork-Presbyterian / Columbia": {
+    url: "https://www.nyp.org/",
     verified: false,
-    note: "Department-specific observer programs only. ENT/Microvascular Surgery has dedicated page. General observation limited to two 8-hour days per year.",
+    note: "NYP no longer accepts individual observerships institution-wide. Select Columbia departments still run programs (Psychiatry, Neurology $250-1000, General Surgery — some closed).",
   },
-  "University of Michigan Health": {
-    url: "https://medicine.umich.edu/",
+  "NewYork-Presbyterian / Weill Cornell": {
+    url: "https://www.nyp.org/",
     verified: false,
-    note: "Only Ophthalmology (Kellogg Eye Center) has visible observership application. Fee: $250. No centralized hospital-wide program.",
+    note: "Same NYP-wide policy — no individual observerships. Select departments (Pediatrics, ENT) still coordinate. Faculty sponsor required.",
+  },
+  "UCSF Medical Center": {
+    url: "https://meded.ucsf.edu/",
+    verified: false,
+    note: "No centralized observership page. Department-specific only: Neuropathology, Dermatopathology, Neurosurgery, BCH Oakland each have own pages.",
+  },
+  "Brigham and Women's Hospital": {
+    url: "https://www.brighamandwomens.org/radiology/education-and-training/observerships",
+    verified: false,
+    note: "Department-specific. Radiology: 1-2 weeks, earns CME credits. EM/Critical Care: 6-12 months, $5,000/month. Max 3 months general, requires faculty sponsor.",
+    cost: "Radiology: CME fee. EM/Critical Care: $5,000/month",
+  },
+  "Boston Medical Center": {
+    url: "https://www.bmc.org/",
+    verified: false,
+    note: "Has clinical observer policy but no dedicated program page. OMFS and Hematology/Oncology accept observers by department. No patient contact.",
+  },
+  "Northwell Health System": {
+    url: "https://international.northwell.edu/consulting-advisory-services",
+    verified: false,
+    note: "2-week or 4-week observership rotations through International Services. Contact international@northwell.edu. Fees not listed publicly.",
   },
   "Northwestern Memorial Hospital": {
     url: "https://www.nm.org/",
     verified: false,
-    note: "No centralized observership for IMGs. Department-by-department basis only. Pathology had one but currently NOT accepting applications.",
+    note: "No centralized observership for IMGs. Department-by-department basis only. Pathology program currently NOT accepting applications.",
   },
   "Rush University Medical Center": {
     url: "https://www.rushu.rush.edu/",
     verified: false,
-    note: "GME office does NOT manage observerships. Department-level only. Neurosurgery has dedicated observership page.",
+    note: "GME office does NOT manage observerships. Department-level only. Neurosurgery has dedicated page.",
+  },
+  "Emory University Hospital": {
+    url: "https://med.emory.edu/",
+    verified: false,
+    note: "Radiology has observer program. General observerships require credentialing office (observership.credentialing@emoryhealthcare.org). Fee: $15 + $10 badge.",
+  },
+  "Duke University Hospital": {
+    url: "https://medschool.duke.edu/",
+    verified: false,
+    note: "No centralized observership. Ophthalmology and Radiology ($1,900/week, CME credit) have dedicated pages. 6 months notice for international applicants.",
+  },
+  "Henry Ford Hospital": {
+    url: "https://www.henryford.com/",
+    verified: false,
+    note: "Department-specific only. ENT/Microvascular Surgery has international observer program. General observation limited to two 8-hour days/year.",
+  },
+  "University of Michigan Health": {
+    url: "https://medicine.umich.edu/",
+    verified: false,
+    note: "Only Ophthalmology (Kellogg Eye Center) has visible observership application ($250 fee). No centralized hospital-wide program.",
   },
   "Ohio State University Wexner Medical Center": {
     url: "https://medicine.osu.edu/departments/office-of-global-health/international-visiting-scholars",
     verified: false,
-    note: "International Visiting Scholars only — requires invitation from OSU faculty. No unsolicited applications.",
+    note: "International Visiting Scholars only — requires invitation from OSU faculty. No unsolicited applications accepted.",
+  },
+  "Vanderbilt University Medical Center": {
+    url: "https://www.vumc.org/observational-services/welcome-vanderbilt-observational-experience-voe-program",
+    verified: false,
+    note: "VOE program limited to one 8-hour session per year. IM residency does NOT offer observerships.",
+  },
+  "Mayo Clinic": {
+    url: "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+    verified: false,
+    cost: "$350 non-refundable application fee (for clerkships)",
+    note: "Visiting Medical Student Clerkships for enrolled students only. No centralized IMG observership program. Contact physician directly for observerships.",
   },
   "Baylor College of Medicine": {
     url: "https://www.bcm.edu/",
     verified: false,
     note: "Department-specific only. $25 processing fee. Max 90 days. Insurance required ($100K min). No centralized observership portal.",
   },
-  "Vanderbilt University Medical Center": {
-    url: "https://www.vumc.org/observational-services/welcome-vanderbilt-observational-experience-voe-program",
+  "Cedars-Sinai Medical Center": {
+    url: "https://www.cedars-sinai.org/",
     verified: false,
-    note: "Vanderbilt Observational Experience (VOE) limited to one 8-hour session per year. IM residency does NOT offer observerships.",
-  },
-  "Mayo Clinic": {
-    url: "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
-    verified: false,
-    note: "Visiting Medical Student Clerkships for enrolled students only ($350 application fee). No centralized IMG observership program. Contact physician directly.",
+    note: "No publicly listed observership program page found. Contact GME office or individual departments.",
   },
 
   // ===== PROGRAMS WITH NO OBSERVERSHIP =====
@@ -141,6 +204,6 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "Cook County Hospital (Stroger)": {
     url: "https://cookcountyhealth.org/",
     verified: false,
-    note: "Cook County Health explicitly does NOT offer observership or shadowing experiences. Firm policy.",
+    note: "Cook County Health explicitly does NOT offer observership or shadowing. Firm institutional policy.",
   },
 };
