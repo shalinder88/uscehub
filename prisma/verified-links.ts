@@ -170,22 +170,24 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
   },
 
-  // ===== THIRD-PARTY PLACEMENT SERVICES =====
+  // ===== THIRD-PARTY PLACEMENT SERVICES (NOT hospitals — demoted from verified) =====
+  // These are paid services that place IMGs at partner hospitals
+  // NOT verified as hospital programs — marked unverified so they don't appear as "verified" listings
 
   "Brooklyn USCE — Clinical Rotations": {
     url: "https://brooklynusce.com/",
-    verified: true,
-    note: "Third-party clinical rotation placement service",
+    verified: false,
+    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service that places IMGs at community hospitals.",
   },
   "AMG Medical Group — Clinical Rotations": {
     url: "https://amgmedicalgroup.com/",
-    verified: true,
-    note: "Third-party clinical rotation placement service",
+    verified: false,
+    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service. Verify quality independently.",
   },
   "ValueMD Clinical Rotations": {
     url: "https://www.valuemd.com/clinical-rotations/",
-    verified: true,
-    note: "Third-party clinical rotation placement service",
+    verified: false,
+    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service. Has active IMG forum.",
   },
 
   // ===== DEPARTMENT-SPECIFIC ONLY (not centralized — marked unverified) =====
