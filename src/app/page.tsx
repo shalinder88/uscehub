@@ -7,6 +7,8 @@ import { HowItWorks } from "@/components/home/how-it-works";
 import { TrustSection } from "@/components/home/trust-section";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { ProgramStats } from "@/components/seo/program-stats";
+import { JourneyTimeline } from "@/components/tools/journey-timeline";
+import { CostCalculatorSection } from "@/components/home/cost-calculator-section";
 
 export const metadata: Metadata = {
   title: "USCEHub — The Largest IMG Opportunities Database",
@@ -128,6 +130,8 @@ export default async function HomePage() {
       <TrustSection />
       <FeaturedListings />
       <HowItWorks />
+      <JourneyTimeline />
+      <CostCalculatorSection />
       <ProgramStats />
       <PeopleAlsoAsk />
     </>

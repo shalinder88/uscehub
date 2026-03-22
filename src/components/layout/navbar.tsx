@@ -14,12 +14,16 @@ import {
   LogOut,
   ChevronDown,
   FileEdit,
+  Wrench,
+  Search,
+  Calculator,
 } from "lucide-react";
 
 export function Navbar() {
   const { data: session } = useSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [toolsMenuOpen, setToolsMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "/browse", label: "Browse Opportunities" },
@@ -49,6 +53,44 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          {/* Tools dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setToolsMenuOpen(!toolsMenuOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+            >
+              Tools
+              <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+
+            {toolsMenuOpen && (
+              <>
+                <div
+                  className="fixed inset-0 z-40"
+                  onClick={() => setToolsMenuOpen(false)}
+                />
+                <div className="absolute left-0 z-50 mt-2 w-56 rounded-xl border border-slate-200 bg-white py-1 shadow-lg">
+                  <Link
+                    href="/recommend"
+                    onClick={() => setToolsMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50"
+                  >
+                    <Search className="h-4 w-4" />
+                    Program Finder
+                  </Link>
+                  <Link
+                    href="/tools/cost-calculator"
+                    onClick={() => setToolsMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50"
+                  >
+                    <Calculator className="h-4 w-4" />
+                    Cost Calculator
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -175,6 +217,26 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="my-2 border-t border-slate-100" />
+            <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
+              Tools
+            </p>
+            <Link
+              href="/recommend"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              <Search className="h-4 w-4" />
+              Program Finder
+            </Link>
+            <Link
+              href="/tools/cost-calculator"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            >
+              <Calculator className="h-4 w-4" />
+              Cost Calculator
+            </Link>
             <div className="my-2 border-t border-slate-100" />
             {session?.user ? (
               <>
