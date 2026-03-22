@@ -148,7 +148,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-b border-slate-200 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant={typeVariant}>
@@ -176,7 +176,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
           <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
             {listing.title}
           </h1>
-          <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-slate-500">
+          <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1">
               <MapPin className="h-4 w-4" />
               {listing.city}, {US_STATES[listing.state] || listing.state}
@@ -210,7 +210,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
               />
             )}
 
-            <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 p-5 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5 sm:grid-cols-3">
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                   Specialty
@@ -302,7 +302,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
               <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                 Description
               </h2>
-              <div className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-slate-600">
+              <div className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {listing.fullDescription || listing.shortDescription}
               </div>
             </div>
@@ -355,7 +355,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   {listing.reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="rounded-lg border border-slate-200 dark:border-slate-700 p-4"
+                      className="rounded-lg border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-4"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -396,7 +396,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                           {review.comment}
                         </p>
                       )}
-                      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500">
+                      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500 dark:text-slate-400">
                         <span>
                           Real experience:{" "}
                           <span className="font-medium">
@@ -420,7 +420,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   ))}
                 </div>
               ) : (
-                <p className="mt-3 text-sm text-slate-500">
+                <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                   No reviews yet. Be the first to share your experience.
                 </p>
               )}
@@ -429,7 +429,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-5">
-              <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
                 <div className="text-center">
                   <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
                     Cost
@@ -455,7 +455,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                       </Button>
                     </a>
                     {listing.listingType === "RESEARCH" ? (
-                      <p className="mt-2 text-center text-xs text-slate-500">
+                      <p className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
                         Research positions are typically found by cold-emailing faculty PIs directly. This link goes to the institution&apos;s postdoc page.
                       </p>
                     ) : listing.linkVerified ? (
@@ -493,7 +493,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
               {/* Organization section - only show for real posters, not system account */}
               {listing.organization && listing.organization.name !== "USCEHub Directory" && (
-                <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+                <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700">
                       <Building2 className="h-5 w-5 text-slate-600 dark:text-slate-300" />
@@ -503,13 +503,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
                         {listing.organization.name}
                       </p>
                       {listing.organization.type && (
-                        <p className="text-xs text-slate-500">
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
                           {listing.organization.type}
                         </p>
                       )}
                     </div>
                   </div>
-                  <div className="mt-3 space-y-1 text-sm text-slate-500">
+                  <div className="mt-3 space-y-1 text-sm text-slate-500 dark:text-slate-400">
                     <p className="flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5" />
                       {listing.organization.city},{" "}
@@ -531,7 +531,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 </div>
               )}
 
-              <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
                 <ShareButtons title={listing.title} />
               </div>
             </div>

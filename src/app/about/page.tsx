@@ -77,8 +77,8 @@ export default function AboutPage() {
                 The process is hard, the uncertainty is real, but thousands of
                 IMGs have walked this path before you and matched. You can too.
               </p>
-              <p className="mt-3 text-xs text-slate-500">— Singh MD, Intensivist</p>
             </div>
+            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— Singh MD, Intensivist</p>
           </div>
         </section>
 

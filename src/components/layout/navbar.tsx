@@ -265,6 +265,13 @@ export function Navbar() {
               <GitCompareArrows className="h-4 w-4" />
               Compare Programs
             </Link>
+            <Link
+              href="/about"
+              onClick={() => setMobileOpen(false)}
+              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            >
+              About Us
+            </Link>
             <div className="my-2 border-t border-slate-100 dark:border-slate-700" />
             {session?.user ? (
               <>
