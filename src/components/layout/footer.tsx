@@ -44,7 +44,7 @@ export function Footer() {
                   href="/for-institutions"
                   className="text-sm text-slate-500 hover:text-slate-700"
                 >
-                  For Institutions
+                  For Institutions & Physicians
                 </Link>
               </li>
               <li>
