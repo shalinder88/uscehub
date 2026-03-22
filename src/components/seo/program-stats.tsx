@@ -148,7 +148,7 @@ export async function ProgramStats() {
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Program Types */}
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-            <h3 className="mb-4 text-sm font-semibold text-slate-900">
+            <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
               Programs by Type
             </h3>
             <div className="space-y-3">
@@ -163,14 +163,14 @@ export async function ProgramStats() {
                     <Icon className="h-4 w-4 shrink-0 text-slate-500" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-700">
+                        <span className="text-sm text-slate-700 dark:text-slate-300">
                           {type.label}
                         </span>
-                        <span className="text-sm font-semibold text-slate-900">
+                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                           {type.value}
                         </span>
                       </div>
-                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100">
+                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
                         <div
                           className="h-1.5 rounded-full bg-slate-700"
                           style={{ width: `${percentage}%` }}
@@ -181,7 +181,7 @@ export async function ProgramStats() {
                 );
               })}
             </div>
-            <div className="mt-4 rounded-lg bg-slate-50 px-4 py-3">
+            <div className="mt-4 rounded-lg bg-slate-50 dark:bg-slate-700 px-4 py-3">
               <div className="flex items-center gap-2">
                 <DollarSign className="h-4 w-4 text-slate-500" />
                 <span className="text-xs text-slate-600">
@@ -198,7 +198,7 @@ export async function ProgramStats() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
             <div className="mb-4 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-slate-500" />
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                 Most Popular States for Observerships
               </h3>
             </div>
@@ -214,12 +214,12 @@ export async function ProgramStats() {
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-700">{state}</span>
-                        <span className="text-sm font-semibold text-slate-900">
+                        <span className="text-sm text-slate-700 dark:text-slate-300">{state}</span>
+                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                           {count} programs
                         </span>
                       </div>
-                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100">
+                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
                         <div
                           className="h-1.5 rounded-full bg-blue-500"
                           style={{ width: `${percentage}%` }}
