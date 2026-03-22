@@ -49,15 +49,15 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Enhanced Observership Program (EOP) for IMGs applying to IM residency. Requires Step 2 CK. 75% match rate.",
   },
   "Massachusetts General Hospital": {
-    url: "https://www.massgeneral.org/education/international-observership",
-    verified: true,
-    note: "WARNING: NOT for medical students or recent graduates. Only for currently practicing physicians with MD/PhD/MBBS. Requires IELTS/TOEFL. Some countries ineligible.",
+    url: "https://www.massgeneral.org/education",
+    verified: false,
+    note: "International observership page no longer accessible. Redirects to generic education page. Contact MGH International Patient Center directly.",
   },
   "UCLA Medical Center": {
     url: "https://www.uclahealth.org/international-services/medical-education-training/physicians/physician-observerships",
     verified: true,
-    cost: "Fee required — contact program for amount",
-    note: "International Physician Observership. 1-3 months. Certificate of Participation. Requires B-1 visa (UCLA cannot assist with visas).",
+    cost: "$750",
+    note: "International Physician Observership. 1-3 months. $750 fee. Certificate of Participation. Requires B-1 visa (UCLA cannot assist with visas).",
   },
   "Stanford Health Care": {
     url: "https://med.stanford.edu/shctv/education/observership.html",
@@ -401,13 +401,13 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   "CommonSpirit Health International — Clinical Observation": {
     url: "https://commonspiritinternational.org/education-programs/",
-    verified: true,
-    note: "159 hospitals nationwide. Institutional application.",
+    verified: false,
+    note: "Generic education page — no observership content found. Contact directly for clinical observation programs.",
   },
   "MedStar Health — International Observer Program": {
-    url: "https://www.medstarhealth.org/education/other-educational-programs/international-observer-program",
-    verified: true,
-    note: "No rotation fee. Georgetown affiliated. DC area.",
+    url: "https://www.medstarhealth.org/education",
+    verified: false,
+    note: "Observer program page may have been removed or restructured. Contact MedStar education office directly.",
   },
   "Georgetown / Ruesch Center — International GI Observership": {
     url: "https://ruesch.georgetown.edu/internationalobservership/",
