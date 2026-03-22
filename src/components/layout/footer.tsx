@@ -3,17 +3,17 @@ import { HeartPulse } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50">
+    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="h-5 w-5 text-slate-800" />
-              <span className="text-base font-bold text-slate-900">
+              <HeartPulse className="h-5 w-5 text-slate-800 dark:text-slate-200" />
+              <span className="text-base font-bold text-slate-900 dark:text-white">
                 USCEHub
               </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+            <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               The largest structured database of clinical observership, externship,
               and research opportunities for International Medical Graduates in the
               United States.
@@ -21,12 +21,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Platform</h3>
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Platform</h3>
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
                   href="/browse"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   Browse Opportunities
                 </Link>
@@ -34,7 +34,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/freida"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   IMG Resources
                 </Link>
@@ -42,7 +42,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/for-institutions"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   For Institutions & Physicians
                 </Link>
@@ -50,7 +50,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/how-it-works"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   How It Works
                 </Link>
@@ -58,7 +58,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   About Us
                 </Link>
@@ -66,7 +66,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/faq"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   FAQ
                 </Link>
@@ -75,14 +75,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Resources</h3>
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Resources</h3>
             <ul className="mt-3 space-y-2">
               <li>
                 <a
                   href="https://www.ecfmg.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   ECFMG
                 </a>
@@ -92,7 +92,7 @@ export function Footer() {
                   href="https://www.usmle.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   USMLE
                 </a>
@@ -102,7 +102,7 @@ export function Footer() {
                   href="https://www.nrmp.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   NRMP
                 </a>
@@ -112,7 +112,7 @@ export function Footer() {
                   href="https://eras.aamc.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   ERAS
                 </a>
@@ -120,7 +120,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/freida"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   FREIDA
                 </Link>
@@ -129,12 +129,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Legal</h3>
+            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Legal</h3>
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
                   href="/disclaimer"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   Disclaimer
                 </Link>
@@ -142,7 +142,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   Privacy Policy
                 </Link>
@@ -150,7 +150,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   Terms of Service
                 </Link>
@@ -158,7 +158,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-slate-500 hover:text-slate-700"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   Contact Us
                 </Link>
@@ -167,7 +167,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 pt-6">
+        <div className="mt-10 border-t border-slate-200 dark:border-slate-800 pt-6">
           <p className="text-xs leading-relaxed text-slate-400">
             USCEHub is an educational and informational platform. We are
             not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong

@@ -95,19 +95,19 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   });
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       <FloatingFinder />
-      <div className="border-b border-slate-200 bg-slate-50">
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900">Browse Opportunities</h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Browse Opportunities</h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100" />}>
+        <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-slate-800" />}>
           <ListingFilters />
         </Suspense>
 
@@ -119,10 +119,10 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
               ))}
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-slate-50 py-20 text-center">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-20 text-center">
               <div className="mx-auto max-w-sm">
-                <p className="text-lg font-medium text-slate-900">No listings found</p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="text-lg font-medium text-slate-900 dark:text-white">No listings found</p>
+                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Try adjusting your filters or search criteria.
                 </p>
               </div>

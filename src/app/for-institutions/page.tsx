@@ -122,7 +122,7 @@ const listingTypes = [
 
 export default function ForInstitutionsPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       {/* Hero */}
       <div className="bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-950">
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

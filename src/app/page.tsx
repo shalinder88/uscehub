@@ -10,6 +10,10 @@ import { ProgramStats } from "@/components/seo/program-stats";
 import { JourneyTimeline } from "@/components/tools/journey-timeline";
 import { CostCalculatorSection } from "@/components/home/cost-calculator-section";
 import { FloatingFinder } from "@/components/tools/floating-finder";
+import { ErasCountdown } from "@/components/home/eras-countdown";
+import { ActivityFeed } from "@/components/home/activity-feed";
+import { ProgramSpotlight } from "@/components/home/program-spotlight";
+import { MatchCounter } from "@/components/home/match-counter";
 
 export const metadata: Metadata = {
   title: "USCEHub — The Largest IMG Opportunities Database",
@@ -129,13 +133,17 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
+      <ErasCountdown />
+      <ActivityFeed />
       <TrustSection />
       <FeaturedListings />
+      <ProgramSpotlight />
       <HowItWorks />
       <JourneyTimeline />
       <CostCalculatorSection />
       <ProgramStats />
       <PeopleAlsoAsk />
+      <MatchCounter />
     </>
   );
 }
