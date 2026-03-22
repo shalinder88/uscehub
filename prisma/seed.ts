@@ -108,8 +108,6 @@ async function main() {
   console.log("Cleared existing data.");
 
   const passwordHash = await hash("admin2026", 12);
-  const posterPasswordHash = await hash("poster2026", 12);
-  const applicantPasswordHash = await hash("applicant2026", 12);
 
   // 1. Create admin user
   const admin = await prisma.user.create({
@@ -123,171 +121,50 @@ async function main() {
   });
   console.log("Created admin user:", admin.email);
 
-  // 2. Create poster users with organizations
-  const poster1 = await prisma.user.create({
+  // 2. Create system poster (for seed listings — no fake people)
+  const systemPoster = await prisma.user.create({
     data: {
-      email: "poster1@mountsinai.edu",
-      password: posterPasswordHash,
-      name: "Dr. Sarah Chen",
+      email: "system@uscehub.com",
+      password: passwordHash,
+      name: "USCEHub System",
       role: "POSTER",
       emailVerified: true,
       posterProfile: {
         create: {
-          contactName: "Dr. Sarah Chen",
-          phone: "212-555-0101",
-          title: "Program Director",
-          institutionalEmail: "sarah.chen@mountsinai.edu",
+          contactName: "USCEHub Platform",
+          title: "System Account",
           verificationStatus: "APPROVED",
         },
       },
     },
   });
 
-  const org1 = await prisma.organization.create({
+  const systemOrg = await prisma.organization.create({
     data: {
-      ownerId: poster1.id,
-      name: "Mount Sinai Health System",
-      type: "Academic Medical Center",
-      contactName: "Dr. Sarah Chen",
-      contactEmail: "gme@mountsinai.edu",
-      phone: "212-555-0101",
-      website: "https://www.mountsinai.org",
-      city: "New York",
-      state: "NY",
-      description: "Mount Sinai Health System is one of the largest academic medical systems in the New York metropolitan area.",
-      institutionalEmail: true,
+      ownerId: systemPoster.id,
+      name: "USCEHub Directory",
+      type: "Platform",
+      contactName: "USCEHub",
+      contactEmail: "admin@uscehub.com",
+      website: "https://uscehub.com",
+      city: "N/A",
+      state: "N/A",
+      description: "Programs listed by USCEHub from publicly available information. Details should be verified directly with each institution.",
+      institutionalEmail: false,
       verificationStatus: "APPROVED",
-      badges: "verified,academic",
+      badges: "platform",
     },
   });
 
-  const poster2 = await prisma.user.create({
-    data: {
-      email: "poster2@clevelandclinic.org",
-      password: posterPasswordHash,
-      name: "Dr. James Wilson",
-      role: "POSTER",
-      emailVerified: true,
-      posterProfile: {
-        create: {
-          contactName: "Dr. James Wilson",
-          phone: "216-555-0201",
-          title: "Associate Program Director",
-          institutionalEmail: "james.wilson@clevelandclinic.org",
-          verificationStatus: "APPROVED",
-        },
-      },
-    },
-  });
-
-  const org2 = await prisma.organization.create({
-    data: {
-      ownerId: poster2.id,
-      name: "Cleveland Clinic",
-      type: "Academic Medical Center",
-      contactName: "Dr. James Wilson",
-      contactEmail: "gme@clevelandclinic.org",
-      phone: "216-555-0201",
-      website: "https://my.clevelandclinic.org",
-      city: "Cleveland",
-      state: "OH",
-      description: "Cleveland Clinic is a nonprofit multispecialty academic medical center.",
-      institutionalEmail: true,
-      verificationStatus: "APPROVED",
-      badges: "verified,academic",
-    },
-  });
-
-  console.log("Created 2 poster users with organizations.");
-
-  // 3. Create applicant users
-  const applicant1 = await prisma.user.create({
-    data: {
-      email: "applicant1@gmail.com",
-      password: applicantPasswordHash,
-      name: "Dr. Amir Patel",
-      role: "APPLICANT",
-      emailVerified: true,
-      applicantProfile: {
-        create: {
-          country: "India",
-          currentLocation: "Mumbai, India",
-          medicalSchool: "Seth GS Medical College",
-          graduationYear: "2023",
-          currentRole: "Medical Graduate",
-          specialtyInterest: "Internal Medicine",
-          visaStatus: "B1/B2",
-          usmleStep1: "Passed",
-          usmleStep2: "249",
-          ecfmgStatus: "Certified",
-          shortBio: "Passionate about internal medicine with strong research background.",
-        },
-      },
-    },
-  });
-
-  const applicant2 = await prisma.user.create({
-    data: {
-      email: "applicant2@gmail.com",
-      password: applicantPasswordHash,
-      name: "Dr. Maria Santos",
-      role: "APPLICANT",
-      emailVerified: true,
-      applicantProfile: {
-        create: {
-          country: "Philippines",
-          currentLocation: "Manila, Philippines",
-          medicalSchool: "University of the Philippines College of Medicine",
-          graduationYear: "2022",
-          currentRole: "Medical Graduate",
-          specialtyInterest: "Surgery",
-          visaStatus: "B1/B2",
-          usmleStep1: "Passed",
-          usmleStep2: "255",
-          ecfmgStatus: "Certified",
-          shortBio: "Aspiring surgeon with clinical research experience in trauma surgery.",
-        },
-      },
-    },
-  });
-
-  const applicant3 = await prisma.user.create({
-    data: {
-      email: "applicant3@gmail.com",
-      password: applicantPasswordHash,
-      name: "Dr. Ahmed Hassan",
-      role: "APPLICANT",
-      emailVerified: true,
-      applicantProfile: {
-        create: {
-          country: "Egypt",
-          currentLocation: "Cairo, Egypt",
-          medicalSchool: "Cairo University Faculty of Medicine",
-          graduationYear: "2024",
-          currentRole: "Medical Graduate",
-          specialtyInterest: "Cardiology",
-          visaStatus: "None",
-          usmleStep1: "Passed",
-          usmleStep2: "In Progress",
-          ecfmgStatus: "Not Yet",
-          shortBio: "Interested in cardiovascular medicine and preventive cardiology research.",
-        },
-      },
-    },
-  });
-
-  console.log("Created 3 applicant users.");
+  console.log("Created system poster for seed listings.");
 
   // 4. Import programs from data.js as listings
   const programs = parsePrograms();
   console.log(`Parsed ${programs.length} programs from data.js`);
 
-  // Track organizations we create for seed programs by a dedup key
-  const orgMap = new Map<string, string>(); // key -> orgId
-
-  // We'll assign programs in a round-robin to the two poster users
-  const posterIds = [poster1.id, poster2.id];
-  const orgIds = [org1.id, org2.id];
+  // All seed listings are posted by the system account
+  const posterId = systemPoster.id;
+  const orgId = systemOrg.id;
 
   let listingIds: string[] = [];
 
@@ -302,7 +179,6 @@ async function main() {
     }
 
     const { city } = parseCityState(program.location);
-    const posterIndex = i % 2;
 
     // Check if this program has a verified link
     const verifiedEntry = VERIFIED_LINKS[program.name];
@@ -329,8 +205,8 @@ async function main() {
         visaSupport: program.visa.includes("J1"),
         websiteUrl: finalUrl,
         linkVerified: isVerified,
-        posterId: posterIds[posterIndex],
-        organizationId: orgIds[posterIndex],
+        posterId: posterId,
+        organizationId: orgId,
       },
     });
 
@@ -339,73 +215,8 @@ async function main() {
 
   console.log(`Created ${listingIds.length} listings from program data (skipped ${skipped} pure bench science programs).`);
 
-  // 5. Create sample reviews
-  const reviewListingIds = listingIds.slice(0, 5);
-  const reviewers = [applicant1.id, applicant2.id, applicant3.id, applicant1.id, applicant2.id];
-  const reviewData = [
-    {
-      overallRating: 5,
-      wasReal: true,
-      worthCost: true,
-      actualExposure: 5,
-      wouldRecommend: true,
-      comment: "Excellent observership program. The attendings were incredibly welcoming and made sure I had meaningful clinical exposure every day. Highly recommend for IMGs looking for strong US clinical experience.",
-      anonymous: false,
-      moderationStatus: "APPROVED" as const,
-    },
-    {
-      overallRating: 4,
-      wasReal: true,
-      worthCost: true,
-      actualExposure: 4,
-      wouldRecommend: true,
-      comment: "Very well-organized program with great teaching. The only downside was the short duration. I wish I could have stayed longer. The letter of recommendation was strong and detailed.",
-      anonymous: false,
-      moderationStatus: "APPROVED" as const,
-    },
-    {
-      overallRating: 3,
-      wasReal: true,
-      worthCost: false,
-      actualExposure: 3,
-      wouldRecommend: true,
-      comment: "Decent experience overall. The clinical exposure was good but the fee was a bit high for what was offered. Still, the networking opportunities made it worthwhile.",
-      anonymous: true,
-      moderationStatus: "APPROVED" as const,
-    },
-    {
-      overallRating: 5,
-      wasReal: true,
-      worthCost: true,
-      actualExposure: 5,
-      wouldRecommend: true,
-      comment: "One of the best externship programs I have participated in. Hands-on experience with excellent supervision. The program coordinator was extremely helpful with logistics.",
-      anonymous: false,
-      moderationStatus: "APPROVED" as const,
-    },
-    {
-      overallRating: 4,
-      wasReal: true,
-      worthCost: true,
-      actualExposure: 4,
-      wouldRecommend: true,
-      comment: "Great research fellowship opportunity. Published two papers during my time here. The PI was very supportive and the lab environment was collaborative.",
-      anonymous: false,
-      moderationStatus: "APPROVED" as const,
-    },
-  ];
-
-  for (let i = 0; i < 5; i++) {
-    await prisma.review.create({
-      data: {
-        listingId: reviewListingIds[i],
-        userId: reviewers[i],
-        ...reviewData[i],
-      },
-    });
-  }
-
-  console.log("Created 5 sample reviews.");
+  // No fake reviews — reviews will come from real users only
+  console.log("No sample reviews created — reviews will come from real users.");
   console.log("Seeding complete!");
 }
 
