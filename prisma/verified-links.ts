@@ -46,7 +46,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   "Houston Methodist Hospital": {
     url: "https://www.houstonmethodist.org/academic-institute/",
-    verified: true,
+    verified: false,
+    note: "Page may have loading issues — contact academic institute directly",
   },
   "Rush University Medical Center": {
     url: "https://www.rushu.rush.edu/education-training/graduate-medical-education",
@@ -66,7 +67,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   "BronxCare Health System": {
     url: "https://www.bronxcare.org/our-services/bronxcares-medical-education-program",
-    verified: true,
+    verified: false,
+    note: "Page may be slow or unavailable — contact BronxCare GME office directly",
   },
   "Cook County Hospital (Stroger)": {
     url: "https://cookcountyhealth.org/education-and-research/",
@@ -108,13 +110,13 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   "NIH — Postdoctoral Research Fellowship": {
     url: "https://www.training.nih.gov/programs/postdoc_irta",
-    verified: true,
-    note: "NIH official page — may require browser access",
+    verified: false,
+    note: "NIH official page — returns 403 to bots but may work in browser. Verify manually.",
   },
   "Cedars-Sinai Medical Center": {
     url: "https://www.cedars-sinai.org/education/graduate-medical-education.html",
-    verified: true,
-    note: "Cedars-Sinai official page — may require browser access",
+    verified: false,
+    note: "Cedars-Sinai official page — returns 403 to bots but may work in browser. Verify manually.",
   },
 
   // ===== UNVERIFIED — these go to general pages, not dedicated observer pages =====
