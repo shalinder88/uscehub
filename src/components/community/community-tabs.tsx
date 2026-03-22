@@ -218,12 +218,12 @@ export function CommunityTabs() {
   }
 
   return (
-    <Tabs defaultValue="community" className="w-full">
+    <Tabs defaultValue="suggest" className="w-full">
       <div className="flex justify-center">
         <TabsList className="flex-wrap">
-          <TabsTrigger value="community">
-            <Users className="mr-1.5 h-3.5 w-3.5" />
-            Community
+          <TabsTrigger value="suggest">
+            <Lightbulb className="mr-1.5 h-3.5 w-3.5" />
+            Suggest a Program
           </TabsTrigger>
           <TabsTrigger value="swap">
             <ArrowRightLeft className="mr-1.5 h-3.5 w-3.5" />
@@ -233,9 +233,9 @@ export function CommunityTabs() {
             <MessageCircle className="mr-1.5 h-3.5 w-3.5" />
             Discussions
           </TabsTrigger>
-          <TabsTrigger value="suggest">
-            <Lightbulb className="mr-1.5 h-3.5 w-3.5" />
-            Suggest a Program
+          <TabsTrigger value="community">
+            <Users className="mr-1.5 h-3.5 w-3.5" />
+            Community
           </TabsTrigger>
         </TabsList>
       </div>

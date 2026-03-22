@@ -24,8 +24,8 @@ export function Navbar() {
   const navLinks = [
     { href: "/browse", label: "Browse Opportunities" },
     { href: "/for-institutions", label: "For Institutions & Physicians" },
-    { href: "/freida", label: "IMG Resources" },
     { href: "/community", label: "Community" },
+    { href: "/freida", label: "IMG Resources" },
     { href: "/about", label: "About Us" },
   ];
 
