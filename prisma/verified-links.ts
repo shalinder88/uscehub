@@ -81,6 +81,40 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Psychiatry-focused observership. 8-12 weeks, min 3 days/week. Application fee required. Covers Adult Inpatient, Addiction, C-L, Child & Adolescent.",
   },
 
+  // ===== BATCH 3 VERIFIED PROGRAMS =====
+
+  "Thomas Jefferson University Hospital": {
+    url: "https://www.jefferson.edu/international-services/visa-categories/short-term-visitors/clinical-observerships.html",
+    verified: true,
+    note: "Clinical observership for international visitors. Student, Resident, Physician tracks. Up to 90 days. 3-month onboarding lead time. NOTE: Internal Medicine no longer offers observerships.",
+  },
+  "Jackson Memorial Hospital (UMiami)": {
+    url: "https://med.miami.edu/centers-and-institutes/international-medicine-institute/education-and-training/global-observership",
+    verified: true,
+    note: "Global Observership via International Medicine Institute. 1-3 month rotations. 850+ participants since 2008. Requires faculty sponsor. Separate JHS track also available.",
+  },
+  "University of Colorado Hospital": {
+    url: "https://medschool.cuanschutz.edu/pediatrics/education/international-trainee-observership-program",
+    verified: true,
+    cost: "$100 registration fee (Pediatrics)",
+    note: "UCHealth 30-day observational experience + Pediatrics International Trainee Observership. No observers in July/December.",
+  },
+  "Allegheny Health Network": {
+    url: "https://www.alleghenyinternational.org/observerships.html",
+    verified: true,
+    note: "Allegheny International Services manages observerships. Strictly shadowing, no patient contact.",
+  },
+  "University of Washington Medical Center": {
+    url: "https://medicine.uw.edu/education/observerships",
+    verified: true,
+    note: "UW does NOT generally offer IMG observerships. Exceptions: Pathology Global Observership (1 month, up to $2,500 stipend), Radiology (1 day to 4 weeks).",
+  },
+  "University of Florida Health / Shands Hospital": {
+    url: "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
+    verified: true,
+    note: "General observer program — up to 6 months. Must find own sponsoring clinician. Anesthesiology $25 app fee.",
+  },
+
   // ===== THIRD-PARTY PLACEMENT SERVICES =====
 
   "Brooklyn USCE — Clinical Rotations": {
@@ -197,6 +231,32 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.cedars-sinai.org/",
     verified: false,
     note: "No publicly listed observership program page found. Contact GME office or individual departments.",
+  },
+
+  "Penn Medicine (UPenn)": {
+    url: "https://www.pennmedicine.org/",
+    verified: false,
+    note: "No centralized observership. Department-specific only. Dermatopathology: $10,000/year. Radiology has visiting observers. Penn does NOT sponsor observerships system-wide.",
+  },
+  "George Washington University Hospital": {
+    url: "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
+    verified: false,
+    note: "Observer Training Program exists but currently NOT ACCEPTING APPLICATIONS. Contact impinfo@gwu.edu for updates.",
+  },
+  "Wayne State University / Detroit Medical Center": {
+    url: "https://www.med.wayne.edu/",
+    verified: false,
+    note: "Multiple departments explicitly state they do NOT offer observerships. No public-facing program page exists.",
+  },
+  "Yale-New Haven Hospital": {
+    url: "https://medicine.yale.edu/",
+    verified: false,
+    note: "Yale explicitly does NOT offer observerships or externships. Only visiting student elective rotations for final-year medical students.",
+  },
+  "University of Kentucky Medical Center": {
+    url: "https://medicine.uky.edu/",
+    verified: false,
+    note: "Department-specific only (Radiology, Neurology, IM Visiting Scholar). Observerships limited to 2 weeks. International observers via J-1 visa.",
   },
 
   // ===== PROGRAMS WITH NO OBSERVERSHIP =====
