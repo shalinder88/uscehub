@@ -403,9 +403,11 @@ export default async function ListingPage({ params }: ListingPageProps) {
                         Verified program link
                       </p>
                     ) : (
-                      <p className="mt-2 text-center text-xs text-slate-400">
-                        Links to hospital website — contact GME office for program details
-                      </p>
+                      <div className="mt-2 text-center">
+                        <p className="text-xs text-amber-600">
+                          ⚠ Unverified — this program is listed based on its history of accepting observers. Observership availability may have changed. Contact the institution directly to confirm.
+                        </p>
+                      </div>
                     )}
                   </>
                 ) : listing.contactEmail ? (
