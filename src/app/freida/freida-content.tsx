@@ -22,6 +22,7 @@ import {
   Globe,
   ArrowRight,
   Info,
+  Star,
 } from "lucide-react";
 
 import {
@@ -35,6 +36,9 @@ import {
   ECFMG_PATHWAYS,
   ECFMG_DEADLINES,
   SOAP_DATA,
+  MATCH_PROCESS_STEPS,
+  MATCH_ALGORITHM_KEY_FACTS,
+  SIGNALING_DATA,
   IMG_FRIENDLY_PROGRAMS,
   STATE_IMG_DATA,
   APPLICATION_TIMELINE,
@@ -94,7 +98,7 @@ function StatCard({ label, value, detail, color }: { label: string; value: strin
     <div className={`rounded-xl border-2 ${borderColors[color] || ""} p-4 text-center`}>
       <p className={`text-2xl font-bold ${textColors[color] || ""}`}>{value}</p>
       <p className="mt-1 text-xs font-semibold text-slate-900 dark:text-white">{label}</p>
-      <p className="mt-0.5 text-[10px] text-slate-500 dark:text-slate-400">{detail}</p>
+      <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{detail}</p>
     </div>
   );
 }
@@ -137,7 +141,7 @@ function OverviewTab() {
                   <td className="px-3 py-2.5 text-right font-semibold text-slate-900 dark:text-white">{s.imgFillRate}%</td>
                   <td className="px-3 py-2.5 text-right text-slate-600 dark:text-slate-300">{s.unfilled}</td>
                   <td className="px-3 py-2.5 text-center">
-                    <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-medium ${levelColor(s.level)}`}>
+                    <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${levelColor(s.level)}`}>
                       {levelLabel(s.level)}
                     </span>
                   </td>
@@ -158,7 +162,7 @@ function OverviewTab() {
             <div key={t.year} className="rounded-lg border border-slate-200 dark:border-slate-700 p-3 text-center">
               <p className="text-xs font-bold text-slate-500 dark:text-slate-400">{t.year}</p>
               <p className="mt-1 text-lg font-bold text-slate-900 dark:text-white">{t.matchRate}%</p>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 {t.imgMatched.toLocaleString()} / {t.imgApplicants.toLocaleString()}
               </p>
             </div>
@@ -242,7 +246,7 @@ function SpecialtiesTab() {
         <div key={s.name} className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
           <div className="flex items-center gap-2">
             <h3 className="text-sm font-bold text-slate-900 dark:text-white">{s.name}</h3>
-            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${levelColor(s.level)}`}>
+            <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${levelColor(s.level)}`}>
               {levelLabel(s.level)}
             </span>
             <TrendIcon trend={s.trend} />
@@ -280,7 +284,7 @@ function ProgramsTab() {
               </div>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.specialties.map((s) => (
-                  <span key={s} className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] text-slate-600 dark:text-slate-300">{s}</span>
+                  <span key={s} className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs text-slate-600 dark:text-slate-300">{s}</span>
                 ))}
               </div>
               <ul className="mt-3 space-y-1">
@@ -341,7 +345,7 @@ function EcfmgTab() {
               <h4 className="text-sm font-bold text-slate-900 dark:text-white">USMLE Step 1</h4>
             </div>
             <p className="mt-2 text-xs text-slate-600 dark:text-slate-400">{ECFMG_REQUIREMENTS.step1.status} — Passing score: {ECFMG_REQUIREMENTS.step1.passingScore}</p>
-            <p className="mt-1 text-[10px] text-slate-500">{ECFMG_REQUIREMENTS.step1.note}</p>
+            <p className="mt-1 text-xs text-slate-500">{ECFMG_REQUIREMENTS.step1.note}</p>
           </div>
           <div className="rounded-xl border-2 border-blue-200 dark:border-blue-800 p-5">
             <div className="flex items-center gap-2">
@@ -349,7 +353,7 @@ function EcfmgTab() {
               <h4 className="text-sm font-bold text-slate-900 dark:text-white">USMLE Step 2 CK</h4>
             </div>
             <p className="mt-2 text-xs text-slate-600 dark:text-slate-400">{ECFMG_REQUIREMENTS.step2ck.status} — Passing score: {ECFMG_REQUIREMENTS.step2ck.passingScore}</p>
-            <p className="mt-1 text-[10px] font-semibold text-blue-700 dark:text-blue-400">{ECFMG_REQUIREMENTS.step2ck.note}</p>
+            <p className="mt-1 text-xs font-semibold text-blue-700 dark:text-blue-400">{ECFMG_REQUIREMENTS.step2ck.note}</p>
           </div>
           <div className="rounded-xl border-2 border-amber-200 dark:border-amber-800 p-5">
             <div className="flex items-center gap-2">
@@ -359,7 +363,7 @@ function EcfmgTab() {
             <p className="mt-2 text-xs text-slate-600 dark:text-slate-400">{ECFMG_REQUIREMENTS.oet.note}</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {Object.entries(ECFMG_REQUIREMENTS.oet.scores).map(([key, val]) => (
-                <span key={key} className="rounded bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-400">{key}: {val}</span>
+                <span key={key} className="rounded bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-400">{key}: {val}</span>
               ))}
             </div>
           </div>
@@ -389,7 +393,7 @@ function EcfmgTab() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{p.name}</h4>
-                    <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:text-emerald-400">{p.status}</span>
+                    <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">{p.status}</span>
                   </div>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{p.details}</p>
                 </div>
@@ -424,9 +428,103 @@ function EcfmgTab() {
 
 function ApplicationTab() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
+      {/* ── How the Match Works ── */}
       <div>
-        <h3 className="mb-4 text-base font-bold text-slate-900 dark:text-white">Application Timeline (2025-2026 Cycle)</h3>
+        <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">How the Residency Match Works</h3>
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
+          The NRMP Match uses a Nobel Prize-winning algorithm to pair applicants with residency programs.
+          Here&apos;s the step-by-step process every IMG needs to understand.
+        </p>
+
+        {/* Visual step flow */}
+        <div className="relative space-y-0">
+          {MATCH_PROCESS_STEPS.map((s, i) => (
+            <div key={s.step} className="relative flex gap-4 pb-6">
+              {/* Connecting line */}
+              {i < MATCH_PROCESS_STEPS.length - 1 && (
+                <div className="absolute left-5 top-12 h-[calc(100%-2rem)] w-0.5 bg-slate-200 dark:bg-slate-700" />
+              )}
+              {/* Step circle */}
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-sm font-bold text-white">
+                {s.step}
+              </div>
+              <div className="flex-1 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">{s.title}</h4>
+                  <span className="shrink-0 rounded-full bg-blue-50 dark:bg-blue-950/30 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-400">
+                    {s.timing}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{s.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Key facts about the algorithm */}
+        <div className="mt-4 rounded-xl border-2 border-blue-200 dark:border-blue-800 bg-blue-50/30 dark:bg-blue-950/20 p-5">
+          <h4 className="text-sm font-bold text-slate-900 dark:text-white">Key Facts About the Algorithm</h4>
+          <ul className="mt-3 space-y-2">
+            {MATCH_ALGORITHM_KEY_FACTS.map((fact) => (
+              <li key={fact} className="flex items-start gap-2 text-sm text-blue-800 dark:text-blue-300">
+                <Info className="mt-0.5 h-4 w-4 shrink-0" />
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* ── Signaling ── */}
+      <div>
+        <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white">Signaling — How to Get More Interviews</h3>
+        <p className="mb-5 text-sm text-slate-600 dark:text-slate-400">
+          {SIGNALING_DATA.overview}
+        </p>
+
+        <div className="space-y-4">
+          {SIGNALING_DATA.types.map((signal) => (
+            <div key={signal.name} className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white">{signal.name}</h4>
+                <span className="shrink-0 rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-400">
+                  {signal.count}
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{signal.description}</p>
+              <div className="mt-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800 px-3 py-2">
+                <p className="text-sm font-medium text-emerald-800 dark:text-emerald-300">Impact: {signal.impact}</p>
+              </div>
+              <ul className="mt-3 space-y-1.5">
+                {signal.tips.map((tip) => (
+                  <li key={tip} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
+                    <CheckCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500" />
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* IMG-specific signaling advice */}
+        <div className="mt-4 rounded-xl border-2 border-amber-200 dark:border-amber-800 bg-amber-50/30 dark:bg-amber-950/20 p-5">
+          <h4 className="text-sm font-bold text-slate-900 dark:text-white">Signaling Tips Specifically for IMGs</h4>
+          <ul className="mt-3 space-y-2">
+            {SIGNALING_DATA.imgSpecificAdvice.map((tip) => (
+              <li key={tip} className="flex items-start gap-2 text-sm text-amber-800 dark:text-amber-300">
+                <Star className="mt-0.5 h-4 w-4 shrink-0" />
+                {tip}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* ── Application Timeline ── */}
+      <div>
+        <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">Application Timeline (2025-2026 Cycle)</h3>
         <div className="space-y-3">
           {APPLICATION_TIMELINE.map((phase, i) => (
             <div key={phase.phase} className="flex gap-4 rounded-xl border border-slate-200 dark:border-slate-700 p-5">
@@ -434,12 +532,12 @@ function ApplicationTab() {
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{phase.phase}</h4>
-                  <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium text-slate-500 dark:text-slate-400">{phase.months}</span>
+                  <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-500 dark:text-slate-400">{phase.months}</span>
                 </div>
                 <ul className="mt-2 space-y-1">
                   {phase.tasks.map((t) => (
-                    <li key={t} className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400">
-                      <CheckCircle className="h-3 w-3 shrink-0 text-slate-400" />{t}
+                    <li key={t} className="flex items-center gap-1.5 text-sm text-slate-600 dark:text-slate-400">
+                      <CheckCircle className="h-3.5 w-3.5 shrink-0 text-slate-400" />{t}
                     </li>
                   ))}
                 </ul>
@@ -449,13 +547,14 @@ function ApplicationTab() {
         </div>
       </div>
 
+      {/* ── SOAP ── */}
       <div>
-        <h3 className="mb-3 text-base font-bold text-slate-900 dark:text-white">SOAP — If You Don&apos;t Match</h3>
+        <h3 className="mb-3 text-lg font-bold text-slate-900 dark:text-white">SOAP — If You Don&apos;t Match</h3>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
           {SOAP_DATA.stats.map((s) => (
             <div key={s.label} className="rounded-lg border border-slate-200 dark:border-slate-700 p-3 text-center">
               <p className="text-base font-bold text-slate-900 dark:text-white">{s.value}</p>
-              <p className="mt-0.5 text-[10px] text-slate-500 dark:text-slate-400">{s.label}</p>
+              <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{s.label}</p>
             </div>
           ))}
         </div>
@@ -492,7 +591,7 @@ function ApplicationTab() {
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">{v.description}</p>
               <div className="mt-3 grid grid-cols-2 gap-3">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600">Pros</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Pros</p>
                   <ul className="mt-1 space-y-1">
                     {v.pros.map((p) => (
                       <li key={p} className="flex items-start gap-1 text-xs text-slate-600 dark:text-slate-400">
@@ -502,7 +601,7 @@ function ApplicationTab() {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-red-600">Cons</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-red-600">Cons</p>
                   <ul className="mt-1 space-y-1">
                     {v.cons.map((c) => (
                       <li key={c} className="flex items-start gap-1 text-xs text-slate-600 dark:text-slate-400">
@@ -547,7 +646,7 @@ function ResourcesTab() {
           {COMMUNITY_INSIGHTS.map((c) => (
             <div key={c.insight} className="rounded-xl border border-slate-200 dark:border-slate-700 p-4">
               <p className="text-xs leading-relaxed text-slate-700 dark:text-slate-300">{c.insight}</p>
-              <p className="mt-2 text-[10px] text-slate-400">Source: {c.source}</p>
+              <p className="mt-2 text-xs text-slate-400">Source: {c.source}</p>
             </div>
           ))}
         </div>
@@ -559,17 +658,17 @@ function ResourcesTab() {
           <div className="text-center">
             <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-sm font-bold text-blue-700 dark:text-blue-300">1</div>
             <p className="mt-2 text-xs font-semibold text-slate-900 dark:text-white">Research on FREIDA</p>
-            <p className="mt-1 text-[10px] text-slate-500 dark:text-slate-400">Use FREIDA to filter 13,000+ programs by IMG%, visa, specialty</p>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Use FREIDA to filter 13,000+ programs by IMG%, visa, specialty</p>
           </div>
           <div className="text-center">
             <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-sm font-bold text-blue-700 dark:text-blue-300">2</div>
             <p className="mt-2 text-xs font-semibold text-slate-900 dark:text-white">Get Experience on USCEHub</p>
-            <p className="mt-1 text-[10px] text-slate-500 dark:text-slate-400">Find observerships and externships to build your US clinical experience</p>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Find observerships and externships to build your US clinical experience</p>
           </div>
           <div className="text-center">
             <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 text-sm font-bold text-blue-700 dark:text-blue-300">3</div>
             <p className="mt-2 text-xs font-semibold text-slate-900 dark:text-white">Apply &amp; Match</p>
-            <p className="mt-1 text-[10px] text-slate-500 dark:text-slate-400">Use ERAS to apply, match into your target residency program</p>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Use ERAS to apply, match into your target residency program</p>
           </div>
         </div>
       </div>
@@ -622,7 +721,7 @@ export function FreidaContent() {
       {/* Source Attribution Banner */}
       <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 lg:px-8">
-          <p className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[10px] text-slate-500 dark:text-slate-400">
+          <p className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
             <span>Last updated: March 2025</span>
             <span>•</span>
             <a href="https://www.nrmp.org/match-data/" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-700 dark:hover:text-slate-300">NRMP 2025</a>
@@ -674,7 +773,7 @@ export function FreidaContent() {
 
       {/* Disclaimer */}
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-        <p className="text-center text-[10px] leading-relaxed text-slate-400">
+        <p className="text-center text-xs leading-relaxed text-slate-400">
           Data sourced from NRMP 2025 Main Residency Match Results, ECFMG.org,
           AMA FREIDA, and NRMP Charting Outcomes 2024. USCEHub is not affiliated
           with NRMP, ECFMG, AMA, ERAS, or AAMC. All trademarks belong to their

@@ -82,11 +82,29 @@ const IMG_FAQS = [
   },
 ];
 
+const MATCH_FAQS = [
+  {
+    question: "How does the residency match algorithm work?",
+    answer:
+      "The NRMP uses the Roth-Peranson algorithm (developed by Nobel Prize winners). You submit a rank order list of programs in your true order of preference. Programs independently rank applicants. The algorithm processes each applicant's list: it tries to place you at your #1 choice first. If that program is full with applicants it prefers more, it tries your #2, then #3, and so on. The algorithm is mathematically applicant-optimal — you cannot improve your outcome by ranking strategically. Always rank in your true order of preference.",
+  },
+  {
+    question: "What is ERAS signaling and how should IMGs use it?",
+    answer:
+      "ERAS preference signals let applicants indicate genuine interest in specific programs. Each applicant gets up to 25 signals (varies by specialty). Programs that receive your signal are 2-4x more likely to invite you for an interview. IMGs benefit more from signaling than US grads because programs often filter out IMG applications early, but a signal makes them take a second look. Use ALL your signals. Signal programs where you rotated, have geographic ties, or where your profile fits. Don't waste signals on your home program or places that already know you.",
+  },
+  {
+    question: "Are residency interviews still in person or virtual?",
+    answer:
+      "Most residency interviews are now conducted virtually via Zoom since the COVID-19 pandemic. Some programs offer optional in-person second looks, but the primary interview is almost always virtual. This has significantly reduced interview costs for IMGs — from $3,000-8,000 in travel to $200-1,500 for technology and preparation. Virtual interviews also allow IMGs to interview at more programs without geographic or financial constraints.",
+  },
+];
+
 export function ImgFaqSchema() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: IMG_FAQS.map((item) => ({
+    mainEntity: [...IMG_FAQS, ...MATCH_FAQS].map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -105,7 +123,7 @@ export function ImgFaqSchema() {
 
       {/* Visible FAQ section for AEO */}
       <div className="space-y-4">
-        {IMG_FAQS.map((item) => (
+        {[...IMG_FAQS, ...MATCH_FAQS].map((item) => (
           <div
             key={item.question}
             className="rounded-xl border border-slate-200 dark:border-slate-700 p-5"
@@ -113,7 +131,7 @@ export function ImgFaqSchema() {
             <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
               {item.question}
             </h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               {item.answer}
             </p>
           </div>

@@ -436,6 +436,113 @@ export const STATE_IMG_DATA = [
   { state: "Georgia", abbr: "GA", programs: "5+", highlight: false, note: "Grady/Emory, Navicent, Augusta — moderate IMG presence in Atlanta area." },
 ];
 
+// ─── HOW THE MATCH WORKS ─────────────────────────────────────────────────────
+
+export const MATCH_PROCESS_STEPS = [
+  {
+    step: 1,
+    title: "Register with NRMP",
+    description: "Create an NRMP account and register for the Main Residency Match. IMGs must have ECFMG certification (or be on track) to register.",
+    timing: "September",
+  },
+  {
+    step: 2,
+    title: "Apply via ERAS",
+    description: "Submit your application through ERAS to individual residency programs. Include personal statement, CV, USMLE transcripts, LORs, MSPE, and photo. IMGs typically apply to 150-200+ programs.",
+    timing: "September - October",
+  },
+  {
+    step: 3,
+    title: "Send Signals & Supplemental Apps",
+    description: "Use your limited preference signals and supplemental application tokens strategically to tell programs you're genuinely interested. Signals significantly increase interview invitations.",
+    timing: "September - October",
+  },
+  {
+    step: 4,
+    title: "Interview (Mostly Virtual)",
+    description: "Programs review applications and invite selected candidates. Most interviews are now conducted virtually via Zoom. Some programs offer optional in-person second looks.",
+    timing: "October - January",
+  },
+  {
+    step: 5,
+    title: "Submit Rank Order List",
+    description: "Rank every program where you interviewed in your true order of preference. Programs independently rank all interviewed applicants. Neither party sees the other's list. Be honest — rank by your true preference, not where you think you'll match.",
+    timing: "February",
+  },
+  {
+    step: 6,
+    title: "The Algorithm Runs",
+    description: "NRMP runs the Roth-Peranson matching algorithm. It processes applicant lists one at a time: the algorithm tries to place you at your #1 choice. If that program is full with applicants it prefers more, it tries your #2, then #3, and so on. The result is mathematically optimal for applicants — you cannot improve your outcome by ranking strategically.",
+    timing: "Late February",
+  },
+  {
+    step: 7,
+    title: "Match Week",
+    description: "Monday: you find out IF you matched (but not where). If unmatched, SOAP begins immediately. Friday (Match Day): matched applicants learn which program they matched to.",
+    timing: "Third week of March",
+  },
+];
+
+export const MATCH_ALGORITHM_KEY_FACTS = [
+  "The algorithm is applicant-optimal — it finds the best possible outcome for YOU based on your rank list",
+  "You should ALWAYS rank programs in your true order of preference — gaming the system cannot help you",
+  "A program cannot see where you ranked them, and you cannot see where they ranked you",
+  "If a program ranks you but you didn't rank them, you will NOT match there",
+  "Couples can link their rank lists together through the Couples Match",
+  "The algorithm was developed by Nobel Prize winners Alvin Roth and Lloyd Shapley",
+];
+
+// ─── SIGNALING ───────────────────────────────────────────────────────────────
+
+export const SIGNALING_DATA = {
+  overview: "Signaling lets applicants indicate genuine interest in specific programs. With applicants applying to 200+ programs, signals help programs identify who actually wants to train there. Signals significantly increase your interview invitation rate.",
+  types: [
+    {
+      name: "ERAS Preference Signals",
+      count: "Up to 25 signals (varies by specialty)",
+      description: "Sent through ERAS when submitting your application. Each specialty determines how many signals applicants receive. Programs see which applicants signaled them.",
+      impact: "Programs that receive your signal are 2-4x more likely to interview you",
+      tips: [
+        "Use ALL your signals — unused signals are wasted opportunities",
+        "Signal your genuine top choices, not just safety programs",
+        "Signal programs where you have a geographic connection (lived, rotated, family nearby)",
+        "Signal programs where your profile fits (Step 2 CK score in their range, right visa status)",
+        "Don't signal your home program or places where you already have a strong connection — they already know you're interested",
+      ],
+    },
+    {
+      name: "Supplemental ERAS Application (MyERAS)",
+      count: "Limited tokens (varies by specialty)",
+      description: "Additional information submitted through a supplemental application. Includes geographic preferences, meaningful experiences, and additional signals beyond the basic preference signals.",
+      impact: "Provides programs with more context about your interest and fit",
+      tips: [
+        "Complete the supplemental application fully — many applicants skip it",
+        "Geographic preference signals carry real weight — programs want residents who will stay",
+        "Highlight specific connections to the program's region or mission",
+        "The supplemental app is where you differentiate from 200 other applicants with similar scores",
+      ],
+    },
+    {
+      name: "Program Signals (Reverse Signals)",
+      count: "Programs send limited signals to applicants",
+      description: "Some programs can signal applicants they're interested in interviewing. This is newer and not universal across all specialties.",
+      impact: "If a program signals you, strongly consider ranking them — they're telling you they want you",
+      tips: [
+        "Check your ERAS messages for program signals",
+        "A program signal + your signal = very high match probability",
+        "Respond promptly to interview invitations from programs that signaled you",
+      ],
+    },
+  ],
+  imgSpecificAdvice: [
+    "IMGs benefit MORE from signaling than US grads — programs often filter out IMG applications early, but a signal makes them take a second look",
+    "Signal community programs AND academic programs — don't assume you can only match at community sites",
+    "If you did an observership or rotation at a program, signal them — the combination of US clinical experience + signal is powerful",
+    "Signal programs in states where you have a connection (observership, family, research) — geographic ties matter for IMGs",
+    "Programs in underserved areas or with historically high IMG percentages should get your signals — they're looking for you",
+  ],
+};
+
 // ─── APPLICATION TIMELINE ────────────────────────────────────────────────────
 
 export const APPLICATION_TIMELINE = [
@@ -536,7 +643,7 @@ export const COMMON_MISTAKES = [
   { mistake: "Skipping mock interviews", fix: "Practice with US physicians. Cultural communication differences matter in interviews." },
   { mistake: "Ignoring SOAP preparation", fix: "Prepare SOAP materials before Match Day. 40% of unmatched IMGs who SOAP successfully match." },
   { mistake: "Not networking", fix: "Attend conferences (ACP, AAFP). Connect with program directors and alumni on LinkedIn." },
-  { mistake: "Underestimating costs", fix: "Budget $15,000-25,000 for the full application cycle including exams, travel, and applications." },
+  { mistake: "Underestimating costs", fix: "Budget $12,000-22,000 for the full application cycle including exams, rotations, and applications. Most interviews are virtual now, saving thousands on travel." },
 ];
 
 // ─── KEY RESOURCES ───────────────────────────────────────────────────────────

@@ -348,7 +348,7 @@ export default function ResourcesPage() {
                 { item: "Malpractice insurance", cost: "$200-500" },
                 { item: "Observership fees", cost: "$0-3,000" },
                 { item: "Travel & housing for rotations", cost: "$3,000-10,000" },
-                { item: "Interview travel", cost: "$3,000-8,000" },
+                { item: "Interview costs (mostly virtual now)", cost: "$200-1,500" },
               ].map((row) => (
                 <div key={row.item} className="flex items-center justify-between text-xs">
                   <span className="text-slate-600 dark:text-slate-400">{row.item}</span>
@@ -358,7 +358,7 @@ export default function ResourcesPage() {
               <div className="mt-3 border-t border-amber-200 dark:border-amber-800 pt-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-bold text-slate-900 dark:text-white">Estimated Total</span>
-                  <span className="font-bold text-amber-700 dark:text-amber-400">$15,000 - $28,000+</span>
+                  <span className="font-bold text-amber-700 dark:text-amber-400">$12,000 - $22,000+</span>
                 </div>
               </div>
             </div>
