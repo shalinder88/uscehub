@@ -129,7 +129,7 @@ export default function PrivacyPage() {
               You have the right to access, update, or delete your personal
               information. You can manage most of your information through your
               account settings. For data deletion requests or questions about
-              your data, please contact us at privacy@usobserverships.com.
+              your data, please contact us at privacy@uscehub.com.
             </p>
           </section>
 
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             </h2>
             <p>
               If you have questions about this Privacy Policy, please contact us
-              at privacy@usobserverships.com.
+              at privacy@uscehub.com.
             </p>
           </section>
         </div>

@@ -2,9 +2,36 @@ export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import { rateLimit, isScrapingBot } from "@/lib/rate-limit";
 
 export async function GET(request: NextRequest) {
   try {
+    // Bot detection
+    const userAgent = request.headers.get("user-agent");
+    if (isScrapingBot(userAgent)) {
+      return Response.json(
+        { error: "Automated access is not permitted. See uscehub.com/terms" },
+        { status: 403 }
+      );
+    }
+
+    // Rate limiting: 30 requests per minute per IP
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const { allowed, remaining, resetIn } = rateLimit(ip, { limit: 30, windowSeconds: 60 });
+
+    if (!allowed) {
+      return Response.json(
+        { error: "Rate limit exceeded. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(resetIn),
+            "X-RateLimit-Remaining": "0",
+          },
+        }
+      );
+    }
+
     const { searchParams } = request.nextUrl;
 
     const type = searchParams.get("type");
@@ -13,7 +40,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get("search");
     const sort = searchParams.get("sort") || "newest";
     const page = parseInt(searchParams.get("page") || "1", 10);
-    const limit = parseInt(searchParams.get("limit") || "20", 10);
+    const limit = Math.min(parseInt(searchParams.get("limit") || "20", 10), 50); // Cap at 50
     const skip = (page - 1) * limit;
 
     const where: Record<string, unknown> = {
@@ -82,15 +109,23 @@ export async function GET(request: NextRequest) {
       prisma.listing.count({ where }),
     ]);
 
-    return Response.json({
-      listings,
-      pagination: {
-        page,
-        limit,
-        total,
-        totalPages: Math.ceil(total / limit),
+    return Response.json(
+      {
+        listings,
+        pagination: {
+          page,
+          limit,
+          total,
+          totalPages: Math.ceil(total / limit),
+        },
       },
-    });
+      {
+        headers: {
+          "X-RateLimit-Remaining": String(remaining),
+          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        },
+      }
+    );
   } catch (error) {
     console.error("GET /api/listings error:", error);
     return Response.json(

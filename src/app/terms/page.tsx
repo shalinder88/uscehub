@@ -124,6 +124,57 @@ export default function TermsPage() {
 
           <section>
             <h2 className="mb-3 text-lg font-semibold text-slate-900">
+              Data Protection &amp; Prohibited Use
+            </h2>
+            <p className="mb-2">
+              The USCEHub database — including program listings, verification
+              data, community reviews, statistical analyses, curated guides,
+              and all structured data compiled by USCEHub — represents
+              significant investment of time, effort, and expertise. This
+              database is protected as a compilation under United States
+              copyright law.
+            </p>
+            <p className="mb-2">You expressly agree that you will NOT:</p>
+            <ul className="ml-4 list-disc space-y-1">
+              <li>
+                Use automated tools, scripts, bots, scrapers, crawlers, or
+                any other automated means to access, collect, copy, or
+                download data from USCEHub
+              </li>
+              <li>
+                Systematically copy, reproduce, or redistribute any portion
+                of the USCEHub database, whether manually or through
+                automated means
+              </li>
+              <li>
+                Create a competing product, service, or directory using data
+                obtained from USCEHub
+              </li>
+              <li>
+                Sell, license, sublicense, or commercially exploit any data
+                collected from USCEHub
+              </li>
+              <li>
+                Use data mining, data harvesting, data extraction, or any
+                similar methods on USCEHub
+              </li>
+              <li>
+                Circumvent or attempt to circumvent any rate limiting,
+                access controls, or technical measures designed to prevent
+                unauthorized data collection
+              </li>
+            </ul>
+            <p className="mt-2">
+              Violation of this section may result in immediate account
+              termination, IP blocking, and legal action including claims
+              for damages, injunctive relief, and recovery of legal fees.
+              USCEHub actively monitors for unauthorized data collection
+              and reserves the right to pursue all available legal remedies.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-lg font-semibold text-slate-900">
               Limitation of Liability
             </h2>
             <p>
@@ -169,7 +220,7 @@ export default function TermsPage() {
             </h2>
             <p>
               For questions about these Terms of Service, please contact us at
-              legal@usobserverships.com.
+              support@uscehub.com.
             </p>
           </section>
         </div>

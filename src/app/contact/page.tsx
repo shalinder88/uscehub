@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm font-medium text-slate-900">Email</p>
                   <p className="mt-0.5 text-sm text-slate-500">
-                    support@usobserverships.com
+                    support@uscehub.com
                   </p>
                 </div>
               </div>
