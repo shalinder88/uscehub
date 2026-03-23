@@ -19,6 +19,7 @@ import {
   Search,
   Calculator,
   GitCompareArrows,
+  BookOpen,
 } from "lucide-react";
 
 export function Navbar() {
@@ -95,6 +96,15 @@ export function Navbar() {
                   >
                     <GitCompareArrows className="h-4 w-4" />
                     Compare Programs
+                  </Link>
+                  <div className="my-1 border-t border-slate-100 dark:border-slate-700" />
+                  <Link
+                    href="/resources"
+                    onClick={() => setToolsMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  >
+                    <BookOpen className="h-4 w-4" />
+                    Resources &amp; Guides
                   </Link>
                 </div>
               </>
@@ -264,6 +274,14 @@ export function Navbar() {
             >
               <GitCompareArrows className="h-4 w-4" />
               Compare Programs
+            </Link>
+            <Link
+              href="/resources"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            >
+              <BookOpen className="h-4 w-4" />
+              Resources &amp; Guides
             </Link>
             <Link
               href="/about"
