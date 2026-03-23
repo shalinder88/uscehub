@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Search,
   FileText,
@@ -76,9 +77,35 @@ const institutionSteps = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Find and Apply for Observerships, Externships, and Research Programs",
+  description:
+    "Step-by-step guide for International Medical Graduates to find and apply for clinical experience opportunities in the United States through USCEHub.",
+  step: [
+    ...applicantSteps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.description,
+    })),
+  ],
+};
+
 export default function HowItWorksPage() {
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "How It Works", url: "https://uscehub.com/how-it-works" },
+        ]}
+      />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900">How It Works</h1>

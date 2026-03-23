@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { FloatingFinder } from "@/components/tools/floating-finder";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
   title: "Browse Observership, Externship & Research Opportunities",
@@ -96,6 +97,12 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
 
   return (
     <div className="bg-white dark:bg-slate-950">
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "Browse Opportunities", url: "https://uscehub.com/browse" },
+        ]}
+      />
       <FloatingFinder />
       <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

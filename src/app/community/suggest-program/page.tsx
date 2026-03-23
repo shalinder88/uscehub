@@ -4,9 +4,12 @@ import { ArrowLeft } from "lucide-react";
 import { SuggestProgramForm } from "@/components/community/community-tabs";
 
 export const metadata: Metadata = {
-  title: "Suggest a Program — USCEHub",
+  title: "Suggest a Program",
   description:
-    "Submit an observership, externship, or research program to help other International Medical Graduates find USCE opportunities.",
+    "Submit an observership, externship, or research program to help other International Medical Graduates find USCE opportunities in the United States.",
+  alternates: {
+    canonical: "https://uscehub.com/community/suggest-program",
+  },
 };
 
 export default function SuggestProgramPage() {

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
+import { US_STATES, SPECIALTIES } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +22,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/observerships`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/recommend`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/compare`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/tools/cost-calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -31,6 +56,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/community/suggest-program`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/freida`,
@@ -82,6 +113,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  // State landing pages (51 pages — all 50 states + DC)
+  const statePages: MetadataRoute.Sitemap = Object.values(US_STATES).map(
+    (name) => ({
+      url: `${baseUrl}/observerships/${name.toLowerCase().replace(/\s+/g, "-")}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })
+  );
+
+  // Specialty landing pages (28 pages)
+  const specialtyPages: MetadataRoute.Sitemap = SPECIALTIES.map((s) => ({
+    url: `${baseUrl}/observerships/specialty/${s
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   // Dynamic listing pages
   const listings = await prisma.listing.findMany({
     where: { status: "APPROVED" },
@@ -95,5 +148,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...listingPages];
+  return [...staticPages, ...statePages, ...specialtyPages, ...listingPages];
 }

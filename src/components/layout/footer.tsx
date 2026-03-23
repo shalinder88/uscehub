@@ -33,6 +33,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/observerships"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                >
+                  Browse by State
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/recommend"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                >
+                  Program Finder
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/freida"
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
@@ -49,10 +65,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/how-it-works"
+                  href="/community"
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
-                  How It Works
+                  Community
                 </Link>
               </li>
               <li>

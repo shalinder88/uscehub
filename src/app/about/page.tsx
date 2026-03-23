@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Target, Eye, Shield, Stethoscope } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -12,9 +13,40 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About USCEHub",
+  description:
+    "Built by an intensivist who lived the IMG journey. USCEHub is the largest free database of clinical observership and externship opportunities for International Medical Graduates.",
+  url: "https://uscehub.com/about",
+  mainEntity: {
+    "@type": "Organization",
+    name: "USCEHub",
+    url: "https://uscehub.com",
+    founder: {
+      "@type": "Person",
+      name: "Singh MD",
+      jobTitle: "Intensivist",
+    },
+    description:
+      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="bg-white dark:bg-slate-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "About Us", url: "https://uscehub.com/about" },
+        ]}
+      />
       {/* Hero */}
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

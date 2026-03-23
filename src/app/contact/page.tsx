@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
@@ -14,9 +15,37 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact USCEHub",
+  url: "https://uscehub.com/contact",
+  mainEntity: {
+    "@type": "Organization",
+    name: "USCEHub",
+    url: "https://uscehub.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "support@uscehub.com",
+      contactType: "customer support",
+      availableLanguage: "English",
+    },
+  },
+};
+
 export default function ContactPage() {
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "Contact Us", url: "https://uscehub.com/contact" },
+        ]}
+      />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900">Contact Us</h1>

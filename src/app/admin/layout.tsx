@@ -1,7 +1,12 @@
 export const dynamic = "force-dynamic";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 import { Avatar } from "@/components/ui/avatar";
 import {
   LayoutDashboard,

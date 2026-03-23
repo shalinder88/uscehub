@@ -1,15 +1,51 @@
 import type { Metadata } from "next";
 import { CostCalculator } from "@/components/tools/cost-calculator";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
-  title: "Cost Calculator — USCEHub",
+  title: "Cost Calculator — Estimate Your Observership Costs",
   description:
-    "Estimate the total cost of your observership, externship, or research experience in the US including housing, food, and transportation.",
+    "Estimate the total cost of your observership, externship, or research experience in the US including program fees, housing, food, transportation, and visa costs.",
+  alternates: {
+    canonical: "https://uscehub.com/tools/cost-calculator",
+  },
+  openGraph: {
+    title: "Cost Calculator — Estimate Your Observership Costs",
+    description:
+      "Calculate the total cost of your US clinical experience including housing, food, transportation, and visa fees.",
+    url: "https://uscehub.com/tools/cost-calculator",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Observership Cost Calculator — USCEHub",
+  description:
+    "Estimate the total cost of your observership, externship, or research experience in the United States including program fees, housing, food, transportation, and visa costs.",
+  url: "https://uscehub.com/tools/cost-calculator",
+  applicationCategory: "FinanceApplication",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
 };
 
 export default function CostCalculatorPage() {
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "Tools", url: "https://uscehub.com/tools/cost-calculator" },
+          { name: "Cost Calculator", url: "https://uscehub.com/tools/cost-calculator" },
+        ]}
+      />
       <div className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold text-slate-900">Cost Calculator</h1>

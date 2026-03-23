@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Users } from "lucide-react";
 import { CommunityTabs } from "@/components/community/community-tabs";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
   title: "IMG Community",
@@ -11,9 +12,36 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "IMG Community — USCEHub",
+  description:
+    "Connect with fellow International Medical Graduates, share observership and externship experiences, ask questions, and find support.",
+  url: "https://uscehub.com/community",
+  mainEntity: {
+    "@type": "DiscussionForumPosting",
+    headline: "IMG Community Forum",
+    about: {
+      "@type": "Thing",
+      name: "International Medical Graduate Clinical Experience",
+    },
+  },
+};
+
 export default function CommunityPage() {
   return (
     <div className="bg-white dark:bg-slate-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "Community", url: "https://uscehub.com/community" },
+        ]}
+      />
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">

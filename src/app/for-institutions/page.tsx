@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import {
   Building2,
   Users,
@@ -108,9 +109,45 @@ const listingTypes = [
   "Elective Rotation",
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "For Institutions & Physicians — List Your Programs on USCEHub",
+  description:
+    "List your clinical observership, externship, or research programs on USCEHub. Reach qualified IMGs, get verified, and manage applications — all free.",
+  url: "https://uscehub.com/for-institutions",
+  mainEntity: {
+    "@type": "Service",
+    name: "USCEHub Program Listing Service",
+    provider: {
+      "@type": "Organization",
+      name: "USCEHub",
+      url: "https://uscehub.com",
+    },
+    description:
+      "Free platform for hospitals, institutions, and physicians to list clinical observership, externship, and research opportunities for International Medical Graduates.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Free program listing for institutions and physicians",
+    },
+  },
+};
+
 export default function ForInstitutionsPage() {
   return (
     <div className="bg-white dark:bg-slate-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "https://uscehub.com" },
+          { name: "For Institutions & Physicians", url: "https://uscehub.com/for-institutions" },
+        ]}
+      />
       {/* Hero */}
       <div className="bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
