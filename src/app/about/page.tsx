@@ -59,7 +59,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-slate-400">
               From medical school abroad to the ICU. This platform was made by
-              Singh MD — someone who went through every step of the IMG process.
+              someone who went through every step of the IMG process.
             </p>
           </div>
         </div>
