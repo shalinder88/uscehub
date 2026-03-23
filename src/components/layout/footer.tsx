@@ -87,6 +87,14 @@ export function Footer() {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/resources"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                >
+                  Recommended Resources
+                </Link>
+              </li>
             </ul>
           </div>
 
