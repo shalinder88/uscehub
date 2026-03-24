@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { ShareWidget } from "@/components/layout/share-widget";
 import { TermsGate } from "@/components/legal/terms-gate";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -131,6 +132,7 @@ export default function RootLayout({
           <ShareWidget />
           <TermsGate />
           <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
