@@ -6,6 +6,7 @@ import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ShareWidget } from "@/components/layout/share-widget";
+import { TermsGate } from "@/components/legal/terms-gate";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
@@ -91,6 +92,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ShareWidget />
+          <TermsGate />
           <Analytics />
         </Providers>
       </body>
