@@ -48,17 +48,16 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
       <div className="mx-auto max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
-            Trusted Directory & Application Platform
+            Verified Directory — Updated March 2026
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            The Largest Structured IMG{" "}
+            Verified U.S. Clinical Experience{" "}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Opportunities Database
+              Programs for IMGs
             </span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            Browse {listingCount}+ clinical observerships, externships, research positions, and
-            postdoctoral fellowships across {stateCount} states. Moderated, structured, and built for IMGs.
+            Search {listingCount}+ observerships, externships, research roles, and postdoc opportunities across {stateCount} states — with direct source links, visa notes, fee ranges, and verification status.
           </p>
 
           <form onSubmit={handleSearch} className="mx-auto mt-8 max-w-xl">
@@ -70,6 +69,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Try &quot;free observerships in New York&quot; or &quot;pediatrics research&quot;..."
+                  aria-label="Search observership and clinical experience programs"
                   className="h-12 w-full rounded-lg border-0 bg-white pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>

@@ -32,7 +32,7 @@ export function Navbar() {
     { href: "/browse", label: "Browse Opportunities" },
     { href: "/for-institutions", label: "For Institutions & Physicians" },
     { href: "/community", label: "Community" },
-    { href: "/freida", label: "IMG Resources" },
+    { href: "/img-resources", label: "IMG Resources" },
   ];
 
   return (

@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://uscehub.com"),
   title: {
-    default: "USCEHub — The Largest IMG Opportunities Database",
+    default: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     template: "%s — USCEHub",
   },
   description:
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "USCEHub",
-    title: "USCEHub — The Largest IMG Opportunities Database",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
     url: "https://uscehub.com",
     images: [
       {
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "USCEHub — The Largest IMG Opportunities Database",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],
   },
   verification: {
@@ -87,9 +87,46 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){}})()`,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "USCEHub",
+              url: "https://www.uscehub.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://www.uscehub.com/browse?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "USCEHub",
+              url: "https://www.uscehub.com",
+              email: "contact@uscehub.com",
+              description:
+                "Directory of clinical observership, externship, research, and postdoctoral opportunities for international medical graduates in the United States.",
+            }),
+          }}
+        />
         <Providers>
+          {/* Skip link for accessibility */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[9999] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1" tabIndex={-1}>{children}</main>
           <Footer />
           <ShareWidget />
           <TermsGate />

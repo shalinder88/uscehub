@@ -301,11 +301,11 @@ export function CommunityTabs() {
         <section className="rounded-xl bg-slate-50 dark:bg-slate-800 p-8 text-center">
           <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Have questions about your IMG journey?</h2>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Check our comprehensive FREIDA &amp; Residency Programs guide for match stats, IMG-friendly programs, and application strategies.
+            Check our comprehensive IMG Resources guide for match stats, IMG-friendly programs, and application strategies.
           </p>
           <div className="mt-5 flex justify-center gap-3">
-            <Link href="/freida">
-              <Button size="lg">IMG Resources &amp; FREIDA</Button>
+            <Link href="/img-resources">
+              <Button size="lg">IMG Resources &amp; Match Data</Button>
             </Link>
             <Link href="/faq">
               <Button variant="outline" size="lg">Read FAQ</Button>

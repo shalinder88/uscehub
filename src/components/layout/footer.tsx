@@ -49,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/freida"
+                  href="/img-resources"
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   IMG Resources
@@ -77,6 +77,14 @@ export function Footer() {
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/methodology"
+                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                >
+                  Methodology
                 </Link>
               </li>
               <li>
@@ -143,10 +151,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/freida"
+                  href="/img-resources"
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
                 >
-                  FREIDA
+                  IMG Resources & Data
                 </Link>
               </li>
             </ul>

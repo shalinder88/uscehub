@@ -13,9 +13,9 @@ import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 
 export const metadata: Metadata = {
-  title: "USCEHub — The Largest IMG Opportunities Database",
+  title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
   description:
-    "Browse the largest database of clinical observerships, externships, and research opportunities for International Medical Graduates in the US. Free, verified, and community-reviewed.",
+    "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
   alternates: {
     canonical: "https://uscehub.com",
   },

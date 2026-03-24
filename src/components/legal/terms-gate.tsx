@@ -5,8 +5,10 @@ import { useState, useEffect } from "react";
 const TERMS_VERSION = "2026-03-23";
 const STORAGE_KEY = "uscehub_terms_accepted";
 
+const TIMER_SECONDS = 60;
+
 export function TermsGate() {
-  const [status, setStatus] = useState<"loading" | "accepted" | "show" | "declined">("loading");
+  const [status, setStatus] = useState<"loading" | "accepted" | "waiting" | "show" | "declined">("loading");
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
@@ -14,12 +16,19 @@ export function TermsGate() {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === TERMS_VERSION) {
         setStatus("accepted");
-      } else {
-        setStatus("show");
+        return;
       }
     } catch {
-      setStatus("show");
+      // Fall through to waiting
     }
+
+    // Not yet accepted — wait 60 seconds then show
+    setStatus("waiting");
+    const timer = setTimeout(() => {
+      setStatus("show");
+    }, TIMER_SECONDS * 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleAccept = () => {
@@ -35,8 +44,8 @@ export function TermsGate() {
     setStatus("declined");
   };
 
-  // Loading — show nothing
-  if (status === "loading" || status === "accepted") return null;
+  // Loading, accepted, or waiting (timer running) — show nothing
+  if (status === "loading" || status === "accepted" || status === "waiting") return null;
 
   // Declined — blank the site
   if (status === "declined") {

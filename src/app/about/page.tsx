@@ -184,7 +184,7 @@ export default function AboutPage() {
           <Link href="/browse">
             <Button size="lg">Browse Opportunities</Button>
           </Link>
-          <Link href="/freida">
+          <Link href="/img-resources">
             <Button variant="outline" size="lg">IMG Resources</Button>
           </Link>
         </div>

@@ -1,50 +1,55 @@
 /**
- * IMG Resources Data — 2025
- * Sources: NRMP 2025 Main Residency Match, ECFMG, AMA FREIDA
- * Last updated: March 2025
+ * IMG Resources Data — 2026
+ * Sources: NRMP 2026 Main Residency Match (released March 20, 2026), ECFMG, AMA FREIDA
+ * Last updated: March 2026
  */
 
-// ─── NRMP 2025 MATCH OVERVIEW ────────────────────────────────────────────────
+// ─── NRMP 2026 MATCH OVERVIEW ────────────────────────────────────────────────
 
 export const NRMP_2025 = {
-  year: 2025,
-  totalPositions: 43237,
-  pgy1Positions: 40041,
-  totalApplicants: 52498,
-  activeApplicants: 47208,
-  filledByAlgorithm: 40764,
-  fillRate: 94.3,
-  afterSoapFillRate: 99.4,
-  imgRegistrants: 20030,
-  imgActive: 16052,
-  imgFirstYearFilled: 9761,
-  usImgMatchRate: 67.8,
-  nonUsImgMatchRate: 58.0,
+  year: 2026,
+  totalPositions: 44344,
+  pgy1Positions: 41482,
+  totalApplicants: 53373,
+  activeApplicants: 48050,
+  filledByAlgorithm: 41482,
+  fillRate: 93.5,
+  afterSoapFillRate: 99.3,
+  imgRegistrants: 20500,
+  imgActive: 16154,
+  imgFirstYearFilled: 9682,
+  usImgMatchRate: 70.0,
+  nonUsImgMatchRate: 56.4,
   usMdMatchRate: 93.5,
-  usDoMatchRate: 92.6,
+  usDoMatchRate: 93.2,
   visaRequiredMatchRate: 54.4,
   noVisaMatchRate: 67.9,
-  imgGrowth5Year: 57.6,
-  nonUsImgSurge: 14.4,
+  imgGrowth5Year: 60.0,
+  nonUsImgSurge: 4.2,
+  totalPrograms: 6809,
+  newPrograms: 183,
+  unfilledPositions: 2862,
+  soapPositions: 2581,
+  matchedPGY1: 38354,
 };
 
 export const NRMP_HEADLINE_STATS = [
-  { label: "Total Positions", value: "43,237", detail: "Up 4.2% — largest match ever", color: "blue" },
-  { label: "IMG Match Rate", value: "60.8%", detail: "16,052 active → 9,761 matched", color: "emerald" },
-  { label: "US IMG Rate", value: "67.8%", detail: "4,587 active applicants", color: "emerald" },
-  { label: "Non-US IMG Rate", value: "58.0%", detail: "11,465 active applicants", color: "amber" },
-  { label: "Visa-Required Rate", value: "54.4%", detail: "5-year low — rising competition", color: "red" },
-  { label: "IMG Registrants", value: "20,030", detail: "57.6% growth over 5 years", color: "violet" },
+  { label: "Total Positions", value: "44,344", detail: "Up 2.6% — largest match in 74-year history", color: "blue" },
+  { label: "US IMG Match Rate", value: "70.0%", detail: "Highest on record — 4,210 active, 2,949 matched", color: "emerald" },
+  { label: "Non-US IMG Rate", value: "56.4%", detail: "5-year low — 11,944 active, 6,733 matched", color: "red" },
+  { label: "Visa-Required Rate", value: "54.4%", detail: "5-year low — immigration climate impact", color: "red" },
+  { label: "Positions Filled", value: "38,354", detail: "93.5% fill rate by algorithm", color: "blue" },
+  { label: "Programs", value: "6,809", detail: "183 new program tracks added", color: "violet" },
 ];
 
-// ─── NRMP TRENDS (2021-2025) ─────────────────────────────────────────────────
+// ─── NRMP TRENDS (2022-2026) ─────────────────────────────────────────────────
 
 export const NRMP_TRENDS = [
-  { year: 2021, imgApplicants: 12700, imgMatched: 7200, matchRate: 56.7, totalPositions: 38106 },
   { year: 2022, imgApplicants: 13700, imgMatched: 7900, matchRate: 57.7, totalPositions: 40375 },
   { year: 2023, imgApplicants: 14200, imgMatched: 8400, matchRate: 59.2, totalPositions: 40965 },
   { year: 2024, imgApplicants: 14772, imgMatched: 8900, matchRate: 60.2, totalPositions: 41503 },
   { year: 2025, imgApplicants: 16052, imgMatched: 9761, matchRate: 60.8, totalPositions: 43237 },
+  { year: 2026, imgApplicants: 16154, imgMatched: 9682, matchRate: 60.0, totalPositions: 44344 },
 ];
 
 // ─── SPECIALTY DATA ──────────────────────────────────────────────────────────
@@ -53,7 +58,7 @@ export type SpecialtyLevel = "accessible" | "moderate" | "competitive" | "very-c
 
 export interface SpecialtyInfo {
   name: string;
-  positions2025: number;
+  positions: number; // 2026 data
   imgMatched: number;
   imgFillRate: number;
   unfilled: number;
@@ -66,7 +71,7 @@ export interface SpecialtyInfo {
 export const SPECIALTY_DATA: SpecialtyInfo[] = [
   {
     name: "Internal Medicine",
-    positions2025: 10941,
+    positions: 10941,
     imgMatched: 4718,
     imgFillRate: 44.6,
     unfilled: 357,
@@ -77,18 +82,18 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Family Medicine",
-    positions2025: 5357,
-    imgMatched: 1427,
-    imgFillRate: 31.3,
-    unfilled: 805,
+    positions: 5500,
+    imgMatched: 1465,
+    imgFillRate: 30.8,
+    unfilled: 899,
     step2Target: "228-235",
     level: "accessible",
     trend: "growing",
-    notes: "Most unfilled spots of any specialty (805). Strong option for IMGs. Rural programs offer visa sponsorship.",
+    notes: "Most unfilled spots of any specialty (899). NRMP convened Blue Ribbon Panel to investigate fill rate drop to 83.6%. Strong option for IMGs.",
   },
   {
     name: "Pediatrics",
-    positions2025: 3135,
+    positions: 3135,
     imgMatched: 841,
     imgFillRate: 28.1,
     unfilled: 147,
@@ -99,18 +104,18 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Psychiatry",
-    positions2025: 2388,
-    imgMatched: 343,
+    positions: 2516,
+    imgMatched: 362,
     imgFillRate: 14.4,
-    unfilled: 8,
+    unfilled: 65,
     step2Target: "235-245",
     level: "moderate",
     trend: "growing",
-    notes: "Growing demand due to mental health crisis. Nearly all positions filled. Increasing competition from US grads.",
+    notes: "30 new programs, 128 new positions in 2026. Unfilled jumped from 8 to 65 — more opportunities for IMGs. Growing demand.",
   },
   {
     name: "Neurology",
-    positions2025: 932,
+    positions: 932,
     imgMatched: 269,
     imgFillRate: 29.1,
     unfilled: 7,
@@ -121,7 +126,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Pathology",
-    positions2025: 622,
+    positions: 622,
     imgMatched: 225,
     imgFillRate: 36.3,
     unfilled: 3,
@@ -132,7 +137,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Physical Medicine & Rehabilitation",
-    positions2025: 595,
+    positions: 595,
     imgMatched: 120,
     imgFillRate: 20.2,
     unfilled: 5,
@@ -143,7 +148,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Preventive Medicine",
-    positions2025: 120,
+    positions: 120,
     imgMatched: 35,
     imgFillRate: 29.2,
     unfilled: 10,
@@ -154,7 +159,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Anesthesiology",
-    positions2025: 1900,
+    positions: 1900,
     imgMatched: 190,
     imgFillRate: 10.0,
     unfilled: 2,
@@ -165,7 +170,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "General Surgery",
-    positions2025: 1778,
+    positions: 1778,
     imgMatched: 214,
     imgFillRate: 12.1,
     unfilled: 4,
@@ -176,18 +181,18 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Emergency Medicine",
-    positions2025: 3015,
-    imgMatched: 180,
+    positions: 3198,
+    imgMatched: 192,
     imgFillRate: 6.0,
-    unfilled: 550,
+    unfilled: 141,
     step2Target: "245-255",
     level: "very-competitive",
-    trend: "declining",
-    notes: "Despite 550 unfilled spots, very few go to IMGs. Programs strongly prefer US grads. Major oversupply crisis.",
+    trend: "stable",
+    notes: "Rebounding — 95.6% fill rate in 2026 (up from 2025). Still very few IMG spots. 130 new positions added.",
   },
   {
     name: "Radiology",
-    positions2025: 1200,
+    positions: 1200,
     imgMatched: 72,
     imgFillRate: 6.0,
     unfilled: 0,
@@ -198,7 +203,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Dermatology",
-    positions2025: 750,
+    positions: 750,
     imgMatched: 15,
     imgFillRate: 2.0,
     unfilled: 0,
@@ -209,7 +214,7 @@ export const SPECIALTY_DATA: SpecialtyInfo[] = [
   },
   {
     name: "Orthopedic Surgery",
-    positions2025: 929,
+    positions: 929,
     imgMatched: 10,
     imgFillRate: 1.1,
     unfilled: 0,

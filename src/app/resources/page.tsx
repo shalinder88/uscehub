@@ -381,7 +381,7 @@ export default function ResourcesPage() {
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </button>
           </Link>
-          <Link href="/freida">
+          <Link href="/img-resources">
             <button className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 px-6 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">
               IMG Resources
             </button>
