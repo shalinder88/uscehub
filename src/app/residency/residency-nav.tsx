@@ -9,13 +9,17 @@ import {
   HeartPulse,
   Users,
   DollarSign,
+  ClipboardList,
+  Moon,
 } from "lucide-react";
 
 const tabs = [
   { label: "Resources", href: "/residency/resources", icon: BookOpen },
   { label: "Fellowship", href: "/residency/fellowship", icon: GraduationCap },
   { label: "Boards", href: "/residency/boards", icon: ClipboardCheck },
+  { label: "Procedures", href: "/residency/procedures", icon: ClipboardList },
   { label: "Survival", href: "/residency/survival", icon: HeartPulse },
+  { label: "Moonlighting", href: "/residency/moonlighting", icon: Moon },
   { label: "Salary", href: "/residency/salary", icon: DollarSign },
   { label: "Community", href: "/residency/community", icon: Users },
 ] as const;
