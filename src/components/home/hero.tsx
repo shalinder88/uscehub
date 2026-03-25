@@ -43,34 +43,34 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
   ];
 
   return (
-    <section className="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800">
+    <section className="bg-gradient-to-b from-background via-background to-surface">
       {/* Top Hero */}
       <div className="mx-auto max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
+          <p className="text-xs font-medium uppercase tracking-widest text-muted">
             Verified Directory — Updated March 2026
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Verified U.S. Clinical Experience{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-cyan bg-clip-text text-transparent">
               Programs for IMGs
             </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
             Search {listingCount}+ observerships, externships, research roles, and postdoc opportunities across {stateCount} states — with direct source links, visa notes, fee ranges, and verification status.
           </p>
 
           <form onSubmit={handleSearch} className="mx-auto mt-8 max-w-xl">
             <div className="flex gap-2">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted" />
                 <input
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Try &quot;free observerships in New York&quot; or &quot;pediatrics research&quot;..."
                   aria-label="Search observership and clinical experience programs"
-                  className="h-12 w-full rounded-lg border-0 bg-white pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="h-12 w-full rounded-lg border-0 bg-surface pl-10 pr-4 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                 />
               </div>
               <Button type="submit" size="lg" className="shrink-0">
@@ -81,12 +81,12 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
 
           <div className="mt-5 flex items-center justify-center gap-3">
             <Link href="/browse">
-              <Button variant="outline" size="lg" className="border-slate-600 bg-transparent text-white hover:bg-slate-700 hover:text-white">
+              <Button variant="outline" size="lg" className="border-border bg-transparent text-foreground hover:bg-surface-alt hover:text-foreground">
                 Browse All
               </Button>
             </Link>
             <Link href="/for-institutions">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
+              <Button size="lg" className="bg-surface text-foreground hover:bg-surface-alt">
                 Post a Listing
               </Button>
             </Link>
@@ -98,12 +98,12 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
       <div className="mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-4 sm:gap-6">
           {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl bg-slate-800/60 px-4 py-5 text-center backdrop-blur-sm">
-              <div className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+            <div key={stat.label} className="rounded-xl bg-surface/60 px-4 py-5 text-center backdrop-blur-sm">
+              <div className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
                 {stat.value}
-                <span className="text-blue-400">+</span>
+                <span className="text-accent">+</span>
               </div>
-              <div className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
+              <div className="mt-1 text-xs font-medium text-muted sm:text-sm">
                 {stat.label}
               </div>
             </div>
@@ -116,12 +116,12 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
             <Link
               key={t.label}
               href={`/browse?type=${t.filter}`}
-              className="group flex items-center gap-2 rounded-lg bg-slate-800/40 px-3 py-3 transition-colors hover:bg-slate-700/60"
+              className="group flex items-center gap-2 rounded-lg bg-surface/40 px-3 py-3 transition-colors hover:bg-surface-alt/60"
             >
               <span className={`h-2.5 w-2.5 rounded-full ${t.color}`} />
               <div className="min-w-0">
-                <div className="text-sm font-semibold text-white sm:text-base">{t.count}</div>
-                <div className="truncate text-[10px] text-slate-400 sm:text-xs">{t.label}</div>
+                <div className="text-sm font-semibold text-foreground sm:text-base">{t.count}</div>
+                <div className="truncate text-[10px] text-muted sm:text-xs">{t.label}</div>
               </div>
             </Link>
           ))}
@@ -130,12 +130,12 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
 
       {/* US Map */}
       <div className="mx-auto mt-8 max-w-4xl px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="rounded-xl bg-slate-800/30 p-4 backdrop-blur-sm sm:p-6">
+        <div className="rounded-xl bg-surface/30 p-4 backdrop-blur-sm sm:p-6">
           <div className="mb-3 flex items-center justify-between">
-            <h3 className="text-sm font-medium text-slate-300">
+            <h3 className="text-sm font-medium text-foreground">
               Opportunities by State
             </h3>
-            <Link href="/browse" className="text-xs text-blue-400 hover:text-blue-300">
+            <Link href="/browse" className="text-xs text-accent hover:text-accent">
               Browse all &rarr;
             </Link>
           </div>

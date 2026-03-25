@@ -89,13 +89,13 @@ const STEPS = [
 
 export function JourneyTimeline() {
   return (
-    <section className="bg-white dark:bg-slate-900 py-16">
+    <section className="bg-surface py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">
+          <h2 className="text-2xl font-bold text-foreground">
             IMG Journey to Residency
           </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+          <p className="mt-2 text-sm text-muted">
             Your step-by-step roadmap from medical school to the Match
           </p>
         </div>
@@ -103,7 +103,7 @@ export function JourneyTimeline() {
         <div className="mx-auto max-w-3xl">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-5 top-0 hidden h-full w-0.5 bg-slate-200 sm:block" />
+            <div className="absolute left-5 top-0 hidden h-full w-0.5 bg-border sm:block" />
 
             <div className="space-y-0">
               {STEPS.map((step, index) => {
@@ -113,23 +113,23 @@ export function JourneyTimeline() {
                 return (
                   <div key={step.title} className="relative flex gap-4 pb-8 last:pb-0">
                     {/* Icon circle */}
-                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
-                      <Icon className="h-4 w-4 text-slate-700 dark:text-slate-300 dark:text-slate-300" />
+                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-border bg-surface shadow-sm">
+                      <Icon className="h-4 w-4 text-foreground" />
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm transition-colors hover:border-slate-300">
+                    <div className="flex-1 rounded-lg border border-border bg-surface p-4 shadow-sm transition-colors hover:border-border-strong">
                       <div className="flex flex-wrap items-start justify-between gap-2">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-surface-alt text-[10px] font-bold text-foreground">
                               {index + 1}
                             </span>
-                            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                            <h3 className="text-sm font-semibold text-foreground">
                               {step.title}
                             </h3>
                           </div>
-                          <p className="mt-1 text-xs font-medium text-slate-400">
+                          <p className="mt-1 text-xs font-medium text-muted">
                             {step.timeframe}
                           </p>
                         </div>
@@ -137,21 +137,21 @@ export function JourneyTimeline() {
                         {step.link && (
                           <Link
                             href={step.link}
-                            className="shrink-0 rounded-md bg-slate-100 dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-200"
+                            className="shrink-0 rounded-md bg-surface-alt px-2.5 py-1 text-xs font-medium text-foreground transition-colors hover:bg-surface-alt"
                           >
                             {step.linkLabel} &rarr;
                           </Link>
                         )}
                       </div>
 
-                      <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
                         {step.tip}
                       </p>
                     </div>
 
                     {/* Connector line on mobile */}
                     {!isLast && (
-                      <div className="absolute bottom-0 left-5 h-8 w-0.5 bg-slate-200 sm:hidden" />
+                      <div className="absolute bottom-0 left-5 h-8 w-0.5 bg-border sm:hidden" />
                     )}
                   </div>
                 );

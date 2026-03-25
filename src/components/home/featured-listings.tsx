@@ -19,20 +19,20 @@ export async function FeaturedListings() {
   if (listings.length === 0) return null;
 
   return (
-    <section className="bg-white dark:bg-slate-950 py-16">
+    <section className="bg-background py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-bold text-foreground">
               Featured Opportunities
             </h2>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-sm text-muted">
               Most viewed listings on the platform
             </p>
           </div>
           <Link
             href="/browse"
-            className="hidden items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white sm:flex"
+            className="hidden items-center gap-1 text-sm font-medium text-foreground hover:text-foreground sm:flex"
           >
             View all
             <ArrowRight className="h-4 w-4" />
@@ -48,7 +48,7 @@ export async function FeaturedListings() {
         <div className="mt-6 text-center sm:hidden">
           <Link
             href="/browse"
-            className="inline-flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover:text-foreground"
           >
             View all opportunities
             <ArrowRight className="h-4 w-4" />
