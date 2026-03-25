@@ -9,6 +9,9 @@ export function PhaseToggle() {
   const { phase, setPhase, isFirstVisit } = useJourney();
   const [expanded, setExpanded] = useState(false);
 
+  // Hidden until launch — remove when ready to go live
+  if (process.env.NEXT_PUBLIC_ENABLE_PHASES !== "1") return null;
+
   if (isFirstVisit) return null;
 
   const currentConfig = PHASE_CONFIGS[phase];

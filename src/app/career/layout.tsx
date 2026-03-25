@@ -12,6 +12,8 @@ import {
   ArrowLeftRight,
   Shield,
   ClipboardCheck,
+  Stethoscope,
+  Calculator,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -30,6 +32,10 @@ export const metadata: Metadata = {
       "J-1 waiver intelligence, job search, immigration guidance, and contract tools for IMG physicians.",
     url: "https://uscehub.com/career",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const tabs = [
@@ -42,6 +48,8 @@ const tabs = [
   { label: "Citizenship", href: "/career/citizenship", icon: Flag },
   { label: "Credentialing", href: "/career/credentialing", icon: ClipboardCheck },
   { label: "Salary", href: "/career/salary", icon: DollarSign },
+  { label: "Locums", href: "/career/locums", icon: Stethoscope },
+  { label: "Taxes", href: "/career/taxes", icon: Calculator },
   { label: "Interview Prep", href: "/career/interview", icon: MessageSquare },
   { label: "Community", href: "/career/community", icon: Users },
 ];

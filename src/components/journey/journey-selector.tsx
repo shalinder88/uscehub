@@ -10,6 +10,11 @@ export function JourneySelector() {
   const [selected, setSelected] = useState<JourneyPhase | null>(null);
   const [animatingOut, setAnimatingOut] = useState(false);
 
+  // Hidden until launch — regular visitors default to medical_graduate phase
+  // To test: set localStorage "uscehub-journey" to "resident" or "attending"
+  // Remove this line when ready to go live with all 3 phases
+  if (process.env.NEXT_PUBLIC_ENABLE_PHASES !== "1") return null;
+
   if (!isFirstVisit) return null;
 
   const handleSelect = (phase: JourneyPhase) => {

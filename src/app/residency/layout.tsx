@@ -14,6 +14,10 @@ export const metadata: Metadata = {
       "Teaching materials, fellowship intelligence, board prep, and community — for ALL residents.",
     url: "https://uscehub.com/residency",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function ResidencyLayout({

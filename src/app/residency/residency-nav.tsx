@@ -11,6 +11,8 @@ import {
   DollarSign,
   ClipboardList,
   Moon,
+  FlaskConical,
+  PiggyBank,
 } from "lucide-react";
 
 const tabs = [
@@ -19,7 +21,9 @@ const tabs = [
   { label: "Boards", href: "/residency/boards", icon: ClipboardCheck },
   { label: "Procedures", href: "/residency/procedures", icon: ClipboardList },
   { label: "Survival", href: "/residency/survival", icon: HeartPulse },
+  { label: "Research", href: "/residency/research", icon: FlaskConical },
   { label: "Moonlighting", href: "/residency/moonlighting", icon: Moon },
+  { label: "Finances", href: "/residency/finances", icon: PiggyBank },
   { label: "Salary", href: "/residency/salary", icon: DollarSign },
   { label: "Community", href: "/residency/community", icon: Users },
 ] as const;
