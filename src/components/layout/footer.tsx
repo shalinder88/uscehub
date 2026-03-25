@@ -1,214 +1,82 @@
 import Link from "next/link";
 import { HeartPulse } from "lucide-react";
 
+const linkClass = "text-sm text-muted transition-colors hover:text-foreground";
+
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+    <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+          {/* Brand */}
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="h-5 w-5 text-slate-800 dark:text-slate-200" />
-              <span className="text-base font-bold text-slate-900 dark:text-white">
-                USCEHub
-              </span>
+              <HeartPulse className="h-5 w-5 text-accent" />
+              <span className="text-base font-bold text-foreground">USCEHub</span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              The largest structured database of clinical observership, externship,
-              and research opportunities for International Medical Graduates in the
-              United States.
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
+              The IMG career operating system — from USCE to residency to attending career. Verified data, structured intelligence, one platform.
             </p>
           </div>
 
+          {/* USCE */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Platform</h3>
+            <h3 className="text-sm font-semibold text-foreground">USCE</h3>
             <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href="/browse"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Browse Opportunities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/observerships"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Browse by State
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recommend"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Program Finder
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/for-institutions"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  For Institutions & Physicians
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/methodology"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Methodology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Recommended Resources
-                </Link>
-              </li>
+              <li><Link href="/browse" className={linkClass}>Browse Programs</Link></li>
+              <li><Link href="/observerships" className={linkClass}>Browse by State</Link></li>
+              <li><Link href="/recommend" className={linkClass}>Program Finder</Link></li>
+              <li><Link href="/compare" className={linkClass}>Compare</Link></li>
+              <li><Link href="/img-resources" className={linkClass}>IMG Resources</Link></li>
+              <li><Link href="/community" className={linkClass}>Community</Link></li>
             </ul>
           </div>
 
+          {/* Residency */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Resources</h3>
+            <h3 className="text-sm font-semibold text-foreground">Residency</h3>
             <ul className="mt-3 space-y-2">
-              <li>
-                <a
-                  href="https://www.ecfmg.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ECFMG
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.usmle.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  USMLE
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.nrmp.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  NRMP
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://eras.aamc.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ERAS
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources & Data
-                </Link>
-              </li>
+              <li><Link href="/residency" className={linkClass}>Overview</Link></li>
+              <li><Link href="/residency/resources" className={linkClass}>Teaching Resources</Link></li>
+              <li><Link href="/residency/fellowship" className={linkClass}>Fellowship Database</Link></li>
+              <li><Link href="/residency/boards" className={linkClass}>Board Prep</Link></li>
+              <li><Link href="/residency/survival" className={linkClass}>Survival Guide</Link></li>
+              <li><Link href="/residency/community" className={linkClass}>Community</Link></li>
             </ul>
           </div>
 
+          {/* Career */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Legal</h3>
+            <h3 className="text-sm font-semibold text-foreground">Career</h3>
             <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href="/disclaimer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Disclaimer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              <li><Link href="/career" className={linkClass}>Overview</Link></li>
+              <li><Link href="/career/jobs" className={linkClass}>Waiver Jobs</Link></li>
+              <li><Link href="/career/waiver" className={linkClass}>State Intelligence</Link></li>
+              <li><Link href="/career/lawyers" className={linkClass}>Lawyers</Link></li>
+              <li><Link href="/career/offers" className={linkClass}>Offer Compare</Link></li>
+              <li><Link href="/career/citizenship" className={linkClass}>Citizenship</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground">Legal</h3>
+            <ul className="mt-3 space-y-2">
+              <li><Link href="/about" className={linkClass}>About</Link></li>
+              <li><Link href="/methodology" className={linkClass}>Methodology</Link></li>
+              <li><Link href="/contact" className={linkClass}>Contact</Link></li>
+              <li><Link href="/disclaimer" className={linkClass}>Disclaimer</Link></li>
+              <li><Link href="/privacy" className={linkClass}>Privacy</Link></li>
+              <li><Link href="/terms" className={linkClass}>Terms</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 dark:border-slate-800 pt-6">
-          <p className="text-xs leading-relaxed text-slate-400">
-            USCEHub is an educational and informational platform. We are
-            not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong
-            to their respective owners. Listings are submitted by third-party
-            institutions and individuals. We do not guarantee the accuracy,
-            completeness, or validity of any listing. Users are advised to verify
-            all information independently before applying or making payments.
+        <div className="mt-10 border-t border-border pt-6">
+          <p className="text-xs leading-relaxed text-muted">
+            USCEHub is an educational and informational platform. We are not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong to their respective owners. All data is verified where possible — unverified data is clearly labeled. Users must verify all information independently.
           </p>
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-muted">
             &copy; {new Date().getFullYear()} USCEHub. All rights reserved.
           </p>
         </div>
