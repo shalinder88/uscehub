@@ -7,6 +7,9 @@ import {
   GitCompare,
   Flag,
   Users,
+  DollarSign,
+  MessageSquare,
+  ArrowLeftRight,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,7 +35,10 @@ const tabs = [
   { label: "State Intel", href: "/career/waiver", icon: MapPin },
   { label: "Lawyers", href: "/career/lawyers", icon: Scale },
   { label: "Offer Compare", href: "/career/offers", icon: GitCompare },
+  { label: "Compare States", href: "/career/compare-states", icon: ArrowLeftRight },
   { label: "Citizenship", href: "/career/citizenship", icon: Flag },
+  { label: "Salary", href: "/career/salary", icon: DollarSign },
+  { label: "Interview Prep", href: "/career/interview", icon: MessageSquare },
   { label: "Community", href: "/career/community", icon: Users },
 ];
 

@@ -8,6 +8,7 @@ import {
   ClipboardCheck,
   HeartPulse,
   Users,
+  DollarSign,
 } from "lucide-react";
 
 const tabs = [
@@ -15,6 +16,7 @@ const tabs = [
   { label: "Fellowship", href: "/residency/fellowship", icon: GraduationCap },
   { label: "Boards", href: "/residency/boards", icon: ClipboardCheck },
   { label: "Survival", href: "/residency/survival", icon: HeartPulse },
+  { label: "Salary", href: "/residency/salary", icon: DollarSign },
   { label: "Community", href: "/residency/community", icon: Users },
 ] as const;
 
