@@ -67,13 +67,32 @@ enum FlagStatus {
   DISMISSED
 }
 
+enum JourneyPhase {
+  MEDICAL_GRADUATE
+  RESIDENT
+  ATTENDING
+}
+
+enum SourceType {
+  OFFICIAL
+  COMMUNITY
+  SELF_REPORTED
+}
+
+enum WaiverType {
+  J1_WAIVER
+  H1B_CAP_EXEMPT
+  H1B_CAP_SUBJECT
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
   password      String
   name          String
-  role          UserRole  @default(APPLICANT)
-  emailVerified Boolean   @default(false)
+  role          UserRole      @default(APPLICANT)
+  journeyPhase  JourneyPhase?
+  emailVerified Boolean       @default(false)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -87,6 +106,8 @@ model User {
   reviews          Review[]
   flagReports      FlagReport[]      @relation("FlagReporter")
   adminActions     AdminActionLog[]
+  communityPosts   CommunityPost[]
+  communityComments CommunityComment[]
 
   @@map("users")
 }
@@ -293,4 +314,175 @@ model AdminActionLog {
   createdAt  DateTime @default(now())
 
   @@map("admin_action_logs")
+}
+
+// ============================================
+// Phase 2: Residency
+// ============================================
+
+model FellowshipProgram {
+  id                  String       @id @default(cuid())
+  name                String
+  specialty           String
+  institution         String
+  city                String
+  state               String
+  visaSponsorship     Boolean      @default(false)
+  requiresUSTraining  Boolean      @default(false)
+  matchParticipation  Boolean      @default(false)
+  applicationDeadline String?
+  duration            String?
+  positions           Int?
+  description         String?
+  requirements        String?
+  websiteUrl          String?
+  sourceType          SourceType   @default(OFFICIAL)
+  lastVerified        DateTime?
+  verifiedBy          String?
+  status              ListingStatus @default(APPROVED)
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  @@index([specialty])
+  @@index([state])
+  @@map("fellowship_programs")
+}
+
+model CommunityPost {
+  id               String           @id @default(cuid())
+  authorId         String
+  author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  phase            JourneyPhase
+  category         String
+  title            String
+  content          String
+  upvotes          Int              @default(0)
+  commentCount     Int              @default(0)
+  pinned           Boolean          @default(false)
+  moderationStatus ModerationStatus @default(PENDING)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  comments CommunityComment[]
+
+  @@index([phase, category])
+  @@map("community_posts")
+}
+
+model CommunityComment {
+  id               String           @id @default(cuid())
+  postId           String
+  post             CommunityPost    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId         String
+  author           User             @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content          String
+  upvotes          Int              @default(0)
+  moderationStatus ModerationStatus @default(APPROVED)
+  createdAt        DateTime         @default(now())
+
+  @@map("community_comments")
+}
+
+// ============================================
+// Phase 3: Career / Attending
+// ============================================
+
+model WaiverState {
+  id              String    @id @default(cuid())
+  stateCode       String    @unique
+  stateName       String
+  conradSlots     Int       @default(30)
+  flexSlots       Int       @default(0)
+  totalSlots      Int       @default(30)
+  timeline        String?
+  processingTime  String?
+  priorityAreas   String?
+  contactInfo     String?
+  contactEmail    String?
+  requirements    String?
+  tips            String?
+  websiteUrl      String?
+  lastVerified    DateTime?
+  verifiedBy      String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  waiverJobs WaiverJob[]
+
+  @@map("waiver_states")
+}
+
+model WaiverJob {
+  id              String        @id @default(cuid())
+  title           String
+  employer        String
+  city            String
+  state           String
+  stateCode       String?
+  stateData       WaiverState?  @relation(fields: [stateCode], references: [stateCode])
+  specialty       String
+  waiverType      WaiverType    @default(J1_WAIVER)
+  salary          String?
+  salaryMin       Int?
+  salaryMax       Int?
+  signOnBonus     String?
+  loanRepayment   String?
+  hpsaScore       Int?
+  muaDesignation  Boolean       @default(false)
+  description     String?
+  requirements    String?
+  contactEmail    String?
+  websiteUrl      String?
+  sourceType      SourceType    @default(OFFICIAL)
+  lastVerified    DateTime?
+  verifiedBy      String?
+  status          ListingStatus @default(APPROVED)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([state])
+  @@index([specialty])
+  @@map("waiver_jobs")
+}
+
+model Lawyer {
+  id                String        @id @default(cuid())
+  name              String
+  firmName          String?
+  city              String
+  state             String
+  phone             String?
+  email             String?
+  websiteUrl        String?
+  specialties       String
+  barNumber         String?
+  yearsExperience   Int?
+  languages         String?
+  freeConsultation  Boolean       @default(false)
+  description       String?
+  sourceType        SourceType    @default(SELF_REPORTED)
+  lastVerified      DateTime?
+  verifiedBy        String?
+  featured          Boolean       @default(false)
+  status            ListingStatus @default(APPROVED)
+  contactClicks     Int           @default(0)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@index([state])
+  @@map("lawyers")
+}
+
+model DataVerification {
+  id         String     @id @default(cuid())
+  targetType String
+  targetId   String
+  verifiedBy String
+  sourceType SourceType
+  sourceUrl  String?
+  notes      String?
+  createdAt  DateTime   @default(now())
+
+  @@index([targetType, targetId])
+  @@map("data_verifications")
 }

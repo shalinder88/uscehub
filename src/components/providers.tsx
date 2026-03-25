@@ -1,13 +1,13 @@
 "use client";
 
 import { SessionProvider } from "next-auth/react";
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { JourneyProvider } from "@/components/providers/journey-provider";
 import type { ReactNode } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
-      <ThemeProvider>{children}</ThemeProvider>
+      <JourneyProvider>{children}</JourneyProvider>
     </SessionProvider>
   );
 }
