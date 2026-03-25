@@ -51,38 +51,38 @@ export function ListingCard({ listing }: ListingCardProps) {
               {LISTING_TYPE_LABELS[listing.listingType] || listing.listingType}
             </Badge>
             {avgRating !== null && (
-              <div className="flex items-center gap-1 text-sm text-muted">
+              <div className="flex items-center gap-1 text-sm text-slate-600">
                 <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                 <span>{avgRating.toFixed(1)}</span>
-                <span className="text-muted">
+                <span className="text-slate-400">
                   ({listing.reviews!.length})
                 </span>
               </div>
             )}
           </div>
 
-          <h3 className="mb-2 text-base font-semibold text-foreground group-hover:text-foreground">
+          <h3 className="mb-2 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-white">
             {listing.title}
           </h3>
 
           <div className="mb-3 space-y-1.5">
-            <div className="flex items-center gap-1.5 text-sm text-muted">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <MapPin className="h-3.5 w-3.5 shrink-0" />
               <span>
                 {listing.city}, {listing.state}
               </span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-muted">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <Clock className="h-3.5 w-3.5 shrink-0" />
               <span>{listing.duration}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-muted">
+            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
               <DollarSign className="h-3.5 w-3.5 shrink-0" />
               <span>{listing.cost}</span>
             </div>
           </div>
 
-          <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-muted">
+          <p className="mb-3 line-clamp-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
             {truncate(listing.shortDescription, 120)}
           </p>
 

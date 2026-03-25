@@ -47,10 +47,10 @@ export function ListingFilters() {
   );
 
   return (
-    <div className="rounded-xl border border-border bg-surface p-4 shadow-sm">
+    <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="relative sm:col-span-2 lg:col-span-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
             placeholder={smartMode ? 'Try "free observerships in New York"...' : "Search hospitals, cities..."}
@@ -79,15 +79,15 @@ export function ListingFilters() {
                 return () => clearTimeout(timeout);
               }
             }}
-            className="flex h-10 w-full rounded-lg border border-border bg-surface pl-9 pr-20 py-2 text-sm text-foreground placeholder:text-muted focus:border-border-strong focus:outline-none focus:ring-2 focus:ring-border"
+            className="flex h-10 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 pl-9 pr-20 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700"
           />
           <button
             type="button"
             onClick={() => setSmartMode(!smartMode)}
             className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
               smartMode
-                ? "bg-accent text-white"
-                : "bg-surface-alt text-muted hover:bg-surface-alt"
+                ? "bg-slate-900 text-white"
+                : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
             }`}
             title="Toggle smart search — parse natural language queries"
           >
@@ -132,34 +132,34 @@ export function ListingFilters() {
       </div>
 
       <div className="mt-3 flex flex-wrap gap-3">
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-surface-alt has-[:checked]:border-emerald-300 has-[:checked]:bg-emerald-950/30">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-emerald-300 has-[:checked]:bg-emerald-50">
           <input
             type="checkbox"
             checked={currentFree}
             onChange={() => toggleParam("free")}
-            className="h-4 w-4 rounded border-border text-emerald-600 focus:ring-emerald-500"
+            className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
           />
-          <span className="font-medium text-foreground">Free Programs Only</span>
+          <span className="font-medium text-slate-700 dark:text-slate-200">Free Programs Only</span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-surface-alt has-[:checked]:border-blue-300 has-[:checked]:bg-blue-950/30">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-blue-300 has-[:checked]:bg-blue-50">
           <input
             type="checkbox"
             checked={currentVisa}
             onChange={() => toggleParam("visa")}
-            className="h-4 w-4 rounded border-border text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
           />
-          <span className="font-medium text-foreground">Visa Support</span>
+          <span className="font-medium text-slate-700 dark:text-slate-200">Visa Support</span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm transition-colors hover:bg-surface-alt has-[:checked]:border-green-300 has-[:checked]:bg-green-950/30">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-green-300 has-[:checked]:bg-green-50">
           <input
             type="checkbox"
             checked={currentVerified}
             onChange={() => toggleParam("verified")}
-            className="h-4 w-4 rounded border-border text-green-600 focus:ring-green-500"
+            className="h-4 w-4 rounded border-slate-300 text-green-600 focus:ring-green-500"
           />
-          <span className="font-medium text-foreground">
+          <span className="font-medium text-slate-700 dark:text-slate-200">
             <svg className="mr-1 inline h-3 w-3 text-green-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             Verified Links
           </span>

@@ -12,13 +12,13 @@ export function StatsBar({ listingCount, stateCount, specialtyCount }: StatsBarP
   ];
 
   return (
-    <div className="grid grid-cols-3 divide-x divide-border">
+    <div className="grid grid-cols-3 divide-x divide-slate-700">
       {stats.map((stat) => (
         <div key={stat.label} className="px-6 py-4 text-center">
-          <div className="text-2xl font-bold text-foreground sm:text-3xl">
+          <div className="text-2xl font-bold text-white sm:text-3xl">
             {stat.value}
           </div>
-          <div className="mt-1 text-xs font-medium text-muted sm:text-sm">
+          <div className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
             {stat.label}
           </div>
         </div>

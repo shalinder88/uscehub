@@ -56,13 +56,13 @@ export function ActivityFeed() {
   if (activities.length === 0) return null;
 
   return (
-    <div className="bg-background pb-6">
+    <div className="bg-slate-900 pb-6">
       <div className="mx-auto max-w-3xl px-4">
         <div className="space-y-1">
           {activities.map((activity, i) => (
             <div
               key={`${i}-${activity}`}
-              className={`text-center text-xs text-muted transition-opacity duration-400 ${
+              className={`text-center text-xs text-slate-500 transition-opacity duration-400 ${
                 fadeIndex === i ? "opacity-0" : "opacity-100"
               }`}
             >

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -7,30 +7,23 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ShareWidget } from "@/components/layout/share-widget";
 import { TermsGate } from "@/components/legal/terms-gate";
-import { JourneySelector } from "@/components/journey/journey-selector";
-import { PhaseToggle } from "@/components/journey/phase-toggle";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://uscehub.com"),
   title: {
-    default: "USCEHub — IMG Career Platform: USCE, Residency, and Career Intelligence",
+    default: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     template: "%s — USCEHub",
   },
   description:
-    "The IMG career operating system — from USCE to residency to attending career. Search verified observerships, fellowship programs, J-1 waiver jobs, salary data, and immigration guidance.",
+    "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
   keywords:
-    "observership, externship, IMG, international medical graduate, USCE, clinical experience, residency, fellowship, J-1 waiver, H-1B, physician jobs, immigration, career",
+    "observership, externship, IMG, international medical graduate, USCE, clinical experience, US hospitals, medical observership, residency preparation",
   authors: [{ name: "USCEHub" }],
   alternates: {
     canonical: "https://uscehub.com",
@@ -38,24 +31,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "USCEHub",
-    title: "USCEHub — IMG Career Platform",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "From USCE to attending career. Search verified clinical opportunities, fellowship programs, waiver jobs, and immigration guidance — one platform for the full IMG journey.",
+      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
     url: "https://uscehub.com",
     images: [
       {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "USCEHub — IMG Career Platform",
+        alt: "USCEHub — IMG Opportunities Database",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "USCEHub — IMG Career Platform",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "From USCE to attending career. Search verified clinical opportunities, fellowship programs, waiver jobs, and immigration guidance.",
+      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],
   },
   verification: {
@@ -73,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased dark`} suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D8JH9PXCZ3"
@@ -88,7 +81,12 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+      <body className="min-h-full flex flex-col font-sans bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -115,14 +113,15 @@ export default function RootLayout({
               url: "https://www.uscehub.com",
               email: "contact@uscehub.com",
               description:
-                "IMG career operating system — verified clinical opportunities, residency intelligence, fellowship data, J-1 waiver guidance, and career tools for international medical graduates.",
+                "Directory of clinical observership, externship, research, and postdoctoral opportunities for international medical graduates in the United States.",
             }),
           }}
         />
         <Providers>
+          {/* Skip link for accessibility */}
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[9999] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[9999] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
           >
             Skip to main content
           </a>
@@ -130,8 +129,6 @@ export default function RootLayout({
           <main id="main-content" className="flex-1" tabIndex={-1}>{children}</main>
           <Footer />
           <ShareWidget />
-          <PhaseToggle />
-          <JourneySelector />
           <TermsGate />
           <Analytics />
         </Providers>
