@@ -9,24 +9,26 @@ import {
 } from "@/lib/conrad-tracker-data";
 import { ArrowLeft, MapPin, ExternalLink } from "lucide-react";
 
+// Colorblind-safe palette (blue sequential + orange for contrast)
+// Based on ColorBrewer 2.0 recommendations
 function getStateColor(stateCode: string): string {
   const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
   if (!state) return "#334155";
-  if (state.fillPattern === "fills_early") return "#ef4444";
-  if (state.fillPattern === "fills_all") return "#f97316";
-  if (state.remainingSlots > 10) return "#22c55e";
-  if (state.remainingSlots > 0) return "#eab308";
-  return "#ef4444";
+  if (state.fillPattern === "fills_early") return "#b91c1c"; // dark red — critical
+  if (state.fillPattern === "fills_all") return "#d97706"; // amber — warning
+  if (state.remainingSlots > 10) return "#2563eb"; // blue — available (good)
+  if (state.remainingSlots > 0) return "#7c3aed"; // purple — few remaining
+  return "#b91c1c";
 }
 
 function getHoverColor(stateCode: string): string {
   const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
   if (!state) return "#475569";
-  if (state.fillPattern === "fills_early") return "#dc2626";
-  if (state.fillPattern === "fills_all") return "#ea580c";
-  if (state.remainingSlots > 10) return "#16a34a";
-  if (state.remainingSlots > 0) return "#ca8a04";
-  return "#dc2626";
+  if (state.fillPattern === "fills_early") return "#991b1b";
+  if (state.fillPattern === "fills_all") return "#b45309";
+  if (state.remainingSlots > 10) return "#1d4ed8";
+  if (state.remainingSlots > 0) return "#6d28d9";
+  return "#991b1b";
 }
 
 export default function WaiverMapPage() {
@@ -77,19 +79,19 @@ export default function WaiverMapPage() {
       {/* Legend */}
       <div className="flex flex-wrap gap-4 mb-4 text-xs">
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-sm bg-red-500" />
+          <div className="h-3 w-3 rounded-sm" style={{ backgroundColor: "#b91c1c" }} />
           <span className="text-muted">Fills Early (days)</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-sm bg-orange-500" />
+          <div className="h-3 w-3 rounded-sm" style={{ backgroundColor: "#d97706" }} />
           <span className="text-muted">Fills All 30</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-sm bg-yellow-500" />
+          <div className="h-3 w-3 rounded-sm" style={{ backgroundColor: "#7c3aed" }} />
           <span className="text-muted">Few Remaining</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-sm bg-green-500" />
+          <div className="h-3 w-3 rounded-sm" style={{ backgroundColor: "#2563eb" }} />
           <span className="text-muted">Slots Available (10+)</span>
         </div>
       </div>
