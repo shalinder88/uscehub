@@ -31,7 +31,6 @@ export const metadata: Metadata = {
 };
 
 const tabs = [
-  { label: "Overview", href: "/career", icon: MapPin },
   { label: "J-1 Waiver", href: "/career/waiver", icon: MapPin },
   { label: "H-1B", href: "/career/h1b", icon: GitCompare },
   { label: "Green Card", href: "/career/greencard", icon: Shield },
