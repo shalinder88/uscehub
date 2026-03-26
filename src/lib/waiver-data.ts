@@ -76,6 +76,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Arkansas DOH reviews and sponsors applications. Arkansas fills all 30 Conrad slots annually (FY 2024). Also eligible for DRA (Delta Regional Authority) waivers — many eastern Arkansas counties are in the DRA footprint with unlimited slots. Full unrestricted AR medical license required.",
     tips: "Arkansas fills all 30 Conrad slots every year — apply early (October 1). The Delta region in eastern Arkansas (Phillips, Lee, St. Francis, Crittenden counties) has the highest HPSA scores and greatest need. DRA pathway is available for Delta counties — unlimited additional slots beyond Conrad. Western Arkansas (Fort Smith area) and northwest Arkansas (outside Fayetteville/Rogers) also have growing need. Arkansas has one of the lowest costs of living in the nation. State income tax is graduated (0-4.4%). UAMS (University of Arkansas for Medical Sciences) is the major academic center for networking.",
     websiteUrl: "https://www.healthy.arkansas.gov",
+    applicationWindow: "Opens October 1. Initial review: Oct 1-10. Rolling first-come-first-served after. Specialist opening: July 1 if primary care slots remain unfilled. Final submission: Sept 15. FY2026: ALL spots filled.",
   },
   CA: {
     stateCode: "CA",
@@ -450,6 +451,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. NJ DOH sponsors Conrad 30 applications. Competitive due to desirable location (NYC metro proximity) and large IMG population. HPSA score of 12+ recommended for competitive applications. Full unrestricted NJ medical license required. Employer must demonstrate inability to recruit US physicians.",
     tips: "New Jersey is moderately to highly competitive — proximity to NYC makes it desirable. Best chances are in urban underserved areas: Newark, Camden, Trenton, Paterson, Elizabeth, and Atlantic City. FQHCs in these cities have strong approval track records. South Jersey rural areas have growing need. NJ has no flex slots beyond Conrad 30 — so exactly 30 slots per year. Large and well-organized IMG community — NJ Medical Society has IMG-specific resources. NJ has a graduated state income tax (1.4-10.75%) — high earners pay more. Consider NJ as a backup to NY — similar geography, somewhat less competitive process.",
     websiteUrl: "https://www.nj.gov/health",
+    applicationWindow: "Year-round rolling applications — no specific window. Primary care focus only (NJ does not recommend specialists for Conrad). Contact NJ DOH directly.",
   },
   NM: {
     stateCode: "NM",
@@ -493,6 +495,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. NC DHHS sponsors applications. HPSA score of 7+ typically sufficient. Full unrestricted NC medical license required. NC also participates in ARC (Appalachian Regional Commission) waivers for eligible western mountain counties. SCRC (Southeast Crescent Regional Commission) waivers available for eligible eastern counties.",
     tips: "North Carolina is a growing state with increasing physician demand. Eastern NC (Greenville, Rocky Mount, Wilson, Lumberton) has critical rural health needs and the highest HPSA scores. Western mountain communities (Asheville area, Appalachian counties) qualify for ARC waivers — giving additional slots beyond Conrad 30. Charlotte and Raleigh-Durham suburbs have growing HPSA-designated sites but are more competitive. NC has a large residency training infrastructure (Duke, UNC, Wake Forest, ECU) — many graduates stay in-state. Reasonable cost of living. State income tax is flat 4.5% (recently reduced). Growing IMG community statewide. Community health centers in eastern NC and mountain communities have best approval rates.",
     websiteUrl: "https://www.ncdhhs.gov",
+    applicationWindow: "Aligned with federal fiscal year (October). NC strongly encourages ARC waiver pathway FIRST for Appalachian counties (unlimited slots, no fee). Conrad slots are limited — use as secondary option.",
   },
   ND: {
     stateCode: "ND",
@@ -680,6 +683,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Virginia DOH sponsors Conrad 30 applications. Virginia typically has some remaining slots. Eligible for both ARC (southwest Appalachian counties) and SCRC waivers — two alternative unlimited-slot pathways. Full unrestricted VA medical license required.",
     tips: "Virginia typically has remaining Conrad slots (not among the 19 states that fill all 30). Southwest Appalachian Virginia (Lee, Scott, Wise, Dickenson, Buchanan counties) has the highest HPSA scores and qualifies for ARC waivers. The Southside region (Danville, Martinsville) and Eastern Shore also have strong need. Parts of Virginia qualify for SCRC waivers too. Northern Virginia (NoVA) is extremely competitive — avoid for waiver purposes. Richmond and Hampton Roads have some FQHC opportunities. Virginia has a moderate state income tax (graduated 2-5.75%). Strong academic systems: UVA, VCU, EVMS for networking.",
     websiteUrl: "https://www.vdh.virginia.gov",
+    applicationWindow: "Opens October 16 (NOT October 1), closes April 16. Do NOT submit before October 16 — early applications risk not being reviewed.",
   },
   WA: {
     stateCode: "WA",
