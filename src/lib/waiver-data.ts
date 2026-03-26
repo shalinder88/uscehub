@@ -640,11 +640,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 5,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health"],
+    priorityAreas: ["Primary Care", "Rural Health", "Behavioral Health"],
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
-      "Must serve in a HPSA or MUA for 3 years. Vermont Department of Health sponsors applications.",
-    tips: "Vermont has widespread rural health needs. The Northeast Kingdom and southern Vermont have the greatest shortages. Small state with limited applications — less competitive. Community health centers are common placements.",
+      "Must serve in a HPSA or MUA for 3 years. Vermont DOH sponsors applications. Vermont typically has 10-20 remaining slots — one of the least competitive states. Notable: 78% of Vermont's Conrad placements are flex waivers (highest flex usage nationally). Full unrestricted VT medical license required.",
+    tips: "Vermont is one of the best states for late applicants — typically has 10-20 remaining Conrad slots. The state has the highest flex waiver usage nationally (78% of placements). Northeast Kingdom and southern Vermont have the greatest shortages. Entire state is rural by most standards. Community health centers like Bi-State Primary Care and Federally Qualified Health Centers are the primary waiver employers. Vermont has a progressive income tax (graduated up to 8.75%) and high cost of living relative to salaries. UVM Medical Center is the major employer. Excellent quality of life if you enjoy rural New England.",
     websiteUrl: "https://www.healthvermont.gov",
   },
   VA: {
@@ -708,13 +708,13 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     stateName: "Wyoming",
     conradSlots: 30,
     flexSlots: 5,
-    timeline: "6-12 months",
-    processingTime: "45-60 days",
+    timeline: "6-10 months (very fast processing)",
+    processingTime: "45-60 days — among the fastest",
     priorityAreas: ["Primary Care", "Rural Health", "Frontier Health"],
-    specialtyNeeds: ["Family Medicine", "Emergency Medicine", "General Surgery"],
+    specialtyNeeds: ["Family Medicine", "Emergency Medicine", "General Surgery", "Internal Medicine"],
     requirements:
-      "Must practice in a HPSA or MUA for 3 years. Wyoming Department of Health sponsors Conrad 30 applications.",
-    tips: "Wyoming has the smallest population of any state but significant rural health needs. Nearly all communities are designated HPSAs. Very fast processing. Least competitive state for waivers. Expect rural lifestyle.",
+      "Must practice in a HPSA or MUA for 3 years. Wyoming DOH sponsors Conrad 30 applications. Wyoming typically uses only 8-10 of its 30 slots — 20+ remaining most years. 70% of Wyoming's Conrad placements are flex waivers (second highest nationally). No alternative regional pathways. Full unrestricted WY medical license required.",
+    tips: "Wyoming is the least competitive waiver state in the nation — typically 20+ slots remaining all year. 70% of placements are flex waivers. Processing is very fast (45-60 days). No state income tax. Nearly every community is HPSA-designated. Expect a truly rural lifestyle — the state's entire population is under 600,000. Casper, Cheyenne, and Laramie are the 'largest' cities. If you're comfortable with small-town medicine and outdoor life, Wyoming offers certainty of placement, fast processing, and no tax burden. WWAMI program (UW partnership with University of Washington) provides some academic connection.",
     websiteUrl: "https://health.wyo.gov",
   },
 };
