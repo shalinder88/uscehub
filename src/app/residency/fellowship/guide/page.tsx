@@ -174,86 +174,90 @@ const pgy3Tasks = [
   },
 ];
 
+// Fellowship match data sourced from NRMP Specialties Matching Service reports.
+// Positions and fill rates reflect 2025-2026 appointment year data.
+// IMG rates reflect Non-US IMG applicant match rates where available.
+// Last verified: March 2026.
 const fellowshipSpecialties = [
   {
-    name: "Cardiology",
+    name: "Cardiology (Cardiovascular Disease)",
     tier: 1,
     duration: "3 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Most competitive IM fellowship. Research is essentially mandatory. Strong Step scores and program prestige matter significantly. Many applicants do a research year between PGY-2 and PGY-3.",
+      "Most competitive IM fellowship. ~900-950 positions offered, ~97-99% fill rate. IMG match rate ~30-35%. Research is essentially mandatory (5+ publications expected for competitive programs). Strong Step/COMLEX scores and program prestige matter significantly. Many applicants do a research year between PGY-2 and PGY-3. Interventional cards adds 1 year after general cardiology.",
     competitiveness: "Very High",
   },
   {
     name: "Gastroenterology",
     tier: 1,
     duration: "3 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Highly competitive with strong compensation. Procedural skills important. Research expected (3-5+ publications). GI fellowship interviews tend to focus heavily on why GI specifically.",
+      "Second most competitive IM fellowship. ~550-600 positions offered, ~98-99% fill rate. IMG match rate ~25-30%. Research expected (3-5+ publications). Procedural skills valued — endoscopy experience a plus. GI fellowship interviews focus heavily on why GI specifically. Advanced endoscopy and hepatology are additional years after GI.",
     competitiveness: "Very High",
   },
   {
     name: "Pulmonary & Critical Care",
     tier: 2,
     duration: "3 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Combined Pulm/CCM is standard. Competitive but slightly more accessible than Cards/GI. Research important (3+ publications). ICU experience and ventilator management skills valued.",
+      "Combined Pulm/CCM is standard. ~550-600 positions offered, ~95-97% fill rate. IMG match rate ~35-40%. Competitive but more accessible than Cards/GI. Research important (3+ publications). ICU experience and ventilator management skills highly valued. Strong job market post-fellowship.",
     competitiveness: "High",
   },
   {
     name: "Hematology-Oncology",
     tier: 2,
     duration: "3 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Research-heavy field — many programs want fellows who will pursue academic careers. Clinical trial experience is a plus. Emotional resilience is discussed in interviews.",
+      "~550-600 positions offered, ~95-97% fill rate. IMG match rate ~30-35%. Research-heavy field — many programs want fellows who will pursue academic careers. Clinical trial experience is a plus. Emotional resilience discussed in interviews. Excellent compensation post-fellowship.",
     competitiveness: "High",
   },
   {
     name: "Nephrology",
     tier: 3,
     duration: "2 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Less competitive with more available positions. Strong job market after fellowship. Research helpful but not required. Genuine interest in kidney physiology and dialysis management is what programs look for.",
+      "~500-550 positions offered, ~75-85% fill rate — one of the least competitive IM fellowships. IMG match rate ~50-60%. More available positions relative to applicants. Strong job market after fellowship (high demand nationally). Research helpful but not required. Genuine interest in kidney physiology and dialysis management is what programs look for.",
     competitiveness: "Moderate",
   },
   {
     name: "Rheumatology",
     tier: 3,
     duration: "2 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Moderate competition. Research helpful but personality fit and genuine interest matter more. Strong clinical reasoning skills valued. Relatively smaller field with good work-life balance.",
+      "~200-220 positions offered, ~90-95% fill rate. IMG match rate ~35-40%. Moderate competition. Smaller field with good work-life balance. Research helpful but personality fit and genuine interest matter more. Strong clinical reasoning skills valued. Growing demand due to aging population.",
     competitiveness: "Moderate",
   },
   {
     name: "Endocrinology",
     tier: 3,
     duration: "2 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Moderate competition. Outpatient-heavy specialty with good lifestyle. Research helpful but not mandatory. Diabetes management experience is universally valued.",
+      "~250-280 positions offered, ~80-90% fill rate. IMG match rate ~40-50%. Moderate competition. Outpatient-heavy specialty with excellent lifestyle. Research helpful but not mandatory. Diabetes and thyroid management experience universally valued. Growing demand driven by diabetes/obesity epidemic.",
     competitiveness: "Moderate",
   },
   {
     name: "Infectious Disease",
     tier: 3,
     duration: "2 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Less competitive with more positions than applicants in recent years. Antimicrobial stewardship experience is a plus. Academic interest and diagnostic reasoning skills valued over research volume.",
+      "~400-450 positions offered, ~65-75% fill rate — consistently among the least competitive IM fellowships. IMG match rate ~55-65%. More positions than qualified applicants in recent years. Antimicrobial stewardship experience is a plus. Academic interest and diagnostic reasoning valued over research volume. Lower compensation post-fellowship compared to procedural specialties.",
     competitiveness: "Low-Moderate",
   },
   {
     name: "Allergy & Immunology",
     tier: 3,
     duration: "2 years",
-    timeline: "ERAS, September",
+    timeline: "ERAS, September — Match in December",
     notes:
-      "Can apply from IM or pediatrics residency. Moderate competition. Outpatient-focused with good lifestyle. Procedural component (allergy testing, immunotherapy) differentiates it.",
+      "~100-120 positions offered, ~90-95% fill rate. IMG match rate ~30-35%. Can apply from IM or pediatrics residency. Moderate competition — small field. Outpatient-focused with excellent lifestyle. Procedural component (allergy testing, immunotherapy) differentiates it. Growing demand due to rising allergy/asthma prevalence.",
     competitiveness: "Moderate",
   },
   {
