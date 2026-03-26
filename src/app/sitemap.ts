@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { US_STATES, SPECIALTIES } from "@/lib/utils";
+import { BLOG_POSTS } from "@/lib/blog-data";
 
 export const dynamic = "force-dynamic";
 
@@ -160,5 +161,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...statePages, ...specialtyPages, ...listingPages];
+  // Blog posts
+  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // Blog index
+  const blogIndex: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+  ];
+
+  return [
+    ...staticPages,
+    ...statePages,
+    ...specialtyPages,
+    ...listingPages,
+    ...blogIndex,
+    ...blogPages,
+  ];
 }

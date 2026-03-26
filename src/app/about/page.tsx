@@ -26,8 +26,7 @@ const jsonLd = {
     url: "https://uscehub.com",
     founder: {
       "@type": "Person",
-      name: "Singh MD",
-      jobTitle: "Intensivist",
+      name: "USCEHub Team",
     },
     description:
       "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
@@ -110,7 +109,7 @@ export default function AboutPage() {
                 IMGs have walked this path before you and matched. You can too.
               </p>
             </div>
-            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— Singh MD, Intensivist</p>
+            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— The USCEHub Team</p>
           </div>
         </section>
 
