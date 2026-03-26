@@ -66,27 +66,27 @@ const statCards = [
 
 const recentUpdates = [
   {
-    title: "Fellowship Strategy Guide Published",
+    title: "2025 Fellowship Match: Largest in History — 9,950 Positions",
     description:
-      "Complete PGY-1 through Match Day timeline with competitiveness tiers, IMG-specific strategies, and what programs actually look for.",
+      "Cardiology filled 100% of 1,347 slots. GI 99.5% of 759. ID dropped to 60.9% fill — lowest ever. Nephrology at 73%. Non-US IMG match rate ~70%. Full competitiveness breakdown in our Fellowship Guide. Source: NRMP SMS.",
     date: "March 2026",
   },
   {
-    title: "Board Exam Guides Added",
+    title: "Board Exam Data Updated with 2024-2025 Official Pass Rates",
     description:
-      "Comprehensive guides for ABIM, ABFM, ABP, ABS, ABPsych, and ABPath with format, timeline, and resources.",
+      "ABIM: 86% (2025). ABFM: 96.8% initial cert. ABP: 89%. ABS QE: 92-95%. ABPN: 90%. ABPath: 92.1%. Plus ABFM's new 5-year longitudinal assessment option. All sourced from official board data.",
     date: "March 2026",
   },
   {
-    title: "Survival Guide Published",
+    title: "CY 2026 Medicare Conversion Factor: $33.40/RVU",
     description:
-      "PGY-year-by-year survival tips covering wellness, financial basics, job search, and contract negotiation.",
+      "CMS set two conversion factors for the first time: $33.57 for APM participants, $33.40 standard. Includes 2.5% statutory bump but -2.5% efficiency adjustment on procedural wRVUs. Source: CMS PFS Final Rule.",
     date: "March 2026",
   },
   {
-    title: "Teaching Resources Curated",
+    title: "Physician Sign-On Bonuses Up 23% to $38,215 Average",
     description:
-      "20+ hand-picked resources across 6 categories: pocketbook medicine, POCUS, procedures, EBM, ICU, and communication.",
+      "GI leads at $46K avg, Urology $45K, Cardiology $41K. 3% of physicians received $100K+ bonuses. 72% received $20K-99K. Loan repayment averaging $104K in 16% of contracts. Source: AMN Healthcare 2025.",
     date: "March 2026",
   },
 ];
