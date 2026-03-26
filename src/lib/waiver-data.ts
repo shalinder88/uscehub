@@ -28,7 +28,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a federally designated HPSA or MUA for 3 years. Alabama Department of Public Health sponsors J-1 waiver applications through the Conrad 30 program.",
-    tips: "Alabama has strong demand in rural counties. Applications through the Alabama Department of Public Health are typically processed within 60-90 days. Apply early in the federal fiscal year (October).",
+    tips: "Alabama typically has remaining Conrad slots. Eligible for DRA (western Black Belt counties) and SCRC waivers — two alternative unlimited-slot pathways. Rural Black Belt counties (Greene, Sumter, Wilcox, Hale) have among the highest physician shortages in the US. Mobile and Birmingham suburbs have some FQHC opportunities. UAB is the major academic system. No state income tax on first $6,000 for married filing jointly. Low cost of living statewide.",
     websiteUrl: "https://www.alabamapublichealth.gov",
   },
   AK: {
@@ -42,7 +42,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Emergency Medicine", "General Surgery"],
     requirements:
       "Must serve in a designated HPSA or MUA. Alaska Department of Health sponsors Conrad 30 applications. Tribal health facilities are common placement sites.",
-    tips: "Alaska has unique opportunities in tribal and native health facilities. Remote locations may offer higher compensation. Contact the Alaska State Medical Association for guidance.",
+    tips: "Alaska typically has 10-15 remaining Conrad slots — less competitive. Tribal and Indian Health Service facilities are common placements. Remote locations offer significantly higher compensation (often $50-100K+ above lower-48 rates). No state income tax. Extremely high cost of living especially in rural areas. Expect true frontier medicine — some communities are accessible only by plane. ANTHC (Alaska Native Tribal Health Consortium) is a major employer. Great option for adventurous physicians willing to embrace isolation.",
     websiteUrl: "https://health.alaska.gov",
   },
   AZ: {
@@ -168,7 +168,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Hawaii Department of Health sponsors applications. Neighbor islands have greatest need.",
-    tips: "Hawaii has unique opportunities on neighbor islands (Big Island, Maui, Kauai, Molokai). Cost of living is high but some employers provide housing assistance. Limited number of applications each year.",
+    tips: "Hawaii typically has 10-18 remaining Conrad slots — low competition. Neighbor islands (Big Island, Maui, Kauai, Molokai) have the greatest need — Honolulu/Oahu is more competitive. Extremely high cost of living (highest in US), but some employers provide housing assistance. No alternative regional pathways. Unique practice environment with diverse patient population. Hawaii has a moderate state income tax (graduated up to 11%). If you can handle the cost of living, Hawaii offers desirable lifestyle with reliable waiver availability.",
     websiteUrl: "https://health.hawaii.gov",
   },
   ID: {
@@ -182,7 +182,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "General Surgery"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Idaho Department of Health and Welfare sponsors applications.",
-    tips: "Idaho has strong rural health needs throughout the state. Boise metro is more competitive. Eastern and central Idaho have the greatest need. Generally IMG-friendly.",
+    tips: "Idaho typically has 14-16 remaining Conrad slots — good for late applicants. Boise metro has limited HPSA sites. Eastern Idaho (Idaho Falls, Pocatello), central Idaho (Sun Valley area), and northern Idaho (Coeur d'Alene area rural) have greatest need. No alternative regional pathways. Idaho has a graduated state income tax (1-5.8%). Growing state with increasing physician demand. Low cost of living outside Boise. Family-friendly communities.",
     websiteUrl: "https://healthandwelfare.idaho.gov",
   },
   IL: {
@@ -224,7 +224,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "General Surgery"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Iowa Department of Public Health sponsors Conrad 30 applications.",
-    tips: "Iowa has widespread rural health needs. Most counties outside Des Moines metro qualify. The state is generally welcoming to IMGs. Community hospitals and FQHCs are common placements.",
+    tips: "Iowa typically has 10 remaining Conrad slots — moderate competition. Most counties outside Des Moines and Iowa City metro qualify as HPSA. Western and southern Iowa have highest need. No alternative regional pathways. Iowa has a graduated state income tax (0.33-6%). Low cost of living, family-friendly communities. University of Iowa is the major academic system. Des Moines University and Broadlawns Medical Center are IMG-friendly employers.",
     websiteUrl: "https://hhs.iowa.gov",
   },
   KS: {
