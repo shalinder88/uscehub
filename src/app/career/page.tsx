@@ -59,6 +59,7 @@ const careerTools = [
 const jobTools = [
   { label: "J-1 Waiver Jobs", value: "6 Sources", href: "/career/jobs", icon: Briefcase, color: "text-accent", bg: "bg-accent/10", description: "Verified job boards with salary benchmarks" },
   { label: "Interview Prep", value: "Deep", href: "/career/interview", icon: Users, color: "text-muted", bg: "bg-surface-alt", description: "Questions, red flags, negotiation tips" },
+  { label: "State Licensing Guide", value: "50 States", href: "/career/licensing", icon: Scale, color: "text-cyan", bg: "bg-cyan/10", description: "Fees, timelines, IMLC Compact, DEA, CDS" },
 ];
 
 const latestUpdates = [
