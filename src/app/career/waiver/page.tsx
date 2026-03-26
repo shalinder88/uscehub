@@ -135,7 +135,7 @@ export default function WaiverPage() {
         </div>
 
         {/* Quick Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <Link
             href="/career/waiver/tracker"
             className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group"
@@ -195,6 +195,22 @@ export default function WaiverPage() {
                 </h3>
                 <p className="text-xs text-muted mt-1">
                   Check if a facility or county qualifies as a shortage area
+                </p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted group-hover:text-accent transition-colors" />
+            </div>
+          </Link>
+          <Link
+            href="/career/waiver/timeline"
+            className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-foreground group-hover:text-accent transition-colors">
+                  Timeline Calculator
+                </h3>
+                <p className="text-xs text-muted mt-1">
+                  Enter your J-1 end date — get your personalized timeline
                 </p>
               </div>
               <ArrowRight className="h-4 w-4 text-muted group-hover:text-accent transition-colors" />
