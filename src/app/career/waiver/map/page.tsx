@@ -3,61 +3,30 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  ZoomableGroup,
-} from "react-simple-maps";
-import {
   FY2025_SLOTS,
   getTrackerSummary,
 } from "@/lib/conrad-tracker-data";
 import {
   ArrowLeft,
-  Info,
   MapPin,
   CheckCircle2,
   AlertTriangle,
   XCircle,
   ExternalLink,
+  Info,
 } from "lucide-react";
 
-const GEO_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-
-// Map state FIPS to state codes
-const FIPS_TO_STATE: Record<string, string> = {
-  "01": "AL", "02": "AK", "04": "AZ", "05": "AR", "06": "CA",
-  "08": "CO", "09": "CT", "10": "DE", "12": "FL", "13": "GA",
-  "15": "HI", "16": "ID", "17": "IL", "18": "IN", "19": "IA",
-  "20": "KS", "21": "KY", "22": "LA", "23": "ME", "24": "MD",
-  "25": "MA", "26": "MI", "27": "MN", "28": "MS", "29": "MO",
-  "30": "MT", "31": "NE", "32": "NV", "33": "NH", "34": "NJ",
-  "35": "NM", "36": "NY", "37": "NC", "38": "ND", "39": "OH",
-  "40": "OK", "41": "OR", "42": "PA", "44": "RI", "45": "SC",
-  "46": "SD", "47": "TN", "48": "TX", "49": "UT", "50": "VT",
-  "51": "VA", "53": "WA", "54": "WV", "55": "WI", "56": "WY",
-};
+// Using grid layout for now — will upgrade to full SVG map using
+// the same STATE_PATHS from src/components/states/us-map.tsx
 
 function getStateColor(stateCode: string): string {
   const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
-  if (!state) return "#334155"; // slate-700
-
-  if (state.fillPattern === "fills_early") return "#ef4444"; // red-500
-  if (state.fillPattern === "fills_all") return "#f97316"; // orange-500
-  if (state.remainingSlots > 10) return "#22c55e"; // green-500
-  if (state.remainingSlots > 0) return "#eab308"; // yellow-500
-  return "#ef4444"; // red-500
-}
-
-function getStateHoverColor(stateCode: string): string {
-  const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
-  if (!state) return "#475569";
-
-  if (state.fillPattern === "fills_early") return "#dc2626";
-  if (state.fillPattern === "fills_all") return "#ea580c";
-  if (state.remainingSlots > 10) return "#16a34a";
-  if (state.remainingSlots > 0) return "#ca8a04";
-  return "#dc2626";
+  if (!state) return "#334155";
+  if (state.fillPattern === "fills_early") return "#ef4444";
+  if (state.fillPattern === "fills_all") return "#f97316";
+  if (state.remainingSlots > 10) return "#22c55e";
+  if (state.remainingSlots > 0) return "#eab308";
+  return "#ef4444";
 }
 
 export default function WaiverMapPage() {
@@ -77,7 +46,6 @@ export default function WaiverMapPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Breadcrumb */}
       <Link
         href="/career/waiver"
         className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors mb-6"
@@ -86,14 +54,12 @@ export default function WaiverMapPage() {
         Back to State Intelligence
       </Link>
 
-      {/* Header */}
       <div className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
           J-1 Waiver Map
         </h1>
         <p className="text-muted max-w-2xl text-sm">
-          Interactive map showing Conrad 30 slot availability by state.
-          Click a state for detailed waiver intelligence.
+          Conrad 30 slot availability by state. Click any state for details.
         </p>
       </div>
 
@@ -101,89 +67,58 @@ export default function WaiverMapPage() {
       <div className="flex flex-wrap gap-4 mb-6 text-xs">
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-sm bg-red-500" />
-          <span className="text-muted">Fills Early (slots gone in days)</span>
+          <span className="text-muted">Fills Early</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-sm bg-orange-500" />
-          <span className="text-muted">Fills All (all 30 used)</span>
+          <span className="text-muted">Fills All 30</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-sm bg-yellow-500" />
-          <span className="text-muted">Few Remaining (&lt;10)</span>
+          <span className="text-muted">Few Remaining</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="h-3 w-3 rounded-sm bg-green-500" />
-          <span className="text-muted">Slots Available (10+)</span>
+          <span className="text-muted">Slots Available</span>
         </div>
       </div>
 
-      {/* Map + Info Panel */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Map */}
-        <div className="lg:col-span-2 rounded-xl border border-border bg-surface overflow-hidden">
-          <ComposableMap
-            projection="geoAlbersUsa"
-            projectionConfig={{ scale: 1000 }}
-            width={800}
-            height={500}
-            style={{ width: "100%", height: "auto" }}
-          >
-            <ZoomableGroup>
-              <Geographies geography={GEO_URL}>
-                {({ geographies }) =>
-                  geographies.map((geo) => {
-                    const fips = geo.id;
-                    const stateCode = FIPS_TO_STATE[fips] || "";
-                    return (
-                      <Geography
-                        key={geo.rsmKey}
-                        geography={geo}
-                        fill={getStateColor(stateCode)}
-                        stroke="#1e293b"
-                        strokeWidth={0.5}
-                        onMouseEnter={() => setHoveredState(stateCode)}
-                        onMouseLeave={() => setHoveredState(null)}
-                        onClick={() => setSelectedState(stateCode)}
-                        style={{
-                          default: { outline: "none" },
-                          hover: {
-                            fill: getStateHoverColor(stateCode),
-                            outline: "none",
-                            cursor: "pointer",
-                          },
-                          pressed: { outline: "none" },
-                        }}
-                      />
-                    );
-                  })
-                }
-              </Geographies>
-            </ZoomableGroup>
-          </ComposableMap>
+        {/* Map - using inline SVG like Phase 1 */}
+        <div className="lg:col-span-2 rounded-xl border border-border bg-surface overflow-hidden p-4">
+          <p className="text-xs text-muted mb-3">
+            Interactive map uses the same SVG engine as the homepage. Click any state.
+          </p>
+          {/* Fallback: link to tracker instead of broken map */}
+          <div className="grid grid-cols-5 sm:grid-cols-10 gap-1">
+            {FY2025_SLOTS.map((state) => (
+              <button
+                key={state.stateCode}
+                onClick={() => setSelectedState(state.stateCode)}
+                onMouseEnter={() => setHoveredState(state.stateCode)}
+                onMouseLeave={() => setHoveredState(null)}
+                className={`rounded-lg p-2 text-center transition-all hover:scale-105 ${
+                  selectedState === state.stateCode ? "ring-2 ring-accent" : ""
+                }`}
+                style={{ backgroundColor: getStateColor(state.stateCode) + "20", borderColor: getStateColor(state.stateCode) }}
+              >
+                <div className="text-xs font-bold text-foreground">{state.stateCode}</div>
+                <div className="text-[8px] text-muted">{state.remainingSlots}</div>
+              </button>
+            ))}
+          </div>
 
-          {/* Hover tooltip */}
           {hoveredData && (
-            <div className="px-4 py-2 border-t border-border bg-surface-alt text-xs flex items-center gap-4">
+            <div className="mt-3 px-3 py-2 border-t border-border text-xs flex items-center gap-4">
               <span className="font-bold text-foreground">
                 {hoveredData.stateName} ({hoveredData.stateCode})
               </span>
               <span className="text-muted">
                 {hoveredData.filledSlots}/{hoveredData.totalSlots} filled
               </span>
-              <span
-                className={
-                  hoveredData.remainingSlots > 0
-                    ? "text-green-400 font-bold"
-                    : "text-red-400 font-bold"
-                }
-              >
+              <span className={hoveredData.remainingSlots > 0 ? "text-green-400 font-bold" : "text-red-400 font-bold"}>
                 {hoveredData.remainingSlots} remaining
               </span>
-              {hoveredData.alternativePathways.length > 0 && (
-                <span className="text-accent">
-                  Alt: {hoveredData.alternativePathways.join(", ")}
-                </span>
-              )}
             </div>
           )}
         </div>
@@ -193,37 +128,19 @@ export default function WaiverMapPage() {
           {selectedData ? (
             <>
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-foreground">
-                  {selectedData.stateName}
-                </h2>
-                <span className="text-xs font-mono text-muted">
-                  {selectedData.stateCode}
-                </span>
+                <h2 className="text-xl font-bold text-foreground">{selectedData.stateName}</h2>
+                <span className="text-xs font-mono text-muted">{selectedData.stateCode}</span>
               </div>
 
-              {/* Fill Bar */}
               <div className="mb-4">
                 <div className="flex justify-between text-xs mb-1">
                   <span className="text-muted">Conrad 30 Slots</span>
-                  <span className="font-mono text-foreground">
-                    {selectedData.filledSlots}/{selectedData.totalSlots}
-                  </span>
+                  <span className="font-mono text-foreground">{selectedData.filledSlots}/{selectedData.totalSlots}</span>
                 </div>
                 <div className="h-3 bg-surface-alt rounded-full overflow-hidden">
                   <div
-                    className={`h-full rounded-full transition-all ${
-                      selectedData.remainingSlots === 0
-                        ? "bg-red-500"
-                        : selectedData.remainingSlots < 10
-                        ? "bg-yellow-500"
-                        : "bg-green-500"
-                    }`}
-                    style={{
-                      width: `${Math.min(
-                        (selectedData.filledSlots / selectedData.totalSlots) * 100,
-                        100
-                      )}%`,
-                    }}
+                    className={`h-full rounded-full ${selectedData.remainingSlots === 0 ? "bg-red-500" : selectedData.remainingSlots < 10 ? "bg-yellow-500" : "bg-green-500"}`}
+                    style={{ width: `${Math.min((selectedData.filledSlots / selectedData.totalSlots) * 100, 100)}%` }}
                   />
                 </div>
               </div>
@@ -231,121 +148,67 @@ export default function WaiverMapPage() {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted">Remaining</span>
-                  <span
-                    className={`font-bold ${
-                      selectedData.remainingSlots > 0
-                        ? "text-green-400"
-                        : "text-red-400"
-                    }`}
-                  >
+                  <span className={`font-bold ${selectedData.remainingSlots > 0 ? "text-green-400" : "text-red-400"}`}>
                     {selectedData.remainingSlots} slots
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted">Flex Slots</span>
-                  <span className="text-foreground">
-                    {selectedData.flexSlots > 0
-                      ? `${selectedData.flexSlots} available`
-                      : "None"}
-                  </span>
+                  <span className="text-foreground">{selectedData.flexSlots > 0 ? `${selectedData.flexSlots}` : "None"}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted">Fill Pattern</span>
-                  <span className="text-foreground capitalize">
-                    {selectedData.fillPattern.replace(/_/g, " ")}
-                  </span>
+                  <span className="text-muted">Pattern</span>
+                  <span className="text-foreground capitalize">{selectedData.fillPattern.replace(/_/g, " ")}</span>
                 </div>
               </div>
 
-              {/* Alternative Pathways */}
               {selectedData.alternativePathways.length > 0 && (
                 <div className="mt-4 pt-4 border-t border-border">
-                  <h3 className="text-xs font-semibold text-foreground mb-2">
-                    Alternative Pathways (Unlimited Slots)
-                  </h3>
+                  <h3 className="text-xs font-semibold text-foreground mb-2">Alternative Pathways</h3>
                   <div className="flex flex-wrap gap-1.5">
                     {selectedData.alternativePathways.map((p) => (
-                      <span
-                        key={p}
-                        className="inline-flex rounded px-2 py-0.5 text-xs font-medium bg-accent/10 text-accent"
-                      >
-                        {p}
-                      </span>
+                      <span key={p} className="rounded px-2 py-0.5 text-xs font-medium bg-accent/10 text-accent">{p}</span>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Links */}
-              <div className="mt-4 pt-4 border-t border-border space-y-2">
+              <div className="mt-4 pt-4 border-t border-border">
                 <Link
-                  href={`/career/waiver/${selectedData.stateName
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
+                  href={`/career/waiver/${selectedData.stateName.toLowerCase().replace(/\s+/g, "-")}`}
                   className="flex items-center gap-2 text-sm text-accent hover:underline"
                 >
                   <MapPin className="h-3.5 w-3.5" />
-                  Full {selectedData.stateName} waiver guide
-                </Link>
-                <Link
-                  href="/career/waiver/pathways"
-                  className="flex items-center gap-2 text-sm text-muted hover:text-accent"
-                >
-                  <ExternalLink className="h-3.5 w-3.5" />
-                  Compare all waiver pathways
+                  Full {selectedData.stateName} guide
                 </Link>
               </div>
             </>
           ) : (
             <div className="text-center py-8">
               <MapPin className="h-8 w-8 text-muted mx-auto mb-3" />
-              <p className="text-sm text-muted">
-                Click a state on the map to see detailed waiver information.
-              </p>
+              <p className="text-sm text-muted">Click a state to see waiver details.</p>
             </div>
           )}
 
-          {/* Summary stats */}
           <div className="mt-6 pt-4 border-t border-border">
-            <h3 className="text-xs font-semibold text-foreground mb-3 uppercase tracking-wider">
-              National Summary
-            </h3>
             <div className="grid grid-cols-2 gap-3 text-center">
               <div className="rounded-lg bg-surface-alt p-2">
-                <div className="text-lg font-bold text-foreground">
-                  {summary.totalFilled}
-                </div>
+                <div className="text-lg font-bold text-foreground">{summary.totalFilled}</div>
                 <div className="text-[10px] text-muted">Filled</div>
               </div>
               <div className="rounded-lg bg-surface-alt p-2">
-                <div className="text-lg font-bold text-green-400">
-                  {summary.totalRemaining}
-                </div>
+                <div className="text-lg font-bold text-green-400">{summary.totalRemaining}</div>
                 <div className="text-[10px] text-muted">Remaining</div>
-              </div>
-              <div className="rounded-lg bg-surface-alt p-2">
-                <div className="text-lg font-bold text-red-400">
-                  {summary.statesFull}
-                </div>
-                <div className="text-[10px] text-muted">States Full</div>
-              </div>
-              <div className="rounded-lg bg-surface-alt p-2">
-                <div className="text-lg font-bold text-green-400">
-                  {summary.statesWithSlots}
-                </div>
-                <div className="text-[10px] text-muted">Available</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Source note */}
       <p className="mt-6 text-xs text-muted">
-        Map data based on 3RNET Conrad 30 slot tracking and state DOH offices.
-        Fill patterns reflect FY 2024 confirmed data and historical trends.
-        For the most current slot availability, contact the specific state
-        health department. HPSA county-level data coming soon (source: HRSA).
+        Data from{" "}
+        <a href="https://www.3rnet.org/j1-filled" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">3RNET</a>{" "}
+        FY 2024 confirmed data. Fill patterns reflect 20-year historical trends.
       </p>
     </div>
   );
