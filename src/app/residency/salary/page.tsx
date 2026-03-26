@@ -404,6 +404,51 @@ export default function SalaryPage() {
             })}
           </div>
 
+          {/* RVU Benchmarks Table */}
+          <h3 className="text-xl font-bold text-foreground mt-10 mb-3">
+            wRVU Benchmarks by Specialty (MGMA 2025)
+          </h3>
+          <p className="text-xs text-muted mb-4">
+            Median wRVU production and $/wRVU conversion rates. Use these to evaluate whether your contract&apos;s RVU targets are realistic. Source: MGMA DataDive 2025, FastRVU.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border mb-10">
+            <table className="min-w-full text-xs">
+              <thead>
+                <tr className="border-b border-border bg-surface-alt">
+                  <th className="px-3 py-2 text-left font-semibold text-foreground">Specialty</th>
+                  <th className="px-3 py-2 text-right font-semibold text-foreground">Median wRVU</th>
+                  <th className="px-3 py-2 text-right font-semibold text-foreground">75th %ile</th>
+                  <th className="px-3 py-2 text-right font-semibold text-foreground">$/wRVU</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { s: "Family Medicine", med: "5,200", p75: "6,400", rate: "$52" },
+                  { s: "Internal Medicine", med: "4,800", p75: "6,200", rate: "$53" },
+                  { s: "Hospitalist", med: "4,800", p75: "5,700", rate: "$61" },
+                  { s: "Cardiology (Invasive)", med: "9,200", p75: "12,000", rate: "$58" },
+                  { s: "Cardiology (Non-Invasive)", med: "6,500", p75: "8,200", rate: "—" },
+                  { s: "Gastroenterology", med: "7,200", p75: "9,000", rate: "$57" },
+                  { s: "General Surgery", med: "7,200", p75: "9,200", rate: "$63" },
+                  { s: "Orthopedic Surgery", med: "7,800", p75: "11,200", rate: "$67" },
+                  { s: "Dermatology", med: "6,200", p75: "8,200", rate: "$58" },
+                  { s: "Psychiatry", med: "4,200", p75: "—", rate: "$67" },
+                  { s: "Emergency Medicine", med: "8,200", p75: "10,500", rate: "$47" },
+                  { s: "Anesthesiology", med: "9,000", p75: "11,200", rate: "$43" },
+                  { s: "Radiology", med: "9,500", p75: "14,500", rate: "$45" },
+                  { s: "Neurology", med: "5,500", p75: "—", rate: "$53" },
+                ].map((row) => (
+                  <tr key={row.s} className="border-b border-border/50 hover:bg-surface/50">
+                    <td className="px-3 py-2 font-medium text-foreground">{row.s}</td>
+                    <td className="px-3 py-2 text-right font-mono text-muted">{row.med}</td>
+                    <td className="px-3 py-2 text-right font-mono text-muted">{row.p75}</td>
+                    <td className="px-3 py-2 text-right font-mono text-accent font-bold">{row.rate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           {/* Additional Compensation Components */}
           <h3 className="text-xl font-bold text-foreground mt-10 mb-6">
             Additional Compensation Components
