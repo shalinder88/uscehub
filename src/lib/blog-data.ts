@@ -893,6 +893,113 @@ Don't wait. File early. Consider multiple pathways simultaneously if you're from
 
 *Data: USCIS, DOS Visa Bulletin, AILA. Verified March 2026.*`,
   },
+  {
+    slug: "usmle-step-2-ck-score-strategy-imgs",
+    title: "USMLE Step 2 CK: The Score That Matters Most for IMGs",
+    description:
+      "Why Step 2 CK is now the most important score for IMG residency applicants, target scores by specialty, study strategy, and timeline.",
+    category: "usce",
+    tags: ["USMLE", "Step 2 CK", "IMG", "score", "study strategy", "residency"],
+    publishedAt: "2026-03-26",
+    updatedAt: "2026-03-26",
+    author: "USCEHub Team",
+    readTime: "7 min",
+    content: `## Step 1 Is Pass/Fail. Step 2 CK Is Everything Now.
+
+Since Step 1 went pass/fail in January 2022, Step 2 CK has become the single most important numerical score on an IMG's application. Program directors use it as their primary screening tool. The NRMP Program Director Survey confirms it — Step 2 CK score is now the #1 factor PDs use to decide who gets interviews.
+
+For IMGs, this isn't just important. It's existential. Your Step 2 CK score determines which programs will even look at your application.
+
+## Target Scores by Specialty
+
+These aren't guarantees. But based on match data, program director surveys, and what we've seen work:
+
+**240+ (competitive for most specialties)**
+Internal Medicine (academic), Pediatrics (academic), Neurology, Psychiatry, FM (competitive programs)
+
+**250+ (competitive for mid-tier specialties)**
+Internal Medicine (university programs), General Surgery, Emergency Medicine, PM&R, Anesthesiology
+
+**260+ (competitive for competitive specialties)**
+Dermatology, Orthopedics, ENT, Ophthalmology, Radiology, Plastic Surgery, Urology
+
+**230-240 (minimum viable for most programs)**
+Family Medicine (community), Internal Medicine (community), Pediatrics (community), Pathology
+
+Below 230 makes the application process significantly harder for IMGs. Not impossible — but you'll need exceptionally strong LORs, research, and USCE to compensate.
+
+## The Honest Study Strategy
+
+### Resource Selection — Keep It Simple
+
+The physicians who score highest are not the ones who use 10 resources. They're the ones who master 2-3.
+
+**Core (everyone needs both):**
+- UWorld Step 2 CK — this is the backbone of your prep. Do every question. Review every explanation. Do it twice if you have time.
+- Amboss or UpToDate — for filling knowledge gaps when UWorld explanations aren't enough.
+
+**Supplementary (pick ONE):**
+- Divine Intervention podcasts — high yield for driving/commuting
+- Online MedEd — good for visual learners who need foundation building
+- Boards & Beyond — systematic video review
+
+That's it. Don't add more. Adding resources creates the illusion of studying without actually mastering anything.
+
+### Timeline
+
+**If you're studying full-time (no clinical duties):**
+8-12 weeks is the sweet spot. Less than 6 weeks is risky. More than 16 weeks leads to burnout and diminishing returns.
+
+**If you're studying while doing clinical rotations:**
+4-6 months of part-time studying (2-3 hours/day) followed by a 4-6 week dedicated period.
+
+### The UWorld Method That Actually Works
+
+1. **First pass:** Timed, random mode, 40 questions/day. Review every question — right and wrong. Take notes on concepts you got wrong.
+2. **Second pass (if time allows):** Focus on marked/incorrect questions only. This is where the real score improvement happens.
+3. **Self-assessments:** Take UWSA 1 and UWSA 2. They overshoot by 5-15 points typically. NBME self-assessments are more conservative and closer to your actual score.
+
+### What Actually Raises Your Score
+
+- **Doing more UWorld questions correctly** — the single highest-yield activity
+- **Understanding WHY each answer is wrong** — not just memorizing the right answer
+- **Spaced repetition on weak topics** — if you keep getting cardiology questions wrong, do a cardiology-focused block
+- **Practice under timed conditions** — Step 2 CK is 9 blocks of 40 questions in 60 minutes each. That's fast. Practice speed.
+
+### What Doesn't Raise Your Score
+
+- Reading textbooks cover-to-cover
+- Watching 200 hours of video lectures without doing questions
+- Doing questions without reviewing them
+- Studying the same topics you're already strong in
+
+## When to Take It
+
+Take Step 2 CK before ERAS opens if at all possible. The ideal timeline:
+
+- Score report available by August = applications go out September with your score already there
+- Programs see a complete application from day one
+- No "score pending" flag that could get your application filtered out
+
+If your score isn't ready by September, it's not the end of the world. But it's a disadvantage, especially for IMGs who are already at a screening disadvantage.
+
+## Retaking Step 2 CK
+
+If your first attempt is below your target, retaking is an option. But be strategic:
+
+- A significant score increase (20+ points) looks like genuine improvement
+- A marginal increase (5-10 points) may not change outcomes enough to justify the risk
+- Multiple retakes (3+) raise red flags with program directors
+- Study differently the second time — if UWorld alone didn't work, add a different resource or change your study method
+
+## The Score Isn't Everything (But It's Close)
+
+Yes, your Step 2 CK score is the most important number. But it's not the only thing. Strong USCE with good LORs, meaningful research, and a thoughtful personal statement matter. The score gets your application looked at. Everything else determines whether you get ranked.
+
+[Find USCE opportunities to strengthen your application](/browse)
+
+*Based on NRMP Program Director Survey data and published match statistics.*`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
