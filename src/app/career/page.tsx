@@ -37,6 +37,12 @@ const immigrationTools = [
   { label: "Timeline Calculator", value: "Personal", href: "/career/waiver/timeline", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Enter J-1 end date → get your timeline" },
   { label: "HPSA Score Lookup", value: "Official", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger", bg: "bg-danger/10", description: "Check if a facility qualifies as shortage area" },
   { label: "Visa Journey Map", value: "7 Stages", href: "/career/visa-journey", icon: Flag, color: "text-success", bg: "bg-success/10", description: "Interactive flowchart: J-1 → H-1B → Green Card" },
+  { label: "Process Step-by-Step", value: "6 Paths", href: "/career/waiver/process", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Exact agency flow for each waiver pathway" },
+];
+
+// Add state compare to career tools
+const financeTools = [
+  { label: "State Financial Compare", value: "25 States", href: "/career/state-compare", icon: TrendingUp, color: "text-success", bg: "bg-success/10", description: "Salary + tax + COL = real take-home by state" },
 ];
 
 // Career & Contract Tools
@@ -154,6 +160,35 @@ export default function CareerPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {careerTools.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Link key={card.href} href={card.href} className="group">
+                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
+                    </div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                      {card.label}
+                    </div>
+                    <div className="text-xs text-muted">{card.description}</div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Financial Tools */}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-success" />
+            Financial Analysis
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {financeTools.map((card) => {
               const Icon = card.icon;
               return (
                 <Link key={card.href} href={card.href} className="group">
