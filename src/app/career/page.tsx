@@ -38,6 +38,8 @@ const immigrationTools = [
   { label: "HPSA Score Lookup", value: "Official", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger", bg: "bg-danger/10", description: "Check if a facility qualifies as shortage area" },
   { label: "Visa Journey Map", value: "7 Stages", href: "/career/visa-journey", icon: Flag, color: "text-success", bg: "bg-success/10", description: "Interactive flowchart: J-1 → H-1B → Green Card" },
   { label: "Process Step-by-Step", value: "6 Paths", href: "/career/waiver/process", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Exact agency flow for each waiver pathway" },
+  { label: "Visa Bulletin Tracker", value: "Monthly", href: "/career/visa-bulletin", icon: TrendingUp, color: "text-warning", bg: "bg-warning/10", description: "EB-2/EB-3 priority date movement + wait calculator" },
+  { label: "Policy Alerts", value: "Weekly", href: "/career/alerts", icon: AlertCircle, color: "text-danger", bg: "bg-danger/10", description: "H-1B fees, Conrad reauth, USCIS changes" },
 ];
 
 // Add state compare to career tools
