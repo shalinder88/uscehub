@@ -31,11 +31,15 @@ export const metadata: Metadata = {
 };
 
 const tabs = [
-  { label: "State Intel", href: "/career/waiver", icon: MapPin },
-  { label: "Offer Compare", href: "/career/offers", icon: GitCompare },
-  { label: "Malpractice", href: "/career/malpractice", icon: Shield },
+  { label: "Overview", href: "/career", icon: MapPin },
+  { label: "J-1 Waiver", href: "/career/waiver", icon: MapPin },
+  { label: "H-1B", href: "/career/h1b", icon: GitCompare },
+  { label: "Green Card", href: "/career/greencard", icon: Shield },
+  { label: "Visa Bulletin", href: "/career/visa-bulletin", icon: DollarSign },
+  { label: "Alerts", href: "/career/alerts", icon: MessageSquare },
   { label: "Salary", href: "/career/salary", icon: DollarSign },
-  { label: "Interview Prep", href: "/career/interview", icon: MessageSquare },
+  { label: "Attorneys", href: "/career/attorneys", icon: Shield },
+  { label: "For Employers", href: "/career/employers", icon: MapPin },
 ];
 
 export default function CareerLayout({
