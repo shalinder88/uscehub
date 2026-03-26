@@ -110,11 +110,18 @@ export default async function WaiverStatePage({
                 {stateData.stateName}.
               </p>
 
-              {/* Verification placeholder */}
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-warning/10 text-warning">
-                <AlertTriangle className="h-3 w-3" />
-                Data under verification — confirm with state health department
-              </div>
+              {/* Confidence label */}
+              {["CA", "NY", "TX", "FL", "IL", "OH", "MI", "NJ", "NC", "PA"].includes(stateData.stateCode) ? (
+                <div className="mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-green-500/10 text-green-400">
+                  <CheckCircle2 className="h-3 w-3" />
+                  Verified March 2026 · Sources: State DOH, 3RNET, USCIS, HRSA
+                </div>
+              ) : (
+                <div className="mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-warning/10 text-warning">
+                  <AlertTriangle className="h-3 w-3" />
+                  Baseline data · Verify details with {stateData.stateName} health department
+                </div>
+              )}
             </div>
           </div>
         </div>

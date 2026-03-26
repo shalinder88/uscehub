@@ -10,6 +10,10 @@ export interface WaiverState {
   requirements: string;
   tips: string;
   websiteUrl: string;
+  /** Data confidence: "official" = from state DOH/3RNET, "community" = from physician reports, "estimated" = based on available data */
+  confidence?: "official" | "community" | "estimated";
+  /** When was this state's data last verified */
+  lastVerified?: string;
 }
 
 export const WAIVER_STATES: Record<string, WaiverState> = {
