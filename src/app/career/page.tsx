@@ -28,52 +28,30 @@ export const metadata: Metadata = {
   },
 };
 
-const statCards = [
-  {
-    label: "State Intelligence",
-    value: "50",
-    description: "Conrad 30 guides with verified data",
-    href: "/career/waiver",
-    icon: MapPin,
-    color: "text-cyan",
-    bg: "bg-cyan/10",
-  },
-  {
-    label: "Offer Comparison",
-    value: "4-way",
-    description: "Side-by-side contract analysis",
-    href: "/career/offers",
-    icon: GitCompare,
-    color: "text-warning",
-    bg: "bg-warning/10",
-  },
-  {
-    label: "Malpractice Guide",
-    value: "8 Tiers",
-    description: "Premiums by specialty & state",
-    href: "/career/malpractice",
-    icon: Scale,
-    color: "text-danger",
-    bg: "bg-danger/10",
-  },
-  {
-    label: "Salary Benchmarks",
-    value: "26",
-    description: "Specialties with sourced data",
-    href: "/career/salary",
-    icon: TrendingUp,
-    color: "text-success",
-    bg: "bg-success/10",
-  },
-  {
-    label: "Interview Prep",
-    value: "Deep",
-    description: "Questions, red flags, negotiation",
-    href: "/career/interview",
-    icon: Briefcase,
-    color: "text-accent",
-    bg: "bg-accent/10",
-  },
+// Immigration & Visa Tools
+const immigrationTools = [
+  { label: "J-1 Waiver State Intel", value: "50 States", href: "/career/waiver", icon: MapPin, color: "text-cyan", bg: "bg-cyan/10", description: "Conrad 30 guides, slot tracker, interactive map" },
+  { label: "Interactive Waiver Map", value: "Live", href: "/career/waiver/map", icon: MapPin, color: "text-accent", bg: "bg-accent/10", description: "Visual US map — click any state for details" },
+  { label: "Conrad 30 Slot Tracker", value: "Real-time", href: "/career/waiver/tracker", icon: Clock, color: "text-warning", bg: "bg-warning/10", description: "Which states still have slots available" },
+  { label: "Waiver Pathways", value: "6 Paths", href: "/career/waiver/pathways", icon: GitCompare, color: "text-success", bg: "bg-success/10", description: "Conrad, HHS, ARC, DRA, SCRC, VA compared" },
+  { label: "Timeline Calculator", value: "Personal", href: "/career/waiver/timeline", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Enter J-1 end date → get your timeline" },
+  { label: "HPSA Score Lookup", value: "Official", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger", bg: "bg-danger/10", description: "Check if a facility qualifies as shortage area" },
+];
+
+// Career & Contract Tools
+const careerTools = [
+  { label: "H-1B Visa Guide", value: "Complete", href: "/career/h1b", icon: Flag, color: "text-accent", bg: "bg-accent/10", description: "Cap-exempt employers, transfers, fees" },
+  { label: "Green Card Pathways", value: "3 Paths", href: "/career/greencard", icon: Flag, color: "text-success", bg: "bg-success/10", description: "EB-2 NIW, EB-1, PERM — timelines & costs" },
+  { label: "Contract Checklist", value: "Critical", href: "/career/contract", icon: Scale, color: "text-warning", bg: "bg-warning/10", description: "Must-have clauses, red flags, negotiation" },
+  { label: "Offer Comparison", value: "4-way", href: "/career/offers", icon: GitCompare, color: "text-cyan", bg: "bg-cyan/10", description: "Compare contracts side by side" },
+  { label: "Salary Benchmarks", value: "26 Specs", href: "/career/salary", icon: TrendingUp, color: "text-success", bg: "bg-success/10", description: "Sourced from Medscape, MGMA, Doximity" },
+  { label: "Malpractice Guide", value: "8 Tiers", href: "/career/malpractice", icon: Scale, color: "text-danger", bg: "bg-danger/10", description: "Occurrence vs claims-made explained" },
+];
+
+// Job & Employer Tools
+const jobTools = [
+  { label: "J-1 Waiver Jobs", value: "6 Sources", href: "/career/jobs", icon: Briefcase, color: "text-accent", bg: "bg-accent/10", description: "Verified job boards with salary benchmarks" },
+  { label: "Interview Prep", value: "Deep", href: "/career/interview", icon: Users, color: "text-muted", bg: "bg-surface-alt", description: "Questions, red flags, negotiation tips" },
 ];
 
 const latestUpdates = [
@@ -138,32 +116,91 @@ export default function CareerPage() {
           </p>
         </div>
 
-        {/* Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {statCards.map((card) => {
-            const Icon = card.icon;
-            return (
-              <Link key={card.href} href={card.href} className="group">
-                <div className="rounded-xl border border-border bg-surface p-6 hover-glow h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <div
-                      className={`${card.bg} ${card.color} rounded-lg p-2.5`}
-                    >
-                      <Icon className="h-5 w-5" />
+        {/* Immigration & Visa Tools */}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-cyan" />
+            Immigration & Visa Intelligence
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {immigrationTools.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Link key={card.href} href={card.href} className="group">
+                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
                     </div>
-                    <ArrowRight className="h-4 w-4 text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                      {card.label}
+                    </div>
+                    <div className="text-xs text-muted">{card.description}</div>
                   </div>
-                  <div className="text-3xl font-bold text-foreground mb-1">
-                    {card.value}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Career & Contract Tools */}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <Scale className="h-5 w-5 text-warning" />
+            Career & Contract Tools
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {careerTools.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Link key={card.href} href={card.href} className="group">
+                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
+                    </div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                      {card.label}
+                    </div>
+                    <div className="text-xs text-muted">{card.description}</div>
                   </div>
-                  <div className="text-sm font-medium text-foreground mb-1">
-                    {card.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Job & Employer Tools */}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+            <Briefcase className="h-5 w-5 text-accent" />
+            Job Search & Preparation
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {jobTools.map((card) => {
+              const Icon = card.icon;
+              return (
+                <Link key={card.href} href={card.href} className="group">
+                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
+                    </div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
+                      {card.label}
+                    </div>
+                    <div className="text-xs text-muted">{card.description}</div>
                   </div>
-                  <div className="text-xs text-muted">{card.description}</div>
-                </div>
-              </Link>
-            );
-          })}
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
         {/* Latest Updates */}
