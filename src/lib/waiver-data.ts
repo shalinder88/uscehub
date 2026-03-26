@@ -14,6 +14,10 @@ export interface WaiverState {
   confidence?: "official" | "community" | "estimated";
   /** When was this state's data last verified */
   lastVerified?: string;
+  /** Application window: when the state accepts Conrad 30 applications */
+  applicationWindow?: string;
+  /** State health department contact for J-1 waiver */
+  contactInfo?: string;
 }
 
 export const WAIVER_STATES: Record<string, WaiverState> = {
