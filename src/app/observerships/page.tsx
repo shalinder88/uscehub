@@ -134,7 +134,7 @@ export default async function ObservershipsByStatePage() {
         {statesWithout.length > 0 && (
           <>
             <h2 className="mb-4 mt-12 text-lg font-bold text-slate-900 dark:text-white">
-              Coming Soon ({statesWithout.length} states)
+              Other States ({statesWithout.length})
             </h2>
             <div className="flex flex-wrap gap-2">
               {statesWithout.map(([abbr, name]) => {

@@ -66,9 +66,9 @@ const statCards = [
 
 const recentUpdates = [
   {
-    title: "Fellowship Database Launched",
+    title: "Fellowship Strategy Guide Published",
     description:
-      "Browse sample fellowship programs with visa sponsorship and match data. Full database coming soon.",
+      "Complete PGY-1 through Match Day timeline with competitiveness tiers, IMG-specific strategies, and what programs actually look for.",
     date: "March 2026",
   },
   {
