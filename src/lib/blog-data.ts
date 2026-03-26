@@ -553,6 +553,188 @@ We maintain a live ERAS countdown timer on our homepage. [Check it now →](/)
 
 *Timeline based on AAMC published ERAS schedules. Specific 2027 dates will be confirmed by AAMC in spring 2026. Data verified March 2026.*`,
   },
+  {
+    slug: "j1-waiver-alternatives-beyond-conrad-30",
+    title: "5 J-1 Waiver Alternatives Beyond Conrad 30 That Most IMGs Don't Know About",
+    description:
+      "Conrad 30 isn't the only option. HHS, ARC, DRA, SCRC, and VA pathways offer unlimited waiver slots. Here's what they are, who qualifies, and how to apply.",
+    category: "immigration",
+    tags: ["J-1 waiver", "Conrad 30", "HHS waiver", "ARC", "SCRC", "alternative pathways"],
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-03-25",
+    author: "USCEHub Team",
+    readTime: "8 min",
+    content: `## The Problem With Conrad 30
+
+Everyone talks about Conrad 30. It's the waiver pathway every IMG knows. And that's exactly the problem — because everyone knows about it, everyone applies for it, and in competitive states, all 30 slots fill within days of the October 1 fiscal year start.
+
+In FY 2024, 19 states filled every single Conrad 30 slot. Kentucky, Michigan, and New York have filled all 30 slots every year for over 20 years straight. Texas and California exhaust their slots on essentially the first day.
+
+So what happens if you miss the window? Or if you're in a competitive state? Most IMGs panic. They shouldn't. Because there are 5 alternative pathways that most people never hear about — and several of them have **unlimited slots**.
+
+## 1. HHS Clinical Care Waiver (Supplement B)
+
+This is the most underused pathway in the system.
+
+**The deal:** HHS reviews waiver applications for physicians who will work in primary care or psychiatry at facilities with a HPSA score of 7 or higher. There's no cap on the number of waivers they can recommend — unlimited slots.
+
+**Who qualifies:** Family Medicine, General Internal Medicine, General Pediatrics, OB/GYN, and General Psychiatry. That's it. No subspecialists.
+
+**The catch:** HHS only reviews about 110 cases per year, and the process takes 6-8 weeks at the HHS level (total timeline 6-9 months with DOS and USCIS). But there's no competition for "slots" — if you meet the requirements, you can apply anytime.
+
+**When to use it:** When Conrad 30 slots are full in your state, and you're in primary care or psychiatry.
+
+## 2. Appalachian Regional Commission (ARC)
+
+If you're willing to work in Appalachian communities, this is one of the best-kept secrets.
+
+**The deal:** Unlimited waiver slots. No application fee (they eliminated it in June 2021). Covers 423 counties across 13 states — and this includes parts of New York, Pennsylvania, Ohio, and North Carolina, which are states where Conrad 30 fills every year.
+
+**The best part:** ARC accepts subspecialists. You don't have to be in primary care. If you're a cardiologist or a surgeon willing to work in an Appalachian community, ARC can work for you.
+
+**States covered:** Alabama, Georgia, Kentucky, Maryland, Mississippi, New York, North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Virginia, and all of West Virginia.
+
+**When to use it:** When you're in one of the 13 covered states and Conrad is full. Especially powerful in PA, OH, NY, and KY where Conrad fills every year but ARC counties overlap.
+
+## 3. Delta Regional Authority (DRA) — "Delta Doctors"
+
+**The deal:** Unlimited slots. The fee was eliminated in October 2022. Covers 240 counties across 8 states in the Mississippi Delta region. DRA sponsored over 400 physicians between 2021 and 2024.
+
+**Who qualifies:** Primary care is prioritized, but specialists can qualify with additional documentation showing community need.
+
+**States covered:** Alabama, Arkansas, Illinois, Kentucky, Louisiana, Mississippi, Missouri, Tennessee.
+
+**When to use it:** When you're in one of the 8 covered states. Kentucky has a unique advantage — it qualifies for both ARC and DRA, giving it effectively three waiver pathways (Conrad + ARC + DRA).
+
+## 4. Southeast Crescent Regional Commission (SCRC)
+
+This is the newest pathway, launched in summer 2022, and it has one killer feature that almost nobody knows about.
+
+**ALL of Florida is covered.** Every single county. That means Florida — one of the most competitive Conrad 30 states — has unlimited additional waiver capacity through SCRC.
+
+**The deal:** Unlimited slots. Covers 428 counties across 7 southeastern states. Accepts subspecialists. Processing takes about 60 days.
+
+**The catch:** $3,000 non-refundable application fee. That's the highest of any pathway. But if the alternative is waiting a full year for the next Conrad 30 cycle, $3,000 is a reasonable investment.
+
+**States covered:** Alabama, Florida (ALL counties), Georgia (122 counties), Mississippi, North Carolina (69 counties), South Carolina, Virginia.
+
+## 5. VA (Department of Veterans Affairs)
+
+Different from all the others.
+
+**The deal:** No HPSA requirement. No geographic restriction to underserved areas. Any specialty the VA needs. You work at a VA medical center as a federal employee.
+
+**The advantage:** VA facilities are H-1B cap-exempt. Federal employment means PSLF eligibility. No non-compete issues. Any specialty.
+
+**The catch:** You have to work at a VA facility specifically. Salary may be lower than private sector. The VA hiring process is notoriously slow. And if a US physician becomes available for the position during the waiver process, your application gets stopped.
+
+## How to Think About This Strategically
+
+Don't put all your eggs in Conrad 30. Here's the smart approach:
+
+1. **Apply for Conrad 30 on October 1** in your primary state
+2. **Simultaneously research which alternative pathways cover your area** — you may qualify for 2-3 additional pathways
+3. **Have a backup state AND a backup pathway** ready
+4. **If you're in primary care or psychiatry** — HHS is always available as a fallback with unlimited slots
+5. **If you're a subspecialist** — ARC, DRA, and SCRC accept you. Conrad does too, but alternatives give you more options if slots fill.
+
+The physicians who get stuck are the ones who apply to one state through one pathway and wait. The ones who succeed treat this like a multi-track application process.
+
+[View our complete pathway comparison →](/career/waiver/pathways)
+[Check the Conrad 30 Slot Tracker →](/career/waiver/tracker)
+
+*Data sourced from USCIS, HHS OGA, ARC, DRA, SCRC, 3RNET. Verified March 2026.*`,
+  },
+  {
+    slug: "fellowship-match-data-2026",
+    title: "2026 Fellowship Match Results: What IMGs Need to Know",
+    description:
+      "Breakdown of the 2025 NRMP fellowship match (2026 appointment year) — the largest in history. Position counts, fill rates, and IMG match rates by subspecialty.",
+    category: "residency",
+    tags: ["fellowship", "NRMP", "match", "subspecialty", "IMG", "2026"],
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-03-25",
+    author: "USCEHub Team",
+    readTime: "7 min",
+    content: `## The Biggest Fellowship Match Ever
+
+The 2025 Medicine and Pediatric Specialties Match (for the 2026 appointment year) was the largest in NRMP history. Programs offered 9,950 positions total. Of those, 8,526 were filled — an overall 85.7% fill rate. The applicant match rate was 78.7%.
+
+For IMGs specifically: non-US IMGs matched at approximately 70%. US MD applicants matched at about 91%. DO applicants at about 82%.
+
+Those are the headlines. Here's what actually matters if you're planning your fellowship application.
+
+## The Numbers by Subspecialty
+
+### Tier 1: Near-100% Fill (Extremely Competitive)
+
+**Cardiology (Cardiovascular Disease)**
+- 1,347 positions offered
+- 100% fill rate — every single slot filled
+- This is the most competitive IM fellowship, period. Research is essentially mandatory. Many applicants do a dedicated research year.
+
+**Gastroenterology**
+- 759 positions offered
+- 99.5% fill rate
+- Second most competitive. Procedural skills and strong research expected.
+
+**Hematology-Oncology**
+- 809 positions offered
+- 99.5% fill rate
+- Research-heavy. Clinical trial experience is a plus.
+
+### Tier 2: 95%+ Fill (Highly Competitive)
+
+**Pulmonary & Critical Care**
+- 844 positions offered
+- 98.8% fill rate
+- Combined Pulm/CCM is standard. ICU experience valued highly.
+
+**Rheumatology**
+- 302 positions offered
+- 99% fill rate
+- Smaller field. More competitive than many people realize.
+
+**Allergy & Immunology**
+- 177 positions offered
+- 98.9% fill rate
+- Can apply from either IM or Peds. Small but competitive.
+
+### Tier 3: Variable Fill (More Accessible for IMGs)
+
+**Endocrinology**
+- ~484 positions offered
+- ~97% fill rate (improved from ~80% in prior years)
+- 38.7% of positions filled by non-US IMGs — one of the most IMG-friendly fellowships
+
+**Nephrology**
+- 496 positions offered
+- 73% fill rate — significantly less competitive
+- 36.2% of positions filled by non-US IMGs
+- Many unfilled positions available. Strong job market after fellowship.
+
+**Infectious Disease**
+- 60.9% fill rate — the lowest among all major IM subspecialties
+- Down 9.3 percentage points from the prior year
+- Lots of unfilled positions. The declining fill rate is driven partly by lower post-fellowship compensation compared to procedural specialties.
+
+## What This Means for IMGs
+
+If you're an IMG planning a fellowship application, here's the practical takeaway:
+
+**Realistic targets by competitiveness:**
+- If you have 5+ publications, strong Step scores, a research year, and US-trained: Cards, GI, Hem/Onc are reachable but competitive
+- If you have 2-3 publications, solid letters, competitive scores: Pulm/CCM, Rheum, Allergy are strong options
+- If you want the best chance of matching: Nephrology, Endocrinology, and ID have the most capacity and highest IMG representation
+
+**The new program signaling system** (introduced for the 2026 ERAS season) gives fellowship applicants the ability to indicate genuine interest to programs. Use your signals strategically — signal programs where you have a connection or genuine fit.
+
+**Don't sleep on the less competitive fellowships.** Nephrology has a strong job market. Endocrinology has excellent lifestyle. ID has intellectual satisfaction even if the pay is lower. Matching into a fellowship you enjoy beats not matching into a prestigious one.
+
+[Read our full Fellowship Strategy Guide →](/residency/fellowship/guide)
+
+*Data from NRMP Specialties Matching Service (SMS) 2025 Match / 2026 Appointment Year. Verified March 2026.*`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

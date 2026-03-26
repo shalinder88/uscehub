@@ -109,7 +109,7 @@ export default function AboutPage() {
                 IMGs have walked this path before you and matched. You can too.
               </p>
             </div>
-            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— The USCEHub Team</p>
+            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— Intensivist</p>
           </div>
         </section>
 
