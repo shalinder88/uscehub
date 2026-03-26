@@ -147,7 +147,11 @@ export default function ConradTrackerPage() {
           <span>
             Last updated: <strong>{summary.lastUpdated}</strong>
           </span>
-          <span className="text-slate-500">· Source: 3RNET, State DOH offices</span>
+          <span className="text-slate-500">· Source:{" "}
+            <a href="https://www.3rnet.org/j1-filled" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">3RNET J-1 Filled Data</a>,{" "}
+            <a href="https://fordmurraylaw.com/must-know-deadlines-conrad-30-j-1-visa-waiver/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">FordMurray Deadlines</a>,{" "}
+            State DOH offices
+          </span>
         </div>
       </div>
 
@@ -345,12 +349,15 @@ export default function ConradTrackerPage() {
 
       {/* Source note */}
       <p className="mt-4 text-xs text-muted">
-        Data sourced from 3RNET Conrad 30 slot tracking and state health
-        department offices. Fill pattern based on FY 2024 confirmed data and
-        historical 20-year trends. Exact current-year slot counts are
-        approximate and updated as state DOH offices report. For the most
-        current slot availability, contact the specific state health department
-        directly.
+        Data sourced from{" "}
+        <a href="https://www.3rnet.org/j1-filled" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">3RNET Conrad 30 slot tracking</a>{" "}
+        (FY 2024 confirmed data),{" "}
+        <a href="https://academic.oup.com/healthaffairsscholar/article/2/9/qxae103/7735459" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">Health Affairs Scholar 20-year analysis</a>,{" "}
+        and individual state health department offices. State application windows from{" "}
+        <a href="https://fordmurraylaw.com/must-know-deadlines-conrad-30-j-1-visa-waiver/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">FordMurray Law</a>{" "}
+        and{" "}
+        <a href="https://millermayer.com/summary-conrad-state-30-j-1-waiver-programs-foreign-medical-graduates/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">Miller Mayer summary</a>.
+        For the most current slot availability, contact the specific state health department directly.
       </p>
     </div>
   );
