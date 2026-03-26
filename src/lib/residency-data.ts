@@ -263,9 +263,9 @@ export const BOARD_EXAMS: BoardExam[] = [
     name: "American Board of Family Medicine",
     specialty: "Family Medicine",
     format:
-      "Computer-based exam with approximately 300 questions over one day. Covers preventive care, chronic disease management, behavioral health, pediatrics, women's health, musculoskeletal, and emergency medicine.",
+      "Computer-based exam with 300 single-best-answer questions in 4 sections over a 9-hour day (with breaks). Content covers: preventive care (15%), chronic disease management (22%), behavioral health (8%), pediatrics (8%), women's health (8%), musculoskeletal (8%), emergency/urgent care (5%), and other areas. Exam fee: $1,300 (2026). Starting 2025, diplomates can alternatively choose quarterly 25-question longitudinal assessments (FMCLA) instead of the one-day exam.",
     timeline:
-      "Taken after completing an ACGME-accredited family medicine residency. Exam offered in spring and fall. Most residents take it in July after PGY-3 graduation.",
+      "Initial certification: taken after completing ACGME-accredited FM residency. Exam offered multiple times per year at Pearson VUE centers. Most PGY-3 graduates take it July-September after graduation. Registration typically opens 6 months before exam. 4-8 week dedicated study period is standard. New 5-year continuous certification cycle launched January 2025.",
     passRate: "First-time initial certification pass rate: 96.8% (2024), 97.9% (2023). 300 questions in 4 sections over a 9-hour exam day. Exam fee: $1,300 (2026). Major change in 2025: new 5-year continuous certification cycle — diplomates can choose quarterly 25-question longitudinal assessments OR the traditional one-day exam. Recertification pass rate is lower (~80-89%). Source: ABFM official data.",
     resources: [
       "AAFP Family Medicine Board Review — comprehensive review course",
@@ -281,9 +281,9 @@ export const BOARD_EXAMS: BoardExam[] = [
     name: "American Board of Pediatrics",
     specialty: "Pediatrics",
     format:
-      "Computer-based exam with approximately 330 questions over two days. Covers general pediatrics, neonatology, adolescent medicine, developmental-behavioral, emergency, and subspecialty pediatrics.",
+      "Computer-based exam administered at testing centers over a 3-day window (one day per candidate). Content covers: neonatology, growth & development, nutrition, adolescent medicine, infectious disease, allergy/immunology, GI, respiratory, cardiovascular, renal, neuro, heme/onc, endocrine, rheumatology, emergency, and general pediatrics. Criterion-referenced passing standard (absolute threshold, not curved — every candidate meeting competence threshold passes).",
     timeline:
-      "Administered in October. Eligible after completing ACGME-accredited pediatrics residency. Registration opens in spring of PGY-3 year.",
+      "Administered annually in October at computer testing centers. Eligible after completing ACGME-accredited pediatrics residency. Registration typically opens in spring of PGY-3 year. Valid unrestricted medical license required by October 1 of exam year (2026 exam: license by Oct 1, 2026). 6-8 week focused study period is standard. MOC exam offered separately.",
     passRate: "First-time pass rate: 89% (2024), low-80% range (2022-2023), 91% (2018 historic high). Historical range since 2012: 80-91%. MOC exam pass rate typically 85-90%. Criterion-referenced passing standard (not curved). Valid unrestricted medical license required by exam date. Source: ABP official exam pass rates.",
     resources: [
       "PREP Self-Assessment (AAP) — official AAP question bank, essential",
@@ -299,9 +299,9 @@ export const BOARD_EXAMS: BoardExam[] = [
     name: "American Board of Surgery",
     specialty: "Surgery",
     format:
-      "Two-part certification: Qualifying Exam (QE) is a computer-based written exam with approximately 300 questions. Certifying Exam (CE) is an oral exam with standardized clinical scenarios and operative management discussions.",
+      "Two-part certification. Qualifying Exam (QE): computer-based written exam with ~300 questions, passing score 400 (on 100-900 scale, adopted 2016). Content covers: alimentary tract, abdomen, breast, vascular, head & neck, endocrine, skin/soft tissue, pediatric, trauma, critical care, and transplant surgery. Certifying Exam (CE): oral exam with standardized clinical scenarios requiring operative management decisions, patient management, and surgical judgment. 2026 QE date: July 29 (registration deadline April 13).",
     timeline:
-      "QE taken in July after completing chief year. CE taken approximately 12-18 months later. QE must be passed before taking CE.",
+      "QE: taken in July after completing chief year (PGY-5). CE: taken approximately 12-18 months after passing QE. QE must be passed before CE eligibility. Spring CE dates for 2026: March 11-13 and 17-19. ACGME requires programs to maintain 65%+ first-time pass rate across both exams over a 5-year period. Continuous certification (ABS CC) launched 2023 with quarterly online assessments as alternative to 10-year recertification.",
     passRate:
       "QE first-time pass rate: 92-95% in recent years (2022 was 95%). CE (oral exam) first-time pass rate: ~79% (5-year average). ~1,400 examinees per exam annually. QE passing score: 400 (on 100-900 scale). ACGME requires programs to maintain 65%+ first-time pass rate over 5 years. ABS implemented continuous certification (ABS CC) starting 2023. Source: ABS certification statistics.",
     resources: [
@@ -318,9 +318,9 @@ export const BOARD_EXAMS: BoardExam[] = [
     name: "American Board of Psychiatry and Neurology",
     specialty: "Psychiatry",
     format:
-      "Computer-based exam with approximately 300 questions covering adult psychiatry, child psychiatry, neurology, psychopharmacology, psychotherapy, forensic psychiatry, and addiction medicine.",
+      "Computer-based exam with ~300 questions covering: adult psychiatry (major focus), psychopharmacology, psychotherapy (CBT, DBT, motivational interviewing), neuroscience/neurology, child & adolescent psychiatry, addiction, forensic psychiatry, consultation-liaison, and ethics/professionalism. Includes article-based questions (interpreting research studies). Criterion-referenced standard (no numerical cutoff disclosed, no curve — all candidates meeting competence threshold pass). Subspecialty certifications available: Addiction Psychiatry (95% pass rate), Child & Adolescent (85%), Forensic, Consult-Liaison, Brain Injury Medicine.",
     timeline:
-      "Offered annually in spring and fall. Eligible after completing an ACGME-accredited psychiatry residency. Most take it within one year of graduation.",
+      "Offered annually at Pearson VUE testing centers, typically spring and fall windows. Eligible after completing ACGME-accredited psychiatry residency. Most graduates take it within one year of completing residency. Registration opens 6+ months before exam. 6-8 week focused study period is standard. ABPN does not have a set time limit for initial certification attempts.",
     passRate: "First-time pass rate: 90% (2024, 1,894/2,096 passed), 91% (2023), 89% (2022), 91% (2021). 5-year cumulative: 90% (8,506/9,426). Related specialties: Addiction Psychiatry 95%, Child & Adolescent 85%, Neurology 84%. Criterion-referenced standard (no curve). Source: ABPN official 5-year pass rate data (2020-2024).",
     resources: [
       "Stahl's Essential Psychopharmacology — the bible of psychopharm",
@@ -336,9 +336,9 @@ export const BOARD_EXAMS: BoardExam[] = [
     name: "American Board of Pathology",
     specialty: "Pathology",
     format:
-      "Two-part exam: Part 1 covers anatomic and clinical pathology fundamentals. Part 2 focuses on subspecialty expertise. Both are computer-based with multiple-choice and image-based questions.",
+      "Combined AP/CP certification: computer-based exam with multiple-choice and image-based questions (glass slides, digital pathology images, lab data interpretation). Content covers: anatomic pathology (surgical path, cytopathology, autopsy), clinical pathology (chemistry, hematology, microbiology, transfusion medicine, molecular diagnostics), and laboratory management. AP-only and CP-only tracks available. Spring and Fall administrations — research shows Spring takers have statistically significantly higher pass rates.",
     timeline:
-      "Part 1 typically taken after PGY-3 year. Part 2 taken after completing residency. Exams offered annually.",
+      "Typically taken after completing ACGME-accredited pathology residency (PGY-4 for AP/CP combined). Spring and Fall exam windows available annually. Important: delaying the exam beyond graduation year is associated with higher failure rates. Subspecialty certifications available: dermatopathology, hematopathology, neuropathology, cytopathology, molecular genetic pathology, and others. ABPath conducted a rescoring in October 2024 (< 2% reclassified from fail to pass).",
     passRate: "Subspecialty first-time pass rate: 92.1% (15-year average 2007-2021). Repeat takers: 54.5%. Overall mean across subspecialties: 89% (range 78.9-100%). Spring takers have statistically higher pass rates than Fall takers. Delaying beyond graduation year associated with higher failure rates. ABPath conducted a rescoring in October 2024. Source: ABPath annual reports and published research.",
     resources: [
       "Robbins & Cotran Pathologic Basis of Disease — the foundational text",
