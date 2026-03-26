@@ -262,14 +262,17 @@ export default function WaiverJobsPage() {
       <div className="rounded-xl border border-danger/30 bg-danger/5 p-6 mb-8">
         <h3 className="text-lg font-bold text-danger mb-2 flex items-center gap-2">
           <AlertTriangle className="h-5 w-5" />
-          Proposed $100K H-1B Filing Fee (2026)
+          $100K H-1B Filing Fee Is Now Law (Sept 2025)
         </h3>
         <p className="text-sm text-muted">
-          A proposed $100,000 H-1B filing fee could significantly impact
-          employer willingness to sponsor physician visas. Smaller practices
-          and rural hospitals may reduce sponsorship. Academic medical centers
-          and large health systems are more likely to absorb the cost. Monitor
-          USCIS announcements for updates.
+          Presidential Proclamation 10973 imposed a $100,000 supplemental fee
+          on new H-1B petitions requiring consular processing. This applies to
+          cap-exempt employers too. It does NOT apply to change-of-status
+          (already in US), extensions, or many transfers. Expires Sept 2026
+          unless renewed. A physician exemption bill has been introduced.
+          Only ~85 employers have paid the fee so far. Impact: smaller
+          practices reducing sponsorship, but large academic systems absorbing
+          the cost. Source: Federal Register, AMA.
         </p>
       </div>
 

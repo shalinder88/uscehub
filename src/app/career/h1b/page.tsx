@@ -40,8 +40,8 @@ const CAP_EXEMPT_CATEGORIES = [
   },
   {
     category: "Government Research Organizations",
-    description: "Federal, state, and local government agencies including VA Medical Centers, NIH, CDC, and military medical facilities.",
-    examples: "All VA Medical Centers (170+), NIH Clinical Center, military hospitals (Walter Reed, Madigan, etc.)",
+    description: "Federal agencies whose primary mission includes research. Important: VA Medical Centers are NOT cap-exempt (patient care is primary mission, not research). Pending legislation (Expanding Health Care Providers for Veterans Act) would change this.",
+    examples: "NIH Clinical Center, CDC, national labs. NOT VA hospitals (contrary to common belief).",
     icon: Shield,
   },
   {
@@ -55,7 +55,7 @@ const CAP_EXEMPT_CATEGORIES = [
 const H1B_FACTS = [
   { label: "Standard filing fee (employer ≤25 employees)", value: "$1,710", note: "I-129 base + ACWIA fee + Fraud Prevention fee" },
   { label: "Standard filing fee (employer >25 employees)", value: "$2,460", note: "Higher ACWIA fee for larger employers" },
-  { label: "Premium processing fee", value: "$2,805", note: "15-day processing guarantee. Strongly recommended for physicians." },
+  { label: "Premium processing fee", value: "$2,965", note: "15-day processing guarantee (increased March 1, 2026). Strongly recommended." },
   { label: "H-1B cap-exempt: filing window", value: "Year-round", note: "No lottery. No October 1 start date requirement. File anytime." },
   { label: "H-1B cap-subject: filing window", value: "April lottery only", note: "Must win lottery first. Very rare for physician employers." },
   { label: "Maximum H-1B duration", value: "6 years", note: "3 years initial, renewable for 3 more. Extensions possible if I-140 approved." },
@@ -128,9 +128,17 @@ export default function H1BPage() {
         </div>
         <p className="text-muted max-w-3xl text-base leading-relaxed">
           Everything physicians need to know about H-1B status — cap-exempt
-          employers, transfer rules, filing fees, and navigating the system
-          after your J-1 waiver.
+          employers, transfer rules, filing fees (including the $100K
+          supplemental fee), and navigating the system after your J-1 waiver.
         </p>
+
+        {/* $100K Fee Alert */}
+        <div className="mt-4 rounded-xl border border-danger/30 bg-danger/5 p-4 flex gap-3">
+          <AlertTriangle className="h-5 w-5 text-danger shrink-0 mt-0.5" />
+          <div className="text-xs text-muted">
+            <strong className="text-danger">$100,000 H-1B Fee Is Now Law</strong> — Presidential Proclamation 10973 (signed Sept 19, 2025) imposes a $100K supplemental fee on new H-1B petitions requiring consular processing. Applies to cap-exempt employers too. Does NOT apply to change-of-status, extensions, or many transfers for people already in the US. Expires Sept 2026 unless renewed. Physician exemption bill (H-1Bs for Physicians Act) has been introduced. Litigation ongoing in multiple courts. Source: Federal Register, AMA, AHA.
+          </div>
+        </div>
         <div className="mt-3">
           <VerifiedBadge date="March 2026" sources={["USCIS", "DOL", "AILA"]} />
         </div>
@@ -193,12 +201,13 @@ export default function H1BPage() {
         </div>
         <div className="mt-4 rounded-lg bg-success/5 border border-success/20 p-4">
           <p className="text-xs text-muted">
-            <strong className="text-success">Key insight:</strong> The vast
-            majority of hospitals where physicians work — academic medical
-            centers, VA hospitals, community nonprofits — are cap-exempt.
-            Private for-profit practice groups and staffing companies are
-            typically cap-subject. If you&apos;re joining a hospital or health
-            system, you&apos;re almost certainly cap-exempt.
+            <strong className="text-success">Key insight:</strong> Academic
+            medical centers affiliated with universities are the safest bet for
+            confirmed cap-exempt status. Being a 501(c)(3) nonprofit alone is
+            NOT sufficient — the employer must have a formal affiliation with a
+            higher education institution or qualify as a research organization.
+            VA hospitals are NOT currently cap-exempt (contrary to common
+            belief). Private for-profit practice groups are cap-subject.
           </p>
         </div>
       </section>
