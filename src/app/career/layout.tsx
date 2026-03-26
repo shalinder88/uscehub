@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Briefcase,
   MapPin,
-  Scale,
   GitCompare,
-  Flag,
-  Users,
   DollarSign,
   MessageSquare,
-  ArrowLeftRight,
   Shield,
-  ClipboardCheck,
-  Stethoscope,
-  Calculator,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -39,19 +31,11 @@ export const metadata: Metadata = {
 };
 
 const tabs = [
-  { label: "Waiver Jobs", href: "/career/jobs", icon: Briefcase },
   { label: "State Intel", href: "/career/waiver", icon: MapPin },
-  { label: "Lawyers", href: "/career/lawyers", icon: Scale },
   { label: "Offer Compare", href: "/career/offers", icon: GitCompare },
   { label: "Malpractice", href: "/career/malpractice", icon: Shield },
-  { label: "Compare States", href: "/career/compare-states", icon: ArrowLeftRight },
-  { label: "Citizenship", href: "/career/citizenship", icon: Flag },
-  { label: "Credentialing", href: "/career/credentialing", icon: ClipboardCheck },
   { label: "Salary", href: "/career/salary", icon: DollarSign },
-  { label: "Locums", href: "/career/locums", icon: Stethoscope },
-  { label: "Taxes", href: "/career/taxes", icon: Calculator },
   { label: "Interview Prep", href: "/career/interview", icon: MessageSquare },
-  { label: "Community", href: "/career/community", icon: Users },
 ];
 
 export default function CareerLayout({

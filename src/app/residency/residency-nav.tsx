@@ -3,29 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  BookOpen,
   GraduationCap,
   ClipboardCheck,
   HeartPulse,
-  Users,
   DollarSign,
-  ClipboardList,
-  Moon,
-  FlaskConical,
-  PiggyBank,
 } from "lucide-react";
 
 const tabs = [
-  { label: "Resources", href: "/residency/resources", icon: BookOpen },
-  { label: "Fellowship", href: "/residency/fellowship", icon: GraduationCap },
+  { label: "Fellowship Guide", href: "/residency/fellowship/guide", icon: GraduationCap },
   { label: "Boards", href: "/residency/boards", icon: ClipboardCheck },
-  { label: "Procedures", href: "/residency/procedures", icon: ClipboardList },
   { label: "Survival", href: "/residency/survival", icon: HeartPulse },
-  { label: "Research", href: "/residency/research", icon: FlaskConical },
-  { label: "Moonlighting", href: "/residency/moonlighting", icon: Moon },
-  { label: "Finances", href: "/residency/finances", icon: PiggyBank },
-  { label: "Salary", href: "/residency/salary", icon: DollarSign },
-  { label: "Community", href: "/residency/community", icon: Users },
+  { label: "Salary & Contracts", href: "/residency/salary", icon: DollarSign },
 ] as const;
 
 export function ResidencyNav() {
