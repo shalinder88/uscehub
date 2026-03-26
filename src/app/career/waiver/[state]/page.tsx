@@ -147,6 +147,21 @@ export default async function WaiverStatePage({
           </div>
         </div>
 
+        {/* Application Window (if available) */}
+        {stateData.applicationWindow && (
+          <div className="rounded-xl border border-accent/30 bg-accent/5 p-5 mb-8 flex gap-3">
+            <Clock className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-1">
+                Application Window
+              </h3>
+              <p className="text-sm text-muted">
+                {stateData.applicationWindow}
+              </p>
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">

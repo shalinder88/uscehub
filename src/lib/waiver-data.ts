@@ -90,6 +90,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. California HCAI (Department of Health Care Access and Information) administers the program. Strong preference for FQHC placements. California requires employers to demonstrate inability to recruit a US physician for 6+ months. HPSA score of 14+ recommended for competitive applications. State requires full California medical license at time of application.",
     tips: "California is the most competitive Conrad 30 state — slots typically fill by January/February of each fiscal year (which starts October 1). FQHC and community health center placements have significantly better approval rates than private practice. Central Valley (Fresno, Bakersfield, Stockton) and rural Northern California (Redding, Eureka) have highest need and best chances. Inland Empire (San Bernardino, Riverside) is growing rapidly with physician shortages. Avoid applying for urban LA or SF Bay Area placements — extremely competitive and often denied. Apply as early as October 1 as possible. Budget for California's high cost of living when evaluating offers.",
     websiteUrl: "https://hcai.ca.gov",
+    applicationWindow: "Opens October 1, closes October 31. Secondary cycle in December if slots remain. Fills within days — apply on Oct 1.",
   },
   CO: {
     stateCode: "CO",
@@ -118,6 +119,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Connecticut DPH administers the program. Connecticut fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways available. Full unrestricted CT medical license required.",
     tips: "Connecticut fills all 30 Conrad slots every year. Urban underserved areas in Hartford, Bridgeport, New Haven, and Waterbury have the highest need and best chances. FQHCs like Community Health Center Inc. and Fair Haven Community Health are major waiver employers. Yale-affiliated community sites in New Haven are competitive but possible. Northeast and northwest rural CT have growing demand. Connecticut has a relatively high cost of living and state income tax (graduated 3-6.99%). Strong academic medical infrastructure (Yale, UConn Health).",
     websiteUrl: "https://portal.ct.gov/dph",
+    applicationWindow: "Opens October 1 at 8:00 AM EST, closes October 15 at 4:30 PM EST. If 30+ applications, lottery conducted. Extended to April 1 only if fewer than 30 received.",
   },
   DE: {
     stateCode: "DE",
@@ -146,6 +148,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Florida DOH administers the Conrad 30 program. Florida is highly competitive due to desirable lifestyle and large IMG population. HPSA score of 14+ strongly recommended. MAJOR ADVANTAGE: The entire state of Florida is covered by SCRC (Southeast Crescent Regional Commission) — every single county qualifies for SCRC waivers with UNLIMITED slots. This means even when Conrad 30 slots fill, SCRC provides an alternative ($3,000 fee applies).",
     tips: "Florida is very competitive for Conrad 30 — second only to California and New York in demand. No state income tax is a major draw. BUT here's the key insight most people miss: ALL of Florida is covered by SCRC waivers (launched 2022), which have unlimited slots. This means Florida effectively has more waiver capacity than almost any other state. The $3,000 SCRC fee is worth it when Conrad fills. Best areas: rural panhandle (Gadsden, Jackson, Bay), central agricultural areas (Polk, Highlands, Hardee), and northern tier (Marion, Putnam, Baker). South Florida (Miami-Dade, Broward) is competitive even for SCRC. Geriatrics is growing need due to aging population. Large IMG community statewide.",
     websiteUrl: "https://www.floridahealth.gov",
+    applicationWindow: "Opens October 1 at 8:00 AM. Closes ~October 12 (~2-week window only). Prioritized by HPSA score, rural/primary care preference.",
   },
   GA: {
     stateCode: "GA",
@@ -202,6 +205,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Illinois DPH (Department of Public Health) administers the Conrad 30 program. HPSA score of 10+ recommended. Illinois has a large residency training infrastructure — many waiver physicians trained in-state. Full Illinois medical license required. The state also accepts applications through HHS Clinical Care Waivers (unlimited slots, HPSA score 7+ required) for eligible sites.",
     tips: "Illinois offers a mix of urban and rural waiver opportunities. Downstate Illinois (Peoria, Springfield, Champaign-Urbana, Carbondale, Rockford) is significantly less competitive than Chicago. Chicago's south side and west side FQHCs have strong track records for waiver placements. Cook County Health System has historically been a major waiver employer. East St. Louis has critical needs. Large IMG physician community — network through Illinois State Medical Society IMG section. Consider that Illinois has a relatively high state income tax (4.95% flat rate).",
     websiteUrl: "https://dph.illinois.gov",
+    applicationWindow: "Three phases: Phase 1 Oct 1-31, Phase 2 Jan 1-31 (if slots remain), Phase 3 Apr 1-30 (if still remaining). Email to DPH.J1Waiver@illinois.gov.",
   },
   IN: {
     stateCode: "IN",
@@ -244,6 +248,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Kansas Department of Health and Environment administers the program.",
     tips: "Kansas fills all 30 Conrad slots annually (FY 2024). Western Kansas has critical shortages — Dodge City, Garden City, Liberal. No alternative regional pathways. Kansas has a graduated state income tax (3.1-5.7%). KU Medical Center is the major academic system. Wichita has some FQHC opportunities. Via Christi and Ascension are key employers.",
     websiteUrl: "https://www.kdhe.ks.gov",
+    applicationWindow: "Phase 1: September 1 - November 30 (decisions by December 15). Phase 2: after November 30 only if slots remain. Kansas opens BEFORE October 1.",
   },
   KY: {
     stateCode: "KY",
@@ -258,6 +263,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Kentucky CHFS sponsors applications. Kentucky has filled every single Conrad 30 slot every year for 20+ years — one of only 3 states (with Michigan and New York) with a perfect fill record. Also eligible for both ARC (Appalachian) and DRA (Delta) waivers — giving Kentucky access to more unlimited-slot pathways than almost any other state.",
     tips: "Kentucky fills all 30 Conrad slots every single year — has never had an unused slot in 20+ years of data (3RNET). Apply on October 1 or earlier if possible. Eastern Appalachian Kentucky has the highest HPSA scores and greatest need. Kentucky has a unique advantage: eligible for BOTH ARC and DRA unlimited-slot waiver pathways, covering much of the state. This means even when Conrad is full, alternatives exist. Louisville and Lexington suburbs have some HPSA sites but are competitive. Rural communities in Pike, Floyd, Harlan, and Clay counties have critical needs. No state income tax on first $10,000 (graduated 0-4.5%). Strong IMG community at University of Kentucky and University of Louisville residency programs.",
     websiteUrl: "https://chfs.ky.gov",
+    applicationWindow: "Opens October 1, initial deadline October 31. Extended until July 30 if waivers remain. Fills every year — apply October 1.",
   },
   LA: {
     stateCode: "LA",
@@ -272,6 +278,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Louisiana DOH sponsors Conrad 30 applications. Louisiana fills all 30 Conrad slots annually (FY 2024). Also eligible for DRA (Delta Regional Authority) waivers with unlimited slots — much of Louisiana is in the DRA footprint. Full unrestricted LA medical license required.",
     tips: "Louisiana fills all 30 Conrad slots every year. Northern Louisiana parishes (Ouachita, Morehouse, Richland) and rural Acadiana have highest HPSA scores. The DRA pathway is a major alternative — many Louisiana parishes qualify for unlimited DRA slots. Baton Rouge and New Orleans suburbs have limited HPSA sites. Louisiana has a long history of supporting IMG physicians, particularly in rural hospitals. State income tax is graduated (1.85-4.25%). Consider LSU Health and Tulane residency connections for networking.",
     websiteUrl: "https://ldh.la.gov",
+    applicationWindow: "Primary care: October 1. Specialists: December 1. First round deadline: December 31. Second round: January 1 (if slots remain). Final: July 31. Preference for in-state residency graduates.",
   },
   ME: {
     stateCode: "ME",
@@ -314,6 +321,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. MA DPH sponsors applications. Massachusetts fills all 30 Conrad slots annually (FY 2024). Highly competitive due to concentration of medical institutions and desirable quality of life. HPSA score of 14+ recommended. Full unrestricted MA medical license required.",
     tips: "Massachusetts fills all 30 slots every year — very competitive. FQHCs in Springfield, Worcester, Brockton, Fall River, New Bedford, and Lowell have the best approval rates. Boston proper is extremely competitive — South Boston and Dorchester FQHCs are possible but limited. Western Massachusetts (Berkshires, Pioneer Valley) has growing rural need. MA has the strongest H-1B cap-exempt employer base in the country (Mass General, Brigham, Beth Israel, BMC, UMass). High cost of living and state income tax (5% flat + 4% surtax on income over $1M). The academic medical community is unparalleled for networking and career development.",
     websiteUrl: "https://www.mass.gov/dph",
+    applicationWindow: "Opens October 1, closes January 15. Second round if all 30 not filled. Applications via REDCap system.",
   },
   MI: {
     stateCode: "MI",
@@ -328,6 +336,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Michigan DHHS sponsors Conrad 30 applications. HPSA score of 7+ typically sufficient. Michigan has one of the most IMG-friendly medical licensing processes in the nation. Full Michigan medical license required. Michigan also participates in HHS Clinical Care Waivers (unlimited slots, HPSA score 7+ required) for eligible sites.",
     tips: "Michigan fills all 30 Conrad slots every single year — one of only 3 states (with Kentucky and New York) that has never had unused slots in 20+ years of data. Despite high competition, Michigan remains a top-5 state for IMG physicians. Detroit has massive physician shortages — Beaumont, Henry Ford, DMC/Tenet systems are major waiver employers. Flint and Saginaw have critical needs. Upper Peninsula is severely underserved with high HPSA scores. Also consider HHS Clinical Care Waiver (unlimited slots) or ARC waiver for eligible counties as alternatives when Conrad slots fill. Michigan has a strong H-1B cap-exempt hospital base (University of Michigan, Beaumont, Henry Ford, Spectrum Health). State income tax is flat 4.25%.",
     websiteUrl: "https://www.michigan.gov/mdhhs",
+    applicationWindow: "Opens September 1, closes November 1 at 5:00 PM. Strict 2-month window. Applications must be RECEIVED (not postmarked) by deadline. Opens before federal fiscal year.",
   },
   MN: {
     stateCode: "MN",
@@ -370,6 +379,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Missouri DHSS sponsors applications. Missouri fills all 30 Conrad slots annually and does NOT support flex waivers (0 flex usage reported). Also eligible for DRA waivers for qualifying Bootheel-region counties. Full unrestricted MO medical license required.",
     tips: "Missouri fills all 30 Conrad slots every year and has zero flex slot usage. Ozarks and southeast Bootheel region have highest HPSA scores and greatest need. DRA pathway available for Bootheel counties (unlimited slots). Kansas City and St. Louis metro have limited HPSA-designated community health centers. Rural western and south-central Missouri has growing demand. Missouri has a flat 4.8% state income tax.",
     websiteUrl: "https://health.mo.gov",
+    applicationWindow: "Opens October 1, closes October 31 — very short 1-month window. Site approval required from MO DHSS. Reviewed within 20 days.",
   },
   MT: {
     stateCode: "MT",
@@ -468,6 +478,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. NYS Department of Health administers the program. Extremely competitive — all 30 slots plus flex slots typically fill within weeks of October 1. Employers must demonstrate active recruitment of US physicians for 6+ months. HPSA score matters — higher scores get priority. Full unrestricted NY medical license required at time of Conrad 30 application. New York also accepts applications through USDA and HHS waiver pathways as alternatives.",
     tips: "New York is the most competitive waiver state. Slots fill within the first 2-3 weeks of the federal fiscal year (October 1). If you miss the window, you wait an entire year. Upstate New York (Buffalo, Syracuse, Albany, Adirondack region) has significantly better chances than NYC metro. NYC boroughs (Bronx, Brooklyn) are possible through FQHCs but extremely competitive. Consider USDA or HHS waiver pathways as alternatives to Conrad 30. Always have 2-3 backup states ready. Start your employer search 12+ months before your J-1 waiver deadline. Budget $5,000-15,000 for immigration attorney fees in NY (complex state process).",
     websiteUrl: "https://www.health.ny.gov",
+    applicationWindow: "Opens ~September/October. NOT first-come-first-served — NY collects all applications by deadline (~January), then ranks and selects top 30 based on HPSA scores and community need.",
   },
   NC: {
     stateCode: "NC",
@@ -510,6 +521,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Ohio Department of Health (ODH) administers the Conrad 30 program. Ohio is widely considered one of the most IMG-friendly states in the nation. HPSA score of 7+ typically sufficient. Ohio also participates in ARC (Appalachian Regional Commission) waivers for eligible Appalachian counties — this provides additional slots beyond Conrad 30. Full unrestricted Ohio medical license required.",
     tips: "Ohio is a top-tier choice for J-1 waiver physicians. Reasonable cost of living, no extreme weather by physician standards, and a massive IMG physician community. Appalachian counties in southeast Ohio (Athens, Vinton, Meigs, Gallia) have critical needs and highest HPSA scores. Cleveland metro has multiple FQHC placements. Dayton, Youngstown, and Toledo have strong hospital-based waiver positions. Columbus suburbs are growing with new HPSA designations. ARC waiver pathway gives Ohio effectively more than 30 total slots. The Ohio State Medical Association has an active IMG section. Ohio has a moderate state income tax (0-3.75% graduated). Strong H-1B cap-exempt employer base (Cleveland Clinic, Ohio State, UC Health, MetroHealth).",
     websiteUrl: "https://odh.ohio.gov",
+    applicationWindow: "Opens October 1 (rolling, first-come-first-served). Primary care deadline: January 31. FLEX/sub-specialist window: January 1 - May 31. Review: primary care 45 days, others 90 days. $3,571 fee.",
   },
   OK: {
     stateCode: "OK",
@@ -538,6 +550,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Oregon Health Authority (OHA) sponsors Conrad 30 applications. Oregon fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways (not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only backup. Full unrestricted OR medical license required.",
     tips: "Oregon fills all 30 Conrad slots every year — apply early. No ARC/DRA/SCRC alternative pathways available for Oregon. Eastern Oregon (Bend, Pendleton, La Grande, Klamath Falls, Burns) has critical shortages and highest HPSA scores. Southern Oregon (Medford, Grants Pass) also needs primary care. Portland metro has very limited HPSA sites and is extremely competitive. Oregon has no sales tax but has state income tax (graduated up to 9.9%). OHSU (Oregon Health & Science University) is the major academic system. Behavioral health is a statewide priority — psychiatrists are in particularly high demand.",
     websiteUrl: "https://www.oregon.gov/oha",
+    applicationWindow: "Opens October 1, first-come-first-served. Fills very fast — 27 of 30 slots claimed by December 18, 2025 for FY2026. $2,000 application fee. Already reserving FY2027 slots.",
   },
   PA: {
     stateCode: "PA",
@@ -552,6 +565,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. PA DOH administers the Conrad 30 program. HPSA score of 7+ typically sufficient. Full unrestricted PA medical license required. Pennsylvania also participates in ARC waivers for eligible Appalachian counties (covers much of central and western PA). HHS Clinical Care Waivers (unlimited slots) available for qualifying sites with HPSA score 7+.",
     tips: "Pennsylvania offers a strong mix of urban and rural waiver opportunities. Philadelphia has major FQHC networks with established waiver relationships (Philadelphia Health Centers, Project HOME). Pittsburgh's underserved neighborhoods have strong need. North-central PA (Williamsport, Lock Haven, Sunbury) and coal country (Scranton, Wilkes-Barre) are severely underserved with high HPSA scores. ARC waiver pathway is a significant advantage — many PA counties qualify, giving effectively more than 30 slots. PA has massive medical training infrastructure (Penn, Jefferson, Temple, Drexel, Pittsburgh, Geisinger). Large IMG community — PA Medical Society supports IMG integration. State income tax is flat 3.07% (one of the lowest with income tax). Cost of living is very reasonable outside Philadelphia.",
     websiteUrl: "https://www.health.pa.gov",
+    applicationWindow: "Three phases: Phase 1 Oct 1 - Dec 15, Phase 2 Jan 1 - Jun 15, Phase 3 Jul 1 - Sep 15. FLEX slots only in second half of fiscal year. NOTE: PA requires 5-year service commitment (vs standard 3 years).",
   },
   RI: {
     stateCode: "RI",
@@ -580,6 +594,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. SC DHEC sponsors applications. South Carolina fills all 30 Conrad slots annually (FY 2024). Major advantage: SC is eligible for BOTH ARC (Appalachian upstate counties) AND SCRC waivers — giving effectively three waiver pathways with unlimited additional capacity. Full unrestricted SC medical license required.",
     tips: "South Carolina fills all 30 Conrad slots every year, but you have excellent alternatives. Upstate SC (Anderson, Pickens, Oconee, Cherokee) qualifies for ARC waivers (unlimited, no fee). Much of SC is covered by SCRC waivers (unlimited, $3,000 fee). This means SC effectively has more waiver capacity than most states despite filling Conrad. Pee Dee region (Florence, Marion, Darlington) and Lowcountry rural areas have highest HPSA scores. MUSC (Charleston) and USC (Columbia) residency connections help with networking. No state income tax on first $3,460 (graduated 0-6.4%). Moderate cost of living.",
     websiteUrl: "https://scdhec.gov",
+    applicationWindow: "Slot reservation begins JULY 1 (earliest of any state) for next fiscal year. First-come-first-served. Must reserve slot before submitting full application. Contact neelyk@dph.sc.gov.",
   },
   SD: {
     stateCode: "SD",
@@ -622,6 +637,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Texas DSHS (Department of State Health Services) administers the Conrad 30 program. Important: Texas does NOT offer flex waiver slots — all 30 must be in designated shortage areas. No state income tax. Employer must be in a HPSA or MUA. Texas accepts specialists beyond primary care more readily than most states. Full unrestricted Texas medical license required.",
     tips: "Texas is widely considered one of the best states for J-1 waivers despite having no flex slots. All 30 slots fill very quickly — often within the first days of the fiscal year (October 1). No state income tax makes Texas financially attractive. Rio Grande Valley, West Texas (El Paso, Lubbock, Midland-Odessa), and East Texas (Tyler, Longview, Texarkana) have the highest HPSA scores and need. Dallas-Fort Worth and Houston suburbs have growing HPSA-designated sites. Also consider HHS Clinical Care Waiver (unlimited slots, requires HPSA score 7+) as alternative to Conrad 30. Texas has one of the largest IMG physician communities in the US. Start employer search 8-10 months before your waiver deadline.",
     websiteUrl: "https://www.dshs.texas.gov",
+    applicationWindow: "Opens ~October 1. Slots exhaust within first day/days. Submit via email to Conrad30@dshs.texas.gov. $3,000 application fee.",
   },
   UT: {
     stateCode: "UT",
