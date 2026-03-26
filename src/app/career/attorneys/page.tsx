@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   Scale,
   CheckCircle2,
@@ -123,6 +124,12 @@ export default function AttorneysPage() {
           cards specifically for physicians. We list them based on reputation
           in the field — not payment.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge
+            date="March 2026"
+            sources={["Firm websites", "AILA directory", "Physician forum reviews"]}
+          />
+        </div>
       </div>
 
       {/* Important note */}
