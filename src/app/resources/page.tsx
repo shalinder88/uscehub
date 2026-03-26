@@ -110,7 +110,7 @@ const CREDENTIALS = [
       "Credential evaluation for international degrees. Required by many state medical boards and some residency programs.",
     price: "$200+",
     icon: GraduationCap,
-    url: "https://www.wes.org/", // REPLACE with affiliate link
+    url: "https://www.wes.org/", // Apply for WES affiliate at wes.org/wes-affiliate-program/ (10% commission)
     why: "Some states require WES evaluation for medical licensure. Check your target state's requirements early.",
   },
   {
