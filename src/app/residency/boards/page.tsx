@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BoardsAccordion } from "./boards-client";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Board Exam Guides",
@@ -30,6 +31,9 @@ export default function BoardsPage() {
             section covers exam format, study timeline, pass rates, and
             recommended preparation resources.
           </p>
+          <div className="mt-3">
+            <VerifiedBadge date="March 2026" sources={["ABIM", "ABFM", "ABP", "ABS", "ABPN", "ABPath"]} />
+          </div>
         </div>
 
         <BoardsAccordion />

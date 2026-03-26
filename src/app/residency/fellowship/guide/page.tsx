@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   GraduationCap,
   Calendar,
@@ -450,6 +451,9 @@ export default function FellowshipGuidePage() {
               Built from the collective experience of residents and fellows who
               have been through the process.
             </p>
+            <div className="mt-4">
+              <VerifiedBadge date="March 2026" sources={["NRMP SMS Reports", "ERAS"]} />
+            </div>
           </div>
         </div>
       </section>

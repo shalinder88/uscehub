@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   Shield,
   AlertTriangle,
@@ -90,6 +91,9 @@ export default function MalpracticePage() {
           a new attending, and almost nobody in residency teaches it. Read every
           word.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="March 2026" sources={["Medical Liability Monitor", "AMA"]} />
+        </div>
       </div>
 
       {/* ═══ SECTION 1: The Two Types ═══ */}
