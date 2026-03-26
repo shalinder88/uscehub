@@ -26,32 +26,34 @@ interface SpecialtyData {
   category: "primary" | "surgical" | "medical-subspecialty" | "other";
 }
 
-// Salary data sourced from Medscape Physician Compensation Report 2025,
-// MGMA DataDive 2025, and Doximity Physician Compensation Report.
+// Salary data cross-referenced from Medscape 2025, MGMA DataDive 2025,
+// Doximity 2025, and AMN Healthcare 2025 reports (reflecting 2024 earnings).
 // Ranges reflect 25th-75th percentile. All values in $K.
+// Medicare conversion factor CY 2026: $33.40/RVU (standard), $33.57/RVU (APM).
+// Avg physician sign-on bonus: $38,215 (up 23% YoY, AMN 2025).
 // Last verified: March 2026.
 const SPECIALTIES: SpecialtyData[] = [
-  { specialty: "Internal Medicine (General)", employedLow: 255, employedHigh: 330, privateLow: 285, privateHigh: 410, median: 295, category: "primary" },
-  { specialty: "Hospital Medicine", employedLow: 290, employedHigh: 390, privateLow: null, privateHigh: null, median: 340, category: "primary" },
-  { specialty: "Family Medicine", employedLow: 235, employedHigh: 315, privateLow: 265, privateHigh: 390, median: 280, category: "primary" },
+  { specialty: "Internal Medicine (General)", employedLow: 255, employedHigh: 330, privateLow: 280, privateHigh: 400, median: 287, category: "primary" },
+  { specialty: "Hospital Medicine", employedLow: 280, employedHigh: 380, privateLow: null, privateHigh: null, median: 310, category: "primary" },
+  { specialty: "Family Medicine", employedLow: 235, employedHigh: 315, privateLow: 270, privateHigh: 390, median: 287, category: "primary" },
   { specialty: "Pediatrics (General)", employedLow: 225, employedHigh: 295, privateLow: 245, privateHigh: 360, median: 265, category: "primary" },
-  { specialty: "Psychiatry", employedLow: 285, employedHigh: 410, privateLow: 310, privateHigh: 475, median: 330, category: "other" },
-  { specialty: "Emergency Medicine", employedLow: 310, employedHigh: 420, privateLow: null, privateHigh: null, median: 355, category: "other" },
-  { specialty: "General Surgery", employedLow: 360, employedHigh: 500, privateLow: 420, privateHigh: 620, median: 430, category: "surgical" },
-  { specialty: "Orthopedic Surgery", employedLow: 510, employedHigh: 780, privateLow: 620, privateHigh: 1050, median: 640, category: "surgical" },
-  { specialty: "Cardiology (Interventional)", employedLow: 520, employedHigh: 780, privateLow: 620, privateHigh: 1100, median: 680, category: "medical-subspecialty" },
-  { specialty: "Cardiology (Non-Invasive)", employedLow: 410, employedHigh: 570, privateLow: 460, privateHigh: 720, median: 490, category: "medical-subspecialty" },
-  { specialty: "Gastroenterology", employedLow: 420, employedHigh: 620, privateLow: 520, privateHigh: 850, median: 520, category: "medical-subspecialty" },
-  { specialty: "Pulm/Critical Care", employedLow: 360, employedHigh: 500, privateLow: 410, privateHigh: 570, median: 430, category: "medical-subspecialty" },
+  { specialty: "Psychiatry", employedLow: 280, employedHigh: 400, privateLow: 310, privateHigh: 475, median: 341, category: "other" },
+  { specialty: "Emergency Medicine", employedLow: 350, employedHigh: 420, privateLow: null, privateHigh: null, median: 388, category: "other" },
+  { specialty: "General Surgery", employedLow: 380, employedHigh: 500, privateLow: 450, privateHigh: 620, median: 440, category: "surgical" },
+  { specialty: "Orthopedic Surgery", employedLow: 480, employedHigh: 750, privateLow: 640, privateHigh: 1050, median: 564, category: "surgical" },
+  { specialty: "Cardiology (Interventional)", employedLow: 520, employedHigh: 780, privateLow: 630, privateHigh: 1100, median: 630, category: "medical-subspecialty" },
+  { specialty: "Cardiology (Non-Invasive)", employedLow: 420, employedHigh: 600, privateLow: 480, privateHigh: 720, median: 520, category: "medical-subspecialty" },
+  { specialty: "Gastroenterology", employedLow: 420, employedHigh: 620, privateLow: 535, privateHigh: 850, median: 513, category: "medical-subspecialty" },
+  { specialty: "Pulm/Critical Care", employedLow: 335, employedHigh: 480, privateLow: 400, privateHigh: 570, median: 380, category: "medical-subspecialty" },
   { specialty: "Nephrology", employedLow: 310, employedHigh: 410, privateLow: 330, privateHigh: 460, median: 360, category: "medical-subspecialty" },
   { specialty: "Hematology/Oncology", employedLow: 390, employedHigh: 540, privateLow: 460, privateHigh: 720, median: 465, category: "medical-subspecialty" },
-  { specialty: "Dermatology", employedLow: 410, employedHigh: 570, privateLow: 520, privateHigh: 850, median: 490, category: "medical-subspecialty" },
-  { specialty: "Neurology", employedLow: 310, employedHigh: 430, privateLow: 360, privateHigh: 520, median: 370, category: "medical-subspecialty" },
+  { specialty: "Dermatology", employedLow: 350, employedHigh: 500, privateLow: 495, privateHigh: 850, median: 454, category: "medical-subspecialty" },
+  { specialty: "Neurology", employedLow: 290, employedHigh: 420, privateLow: 350, privateHigh: 520, median: 332, category: "medical-subspecialty" },
   { specialty: "Rheumatology", employedLow: 285, employedHigh: 390, privateLow: 310, privateHigh: 460, median: 340, category: "medical-subspecialty" },
   { specialty: "Endocrinology", employedLow: 255, employedHigh: 360, privateLow: 285, privateHigh: 415, median: 310, category: "medical-subspecialty" },
   { specialty: "Infectious Disease", employedLow: 265, employedHigh: 360, privateLow: 290, privateHigh: 410, median: 310, category: "medical-subspecialty" },
-  { specialty: "Radiology", employedLow: 410, employedHigh: 570, privateLow: 510, privateHigh: 780, median: 490, category: "other" },
-  { specialty: "Anesthesiology", employedLow: 390, employedHigh: 500, privateLow: 420, privateHigh: 620, median: 430, category: "other" },
+  { specialty: "Radiology", employedLow: 425, employedHigh: 620, privateLow: 530, privateHigh: 780, median: 526, category: "other" },
+  { specialty: "Anesthesiology", employedLow: 425, employedHigh: 550, privateLow: 450, privateHigh: 650, median: 501, category: "other" },
   { specialty: "Pathology", employedLow: 310, employedHigh: 410, privateLow: 330, privateHigh: 465, median: 360, category: "other" },
   { specialty: "PM&R", employedLow: 310, employedHigh: 410, privateLow: 360, privateHigh: 510, median: 360, category: "other" },
   { specialty: "Urology", employedLow: 420, employedHigh: 570, privateLow: 520, privateHigh: 720, median: 490, category: "surgical" },

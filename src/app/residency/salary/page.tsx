@@ -56,7 +56,7 @@ const compensationStructure = [
       "RVU (Relative Value Unit) is how physicians' work is measured for billing. Every CPT code has an assigned RVU value.",
       "A typical office visit (99214) generates about 1.92 wRVUs. A complex visit (99215) generates about 2.80 wRVUs. Hospital admission (99223) generates about 3.86 wRVUs.",
       "Most employed physicians have an RVU target (e.g., 4,500-6,000 wRVUs/year for internal medicine). Meeting or exceeding this triggers productivity bonuses.",
-      "The dollar-per-RVU rate varies by specialty and region. Internal medicine typically pays $45-55/wRVU. Surgical specialties pay $55-80+/wRVU.",
+      "The dollar-per-RVU rate varies by specialty and region. Internal medicine typically pays $52-53/wRVU. Psychiatry and orthopedics pay highest at ~$67/wRVU. Anesthesiology pays lowest at ~$43/wRVU. Medicare conversion factor for CY 2026: $33.40/RVU (standard). Source: MGMA 2025, CMS CY 2026 PFS.",
       "Ask about what happens if you don't hit your RVU target. Some contracts reduce your salary. Others just withhold the bonus. This matters enormously.",
     ],
   },
