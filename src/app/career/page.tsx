@@ -36,6 +36,7 @@ const immigrationTools = [
   { label: "Waiver Pathways", value: "6 Paths", href: "/career/waiver/pathways", icon: GitCompare, color: "text-success", bg: "bg-success/10", description: "Conrad, HHS, ARC, DRA, SCRC, VA compared" },
   { label: "Timeline Calculator", value: "Personal", href: "/career/waiver/timeline", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Enter J-1 end date → get your timeline" },
   { label: "HPSA Score Lookup", value: "Official", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger", bg: "bg-danger/10", description: "Check if a facility qualifies as shortage area" },
+  { label: "Visa Journey Map", value: "7 Stages", href: "/career/visa-journey", icon: Flag, color: "text-success", bg: "bg-success/10", description: "Interactive flowchart: J-1 → H-1B → Green Card" },
 ];
 
 // Career & Contract Tools
