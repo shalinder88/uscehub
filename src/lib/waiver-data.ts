@@ -126,7 +126,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Pediatrics"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Delaware Division of Public Health sponsors Conrad 30 applications.",
-    tips: "Delaware is a small state with limited slots used each year. Southern Delaware (Sussex County) has the greatest need. Less competitive than neighboring states.",
+    tips: "Delaware typically has 12+ remaining Conrad slots — low competition. Southern Delaware (Sussex County) has greatest need. Bayhealth and ChristianaCare are major employers. Small state with limited applicants — good backup option. No alternative regional pathways. Delaware has no sales tax and graduated income tax (up to 6.6%).",
     websiteUrl: "https://dhss.delaware.gov/dph",
   },
   FL: {
@@ -238,7 +238,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Kansas Department of Health and Environment administers the program.",
-    tips: "Kansas has strong rural health needs, especially in western Kansas. Most rural communities are designated HPSAs. The state processes applications efficiently.",
+    tips: "Kansas fills all 30 Conrad slots annually (FY 2024). Western Kansas has critical shortages — Dodge City, Garden City, Liberal. No alternative regional pathways. Kansas has a graduated state income tax (3.1-5.7%). KU Medical Center is the major academic system. Wichita has some FQHC opportunities. Via Christi and Ascension are key employers.",
     websiteUrl: "https://www.kdhe.ks.gov",
   },
   KY: {
@@ -280,7 +280,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Maine Department of Health and Human Services sponsors applications.",
-    tips: "Maine has significant rural health needs, especially in northern and western regions. Aging population creates strong demand for primary care. Generally IMG-friendly.",
+    tips: "Maine fills all 30 Conrad slots annually (FY 2024). Northern (Aroostook County) and western Maine have highest need. Aging population drives primary care demand. No alternative regional pathways. Maine has a graduated state income tax (5.8-7.15%). MaineHealth and Northern Light Health are major employer systems. Portland area is competitive but rural Maine has critical shortages.",
     websiteUrl: "https://www.maine.gov/dhhs",
   },
   MD: {
@@ -378,7 +378,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Emergency Medicine", "General Surgery"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Montana Department of Public Health and Human Services sponsors applications.",
-    tips: "Montana has widespread rural and frontier health needs. Most communities outside Billings and Missoula are designated HPSAs. Expect rural lifestyle. Indian Health Service facilities are common placements.",
+    tips: "Montana typically has 14+ remaining Conrad slots — low competition. Most communities outside Billings and Missoula are HPSA-designated. Indian Health Service and tribal facilities are common placements. No state income tax on first $18,150 (graduated up to 5.9%). Frontier medicine with very low population density. No alternative regional pathways. Excellent quality of life for outdoor enthusiasts. Billings Clinic and Providence Health are major employer systems.",
     websiteUrl: "https://dphhs.mt.gov",
   },
   NE: {
@@ -392,7 +392,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Nebraska Department of Health and Human Services sponsors Conrad 30 applications.",
-    tips: "Nebraska has strong rural health needs throughout western and central regions. Most communities outside Omaha and Lincoln qualify. The state has been supportive of IMG physicians.",
+    tips: "Nebraska typically has 10 remaining Conrad slots. Western and central Nebraska (Panhandle, Sandhills) have highest need. Omaha and Lincoln metro are competitive. No alternative regional pathways. Nebraska has a graduated state income tax (2.46-5.84%). Low cost of living in rural areas. UNMC (University of Nebraska Medical Center) is the major academic system. CHI Health and Bryan Health are key employers.",
     websiteUrl: "https://dhhs.ne.gov",
   },
   NV: {
@@ -406,7 +406,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Nevada Division of Public and Behavioral Health sponsors applications.",
-    tips: "Nevada has significant physician shortages statewide. Rural Nevada has critical needs. Las Vegas and Reno have some HPSA-designated sites. Growing state with increasing demand.",
+    tips: "Nevada typically has 12 remaining Conrad slots. Rural Nevada (Elko, Ely, Winnemucca, Pahrump) has critical needs. Las Vegas and Reno have some HPSA-designated FQHCs. No state income tax — major financial advantage. No alternative regional pathways. Rapidly growing population driving physician demand. UNLV School of Medicine (opened 2017) is expanding the academic footprint. Touro University and UNR also train physicians.",
     websiteUrl: "https://dpbh.nv.gov",
   },
   NH: {
@@ -420,7 +420,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. New Hampshire Department of Health and Human Services sponsors applications.",
-    tips: "New Hampshire has rural health needs in the northern part of the state. Smaller applicant pool means less competition. Community health centers are common placements.",
+    tips: "New Hampshire typically has 14 remaining Conrad slots — low competition. Northern NH (Berlin, Coos County, North Country) has greatest need. No state income tax on earned income (5% on dividends/interest only). No alternative regional pathways. Dartmouth-Hitchcock is the major academic employer. Community health centers throughout the state. High quality of life in New England setting.",
     websiteUrl: "https://www.dhhs.nh.gov",
   },
   NJ: {
@@ -448,7 +448,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Emergency Medicine"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. New Mexico Department of Health sponsors applications. Tribal health facilities are common placements.",
-    tips: "New Mexico has critical physician shortages statewide. Indian Health Service and tribal facilities offer unique opportunities. Rural communities have high demand. The state is generally IMG-friendly.",
+    tips: "New Mexico fills all 30 Conrad slots annually (FY 2024). Critical physician shortages statewide. Indian Health Service and tribal facilities (Navajo Nation, Pueblo communities) are major employers. UNM Health Sciences Center is the dominant academic system. Santa Fe and Albuquerque suburbs have some FQHC sites. Southern NM (Las Cruces, Roswell) has growing need. No alternative regional pathways. New Mexico has a graduated state income tax (1.7-5.9%). Very IMG-friendly state with established support networks.",
     websiteUrl: "https://www.nmhealth.org",
   },
   NY: {
@@ -490,7 +490,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "General Surgery"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. North Dakota Department of Health sponsors Conrad 30 applications.",
-    tips: "North Dakota has widespread rural health needs. Most communities outside Fargo and Bismarck qualify. Fast processing times. Less competitive than larger states. Oil country (western ND) has growing populations.",
+    tips: "North Dakota typically has 16 remaining Conrad slots — very low competition. Most communities outside Fargo and Bismarck qualify. Western ND oil country (Williston, Dickinson) has growing populations and demand. Fast processing. No alternative regional pathways. ND has a graduated state income tax (0-1.95% — among lowest in nation). Sanford Health and CHI St. Alexius are major employers. Extreme winters but strong community support.",
     websiteUrl: "https://www.health.nd.gov",
   },
   OH: {
@@ -518,7 +518,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Oklahoma State Department of Health sponsors Conrad 30 applications.",
-    tips: "Oklahoma has significant rural health needs throughout the state. Tribal health facilities offer additional opportunities. Western and southeastern Oklahoma have the greatest need.",
+    tips: "Oklahoma typically has 8 remaining Conrad slots. Western and southeastern OK have greatest need. Tribal health facilities (Cherokee Nation, Chickasaw Nation, Indian Health Service) are major employers. No alternative regional pathways. Oklahoma has a graduated state income tax (0.25-4.75%). Low cost of living. OU Health Sciences Center and OSU College of Osteopathic Medicine are the major academic systems.",
     websiteUrl: "https://oklahoma.gov/health",
   },
   OR: {
@@ -560,7 +560,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Rhode Island Department of Health sponsors applications.",
-    tips: "Rhode Island is a small state with limited waiver demand. Providence and surrounding communities have HPSA-designated sites. Less competitive than neighboring Massachusetts and Connecticut.",
+    tips: "Rhode Island typically has 18 remaining Conrad slots — very low competition (smallest state). Providence and surrounding communities (Pawtucket, Central Falls, Woonsocket) have HPSA-designated FQHCs. No alternative regional pathways. Rhode Island has a graduated state income tax (3.75-5.99%). Brown University/Lifespan and Care New England are the major employer systems. Good backup option if neighboring MA and CT are full.",
     websiteUrl: "https://health.ri.gov",
   },
   SC: {
@@ -588,7 +588,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "General Surgery"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. South Dakota Department of Health sponsors Conrad 30 applications.",
-    tips: "South Dakota has widespread rural health needs. Indian Health Service facilities on reservations offer unique opportunities. Fast processing times. Less competitive than larger states.",
+    tips: "South Dakota typically has 14 remaining Conrad slots — low competition. Indian Health Service facilities on reservations (Pine Ridge, Rosebud) offer unique opportunities. No state income tax — major financial advantage. Fast processing. No alternative regional pathways. Sanford Health and Avera Health are major employers. Sioux Falls is the only metro area. Very low cost of living.",
     websiteUrl: "https://doh.sd.gov",
   },
   TN: {
@@ -630,7 +630,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must practice in a HPSA or MUA for 3 years. Utah Department of Health and Human Services sponsors Conrad 30 applications.",
-    tips: "Utah has rural health needs in southern and eastern parts of the state. Rural communities outside Salt Lake City and Provo have the greatest need. Growing population creates increasing demand.",
+    tips: "Utah typically has 12 remaining Conrad slots. Southern and eastern Utah (St. George rural areas, Moab, Price, Vernal) have greatest need. SLC and Provo metro are competitive. No alternative regional pathways. Utah has a flat state income tax (4.65%). Rapidly growing population driving physician demand. Intermountain Healthcare is the dominant employer system. University of Utah Health is the major academic center. Family-friendly state with excellent outdoor recreation.",
     websiteUrl: "https://dhhs.utah.gov",
   },
   VT: {
@@ -700,7 +700,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
     requirements:
       "Must serve in a HPSA or MUA for 3 years. Wisconsin Department of Health Services sponsors Conrad 30 applications.",
-    tips: "Wisconsin has rural health needs in northern and western regions. Marshfield Clinic system has historically been a major employer of IMG physicians. Community health centers and critical access hospitals are common placements.",
+    tips: "Wisconsin typically has 8 remaining Conrad slots. Northern and western Wisconsin have highest need. Marshfield Clinic system has historically been one of the largest waiver employers for IMG physicians in the nation. No alternative regional pathways. Wisconsin has a graduated state income tax (3.54-7.65%). MCW (Medical College of Wisconsin) and UW-Madison are the major academic systems. Gundersen Health and Prevea Health are also key employers. Good quality of life, reasonable cost of living outside Milwaukee.",
     websiteUrl: "https://www.dhs.wisconsin.gov",
   },
   WY: {
