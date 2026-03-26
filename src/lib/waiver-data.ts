@@ -95,10 +95,10 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     timeline: "6-12 months",
     processingTime: "60-90 days",
     priorityAreas: ["Primary Care", "Rural Health", "Behavioral Health"],
-    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine"],
+    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine", "Pediatrics"],
     requirements:
-      "Must serve in a designated HPSA or MUA. Colorado Department of Public Health and Environment sponsors applications. 3-year service commitment required.",
-    tips: "Colorado has growing demand especially on the Eastern Plains and Western Slope. Behavioral health specialists are in particularly high demand. Denver metro HPSA sites are competitive.",
+      "Must serve in a HPSA or MUA for 3 years. Colorado CDPHE sponsors applications. Colorado typically has remaining slots (not among states that fill all 30). No alternative regional pathways. HHS is the only unlimited backup. Full unrestricted CO medical license required.",
+    tips: "Colorado typically does not fill all 30 Conrad slots — you have a real chance even if applying after October. Eastern Plains (Burlington, Lamar, La Junta) and Western Slope (Montrose, Grand Junction rural, Durango) have the highest need. San Luis Valley (Alamosa) has critical shortages. Denver metro HPSA sites exist but are competitive. Behavioral health is a statewide crisis — psychiatrists are in extremely high demand. Colorado has a flat state income tax (4.4%). High quality of life but cost of living in Denver/Boulder is steep. University of Colorado is the major academic system.",
     websiteUrl: "https://cdphe.colorado.gov",
   },
   CT: {
@@ -290,11 +290,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 5,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Urban Underserved", "Rural Health"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics"],
+    priorityAreas: ["Primary Care", "Urban Underserved", "Rural Health", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics", "OB/GYN"],
     requirements:
-      "Must practice in a HPSA or MUA for 3 years. Maryland Department of Health administers the Conrad 30 program.",
-    tips: "Maryland has both urban underserved areas (Baltimore) and rural areas (Eastern Shore, Western Maryland). FQHCs in Baltimore are common placements. Moderate competition.",
+      "Must practice in a HPSA or MUA for 3 years. Maryland DOH administers the Conrad 30 program. Maryland typically has remaining slots. Western Maryland counties are ARC-eligible (unlimited alternative pathway). Full unrestricted MD medical license required.",
+    tips: "Maryland typically has remaining Conrad slots — moderate competition. Baltimore has major FQHC networks with established waiver relationships. Western Maryland (Allegany, Garrett counties) qualifies for ARC waivers with unlimited slots. Eastern Shore has growing rural need. Suburban MD near DC has very few HPSA sites. Strong academic infrastructure: Johns Hopkins, University of Maryland, Uniformed Services University. Maryland has relatively high state income tax (graduated 2-5.75% plus county surcharges). H-1B cap-exempt employers include Hopkins, UMD Medical System, NIH.",
     websiteUrl: "https://health.maryland.gov",
   },
   MA: {
@@ -346,11 +346,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 10,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health", "Delta Region"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "OB/GYN", "Psychiatry"],
+    priorityAreas: ["Primary Care", "Rural Health", "Delta Region", "Maternal Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "OB/GYN", "Psychiatry", "General Surgery"],
     requirements:
-      "Must practice in a HPSA or MUA for 3 years. Mississippi State Department of Health sponsors Conrad 30 applications.",
-    tips: "Mississippi has among the highest physician shortage in the nation. The Delta region has critical need. Less competitive for waivers. Strong demand across nearly all specialties in rural areas.",
+      "Must practice in a HPSA or MUA for 3 years. Mississippi MSDH sponsors Conrad 30 applications. Mississippi typically has remaining slots. Major advantage: eligible for THREE alternative pathways — DRA (Delta), SCRC (southeast), and ARC (northeast hill counties). Among the most waiver-friendly states in the nation.",
+    tips: "Mississippi has among the highest physician shortage rates in the nation and typically does not fill all 30 Conrad slots. The Delta (Sunflower, Bolivar, Washington, Leflore counties) has some of the highest HPSA scores in the country. THREE alternative unlimited-slot pathways available: DRA covers the Delta and western MS, SCRC covers southeastern MS, and ARC covers northeastern hill counties. This gives Mississippi more waiver capacity per capita than almost any state. Lowest cost of living in the US. No state income tax on first $5,000 (graduated up to 5%). UMMC (University of Mississippi Medical Center) is the major academic system. Maternal health is a critical priority — OB/GYNs are desperately needed.",
     websiteUrl: "https://msdh.ms.gov",
   },
   MO: {
@@ -654,11 +654,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 10,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health", "Appalachian Region"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics"],
+    priorityAreas: ["Primary Care", "Rural Health", "Appalachian Region", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics", "OB/GYN"],
     requirements:
-      "Must practice in a HPSA or MUA for 3 years. Virginia Department of Health sponsors Conrad 30 applications.",
-    tips: "Virginia has strong rural health needs in southwestern Appalachian Virginia and the Southside region. Northern Virginia is very competitive. Rural areas have better chances. The state has an established IMG community.",
+      "Must practice in a HPSA or MUA for 3 years. Virginia DOH sponsors Conrad 30 applications. Virginia typically has some remaining slots. Eligible for both ARC (southwest Appalachian counties) and SCRC waivers — two alternative unlimited-slot pathways. Full unrestricted VA medical license required.",
+    tips: "Virginia typically has remaining Conrad slots (not among the 19 states that fill all 30). Southwest Appalachian Virginia (Lee, Scott, Wise, Dickenson, Buchanan counties) has the highest HPSA scores and qualifies for ARC waivers. The Southside region (Danville, Martinsville) and Eastern Shore also have strong need. Parts of Virginia qualify for SCRC waivers too. Northern Virginia (NoVA) is extremely competitive — avoid for waiver purposes. Richmond and Hampton Roads have some FQHC opportunities. Virginia has a moderate state income tax (graduated 2-5.75%). Strong academic systems: UVA, VCU, EVMS for networking.",
     websiteUrl: "https://www.vdh.virginia.gov",
   },
   WA: {
@@ -669,10 +669,10 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     timeline: "6-12 months",
     processingTime: "60-90 days",
     priorityAreas: ["Primary Care", "Rural Health", "Behavioral Health"],
-    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine"],
+    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine", "Pediatrics"],
     requirements:
-      "Must serve in a HPSA or MUA for 3 years. Washington State Department of Health sponsors Conrad 30 applications.",
-    tips: "Washington has rural health needs east of the Cascades. Eastern Washington and rural Olympic Peninsula have the greatest need. Seattle metro is very competitive. Behavioral health is a statewide priority.",
+      "Must serve in a HPSA or MUA for 3 years. Washington DOH sponsors Conrad 30 applications. Washington typically has some remaining slots. No alternative regional pathways (not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only backup for primary care/psychiatry. Full unrestricted WA medical license required.",
+    tips: "Washington typically has remaining Conrad slots — not as competitive as neighboring Oregon which fills all 30. No state income tax — major financial advantage alongside no alternative regional pathways. Eastern Washington (Yakima, Wenatchee, Spokane rural areas, Tri-Cities) and rural Olympic Peninsula have greatest need. Seattle metro has very few HPSA sites and is extremely competitive. Behavioral health is a statewide crisis — psychiatrists are in extremely high demand. University of Washington and its WWAMI network are the dominant academic system. High cost of living in Seattle metro but reasonable in eastern WA.",
     websiteUrl: "https://doh.wa.gov",
   },
   WV: {
