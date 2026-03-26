@@ -72,7 +72,7 @@ export const FY2025_SLOTS: ConradSlotStatus[] = [
   { stateCode: "SC", stateName: "South Carolina", totalSlots: 30, flexSlots: 10, filledSlots: 30, remainingSlots: 0, fillPattern: "fills_all", lastUpdated: "2026-03-25", alternativePathways: ["ARC", "SCRC"] },
   { stateCode: "SD", stateName: "South Dakota", totalSlots: 30, flexSlots: 5, filledSlots: 16, remainingSlots: 14, fillPattern: "has_remaining", lastUpdated: "2026-03-25", alternativePathways: [] },
   { stateCode: "TN", stateName: "Tennessee", totalSlots: 30, flexSlots: 10, filledSlots: 26, remainingSlots: 4, fillPattern: "has_remaining", lastUpdated: "2026-03-25", alternativePathways: ["ARC", "DRA"] },
-  { stateCode: "TX", stateName: "Texas", totalSlots: 30, flexSlots: 0, filledSlots: 30, remainingSlots: 0, fillPattern: "fills_early", lastUpdated: "2026-03-25", alternativePathways: ["HHS"] },
+  { stateCode: "TX", stateName: "Texas", totalSlots: 30, flexSlots: 10, filledSlots: 30, remainingSlots: 0, fillPattern: "fills_early", lastUpdated: "2026-03-26", alternativePathways: ["HHS"] },
   { stateCode: "UT", stateName: "Utah", totalSlots: 30, flexSlots: 5, filledSlots: 18, remainingSlots: 12, fillPattern: "has_remaining", lastUpdated: "2026-03-25", alternativePathways: [] },
   { stateCode: "VT", stateName: "Vermont", totalSlots: 30, flexSlots: 10, filledSlots: 10, remainingSlots: 20, fillPattern: "has_remaining", lastUpdated: "2026-03-25", alternativePathways: [] },
   { stateCode: "VA", stateName: "Virginia", totalSlots: 30, flexSlots: 10, filledSlots: 24, remainingSlots: 6, fillPattern: "has_remaining", lastUpdated: "2026-03-25", alternativePathways: ["ARC", "SCRC"] },
