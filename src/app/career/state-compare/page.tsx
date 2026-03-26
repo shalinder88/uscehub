@@ -214,6 +214,16 @@ export default function StateComparePage() {
         (does not include federal tax, FICA, deductions, or local taxes). For full financial
         planning, consult a financial advisor.
       </p>
+
+      {/* Cross-link */}
+      <div className="mt-8 rounded-xl border border-border bg-surface p-5">
+        <p className="text-sm text-muted">
+          Want to compare 2-3 states side by side?{" "}
+          <Link href="/career/compare-states" className="text-accent hover:underline font-medium">
+            Use our State Comparison Tool →
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

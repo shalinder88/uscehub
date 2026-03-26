@@ -439,6 +439,16 @@ export default function CompareStatesPage() {
           </p>
         </div>
       )}
+
+      {/* Cross-link */}
+      <div className="mt-8 rounded-xl border border-border bg-surface p-5">
+        <p className="text-sm text-muted">
+          Want to see all 50 states ranked by take-home pay?{" "}
+          <Link href="/career/state-compare" className="text-accent hover:underline font-medium">
+            View State Financial Rankings →
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
