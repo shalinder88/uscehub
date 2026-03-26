@@ -28,62 +28,73 @@ export interface MonthlyBulletin {
   entries: BulletinEntry[];
 }
 
-// Current bulletin — PLACEHOLDER: will be updated with exact data from research
-// These are approximate based on trends — MUST be verified against official DOS data
+// VERIFIED April 2026 Visa Bulletin from U.S. Department of State
+// Source: https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2026/visa-bulletin-for-april-2026.html
+// USCIS designated Dates for Filing chart for April 2026.
+// Notable: EB-2 India jumped 10 months (303 days) from Mar to Apr 2026.
+// Warning: DOS warns dates may retrogress later in FY2026.
 export const CURRENT_BULLETIN: MonthlyBulletin = {
   month: "April 2026",
   effectiveDate: "2026-04-01",
   sourceUrl: "https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin/2026/visa-bulletin-for-april-2026.html",
   entries: [
-    // EB-1
-    { category: "EB-1", country: "India", finalActionDate: "C", datesForFiling: "C" },
-    { category: "EB-1", country: "China", finalActionDate: "C", datesForFiling: "C" },
+    // EB-1 — India and China at Apr 2023, ROW current
+    { category: "EB-1", country: "India", finalActionDate: "2023-04-01", datesForFiling: "2023-12-01" },
+    { category: "EB-1", country: "China", finalActionDate: "2023-04-01", datesForFiling: "2023-12-01" },
     { category: "EB-1", country: "All Other", finalActionDate: "C", datesForFiling: "C" },
-    // EB-2 — PLACEHOLDER dates, will update with research
-    { category: "EB-2", country: "India", finalActionDate: "2014-07-01", datesForFiling: "2015-01-01" },
-    { category: "EB-2", country: "China", finalActionDate: "2021-06-01", datesForFiling: "2022-01-01" },
+    // EB-2 — India at Jul 2014 (jumped 10 months!), China Sep 2021, ROW current
+    { category: "EB-2", country: "India", finalActionDate: "2014-07-15", datesForFiling: "2015-01-15" },
+    { category: "EB-2", country: "China", finalActionDate: "2021-09-01", datesForFiling: "2022-01-01" },
     { category: "EB-2", country: "All Other", finalActionDate: "C", datesForFiling: "C" },
-    // EB-3 — PLACEHOLDER dates
-    { category: "EB-3", country: "India", finalActionDate: "2013-01-01", datesForFiling: "2014-06-01" },
-    { category: "EB-3", country: "China", finalActionDate: "2020-06-01", datesForFiling: "2021-06-01" },
-    { category: "EB-3", country: "All Other", finalActionDate: "C", datesForFiling: "C" },
+    // EB-3 — India Nov 2013, China Jun 2021, ROW Jun 2024
+    { category: "EB-3", country: "India", finalActionDate: "2013-11-15", datesForFiling: "2015-01-15" },
+    { category: "EB-3", country: "China", finalActionDate: "2021-06-15", datesForFiling: "2022-01-01" },
+    { category: "EB-3", country: "All Other", finalActionDate: "2024-06-01", datesForFiling: "C" },
   ],
 };
 
-// Historical data for trend chart — last 12 months of EB-2 India Final Action Date
-// PLACEHOLDER: will be updated with research
+// VERIFIED historical EB-2 India Final Action Date movement
+// Source: ImmiHelp, Boundless, Manifest Law cross-referenced with DOS bulletins
+// Notable: 5-month freeze May-Sep 2025, then massive acceleration in FY2026
 export const EB2_INDIA_HISTORY: { month: string; date: string }[] = [
-  { month: "Apr 2025", date: "2013-12-01" },
-  { month: "May 2025", date: "2013-12-01" },
-  { month: "Jun 2025", date: "2014-01-01" },
-  { month: "Jul 2025", date: "2014-01-01" },
-  { month: "Aug 2025", date: "2014-02-01" },
-  { month: "Sep 2025", date: "2014-03-01" },
-  { month: "Oct 2025", date: "2014-03-01" },
-  { month: "Nov 2025", date: "2014-04-01" },
-  { month: "Dec 2025", date: "2014-05-01" },
-  { month: "Jan 2026", date: "2014-05-01" },
-  { month: "Feb 2026", date: "2014-06-01" },
-  { month: "Mar 2026", date: "2014-06-01" },
-  { month: "Apr 2026", date: "2014-07-01" },
+  { month: "Oct 2024", date: "2012-07-15" },
+  { month: "Nov 2024", date: "2012-07-15" },
+  { month: "Dec 2024", date: "2012-08-01" },
+  { month: "Jan 2025", date: "2012-10-01" },
+  { month: "Feb 2025", date: "2012-10-15" },
+  { month: "Mar 2025", date: "2012-12-01" },
+  { month: "Apr 2025", date: "2013-01-01" },
+  { month: "May 2025", date: "2013-01-01" }, // FROZEN
+  { month: "Jun 2025", date: "2013-01-01" }, // FROZEN
+  { month: "Jul 2025", date: "2013-01-01" }, // FROZEN
+  { month: "Aug 2025", date: "2013-01-01" }, // FROZEN
+  { month: "Sep 2025", date: "2013-01-01" }, // FROZEN
+  { month: "Oct 2025", date: "2013-04-01" }, // Movement resumes
+  { month: "Nov 2025", date: "2013-04-01" },
+  { month: "Dec 2025", date: "2013-05-15" },
+  { month: "Jan 2026", date: "2013-07-15" },
+  { month: "Feb 2026", date: "2013-07-15" },
+  { month: "Mar 2026", date: "2013-09-15" },
+  { month: "Apr 2026", date: "2014-07-15" }, // +10 MONTHS in one jump!
 ];
 
-// Estimated wait times (conservative estimates based on historical movement)
+// VERIFIED wait estimates based on current bulletin position and historical movement
+// Source: Fragomen, BeyondBorder, Manifest Law analyses of April 2026 bulletin
 export const WAIT_ESTIMATES = {
   "EB-1": {
-    India: "Current — no backlog",
-    China: "Current to 6 months",
-    "All Other": "Current — no backlog",
+    India: "~3-4 years from filing (Final Action at Apr 2023)",
+    China: "~2.5-3 years from filing (Final Action at Apr 2023)",
+    "All Other": "Current — processing time only (~12-18 months)",
   },
   "EB-2": {
-    India: "10-15+ years from filing date",
-    China: "4-6 years from filing date",
-    "All Other": "Current to 1 year",
+    India: "12-15+ years from filing (Final Action at Jul 2014, ~400K in queue)",
+    China: "~4-5 years from filing (Final Action at Sep 2021)",
+    "All Other": "Current — processing time only (~6-12 months)",
   },
   "EB-3": {
-    India: "10-15+ years from filing date",
-    China: "5-7 years from filing date",
-    "All Other": "Current to 1 year",
+    India: "12-15+ years from filing (Final Action at Nov 2013)",
+    China: "~4-5 years from filing (Final Action at Jun 2021)",
+    "All Other": "~1-2 years from filing (Final Action at Jun 2024)",
   },
 };
 
