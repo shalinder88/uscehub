@@ -66,11 +66,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 5,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health", "MUA/MUP"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "OB/GYN"],
+    priorityAreas: ["Primary Care", "Rural Health", "MUA/MUP", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "OB/GYN", "General Surgery"],
     requirements:
-      "Must practice in a federally designated HPSA or MUA for 3 years. Arkansas Department of Health reviews and sponsors applications.",
-    tips: "Arkansas has significant rural health needs. Delta region communities offer strong opportunities. The state is generally IMG-friendly with reasonable processing times.",
+      "Must practice in a HPSA or MUA for 3 years. Arkansas DOH reviews and sponsors applications. Arkansas fills all 30 Conrad slots annually (FY 2024). Also eligible for DRA (Delta Regional Authority) waivers — many eastern Arkansas counties are in the DRA footprint with unlimited slots. Full unrestricted AR medical license required.",
+    tips: "Arkansas fills all 30 Conrad slots every year — apply early (October 1). The Delta region in eastern Arkansas (Phillips, Lee, St. Francis, Crittenden counties) has the highest HPSA scores and greatest need. DRA pathway is available for Delta counties — unlimited additional slots beyond Conrad. Western Arkansas (Fort Smith area) and northwest Arkansas (outside Fayetteville/Rogers) also have growing need. Arkansas has one of the lowest costs of living in the nation. State income tax is graduated (0-4.4%). UAMS (University of Arkansas for Medical Sciences) is the major academic center for networking.",
     websiteUrl: "https://www.healthy.arkansas.gov",
   },
   CA: {
@@ -108,11 +108,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 5,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Urban Underserved", "Community Health"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
+    priorityAreas: ["Primary Care", "Urban Underserved", "Community Health", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics"],
     requirements:
-      "Must practice in a designated HPSA or MUA for 3 years. Connecticut Department of Public Health administers the program.",
-    tips: "Connecticut has urban underserved areas in Hartford, Bridgeport, and New Haven with strong need. Community health centers are common placement sites.",
+      "Must practice in a HPSA or MUA for 3 years. Connecticut DPH administers the program. Connecticut fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways available. Full unrestricted CT medical license required.",
+    tips: "Connecticut fills all 30 Conrad slots every year. Urban underserved areas in Hartford, Bridgeport, New Haven, and Waterbury have the highest need and best chances. FQHCs like Community Health Center Inc. and Fair Haven Community Health are major waiver employers. Yale-affiliated community sites in New Haven are competitive but possible. Northeast and northwest rural CT have growing demand. Connecticut has a relatively high cost of living and state income tax (graduated 3-6.99%). Strong academic medical infrastructure (Yale, UConn Health).",
     websiteUrl: "https://portal.ct.gov/dph",
   },
   DE: {
@@ -332,11 +332,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 5,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry"],
+    priorityAreas: ["Primary Care", "Rural Health", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "Pediatrics"],
     requirements:
-      "Must serve in a HPSA or MUA for 3 years. Minnesota Department of Health sponsors applications.",
-    tips: "Minnesota has rural health needs outside the Twin Cities metro. Southern and western Minnesota communities have strong demand. The state has good support systems for new physicians.",
+      "Must serve in a HPSA or MUA for 3 years. Minnesota DOH sponsors applications. Minnesota fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways (not in ARC, DRA, or SCRC regions). HHS Clinical Care Waiver is the only backup for primary care/psychiatry. Full unrestricted MN medical license required.",
+    tips: "Minnesota fills all 30 Conrad slots every year — apply on October 1. No alternative regional pathways available (MN is not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only unlimited-slot alternative for primary care/psychiatry. Southern and western Minnesota (Marshall, Worthington, Mankato area) have highest need. Iron Range (Duluth, Hibbing, Virginia) has growing demand. Twin Cities metro has very limited HPSA sites. Mayo Clinic system and HealthPartners are major employers. Minnesota has relatively high state income tax (graduated, up to 9.85%). Excellent quality of life and school systems. Consider that winter weather is a real factor — it can affect recruitment and retention.",
     websiteUrl: "https://www.health.state.mn.us",
   },
   MS: {
@@ -529,10 +529,10 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     timeline: "6-12 months",
     processingTime: "60-90 days",
     priorityAreas: ["Primary Care", "Rural Health", "Behavioral Health"],
-    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine"],
+    specialtyNeeds: ["Family Medicine", "Psychiatry", "Internal Medicine", "OB/GYN"],
     requirements:
-      "Must serve in a HPSA or MUA for 3 years. Oregon Health Authority sponsors Conrad 30 applications.",
-    tips: "Oregon has strong rural health needs east of the Cascades. Behavioral health is a priority statewide. Portland metro is more competitive. Eastern Oregon communities have critical shortages.",
+      "Must serve in a HPSA or MUA for 3 years. Oregon Health Authority (OHA) sponsors Conrad 30 applications. Oregon fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways (not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only backup. Full unrestricted OR medical license required.",
+    tips: "Oregon fills all 30 Conrad slots every year — apply early. No ARC/DRA/SCRC alternative pathways available for Oregon. Eastern Oregon (Bend, Pendleton, La Grande, Klamath Falls, Burns) has critical shortages and highest HPSA scores. Southern Oregon (Medford, Grants Pass) also needs primary care. Portland metro has very limited HPSA sites and is extremely competitive. Oregon has no sales tax but has state income tax (graduated up to 9.9%). OHSU (Oregon Health & Science University) is the major academic system. Behavioral health is a statewide priority — psychiatrists are in particularly high demand.",
     websiteUrl: "https://www.oregon.gov/oha",
   },
   PA: {
@@ -570,11 +570,11 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     flexSlots: 10,
     timeline: "6-12 months",
     processingTime: "60-90 days",
-    priorityAreas: ["Primary Care", "Rural Health", "MUA/MUP"],
-    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "OB/GYN"],
+    priorityAreas: ["Primary Care", "Rural Health", "MUA/MUP", "Behavioral Health"],
+    specialtyNeeds: ["Family Medicine", "Internal Medicine", "Psychiatry", "OB/GYN", "General Surgery"],
     requirements:
-      "Must practice in a HPSA or MUA for 3 years. South Carolina Department of Health and Environmental Control sponsors applications.",
-    tips: "South Carolina has significant rural health needs, especially in the Pee Dee region and Lowcountry. The state has been increasingly welcoming to IMG physicians. FQHCs and rural hospitals are common placements.",
+      "Must practice in a HPSA or MUA for 3 years. SC DHEC sponsors applications. South Carolina fills all 30 Conrad slots annually (FY 2024). Major advantage: SC is eligible for BOTH ARC (Appalachian upstate counties) AND SCRC waivers — giving effectively three waiver pathways with unlimited additional capacity. Full unrestricted SC medical license required.",
+    tips: "South Carolina fills all 30 Conrad slots every year, but you have excellent alternatives. Upstate SC (Anderson, Pickens, Oconee, Cherokee) qualifies for ARC waivers (unlimited, no fee). Much of SC is covered by SCRC waivers (unlimited, $3,000 fee). This means SC effectively has more waiver capacity than most states despite filling Conrad. Pee Dee region (Florence, Marion, Darlington) and Lowcountry rural areas have highest HPSA scores. MUSC (Charleston) and USC (Columbia) residency connections help with networking. No state income tax on first $3,460 (graduated 0-6.4%). Moderate cost of living.",
     websiteUrl: "https://scdhec.gov",
   },
   SD: {
