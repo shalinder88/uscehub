@@ -326,6 +326,22 @@ export default function EmployersPage() {
           waiver or H-1B sponsorship. All listings reviewed before publishing.
         </p>
       </div>
+
+      {/* Related Pages */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Link href="/career/waiver" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">J-1 Waiver State Guide</h3>
+          <p className="text-xs text-muted mt-1">Where physicians search for waiver opportunities</p>
+        </Link>
+        <Link href="/career/jobs" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Where Physicians Search</h3>
+          <p className="text-xs text-muted mt-1">See which job boards physicians actually use</p>
+        </Link>
+        <Link href="/career/waiver/hpsa-lookup" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">HPSA Lookup</h3>
+          <p className="text-xs text-muted mt-1">Verify your facility qualifies for waiver placement</p>
+        </Link>
+      </div>
     </div>
   );
 }
