@@ -248,7 +248,7 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Computer-based exam with 240 single-best-answer questions across two 5-hour sessions in a single day. Content spans all IM subspecialties weighted by clinical prevalence.",
     timeline:
       "Typically taken in August or October of PGY-3 year, within 2 years of residency completion. Registration opens January. 60-day focused study period is standard.",
-    passRate: "First-time pass rate: ~92% for US MD graduates, ~87% for US DO graduates, ~78-82% for IMGs. Overall first-time rate approximately 89-91%. Retake pass rate drops significantly to ~50-60%. Source: ABIM publicly reported data.",
+    passRate: "First-time pass rate: 86% (2025), 87% (2024), 87% (2023). 240 questions, passing score 366. Must pass within 7 years of board eligibility. After 3 consecutive failures, must wait 1 year. ABIM does not publicly break down by IMG vs US graduate, but program-level data is published. Retake pass rates drop significantly. Source: ABIM official exam pass rates.",
     resources: [
       "MKSAP 19 (ACP) — the gold standard, covers all 11 subspecialties",
       "UWorld Internal Medicine Qbank — best for question practice",
@@ -266,13 +266,13 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Computer-based exam with approximately 300 questions over one day. Covers preventive care, chronic disease management, behavioral health, pediatrics, women's health, musculoskeletal, and emergency medicine.",
     timeline:
       "Taken after completing an ACGME-accredited family medicine residency. Exam offered in spring and fall. Most residents take it in July after PGY-3 graduation.",
-    passRate: "First-time pass rate: ~89-92% for residency graduates. ABFM transitioned to longitudinal assessment (FMCLA) in 2024 as an alternative to the traditional 1-day exam. The 1-day exam is still available. Source: ABFM annual reports.",
+    passRate: "First-time initial certification pass rate: 96.8% (2024), 97.9% (2023). 300 questions in 4 sections over a 9-hour exam day. Exam fee: $1,300 (2026). Major change in 2025: new 5-year continuous certification cycle — diplomates can choose quarterly 25-question longitudinal assessments OR the traditional one-day exam. Recertification pass rate is lower (~80-89%). Source: ABFM official data.",
     resources: [
       "AAFP Family Medicine Board Review — comprehensive review course",
       "UWorld Family Medicine Qbank — best question bank for FM boards",
       "ABFM Self-Assessment Modules (SAMs) — required for MOC",
       "Swanson's Family Medicine Review — classic textbook review",
-      "ABFM Knowledge Self-Assessment (KSA) — new longitudinal option",
+      "ABFM Certification 2025 — new 5-year longitudinal option",
     ],
   },
   {
@@ -284,7 +284,7 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Computer-based exam with approximately 330 questions over two days. Covers general pediatrics, neonatology, adolescent medicine, developmental-behavioral, emergency, and subspecialty pediatrics.",
     timeline:
       "Administered in October. Eligible after completing ACGME-accredited pediatrics residency. Registration opens in spring of PGY-3 year.",
-    passRate: "First-time pass rate: ~83-87% for general pediatrics (varies by year). Subspecialty certification pass rates vary widely. ABP uses a single-day computer-based format administered in October. Source: ABP publicly reported data.",
+    passRate: "First-time pass rate: 89% (2024), low-80% range (2022-2023), 91% (2018 historic high). Historical range since 2012: 80-91%. MOC exam pass rate typically 85-90%. Criterion-referenced passing standard (not curved). Valid unrestricted medical license required by exam date. Source: ABP official exam pass rates.",
     resources: [
       "PREP Self-Assessment (AAP) — official AAP question bank, essential",
       "UWorld Pediatrics Qbank — high-yield for board-style questions",
@@ -303,7 +303,7 @@ export const BOARD_EXAMS: BoardExam[] = [
     timeline:
       "QE taken in July after completing chief year. CE taken approximately 12-18 months later. QE must be passed before taking CE.",
     passRate:
-      "QE first-time pass rate: ~80-85%. CE (oral exam) first-time pass rate: ~74-80%. The QE is one of the harder written board exams. ABS implemented continuous certification (ABS CC) starting 2023, with quarterly online assessments as alternative to 10-year recertification. Source: ABS publicly reported data.",
+      "QE first-time pass rate: 92-95% in recent years (2022 was 95%). CE (oral exam) first-time pass rate: ~79% (5-year average). ~1,400 examinees per exam annually. QE passing score: 400 (on 100-900 scale). ACGME requires programs to maintain 65%+ first-time pass rate over 5 years. ABS implemented continuous certification (ABS CC) starting 2023. Source: ABS certification statistics.",
     resources: [
       "SCORE Curriculum — official ABS-endorsed learning platform, essential",
       "Surgical Council on Resident Education (SCORE) portal",
@@ -321,7 +321,7 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Computer-based exam with approximately 300 questions covering adult psychiatry, child psychiatry, neurology, psychopharmacology, psychotherapy, forensic psychiatry, and addiction medicine.",
     timeline:
       "Offered annually in spring and fall. Eligible after completing an ACGME-accredited psychiatry residency. Most take it within one year of graduation.",
-    passRate: "First-time pass rate: ~86-90%. ABPN phased out the oral exam in 2010 — all certification is now via computer-based exam. Added article-based questions starting in recent years. Subspecialty certifications (addiction, forensic, child & adolescent, consult-liaison) have separate exams. Source: ABPN published data.",
+    passRate: "First-time pass rate: 90% (2024, 1,894/2,096 passed), 91% (2023), 89% (2022), 91% (2021). 5-year cumulative: 90% (8,506/9,426). Related specialties: Addiction Psychiatry 95%, Child & Adolescent 85%, Neurology 84%. Criterion-referenced standard (no curve). Source: ABPN official 5-year pass rate data (2020-2024).",
     resources: [
       "Stahl's Essential Psychopharmacology — the bible of psychopharm",
       "UWorld Psychiatry Qbank — best question bank for ABPN boards",
@@ -339,7 +339,7 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Two-part exam: Part 1 covers anatomic and clinical pathology fundamentals. Part 2 focuses on subspecialty expertise. Both are computer-based with multiple-choice and image-based questions.",
     timeline:
       "Part 1 typically taken after PGY-3 year. Part 2 taken after completing residency. Exams offered annually.",
-    passRate: "First-time pass rate: ~80-85% for AP/CP combined. AP-only and CP-only tracks have slightly different rates. ABPath has been modernizing with digital slide-based questions. Subspecialty certification exams (dermatopathology, hematopathology, neuropathology, etc.) have variable pass rates. Source: ABPath published data.",
+    passRate: "Subspecialty first-time pass rate: 92.1% (15-year average 2007-2021). Repeat takers: 54.5%. Overall mean across subspecialties: 89% (range 78.9-100%). Spring takers have statistically higher pass rates than Fall takers. Delaying beyond graduation year associated with higher failure rates. ABPath conducted a rescoring in October 2024. Source: ABPath annual reports and published research.",
     resources: [
       "Robbins & Cotran Pathologic Basis of Disease — the foundational text",
       "PathPrimer Qbank — pathology-specific question bank",
