@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   Shield,
@@ -601,6 +602,22 @@ export default function MalpracticePage() {
           is not something you figure out later. Get it right before you sign.
         </p>
       </section>
+
+      {/* Related Tools */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Link href="/career/contract" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Contract Checklist</h3>
+          <p className="text-xs text-muted mt-1">What to verify before signing your waiver contract</p>
+        </Link>
+        <Link href="/career/offers" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Offer Comparison</h3>
+          <p className="text-xs text-muted mt-1">Compare up to 4 offers side-by-side</p>
+        </Link>
+        <Link href="/career/salary" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Salary Benchmarks</h3>
+          <p className="text-xs text-muted mt-1">Know your market rate by specialty and state</p>
+        </Link>
+      </div>
     </div>
   );
 }

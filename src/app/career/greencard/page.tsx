@@ -333,6 +333,22 @@ export default function GreenCardPage() {
           </p>
         </div>
       </div>
+
+      {/* Related Tools */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Link href="/career/visa-bulletin" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Visa Bulletin Tracker</h3>
+          <p className="text-xs text-muted mt-1">Check your EB-2/EB-1 priority date movement</p>
+        </Link>
+        <Link href="/career/h1b" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">H-1B Guide</h3>
+          <p className="text-xs text-muted mt-1">Cap-exempt rules, transfers, and fees</p>
+        </Link>
+        <Link href="/career/attorneys" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Immigration Attorneys</h3>
+          <p className="text-xs text-muted mt-1">Vetted attorneys who specialize in physician cases</p>
+        </Link>
+      </div>
     </div>
   );
 }

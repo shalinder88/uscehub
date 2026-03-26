@@ -247,6 +247,22 @@ export default function H4SpousePage() {
           helpful, share it with someone who needs it.
         </div>
       </div>
+
+      {/* Related Tools */}
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Link href="/career/visa-bulletin" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Visa Bulletin Tracker</h3>
+          <p className="text-xs text-muted mt-1">Track your spouse&apos;s EB-2/EB-1 priority date</p>
+        </Link>
+        <Link href="/career/greencard" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">Green Card Pathways</h3>
+          <p className="text-xs text-muted mt-1">EB-2 NIW, EB-1, PERM — which unlocks your EAD</p>
+        </Link>
+        <Link href="/career/h1b" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">H-1B Guide</h3>
+          <p className="text-xs text-muted mt-1">Your spouse&apos;s visa status affects your EAD eligibility</p>
+        </Link>
+      </div>
     </div>
   );
 }
