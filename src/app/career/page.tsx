@@ -13,6 +13,7 @@ import {
   AlertCircle,
   Globe,
   CheckCircle2,
+  GraduationCap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ const immigrationTools = [
   { label: "Visa Bulletin Tracker", value: "Monthly", href: "/career/visa-bulletin", icon: TrendingUp, color: "text-warning", bg: "bg-warning/10", description: "EB-2/EB-3 priority date movement + wait calculator" },
   { label: "Policy Alerts", value: "Weekly", href: "/career/alerts", icon: AlertCircle, color: "text-danger", bg: "bg-danger/10", description: "H-1B fees, Conrad reauth, USCIS changes" },
   { label: "H-4 Spouse Guide", value: "Essential", href: "/career/h4-spouse", icon: Flag, color: "text-warning", bg: "bg-warning/10", description: "Work authorization, EAD, career options for spouses" },
+  { label: "ECFMG Certification", value: "6 Pathways", href: "/career/ecfmg", icon: GraduationCap, color: "text-cyan", bg: "bg-cyan/10", description: "Pathways, fees ($4K+), OET scores, 7-year rule" },
 ];
 
 // Add state compare to career tools
