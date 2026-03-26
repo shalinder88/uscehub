@@ -71,7 +71,7 @@ export const PHASE_CONFIGS: Record<JourneyPhase, PhaseConfig> = {
     nav: [
       { label: "Waiver Jobs", href: "/career/jobs" },
       { label: "State Intel", href: "/career/waiver" },
-      { label: "Lawyers", href: "/career/lawyers" },
+      { label: "Attorneys", href: "/career/attorneys" },
       { label: "Offer Compare", href: "/career/offers" },
       { label: "Community", href: "/career/community" },
       { label: "About", href: "/about" },

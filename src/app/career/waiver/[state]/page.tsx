@@ -346,10 +346,10 @@ export default async function WaiverStatePage({
                 Find immigration lawyers who specialize in J-1 waivers.
               </p>
               <Link
-                href="/career/lawyers"
+                href="/career/attorneys"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-surface-alt px-4 py-2 text-sm font-medium text-foreground hover:bg-accent/10 hover:text-accent transition-colors"
               >
-                Browse Lawyers
+                Browse Attorneys
               </Link>
             </div>
           </div>

@@ -100,7 +100,7 @@ const TIMELINE_STEPS: TimelineStep[] = [
   {
     label: "USCIS H-1B adjudication",
     description:
-      "USCIS reviews and approves the H-1B petition. Premium processing available ($2,805 fee for 15-day processing). Strongly recommended — don't wait for regular processing.",
+      "USCIS reviews and approves the H-1B petition. Premium processing available ($2,965 fee for 15-day processing). Strongly recommended — don't wait for regular processing.",
     monthsBefore: 2,
     critical: true,
   },

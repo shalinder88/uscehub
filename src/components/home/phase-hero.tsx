@@ -85,7 +85,7 @@ export function AttendingHero() {
   const stats = [
     { value: "250+", label: "Waiver Jobs", icon: Briefcase, href: "/career/jobs" },
     { value: "50", label: "States Covered", icon: MapPin, href: "/career/waiver" },
-    { value: "50+", label: "Lawyers Listed", icon: Scale, href: "/career/lawyers" },
+    { value: "6", label: "Verified Attorney Firms", icon: Scale, href: "/career/attorneys" },
     { value: "4", label: "Visa Pathways", icon: FileCheck, href: "/career/citizenship" },
   ];
 

@@ -66,7 +66,7 @@ const TRANSFER_STEPS = [
   {
     step: 1,
     title: "New employer files H-1B transfer petition",
-    detail: "Your new employer files Form I-129 with USCIS requesting a 'change of employer' H-1B. They should use premium processing ($2,805) for 15-day adjudication.",
+    detail: "Your new employer files Form I-129 with USCIS requesting a 'change of employer' H-1B. They should use premium processing ($2,965) for 15-day adjudication.",
   },
   {
     step: 2,
