@@ -11,6 +11,8 @@ import {
   Clock,
   TrendingUp,
   AlertCircle,
+  Globe,
+  CheckCircle2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -118,14 +120,36 @@ export default function CareerPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero */}
         <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent mb-4">
+            <Globe className="h-3.5 w-3.5" />
+            The Physician Immigration Platform
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
-            Navigate Your Attending Career
+            J-1 Waiver · H-1B · Green Card
           </h1>
-          <p className="text-lg text-muted max-w-3xl mx-auto">
-            J-1 waiver intelligence, job search, immigration guidance, and
-            contract tools for physicians transitioning from residency to
-            independent practice.
+          <p className="text-lg text-muted max-w-2xl mx-auto mb-6">
+            22 tools built for physicians navigating US immigration.
+            Conrad 30 tracker, visa bulletin, state intelligence, contract
+            checklist, salary benchmarks — all verified, all sourced.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 text-xs text-muted">
+            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
+              <CheckCircle2 className="h-3 w-3 text-success" />
+              50 state waiver guides
+            </span>
+            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
+              <CheckCircle2 className="h-3 w-3 text-success" />
+              Real-time slot tracker
+            </span>
+            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
+              <CheckCircle2 className="h-3 w-3 text-success" />
+              Verified monthly bulletin
+            </span>
+            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
+              <CheckCircle2 className="h-3 w-3 text-success" />
+              Every number sourced
+            </span>
+          </div>
         </div>
 
         {/* Immigration & Visa Tools */}
