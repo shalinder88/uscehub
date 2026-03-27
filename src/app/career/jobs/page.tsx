@@ -72,16 +72,22 @@ const JOB_SOURCES = [
 ];
 
 const SALARY_BENCHMARKS = [
-  { specialty: "Primary Care (FM/IM)", range: "$215K - $307K", source: "PracticeLink/ChenMed 2026" },
-  { specialty: "Hospitalist", range: "$250K - $350K", source: "MDOpts/PracticeMatch 2026" },
-  { specialty: "Pulm/Critical Care", range: "$350K - $400K", source: "MDOpts 2026" },
-  { specialty: "Cardiology", range: "$300K - $400K+", source: "ZipRecruiter/MDOpts 2026" },
-  { specialty: "Gastroenterology", range: "$350K - $500K+", source: "PracticeMatch 2026" },
-  { specialty: "Nephrology", range: "$175K - $350K", source: "MDOpts 2026" },
-  { specialty: "Rheumatology", range: "$200K - $340K", source: "MDOpts 2026" },
-  { specialty: "Pain Management", range: "$300K+", source: "MDOpts 2026" },
-  { specialty: "Psychiatry", range: "$250K - $380K", source: "PracticeLink 2026" },
-  { specialty: "Pediatrics (rural)", range: "$120K - $250K", source: "MDOpts 2026" },
+  { specialty: "Pulmonary/Critical Care", range: "$350K - $510K", source: "MDOpts, Thoracic.org, PracticeLink 2026", note: "NE listing at $510K + $100K sign-on. Pure pulm-only jobs are rare; most combine with CC." },
+  { specialty: "Critical Care / Intensivist", range: "$325K - $400K+", source: "Sound Physicians, USACS, Indeed 2026", note: "Sound Physicians, USACS, Prime Healthcare actively recruiting. Night coverage adds premium." },
+  { specialty: "Hospitalist", range: "$325K - $400K", source: "Sound Physicians 2026", note: "Sound Physicians NC: $380-390K nocturnist. MI: $325-400K + $75K bonus. Nocturnists earn 15-25% more." },
+  { specialty: "Gastroenterology", range: "$500K - $700K+", source: "AdventHealth, Indeed 2026", note: "AdventHealth FL: base + bonus >$700K. Marshfield, Baystate, Corewell Health actively hiring." },
+  { specialty: "Cardiology (Non-Invasive)", range: "$350K - $520K", source: "PracticeLink, MDOpts 2026", note: "Conemaugh PA accepts Conrad, ARC, DRA, HHS + O-1 visas." },
+  { specialty: "Cardiology (Interventional)", range: "$450K - $650K+", source: "PracticeLink, MDOpts 2026", note: "Flowers Hospital AL, HHS OK Heart Institute, Tulane Heart Failure actively hiring." },
+  { specialty: "Neurology", range: "$350K - $402K", source: "PracticeMatch, Indeed 2026", note: "Aurora WI: $402K guarantee + up to $200K sign-on/loan forgiveness. IN: $350K + RVU incentives." },
+  { specialty: "Nephrology", range: "$175K - $350K", source: "MDOpts 2026", note: "MD: $175K starting with partnership after 2 yrs. Multiple states. Lower initial salary but partnership track common." },
+  { specialty: "Psychiatry", range: "$250K - $380K", source: "Indeed, PracticeLink 2026", note: "Qualifies for Mental Health HPSA. Benefis MT, Mindpath CA, OSF IL, State of MI all actively hiring." },
+  { specialty: "Endocrinology", range: "$220K - $320K", source: "ZipRecruiter, MDOpts 2026", note: "University of Missouri, Benefis MT, Ohio University. High demand due to 80% fellowship fill rate." },
+  { specialty: "Hematology/Oncology", range: "$350K - $500K+", source: "Indeed, ASCO Careers 2026", note: "Marshfield WI, UnityPoint IA, MercyOne IA. Some with 100+ clinical trials access." },
+  { specialty: "Emergency Medicine", range: "$235/hr - $400K+", source: "Indeed, USACS 2026", note: "USACS has J-1 locations in AL, AZ, CA, FL, GA, OH, PA, TX. MO: $235/hr for EM board-certified." },
+  { specialty: "Family Medicine", range: "$260K - $355K", source: "Indeed, MDOpts 2026", note: "KS: $290K + $65K recruitment. FL: $260K + $20K sign-on. 4-day week options available." },
+  { specialty: "Internal Medicine (Outpatient)", range: "$215K - $307K", source: "ChenMed, MDOpts 2026", note: "ChenMed TX: $215-307K (max 450 patient panel). FL: $260K + $20K. ACCESS Chicago hiring." },
+  { specialty: "General Surgery", range: "$385K - $500K+", source: "ZipRecruiter, Indeed 2026", note: "UnityPoint IA: $385K 2-yr guarantee. Fewer J-1 listings because surgery is not primary care under HHS." },
+  { specialty: "Pediatrics", range: "$120K - $280K", source: "MDOpts, Indeed 2026", note: "Rural positions at lower end. IU Health Riley Children's (Ped Hem/Onc) at higher end." },
 ];
 
 const RED_FLAGS = [
