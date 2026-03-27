@@ -15,6 +15,11 @@ import {
   CheckCircle2,
   GraduationCap,
   DollarSign,
+  Shield,
+  Heart,
+  FileText,
+  AlertTriangle,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -31,76 +36,6 @@ export const metadata: Metadata = {
     url: "https://uscehub.com/career",
   },
 };
-
-// Immigration & Visa Tools
-const immigrationTools = [
-  { label: "J-1 Waiver State Intel", value: "50 States", href: "/career/waiver", icon: MapPin, color: "text-cyan", bg: "bg-cyan/10", description: "Conrad 30 guides, slot tracker, interactive map" },
-  { label: "Interactive Waiver Map", value: "Live", href: "/career/waiver/map", icon: MapPin, color: "text-accent", bg: "bg-accent/10", description: "Visual US map — click any state for details" },
-  { label: "Conrad 30 Slot Tracker", value: "Real-time", href: "/career/waiver/tracker", icon: Clock, color: "text-warning", bg: "bg-warning/10", description: "Which states still have slots available" },
-  { label: "Waiver Pathways", value: "6 Paths", href: "/career/waiver/pathways", icon: GitCompare, color: "text-success", bg: "bg-success/10", description: "Conrad, HHS, ARC, DRA, SCRC, VA compared" },
-  { label: "Timeline Calculator", value: "Personal", href: "/career/waiver/timeline", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Enter J-1 end date → get your timeline" },
-  { label: "HPSA Score Lookup", value: "Official", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger", bg: "bg-danger/10", description: "Check if a facility qualifies as shortage area" },
-  { label: "Visa Journey Map", value: "7 Stages", href: "/career/visa-journey", icon: Flag, color: "text-success", bg: "bg-success/10", description: "Interactive flowchart: J-1 → H-1B → Green Card" },
-  { label: "Process Step-by-Step", value: "6 Paths", href: "/career/waiver/process", icon: Clock, color: "text-muted", bg: "bg-surface-alt", description: "Exact agency flow for each waiver pathway" },
-  { label: "Visa Bulletin Tracker", value: "Monthly", href: "/career/visa-bulletin", icon: TrendingUp, color: "text-warning", bg: "bg-warning/10", description: "EB-2/EB-3 priority date movement + wait calculator" },
-  { label: "Policy Alerts", value: "Weekly", href: "/career/alerts", icon: AlertCircle, color: "text-danger", bg: "bg-danger/10", description: "H-1B fees, Conrad reauth, USCIS changes" },
-  { label: "H-4 Spouse Guide", value: "Essential", href: "/career/h4-spouse", icon: Flag, color: "text-warning", bg: "bg-warning/10", description: "Work authorization, EAD, career options for spouses" },
-  { label: "ECFMG Certification", value: "6 Pathways", href: "/career/ecfmg", icon: GraduationCap, color: "text-cyan", bg: "bg-cyan/10", description: "Pathways, fees ($4K+), OET scores, 7-year rule" },
-  { label: "Loan Repayment", value: "$75K-$300K", href: "/career/loan-repayment", icon: DollarSign, color: "text-success", bg: "bg-success/10", description: "NHSC, PSLF, state programs — stack for full forgiveness" },
-  { label: "When Things Go Wrong", value: "Critical", href: "/career/waiver-problems", icon: AlertCircle, color: "text-danger", bg: "bg-danger/10", description: "Employer breach, transfers, non-competes, what to do" },
-  { label: "Jobs by Specialty", value: "9 Specialties", href: "/career/jobs", icon: Briefcase, color: "text-accent", bg: "bg-accent/10", description: "Salary benchmarks + real employers for Pulm, CC, GI, Cards, etc." },
-];
-
-// Add state compare to career tools
-const financeTools = [
-  { label: "State Financial Compare", value: "25 States", href: "/career/state-compare", icon: TrendingUp, color: "text-success", bg: "bg-success/10", description: "Salary + tax + COL = real take-home by state" },
-];
-
-// Career & Contract Tools
-const careerTools = [
-  { label: "H-1B Visa Guide", value: "Complete", href: "/career/h1b", icon: Flag, color: "text-accent", bg: "bg-accent/10", description: "Cap-exempt employers, transfers, fees" },
-  { label: "Green Card Pathways", value: "3 Paths", href: "/career/greencard", icon: Flag, color: "text-success", bg: "bg-success/10", description: "EB-2 NIW, EB-1, PERM — timelines & costs" },
-  { label: "Contract Checklist", value: "Critical", href: "/career/contract", icon: Scale, color: "text-warning", bg: "bg-warning/10", description: "Must-have clauses, red flags, negotiation" },
-  { label: "Offer Comparison", value: "4-way", href: "/career/offers", icon: GitCompare, color: "text-cyan", bg: "bg-cyan/10", description: "Compare contracts side by side" },
-  { label: "Salary Benchmarks", value: "26 Specs", href: "/career/salary", icon: TrendingUp, color: "text-success", bg: "bg-success/10", description: "Sourced from Medscape, MGMA, Doximity" },
-  { label: "Malpractice Guide", value: "8 Tiers", href: "/career/malpractice", icon: Scale, color: "text-danger", bg: "bg-danger/10", description: "Occurrence vs claims-made explained" },
-];
-
-// Job & Employer Tools
-const jobTools = [
-  { label: "J-1 Waiver Jobs", value: "6 Sources", href: "/career/jobs", icon: Briefcase, color: "text-accent", bg: "bg-accent/10", description: "Verified job boards with salary benchmarks" },
-  { label: "Interview Prep", value: "Deep", href: "/career/interview", icon: Users, color: "text-muted", bg: "bg-surface-alt", description: "Questions, red flags, negotiation tips" },
-  { label: "State Licensing Guide", value: "50 States", href: "/career/licensing", icon: Scale, color: "text-cyan", bg: "bg-cyan/10", description: "Fees, timelines, IMLC Compact, DEA, CDS" },
-  { label: "Find an Attorney", value: "Vetted", href: "/career/attorneys", icon: Scale, color: "text-accent", bg: "bg-accent/10", description: "Physician immigration specialists directory" },
-  { label: "For Employers", value: "Post Jobs", href: "/career/employers", icon: Briefcase, color: "text-success", bg: "bg-success/10", description: "Reach waiver physicians \u2014 from $249/listing" },
-];
-
-const latestUpdates = [
-  {
-    title: "Conrad 30 Reauthorization Act (H.R. 1585 / S. 709) Introduced",
-    description:
-      "Bipartisan bill introduced Feb 2025 in 119th Congress. Would increase slots from 30 to 35 per state, add automatic escalation if 90% used nationally, and create slot recapture when physicians leave a state. Currently in Senate Judiciary Committee. Critical: without extension, physicians who acquired J-1 status after Oct 1, 2025 may not be eligible. Source: Congress.gov",
-    date: "Mar 2026",
-    type: "Legislative",
-    icon: AlertCircle,
-  },
-  {
-    title: "CY 2026 Medicare Conversion Factor: $33.40/RVU",
-    description:
-      "CMS established two conversion factors for the first time: $33.57/RVU for qualifying APM participants, $33.40/RVU for standard. Includes temporary 2.5% statutory bump from H.R. 1. However, a -2.5% efficiency adjustment to wRVUs on non-timed services may reduce procedural specialty reimbursement. Source: CMS CY 2026 PFS Final Rule.",
-    date: "Mar 2026",
-    type: "Compensation",
-    icon: TrendingUp,
-  },
-  {
-    title: "FY 2024: 19 States Filled All 30 Conrad Slots",
-    description:
-      "Per 3RNET data, 19 states exhausted all Conrad 30 slots in FY 2024: AZ, AR, CT, GA, IN, KS, KY, LA, ME, MA, MI, MN, MO, NM, NY, OH, OR, PA, SC. Kentucky, Michigan, and New York have filled every slot every year for 20+ years. Total national placements: 1,010 physicians. Source: 3RNET, Health Affairs Scholar.",
-    date: "Feb 2026",
-    type: "Waiver Data",
-    icon: Clock,
-  },
-];
 
 export default function CareerPage() {
   const jsonLd = {
@@ -125,192 +60,254 @@ export default function CareerPage() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero */}
-        <div className="text-center mb-12">
+        {/* Hero — tight, specific */}
+        <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-xs font-medium text-accent mb-4">
             <Globe className="h-3.5 w-3.5" />
-            The Physician Immigration Platform
+            Physician Immigration Intelligence
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             J-1 Waiver · H-1B · Green Card
           </h1>
-          <p className="text-lg text-muted max-w-2xl mx-auto mb-6">
-            22 tools built for physicians navigating US immigration.
-            Conrad 30 tracker, visa bulletin, state intelligence, contract
-            checklist, salary benchmarks — all verified, all sourced.
+          <p className="text-lg text-muted max-w-2xl mx-auto">
+            25+ tools built for physicians navigating US immigration.
+            Every number sourced from official data. Every claim verified.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 text-xs text-muted">
-            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
-              <CheckCircle2 className="h-3 w-3 text-success" />
-              50 state waiver guides
-            </span>
-            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
-              <CheckCircle2 className="h-3 w-3 text-success" />
-              Real-time slot tracker
-            </span>
-            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
-              <CheckCircle2 className="h-3 w-3 text-success" />
-              Verified monthly bulletin
-            </span>
-            <span className="flex items-center gap-1 rounded-full bg-surface border border-border px-3 py-1">
-              <CheckCircle2 className="h-3 w-3 text-success" />
-              Every number sourced
-            </span>
-          </div>
         </div>
 
-        {/* Immigration & Visa Tools */}
-        <div className="mb-12">
-          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-cyan" />
-            Immigration & Visa Intelligence
+        {/* ═══ SECTION 1: Product Proof — Live Data Previews ═══ */}
+        <div className="mb-16">
+          <h2 className="text-sm font-semibold text-muted uppercase tracking-wider mb-6">
+            Live Intelligence
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {immigrationTools.map((card) => {
-              const Icon = card.icon;
-              return (
-                <Link key={card.href} href={card.href} className="group">
-                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
-                    </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
-                      {card.label}
-                    </div>
-                    <div className="text-xs text-muted">{card.description}</div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Proof Block 1: Visa Bulletin */}
+            <Link href="/career/visa-bulletin" className="group">
+              <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-accent">Visa Bulletin — April 2026</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-muted group-hover:text-accent transition-colors" />
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-muted">EB-2 India</span>
+                    <span className="font-mono font-bold text-warning">Jul 15, 2014</span>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Career & Contract Tools */}
-        <div className="mb-12">
-          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-            <Scale className="h-5 w-5 text-warning" />
-            Career & Contract Tools
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {careerTools.map((card) => {
-              const Icon = card.icon;
-              return (
-                <Link key={card.href} href={card.href} className="group">
-                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
-                    </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
-                      {card.label}
-                    </div>
-                    <div className="text-xs text-muted">{card.description}</div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-muted">EB-2 China</span>
+                    <span className="font-mono font-bold text-foreground">Sep 1, 2021</span>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Financial Tools */}
-        <div className="mb-12">
-          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-            <TrendingUp className="h-5 w-5 text-success" />
-            Financial Analysis
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {financeTools.map((card) => {
-              const Icon = card.icon;
-              return (
-                <Link key={card.href} href={card.href} className="group">
-                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
-                    </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
-                      {card.label}
-                    </div>
-                    <div className="text-xs text-muted">{card.description}</div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-muted">EB-2 ROW</span>
+                    <span className="font-mono font-bold text-success">Current</span>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Job & Employer Tools */}
-        <div className="mb-12">
-          <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
-            <Briefcase className="h-5 w-5 text-accent" />
-            Job Search & Preparation
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {jobTools.map((card) => {
-              const Icon = card.icon;
-              return (
-                <Link key={card.href} href={card.href} className="group">
-                  <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`${card.bg} ${card.color} rounded-lg p-2`}>
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-accent">{card.value}</span>
-                    </div>
-                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors mb-1">
-                      {card.label}
-                    </div>
-                    <div className="text-xs text-muted">{card.description}</div>
+                  <div className="flex justify-between text-xs">
+                    <span className="text-muted">EB-1 India</span>
+                    <span className="font-mono font-bold text-foreground">Apr 1, 2023</span>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+                </div>
+                <div className="mt-3 pt-3 border-t border-border text-[10px] text-success flex items-center gap-1">
+                  <TrendingUp className="h-3 w-3" />
+                  EB-2 India jumped 10 months this month (303 days)
+                </div>
+                <div className="mt-1 text-[10px] text-muted">Source: U.S. Department of State</div>
+              </div>
+            </Link>
 
-        {/* Latest Updates */}
-        <div>
-          <h2 className="text-2xl font-bold text-foreground mb-6">
-            Latest Waiver Updates
-          </h2>
-          <div className="space-y-4">
-            {latestUpdates.map((update, i) => {
-              const Icon = update.icon;
-              return (
-                <div
-                  key={i}
-                  className="rounded-xl border border-border bg-surface p-6 hover-glow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-accent/10 p-2.5 shrink-0">
-                      <Icon className="h-5 w-5 text-accent" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="text-base font-semibold text-foreground">
-                          {update.title}
-                        </h3>
-                        <span className="rounded-full px-3 py-1 text-xs font-medium bg-accent/10 text-accent">
-                          {update.type}
+            {/* Proof Block 2: Conrad 30 Slots */}
+            <Link href="/career/waiver/tracker" className="group">
+              <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-accent">Conrad 30 Slot Tracker — FY 2025</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-muted group-hover:text-accent transition-colors" />
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { state: "Texas", filled: 30, total: 30, status: "Filled" },
+                    { state: "California", filled: 28, total: 30, status: "2 left" },
+                    { state: "New York", filled: 30, total: 30, status: "Filled" },
+                    { state: "Alaska", filled: 5, total: 30, status: "25 left" },
+                  ].map((s) => (
+                    <div key={s.state} className="flex items-center justify-between text-xs">
+                      <span className="text-muted">{s.state}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-16 h-1.5 rounded-full bg-border overflow-hidden">
+                          <div
+                            className={`h-full rounded-full ${s.filled === s.total ? "bg-danger" : s.filled > 20 ? "bg-warning" : "bg-success"}`}
+                            style={{ width: `${(s.filled / s.total) * 100}%` }}
+                          />
+                        </div>
+                        <span className={`font-mono text-[10px] ${s.filled === s.total ? "text-danger" : "text-success"}`}>
+                          {s.status}
                         </span>
                       </div>
-                      <p className="text-sm text-muted mb-2">
-                        {update.description}
-                      </p>
-                      <span className="text-xs text-muted">{update.date}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 pt-3 border-t border-border text-[10px] text-muted">
+                  50 states tracked · 19 states filled all 30 in FY 2024 · Source: 3RNET
+                </div>
+              </div>
+            </Link>
+
+            {/* Proof Block 3: Salary Snapshot */}
+            <Link href="/career/salary" className="group">
+              <div className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-all h-full">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-accent">J-1 Waiver Salary — 2026</span>
+                  <ArrowRight className="h-3.5 w-3.5 text-muted group-hover:text-accent transition-colors" />
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { spec: "GI", range: "$500-700K+", trend: "↑" },
+                    { spec: "Interventional Radiology", range: "$575K+", trend: "↑" },
+                    { spec: "Hospitalist (nocturnist)", range: "$380-400K", trend: "→" },
+                    { spec: "Family Medicine", range: "$260-355K", trend: "↑" },
+                  ].map((s) => (
+                    <div key={s.spec} className="flex items-center justify-between text-xs">
+                      <span className="text-muted">{s.spec}</span>
+                      <span className="font-mono font-bold text-success">{s.range}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 pt-3 border-t border-border text-[10px] text-muted">
+                  16 specialties · From real job postings · Sources: Medscape, MGMA, PracticeLink
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* ═══ SECTION 2: Quick Access — Most Important Tools ═══ */}
+        <div className="mb-16">
+          <h2 className="text-sm font-semibold text-muted uppercase tracking-wider mb-6">
+            Core Tools
+          </h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {[
+              { label: "50 State Waiver Intel", href: "/career/waiver", icon: MapPin, color: "text-cyan" },
+              { label: "Interactive Map", href: "/career/waiver/map", icon: Globe, color: "text-accent" },
+              { label: "Conrad Slot Tracker", href: "/career/waiver/tracker", icon: Clock, color: "text-warning" },
+              { label: "6 Waiver Pathways", href: "/career/waiver/pathways", icon: GitCompare, color: "text-success" },
+              { label: "Visa Bulletin", href: "/career/visa-bulletin", icon: TrendingUp, color: "text-warning" },
+              { label: "H-1B Guide", href: "/career/h1b", icon: Flag, color: "text-accent" },
+              { label: "Green Card Paths", href: "/career/greencard", icon: Flag, color: "text-success" },
+              { label: "Visa Journey Map", href: "/career/visa-journey", icon: ArrowRight, color: "text-cyan" },
+              { label: "Process Step-by-Step", href: "/career/waiver/process", icon: FileText, color: "text-muted" },
+              { label: "Contract Checklist", href: "/career/contract", icon: Scale, color: "text-warning" },
+              { label: "Offer Comparison", href: "/career/offers", icon: GitCompare, color: "text-cyan" },
+              { label: "Salary Benchmarks", href: "/career/salary", icon: DollarSign, color: "text-success" },
+              { label: "Malpractice Guide", href: "/career/malpractice", icon: Shield, color: "text-danger" },
+              { label: "State Licensing", href: "/career/licensing", icon: Scale, color: "text-cyan" },
+              { label: "Jobs by Specialty", href: "/career/jobs", icon: Briefcase, color: "text-accent" },
+              { label: "Interview Prep", href: "/career/interview", icon: Users, color: "text-muted" },
+              { label: "ECFMG Certification", href: "/career/ecfmg", icon: GraduationCap, color: "text-cyan" },
+              { label: "Loan Repayment", href: "/career/loan-repayment", icon: DollarSign, color: "text-success" },
+              { label: "State Compare", href: "/career/state-compare", icon: TrendingUp, color: "text-success" },
+              { label: "When Things Go Wrong", href: "/career/waiver-problems", icon: AlertTriangle, color: "text-danger" },
+              { label: "H-4 Spouse Guide", href: "/career/h4-spouse", icon: Heart, color: "text-warning" },
+              { label: "HPSA Lookup", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger" },
+              { label: "Policy Alerts", href: "/career/alerts", icon: AlertCircle, color: "text-danger" },
+              { label: "Find an Attorney", href: "/career/attorneys", icon: Scale, color: "text-accent" },
+            ].map((tool) => {
+              const Icon = tool.icon;
+              return (
+                <Link key={tool.href} href={tool.href} className="group">
+                  <div className="rounded-lg border border-border bg-surface p-3 hover:border-accent/50 transition-all text-center h-full flex flex-col items-center justify-center gap-1.5">
+                    <Icon className={`h-4 w-4 ${tool.color}`} />
+                    <span className="text-xs font-medium text-foreground group-hover:text-accent transition-colors leading-tight">
+                      {tool.label}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ═══ SECTION 3: Intelligence Feed ═══ */}
+        <div className="mb-16">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-sm font-semibold text-muted uppercase tracking-wider">
+              Intelligence Feed
+            </h2>
+            <Link href="/career/alerts" className="text-xs text-accent hover:underline flex items-center gap-1">
+              All alerts <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                type: "CRITICAL",
+                typeColor: "bg-danger/10 text-danger",
+                title: "Conrad 30 Authorization Has Lapsed",
+                detail: "Program authorization expired Sept 30, 2025. Physicians who acquired J-1 status after Oct 1, 2025 may not be eligible. H.R. 1585 pending.",
+                source: "USCIS, Congress.gov",
+                date: "Mar 2026",
+              },
+              {
+                type: "H-1B FEE",
+                typeColor: "bg-warning/10 text-warning",
+                title: "$100K H-1B Filing Fee (Proclamation 10973)",
+                detail: "Applies to new petitions requiring consular processing. Does NOT apply to change-of-status or extensions. Physician exemption bill introduced. Expires Sept 2026.",
+                source: "Federal Register, AMA",
+                date: "Mar 2026",
+              },
+              {
+                type: "VISA BULLETIN",
+                typeColor: "bg-success/10 text-success",
+                title: "EB-2 India Jumped 10 Months in April 2026",
+                detail: "Final Action Date moved from Sep 15, 2013 to Jul 15, 2014 — the largest single-month advance in years. Driven by reduced consular processing. May retrogress later in FY2026.",
+                source: "DOS Visa Bulletin",
+                date: "Apr 2026",
+              },
+              {
+                type: "SLOTS",
+                typeColor: "bg-cyan/10 text-cyan",
+                title: "FY 2024: 19 States Filled All 30 Conrad Slots",
+                detail: "KY, MI, NY have filled every slot for 20+ years. TX and CA did not fill all 30 in FY2024 despite common belief. Total: 1,010 physicians placed nationally.",
+                source: "3RNET, Health Affairs Scholar",
+                date: "Feb 2026",
+              },
+            ].map((alert, i) => (
+              <div key={i} className="rounded-lg border border-border bg-surface p-4">
+                <div className="flex items-start gap-3">
+                  <span className={`shrink-0 rounded-md px-2 py-0.5 text-[10px] font-bold ${alert.typeColor}`}>
+                    {alert.type}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-semibold text-foreground mb-1">{alert.title}</h3>
+                    <p className="text-xs text-muted mb-1.5">{alert.detail}</p>
+                    <div className="flex items-center gap-3 text-[10px] text-muted">
+                      <span>Source: {alert.source}</span>
+                      <span>·</span>
+                      <span>{alert.date}</span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* ═══ SECTION 4: For Employers ═══ */}
+        <div className="rounded-xl border border-accent/30 bg-accent/5 p-6 text-center">
+          <h2 className="text-lg font-bold text-foreground mb-2">
+            Hiring J-1 Waiver Physicians?
+          </h2>
+          <p className="text-sm text-muted mb-4 max-w-lg mx-auto">
+            Post your position to reach physicians actively searching for
+            waiver-eligible positions. From $249/listing.
+          </p>
+          <Link
+            href="/career/employers"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
+          >
+            Post a Position <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </>
