@@ -82,11 +82,11 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
   },
   {
     id: "res-5",
-    name: "5 Minute Sono",
+    name: "Core Ultrasound",
     description:
-      "Short, high-yield ultrasound tutorials for bedside clinicians covering focused cardiac, lung, FAST, DVT, and soft tissue exams.",
+      "High-yield point-of-care ultrasound tutorials for bedside clinicians covering focused cardiac, lung, FAST, DVT, and soft tissue exams.",
     category: "Ultrasound & POCUS",
-    url: "https://www.thepocusatlas.com/",
+    url: "https://www.coreultrasound.com/",
     free: true,
   },
   {

@@ -87,7 +87,7 @@ const SALARY_BENCHMARKS = [
 const RED_FLAGS = [
   {
     title: "Non-compete clauses",
-    detail: "Federal law prohibits non-compete clauses in Conrad 30 waiver contracts. If an employer includes one, they either don't understand the law or are hoping you don't.",
+    detail: "Conrad 30 program rules prohibit non-compete clauses in waiver contracts. If an employer includes one, they either don't understand the waiver requirements or are hoping you don't. After the 3-year period, enforceability depends on state law.",
   },
   {
     title: "Salary significantly below market",

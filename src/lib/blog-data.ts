@@ -624,7 +624,7 @@ Different from all the others.
 
 **The deal:** No HPSA requirement. No geographic restriction to underserved areas. Any specialty the VA needs. You work at a VA medical center as a federal employee.
 
-**The advantage:** VA facilities are H-1B cap-exempt. Federal employment means PSLF eligibility. No non-compete issues. Any specialty.
+**The advantage:** Federal employment means PSLF eligibility. No non-compete issues. Any specialty. Note: VA is NOT automatically H-1B cap-exempt (pending legislation), but individual VA medical centers with university affiliations may qualify.
 
 **The catch:** You have to work at a VA facility specifically. Salary may be lower than private sector. The VA hiring process is notoriously slow. And if a US physician becomes available for the position during the waiver process, your application gets stopped.
 
