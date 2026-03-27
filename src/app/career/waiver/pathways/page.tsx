@@ -237,7 +237,7 @@ const pathways: Pathway[] = [
       "VA hiring process can be slow and bureaucratic",
       "Salary may be lower than private sector",
     ],
-    url: "https://www.va.gov/health/careers",
+    url: "https://www.vacareers.va.gov/",
     color: "text-muted",
   },
 ];

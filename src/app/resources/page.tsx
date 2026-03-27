@@ -36,7 +36,7 @@ const EXAM_PREP = [
     price: "$400-600",
     icon: BookOpen,
     tag: "Most Popular",
-    url: "https://www.uworld.com/usmle/", // REPLACE with affiliate link
+    url: "https://medical.uworld.com/usmle/", // REPLACE with affiliate link
     why: "Highest-yield resource for Step 2 CK — the score that matters most for IMGs.",
   },
   {
@@ -77,7 +77,7 @@ const OET_PREP = [
       "Official practice materials from OET. Includes sample tests, preparation guides, and scoring criteria explanations.",
     price: "Free-$100",
     icon: Globe,
-    url: "https://www.occupationalenglishtest.org/preparation/",
+    url: "https://oet.com/preparation/",
     why: "Start here for free before investing in paid courses. Understand the test format first.",
   },
 ];
@@ -131,7 +131,7 @@ const APPLICATION = [
       "The platform for submitting residency applications. MyERAS opens in June, applications transmit in September.",
     price: "$1,500-3,000+",
     icon: FileText,
-    url: "https://eras.aamc.org/",
+    url: "https://students-residents.aamc.org/applying-residencies-eras/applying-residencies-eras",
     why: "Cost depends on how many programs you apply to. IMGs typically apply to 150-200+ programs.",
   },
   {

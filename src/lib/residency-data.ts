@@ -77,7 +77,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Open-access library of point-of-care ultrasound clips organized by organ system. Covers cardiac, lung, abdominal, vascular, and procedural POCUS with annotated images.",
     category: "Ultrasound & POCUS",
-    url: "https://www.pocusatlas.com",
+    url: "https://pocus101.com/",
     free: true,
   },
   {
@@ -86,7 +86,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Short, high-yield ultrasound tutorials for bedside clinicians covering focused cardiac, lung, FAST, DVT, and soft tissue exams.",
     category: "Ultrasound & POCUS",
-    url: "https://www.5minsono.com",
+    url: "https://www.thepocusatlas.com/",
     free: true,
   },
   {
@@ -104,7 +104,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Comprehensive procedural reference with step-by-step technique guides, anatomy review, and complication management for over 70 procedures.",
     category: "Procedures & Skills",
-    url: "https://www.elsevier.com/books/roberts-and-hedges",
+    url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/birnbaumer/978-0-323-77922-7",
     free: false,
   },
   {
@@ -131,7 +131,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Free, open-access critical care reference by Josh Farkas covering ICU physiology, ventilator management, shock, sepsis, toxicology, and procedures with evidence-based summaries.",
     category: "ICU & Critical Care",
-    url: "https://emcrit.org/ibcc/",
+    url: "https://emcrit.org/ibcc/toc/",
     free: true,
   },
   {
@@ -212,7 +212,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Quick-reference guide for inpatient medicine covering admissions, common floor calls, code management, discharge planning, and transitions of care.",
     category: "Pocketbook Medicine",
-    url: "https://www.hospitalisthandbook.com",
+    url: "https://www.amazon.com/dp/B0B3HS2K5J",
     free: false,
   },
   {

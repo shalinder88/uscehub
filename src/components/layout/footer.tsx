@@ -149,7 +149,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://eras.aamc.org/"
+                  href="https://students-residents.aamc.org/applying-residencies-eras/applying-residencies-eras"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"

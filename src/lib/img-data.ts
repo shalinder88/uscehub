@@ -658,7 +658,7 @@ export const KEY_RESOURCES = [
   { name: "NRMP", url: "https://www.nrmp.org/", description: "National Resident Matching Program — match data and policies" },
   { name: "ECFMG", url: "https://www.ecfmg.org/", description: "Educational Commission for Foreign Medical Graduates" },
   { name: "ECFMG Pathways", url: "https://www.ecfmg.org/certification-pathways/", description: "2026 Certification Pathways" },
-  { name: "ERAS", url: "https://eras.aamc.org/", description: "Electronic Residency Application Service" },
+  { name: "ERAS", url: "https://students-residents.aamc.org/applying-residencies-eras/applying-residencies-eras", description: "Electronic Residency Application Service" },
   { name: "USMLE", url: "https://www.usmle.org/", description: "United States Medical Licensing Examination" },
   { name: "r/IMGreddit", url: "https://reddit.com/r/IMGreddit", description: "Reddit community for IMGs" },
   { name: "r/residency", url: "https://reddit.com/r/residency", description: "Reddit residency community" },

@@ -509,7 +509,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     requirements:
       "Must practice in a HPSA or MUA for 3 years. North Dakota Department of Health sponsors Conrad 30 applications.",
     tips: "North Dakota typically has 16 remaining Conrad slots — very low competition. Most communities outside Fargo and Bismarck qualify. Western ND oil country (Williston, Dickinson) has growing populations and demand. Fast processing. No alternative regional pathways. ND has a graduated state income tax (0-1.95% — among lowest in nation). Sanford Health and CHI St. Alexius are major employers. Extreme winters but strong community support.",
-    websiteUrl: "https://www.health.nd.gov",
+    websiteUrl: "https://www.hhs.nd.gov/health/",
   },
   OH: {
     stateCode: "OH",
@@ -567,7 +567,7 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     requirements:
       "Must practice in a HPSA or MUA for 3 years. PA DOH administers the Conrad 30 program. HPSA score of 7+ typically sufficient. Full unrestricted PA medical license required. Pennsylvania also participates in ARC waivers for eligible Appalachian counties (covers much of central and western PA). HHS Clinical Care Waivers (unlimited slots) available for qualifying sites with HPSA score 7+.",
     tips: "Pennsylvania offers a strong mix of urban and rural waiver opportunities. Philadelphia has major FQHC networks with established waiver relationships (Philadelphia Health Centers, Project HOME). Pittsburgh's underserved neighborhoods have strong need. North-central PA (Williamsport, Lock Haven, Sunbury) and coal country (Scranton, Wilkes-Barre) are severely underserved with high HPSA scores. ARC waiver pathway is a significant advantage — many PA counties qualify, giving effectively more than 30 slots. PA has massive medical training infrastructure (Penn, Jefferson, Temple, Drexel, Pittsburgh, Geisinger). Large IMG community — PA Medical Society supports IMG integration. State income tax is flat 3.07% (one of the lowest with income tax). Cost of living is very reasonable outside Philadelphia.",
-    websiteUrl: "https://www.health.pa.gov",
+    websiteUrl: "https://www.pa.gov/en/agencies/health.html",
     applicationWindow: "Three phases: Phase 1 Oct 1 - Dec 15, Phase 2 Jan 1 - Jun 15, Phase 3 Jul 1 - Sep 15. FLEX only in second half. NOTE: PA requires 5-year total commitment: 3 years (federal Conrad) + 2 additional years (state/NIW requirement).",
   },
   RI: {
