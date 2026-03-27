@@ -74,7 +74,7 @@ const recentUpdates = [
   {
     title: "Board Exam Data Updated with 2024-2025 Official Pass Rates",
     description:
-      "ABIM: 86% (2025). ABFM: 96.8% initial cert. ABP: 89%. ABS QE: 92-95%. ABPN: 90%. ABPath: 92.1%. Plus ABFM's new 5-year longitudinal assessment option. All sourced from official board data.",
+      "ABIM: 88% (2025, 9,506 examinees). ABFM: 96.8% initial cert. ABP: 89%. ABS QE: 92-95%. ABPN: 90%. ABPath: 92.1%. Plus ABFM's new 5-year longitudinal assessment option. All sourced from official board data.",
     date: "March 2026",
   },
   {

@@ -248,7 +248,7 @@ export const BOARD_EXAMS: BoardExam[] = [
       "Computer-based exam with 240 single-best-answer questions across two 5-hour sessions in a single day. Content spans all IM subspecialties weighted by clinical prevalence.",
     timeline:
       "Typically taken in August or October of PGY-3 year, within 2 years of residency completion. Registration opens January. 60-day focused study period is standard.",
-    passRate: "First-time pass rate: 86% (2025), 87% (2024), 87% (2023). 240 questions, passing score 366. Must pass within 7 years of board eligibility. After 3 consecutive failures, must wait 1 year. ABIM does not publicly break down by IMG vs US graduate, but program-level data is published. Retake pass rates drop significantly. Source: ABIM official exam pass rates.",
+    passRate: "First-time pass rate: 88% (2025, 9,506 examinees), 87% (2024), 87% (2023). 240 questions, passing score 366. Must pass within 7 years of board eligibility. After 3 consecutive failures, must wait 1 year. ABIM does not publicly break down by IMG vs US graduate, but program-level data is published. Retake pass rates drop significantly. Source: ABIM official exam pass rates.",
     resources: [
       "MKSAP 19 (ACP) — the gold standard, covers all 11 subspecialties",
       "UWorld Internal Medicine Qbank — best for question practice",

@@ -6,9 +6,9 @@ import { US_STATES } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Observerships by State — All 50 States",
+  title: "Observerships by State — 37 States & DC",
   description:
-    "Find clinical observerships, externships, and research opportunities for IMGs in every US state. Browse programs by state to find opportunities near you.",
+    "Find clinical observerships, externships, and research opportunities for IMGs across 37 US states and DC. Browse programs by state to find opportunities near you.",
   alternates: {
     canonical: "https://uscehub.com/observerships",
   },
