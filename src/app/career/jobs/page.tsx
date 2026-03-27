@@ -264,6 +264,40 @@ export default function WaiverJobsPage() {
         </div>
       </section>
 
+      {/* Browse by Specialty */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+          <Briefcase className="h-5 w-5 text-accent" />
+          Browse by Specialty
+        </h2>
+        <p className="text-sm text-muted mb-4">
+          Each specialty page has active employers, salary data, and direct
+          search links to job boards — all verified from real postings.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          {[
+            { name: "Pulm/CC", slug: "pulmonary-critical-care", salary: "$350-510K" },
+            { name: "Critical Care", slug: "critical-care", salary: "$325-400K+" },
+            { name: "Hospitalist", slug: "hospitalist", salary: "$325-400K" },
+            { name: "Gastroenterology", slug: "gastroenterology", salary: "$500-700K+" },
+            { name: "Cardiology", slug: "cardiology", salary: "$350-650K+" },
+            { name: "Psychiatry", slug: "psychiatry", salary: "$250-380K" },
+            { name: "Family Medicine", slug: "family-medicine", salary: "$260-355K" },
+            { name: "Neurology", slug: "neurology", salary: "$350-402K" },
+            { name: "Nephrology", slug: "nephrology", salary: "$175-350K" },
+          ].map((s) => (
+            <Link
+              key={s.slug}
+              href={`/career/jobs/${s.slug}`}
+              className="rounded-lg border border-border bg-surface p-3 hover:border-accent/50 transition-colors group text-center"
+            >
+              <div className="text-sm font-semibold text-foreground group-hover:text-accent">{s.name}</div>
+              <div className="text-xs text-success font-mono mt-1">{s.salary}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* H-1B Alert */}
       <div className="rounded-xl border border-danger/30 bg-danger/5 p-6 mb-8">
         <h3 className="text-lg font-bold text-danger mb-2 flex items-center gap-2">
