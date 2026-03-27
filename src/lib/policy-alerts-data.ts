@@ -102,15 +102,15 @@ export const POLICY_ALERTS: PolicyAlert[] = [
   },
   {
     id: "fha-loan-exclusion",
-    date: "2025-05-15",
+    date: "2025-03-26",
     title: "FHA Loans No Longer Available to Non-Permanent Residents",
     summary:
-      "HUD Mortgagee Letter 2025-09 made FHA-insured loans unavailable to non-permanent residents. This directly affects H-1B physicians trying to buy homes during their waiver service. Conventional and physician mortgage loans remain available but often at higher rates or with adjustable terms.",
+      "HUD Mortgagee Letter 2025-09 (published March 26, 2025, mandatory for case numbers assigned on or after May 25, 2025) made FHA-insured loans unavailable to non-permanent residents. This directly affects H-1B physicians trying to buy homes during their waiver service. Conventional and physician mortgage loans remain available but often at higher rates or with adjustable terms.",
     impact: "high",
     category: "uscis",
     affectsWho: ["H-1B physicians buying homes", "J-1 waiver physicians considering home purchase"],
-    sourceUrl: "https://homesteadfinancial.com/purchase/who-can-get-a-mortgage-a-guide-for-immigrants-in-the-u-s/",
-    sourceName: "Homestead Financial",
+    sourceUrl: "https://www.hud.gov/sites/default/files/OCHCO/documents/2025-09hsgml.pdf",
+    sourceName: "HUD Mortgagee Letter 2025-09",
   },
   {
     id: "premium-processing-fee-increase",

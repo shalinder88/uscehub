@@ -72,7 +72,7 @@ const pathways = [
       "Must meet at least 3 of 10 criteria (publications, judging others' work, awards, etc.)",
     ],
     pros: [
-      "No per-country backlog — current for all countries",
+      "Minimal backlog — generally current for all countries (India may experience brief retrogression periods)",
       "Fastest green card pathway when eligible",
       "No PERM labor certification required",
       "Premium processing available (15 days for I-140)",

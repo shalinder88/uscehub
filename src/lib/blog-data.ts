@@ -257,9 +257,9 @@ The most common waiver pathway. Key facts:
 - **You work in H-1B status** after waiver approval
 - **Non-compete clauses are prohibited** in federal shortage-area waiver contracts
 
-### 2026 Critical Update: Sunset Risk
+### 2026 Critical Update: Authorization Has Lapsed
 
-The Conrad 30 authorization faces a potential sunset. USCIS has stated that physicians who acquired J-1 status **on or after October 1, 2025** may not be eligible for Conrad 30 waivers unless Congress extends the provision. The Conrad State 30 and Physician Access Reauthorization Act (H.R. 1585 / S. 709) was introduced in February 2025 and would:
+The Conrad 30 statutory authorization **lapsed on September 30, 2025**. USCIS continues to process waivers for physicians who acquired J-1 status **on or before September 30, 2025**, but those who acquired J-1 status on or after October 1, 2025 may not be eligible unless Congress passes reauthorization. The Conrad State 30 and Physician Access Reauthorization Act (H.R. 1585 / S. 709) was introduced in February 2025 and would:
 - Extend the program for 3 years
 - Increase slots from 30 to **35 per state**
 - Add automatic escalation if 90% used nationally

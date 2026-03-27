@@ -77,7 +77,9 @@ export default function H4SpousePage() {
             </h3>
             <p className="text-xs text-muted mb-3">
               H-4 spouses can work if they obtain an EAD. Eligibility requires
-              that your H-1B spouse has an approved I-140 petition.
+              either: (1) your H-1B spouse has an approved I-140 petition, or
+              (2) your H-1B spouse has been granted H-1B status beyond the 6-year
+              limit under AC21 provisions.
             </p>
             <div className="space-y-2 text-xs text-muted">
               <div className="flex items-start gap-2">

@@ -462,7 +462,7 @@ export default function WaiverProcessPage() {
             <strong className="text-foreground">DOS review (all pathways):</strong> 8-12 weeks. Cannot be expedited. $120 fee for DS-3035.
           </div>
           <div>
-            <strong className="text-foreground">USCIS (all pathways):</strong> I-612 waiver + I-129 H-1B filed together. Premium processing $2,965 for 15-day guarantee.
+            <strong className="text-foreground">USCIS (all pathways):</strong> After waiver approval, employer files I-129 H-1B petition. I-612 is NOT required for Conrad 30 (USCIS handles internally). Premium processing $2,965 for 15-day guarantee.
           </div>
           <div>
             <strong className="text-foreground">Service commitment:</strong> 3 years full-time (40+ hrs/week) at designated facility. Begin within 90 days of H-1B approval.

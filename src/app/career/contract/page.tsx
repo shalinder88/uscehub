@@ -39,7 +39,7 @@ const REQUIRED_CLAUSES = [
   },
   {
     title: "No Non-Compete Clause",
-    detail: "Federal law prohibits restrictive covenants (non-compete clauses) in Conrad 30 waiver contracts. If your employer includes one, it is unenforceable for the waiver period. Have your attorney flag and remove it.",
+    detail: "Conrad 30 program rules prohibit restrictive covenants (non-compete clauses) in waiver contracts. State DOHs and DOS require removal before approval. If your employer includes one, it must be removed via addendum. After the 3-year waiver period, non-compete enforceability depends on state law.",
     critical: true,
   },
   {
@@ -82,7 +82,7 @@ const REQUIRED_CLAUSES = [
 const PROHIBITED_TERMS = [
   {
     title: "Non-compete clauses",
-    detail: "Federal law prohibits non-competes in Conrad 30 waiver contracts. Any restrictive covenant limiting where you can practice after the waiver period is unenforceable during the 3-year commitment and potentially beyond.",
+    detail: "Conrad 30 program rules prohibit non-competes in waiver contracts. State health departments require their removal before approving the waiver. During the 3-year commitment, non-competes are unenforceable. After the waiver period, enforceability depends on your state's law.",
   },
   {
     title: "Salary reduction tied to productivity in year 1",

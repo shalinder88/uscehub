@@ -227,15 +227,15 @@ const pathways: Pathway[] = [
     ],
     pros: [
       "Not limited by shortage-area designations",
-      "VA facilities are H-1B cap-exempt employers",
       "Federal employment benefits (PSLF-eligible, federal retirement)",
       "Can be in any specialty the VA needs",
+      "Research and teaching positions also eligible",
     ],
     cons: [
       "Must work at a VA facility specifically",
+      "VA is NOT currently H-1B cap-exempt (legislation pending — verify before choosing)",
       "VA hiring process can be slow and bureaucratic",
       "Salary may be lower than private sector",
-      "Less flexibility in practice location",
     ],
     url: "https://www.va.gov/health/careers",
     color: "text-muted",
