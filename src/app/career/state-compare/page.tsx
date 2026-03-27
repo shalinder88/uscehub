@@ -96,6 +96,11 @@ export default function StateComparePage() {
           $310K in Texas after you factor in 13.3% state tax and 42% higher
           cost of living.
         </p>
+        <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-400">
+          <CheckCircle2 className="h-3.5 w-3.5" />
+          <span>Last verified: <strong>March 2026</strong></span>
+          <span className="text-slate-500">· Sources: Tax Foundation, BLS, SmartAsset</span>
+        </div>
       </div>
 
       {/* Info Box */}

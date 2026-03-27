@@ -19,6 +19,7 @@ import {
   Info,
   ExternalLink,
   ArrowLeft,
+  ShieldCheck,
 } from "lucide-react";
 
 type Category = "EB-1" | "EB-2" | "EB-3";
@@ -77,6 +78,11 @@ export default function VisaBulletinPage() {
           Track employment-based green card priority date movement. Select your
           category and country of birth to see where you stand.
         </p>
+        <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-400">
+          <ShieldCheck className="h-3.5 w-3.5" />
+          <span>Last verified: <strong>March 2026</strong></span>
+          <span className="text-slate-500">· Source: U.S. Department of State Visa Bulletin</span>
+        </div>
       </div>
 
       {/* Category + Country Selector */}

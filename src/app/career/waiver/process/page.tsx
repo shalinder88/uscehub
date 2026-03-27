@@ -363,6 +363,11 @@ export default function WaiverProcessPage() {
           agencies, forms, and approvals. Know exactly where your application
           is at every stage.
         </p>
+        <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-400">
+          <CheckCircle2 className="h-3.5 w-3.5" />
+          <span>Last verified: <strong>March 2026</strong></span>
+          <span className="text-slate-500">· Sources: USCIS, DOS, ARC, HHS, DRA, SCRC</span>
+        </div>
       </div>
 
       {/* Pathway Selector */}
