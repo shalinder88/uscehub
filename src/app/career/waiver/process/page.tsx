@@ -149,9 +149,9 @@ const PATHWAYS: PathwayProcess[] = [
       {
         agency: "USCIS",
         action: "Waiver approval + H-1B petition",
-        form: "I-612 + I-129",
+        form: "I-129 (H-1B petition)",
         duration: "15 days (premium) or 3-6 months",
-        details: "Same USCIS process as Conrad 30. File I-612 waiver and I-129 H-1B petition. Premium processing ($2,965) strongly recommended.",
+        details: "Same USCIS process as Conrad 30. Employer files I-129 H-1B petition (I-612 is NOT required — USCIS handles waiver internally). Premium processing ($2,965) strongly recommended.",
       },
       {
         agency: "USCIS → You",
@@ -198,7 +198,7 @@ const PATHWAYS: PathwayProcess[] = [
       {
         agency: "USCIS",
         action: "Waiver approval + H-1B petition",
-        form: "I-612 + I-129",
+        form: "I-129 (H-1B petition)",
         duration: "15 days (premium) or 3-6 months",
         details: "Same USCIS process. Premium processing recommended.",
       },
@@ -241,7 +241,7 @@ const PATHWAYS: PathwayProcess[] = [
       {
         agency: "USCIS",
         action: "Waiver + H-1B",
-        form: "I-612 + I-129",
+        form: "I-129 (H-1B petition)",
         duration: "15 days premium",
         details: "Same USCIS process.",
       },
@@ -283,7 +283,7 @@ const PATHWAYS: PathwayProcess[] = [
       {
         agency: "USCIS",
         action: "Waiver + H-1B",
-        form: "I-612 + I-129",
+        form: "I-129 (H-1B petition)",
         duration: "15 days premium",
         details: "Same process.",
       },
@@ -324,7 +324,7 @@ const PATHWAYS: PathwayProcess[] = [
       {
         agency: "USCIS",
         action: "Waiver + H-1B",
-        form: "I-612 + I-129",
+        form: "I-129 (H-1B petition)",
         duration: "15 days premium (note: VA is NOT H-1B cap-exempt)",
         details: "Important: VA is currently NOT H-1B cap-exempt (pending legislation). This means the H-1B petition must go through the lottery unless the physician is already in H-1B status. Premium processing available.",
       },

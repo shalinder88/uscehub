@@ -149,7 +149,7 @@ export const TEACHING_RESOURCES: TeachingResource[] = [
     description:
       "Compact drug dosing reference organized by therapeutic class with renal/hepatic adjustments, pregnancy categories, and cost information.",
     category: "Pocketbook Medicine",
-    url: "https://www.tarascon.com",
+    url: "https://info.jblearning.com/tarascon-pocketbooks/",
     free: false,
   },
   {
