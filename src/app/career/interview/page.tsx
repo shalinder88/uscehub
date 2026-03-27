@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   MessageSquare,
   ClipboardCheck,
@@ -118,6 +119,9 @@ export default function InterviewPage() {
             guide is written by physicians who have been through the process and
             learned what matters — and what to walk away from.
           </p>
+          <div className="mt-3">
+            <VerifiedBadge date="March 2026" sources={["AMA", "AAFP", "Physician contracts"]} />
+          </div>
         </div>
 
         {/* ═══ BEFORE THE INTERVIEW ═══ */}
