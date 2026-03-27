@@ -179,113 +179,131 @@ export default function CareerPage() {
           </div>
         </div>
 
-        {/* ═══ SECTION 2: Quick Access — Most Important Tools ═══ */}
+        {/* ═══ SECTION 2: Five Focus Cards ═══ */}
         <div className="mb-16">
-          <h2 className="text-sm font-semibold text-muted uppercase tracking-wider mb-6">
-            Core Tools
-          </h2>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {[
-              { label: "50 State Waiver Intel", href: "/career/waiver", icon: MapPin, color: "text-cyan" },
-              { label: "Interactive Map", href: "/career/waiver/map", icon: Globe, color: "text-accent" },
-              { label: "Conrad Slot Tracker", href: "/career/waiver/tracker", icon: Clock, color: "text-warning" },
-              { label: "6 Waiver Pathways", href: "/career/waiver/pathways", icon: GitCompare, color: "text-success" },
-              { label: "Visa Bulletin", href: "/career/visa-bulletin", icon: TrendingUp, color: "text-warning" },
-              { label: "H-1B Guide", href: "/career/h1b", icon: Flag, color: "text-accent" },
-              { label: "Green Card Paths", href: "/career/greencard", icon: Flag, color: "text-success" },
-              { label: "Visa Journey Map", href: "/career/visa-journey", icon: ArrowRight, color: "text-cyan" },
-              { label: "Process Step-by-Step", href: "/career/waiver/process", icon: FileText, color: "text-muted" },
-              { label: "Contract Checklist", href: "/career/contract", icon: Scale, color: "text-warning" },
-              { label: "Offer Comparison", href: "/career/offers", icon: GitCompare, color: "text-cyan" },
-              { label: "Salary Benchmarks", href: "/career/salary", icon: DollarSign, color: "text-success" },
-              { label: "Malpractice Guide", href: "/career/malpractice", icon: Shield, color: "text-danger" },
-              { label: "State Licensing", href: "/career/licensing", icon: Scale, color: "text-cyan" },
-              { label: "Jobs by Specialty", href: "/career/jobs", icon: Briefcase, color: "text-accent" },
-              { label: "Interview Prep", href: "/career/interview", icon: Users, color: "text-muted" },
-              { label: "ECFMG Certification", href: "/career/ecfmg", icon: GraduationCap, color: "text-cyan" },
-              { label: "Loan Repayment", href: "/career/loan-repayment", icon: DollarSign, color: "text-success" },
-              { label: "State Compare", href: "/career/state-compare", icon: TrendingUp, color: "text-success" },
-              { label: "When Things Go Wrong", href: "/career/waiver-problems", icon: AlertTriangle, color: "text-danger" },
-              { label: "H-4 Spouse Guide", href: "/career/h4-spouse", icon: Heart, color: "text-warning" },
-              { label: "HPSA Lookup", href: "/career/waiver/hpsa-lookup", icon: MapPin, color: "text-danger" },
-              { label: "Policy Alerts", href: "/career/alerts", icon: AlertCircle, color: "text-danger" },
-              { label: "Find an Attorney", href: "/career/attorneys", icon: Scale, color: "text-accent" },
-            ].map((tool) => {
-              const Icon = tool.icon;
-              return (
-                <Link key={tool.href} href={tool.href} className="group">
-                  <div className="rounded-lg border border-border bg-surface p-3 hover:border-accent/50 transition-all text-center h-full flex flex-col items-center justify-center gap-1.5">
-                    <Icon className={`h-4 w-4 ${tool.color}`} />
-                    <span className="text-xs font-medium text-foreground group-hover:text-accent transition-colors leading-tight">
-                      {tool.label}
-                    </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Card 1: J-1 Waiver Jobs — THE MAIN PRODUCT */}
+            <Link href="/career/jobs" className="group sm:col-span-2 lg:col-span-1">
+              <div className="rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-surface p-6 hover:border-accent/60 transition-all h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="rounded-xl bg-accent/15 p-3">
+                    <Briefcase className="h-6 w-6 text-accent" />
                   </div>
-                </Link>
-              );
-            })}
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">J-1 Waiver Jobs</h3>
+                    <p className="text-[10px] text-accent font-medium">25+ verified positions · 13 specialties</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted mb-3">
+                  Real job listings from real hospitals. Salary data, HPSA status, visa type — all verified. No stale data, no recruiter spam.
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Pulm/CC", "GI", "Cards", "Hospitalist", "Psych", "EM"].map((s) => (
+                    <span key={s} className="rounded-full bg-surface border border-border px-2 py-0.5 text-[10px] text-muted">{s}</span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+
+            {/* Card 2: Conrad 30 Intelligence — opens to map */}
+            <Link href="/career/waiver/map" className="group">
+              <div className="rounded-2xl border border-border bg-surface p-6 hover:border-cyan/50 transition-all h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="rounded-xl bg-cyan/10 p-3">
+                    <Globe className="h-6 w-6 text-cyan" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-foreground group-hover:text-cyan transition-colors">Conrad 30 Map</h3>
+                    <p className="text-[10px] text-cyan font-medium">Interactive · 50 states · Click any state</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted">
+                  Slot availability, application windows, HPSA data, processing times. Click a state to see everything.
+                </p>
+              </div>
+            </Link>
+
+            {/* Card 3: Immigration Knowledge */}
+            <Link href="/career/visa-journey" className="group">
+              <div className="rounded-2xl border border-border bg-surface p-6 hover:border-success/50 transition-all h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="rounded-xl bg-success/10 p-3">
+                    <Flag className="h-6 w-6 text-success" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-foreground group-hover:text-success transition-colors">Immigration Pathways</h3>
+                    <p className="text-[10px] text-success font-medium">J-1 → H-1B → Green Card</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted">
+                  6 waiver pathways, H-1B guide, green card routes, visa bulletin, ECFMG, step-by-step process.
+                </p>
+              </div>
+            </Link>
+
+            {/* Card 4: Career & Contract Tools */}
+            <Link href="/career/salary" className="group">
+              <div className="rounded-2xl border border-border bg-surface p-6 hover:border-warning/50 transition-all h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="rounded-xl bg-warning/10 p-3">
+                    <DollarSign className="h-6 w-6 text-warning" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-foreground group-hover:text-warning transition-colors">Salary & Contracts</h3>
+                    <p className="text-[10px] text-warning font-medium">26 specialties · Real benchmarks</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted">
+                  Salary data, offer comparison, contract red flags, malpractice, state licensing, negotiation.
+                </p>
+              </div>
+            </Link>
+
+            {/* Card 5: Your Journey */}
+            <Link href="/career/waiver/timeline" className="group">
+              <div className="rounded-2xl border border-border bg-surface p-6 hover:border-danger/50 transition-all h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="rounded-xl bg-danger/10 p-3">
+                    <Heart className="h-6 w-6 text-danger" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-foreground group-hover:text-danger transition-colors">Your Journey</h3>
+                    <p className="text-[10px] text-danger font-medium">Timeline · Alerts · Spouse · Problems</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted">
+                  Personal timeline calculator, policy alerts, H-4 spouse guide, what to do when things go wrong.
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
 
-        {/* ═══ SECTION 3: Intelligence Feed ═══ */}
+        {/* ═══ SECTION 3: Intelligence Feed (compact) ═══ */}
         <div className="mb-16">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4">
             <h2 className="text-sm font-semibold text-muted uppercase tracking-wider">
-              Intelligence Feed
+              Latest Intelligence
             </h2>
             <Link href="/career/alerts" className="text-xs text-accent hover:underline flex items-center gap-1">
               All alerts <ArrowRight className="h-3 w-3" />
             </Link>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
-              {
-                type: "CRITICAL",
-                typeColor: "bg-danger/10 text-danger",
-                title: "Conrad 30 Authorization Has Lapsed",
-                detail: "Program authorization expired Sept 30, 2025. Physicians who acquired J-1 status after Oct 1, 2025 may not be eligible. H.R. 1585 pending.",
-                source: "USCIS, Congress.gov",
-                date: "Mar 2026",
-              },
-              {
-                type: "H-1B FEE",
-                typeColor: "bg-warning/10 text-warning",
-                title: "$100K H-1B Filing Fee (Proclamation 10973)",
-                detail: "Applies to new petitions requiring consular processing. Does NOT apply to change-of-status or extensions. Physician exemption bill introduced. Expires Sept 2026.",
-                source: "Federal Register, AMA",
-                date: "Mar 2026",
-              },
-              {
-                type: "VISA BULLETIN",
-                typeColor: "bg-success/10 text-success",
-                title: "EB-2 India Jumped 10 Months in April 2026",
-                detail: "Final Action Date moved from Sep 15, 2013 to Jul 15, 2014 — the largest single-month advance in years. Driven by reduced consular processing. May retrogress later in FY2026.",
-                source: "DOS Visa Bulletin",
-                date: "Apr 2026",
-              },
-              {
-                type: "SLOTS",
-                typeColor: "bg-cyan/10 text-cyan",
-                title: "FY 2024: 19 States Filled All 30 Conrad Slots",
-                detail: "KY, MI, NY have filled every slot for 20+ years. TX and CA did not fill all 30 in FY2024 despite common belief. Total: 1,010 physicians placed nationally.",
-                source: "3RNET, Health Affairs Scholar",
-                date: "Feb 2026",
-              },
-            ].map((alert, i) => (
-              <div key={i} className="rounded-lg border border-border bg-surface p-4">
-                <div className="flex items-start gap-3">
-                  <span className={`shrink-0 rounded-md px-2 py-0.5 text-[10px] font-bold ${alert.typeColor}`}>
-                    {alert.type}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-semibold text-foreground mb-1">{alert.title}</h3>
-                    <p className="text-xs text-muted mb-1.5">{alert.detail}</p>
-                    <div className="flex items-center gap-3 text-[10px] text-muted">
-                      <span>Source: {alert.source}</span>
-                      <span>·</span>
-                      <span>{alert.date}</span>
-                    </div>
+              { type: "CRITICAL", color: "border-l-red-500", title: "Conrad 30 Authorization Lapsed", detail: "Physicians with J-1 status after Oct 1, 2025 may not be eligible. H.R. 1585 pending.", src: "USCIS" },
+              { type: "H-1B FEE", color: "border-l-amber-500", title: "$100K H-1B Filing Fee Active", detail: "Proclamation 10973. Does NOT apply to change-of-status. Physician exemption bill introduced.", src: "Federal Register" },
+              { type: "BULLETIN", color: "border-l-green-500", title: "EB-2 India: +10 Months in April", detail: "Jul 15, 2014 — largest single-month advance in years. May retrogress later in FY2026.", src: "DOS" },
+              { type: "SLOTS", color: "border-l-blue-500", title: "19 States Filled All 30 Slots (FY2024)", detail: "KY, MI, NY: perfect fill record 20+ years. TX/CA did NOT fill all 30.", src: "3RNET" },
+            ].map((a, i) => (
+              <div key={i} className={`rounded-lg border border-border ${a.color} border-l-4 bg-surface p-3`}>
+                <div className="flex items-start gap-2">
+                  <span className="text-[9px] font-bold text-muted bg-surface-alt rounded px-1.5 py-0.5 shrink-0">{a.type}</span>
+                  <div>
+                    <h3 className="text-xs font-semibold text-foreground">{a.title}</h3>
+                    <p className="text-[10px] text-muted mt-0.5">{a.detail}</p>
+                    <p className="text-[9px] text-muted mt-1">Source: {a.src}</p>
                   </div>
                 </div>
               </div>
@@ -294,21 +312,63 @@ export default function CareerPage() {
         </div>
 
         {/* ═══ SECTION 4: For Employers ═══ */}
-        <div className="rounded-xl border border-accent/30 bg-accent/5 p-6 text-center">
-          <h2 className="text-lg font-bold text-foreground mb-2">
-            Hiring J-1 Waiver Physicians?
-          </h2>
-          <p className="text-sm text-muted mb-4 max-w-lg mx-auto">
-            Post your position to reach physicians actively searching for
-            waiver-eligible positions. From $249/listing.
-          </p>
+        <div className="rounded-xl border border-accent/30 bg-accent/5 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 mb-16">
+          <div>
+            <h2 className="text-lg font-bold text-foreground mb-1">
+              Hiring J-1 Waiver Physicians?
+            </h2>
+            <p className="text-sm text-muted">
+              Post your position. Reach physicians actively searching. From $249/listing.
+            </p>
+          </div>
           <Link
             href="/career/employers"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors shrink-0"
           >
             Post a Position <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
+
+        {/* ═══ SECTION 5: All Tools (collapsed, for power users) ═══ */}
+        <details className="group mb-8">
+          <summary className="cursor-pointer text-sm font-medium text-muted hover:text-foreground transition-colors flex items-center gap-2">
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-open:rotate-90" />
+            All 25+ tools
+          </summary>
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            {[
+              { label: "50 State Waiver Intel", href: "/career/waiver" },
+              { label: "Interactive Map", href: "/career/waiver/map" },
+              { label: "Conrad Slot Tracker", href: "/career/waiver/tracker" },
+              { label: "6 Waiver Pathways", href: "/career/waiver/pathways" },
+              { label: "Process Step-by-Step", href: "/career/waiver/process" },
+              { label: "Timeline Calculator", href: "/career/waiver/timeline" },
+              { label: "HPSA Lookup", href: "/career/waiver/hpsa-lookup" },
+              { label: "Visa Bulletin", href: "/career/visa-bulletin" },
+              { label: "H-1B Guide", href: "/career/h1b" },
+              { label: "Green Card Paths", href: "/career/greencard" },
+              { label: "Visa Journey Map", href: "/career/visa-journey" },
+              { label: "ECFMG Certification", href: "/career/ecfmg" },
+              { label: "Contract Checklist", href: "/career/contract" },
+              { label: "Offer Comparison", href: "/career/offers" },
+              { label: "Salary Benchmarks", href: "/career/salary" },
+              { label: "Malpractice Guide", href: "/career/malpractice" },
+              { label: "State Licensing", href: "/career/licensing" },
+              { label: "State Compare", href: "/career/state-compare" },
+              { label: "Jobs by Specialty", href: "/career/jobs" },
+              { label: "Interview Prep", href: "/career/interview" },
+              { label: "Loan Repayment", href: "/career/loan-repayment" },
+              { label: "Policy Alerts", href: "/career/alerts" },
+              { label: "H-4 Spouse Guide", href: "/career/h4-spouse" },
+              { label: "When Things Go Wrong", href: "/career/waiver-problems" },
+              { label: "Find an Attorney", href: "/career/attorneys" },
+            ].map((t) => (
+              <Link key={t.href} href={t.href} className="rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted hover:text-accent hover:border-accent/30 transition-colors">
+                {t.label}
+              </Link>
+            ))}
+          </div>
+        </details>
       </div>
     </>
   );
