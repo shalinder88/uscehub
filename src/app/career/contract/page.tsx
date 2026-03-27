@@ -99,13 +99,15 @@ const PROHIBITED_TERMS = [
 ];
 
 const NEGOTIATE_ITEMS = [
-  { item: "Sign-on bonus", typical: "$10,000-50,000+", note: "Higher in rural/underserved areas. Negotiate upward — the employer needs you more than you need them in HPSA areas." },
-  { item: "Relocation allowance", typical: "$5,000-15,000", note: "Especially important if moving cross-country. Some employers offer temporary housing for 1-2 months." },
-  { item: "Student loan repayment", typical: "$20,000-50,000/year", note: "Ask about NHSC, state loan repayment programs, and employer-specific programs. PSLF eligibility if employer is 501(c)(3)." },
-  { item: "CME allowance", typical: "$3,000-5,000/year + 5-7 days", note: "Often negotiable upward. Include both money and time off for conferences." },
-  { item: "Tail coverage", typical: "$10,000-50,000+", note: "If malpractice is claims-made, negotiate employer-paid tail. This is the most commonly overlooked item." },
-  { item: "Green card support", typical: "Employer pays I-140 + PERM", note: "Get written commitment to support your green card process, including timeline for filing." },
-  { item: "Schedule flexibility", typical: "4-day work week, no weekends", note: "Some positions offer 4-day weeks or limited call. Worth asking — you'll be there 3 years." },
+  { item: "Sign-on bonus", typical: "$30,000-46,000 avg (up to $325K)", note: "2025 average: $38,315 (up 23% YoY). FM: ~$30K, IM: ~$32K, GI: ~$46K. 3% of physicians got >$100K. Standard — not a special request. Source: AMN Healthcare 2025." },
+  { item: "Relocation allowance", typical: "$12,000 avg (up to $100K)", note: "2025 average: $12,019 (up 12% YoY). Competitive roles in rural areas go higher. Ask for temporary housing (1-2 months) if relocating cross-country." },
+  { item: "Student loan repayment", typical: "$50,000-200,000", note: "16% of physician contracts include loan repayment averaging $104,200. Separate from NHSC (requires US citizenship). PSLF-eligible if employer is 501(c)(3)." },
+  { item: "CME allowance", typical: "$2,000-5,000/yr + 5-7 days", note: "Combined avg (sign-on + relocation + CME): $58,854. Include both dollar amount and time off in writing. Source: AMN Healthcare." },
+  { item: "Tail coverage", typical: "$80,000-120,000 (1.5-3x annual premium)", note: "Most commonly overlooked. Occurrence policy eliminates this entirely — negotiate for occurrence-based. If claims-made, get employer-paid tail in writing. Source: ACP, White Coat Investor." },
+  { item: "Green card sponsorship", typical: "Employer pays I-140 + PERM fees", note: "Get written commitment with TIMELINE — 'within 6 months of employment' not 'at employer's discretion.' H-1B filing costs legally must be paid by employer. Source: AILA." },
+  { item: "Malpractice insurance type", typical: "Occurrence vs Claims-Made", note: "Occurrence = no tail needed, better for you. Standard limits: $1M/$3M. If claims-made, tail is your biggest hidden cost. Clarify in writing before signing." },
+  { item: "Partnership track (if private group)", typical: "2-3 year timeline in writing", note: "Waiver physicians are told 'partnership after 3 years' verbally — get it in the contract with specific terms, buy-in amount, and revenue share formula." },
+  { item: "Prevailing wage verification", typical: "At least DOL Level 2", note: "Look up prevailing wage at flag.dol.gov/wage-data/wage-search. Your salary must equal or exceed the prevailing wage for your specialty in the area. Some states require Level 2 minimum." },
 ];
 
 export default function ContractChecklistPage() {
@@ -241,8 +243,41 @@ export default function ContractChecklistPage() {
         </div>
       </div>
 
+      {/* Contract Review Stats */}
+      <section className="mb-10">
+        <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+          <Scale className="h-5 w-5 text-accent" />
+          Why Professional Contract Review Matters
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="rounded-xl border border-border bg-surface p-5 text-center">
+            <div className="text-2xl font-bold text-accent">$7,000</div>
+            <div className="text-xs text-muted mt-1">Average improvement per contract (Physicians Thrive, 20K+ reviewed)</div>
+          </div>
+          <div className="rounded-xl border border-border bg-surface p-5 text-center">
+            <div className="text-2xl font-bold text-success">0%</div>
+            <div className="text-xs text-muted mt-1">Offers lost due to negotiation (Physicians Thrive reports zero)</div>
+          </div>
+          <div className="rounded-xl border border-border bg-surface p-5 text-center">
+            <div className="text-2xl font-bold text-warning">$80-120K</div>
+            <div className="text-xs text-muted mt-1">Hidden tail coverage cost if not negotiated upfront</div>
+          </div>
+        </div>
+        <div className="rounded-lg border border-border bg-surface-alt p-4 flex gap-3">
+          <Info className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+          <p className="text-xs text-muted">
+            <strong className="text-foreground">Prevailing wage lookup:</strong>{" "}
+            Verify your offered salary meets DOL prevailing wage requirements at{" "}
+            <a href="https://flag.dol.gov/wage-data/wage-search" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">flag.dol.gov/wage-data/wage-search</a>.
+            Use SOC code 29-1215 (Family Medicine), 29-1216 (Internal Medicine), etc.
+            Your H-1B salary must equal or exceed this — paying below prevailing wage
+            can result in back wages, fines, and employer debarment from the H-1B program.
+          </p>
+        </div>
+      </section>
+
       {/* Related */}
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Link
           href="/career/waiver/timeline"
           className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group"
@@ -252,6 +287,17 @@ export default function ContractChecklistPage() {
           </h3>
           <p className="text-xs text-muted mt-1">
             See when to sign your contract relative to your J-1 end date
+          </p>
+        </Link>
+        <Link
+          href="/career/waiver-problems"
+          className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group"
+        >
+          <h3 className="font-semibold text-foreground group-hover:text-accent text-sm">
+            When Things Go Wrong
+          </h3>
+          <p className="text-xs text-muted mt-1">
+            Employer breach, extenuating circumstances, non-compete bans
           </p>
         </Link>
         <Link
