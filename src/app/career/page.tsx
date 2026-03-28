@@ -191,14 +191,15 @@ export default function CareerPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">J-1 Waiver Jobs</h3>
-                    <p className="text-[10px] text-accent font-medium">25+ verified positions · 13 specialties</p>
+                    <p className="text-[10px] text-accent font-medium">29 jobs + 1,087 H-1B sponsors · 13 specialties</p>
                   </div>
                 </div>
                 <p className="text-xs text-muted mb-3">
-                  Real job listings from real hospitals. Salary data, HPSA status, visa type — all verified. No stale data, no recruiter spam.
+                  Verified job listings + 1,087 H-1B sponsor hospitals from DOL public data.
+                  Salary data, HPSA status, visa type. Updated 3x daily.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {["Pulm/CC", "GI", "Cards", "Hospitalist", "Psych", "EM"].map((s) => (
+                  {["Jobs", "Sponsors", "Pulm/CC", "GI", "Cards", "Hospitalist"].map((s) => (
                     <span key={s} className="rounded-full bg-surface border border-border px-2 py-0.5 text-[10px] text-muted">{s}</span>
                   ))}
                 </div>
@@ -356,6 +357,7 @@ export default function CareerPage() {
               { label: "State Licensing", href: "/career/licensing" },
               { label: "State Compare", href: "/career/state-compare" },
               { label: "Jobs by Specialty", href: "/career/jobs" },
+              { label: "H-1B Sponsor Database", href: "/career/sponsors" },
               { label: "Interview Prep", href: "/career/interview" },
               { label: "Loan Repayment", href: "/career/loan-repayment" },
               { label: "Policy Alerts", href: "/career/alerts" },
