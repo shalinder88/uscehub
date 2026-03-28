@@ -34,6 +34,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a federally designated HPSA or MUA for 3 years. Alabama Department of Public Health sponsors J-1 waiver applications through the Conrad 30 program.",
     tips: "Alabama typically has remaining Conrad slots. Eligible for DRA (western Black Belt counties) and SCRC waivers — two alternative unlimited-slot pathways. Rural Black Belt counties (Greene, Sumter, Wilcox, Hale) have among the highest physician shortages in the US. Mobile and Birmingham suburbs have some FQHC opportunities. UAB is the major academic system. No state income tax on first $6,000 for married filing jointly. Low cost of living statewide.",
     websiteUrl: "https://www.alabamapublichealth.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   AK: {
     stateCode: "AK",
@@ -48,6 +50,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a designated HPSA or MUA. Alaska Department of Health sponsors Conrad 30 applications. Tribal health facilities are common placement sites.",
     tips: "Alaska typically has 10-15 remaining Conrad slots — less competitive. Tribal and Indian Health Service facilities are common placements. Remote locations offer significantly higher compensation (often $50-100K+ above lower-48 rates). No state income tax. Extremely high cost of living especially in rural areas. Expect true frontier medicine — some communities are accessible only by plane. ANTHC (Alaska Native Tribal Health Consortium) is a major employer. Great option for adventurous physicians willing to embrace isolation.",
     websiteUrl: "https://health.alaska.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   AZ: {
     stateCode: "AZ",
@@ -62,6 +66,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Arizona ADHS administers the Conrad 30 program. Important: Arizona does NOT offer flex waiver slots — all 30 must be in designated shortage areas. Arizona fills all 30 slots annually. Preference given to primary care and behavioral health.",
     tips: "Arizona fills all 30 Conrad slots every year. Strong demand in Maricopa County suburbs and rural areas. Behavioral health specialists are especially needed. Consider SCRC (Southeast Crescent Regional Commission) or HHS Clinical Care Waiver as alternatives. Apply through ADHS as early as October 1.",
     websiteUrl: "https://www.azdhs.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   AR: {
     stateCode: "AR",
@@ -77,6 +83,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Arkansas fills all 30 Conrad slots every year — apply early (October 1). The Delta region in eastern Arkansas (Phillips, Lee, St. Francis, Crittenden counties) has the highest HPSA scores and greatest need. DRA pathway is available for Delta counties — unlimited additional slots beyond Conrad. Western Arkansas (Fort Smith area) and northwest Arkansas (outside Fayetteville/Rogers) also have growing need. Arkansas has one of the lowest costs of living in the nation. State income tax is graduated (0-4.4%). UAMS (University of Arkansas for Medical Sciences) is the major academic center for networking.",
     websiteUrl: "https://www.healthy.arkansas.gov",
     applicationWindow: "Opens October 1. Initial review: Oct 1-10. Rolling first-come-first-served after. Specialist opening: July 1 if primary care slots remain unfilled. Final submission: Sept 15. FY2026: ALL spots filled.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   CA: {
     stateCode: "CA",
@@ -92,6 +100,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "California is highly competitive but did NOT fill all 30 slots in FY2024 — slots may remain after the October window. FQHC and community health center placements have significantly better approval rates. Central Valley (Fresno, Bakersfield, Stockton) and rural Northern California (Redding, Eureka) have highest need. Inland Empire (San Bernardino, Riverside) is growing rapidly. Avoid urban LA or SF Bay Area — extremely competitive. Both primary care and specialists now apply in the same October window (recent HCAI change). Budget for high cost of living.",
     websiteUrl: "https://hcai.ca.gov",
     applicationWindow: "Opens October 1, closes October 31. Secondary cycle in December if slots remain. Fills within days — apply on Oct 1.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   CO: {
     stateCode: "CO",
@@ -106,6 +116,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Colorado CDPHE sponsors applications. Colorado typically has remaining slots (not among states that fill all 30). No alternative regional pathways. HHS is the only unlimited backup. Full unrestricted CO medical license required.",
     tips: "Colorado typically does not fill all 30 Conrad slots — you have a real chance even if applying after October. Eastern Plains (Burlington, Lamar, La Junta) and Western Slope (Montrose, Grand Junction rural, Durango) have the highest need. San Luis Valley (Alamosa) has critical shortages. Denver metro HPSA sites exist but are competitive. Behavioral health is a statewide crisis — psychiatrists are in extremely high demand. Colorado has a flat state income tax (4.4%). High quality of life but cost of living in Denver/Boulder is steep. University of Colorado is the major academic system.",
     websiteUrl: "https://cdphe.colorado.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   CT: {
     stateCode: "CT",
@@ -121,6 +133,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Connecticut fills all 30 Conrad slots every year. Urban underserved areas in Hartford, Bridgeport, New Haven, and Waterbury have the highest need and best chances. FQHCs like Community Health Center Inc. and Fair Haven Community Health are major waiver employers. Yale-affiliated community sites in New Haven are competitive but possible. Northeast and northwest rural CT have growing demand. Connecticut has a relatively high cost of living and state income tax (graduated 3-6.99%). Strong academic medical infrastructure (Yale, UConn Health).",
     websiteUrl: "https://portal.ct.gov/dph",
     applicationWindow: "Opens October 1 at 8:00 AM EST, closes October 15 at 4:30 PM EST. If 30+ applications, lottery conducted. Extended to April 1 only if fewer than 30 received.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   DE: {
     stateCode: "DE",
@@ -135,6 +149,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Delaware Division of Public Health sponsors Conrad 30 applications.",
     tips: "Delaware typically has 12+ remaining Conrad slots — low competition. Southern Delaware (Sussex County) has greatest need. Bayhealth and ChristianaCare are major employers. Small state with limited applicants — good backup option. No alternative regional pathways. Delaware has no sales tax and graduated income tax (up to 6.6%).",
     websiteUrl: "https://dhss.delaware.gov/dph",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   FL: {
     stateCode: "FL",
@@ -150,6 +166,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Florida is very competitive for Conrad 30 — second only to California and New York in demand. No state income tax is a major draw. BUT here's the key insight most people miss: ALL of Florida is covered by SCRC waivers (launched 2022), which have unlimited slots. This means Florida effectively has more waiver capacity than almost any other state. The $3,000 SCRC fee is worth it when Conrad fills. Best areas: rural panhandle (Gadsden, Jackson, Bay), central agricultural areas (Polk, Highlands, Hardee), and northern tier (Marion, Putnam, Baker). South Florida (Miami-Dade, Broward) is competitive even for SCRC. Geriatrics is growing need due to aging population. Large IMG community statewide.",
     websiteUrl: "https://www.floridahealth.gov",
     applicationWindow: "Opens October 1 at 8:00 AM. Closes ~October 12 (~2-week window only). Prioritized by HPSA score, rural/primary care preference.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   GA: {
     stateCode: "GA",
@@ -164,6 +182,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Georgia DCH sponsors Conrad 30 applications. Georgia fills all 30 Conrad slots every year (FY 2024 data). Also eligible for SCRC (Southeast Crescent Regional Commission) waivers — unlimited slots covering 428 counties across 7 southeastern states including Georgia. Full unrestricted GA medical license required.",
     tips: "Georgia fills all 30 Conrad slots annually — apply early (October 1). Southern and eastern Georgia have the highest HPSA scores and greatest need. Atlanta metro has limited HPSA sites and is very competitive. Savannah, Augusta, Macon, Albany, and Columbus have better chances. The SCRC pathway is a major advantage for Georgia — unlimited additional slots for eligible counties. Georgia has a growing IMG physician community. State income tax is graduated (1-5.49%). Consider Emory, MCG/Augusta University, and Mercer residency program connections for networking.",
     websiteUrl: "https://dch.georgia.gov",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   HI: {
     stateCode: "HI",
@@ -178,6 +198,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Hawaii Department of Health sponsors applications. Neighbor islands have greatest need.",
     tips: "Hawaii typically has 10-18 remaining Conrad slots — low competition. Neighbor islands (Big Island, Maui, Kauai, Molokai) have the greatest need — Honolulu/Oahu is more competitive. Extremely high cost of living (highest in US), but some employers provide housing assistance. No alternative regional pathways. Unique practice environment with diverse patient population. Hawaii has a moderate state income tax (graduated up to 11%). If you can handle the cost of living, Hawaii offers desirable lifestyle with reliable waiver availability.",
     websiteUrl: "https://health.hawaii.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   ID: {
     stateCode: "ID",
@@ -192,6 +214,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Idaho Department of Health and Welfare sponsors applications.",
     tips: "Idaho typically has 14-16 remaining Conrad slots — good for late applicants. Boise metro has limited HPSA sites. Eastern Idaho (Idaho Falls, Pocatello), central Idaho (Sun Valley area), and northern Idaho (Coeur d'Alene area rural) have greatest need. No alternative regional pathways. Idaho has a graduated state income tax (1-5.8%). Growing state with increasing physician demand. Low cost of living outside Boise. Family-friendly communities.",
     websiteUrl: "https://healthandwelfare.idaho.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   IL: {
     stateCode: "IL",
@@ -207,6 +231,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Illinois offers a mix of urban and rural waiver opportunities. Downstate Illinois (Peoria, Springfield, Champaign-Urbana, Carbondale, Rockford) is significantly less competitive than Chicago. Chicago's south side and west side FQHCs have strong track records for waiver placements. Cook County Health System has historically been a major waiver employer. East St. Louis has critical needs. Large IMG physician community — network through Illinois State Medical Society IMG section. Consider that Illinois has a relatively high state income tax (4.95% flat rate).",
     websiteUrl: "https://dph.illinois.gov",
     applicationWindow: "Three phases: Phase 1 Oct 1-31, Phase 2 Jan 1-31 (if slots remain), Phase 3 Apr 1-30 (if still remaining). Email to DPH.J1Waiver@illinois.gov.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   IN: {
     stateCode: "IN",
@@ -221,6 +247,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Indiana ISDH administers the program. Important: Indiana does NOT offer flex waiver slots. Indiana fills all 30 slots annually.",
     tips: "Indiana fills all 30 Conrad slots every year and does not support flex waivers. Southern Indiana and rural counties have highest demand. Community health centers are common placements. Consider ARC waiver for eligible Appalachian southern Indiana counties as an alternative pathway.",
     websiteUrl: "https://www.in.gov/health",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   IA: {
     stateCode: "IA",
@@ -235,6 +263,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Iowa Department of Public Health sponsors Conrad 30 applications.",
     tips: "Iowa typically has 10 remaining Conrad slots — moderate competition. Most counties outside Des Moines and Iowa City metro qualify as HPSA. Western and southern Iowa have highest need. No alternative regional pathways. Iowa has a graduated state income tax (0.33-6%). Low cost of living, family-friendly communities. University of Iowa is the major academic system. Des Moines University and Broadlawns Medical Center are IMG-friendly employers.",
     websiteUrl: "https://hhs.iowa.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   KS: {
     stateCode: "KS",
@@ -250,6 +280,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Kansas fills all 30 Conrad slots annually (FY 2024). Western Kansas has critical shortages — Dodge City, Garden City, Liberal. No alternative regional pathways. Kansas has a graduated state income tax (3.1-5.7%). KU Medical Center is the major academic system. Wichita has some FQHC opportunities. Via Christi and Ascension are key employers.",
     websiteUrl: "https://www.kdhe.ks.gov",
     applicationWindow: "Phase 1: September 1 - November 30 (decisions by December 15). Phase 2: after November 30 only if slots remain. Kansas opens BEFORE October 1.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   KY: {
     stateCode: "KY",
@@ -265,6 +297,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Kentucky fills all 30 Conrad slots every single year — has never had an unused slot in 20+ years of data (3RNET). Apply on October 1 or earlier if possible. Eastern Appalachian Kentucky has the highest HPSA scores and greatest need. Kentucky has a unique advantage: eligible for BOTH ARC and DRA unlimited-slot waiver pathways, covering much of the state. This means even when Conrad is full, alternatives exist. Louisville and Lexington suburbs have some HPSA sites but are competitive. Rural communities in Pike, Floyd, Harlan, and Clay counties have critical needs. No state income tax on first $10,000 (graduated 0-4.5%). Strong IMG community at University of Kentucky and University of Louisville residency programs.",
     websiteUrl: "https://chfs.ky.gov",
     applicationWindow: "Opens October 1, initial deadline October 31. Extended until July 30 if waivers remain. Fills every year — apply October 1.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   LA: {
     stateCode: "LA",
@@ -280,6 +314,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Louisiana fills all 30 Conrad slots every year. Northern Louisiana parishes (Ouachita, Morehouse, Richland) and rural Acadiana have highest HPSA scores. The DRA pathway is a major alternative — many Louisiana parishes qualify for unlimited DRA slots. Baton Rouge and New Orleans suburbs have limited HPSA sites. Louisiana has a long history of supporting IMG physicians, particularly in rural hospitals. State income tax is graduated (1.85-4.25%). Consider LSU Health and Tulane residency connections for networking.",
     websiteUrl: "https://ldh.la.gov",
     applicationWindow: "Primary care: October 1. Specialists: December 1. First round deadline: December 31. Second round: January 1 (if slots remain). Final: July 31. Preference for in-state residency graduates.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   ME: {
     stateCode: "ME",
@@ -294,6 +330,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Maine Department of Health and Human Services sponsors applications.",
     tips: "Maine fills all 30 Conrad slots annually (FY 2024). Northern (Aroostook County) and western Maine have highest need. Aging population drives primary care demand. No alternative regional pathways. Maine has a graduated state income tax (5.8-7.15%). MaineHealth and Northern Light Health are major employer systems. Portland area is competitive but rural Maine has critical shortages.",
     websiteUrl: "https://www.maine.gov/dhhs",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   MD: {
     stateCode: "MD",
@@ -308,6 +346,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Maryland DOH administers the Conrad 30 program. Maryland typically has remaining slots. Western Maryland counties are ARC-eligible (unlimited alternative pathway). Full unrestricted MD medical license required.",
     tips: "Maryland typically has remaining Conrad slots — moderate competition. Baltimore has major FQHC networks with established waiver relationships. Western Maryland (Allegany, Garrett counties) qualifies for ARC waivers with unlimited slots. Eastern Shore has growing rural need. Suburban MD near DC has very few HPSA sites. Strong academic infrastructure: Johns Hopkins, University of Maryland, Uniformed Services University. Maryland has relatively high state income tax (graduated 2-5.75% plus county surcharges). H-1B cap-exempt employers include Hopkins, UMD Medical System, NIH.",
     websiteUrl: "https://health.maryland.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   MA: {
     stateCode: "MA",
@@ -323,6 +363,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Massachusetts fills all 30 slots every year — very competitive. FQHCs in Springfield, Worcester, Brockton, Fall River, New Bedford, and Lowell have the best approval rates. Boston proper is extremely competitive — South Boston and Dorchester FQHCs are possible but limited. Western Massachusetts (Berkshires, Pioneer Valley) has growing rural need. MA has the strongest H-1B cap-exempt employer base in the country (Mass General, Brigham, Beth Israel, BMC, UMass). High cost of living and state income tax (5% flat + 4% surtax on income over $1M). The academic medical community is unparalleled for networking and career development.",
     websiteUrl: "https://www.mass.gov/dph",
     applicationWindow: "Opens October 1, closes January 15. Second round if all 30 not filled. Applications via REDCap system.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   MI: {
     stateCode: "MI",
@@ -338,6 +380,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Michigan fills all 30 Conrad slots every single year — one of only 3 states (with Kentucky and New York) that has never had unused slots in 20+ years of data. Despite high competition, Michigan remains a top-5 state for IMG physicians. Detroit has massive physician shortages — Beaumont, Henry Ford, DMC/Tenet systems are major waiver employers. Flint and Saginaw have critical needs. Upper Peninsula is severely underserved with high HPSA scores. Also consider HHS Clinical Care Waiver (unlimited slots) or ARC waiver for eligible counties as alternatives when Conrad slots fill. Michigan has a strong H-1B cap-exempt hospital base (University of Michigan, Beaumont, Henry Ford, Spectrum Health). State income tax is flat 4.25%.",
     websiteUrl: "https://www.michigan.gov/mdhhs",
     applicationWindow: "Opens September 1, closes November 1 at 5:00 PM. Strict 2-month window. Applications must be RECEIVED (not postmarked) by deadline. Opens before federal fiscal year.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   MN: {
     stateCode: "MN",
@@ -352,6 +396,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Minnesota DOH sponsors applications. Minnesota fills all 30 Conrad slots annually (FY 2024). No alternative regional pathways (not in ARC, DRA, or SCRC regions). HHS Clinical Care Waiver is the only backup for primary care/psychiatry. Full unrestricted MN medical license required.",
     tips: "Minnesota fills all 30 Conrad slots every year — apply on October 1. No alternative regional pathways available (MN is not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only unlimited-slot alternative for primary care/psychiatry. Southern and western Minnesota (Marshall, Worthington, Mankato area) have highest need. Iron Range (Duluth, Hibbing, Virginia) has growing demand. Twin Cities metro has very limited HPSA sites. Mayo Clinic system and HealthPartners are major employers. Minnesota has relatively high state income tax (graduated, up to 9.85%). Excellent quality of life and school systems. Consider that winter weather is a real factor — it can affect recruitment and retention.",
     websiteUrl: "https://www.health.state.mn.us",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   MS: {
     stateCode: "MS",
@@ -366,6 +412,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Mississippi MSDH sponsors Conrad 30 applications. Mississippi typically has remaining slots. Major advantage: eligible for THREE alternative pathways — DRA (Delta), SCRC (southeast), and ARC (northeast hill counties). Among the most waiver-friendly states in the nation.",
     tips: "Mississippi has among the highest physician shortage rates in the nation and typically does not fill all 30 Conrad slots. The Delta (Sunflower, Bolivar, Washington, Leflore counties) has some of the highest HPSA scores in the country. THREE alternative unlimited-slot pathways available: DRA covers the Delta and western MS, SCRC covers southeastern MS, and ARC covers northeastern hill counties. This gives Mississippi more waiver capacity per capita than almost any state. Lowest cost of living in the US. No state income tax on first $5,000 (graduated up to 5%). UMMC (University of Mississippi Medical Center) is the major academic system. Maternal health is a critical priority — OB/GYNs are desperately needed.",
     websiteUrl: "https://msdh.ms.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   MO: {
     stateCode: "MO",
@@ -381,6 +429,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Missouri fills all 30 Conrad slots every year and has zero flex slot usage. Ozarks and southeast Bootheel region have highest HPSA scores and greatest need. DRA pathway available for Bootheel counties (unlimited slots). Kansas City and St. Louis metro have limited HPSA-designated community health centers. Rural western and south-central Missouri has growing demand. Missouri has a flat 4.8% state income tax.",
     websiteUrl: "https://health.mo.gov",
     applicationWindow: "Opens October 1, closes October 31 — very short 1-month window. Site approval required from MO DHSS. Reviewed within 20 days.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   MT: {
     stateCode: "MT",
@@ -395,6 +445,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Montana Department of Public Health and Human Services sponsors applications.",
     tips: "Montana typically has 14+ remaining Conrad slots — low competition. Most communities outside Billings and Missoula are HPSA-designated. Indian Health Service and tribal facilities are common placements. No state income tax on first $18,150 (graduated up to 5.9%). Frontier medicine with very low population density. No alternative regional pathways. Excellent quality of life for outdoor enthusiasts. Billings Clinic and Providence Health are major employer systems.",
     websiteUrl: "https://dphhs.mt.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   NE: {
     stateCode: "NE",
@@ -409,6 +461,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Nebraska Department of Health and Human Services sponsors Conrad 30 applications.",
     tips: "Nebraska typically has 10 remaining Conrad slots. Western and central Nebraska (Panhandle, Sandhills) have highest need. Omaha and Lincoln metro are competitive. No alternative regional pathways. Nebraska has a graduated state income tax (2.46-5.84%). Low cost of living in rural areas. UNMC (University of Nebraska Medical Center) is the major academic system. CHI Health and Bryan Health are key employers.",
     websiteUrl: "https://dhhs.ne.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   NV: {
     stateCode: "NV",
@@ -423,6 +477,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Nevada Division of Public and Behavioral Health sponsors applications.",
     tips: "Nevada typically has 12 remaining Conrad slots. Rural Nevada (Elko, Ely, Winnemucca, Pahrump) has critical needs. Las Vegas and Reno have some HPSA-designated FQHCs. No state income tax — major financial advantage. No alternative regional pathways. Rapidly growing population driving physician demand. UNLV School of Medicine (opened 2017) is expanding the academic footprint. Touro University and UNR also train physicians.",
     websiteUrl: "https://dpbh.nv.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   NH: {
     stateCode: "NH",
@@ -437,6 +493,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. New Hampshire Department of Health and Human Services sponsors applications.",
     tips: "New Hampshire typically has 14 remaining Conrad slots — low competition. Northern NH (Berlin, Coos County, North Country) has greatest need. No state income tax on earned income (5% on dividends/interest only). No alternative regional pathways. Dartmouth-Hitchcock is the major academic employer. Community health centers throughout the state. High quality of life in New England setting.",
     websiteUrl: "https://www.dhhs.nh.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   NJ: {
     stateCode: "NJ",
@@ -452,6 +510,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "New Jersey is moderately to highly competitive — proximity to NYC makes it desirable. Best chances are in urban underserved areas: Newark, Camden, Trenton, Paterson, Elizabeth, and Atlantic City. FQHCs in these cities have strong approval track records. South Jersey rural areas have growing need. NJ has no flex slots beyond Conrad 30 — so exactly 30 slots per year. Large and well-organized IMG community — NJ Medical Society has IMG-specific resources. NJ has a graduated state income tax (1.4-10.75%) — high earners pay more. Consider NJ as a backup to NY — similar geography, somewhat less competitive process.",
     websiteUrl: "https://www.nj.gov/health",
     applicationWindow: "Year-round rolling applications — no specific window. Primary care focus only (NJ does not recommend specialists for Conrad). Contact NJ DOH directly.",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   NM: {
     stateCode: "NM",
@@ -466,6 +526,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. New Mexico Department of Health sponsors applications. Tribal health facilities are common placements.",
     tips: "New Mexico fills all 30 Conrad slots annually (FY 2024). Critical physician shortages statewide. Indian Health Service and tribal facilities (Navajo Nation, Pueblo communities) are major employers. UNM Health Sciences Center is the dominant academic system. Santa Fe and Albuquerque suburbs have some FQHC sites. Southern NM (Las Cruces, Roswell) has growing need. No alternative regional pathways. New Mexico has a graduated state income tax (1.7-5.9%). Very IMG-friendly state with established support networks.",
     websiteUrl: "https://www.nmhealth.org",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   NY: {
     stateCode: "NY",
@@ -481,6 +543,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "New York is the most competitive waiver state. Slots fill within the first 2-3 weeks of the federal fiscal year (October 1). If you miss the window, you wait an entire year. Upstate New York (Buffalo, Syracuse, Albany, Adirondack region) has significantly better chances than NYC metro. NYC boroughs (Bronx, Brooklyn) are possible through FQHCs but extremely competitive. Consider USDA or HHS waiver pathways as alternatives to Conrad 30. Always have 2-3 backup states ready. Start your employer search 12+ months before your J-1 waiver deadline. Budget $5,000-15,000 for immigration attorney fees in NY (complex state process).",
     websiteUrl: "https://www.health.ny.gov",
     applicationWindow: "Opens ~September/October. NOT first-come-first-served — NY collects all applications by deadline (~January), then ranks and selects top 30 based on HPSA scores and community need.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   NC: {
     stateCode: "NC",
@@ -496,6 +560,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "North Carolina is a growing state with increasing physician demand. Eastern NC (Greenville, Rocky Mount, Wilson, Lumberton) has critical rural health needs and the highest HPSA scores. Western mountain communities (Asheville area, Appalachian counties) qualify for ARC waivers — giving additional slots beyond Conrad 30. Charlotte and Raleigh-Durham suburbs have growing HPSA-designated sites but are more competitive. NC has a large residency training infrastructure (Duke, UNC, Wake Forest, ECU) — many graduates stay in-state. Reasonable cost of living. State income tax is flat 4.5% (recently reduced). Growing IMG community statewide. Community health centers in eastern NC and mountain communities have best approval rates.",
     websiteUrl: "https://www.ncdhhs.gov",
     applicationWindow: "Aligned with federal fiscal year (October). NC strongly encourages ARC waiver pathway FIRST for Appalachian counties (unlimited slots, no fee). Conrad slots are limited — use as secondary option.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   ND: {
     stateCode: "ND",
@@ -510,6 +576,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. North Dakota Department of Health sponsors Conrad 30 applications.",
     tips: "North Dakota typically has 16 remaining Conrad slots — very low competition. Most communities outside Fargo and Bismarck qualify. Western ND oil country (Williston, Dickinson) has growing populations and demand. Fast processing. No alternative regional pathways. ND has a graduated state income tax (0-1.95% — among lowest in nation). Sanford Health and CHI St. Alexius are major employers. Extreme winters but strong community support.",
     websiteUrl: "https://www.hhs.nd.gov/health/",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   OH: {
     stateCode: "OH",
@@ -525,6 +593,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Ohio is a top-tier choice for J-1 waiver physicians. Reasonable cost of living, no extreme weather by physician standards, and a massive IMG physician community. Appalachian counties in southeast Ohio (Athens, Vinton, Meigs, Gallia) have critical needs and highest HPSA scores. Cleveland metro has multiple FQHC placements. Dayton, Youngstown, and Toledo have strong hospital-based waiver positions. Columbus suburbs are growing with new HPSA designations. ARC waiver pathway gives Ohio effectively more than 30 total slots. The Ohio State Medical Association has an active IMG section. Ohio has a moderate state income tax (0-3.75% graduated). Strong H-1B cap-exempt employer base (Cleveland Clinic, Ohio State, UC Health, MetroHealth).",
     websiteUrl: "https://odh.ohio.gov",
     applicationWindow: "Opens October 1 (rolling, first-come-first-served). Primary care deadline: January 31. FLEX/sub-specialist window: January 1 - May 31. Review: primary care 45 days, others 90 days. $3,571 fee.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   OK: {
     stateCode: "OK",
@@ -539,6 +609,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Oklahoma State Department of Health sponsors Conrad 30 applications.",
     tips: "Oklahoma typically has 8 remaining Conrad slots. Western and southeastern OK have greatest need. Tribal health facilities (Cherokee Nation, Chickasaw Nation, Indian Health Service) are major employers. No alternative regional pathways. Oklahoma has a graduated state income tax (0.25-4.75%). Low cost of living. OU Health Sciences Center and OSU College of Osteopathic Medicine are the major academic systems.",
     websiteUrl: "https://oklahoma.gov/health",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   OR: {
     stateCode: "OR",
@@ -554,6 +626,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Oregon fills all 30 Conrad slots every year — apply early. No ARC/DRA/SCRC alternative pathways available for Oregon. Eastern Oregon (Bend, Pendleton, La Grande, Klamath Falls, Burns) has critical shortages and highest HPSA scores. Southern Oregon (Medford, Grants Pass) also needs primary care. Portland metro has very limited HPSA sites and is extremely competitive. Oregon has no sales tax but has state income tax (graduated up to 9.9%). OHSU (Oregon Health & Science University) is the major academic system. Behavioral health is a statewide priority — psychiatrists are in particularly high demand.",
     websiteUrl: "https://www.oregon.gov/oha",
     applicationWindow: "Opens October 1, first-come-first-served. Fills very fast — 27 of 30 slots claimed by December 18, 2025 for FY2026. $2,000 application fee. Already reserving FY2027 slots.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   PA: {
     stateCode: "PA",
@@ -569,6 +643,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Pennsylvania offers a strong mix of urban and rural waiver opportunities. Philadelphia has major FQHC networks with established waiver relationships (Philadelphia Health Centers, Project HOME). Pittsburgh's underserved neighborhoods have strong need. North-central PA (Williamsport, Lock Haven, Sunbury) and coal country (Scranton, Wilkes-Barre) are severely underserved with high HPSA scores. ARC waiver pathway is a significant advantage — many PA counties qualify, giving effectively more than 30 slots. PA has massive medical training infrastructure (Penn, Jefferson, Temple, Drexel, Pittsburgh, Geisinger). Large IMG community — PA Medical Society supports IMG integration. State income tax is flat 3.07% (one of the lowest with income tax). Cost of living is very reasonable outside Philadelphia.",
     websiteUrl: "https://www.pa.gov/en/agencies/health.html",
     applicationWindow: "Three phases: Phase 1 Oct 1 - Dec 15, Phase 2 Jan 1 - Jun 15, Phase 3 Jul 1 - Sep 15. FLEX only in second half. NOTE: PA requires 5-year total commitment: 3 years (federal Conrad) + 2 additional years (state/NIW requirement).",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   RI: {
     stateCode: "RI",
@@ -583,6 +659,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Rhode Island Department of Health sponsors applications.",
     tips: "Rhode Island typically has 18 remaining Conrad slots — very low competition (smallest state). Providence and surrounding communities (Pawtucket, Central Falls, Woonsocket) have HPSA-designated FQHCs. No alternative regional pathways. Rhode Island has a graduated state income tax (3.75-5.99%). Brown University/Lifespan and Care New England are the major employer systems. Good backup option if neighboring MA and CT are full.",
     websiteUrl: "https://health.ri.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   SC: {
     stateCode: "SC",
@@ -598,6 +676,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "South Carolina fills all 30 Conrad slots every year, but you have excellent alternatives. Upstate SC (Anderson, Pickens, Oconee, Cherokee) qualifies for ARC waivers (unlimited, no fee). Much of SC is covered by SCRC waivers (unlimited, $3,000 fee). This means SC effectively has more waiver capacity than most states despite filling Conrad. Pee Dee region (Florence, Marion, Darlington) and Lowcountry rural areas have highest HPSA scores. MUSC (Charleston) and USC (Columbia) residency connections help with networking. No state income tax on first $3,460 (graduated 0-6.4%). Moderate cost of living.",
     websiteUrl: "https://dph.sc.gov",
     applicationWindow: "Slot reservation begins JULY 1 (earliest of any state) for next fiscal year. First-come-first-served. Must reserve slot before submitting full application. Contact neelyk@dph.sc.gov.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   SD: {
     stateCode: "SD",
@@ -612,6 +692,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. South Dakota Department of Health sponsors Conrad 30 applications.",
     tips: "South Dakota typically has 14 remaining Conrad slots — low competition. Indian Health Service facilities on reservations (Pine Ridge, Rosebud) offer unique opportunities. No state income tax — major financial advantage. Fast processing. No alternative regional pathways. Sanford Health and Avera Health are major employers. Sioux Falls is the only metro area. Very low cost of living.",
     websiteUrl: "https://doh.sd.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   TN: {
     stateCode: "TN",
@@ -626,6 +708,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Tennessee DOH sponsors Conrad 30 applications. Tennessee is eligible for BOTH ARC (Appalachian, eastern TN) AND DRA (Delta, western TN) waivers — giving the state access to unlimited additional slots through two separate regional pathways. Full unrestricted TN medical license required.",
     tips: "Tennessee has a unique advantage: eligible for both ARC and DRA unlimited-slot pathways in addition to Conrad 30. East Tennessee (Appalachian counties — Johnson, Scott, Morgan, Campbell) qualifies for ARC. West Tennessee (Shelby/Memphis metro excluded, but rural counties like Haywood, Lauderdale, Tipton) qualifies for DRA. Nashville suburbs have limited HPSA sites. Chattanooga, Knoxville suburbs, and rural middle TN have growing need. No state income tax on earned income (Hall income tax on interest/dividends was fully phased out in 2021). Tennessee has an active Vanderbilt, UT Health, and Meharry residency pipeline for networking.",
     websiteUrl: "https://www.tn.gov/health",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   TX: {
     stateCode: "TX",
@@ -641,6 +725,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Texas is one of the most competitive waiver states but did NOT fill all 30 slots in FY2024 (contrary to common belief). Standard slots fill quickly in October but some may remain. The flex option exists in Texas policy but has not been activated recently. No state income tax. Rio Grande Valley, West Texas (El Paso, Lubbock, Midland-Odessa), and East Texas (Tyler, Longview, Texarkana) have highest HPSA scores. Also consider HHS Clinical Care Waiver (unlimited slots) as alternative. $3,000 fee. Start employer search 8-10 months early.",
     websiteUrl: "https://www.dshs.texas.gov",
     applicationWindow: "Opens ~October 1. Slots exhaust within first day/days. Submit via email to Conrad30@dshs.texas.gov. $3,000 application fee.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   UT: {
     stateCode: "UT",
@@ -655,6 +741,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Utah Department of Health and Human Services sponsors Conrad 30 applications.",
     tips: "Utah typically has 12 remaining Conrad slots. Southern and eastern Utah (St. George rural areas, Moab, Price, Vernal) have greatest need. SLC and Provo metro are competitive. No alternative regional pathways. Utah has a flat state income tax (4.65%). Rapidly growing population driving physician demand. Intermountain Healthcare is the dominant employer system. University of Utah Health is the major academic center. Family-friendly state with excellent outdoor recreation.",
     websiteUrl: "https://dhhs.utah.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   VT: {
     stateCode: "VT",
@@ -669,6 +757,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Vermont DOH sponsors applications. Vermont typically has 10-20 remaining slots — one of the least competitive states. Notable: 78% of Vermont's Conrad placements are flex waivers (highest flex usage nationally). Full unrestricted VT medical license required.",
     tips: "Vermont is one of the best states for late applicants — typically has 10-20 remaining Conrad slots. The state has the highest flex waiver usage nationally (78% of placements). Northeast Kingdom and southern Vermont have the greatest shortages. Entire state is rural by most standards. Community health centers like Bi-State Primary Care and Federally Qualified Health Centers are the primary waiver employers. Vermont has a progressive income tax (graduated up to 8.75%) and high cost of living relative to salaries. UVM Medical Center is the major employer. Excellent quality of life if you enjoy rural New England.",
     websiteUrl: "https://www.healthvermont.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
   VA: {
     stateCode: "VA",
@@ -684,6 +774,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
     tips: "Virginia typically has remaining Conrad slots (not among the 19 states that fill all 30). Southwest Appalachian Virginia (Lee, Scott, Wise, Dickenson, Buchanan counties) has the highest HPSA scores and qualifies for ARC waivers. The Southside region (Danville, Martinsville) and Eastern Shore also have strong need. Parts of Virginia qualify for SCRC waivers too. Northern Virginia (NoVA) is extremely competitive — avoid for waiver purposes. Richmond and Hampton Roads have some FQHC opportunities. Virginia has a moderate state income tax (graduated 2-5.75%). Strong academic systems: UVA, VCU, EVMS for networking.",
     websiteUrl: "https://www.vdh.virginia.gov",
     applicationWindow: "Opens October 16 (NOT October 1), closes April 16. Do NOT submit before October 16 — early applications risk not being reviewed.",
+      confidence: "official" as const,
+    lastVerified: "2026-03-28",
   },
   WA: {
     stateCode: "WA",
@@ -698,6 +790,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Washington DOH sponsors Conrad 30 applications. Washington typically has some remaining slots. No alternative regional pathways (not in ARC, DRA, or SCRC). HHS Clinical Care Waiver is the only backup for primary care/psychiatry. Full unrestricted WA medical license required.",
     tips: "Washington typically has remaining Conrad slots — not as competitive as neighboring Oregon which fills all 30. No state income tax — major financial advantage alongside no alternative regional pathways. Eastern Washington (Yakima, Wenatchee, Spokane rural areas, Tri-Cities) and rural Olympic Peninsula have greatest need. Seattle metro has very few HPSA sites and is extremely competitive. Behavioral health is a statewide crisis — psychiatrists are in extremely high demand. University of Washington and its WWAMI network are the dominant academic system. High cost of living in Seattle metro but reasonable in eastern WA.",
     websiteUrl: "https://doh.wa.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   WV: {
     stateCode: "WV",
@@ -712,6 +806,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. WV DHHR sponsors applications. ALL of West Virginia is in the ARC (Appalachian Regional Commission) region — the entire state qualifies for ARC waivers with unlimited slots and no application fee. This is the biggest advantage any state has: Conrad 30 + unlimited ARC = essentially unlimited waiver capacity. Fast processing times.",
     tips: "West Virginia is arguably the best-positioned state for J-1 waivers because the ENTIRE state is ARC-eligible. This means even when Conrad 30 fills, ARC provides unlimited additional capacity at no cost. Nearly every community in WV is HPSA-designated — physician shortage rates are among the highest in the nation. Processing is fast (45-60 days at state level). Very IMG-friendly. WVU and Marshall University residency programs produce many IMG graduates who stay for waivers. Substance abuse and behavioral health are critical priorities. No state income tax on first $10,000 (graduated up to 6.5%). Low cost of living statewide. Strong demand for virtually every specialty.",
     websiteUrl: "https://dhhr.wv.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   WI: {
     stateCode: "WI",
@@ -726,6 +822,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must serve in a HPSA or MUA for 3 years. Wisconsin Department of Health Services sponsors Conrad 30 applications.",
     tips: "Wisconsin typically has 8 remaining Conrad slots. Northern and western Wisconsin have highest need. Marshfield Clinic system has historically been one of the largest waiver employers for IMG physicians in the nation. No alternative regional pathways. Wisconsin has a graduated state income tax (3.54-7.65%). MCW (Medical College of Wisconsin) and UW-Madison are the major academic systems. Gundersen Health and Prevea Health are also key employers. Good quality of life, reasonable cost of living outside Milwaukee.",
     websiteUrl: "https://www.dhs.wisconsin.gov",
+      confidence: "community" as const,
+    lastVerified: "2026-03-28",
   },
   WY: {
     stateCode: "WY",
@@ -740,6 +838,8 @@ export const WAIVER_STATES: Record<string, WaiverState> = {
       "Must practice in a HPSA or MUA for 3 years. Wyoming DOH sponsors Conrad 30 applications. Wyoming typically uses only 8-10 of its 30 slots — 20+ remaining most years. 70% of Wyoming's Conrad placements are flex waivers (second highest nationally). No alternative regional pathways. Full unrestricted WY medical license required.",
     tips: "Wyoming is the least competitive waiver state in the nation — typically 20+ slots remaining all year. 70% of placements are flex waivers. Processing is very fast (45-60 days). No state income tax. Nearly every community is HPSA-designated. Expect a truly rural lifestyle — the state's entire population is under 600,000. Casper, Cheyenne, and Laramie are the 'largest' cities. If you're comfortable with small-town medicine and outdoor life, Wyoming offers certainty of placement, fast processing, and no tax burden. WWAMI program (UW partnership with University of Washington) provides some academic connection.",
     websiteUrl: "https://health.wyo.gov",
+      confidence: "estimated" as const,
+    lastVerified: "2026-03-28",
   },
 };
 

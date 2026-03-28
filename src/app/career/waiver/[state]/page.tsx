@@ -110,10 +110,22 @@ export default async function WaiverStatePage({
                 {stateData.stateName}.
               </p>
 
-              {/* Confidence label — all 50 states now verified */}
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium bg-green-500/10 text-green-400">
+              {/* Dynamic confidence label */}
+              <div className={`mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                stateData.confidence === "official"
+                  ? "bg-green-500/10 text-green-400"
+                  : stateData.confidence === "community"
+                  ? "bg-blue-500/10 text-blue-400"
+                  : "bg-yellow-500/10 text-yellow-400"
+              }`}>
                 <CheckCircle2 className="h-3 w-3" />
-                Verified March 2026 · Sources: State DOH, 3RNET, USCIS, HRSA
+                {stateData.confidence === "official"
+                  ? "Official source · Verified against State DOH / 3RNET"
+                  : stateData.confidence === "community"
+                  ? "Community verified · Cross-referenced with immigration law sources"
+                  : "Estimated · Based on available data, verify with state directly"
+                }
+                {stateData.lastVerified && ` · Last verified: ${stateData.lastVerified}`}
               </div>
             </div>
           </div>
