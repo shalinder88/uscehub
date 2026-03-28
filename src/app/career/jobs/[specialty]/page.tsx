@@ -38,18 +38,18 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     demandLevel: "high",
     employers: [
       { name: "Jackson Physician Search", location: "Nebraska", visa: "J-1 waiver", salary: "$510K + $100K sign-on", source: "Thoracic.org", url: "https://careers.thoracic.org/" },
-      { name: "Thomas Jefferson University Hospital", location: "Philadelphia, PA", visa: "J-1", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/" },
-      { name: "White River Medical Center", location: "Batesville, AR", visa: "J-1/H-1B", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/987787/" },
-      { name: "SIH (Southern Illinois Healthcare)", location: "Carbondale, IL", visa: "J-1/H-1B", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/506682/" },
-      { name: "Marshfield Clinic Health System", location: "Weston, WI", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-pulmonary-critical-care-j1-waiver-jobs.html" },
-      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/cmp/Benefis-Health-System/jobs" },
-      { name: "Ascension Via Christi Hospital", location: "Manhattan, KS", visa: "J-1/H-1B", source: "PracticeMatch", url: "https://www.practicematch.com/physicians/jobs/?J1Visa=1" },
-      { name: "Deaconess Health System", location: "Evansville, IN", visa: "J-1/H-1B", source: "PracticeMatch", url: "https://www.practicematch.com/physicians/jobs/?J1Visa=1" },
+      { name: "Thomas Jefferson University Hospital", location: "Philadelphia, PA", visa: "J-1", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "White River Medical Center", location: "Batesville, AR", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "SIH (Southern Illinois Healthcare)", location: "Carbondale, IL", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Marshfield Clinic Health System", location: "Weston, WI", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Ascension Via Christi Hospital", location: "Manhattan, KS", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Deaconess Health System", location: "Evansville, IN", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeLink — Pulm/CC + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=pulmonary-disease-critical-care" },
-      { name: "PracticeMatch — Pulm + J-1", url: "https://www.practicematch.com/physicians/jobs/pulmonary-disease/?J1Visa=1" },
-      { name: "Indeed — Pulm/CC J-1 Waiver", url: "https://www.indeed.com/q-pulmonary-critical-care-j1-waiver-jobs.html" },
+      
+      
+      
       { name: "ATS Career Center", url: "https://careers.thoracic.org/" },
     ],
     tips: [
@@ -68,7 +68,7 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30 (all states), ARC, DRA, SCRC. Not eligible for HHS (specialist).",
     demandLevel: "high",
     employers: [
-      { name: "Southern Regional Medical Center", location: "Riverdale (Atlanta), GA", visa: "J-1 waiver", source: "Indeed", url: "https://www.indeed.com/viewjob?jk=92c72bec58b4ee8b" },
+      { name: "Southern Regional Medical Center", location: "Riverdale (Atlanta), GA", visa: "J-1 waiver", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "USACS / Baptist Memorial Hospital", location: "Union City, TN", visa: "J-1/H-1B", source: "USACS", url: "https://www.usacs.com/j1-visa-careers" },
       { name: "USACS / Sid Peterson Hospital", location: "Kerrville, TX", visa: "J-1", source: "USACS", url: "https://www.usacs.com/j1-visa-careers" },
       { name: "Sound Physicians / Methodist Southlake", location: "Merrillville, IN", visa: "J-1/H-1B", source: "Sound Physicians", url: "https://careers.soundphysicians.com" },
@@ -77,8 +77,8 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     searchLinks: [
       { name: "USACS J-1 Careers", url: "https://www.usacs.com/j1-visa-careers" },
       { name: "Sound Physicians Careers", url: "https://careers.soundphysicians.com" },
-      { name: "Indeed — Intensivist J-1", url: "https://www.indeed.com/q-intensivist-j1-waiver-jobs.html" },
-      { name: "PracticeMatch — Critical Care + J-1", url: "https://www.practicematch.com/physicians/jobs/critical-care-medicine/?J1Visa=1" },
+      
+      
     ],
     tips: [
       "Sound Physicians and USACS are the two largest employers of J-1 intensivists",
@@ -100,15 +100,15 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
       { name: "Sound Physicians", location: "Alpena, MI", visa: "J-1/H-1B", salary: "$325K-$400K + $75K bonus", source: "Sound Physicians", url: "https://careers.soundphysicians.com/job/hospitalist-or-nocturnist-alpena-michigan" },
       { name: "Sound Physicians", location: "Denison, TX", visa: "J-1/H-1B", source: "Sound Physicians", url: "https://careers.soundphysicians.com/job/denison/hospital-medicine-physician-nocturnist/48983/91407126576" },
       { name: "Sound Physicians / Mercy Medical Center", location: "Cedar Rapids, IA", visa: "J-1/H-1B", source: "Sound Physicians", url: "https://careers.soundphysicians.com/job/hospitalist-or-nocturnist-5" },
-      { name: "PAGNY / NYC Health + Hospitals/Metropolitan", location: "New York, NY", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-hospitalist-j1-waiver-jobs.html" },
-      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/1518056/" },
+      { name: "PAGNY / NYC Health + Hospitals/Metropolitan", location: "New York, NY", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "USACS", location: "Far Rockaway, NY", visa: "J-1", source: "USACS", url: "https://www.usacs.com/j1-visa-careers" },
     ],
     searchLinks: [
       { name: "Sound Physicians Careers", url: "https://careers.soundphysicians.com" },
-      { name: "PracticeLink — Hospitalist + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=hospitalist" },
-      { name: "PracticeMatch — Hospitalist + J-1", url: "https://www.practicematch.com/physicians/jobs/hospitalist/?J1Visa=1" },
-      { name: "Indeed — Hospitalist J-1", url: "https://www.indeed.com/q-hospitalist-j1-waiver-jobs.html" },
+      
+      
+      
     ],
     tips: [
       "Sound Physicians is the largest employer of J-1 hospitalists — check their careers page first",
@@ -126,17 +126,17 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30 only. NOT eligible for HHS (specialist). ARC, DRA, SCRC accept specialists.",
     demandLevel: "high",
     employers: [
-      { name: "AdventHealth Medical Group", location: "Zephyrhills/Dade City, FL", visa: "J-1/H-1B", salary: "Base + bonus >$700K", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
-      { name: "Ochsner LSU Health Shreveport", location: "Shreveport, LA", visa: "J-1 (Conrad 30)", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
-      { name: "Loyola Medicine at MacNeal Hospital", location: "Maywood, IL", visa: "J-1", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
-      { name: "Corewell Health", location: "Royal Oak, MI", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
-      { name: "Baystate Health", location: "Greenfield/Springfield, MA", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
-      { name: "Marshfield Clinic Health System", location: "Various WI/MI", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
+      { name: "AdventHealth Medical Group", location: "Zephyrhills/Dade City, FL", visa: "J-1/H-1B", salary: "Base + bonus >$700K", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Ochsner LSU Health Shreveport", location: "Shreveport, LA", visa: "J-1 (Conrad 30)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Loyola Medicine at MacNeal Hospital", location: "Maywood, IL", visa: "J-1", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Corewell Health", location: "Royal Oak, MI", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Baystate Health", location: "Greenfield/Springfield, MA", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Marshfield Clinic Health System", location: "Various WI/MI", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeLink — GI + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=gastroenterology" },
-      { name: "PracticeMatch — GI + J-1", url: "https://www.practicematch.com/physicians/jobs/gastroenterology/?J1Visa=1" },
-      { name: "Indeed — GI J-1 Waiver", url: "https://www.indeed.com/q-gastroenterology-j1-waiver-jobs.html" },
+      
+      
+      
       { name: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
     ],
     tips: [
@@ -155,16 +155,16 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30 (all states), ARC, DRA, SCRC. NOT eligible for HHS.",
     demandLevel: "high",
     employers: [
-      { name: "Conemaugh Memorial Medical Center", location: "Johnstown, PA", visa: "J-1 (Conrad, ARC, DRA, HHS) + O-1", source: "PracticeLink", url: "https://www.practicelink.com/jobs/717238/" },
-      { name: "Flowers Hospital", location: "Dothan, AL", visa: "J-1 (AL State-30)", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/1234791/" },
-      { name: "HHS Oklahoma Heart Institute", location: "Tulsa, OK", visa: "J-1 (Conrad, ARC, DRA, HHS)", source: "PracticeLink", url: "https://jobs.practicelink.com/jobs/1290417/" },
-      { name: "Tulane University / LCMC Healthcare", location: "New Orleans, LA", visa: "J-1/Green Card", source: "Indeed/LinkedIn", url: "https://www.indeed.com/q-cardiology-j1-waiver-jobs.html" },
-      { name: "Community Health Systems", location: "Las Cruces, NM", visa: "J-1", source: "Indeed", url: "https://www.indeed.com/q-cardiology-j1-waiver-jobs.html" },
+      { name: "Conemaugh Memorial Medical Center", location: "Johnstown, PA", visa: "J-1 (Conrad, ARC, DRA, HHS) + O-1", source: "Employer Career Page", url: "https://www.conemaugh.org/careers" },
+      { name: "Flowers Hospital", location: "Dothan, AL", visa: "J-1 (AL State-30)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "HHS Oklahoma Heart Institute", location: "Tulsa, OK", visa: "J-1 (Conrad, ARC, DRA, HHS)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Tulane University / LCMC Healthcare", location: "New Orleans, LA", visa: "J-1/Green Card", source: "Indeed/LinkedIn", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Community Health Systems", location: "Las Cruces, NM", visa: "J-1", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeLink — Cardiology + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=cardiology" },
-      { name: "PracticeMatch — Cardiology + J-1", url: "https://www.practicematch.com/physicians/jobs/cardiovascular-disease/?J1Visa=1" },
-      { name: "Indeed — Cardiology J-1", url: "https://www.indeed.com/q-cardiology-j1-waiver-jobs.html" },
+      
+      
+      
       { name: "ACC Career Center", url: "https://careers.acc.org/" },
     ],
     tips: [
@@ -183,18 +183,18 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30, ARC, DRA, SCRC, AND HHS (general psychiatry qualifies for HHS Supplement B).",
     demandLevel: "high",
     employers: [
-      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "Mindpath Health", location: "Bakersfield, CA", visa: "J-1 waiver", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "OSF HealthCare", location: "Ottawa, IL", visa: "J-1", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "State of Michigan", location: "Westland, MI", visa: "J-1", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "Generations Family Health Center", location: "Putnam, CT", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "Corewell Health / Helen DeVos Children's Hospital", location: "Grand Rapids, MI", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "US HealthCare Careers", location: "Ashtabula, OH", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
+      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Mindpath Health", location: "Bakersfield, CA", visa: "J-1 waiver", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "OSF HealthCare", location: "Ottawa, IL", visa: "J-1", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "State of Michigan", location: "Westland, MI", visa: "J-1", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Generations Family Health Center", location: "Putnam, CT", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Corewell Health / Helen DeVos Children's Hospital", location: "Grand Rapids, MI", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "US HealthCare Careers", location: "Ashtabula, OH", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "Indeed — Psychiatry J-1", url: "https://www.indeed.com/q-psychiatrist-j1-waiver-jobs.html" },
-      { name: "PracticeLink — Psychiatry + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=psychiatry" },
-      { name: "PracticeMatch — Psychiatry + J-1", url: "https://www.practicematch.com/physicians/jobs/psychiatry/?J1Visa=1" },
+      
+      
+      
       { name: "Psychiatry.org J-1 Resources", url: "https://www.psychiatry.org/psychiatrists/international/international-medical-graduates-resources/j-1-visa-waivers-and-pathways-to-residency" },
     ],
     tips: [
@@ -213,16 +213,16 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "ALL pathways: Conrad 30, HHS, ARC, DRA, SCRC, VA. Broadest eligibility of any specialty.",
     demandLevel: "high",
     employers: [
-      { name: "Jackson Physician Search (not-for-profit system)", location: "Western Kansas", visa: "J-1", salary: "$290K + $65K recruitment", source: "Indeed", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
-      { name: "Community Health Systems / Presbyterian Healthcare", location: "Roswell/Clovis/Carlsbad, NM", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
-      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
-      { name: "Generations Family Health Center", location: "Willimantic, CT", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
-      { name: "ACCESS Community Health Network", location: "Chicago, IL", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
+      { name: "Jackson Physician Search (not-for-profit system)", location: "Western Kansas", visa: "J-1", salary: "$290K + $65K recruitment", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Community Health Systems / Presbyterian Healthcare", location: "Roswell/Clovis/Carlsbad, NM", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Generations Family Health Center", location: "Willimantic, CT", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "ACCESS Community Health Network", location: "Chicago, IL", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeLink — FM + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=family-practice" },
-      { name: "PracticeMatch — FM + J-1", url: "https://www.practicematch.com/physicians/jobs/family-practice/?J1Visa=1" },
-      { name: "Indeed — FM J-1", url: "https://www.indeed.com/q-family-medicine-j1-waiver-jobs.html" },
+      
+      
+      
       { name: "3RNET — Rural FM Jobs", url: "https://www.3rnet.org/Family-Medicine-Physician-Jobs" },
     ],
     tips: [
@@ -241,15 +241,15 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30, ARC, DRA, SCRC. NOT HHS (specialist).",
     demandLevel: "moderate",
     employers: [
-      { name: "Aurora Medical Center - Bay Area", location: "Green Bay, WI", visa: "J-1 waiver", salary: "$402K + up to $200K sign-on", source: "PracticeMatch", url: "https://www.practicematch.com/physicians/job-details.cfm/1056292" },
-      { name: "Employer (via recruiter)", location: "Jasper, IN", visa: "J-1", salary: "$350K + RVU/quality incentives", source: "Indeed", url: "https://www.indeed.com/q-neurology-j1-waiver-jobs.html" },
+      { name: "Aurora Medical Center - Bay Area", location: "Green Bay, WI", visa: "J-1 waiver", salary: "$402K + up to $200K sign-on", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Employer (via recruiter)", location: "Jasper, IN", visa: "J-1", salary: "$350K + RVU/quality incentives", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "Benefis Health System", location: "Great Falls, MT", visa: "J-1/H-1B", source: "ZipRecruiter", url: "https://www.ziprecruiter.com/jobs/neurology-j1-waiver" },
       { name: "MDOpts client (acute care hospital)", location: "Midwest", visa: "J-1/H-1B", source: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
     ],
     searchLinks: [
-      { name: "PracticeMatch — Neurology + J-1", url: "https://www.practicematch.com/physicians/jobs/neurology/?J1Visa=1" },
-      { name: "PracticeLink — Neurology + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=neurology" },
-      { name: "Indeed — Neurology J-1", url: "https://www.indeed.com/q-neurology-j1-waiver-jobs.html" },
+      
+      
+      
     ],
     tips: [
       "Aurora WI has one of the most generous sign-on packages found: $200K combined",
@@ -270,14 +270,14 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
       { name: "MDOpts client (private group)", location: "Upstate New York", visa: "J-1", salary: "Competitive + sign-on", source: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
       { name: "MDOpts client (hospital)", location: "Rural New York", visa: "J-1", source: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
       { name: "MDOpts client (partnership track)", location: "Maryland (40mi from Annapolis)", visa: "J-1/H-1B", salary: "$175K starting", source: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
-      { name: "Private practice (33 physicians)", location: "Mobile, AL", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-nephrology-j1-waiver-jobs.html" },
-      { name: "Physician-led group", location: "Springfield, MO", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-nephrology-j1-waiver-jobs.html" },
-      { name: "Marshfield Clinic Health System", location: "Various WI", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-nephrology-j1-waiver-jobs.html" },
+      { name: "Private practice (33 physicians)", location: "Mobile, AL", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Physician-led group", location: "Springfield, MO", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Marshfield Clinic Health System", location: "Various WI", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeMatch — Nephrology + J-1", url: "https://www.practicematch.com/physicians/jobs/nephrology/?J1Visa=1" },
-      { name: "PracticeLink — Nephrology + J-1", url: "https://jobs.practicelink.com/jobs/physician/accept-j1/?specialty=nephrology" },
-      { name: "Indeed — Nephrology J-1", url: "https://www.indeed.com/q-nephrology-j1-waiver-jobs.html" },
+      
+      
+      
       { name: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
     ],
     tips: [
@@ -296,16 +296,16 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30, ARC, DRA, SCRC. NOT HHS (specialist). HIV-focused positions may qualify for Mental Health HPSA in some states.",
     demandLevel: "moderate",
     employers: [
-      { name: "Gulf Coast Infectious Diseases", location: "Pensacola, FL", visa: "J-1 waiver", salary: "$325K base + production", source: "Indeed", url: "https://www.indeed.com/viewjob?jk=219a033e8e6655c9" },
-      { name: "DFW Health Care Associates", location: "Dallas County, TX", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-physician-jobs.html" },
-      { name: "Central Ohio Primary Care Physicians", location: "Westerville, OH", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-physician-jobs.html" },
-      { name: "Essen Health Care", location: "Bronx, NY", visa: "J-1 (Conrad 30)", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-physician-jobs.html" },
-      { name: "Ryan Health", location: "New York, NY", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-physician-jobs.html" },
+      { name: "Gulf Coast Infectious Diseases", location: "Pensacola, FL", visa: "J-1 waiver", salary: "$325K base + production", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "DFW Health Care Associates", location: "Dallas County, TX", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Central Ohio Primary Care Physicians", location: "Westerville, OH", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Essen Health Care", location: "Bronx, NY", visa: "J-1 (Conrad 30)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Ryan Health", location: "New York, NY", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "Pennsylvania ID Group (via MDOpts)", location: "Pennsylvania", visa: "J-1/H-1B", source: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
     ],
     searchLinks: [
-      { name: "Indeed — ID J-1 Waiver", url: "https://www.indeed.com/q-infectious-disease-j1-waiver-jobs.html" },
-      { name: "PracticeMatch — ID + J-1", url: "https://www.practicematch.com/physicians/jobs/infectious-disease/?J1Visa=1" },
+      
+      
       { name: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
       { name: "IDSA Career Center", url: "https://careers.idsociety.org/" },
     ],
@@ -325,14 +325,14 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30 only. NOT eligible for HHS (specialist). ARC, DRA, SCRC accept specialists.",
     demandLevel: "low",
     employers: [
-      { name: "Baptist Memorial Hospital Golden Triangle", location: "Columbus, MS", visa: "J-1 waiver", source: "PracticeMatch", url: "https://www.practicematch.com/physicians/job-details.cfm/930004" },
-      { name: "Spectrum Healthcare Partners", location: "Bangor, ME", visa: "J-1 (Conrad 30)/H-1B", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-radiologist-jobs.html" },
+      { name: "Baptist Memorial Hospital Golden Triangle", location: "Columbus, MS", visa: "J-1 waiver", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Spectrum Healthcare Partners", location: "Bangor, ME", visa: "J-1 (Conrad 30)/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "Corewell Health", location: "Royal Oak, MI", visa: "J-1 waiver", source: "Corewell Careers", url: "https://careers.corewellhealth.org/" },
-      { name: "CU Dept of Radiology", location: "Colorado", visa: "J-1 encouraged", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-radiology-jobs.html" },
+      { name: "CU Dept of Radiology", location: "Colorado", visa: "J-1 encouraged", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "PracticeMatch — Radiology + J-1", url: "https://www.practicematch.com/physicians/jobs/radiology-diagnostic/?J1Visa=1" },
-      { name: "Indeed — Radiology J-1", url: "https://www.indeed.com/q-j1-waiver-radiologist-jobs.html" },
+      
+      
       { name: "ACR Career Center", url: "https://careers.acr.org/" },
     ],
     tips: [
@@ -351,13 +351,13 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "Conrad 30, ARC, DRA, SCRC. NOT eligible for HHS (specialist).",
     demandLevel: "moderate",
     employers: [
-      { name: "Marshfield Clinic Health System", location: "Eau Claire & Marshfield, WI", visa: "J-1/H-1B (cap-exempt)", source: "Indeed", url: "https://www.indeed.com/q-physician-j1-visa-anesthesia-jobs.html" },
+      { name: "Marshfield Clinic Health System", location: "Eau Claire & Marshfield, WI", visa: "J-1/H-1B (cap-exempt)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
       { name: "Integrated Anesthesia Associates (IAA)", location: "Connecticut", visa: "J-1/H-1B/NIW", source: "IAA Partners", url: "https://iaapartners.com/whereyouworkmatters/" },
       { name: "CHI Health St. Francis", location: "Nebraska", visa: "J-1/H-1B", source: "ZipRecruiter", url: "https://www.ziprecruiter.com/Jobs/Anesthesiology-J1-Waiver" },
     ],
     searchLinks: [
-      { name: "Indeed — Anesthesiology J-1", url: "https://www.indeed.com/q-physician-j1-visa-anesthesia-jobs.html" },
-      { name: "PracticeMatch — Anesthesiology + J-1", url: "https://www.practicematch.com/physicians/jobs/anesthesiology/?J1Visa=1" },
+      
+      
       { name: "j-1waiver.com — Historical Data", url: "https://j-1waiver.com/" },
       { name: "Gaswork (Anesthesia Jobs)", url: "https://www.gaswork.com/" },
     ],
@@ -377,14 +377,14 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
     waiverEligibility: "ALL pathways: Conrad 30, HHS (primary care classification), ARC, DRA, SCRC, VA. Second broadest eligibility after FM.",
     demandLevel: "high",
     employers: [
-      { name: "Unified Women's Healthcare", location: "Las Vegas, NV", visa: "J-1 waiver", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-ob-gyn-jobs.html" },
-      { name: "Ochsner LSU Health Shreveport", location: "Shreveport, LA", visa: "J-1 (academic)", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-ob-gyn-jobs.html" },
-      { name: "Marshfield Clinic Health System", location: "Marshfield, WI", visa: "J-1/H-1B", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-ob-gyn-jobs.html" },
-      { name: "Providence", location: "Seaside, OR", visa: "J-1 (new grads welcome)", source: "Indeed", url: "https://www.indeed.com/q-j1-waiver-ob-gyn-jobs.html" },
+      { name: "Unified Women's Healthcare", location: "Las Vegas, NV", visa: "J-1 waiver", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Ochsner LSU Health Shreveport", location: "Shreveport, LA", visa: "J-1 (academic)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Marshfield Clinic Health System", location: "Marshfield, WI", visa: "J-1/H-1B", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
+      { name: "Providence", location: "Seaside, OR", visa: "J-1 (new grads welcome)", source: "Employer Career Page", url: "https://www.dol.gov/agencies/eta/foreign-labor/performance" },
     ],
     searchLinks: [
-      { name: "Indeed — OB/GYN J-1", url: "https://www.indeed.com/q-j1-waiver-ob-gyn-jobs.html" },
-      { name: "PracticeMatch — OB/GYN + J-1", url: "https://www.practicematch.com/physicians/jobs/obstetrics-and-gynecology/?J1Visa=1" },
+      
+      
       { name: "MDOpts", url: "https://www.mdopts.org/job-options.php" },
       { name: "ACOG Career Connection", url: "https://careers.acog.org/" },
     ],
