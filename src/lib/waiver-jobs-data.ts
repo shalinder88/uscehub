@@ -1,14 +1,32 @@
 // ════════════════════════════════════════════════════════════════
 // J-1 WAIVER & H-1B PHYSICIAN JOB DATABASE
 // ════════════════════════════════════════════════════════════════
-// Every job in this database is from a verified source:
-// - Hospital/employer career pages
-// - PracticeLink, PracticeMatch, MDOpts, 3RNET, Indeed
-// - Sound Physicians, USACS, CompHealth career pages
 //
-// NO DocCafe, NO recruiter-only listings, NO anonymized postings.
+// LEGAL COMPLIANCE:
+// See job-source-compliance.ts for full legal documentation.
+//
+// SOURCING WORKFLOW (enforced for every job):
+// 1. DISCOVERY: Find job on any source (PracticeLink, Indeed, etc.)
+// 2. VERIFICATION: Confirm position on EMPLOYER'S own career page
+// 3. DESCRIPTION: Write our OWN description (never copy text)
+// 4. SOURCE: Link to employer career page or public data source
+// 5. ATTRIBUTION: Show "Verified [date] · Source: [employer/data source]"
+//
+// SAFE SOURCES (no restrictions):
+// - DOL LCA public data (government, public domain)
+// - USCIS H-1B Data Hub (government, public domain)
+// - Hospital/employer career pages (factual data, our own descriptions)
+// - Employer self-posts (posted directly on our platform)
+//
+// DISCOVERY-ONLY SOURCES (used to find jobs, sourced via employer):
+// - PracticeLink, PracticeMatch, Indeed (discovery → verify → source employer)
+//
+// NEVER USED:
+// - DocCafe or similar aggregators (stale data, recruiter spam)
+// - Anonymous/anonymized listings
+// - Copied job descriptions from any source
+//
 // Jobs are refreshed by automated agents 3x daily.
-//
 // Last full verification: March 27, 2026
 // ════════════════════════════════════════════════════════════════
 
