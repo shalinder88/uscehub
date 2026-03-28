@@ -140,8 +140,8 @@ export default function AttorneysPage() {
           immigration attorney makes decisions that affect your career for
           years. The biggest mistake IMGs make is using a general immigration
           attorney who doesn&apos;t understand physician-specific rules.
-          Filing I-485 too early, missing a state deadline, or choosing the
-          wrong pathway can set you back years.
+          Filing I-485 before your priority date is current, missing a state
+          deadline, or choosing the wrong pathway can set you back years.
         </div>
       </div>
 
