@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/verify-jobs",
-      "schedule": "0 8,14,22 * * *"
+      "schedule": "0 8 * * *"
     }
   ]
 }
