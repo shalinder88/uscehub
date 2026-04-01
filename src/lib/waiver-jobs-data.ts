@@ -636,16 +636,23 @@ export const WAIVER_JOBS: WaiverJob[] = [
   },
 ];
 
+// ═══ MERGED DATABASE ═══
+// Combines manually verified jobs + DOL LCA public data sponsors
+
+import { DOL_SPONSOR_JOBS } from "./dol-jobs-data";
+
+const ALL_JOBS: WaiverJob[] = [...WAIVER_JOBS, ...DOL_SPONSOR_JOBS];
+
 // ═══ HELPER FUNCTIONS ═══
 
 export function getJobsBySpecialty(specialty: string): WaiverJob[] {
-  return WAIVER_JOBS.filter(
+  return ALL_JOBS.filter(
     (j) => j.specialty.toLowerCase().includes(specialty.toLowerCase())
   );
 }
 
 export function getJobsByState(state: string): WaiverJob[] {
-  return WAIVER_JOBS.filter((j) => j.state === state || j.state === "MULTI");
+  return ALL_JOBS.filter((j) => j.state === state || j.state === "MULTI");
 }
 
 export function getFeaturedJobs(): WaiverJob[] {
@@ -653,15 +660,31 @@ export function getFeaturedJobs(): WaiverJob[] {
 }
 
 export function getJobCount(): number {
+  return ALL_JOBS.length;
+}
+
+export function getManualJobCount(): number {
   return WAIVER_JOBS.length;
 }
 
+export function getDolJobCount(): number {
+  return DOL_SPONSOR_JOBS.length;
+}
+
 export function getUniqueSpecialties(): string[] {
-  return [...new Set(WAIVER_JOBS.map((j) => j.specialty))].sort();
+  return [...new Set(ALL_JOBS.map((j) => j.specialty))].sort();
 }
 
 export function getUniqueStates(): string[] {
-  return [...new Set(WAIVER_JOBS.map((j) => j.state).filter((s) => s !== "MULTI"))].sort();
+  return [...new Set(ALL_JOBS.map((j) => j.state).filter((s) => s !== "MULTI"))].sort();
+}
+
+export function getJ1Jobs(): WaiverJob[] {
+  return ALL_JOBS.filter((j) => j.visaTypes.includes("j1") || j.visaTypes.includes("both"));
+}
+
+export function getH1bJobs(): WaiverJob[] {
+  return ALL_JOBS.filter((j) => j.visaTypes.includes("h1b") || j.visaTypes.includes("both"));
 }
 
 export function formatSalary(min?: number, max?: number): string {
