@@ -446,7 +446,7 @@ export default function SpecialtyJobPage({ params }: { params: { specialty: stri
         </div>
         <p className="text-sm text-muted">{data.salaryNote}</p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["PracticeLink", "PracticeMatch", "MDOpts", "Indeed"]} />
+          <VerifiedBadge date="March 2026" sources={["DOL LCA Public Data", "Hospital career pages", "Employer sites"]} />
         </div>
       </div>
 

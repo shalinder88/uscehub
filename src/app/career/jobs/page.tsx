@@ -43,7 +43,7 @@ export default function WaiverJobsPage() {
         <div className="mt-2">
           <VerifiedBadge
             date="March 2026"
-            sources={["Hospital career pages", "PracticeLink", "PracticeMatch", "Sound Physicians", "USACS"]}
+            sources={["Hospital career pages", "DOL LCA Public Data", "Employer career sites"]}
           />
         </div>
       </div>
