@@ -81,21 +81,17 @@ export default function AboutPage() {
         {/* Personal Story */}
         <section className="mb-14">
           <div className="rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 p-6 sm:p-8">
-            <div className="space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            <div className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <p>
                 I built this platform because I remember. The confusion of
                 figuring out which exams to take and when. The expenses that
                 kept piling up — exam fees, application fees, travel, housing.
-                The lonely nights studying for Step exams in a different time
-                zone from everyone I knew. Cold-emailing dozens of hospitals
-                hoping someone would give me a chance to observe.
-              </p>
-              <p>
-                I went through the entire process — USMLE exams, ECFMG
-                certification, observerships, research, residency, fellowship,
-                and finally attending life in the ICU. At every stage, I wished
-                there was one honest, organized place with the information I
-                needed. There wasn&apos;t. So I built it.
+                Cold-emailing dozens of hospitals hoping someone would give me
+                a chance to observe. I went through the entire process — USMLE
+                exams, ECFMG certification, observerships, research, residency,
+                fellowship, and finally attending life in the ICU. At every
+                stage, I wished there was one honest, organized place with the
+                information I needed. There wasn&apos;t. So I built it.
               </p>
             </div>
 

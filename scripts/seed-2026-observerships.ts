@@ -8,13 +8,18 @@ import { batch1 } from "./data/observerships-2026-b1";
 import { batch2 } from "./data/observerships-2026-b2";
 import { batch3 } from "./data/observerships-2026-b3";
 import { batch4 } from "./data/observerships-2026-b4";
+import { clerkshipsA } from "./data/clerkships-2026-a";
+import { clerkshipsB } from "./data/clerkships-2026-b";
 
 const SYSTEM_POSTER_ID = "cmn2110rm0001sb11op4cbmc9"; // system@uscehub.com
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const allRecords = [...batch1, ...batch2, ...batch3, ...batch4];
+  const allRecords = [
+    ...batch1, ...batch2, ...batch3, ...batch4,
+    ...clerkshipsA, ...clerkshipsB,
+  ];
   console.log(`Seeding ${allRecords.length} records...`);
 
   let featured = 0;

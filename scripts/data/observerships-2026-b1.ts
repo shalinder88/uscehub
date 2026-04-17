@@ -22,7 +22,7 @@ export type ObservershipSeedRecord = {
   ecfmgRequired: string | null;
   stepRequirements: string | null;
   graduationYearPref: string | null;
-  audienceTag: "USMLE-IMG" | "Specialty Visiting" | "Both";
+  audienceTag: "USMLE-IMG" | "Specialty Visiting" | "Both" | "Med Student" | "Pre-Med/Volunteer";
   usmleTier: "A" | "B" | "C";
   featured: boolean;
   adminNotes: string;
