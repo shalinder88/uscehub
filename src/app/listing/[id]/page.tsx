@@ -8,6 +8,8 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
 import { TrustBadges } from "@/components/listings/trust-badges";
 import { ShareButtons } from "@/components/listings/share-buttons";
+import { ReviewForm } from "@/components/listings/review-form";
+import { FlagButton } from "@/components/listings/flag-button";
 import {
   MapPin,
   Clock,
@@ -426,6 +428,18 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   No reviews yet. Be the first to share your experience.
                 </p>
               )}
+
+              <div className="mt-6">
+                <ReviewForm listingId={listing.id} />
+              </div>
+            </div>
+
+            <Separator className="my-8" />
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Something wrong with this listing?
+              </p>
+              <FlagButton listingId={listing.id} />
             </div>
           </div>
 

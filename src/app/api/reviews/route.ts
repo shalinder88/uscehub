@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import { sendAdminNotification } from "@/lib/email";
 
 export async function GET(request: NextRequest) {
   try {
@@ -132,6 +133,22 @@ export async function POST(request: NextRequest) {
         moderationStatus: "PENDING",
       },
     });
+
+    // Fire-and-forget admin notification
+    const baseUrl = process.env.NEXTAUTH_URL || "https://uscehub.com";
+    sendAdminNotification({
+      kind: "review",
+      subjectLine: `New review pending: ${listing.title}`,
+      fromUserEmail: session.user.email,
+      fromUserName: session.user.name,
+      contextLines: [
+        { label: "Listing", value: listing.title },
+        { label: "Rating", value: `${overallRating}/5` },
+        { label: "Recommend", value: wouldRecommend ? "Yes" : "No" },
+      ],
+      body: comment || undefined,
+      reviewUrl: `${baseUrl}/admin/reviews`,
+    }).catch((err) => console.error("[reviews] notify failed:", err));
 
     return Response.json(review, { status: 201 });
   } catch (error) {

@@ -16,6 +16,7 @@ import {
   Plus,
   FileText,
   Settings,
+  MessageSquare,
 } from "lucide-react";
 
 const sidebarLinks = [
@@ -24,6 +25,7 @@ const sidebarLinks = [
   { href: "/poster/verification", label: "Verification", icon: ShieldCheck },
   { href: "/poster/listings", label: "My Listings", icon: List },
   { href: "/poster/applications", label: "Applications", icon: FileText },
+  { href: "/contact-admin", label: "Contact Admin", icon: MessageSquare },
   { href: "/poster/settings", label: "Settings", icon: Settings },
 ];
 

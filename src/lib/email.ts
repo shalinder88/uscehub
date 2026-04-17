@@ -86,6 +86,66 @@ export async function sendListingNotification(
   }
 }
 
+// ---------------------------------------------------------------------------
+// Generic admin notification — used for new review, flag, contact message
+// ---------------------------------------------------------------------------
+export type AdminNotificationPayload = {
+  kind: "review" | "flag" | "contact";
+  subjectLine: string;
+  fromUserEmail?: string | null;
+  fromUserName?: string | null;
+  contextLines: Array<{ label: string; value: string }>;
+  body?: string;
+  reviewUrl: string;
+};
+
+export async function sendAdminNotification(
+  p: AdminNotificationPayload
+): Promise<void> {
+  const client = getClient();
+  const to = process.env.NOTIFY_TO;
+  const from = process.env.RESEND_FROM || "USCEHub <onboarding@resend.dev>";
+
+  if (!client || !to) {
+    console.warn(`[email] Resend not configured; skipping ${p.kind} notification`);
+    return;
+  }
+
+  const subject = `[USCEHub] ${p.subjectLine}`;
+  const text = [
+    `New ${p.kind} in USCEHub.`,
+    ``,
+    ...p.contextLines.map((c) => `${c.label.padEnd(12)} ${c.value}`),
+    p.fromUserEmail ? `From:        ${p.fromUserName || "(anon)"} <${p.fromUserEmail}>` : "",
+    p.body ? `\nMessage:\n${p.body}` : "",
+    ``,
+    `Review: ${p.reviewUrl}`,
+  ].filter(Boolean).join("\n");
+
+  const ctxRows = p.contextLines
+    .map((c) => `<tr><td style="padding:4px 12px 4px 0;color:#666;">${escapeHtml(c.label)}</td><td>${escapeHtml(c.value)}</td></tr>`)
+    .join("");
+  const fromRow = p.fromUserEmail
+    ? `<tr><td style="padding:4px 12px 4px 0;color:#666;">From</td><td>${escapeHtml(p.fromUserName || "(anon)")} &lt;${escapeHtml(p.fromUserEmail)}&gt;</td></tr>`
+    : "";
+  const bodyBlock = p.body
+    ? `<div style="margin-top:16px;padding:12px;background:#f6f8fa;border-radius:6px;white-space:pre-wrap;font-size:14px;">${escapeHtml(p.body)}</div>`
+    : "";
+  const html = `
+    <div style="font-family: -apple-system, Segoe UI, sans-serif; max-width: 560px;">
+      <h2 style="margin:0 0 16px;">New ${escapeHtml(p.kind)} in USCEHub</h2>
+      <table style="border-collapse:collapse;font-size:14px;">${ctxRows}${fromRow}</table>
+      ${bodyBlock}
+      <p style="margin-top:20px;">
+        <a href="${p.reviewUrl}" style="display:inline-block;padding:10px 16px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px;">Review in admin</a>
+      </p>
+    </div>
+  `;
+
+  const { error } = await client.emails.send({ from, to, subject, text, html });
+  if (error) throw new Error(`Resend API error: ${error.message || JSON.stringify(error)}`);
+}
+
 function escapeHtml(s: string): string {
   return String(s)
     .replace(/&/g, "&amp;")

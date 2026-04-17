@@ -16,12 +16,14 @@ import {
   Star,
   Flag,
   ScrollText,
+  Inbox,
 } from "lucide-react";
 
 const sidebarLinks = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard },
   { href: "/admin/posters", label: "Pending Posters", icon: ShieldCheck },
   { href: "/admin/listings", label: "Pending Listings", icon: List },
+  { href: "/admin/messages", label: "User Messages", icon: Inbox },
   { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/reviews", label: "Reviews", icon: Star },
   { href: "/admin/flags", label: "Flags", icon: Flag },

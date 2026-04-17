@@ -17,6 +17,7 @@ import {
   Star,
   Settings,
   Plus,
+  MessageSquare,
 } from "lucide-react";
 
 const sidebarLinks = [
@@ -26,6 +27,7 @@ const sidebarLinks = [
   { href: "/dashboard/compare", label: "Compare", icon: GitCompareArrows },
   { href: "/dashboard/applications", label: "Applications", icon: FileText },
   { href: "/dashboard/reviews", label: "Reviews", icon: Star },
+  { href: "/contact-admin", label: "Contact Admin", icon: MessageSquare },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
 

@@ -306,6 +306,23 @@ model FlagReport {
   @@map("flag_reports")
 }
 
+model AdminMessage {
+  id         String   @id @default(cuid())
+  userId     String?
+  userEmail  String?
+  userName   String?
+  category   String   @default("general")
+  subject    String
+  body       String
+  status     String   @default("OPEN") // OPEN | READ | RESOLVED
+  adminNotes String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@map("admin_messages")
+}
+
 model AdminActionLog {
   id         String   @id @default(cuid())
   adminId    String
