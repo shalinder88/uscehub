@@ -12,7 +12,7 @@ interface HeroProps {
   listingCount: number;
   stateCount: number;
   specialtyCount: number;
-  typeCounts: { observerships: number; externships: number; research: number; postdoc: number };
+  typeCounts: { clinicalRotations: number; researchPositions: number; volunteer: number };
   stateCounts: Record<string, number>;
 }
 
@@ -36,10 +36,13 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
     { value: specialtyCount, label: "Specialties", icon: Stethoscope },
   ];
 
+  // Merged 3-category view. Clinical Rotations bundles observership +
+  // externship + elective — all three overlap heavily in practice and users
+  // filter by audience (IMG graduate vs M4 vs specialty) instead of by type.
   const types = [
-    { label: "Observerships", count: typeCounts.observerships, color: "bg-blue-500", filter: "OBSERVERSHIP" },
-    { label: "Externships", count: typeCounts.externships, color: "bg-emerald-500", filter: "EXTERNSHIP" },
-    { label: "Research Fellowships", count: typeCounts.research + typeCounts.postdoc, color: "bg-violet-500", filter: "RESEARCH" },
+    { label: "Clinical Rotations", count: typeCounts.clinicalRotations, color: "bg-blue-500", filter: "clinical" },
+    { label: "Research Positions", count: typeCounts.researchPositions, color: "bg-violet-500", filter: "research" },
+    { label: "Volunteer / Pre-Med", count: typeCounts.volunteer, color: "bg-emerald-500", filter: "volunteer" },
   ];
 
   return (
@@ -48,7 +51,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
       <div className="mx-auto max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
-            Verified Directory — Updated March 2026
+            Verified Directory — Updated April 2026
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Verified U.S. Clinical Experience{" "}
@@ -57,7 +60,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
             </span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            Search {listingCount}+ observerships, externships, research roles, and postdoc opportunities across {stateCount} states — with direct source links, visa notes, fee ranges, and verification status.
+            Search {listingCount}+ clinical rotations, research positions, and visiting programs across {stateCount} states — with direct source links, visa notes, fee ranges, and verification status.
           </p>
 
           <form onSubmit={handleSearch} className="mx-auto mt-8 max-w-xl">
@@ -115,7 +118,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           {types.map((t) => (
             <Link
               key={t.label}
-              href={`/browse?type=${t.filter}`}
+              href={`/browse?category=${t.filter}`}
               className="group flex items-center gap-2 rounded-lg bg-slate-800/40 px-3 py-3 transition-colors hover:bg-slate-700/60"
             >
               <span className={`h-2.5 w-2.5 rounded-full ${t.color}`} />

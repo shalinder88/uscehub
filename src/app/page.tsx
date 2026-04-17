@@ -22,33 +22,66 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const [totalListings, stateData, specialtyData, observerships, externships, research, postdoc, allListings] =
-    await Promise.all([
-      prisma.listing.count({ where: { status: "APPROVED" } }),
-      prisma.listing.findMany({
-        where: { status: "APPROVED" },
-        select: { state: true },
-        distinct: ["state"],
-      }),
-      prisma.listing.findMany({
-        where: { status: "APPROVED" },
-        select: { specialty: true },
-        distinct: ["specialty"],
-      }),
-      prisma.listing.count({ where: { status: "APPROVED", listingType: "OBSERVERSHIP" } }),
-      prisma.listing.count({ where: { status: "APPROVED", listingType: "EXTERNSHIP" } }),
-      prisma.listing.count({ where: { status: "APPROVED", listingType: "RESEARCH" } }),
-      prisma.listing.count({ where: { status: "APPROVED", listingType: "POSTDOC" } }),
-      prisma.listing.findMany({
-        where: { status: "APPROVED" },
-        select: { state: true },
-      }),
-    ]);
+  const [
+    totalListings,
+    stateData,
+    specialtyRaw,
+    observerships,
+    externships,
+    electives,
+    research,
+    postdoc,
+    volunteer,
+    allListings,
+  ] = await Promise.all([
+    prisma.listing.count({ where: { status: "APPROVED" } }),
+    prisma.listing.findMany({
+      where: { status: "APPROVED", NOT: { state: "MULTI" } },
+      select: { state: true },
+      distinct: ["state"],
+    }),
+    prisma.listing.findMany({
+      where: { status: "APPROVED" },
+      select: { specialty: true },
+    }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "OBSERVERSHIP" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "EXTERNSHIP" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "ELECTIVE" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "RESEARCH" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "POSTDOC" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "VOLUNTEER" } }),
+    prisma.listing.findMany({
+      where: { status: "APPROVED" },
+      select: { state: true },
+    }),
+  ]);
+
+  // Merged clinical bucket = observership + externship + elective.
+  // These all overlap in practice (same sites use different names); users
+  // pick with audience filter, not with type filter.
+  const clinicalRotations = observerships + externships + electives;
+  const researchPositions = research + postdoc;
+
+  // Normalize specialties: split on commas / em-dash / paren, take primary
+  // token, dedupe case-insensitively. Prevents "Dermatology" vs
+  // "Dermatology — Surgery" vs "Dermatology (Mohs/Cosmetic)" triple-counting.
+  const specialtyBucket = new Set<string>();
+  for (const row of specialtyRaw) {
+    if (!row.specialty) continue;
+    const primary = row.specialty
+      .split(/[,—–(]/)[0]
+      .trim()
+      .toLowerCase();
+    if (primary && primary.length > 2) specialtyBucket.add(primary);
+  }
+  const specialtyCount = specialtyBucket.size;
 
   // Calculate state counts
   const stateCounts: Record<string, number> = {};
   allListings.forEach((l) => {
-    if (l.state) stateCounts[l.state] = (stateCounts[l.state] || 0) + 1;
+    if (l.state && l.state !== "MULTI") {
+      stateCounts[l.state] = (stateCounts[l.state] || 0) + 1;
+    }
   });
 
   const organizationJsonLd = {
@@ -77,28 +110,28 @@ export default async function HomePage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Featured Clinical Opportunities for IMGs",
+    name: "Clinical Opportunities for IMGs and Medical Students",
     description:
-      "Browse observerships, externships, and research positions across the United States.",
+      "Browse clinical rotations, research positions, and volunteer programs across the United States.",
     numberOfItems: totalListings,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: `${observerships} Observership Programs`,
-        url: "https://uscehub.com/browse?type=OBSERVERSHIP",
+        name: `${clinicalRotations} Clinical Rotations (observerships, externships, electives)`,
+        url: "https://uscehub.com/browse?category=clinical",
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: `${externships} Externship Programs`,
-        url: "https://uscehub.com/browse?type=EXTERNSHIP",
+        name: `${researchPositions} Research Positions`,
+        url: "https://uscehub.com/browse?category=research",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: `${research} Research Positions`,
-        url: "https://uscehub.com/browse?type=RESEARCH",
+        name: `${volunteer} Volunteer / Pre-Med Programs`,
+        url: "https://uscehub.com/browse?category=volunteer",
       },
     ],
   };
@@ -121,12 +154,11 @@ export default async function HomePage() {
       <Hero
         listingCount={totalListings}
         stateCount={stateData.length}
-        specialtyCount={specialtyData.length}
+        specialtyCount={specialtyCount}
         typeCounts={{
-          observerships,
-          externships,
-          research,
-          postdoc,
+          clinicalRotations,
+          researchPositions,
+          volunteer,
         }}
         stateCounts={stateCounts}
       />

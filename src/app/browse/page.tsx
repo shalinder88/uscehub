@@ -9,9 +9,9 @@ import { FloatingFinder } from "@/components/tools/floating-finder";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
-  title: "Browse Observership, Externship & Research Opportunities",
+  title: "Browse Clinical Rotations, Research & Volunteer Opportunities",
   description:
-    "Search and filter clinical observerships, externships, and research positions for International Medical Graduates across all US states. Free database with verified listings.",
+    "Search and filter clinical rotations (observerships, externships, electives), research fellowships, and volunteer programs for IMGs and medical students across all US states. Free, verified, and audience-tagged.",
   alternates: {
     canonical: "https://uscehub.com/browse",
   },
@@ -21,6 +21,8 @@ interface BrowsePageProps {
   searchParams: Promise<{
     search?: string;
     type?: string;
+    category?: string;
+    audience?: string;
     state?: string;
     sort?: string;
     free?: string;
@@ -28,6 +30,15 @@ interface BrowsePageProps {
     verified?: string;
   }>;
 }
+
+// Map the 3 merged categories (used in hero + filters) to the underlying
+// enum values. Clinical = observership + externship + elective, all of which
+// overlap in practice. Users pick by audience, not by type.
+const CATEGORY_TYPES: Record<string, string[]> = {
+  clinical: ["OBSERVERSHIP", "EXTERNSHIP", "ELECTIVE"],
+  research: ["RESEARCH", "POSTDOC"],
+  volunteer: ["VOLUNTEER"],
+};
 
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   const params = await searchParams;
@@ -47,12 +58,19 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     });
   }
 
-  if (params.type) {
+  if (params.category && CATEGORY_TYPES[params.category]) {
+    conditions.push({ listingType: { in: CATEGORY_TYPES[params.category] } });
+  } else if (params.type) {
+    // Legacy ?type= param still supported for bookmarks / back-compat.
     if (params.type === "RESEARCH") {
       conditions.push({ listingType: { in: ["RESEARCH", "POSTDOC"] } });
     } else {
       conditions.push({ listingType: params.type });
     }
+  }
+
+  if (params.audience) {
+    conditions.push({ audienceTag: params.audience });
   }
 
   if (params.state) {
@@ -110,6 +128,27 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
+
+          <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
+            <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
+              What&apos;s the difference between an observership, externship, elective, and clerkship?
+            </summary>
+            <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
+              <p>
+                <strong className="text-slate-900 dark:text-slate-50">Clinical rotation</strong> is the umbrella term. In practice the labels below overlap — the same program might call itself an observership at one hospital and an externship at another. Pick by your stage, not by the label.
+              </p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li><strong>Observership</strong> — Shadow-only. No hands on patients. Most common path for IMG graduates preparing for the US Match.</li>
+                <li><strong>Externship</strong> — Often used interchangeably with observership, but sometimes means hands-on activity (taking histories, presenting) under supervision. Rules vary per program.</li>
+                <li><strong>Elective / Clerkship</strong> — Formal for-credit clinical rotation, almost always 4 weeks, usually through AAMC <em>VSLO</em>. For current 4th-year US medical students (some accept international M4s via affiliation agreement).</li>
+                <li><strong>Research fellowship / postdoc</strong> — Research focus with optional clinical shadowing.</li>
+                <li><strong>Volunteer / pre-med</strong> — Structured shadow programs for undergraduates.</li>
+              </ul>
+              <p className="text-xs text-slate-500 dark:text-slate-400 pt-1">
+                Use the <strong>Audience</strong> filter to narrow to programs that actually accept you (USMLE-IMG graduate, Med Student, Pre-Med/Volunteer, or Specialty Visiting).
+              </p>
+            </div>
+          </details>
         </div>
       </div>
 

@@ -13,6 +13,8 @@ export function ListingFilters() {
 
   const currentSearch = searchParams.get("search") || "";
   const currentType = searchParams.get("type") || "";
+  const currentCategory = searchParams.get("category") || "";
+  const currentAudience = searchParams.get("audience") || "";
   const currentState = searchParams.get("state") || "";
   const currentSort = searchParams.get("sort") || "newest";
   const currentFree = searchParams.get("free") === "true";
@@ -97,15 +99,34 @@ export function ListingFilters() {
         </div>
 
         <Select
-          value={currentType}
-          onChange={(e) => updateParam("type", e.target.value)}
+          value={currentCategory}
+          onChange={(e) => {
+            // Clear legacy type param when switching to category
+            const params = new URLSearchParams(searchParams.toString());
+            if (e.target.value) params.set("category", e.target.value);
+            else params.delete("category");
+            params.delete("type");
+            router.push(`/browse?${params.toString()}`);
+          }}
+          title="What kind of program are you looking for?"
         >
-          <option value="">All Types</option>
-          <option value="OBSERVERSHIP">Observership</option>
-          <option value="EXTERNSHIP">Externship</option>
-          <option value="RESEARCH">Research Fellowship</option>
-          <option value="ELECTIVE">Elective</option>
-          <option value="VOLUNTEER">Volunteer</option>
+          <option value="">All categories</option>
+          <option value="clinical">Clinical Rotation (observership / externship / elective)</option>
+          <option value="research">Research Position</option>
+          <option value="volunteer">Volunteer / Pre-Med</option>
+        </Select>
+
+        <Select
+          value={currentAudience}
+          onChange={(e) => updateParam("audience", e.target.value)}
+          title="Who's the program for?"
+        >
+          <option value="">All audiences</option>
+          <option value="USMLE-IMG">IMG Graduate (USMLE Match prep)</option>
+          <option value="Med Student">Current Medical Student</option>
+          <option value="Specialty Visiting">Trained Specialist visitor</option>
+          <option value="Pre-Med/Volunteer">Pre-Med / Volunteer</option>
+          <option value="Both">Open to Both IMG + Students</option>
         </Select>
 
         <Select
