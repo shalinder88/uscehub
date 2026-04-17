@@ -4,9 +4,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export async function FeaturedListings() {
-  const listings = await prisma.listing.findMany({
-    where: { status: "APPROVED" },
-    orderBy: [{ linkVerified: "desc" }, { views: "desc" }],
+  // Prefer listings explicitly flagged `featured: true` (admin-curated for
+  // USMLE-IMG credibility — LOR offered, academic sponsor, published Step
+  // requirements). Fall back to most-viewed if fewer than 6 featured exist.
+  const featured = await prisma.listing.findMany({
+    where: { status: "APPROVED", featured: true },
+    orderBy: [{ createdAt: "desc" }],
     take: 6,
     include: {
       reviews: {
@@ -15,6 +18,25 @@ export async function FeaturedListings() {
       },
     },
   });
+
+  let listings = featured;
+  if (listings.length < 6) {
+    const fallback = await prisma.listing.findMany({
+      where: {
+        status: "APPROVED",
+        featured: false,
+      },
+      orderBy: [{ linkVerified: "desc" }, { views: "desc" }],
+      take: 6 - listings.length,
+      include: {
+        reviews: {
+          where: { moderationStatus: "APPROVED" },
+          select: { overallRating: true },
+        },
+      },
+    });
+    listings = [...listings, ...fallback];
+  }
 
   if (listings.length === 0) return null;
 
@@ -27,7 +49,7 @@ export async function FeaturedListings() {
               Featured Opportunities
             </h2>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Most viewed listings on the platform
+              Hand-picked programs with the strongest USMLE Match credibility
             </p>
           </div>
           <Link

@@ -215,6 +215,9 @@ model Listing {
   logoUrl              String?
   adminNotes           String?
   views                Int           @default(0)
+  featured             Boolean       @default(false)
+  audienceTag          String?
+  usmleTier            String?
   createdAt            DateTime      @default(now())
   updatedAt            DateTime      @updatedAt
 
