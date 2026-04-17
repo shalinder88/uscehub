@@ -3,6 +3,7 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { rateLimit, isScrapingBot } from "@/lib/rate-limit";
+import { sendListingNotification } from "@/lib/email";
 
 export async function GET(request: NextRequest) {
   try {
@@ -143,12 +144,9 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    if (session.user.role !== "POSTER" && session.user.role !== "ADMIN") {
-      return Response.json(
-        { error: "Only posters can create listings" },
-        { status: 403 }
-      );
-    }
+    // Any authenticated user may submit a listing. Submissions default to
+    // PENDING (see `status` below) and are manually reviewed in /admin/listings.
+    // Admins bypass review and get APPROVED on create.
 
     const body = await request.json();
 
@@ -222,6 +220,23 @@ export async function POST(request: NextRequest) {
         status: session.user.role === "ADMIN" ? "APPROVED" : "PENDING",
       },
     });
+
+    // Notify admin of pending listings (fire-and-forget — failures must not
+    // break the submission response). Skipped automatically for ADMIN-created
+    // listings since those are already APPROVED.
+    if (listing.status === "PENDING") {
+      sendListingNotification({
+        listingId: listing.id,
+        title: listing.title,
+        listingType: String(listing.listingType),
+        city: listing.city,
+        state: listing.state,
+        submitterEmail: session.user.email ?? "(unknown)",
+        submitterName: session.user.name,
+      }).catch((err) => {
+        console.error("[listings] Failed to send notification email:", err);
+      });
+    }
 
     return Response.json(listing, { status: 201 });
   } catch (error) {
