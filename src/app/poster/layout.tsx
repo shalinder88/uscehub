@@ -13,7 +13,7 @@ import {
   Building2,
   ShieldCheck,
   List,
-  PlusCircle,
+  Plus,
   FileText,
   Settings,
 } from "lucide-react";
@@ -23,7 +23,6 @@ const sidebarLinks = [
   { href: "/poster/organization", label: "Organization", icon: Building2 },
   { href: "/poster/verification", label: "Verification", icon: ShieldCheck },
   { href: "/poster/listings", label: "My Listings", icon: List },
-  { href: "/poster/listings/new", label: "Create Listing", icon: PlusCircle },
   { href: "/poster/applications", label: "Applications", icon: FileText },
   { href: "/poster/settings", label: "Settings", icon: Settings },
 ];
@@ -57,7 +56,17 @@ export default async function PosterLayout({
             </div>
           </div>
 
-          <nav className="flex-1 space-y-1 p-4">
+          <div className="p-4">
+            <Link
+              href="/poster/listings/new"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
+            >
+              <Plus className="h-4 w-4" />
+              Create Listing
+            </Link>
+          </div>
+
+          <nav className="flex-1 space-y-1 px-4 pb-4">
             {sidebarLinks.map((link) => (
               <Link
                 key={link.href}
