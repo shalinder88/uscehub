@@ -168,12 +168,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 Certificate
               </Badge>
             )}
-            {listing.lorPossible && (
-              <Badge variant="info">
-                <FileText className="mr-1 h-3 w-3" />
-                LOR Available
-              </Badge>
-            )}
             {listing.visaSupport && (
               <Badge variant="warning">
                 <Globe className="mr-1 h-3 w-3" />

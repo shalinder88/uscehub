@@ -327,19 +327,6 @@ export default function EditListingPage({
               <label className="flex items-center gap-2 rounded-lg border border-slate-200 p-3 cursor-pointer hover:bg-slate-50">
                 <input
                   type="checkbox"
-                  checked={form.lorPossible}
-                  onChange={(e) =>
-                    updateField("lorPossible", e.target.checked)
-                  }
-                  className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-500"
-                />
-                <span className="text-sm font-medium text-slate-700">
-                  Letter of Recommendation
-                </span>
-              </label>
-              <label className="flex items-center gap-2 rounded-lg border border-slate-200 p-3 cursor-pointer hover:bg-slate-50">
-                <input
-                  type="checkbox"
                   checked={form.visaSupport}
                   onChange={(e) =>
                     updateField("visaSupport", e.target.checked)

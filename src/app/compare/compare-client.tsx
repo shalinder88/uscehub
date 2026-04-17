@@ -122,7 +122,6 @@ export default function CompareClient() {
     { label: "Cost", render: (l) => l.cost },
     { label: "Format", render: (l) => FORMAT_LABELS[l.format] || l.format },
     { label: "Certificate", render: (l) => <BoolCell value={l.certificateOffered} /> },
-    { label: "LOR Possible", render: (l) => <BoolCell value={l.lorPossible} /> },
     { label: "Visa Support", render: (l) => <BoolCell value={l.visaSupport} /> },
     { label: "Verified", render: (l) => <BoolCell value={l.linkVerified} /> },
     { label: "Application", render: (l) => l.applicationMethod === "platform" ? "Via Platform" : "External" },

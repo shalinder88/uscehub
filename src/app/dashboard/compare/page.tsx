@@ -32,7 +32,6 @@ const comparisonFields = [
   { key: "duration", label: "Duration" },
   { key: "cost", label: "Cost" },
   { key: "certificateOffered", label: "Certificate", boolean: true },
-  { key: "lorPossible", label: "Letter of Rec.", boolean: true },
   { key: "visaSupport", label: "Visa Support", boolean: true },
 ];
 

@@ -96,12 +96,6 @@ export function ListingCard({ listing }: ListingCardProps) {
                 Certificate
               </Badge>
             )}
-            {listing.lorPossible && (
-              <Badge variant="info" className="text-xs">
-                <FileText className="mr-1 h-3 w-3" />
-                LOR
-              </Badge>
-            )}
             {listing.visaSupport && (
               <Badge variant="warning" className="text-xs">
                 <Globe className="mr-1 h-3 w-3" />
