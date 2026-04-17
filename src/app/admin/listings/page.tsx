@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { CardRoot, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { formatDate, LISTING_TYPE_LABELS } from "@/lib/utils";
-import { List, MapPin } from "lucide-react";
+import { List, MapPin, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 interface ListingItem {
   id: string;
@@ -85,7 +86,7 @@ export default function AdminListingsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
-        <p className="text-sm text-slate-500">Loading pending listings...</p>
+        <p className="text-sm text-slate-700 dark:text-slate-300">Loading pending listings...</p>
       </div>
     );
   }
@@ -95,10 +96,10 @@ export default function AdminListingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">
           Pending Listings
         </h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
           Review and approve new listing submissions
         </p>
       </div>
@@ -106,11 +107,11 @@ export default function AdminListingsPage() {
       {pendingListings.length === 0 ? (
         <CardRoot>
           <CardContent className="flex flex-col items-center py-12">
-            <List className="h-12 w-12 text-slate-300" />
-            <p className="mt-4 text-sm font-medium text-slate-900">
+            <List className="h-12 w-12 text-slate-400 dark:text-slate-600" />
+            <p className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
               No pending listings
             </p>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
               All listings have been reviewed
             </p>
           </CardContent>
@@ -123,7 +124,7 @@ export default function AdminListingsPage() {
                 <div className="flex items-start justify-between">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-slate-900">
+                      <span className="text-sm font-semibold text-slate-900 dark:text-slate-50">
                         {listing.title}
                       </span>
                       <Badge
@@ -138,7 +139,7 @@ export default function AdminListingsPage() {
                           listing.listingType}
                       </Badge>
                     </div>
-                    <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                    <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-slate-700 dark:text-slate-300">
                       <span>By: {listing.poster.name}</span>
                       <span className="flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
@@ -146,11 +147,20 @@ export default function AdminListingsPage() {
                       </span>
                       <span>{listing.specialty}</span>
                     </div>
-                    <p className="mt-1 text-xs text-slate-400">
+                    <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                       Submitted {formatDate(listing.createdAt)}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 ml-4">
+                    <Link
+                      href={`/listing/${listing.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={buttonVariants({ variant: "outline", size: "sm" })}
+                    >
+                      <ExternalLink className="h-3 w-3 mr-1" />
+                      View
+                    </Link>
                     <Button
                       variant="success"
                       size="sm"

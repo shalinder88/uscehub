@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import { auth } from "@/lib/auth";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -78,14 +79,21 @@ export default async function ListingPage({ params }: ListingPageProps) {
     },
   });
 
-  if (!listing || listing.status !== "APPROVED") {
+  // Admins can preview pending/rejected/hidden listings from the moderation
+  // queue. Everyone else can only see APPROVED listings.
+  const session = await auth();
+  const isAdmin = session?.user && (session.user as { role?: string }).role === "ADMIN";
+  if (!listing || (listing.status !== "APPROVED" && !isAdmin)) {
     notFound();
   }
 
-  await prisma.listing.update({
-    where: { id },
-    data: { views: { increment: 1 } },
-  });
+  // Don't inflate view counts for admin previews.
+  if (listing.status === "APPROVED") {
+    await prisma.listing.update({
+      where: { id },
+      data: { views: { increment: 1 } },
+    });
+  }
 
   const avgRating =
     listing.reviews.length > 0
