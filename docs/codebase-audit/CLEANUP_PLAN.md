@@ -4,6 +4,8 @@ Staged sequence. The principle: each PR ships an architectural primitive that se
 
 > **Preservation rules apply.** Read [RULES.md](RULES.md) before opening any of the PRs below. The `/career/**` directory tree, the jobs/sponsor/waiver/attorney TS data files, the aspirational Prisma models, and the employer URL map are on the **hard protection list** — no deletes, no renames, no merges into other routes. Where a PR below previously implied deletion, it has been re-scoped to **add new + preserve old**. Any PR that ends up needing to break that rule has to be re-approved by the user before the branch is opened.
 
+> **Strategic guardrail.** Future product architecture and messaging are governed by [USCEHUB_MASTER_BLUEPRINT.md](USCEHUB_MASTER_BLUEPRINT.md). Cleanup PRs must **not** implement fellowship, nav redesign, monetization, or community features until the planned phase. Phase 0 remains codebase stabilization. Documentation of a future phase in the blueprint is **not** authorization to implement that phase.
+
 The hardest constraint: **the dirty work I stashed (jobs expansion + search refactor + employer-urls.ts) needs to be unstashed and shipped on its own branch in parallel**, without colliding with these PRs. PR1 below is deliberately scoped to surfaces the stash does not touch.
 
 ---

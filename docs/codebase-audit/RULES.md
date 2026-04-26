@@ -102,3 +102,5 @@ Cleanup PRs derived from [CLEANUP_PLAN.md](CLEANUP_PLAN.md) must:
 - be additive where possible (new helpers, new components) and route new usage through them — leaving the old paths in place even if they look redundant
 
 **Anything that needs to break this rule needs explicit user approval before the PR is opened.**
+
+Strategic product expansion such as fellowship, Match Prep, Career Path, monetization, and community must be documented first and implemented only in its planned phase; documentation is not implementation authorization.
