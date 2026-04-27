@@ -104,3 +104,7 @@ Cleanup PRs derived from [CLEANUP_PLAN.md](CLEANUP_PLAN.md) must:
 **Anything that needs to break this rule needs explicit user approval before the PR is opened.**
 
 Strategic product expansion such as fellowship, Match Prep, Career Path, monetization, and community must be documented first and implemented only in its planned phase; documentation is not implementation authorization.
+
+## 6 — SEO preservation
+
+SEO preservation is a hard protection rule. Public URLs, crawlability, sitemap, robots, metadata, canonical URLs, JSON-LD, and internal links must not be changed casually. Any SEO-impacting change requires documentation and explicit review. Full rules in [SEO_PRESERVATION_RULES.md](SEO_PRESERVATION_RULES.md), including the SEO impact log every such PR must include in its final report.
