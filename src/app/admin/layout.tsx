@@ -12,6 +12,7 @@ import {
   LayoutDashboard,
   ShieldCheck,
   List,
+  ListChecks,
   Users,
   Star,
   Flag,
@@ -27,6 +28,7 @@ const sidebarLinks = [
   { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/reviews", label: "Reviews", icon: Star },
   { href: "/admin/flags", label: "Flags", icon: Flag },
+  { href: "/admin/verification-queue", label: "Verification Queue", icon: ListChecks },
   { href: "/admin/activity", label: "Activity Log", icon: ScrollText },
 ];
 
