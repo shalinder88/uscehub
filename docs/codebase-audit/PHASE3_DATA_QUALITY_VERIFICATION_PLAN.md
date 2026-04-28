@@ -6,6 +6,48 @@
 
 ---
 
+## Shipped PR 3.3 contract update
+
+PR #9 shipped the conservative cron contract. This supersedes any earlier planning language suggesting automated `SOURCE_DEAD` transitions or automated `FlagReport` creation. Where the body of this plan and this section disagree, this section wins.
+
+Current shipped cron behavior (`/api/cron/verify-listings`, commit `05202ed`):
+
+- runs daily at `0 9 * * *` UTC
+- processes a bounded cap of **25 listings per run**
+- orders by `lastVerificationAttemptAt ASC NULLS FIRST` (no strict 7-day floor)
+- probes one URL per listing, priority `sourceUrl > applicationUrl > websiteUrl`
+- writes one `DataVerification` row per attempt (`method = "CRON"`, `verifiedBy = "system:cron-verify-listings"`, `targetType = "listing"`)
+- updates `lastVerificationAttemptAt` on every attempt
+- sets `lastVerifiedAt` **only** on `VERIFIED`
+- can set only:
+  - `VERIFIED`
+  - `REVERIFYING`
+  - `NEEDS_MANUAL_REVIEW`
+- **cannot** set:
+  - `SOURCE_DEAD`
+  - `PROGRAM_CLOSED`
+  - `NO_OFFICIAL_SOURCE`
+- never hides or deletes listings
+- never modifies `Listing.status`
+- never rewrites `sourceUrl` / `applicationUrl` / `websiteUrl`
+- **never creates `FlagReport` automatically**
+- preserves the legacy `linkVerified` Boolean unchanged on transient `REVERIFYING` (no badge flap on a single network blip); flips to `true` on `VERIFIED`, `false` on `NEEDS_MANUAL_REVIEW`
+- does not fake verification dates
+
+### PR 3.4 implication
+
+The admin verification queue must source from **all** of:
+
+1. user-submitted `FlagReport` items (`OPEN`, `IN_REVIEW`)
+2. listings with `linkVerificationStatus = NEEDS_MANUAL_REVIEW`
+3. optionally, listings stuck in `REVERIFYING` past an admin-defined age threshold
+
+PR 3.4 must not be built assuming cron-created flags exist — they do not. Relying solely on `FlagReport` as the queue source would miss every cron-detected failed link.
+
+The admin actions that set `SOURCE_DEAD`, `PROGRAM_CLOSED`, or `NO_OFFICIAL_SOURCE` remain valid (per §6 below) — those are **manual** transitions, gated on explicit admin action.
+
+---
+
 ## 1. Strategic decision
 
 The next real product layer is data quality and verification — not conversion architecture.
@@ -105,7 +147,7 @@ enum LinkVerificationStatus {
   UNKNOWN              // never checked yet
   VERIFIED             // last check succeeded
   REVERIFYING          // explicit admin/cron flag while a recheck is in progress
-  SOURCE_DEAD          // source URL returns 4xx/5xx/timeout consistently across N consecutive checks
+  SOURCE_DEAD          // admin-only; cron cannot set this state. Set manually after triage of NEEDS_MANUAL_REVIEW or BROKEN_LINK FlagReport.
   PROGRAM_CLOSED       // admin-confirmed: official source says program is no longer running
   NO_OFFICIAL_SOURCE   // listing has only a community/self-reported source, no institutional URL
   NEEDS_MANUAL_REVIEW  // automated check ambiguous, admin must triage
@@ -161,13 +203,13 @@ These principles override convenience. They constrain what the verification engi
 3. **Source URL ≠ Application URL.** A program's info page and its application form may live on different hostnames. Verifying one does not verify the other. PR 3.2 introduces both fields.
 4. **Verified means an *official source* was checked.** Community-submitted URLs are not "verified" until an admin confirms the institution actually owns the page.
 5. **Automated HTTP 200 is necessary but not sufficient.** A 200 response means the URL serves *something*. It does not mean the *program* is current. Initial cron checks can mark listings as VERIFIED only if they were previously VERIFIED (i.e., periodic re-check). First-time verification of a brand-new listing requires admin action OR multiple successful checks over time. PR 3.3 will codify this rule.
-6. **`SOURCE_DEAD` requires N consecutive failures**, not one. PR 3.3 will set N = 3 across separate cron runs (≥3 days apart) before transitioning to SOURCE_DEAD. One failed HEAD does not hide a listing.
+6. **`SOURCE_DEAD` is admin-only.** The shipped PR #9 cron cannot transition a listing to `SOURCE_DEAD`. Repeated cron failures on a 4xx/5xx classify the listing as `NEEDS_MANUAL_REVIEW` (single failure is sufficient); transient errors classify as `REVERIFYING`. Admin reviews the queue and chooses whether to set `SOURCE_DEAD`. One failed HEAD never hides a listing.
 7. **`PROGRAM_CLOSED` requires admin confirmation.** Automated checks cannot set this status. They can flag for manual review only.
 8. **`NO_OFFICIAL_SOURCE` requires admin determination.** Listings whose URL points to a Reddit thread, blog post, or community-aggregated content are NO_OFFICIAL_SOURCE.
 9. **Public badges must reflect real status.** No "Verified link" pill for listings with `linkVerificationStatus !== VERIFIED`.
 10. **Admin overrides must be logged.** Every status change writes a `DataVerification` row with `verifiedBy = <admin user ID>`, `method = MANUAL`, before/after status, and notes.
 11. **User reports enter the review queue, not the live status.** A user reporting "broken link" creates a `FlagReport` with `kind = BROKEN_LINK`. It does NOT auto-flip the listing to `SOURCE_DEAD`. Admin reviews and decides.
-12. **Public hiding requires admin action**, not single failed automated checks. Even after N consecutive failures, the listing is `SOURCE_DEAD` but visible (with a clear "Source not currently reachable — admin reviewing" badge) until an admin chooses to hide it.
+12. **Public hiding requires admin action**, not automated checks. Cron classifies repeated failures as `NEEDS_MANUAL_REVIEW` (4xx/5xx) or `REVERIFYING` (transient). Admin manually sets `SOURCE_DEAD` (and may then choose to hide) via the verification queue. The listing remains visible throughout cron-driven status transitions.
 
 ---
 
@@ -251,36 +293,44 @@ Six PRs, each preview-mergeable, each independently reversible. Same rhythm as c
 
 ### PR 3.3 — Verification cron extension for USCE listings
 
-**Branch:** `phase3/03-listing-verification-cron`
+**Status:** ✅ shipped as PR #9, commit `05202ed`. Branch was `phase3/03-verification-cron`. The "Shipped PR 3.3 contract update" section near the top of this doc supersedes the spec below where they disagree.
+
 **Schema change:** none.
 **Behavior change:** new background work; no user-visible UI change.
 
-**Requires CRON_SECRET to be set in Vercel production env vars** (operational prerequisite).
+**Operational prerequisite met:** `CRON_SECRET` is set in Vercel Production. Unauthenticated probes to `/api/cron/verify-listings` return 401.
 
-**Extends:**
-- `src/app/api/cron/verify-jobs/route.ts` (or splits into a new `src/app/api/cron/verify-listings/route.ts` — TBD during PR; both routes share auth + batch logic)
-- Reads listings where `linkVerificationStatus IN (UNKNOWN, VERIFIED, REVERIFYING)` and `lastVerificationAttemptAt < NOW() - 7 days` (or whatever cadence is configured)
-- Batches of 5, 10s timeout per request, same as existing waiver-job verifier
+**As-shipped behavior:**
+- Lives at `src/app/api/cron/verify-listings/route.ts` (separate from `verify-jobs`; both share `getCronSecret()` auth)
+- Selects up to **25 listings per run** ordered by `lastVerificationAttemptAt ASC NULLS FIRST` (least-recently-attempted first; never-attempted listings prioritized via NULLS FIRST). No strict 7-day floor — selection is bounded by the per-run cap.
+- Probes one URL per listing in priority `sourceUrl > applicationUrl > websiteUrl`
+- Batches of 5 in parallel, 500ms gap between batches, 10s HEAD timeout per request
 - For each listing:
-  - HEAD request to `sourceUrl` (preferred) or fallback to `websiteUrl`
-  - Records result in a new `DataVerification` row (method=AUTOMATED, statusBefore, statusAfter)
-  - Updates listing `lastVerificationAttemptAt`
-  - Updates `linkVerificationStatus`:
-    - 2xx → keep VERIFIED if already VERIFIED, else VERIFIED only after 2 consecutive successes
-    - 3xx → follow redirect, treat final status as the response
-    - 4xx/5xx/timeout → first failure: stays VERIFIED; second consecutive failure: REVERIFYING; third: SOURCE_DEAD
-  - Updates `lastVerifiedAt` only on success
+  - 2xx → `VERIFIED` (single success classifies; no two-success threshold)
+  - 3xx → follow redirect, treat final status as the response
+  - **4xx/5xx → `NEEDS_MANUAL_REVIEW`** (single failure already classifies; never `SOURCE_DEAD`)
+  - **Timeout / network error → `REVERIFYING`** (transient; legacy `linkVerified` Boolean unchanged so the public badge does not flap on a single network blip)
+  - Records the result in a `DataVerification` row (`method = "CRON"`, `verifiedBy = "system:cron-verify-listings"`, `targetType = "listing"`, with `statusBefore`/`statusAfter`/`httpStatus`/`finalUrl` populated)
+  - Updates `lastVerificationAttemptAt` to NOW
+  - Updates `lastVerifiedAt` **only** when status ends `VERIFIED`
   - Sets `verificationFailureReason` on failure
+  - Updates legacy `linkVerified` Boolean: `true` on `VERIFIED`, `false` on `NEEDS_MANUAL_REVIEW`, **unchanged** on `REVERIFYING`
 
 **Hard rules (encoded in cron logic):**
+- **Do not auto-set `SOURCE_DEAD` (admin-only)**
 - Do not auto-set `PROGRAM_CLOSED` (admin-only)
+- Do not auto-set `NO_OFFICIAL_SOURCE` (admin-only)
 - Do not auto-hide listings (admin-only)
+- **Do not auto-create `FlagReport`** — admin queue surfaces `NEEDS_MANUAL_REVIEW` listings directly (see PR 3.4 queue sources)
+- Do not modify `Listing.status`
+- Do not rewrite `sourceUrl`, `applicationUrl`, or `websiteUrl`
 - Do not modify any `/career` data file or model — out of scope for this cron
 - Use existing `getCronSecret()` from `src/lib/env.ts` for auth — same env var as waiver-jobs cron
 
-**Acceptance:**
-- Cron route can run safely (manually triggered via `curl` with auth header) without auto-hiding or destructive writes
-- DataVerification rows accumulate as expected
+**Acceptance (verified post-merge):**
+- `/api/cron/verify-listings` deployed, unauthenticated probe returns 401 (auth gate working)
+- `vercel.json` declares `0 9 * * *` UTC schedule (Hobby-plan max 2 cron entries used: `verify-jobs` at `0 8 * * *`, `verify-listings` at `0 9 * * *`)
+- DataVerification rows accumulate per run (verification pending first scheduled cron tick)
 - No public UI change in this PR
 - No `/career` touched
 - Build/typecheck/tests green
@@ -290,6 +340,15 @@ Six PRs, each preview-mergeable, each independently reversible. Same rhythm as c
 **Branch:** `phase3/04-admin-verification-queue`
 **Schema change:** none (already in 3.2).
 **Behavior change:** admin-only surface; no public UI change.
+
+**Gate:** blocked until the first scheduled `/api/cron/verify-listings` run (09:00 UTC) is reviewed. PR 3.4 must not begin until that review confirms the cron behaves as documented.
+
+**Queue sources (must integrate all of these):**
+1. User-submitted `FlagReport` items (`OPEN`, `IN_REVIEW`)
+2. Listings with `linkVerificationStatus = NEEDS_MANUAL_REVIEW` (cron-classified)
+3. Optionally, listings stuck in `REVERIFYING` past an admin-defined age threshold (e.g. older than 14 days of attempted re-verification)
+
+The shipped PR #9 cron does not auto-create `FlagReport` rows. PR 3.4 must surface `NEEDS_MANUAL_REVIEW` listings independently of the `FlagReport` table — relying solely on `FlagReport` would miss every cron-detected failed link.
 
 **Extends `/admin/flags`** (already exists at `src/app/admin/flags/page.tsx`):
 - Filter by `kind` (BROKEN_LINK / WRONG_DEADLINE / PROGRAM_CLOSED / etc.)
@@ -391,18 +450,21 @@ End-to-end story for a single broken-link report:
 8. **All actions audit-log** to `AdminActionLog` (existing model) and a `DataVerification` row.
 9. **Public UI updates** only after the admin action lands — never automatically from a single user report.
 
-End-to-end story for a cron-detected dead link:
+End-to-end story for a cron-detected dead link (per shipped PR #9):
 
-1. **Cron runs at 8am UTC** (existing schedule)
-2. **Verifies a listing's `sourceUrl`** — gets HTTP 404
-3. **Updates `lastVerificationAttemptAt`** to NOW
-4. **Writes `DataVerification` row** with method=AUTOMATED, statusAfter=REVERIFYING (first failure), httpStatus=404
-5. **Listing remains visible** with VERIFIED badge (one failure ≠ dead)
-6. **Cron runs next day** (8am UTC); 404 again
-7. **`linkVerificationStatus` → REVERIFYING**, listing detail starts showing "We're rechecking this application link" notice (Phase 2 component already supports this)
-8. **Cron runs third day**; 404 again
-9. **`linkVerificationStatus` → SOURCE_DEAD**; auto-creates a `FlagReport` (kind=BROKEN_LINK, reporterId=<system user>, status=OPEN) so admin sees it in the queue
-10. **Listing remains visible** until admin reviews and either reverifies (URL came back), confirms hide, or marks PROGRAM_CLOSED
+1. **Cron runs at 09:00 UTC** (`0 9 * * *`)
+2. **Selects up to 25 listings** ordered by `lastVerificationAttemptAt ASC NULLS FIRST`
+3. **Probes each listing's URL** in priority `sourceUrl > applicationUrl > websiteUrl` — gets HTTP 404
+4. **Writes `DataVerification` row** (`method = "CRON"`, `verifiedBy = "system:cron-verify-listings"`, `targetType = "listing"`, `statusAfter = NEEDS_MANUAL_REVIEW`, `httpStatus = 404`)
+5. **Updates `lastVerificationAttemptAt`** to NOW
+6. **Sets `linkVerificationStatus = NEEDS_MANUAL_REVIEW`** — single 4xx/5xx failure is sufficient; there is no consecutive-failure threshold
+7. **`lastVerifiedAt` unchanged** (only advances on `VERIFIED`)
+8. **Legacy `linkVerified` Boolean → false** (flips on `NEEDS_MANUAL_REVIEW`)
+9. **Listing remains visible** with whatever public badge PR 3.5 specifies for `NEEDS_MANUAL_REVIEW`
+10. **No `FlagReport` is auto-created.** Admin sees the listing via the `NEEDS_MANUAL_REVIEW` queue surface (PR 3.4 must integrate this source — see §5 PR 3.4 queue sources).
+11. **Admin reviews** and chooses one of: confirm working (→ `VERIFIED`, `method = MANUAL`), confirm broken (→ `SOURCE_DEAD`, admin-only), confirm program closed (→ `PROGRAM_CLOSED`, admin-only), or mark `NO_OFFICIAL_SOURCE` (admin-only). Each manual transition writes a `DataVerification` row.
+
+Transient failures (timeout / network error) are classified `REVERIFYING` instead of `NEEDS_MANUAL_REVIEW`. The legacy `linkVerified` Boolean stays unchanged on `REVERIFYING`, so the public badge does not flap on a single network blip. Repeated `REVERIFYING` over time may surface in the queue via the optional age-threshold rule documented in PR 3.4.
 
 ---
 
@@ -532,8 +594,8 @@ Conversion architecture begins after PR 3.5 (real verification UI). PR 3.6 is th
 | Risk | Mitigation |
 |---|---|
 | **Migration risk in PR 3.2** — schema changes can break production at deploy | Migration is non-destructive (no DROP, no TRUNCATE). New fields are nullable or have safe defaults. Existing `linkVerified` Boolean kept. Migration tested on shadow DB before approval. |
-| **Fake verification risk** — "we said verified, it's actually a 404" | §4 principles enforce: 2-consecutive-success threshold for first-time VERIFIED; 3-consecutive-failure threshold for SOURCE_DEAD; PROGRAM_CLOSED requires admin. |
-| **Over-automated hiding risk** — auto-hiding good listings on transient failures | Cron does NOT hide. SOURCE_DEAD listings stay visible with status; admin makes the hide decision. |
+| **Fake verification risk** — "we said verified, it's actually a 404" | Shipped cron sets `VERIFIED` only on 2xx; `NEEDS_MANUAL_REVIEW` on 4xx/5xx (single failure); `REVERIFYING` on transient errors. `SOURCE_DEAD`, `PROGRAM_CLOSED`, `NO_OFFICIAL_SOURCE` are admin-only. Admin reviews the queue (FlagReports + NEEDS_MANUAL_REVIEW listings). |
+| **Over-automated hiding risk** — auto-hiding good listings on transient failures | Cron does NOT hide and cannot set `SOURCE_DEAD`. Cron classifies failures as `NEEDS_MANUAL_REVIEW` (4xx/5xx) or `REVERIFYING` (transient). Admin sets `SOURCE_DEAD` and decides hiding. |
 | **Admin workload risk** — flag queue grows faster than admin can process | PR 3.4 surfaces queue volume; if growing, raise the threshold for auto-flagging or add a second admin. Solo-admin scale-out plan documented as future work, not blocking. |
 | **UI clutter risk** — too many badges, banners, status pills overwhelming users | PR 3.5 controlled — badge only on verified state for cards; conservative on detail page. Same "no clutter" rule from Phase 1. |
 | **SEO risk if hiding pages incorrectly** — PROGRAM_CLOSED listings deindexed too aggressively | Hidden listings keep detail URLs serving (with archived rendering, in a future PR). Sitemap query filters carefully. SEO impact section required in PR 3.5 body. |
