@@ -62,6 +62,7 @@ enum ModerationStatus {
 
 enum FlagStatus {
   OPEN
+  IN_REVIEW
   REVIEWED
   RESOLVED
   DISMISSED
@@ -85,28 +86,53 @@ enum WaiverType {
   H1B_CAP_SUBJECT
 }
 
+// Per-listing source-link verification state (Phase 3.2). Distinct from
+// the existing VerificationStatus enum which describes poster/organization
+// verification — see docs/codebase-audit/PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md.
+enum LinkVerificationStatus {
+  UNKNOWN
+  VERIFIED
+  REVERIFYING
+  NEEDS_MANUAL_REVIEW
+  SOURCE_DEAD
+  PROGRAM_CLOSED
+  NO_OFFICIAL_SOURCE
+}
+
+// Structured taxonomy for FlagReport.kind. Free-text reason still captured
+// in FlagReport.reason for user commentary.
+enum FlagKind {
+  BROKEN_LINK
+  WRONG_DEADLINE
+  PROGRAM_CLOSED
+  INCORRECT_INFO
+  DUPLICATE
+  SPAM
+  OTHER
+}
+
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
+  id            String        @id @default(cuid())
+  email         String        @unique
   password      String
   name          String
   role          UserRole      @default(APPLICANT)
   journeyPhase  JourneyPhase?
   emailVerified Boolean       @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
 
-  applicantProfile ApplicantProfile?
-  posterProfile    PosterProfile?
-  organization     Organization?     @relation("OrganizationOwner")
-  listings         Listing[]
-  applications     Application[]
-  savedListings    SavedListing[]
-  comparedListings ComparedListing[]
-  reviews          Review[]
-  flagReports      FlagReport[]      @relation("FlagReporter")
-  adminActions     AdminActionLog[]
-  communityPosts   CommunityPost[]
+  applicantProfile  ApplicantProfile?
+  posterProfile     PosterProfile?
+  organization      Organization?      @relation("OrganizationOwner")
+  listings          Listing[]
+  applications      Application[]
+  savedListings     SavedListing[]
+  comparedListings  ComparedListing[]
+  reviews           Review[]
+  flagReports       FlagReport[]       @relation("FlagReporter")
+  adminActions      AdminActionLog[]
+  communityPosts    CommunityPost[]
   communityComments CommunityComment[]
 
   @@map("users")
@@ -179,52 +205,60 @@ model Organization {
 }
 
 model Listing {
-  id                   String        @id @default(cuid())
-  organizationId       String?
-  organization         Organization? @relation(fields: [organizationId], references: [id])
-  posterId             String
-  poster               User          @relation(fields: [posterId], references: [id])
-  title                String
-  listingType          ListingType
-  specialty            String
-  city                 String
-  state                String
-  country              String        @default("USA")
-  format               ListingFormat @default(IN_PERSON)
-  shortDescription     String
-  fullDescription      String?
-  duration             String
-  cost                 String
-  applicationMethod    String        @default("platform")
-  contactEmail         String?
-  eligibilitySummary   String?
-  status               ListingStatus @default(PENDING)
-  startDate            String?
-  applicationDeadline  String?
-  certificateOffered   Boolean       @default(false)
-  lorPossible          Boolean       @default(false)
-  visaSupport          Boolean       @default(false)
-  housingSupport       String?
-  websiteUrl           String?
-  linkVerified         Boolean       @default(false)
-  numberOfSpots        String?
-  supervisingPhysician String?
-  graduationYearPref   String?
-  stepRequirements     String?
-  ecfmgRequired        String?
-  logoUrl              String?
-  adminNotes           String?
-  views                Int           @default(0)
-  featured             Boolean       @default(false)
-  audienceTag          String?
-  usmleTier            String?
-  createdAt            DateTime      @default(now())
-  updatedAt            DateTime      @updatedAt
+  id                        String                 @id @default(cuid())
+  organizationId            String?
+  organization              Organization?          @relation(fields: [organizationId], references: [id])
+  posterId                  String
+  poster                    User                   @relation(fields: [posterId], references: [id])
+  title                     String
+  listingType               ListingType
+  specialty                 String
+  city                      String
+  state                     String
+  country                   String                 @default("USA")
+  format                    ListingFormat          @default(IN_PERSON)
+  shortDescription          String
+  fullDescription           String?
+  duration                  String
+  cost                      String
+  applicationMethod         String                 @default("platform")
+  contactEmail              String?
+  eligibilitySummary        String?
+  status                    ListingStatus          @default(PENDING)
+  startDate                 String?
+  applicationDeadline       String?
+  certificateOffered        Boolean                @default(false)
+  lorPossible               Boolean                @default(false)
+  visaSupport               Boolean                @default(false)
+  housingSupport            String?
+  websiteUrl                String?
+  linkVerified              Boolean                @default(false)
+  // Phase 3.2 verification fields. `linkVerified` Boolean kept for
+  // backward compat; new code should read `linkVerificationStatus`.
+  sourceUrl                 String?
+  applicationUrl            String?
+  linkVerificationStatus    LinkVerificationStatus @default(UNKNOWN)
+  lastVerifiedAt            DateTime?
+  lastVerificationAttemptAt DateTime?
+  verificationFailureReason String?
+  numberOfSpots             String?
+  supervisingPhysician      String?
+  graduationYearPref        String?
+  stepRequirements          String?
+  ecfmgRequired             String?
+  logoUrl                   String?
+  adminNotes                String?
+  views                     Int                    @default(0)
+  featured                  Boolean                @default(false)
+  audienceTag               String?
+  usmleTier                 String?
+  createdAt                 DateTime               @default(now())
+  updatedAt                 DateTime               @updatedAt
 
-  applications  Application[]
-  savedBy       SavedListing[]
-  comparedBy    ComparedListing[]
-  reviews       Review[]
+  applications Application[]
+  savedBy      SavedListing[]
+  comparedBy   ComparedListing[]
+  reviews      Review[]
 
   @@index([status, listingType])
   @@index([state])
@@ -300,6 +334,12 @@ model FlagReport {
   reason     String
   status     FlagStatus @default(OPEN)
   adminNotes String?
+  // Phase 3.2 structured fields. `reason` (free text) stays for user
+  // commentary; `kind` provides admin-queue filtering.
+  kind       FlagKind   @default(OTHER)
+  sourceUrl  String?
+  resolvedAt DateTime?
+  resolvedBy String?
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
 
@@ -341,27 +381,27 @@ model AdminActionLog {
 // ============================================
 
 model FellowshipProgram {
-  id                  String       @id @default(cuid())
+  id                  String        @id @default(cuid())
   name                String
   specialty           String
   institution         String
   city                String
   state               String
-  visaSponsorship     Boolean      @default(false)
-  requiresUSTraining  Boolean      @default(false)
-  matchParticipation  Boolean      @default(false)
+  visaSponsorship     Boolean       @default(false)
+  requiresUSTraining  Boolean       @default(false)
+  matchParticipation  Boolean       @default(false)
   applicationDeadline String?
   duration            String?
   positions           Int?
   description         String?
   requirements        String?
   websiteUrl          String?
-  sourceType          SourceType   @default(OFFICIAL)
+  sourceType          SourceType    @default(OFFICIAL)
   lastVerified        DateTime?
   verifiedBy          String?
   status              ListingStatus @default(APPROVED)
-  createdAt           DateTime     @default(now())
-  updatedAt           DateTime     @updatedAt
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
 
   @@index([specialty])
   @@index([state])
@@ -408,24 +448,24 @@ model CommunityComment {
 // ============================================
 
 model WaiverState {
-  id              String    @id @default(cuid())
-  stateCode       String    @unique
-  stateName       String
-  conradSlots     Int       @default(30)
-  flexSlots       Int       @default(0)
-  totalSlots      Int       @default(30)
-  timeline        String?
-  processingTime  String?
-  priorityAreas   String?
-  contactInfo     String?
-  contactEmail    String?
-  requirements    String?
-  tips            String?
-  websiteUrl      String?
-  lastVerified    DateTime?
-  verifiedBy      String?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  id             String    @id @default(cuid())
+  stateCode      String    @unique
+  stateName      String
+  conradSlots    Int       @default(30)
+  flexSlots      Int       @default(0)
+  totalSlots     Int       @default(30)
+  timeline       String?
+  processingTime String?
+  priorityAreas  String?
+  contactInfo    String?
+  contactEmail   String?
+  requirements   String?
+  tips           String?
+  websiteUrl     String?
+  lastVerified   DateTime?
+  verifiedBy     String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
 
   waiverJobs WaiverJob[]
 
@@ -433,32 +473,32 @@ model WaiverState {
 }
 
 model WaiverJob {
-  id              String        @id @default(cuid())
-  title           String
-  employer        String
-  city            String
-  state           String
-  stateCode       String?
-  stateData       WaiverState?  @relation(fields: [stateCode], references: [stateCode])
-  specialty       String
-  waiverType      WaiverType    @default(J1_WAIVER)
-  salary          String?
-  salaryMin       Int?
-  salaryMax       Int?
-  signOnBonus     String?
-  loanRepayment   String?
-  hpsaScore       Int?
-  muaDesignation  Boolean       @default(false)
-  description     String?
-  requirements    String?
-  contactEmail    String?
-  websiteUrl      String?
-  sourceType      SourceType    @default(OFFICIAL)
-  lastVerified    DateTime?
-  verifiedBy      String?
-  status          ListingStatus @default(APPROVED)
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+  id             String        @id @default(cuid())
+  title          String
+  employer       String
+  city           String
+  state          String
+  stateCode      String?
+  stateData      WaiverState?  @relation(fields: [stateCode], references: [stateCode])
+  specialty      String
+  waiverType     WaiverType    @default(J1_WAIVER)
+  salary         String?
+  salaryMin      Int?
+  salaryMax      Int?
+  signOnBonus    String?
+  loanRepayment  String?
+  hpsaScore      Int?
+  muaDesignation Boolean       @default(false)
+  description    String?
+  requirements   String?
+  contactEmail   String?
+  websiteUrl     String?
+  sourceType     SourceType    @default(OFFICIAL)
+  lastVerified   DateTime?
+  verifiedBy     String?
+  status         ListingStatus @default(APPROVED)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
 
   @@index([state])
   @@index([specialty])
@@ -466,42 +506,51 @@ model WaiverJob {
 }
 
 model Lawyer {
-  id                String        @id @default(cuid())
-  name              String
-  firmName          String?
-  city              String
-  state             String
-  phone             String?
-  email             String?
-  websiteUrl        String?
-  specialties       String
-  barNumber         String?
-  yearsExperience   Int?
-  languages         String?
-  freeConsultation  Boolean       @default(false)
-  description       String?
-  sourceType        SourceType    @default(SELF_REPORTED)
-  lastVerified      DateTime?
-  verifiedBy        String?
-  featured          Boolean       @default(false)
-  status            ListingStatus @default(APPROVED)
-  contactClicks     Int           @default(0)
-  createdAt         DateTime      @default(now())
-  updatedAt         DateTime      @updatedAt
+  id               String        @id @default(cuid())
+  name             String
+  firmName         String?
+  city             String
+  state            String
+  phone            String?
+  email            String?
+  websiteUrl       String?
+  specialties      String
+  barNumber        String?
+  yearsExperience  Int?
+  languages        String?
+  freeConsultation Boolean       @default(false)
+  description      String?
+  sourceType       SourceType    @default(SELF_REPORTED)
+  lastVerified     DateTime?
+  verifiedBy       String?
+  featured         Boolean       @default(false)
+  status           ListingStatus @default(APPROVED)
+  contactClicks    Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
 
   @@index([state])
   @@map("lawyers")
 }
 
 model DataVerification {
-  id         String     @id @default(cuid())
-  targetType String
-  targetId   String
-  verifiedBy String
-  sourceType SourceType
-  sourceUrl  String?
-  notes      String?
-  createdAt  DateTime   @default(now())
+  id           String     @id @default(cuid())
+  targetType   String
+  targetId     String
+  verifiedBy   String
+  sourceType   SourceType
+  sourceUrl    String?
+  notes        String?
+  // Phase 3.2 verification-log fields. String? rather than enum for
+  // forward compat — historical entries don't need migration if the
+  // status enum gains new values later.
+  method       String?
+  statusBefore String?
+  statusAfter  String?
+  httpStatus   Int?
+  finalUrl     String?
+  errorMessage String?
+  createdAt    DateTime   @default(now())
 
   @@index([targetType, targetId])
   @@map("data_verifications")
