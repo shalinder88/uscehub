@@ -163,11 +163,25 @@ export async function GET(request: Request) {
 }
 
 async function probeUrl(url: string): Promise<ProbeOutcome> {
+  // HEAD first; many servers reject HEAD with 405 even when the resource
+  // is reachable on GET. PR 3.3a: on a HEAD-405 we retry once with GET
+  // so the recorded ProbeOutcome reflects actual liveness rather than
+  // method rejection. Any 405 that survives this fallback is a real
+  // "server rejects both HEAD and GET" situation and is routed to the
+  // admin queue by classifyProbeOutcome.
+  const head = await fetchWithMethod(url, "HEAD");
+  if (head.errorKind !== "none" || head.httpStatus !== 405) {
+    return head;
+  }
+  return await fetchWithMethod(url, "GET");
+}
+
+async function fetchWithMethod(url: string, method: "HEAD" | "GET"): Promise<ProbeOutcome> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
     const res = await fetch(url, {
-      method: "HEAD",
+      method,
       headers: { "User-Agent": USER_AGENT },
       signal: controller.signal,
       redirect: "follow",

@@ -72,10 +72,11 @@ export function classifyProbeOutcome(outcome: ProbeOutcome): Classification {
     };
   }
 
-  // 405 — server alive, just rejected HEAD method. Live in practice.
-  if (code === 405) {
-    return { status: STATUSES.VERIFIED, reason: null };
-  }
+  // 405 falls through to the "Other 4xx" rule below. The route's
+  // probeUrl performs a HEAD→GET fallback when HEAD returns 405 (PR
+  // 3.3a) — so any 405 reaching classification means the GET retry
+  // also returned 405. In that case it is genuinely unusual and goes
+  // to the human queue rather than being silently treated as live.
 
   // 401 / 403 — auth or permission wall. Could be intentional (career
   // portal behind login) or bot blocking. Human review.

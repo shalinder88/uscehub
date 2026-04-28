@@ -59,15 +59,22 @@ function expectPick(
 
 console.log("=== Phase 3.3 link verification — pure-function tests ===\n");
 
-console.log("Verified outcomes (2xx + 405):");
+console.log("Verified outcomes (2xx):");
 expectClassification("200 OK → VERIFIED", probe(200), "VERIFIED", null);
 expectClassification("204 No Content → VERIFIED", probe(204), "VERIFIED", null);
 expectClassification("299 boundary → VERIFIED", probe(299), "VERIFIED", null);
+
+console.log("\n405 Method Not Allowed — PR 3.3a contract:");
+// Route-level probeUrl performs HEAD→GET fallback when HEAD returns 405.
+// classifyProbeOutcome only ever sees the post-fallback HTTP status, so
+// any 405 reaching this function means GET also returned 405 (genuinely
+// unusual). It surfaces to the human queue rather than being silently
+// treated as live.
 expectClassification(
-  "405 Method Not Allowed (HEAD rejected, server alive) → VERIFIED",
+  "405 (HEAD-GET fallback exhausted; GET also 405) → NEEDS_MANUAL_REVIEW",
   probe(405),
-  "VERIFIED",
-  null,
+  "NEEDS_MANUAL_REVIEW",
+  "http_4xx_405",
 );
 
 console.log("\nUnresolved redirects (would only land here if fetch failed to resolve):");

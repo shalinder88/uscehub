@@ -16,6 +16,7 @@ Current shipped cron behavior (`/api/cron/verify-listings`, commit `05202ed`):
 - processes a bounded cap of **25 listings per run**
 - orders by `lastVerificationAttemptAt ASC NULLS FIRST` (no strict 7-day floor)
 - probes one URL per listing, priority `sourceUrl > applicationUrl > websiteUrl`
+- HEAD first; on **HTTP 405** the probe retries once with GET (PR 3.3a) so an audit row never reads as "405 verified" via HEAD-rejection inference. Classification works on the final post-fallback status; `405` post-fallback → `NEEDS_MANUAL_REVIEW`.
 - writes one `DataVerification` row per attempt (`method = "CRON"`, `verifiedBy = "system:cron-verify-listings"`, `targetType = "listing"`)
 - updates `lastVerificationAttemptAt` on every attempt
 - sets `lastVerifiedAt` **only** on `VERIFIED`
