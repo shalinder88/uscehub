@@ -5,6 +5,7 @@ import { Stethoscope, ArrowRight } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { SPECIALTIES, US_STATES, LISTING_TYPE_LABELS } from "@/lib/utils";
 import { ListingCard } from "@/components/listings/listing-card";
+import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -232,6 +233,7 @@ export default async function SpecialtyPage({
         )}
 
         {/* Listings grid */}
+        {listings.length > 0 && <ListingDisclaimer className="mb-5" />}
         {listings.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {listings.map((listing) => (
