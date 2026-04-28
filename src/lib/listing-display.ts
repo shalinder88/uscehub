@@ -31,16 +31,52 @@ export type ListingDisplayInput = ListingCtaInput;
  * ListingVerificationStatus used by ListingVerificationBadge and
  * ListingTrustMetadata.
  *
- * Conservative: defaults to "unverified" when the verification field
- * is absent, false, or null. "reverifying" is opt-in only — the DB
- * does not yet expose this field, so the helper supports it for
- * future use (per audit P1-12 / RULES.md, the FellowshipProgram /
- * WaiverJob aspirational models are preserved unmigrated).
+ * Precedence (PR 3.5):
+ *   1. `linkVerificationStatus` enum if present (Phase 3.2 schema field)
+ *   2. legacy `reverifying` flag
+ *   3. legacy `linkVerified` Boolean
+ *   4. fallback "unverified"
+ *
+ * Conservative mapping for the enum:
+ *   VERIFIED              → "verified"
+ *   REVERIFYING           → "reverifying"
+ *   NEEDS_MANUAL_REVIEW
+ *   SOURCE_DEAD
+ *   PROGRAM_CLOSED
+ *   NO_OFFICIAL_SOURCE
+ *   UNKNOWN               → "unverified"
+ *
+ * Source-dead / program-closed / no-official-source are admin-only
+ * states; the public badge variant deliberately does not yet exist
+ * for them. Until a richer badge system lands, surfacing them as
+ * "unverified" keeps the public language honest without inventing
+ * scary banners site-wide (per SEO_PRESERVATION_RULES.md).
  */
 export function listingVerificationStatus(input: {
   linkVerified?: boolean | null;
   reverifying?: boolean | null;
+  linkVerificationStatus?:
+    | "VERIFIED"
+    | "REVERIFYING"
+    | "NEEDS_MANUAL_REVIEW"
+    | "SOURCE_DEAD"
+    | "PROGRAM_CLOSED"
+    | "NO_OFFICIAL_SOURCE"
+    | "UNKNOWN"
+    | null;
 }): ListingVerificationStatus {
+  switch (input.linkVerificationStatus) {
+    case "VERIFIED":
+      return "verified";
+    case "REVERIFYING":
+      return "reverifying";
+    case "NEEDS_MANUAL_REVIEW":
+    case "SOURCE_DEAD":
+    case "PROGRAM_CLOSED":
+    case "NO_OFFICIAL_SOURCE":
+    case "UNKNOWN":
+      return "unverified";
+  }
   if (input.reverifying === true) return "reverifying";
   if (input.linkVerified === true) return "verified";
   return "unverified";
