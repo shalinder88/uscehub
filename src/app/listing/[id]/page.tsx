@@ -472,6 +472,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                     contactEmail: listing.contactEmail,
                     linkVerified: listing.linkVerified,
                     linkVerificationStatus: listing.linkVerificationStatus,
+                    lastVerifiedAt: listing.lastVerifiedAt,
                     listingType: listing.listingType,
                   });
                   const decision = display.cta;
@@ -533,6 +534,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   verificationStatus={listingVerificationStatus({
                     linkVerified: listing.linkVerified,
                     linkVerificationStatus: listing.linkVerificationStatus,
+                    lastVerifiedAt: listing.lastVerifiedAt,
                   })}
                   lastVerifiedAt={listing.lastVerifiedAt}
                 />

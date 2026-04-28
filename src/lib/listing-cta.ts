@@ -42,6 +42,14 @@ export type ListingCtaInput = {
    * everything else → unverified path.
    */
   linkVerificationStatus?: LinkVerificationStatusInput | null;
+  /**
+   * Real verification timestamp from the DB. CTA decisions don't read this,
+   * but it's part of the shared `ListingDisplayInput` so downstream
+   * verification-status mapping (PR 3.5a) can distinguish "verified" from
+   * "verified-on-file" rows. Keeping it on the same input type avoids
+   * call-site boilerplate.
+   */
+  lastVerifiedAt?: Date | string | null;
   /** Listing.listingType from Prisma. Research listings use a softer CTA. */
   listingType?: string | null;
 };

@@ -86,6 +86,12 @@ export function ListingTrustMetadata({
 
       {verificationStatus === "reverifying" && <ListingReverificationNotice />}
 
+      {verificationStatus === "needs-review" && (
+        <p className="text-xs text-amber-700 dark:text-amber-300">
+          Source needs review — verify directly with the institution before applying.
+        </p>
+      )}
+
       {showReportLink && (
         <div className="flex flex-wrap items-center gap-3">
           <ReportBrokenLinkButton listingId={listingId} sourceUrl={sourceUrl} />
