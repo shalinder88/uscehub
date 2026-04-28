@@ -435,7 +435,9 @@ Lock execution order. Each phase only begins when the previous is complete.
 - no clutter
 
 ### Phase 3
-- conversion architecture
+**Phase 3 begins with the data quality and verification engine. Conversion architecture follows once verification fields, admin review, and analytics primitives exist.** See [PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md](PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md) for the execution-ready 6-PR sequence (analytics → schema → cron → admin queue → real verification UI → conversion hooks).
+
+Conversion architecture (deferred, not abandoned, ships as PR 3.6 onward):
 - lead magnets
 - saved programs
 - compare programs
