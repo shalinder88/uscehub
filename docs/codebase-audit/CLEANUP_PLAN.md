@@ -6,6 +6,8 @@ Staged sequence. The principle: each PR ships an architectural primitive that se
 
 > **Strategic guardrail.** Future product architecture and messaging are governed by [USCEHUB_MASTER_BLUEPRINT.md](USCEHUB_MASTER_BLUEPRINT.md). Cleanup PRs must **not** implement fellowship, nav redesign, monetization, or community features until the planned phase. Phase 0 remains codebase stabilization. Documentation of a future phase in the blueprint is **not** authorization to implement that phase.
 
+> **Prisma migration baseline (Phase 3.2 prerequisite).** Before Phase 3.2 schema fields can land, Prisma migration history must be baselined because the repo previously had no `prisma/migrations/` directory. The baseline migration must **not** be applied directly to the existing production database; it must be marked already-applied via `prisma migrate resolve --applied <baseline_folder>` first. See [docs/database/PRISMA_MIGRATION_BASELINE.md](../database/PRISMA_MIGRATION_BASELINE.md).
+
 The hardest constraint: **the dirty work I stashed (jobs expansion + search refactor + employer-urls.ts) needs to be unstashed and shipped on its own branch in parallel**, without colliding with these PRs. PR1 below is deliberately scoped to surfaces the stash does not touch.
 
 ---
