@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { ShareWidget } from "@/components/layout/share-widget";
 import { TermsGate } from "@/components/legal/terms-gate";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "@/lib/site-config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://uscehub.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     template: "%s — USCEHub",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     "observership, externship, IMG, international medical graduate, USCE, clinical experience, US hospitals, medical observership, residency preparation",
   authors: [{ name: "USCEHub" }],
   alternates: {
-    canonical: "https://uscehub.com",
+    canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
       "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
-    url: "https://uscehub.com",
+    url: SITE_URL,
     images: [
       {
         url: "/og-default.png",
@@ -51,9 +52,18 @@ export const metadata: Metadata = {
       "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],
   },
-  verification: {
-    google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
-  },
+  // Google Search Console verification (audit P1-8):
+  //
+  // INTENTIONALLY ABSENT. A previous placeholder string
+  // "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" never resolved to a real
+  // token and was removed in cleanup PR1. PR6 explicitly documents:
+  // do NOT add a placeholder google-site-verification tag here. Either:
+  //   (a) verify the site via DNS TXT record (preferred — no code change),
+  //   (b) verify via the HTML-file method (upload to /public/),
+  //   (c) only after obtaining a REAL token, re-add
+  //       `verification: { google: "<real-token>" }` to this object.
+  // Anything fake or templated will fail verification and ship a
+  // misleading meta tag to the public.
   robots: {
     index: true,
     follow: true,
@@ -94,10 +104,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "USCEHub",
-              url: "https://www.uscehub.com",
+              url: SITE_URL,
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://www.uscehub.com/browse?q={search_term_string}",
+                target: `${SITE_URL}/browse?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),
@@ -110,7 +120,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "USCEHub",
-              url: "https://www.uscehub.com",
+              url: SITE_URL,
               email: "contact@uscehub.com",
               description:
                 "Directory of clinical observership, externship, research, and postdoctoral opportunities for international medical graduates in the United States.",

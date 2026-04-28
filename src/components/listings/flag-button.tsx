@@ -73,7 +73,7 @@ export function FlagButton({ listingId }: Props) {
       <form onSubmit={submit} className="w-full max-w-md rounded-lg bg-white dark:bg-slate-900 p-5 shadow-xl">
         <h3 className="text-base font-semibold text-slate-900 dark:text-slate-50">Report an issue with this listing</h3>
         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-          Tell admin what's wrong. They review every report.
+          Tell admin what&apos;s wrong. They review every report.
         </p>
 
         <div className="mt-4">

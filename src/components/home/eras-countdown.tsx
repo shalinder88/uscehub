@@ -27,6 +27,14 @@ export function ErasCountdown() {
   const [info, setInfo] = useState<{ open: boolean; days?: number; matchYear: number } | null>(null);
 
   useEffect(() => {
+    // Client-only time-based seed AFTER hydration. Lazy init would
+    // depend on Date.now() at render time, producing slightly different
+    // values server vs client and risking hydration mismatch. The
+    // current pattern renders nothing on the server (per the `if (!info)
+    // return null` guard) and computes the countdown on mount. React 19
+    // flags setState-in-effect as a cascading-render risk, but this is
+    // the documented client-only-after-mount pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setInfo(getErasInfo());
   }, []);
 

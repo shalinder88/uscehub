@@ -1,5 +1,21 @@
 "use client";
 
+/**
+ * VerificationBadge — PRESERVE for compatibility. Candidate for later review;
+ * do not delete now (per docs/codebase-audit/RULES.md hard protection rules).
+ *
+ * No active consumer was found for this component in src/app, but it
+ * documents a richer source-type taxonomy (official / community /
+ * self_reported / disputed / outdated) than the new ListingVerificationBadge
+ * (verified / unverified / reverifying). The mappings are not 1:1, so the
+ * file is preserved unchanged until a deliberate consolidation pass that
+ * picks one taxonomy.
+ *
+ * New listing-trust UI should reach for:
+ *   - src/components/listings/listing-trust-metadata.tsx  (full block)
+ *   - src/components/listings/listing-verification-badge.tsx (badge only)
+ */
+
 import { CheckCircle, Users, AlertTriangle, AlertOctagon, Clock, Flag } from "lucide-react";
 import { useState } from "react";
 

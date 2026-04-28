@@ -34,6 +34,13 @@ export function ActivityFeed() {
   const [fadeIndex, setFadeIndex] = useState(-1);
 
   useEffect(() => {
+    // Client-only random seed AFTER hydration. Lazy init would cause a
+    // mismatch (server returns []; client returns 3 random items). The
+    // current pattern intentionally renders nothing on the server (per
+    // the `if (activities.length === 0) return null` guard) and seeds
+    // on mount. React 19 flags setState-in-effect as a cascading-render
+    // risk, but this is the documented client-only-after-mount pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActivities([generateActivity(), generateActivity(), generateActivity()]);
   }, []);
 

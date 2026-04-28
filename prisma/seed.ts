@@ -1,8 +1,49 @@
 import { PrismaClient } from "@prisma/client";
 import { hash } from "bcryptjs";
+import { randomBytes } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
 import { VERIFIED_LINKS } from "./verified-links";
+import { getSeedAdminCredentials, shouldSeedCreateAdmin } from "../src/lib/env";
+
+// ─────────────────────────────────────────────────────────────────
+// SEED PRESERVATION NOTES — read before running.
+//
+// 1. ADMIN CREATION IS OPT-IN (audit P0-1 + P0-3, fully fixed in cleanup PR6):
+//    Admin user creation is OFF by default. To create an admin during
+//    seed, set BOTH:
+//      SEED_CREATE_ADMIN=1
+//      SEED_ADMIN_EMAIL=<your-email>
+//      SEED_ADMIN_PASSWORD=<long-random-string>
+//
+//    When SEED_CREATE_ADMIN is unset (or != "1"), the admin block is
+//    skipped and a log line announces it. The systemPoster account
+//    (used to own seed-created listings) gets its own throwaway
+//    random password every run — nobody logs in as it externally.
+//
+//    The previously hardcoded admin password literal has been removed
+//    from source — see docs/codebase-audit/TECH_DEBT_REGISTER.md P0-1
+//    and P0-3 for the historical context. NEVER reintroduce a
+//    hardcoded password and NEVER make admin creation the default.
+//
+// 2. SIBLING-REPO DEPENDENCY (audit P0-2, NOT fixed here):
+//    `parsePrograms()` below reads from
+//      ../../usmle-observerships/data.js
+//    which is a sibling repository on the local filesystem. This
+//    means seed will FAIL in CI / fresh clones / Vercel — no warning,
+//    just a "Could not parse PROGRAMS from data.js" error.
+//
+//    Cleanup PR3 deliberately does NOT fix this; the proper fix is
+//    to copy the source data into this repo (e.g. into
+//    `prisma/seed-data/observerships-bootstrap.json`) so seed is
+//    self-contained, but that is a data-handling decision the user
+//    must approve. Per docs/codebase-audit/RULES.md the sibling repo
+//    is preserved and not touched here.
+//
+//    Future PR: move the data, drop the path.resolve, delete the
+//    Function-eval shim. Until then: seed only works on shelly's
+//    local machine where the sibling repo is checked out.
+// ─────────────────────────────────────────────────────────────────
 
 const prisma = new PrismaClient();
 
@@ -107,25 +148,38 @@ async function main() {
 
   console.log("Cleared existing data.");
 
-  const passwordHash = await hash("admin2026", 12);
+  // 1. Create admin user (OPT-IN, see header preservation note).
+  if (shouldSeedCreateAdmin()) {
+    // Throws MissingEnvError BEFORE any DB write if env vars unset.
+    const seedAdmin = getSeedAdminCredentials();
+    const adminHash = await hash(seedAdmin.password, 12);
+    const admin = await prisma.user.create({
+      data: {
+        email: seedAdmin.email,
+        password: adminHash,
+        name: "Platform Admin",
+        role: "ADMIN",
+        emailVerified: true,
+      },
+    });
+    // Do NOT log the password — only the email.
+    console.log("Created admin user:", admin.email);
+  } else {
+    console.log(
+      "Skipped admin user creation (SEED_CREATE_ADMIN != '1'). " +
+        "Set SEED_CREATE_ADMIN=1 with SEED_ADMIN_EMAIL and SEED_ADMIN_PASSWORD to enable.",
+    );
+  }
 
-  // 1. Create admin user
-  const admin = await prisma.user.create({
-    data: {
-      email: "admin@uscehub.com",
-      password: passwordHash,
-      name: "Platform Admin",
-      role: "ADMIN",
-      emailVerified: true,
-    },
-  });
-  console.log("Created admin user:", admin.email);
-
-  // 2. Create system poster (for seed listings — no fake people)
+  // 2. Create system poster (for seed listings — no fake people).
+  // Uses an ephemeral random password every run — nobody logs in as
+  // the system account externally; this keeps systemPoster decoupled
+  // from the admin opt-in flag.
+  const systemPasswordHash = await hash(randomBytes(32).toString("base64url"), 12);
   const systemPoster = await prisma.user.create({
     data: {
       email: "system@uscehub.com",
-      password: passwordHash,
+      password: systemPasswordHash,
       name: "USCEHub System",
       role: "POSTER",
       emailVerified: true,
@@ -166,7 +220,7 @@ async function main() {
   const posterId = systemPoster.id;
   const orgId = systemOrg.id;
 
-  let listingIds: string[] = [];
+  const listingIds: string[] = [];
 
   let skipped = 0;
   for (let i = 0; i < programs.length; i++) {

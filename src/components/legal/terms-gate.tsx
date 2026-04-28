@@ -12,9 +12,15 @@ export function TermsGate() {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
+    // SSR-safe localStorage hydration. Server renders null (status==
+    // "loading"), client renders null in every initial state ("loading",
+    // "accepted", "waiting"), so no hydration mismatch is possible.
+    // React 19 flags setState-in-effect as a cascading-render risk,
+    // but this is the documented hydration pattern (audit P1-13).
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored === TERMS_VERSION) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setStatus("accepted");
         return;
       }
@@ -23,6 +29,7 @@ export function TermsGate() {
     }
 
     // Not yet accepted — wait 60 seconds then show
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStatus("waiting");
     const timer = setTimeout(() => {
       setStatus("show");

@@ -286,10 +286,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    // /career is intentionally listed once here; the duplicate entry that
+    // previously appeared further down was removed during cleanup PR1
+    // (audit P1-6). The /career route itself is preserved per
+    // docs/codebase-audit/RULES.md.
     {
       url: `${baseUrl}/career`,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
@@ -340,12 +344,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/career`,
-      lastModified: new Date(),
-      changeFrequency: "daily" as const,
-      priority: 0.9,
-    },
+    // (Duplicate /career entry that lived here was removed in cleanup
+    // PR1 per audit P1-6. The canonical /career entry is above, near
+    // /career/waiver. The /career route itself is preserved.)
     {
       url: `${baseUrl}/career/sponsors`,
       lastModified: new Date(),

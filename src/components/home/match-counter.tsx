@@ -29,6 +29,13 @@ export function MatchCounter() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
+    // Client-only localStorage seed AFTER hydration. Server renders
+    // totalCount=BASE_COUNT (no submissions); client first render
+    // matches; then this effect adds locally-stored submissions to the
+    // count. Lazy init would diverge between server and client. React
+    // 19 flags setState-in-effect as a cascading-render risk, but this
+    // is the documented client-only-after-mount pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSubmissions(getSubmissions());
   }, []);
 

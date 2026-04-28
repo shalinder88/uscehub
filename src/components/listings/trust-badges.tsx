@@ -1,3 +1,21 @@
+/**
+ * TrustBadges — PRESERVE for compatibility. Candidate for later review;
+ * do not delete now (per docs/codebase-audit/RULES.md hard protection rules).
+ *
+ * Currently imported by src/app/listing/[id]/page.tsx to render four
+ * boolean trust pills (admin-reviewed / verified-poster / institutional
+ * email / NPI-verified). The shape is intentionally different from the
+ * new ListingTrustMetadata, which is source-link verification metadata
+ * driven by a single status. The two components are complementary, not
+ * redundant — TrustBadges describes the POSTER, ListingTrustMetadata
+ * describes the SOURCE LINK.
+ *
+ * New listing-trust UI for SOURCE LINKS should reach for:
+ *   - src/components/listings/listing-trust-metadata.tsx  (full block)
+ *   - src/components/listings/listing-verification-badge.tsx (badge only)
+ *
+ * For future poster-trust changes, this component is still the right home.
+ */
 import { ShieldCheck, BadgeCheck, Mail, Star } from "lucide-react";
 
 interface TrustBadgesProps {

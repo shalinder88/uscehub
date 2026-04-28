@@ -70,7 +70,7 @@ export default function ContactAdminPage() {
     <div className="mx-auto max-w-2xl p-6">
       <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">Contact Admin</h1>
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-        Send a private message to USCEHub's administrator. Use this for feedback,
+        Send a private message to USCEHub&apos;s administrator. Use this for feedback,
         grievances, data corrections, or anything you want us to know.
       </p>
 

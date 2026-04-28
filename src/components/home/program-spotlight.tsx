@@ -19,7 +19,14 @@ export async function ProgramSpotlight() {
 
   if (verifiedListings.length === 0) return null;
 
-  // Pick a pseudo-random listing based on the day
+  // Pick a pseudo-random listing based on the day. Date.now() is impure
+  // by React-19 standards (react-hooks/purity) — but daily-rotation IS
+  // the intended product behavior on this server component, and the
+  // alternative (unstable_cache with revalidate: 86400) would change
+  // SSR caching semantics for the surrounding listing fetch. Keeping
+  // the call here and suppressing locally; future refactor candidate
+  // if the SEO phase moves this off SSR.
+  // eslint-disable-next-line react-hooks/purity
   const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
   const listing = verifiedListings[dayIndex % verifiedListings.length];
 

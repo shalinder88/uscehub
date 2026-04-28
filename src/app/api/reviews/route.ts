@@ -3,6 +3,8 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { sendAdminNotification } from "@/lib/email";
+import { getSiteUrlFromEnv } from "@/lib/env";
+import { SITE_URL } from "@/lib/site-config";
 
 export async function GET(request: NextRequest) {
   try {
@@ -135,7 +137,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Fire-and-forget admin notification
-    const baseUrl = process.env.NEXTAUTH_URL || "https://uscehub.com";
+    const baseUrl = getSiteUrlFromEnv(SITE_URL);
     sendAdminNotification({
       kind: "review",
       subjectLine: `New review pending: ${listing.title}`,

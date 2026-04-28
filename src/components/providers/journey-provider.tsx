@@ -24,17 +24,29 @@ export function JourneyProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // SSR-safe localStorage hydration. Initial state matches server
+    // ("medical_graduate", isFirstVisit=false, mounted=false) and the
+    // component renders <>{children}</> until mounted, so there's no
+    // hydration mismatch. React 19 flags setState-in-effect as a
+    // cascading-render risk, but this is the documented hydration
+    // pattern (audit P1-13). Refactoring to useSyncExternalStore would
+    // change behavior and is deferred per RULES.md cleanup-PR safety.
     try {
       const stored = localStorage.getItem(JOURNEY_STORAGE_KEY);
       if (stored && (stored === "medical_graduate" || stored === "resident" || stored === "attending")) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPhaseState(stored as JourneyPhase);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsFirstVisit(false);
       } else {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsFirstVisit(true);
       }
     } catch {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsFirstVisit(true);
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 

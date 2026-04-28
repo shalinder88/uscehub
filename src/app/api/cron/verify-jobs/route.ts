@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { WAIVER_JOBS } from "@/lib/waiver-jobs-data";
+import { getCronSecret } from "@/lib/env";
 
 const TIMEOUT_MS = 10000;
 const USER_AGENT = "USCEHub-JobVerifier/1.0 (uscehub.com; job verification bot)";
@@ -7,22 +8,47 @@ const USER_AGENT = "USCEHub-JobVerifier/1.0 (uscehub.com; job verification bot)"
 /**
  * Vercel Cron Job: Verify J-1 Waiver Job Listings
  *
- * Runs 3x daily at 8am, 2pm, 10pm UTC.
+ * Runs **once daily at 8am UTC** (per vercel.json's "0 8 * * *" schedule).
  * Checks every job's sourceUrl to ensure it's still live.
  * Flags expired jobs for removal.
  *
- * Configure in vercel.json:
- * { "crons": [{ "path": "/api/cron/verify-jobs", "schedule": "0 8,14,22 * * *" }] }
+ * The actual schedule is in vercel.json:
+ *   { "crons": [{ "path": "/api/cron/verify-jobs", "schedule": "0 8 * * *" }] }
+ *
+ * (Audit P1-9, fixed in cleanup PR6: this docstring previously claimed
+ * "3x daily at 8am, 2pm, 10pm UTC" with the example schedule
+ * "0 8,14,22 * * *", which did not match the actual single-run config.
+ * Increasing cron frequency is an ops decision; the comment was
+ * corrected to match the configured schedule.)
+ *
+ * Auth: in production, CRON_SECRET is REQUIRED. The previous code
+ * compared against `Bearer ${process.env.CRON_SECRET}` which silently
+ * resolved to `Bearer undefined` if the env was missing — meaning an
+ * attacker could bypass auth by sending exactly that string. The
+ * env helper now throws `MissingEnvError` in production if the secret
+ * is unset, and the bearer comparison below is empty-string safe.
  */
 export async function GET(request: Request) {
-  // Verify this is a legitimate cron request (Vercel adds this header)
+  // Verify this is a legitimate cron request (Vercel adds this header).
+  // In production, getCronSecret() throws MissingEnvError if CRON_SECRET
+  // is unset — that is INTENTIONAL: the route should refuse to serve
+  // until the secret is configured. In development, secret may be undefined.
+  const expectedSecret = getCronSecret();
   const authHeader = request.headers.get("authorization");
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    // In development, allow without auth
-    if (process.env.NODE_ENV === "production") {
+
+  if (process.env.NODE_ENV === "production") {
+    // expectedSecret is non-empty here (getCronSecret throws otherwise).
+    if (authHeader !== `Bearer ${expectedSecret}`) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+  } else if (expectedSecret) {
+    // Dev with a configured secret — still validate, so local cron
+    // testing matches prod behavior.
+    if (authHeader !== `Bearer ${expectedSecret}`) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
   }
+  // Dev with no secret configured: allow through for local testing.
 
   const results = {
     timestamp: new Date().toISOString(),

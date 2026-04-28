@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
 import { TrustBadges } from "@/components/listings/trust-badges";
+import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 import { ShareButtons } from "@/components/listings/share-buttons";
 import { ReviewForm } from "@/components/listings/review-form";
 import { FlagButton } from "@/components/listings/flag-button";
+import { listingDisplay } from "@/lib/listing-display";
 import {
   MapPin,
   Clock,
@@ -198,6 +200,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <ListingDisclaimer className="mb-6" />
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
             {/* Only show trust badges for real posters, not system-seeded listings */}
@@ -457,48 +460,61 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
                 <Separator className="my-4" />
 
-                {listing.websiteUrl ? (
-                  <>
-                    <a
-                      href={listing.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <Button className="w-full" size="lg">
-                        {listing.listingType === "RESEARCH" ? "Learn More" : listing.linkVerified ? "Apply Now" : "Visit Website"}
-                        <ExternalLink className="ml-1 h-4 w-4" />
+                {(() => {
+                  // CTA + verification status are normalized through
+                  // src/lib/listing-display.ts (which composes
+                  // src/lib/listing-cta.ts). Conservative defaults: only
+                  // "Apply Now" when admin-verified, otherwise
+                  // "View Official Source". See audit P1-5.
+                  const display = listingDisplay({
+                    websiteUrl: listing.websiteUrl,
+                    contactEmail: listing.contactEmail,
+                    linkVerified: listing.linkVerified,
+                    listingType: listing.listingType,
+                  });
+                  const decision = display.cta;
+                  const caption = display.ctaCaption;
+                  const captionClass =
+                    decision.variant === "verified"
+                      ? "mt-2 text-center text-xs text-emerald-600 dark:text-emerald-400"
+                      : decision.variant === "official-source"
+                      ? "mt-2 text-center text-xs text-amber-700 dark:text-amber-400"
+                      : "mt-2 text-center text-xs text-slate-500 dark:text-slate-400";
+
+                  if (decision.href) {
+                    const linkProps = decision.external
+                      ? { target: "_blank", rel: "noopener noreferrer" as const }
+                      : {};
+                    return (
+                      <>
+                        <a href={decision.href} {...linkProps} className="block">
+                          <Button className="w-full" size="lg">
+                            {decision.variant === "contact" && (
+                              <Mail className="mr-1 h-4 w-4" />
+                            )}
+                            {decision.label}
+                            {decision.external && (
+                              <ExternalLink className="ml-1 h-4 w-4" />
+                            )}
+                          </Button>
+                        </a>
+                        {caption && <p className={captionClass}>{caption}</p>}
+                      </>
+                    );
+                  }
+
+                  // No href: missing-source or reverifying. Show disabled-style
+                  // button so the CTA card layout stays intact but the user
+                  // doesn't get a misleading "Apply" affordance.
+                  return (
+                    <>
+                      <Button className="w-full" size="lg" disabled>
+                        {decision.label}
                       </Button>
-                    </a>
-                    {listing.listingType === "RESEARCH" ? (
-                      <p className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
-                        Research positions are typically found by cold-emailing faculty PIs directly. This link goes to the institution&apos;s postdoc page.
-                      </p>
-                    ) : listing.linkVerified ? (
-                      <p className="mt-2 text-center text-xs text-green-600 flex items-center justify-center gap-1">
-                        <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                        Verified program link
-                      </p>
-                    ) : (
-                      <div className="mt-2 text-center">
-                        <p className="text-xs text-amber-600">
-                          ⚠ Unverified — listed based on history of accepting observers. Availability may have changed. Contact institution directly.
-                        </p>
-                      </div>
-                    )}
-                  </>
-                ) : listing.contactEmail ? (
-                  <a href={`mailto:${listing.contactEmail}`}>
-                    <Button className="w-full" size="lg">
-                      <Mail className="mr-1 h-4 w-4" />
-                      Contact to Apply
-                    </Button>
-                  </a>
-                ) : (
-                  <Button className="w-full" size="lg">
-                    Apply Through Platform
-                  </Button>
-                )}
+                      {caption && <p className={captionClass}>{caption}</p>}
+                    </>
+                  );
+                })()}
 
                 {listing.contactEmail && (
                   <p className="mt-3 text-center text-xs text-slate-400">

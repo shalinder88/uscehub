@@ -43,7 +43,7 @@ export default function MethodologyPage() {
               <li><strong className="text-slate-800 dark:text-slate-200">Postdoctoral Fellowship</strong> — A postdoctoral research or clinical research fellowship at an academic medical center.</li>
             </ul>
             <p className="mt-3">
-              We do not list programs that lack verifiable institutional backing, programs that are exclusively marketed as paid "packages" with no institutional affiliation, or programs from individuals without verifiable credentials.
+              We do not list programs that lack verifiable institutional backing, programs that are exclusively marketed as paid &ldquo;packages&rdquo; with no institutional affiliation, or programs from individuals without verifiable credentials.
             </p>
           </section>
 
@@ -64,7 +64,7 @@ export default function MethodologyPage() {
           {/* What verified means */}
           <section>
             <h2 className="text-base font-bold text-slate-900 dark:text-white mb-3">
-              What "Verified" Means
+              What &ldquo;Verified&rdquo; Means
             </h2>
             <p>A listing marked as <strong className="text-emerald-600 dark:text-emerald-400">Verified</strong> means:</p>
             <ul className="mt-3 ml-4 list-disc space-y-1.5">

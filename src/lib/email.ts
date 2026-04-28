@@ -1,17 +1,20 @@
 import { Resend } from "resend";
+import { getResendConfig, getSiteUrlFromEnv } from "@/lib/env";
+import { SITE_URL } from "@/lib/site-config";
 
 // ---------------------------------------------------------------------------
 // Resend transactional email — reads from server-side env only.
 // NOTIFY_TO (recipient) is NEVER exposed to the client or to public responses.
+// All env reads now flow through src/lib/env.ts (cleanup PR3).
 // ---------------------------------------------------------------------------
 
 let cachedClient: Resend | null = null;
 
 function getClient(): Resend | null {
   if (cachedClient) return cachedClient;
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return null;
-  cachedClient = new Resend(key);
+  const { apiKey } = getResendConfig();
+  if (!apiKey) return null;
+  cachedClient = new Resend(apiKey);
   return cachedClient;
 }
 
@@ -29,17 +32,14 @@ export async function sendListingNotification(
   payload: ListingNotificationPayload
 ): Promise<void> {
   const client = getClient();
-  const to = process.env.NOTIFY_TO;
-  // Default to Resend's built-in test domain so setup works before the user
-  // has verified their own domain. Swap to noreply@uscehub.com after DNS.
-  const from = process.env.RESEND_FROM || "USCEHub <onboarding@resend.dev>";
+  const { from, notifyTo: to } = getResendConfig();
 
   if (!client || !to) {
     console.warn("[email] Resend not configured; skipping listing notification");
     return;
   }
 
-  const baseUrl = process.env.NEXTAUTH_URL || "https://uscehub.com";
+  const baseUrl = getSiteUrlFromEnv(SITE_URL);
   const reviewUrl = `${baseUrl}/admin/listings`;
 
   const subject = `[USCEHub] New listing pending review: ${payload.title}`;
@@ -103,8 +103,7 @@ export async function sendAdminNotification(
   p: AdminNotificationPayload
 ): Promise<void> {
   const client = getClient();
-  const to = process.env.NOTIFY_TO;
-  const from = process.env.RESEND_FROM || "USCEHub <onboarding@resend.dev>";
+  const { from, notifyTo: to } = getResendConfig();
 
   if (!client || !to) {
     console.warn(`[email] Resend not configured; skipping ${p.kind} notification`);

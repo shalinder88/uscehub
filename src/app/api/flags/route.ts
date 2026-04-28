@@ -3,6 +3,8 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 import { sendAdminNotification } from "@/lib/email";
+import { getSiteUrlFromEnv } from "@/lib/env";
+import { SITE_URL } from "@/lib/site-config";
 
 export async function POST(request: NextRequest) {
   try {
@@ -48,7 +50,7 @@ export async function POST(request: NextRequest) {
       if (listing) targetLabel = `${listing.title} (${listing.city}, ${listing.state})`;
     }
 
-    const baseUrl = process.env.NEXTAUTH_URL || "https://uscehub.com";
+    const baseUrl = getSiteUrlFromEnv(SITE_URL);
     sendAdminNotification({
       kind: "flag",
       subjectLine: `New flag on ${type}: ${targetLabel.slice(0, 60)}`,

@@ -1,3 +1,17 @@
+/**
+ * VerifiedBadge — PRESERVE for compatibility. Candidate for later review;
+ * do not delete now (per docs/codebase-audit/RULES.md hard protection rules).
+ *
+ * Currently imported by ~17 pages, most inside the protected /career and
+ * /residency areas. New listing-trust UI should reach for:
+ *   - src/components/listings/listing-trust-metadata.tsx  (full block)
+ *   - src/components/listings/listing-verification-badge.tsx (badge only)
+ *
+ * Migrating the existing call sites away from VerifiedBadge is out of scope
+ * for cleanup PR2; touching /career pages requires explicit user approval.
+ * This component remains the canonical "Last verified: <date>" pill until
+ * a coordinated follow-up migration ships.
+ */
 import { ShieldCheck } from "lucide-react";
 
 interface VerifiedBadgeProps {

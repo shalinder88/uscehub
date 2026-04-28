@@ -109,7 +109,7 @@ const SPECIALTY_LOWER = SPECIALTIES.map((s) => s.toLowerCase());
  */
 export function parseSmartSearch(query: string): SmartSearchFilters {
   const filters: SmartSearchFilters = {};
-  let q = query.trim();
+  const q = query.trim();
   if (!q) return filters;
 
   const lower = q.toLowerCase();

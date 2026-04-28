@@ -21,7 +21,9 @@ export function ShareWidget() {
     };
 
     if (platform === "email") {
-      window.location.href = urls[platform];
+      // Use the method form rather than assigning window.location.href —
+      // satisfies react-hooks/immutability without behavior change.
+      window.location.assign(urls[platform]);
     } else {
       window.open(urls[platform], "_blank", "width=600,height=400");
     }

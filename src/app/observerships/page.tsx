@@ -4,19 +4,20 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { US_STATES } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { SITE_METRICS } from "@/lib/site-metrics";
+import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Observerships by State — 37 States & DC",
-  description:
-    "Find clinical observerships, externships, and research opportunities for IMGs across 37 US states and DC. Browse programs by state to find opportunities near you.",
+  title: `Observerships by State — ${SITE_METRICS.statesCovered} States & DC`,
+  description: `Find clinical observerships, externships, and research opportunities for IMGs across ${SITE_METRICS.statesCovered} US states and DC. Browse programs by state to find opportunities near you.`,
   alternates: {
-    canonical: "https://uscehub.com/observerships",
+    canonical: siteUrl("/observerships"),
   },
   openGraph: {
     title: "Observerships by State — USCEHub",
     description:
       "Browse IMG clinical experience opportunities in all 50 US states. Find observerships, externships, and research programs near you.",
-    url: "https://uscehub.com/observerships",
+    url: siteUrl("/observerships"),
   },
 };
 
