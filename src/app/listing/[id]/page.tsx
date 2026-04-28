@@ -8,10 +8,11 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar } from "@/components/ui/avatar";
 import { TrustBadges } from "@/components/listings/trust-badges";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
+import { ListingTrustMetadata } from "@/components/listings/listing-trust-metadata";
 import { ShareButtons } from "@/components/listings/share-buttons";
 import { ReviewForm } from "@/components/listings/review-form";
 import { FlagButton } from "@/components/listings/flag-button";
-import { listingDisplay } from "@/lib/listing-display";
+import { listingDisplay, listingVerificationStatus } from "@/lib/listing-display";
 import {
   MapPin,
   Clock,
@@ -515,6 +516,23 @@ export default async function ListingPage({ params }: ListingPageProps) {
                     </>
                   );
                 })()}
+
+                {/*
+                 * Source-link trust metadata — verification badge + report-broken-link affordance.
+                 * Complementary to <TrustBadges> above (which describes the POSTER, not the source link).
+                 * No `lastVerified` is passed — the DB does not yet expose an admin-confirmed last-verified
+                 * timestamp, and per docs/codebase-audit/RULES.md we do not display fake/inferred dates.
+                 * The existing <FlagButton> at the bottom of the page remains for generic "report any issue"
+                 * reports; this report-broken-link affordance is link-specific and lives next to the CTA.
+                 */}
+                <ListingTrustMetadata
+                  className="mt-4"
+                  listingId={listing.id}
+                  sourceUrl={listing.websiteUrl}
+                  verificationStatus={listingVerificationStatus({
+                    linkVerified: listing.linkVerified,
+                  })}
+                />
 
                 {listing.contactEmail && (
                   <p className="mt-3 text-center text-xs text-slate-400">
