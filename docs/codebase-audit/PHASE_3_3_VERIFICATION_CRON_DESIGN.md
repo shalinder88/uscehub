@@ -62,7 +62,9 @@ avoids ambiguity over which URL "speaks for" the listing's status.
 
 Pure function: HTTP response → `(linkVerificationStatus, verificationFailureReason)`.
 
-| Outcome from HEAD request | Set `linkVerificationStatus` to | Set `verificationFailureReason` to | `lastVerifiedAt` | Notes |
+The route-level `probeUrl` performs a one-shot **HEAD→GET fallback when HEAD returns 405** (PR 3.3a). The outcomes in this table are the **final** HTTP outcomes after that fallback, not the raw HEAD outcome. A `405` row in the table therefore corresponds to "GET also returned 405", not "HEAD returned 405".
+
+| Outcome from probe (final, post-fallback) | Set `linkVerificationStatus` to | Set `verificationFailureReason` to | `lastVerifiedAt` | Notes |
 |---|---|---|---|---|
 | 200–299 | `VERIFIED` | `null` | `now()` | Live URL. |
 | 300–399 (after `redirect: follow`) | `VERIFIED` | `null` | `now()` | `fetch` follows redirects automatically; final 2xx counts as verified. Final URL recorded in `DataVerification.finalUrl`. |
@@ -70,7 +72,7 @@ Pure function: HTTP response → `(linkVerificationStatus, verificationFailureRe
 | 403 | `NEEDS_MANUAL_REVIEW` | `"http_403_forbidden"` | unchanged | Often bot blocking; could also be a real permission change. Human review. |
 | 404 | `NEEDS_MANUAL_REVIEW` | `"http_404_not_found"` | unchanged | **Not auto-classified as `SOURCE_DEAD`** — single 404 may be a deploy artifact, redirect chain miss, or temporary unpublish. Repeated-failure escalation is a future PR. |
 | 410 | `NEEDS_MANUAL_REVIEW` | `"http_410_gone"` | unchanged | Same conservative handling as 404. |
-| 405 (Method Not Allowed) | `VERIFIED` | `null` | `now()` | Server explicitly rejected HEAD but is alive. Treated as live. |
+| 405 (Method Not Allowed, post-fallback) | `NEEDS_MANUAL_REVIEW` | `"http_4xx_405"` | unchanged | **PR 3.3a:** the probe already retried with GET and that also returned 405. Genuinely unusual — surface to human queue. The previous "405 → VERIFIED on HEAD-rejection inference" was rolled back so the audit row never reads as "405 verified." |
 | 408 / abort | `REVERIFYING` | `"timeout_10s"` | unchanged | Tries again next day. |
 | 5xx | `REVERIFYING` | `"http_5xx_<status>"` | unchanged | Server-side flake; tries again next day. |
 | Network error / DNS / refused | `REVERIFYING` | `"network_error"` | unchanged | Tries again next day. |
