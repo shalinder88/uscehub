@@ -520,6 +520,22 @@ Explicitly documented:
 
 ---
 
+## Operator reminder
+
+Do not rely on memory alone. Before major implementation prompts, search the current docs for:
+
+- protected `/career` rules — see [RULES.md](RULES.md) §2
+- SEO preservation rules — see [SEO_PRESERVATION_RULES.md](SEO_PRESERVATION_RULES.md)
+- strategic checkpoint cadence — see [/AGENTS.md](../../AGENTS.md)
+- migration / deploy rules — see [/database/PRISMA_MIGRATION_BASELINE.md](../database/PRISMA_MIGRATION_BASELINE.md) and the production-guard build script in `package.json`
+- current phase order — §13 of this document
+
+If the next task is a schema, cron, deploy, SEO, or route change, perform a strategic checkpoint even if it is not the 10th prompt.
+
+The checkpoint cadence and per-prompt agreement rule are defined once in [/AGENTS.md](../../AGENTS.md). Do not redefine them here.
+
+---
+
 ## Cross-references
 
 - [RULES.md](RULES.md) — preservation rules, hard protection list, git safety. **Higher authority than this document.**
