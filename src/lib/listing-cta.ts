@@ -13,6 +13,21 @@
  * Pure function. SSR-safe. No React. No DB calls.
  */
 
+/**
+ * Subset of Prisma's `LinkVerificationStatus` we accept here. Defined as
+ * a string union (not the Prisma type) to keep this module dependency-free
+ * for SSR/edge call sites and to match what serialized Prisma rows look
+ * like over the wire.
+ */
+export type LinkVerificationStatusInput =
+  | "VERIFIED"
+  | "REVERIFYING"
+  | "NEEDS_MANUAL_REVIEW"
+  | "SOURCE_DEAD"
+  | "PROGRAM_CLOSED"
+  | "NO_OFFICIAL_SOURCE"
+  | "UNKNOWN";
+
 export type ListingCtaInput = {
   websiteUrl?: string | null;
   contactEmail?: string | null;
@@ -20,6 +35,21 @@ export type ListingCtaInput = {
   linkVerified?: boolean | null;
   /** Future field — currently the DB doesn't expose this, but the helper supports it for future use. */
   reverifying?: boolean | null;
+  /**
+   * Phase 3.2 verification enum. When present, takes precedence over
+   * `linkVerified` Boolean and `reverifying` flag. Conservative
+   * mapping: VERIFIED → verified path; REVERIFYING → reverifying path;
+   * everything else → unverified path.
+   */
+  linkVerificationStatus?: LinkVerificationStatusInput | null;
+  /**
+   * Real verification timestamp from the DB. CTA decisions don't read this,
+   * but it's part of the shared `ListingDisplayInput` so downstream
+   * verification-status mapping (PR 3.5a) can distinguish "verified" from
+   * "verified-on-file" rows. Keeping it on the same input type avoids
+   * call-site boilerplate.
+   */
+  lastVerifiedAt?: Date | string | null;
   /** Listing.listingType from Prisma. Research listings use a softer CTA. */
   listingType?: string | null;
 };
@@ -56,7 +86,15 @@ export type ListingCtaDecision = {
  *  6. Nothing — "Verify Program Page"
  */
 export function decideListingCta(listing: ListingCtaInput): ListingCtaDecision {
-  if (listing.reverifying === true) {
+  // Phase 3.2 enum takes precedence when present. We map to the existing
+  // behavior paths so this stays back-compat with rows that only have
+  // the legacy `linkVerified` Boolean populated.
+  const enumStatus = listing.linkVerificationStatus ?? null;
+  const isReverifying = listing.reverifying === true || enumStatus === "REVERIFYING";
+  const isEnumVerified = enumStatus === "VERIFIED";
+  const isLegacyVerified = enumStatus == null && listing.linkVerified === true;
+
+  if (isReverifying) {
     return {
       label: "Application link being reverified",
       variant: "reverifying",
@@ -74,7 +112,7 @@ export function decideListingCta(listing: ListingCtaInput): ListingCtaDecision {
     };
   }
 
-  if (listing.websiteUrl && listing.linkVerified === true) {
+  if (listing.websiteUrl && (isEnumVerified || isLegacyVerified)) {
     return {
       label: "Apply Now",
       variant: "verified",

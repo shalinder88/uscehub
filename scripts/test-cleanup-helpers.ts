@@ -178,9 +178,16 @@ section("ctaCaption: variant -> caption");
 // ─── listing-display: verification status mapping ────────────
 section("listing-display: verificationStatus mapping is conservative");
 {
+  // PR 3.5a: legacy linkVerified=true with no audit timestamp must NOT
+  // show as green "verified" — it is "verified-on-file" (URL on file,
+  // no recent verification).
   assert(
-    listingVerificationStatus({ linkVerified: true }) === "verified",
-    "linkVerified=true -> 'verified'",
+    listingVerificationStatus({ linkVerified: true }) === "verified-on-file",
+    "linkVerified=true (no lastVerifiedAt) -> 'verified-on-file' (no overclaim)",
+  );
+  assert(
+    listingVerificationStatus({ linkVerified: true, lastVerifiedAt: new Date() }) === "verified",
+    "linkVerified=true + lastVerifiedAt -> 'verified'",
   );
   assert(
     listingVerificationStatus({ linkVerified: false }) === "unverified",
@@ -204,20 +211,108 @@ section("listing-display: verificationStatus mapping is conservative");
   );
 }
 
+// ─── listing-display: PR 3.5a enum + lastVerifiedAt mapping ──
+section("listing-display: enum + lastVerifiedAt mapping (PR 3.5a)");
+{
+  // VERIFIED enum + real timestamp -> green verified
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "VERIFIED",
+      lastVerifiedAt: new Date(),
+    }) === "verified",
+    "enum=VERIFIED + lastVerifiedAt set -> 'verified' (green)",
+  );
+  // VERIFIED enum + null timestamp -> verified-on-file (the legacy backfill case)
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "VERIFIED",
+      lastVerifiedAt: null,
+    }) === "verified-on-file",
+    "enum=VERIFIED + lastVerifiedAt null -> 'verified-on-file' (no overclaim)",
+  );
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "VERIFIED",
+    }) === "verified-on-file",
+    "enum=VERIFIED + lastVerifiedAt absent -> 'verified-on-file'",
+  );
+  // String date works (Prisma serializes Date as ISO string at the wire)
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "VERIFIED",
+      lastVerifiedAt: "2026-04-28T20:47:39.141Z",
+    }) === "verified",
+    "enum=VERIFIED + lastVerifiedAt as ISO string -> 'verified'",
+  );
+  // NEEDS_MANUAL_REVIEW gets its own stronger amber variant
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "NEEDS_MANUAL_REVIEW",
+    }) === "needs-review",
+    "enum=NEEDS_MANUAL_REVIEW -> 'needs-review' (stronger than 'unverified')",
+  );
+  // REVERIFYING enum
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "REVERIFYING",
+    }) === "reverifying",
+    "enum=REVERIFYING -> 'reverifying'",
+  );
+  // Admin-only states still soft-amber (richer variants deferred)
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "SOURCE_DEAD",
+    }) === "unverified",
+    "enum=SOURCE_DEAD -> 'unverified' (admin-only state, no green)",
+  );
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "PROGRAM_CLOSED",
+    }) === "unverified",
+    "enum=PROGRAM_CLOSED -> 'unverified'",
+  );
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "NO_OFFICIAL_SOURCE",
+    }) === "unverified",
+    "enum=NO_OFFICIAL_SOURCE -> 'unverified'",
+  );
+  assert(
+    listingVerificationStatus({
+      linkVerificationStatus: "UNKNOWN",
+    }) === "unverified",
+    "enum=UNKNOWN -> 'unverified'",
+  );
+}
+
 // ─── listing-display: full normalization composes correctly ─
 section("listing-display: full normalization");
 {
   const display = listingDisplay({
     websiteUrl: "https://example.org/apply",
     linkVerified: true,
+    lastVerifiedAt: new Date(),
     listingType: "OBSERVERSHIP",
   });
   assert(display.cta.label === "Apply Now", "verified -> CTA label 'Apply Now'");
   assert(display.cta.variant === "verified", "verified -> CTA variant 'verified'");
-  assert(display.verificationStatus === "verified", "verified -> verificationStatus 'verified'");
+  assert(display.verificationStatus === "verified", "verified + lastVerifiedAt -> verificationStatus 'verified'");
   assert(
     display.ctaCaption === "Verified program link",
     "verified -> caption 'Verified program link'",
+  );
+
+  // Same listing without an audit timestamp keeps "Apply Now" CTA
+  // (URL is on file) but downgrades the badge to "verified-on-file".
+  const onFile = listingDisplay({
+    websiteUrl: "https://example.org/apply",
+    linkVerified: true,
+    listingType: "OBSERVERSHIP",
+  });
+  assert(onFile.cta.label === "Apply Now", "linkVerified=true without lastVerifiedAt -> CTA still 'Apply Now' (URL on file)");
+  assert(
+    onFile.verificationStatus === "verified-on-file",
+    "linkVerified=true without lastVerifiedAt -> badge 'verified-on-file' (no overclaim)",
   );
 }
 
@@ -258,10 +353,11 @@ section("listing-display: research listings get 'Learn More'");
   const display = listingDisplay({
     websiteUrl: "https://example.org/research",
     linkVerified: true,
+    lastVerifiedAt: new Date(),
     listingType: "RESEARCH",
   });
   assert(display.cta.label === "Learn More", "research -> 'Learn More'");
-  assert(display.verificationStatus === "verified", "research+verified -> verificationStatus 'verified'");
+  assert(display.verificationStatus === "verified", "research+verified+lastVerifiedAt -> verificationStatus 'verified'");
 }
 
 // ─── listing-display: missing source is safe ────────────────

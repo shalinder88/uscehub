@@ -4,6 +4,7 @@ import {
 } from "@/components/listings/listing-verification-badge";
 import { ListingReverificationNotice } from "@/components/listings/listing-reverification-notice";
 import { ReportBrokenLinkButton } from "@/components/listings/report-broken-link-button";
+import { formatRelativeTime } from "@/lib/relative-time";
 
 interface ListingTrustMetadataProps {
   /** Listing primary key — required for the report-broken-link wire. */
@@ -12,8 +13,14 @@ interface ListingTrustMetadataProps {
   sourceUrl?: string | null;
   /** Verification status. Defaults to "unverified" — conservative. */
   verificationStatus?: ListingVerificationStatus;
-  /** Free-form date string ("March 2026") — purely display. */
+  /** Free-form date string ("March 2026") — purely display. Legacy prop; prefer `lastVerifiedAt`. */
   lastVerified?: string | null;
+  /**
+   * Phase 3.5: real verification timestamp from the DB. Rendered as
+   * relative time ("5 days ago") only when status === "verified" — never
+   * fabricates a verification date for unverified or reverifying rows.
+   */
+  lastVerifiedAt?: Date | string | null;
   /**
    * Optional URL where users can suggest an update / corrected source.
    * If omitted, the report-broken-link button still appears.
@@ -40,16 +47,24 @@ export function ListingTrustMetadata({
   sourceUrl,
   verificationStatus = "unverified",
   lastVerified,
+  lastVerifiedAt,
   suggestUpdateUrl,
   showReportLink = true,
   compact = false,
   className = "",
 }: ListingTrustMetadataProps) {
+  // Only show a relative-time line when the listing is actually verified.
+  // Per RULES.md / PHASE3 plan §4 we never render a fake or inferred
+  // verification date.
+  const realRelative =
+    verificationStatus === "verified" ? formatRelativeTime(lastVerifiedAt) : null;
+  const displayLine = realRelative ?? lastVerified ?? null;
+
   if (compact) {
     return (
       <ListingVerificationBadge
         status={verificationStatus}
-        lastVerified={lastVerified}
+        lastVerified={displayLine}
         className={className}
       />
     );
@@ -60,16 +75,22 @@ export function ListingTrustMetadata({
       <div className="flex flex-wrap items-center gap-2">
         <ListingVerificationBadge
           status={verificationStatus}
-          lastVerified={lastVerified}
+          lastVerified={displayLine}
         />
-        {lastVerified && (
+        {displayLine && (
           <span className="text-xs text-slate-500 dark:text-slate-400">
-            Last verified <strong className="font-medium">{lastVerified}</strong>
+            Last verified <strong className="font-medium">{displayLine}</strong>
           </span>
         )}
       </div>
 
       {verificationStatus === "reverifying" && <ListingReverificationNotice />}
+
+      {verificationStatus === "needs-review" && (
+        <p className="text-xs text-amber-700 dark:text-amber-300">
+          Source needs review — verify directly with the institution before applying.
+        </p>
+      )}
 
       {showReportLink && (
         <div className="flex flex-wrap items-center gap-3">

@@ -471,6 +471,8 @@ export default async function ListingPage({ params }: ListingPageProps) {
                     websiteUrl: listing.websiteUrl,
                     contactEmail: listing.contactEmail,
                     linkVerified: listing.linkVerified,
+                    linkVerificationStatus: listing.linkVerificationStatus,
+                    lastVerifiedAt: listing.lastVerifiedAt,
                     listingType: listing.listingType,
                   });
                   const decision = display.cta;
@@ -520,10 +522,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 {/*
                  * Source-link trust metadata — verification badge + report-broken-link affordance.
                  * Complementary to <TrustBadges> above (which describes the POSTER, not the source link).
-                 * No `lastVerified` is passed — the DB does not yet expose an admin-confirmed last-verified
-                 * timestamp, and per docs/codebase-audit/RULES.md we do not display fake/inferred dates.
-                 * The existing <FlagButton> at the bottom of the page remains for generic "report any issue"
-                 * reports; this report-broken-link affordance is link-specific and lives next to the CTA.
+                 * Phase 3.5 wires this to the real `linkVerificationStatus` enum and `lastVerifiedAt`
+                 * timestamp. The component renders a relative-time line ("Last verified 5 days ago")
+                 * only when `verificationStatus === "verified"` AND a real timestamp is present —
+                 * never fakes or infers a date (RULES.md §4 / PHASE3 plan §4).
                  */}
                 <ListingTrustMetadata
                   className="mt-4"
@@ -531,7 +533,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   sourceUrl={listing.websiteUrl}
                   verificationStatus={listingVerificationStatus({
                     linkVerified: listing.linkVerified,
+                    linkVerificationStatus: listing.linkVerificationStatus,
+                    lastVerifiedAt: listing.lastVerifiedAt,
                   })}
+                  lastVerifiedAt={listing.lastVerifiedAt}
                 />
 
                 {listing.contactEmail && (

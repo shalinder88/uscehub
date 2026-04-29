@@ -31,18 +31,72 @@ export type ListingDisplayInput = ListingCtaInput;
  * ListingVerificationStatus used by ListingVerificationBadge and
  * ListingTrustMetadata.
  *
- * Conservative: defaults to "unverified" when the verification field
- * is absent, false, or null. "reverifying" is opt-in only — the DB
- * does not yet expose this field, so the helper supports it for
- * future use (per audit P1-12 / RULES.md, the FellowshipProgram /
- * WaiverJob aspirational models are preserved unmigrated).
+ * Precedence (PR 3.5a):
+ *   1. `linkVerificationStatus` enum if present (Phase 3.2 schema field)
+ *   2. legacy `reverifying` flag
+ *   3. legacy `linkVerified` Boolean
+ *   4. fallback "unverified"
+ *
+ * Conservative mapping for the enum:
+ *   VERIFIED + lastVerifiedAt set    → "verified"          (green; cron or admin verified recently)
+ *   VERIFIED + lastVerifiedAt null   → "verified-on-file"  (slate; URL on file, no audit trail)
+ *   REVERIFYING                      → "reverifying"
+ *   NEEDS_MANUAL_REVIEW              → "needs-review"      (amber stronger; cron 4xx/5xx)
+ *   SOURCE_DEAD
+ *   PROGRAM_CLOSED
+ *   NO_OFFICIAL_SOURCE
+ *   UNKNOWN                          → "unverified"        (amber soft)
+ *
+ * The `verified` vs `verified-on-file` split is the PR 3.5a fix: 136
+ * legacy-backfilled rows on production have linkVerificationStatus =
+ * VERIFIED but lastVerifiedAt = null (they were copied from the legacy
+ * `linkVerified` Boolean during the PR #7 migration; the cron has not
+ * yet probed them). Rendering them as the same green "Verified link"
+ * badge as freshly-cron-verified rows would overclaim. The
+ * "verified-on-file" variant says "URL is on file, we have not
+ * recently checked it" — honest without scary banners.
+ *
+ * Source-dead / program-closed / no-official-source are admin-only
+ * states; richer admin-state badge variants are deferred to a follow-up
+ * PR. Surfacing them as "unverified" keeps the public language honest
+ * without inventing scary banners site-wide (per SEO_PRESERVATION_RULES.md).
  */
 export function listingVerificationStatus(input: {
   linkVerified?: boolean | null;
   reverifying?: boolean | null;
+  linkVerificationStatus?:
+    | "VERIFIED"
+    | "REVERIFYING"
+    | "NEEDS_MANUAL_REVIEW"
+    | "SOURCE_DEAD"
+    | "PROGRAM_CLOSED"
+    | "NO_OFFICIAL_SOURCE"
+    | "UNKNOWN"
+    | null;
+  lastVerifiedAt?: Date | string | null;
 }): ListingVerificationStatus {
+  const hasRealVerifiedAt = input.lastVerifiedAt != null;
+
+  switch (input.linkVerificationStatus) {
+    case "VERIFIED":
+      return hasRealVerifiedAt ? "verified" : "verified-on-file";
+    case "REVERIFYING":
+      return "reverifying";
+    case "NEEDS_MANUAL_REVIEW":
+      return "needs-review";
+    case "SOURCE_DEAD":
+    case "PROGRAM_CLOSED":
+    case "NO_OFFICIAL_SOURCE":
+    case "UNKNOWN":
+      return "unverified";
+  }
+  // Legacy fallback (no enum): be conservative. linkVerified=true
+  // without an audit-trail timestamp still maps to verified-on-file,
+  // never green "verified".
   if (input.reverifying === true) return "reverifying";
-  if (input.linkVerified === true) return "verified";
+  if (input.linkVerified === true) {
+    return hasRealVerifiedAt ? "verified" : "verified-on-file";
+  }
   return "unverified";
 }
 
