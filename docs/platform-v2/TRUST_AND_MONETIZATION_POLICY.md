@@ -1,5 +1,9 @@
 # USCEHub v2 — Trust and Monetization Policy
 
+**Doc status:** Draft recommendation. **13 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).** First-monetization-mode = blocking decision A7. Disclaimer-vs-disclosure naming = blocking decision A8.
+
+> **Revision notice (2026-04-29 audit):** §6 (paid claim flow) proposed building a new `/institutions/claim` flow + new `InstitutionClaim` Prisma model — but **`/poster/*` is a live institutional onboarding flow** with 5 subroutes backed by `PosterProfile` + `Organization` Prisma models + `UserRole.POSTER`. Per [V2_DECISION_REGISTER.md A2](V2_DECISION_REGISTER.md), **decision: extend `/poster/*` rather than replace.** §12 proposed `/disclosure` URL conflicts with existing live `/disclaimer` — per [V2_DECISION_REGISTER.md A8](V2_DECISION_REGISTER.md), **keep both** (different scope: `/disclaimer` general legal, `/disclosure` monetization-state surface).
+
 **Status:** v2 planning doc. Operationalizes [PLATFORM_V2_STRATEGY.md §12 + §15](PLATFORM_V2_STRATEGY.md) into per-monetization-state implementation rules, FTC compliance templates, and ranking/ordering protections.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.

@@ -1,5 +1,9 @@
 # USCEHub v2 — Pre-Launch QA Checklist
 
+**Doc status:** Binding rule (once approved). **5 open decisions in [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** Original checklist missed coverage for several existing surfaces. Added below in §16-§24: auth flow QA, `/poster/*` flow QA, `Application` flow QA, `Review` flow QA, `/community/*` flow QA, deeper `/admin/*` QA beyond verification queue, **verify-jobs cron** QA, `/disclaimer` + `/privacy` + `/terms` "Last updated" freshness, and `/accessibility` page existence (currently missing — must be created before launch per §15).
+
 **Status:** v2 planning doc. Comprehensive QA checklist for before the v2 launch event (PR 31 in [V2_PR_BREAKDOWN.md](V2_PR_BREAKDOWN.md)).
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.
@@ -398,6 +402,77 @@ If any of the above fails: rollback per [PLATFORM_V2_STRATEGY.md §20.3](PLATFOR
 - [ ] On-call window scheduled for first 24 hours
 
 **Launch authorized:** [date / sign-off]
+
+---
+
+## 24a. Existing-surface QA (added per audit)
+
+The following live surfaces must be exercised before launch:
+
+### 24a.1 Auth flow
+
+- [ ] `/auth/signin` works for existing user
+- [ ] `/auth/signup` creates `User` with correct role default
+- [ ] Password reset flow works end-to-end
+- [ ] OAuth providers (if any) work
+- [ ] `UserRole.APPLICANT` / `POSTER` / `ADMIN` redirects work
+- [ ] Session persistence + logout
+
+### 24a.2 `/poster/*` flow
+
+- [ ] Sign in as `POSTER` → land at `/poster`
+- [ ] Create / edit listing via `/poster/listings`
+- [ ] Edit organization profile via `/poster/organization`
+- [ ] Submit verification via `/poster/verification`
+- [ ] View applications via `/poster/applications`
+
+### 24a.3 `Application` flow
+
+- [ ] User submits application from listing detail (if implemented)
+- [ ] Application appears in `/dashboard/applications`
+- [ ] Poster sees application in `/poster/applications`
+- [ ] Status updates flow (per `ApplicationStatus` enum)
+- [ ] **If aspirational only:** verify homepage copy doesn't claim flow works
+
+### 24a.4 `Review` flow
+
+- [ ] User submits review on a listing
+- [ ] Review appears in `/dashboard/reviews`
+- [ ] Review surfaces on listing detail with moderation gate
+- [ ] FTC compliance per [TRUST_AND_MONETIZATION_POLICY.md §4.5](TRUST_AND_MONETIZATION_POLICY.md)
+
+### 24a.5 `/community/*` flow
+
+- [ ] `/community` page loads
+- [ ] `/community/suggest-program` form submits
+- [ ] User submissions appear in admin queue (or wherever they go)
+- [ ] Moderation policy alignment with Master Blueprint §6
+
+### 24a.6 Deeper admin surface
+
+- [ ] `/admin/flags` (flag triage)
+- [ ] `/admin/listings` (listing admin)
+- [ ] `/admin/messages`
+- [ ] `/admin/posters`
+- [ ] `/admin/reviews`
+- [ ] `/admin/users`
+- [ ] `/admin/activity`
+- [ ] `/admin/verification-queue` (PR #12 surface)
+
+### 24a.7 verify-jobs cron
+
+- [ ] Cron health for verify-jobs over ≥4 days clean
+- [ ] No cron-attributed dangerous transitions
+- [ ] Job listings on `/career/jobs/*` reflect verified-jobs cron output
+- [ ] Stale job entries surface in admin queue
+
+### 24a.8 Legal pages freshness
+
+- [ ] `/privacy` "Last updated" within 90 days of launch
+- [ ] `/terms` "Last updated" within 90 days
+- [ ] `/disclaimer` "Last updated" current
+- [ ] `/disclosure` (if created per A8) drafted
+- [ ] `/accessibility` page **created and reviewed** — currently missing
 
 ---
 

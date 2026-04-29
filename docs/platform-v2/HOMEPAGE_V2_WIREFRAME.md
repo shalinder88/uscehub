@@ -1,5 +1,9 @@
 # USCEHub v2 — Homepage Wireframe
 
+**Doc status:** Draft recommendation. **12 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).** Hero framing (B2), primary CTA count (B3), audience-landing count (B1) all in register.
+
+> **Revision notice (2026-04-29 audit):** §6 Tools block did not credit `/tools/cost-calculator` as already-live (per [EXISTING_SURFACE_INVENTORY.md §2.1](EXISTING_SURFACE_INVENTORY.md)). §11 Footer must include `/community`, `/how-it-works`, `/disclaimer`. §12 "Submit your application" softening — the `Application` Prisma model + `/api/applications` + `/dashboard/applications` exist; whether the flow is real-functional or aspirational is **decision A3** (audit first). §8 "Recently Verified" section currently has only ~20 listings with `lastVerifiedAt` set (per cron health) — implementation must fall back to "Recently updated" gracefully or hide the section until coverage grows.
+
 **Status:** v2 planning doc. Defines the v2 homepage layout, hero pitch, primary paths, trust surface, tools surface, audience surface, and copy rules.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md), and [INFORMATION_ARCHITECTURE.md](INFORMATION_ARCHITECTURE.md). Where conflict, those win.
 **Authored:** 2026-04-29.

@@ -1,5 +1,9 @@
 # USCEHub v2 — 35-Day Aggressive Build Plan
 
+**Doc status:** Future idea (aspirational ceiling). **The 10-week realistic version in §12 is now the binding default.** **10 open decisions in [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** Per [V2_PLANNING_AUDIT.md §3.8 / §9.3](V2_PLANNING_AUDIT.md): the 35-day plan is **unrealistic** given (a) PR #30 docs are 6,400+ lines requiring >2 days of user review, (b) cron capacity vs ≥80% Current+Aging threshold is months, (c) Phase 0 audit PRs (per [V2_PR_BREAKDOWN.md](V2_PR_BREAKDOWN.md)) add 7 audit cycles. **The 10-week realistic timeline in §12 is the binding default.** The 35-day plan remains as an aspirational ceiling — if all gates fall faster than expected, can compress; if not (the realistic case), the 10-week version governs. Distribution work explicitly does **not** start within 7 days post-launch — minimum 30-day post-launch soak.
+
 **Status:** v2 planning doc. Aggressive timeline mapped to gates from [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md). Honest about compression risk.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.

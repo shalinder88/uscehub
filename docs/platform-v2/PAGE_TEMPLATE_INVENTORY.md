@@ -1,5 +1,9 @@
 # USCEHub v2 — Page Template Inventory
 
+**Doc status:** Draft recommendation. Status table corrected; **10 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** Per [V2_PLANNING_AUDIT.md](V2_PLANNING_AUDIT.md), §3.3 Fellowship was incorrectly classified "future Phase C+" — `/residency/fellowship` is a **live fellowship database**. §17 Job listing must coordinate with the existing `/career/jobs/*` tree (preserved per [RULES.md](../codebase-audit/RULES.md) §2). §19 Institution profile must reconcile with the existing `/poster/*` flow + `PosterProfile` model (decision A2 in [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md)). Several "Reviews" + "Community" surfaces (existing `Review`, `CommunityPost`, `CommunityComment` models) were not addressed in this doc — see [EXISTING_SURFACE_INVENTORY.md §4.3](EXISTING_SURFACE_INVENTORY.md). Audit conclusion: **add "audit existing implementation before replacing" to every template that overlaps an existing surface.**
+
 **Status:** v2 planning doc. Defines every page template type, its data requirements, trust elements, indexation rule, and depth-before-breadth standards.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md), [INFORMATION_ARCHITECTURE.md](INFORMATION_ARCHITECTURE.md).
 **Authored:** 2026-04-29.
@@ -44,10 +48,10 @@ Every template's "Data requirements" section names the authentic sources allowed
 | Blog post | `/resources/blog/[slug]` | live | yes (approved only) | §14 |
 | Blog index | `/resources/blog`, `/resources/blog/category/[category]` | live | yes (index); category yes if curated | §15 |
 | Methodology / FAQ / IMG resources / glossary | `/resources/methodology`, `/resources/faq`, `/resources/img/*`, `/resources/glossary` | live (partial) | yes | §16 |
-| Job listing | `/jobs/[job-id]` | future (Phase C+) | yes if from authentic source | §17 |
-| Directory entry — attorney | `/institutions/attorneys/[slug]` | future (Phase C+) | yes if curated | §18 |
+| Job listing | `/jobs/[job-id]` (proposed) — **but `/career/jobs/*` is live** with `WaiverJob` model + `verify-jobs` cron | future v2 surface; **existing live behind `/career/jobs/*` per [RULES.md](../codebase-audit/RULES.md) §2** | yes if from authentic source | §17 |
+| Directory entry — attorney | `/institutions/attorneys/[slug]` (proposed) — **but `/career/attorneys` is live** | future (Phase C+); reuse `Lawyer` Prisma model | yes if curated | §18 |
 | Directory entry — recruiter | `/institutions/recruiters/[slug]` | future (Phase C+) | yes if curated | §18 |
-| Institution profile | `/institutions/profile/[slug]` (claimed listings) | future (Phase C+) | yes if claimed | §19 |
+| Institution profile | `/institutions/profile/[slug]` (proposed) — **`/poster/*` flow + `PosterProfile`/`Organization` models live** | **decision A2: extend existing `/poster/*` flow rather than build new** | yes if claimed | §19 |
 | Alert / digest preview | `/tools/alerts/preview/[id]` | live (no-send only) | `noindex, nofollow` | §20 |
 | Search results | `/search?q=*` | future | `noindex, follow` | §21 |
 | Account / dashboard | `/dashboard/*` | live | `noindex, nofollow` | §22 |

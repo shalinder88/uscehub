@@ -1,5 +1,9 @@
 # USCEHub v2 — Indexation and URL Policy
 
+**Doc status:** Draft recommendation. **14 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).** AI crawler policy = blocking decision A5.
+
+> **Revision notice (2026-04-29 audit):** §8.4 "v2 must additionally emit `X-Robots-Tag: noindex, nofollow`" — **already implemented** in [next.config.ts](../../next.config.ts) for non-`uscehub.com` hosts. v2 must not regress; not new work. §12.4 "AI crawlers allowed by default" — **conflicts with existing [public/robots.txt](../../public/robots.txt)** which blocks Bytespider + PetalBot. Status: **open decision A5** in [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md). Recommendation: keep existing anti-scraper blocks + add explicit allows for GPTBot/ClaudeBot/PerplexityBot/anthropic-ai/ChatGPT-User. §5 sitemap criteria: existing [src/app/sitemap.ts](../../src/app/sitemap.ts) auto-generates entries for all 50 US states + all specialties + all blog posts + all 50 waiver states — **§9 quality gate is grandfathered** for these existing entries (decision B9), applies only to new entries.
+
 **Status:** v2 planning doc. Defines canonical URL rules, sitemap inclusion criteria, indexability per page type, faceted-navigation handling, and crawler discipline.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.

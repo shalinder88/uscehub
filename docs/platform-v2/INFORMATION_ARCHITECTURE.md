@@ -1,5 +1,9 @@
 # USCEHub v2 — Information Architecture
 
+**Doc status:** Draft recommendation. **15 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** Drafted before fully inventorying existing routes. Per [V2_PLANNING_AUDIT.md §3.1 / §5](V2_PLANNING_AUDIT.md), these live routes were treated as "future" or omitted and are now reconciled below: `/about` + 3 subroutes, `/community` + `/community/suggest-program`, `/contact`, `/contact-admin`, `/disclaimer`, `/how-it-works`, `/poster/*` (5 subroutes), `/residency/*` (12 routes including the existing `/residency/fellowship` fellowship database), `/tools/cost-calculator` (already a live `WebApplication`). [EXISTING_SURFACE_INVENTORY.md](EXISTING_SURFACE_INVENTORY.md) is the binding factual reference. Blocking decisions: **A1 (`/residency/*` fate), A2 (`/poster/*` vs new institution flow), A4 (URL canonical 301 vs keep-both), A6 (launch-scope verticals)** — all in [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).
+
 **Status:** v2 planning doc, foundational. Defines nav, page map, audience paths, and indexation candidacy for the v2 overhaul.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), and [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md). Where any conflict, those win.
 **Authored:** 2026-04-29.
@@ -42,13 +46,23 @@ These URLs are live on `uscehub.com` today. v2 must preserve every one (or migra
 | `/recommend` | Listing recommend | preserve, becomes Tools/recommend in v2 |
 | `/dashboard/saved` | Logged-in saved listings | preserve, becomes Tools/dashboard in v2 |
 | `/dashboard/compare` | Logged-in compare | preserve |
-| `/admin/verification-queue` | Admin queue | preserve, internal-only, not in user IA |
+| `/admin/*` (deeper than `verification-queue`) | Admin tooling — `/admin/{flags,listings,messages,posters,reviews,users,activity,verification-queue}` | preserve, internal-only, not in user IA |
 | `/blog` | Blog index | preserve, becomes Resources/blog in v2 |
 | `/blog/[slug]` | Blog post | preserve, becomes Resources/blog/[slug] in v2 |
 | `/methodology` | Methodology | preserve, becomes Resources/methodology in v2 |
 | `/img-resources` | IMG resources | preserve, becomes Resources/img in v2 |
 | `/faq` | FAQ | preserve, becomes Resources/faq in v2 |
 | `/for-institutions` | Institution landing | preserve, becomes For Institutions root in v2 |
+| `/about` + `/about/{editorial-policy,methodology,source-policy}` | About page (`AboutPage` JSON-LD) + editorial/methodology/source subroutes | **audit before v2** — `/about/methodology` likely 301s to `/methodology` (decision B7) |
+| `/community` + `/community/suggest-program` | Community page + user-suggest-program flow | **audit before v2** — moderation policy alignment with Master Blueprint §6 |
+| `/contact` + `/contact-admin` | Contact pages (`ContactPage` JSON-LD) | **keep `/contact`** at v2 launch; rename `/contact-admin` → `/admin/contact-tickets` (decision B8) |
+| `/disclaimer` | Legal disclaimer ("Last updated: March 2026") | **keep alongside proposed `/disclosure`** (different scope; decision A8) |
+| `/how-it-works` | Explainer page | **audit before v2** — overlap with `/methodology` |
+| `/poster/*` (5 subroutes: `applications`, `listings`, `organization`, `settings`, `verification`) | **Live institutional onboarding flow** — backed by `PosterProfile` + `Organization` Prisma models | **reconcile with proposed `/institutions/claim`** ([V2_DECISION_REGISTER.md A2](V2_DECISION_REGISTER.md)) — extend rather than replace |
+| `/recommend` | Live listing-recommendation tool | redesign as `/tools/recommend` in v2 (existing surface, not future) |
+| `/residency` + 11 subroutes (`boards`, `community`, `fellowship`, `finances`, `moonlighting`, `post-match`, `procedures`, `research`, `resources`, `salary`, `survival`) | **Live "Residency Command Center"** — including `/residency/fellowship` fellowship database with visa-sponsorship + match-participation data | **BLOCKING decision A1** — keep `/residency/*` canonical OR migrate to `/match`+`/fellowship` |
+| `/resources` | "Recommended Tools & Resources for IMGs" (live) | **audit/reconcile** with proposed `/resources` vertical (URL collision; needs migration plan) |
+| `/tools` + `/tools/cost-calculator` | Tools landing + cost calculator (`WebApplication` JSON-LD on cost-calc) — **live** | reuse `/tools` URL prefix; add `/tools/{compare,recommend,saved,alerts,checklist,visa-decision-helper}` |
 | `/career` and `/career/**` | **Protected per [RULES.md](../codebase-audit/RULES.md) §2** — unfinished asset | **preserve unchanged in v2; do NOT migrate or rename** |
 | `/careers` | **Protected per [RULES.md](../codebase-audit/RULES.md) §2** | **preserve unchanged** |
 | `/sitemap.xml` | Sitemap | preserve, regenerate at launch |
@@ -208,9 +222,12 @@ Detailed URL hierarchy per vertical. Bold = exists today. Italic = future-only, 
   /match/img-friendly           (curated list of IMG-friendly programs; flagship page for IMG audience)
 ```
 
-**Today:** none live.
-**v2 launch:** vertical landing + `/match/strategy/img` + `/match/img-friendly` + `/match/timeline` minimum. Other pages launch as curated.
-**Honest empty state if not built:** "Match — coming soon. Be the first to know."
+**Today:** **`/residency/*` is the live resident-side surface** (12 subroutes; "Residency Command Center"). Match-strategy content for IMGs lives at `/img-resources` today; some match-prep content at `/residency/post-match`. **`/match/*` URLs do not exist.**
+**v2 launch:** **BLOCKING decision A1.** Two viable paths:
+- (a) Keep `/residency/*` canonical; v2 nav surfaces "Residency"; defer `/match/*` URLs to post-launch.
+- (b) Migrate `/residency/*` → `/match/*` + `/fellowship/*` with 301 redirects + sitemap rebuild.
+**Recommended:** (a) at v2 launch. The Residency Command Center is built; rebuilding is unnecessary churn.
+**Honest empty state if (b) deferred:** the Match nav slot links to a curated landing referencing `/residency/post-match` etc. content.
 
 ### 5.3 Fellowship
 
@@ -225,8 +242,11 @@ Detailed URL hierarchy per vertical. Bold = exists today. Italic = future-only, 
   /fellowship/visa-friendly     (cross-cuts with Visa vertical; canonical here; deeplink from /visa)
 ```
 
-**Today:** none live.
-**v2 launch:** vertical landing + `/fellowship/visa-friendly` minimum.
+**Today:** **`/residency/fellowship` is a live fellowship database** with visa-sponsorship + match-participation data, plus `/residency/fellowship/guide`. **`/fellowship/*` top-level URLs do not exist.**
+**v2 launch:** depends on decision A1.
+- If A1=(a) keep `/residency/*`: skip `/fellowship/*` top-level entirely; surface fellowship under `/residency/fellowship` from v2 nav.
+- If A1=(b) migrate: 301 `/residency/fellowship` → `/fellowship/programs` etc.; sitemap rebuild.
+**Recommended:** A1=(a). The fellowship database is built and useful at `/residency/fellowship`.
 **Note:** USCEHub does not replace ABMS / specialty board / fellowship match systems. We bridge: visa-friendly programs, IMG-friendly programs, audience-specific strategy.
 
 ### 5.4 Jobs
@@ -276,14 +296,14 @@ Detailed URL hierarchy per vertical. Bold = exists today. Italic = future-only, 
   /tools/saved                  (replaces /dashboard/saved; logged-in)
   /tools/alerts                 (digest + deadline reminders; gated by [MESSAGING_AND_ALERTS_POLICY.md](MESSAGING_AND_ALERTS_POLICY.md))
   /tools/checklist              (career-stage checklist; future)
-  /tools/visa-decision-helper   (alias / canonical with /visa/decision-helper TBD; see [INDEXATION_AND_URL_POLICY.md](INDEXATION_AND_URL_POLICY.md))
+  /tools/visa-decision-helper   (canonical; /visa/decision-helper alias-only — decision A1/B-resolved per V2_DECISION_REGISTER)
   /tools/fellowship-competitiveness (future)
-  /tools/cost-calculator        (USCE cost estimator; future)
+  /tools/cost-calculator        (LIVE — already has WebApplication JSON-LD; not future)
   /tools/timeline-builder       (custom application timeline; future)
 ```
 
-**Today:** `/compare`, `/recommend`, `/dashboard/saved` live.
-**v2 launch:** `/tools` vertical landing + `/tools/compare`, `/tools/recommend`, `/tools/saved` minimum. Old URLs 301 to new.
+**Today:** `/compare`, `/recommend`, `/dashboard/saved`, **`/tools/cost-calculator`** all live (corrected per audit; `/tools/cost-calculator` is not future as previously claimed).
+**v2 launch:** `/tools` vertical landing + redesigned `/tools/compare`, `/tools/recommend`, `/tools/saved`, `/tools/cost-calculator` minimum. Old URLs 301 to new (decision A4).
 
 ### 5.7 Resources
 
@@ -320,8 +340,9 @@ Detailed URL hierarchy per vertical. Bold = exists today. Italic = future-only, 
   /institutions/dashboard       (logged-in institution dashboard; future)
 ```
 
-**Today:** `/for-institutions` live, mostly informational.
-**v2 launch:** `/institutions` vertical landing + `/institutions/claim` minimum. Other pages defer.
+**Today:** `/for-institutions` live (informational). **`/poster/*` is a live institutional surface** with 5 subroutes (`applications`, `listings`, `organization`, `settings`, `verification`) — backed by `PosterProfile` + `Organization` Prisma models + `UserRole.POSTER`. This is **already the institution-claim flow** in latent form.
+**v2 launch:** `/institutions` vertical landing + **extension of `/poster/*` flow** (renamed `/institutions/dashboard/*` per decision A2) + `/institutions/claim` as the entry point that flows into the existing `/poster/verification` flow.
+**Decision A2:** extend `/poster/*` rather than build new `/institutions/claim` system from scratch (`PosterProfile` + `Organization` models already do this work).
 **Note:** This vertical is the buyer-side surface. Per [PLATFORM_V2_STRATEGY.md §15.2](PLATFORM_V2_STRATEGY.md), it's structurally separate from user-side IA.
 
 ---

@@ -1,5 +1,9 @@
 # USCEHub v2 — Navigation Model
 
+**Doc status:** Draft recommendation. **10 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** §7.2 vertical-exposure table treated Fellowship as "future Phase C+" — `/residency/fellowship` is **live**. The 8-vertical nav target depends on **decision A1** (`/residency/*` fate): if kept canonical, nav surfaces "Residency" not separate Match/Fellowship items; if migrated, nav exposes Match + Fellowship. **No nav rework should ship before A1 resolves.** §13 Existing URL preservation: every URL in [EXISTING_SURFACE_INVENTORY.md §2.1](EXISTING_SURFACE_INVENTORY.md) must remain reachable from nav or footer at v2 launch — including `/about`, `/community`, `/contact`, `/disclaimer`, `/how-it-works` which the original nav model did not catalog.
+
 **Status:** v2 planning doc. Defines desktop nav, mobile nav, footer, breadcrumbs, search placement, and stable-vs-future nav structure.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md), [INFORMATION_ARCHITECTURE.md](INFORMATION_ARCHITECTURE.md). Where conflict, those win.
 **Authored:** 2026-04-29.

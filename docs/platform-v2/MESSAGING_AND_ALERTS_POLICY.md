@@ -1,5 +1,9 @@
 # USCEHub v2 — Messaging and Alerts Policy
 
+**Doc status:** Draft recommendation. **12 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).** Postal address (B4) + sender DNS (B5) = launch-blockers.
+
+> **Revision notice (2026-04-29 audit):** Doc accurately reflects the 8-prerequisite gate before any real send. Existing infra: `Resend` SDK in `package.json`, no real-send wiring to user-facing email yet, `scripts/preview-verified-listings-digest.ts` is no-send preview only (PR #21). DNS records (SPF/DKIM/DMARC) for sender domain **not configured** — this is decision B5. Postal address **not chosen** — decision B4. The existing `AdminMessage` Prisma model handles admin-side messaging (separate concern); v2 user-side email infrastructure is greenfield. No revisions to doctrine; cross-references added to register.
+
 **Status:** v2 planning doc. Operationalizes [PLATFORM_V2_STRATEGY.md §13](PLATFORM_V2_STRATEGY.md) into per-category send rules, double-opt-in flow, frequency caps, unsubscribe handling, and rollout stages.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.

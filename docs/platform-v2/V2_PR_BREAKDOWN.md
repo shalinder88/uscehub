@@ -1,5 +1,9 @@
 # USCEHub v2 — PR Breakdown
 
+**Doc status:** Draft recommendation. **10 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).** PR ordering revised per audit.
+
+> **Revision notice (2026-04-29 audit):** Original PR sequence started with PR 1 = design system tokens. Audit conclusion: **the first 7 PRs must be audits of existing implementations**, not greenfield design tokens. New "Phase 0 — Existing-surface audits" section below replaces what was Phase A foundation. Schema PRs (Phase D, formerly PRs 20-23) revised: only `Listing.audienceTags` (PR 20) is critically needed for v2 launch; PRs 21-23 deferred to post-launch (per [V2_DECISION_REGISTER.md D1](V2_DECISION_REGISTER.md)). Phase D's 4-PR serialization point reduced to 1.
+
 **Status:** v2 planning doc. Decomposes the v2 implementation into a sequence of small, reviewable PRs targeting `redesign/platform-v2` (sub-branches), with a final launch PR to `main`.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.
@@ -37,6 +41,24 @@ Sub-branches PR into `redesign/platform-v2`. Never into `main` directly.
 ## 2. PR sequence
 
 Numbered for clarity. Order matters for dependencies. Each section gives: title, scope, files, dependencies, estimated LOC.
+
+### Phase 0 — Existing-surface audits (PRs 0a–0g)
+
+**Per [V2_PLANNING_AUDIT.md §10](V2_PLANNING_AUDIT.md) and [EXISTING_SURFACE_INVENTORY.md §8.1](EXISTING_SURFACE_INVENTORY.md): audit before greenfield. These 7 PRs are read-only investigations producing audit docs (one per surface). Each unblocks downstream design work.**
+
+| PR | Audit | Output | Unblocks |
+|---|---|---|---|
+| 0a | `/poster/*` flow + `PosterProfile` model | `docs/platform-v2/audits/POSTER_FLOW_AUDIT.md` | A2 decision; PR 12 institutions vertical |
+| 0b | `/residency/*` namespace + Residency Command Center | `docs/platform-v2/audits/RESIDENCY_AUDIT.md` | A1 decision; PR 10 vertical landings |
+| 0c | `Application` model + `/api/applications` + `/dashboard/applications` | `docs/platform-v2/audits/APPLICATION_FLOW_AUDIT.md` | A3 decision; HOMEPAGE §12 copy |
+| 0d | `Review` model + `/dashboard/reviews` + listing-detail review surfaces | `docs/platform-v2/audits/REVIEW_FLOW_AUDIT.md` | TRUST_AND_MONETIZATION §4.5 alignment |
+| 0e | `CommunityPost` + `/community/*` + Master Blueprint §6 moderation | `docs/platform-v2/audits/COMMUNITY_FLOW_AUDIT.md` | community vertical scope |
+| 0f | `/recommend` algorithm + methodology | `docs/platform-v2/audits/RECOMMEND_AUDIT.md` | PR 9 tools hub; methodology page coverage |
+| 0g | `/tools/cost-calculator` data sources + methodology | `docs/platform-v2/audits/COST_CALCULATOR_AUDIT.md` | PR 9 tools hub |
+
+**Total Phase 0:** 7 docs-only PRs, each ≤ 500 LOC. Reviewable rapidly. Block downstream PRs that touch their respective surfaces.
+
+---
 
 ### Phase A — Foundation (PRs 1-5)
 

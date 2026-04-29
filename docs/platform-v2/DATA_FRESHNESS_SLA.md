@@ -1,5 +1,9 @@
 # USCEHub v2 — Data Freshness SLA
 
+**Doc status:** Draft recommendation. **13 open decisions extracted to [V2_DECISION_REGISTER.md](V2_DECISION_REGISTER.md).**
+
+> **Revision notice (2026-04-29 audit):** This doc originally addressed the `verify-listings` cron only. Per [V2_PLANNING_AUDIT.md §3.2](V2_PLANNING_AUDIT.md), the site runs **two crons** — `verify-jobs` also exists for `WAIVER_JOBS` source-URL freshness. New §17 below addresses verify-jobs. Also: per cron health, only **~20 of 304 APPROVED listings have `lastVerifiedAt` set** today (Current+Aging tier ratio ~7%); the §6.1 ≥80% threshold for "verified programs" public claim is **months from passing**. PR #25 + PR #27 (merged 2026-04-29) keep the conservative-language baseline — see [V2_DECISION_REGISTER.md B14](V2_DECISION_REGISTER.md).
+
 **Status:** v2 planning doc. Operationalizes [PLATFORM_V2_STRATEGY.md §11](PLATFORM_V2_STRATEGY.md) into per-tier admin queue prioritization, automated downgrade rules, public-claim alignment script, and metrics.
 **Authority:** lower than [RULES.md](../codebase-audit/RULES.md), [SEO_PRESERVATION_RULES.md](../codebase-audit/SEO_PRESERVATION_RULES.md), [PLATFORM_V2_STRATEGY.md](PLATFORM_V2_STRATEGY.md).
 **Authored:** 2026-04-29.
@@ -498,6 +502,47 @@ This SLA is partially active today (display-tier rendering exists; cron + admin 
 - Schema downgrade automation (Phase 3.10, deferred).
 
 All deferred items require their own authorization PRs. None happens at v2 launch unless explicitly added.
+
+---
+
+## 17. Verify-jobs cron — separate freshness story
+
+The `vercel.json` cron config runs **two crons**:
+
+| Cron | Path | Schedule | Data | Tier scheme |
+|---|---|---|---|---|
+| Listings | `/api/cron/verify-listings` | `0 9 * * *` UTC | `Listing.sourceUrl` | per §2-9 above |
+| Jobs | `/api/cron/verify-jobs` | `0 8 * * *` UTC | `WAIVER_JOBS.sourceUrl` (in [src/lib/waiver-jobs-data.ts](../../src/lib/waiver-jobs-data.ts) per [RULES.md](../codebase-audit/RULES.md) §2 hard protection) | mirrored from §2 |
+
+### 17.1 Verify-jobs tier scheme
+
+The same Current/Aging/Stale/Reverify-required tier scheme applies to job listings, with these adaptations:
+
+| Tier | Age | Behavior for jobs |
+|---|---|---|
+| **Current** (≤ 90 days) | recently verified | display normally on `/career/jobs/*` |
+| **Aging** (91-180 days) | due for revalidation | passive cron pickup |
+| **Stale** (181-365 days) | admin attention | admin queue surfaces |
+| **Reverify-required** (> 365 days) | trust badge downgraded | display with "Reverification due" notice; still indexable |
+
+### 17.2 Why jobs need separate handling
+
+- Jobs go stale faster than program listings (job postings often filled or expired within 90 days vs program pages stable for years).
+- Recommend tighter tier boundaries for jobs: Current ≤ 30 days, Aging 31-90, Stale 91-180, Reverify-required > 180.
+- Open decision (B-tier): adopt tighter job-specific boundaries or share the listings tier scheme?
+
+### 17.3 Verify-jobs operator action
+
+Mirror §4 (admin queue prioritization) for jobs:
+- Admin queue surfaces jobs with `NEEDS_MANUAL_REVIEW` from verify-jobs cron
+- 4xx / 5xx → `NEEDS_MANUAL_REVIEW`; admin reviews source URL or removes
+- Cron never modifies job `status` (preserves admin-only control per [PLATFORM_V2_STRATEGY.md §2.2](PLATFORM_V2_STRATEGY.md) cron contract)
+
+### 17.4 Verify-jobs public claim alignment
+
+Job listings appearing on `/career/jobs/*` with stale verification trigger the same conservative-language doctrine: don't claim "verified" job listings until the freshness threshold per §6.1 holds for the job cohort.
+
+Currently: verify-jobs cron behavior + audit trail unaudited (per [V2_DECISION_REGISTER.md A3 / B-tier](V2_DECISION_REGISTER.md)). Audit before any v2 jobs-vertical implementation.
 
 ---
 
