@@ -60,8 +60,10 @@ export type ListingCtaVariant =
   | "reverifying"
   | "missing-source"
   | "research"
-  | "contact"
-  | "platform";
+  | "contact";
+// "platform" variant intentionally absent (PR 0c audit): there is no
+// in-platform <ApplyForm /> today, and `decideListingCta()` never returns
+// it. Re-add when a real platform-tracked apply flow ships.
 
 export type ListingCtaDecision = {
   /** Button label shown to users. */
@@ -164,8 +166,6 @@ export function ctaCaption(decision: ListingCtaDecision): string | null {
     case "research":
       return "Research positions are typically arranged by emailing the PI directly. This link goes to the institution's research page.";
     case "contact":
-      return null;
-    case "platform":
       return null;
   }
 }

@@ -14,7 +14,7 @@ const signals = [
   {
     icon: Star,
     title: "Community Reviews",
-    description: "Real feedback from past participants",
+    description: "Moderated community feedback, separate from source verification",
   },
   {
     icon: Users,

@@ -121,15 +121,14 @@ export default function ReviewsPage() {
                       </p>
                     )}
                     <div className="mt-2 flex flex-wrap items-center gap-2">
-                      {review.wasReal && (
-                        <Badge variant="success">Real Experience</Badge>
-                      )}
-                      {review.worthCost && (
-                        <Badge variant="success">Worth the Cost</Badge>
-                      )}
-                      {review.wouldRecommend && (
-                        <Badge variant="success">Would Recommend</Badge>
-                      )}
+                      {/*
+                       * PR 0d audit H2: `wasReal` / `worthCost` /
+                       * `wouldRecommend` chips removed — the live review
+                       * form (src/components/listings/review-form.tsx) does
+                       * not collect those fields, so the API silently
+                       * defaults them to true. Rendering them as
+                       * user-affirmed claims was misleading.
+                       */}
                       {review.anonymous && (
                         <Badge variant="default">Anonymous</Badge>
                       )}

@@ -106,9 +106,9 @@ const disabilityInsuranceInfo = [
   },
   {
     icon: Heart,
-    title: "Recommended Companies",
+    title: "How to Compare Carriers",
     content:
-      "Guardian, MassMutual, Principal, Ohio National, and Ameritas are the most commonly recommended for physician disability policies. Work with an independent insurance broker who specializes in physicians — they can compare across carriers.",
+      "Several insurers offer physician-specific disability policies. Rather than naming carriers, work with an independent insurance broker who specializes in physicians — they can compare features (own-occupation specialty-specific definition, future-purchase options, COLA riders, residency-discount programs) across multiple carriers. Independent third-party comparisons (e.g., White Coat Investor's disability insurance overview) are useful starting points for unbiased information. USCEHub does not endorse, sell, or earn commissions from any insurance product.",
   },
 ];
 

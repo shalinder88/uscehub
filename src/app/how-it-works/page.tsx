@@ -40,13 +40,13 @@ const applicantSteps = [
     icon: CheckCircle,
     title: "Apply and Track",
     description:
-      "Submit your applications directly through the platform or follow the institution's preferred application method. Track all your applications from your dashboard and receive updates on your application status.",
+      "Follow each listing's institution-preferred application method (linked from the listing). Save listings and track opportunities you're interested in from your dashboard. Some listings may support platform-tracked applications when available.",
   },
   {
     icon: Star,
-    title: "Complete and Review",
+    title: "Complete and Share Feedback",
     description:
-      "After completing your rotation, share your experience by leaving a verified review. Your feedback helps future applicants make informed decisions and rewards quality programs.",
+      "After your rotation, share your experience as community feedback. Reviews are moderated before publishing and are separate from source-link verification.",
   },
 ];
 
@@ -65,15 +65,15 @@ const institutionSteps = [
   },
   {
     icon: Users,
-    title: "Manage Applications",
+    title: "Manage Inbound Interest",
     description:
-      "Receive and review applications through the platform. Access applicant profiles, review their qualifications, and communicate directly through our secure messaging system.",
+      "Direct applicants to your institution's preferred application method, linked from your listing. Where applicants choose to track interest on the platform, you can see it from the institution dashboard.",
   },
   {
     icon: Shield,
     title: "Build Your Reputation",
     description:
-      "Earn positive reviews from participants, maintain your verification status, and build a strong presence on the platform. Top-rated programs are featured prominently in search results.",
+      "Maintain your verification status and respond to reported issues. Verified, freshly-linked listings are featured prominently in search results.",
   },
 ];
 

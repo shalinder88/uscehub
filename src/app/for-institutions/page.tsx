@@ -48,9 +48,9 @@ const institutionBenefits = [
   },
   {
     icon: Star,
-    title: "Community Reviews & Reputation",
+    title: "Community Feedback",
     description:
-      "Collect verified reviews from past participants to build your program's reputation and attract top talent.",
+      "Receive moderated community feedback on your listing. Reviews are user-submitted and separate from source-link verification.",
   },
 ];
 

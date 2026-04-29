@@ -29,7 +29,7 @@ export default function NewListingPage() {
     fullDescription: "",
     duration: "",
     cost: "",
-    applicationMethod: "platform",
+    applicationMethod: "website",
     contactEmail: "",
     eligibilitySummary: "",
     startDate: "",
@@ -386,7 +386,12 @@ export default function NewListingPage() {
                   updateField("applicationMethod", e.target.value)
                 }
               >
-                <option value="platform">Through Platform</option>
+                {/*
+                 * PR 0c audit: "Through Platform" was removed because no
+                 * in-platform <ApplyForm /> exists today; the listing-detail
+                 * CTA always exits to websiteUrl or mailto. Re-introduce
+                 * once a real platform-tracked apply flow ships.
+                 */}
                 <option value="email">Via Email</option>
                 <option value="website">External Website</option>
               </Select>

@@ -166,7 +166,12 @@ export default function CompareClient() {
     { label: "Certificate", render: (l) => <BoolCell value={l.certificateOffered} /> },
     { label: "Visa Support", render: (l) => <BoolCell value={l.visaSupport} /> },
     { label: "Verified", render: (l) => <VerificationCell listing={l} /> },
-    { label: "Application", render: (l) => l.applicationMethod === "platform" ? "Via Platform" : "External" },
+    // PR 0c audit: the "platform" applicationMethod branch is unreachable
+    // (no <ApplyForm /> exists; the listing-detail CTA always exits to
+    // websiteUrl or mailto). The DB column is informational only — display
+    // a neutral label here rather than implying a platform-tracked
+    // application flow.
+    { label: "Application", render: () => "Via institution" },
     { label: "Start Date", render: (l) => l.startDate || "—" },
     { label: "Deadline", render: (l) => l.applicationDeadline || "—" },
   ];
