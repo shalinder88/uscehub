@@ -13,7 +13,7 @@ import {
 export async function ProgramStats() {
   const [
     totalListings,
-    verifiedCount,
+    listingsWithOfficialSource,
     stateData,
     observerships,
     externships,
@@ -22,6 +22,10 @@ export async function ProgramStats() {
     freeListings,
   ] = await Promise.all([
     prisma.listing.count({ where: { status: "APPROVED" } }),
+    // Phase 3.9 trust language: this count is broad — it includes the
+    // legacy backfilled rows whose URL is on file but has not been
+    // freshly cron-verified. Labeled accordingly in the highlights
+    // grid below ("Official Source on File", not "Verified Programs").
     prisma.listing.count({
       where: { status: "APPROVED", linkVerified: true },
     }),
@@ -76,8 +80,8 @@ export async function ProgramStats() {
     },
     {
       icon: BadgeCheck,
-      label: "Verified Programs",
-      value: verifiedCount.toString(),
+      label: "Programs with Official Source",
+      value: listingsWithOfficialSource.toString(),
     },
     {
       icon: MapPin,

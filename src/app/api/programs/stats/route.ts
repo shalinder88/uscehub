@@ -7,7 +7,7 @@ export async function GET() {
   try {
     const [
       total,
-      verifiedCount,
+      listingsWithOfficialSourceCount,
       observerships,
       externships,
       research,
@@ -16,6 +16,9 @@ export async function GET() {
       freeListings,
     ] = await Promise.all([
       prisma.listing.count({ where: { status: "APPROVED" } }),
+      // Phase 3.9 trust language: broad count (URL on file, not the
+      // strict "freshly cron-verified" cohort). The renamed JSON
+      // response field below documents what the count means.
       prisma.listing.count({
         where: { status: "APPROVED", linkVerified: true },
       }),
@@ -61,7 +64,13 @@ export async function GET() {
     const response = {
       generatedAt: new Date().toISOString(),
       totalListings: total,
-      verifiedListings: verifiedCount,
+      // Phase 3.9: renamed from `verifiedListings`. The count is
+      // listings whose official source URL is on file (legacy
+      // linkVerified = true, equivalent to the current
+      // linkVerificationStatus = VERIFIED count regardless of
+      // lastVerifiedAt). It is NOT the same as the strict
+      // "freshly verified by the cron" cohort.
+      listingsWithOfficialSource: listingsWithOfficialSourceCount,
       freeListings,
       statesCovered: Object.keys(stateCounts).length,
       byType: {

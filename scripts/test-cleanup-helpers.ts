@@ -36,12 +36,31 @@ function section(name: string): void {
 // ─── site-metrics ─────────────────────────────────────────────
 section("site-metrics");
 assert(SITE_METRICS.opportunitiesIndexed === 304, "opportunitiesIndexed = 304");
-assert(SITE_METRICS.activeVerifiedListings === 207, "activeVerifiedListings = 207");
+// Phase 3.9: renamed from `activeVerifiedListings`. The count is
+// listings whose official source URL is on file (broad legacy count),
+// NOT the strict "freshly verified by cron" cohort. Updated to 156
+// to match current DB state. See src/lib/site-metrics.ts header.
+assert(
+  SITE_METRICS.listingsWithOfficialSource === 156,
+  "listingsWithOfficialSource = 156",
+);
 assert(SITE_METRICS.statesCovered === 37, "statesCovered = 37");
 assert(typeof SITE_METRICS.lastUpdatedLabel === "string", "lastUpdatedLabel is a string");
 assert(
   SITE_METRICS_DISPLAY.opportunitiesIndexed.includes("304"),
   "display.opportunitiesIndexed contains 304",
+);
+assert(
+  SITE_METRICS_DISPLAY.listingsWithOfficialSource.includes("156"),
+  "display.listingsWithOfficialSource contains 156",
+);
+assert(
+  SITE_METRICS_DISPLAY.listingsWithOfficialSource.includes("official source on file"),
+  "display.listingsWithOfficialSource uses the honest 'official source on file' phrase",
+);
+assert(
+  !SITE_METRICS_DISPLAY.listingsWithOfficialSource.toLowerCase().includes("verified"),
+  "display.listingsWithOfficialSource does NOT use 'verified' (no overclaim)",
 );
 assert(
   SITE_METRICS_DISPLAY.statesCovered.includes("37"),
