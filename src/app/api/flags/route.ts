@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import { sendAdminNotification } from "@/lib/email";
 import { getSiteUrlFromEnv } from "@/lib/env";
 import { SITE_URL } from "@/lib/site-config";
+import { rateLimit } from "@/lib/rate-limit";
 import type { FlagKind } from "@prisma/client";
 
 // FlagKind enum values, validated server-side against arbitrary user input.
@@ -42,6 +43,25 @@ export async function POST(request: NextRequest) {
     const session = await auth();
     if (!session?.user) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // Per-user rate limit (PR 0d audit H3): cap flag submissions so a
+    // single user cannot mass-spam reports. Higher cap than reviews
+    // because legitimate users may report several stale links in one
+    // session.
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const { allowed, resetIn } = rateLimit(`flags:${session.user.id}:${ip}`, {
+      limit: 20,
+      windowSeconds: 3600,
+    });
+    if (!allowed) {
+      return Response.json(
+        { error: "Too many flag submissions. Please try again later." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(resetIn) },
+        }
+      );
     }
 
     const body = await request.json();

@@ -144,15 +144,11 @@ export default async function ListingPage({ params }: ListingPageProps) {
     url: `https://uscehub.com/listing/${id}`,
     applicationStartDate: listing.startDate || undefined,
     applicationDeadline: listing.applicationDeadline || undefined,
-    ...(avgRating !== null
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: avgRating.toFixed(1),
-            reviewCount: listing.reviews.length,
-          },
-        }
-      : {}),
+    // AggregateRating intentionally omitted (PR 0d audit C2): without a
+    // verified-purchase / completed-application gate on POST /api/reviews
+    // and without a minimum-N threshold, AggregateRating in structured
+    // data risks Google rich-results spam classification. Re-introduce
+    // when both gates are in place. See REVIEW_FLOW_AUDIT.md §14.
   };
 
   return (
@@ -337,6 +333,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   </span>
                 )}
               </h2>
+              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                Reviews are user-submitted feedback, moderated before
+                publishing. They are separate from the verification badges
+                shown on this page, which refer to source-link checks, not
+                review endorsement.
+              </p>
 
               {avgRating !== null && (
                 <div className="mt-3 flex items-center gap-2">
@@ -404,26 +406,17 @@ export default async function ListingPage({ params }: ListingPageProps) {
                           {review.comment}
                         </p>
                       )}
-                      <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500 dark:text-slate-400">
-                        <span>
-                          Real experience:{" "}
-                          <span className="font-medium">
-                            {review.wasReal ? "Yes" : "No"}
-                          </span>
-                        </span>
-                        <span>
-                          Worth cost:{" "}
-                          <span className="font-medium">
-                            {review.worthCost ? "Yes" : "No"}
-                          </span>
-                        </span>
-                        <span>
-                          Would recommend:{" "}
-                          <span className="font-medium">
-                            {review.wouldRecommend ? "Yes" : "No"}
-                          </span>
-                        </span>
-                      </div>
+                      {/*
+                       * PR 0d audit H2: the live review form does not collect
+                       * `wasReal` / `worthCost` / `actualExposure`. Those
+                       * fields are silently defaulted to true / 3 server-side,
+                       * so rendering them as user-affirmed chips was
+                       * misleading. Removed until the form re-collects them.
+                       * `wouldRecommend` is still collected by the live form
+                       * but is summarized in the aggregate stats; we don't
+                       * repeat it per-review here to avoid implying a
+                       * structured rubric we don't enforce.
+                       */}
                     </div>
                   ))}
                 </div>

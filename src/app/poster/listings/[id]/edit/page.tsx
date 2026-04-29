@@ -33,7 +33,7 @@ export default function EditListingPage({
     fullDescription: "",
     duration: "",
     cost: "",
-    applicationMethod: "platform",
+    applicationMethod: "website",
     contactEmail: "",
     eligibilitySummary: "",
     startDate: "",
@@ -71,7 +71,7 @@ export default function EditListingPage({
           fullDescription: data.fullDescription || "",
           duration: data.duration || "",
           cost: data.cost || "",
-          applicationMethod: data.applicationMethod || "platform",
+          applicationMethod: data.applicationMethod || "website",
           contactEmail: data.contactEmail || "",
           eligibilitySummary: data.eligibilitySummary || "",
           startDate: data.startDate || "",
@@ -410,7 +410,13 @@ export default function EditListingPage({
                   updateField("applicationMethod", e.target.value)
                 }
               >
-                <option value="platform">Through Platform</option>
+                {/*
+                 * PR 0c audit: "Through Platform" was removed because no
+                 * in-platform <ApplyForm /> exists today. Existing listings
+                 * with applicationMethod === "platform" continue to round-trip
+                 * through the DB; the dropdown defaults to "website" if the
+                 * stored value is no longer in the option set.
+                 */}
                 <option value="email">Via Email</option>
                 <option value="website">External Website</option>
               </Select>

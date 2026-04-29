@@ -11,7 +11,7 @@ const applicantSteps = [
     icon: FileText,
     title: "Apply Directly",
     description:
-      "Submit your application through the platform or via the institution's preferred method. Track your applications from your dashboard.",
+      "Apply via the institution's preferred method, linked from each listing. Save listings and track opportunities you're interested in from your dashboard.",
   },
   {
     icon: CheckCircle,
@@ -36,9 +36,9 @@ const institutionSteps = [
   },
   {
     icon: Users,
-    title: "Review Applicants",
+    title: "Manage Inbound Interest",
     description:
-      "Receive applications directly through the platform. Review candidate profiles and manage your selection process.",
+      "Direct applicants to your institution's preferred application method. Some listings may support platform-tracked interest where available.",
   },
 ];
 

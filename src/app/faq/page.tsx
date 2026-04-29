@@ -88,7 +88,7 @@ const faqs = [
   {
     question: "How are listings verified on the platform?",
     answer:
-      "All listings go through our review process before being published. We verify institutional credentials, check NPI numbers when provided, and review the listing content for accuracy and legitimacy. We also display trust badges such as Admin Reviewed, Verified Poster, Institutional Email, and NPI Verified to help you assess listing quality. Community reviews provide additional verification from past participants.",
+      "All listings go through our review process before being published. We verify institutional credentials, check NPI numbers when provided, and review the listing content for accuracy and legitimacy. We also display trust badges such as Admin Reviewed, Verified Poster, Institutional Email, and NPI Verified to help you assess listing quality. Community reviews are moderated user-submitted feedback and are separate from source-link verification.",
   },
   {
     question: "Do you offer visa sponsorship or support?",

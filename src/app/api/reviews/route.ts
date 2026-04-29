@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import { sendAdminNotification } from "@/lib/email";
 import { getSiteUrlFromEnv } from "@/lib/env";
 import { SITE_URL } from "@/lib/site-config";
+import { rateLimit } from "@/lib/rate-limit";
 
 export async function GET(request: NextRequest) {
   try {
@@ -70,6 +71,24 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // Per-user rate limit (PR 0d audit H3): cap review submissions to
+    // prevent automated spam. The applicant-create surface today is the
+    // only entry; this is conservative on purpose.
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const { allowed, resetIn } = rateLimit(`reviews:${session.user.id}:${ip}`, {
+      limit: 5,
+      windowSeconds: 3600,
+    });
+    if (!allowed) {
+      return Response.json(
+        { error: "Too many review submissions. Please try again later." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(resetIn) },
+        }
+      );
+    }
+
     const body = await request.json();
     const {
       listingId,
@@ -102,6 +121,30 @@ export async function POST(request: NextRequest) {
 
     if (!listing) {
       return Response.json({ error: "Listing not found" }, { status: 404 });
+    }
+
+    // PR 0d audit M3: only APPROVED listings may receive reviews. Without
+    // this check a user with a listing id could review PENDING / REJECTED
+    // / HIDDEN rows. Admin moderation later catches the orphan review,
+    // but it leaks the listing's existence and lets a hidden listing
+    // accumulate reviews while it's offline.
+    if (listing.status !== "APPROVED") {
+      return Response.json(
+        { error: "Cannot review this listing" },
+        { status: 400 }
+      );
+    }
+
+    // PR 0d audit C1: a poster cannot review their own listing. Self-review
+    // is the dominant abuse vector — admin moderation moderates content
+    // honesty, not authorship, so a 5-star self-review survives moderation
+    // and pollutes aggregate ratings + (when re-introduced) AggregateRating
+    // structured data. Block at the source.
+    if (listing.posterId === session.user.id) {
+      return Response.json(
+        { error: "You cannot review a listing you posted" },
+        { status: 403 }
+      );
     }
 
     // Check for existing review
