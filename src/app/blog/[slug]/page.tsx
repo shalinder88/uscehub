@@ -266,8 +266,8 @@ export default async function BlogPostPage({
             Find Your Clinical Experience
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
-            Browse 207+ verified observerships, externships, and research
-            positions across 37 states.
+            Browse 156+ observership, externship, and research programs with
+            an official source on file across 37 states.
           </p>
           <Link
             href="/browse"
