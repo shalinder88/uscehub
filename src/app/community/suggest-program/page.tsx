@@ -3,12 +3,20 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SuggestProgramForm } from "@/components/community/community-tabs";
 
+// PR 0e-fix: page softened. The submission form is now a placeholder
+// that points users to /contact-admin (PR 0e audit C3). The page emits
+// noindex until a real submission backend exists, so search engines do
+// not surface a placeholder as a working intake (PR 0e audit H2).
 export const metadata: Metadata = {
-  title: "Suggest a Program",
+  title: "Suggest a Program — Coming Soon",
   description:
-    "Submit an observership, externship, or research program to help other International Medical Graduates find USCE opportunities in the United States.",
+    "Program suggestion intake is being planned. For now, suggest programs by contacting admin via /contact-admin.",
   alternates: {
     canonical: "https://uscehub.com/community/suggest-program",
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

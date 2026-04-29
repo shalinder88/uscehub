@@ -53,18 +53,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/community`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/community/suggest-program`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
+    // PR 0e-fix: /community and /community/suggest-program removed from
+    // sitemap. Both pages now emit `noindex` and present "Coming Soon"
+    // copy. Re-add when a real moderated community surface ships
+    // (post-launch). See COMMUNITY_FLOW_AUDIT.md §17 PR 0e-fix-2.
     {
       url: `${baseUrl}/resources`,
       lastModified: new Date(),
