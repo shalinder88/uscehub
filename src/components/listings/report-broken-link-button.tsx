@@ -85,6 +85,13 @@ export function ReportBrokenLinkButton({
           type: "listing",
           targetId: listingId,
           reason,
+          // Phase 3.8: send the structured FlagKind so the admin queue
+          // can filter broken-link reports correctly. The /api/flags
+          // route also back-compat-parses the "[broken_link]" prefix
+          // in `reason` for older clients, so this is additive — the
+          // explicit kind is the canonical wire going forward.
+          kind: "BROKEN_LINK",
+          ...(sourceUrl ? { sourceUrl } : {}),
         }),
       });
       if (res.ok) {

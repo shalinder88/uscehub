@@ -5,6 +5,37 @@ import { auth } from "@/lib/auth";
 import { sendAdminNotification } from "@/lib/email";
 import { getSiteUrlFromEnv } from "@/lib/env";
 import { SITE_URL } from "@/lib/site-config";
+import type { FlagKind } from "@prisma/client";
+
+// FlagKind enum values, validated server-side against arbitrary user input.
+// Phase 3.8: PR #7 added the structured kind column; this route never
+// populated it, so user-submitted broken-link reports fell back to the
+// schema default (OTHER) and the admin queue could not filter by kind.
+const ALLOWED_FLAG_KINDS: ReadonlySet<string> = new Set<FlagKind>([
+  "BROKEN_LINK",
+  "WRONG_DEADLINE",
+  "PROGRAM_CLOSED",
+  "INCORRECT_INFO",
+  "DUPLICATE",
+  "SPAM",
+  "OTHER",
+]);
+const BROKEN_LINK_PREFIX = "[broken_link]";
+
+function resolveKind(rawKind: unknown, reason: string): FlagKind {
+  // 1. Trust an explicit, validated kind from the body.
+  if (typeof rawKind === "string" && ALLOWED_FLAG_KINDS.has(rawKind)) {
+    return rawKind as FlagKind;
+  }
+  // 2. Back-compat: parse the legacy "[broken_link] ..." reason prefix.
+  //    Older clients (and the original ReportBrokenLinkButton spec
+  //    documented in PHASE3 plan §6) signaled the kind via this prefix.
+  if (reason.startsWith(BROKEN_LINK_PREFIX)) return "BROKEN_LINK";
+  // 3. Default. Schema default is OTHER too, but make it explicit so the
+  //    audit trail and any future client-side validation see the same
+  //    value.
+  return "OTHER";
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,7 +45,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { type, targetId, reason } = body;
+    const { type, targetId, reason, kind: rawKind, sourceUrl: rawSourceUrl } = body;
 
     if (!type || !targetId || !reason) {
       return Response.json(
@@ -30,6 +61,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const kind = resolveKind(rawKind, reason);
+    const sourceUrl =
+      typeof rawSourceUrl === "string" && rawSourceUrl.length > 0 && rawSourceUrl.length <= 2048
+        ? rawSourceUrl
+        : null;
+
     const flag = await prisma.flagReport.create({
       data: {
         type,
@@ -37,6 +74,8 @@ export async function POST(request: NextRequest) {
         reporterId: session.user.id,
         reason,
         status: "OPEN",
+        kind,
+        sourceUrl,
       },
     });
 
