@@ -36,6 +36,11 @@ export async function GET(request: NextRequest) {
         lorPossible: true,
         visaSupport: true,
         linkVerified: true,
+        // Phase 3.5b: real verification fields for the compare table
+        // "Verified" cell. Falls back to legacy `linkVerified` when the
+        // enum/timestamp are absent.
+        linkVerificationStatus: true,
+        lastVerifiedAt: true,
         shortDescription: true,
         applicationMethod: true,
         startDate: true,

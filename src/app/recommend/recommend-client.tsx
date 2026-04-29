@@ -91,6 +91,21 @@ interface Listing {
   lorPossible: boolean;
   visaSupport: boolean;
   linkVerified?: boolean;
+  /**
+   * Phase 3.5b: real verification fields surfaced via /api/recommend's
+   * default-all-scalar-fields findMany. Forwarded to ListingCard so the
+   * grid surfaces match the listing-detail trust language.
+   */
+  linkVerificationStatus?:
+    | "VERIFIED"
+    | "REVERIFYING"
+    | "NEEDS_MANUAL_REVIEW"
+    | "SOURCE_DEAD"
+    | "PROGRAM_CLOSED"
+    | "NO_OFFICIAL_SOURCE"
+    | "UNKNOWN"
+    | null;
+  lastVerifiedAt?: string | null;
   reviews?: { overallRating: number }[];
 }
 

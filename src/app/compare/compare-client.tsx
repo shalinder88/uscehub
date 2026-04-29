@@ -3,6 +3,17 @@
 import { useState, useEffect } from "react";
 import { Check, X, ArrowRight, GitCompareArrows } from "lucide-react";
 import Link from "next/link";
+import { ListingVerificationBadge } from "@/components/listings/listing-verification-badge";
+import { listingVerificationStatus } from "@/lib/listing-display";
+
+type LinkVerificationStatusInput =
+  | "VERIFIED"
+  | "REVERIFYING"
+  | "NEEDS_MANUAL_REVIEW"
+  | "SOURCE_DEAD"
+  | "PROGRAM_CLOSED"
+  | "NO_OFFICIAL_SOURCE"
+  | "UNKNOWN";
 
 interface ListingOption {
   id: string;
@@ -25,6 +36,13 @@ interface ComparedListing {
   lorPossible: boolean;
   visaSupport: boolean;
   linkVerified: boolean;
+  /**
+   * Phase 3.5b: real verification fields. Optional because the legacy
+   * `linkVerified` Boolean is the back-compat fallback when the enum or
+   * timestamp are absent.
+   */
+  linkVerificationStatus?: LinkVerificationStatusInput | null;
+  lastVerifiedAt?: string | null;
   shortDescription: string;
   applicationMethod: string;
   startDate: string | null;
@@ -51,6 +69,30 @@ function BoolCell({ value }: { value: boolean }) {
     <Check className="mx-auto h-4 w-4 text-emerald-600" />
   ) : (
     <X className="mx-auto h-4 w-4 text-slate-300" />
+  );
+}
+
+/**
+ * Phase 3.5b: compare-table verification cell. Renders the real
+ * `ListingVerificationBadge` for verified / verified-on-file /
+ * reverifying / needs-review states, and a neutral "—" for the soft
+ * "unverified" bucket (UNKNOWN, admin-only states, false legacy
+ * Boolean) — matches the conservative-no-clutter rule on listing
+ * cards.
+ */
+function VerificationCell({ listing }: { listing: ComparedListing }) {
+  const status = listingVerificationStatus({
+    linkVerified: listing.linkVerified,
+    linkVerificationStatus: listing.linkVerificationStatus,
+    lastVerifiedAt: listing.lastVerifiedAt,
+  });
+  if (status === "unverified") {
+    return <X className="mx-auto h-4 w-4 text-slate-300" aria-label="Source not yet verified" />;
+  }
+  return (
+    <div className="flex justify-center">
+      <ListingVerificationBadge status={status} />
+    </div>
   );
 }
 
@@ -123,7 +165,7 @@ export default function CompareClient() {
     { label: "Format", render: (l) => FORMAT_LABELS[l.format] || l.format },
     { label: "Certificate", render: (l) => <BoolCell value={l.certificateOffered} /> },
     { label: "Visa Support", render: (l) => <BoolCell value={l.visaSupport} /> },
-    { label: "Verified", render: (l) => <BoolCell value={l.linkVerified} /> },
+    { label: "Verified", render: (l) => <VerificationCell listing={l} /> },
     { label: "Application", render: (l) => l.applicationMethod === "platform" ? "Via Platform" : "External" },
     { label: "Start Date", render: (l) => l.startDate || "—" },
     { label: "Deadline", render: (l) => l.applicationDeadline || "—" },
