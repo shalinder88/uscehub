@@ -116,7 +116,7 @@ One of these letters gets you interviews. The other one gets skimmed and forgott
 
 ## Where to Find Opportunities
 
-Browse verified observerships and externships on [USCEHub](/browse) — we list 207+ programs across 37 states with direct links, costs, visa requirements, and verification status.`,
+Browse observerships and externships on [USCEHub](/browse) — we list 156+ programs across 37 states with direct links, costs, visa requirements, and per-listing verification status (verified, official source on file, or needs review).`,
   },
   {
     slug: "how-to-get-usce-as-img",
