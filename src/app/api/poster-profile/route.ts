@@ -37,6 +37,16 @@ export async function PATCH(request: NextRequest) {
       return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // Role gate (PR 0a-fix-2, PR #32 medium gap M3): only POSTER and
+    // ADMIN may upsert PosterProfile rows. APPLICANT users have no
+    // legitimate reason to create or update a poster profile.
+    if (session.user.role !== "POSTER" && session.user.role !== "ADMIN") {
+      return Response.json(
+        { error: "Only posters can update a poster profile" },
+        { status: 403 }
+      );
+    }
+
     const body = await request.json();
     const { npiNumber, institutionalEmail, contactName, phone, title } = body;
 

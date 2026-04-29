@@ -2,6 +2,11 @@ export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import {
+  sanitizeOrganizationPatchForRole,
+  getStrippedOrganizationFields,
+  type Role,
+} from "@/lib/organization-update-guard";
 
 export async function GET(request: NextRequest) {
   try {
@@ -150,7 +155,7 @@ export async function PATCH(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { id: targetId, ...updateData } = body;
+    const { id: targetId } = body;
 
     // Admin can update any org by passing id
     const orgId = session.user.role === "ADMIN" && targetId
@@ -164,9 +169,26 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    // Remove fields that shouldn't be updated directly
-    delete updateData.ownerId;
-    delete updateData.createdAt;
+    // Role-aware field allowlist (PR 0a-fix-2, PR #32 medium gap M1).
+    // Owners may only patch content fields; verificationStatus, badges,
+    // adminNotes, institutionalEmail are admin-only.
+    // See src/lib/organization-update-guard.ts.
+    const role = (session.user.role ?? "APPLICANT") as Role;
+    const updateData = sanitizeOrganizationPatchForRole(body, role);
+
+    if (role !== "ADMIN") {
+      const stripped = getStrippedOrganizationFields(body, role);
+      if (stripped.length > 0) {
+        console.warn(
+          `[organizations PATCH] user ${session.user.id} attempted to set restricted fields on org ${orgId}:`,
+          stripped.join(", "),
+        );
+      }
+    }
+
+    if (Object.keys(updateData).length === 0) {
+      return Response.json({ error: "No editable fields provided" }, { status: 400 });
+    }
 
     const updated = await prisma.organization.update({
       where: { id: orgId },
