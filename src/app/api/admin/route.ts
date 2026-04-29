@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
+import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 
@@ -25,13 +26,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let result: unknown;
+    // Build the state-change query without awaiting, so it can run
+    // atomically with the AdminActionLog write inside a $transaction
+    // (PR 0a-fix-4, PR #32 low gap L1: previously the admin update
+    // and the audit-log write were sequential, leaving a crash window
+    // that could orphan a state change without an audit row).
+    let updateQuery: Prisma.PrismaPromise<unknown>;
     let targetType: string;
 
     switch (action) {
       case "approve_poster": {
         targetType = "poster_profile";
-        result = await prisma.posterProfile.update({
+        updateQuery = prisma.posterProfile.update({
           where: { id: targetId },
           data: {
             verificationStatus: "APPROVED",
@@ -43,7 +49,7 @@ export async function POST(request: NextRequest) {
 
       case "reject_poster": {
         targetType = "poster_profile";
-        result = await prisma.posterProfile.update({
+        updateQuery = prisma.posterProfile.update({
           where: { id: targetId },
           data: {
             verificationStatus: "REJECTED",
@@ -55,7 +61,7 @@ export async function POST(request: NextRequest) {
 
       case "approve_listing": {
         targetType = "listing";
-        result = await prisma.listing.update({
+        updateQuery = prisma.listing.update({
           where: { id: targetId },
           data: {
             status: "APPROVED",
@@ -67,7 +73,7 @@ export async function POST(request: NextRequest) {
 
       case "reject_listing": {
         targetType = "listing";
-        result = await prisma.listing.update({
+        updateQuery = prisma.listing.update({
           where: { id: targetId },
           data: {
             status: "REJECTED",
@@ -79,7 +85,7 @@ export async function POST(request: NextRequest) {
 
       case "hide_listing": {
         targetType = "listing";
-        result = await prisma.listing.update({
+        updateQuery = prisma.listing.update({
           where: { id: targetId },
           data: {
             status: "HIDDEN",
@@ -91,7 +97,7 @@ export async function POST(request: NextRequest) {
 
       case "approve_review": {
         targetType = "review";
-        result = await prisma.review.update({
+        updateQuery = prisma.review.update({
           where: { id: targetId },
           data: {
             moderationStatus: "APPROVED",
@@ -102,7 +108,7 @@ export async function POST(request: NextRequest) {
 
       case "reject_review": {
         targetType = "review";
-        result = await prisma.review.update({
+        updateQuery = prisma.review.update({
           where: { id: targetId },
           data: {
             moderationStatus: "REJECTED",
@@ -120,8 +126,7 @@ export async function POST(request: NextRequest) {
         );
     }
 
-    // Log the admin action
-    await prisma.adminActionLog.create({
+    const logQuery = prisma.adminActionLog.create({
       data: {
         adminId: session.user.id,
         action,
@@ -130,6 +135,11 @@ export async function POST(request: NextRequest) {
         notes: notes || null,
       },
     });
+
+    // Atomic: state change + audit log either both commit or both
+    // roll back. Closes the L1 gap (orphan state change with missing
+    // audit row).
+    const [result] = await prisma.$transaction([updateQuery, logQuery]);
 
     return Response.json({ success: true, result });
   } catch (error) {
