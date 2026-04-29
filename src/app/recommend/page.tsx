@@ -2,17 +2,21 @@ import type { Metadata } from "next";
 import RecommendClient from "./recommend-client";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
+// PR 0f-fix (audit H1): "best match" / "best programs" framing removed.
+// The engine filters APPROVED listings by user input and orders by
+// trust+views — there is no quality-ranking model behind "best". Copy
+// reframed as filter-based matching.
 export const metadata: Metadata = {
-  title: "Program Finder — Find the Best Observership for You",
+  title: "Program Finder — Match Programs to Your Profile",
   description:
-    "Answer a few questions about your budget, specialty, visa status, and preferred region to find the best observership, externship, or research programs for IMGs in the United States.",
+    "Answer a few questions about your budget, specialty, visa needs, and preferred region to find observership, externship, or research programs that match your filters. Results may prioritize recently verified, source-linked, approved listings.",
   alternates: {
     canonical: "https://uscehub.com/recommend",
   },
   openGraph: {
-    title: "Program Finder — Find the Best Observership for You",
+    title: "Program Finder — Match Programs to Your Profile",
     description:
-      "Answer a few questions to find the best clinical experience programs for International Medical Graduates.",
+      "Answer a few questions to find clinical experience programs that match your filters.",
     url: "https://uscehub.com/recommend",
   },
 };
@@ -22,7 +26,7 @@ const jsonLd = {
   "@type": "WebApplication",
   name: "Program Finder — USCEHub",
   description:
-    "Interactive tool that helps International Medical Graduates find the best observership, externship, or research programs based on budget, specialty, visa status, and location.",
+    "Interactive tool that helps International Medical Graduates find observership, externship, or research programs that match their filters by budget, specialty, visa needs, and location.",
   url: "https://uscehub.com/recommend",
   applicationCategory: "EducationalApplication",
   offers: {

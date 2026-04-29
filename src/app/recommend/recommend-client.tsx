@@ -51,15 +51,27 @@ const STEPS = [
     ],
   },
   {
+    // PR 0f-fix (audit M1): the previous visa step offered b1b2/j1/citizen
+    // options that the API does not filter on (only `need-support` constrains
+    // the query). Replaced with a 2-option binary that matches what the
+    // engine actually does, so the affordance is honest. See
+    // /api/recommend/route.ts:36-39.
     key: "visa" as const,
-    title: "What's your visa status?",
-    subtitle: "This helps us find programs that accept your visa type",
+    title: "Do you need visa-support listings?",
+    subtitle:
+      "Some listings explicitly support applicants who need visa help. Other listings may still accept various visa types — verify with the institution.",
     icon: Globe,
     options: [
-      { value: "b1b2", label: "B1/B2 Visitor Visa", description: "Tourist/business visa" },
-      { value: "j1", label: "J1 Exchange Visa", description: "Exchange visitor" },
-      { value: "citizen", label: "US Citizen / Resident", description: "Green card or citizen" },
-      { value: "need-support", label: "Need visa support", description: "Show programs with visa help" },
+      {
+        value: "need-support",
+        label: "Yes — show listings with visa support",
+        description: "Filters to listings flagged as supporting visa applicants",
+      },
+      {
+        value: "any",
+        label: "No — show all listings",
+        description: "No visa-support filter applied",
+      },
     ],
   },
   {
@@ -171,7 +183,7 @@ export default function RecommendClient() {
         <div className="text-center">
           <Loader2 className="mx-auto h-8 w-8 animate-spin text-slate-400" />
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-            Finding your best matches...
+            Finding listings that match your filters…
           </p>
         </div>
       </div>
@@ -184,11 +196,13 @@ export default function RecommendClient() {
         <div className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
             <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              Your Top Matches
+              Your Matches
             </h1>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              {results.length} {results.length === 1 ? "program" : "programs"}{" "}
-              matched your preferences
+              {results.length} {results.length === 1 ? "listing" : "listings"}{" "}
+              matched your filters. Results may prioritize recently verified,
+              source-linked, approved listings — verify details with the
+              official institution before applying.
             </p>
           </div>
         </div>
@@ -208,7 +222,7 @@ export default function RecommendClient() {
                 {answers.specialty}
               </span>
             )}
-            {answers.visa && (
+            {answers.visa && answers.visa !== "any" && (
               <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-300">
                 <Globe className="h-3 w-3" />
                 {STEPS[2].options.find((o) => o.value === answers.visa)?.label}
@@ -266,7 +280,8 @@ export default function RecommendClient() {
             Program Finder
           </h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Answer a few questions and we&apos;ll find the best programs for you
+            Answer a few questions and we&apos;ll find listings that match your
+            filters
           </p>
         </div>
       </div>

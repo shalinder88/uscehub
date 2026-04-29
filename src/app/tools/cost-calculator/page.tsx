@@ -2,43 +2,36 @@ import type { Metadata } from "next";
 import { CostCalculator } from "@/components/tools/cost-calculator";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
+// PR 0g-fix:
+//   - "visa costs" dropped from descriptions (audit H1) — the calculator
+//     does NOT include visa, exam, ECFMG, ERAS/NRMP, airfare, malpractice,
+//     or background-check fees. Honest scope is housing/food/transport/
+//     insurance + a manual program-fee field.
+//   - `WebApplication` JSON-LD with `applicationCategory: "FinanceApplication"`
+//     removed entirely (audit H2). Schema.org reserves that category for
+//     financial-transaction tools (banking, tax filing, loan applications);
+//     a static client-side estimator overclaims under it. BreadcrumbSchema
+//     preserved. Re-introduce only if/when a real finance product ships
+//     with appropriate disclosure. Same authorized SEO-impl exception
+//     class as PR #42 (`AggregateRating`) and PR #44 (`DiscussionForumPosting`).
 export const metadata: Metadata = {
-  title: "Cost Calculator — Estimate Your Observership Costs",
+  title: "Cost Calculator — Estimate Your Observership Trip Costs",
   description:
-    "Estimate the total cost of your observership, externship, or research experience in the US including program fees, housing, food, transportation, and visa costs.",
+    "Estimate the trip-side cost of your observership, externship, or research experience in the US — program fee plus housing, food, transport, and an insurance range. Visa, exam, ECFMG, ERAS/NRMP, airfare, malpractice, and background-check fees are not included.",
   alternates: {
     canonical: "https://uscehub.com/tools/cost-calculator",
   },
   openGraph: {
-    title: "Cost Calculator — Estimate Your Observership Costs",
+    title: "Cost Calculator — Estimate Your Observership Trip Costs",
     description:
-      "Calculate the total cost of your US clinical experience including housing, food, transportation, and visa fees.",
+      "Estimator for housing, food, transport, insurance, and program fee. Other IMG-cycle fees are not included.",
     url: "https://uscehub.com/tools/cost-calculator",
-  },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Observership Cost Calculator — USCEHub",
-  description:
-    "Estimate the total cost of your observership, externship, or research experience in the United States including program fees, housing, food, transportation, and visa costs.",
-  url: "https://uscehub.com/tools/cost-calculator",
-  applicationCategory: "FinanceApplication",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
   },
 };
 
 export default function CostCalculatorPage() {
   return (
     <div className="bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
