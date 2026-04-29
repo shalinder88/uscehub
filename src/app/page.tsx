@@ -11,6 +11,10 @@ import { ErasCountdown } from "@/components/home/eras-countdown";
 import { ActivityFeed } from "@/components/home/activity-feed";
 import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
+// PR P1-2: soft pathway selector below the hero. Non-blocking,
+// localStorage-only, no redirect, no modal. See
+// docs/platform-v2/P1_2_HOMEPAGE_PATHWAY_SELECTOR.md.
+import { PathwaySelectorSection } from "@/components/home/pathway-selector-section";
 
 export const metadata: Metadata = {
   title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
@@ -162,6 +166,7 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
+      <PathwaySelectorSection />
       <ErasCountdown />
       <ActivityFeed />
       <TrustSection />
