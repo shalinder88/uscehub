@@ -6,6 +6,64 @@
 
 ---
 
+## 0. Long-term platform vision
+
+USCEHub is intended to become the **cleanest, most trusted physician career-pathway platform for the whole physician pipeline**, not an observership directory.
+
+### Audience (long-term, not just today's wedge)
+
+- non-U.S. IMGs and U.S. IMGs (current deepest content investment)
+- Caribbean IMGs, old-YOG IMGs, reapplicants
+- visa-requiring applicants
+- U.S. MD / DO medical students and graduates
+- residents (USMG and IMG)
+- fellows
+- attendings, including new attendings entering jobs, contracts, insurance, relocation, and adult-life finance setup
+- visa-sponsored physicians at every career stage
+
+§2 expands the audience hierarchy and explicit "include U.S. MD / DO" rule.
+
+### Current wedge
+
+**Verified USCE / observership / elective / clinical-experience data.** This is the foundation. The trust/data-quality work in Phase 3 (cron + admin queue + real verification UI) is the precondition for every other vertical. Without trustworthy data, none of the future surfaces below have credibility.
+
+### Future verticals
+
+Documented in detail in §7 (product architecture) and §13 (execution order). Listed here as a single durable reference so future agents do not narrow scope:
+
+- USCE: observerships, externships, electives, research, postdoc
+- Match prep: residency, fellowship, IMG strategy, SOAP, signaling, rank list
+- Fellowship pathway: subspecialty-by-subspecialty (see §8)
+- Career path: J1 waiver jobs, H1B-friendly physician jobs, attending transition, locums / moonlighting
+- Visa and immigration support: J1 vs H1B, Conrad 30, waiver guides, immigration attorney directory
+- Recruiter directory and physician recruiter relationships
+- Contract review services
+- Adult-life setup for new attendings: disability insurance, term life insurance, physician mortgage, relocation, financial setup
+- Tools: saved programs, compare, alerts, deadline tracker, visa decision helper, fellowship competitiveness helper, cost calculator, email-gated PDF exports
+- Institution / recruiter / attorney marketplace
+- Long-term monetization layered on top — never replacing the free core
+
+### Hard sequencing rule
+
+Do not build the future verticals prematurely. The order is fixed and reaffirmed in §13:
+
+1. **Trust / data-quality engine** (Phase 3 — verification cron, admin queue, real public verification UI). Must be stable before anything else ships.
+2. **Saved / compare / alerts** on top of trustworthy data.
+3. **Expand** into career, visa, fellowship, and new-attending support.
+4. **Marketplace and monetization** layered on the foundation.
+
+Conversion architecture, fellowship pages, monetization, marketplace, and a cron schedule beyond the existing two are **all gated** on Phase 3 stabilizing in production.
+
+### Anti-narrowing rule for agents
+
+Do **not** describe USCEHub as "an observership directory" or "an IMG observership site" in any commit message, PR body, internal doc, public copy, or session handoff. The current wedge is the trust engine for verified clinical-experience data; the long-term product is the whole physician career pathway.
+
+If a draft (yours or another agent's) implies the product is only observerships, treat that as drift, flag it, and link back to this section before writing more code.
+
+The website itself must remain clean, structured, trustworthy, and easy to navigate as it grows. Conservative trust language (see [PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md](PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md) §4 and the PR 3.5a wording rules) applies to every future vertical, not just USCE.
+
+---
+
 ## 1. Core decision
 
 USCEHub is the free physician training pathway platform.
