@@ -80,7 +80,7 @@ export async function ProgramStats() {
     },
     {
       icon: BadgeCheck,
-      label: "Official Source on File",
+      label: "Programs with Official Source",
       value: listingsWithOfficialSource.toString(),
     },
     {

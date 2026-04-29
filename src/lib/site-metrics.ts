@@ -60,7 +60,7 @@ export const SITE_METRICS = {
  */
 export const SITE_METRICS_DISPLAY = {
   opportunitiesIndexed: `${SITE_METRICS.opportunitiesIndexed}+ opportunities indexed`,
-  listingsWithOfficialSource: `${SITE_METRICS.listingsWithOfficialSource} listings with an official source on file`,
+  listingsWithOfficialSource: `${SITE_METRICS.listingsWithOfficialSource} programs with an official source on file`,
   statesCovered: `${SITE_METRICS.statesCovered} states`,
   lastUpdated: `Updated ${SITE_METRICS.lastUpdatedLabel}`,
 } as const;
