@@ -12,7 +12,7 @@ Read these in this order at session start:
 1. `/AGENTS.md` — canonical agent operating rules. CLAUDE.md delegates here via `@AGENTS.md`. Contains the every-10th-prompt strategic checkpoint cadence, the per-prompt Agree / Disagree / Agree-with-caveat rule, and the phase-and-stop discipline.
 2. `/docs/codebase-audit/RULES.md` — preservation rules, **`/career` hard protection list**, git-safety list. Higher authority than the blueprint or AGENTS.md when there is a conflict.
 3. `/docs/codebase-audit/SEO_PRESERVATION_RULES.md` — SEO impact log every PR must include.
-4. `/docs/codebase-audit/USCEHUB_MASTER_BLUEPRINT.md` — strategic source of truth for what to build, in what order, for whom. Phase 0 is the active phase. §13 has the phase order. The new "Operator reminder" section near the end cross-references the rule files.
+4. `/docs/codebase-audit/USCEHUB_MASTER_BLUEPRINT.md` — strategic source of truth for what to build, in what order, for whom. **Read §0 first** — it is the long-term platform vision and the anti-narrowing rule (do **not** describe USCEHub as "an observership directory"; the current verified-USCE wedge is the foundation of a much larger physician career-pathway platform). Phase 0 is the active phase. §13 has the phase order. The "Operator reminder" section near the end cross-references the rule files.
 5. `/docs/codebase-audit/PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md` — the 6-PR Phase 3 sequence (3.1–3.6). 3.1, 3.2, 3.2a, 3.3 done. 3.4 next.
 6. This file.
 
