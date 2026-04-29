@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@prisma/client";
 import { ListingFilters } from "@/components/listings/listing-filters";
 import { ListingCard } from "@/components/listings/listing-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
@@ -97,11 +98,25 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     conditions.push({ linkVerified: true });
   }
 
-  // Default sort: verified first, then by date
-  let orderBy: Record<string, string>[] = [{ linkVerified: "desc" }, { createdAt: "desc" }];
-  if (params.sort === "cost-low") orderBy = [{ linkVerified: "desc" }, { cost: "asc" }];
-  else if (params.sort === "cost-high") orderBy = [{ linkVerified: "desc" }, { cost: "desc" }];
-  else if (params.sort === "most-reviewed") orderBy = [{ linkVerified: "desc" }, { views: "desc" }];
+  // Default sort: freshly cron/admin-verified rows first (real
+  // `lastVerifiedAt` timestamp present, newest first), then legacy
+  // verified-on-file rows (linkVerified=true with null lastVerifiedAt),
+  // then everything else. Matches the badge precedence shipped in
+  // PR #13/#16 so the most trustworthy rows lead the grid.
+  const FRESH_FIRST: Prisma.ListingOrderByWithRelationInput = {
+    lastVerifiedAt: { sort: "desc", nulls: "last" },
+  };
+  let orderBy: Prisma.ListingOrderByWithRelationInput[] = [
+    FRESH_FIRST,
+    { linkVerified: "desc" },
+    { createdAt: "desc" },
+  ];
+  if (params.sort === "cost-low")
+    orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { cost: "asc" }];
+  else if (params.sort === "cost-high")
+    orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { cost: "desc" }];
+  else if (params.sort === "most-reviewed")
+    orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { views: "desc" }];
 
   const listings = await prisma.listing.findMany({
     where: { AND: conditions },

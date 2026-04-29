@@ -62,7 +62,14 @@ export async function GET(request: NextRequest) {
 
     const listings = await prisma.listing.findMany({
       where: { AND: conditions },
-      orderBy: [{ linkVerified: "desc" }, { views: "desc" }],
+      // Phase 3.7: prioritize freshly cron/admin-verified rows
+      // (real lastVerifiedAt timestamp), then legacy verified-on-file,
+      // then by views.
+      orderBy: [
+        { lastVerifiedAt: { sort: "desc", nulls: "last" } },
+        { linkVerified: "desc" },
+        { views: "desc" },
+      ],
       take: 20,
       include: {
         reviews: {
