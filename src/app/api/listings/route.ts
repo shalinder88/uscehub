@@ -187,6 +187,33 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Organization ownership check (PR 0a-fix-3, PR #32 medium gap M2).
+    // If the submitter passes organizationId, verify they own that
+    // organization. Admins may attach any organization; non-admins
+    // may only attach their own. This prevents a poster from
+    // claiming someone else's organization on a new listing.
+    if (organizationId && session.user.role !== "ADMIN") {
+      const org = await prisma.organization.findUnique({
+        where: { id: organizationId },
+        select: { ownerId: true },
+      });
+      if (!org) {
+        return Response.json(
+          { error: "Organization not found" },
+          { status: 404 }
+        );
+      }
+      if (org.ownerId !== session.user.id) {
+        console.warn(
+          `[listings POST] user ${session.user.id} attempted to attach organizationId ${organizationId} they do not own`,
+        );
+        return Response.json(
+          { error: "Forbidden: organization does not belong to you" },
+          { status: 403 }
+        );
+      }
+    }
+
     const listing = await prisma.listing.create({
       data: {
         title,
