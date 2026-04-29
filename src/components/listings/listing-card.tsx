@@ -3,7 +3,17 @@ import { MapPin, Clock, DollarSign, Star, Award, FileText, Globe } from "lucide-
 import { CardRoot } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ListingVerificationBadge } from "@/components/listings/listing-verification-badge";
+import { listingVerificationStatus } from "@/lib/listing-display";
 import { LISTING_TYPE_LABELS, truncate } from "@/lib/utils";
+
+type LinkVerificationStatusInput =
+  | "VERIFIED"
+  | "REVERIFYING"
+  | "NEEDS_MANUAL_REVIEW"
+  | "SOURCE_DEAD"
+  | "PROGRAM_CLOSED"
+  | "NO_OFFICIAL_SOURCE"
+  | "UNKNOWN";
 
 interface ListingCardProps {
   listing: {
@@ -20,6 +30,14 @@ interface ListingCardProps {
     lorPossible: boolean;
     visaSupport: boolean;
     linkVerified?: boolean;
+    /**
+     * Phase 3.5b: real verification fields. When present they take
+     * precedence over the legacy `linkVerified` Boolean. List surfaces
+     * (browse, observerships, featured) feed these via Prisma's
+     * default-all-scalar-fields findMany result.
+     */
+    linkVerificationStatus?: LinkVerificationStatusInput | null;
+    lastVerifiedAt?: Date | string | null;
     reviews?: { overallRating: number }[];
   };
 }
@@ -42,6 +60,19 @@ export function ListingCard({ listing }: ListingCardProps) {
       ? listing.reviews.reduce((sum, r) => sum + r.overallRating, 0) /
         listing.reviews.length
       : null;
+
+  // Phase 3.5b: cards use the same verification mapping as listing detail.
+  // The badge is suppressed for plain "unverified" (UNKNOWN, admin-only
+  // SOURCE_DEAD/PROGRAM_CLOSED/NO_OFFICIAL_SOURCE, false legacy Boolean)
+  // to keep card surfaces uncluttered — those statuses still surface in
+  // the listing detail trust block. Verified, verified-on-file,
+  // reverifying, and needs-review all render their badge here.
+  const verificationStatus = listingVerificationStatus({
+    linkVerified: listing.linkVerified,
+    linkVerificationStatus: listing.linkVerificationStatus,
+    lastVerifiedAt: listing.lastVerifiedAt,
+  });
+  const showVerificationBadge = verificationStatus !== "unverified";
 
   return (
     <Link href={`/listing/${listing.id}`}>
@@ -103,8 +134,8 @@ export function ListingCard({ listing }: ListingCardProps) {
                 Visa
               </Badge>
             )}
-            {listing.linkVerified && (
-              <ListingVerificationBadge status="verified" />
+            {showVerificationBadge && (
+              <ListingVerificationBadge status={verificationStatus} />
             )}
           </div>
         </div>
