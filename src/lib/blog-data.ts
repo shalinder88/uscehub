@@ -165,7 +165,7 @@ ECFMG certification (or pathway completion) opens more doors. Many externship pr
 - See our detailed comparison: [Observership vs Externship](/blog/observership-vs-externship-difference)
 
 ### Step 3: Search for Programs
-- **USCEHub** — [browse 207+ verified programs](/browse) with filters by state, specialty, cost, and visa requirements
+- **USCEHub** — [browse 156+ programs with an official source on file](/browse) with filters by state, specialty, cost, and visa requirements
 - Hospital GME websites — search "[Hospital Name] observership program"
 - Medical school international electives offices
 - Professional connections — IMGs who have done rotations can recommend preceptors
@@ -227,7 +227,7 @@ More is not always better. Quality matters more than quantity. One month of a st
 
 ## Find Your Program
 
-Search [USCEHub's database](/browse) — 207+ verified programs across 37 states, filtered by specialty, cost, state, and visa requirements. Every listing includes a direct link to the program's official page.`,
+Search [USCEHub's database](/browse) — 156+ programs with an official source on file across 37 states, filtered by specialty, cost, state, and visa requirements. Every listing includes a direct link to the program's official page.`,
   },
   {
     slug: "j1-waiver-guide-for-physicians",
