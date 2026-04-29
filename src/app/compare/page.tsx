@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Compare Programs Side by Side — USCEHub",
     description:
-      "Compare observership and externship programs side by side to find the best fit for your IMG journey.",
+      "Compare observership and externship programs side by side. Source-linked fields shown where available; verify missing data with the official institution.",
     url: "https://uscehub.com/compare",
   },
 };
