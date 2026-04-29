@@ -2,6 +2,11 @@ export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import {
+  sanitizeListingPatchForRole,
+  getStrippedListingFields,
+  type Role,
+} from "@/lib/listing-update-guard";
 
 export async function GET(
   request: NextRequest,
@@ -89,8 +94,28 @@ export async function PATCH(
 
     const body = await request.json();
 
-    // Remove fields that shouldn't be updated directly
-    const { id: _id, posterId: _posterId, createdAt: _createdAt, views: _views, ...updateData } = body;
+    // Role-aware field allowlist (PR 0a-fix-1, PR #32 critical gap C1).
+    // Posters may only patch content fields; admin moderation, trust,
+    // verification, featured, and admin-notes fields are admin-only.
+    // See src/lib/listing-update-guard.ts.
+    const role = (session.user.role ?? "APPLICANT") as Role;
+    const updateData = sanitizeListingPatchForRole(body, role);
+
+    // Telemetry-only: log keys the poster attempted to set but were
+    // stripped, so audit can detect malicious or buggy clients.
+    if (role !== "ADMIN") {
+      const stripped = getStrippedListingFields(body, role);
+      if (stripped.length > 0) {
+        console.warn(
+          `[listings PATCH] poster ${session.user.id} attempted to set restricted fields on listing ${id}:`,
+          stripped.join(", "),
+        );
+      }
+    }
+
+    if (Object.keys(updateData).length === 0) {
+      return Response.json({ error: "No editable fields provided" }, { status: 400 });
+    }
 
     const updated = await prisma.listing.update({
       where: { id },
