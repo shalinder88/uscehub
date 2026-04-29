@@ -6,7 +6,15 @@
 
 ## TL;DR
 
-Phase 3 is **substantively complete on the data-quality, display, ordering, admin-tooling, and observability axes.** The 9 PRs that built it are all merged to `main`. Three non-cron gaps remain — none block Phase 3 completion, but two affect public trust truthfulness and should be decided on before Phase 4 (institution outreach) or Phase 3.6 (real email digests) start.
+Phase 3 is **substantively complete on the data-quality, display, ordering, admin-tooling, and observability axes.** The 9 PRs that built it are all merged to `main`. Three non-cron gaps were surfaced in §9; **two of three are now addressed** (status table below). Phase 4 (institution outreach) and Phase 3.6 (real email digests) remain gated per Master Blueprint §0.
+
+## Audit findings status (updated 2026-04-29)
+
+| Finding | Original status (PR #23 audit) | Now |
+|---|---|---|
+| §9.1 `/api/flags` POST does not populate `FlagKind` | ⚠️ open | ✅ **FIXED** in PR #24 (`1725718`) — server validates `kind` body field against the enum; back-compat parses `[broken_link]` reason prefix; `<ReportBrokenLinkButton>` sends `kind: "BROKEN_LINK"` explicitly |
+| §9.2 SEO / home count widgets overclaim "verified" | ⚠️ open | 🟡 **IN PROGRESS** in PR #25 — Option B implemented (rename, not narrow): `SITE_METRICS.activeVerifiedListings` → `listingsWithOfficialSource`, value 207 → 156, stat card label "Verified Programs" → "Official Source on File", JSON field rename. PR open, awaiting explicit user review of the visible-copy change. |
+| §9.3 `probeUrl` HEAD→GET fallback integration test | ⏳ unchanged | ⏳ unchanged — very low priority; classifier is unit-tested |
 
 ## Phase 3 PR ledger (all on main)
 
@@ -31,6 +39,9 @@ Phase 3 is **substantively complete on the data-quality, display, ordering, admi
 | #20 | `a5da2b1` | Ops: Search Console + mobile QA runbook |
 | #21 | `48de83e` | Phase 3.6 foundation: verified listings digest preview |
 | #22 | `2e9371e` | Ops: admin verification queue operator runbook |
+| #23 | `211586c` | Audit Phase 3 completion gaps (this doc, original) |
+| #24 | `1725718` | Phase 3.8: set broken-link flag kind (closes §9.1) |
+| #25 | open | Phase 3.9: clarify trust metrics language (closes §9.2 — awaiting user review) |
 
 ## 1. Data model / migrations
 
@@ -80,7 +91,7 @@ Phase 3 is **substantively complete on the data-quality, display, ordering, admi
 | `lastVerifiedAt` only advances on VERIFIED | ✅ |
 | Admin action audit log | ✅ `AdminActionLog` row per mutation |
 | Admin queue runbook | ✅ `docs/codebase-audit/ADMIN_VERIFICATION_QUEUE_RUNBOOK.md` (PR #22) |
-| **`/api/flags` POST handler does not set `kind`** | ⚠️ **gap — see §9 item 1** |
+| `/api/flags` POST handler sets `kind` | ✅ PR #24 (post-original-audit) — see §9.1 below |
 
 ## 4. Public trust UI
 
@@ -97,7 +108,7 @@ Phase 3 is **substantively complete on the data-quality, display, ordering, admi
 | Report broken link still present | ✅ |
 | ListingDisclaimer still visible | ✅ |
 | `<TrustBadges>` (poster trust) preserved | ✅ unrelated to source-link verification, kept per RULES.md |
-| **`linkVerified` Boolean used in SEO/home count widgets** | ⚠️ **see §9 item 2** |
+| `linkVerified` Boolean used in SEO/home count widgets | 🟡 PR #25 open — see §9.2 below |
 
 ## 5. Save / compare / recommend
 
@@ -164,37 +175,56 @@ Three concrete items surfaced during this audit. None blocks Phase 3 completion.
 
 ### 9.1 `/api/flags` POST handler does not populate `FlagKind`
 
+**Status: ✅ FIXED in PR #24 (`1725718`).**
+
 **Severity:** low correctness; affects admin queue triage UX, not data integrity.
 
-**What:** `<ReportBrokenLinkButton>` ([src/components/listings/report-broken-link-button.tsx](src/components/listings/report-broken-link-button.tsx)) submits to `/api/flags` with `reason: "[broken_link] Reported from the listing detail page."` — a free-text prefix. The route handler in [src/app/api/flags/route.ts](src/app/api/flags/route.ts) does **not** set the structured `kind` column that PR #7 added. Default fires: `kind = OTHER`. The admin queue surfaces this fine (it filters on `status`, not `kind`, so the row still appears), but per-kind filtering at `/admin/verification-queue` cannot distinguish broken-link reports from generic flags.
+**What:** `<ReportBrokenLinkButton>` ([src/components/listings/report-broken-link-button.tsx](src/components/listings/report-broken-link-button.tsx)) used to submit to `/api/flags` with `reason: "[broken_link] Reported from the listing detail page."` — a free-text prefix. The route handler in [src/app/api/flags/route.ts](src/app/api/flags/route.ts) did **not** set the structured `kind` column that PR #7 added. Default fired: `kind = OTHER`. The admin queue surfaced the row fine (it filters on `status`, not `kind`), but per-kind filtering at `/admin/verification-queue` could not distinguish broken-link reports from generic flags.
 
 **Why it survived:** PR #7 added the schema column, no PR ever wired the user-facing POST to populate it. The schema design in [PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md](PHASE3_DATA_QUALITY_VERIFICATION_PLAN.md) §3 + §6 explicitly anticipated that PR 3.4 would parse the prefix; PR #12 did not.
 
-**Fix shape (≤10 lines):** in `/api/flags/route.ts`, accept an optional `kind?: string` param from the body OR parse the leading `[broken_link]` token; pass `kind: "BROKEN_LINK"` (validated against the enum) to `prisma.flagReport.create`. `<ReportBrokenLinkButton>` then either passes `kind` explicitly or relies on the prefix parser.
+**How PR #24 closed it:**
+- Server (`/api/flags/route.ts`) accepts an optional `kind?: string` body field, validated against the FlagKind enum via a `Set` allow-list (never blindly trusts user input).
+- Back-compat: if `kind` is missing, parses the legacy `[broken_link]` prefix in `reason`.
+- Default if neither: `OTHER`.
+- Also accepts `sourceUrl?: string` (length-capped) and persists to `FlagReport.sourceUrl` (PR #7 added the column; no caller populated it before).
+- Client (`<ReportBrokenLinkButton>`) sends `kind: "BROKEN_LINK"` explicitly; the `[broken_link]` reason prefix stays for back-compat.
 
-**Risk:** none — schema column exists, default is harmless, fix is purely additive.
+**Effect:** new broken-link reports appear with `kind = BROKEN_LINK` and `sourceUrl` populated, so [`/admin/verification-queue`](src/app/admin/verification-queue/page.tsx) per-kind context renders correctly. Old reports retain `kind = OTHER` and remain triagable as before.
 
-### 9.2 SEO / home count widgets still query the legacy Boolean
+**Risk:** none — schema column already existed; the fix is purely additive.
+
+### 9.2 SEO / home count widgets overclaim "verified"
+
+**Status: 🟡 IN PROGRESS in PR #25 — open, awaiting explicit user review of the visible-copy change.**
 
 **Severity:** low correctness; affects public stat truthfulness, not behavior.
 
-**What:** three count surfaces still use `where: { status: "APPROVED", linkVerified: true }`:
+**What:** three count surfaces used `where: { status: "APPROVED", linkVerified: true }` with a "verified" label:
 
-- [src/components/seo/program-stats.tsx](src/components/seo/program-stats.tsx) line 26
-- [src/app/api/programs/stats/route.ts](src/app/api/programs/stats/route.ts) line 20
-- [src/components/home/program-spotlight.tsx](src/components/home/program-spotlight.tsx) line 8
+- [src/components/seo/program-stats.tsx](src/components/seo/program-stats.tsx) — "Verified Programs" stat card
+- [src/app/api/programs/stats/route.ts](src/app/api/programs/stats/route.ts) — `verifiedListings` JSON field
+- [src/components/home/program-spotlight.tsx](src/components/home/program-spotlight.tsx) — single-listing "Featured Program" picker (label is fine; broad selection is appropriate)
 
-After PRs #11 / #13 / #16 / #17, "verified" on the public site means freshly cron- or admin-verified (with `lastVerifiedAt`). But the legacy Boolean is `true` for both freshly verified rows AND the 136 legacy backfilled rows that have `lastVerifiedAt = null`. So these count widgets currently overstate the "verified" count by ~136 listings on the homepage and SEO surfaces — same overclaim PR #13 + #16 fixed in the badges.
+After PRs #11 / #13 / #16 / #17, "verified" on the public site means freshly cron- or admin-verified (with `lastVerifiedAt`). The legacy Boolean is `true` for both that strict cohort AND the ~136 legacy backfilled rows that have `lastVerifiedAt = null`. So the first two count widgets overstated the "verified" count by ~136 listings on the homepage and SEO surfaces.
 
-Additionally, [src/lib/site-metrics.ts](src/lib/site-metrics.ts) hardcodes `activeVerifiedListings = 207` (from a pre-Phase-3 era). That number is stale relative to the current 156 `linkVerificationStatus = VERIFIED` enum count, and stale-er still relative to the 20 `VERIFIED + lastVerifiedAt set` "freshly verified" count.
+Additionally, [src/lib/site-metrics.ts](src/lib/site-metrics.ts) hardcoded `activeVerifiedListings = 207` (from a pre-Phase-3 era), stale relative to the current 156 `linkVerified = true` count and stale-er relative to the 20 strict-cohort count.
 
-**Decision needed (judgement call, user-facing):**
-- Should the homepage stat say **20** (freshly verified — strict honesty), **156** (verified-class — moderate honesty), or **207** (legacy hardcoded — current state)?
-- Or replace the static hardcoded number with a live query?
+**User's policy choice (Option B):** keep the broader inventory-signal count, but rename it so it does NOT use the word "verified". Reserve "verified" for the strict cohort (admin / digest contexts). Avoids making the homepage look artificially weaker overnight.
 
-**Fix shape, once decided:** narrow the three queries' `where` clause to `linkVerificationStatus = "VERIFIED"` (and optionally `lastVerifiedAt: { not: null }`); update `SITE_METRICS.activeVerifiedListings` to match (or replace with a live query).
+**How PR #25 implements it:**
+- `SITE_METRICS.activeVerifiedListings` → `listingsWithOfficialSource`. Value 207 → 156 (current accurate count).
+- Display string "207 verified listings" → "156 listings with an official source on file".
+- `program-stats.tsx` stat card label "Verified Programs" → "Official Source on File". Query unchanged (still the broad inventory signal); the rename is the fix.
+- `/api/programs/stats` JSON field rename: `verifiedListings` → `listingsWithOfficialSource`. Internal API; no external consumers in `/src`.
+- `program-spotlight.tsx` left alone — its label is "Featured Program", not "Verified Program", so the broad selection is appropriate.
+- Test assertions added to `scripts/test-cleanup-helpers.ts` so a future regression that resurrects the overclaim wording fails fast: display copy MUST contain "official source on file" AND MUST NOT contain "verified".
 
-**Risk:** changes a public number on the homepage. Should land as its own small PR with a clear before/after note in the PR body.
+**Risk:** changes a public stat-card label and the rendered number on the homepage. PR #25 stays open for explicit user sign-off on the visible-copy change.
+
+**Out of scope for PR #25 (flagged as follow-ups):**
+- [src/lib/blog-data.ts](src/lib/blog-data.ts) has two literal "207+ verified programs" references in blog post bodies (lines 168, 230). Blog content is product copy with SEO implications; updating it should be a separate small content PR, not bundled with the stats infra refactor.
+- A separate "recently verified" stat card (count of strict cohort, ~20 today) is not added by PR #25. Open question whether to expose it as a 5th stat highlight, a sub-line under the renamed card, or just keep it surfaced via the admin queue and digest preview.
 
 ### 9.3 `probeUrl()` HEAD→GET fallback has no integration test
 
@@ -219,11 +249,11 @@ Additionally, [src/lib/site-metrics.ts](src/lib/site-metrics.ts) hardcodes `acti
 - Vercel duplicate project cleanup (operator task; doc in PR #19).
 - Prisma `package.json#prisma` → `prisma.config.ts` migration (deferred; not blocking; in `DEFERRED_OPS_CHECKLIST.md`).
 
-## Recommended next steps (not implemented)
+## Recommended next steps
 
-1. **Decide on §9.1** (`kind: BROKEN_LINK` plumbing). Tiny code PR; correctness fix.
-2. **Decide on §9.2** (homepage / SEO count). Pick the policy: 20 vs 156 vs live query. Then small code PR.
-3. **Decide on §9.3** (probeUrl integration test). Optional; very low priority.
+1. ~~**Decide on §9.1**~~ ✅ done — PR #24 merged.
+2. **Review and merge PR #25 (§9.2)** if the visible-copy change ("Verified Programs" stat card → "Official Source on File", count 207 → 156) reads honestly to you. The PR also updates `SITE_METRICS.activeVerifiedListings` → `listingsWithOfficialSource` and the JSON API field. Once merged, optionally update [src/lib/blog-data.ts](src/lib/blog-data.ts) lines 168 + 230 in a separate small content PR (still says "207+ verified programs").
+3. **§9.3** (probeUrl integration test) remains open — very low priority; defer.
 4. After daily cron has been clean for 3–7 ticks, decide whether to start the Phase 3.6 send path. Requires the 8 prerequisites in §6.
 5. Operator runbooks (mobile QA, GSC, Vercel cleanup) at user's pace.
 
