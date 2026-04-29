@@ -26,7 +26,14 @@ export async function FeaturedListings() {
         status: "APPROVED",
         featured: false,
       },
-      orderBy: [{ linkVerified: "desc" }, { views: "desc" }],
+      // Phase 3.7: prioritize freshly cron/admin-verified rows
+      // (real lastVerifiedAt timestamp), then legacy verified-on-file,
+      // then by views. Matches the badge precedence on cards.
+      orderBy: [
+        { lastVerifiedAt: { sort: "desc", nulls: "last" } },
+        { linkVerified: "desc" },
+        { views: "desc" },
+      ],
       take: 6 - listings.length,
       include: {
         reviews: {
