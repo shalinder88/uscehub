@@ -9,7 +9,6 @@ import { ProgramStats } from "@/components/seo/program-stats";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { ErasCountdown } from "@/components/home/eras-countdown";
 import { ActivityFeed } from "@/components/home/activity-feed";
-import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 
 export const metadata: Metadata = {
@@ -164,9 +163,8 @@ export default async function HomePage() {
       />
       <ErasCountdown />
       <ActivityFeed />
-      <TrustSection />
       <FeaturedListings />
-      <ProgramSpotlight />
+      <TrustSection />
       <HowItWorks />
       <ProgramStats />
       <MatchCounter />

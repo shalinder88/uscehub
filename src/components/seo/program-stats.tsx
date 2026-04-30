@@ -114,14 +114,17 @@ export async function ProgramStats() {
   ];
 
   return (
-    <section className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 py-16">
+    <section className="border-t border-[#dfd5b8] py-16 dark:border-[#34373f]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-white">
-            USCEHub by the Numbers
+          <p className="mb-3 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+            — By the numbers —
+          </p>
+          <h2 className="font-serif text-3xl font-normal tracking-tight text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'Source Serif Pro', ui-serif, Georgia, serif", letterSpacing: "-0.022em" }}>
+            USCEHub <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">in figures</em>
           </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Real-time statistics from the largest IMG opportunities database
+          <p className="mt-2 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
+            Real-time statistics from the largest verified U.S. clinical experience database.
           </p>
         </div>
 
@@ -132,15 +135,15 @@ export async function ProgramStats() {
             return (
               <div
                 key={stat.label}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center"
+                className="group rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-5 text-center shadow-plush shadow-plush-hover transition-all hover:-translate-y-0.5 dark:border-[#34373f] dark:bg-[#23262e]"
               >
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
-                  <Icon className="h-5 w-5 text-slate-700" />
+                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-[#dfd5b8] bg-[#f0e9d3] dark:border-[#34373f] dark:bg-[#2a2d36]">
+                  <Icon className="h-5 w-5 text-[#1a5454] dark:text-[#0fa595]" />
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">
+                <div className="font-serif text-3xl font-semibold tracking-tight text-[#0d1418] dark:text-[#f7f5ec]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
                   {stat.value}
                 </div>
-                <div className="mt-1 text-xs font-medium text-slate-500">
+                <div className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#bfc1c9]">
                   {stat.label}
                 </div>
               </div>
@@ -151,9 +154,9 @@ export async function ProgramStats() {
         {/* Type Breakdown and Top States */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Program Types */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
-            <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
-              Programs by Type
+          <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-6 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+            <h3 className="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1a5454] dark:text-[#0fa595]">
+              Programs by type
             </h3>
             <div className="space-y-3">
               {typeBreakdown.map((type) => {
@@ -163,20 +166,20 @@ export async function ProgramStats() {
                     ? Math.round((type.value / totalListings) * 100)
                     : 0;
                 return (
-                  <div key={type.label} className="flex items-center gap-3">
-                    <Icon className="h-4 w-4 shrink-0 text-slate-500" />
+                  <div key={type.label} className="group/row -mx-2 flex cursor-pointer items-center gap-3 rounded px-2 py-1 transition-colors hover:bg-[#f0e9d3] dark:hover:bg-[#2a2d36]">
+                    <Icon className="h-4 w-4 shrink-0 text-[#1a5454] dark:text-[#0fa595]" />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-700 dark:text-slate-300">
+                        <span className="text-sm text-[#4a5057] dark:text-[#bfc1c9]">
                           {type.label}
                         </span>
-                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        <span className="font-mono text-sm font-semibold text-[#0d1418] dark:text-[#f7f5ec]">
                           {type.value}
                         </span>
                       </div>
-                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
+                      <div className="mt-1 h-1.5 w-full rounded-full bg-[#f0e9d3] dark:bg-[#2a2d36]">
                         <div
-                          className="h-1.5 rounded-full bg-slate-700"
+                          className="h-1.5 rounded-full bg-[#1a5454] dark:bg-[#0fa595]"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>
@@ -185,13 +188,13 @@ export async function ProgramStats() {
                 );
               })}
             </div>
-            <div className="mt-4 rounded-lg bg-slate-50 dark:bg-slate-700 px-4 py-3">
+            <div className="mt-4 rounded-lg border border-[#dfd5b8] bg-[#f0e9d3] px-4 py-3 dark:border-[#34373f] dark:bg-[#2a2d36]">
               <div className="flex items-center gap-2">
-                <DollarSign className="h-4 w-4 text-slate-500" />
-                <span className="text-xs text-slate-600">
+                <DollarSign className="h-4 w-4 text-[#1a5454] dark:text-[#0fa595]" />
+                <span className="text-xs text-[#4a5057] dark:text-[#bfc1c9]">
                   Average observership cost range:{" "}
-                  <span className="font-semibold text-slate-900">
-                    Free - $2,500
+                  <span className="font-semibold text-[#0d1418] dark:text-[#f7f5ec]">
+                    Free – $2,500
                   </span>
                 </span>
               </div>
@@ -199,11 +202,11 @@ export async function ProgramStats() {
           </div>
 
           {/* Top States */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-6 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
             <div className="mb-4 flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 text-slate-500" />
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                Most Popular States for Observerships
+              <TrendingUp className="h-4 w-4 text-[#1a5454] dark:text-[#0fa595]" />
+              <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1a5454] dark:text-[#0fa595]">
+                Most popular states for observerships
               </h3>
             </div>
             <div className="space-y-3">
@@ -212,20 +215,20 @@ export async function ProgramStats() {
                 const percentage =
                   maxCount > 0 ? Math.round((count / maxCount) * 100) : 0;
                 return (
-                  <div key={state} className="flex items-center gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-semibold text-slate-600">
+                  <div key={state} className="group/row -mx-2 flex cursor-pointer items-center gap-3 rounded px-2 py-1 transition-colors hover:bg-[#f0e9d3] dark:hover:bg-[#2a2d36]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#dfd5b8] bg-[#f0e9d3] font-mono text-xs font-semibold text-[#4a5057] dark:border-[#34373f] dark:bg-[#2a2d36] dark:text-[#bfc1c9]">
                       {index + 1}
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-700 dark:text-slate-300">{state}</span>
-                        <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                        <span className="text-sm text-[#4a5057] dark:text-[#bfc1c9]">{state}</span>
+                        <span className="font-mono text-sm font-semibold text-[#0d1418] dark:text-[#f7f5ec]">
                           {count} programs
                         </span>
                       </div>
-                      <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
+                      <div className="mt-1 h-1.5 w-full rounded-full bg-[#f0e9d3] dark:bg-[#2a2d36]">
                         <div
-                          className="h-1.5 rounded-full bg-blue-500"
+                          className="h-1.5 rounded-full bg-[#1a5454] dark:bg-[#0fa595]"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>

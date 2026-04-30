@@ -1,223 +1,117 @@
 import Link from "next/link";
-import { HeartPulse } from "lucide-react";
+
+const SERIF =
+  "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif";
+
+// Editorial masthead footer — mirrors #40 mockup: italic display title
+// "USCE·Hub", gold mono-cap tagline, 4 columns (Browse / Tools / About /
+// Legal), volume row at the bottom (VOL II · ISSUE 4 …), italic Charter
+// disclaimer. Background uses the warm paper card tint so the page
+// closes on the same surface the hero opens on.
+const cols: { heading: string; links: { label: string; href: string; external?: boolean }[] }[] = [
+  {
+    heading: "Browse",
+    links: [
+      { label: "All listings", href: "/browse" },
+      { label: "By state", href: "/observerships" },
+      { label: "By specialty", href: "/browse" },
+      { label: "Compare", href: "/compare" },
+    ],
+  },
+  {
+    heading: "Tools",
+    links: [
+      { label: "Cost estimator", href: "/tools/cost-calculator" },
+      { label: "Saved", href: "/dashboard/saved" },
+      { label: "Recommend", href: "/recommend" },
+      { label: "Report issue", href: "/contact-admin" },
+    ],
+  },
+  {
+    heading: "About",
+    links: [
+      { label: "How it works", href: "/how-it-works" },
+      { label: "Methodology", href: "/methodology" },
+      { label: "For institutions", href: "/for-institutions" },
+      { label: "Community", href: "/community" },
+    ],
+  },
+  {
+    heading: "Legal",
+    links: [
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Disclaimer", href: "/disclaimer" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+];
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="h-5 w-5 text-slate-800 dark:text-slate-200" />
-              <span className="text-base font-bold text-slate-900 dark:text-white">
-                USCEHub
-              </span>
-            </Link>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              The largest structured database of clinical observership, externship,
-              and research opportunities for International Medical Graduates in the
-              United States.
-            </p>
-          </div>
+    <footer className="border-t border-[#dfd5b8] bg-[#faf6e8] py-16 dark:border-[#34373f] dark:bg-[#1d1f26]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-7 border-t-2 border-double border-[#dfd5b8] dark:border-[#34373f]" />
 
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Platform</h3>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href="/browse"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Browse Opportunities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/observerships"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Browse by State
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recommend"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Program Finder
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/for-institutions"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  For Institutions & Physicians
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/methodology"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Methodology
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Recommended Resources
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Resources</h3>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <a
-                  href="https://www.ecfmg.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ECFMG
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.usmle.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  USMLE
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.nrmp.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  NRMP
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://students-residents.aamc.org/applying-residencies-eras/applying-residencies-eras"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ERAS
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources & Data
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Legal</h3>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href="/disclaimer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Disclaimer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="text-center">
+          <h2
+            className="font-serif text-[34px] italic leading-tight tracking-tight text-[#0d1418] dark:text-[#f7f5ec]"
+            style={{ fontFamily: SERIF }}
+          >
+            USCE
+            <span className="not-italic font-medium text-[#1a5454] dark:text-[#0fa595]">·</span>
+            Hub
+          </h2>
+          <p className="mt-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.32em] text-[#a87b2e] dark:text-[#d8a978]">
+            Verified Directory · A Resource for U.S. Clinical Experience
+          </p>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 dark:border-slate-800 pt-6">
-          <p className="text-xs leading-relaxed text-slate-400">
-            USCEHub is an educational and informational platform. We are
-            not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong
-            to their respective owners. Listings are submitted by third-party
-            institutions and individuals. We do not guarantee the accuracy,
-            completeness, or validity of any listing. Users are advised to verify
-            all information independently before applying or making payments.
+        <div className="mt-10 grid grid-cols-2 gap-8 text-left sm:grid-cols-4">
+          {cols.map((col) => (
+            <div key={col.heading}>
+              <h5 className="mb-2.5 font-mono text-[9.5px] font-semibold uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+                {col.heading}
+              </h5>
+              <ul className="space-y-1.5">
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      className="text-[13px] text-[#4a5057] transition-colors hover:text-[#0d1418] dark:text-[#bfc1c9] dark:hover:text-[#f7f5ec]"
+                      style={{ fontFamily: SERIF }}
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-[#dfd5b8] pt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7a7f88] dark:border-[#34373f] dark:text-[#7e8089]">
+          <span>
+            <strong className="font-semibold text-[#4a5057] dark:text-[#bfc1c9]">VOL II · ISSUE 4</strong>
+          </span>
+          <span>Edited by the USCEHub desk</span>
+          <span>Last reviewed · April {year}</span>
+          <span>NO. {year}.04</span>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p
+            className="mx-auto max-w-3xl text-[12px] italic leading-relaxed text-[#7a7f88] dark:text-[#7e8089]"
+            style={{ fontFamily: SERIF }}
+          >
+            USCEHub is an independent informational platform. Not affiliated with
+            NRMP, ECFMG, ERAS, AAMC, or any hospital or residency program. We do
+            not guarantee placement, match, or visa outcomes. Always verify
+            program details with the official institution before applying.
           </p>
-          <p className="mt-3 text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} USCEHub. All rights reserved.
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
+            &copy; {year} USCEHub · All rights reserved
           </p>
         </div>
       </div>

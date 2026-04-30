@@ -48,14 +48,14 @@ export function ShareWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-40">
       {open && (
-        <div className="mb-3 w-48 rounded-xl border border-slate-200 bg-white p-3 shadow-xl">
-          <p className="mb-2 text-xs font-semibold text-slate-700">Share this page</p>
+        <div className="mb-3 w-48 rounded-xl border border-[#dfd5b8] bg-white p-3 shadow-xl dark:border-[#34373f] dark:bg-[#23262e]">
+          <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[#1a5454] dark:text-[#1a5454]">Share this page</p>
           <div className="space-y-1">
             {platforms.map((p) => (
               <button
                 key={p.key}
                 onClick={() => share(p.key)}
-                className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+                className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-[#4a5057] transition-colors hover:bg-[#f0e9d3] hover:text-[#0d1418] dark:text-[#bfc1c9] dark:hover:bg-[#2a2d36] dark:hover:text-[#f7f5ec]"
               >
                 {p.icon}
                 {p.label}
@@ -63,9 +63,9 @@ export function ShareWidget() {
             ))}
             <button
               onClick={copyLink}
-              className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+              className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-[#4a5057] transition-colors hover:bg-[#f0e9d3] hover:text-[#0d1418] dark:text-[#bfc1c9] dark:hover:bg-[#2a2d36] dark:hover:text-[#f7f5ec]"
             >
-              {copied ? <Check className="h-4 w-4 text-emerald-500" /> : <Link2 className="h-4 w-4" />}
+              {copied ? <Check className="h-4 w-4 text-[#1a5454] dark:text-[#1a5454]" /> : <Link2 className="h-4 w-4" />}
               {copied ? "Copied!" : "Copy Link"}
             </button>
           </div>
@@ -73,7 +73,7 @@ export function ShareWidget() {
       )}
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg transition-transform hover:scale-105"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0d1418] text-white shadow-lg transition-transform hover:scale-105 hover:bg-[#0e3838] dark:bg-[#23262e] dark:hover:bg-[#2a2d36]"
         aria-label="Share"
       >
         {open ? <X className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}
