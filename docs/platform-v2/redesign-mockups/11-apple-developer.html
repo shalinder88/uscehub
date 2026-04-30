@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>11 · Apple developer</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fbfbfd;--panel:#fff;--fg:#1d1d1f;--muted:#6e6e73;--quiet:#a1a1a6;--line:#d2d2d7;--accent:#06c;--accent-hover:#0466cc;--green:#1d6d3a;--sans:"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.47;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{background:rgba(245,245,247,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:24px;font-size:13px}
+.logo{font-weight:600;font-size:16px;color:var(--fg);letter-spacing:-.01em}
+.nav-links{display:flex;gap:24px;color:var(--fg);margin-left:auto}
+.nav-links a{color:var(--fg);font-weight:400}
+.nav-links a:hover{color:var(--muted);text-decoration:none}
+.hero{padding:64px 24px 48px;text-align:center;background:var(--bg)}
+.hero-inner{max-width:1080px;margin:0 auto}
+.eyebrow{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:14px}
+.hero h1{font-size:56px;line-height:1.07;letter-spacing:-.025em;font-weight:600;margin:0 0 14px}
+.hero .lede{font-size:21px;line-height:1.38;color:var(--fg);max-width:760px;margin:0 auto 28px;font-weight:400}
+.cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{height:36px;padding:0 16px;border-radius:18px;display:inline-flex;align-items:center;font-size:14px;font-weight:400;letter-spacing:-.005em}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);text-decoration:none}
+.btn-secondary{color:var(--accent)}
+.btn-secondary::after{content:" ›";font-weight:600;margin-left:4px}
+.btn-secondary:hover{text-decoration:underline}
+.section{max-width:1180px;margin:0 auto;padding:48px 24px}
+.section-head{margin-bottom:24px}
+.section-head h2{font-size:32px;letter-spacing:-.022em;font-weight:600;margin:0 0 4px}
+.section-head .sub{font-size:14px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .lede{font-size:17px}.nav-links{display:none}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.card .row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:16px}
+.card .row h3{font-size:21px;font-weight:600;letter-spacing:-.01em;margin:0;line-height:1.25}
+.card .row .verif{flex-shrink:0;font-size:12px;color:var(--green);font-weight:500;display:inline-flex;align-items:center;gap:5px}
+.card .row .verif::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}
+.card .desc{font-size:14px;color:var(--muted);margin:0 0 18px;line-height:1.5}
+.card .specs{border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:12px}
+.card .spec{display:flex;justify-content:space-between;align-items:center}
+.card .spec .k{color:var(--muted)}
+.card .spec .v{color:var(--fg);font-weight:500}
+.card .footer{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.card .footer .more{color:var(--accent)}
+.card .footer .save{color:var(--muted)}
+.metrics{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px 24px}
+.metrics-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+@media(max-width:640px){.metrics-inner{grid-template-columns:repeat(2,1fr);gap:24px}}
+.metric h3{font-size:48px;letter-spacing:-.025em;font-weight:600;margin:0 0 4px;line-height:1}
+.metric p{font-size:13px;color:var(--muted);margin:0}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+@media(max-width:760px){.feat{grid-template-columns:1fr}}
+.feat-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.feat-card.dark{background:var(--fg);color:#fff;border-color:var(--fg)}
+.feat-card.dark .desc{color:rgba(255,255,255,.7)}
+.feat-card .eb{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:-.005em}
+.feat-card.dark .eb{color:rgba(255,255,255,.5)}
+.feat-card h3{font-size:24px;letter-spacing:-.015em;font-weight:600;margin:0;line-height:1.2}
+.feat-card .desc{font-size:14px;color:var(--muted);line-height:1.55;margin:0}
+.feat-card a{font-size:13px;margin-top:auto}
+.footer{padding:24px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid var(--line)}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">USCEHub</span>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Cost Estimator</a><a href="#">Methodology</a><a href="#">For Institutions</a><a href="#" style="color:var(--accent)">Sign In</a></div>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <p class="eyebrow">USCEHub · Verified Directory · v2026</p>
+  <h1>Find verified U.S. clinical experience.</h1>
+  <p class="lede">A structured directory of source-linked observerships, externships, and research positions for international medical graduates. Cron-checked daily, admin-reviewed before publishing.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">Browse 1,247 listings</a>
+    <a class="btn btn-secondary" href="#">View methodology</a>
+  </div>
+</div></section>
+
+<div class="metrics"><div class="metrics-inner">
+  <div class="metric"><h3>1,247</h3><p>Verified listings</p></div>
+  <div class="metric"><h3>89%</h3><p>With source link</p></div>
+  <div class="metric"><h3>47</h3><p>States covered</p></div>
+  <div class="metric"><h3>Apr 14</h3><p>Last cron run</p></div>
+</div></div>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Recently verified</h2>
+    <p class="sub">Source-link confirmed in the last verification window. Verify program details with the institution before applying.</p>
+  </div>
+  <div class="cards">
+
+    <article class="card">
+      <div class="row">
+        <h3>Internal Medicine Observership · Mount Sinai</h3>
+        <span class="verif">Verified</span>
+      </div>
+      <p class="desc">Hospital-based observership with rotation in cardiology and pulmonology. Accepts IMGs with USMLE Step 1 pass.</p>
+      <div class="specs">
+        <div class="spec"><span class="k">Type</span><span class="v">Observership</span></div>
+        <div class="spec"><span class="k">Location</span><span class="v">New York, NY</span></div>
+        <div class="spec"><span class="k">Duration</span><span class="v">4 weeks</span></div>
+        <div class="spec"><span class="k">Cost</span><span class="v">$1,500–$2,000</span></div>
+        <div class="spec"><span class="k">LOR</span><span class="v">Possible</span></div>
+        <div class="spec"><span class="k">Visa support</span><span class="v">Yes</span></div>
+        <div class="spec"><span class="k">Last verified</span><span class="v">Apr 12, 2026</span></div>
+        <div class="spec"><span class="k">Source link</span><span class="v">Working</span></div>
+      </div>
+      <div class="footer"><a class="more" href="#">View listing ›</a><span class="save">Save · Compare</span></div>
+    </article>
+
+    <article class="card">
+      <div class="row">
+        <h3>Cardiovascular Research · Cleveland Clinic</h3>
+        <span class="verif">Verified</span>
+      </div>
+      <p class="desc">Funded research with the cardiovascular medicine team. Open to IMGs with prior research experience. Authorship possible.</p>
+      <div class="specs">
+        <div class="spec"><span class="k">Type</span><span class="v">Research</span></div>
+        <div class="spec"><span class="k">Location</span><span class="v">Cleveland, OH</span></div>
+        <div class="spec"><span class="k">Duration</span><span class="v">12 weeks</span></div>
+        <div class="spec"><span class="k">Cost</span><span class="v">Funded</span></div>
+        <div class="spec"><span class="k">Authorship</span><span class="v">Possible</span></div>
+        <div class="spec"><span class="k">Visa support</span><span class="v">Case-by-case</span></div>
+        <div class="spec"><span class="k">Last verified</span><span class="v">Apr 14, 2026</span></div>
+        <div class="spec"><span class="k">Source link</span><span class="v">Working</span></div>
+      </div>
+      <div class="footer"><a class="more" href="#">View listing ›</a><span class="save">Save · Compare</span></div>
+    </article>
+
+  </div>
+  <div class="feat">
+    <div class="feat-card">
+      <p class="eb">Methodology</p>
+      <h3>How we verify</h3>
+      <p class="desc">Automated cron + human admin review. Failures flagged within 24 hours. Reviews are kept structurally separate from source-link verification.</p>
+      <a href="#">Read methodology ›</a>
+    </div>
+    <div class="feat-card dark">
+      <p class="eb">Cost estimator</p>
+      <h3>Estimate your trip</h3>
+      <p class="desc">Housing, food, transport, insurance. USMLE / ECFMG / visa / airfare are not included.</p>
+      <a href="#" style="color:#fff">Open estimator ›</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 USCEHub · independent · not affiliated with NRMP / ECFMG / ERAS / AAMC · <a href="#">Privacy</a> · <a href="#">Terms</a></footer>
+
+</body></html>

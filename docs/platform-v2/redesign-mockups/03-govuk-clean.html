@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>03 · GOV.UK extreme minimal</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fff;--fg:#0b0c0c;--muted:#505a5f;--line:#b1b4b6;--accent:#1d70b8;--accent-hover:#003078;--focus:#fd0;--green:#00703c;--green-soft:#cce2d8;--sans:"GDS Transport","Helvetica Neue",Helvetica,Arial,sans-serif}
+html,body{margin:0}
+body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.5;font-size:19px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:.1em}
+a:hover{color:var(--accent-hover);text-decoration-thickness:3px}
+a:focus{outline:3px solid var(--focus);outline-offset:0;background:var(--focus);color:var(--fg);text-decoration:none}
+.banner{background:var(--accent);color:#fff;padding:10px 24px;font-size:16px;font-weight:600}
+.banner a{color:#fff;text-decoration:underline}
+.nav{background:var(--bg);border-bottom:10px solid var(--accent)}
+.nav-inner{max-width:960px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.logo{font-weight:700;font-size:24px;letter-spacing:0;color:var(--fg);text-decoration:none}
+.nav-links{display:flex;gap:18px;font-size:16px;margin-left:auto}
+.nav-links a{color:var(--accent)}
+.hero{padding:48px 24px;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:960px;margin:0 auto}
+.hero h1{font-size:48px;line-height:1.09;font-weight:700;margin:0 0 18px;letter-spacing:0}
+.hero .lede{font-size:24px;line-height:1.31;color:var(--muted);max-width:760px;margin:0 0 30px;font-weight:400}
+.search{display:flex;max-width:720px;margin:0 0 28px;gap:0;border:2px solid var(--fg)}
+.search input{flex:1;height:50px;padding:0 16px;border:0;font-family:inherit;font-size:19px;background:var(--bg);color:var(--fg)}
+.search input:focus{outline:3px solid var(--focus);outline-offset:-3px}
+.search button{height:50px;padding:0 24px;background:var(--green);color:#fff;border:0;font-family:inherit;font-size:19px;font-weight:700;cursor:pointer}
+.search button:hover{background:#005a30}
+.popular{display:flex;flex-wrap:wrap;gap:14px;font-size:16px;color:var(--muted)}
+.popular b{color:var(--fg);margin-right:6px;font-weight:700}
+.section{max-width:960px;margin:0 auto;padding:48px 24px;border-bottom:1px solid var(--line)}
+.section h2{font-size:36px;line-height:1.11;font-weight:700;margin:0 0 24px;letter-spacing:0}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:640px){.cats{grid-template-columns:1fr}.hero h1{font-size:32px}.hero .lede{font-size:18px}}
+.cat h3{margin:0 0 6px;font-size:24px}
+.cat h3 a{font-weight:700}
+.cat p{font-size:16px;color:var(--muted);margin:0;line-height:1.5}
+.list-item{padding:18px 0;border-top:1px solid var(--line)}
+.list-item:first-child{border-top:0}
+.list-item h3{margin:0 0 6px;font-size:20px;font-weight:700}
+.list-item h3 a{font-weight:700}
+.list-item .meta{font-size:16px;color:var(--muted);margin:0 0 4px}
+.list-item .verif{display:inline-block;font-size:14px;font-weight:700;color:var(--green);background:var(--green-soft);padding:2px 8px;border:0}
+.footer{background:#f3f2f1;padding:32px 24px;border-top:10px solid var(--accent)}
+.footer-inner{max-width:960px;margin:0 auto;font-size:16px;color:var(--muted)}
+.footer h4{margin:0 0 8px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--fg)}
+.footer ul{list-style:none;margin:0 0 18px;padding:0}
+.footer li{margin-bottom:4px}
+.footer a{color:var(--accent)}
+</style></head><body>
+
+<div class="banner">⚪ This is a research mockup — <a href="index.html" style="color:#fff">back to gallery</a></div>
+
+<header class="nav"><div class="nav-inner">
+  <a class="logo" href="#">USCEHub</a>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Tools</a><a href="#">About</a></div>
+</div></header>
+
+<section class="hero"><div class="hero-inner">
+  <h1>Find verified U.S. clinical experience programs</h1>
+  <p class="lede">A directory of source-linked observerships, externships, and research positions for international medical graduates. We verify the link works. We do not apply for you.</p>
+  <form class="search" onsubmit="event.preventDefault()">
+    <input type="text" placeholder="Search by specialty, city, or institution" />
+    <button type="submit">Search</button>
+  </form>
+  <div class="popular">
+    <b>Popular searches:</b>
+    <a href="#">Internal Medicine New York</a>·
+    <a href="#">Pediatrics observership</a>·
+    <a href="#">Funded research</a>·
+    <a href="#">Visa-supported</a>
+  </div>
+</div></section>
+
+<section class="section">
+  <h2>Browse by category</h2>
+  <div class="cats">
+    <div class="cat"><h3><a href="#">Observerships</a></h3><p>Hospital-based observation programs. 624 verified listings across 41 states.</p></div>
+    <div class="cat"><h3><a href="#">Externships</a></h3><p>Hands-on clinical exposure. 218 verified listings across 32 states.</p></div>
+    <div class="cat"><h3><a href="#">Research positions</a></h3><p>Funded and unfunded research. 314 verified listings across 38 states.</p></div>
+    <div class="cat"><h3><a href="#">Visiting electives</a></h3><p>Final-year-medical-student electives via VSLO. 91 verified listings.</p></div>
+    <div class="cat"><h3><a href="#">By state</a></h3><p>Browse by all 47 states with verified programs.</p></div>
+    <div class="cat"><h3><a href="#">By specialty</a></h3><p>Browse by 66 specialties.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Recently verified opportunities</h2>
+  <article class="list-item">
+    <h3><a href="#">Internal Medicine Observership — Mount Sinai, New York</a></h3>
+    <p class="meta">4 weeks · $1,500–$2,000 · LOR possible · Visa support</p>
+    <span class="verif">Source verified · 12 April 2026</span>
+  </article>
+  <article class="list-item">
+    <h3><a href="#">Cardiovascular Research Position — Cleveland Clinic</a></h3>
+    <p class="meta">12 weeks · Funded · Authorship possible · Cleveland, OH</p>
+    <span class="verif">Source verified · 14 April 2026</span>
+  </article>
+  <article class="list-item">
+    <h3><a href="#">Pediatrics Externship — Johns Hopkins, Baltimore</a></h3>
+    <p class="meta">4 weeks · $2,000 · Certificate offered · Step 2 CK required</p>
+    <span class="verif">Source verified · 9 April 2026</span>
+  </article>
+  <article class="list-item">
+    <h3><a href="#">Surgery Observership — UCLA Medical Center</a></h3>
+    <p class="meta">2 or 4 weeks · $2,500 · Hands-off · Los Angeles, CA</p>
+    <span class="verif">Source verified · 8 April 2026</span>
+  </article>
+</section>
+
+<section class="section">
+  <h2>What "verified" means</h2>
+  <p style="font-size:19px;color:var(--muted);margin:0 0 14px">Three things we confirm before a listing is published:</p>
+  <ol style="font-size:19px;color:var(--fg);padding-left:24px;margin:0">
+    <li style="margin-bottom:8px"><strong>The source link works.</strong> An automated cron and human admins confirm the institution's application URL returns a working program page.</li>
+    <li style="margin-bottom:8px"><strong>The listing is approved.</strong> An admin reviewed the listing copy for accuracy before publishing.</li>
+    <li><strong>Reviews are separate.</strong> Community reviews are user-submitted feedback shown separately from source-link verification.</li>
+  </ol>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <h4>USCEHub</h4>
+  <ul>
+    <li><a href="#">How it works</a></li>
+    <li><a href="#">Methodology</a></li>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms</a></li>
+  </ul>
+  <p style="margin:0">USCEHub is an independent informational platform. Not affiliated with NRMP, ECFMG, ERAS, AAMC, or any hospital or residency program. We do not guarantee placement, match, or visa outcomes.</p>
+</div></footer>
+
+</body></html>

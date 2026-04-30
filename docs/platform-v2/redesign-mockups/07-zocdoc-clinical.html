@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>07 · Zocdoc clinical</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fff;--panel:#fff;--soft:#f5f9ff;--fg:#0f172a;--muted:#475569;--quiet:#94a3b8;--line:#e2e8f0;--accent:#0078e2;--accent-hover:#005ab2;--green:#039855;--green-soft:#d1fadf;--amber:#dc6803;--amber-soft:#fef0c7;--sans:"Helvetica Neue","Inter",-apple-system,BlinkMacSystemFont,sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline}
+.nav{background:var(--panel);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.logo{font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--accent)}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--fg);margin-left:auto;font-weight:500}
+.nav-links a{color:var(--fg);text-decoration:none}
+.nav-cta{height:36px;padding:0 14px;border:1px solid var(--accent);color:var(--accent);font-weight:600;border-radius:6px;display:inline-flex;align-items:center;font-size:13px}
+.hero{background:linear-gradient(180deg,var(--soft) 0%,#fff 100%);padding:48px 24px;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:980px;margin:0 auto;text-align:center}
+.hero h1{font-size:38px;line-height:1.15;font-weight:700;margin:0 0 12px;letter-spacing:-.015em}
+.hero .lede{font-size:17px;color:var(--muted);max-width:680px;margin:0 auto 32px}
+.search{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px;max-width:840px;margin:0 auto;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.search .field{padding:0 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;text-align:left;height:54px}
+.search .field:last-of-type{border-right:0}
+.search .field label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
+.search .field input,.search .field select{border:0;font-family:inherit;font-size:14px;padding:0;background:transparent;color:var(--fg);outline:none;width:100%}
+.search .go{height:54px;padding:0 24px;background:var(--accent);color:#fff;border:0;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.search .go:hover{background:var(--accent-hover)}
+.section{max-width:1200px;margin:0 auto;padding:48px 24px}
+.section h2{font-size:24px;letter-spacing:-.01em;font-weight:700;margin:0 0 6px}
+.section p.sub{font-size:14px;color:var(--muted);margin:0 0 24px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 6px 18px -6px rgba(15,23,42,.10);transform:translateY(-1px)}
+.card .top{padding:18px 18px 0;display:flex;gap:14px;align-items:flex-start}
+.card .avatar{flex-shrink:0;width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#bfdbfe,#3b82f6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:18px;letter-spacing:-.02em}
+.card .avatar.alt2{background:linear-gradient(135deg,#fed7aa,#f97316)}
+.card .avatar.alt3{background:linear-gradient(135deg,#bbf7d0,#16a34a)}
+.card .head h3{font-size:17px;font-weight:700;margin:0 0 2px;letter-spacing:-.01em}
+.card .head .inst{font-size:13px;color:var(--muted);margin:0}
+.card .head .verif{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--green);margin-top:4px;font-weight:600}
+.card .head .verif::before{content:"✓";font-weight:700}
+.card .body{padding:14px 18px}
+.card .meta{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);margin:0 0 14px}
+.card .meta b{color:var(--fg);font-weight:600}
+.card .signals{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.card .signal{background:#f8fafc;border:1px solid var(--line);padding:8px;border-radius:6px;text-align:center}
+.card .signal .lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.card .signal .val{font-size:13px;font-weight:700;color:var(--fg)}
+.card .signal.green .val{color:var(--green)}
+.card .signal.amber .val{color:var(--amber)}
+.card .footer{display:flex;gap:8px;padding:0 18px 18px}
+.card .footer .primary{flex:1;height:38px;background:var(--accent);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;text-decoration:none}
+.card .footer .primary:hover{background:var(--accent-hover);text-decoration:none}
+.card .footer .icon-btn{height:38px;width:38px;border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none}
+.card .footer .icon-btn:hover{background:#f8fafc}
+.trust-strip{background:var(--soft);padding:18px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;align-items:center;font-size:13px;color:var(--muted)}
+.trust-inner b{color:var(--fg);font-weight:700}
+.footer{background:#f8fafc;border-top:1px solid var(--line);padding:32px 24px;font-size:13px;color:var(--muted)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+@media(max-width:640px){.search{grid-template-columns:1fr}.search .field{border-right:0;border-bottom:1px solid var(--line)}.hero h1{font-size:28px}}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">USCEHub</span>
+  <div class="nav-links"><a href="#">Find programs</a><a href="#">Compare</a><a href="#">Cost estimator</a><a href="#">For institutions</a></div>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <h1>Find verified U.S. clinical experience programs.</h1>
+  <p class="lede">Source-linked observerships, externships, and research positions for IMGs. We confirm the link works. We do not apply for you.</p>
+  <form class="search" onsubmit="event.preventDefault()">
+    <div class="field"><label>Specialty</label><input type="text" placeholder="Internal Medicine" /></div>
+    <div class="field"><label>State</label><select><option>Any</option><option>NY</option><option>CA</option><option>OH</option></select></div>
+    <div class="field"><label>Type</label><select><option>Any</option><option>Observership</option><option>Externship</option><option>Research</option></select></div>
+    <button class="go" type="submit">Search</button>
+  </form>
+</div></section>
+
+<div class="trust-strip"><div class="trust-inner">
+  <span><b>1,247</b> verified listings</span>
+  <span><b>89%</b> with source link</span>
+  <span><b>Apr 14</b> last cron run</span>
+  <span style="margin-left:auto"><a href="#">Report a broken link →</a></span>
+</div></div>
+
+<section class="section">
+  <h2>Recently verified · Internal Medicine</h2>
+  <p class="sub">Source-link confirmed in the last verification window. Verify program details with the institution before applying.</p>
+  <div class="cards">
+    <article class="card">
+      <div class="top">
+        <div class="avatar">MS</div>
+        <div class="head">
+          <h3>Internal Medicine Observership</h3>
+          <p class="inst">Mount Sinai · New York, NY</p>
+          <span class="verif">Source verified · Apr 12</span>
+        </div>
+      </div>
+      <div class="body">
+        <p class="meta"><b>4 weeks</b><span>·</span><b>$1,500–$2,000</b><span>·</span>Visa support<span>·</span>LOR possible</p>
+        <div class="signals">
+          <div class="signal green"><div class="lbl">Source link</div><div class="val">Working</div></div>
+          <div class="signal"><div class="lbl">LOR possible</div><div class="val">Yes</div></div>
+          <div class="signal"><div class="lbl">Last verified</div><div class="val">Apr 12</div></div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="primary" href="#">View listing →</a>
+        <a class="icon-btn" href="#" title="Save">♡</a>
+        <a class="icon-btn" href="#" title="Compare">⇄</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="top">
+        <div class="avatar alt2">CC</div>
+        <div class="head">
+          <h3>Cardiovascular Research Position</h3>
+          <p class="inst">Cleveland Clinic · Cleveland, OH</p>
+          <span class="verif">Source verified · Apr 14</span>
+        </div>
+      </div>
+      <div class="body">
+        <p class="meta"><b>12 weeks</b><span>·</span><b>Funded</b><span>·</span>Authorship possible</p>
+        <div class="signals">
+          <div class="signal green"><div class="lbl">Source link</div><div class="val">Working</div></div>
+          <div class="signal"><div class="lbl">Authorship</div><div class="val">Possible</div></div>
+          <div class="signal"><div class="lbl">Last verified</div><div class="val">Apr 14</div></div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="primary" href="#">View listing →</a>
+        <a class="icon-btn" href="#" title="Save">♡</a>
+        <a class="icon-btn" href="#" title="Compare">⇄</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="top">
+        <div class="avatar alt3">JH</div>
+        <div class="head">
+          <h3>Pediatrics Externship</h3>
+          <p class="inst">Johns Hopkins · Baltimore, MD</p>
+          <span class="verif">Source verified · Apr 09</span>
+        </div>
+      </div>
+      <div class="body">
+        <p class="meta"><b>4 weeks</b><span>·</span><b>$2,000</b><span>·</span>Certificate offered<span>·</span>Step 2 CK required</p>
+        <div class="signals">
+          <div class="signal green"><div class="lbl">Source link</div><div class="val">Working</div></div>
+          <div class="signal"><div class="lbl">Certificate</div><div class="val">Yes</div></div>
+          <div class="signal amber"><div class="lbl">Last verified</div><div class="val">Apr 09</div></div>
+        </div>
+      </div>
+      <div class="footer">
+        <a class="primary" href="#">View listing →</a>
+        <a class="icon-btn" href="#" title="Save">♡</a>
+        <a class="icon-btn" href="#" title="Compare">⇄</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>© 2026 USCEHub · independent · not affiliated with NRMP / ECFMG / ERAS / AAMC</span>
+  <span><a href="#">Methodology</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></span>
+</div></footer>
+
+</body></html>

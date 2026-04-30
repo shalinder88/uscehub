@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>35 · ★★★★★ Five-star v2 · Day (#22 + blue map + solid teal)</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  /* base — preserved from #22 */
+  --bg:#fbfaf6;--panel:#ffffff;--panel-tint:#f8f6f0;
+  --fg:#0a2540;--ink:#0c2c4f;--muted:#425466;--quiet:#8898aa;
+  --line:#e3e2dc;--line-soft:#ede9dc;
+  /* solid medical-premium palette (no neon) */
+  --emerald:#047857;--emerald-deep:#065f46;--emerald-soft:#d1fae5;
+  --teal:#0f766e;--teal-deep:#115e59;--teal-soft:#ccfbf1;
+  --navy:#1e3a8a;--navy-deep:#1e40af;
+  --blue:#2563eb;--blue-soft:#dbeafe;--blue-mid:#93c5fd;--blue-pale:#eff6ff;
+  --amber:#b45309;--amber-soft:#fef3c7;
+  --slate:#475569;--slate-soft:#e2e8f0;
+  /* type-borders (solid, restrained) */
+  --obs:#2563eb;--ext:#c2410c;--res:#047857;--ele:#7c3aed;--vol:#be185d;
+  --display:"Charter","Iowan Old Style","Iowan Old Style BT","Source Serif Pro",ui-serif,Georgia,serif;
+  --serif:"Source Serif Pro","Charter","Iowan Old Style",ui-serif,Georgia,serif;
+  --sans:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
+}
+html,body{margin:0}
+body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;letter-spacing:-.011em;font-feature-settings:"kern" 1,"liga" 1,"ss01" 1}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+
+.banner{background:#f1f5f9;border-bottom:1px solid var(--slate-soft);color:#334155;padding:8px 16px;font-size:12px;font-weight:600;text-align:center;letter-spacing:.04em;font-family:var(--mono)}
+.banner b{color:var(--ink)}
+
+/* NAV — same as #22 */
+.nav{background:rgba(251,250,246,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.nav-inner{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:32px}
+.logo{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.logo .em{color:var(--teal);font-style:italic;font-weight:600}
+.nav-links{display:flex;gap:26px;font-size:13px;color:var(--muted);margin-left:auto}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.kbd{font-family:var(--mono);font-size:11px;background:var(--panel-tint);border:1px solid var(--line);padding:2px 6px;border-radius:4px;color:var(--muted)}
+.nav-cta{height:34px;padding:0 14px;background:var(--ink);color:#fff;border-radius:8px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;letter-spacing:-.005em}
+.nav-cta:hover{background:#0a233f;color:#fff;text-decoration:none}
+.theme-toggle{height:34px;width:34px;border:1px solid var(--line);background:var(--panel);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);cursor:pointer}
+.theme-toggle:hover{color:var(--ink);border-color:var(--quiet)}
+
+/* HERO — preserved background from #22, refined copy per doctrine */
+.hero{position:relative;padding:96px 28px 72px;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 80% 60% at 20% 0%,rgba(15,118,110,.08),transparent 60%),
+  radial-gradient(ellipse 60% 50% at 90% 30%,rgba(37,99,235,.06),transparent 70%),
+  linear-gradient(180deg,#fdfcf7 0%,var(--bg) 100%);
+  pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(10,37,64,.04) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(10,37,64,.04) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 50% 30%,black 30%,transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 30%,black 30%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;max-width:980px;margin:0 auto;text-align:center;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hero h1{font-family:var(--display);font-size:62px;line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 20px;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--teal);font-weight:600}
+.hero .lede{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--muted);max-width:640px;margin:0 auto 28px}
+
+/* finder — center stage */
+.finder{display:flex;max-width:680px;margin:0 auto 18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 2px rgba(10,37,64,.04),0 12px 28px -12px rgba(10,37,64,.10);overflow:hidden}
+.finder input{flex:1;border:0;outline:0;padding:18px 20px;font:500 15px/1.4 var(--sans);background:transparent;color:var(--ink);letter-spacing:-.005em}
+.finder input::placeholder{color:var(--quiet)}
+.finder select{border:0;border-left:1px solid var(--line);outline:0;padding:0 16px;font:500 14px var(--sans);background:transparent;color:var(--muted);cursor:pointer}
+.finder button{border:0;background:var(--ink);color:#fff;padding:0 22px;font:500 14px var(--sans);letter-spacing:-.005em;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.finder button:hover{background:#0a233f}
+
+.cta-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:10px;font-size:14px;font-weight:500;letter-spacing:-.005em;transition:transform .15s ease,box-shadow .15s ease;font-family:var(--sans)}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,118,110,.2),0 4px 12px -4px rgba(15,118,110,.25)}
+.btn-primary:hover{background:var(--teal-deep);color:#fff}
+.btn-secondary{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--ink)}
+.btn-tertiary{background:transparent;color:var(--muted);font-weight:500;height:44px;padding:0 12px;font-size:14px}
+.btn-tertiary:hover{color:var(--ink);text-decoration:none}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(2px)}
+
+/* trust chips — minimal, conservative language */
+.chips{display:flex;justify-content:center;gap:0;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--quiet)}
+.chips span{padding:0 14px;border-right:1px solid var(--line)}
+.chips span:last-child{border-right:0}
+.chips b{color:var(--ink);font-weight:600}
+
+/* COMPACT VERIFICATION STRIP — small, not dashboardy */
+.vstrip{position:relative;background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 28px;z-index:2}
+.vstrip-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.vstrip-left{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--muted)}
+.vstrip-dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 3px rgba(4,120,87,.12);flex-shrink:0}
+.vstrip-pipe{display:flex;align-items:center;gap:0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--quiet)}
+.vstrip-pipe .step{display:inline-flex;align-items:center;gap:6px;padding:0 12px;border-right:1px solid var(--line)}
+.vstrip-pipe .step:last-child{border-right:0}
+.vstrip-pipe .step b{color:var(--ink);font-weight:600;letter-spacing:0;font-family:var(--sans)}
+.vstrip-pipe .step .n{font-family:var(--mono);font-weight:600;color:var(--teal)}
+.vstrip-pipe .step .arrow{color:var(--quiet);margin:0 2px}
+.vstrip-right{font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.04em}
+.vstrip-right a{color:var(--muted)}
+.vstrip-right a:hover{color:var(--ink)}
+@media(max-width:900px){.vstrip-inner{justify-content:flex-start}}
+
+/* SECTION */
+.section{max-width:1240px;margin:0 auto;padding:88px 28px;position:relative}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;gap:24px;flex-wrap:wrap}
+.section-head .copy h2{font-family:var(--display);font-size:36px;line-height:1.15;letter-spacing:-.022em;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.section-head .copy h2 em{font-style:italic;color:var(--teal)}
+.section-head .copy p{font-size:15px;color:var(--muted);margin:0;max-width:560px;line-height:1.6}
+.section-head .action{font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.section-head .action a{color:var(--muted)}
+.section-head .action a:hover{color:var(--ink)}
+
+/* DECISION CARDS — strict, type-bordered (2px solid) */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-top:2px solid var(--obs);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;position:relative}
+.card.t-ext{border-top-color:var(--ext)}
+.card.t-res{border-top-color:var(--res)}
+.card.t-ele{border-top-color:var(--ele)}
+.card.t-vol{border-top-color:var(--vol)}
+.card:hover{transform:translateY(-2px);box-shadow:0 16px 32px -16px rgba(10,37,64,.10),0 4px 10px -4px rgba(10,37,64,.06);border-bottom-color:var(--quiet);border-left-color:var(--quiet);border-right-color:var(--quiet)}
+.card-head{padding:18px 20px 10px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.card-type{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--obs)}
+.card.t-ext .card-type{color:var(--ext)}
+.card.t-res .card-type{color:var(--res)}
+.card.t-ele .card-type{color:var(--ele)}
+.card.t-vol .card-type{color:var(--vol)}
+.card-status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;font-family:var(--mono);color:var(--emerald);letter-spacing:.02em}
+.card-status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--emerald)}
+.card-status.amber{color:var(--amber)}
+.card-status.amber::before{background:var(--amber)}
+.card-body{padding:0 20px 14px;display:flex;flex-direction:column;flex:1;gap:10px}
+.card-body h3{font-family:var(--display);font-size:21px;line-height:1.25;letter-spacing:-.012em;font-weight:600;margin:0;color:var(--ink)}
+.card-inst{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--muted);margin:0}
+.card-meta-row{display:flex;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--muted);align-items:center;font-family:var(--mono);letter-spacing:.01em}
+.card-meta-row b{color:var(--ink);font-weight:600;font-family:var(--sans)}
+.dot{display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--quiet)}
+.specsheet{border-top:1px solid var(--line-soft);padding-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-top:auto}
+.specsheet .row{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;line-height:1.4}
+.specsheet .k{color:var(--quiet);font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase}
+.specsheet .v{color:var(--ink);font-weight:500;font-size:12px}
+.specsheet .v.ok{color:var(--emerald)}
+.specsheet .v.amber{color:var(--amber)}
+.card-footer{display:flex;gap:6px;padding:12px 20px 16px;border-top:1px solid var(--line-soft);margin-top:12px;background:var(--panel-tint)}
+.card-footer a{flex:1;font-size:13px;text-align:center;padding:8px 0;border-radius:7px;font-weight:500;font-family:var(--sans)}
+.card-footer a.primary{background:var(--ink);color:#fff}
+.card-footer a.primary:hover{background:#0a233f;text-decoration:none}
+.card-footer a:not(.primary){color:var(--muted)}
+.card-footer a:not(.primary):hover{color:var(--ink);background:var(--panel);text-decoration:none}
+
+/* MAP — blue, solid, NOT neon */
+.map{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:88px 28px}
+.map-inner{max-width:1240px;margin:0 auto}
+.map-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start}
+@media(max-width:980px){.map-grid{grid-template-columns:1fr}}
+.map-svg-wrap{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:24px;overflow:hidden}
+.map-svg{width:100%;height:auto;display:block}
+.map-svg .state{fill:#eef2f6;stroke:#fff;stroke-width:1.2;transition:fill .15s,stroke .15s}
+.map-svg .state.s1{fill:#dbeafe}
+.map-svg .state.s2{fill:#bfdbfe}
+.map-svg .state.s3{fill:#60a5fa}
+.map-svg .state.s4{fill:#2563eb}
+.map-svg .state.s5{fill:#1e3a8a}
+.map-svg .state:hover{stroke:var(--ink);stroke-width:1.6;cursor:pointer}
+.map-pill{position:absolute;bottom:18px;right:18px;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;box-shadow:0 1px 2px rgba(10,37,64,.04)}
+.map-pill .d{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.map-pill b{color:var(--ink);font-weight:600;font-family:var(--sans);letter-spacing:0}
+.map-legend{display:flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--quiet)}
+.map-legend .swatches{display:inline-flex;align-items:center;gap:2px;margin:0 6px}
+.map-legend .sw{width:18px;height:10px}
+.map-side h3{font-family:var(--display);font-size:24px;letter-spacing:-.018em;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.map-side h3 em{font-style:italic;color:var(--teal)}
+.map-side .sub{font-size:14px;color:var(--muted);margin:0 0 22px;line-height:1.55}
+.map-states{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft)}
+.map-states li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:13px}
+.map-states li .rk{font-family:var(--mono);color:var(--quiet);font-size:11px;width:18px}
+.map-states li .nm{color:var(--ink);font-weight:500}
+.map-states li .nm small{color:var(--quiet);font-weight:400;font-family:var(--mono);font-size:10px;margin-left:6px;letter-spacing:.04em}
+.map-states li .ct{font-family:var(--mono);color:var(--ink);font-weight:600;font-size:13px}
+.map-states li .ct small{color:var(--quiet);font-weight:400;margin-left:4px}
+.map-foot{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.04em}
+
+/* HOW + TRUST EXPLAINER (compact) */
+.how{padding:88px 28px}
+.how-inner{max-width:1080px;margin:0 auto}
+.how .head{text-align:center;margin-bottom:48px}
+.how h2{font-family:var(--display);font-size:38px;letter-spacing:-.022em;font-weight:600;margin:0 0 12px;color:var(--ink)}
+.how h2 em{font-style:italic;color:var(--teal)}
+.how p.sub{color:var(--muted);font-size:16px;margin:0 auto;max-width:560px;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:8px}
+.step-num{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--teal);margin-bottom:4px}
+.step h3{font-family:var(--display);font-size:20px;letter-spacing:-.012em;font-weight:600;margin:0;line-height:1.25;color:var(--ink)}
+.step p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.6}
+
+/* TRUST EXPLAINER — preserved from #22, accent swapped to teal */
+.trust-explainer{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:88px 28px}
+.trust-explainer-inner{max-width:1080px;margin:0 auto}
+.trust-explainer h2{font-family:var(--display);font-size:32px;letter-spacing:-.022em;font-weight:600;margin:0 0 12px;text-align:center;color:var(--ink)}
+.trust-explainer h2 em{font-style:italic;color:var(--teal)}
+.trust-explainer p.intro{font-size:15px;color:var(--muted);max-width:640px;margin:0 auto 36px;text-align:center;line-height:1.65}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+@media(max-width:760px){.trust-grid{grid-template-columns:1fr}}
+.trust-cell{background:var(--bg);padding:24px 22px;transition:background .15s}
+.trust-cell:hover{background:var(--panel-tint)}
+.trust-cell .num{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--teal);letter-spacing:.16em;margin-bottom:10px}
+.trust-cell h4{font-family:var(--display);font-size:17px;font-weight:600;margin:0 0 8px;letter-spacing:-.012em;color:var(--ink)}
+.trust-cell p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+/* TOOLS row — compact, after trust */
+.tools{padding:88px 28px}
+.tools-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.tools-inner{grid-template-columns:1fr}}
+.tool{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,box-shadow .15s}
+.tool:hover{border-color:var(--quiet);box-shadow:0 6px 14px -6px rgba(10,37,64,.08)}
+.tool .lbl{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.16em;color:var(--teal);text-transform:uppercase}
+.tool h3{font-family:var(--display);font-size:20px;letter-spacing:-.012em;font-weight:600;margin:0;color:var(--ink)}
+.tool p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.55}
+.tool a{font-family:var(--mono);font-size:11.5px;color:var(--ink);font-weight:600;letter-spacing:.04em;margin-top:8px;display:inline-flex;align-items:center;gap:6px}
+.tool a .arrow{transition:transform .15s}
+.tool a:hover{text-decoration:none}
+.tool a:hover .arrow{transform:translateX(3px)}
+
+/* FOOTER */
+.footer{background:var(--bg);border-top:1px solid var(--line);padding:48px 28px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.footer-inner{grid-template-columns:1fr 1fr;gap:24px}}
+.footer h5{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);margin:0 0 12px}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer li{margin-bottom:6px}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--ink)}
+.footer p{margin:0;font-size:13px;color:var(--muted);max-width:340px;line-height:1.55}
+.footer-disclaimer{max-width:1240px;margin:32px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--quiet);line-height:1.65}
+
+/* MOBILE */
+@media(max-width:640px){
+  .hero{padding:56px 22px 48px}
+  .hero h1{font-size:38px}
+  .hero .lede{font-size:16px}
+  .section{padding:56px 22px}
+  .section-head .copy h2{font-size:26px}
+  .nav-links{display:none}
+  .map{padding:56px 22px}
+  .how{padding:56px 22px}
+  .trust-explainer{padding:56px 22px}
+  .tools{padding:56px 22px}
+  .vstrip-inner{flex-direction:column;align-items:flex-start;gap:12px}
+}
+</style></head><body>
+
+<div class="banner">★★★★★ FIVE-STAR v2 · DAY — variation of <b>#22</b> · solid teal accent · blue U.S. map · doctrine applied (no neon, no dashboard) · <b>view night →</b> <a href="34-five-star-night.html" style="color:#334155">#34</a> or <a href="36-five-star-blue-night.html" style="color:#334155">#36</a></div>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="#" class="logo">USCE<span class="em">·</span>Hub</a>
+  <div class="nav-links">
+    <a href="#">Browse</a>
+    <a href="#">Compare</a>
+    <a href="#">Cost estimator</a>
+    <a href="#">Methodology</a>
+    <a href="#">For institutions</a>
+  </div>
+  <span class="kbd">⌘ K</span>
+  <a href="36-five-star-blue-night.html" class="theme-toggle" title="Switch to night">☾</a>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<!-- HERO — minimal, doctrine copy -->
+<section class="hero"><div class="hero-inner">
+  <p class="eyebrow">For International Medical Graduates · April 2026</p>
+  <h1>Verified U.S. <em>clinical experience</em>.</h1>
+  <p class="lede">A directory of source-linked observerships, externships, and research positions. Each listing carries a source-link status and a last-reviewed date — or it does not ship.</p>
+
+  <form class="finder" onsubmit="return false">
+    <input type="text" placeholder="Search by specialty, institution, or city" />
+    <select><option>Any state</option><option>California</option><option>Texas</option><option>New York</option></select>
+    <button>Search <span style="opacity:.7">→</span></button>
+  </form>
+
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#">Browse verified USCE <span class="arrow">→</span></a>
+    <a class="btn btn-secondary" href="#">Estimate trip cost</a>
+    <a class="btn btn-tertiary" href="#">Methodology</a>
+  </div>
+
+  <p class="chips">
+    <span><b>Free</b></span>
+    <span><b>No account</b> needed</span>
+    <span><b>Source status</b> shown on every listing</span>
+    <span><b>Report</b> a broken link</span>
+  </p>
+</div></section>
+
+<!-- COMPACT VERIFICATION STRIP — single row, not a dashboard -->
+<section class="vstrip"><div class="vstrip-inner">
+  <div class="vstrip-left">
+    <span class="vstrip-dot"></span>
+    <span><b style="color:var(--ink);font-weight:600">Verification pipeline</b> · <span style="color:var(--quiet)">last cron Apr 14, 02:00 UTC</span></span>
+  </div>
+  <div class="vstrip-pipe">
+    <span class="step"><span class="n">01</span><b>Ingest</b></span>
+    <span class="arrow">→</span>
+    <span class="step"><span class="n">02</span><b>Admin review</b></span>
+    <span class="arrow">→</span>
+    <span class="step"><span class="n">03</span><b>Cron check</b></span>
+    <span class="arrow">→</span>
+    <span class="step"><span class="n">04</span><b>Publish</b></span>
+  </div>
+  <div class="vstrip-right"><a href="#">Read methodology →</a></div>
+</div></section>
+
+<!-- FEATURED LISTINGS — decision cards -->
+<section class="section">
+  <div class="section-head">
+    <div class="copy">
+      <h2>Recently <em>source-linked</em> opportunities</h2>
+      <p>Programs whose source links were confirmed working in the last verification window. Verify program details with the institution before applying.</p>
+    </div>
+    <div class="action"><a href="#">VIEW ALL 1,247 →</a></div>
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-head">
+        <span class="card-type">Observership</span>
+        <span class="card-status">Source-linked</span>
+      </div>
+      <div class="card-body">
+        <h3>Internal Medicine Observership</h3>
+        <p class="card-inst">Mount Sinai · New York, NY</p>
+        <div class="card-meta-row"><b>4 weeks</b><span class="dot"></span><b>$1,500–$2,000</b><span class="dot"></span>Step 1 required</div>
+        <div class="specsheet">
+          <div class="row"><span class="k">Specialty</span><span class="v">Internal Med</span></div>
+          <div class="row"><span class="k">Visa note</span><span class="v">Sponsored</span></div>
+          <div class="row"><span class="k">LOR</span><span class="v ok">Possible</span></div>
+          <div class="row"><span class="k">Hands-on</span><span class="v">No</span></div>
+          <div class="row"><span class="k">Source</span><span class="v ok">On file</span></div>
+          <div class="row"><span class="k">Reviewed</span><span class="v">Apr 12</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="primary" href="#">View listing →</a>
+        <a href="#">Save</a>
+        <a href="#">Compare</a>
+      </div>
+    </article>
+
+    <article class="card t-res">
+      <div class="card-head">
+        <span class="card-type">Research</span>
+        <span class="card-status">Source-linked</span>
+      </div>
+      <div class="card-body">
+        <h3>Cardiovascular Research</h3>
+        <p class="card-inst">Cleveland Clinic · Cleveland, OH</p>
+        <div class="card-meta-row"><b>12 weeks</b><span class="dot"></span><b>Funded</b><span class="dot"></span>Step 1 required</div>
+        <div class="specsheet">
+          <div class="row"><span class="k">Specialty</span><span class="v">Cardiology</span></div>
+          <div class="row"><span class="k">Visa note</span><span class="v amber">Case-by-case</span></div>
+          <div class="row"><span class="k">Authorship</span><span class="v ok">Possible</span></div>
+          <div class="row"><span class="k">Stipend</span><span class="v ok">Yes</span></div>
+          <div class="row"><span class="k">Source</span><span class="v ok">On file</span></div>
+          <div class="row"><span class="k">Reviewed</span><span class="v">Apr 14</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="primary" href="#">View listing →</a>
+        <a href="#">Save</a>
+        <a href="#">Compare</a>
+      </div>
+    </article>
+
+    <article class="card t-ext">
+      <div class="card-head">
+        <span class="card-type">Externship</span>
+        <span class="card-status">Source-linked</span>
+      </div>
+      <div class="card-body">
+        <h3>Pediatrics Externship</h3>
+        <p class="card-inst">Johns Hopkins · Baltimore, MD</p>
+        <div class="card-meta-row"><b>4 weeks</b><span class="dot"></span><b>$2,000</b><span class="dot"></span>Step 2 CK required</div>
+        <div class="specsheet">
+          <div class="row"><span class="k">Specialty</span><span class="v">Pediatrics</span></div>
+          <div class="row"><span class="k">Visa note</span><span class="v">Sponsored</span></div>
+          <div class="row"><span class="k">LOR</span><span class="v ok">Possible</span></div>
+          <div class="row"><span class="k">Hands-on</span><span class="v ok">Yes</span></div>
+          <div class="row"><span class="k">Source</span><span class="v ok">On file</span></div>
+          <div class="row"><span class="k">Reviewed</span><span class="v">Apr 09</span></div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a class="primary" href="#">View listing →</a>
+        <a href="#">Save</a>
+        <a href="#">Compare</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- BLUE U.S. MAP — solid scale, no neon -->
+<section class="map"><div class="map-inner">
+  <div class="section-head" style="margin-bottom:32px">
+    <div class="copy">
+      <h2>Browse by <em>state</em></h2>
+      <p>Each state shows the count of source-linked listings. Hover to see numbers, click to filter the browse page.</p>
+    </div>
+    <div class="action"><a href="#">OPEN BROWSE →</a></div>
+  </div>
+
+  <div class="map-grid">
+    <div>
+      <div class="map-svg-wrap">
+        <svg class="map-svg" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" aria-label="U.S. state density map">
+          <!-- simplified Albers-style state polygons -->
+          <path class="state s1" d="M 60,140 L 145,138 L 162,180 L 155,225 L 95,232 L 65,205 Z" data-state="WA"><title>Washington · 32 listings</title></path>
+          <path class="state s1" d="M 145,138 L 240,142 L 252,200 L 162,205 L 162,180 Z" data-state="MT"><title>Montana · 4 listings</title></path>
+          <path class="state s1" d="M 240,142 L 320,148 L 326,195 L 252,200 Z" data-state="ND"><title>North Dakota · 6 listings</title></path>
+          <path class="state s1" d="M 320,148 L 405,150 L 408,200 L 326,195 Z" data-state="MN"><title>Minnesota · 38 listings</title></path>
+          <path class="state s1" d="M 405,150 L 492,156 L 488,200 L 408,200 Z" data-state="WI"><title>Wisconsin · 28 listings</title></path>
+
+          <path class="state s2" d="M 60,205 L 95,232 L 100,290 L 70,295 Z" data-state="OR"><title>Oregon · 22 listings</title></path>
+          <path class="state s5" d="M 70,295 L 100,290 L 152,310 L 165,400 L 130,440 L 90,420 L 65,380 L 62,330 Z" data-state="CA"><title>California · 187 listings</title></path>
+          <path class="state s2" d="M 100,290 L 155,225 L 252,200 L 250,290 L 152,310 Z" data-state="ID"><title>Idaho · 8 listings</title></path>
+          <path class="state s2" d="M 250,290 L 252,200 L 326,195 L 326,290 Z" data-state="WY"><title>Wyoming · 4 listings</title></path>
+          <path class="state s1" d="M 326,195 L 408,200 L 412,288 L 326,290 Z" data-state="SD"><title>South Dakota · 6 listings</title></path>
+
+          <path class="state s2" d="M 152,310 L 250,290 L 252,395 L 165,400 Z" data-state="NV"><title>Nevada · 28 listings</title></path>
+          <path class="state s2" d="M 250,290 L 326,290 L 330,380 L 252,395 Z" data-state="UT"><title>Utah · 18 listings</title></path>
+          <path class="state s3" d="M 326,290 L 412,288 L 416,380 L 330,380 Z" data-state="CO"><title>Colorado · 64 listings</title></path>
+          <path class="state s1" d="M 408,200 L 492,200 L 492,288 L 412,288 Z" data-state="NE"><title>Nebraska · 12 listings</title></path>
+          <path class="state s2" d="M 488,200 L 580,202 L 580,290 L 492,288 Z" data-state="IA"><title>Iowa · 22 listings</title></path>
+
+          <path class="state s3" d="M 165,400 L 252,395 L 268,475 L 240,520 L 178,510 Z" data-state="AZ"><title>Arizona · 56 listings</title></path>
+          <path class="state s3" d="M 252,395 L 330,380 L 360,470 L 268,475 Z" data-state="NM"><title>New Mexico · 42 listings</title></path>
+          <path class="state s4" d="M 330,380 L 416,380 L 432,475 L 360,470 Z" data-state="OK"><title>Oklahoma · 88 listings</title></path>
+          <path class="state s2" d="M 416,380 L 492,288 L 492,378 Z" data-state="KS"><title>Kansas · 24 listings</title></path>
+          <path class="state s5" d="M 360,470 L 432,475 L 540,560 L 470,572 L 380,560 L 312,540 L 268,475 Z" data-state="TX"><title>Texas · 156 listings</title></path>
+
+          <path class="state s2" d="M 492,200 L 580,202 L 582,288 L 492,288 Z" data-state="MO_top"><title>—</title></path>
+          <path class="state s3" d="M 492,288 L 582,288 L 588,380 L 496,380 Z" data-state="MO"><title>Missouri · 48 listings</title></path>
+          <path class="state s2" d="M 496,380 L 588,380 L 590,440 L 504,442 Z" data-state="AR"><title>Arkansas · 18 listings</title></path>
+          <path class="state s2" d="M 504,442 L 590,440 L 592,500 L 510,506 Z" data-state="LA"><title>Louisiana · 22 listings</title></path>
+
+          <path class="state s5" d="M 580,202 L 670,205 L 672,290 L 582,288 Z" data-state="IL"><title>Illinois · 142 listings</title></path>
+          <path class="state s4" d="M 670,205 L 758,212 L 760,288 L 672,290 Z" data-state="IN"><title>Indiana · 78 listings</title></path>
+          <path class="state s5" d="M 758,212 L 838,222 L 840,288 L 760,288 Z" data-state="OH"><title>Ohio · 124 listings</title></path>
+          <path class="state s3" d="M 838,222 L 905,232 L 906,290 L 840,288 Z" data-state="PA_w"><title>—</title></path>
+          <path class="state s4" d="M 672,290 L 760,288 L 762,360 L 674,360 Z" data-state="KY"><title>Kentucky · 72 listings</title></path>
+
+          <path class="state s3" d="M 590,440 L 672,360 L 674,430 L 592,500 Z" data-state="MS_TN"><title>—</title></path>
+          <path class="state s2" d="M 588,380 L 672,360 L 674,430 L 590,440 Z" data-state="MS"><title>Mississippi · 14 listings</title></path>
+          <path class="state s3" d="M 672,360 L 762,360 L 764,438 L 674,430 Z" data-state="TN"><title>Tennessee · 64 listings</title></path>
+          <path class="state s2" d="M 674,430 L 764,438 L 766,500 L 676,498 Z" data-state="AL"><title>Alabama · 24 listings</title></path>
+
+          <path class="state s5" d="M 766,500 L 822,510 L 855,560 L 832,580 L 770,570 Z" data-state="FL"><title>Florida · 119 listings</title></path>
+          <path class="state s3" d="M 762,360 L 850,366 L 855,440 L 766,438 Z" data-state="GA"><title>Georgia · 62 listings</title></path>
+          <path class="state s3" d="M 850,366 L 906,372 L 905,438 L 855,440 Z" data-state="SC"><title>South Carolina · 36 listings</title></path>
+
+          <path class="state s4" d="M 762,300 L 850,304 L 906,310 L 906,372 L 850,366 L 762,360 Z" data-state="NC"><title>North Carolina · 86 listings</title></path>
+          <path class="state s3" d="M 840,288 L 905,290 L 906,310 L 850,304 Z" data-state="VA_n"><title>—</title></path>
+          <path class="state s4" d="M 762,300 L 840,288 L 850,304 L 850,304 Z M 762,288 L 840,288 L 850,304 L 762,300 Z" data-state="VA"><title>Virginia · 78 listings</title></path>
+          <path class="state s3" d="M 825,260 L 875,264 L 875,288 L 825,288 Z" data-state="WV"><title>West Virginia · 14 listings</title></path>
+
+          <path class="state s5" d="M 838,222 L 905,232 L 905,260 L 825,260 L 838,222 Z M 905,232 L 925,242 L 922,275 L 905,260 Z" data-state="PA"><title>Pennsylvania · 96 listings</title></path>
+          <path class="state s4" d="M 822,150 L 905,162 L 905,232 L 838,222 Z" data-state="NY_a"><title>New York · 108 listings</title></path>
+          <path class="state s4" d="M 822,150 L 905,162 L 925,180 L 925,242 L 905,232 L 905,162 Z" data-state="NY"><title>New York · 108 listings</title></path>
+
+          <path class="state s2" d="M 822,90 L 905,92 L 920,150 L 822,150 Z" data-state="VT_NH"><title>—</title></path>
+          <path class="state s2" d="M 822,90 L 870,90 L 870,148 L 822,148 Z" data-state="VT"><title>Vermont · 6 listings</title></path>
+          <path class="state s2" d="M 870,90 L 920,90 L 928,148 L 870,148 Z" data-state="NH"><title>New Hampshire · 8 listings</title></path>
+          <path class="state s3" d="M 905,40 L 945,48 L 945,90 L 905,92 Z M 870,18 L 920,22 L 928,80 L 905,82 Z" data-state="ME"><title>Maine · 14 listings</title></path>
+          <path class="state s3" d="M 905,148 L 928,148 L 920,180 L 905,178 Z" data-state="MA"><title>Massachusetts · 84 listings</title></path>
+          <path class="state s2" d="M 920,180 L 938,184 L 935,202 L 918,200 Z" data-state="RI"><title>Rhode Island · 8 listings</title></path>
+          <path class="state s3" d="M 905,178 L 920,180 L 920,205 L 902,205 Z" data-state="CT"><title>Connecticut · 22 listings</title></path>
+          <path class="state s3" d="M 902,205 L 932,210 L 935,238 L 905,232 Z" data-state="NJ"><title>New Jersey · 38 listings</title></path>
+          <path class="state s2" d="M 905,232 L 932,232 L 932,260 L 905,260 Z" data-state="DE_MD"><title>—</title></path>
+          <path class="state s3" d="M 905,232 L 925,232 L 925,260 L 905,260 Z" data-state="MD"><title>Maryland · 42 listings</title></path>
+
+          <path class="state s5" d="M 580,200 L 670,205 L 670,260 L 580,258 Z" data-state="MI_lp"><title>—</title></path>
+          <path class="state s5" d="M 580,142 L 670,142 L 670,205 L 580,202 Z" data-state="MI"><title>Michigan · 116 listings</title></path>
+
+          <!-- Alaska + Hawaii cartouches -->
+          <g transform="translate(40,440)">
+            <rect x="0" y="0" width="120" height="120" fill="#fff" stroke="#e3e2dc" stroke-width="1"/>
+            <path class="state s2" d="M 16,40 L 60,30 L 95,50 L 100,80 L 70,95 L 40,90 L 18,75 Z" data-state="AK"><title>Alaska · 4 listings</title></path>
+            <text x="6" y="14" font-family="ui-monospace" font-size="9" fill="#8898aa" letter-spacing=".06em">AK</text>
+          </g>
+          <g transform="translate(180,490)">
+            <rect x="0" y="0" width="80" height="70" fill="#fff" stroke="#e3e2dc" stroke-width="1"/>
+            <circle class="state s2" cx="20" cy="38" r="4" data-state="HI"><title>Hawaii · 6 listings</title></circle>
+            <circle class="state s2" cx="34" cy="34" r="5" data-state="HI"><title>Hawaii · 6 listings</title></circle>
+            <circle class="state s2" cx="50" cy="40" r="6" data-state="HI"><title>Hawaii · 6 listings</title></circle>
+            <ellipse class="state s2" cx="66" cy="46" rx="9" ry="5" data-state="HI"><title>Hawaii · 6 listings</title></ellipse>
+            <text x="6" y="14" font-family="ui-monospace" font-size="9" fill="#8898aa" letter-spacing=".06em">HI</text>
+          </g>
+        </svg>
+        <div class="map-pill"><span class="d"></span> Hover any state · <b>1,247</b> total · <b>47</b> states · last cron <b>Apr 14</b></div>
+      </div>
+      <div class="map-legend">
+        FEWER
+        <span class="swatches">
+          <span class="sw" style="background:#eef2f6"></span>
+          <span class="sw" style="background:#dbeafe"></span>
+          <span class="sw" style="background:#bfdbfe"></span>
+          <span class="sw" style="background:#60a5fa"></span>
+          <span class="sw" style="background:#2563eb"></span>
+          <span class="sw" style="background:#1e3a8a"></span>
+        </span>
+        MORE LISTINGS
+      </div>
+    </div>
+
+    <div class="map-side">
+      <h3>Top <em>10 states</em></h3>
+      <p class="sub">Ranked by source-linked listings, last verified Apr 14, 2026.</p>
+      <ol class="map-states">
+        <li><span class="rk">01</span><span class="nm">California <small>CA</small></span><span class="ct">187</span></li>
+        <li><span class="rk">02</span><span class="nm">Texas <small>TX</small></span><span class="ct">156</span></li>
+        <li><span class="rk">03</span><span class="nm">Illinois <small>IL</small></span><span class="ct">142</span></li>
+        <li><span class="rk">04</span><span class="nm">Ohio <small>OH</small></span><span class="ct">124</span></li>
+        <li><span class="rk">05</span><span class="nm">Florida <small>FL</small></span><span class="ct">119</span></li>
+        <li><span class="rk">06</span><span class="nm">Michigan <small>MI</small></span><span class="ct">116</span></li>
+        <li><span class="rk">07</span><span class="nm">New York <small>NY</small></span><span class="ct">108</span></li>
+        <li><span class="rk">08</span><span class="nm">Pennsylvania <small>PA</small></span><span class="ct">96</span></li>
+        <li><span class="rk">09</span><span class="nm">Oklahoma <small>OK</small></span><span class="ct">88</span></li>
+        <li><span class="rk">10</span><span class="nm">North Carolina <small>NC</small></span><span class="ct">86</span></li>
+      </ol>
+      <p class="map-foot">3 states currently have <b style="color:var(--ink)">zero</b> source-linked listings · <a href="#" style="color:var(--teal)">see full table →</a></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS — 3 steps, compact -->
+<section class="how"><div class="how-inner">
+  <div class="head">
+    <h2>How USCEHub <em>works</em></h2>
+    <p class="sub">A directory, not a placement service. We do not apply for you. We make sure the link works.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">STEP 01 · SEARCH</div>
+      <h3>Filter by what matters</h3>
+      <p>Specialty, state, fee range, visa note, time of year. Results prioritize source-linked, recently reviewed listings.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 02 · OPEN SOURCE</div>
+      <h3>Use the institution's link</h3>
+      <p>Every listing carries the institution's own application URL. Apply at the source. Save listings to revisit, compare up to three side by side.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03 · BUDGET</div>
+      <h3>Estimate the trip</h3>
+      <p>Use the cost estimator for housing, food, transport, and insurance. USMLE / ECFMG / visa / airfare fees are not included.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- TRUST EXPLAINER — preserved from #22, accent swap to teal -->
+<section class="trust-explainer"><div class="trust-explainer-inner">
+  <h2>What "<em>verified</em>" actually means here</h2>
+  <p class="intro">USCEHub is a structured directory. We confirm three specific things, in plain English. Anything we cannot confirm, we say so.</p>
+  <div class="trust-grid">
+    <div class="trust-cell">
+      <div class="num">01 · SOURCE LINK</div>
+      <h4>The URL works</h4>
+      <p>An automated cron and human admins confirm the institution's application URL returns a working program page. Stale links are flagged "Needs recheck" — never silently hidden.</p>
+    </div>
+    <div class="trust-cell">
+      <div class="num">02 · ADMIN REVIEW</div>
+      <h4>The listing is approved</h4>
+      <p>An admin reviewed the listing copy for accuracy before publishing. We don't auto-publish poster submissions.</p>
+    </div>
+    <div class="trust-cell">
+      <div class="num">03 · REVIEWS SEPARATE</div>
+      <h4>Opinions ≠ audits</h4>
+      <p>Community reviews are user-submitted feedback, moderated before publishing, and shown separately from source-link verification. Reviews are opinions; verification is an audit.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- TOOLS row -->
+<section class="tools"><div class="tools-inner">
+  <div class="tool">
+    <span class="lbl">TOOL · 01</span>
+    <h3>Cost estimator</h3>
+    <p>Housing, food, transport, insurance — by state and duration. USMLE / ECFMG / visa / airfare fees not included.</p>
+    <a href="#">Open estimator <span class="arrow">→</span></a>
+  </div>
+  <div class="tool">
+    <span class="lbl">TOOL · 02</span>
+    <h3>Compare side-by-side</h3>
+    <p>Pick up to three listings, see their specs, costs, visa notes, and source-link status in one table.</p>
+    <a href="#">Open compare <span class="arrow">→</span></a>
+  </div>
+  <div class="tool">
+    <span class="lbl">TOOL · 03</span>
+    <h3>Saved listings</h3>
+    <p>Revisit listings without an account. Saved locally in your browser. We never email you.</p>
+    <a href="#">Open saved <span class="arrow">→</span></a>
+  </div>
+</div></section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="font-size:20px;margin-bottom:10px">USCE<span class="em">·</span>Hub</div>
+      <p>A directory of source-linked U.S. clinical experience programs for international medical graduates. Last reviewed Apr 14, 2026.</p>
+    </div>
+    <div><h5>Browse</h5><ul><li><a href="#">All listings</a></li><li><a href="#">By state</a></li><li><a href="#">By specialty</a></li><li><a href="#">Compare</a></li></ul></div>
+    <div><h5>Tools</h5><ul><li><a href="#">Cost estimator</a></li><li><a href="#">Saved</a></li><li><a href="#">Recommend a program</a></li></ul></div>
+    <div><h5>About</h5><ul><li><a href="#">How it works</a></li><li><a href="#">Methodology</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <p class="footer-disclaimer">USCEHub is an independent informational platform. Not affiliated with NRMP, ECFMG, ERAS, AAMC, or any hospital or residency program. We do not guarantee placement, match, or visa outcomes. Always verify program details with the official institution before applying.</p>
+</footer>
+
+</body></html>
