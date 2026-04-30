@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>21 · Maximalist hybrid (sanity check)</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fdfaf3;--panel:#fff;--soft:#f5f9ff;--cream:#fef9e7;--fg:#0c2c4f;--ink:#3a2c1a;--muted:#475569;--quiet:#94a3b8;--line:#dbd2bb;--accent:#8b1a1a;--gold:#c9a14a;--green:#0a6b3d;--green-soft:#d1fadf;--blue:#0078e2;--purple:#7c3aed;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--display:"Playfair Display",Georgia,serif;--serif:"Source Serif Pro","Charter",Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif}
+html,body{margin:0}body{font-family:var(--serif);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.banner{background:#fee;border-bottom:2px solid #f99;padding:10px 24px;text-align:center;font-family:var(--mono);font-size:12px;color:#9a3412;font-weight:600}
+.nav{background:var(--panel);border-bottom:6px double var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;font-size:14px;font-family:var(--sans)}
+.logo{font-family:var(--display);font-size:28px;font-weight:600;color:var(--fg);font-style:italic}
+.logo .accent{color:var(--accent)}
+.nav-links{display:flex;gap:18px;color:var(--muted);margin-left:auto;font-weight:500}
+.kbd{font-family:var(--mono);font-size:11px;background:var(--cream);border:1px solid var(--line);padding:2px 6px;border-radius:4px;color:var(--muted);margin-left:8px}
+.nav-cta{height:34px;padding:0 14px;background:var(--accent);color:#fff;border-radius:0;font-family:var(--sans);font-size:13px;font-weight:600;display:inline-flex;align-items:center;letter-spacing:.04em;text-transform:uppercase}
+.hero{padding:80px 24px 48px;background:linear-gradient(180deg,var(--cream) 0%,var(--bg) 100%);border-bottom:1px solid var(--line);text-align:center}
+.hero-inner{max-width:980px;margin:0 auto}
+.id-strip{font-family:var(--mono);font-size:11px;color:var(--quiet);margin-bottom:14px;letter-spacing:.04em}
+.id-strip .pill{display:inline-block;font-family:var(--mono);font-size:10px;background:var(--green-soft);color:var(--green);padding:3px 8px;border-radius:4px;margin-right:8px;font-weight:600}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--display);font-size:62px;line-height:1.05;letter-spacing:-.02em;font-weight:600;margin:0 0 18px;font-style:italic}
+.hero h1 em{color:var(--green);font-style:italic}
+.hero h1 .grad{background:linear-gradient(90deg,var(--accent) 0%,var(--blue) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.hero .lede{font-family:var(--serif);font-size:20px;color:var(--muted);max-width:680px;margin:0 auto 26px}
+.cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn{height:44px;padding:0 22px;border-radius:99px;display:inline-flex;align-items:center;font-family:var(--sans);font-size:14px;font-weight:600}
+.btn-primary{background:var(--accent);color:#fff;border-radius:0}
+.btn-secondary{background:transparent;color:var(--fg);border:2px solid var(--fg);border-radius:0}
+.btn-tertiary{background:var(--blue);color:#fff;border-radius:99px}
+.search{max-width:680px;margin:0 auto;display:grid;grid-template-columns:1fr 200px auto;gap:8px;padding:8px;background:var(--panel);border:2px solid var(--accent);box-shadow:6px 6px 0 var(--gold)}
+.search input,.search select{height:42px;padding:0 14px;border:0;background:transparent;font-family:var(--serif);font-size:15px}
+.search button{height:42px;padding:0 22px;background:var(--accent);color:#fff;border:0;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;text-transform:uppercase;letter-spacing:.05em}
+.metrics{background:var(--panel);border-bottom:1px solid var(--line);padding:32px 24px}
+.metrics-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:760px){.metrics-inner{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:36px}.search{grid-template-columns:1fr;gap:6px}}
+.metric{padding:18px;background:var(--cream);border:1px solid var(--gold);text-align:left;position:relative}
+.metric .lbl{font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-weight:700}
+.metric .val{font-family:var(--display);font-size:32px;font-weight:600;color:var(--fg);line-height:1;margin:0}
+.metric .desc{font-family:var(--serif);font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.4}
+.section{max-width:1200px;margin:0 auto;padding:64px 24px;border-bottom:1px solid var(--line)}
+.section .head{text-align:center;margin-bottom:32px}
+.section h2{font-family:var(--display);font-size:42px;letter-spacing:-.015em;font-weight:600;margin:0 0 6px;font-style:italic}
+.section .sub{font-family:var(--sans);font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:980px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--accent);padding:0;display:flex;flex-direction:column;overflow:hidden;transition:transform .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px -6px rgba(0,0,0,.12)}
+.card .photo{aspect-ratio:16/9;background:linear-gradient(135deg,#fef3c7,#f59e0b);position:relative}
+.card.alt2 .photo{background:linear-gradient(135deg,#dbeafe,#3b82f6)}
+.card.alt3 .photo{background:linear-gradient(135deg,#dcfce7,#16a34a)}
+.card .photo .id{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:10px;font-weight:700;color:var(--fg);background:#fff;padding:3px 7px;letter-spacing:.06em}
+.card .photo .verif{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:10px;font-weight:700;color:var(--green);background:var(--green-soft);padding:3px 7px;border-radius:99px;letter-spacing:.04em}
+.card .photo .inst{position:absolute;bottom:12px;left:12px;font-family:var(--display);font-size:14px;font-weight:600;font-style:italic;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-.005em;margin:0;line-height:1.25}
+.card .meta{font-family:var(--sans);font-size:13px;color:var(--muted)}
+.card .meta b{color:var(--fg);font-weight:600}
+.card .specs{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:10px;border-top:1px dashed var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.card .specs .item{text-align:center;background:var(--cream);padding:6px;border:1px solid var(--gold)}
+.card .specs .item .k{font-size:9px;color:var(--quiet);text-transform:uppercase;letter-spacing:.06em}
+.card .specs .item .v{font-weight:700;color:var(--fg);text-transform:none;letter-spacing:0}
+.card .footer{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);background:var(--cream)}
+.card .footer .primary{flex:1;height:34px;background:var(--fg);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.card .footer a{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.principles{padding:48px 24px;background:var(--cream);border-bottom:1px solid var(--gold)}
+.principles-inner{max-width:880px;margin:0 auto;text-align:center}
+.principles h2{font-family:var(--display);font-size:32px;font-style:italic;color:var(--accent);font-weight:600;margin:0 0 18px}
+.principles p{font-family:var(--serif);font-size:18px;color:var(--fg);margin:0 0 14px;line-height:1.65}
+.footer{background:var(--fg);color:#cbd5e1;padding:36px 24px;font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footer a{color:var(--gold)}
+</style></head><body>
+
+<div class="banner">⚠ MAXIMALIST SANITY-CHECK MOCKUP — uses serif + sans + mono + 5 colors at once. Use as a "TOO MUCH" reference.</div>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">USCE<span class="accent">·</span>Hub</span>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Estimator</a><a href="#">Methodology</a><a href="#">For Institutions</a></div>
+  <span class="kbd">⌘K</span>
+  <a class="nav-cta" href="#">Sign In</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <div class="id-strip"><span class="pill">USCE-V2026</span>For International Medical Graduates · 1,247 listings · 47 states · cron'd daily</div>
+  <p class="eyebrow">A verified directory · April 2026</p>
+  <h1>Find <em>verified</em> U.S. <span class="grad">clinical experience</span> programs.</h1>
+  <p class="lede">Source-linked observerships, externships, and research. Each listing has a working URL, a verification status, and a date — or it doesn't ship.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">Browse 1,247 →</a>
+    <a class="btn btn-secondary" href="#">Methodology</a>
+    <a class="btn btn-tertiary" href="#">Estimate cost</a>
+  </div>
+  <form class="search" onsubmit="event.preventDefault()">
+    <input type="text" placeholder="Specialty (e.g. Internal Medicine)" />
+    <select><option>Any state</option></select>
+    <button type="submit">Search</button>
+  </form>
+</div></section>
+
+<section class="metrics"><div class="metrics-inner">
+  <div class="metric"><p class="lbl">VERIFIED</p><p class="val">1,247</p><p class="desc">Source-link confirmed by cron and admin in last 30 days</p></div>
+  <div class="metric"><p class="lbl">SOURCE-LINKED</p><p class="val">89%</p><p class="desc">Approved listings carry a working institution URL</p></div>
+  <div class="metric"><p class="lbl">STATES</p><p class="val">47</p><p class="desc">Three states currently have zero listings</p></div>
+  <div class="metric"><p class="lbl">CRON</p><p class="val">Apr 14</p><p class="desc">Daily check at 02:00 UTC; failures within 24h</p></div>
+</div></section>
+
+<section class="section">
+  <div class="head"><p class="sub">April 2026 cohort</p><h2>Recently verified</h2></div>
+  <div class="cards">
+    <article class="card">
+      <div class="photo"><span class="id">OBS-2741</span><span class="verif">VERIFIED</span><span class="inst">Mount Sinai</span></div>
+      <div class="body">
+        <h3>Internal Medicine Observership</h3>
+        <p class="meta"><b>New York, NY</b> · 4 weeks · $1,500–$2,000</p>
+        <div class="specs">
+          <div class="item"><div class="k">SOURCE</div><div class="v">✓</div></div>
+          <div class="item"><div class="k">LOR</div><div class="v">YES</div></div>
+          <div class="item"><div class="k">VERIFIED</div><div class="v">APR-12</div></div>
+        </div>
+      </div>
+      <div class="footer"><a class="primary" href="#">View →</a><a href="#">Save</a><a href="#">Compare</a></div>
+    </article>
+    <article class="card alt2">
+      <div class="photo"><span class="id">RES-1158</span><span class="verif">VERIFIED</span><span class="inst">Cleveland Clinic</span></div>
+      <div class="body">
+        <h3>Cardiovascular Research</h3>
+        <p class="meta"><b>Cleveland, OH</b> · 12 weeks · Funded</p>
+        <div class="specs">
+          <div class="item"><div class="k">SOURCE</div><div class="v">✓</div></div>
+          <div class="item"><div class="k">AUTH</div><div class="v">YES</div></div>
+          <div class="item"><div class="k">VERIFIED</div><div class="v">APR-14</div></div>
+        </div>
+      </div>
+      <div class="footer"><a class="primary" href="#">View →</a><a href="#">Save</a><a href="#">Compare</a></div>
+    </article>
+    <article class="card alt3">
+      <div class="photo"><span class="id">EXT-0942</span><span class="verif">VERIFIED</span><span class="inst">Johns Hopkins</span></div>
+      <div class="body">
+        <h3>Pediatrics Externship</h3>
+        <p class="meta"><b>Baltimore, MD</b> · 4 weeks · $2,000</p>
+        <div class="specs">
+          <div class="item"><div class="k">SOURCE</div><div class="v">✓</div></div>
+          <div class="item"><div class="k">CERT</div><div class="v">YES</div></div>
+          <div class="item"><div class="k">VERIFIED</div><div class="v">APR-09</div></div>
+        </div>
+      </div>
+      <div class="footer"><a class="primary" href="#">View →</a><a href="#">Save</a><a href="#">Compare</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="principles"><div class="principles-inner">
+  <h2>What "verified" <em>actually</em> means here</h2>
+  <p>USCEHub is a directory, not a placement service. We confirm the source link works, the listing was admin-approved, and reviews are kept structurally separate. Anything we cannot confirm, we say so.</p>
+</div></section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>© 2026 USCEHUB · INDEPENDENT · NOT AFFILIATED WITH NRMP / ECFMG / ERAS / AAMC</span>
+  <span><a href="#">METHODOLOGY</a> · <a href="#">PRIVACY</a> · <a href="#">TERMS</a></span>
+</div></footer>
+
+</body></html>

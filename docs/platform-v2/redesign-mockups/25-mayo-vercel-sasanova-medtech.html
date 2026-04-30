@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>25 · Mayo + Vercel + Sasanova (medical-tech)</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fafaf8;--panel:#fff;--soft:#f3f3f0;--fg:#0a1628;--ink:#0a1628;--navy:#0c2c4f;--muted:#3f4a5c;--quiet:#94a0b3;--line:#e5e7ec;--accent:#0a1628;--emerald:#10b981;--emerald-soft:#dcfce7;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--display:"Charter",ui-serif,Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
+a{color:inherit;text-decoration:none}
+.nav{background:rgba(250,250,248,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px;font-size:13px}
+.logo{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+.logo .mark{display:inline-block;width:14px;height:14px;background:var(--emerald);clip-path:polygon(50% 0,100% 100%,0 100%);transform:translateY(2px);margin-right:6px}
+.nav-links{display:flex;gap:24px;color:var(--muted);margin-left:auto}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{height:32px;padding:0 14px;background:var(--accent);color:#fff;border-radius:6px;font-size:12px;font-weight:500;display:inline-flex;align-items:center}
+.hero{position:relative;padding:96px 28px 64px;border-bottom:1px solid var(--line);overflow:hidden;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(16,185,129,.06),transparent 60%)}
+.hero-inner{position:relative;max-width:1080px;margin:0 auto;text-align:center;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald);margin-bottom:18px}
+.hero h1{font-family:var(--display);font-size:64px;line-height:1.05;letter-spacing:-.025em;font-weight:600;margin:0 0 22px;color:var(--navy)}
+.hero h1 em{font-style:italic;color:var(--emerald)}
+.hero h1 .grad{background:linear-gradient(90deg,var(--navy) 0%,var(--emerald) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.hero .lede{font-size:19px;color:var(--muted);max-width:680px;margin:0 auto 32px;line-height:1.55}
+.cta{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn{height:46px;padding:0 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:hover{text-decoration:none}
+.btn-secondary:hover{border-color:var(--ink);background:var(--panel)}
+.metrics{display:flex;justify-content:center;gap:64px;font-family:var(--mono);font-size:11px;color:var(--quiet);text-transform:uppercase;letter-spacing:.08em;flex-wrap:wrap}
+.metrics b{display:block;font-family:var(--display);color:var(--navy);font-size:32px;font-weight:600;letter-spacing:-.025em;line-height:1;margin-bottom:6px;text-transform:none}
+.section{max-width:1240px;margin:0 auto;padding:96px 28px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:16px}
+.section-head h2{font-family:var(--display);font-size:38px;letter-spacing:-.022em;font-weight:600;margin:0;color:var(--navy)}
+.section-head h2 em{font-style:italic;color:var(--emerald)}
+.section-head .link{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.section-head .link:hover{color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+@media(max-width:980px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);padding:26px;display:flex;flex-direction:column;gap:14px;transition:background .15s}
+.card:hover{background:#fafaf8}
+.card .row1{display:flex;justify-content:space-between;align-items:center}
+.card .id{font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.04em}
+.card .verif{font-family:var(--mono);font-size:10px;color:var(--emerald);background:var(--emerald-soft);padding:3px 7px;border-radius:4px;font-weight:600;letter-spacing:.04em}
+.card h3{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-.012em;margin:0;line-height:1.25;color:var(--navy)}
+.card .inst{font-size:13px;color:var(--muted);font-style:italic;margin:-4px 0 0;font-family:var(--display)}
+.card .specs{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:5px;margin-top:auto}
+.card .specs .row{display:flex;justify-content:space-between;align-items:center}
+.card .specs .k{color:var(--quiet);text-transform:uppercase;font-size:10px}
+.card .specs .v{color:var(--ink);font-weight:600}
+.card .specs .v.ok{color:var(--emerald)}
+.section-text{max-width:1240px;margin:0 auto;padding:80px 28px;border-top:1px solid var(--line);text-align:center}
+.section-text h2{font-family:var(--display);font-size:42px;letter-spacing:-.025em;font-weight:600;margin:0 0 18px;line-height:1.1;color:var(--navy)}
+.section-text h2 em{font-style:italic;color:var(--emerald)}
+.section-text p{font-size:17px;color:var(--muted);max-width:640px;margin:0 auto 24px}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;text-align:left;max-width:1080px;margin:48px auto 0}
+@media(max-width:760px){.principles{grid-template-columns:1fr;gap:32px}.hero h1{font-size:42px}.metrics{gap:32px}}
+.principle .num{font-family:var(--mono);font-size:11px;color:var(--emerald);letter-spacing:.1em;margin-bottom:10px;font-weight:600}
+.principle h3{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.012em;margin:0 0 8px;color:var(--navy)}
+.principle p{font-size:14px;color:var(--muted);margin:0;line-height:1.65}
+.footer{border-top:1px solid var(--line);padding:36px 28px;font-family:var(--mono);font-size:11px;color:var(--quiet);background:var(--panel);letter-spacing:.04em}
+.footer-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;text-transform:uppercase}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--ink)}
+@media(max-width:640px){.section-head h2{font-size:28px}}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo"><span class="mark"></span>USCEHub</span>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Estimator</a><a href="#">Methodology</a></div>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <p class="eyebrow">USCE Directory · v2026 · cron-checked daily</p>
+  <h1>Find <em>verified</em> U.S. clinical experience.<br><span class="grad">Source-linked. Admin-reviewed.</span></h1>
+  <p class="lede">A directory built for IMGs who don't have time to chase dead links. Every approved listing's URL is verified daily, every admin action is logged, every review is kept structurally separate from source-link status.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">Browse 1,247 listings →</a>
+    <a class="btn btn-secondary" href="#">View methodology</a>
+  </div>
+  <div class="metrics">
+    <span><b>1,247</b>VERIFIED LISTINGS</span>
+    <span><b>89%</b>WITH SOURCE LINK</span>
+    <span><b>47</b>STATES COVERED</span>
+    <span><b>Apr 14</b>LAST CRON RUN</span>
+  </div>
+</div></section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Recently <em>verified</em></h2>
+    <a class="link" href="#">VIEW ALL 1,247 →</a>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <div class="row1"><span class="id">OBS-2741</span><span class="verif">VERIFIED</span></div>
+      <h3>Internal Medicine Observership</h3>
+      <p class="inst">Mount Sinai · New York, NY</p>
+      <div class="specs">
+        <div class="row"><span class="k">DURATION</span><span class="v">4 wk</span></div>
+        <div class="row"><span class="k">COST</span><span class="v">$1,500–2,000</span></div>
+        <div class="row"><span class="k">LOR</span><span class="v">YES</span></div>
+        <div class="row"><span class="k">VISA SUPPORT</span><span class="v">YES</span></div>
+        <div class="row"><span class="k">SOURCE LINK</span><span class="v ok">✓ WORKING</span></div>
+        <div class="row"><span class="k">LAST VERIFIED</span><span class="v">APR 12</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="row1"><span class="id">RES-1158</span><span class="verif">VERIFIED</span></div>
+      <h3>Cardiovascular Research</h3>
+      <p class="inst">Cleveland Clinic · Cleveland, OH</p>
+      <div class="specs">
+        <div class="row"><span class="k">DURATION</span><span class="v">12 wk</span></div>
+        <div class="row"><span class="k">COST</span><span class="v">FUNDED</span></div>
+        <div class="row"><span class="k">AUTHORSHIP</span><span class="v">YES</span></div>
+        <div class="row"><span class="k">VISA SUPPORT</span><span class="v">CASE-BY-CASE</span></div>
+        <div class="row"><span class="k">SOURCE LINK</span><span class="v ok">✓ WORKING</span></div>
+        <div class="row"><span class="k">LAST VERIFIED</span><span class="v">APR 14</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="row1"><span class="id">EXT-0942</span><span class="verif">VERIFIED</span></div>
+      <h3>Pediatrics Externship</h3>
+      <p class="inst">Johns Hopkins · Baltimore, MD</p>
+      <div class="specs">
+        <div class="row"><span class="k">DURATION</span><span class="v">4 wk</span></div>
+        <div class="row"><span class="k">COST</span><span class="v">$2,000</span></div>
+        <div class="row"><span class="k">CERT.</span><span class="v">YES</span></div>
+        <div class="row"><span class="k">STEP REQ.</span><span class="v">2 CK</span></div>
+        <div class="row"><span class="k">SOURCE LINK</span><span class="v ok">✓ WORKING</span></div>
+        <div class="row"><span class="k">LAST VERIFIED</span><span class="v">APR 09</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section-text">
+  <h2>Trust through <em>code,</em> not slogans.</h2>
+  <p>USCEHub runs an automated verification pipeline against every approved listing's source URL. Failures are flagged within 24 hours; reviews are kept structurally separate from source-link status.</p>
+  <div class="principles">
+    <div class="principle"><div class="num">01 — VERIFY</div><h3>Cron + admin review</h3><p>Daily cron checks every listing's URL. Failures route to a human admin queue within 24 hours.</p></div>
+    <div class="principle"><div class="num">02 — SEPARATE</div><h3>Reviews ≠ verification</h3><p>Community reviews are user-submitted feedback. They never substitute for a working source link.</p></div>
+    <div class="principle"><div class="num">03 — DISCLOSE</div><h3>What we don't do</h3><p>We don't apply for you. We don't promise placement, match, or visa outcomes. We just keep the directory honest.</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>© 2026 USCEHUB · INDEPENDENT · NOT AFFILIATED WITH NRMP / ECFMG / ERAS / AAMC</span>
+  <span><a href="#">METHODOLOGY</a> · <a href="#">PRIVACY</a> · <a href="#">TERMS</a></span>
+</div></footer>
+
+</body></html>
