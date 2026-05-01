@@ -3,6 +3,7 @@ import { MapPin, Clock, DollarSign, Star, Award, FileText, Globe } from "lucide-
 import { CardRoot } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ListingVerificationBadge } from "@/components/listings/listing-verification-badge";
+import { SaveButton } from "@/components/listings/save-button";
 import { listingVerificationStatus } from "@/lib/listing-display";
 import { LISTING_TYPE_LABELS, truncate } from "@/lib/utils";
 
@@ -82,15 +83,18 @@ export function ListingCard({ listing }: ListingCardProps) {
             <Badge variant={getTypeVariant(listing.listingType)}>
               {LISTING_TYPE_LABELS[listing.listingType] || listing.listingType}
             </Badge>
-            {avgRating !== null && (
-              <div className="flex items-center gap-1 text-sm text-slate-600">
-                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                <span>{avgRating.toFixed(1)}</span>
-                <span className="text-slate-400">
-                  ({listing.reviews!.length})
-                </span>
-              </div>
-            )}
+            <div className="flex items-center gap-2">
+              {avgRating !== null && (
+                <div className="flex items-center gap-1 text-sm text-slate-600">
+                  <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                  <span>{avgRating.toFixed(1)}</span>
+                  <span className="text-slate-400">
+                    ({listing.reviews!.length})
+                  </span>
+                </div>
+              )}
+              <SaveButton listingId={listing.id} variant="icon" />
+            </div>
           </div>
 
           <h3 className="mb-2 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-white">
