@@ -10,6 +10,7 @@ import { TrustBadges } from "@/components/listings/trust-badges";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 import { ListingTrustMetadata } from "@/components/listings/listing-trust-metadata";
 import { ShareButtons } from "@/components/listings/share-buttons";
+import { SaveButton } from "@/components/listings/save-button";
 import { ReviewForm } from "@/components/listings/review-form";
 import { FlagButton } from "@/components/listings/flag-button";
 import { listingDisplay, listingVerificationStatus } from "@/lib/listing-display";
@@ -583,6 +584,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
               )}
 
               <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
+                <div className="mb-4">
+                  <SaveButton
+                    listingId={listing.id}
+                    variant="labeled"
+                    stopParentNavigation={false}
+                  />
+                </div>
                 <ShareButtons title={listing.title} />
               </div>
             </div>
