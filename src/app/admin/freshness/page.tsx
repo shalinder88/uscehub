@@ -132,6 +132,20 @@ export default async function AdminFreshnessPage() {
     select: { id: true, subject: true, body: true, createdAt: true, status: true },
   });
 
+  // P96-1B: count content-classifier-driven AdminMessage rows in the
+  // 14-day dedupe window. Same window the cron uses, so the tiles
+  // match the deduped queue size at any given time.
+  const days14 = new Date(now - 14 * oneDay);
+  const [genericFlagCount, wrongFlagCount] = await Promise.all([
+    prisma.adminMessage.count({
+      where: { category: "verification_generic_source", createdAt: { gte: days14 } },
+    }),
+    prisma.adminMessage.count({
+      where: { category: "verification_wrong_page", createdAt: { gte: days14 } },
+    }),
+  ]);
+  const totalContentReviewFlags = genericFlagCount + wrongFlagCount;
+
   return (
     <div className="space-y-6">
       <div>
@@ -156,6 +170,9 @@ export default async function AdminFreshnessPage() {
             { label: "Never verified", value: neverVerified },
             { label: "No URL on file", value: noUrl.length },
             { label: "Generic-homepage URL", value: generic.length },
+            { label: "Generic-source flags (last 14d)", value: genericFlagCount },
+            { label: "Wrong-page flags (last 14d)", value: wrongFlagCount },
+            { label: "Content-classifier flags (last 14d)", value: totalContentReviewFlags },
           ].map((s) => (
             <div
               key={s.label}
