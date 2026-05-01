@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -11,16 +12,63 @@ const CATEGORIES = [
   { value: "grievance", label: "Complaint / grievance" },
   { value: "bug", label: "Bug report" },
   { value: "data", label: "Data correction" },
+  // Coordinator-facing intents. AdminMessage.category is a free
+  // string, so adding values here costs nothing on the backend; the
+  // admin queue lists the category as-is.
+  { value: "institution_update", label: "Institution / program update" },
+  { value: "removal_request", label: "Request listing removal or review" },
+  { value: "source_update", label: "Official source URL changed" },
+  { value: "coordinator_correction", label: "Coordinator correction" },
   { value: "partnership", label: "Partnership / collaboration" },
 ];
 
+const VALID_CATEGORY_VALUES = new Set(CATEGORIES.map((c) => c.value));
+
+const INSTITUTION_FACING_CATEGORIES = new Set([
+  "institution_update",
+  "removal_request",
+  "source_update",
+  "coordinator_correction",
+]);
+
 export default function ContactAdminPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="mx-auto max-w-2xl p-6 text-sm text-slate-600 dark:text-slate-400">
+          Loading…
+        </div>
+      }
+    >
+      <ContactAdminForm />
+    </Suspense>
+  );
+}
+
+function ContactAdminForm() {
   const { data: session, status } = useSession();
+  const searchParams = useSearchParams();
   const [category, setCategory] = useState("general");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null);
+
+  // Prefill from URL on first mount. Used by the listing detail
+  // "Suggest a correction" link and by /for-institutions coordinator
+  // CTAs. Server validates again, so untrusted query strings are safe.
+  useEffect(() => {
+    const qpCategory = searchParams.get("category");
+    if (qpCategory && VALID_CATEGORY_VALUES.has(qpCategory)) {
+      setCategory(qpCategory);
+    }
+    const qpSubject = searchParams.get("subject");
+    if (qpSubject && qpSubject.length > 0 && qpSubject.length <= 200) {
+      setSubject(qpSubject);
+    }
+    // Intentionally only on first mount — subsequent edits are user-driven.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (status === "loading") {
     return <div className="mx-auto max-w-2xl p-6 text-sm text-slate-600 dark:text-slate-400">Loading…</div>;
@@ -86,6 +134,14 @@ export default function ContactAdminPage() {
               <option key={c.value} value={c.value}>{c.label}</option>
             ))}
           </select>
+          {INSTITUTION_FACING_CATEGORIES.has(category) && (
+            <p className="mt-2 rounded-md border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+              USCEHub does not represent the institutions listed on this site. We
+              link applicants to official sources when available. Correction,
+              update, and removal requests are reviewed before any public change
+              — we do not guarantee a response time.
+            </p>
+          )}
         </div>
 
         <div>
