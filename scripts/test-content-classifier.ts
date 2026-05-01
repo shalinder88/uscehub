@@ -152,6 +152,101 @@ expectEqual(
   "15: hostname is lowercased"
 );
 
+// --- P96-1B: cron URL-only invocation contract ---
+// The cron passes URL + httpStatus + finalUrl, with NO contentSnippet.
+// Verify the classifier behaves correctly under that exact invocation.
+
+// 16. URL-only with HTTP 200 + generic homepage → GENERIC_HOMEPAGE.
+expectEqual(
+  classifyContent({
+    url: "https://www.bcm.edu/",
+    httpStatus: 200,
+    finalUrl: null,
+  }).classification,
+  "GENERIC_HOMEPAGE",
+  "16 (P96-1B): URL+200, generic root → GENERIC_HOMEPAGE"
+);
+
+// 17. URL-only with HTTP 200 + path keyword → PATH_HINTS_PROGRAM.
+expectEqual(
+  classifyContent({
+    url: "https://www.mskcc.org/hcp-education-training/medical-students/summer-fellowship",
+    httpStatus: 200,
+    finalUrl: null,
+  }).classification,
+  "PATH_HINTS_PROGRAM",
+  "17 (P96-1B): URL+200, path keyword → PATH_HINTS_PROGRAM"
+);
+
+// 18. URL-only with HTTP 200 + wrong-page hint in path → LIKELY_WRONG_PAGE.
+expectEqual(
+  classifyContent({
+    url: "https://international.northwell.edu/consulting-advisory-services",
+    httpStatus: 200,
+    finalUrl: null,
+  }).classification,
+  "LIKELY_WRONG_PAGE",
+  "18 (P96-1B): URL+200, consulting-advisory path → LIKELY_WRONG_PAGE"
+);
+
+// 19. URL-only with HTTP 200 + deep path no keyword → DEEP_PATH_NO_HINT.
+expectEqual(
+  classifyContent({
+    url: "https://example.org/some/random/path/x42",
+    httpStatus: 200,
+    finalUrl: null,
+  }).classification,
+  "DEEP_PATH_NO_HINT",
+  "19 (P96-1B): URL+200, deep path no keyword → DEEP_PATH_NO_HINT"
+);
+
+// 20. URL-only with no contentSnippet → never returns LOGIN_REQUIRED.
+const r20 = classifyContent({
+  url: "https://example.org/observership/apply",
+  httpStatus: 200,
+  finalUrl: null,
+});
+if (r20.classification === "LOGIN_REQUIRED") {
+  fail++;
+  failures.push("20 (P96-1B): URL-only must NOT return LOGIN_REQUIRED");
+} else {
+  pass++;
+}
+
+// 21. Final URL after redirect supersedes original URL.
+expectEqual(
+  classifyContent({
+    url: "https://example.org/observership",
+    httpStatus: 200,
+    finalUrl: "https://example.org/",
+  }).classification,
+  "GENERIC_HOMEPAGE",
+  "21 (P96-1B): redirect to generic root downgrades to GENERIC_HOMEPAGE"
+);
+
+// 22. URL-only with httpStatus = 0 (network error) → SOURCE_DEAD.
+expectEqual(
+  classifyContent({
+    url: "https://example.org/observership",
+    httpStatus: 0,
+    finalUrl: null,
+  }).classification,
+  "SOURCE_DEAD",
+  "22 (P96-1B): URL+httpStatus=0 → SOURCE_DEAD"
+);
+
+// 23. PATH_HINTS_PROGRAM does NOT promote when wrong-page hint also
+// appears in the path (e.g. observership-billing).
+expectEqual(
+  classifyContent({
+    url: "https://example.org/observership-billing-policy",
+    httpStatus: 200,
+    finalUrl: null,
+  }).classification,
+  "LIKELY_WRONG_PAGE",
+  "23 (P96-1B): wrong-page hint beats keyword in path"
+);
+
 // Summary
 const total = pass + fail;
 console.log(`\n${pass}/${total} passed.`);
