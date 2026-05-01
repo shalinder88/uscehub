@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>26 · Stripe Press + Apple + Sasanova</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fcfaf6;--panel:#fefdfa;--soft:#f5f2ea;--fg:#1a1a1a;--ink:#1a1a1a;--muted:#5a5a5a;--quiet:#999;--line:#d8d2c4;--accent:#7c2d12;--gold:#a67c00;--green:#15803d;--green-soft:#dcfce7;--serif:"Source Serif Pro","Charter","Iowan Old Style",ui-serif,Georgia,serif;--display:"Playfair Display",ui-serif,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+html,body{margin:0}body{font-family:var(--serif);color:var(--fg);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--quiet);text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--accent)}
+.nav{background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:18px 32px;display:flex;align-items:baseline;gap:32px;font-family:var(--sans);font-size:13px}
+.logo{font-family:var(--display);font-size:24px;font-style:italic;font-weight:600;letter-spacing:0;text-decoration:none}
+.nav-links{display:flex;gap:24px;color:var(--muted);margin-left:auto}
+.nav-links a{text-decoration:none}
+.nav-cta{background:var(--ink);color:#fff;padding:7px 14px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:.04em}
+.hero{padding:80px 32px 48px;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:end}
+@media(max-width:760px){.hero-inner{grid-template-columns:1fr;gap:24px}}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px}
+.hero h1{font-family:var(--display);font-size:62px;line-height:1.05;letter-spacing:-.022em;font-weight:600;margin:0 0 24px;font-style:normal}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{font-size:21px;line-height:1.55;color:var(--fg);max-width:580px;margin:0 0 28px}
+.hero .meta-line{font-family:var(--sans);font-size:12px;color:var(--quiet);letter-spacing:.04em;border-top:1px solid var(--line);padding-top:14px;display:flex;flex-wrap:wrap;gap:18px}
+.hero .meta-line b{color:var(--ink);font-weight:600}
+/* Right-side numbers panel — Sasanova credibility */
+.hero-numbers{background:var(--panel);border:1px solid var(--line);padding:24px;font-family:var(--sans);font-size:13px}
+.hero-numbers h4{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 14px}
+.hero-numbers .row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--line)}
+.hero-numbers .row:last-child{border-bottom:0}
+.hero-numbers .row .k{color:var(--muted);font-size:13px}
+.hero-numbers .row .v{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.hero-numbers .row .v.ok{color:var(--green)}
+.hero-numbers .footer{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:11px;color:var(--quiet);text-align:center}
+.hero-numbers .footer a{color:var(--accent)}
+.section{max-width:1080px;margin:0 auto;padding:64px 32px;border-bottom:1px solid var(--line)}
+.section h2{font-family:var(--display);font-size:36px;letter-spacing:-.012em;font-weight:600;margin:0 0 6px}
+.section p.sub{font-family:var(--sans);font-size:13px;color:var(--quiet);letter-spacing:.05em;text-transform:uppercase;margin:0 0 36px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+/* Apple-style spec-sheet card */
+.card{background:var(--panel);border:1px solid var(--line);padding:24px 26px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 12px 24px -10px rgba(124,45,18,.10);transform:translateY(-2px)}
+.card .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.card .num{font-family:var(--display);font-size:13px;font-style:italic;color:var(--accent);font-weight:600;flex-shrink:0}
+.card .verif{font-family:var(--sans);font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;display:inline-flex;align-items:center;gap:5px;background:var(--green-soft);padding:3px 8px}
+.card .verif::before{content:"";width:5px;height:5px;background:var(--green);border-radius:50%}
+.card h3{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-.005em;margin:0;line-height:1.25;color:var(--ink)}
+.card .inst{font-family:var(--display);font-size:14px;color:var(--muted);font-style:italic;margin:-4px 0 0}
+.card .desc{font-size:15px;color:var(--fg);margin:0;line-height:1.65}
+/* Apple-style specsheet */
+.specsheet{font-family:var(--sans);font-size:12px;border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:auto}
+.specsheet .row{display:flex;justify-content:space-between;align-items:baseline;padding:2px 0}
+.specsheet .k{color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.05em}
+.specsheet .v{color:var(--ink);font-weight:600}
+.specsheet .v.ok{color:var(--green)}
+.card .footer{font-family:var(--sans);font-size:13px;display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line);margin-top:6px}
+.card .footer .more{color:var(--accent);font-weight:600;text-decoration:none}
+.card .footer .more:hover{text-decoration:underline}
+.card .footer .save{color:var(--quiet);text-decoration:none}
+.principles{max-width:880px;margin:0 auto;padding:64px 32px;font-size:18px;line-height:1.7}
+.principles h2{font-family:var(--display);font-size:30px;letter-spacing:-.01em;font-weight:600;margin:0 0 24px}
+.principles p{margin:0 0 18px;color:var(--fg)}
+.principles p:first-of-type{font-size:21px;line-height:1.55;font-style:italic;color:var(--accent)}
+.callout{font-family:var(--sans);font-size:13px;color:var(--muted);background:var(--panel);border-left:3px solid var(--accent);padding:14px 18px;margin:24px 0;line-height:1.55}
+.footer{background:var(--bg);padding:48px 32px;font-family:var(--sans);font-size:12px;color:var(--quiet)}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;border-top:1px solid var(--line);padding-top:24px}
+.footer a{color:var(--muted);text-decoration:none}
+.footer a:hover{color:var(--ink);text-decoration:underline}
+@media(max-width:640px){.hero h1{font-size:42px}.section h2{font-size:28px}.nav-links{display:none}}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <a class="logo" href="#">USCEHub</a>
+  <div class="nav-links"><a href="#">Listings</a><a href="#">Compare</a><a href="#">Cost</a><a href="#">Methodology</a><a href="#">About</a></div>
+  <a class="nav-cta" href="#">SIGN IN</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <div>
+    <p class="eyebrow">A directory · April 2026 issue</p>
+    <h1>The verified guide to U.S. <em>clinical experience.</em></h1>
+    <p class="lede">USCEHub is a structured catalog of source-linked observerships, externships, and research positions. We confirm the link works. We do not apply for you. We do not promise outcomes.</p>
+    <div class="meta-line">
+      <span><b>1,247</b> verified listings</span>
+      <span><b>89%</b> with source link</span>
+      <span><b>47</b> states</span>
+      <span>last reviewed <b>April 14, 2026</b></span>
+    </div>
+  </div>
+  <div class="hero-numbers">
+    <h4>Verification status · Apr 14</h4>
+    <div class="row"><span class="k">Verified listings</span><span class="v ok">1,247</span></div>
+    <div class="row"><span class="k">With source link</span><span class="v">89%</span></div>
+    <div class="row"><span class="k">Needs recheck</span><span class="v">14</span></div>
+    <div class="row"><span class="k">States covered</span><span class="v">47</span></div>
+    <div class="footer">Last cron: <b style="color:var(--ink)">02:00 UTC</b> · <a href="#">Report a broken link →</a></div>
+  </div>
+</div></section>
+
+<section class="section">
+  <h2>Recently verified</h2>
+  <p class="sub">Listings · April 2026 cohort</p>
+  <div class="cards">
+
+    <article class="card">
+      <div class="row1">
+        <span class="num">№ 01</span>
+        <span class="verif">Verified</span>
+      </div>
+      <h3>Internal Medicine Observership</h3>
+      <p class="inst">Mount Sinai · New York, NY</p>
+      <p class="desc">Hospital-based observership in IM with rotation in cardiology and pulmonology. Open to IMGs with USMLE Step 1 pass; LOR possible after 4 weeks.</p>
+      <div class="specsheet">
+        <div class="row"><span class="k">DURATION</span><span class="v">4 weeks</span></div>
+        <div class="row"><span class="k">COST</span><span class="v">$1,500–$2,000</span></div>
+        <div class="row"><span class="k">LOR</span><span class="v">Possible</span></div>
+        <div class="row"><span class="k">VISA</span><span class="v">Yes</span></div>
+        <div class="row"><span class="k">SOURCE</span><span class="v ok">Working</span></div>
+        <div class="row"><span class="k">VERIFIED</span><span class="v">Apr 12</span></div>
+      </div>
+      <div class="footer"><a class="more" href="#">View listing →</a><a class="save" href="#">Save · Compare</a></div>
+    </article>
+
+    <article class="card">
+      <div class="row1">
+        <span class="num">№ 02</span>
+        <span class="verif">Verified</span>
+      </div>
+      <h3>Cardiovascular Research Position</h3>
+      <p class="inst">Cleveland Clinic · Cleveland, OH</p>
+      <p class="desc">Funded research with the cardiovascular medicine team. Open to IMGs with prior research experience. Authorship possible.</p>
+      <div class="specsheet">
+        <div class="row"><span class="k">DURATION</span><span class="v">12 weeks</span></div>
+        <div class="row"><span class="k">COST</span><span class="v">Funded</span></div>
+        <div class="row"><span class="k">AUTHORSHIP</span><span class="v">Possible</span></div>
+        <div class="row"><span class="k">VISA</span><span class="v">Case-by-case</span></div>
+        <div class="row"><span class="k">SOURCE</span><span class="v ok">Working</span></div>
+        <div class="row"><span class="k">VERIFIED</span><span class="v">Apr 14</span></div>
+      </div>
+      <div class="footer"><a class="more" href="#">View listing →</a><a class="save" href="#">Save · Compare</a></div>
+    </article>
+
+  </div>
+</section>
+
+<section class="principles">
+  <h2>How we verify</h2>
+  <p>A directory is only as good as its links.</p>
+  <p>USCEHub runs an automated cron daily against every approved listing's source URL and routes failures to a human admin queue within 24 hours. A listing whose source link returns an error is flagged "Needs recheck" — never silently hidden. If the institution has retired the program, we mark "Program closed" and stop showing it in default search results.</p>
+  <p>Reviews are user-submitted feedback, moderated before publishing, and shown separately from source-link verification. Reviews are opinions; verification is an audit. We do not let one substitute for the other.</p>
+  <div class="callout">USCEHub is an independent informational platform. We are not affiliated with NRMP, ECFMG, ERAS, AAMC, or any hospital or residency program. We do not guarantee placement, match, or visa outcomes. Always verify program details with the institution before applying.</div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>© 2026 USCEHub · April 14, 2026 issue</span>
+  <span><a href="#">Methodology</a> · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Disclaimer</a> · <a href="#">Contact admin</a></span>
+</div></footer>
+
+</body></html>
