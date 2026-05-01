@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s — USCEHub",
   },
   description:
-    "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+    "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
   keywords:
     "observership, externship, IMG, international medical graduate, USCE, clinical experience, US hospitals, medical observership, residency preparation",
   authors: [{ name: "USCEHub" }],

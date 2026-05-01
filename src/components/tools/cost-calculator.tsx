@@ -31,6 +31,27 @@ const DURATIONS = [
 const INSURANCE_MIN = 50;
 const INSURANCE_MAX = 200;
 
+// PR 0g-fix (audit M1): visible "last reviewed" line so users (and admins)
+// know the city/insurance assumptions are dated and may drift. Update this
+// constant when the underlying figures are reviewed.
+const LAST_REVIEWED = "April 2026";
+
+// PR 0g-fix (audit H1 / M2): IMG-cycle fees that are NOT modelled by this
+// calculator. Surfaced near the total so a user reading "$X,XXX Estimated
+// Total" understands the trip estimate is partial. Update when the
+// calculator scope expands.
+const NOT_INCLUDED_FEES = [
+  "USMLE Step 1 / Step 2 CK / Step 3 fees",
+  "ECFMG application + Pathways assessment fees",
+  "ERAS / NRMP application + match fees",
+  "Visa application + SEVIS / consular fees",
+  "Round-trip airfare from origin country",
+  "Malpractice insurance (if not program-covered)",
+  "Background check + drug screen + immunizations",
+  "Document translation / notarization (non-English source schools)",
+  "TOEFL / IELTS, NPI registration, contingency buffer",
+];
+
 interface CostCalculatorProps {
   compact?: boolean;
 }
@@ -181,7 +202,7 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
               <div className="border-t border-slate-200 dark:border-slate-700 pt-2.5">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
-                    Estimated Total
+                    Estimated Trip Total
                   </span>
                   <span className="text-lg font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">
                     {formatUsd(totalMin)}
@@ -191,9 +212,54 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
               </div>
             </div>
 
-            <p className="mt-3 text-xs text-slate-400">
-              Estimates based on average costs. Actual costs may vary by neighborhood, lifestyle, and time of year.
-            </p>
+            {/*
+             * PR 0g-fix (audit H1): "Other city" silently defaults to a
+             * US-median proxy (housing $1000 / food $300 / transport $80).
+             * Surface that assumption rather than letting users from
+             * SF/Seattle/DC under-estimate.
+             */}
+            {city === "Other city" && (
+              <p className="mt-3 rounded-md border border-amber-200 bg-amber-50 dark:border-amber-900/40 dark:bg-amber-950/30 px-3 py-2 text-xs text-amber-800 dark:text-amber-200">
+                <strong>Heads up:</strong> &ldquo;Other city&rdquo; uses
+                US-median assumptions. Higher-cost cities (San Francisco,
+                Seattle, DC, etc.) will be under-estimated; lower-cost cities
+                may be over-estimated. Verify locally.
+              </p>
+            )}
+
+            {/*
+             * PR 0g-fix (audit H1 + M1): strengthened disclaimer, last-reviewed
+             * date, and "What's NOT included" list. Closes credibility-by-
+             * omission gap from the prior single-line disclaimer.
+             */}
+            <div className="mt-3 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+              <p>
+                <strong className="text-slate-700 dark:text-slate-300">Estimator only.</strong>{" "}
+                Not financial, insurance, immigration, or legal advice. Costs
+                are planning ranges; actual costs vary by neighborhood,
+                lifestyle, time of year, program, travel origin, visa type,
+                and required documents. City and insurance assumptions are
+                internal estimates &mdash; verify locally and with the program.
+              </p>
+              <p>
+                <strong className="text-slate-700 dark:text-slate-300">Last reviewed:</strong>{" "}
+                {LAST_REVIEWED}.
+              </p>
+              <details className="group">
+                <summary className="cursor-pointer text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100">
+                  <strong>Common costs not included</strong> (verify with
+                  ECFMG / USMLE / ERAS / NRMP / consular and institutional
+                  sources):
+                </summary>
+                <ul className="mt-2 space-y-1 pl-4">
+                  {NOT_INCLUDED_FEES.map((fee) => (
+                    <li key={fee} className="list-disc list-outside">
+                      {fee}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </div>
           </div>
         </div>
       )}

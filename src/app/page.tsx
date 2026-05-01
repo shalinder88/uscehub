@@ -91,7 +91,7 @@ export default async function HomePage() {
     url: "https://uscehub.com",
     logo: "https://uscehub.com/og-default.png",
     description:
-      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
     sameAs: [],
   };
 

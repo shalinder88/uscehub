@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>13 · Plausible privacy-first</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fff;--panel:#fcfcfc;--fg:#1a1a1a;--muted:#666;--quiet:#999;--line:#e8e8e8;--accent:#5850ec;--green:#22c55e;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--sans:"Inter","Helvetica Neue",-apple-system,sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+.nav{background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;font-size:14px}
+.logo{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:-.01em}
+.nav-links{display:flex;gap:20px;color:var(--muted);margin-left:auto}
+.nav-cta{height:34px;padding:0 14px;background:var(--accent);color:#fff;border-radius:5px;display:inline-flex;align-items:center;font-size:13px;font-weight:500}
+.banner{background:#f5f5ff;border-bottom:1px solid var(--line);padding:10px 24px;text-align:center;font-size:13px;color:var(--muted);font-family:var(--mono)}
+.banner b{color:var(--accent)}
+.hero{padding:80px 24px;text-align:center}
+.hero-inner{max-width:880px;margin:0 auto}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--accent);background:#f5f5ff;padding:4px 10px;border-radius:4px;letter-spacing:.04em;margin-bottom:18px}
+.hero h1{font-size:54px;line-height:1.08;letter-spacing:-.025em;font-weight:700;margin:0 0 20px}
+.hero h1 strong{color:var(--accent);font-weight:700}
+.hero .lede{font-size:18px;color:var(--muted);max-width:680px;margin:0 auto 32px}
+.cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.btn{height:42px;padding:0 18px;border-radius:5px;display:inline-flex;align-items:center;font-size:14px;font-weight:500;font-family:var(--mono)}
+.btn-primary{background:var(--fg);color:#fff}
+.btn-secondary{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.policy{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.policy span::before{content:"✓";color:var(--green);margin-right:4px;font-weight:700}
+.section{max-width:1100px;margin:0 auto;padding:64px 24px}
+.section-head{margin-bottom:32px}
+.section-head h2{font-size:28px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}
+.section-head .sub{font-family:var(--mono);font-size:12px;color:var(--quiet);margin:0;letter-spacing:.04em}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:760px){.cards{grid-template-columns:1fr}.hero h1{font-size:36px}}
+.card{background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:10px;transition:background .15s}
+.card:hover{background:var(--panel)}
+.card .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.card h3{font-size:16px;font-weight:600;margin:0;letter-spacing:-.005em;line-height:1.35}
+.card .verif{font-family:var(--mono);font-size:11px;color:var(--green);font-weight:500;flex-shrink:0}
+.card .verif::before{content:"●";margin-right:4px}
+.card .inst{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0}
+.card .meta{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:14px;padding-top:10px;border-top:1px dashed var(--line)}
+.card .meta .key{color:var(--quiet);text-transform:uppercase;font-size:10px;letter-spacing:.06em;margin-right:3px}
+.card .meta b{color:var(--fg);font-weight:500}
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:32px}
+@media(max-width:760px){.principles{grid-template-columns:1fr}}
+.principle{padding:24px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.principle h3{font-size:18px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
+.principle p{font-size:14px;color:var(--muted);margin:0;line-height:1.65}
+.principle .eb{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.04em;margin-bottom:8px}
+.footer{padding:48px 24px 32px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+</style></head><body>
+
+<div class="banner">USCEHub uses <b>no tracking cookies</b>, <b>no third-party analytics</b>, and never sells data. <a href="#" style="color:var(--accent);text-decoration:underline">privacy.html</a></div>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">$ uscehub</span>
+  <div class="nav-links"><a href="#">browse</a><a href="#">compare</a><a href="#">estimator</a><a href="#">methodology</a></div>
+  <a class="nav-cta" href="#">sign in</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <span class="tag">independent · privacy-first · last reviewed apr 14, 2026</span>
+  <h1>The verified directory for U.S. clinical experience.<br><strong>No tracking. No noise.</strong></h1>
+  <p class="lede">USCEHub catalogs source-linked observerships, externships, and research positions for IMGs. Every listing has a working URL, a verification status, and a date. We don't apply for you. We don't track you.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">browse 1,247 →</a>
+    <a class="btn btn-secondary" href="#">$ methodology</a>
+  </div>
+  <div class="policy">
+    <span>no cookies</span>
+    <span>no analytics</span>
+    <span>no tracking pixels</span>
+    <span>no fake reviews</span>
+    <span>open methodology</span>
+  </div>
+</div></section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Recently verified</h2>
+    <p class="sub">// source-link confirmed in last cron window · apr 14, 2026</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="row1"><h3>Internal Medicine Observership</h3><span class="verif">VERIFIED</span></div><p class="inst">Mount Sinai · New York, NY</p><div class="meta"><span><span class="key">type</span><b>obs</b></span><span><span class="key">dur</span><b>4 wk</b></span><span><span class="key">cost</span><b>$1.5–2K</b></span><span><span class="key">verified</span><b>apr 12</b></span></div></article>
+    <article class="card"><div class="row1"><h3>Cardiovascular Research</h3><span class="verif">VERIFIED</span></div><p class="inst">Cleveland Clinic · Cleveland, OH</p><div class="meta"><span><span class="key">type</span><b>res</b></span><span><span class="key">dur</span><b>12 wk</b></span><span><span class="key">cost</span><b>funded</b></span><span><span class="key">verified</span><b>apr 14</b></span></div></article>
+    <article class="card"><div class="row1"><h3>Pediatrics Externship</h3><span class="verif">VERIFIED</span></div><p class="inst">Johns Hopkins · Baltimore, MD</p><div class="meta"><span><span class="key">type</span><b>ext</b></span><span><span class="key">dur</span><b>4 wk</b></span><span><span class="key">cost</span><b>$2K</b></span><span><span class="key">verified</span><b>apr 09</b></span></div></article>
+    <article class="card"><div class="row1"><h3>Surgery Observership</h3><span class="verif">VERIFIED</span></div><p class="inst">UCLA Medical · Los Angeles, CA</p><div class="meta"><span><span class="key">type</span><b>obs</b></span><span><span class="key">dur</span><b>2/4 wk</b></span><span><span class="key">cost</span><b>$2.5K</b></span><span><span class="key">verified</span><b>apr 08</b></span></div></article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>What we don't do</h2>
+    <p class="sub">// the negative space matters</p>
+  </div>
+  <div class="principles">
+    <div class="principle"><div class="eb">// 01</div><h3>We don't apply for you.</h3><p>Every approved listing carries the institution's own application URL. You apply at the institution, not through us.</p></div>
+    <div class="principle"><div class="eb">// 02</div><h3>We don't promise outcomes.</h3><p>We don't guarantee placement, match, or visa outcomes. Anyone telling IMGs they can guarantee a residency match is lying.</p></div>
+    <div class="principle"><div class="eb">// 03</div><h3>We don't track you.</h3><p>No third-party analytics, no tracking pixels, no advertising cookies. Methodology is public.</p></div>
+    <div class="principle"><div class="eb">// 04</div><h3>We don't fake activity.</h3><p>No "X people viewing now" urgency theater. Reviews are kept structurally separate from source-link verification.</p></div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>// © 2026 uscehub · independent · not affiliated with nrmp / ecfmg / eras / aamc</span>
+  <span><a href="#" style="color:var(--accent)">methodology.md</a> · <a href="#" style="color:var(--accent)">privacy.html</a> · <a href="#" style="color:var(--accent)">terms.html</a></span>
+</div></footer>
+
+</body></html>

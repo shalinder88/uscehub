@@ -7,7 +7,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Built by an intensivist who lived the IMG journey. USCEHub is the largest free database of clinical observership and externship opportunities for International Medical Graduates.",
+    "Built by an intensivist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
   alternates: {
     canonical: "https://uscehub.com/about",
   },
@@ -18,7 +18,7 @@ const jsonLd = {
   "@type": "AboutPage",
   name: "About USCEHub",
   description:
-    "Built by an intensivist who lived the IMG journey. USCEHub is the largest free database of clinical observership and externship opportunities for International Medical Graduates.",
+    "Built by an intensivist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
   url: "https://uscehub.com/about",
   mainEntity: {
     "@type": "Organization",
@@ -29,7 +29,7 @@ const jsonLd = {
       name: "USCEHub Team",
     },
     description:
-      "The largest structured database of clinical observership, externship, and research opportunities for International Medical Graduates in the United States.",
+      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
   },
 };
 
@@ -139,8 +139,9 @@ export default function AboutPage() {
               </div>
               <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Mission</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                Build the largest, most trustworthy database of clinical and
-                research opportunities for IMGs in the United States.
+                Build an independent, source-linked, trustworthy directory of
+                clinical and research opportunities for IMGs in the United
+                States.
               </p>
             </div>
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">

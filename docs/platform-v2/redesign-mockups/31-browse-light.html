@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>31 · Browse · Light</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fbfaf6;--panel:#fff;--panel-2:#fafaf6;--soft:#f3f1e9;--fg:#0a1628;--ink:#0a1628;--muted:#475569;--quiet:#94a0b3;--line:#e6e3d8;--line-soft:#efece2;--accent:#0a1628;--accent-hover:#0c2c4f;--obs:#3b82f6;--obs-soft:#dbeafe;--ext:#f97316;--ext-soft:#fed7aa;--res:#10b981;--res-soft:#d1fae5;--ele:#8b5cf6;--ele-soft:#e9d5ff;--vol:#ec4899;--vol-soft:#fbcfe8;--ok:#0e7c66;--ok-soft:#d6f0e5;--warn:#b45309;--warn-soft:#fef3c7;--display:"Charter",ui-serif,Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
+a{color:inherit;text-decoration:none}
+
+.banner{background:#ecfdf5;border-bottom:1px solid #a7f3d0;color:#065f46;padding:6px 16px;font-size:11px;font-weight:600;text-align:center;letter-spacing:.06em;font-family:var(--mono);text-transform:uppercase}
+
+.nav{background:rgba(251,250,246,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.nav-inner{max-width:1440px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:24px}
+.logo{font-family:var(--display);font-size:22px;font-weight:600;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:6px}
+.logo .dot{width:8px;height:8px;background:var(--ok);border-radius:50%;box-shadow:0 0 0 3px rgba(14,124,102,.18)}
+.logo .em{color:var(--ok);font-style:italic}
+.nav-search{flex:1;max-width:560px;margin:0 auto;display:flex;align-items:center;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 6px 6px 16px;font-size:13px}
+.nav-search input{flex:1;border:0;background:transparent;font-family:inherit;font-size:14px;color:var(--ink);outline:none;padding:6px 0}
+.nav-search input::placeholder{color:var(--quiet)}
+.nav-search .go{height:32px;padding:0 14px;background:var(--accent);color:#fff;border-radius:99px;font-size:12px;font-weight:600;border:0;cursor:pointer;font-family:inherit}
+.nav-links{display:flex;gap:18px;font-size:13px;color:var(--muted)}
+.theme-toggle{height:32px;width:32px;border:1px solid var(--line);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;background:var(--panel);font-size:14px;cursor:pointer}
+.nav-cta{height:32px;padding:0 14px;background:var(--accent);color:#fff;border-radius:8px;font-size:12px;font-weight:500;display:inline-flex;align-items:center}
+
+/* Sub-bar with crumbs + result count + sort */
+.subbar{background:var(--panel);border-bottom:1px solid var(--line)}
+.subbar-inner{max-width:1440px;margin:0 auto;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
+.subbar .crumbs{display:flex;align-items:center;gap:8px}
+.subbar .crumbs a{color:var(--muted)}
+.subbar .crumbs .sep{color:var(--quiet)}
+.subbar .crumbs .now{color:var(--ink);font-weight:600}
+.subbar .right{display:flex;align-items:center;gap:18px}
+.subbar .count{font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.subbar .count b{color:var(--ink);font-weight:700}
+.subbar .sort{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.subbar .sort select{font-family:var(--mono);font-size:11px;border:1px solid var(--line);background:var(--panel);padding:5px 24px 5px 10px;border-radius:6px;color:var(--ink);font-weight:600;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1.5L5 5L9 1.5' stroke='%2394a0b3' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+
+/* Layout: sidebar + content */
+.layout{max-width:1440px;margin:0 auto;padding:24px 28px;display:grid;grid-template-columns:260px 1fr;gap:28px}
+@media(max-width:980px){.layout{grid-template-columns:1fr;gap:18px}.sidebar{display:none}}
+.sidebar{position:sticky;top:88px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;font-size:13px;max-height:calc(100vh - 110px);overflow-y:auto}
+.sidebar h4{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--quiet);margin:0 0 10px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.sidebar h4:first-child{margin-top:0;padding-top:0;border-top:0}
+.sidebar .opt{display:flex;align-items:center;gap:8px;padding:5px 0;color:var(--muted);cursor:pointer}
+.sidebar .opt input{accent-color:var(--accent);cursor:pointer}
+.sidebar .opt:hover{color:var(--ink)}
+.sidebar .opt .count{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--quiet);font-weight:600}
+.sidebar .opt.active{color:var(--ink);font-weight:600}
+.sidebar .opt .dot{display:inline-block;width:7px;height:7px;border-radius:50%}
+.sidebar .opt[data-type="obs"] .dot{background:var(--obs)}
+.sidebar .opt[data-type="ext"] .dot{background:var(--ext)}
+.sidebar .opt[data-type="res"] .dot{background:var(--res)}
+.sidebar .opt[data-type="ele"] .dot{background:var(--ele)}
+.sidebar .opt[data-type="vol"] .dot{background:var(--vol)}
+.sidebar .clear{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* Active filter chips above results */
+.active-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.active-chips .chip{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;background:var(--panel);border:1px solid var(--line);border-radius:99px;font-size:12px;color:var(--ink);font-weight:500;font-family:var(--mono);letter-spacing:.02em}
+.active-chips .chip .x{color:var(--quiet);cursor:pointer;margin-left:2px}
+.active-chips .clear-all{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;align-self:center;margin-left:6px;letter-spacing:.04em}
+
+/* CARDS — slightly more compact for browse density */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:1200px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;border-radius:12px 12px 0 0}
+.card.obs::before{background:var(--obs)}
+.card.ext::before{background:var(--ext)}
+.card.res::before{background:var(--res)}
+.card.ele::before{background:var(--ele)}
+.card.vol::before{background:var(--vol)}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(10,22,40,.10);border-color:var(--quiet)}
+.card-head{padding:14px 18px 6px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card-type{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:99px}
+.card.obs .card-type{background:var(--obs-soft);color:#1d4ed8}
+.card.ext .card-type{background:var(--ext-soft);color:#9a3412}
+.card.res .card-type{background:var(--res-soft);color:#065f46}
+.card.ele .card-type{background:var(--ele-soft);color:#5b21b6}
+.card.vol .card-type{background:var(--vol-soft);color:#9f1239}
+.card-verif{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:var(--ok)}
+.card-verif::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ok)}
+.card-body{padding:4px 18px 12px;display:flex;flex-direction:column;gap:4px}
+.card-body h3{font-family:var(--display);font-size:17px;line-height:1.3;letter-spacing:-.01em;font-weight:600;margin:0;color:var(--ink)}
+.card-inst{font-family:var(--display);font-size:13px;color:var(--muted);font-style:italic;margin:0}
+.card-meta{font-family:var(--mono);font-size:10px;color:var(--quiet);letter-spacing:.04em;text-transform:uppercase;margin-top:4px;display:flex;flex-wrap:wrap;gap:8px}
+.card-meta b{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:11px;font-family:var(--sans)}
+.specsheet{padding:0 18px;display:grid;grid-template-columns:repeat(2,1fr);gap:4px 14px;font-size:11px;margin-bottom:10px}
+.specsheet .row{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0}
+.specsheet .k{color:var(--quiet);font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em}
+.specsheet .v{color:var(--ink);font-weight:600;font-family:var(--mono);font-size:10px}
+.specsheet .v.ok{color:var(--ok)}
+.specsheet .v.amber{color:var(--warn)}
+.card-foot{padding:10px 18px;background:var(--panel-2);border-top:1px solid var(--line-soft);display:flex;gap:6px;align-items:center;justify-content:space-between}
+.card-foot .primary{height:30px;padding:0 14px;background:var(--accent);color:#fff;border-radius:6px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.card-foot .primary:hover{background:var(--accent-hover);color:#fff}
+.card-foot .actions{display:flex;gap:4px}
+.card-foot .ic{width:30px;height:30px;border:1px solid var(--line);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);cursor:pointer;background:var(--panel)}
+.card-foot .ic:hover{border-color:var(--ink);color:var(--ink)}
+
+/* Sticky compare dock */
+.compare-dock{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:99px;display:flex;align-items:center;gap:14px;font-family:var(--sans);font-size:13px;box-shadow:0 10px 28px -8px rgba(10,22,40,.40);z-index:20;font-weight:500}
+.compare-dock .count{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.06em;text-transform:uppercase}
+.compare-dock .count b{color:#fff;font-weight:700}
+.compare-dock .slot{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.10);border:1px dashed rgba(255,255,255,.25);display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:rgba(255,255,255,.55);font-family:var(--mono)}
+.compare-dock .slot.filled{background:#fff;color:var(--ink);border:0;font-weight:700}
+.compare-dock .go{height:32px;padding:0 14px;background:#fff;color:var(--ink);border-radius:99px;font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;border:0}
+.compare-dock .clear{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:2px;cursor:pointer;letter-spacing:.04em}
+
+@media(max-width:760px){.nav-search{display:none}.nav-links{display:none}.layout{padding:18px}.compare-dock{left:14px;right:14px;transform:none}}
+</style></head><body>
+
+<div class="banner">★ BROWSE · LIGHT — type-bordered cards · sidebar filters · sticky compare dock</div>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="28-final-light-v1.html" class="logo"><span class="dot"></span>USCE<span class="em">Hub</span></a>
+  <form class="nav-search" onsubmit="event.preventDefault()">
+    <input type="text" placeholder="Search 1,247 verified listings — specialty, city, institution" />
+    <button class="go" type="submit">Search</button>
+  </form>
+  <div class="nav-links">
+    <a href="#">Compare</a>
+    <a href="#">Tools</a>
+  </div>
+  <a class="theme-toggle" href="32-browse-dark.html" title="Switch to dark">☀</a>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<div class="subbar"><div class="subbar-inner">
+  <div class="crumbs">
+    <a href="28-final-light-v1.html">Home</a>
+    <span class="sep">/</span>
+    <span class="now">Browse listings</span>
+  </div>
+  <div class="right">
+    <span class="count"><b>1,247</b> verified · <b>89%</b> source-linked · LAST CRON <b>APR 14, 02:00 UTC</b></span>
+    <span class="sort">SORT BY <select><option>RECENTLY VERIFIED</option><option>NEWEST</option><option>LOW COST</option><option>VISA SUPPORT</option></select></span>
+  </div>
+</div></div>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h4>Type</h4>
+    <label class="opt active" data-type="obs"><input type="checkbox" checked /><span class="dot"></span>Observership<span class="count">624</span></label>
+    <label class="opt" data-type="ext"><input type="checkbox" /><span class="dot"></span>Externship<span class="count">218</span></label>
+    <label class="opt active" data-type="res"><input type="checkbox" checked /><span class="dot"></span>Research<span class="count">314</span></label>
+    <label class="opt" data-type="ele"><input type="checkbox" /><span class="dot"></span>Elective<span class="count">91</span></label>
+    <label class="opt" data-type="vol"><input type="checkbox" /><span class="dot"></span>Volunteer<span class="count">26</span></label>
+
+    <h4>Verification</h4>
+    <label class="opt active"><input type="checkbox" checked />Source verified<span class="count">1,107</span></label>
+    <label class="opt"><input type="checkbox" />Source on file<span class="count">126</span></label>
+    <label class="opt"><input type="checkbox" />Needs recheck<span class="count">14</span></label>
+
+    <h4>Cost</h4>
+    <label class="opt"><input type="checkbox" />Free / funded<span class="count">102</span></label>
+    <label class="opt"><input type="checkbox" />Under $500<span class="count">88</span></label>
+    <label class="opt"><input type="checkbox" />$500–$1,500<span class="count">312</span></label>
+    <label class="opt"><input type="checkbox" />$1,500–$3,000<span class="count">498</span></label>
+    <label class="opt"><input type="checkbox" />$3,000+<span class="count">247</span></label>
+
+    <h4>Eligibility</h4>
+    <label class="opt"><input type="checkbox" />Visa support<span class="count">438</span></label>
+    <label class="opt"><input type="checkbox" />LOR possible<span class="count">621</span></label>
+    <label class="opt"><input type="checkbox" />Certificate<span class="count">512</span></label>
+    <label class="opt"><input type="checkbox" />Old YOG OK<span class="count">194</span></label>
+
+    <h4>Specialty</h4>
+    <label class="opt"><input type="checkbox" />Internal Medicine<span class="count">238</span></label>
+    <label class="opt"><input type="checkbox" />Surgery<span class="count">147</span></label>
+    <label class="opt"><input type="checkbox" />Pediatrics<span class="count">86</span></label>
+    <label class="opt"><input type="checkbox" />Cardiology<span class="count">62</span></label>
+    <label class="opt"><input type="checkbox" />Family Medicine<span class="count">58</span></label>
+
+    <a class="clear" href="#">CLEAR ALL FILTERS</a>
+  </aside>
+
+  <main>
+    <div class="active-chips">
+      <span class="chip"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--obs)"></span>OBSERVERSHIP <span class="x">×</span></span>
+      <span class="chip"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--res)"></span>RESEARCH <span class="x">×</span></span>
+      <span class="chip">SOURCE VERIFIED <span class="x">×</span></span>
+      <a class="clear-all" href="#">Clear all</a>
+    </div>
+
+    <div class="cards">
+
+      <article class="card obs"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Internal Medicine Observership</h3><p class="card-inst">Mount Sinai · New York, NY</p><div class="card-meta"><b>4 wk</b> · <b>$1,500–$2,000</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-12</span></div><div class="row"><span class="k">LOR</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card res"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--res)"></span>Research</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Cardiovascular Research</h3><p class="card-inst">Cleveland Clinic · Cleveland, OH</p><div class="card-meta"><b>12 wk</b> · <b>Funded</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-14</span></div><div class="row"><span class="k">AUTHOR.</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">CASE</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card obs"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Surgery Observership</h3><p class="card-inst">UCLA Medical · Los Angeles, CA</p><div class="card-meta"><b>2/4 wk</b> · <b>$2,500</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-08</span></div><div class="row"><span class="k">HANDS</span><span class="v">OFF</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card res"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--res)"></span>Research</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Neurology Research</h3><p class="card-inst">Mass General · Boston, MA</p><div class="card-meta"><b>12 wk</b> · <b>Funded</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-13</span></div><div class="row"><span class="k">AUTHOR.</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card obs"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>IM Observership — Cardiology focus</h3><p class="card-inst">Stanford · Palo Alto, CA</p><div class="card-meta"><b>4 wk</b> · <b>$3,000</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-11</span></div><div class="row"><span class="k">LOR</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card res"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--res)"></span>Research</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Oncology Research Position</h3><p class="card-inst">MD Anderson · Houston, TX</p><div class="card-meta"><b>12 wk</b> · <b>Funded</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-10</span></div><div class="row"><span class="k">AUTHOR.</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">CASE</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card obs"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif" style="color:var(--warn)"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--warn)"></span>Recheck</span></div><div class="card-body"><h3>Pediatrics Observership</h3><p class="card-inst">Children's Hospital · Philadelphia, PA</p><div class="card-meta"><b>4 wk</b> · <b>$1,800</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v amber">RECHECK</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-02</span></div><div class="row"><span class="k">LOR</span><span class="v">CASE</span></div><div class="row"><span class="k">VISA</span><span class="v">NO</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card res"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--res)"></span>Research</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Genetics Research</h3><p class="card-inst">Mayo Clinic · Rochester, MN</p><div class="card-meta"><b>16 wk</b> · <b>Funded</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-13</span></div><div class="row"><span class="k">AUTHOR.</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+      <article class="card obs"><div class="card-head"><span class="card-type"><span style="display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif">Verified</span></div><div class="card-body"><h3>Family Medicine Observership</h3><p class="card-inst">UPMC · Pittsburgh, PA</p><div class="card-meta"><b>4 wk</b> · <b>$1,000</b></div></div><div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓</span></div><div class="row"><span class="k">VERIF.</span><span class="v">APR-11</span></div><div class="row"><span class="k">LOR</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div></div><div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div></article>
+
+    </div>
+  </main>
+</div>
+
+<!-- Sticky compare dock -->
+<div class="compare-dock">
+  <span class="count">COMPARING <b>2</b>/3</span>
+  <span class="slot filled" title="Internal Medicine — Mount Sinai">MS</span>
+  <span class="slot filled" title="Cardiovascular Research — Cleveland Clinic">CC</span>
+  <span class="slot">+</span>
+  <button class="go">Compare →</button>
+  <a class="clear" href="#">Clear</a>
+</div>
+
+</body></html>

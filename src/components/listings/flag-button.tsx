@@ -7,12 +7,21 @@ import { Flag } from "lucide-react";
 
 type Props = { listingId: string };
 
-const CATEGORIES = [
-  { value: "inaccurate", label: "Incorrect or outdated info" },
-  { value: "dead_link", label: "Link is dead or wrong page" },
-  { value: "spam", label: "Looks like spam or fake" },
-  { value: "duplicate", label: "Duplicate of another listing" },
-  { value: "other", label: "Other" },
+// UI category → server-side FlagKind enum. Sent on the wire so the
+// admin queue (and any future filtering) can see the structured kind
+// instead of falling back to OTHER. The /api/flags route still
+// validates the kind against its allowlist, so an unexpected value
+// is harmless.
+const CATEGORIES: ReadonlyArray<{
+  value: string;
+  label: string;
+  kind: "INCORRECT_INFO" | "BROKEN_LINK" | "SPAM" | "DUPLICATE" | "OTHER";
+}> = [
+  { value: "inaccurate", label: "Incorrect or outdated info", kind: "INCORRECT_INFO" },
+  { value: "dead_link", label: "Link is dead or wrong page", kind: "BROKEN_LINK" },
+  { value: "spam", label: "Looks like spam or fake", kind: "SPAM" },
+  { value: "duplicate", label: "Duplicate of another listing", kind: "DUPLICATE" },
+  { value: "other", label: "Other", kind: "OTHER" },
 ];
 
 export function FlagButton({ listingId }: Props) {
@@ -32,11 +41,17 @@ export function FlagButton({ listingId }: Props) {
     setSubmitting(true);
     setMessage(null);
     try {
-      const fullReason = `[${CATEGORIES.find((c) => c.value === category)?.label || category}] ${reason}`.trim();
+      const selected = CATEGORIES.find((c) => c.value === category);
+      const fullReason = `[${selected?.label || category}] ${reason}`.trim();
       const res = await fetch("/api/flags", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "listing", targetId: listingId, reason: fullReason }),
+        body: JSON.stringify({
+          type: "listing",
+          targetId: listingId,
+          reason: fullReason,
+          kind: selected?.kind ?? "OTHER",
+        }),
       });
       if (res.ok) {
         setMessage("Thanks — report sent. Admin will review.");

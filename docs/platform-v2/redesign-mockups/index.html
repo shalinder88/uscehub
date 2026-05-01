@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>USCEHub — Redesign Mockup Gallery</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #fafaf9;
+    color: #0f172a;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 48px 24px 96px; }
+  header.page-head {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+  .lede {
+    font-size: 16px;
+    color: #475569;
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+  .meta {
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .meta b { color: #0f172a; font-weight: 600; }
+  h2 {
+    font-family: ui-serif, Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 48px 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    display: block;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  }
+  .card.featured {
+    border-color: #059669;
+    background: #ecfdf5;
+  }
+  .card.featured::before {
+    content: "★ RECOMMENDED";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #047857;
+    background: #ffffff;
+    padding: 3px 8px;
+    border-radius: 99px;
+    border: 1px solid #6ee7b7;
+  }
+  .card.baseline {
+    border-style: dashed;
+    background: #fafaf9;
+  }
+  .card.baseline::before {
+    content: "BASELINE";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+  .card .num {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px;
+    color: #94a3b8;
+    margin: 0 0 6px;
+  }
+  .card h3 {
+    font-family: ui-serif, Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .card .desc {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.5;
+    margin: 0 0 12px;
+  }
+  .card .tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .legend {
+    font-size: 13px;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+  .legend ul { margin: 8px 0 0 18px; padding: 0; }
+  .legend li { margin: 2px 0; }
+  footer.page-foot {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    color: #94a3b8;
+    font-size: 12px;
+  }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12px;
+    background: #f1f5f9;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Redesign research · noindex / local-only</p>
+    <h1>USCEHub Homepage Redesign — Mockup Gallery</h1>
+    <p class="lede">39 self-contained homepage variants across 4 rounds. <b>Locked direction: #37 Day · #38 Night.</b> Backups: #36 (home, no neon) · #32 (browse, no neon).</p>
+    <div class="meta">
+      <span><b>Chosen:</b> #37 Day · #38 Night</span>
+      <span><b>Backup home:</b> #36</span>
+      <span><b>Backup browse:</b> #32</span>
+      <span><b>Constraint:</b> truth-fix wins from PR #42 / #44 / #47 preserved · no neon anywhere</span>
+    </div>
+    <div style="margin-top:18px;padding:14px 18px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;font-size:12.5px;color:#475569;line-height:1.65">
+      <b style="color:#0f172a;font-weight:600">Theme memory</b> — for future reference:<br>
+      &nbsp;&nbsp;<b>#22</b> base DNA · warm paper #fbfaf6 · Charter serif · Stripe gradient hero · 4-cell numbers · gradient cards (yellow/blue/green) · emerald #0e7c66<br>
+      &nbsp;&nbsp;<b>#37 Day</b> · #22 theme + uscehub structure · 6-cell ribbon · blue map · activity feed · 4-cell trust grid · #22 cards (compact) · teal CTA<br>
+      &nbsp;&nbsp;<b>#38 Night</b> · sasanova near-black #0a0a0f warm undertone · same structure as #37 · dim muted card gradients · solid emerald CTA · NO neon<br>
+      &nbsp;&nbsp;<b>#36 Night backup</b> · dark navy #0b1322 · blue map · decision cards (no gradient banners) · solid emerald accent · NO neon (post-fix)<br>
+      &nbsp;&nbsp;<b>#32 Browse backup</b> · dark navy · type-bordered listing grid · sidebar filters · sticky compare dock · NO neon (post-fix)
+    </div>
+  </header>
+
+  <h2>✓ LOCKED — chosen direction</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px"><b>#37 Day + #38 Night are the locked target.</b> #22 theme as the base, uscehub.com structure layered in. Hero is just the headline. 6-cell numbers ribbon · blue SVG U.S. map · activity feed · 4-cell trust grid (NPI / Admin / Community / Moderated) · Featured Opportunities with #22's gradient cards (compact, dimmed for night). No neon anywhere.</p>
+  <div class="grid" style="margin-bottom:32px">
+    <a class="card featured" href="37-day-merged.html" style="border-color:#0f766e;background:#fdfcf7">
+      <p class="num">37 · ✓ CHOSEN · DAY</p>
+      <h3>Day — locked</h3>
+      <p class="desc">#22's warm-paper bg, Stripe gradient hero, Charter serif. Compact featured-opportunity cards (16/7 image, 18px h3). Solid teal CTA. Blue map.</p>
+      <span class="tag">CHOSEN</span><span class="tag">day</span>
+    </a>
+    <a class="card featured" href="38-night-merged.html" style="border-color:#0a0a0f;background:#0a0a0f;color:#e7e5dc">
+      <p class="num" style="color:#5a5849">38 · ✓ CHOSEN · NIGHT</p>
+      <h3 style="color:#f5f4ec">Night — locked</h3>
+      <p class="desc" style="color:#9b9789">Sasanova-style near-black base (#0a0a0f). Compact cards with <b>dim muted gradient banners</b> (dark amber / dark blue / dark green) — not bright like day. Solid emerald CTA. No neon.</p>
+      <span class="tag" style="background:#161620;color:#9b9789">CHOSEN</span><span class="tag" style="background:#161620;color:#9b9789">no neon</span>
+    </a>
+  </div>
+
+  <h2>Backups (kept as fallback)</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px"><b>#36</b> = home backup if #37/#38 needs to fail to a simpler shape (decision cards, no gradient banners). <b>#32</b> = browse-page backup. Both audited and stripped of neon glow.</p>
+  <div class="grid" style="margin-bottom:32px">
+    <a class="card" href="36-five-star-blue-night.html" style="background:#0b1322;border-color:#262b3d;color:#e6ebf5">
+      <p class="num" style="color:#5c6478">36 · BACKUP HOME</p>
+      <h3 style="color:#f3f6fb">Home backup — dark navy, decision cards</h3>
+      <p class="desc" style="color:#9aa6bd">Dark navy #0b1322 base. Blue map. Decision-card listings (type-coded 2px border, no gradient banner). Solid emerald accent only on logo dot · CTA · hovered map state. <b>Neon stripped</b> (pulse animation removed, drop-shadow removed).</p>
+      <span class="tag" style="background:#13203a;color:#9aa6bd">backup</span><span class="tag" style="background:#13203a;color:#9aa6bd">no neon</span>
+    </a>
+    <a class="card" href="32-browse-dark.html" style="background:#0a0e1a;border-color:#262b3d;color:#e8eaf0">
+      <p class="num" style="color:#5c6478">32 · BACKUP BROWSE</p>
+      <h3 style="color:#f4f5f8">Browse backup — dark, type-bordered grid</h3>
+      <p class="desc" style="color:#9aa3b8">Dark-mode browse page: filter sidebar · 9-card listing grid · sticky compare dock · sort dropdown · active-filter chips. <b>Neon stripped</b> (card top-border glow removed, compare-dock emerald ring removed).</p>
+      <span class="tag" style="background:#1a1f30;color:#9aa3b8">backup</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">browse</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">no neon</span>
+    </a>
+  </div>
+
+  <h2>Earlier round-4 passes (reference only)</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px">Earlier exploration kept for the SVG map / decision-card / audit-chart patterns.</p>
+  <div class="grid" style="margin-bottom:32px">
+    <a class="card" href="35-five-star-blue-day.html">
+      <p class="num">35 · earlier</p>
+      <h3>v2 Day — decision cards, no gradient banners</h3>
+      <p class="desc">#22 variation with strict decision cards (no gradient banners). Useful if we ever swap to non-gradient card style.</p>
+      <span class="tag">reference</span>
+    </a>
+    <a class="card" href="33-five-star-day.html">
+      <p class="num">33 · earlier</p>
+      <h3>v1 Day — dashboard-heavy</h3>
+      <p class="desc">Reference for the SVG map technique and the audit-chart pattern. Too dashboardy for homepage.</p>
+      <span class="tag">reference</span>
+    </a>
+    <a class="card" href="34-five-star-night.html" style="background:#0a0e1a;border-color:#262b3d;color:#e8eaf0">
+      <p class="num" style="color:#5c6478">34 · earlier</p>
+      <h3 style="color:#f4f5f8">v1 Night — neon-leaning</h3>
+      <p class="desc" style="color:#9aa3b8">Reference only. Has emerald glow throughout (against current "no neon" rule).</p>
+      <span class="tag" style="background:#1a1f30;color:#9aa3b8">reference</span>
+    </a>
+  </div>
+
+  <h2>★★ Production base (round 2 — kept)</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px"><b>#22 is preserved</b> as the design DNA. #37/#38 inherit it directly — same hero composition, same restraint, same gradient cards.</p>
+
+  <h2>★★★ Final round (round 3)</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px"><b>Refined #22</b> with all your feedback applied: minimal hero, sharper sasanova-style CTAs, <b>type-bordered cards instead of decorative gradients</b> (border color = program type — blue/orange/emerald/purple/rose), inline trust chips, USA hex-density map, live cron ticker. Plus dark mode with toggle, plus light/dark browse pages.</p>
+  <div class="grid" style="margin-bottom:32px">
+    <a class="card featured" href="28-final-light-v1.html" style="border-color:#0a1628;background:#fdfcf7">
+      <p class="num">28 · ★★★ FINAL LIGHT v1</p>
+      <h3>Final Light v1 — refined #22</h3>
+      <p class="desc"><b>Minimal hero (header only)</b>, 3 sasanova CTAs (primary + secondary + tertiary), inline trust chips (Free · No account · 89% source-linked · Apr 14), big numbers ribbon, type-bordered cards (no decorative gradients), USA hex map, live cron ticker. Toggle to dark in nav.</p>
+      <span class="tag">finals</span><span class="tag">type-bordered</span><span class="tag">USA hex map</span>
+    </a>
+    <a class="card featured" href="29-final-light-v2.html" style="border-color:#0a1628;background:#fdfcf7">
+      <p class="num">29 · ★★★ FINAL LIGHT v2</p>
+      <h3>Final Light v2 — split hero variant</h3>
+      <p class="desc"><b>Alternative arrangement</b>: split hero with live verification feed panel on the right (cron-status table). Sasanova-style category browse grid (Observership / Externship / Research / By state / By specialty). Same type-bordered cards.</p>
+      <span class="tag">finals</span><span class="tag">split hero</span><span class="tag">live feed</span>
+    </a>
+    <a class="card featured" href="30-final-dark.html" style="border-color:#0a0e1a;background:#0a0e1a;color:#e8eaf0">
+      <p class="num" style="color:#5c6478">30 · ★★★ FINAL DARK</p>
+      <h3 style="color:#f4f5f8">Final Dark — sasanova dark base</h3>
+      <p class="desc" style="color:#9aa3b8">Same structure as #28 but inverted. Navy-black base, emerald-pop accent, glowing type-borders on cards (subtle). Toggle to light in nav. Hex map uses emerald gradient.</p>
+      <span class="tag" style="background:#1a1f30;color:#9aa3b8">finals</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">dark mode</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">emerald accent</span>
+    </a>
+    <a class="card" href="31-browse-light.html">
+      <p class="num">31 · BROWSE LIGHT</p>
+      <h3>Browse page · Light</h3>
+      <p class="desc">Filter sidebar (type · verification · cost · eligibility · specialty) + 9-card listing grid + sticky compare dock at bottom (showing 2/3 slots filled). Active-filter chips above results. Sort dropdown.</p>
+      <span class="tag">finals</span><span class="tag">browse</span><span class="tag">filters</span>
+    </a>
+    <a class="card" href="32-browse-dark.html" style="background:#0a0e1a;border-color:#262b3d;color:#e8eaf0">
+      <p class="num" style="color:#5c6478">32 · BROWSE DARK</p>
+      <h3 style="color:#f4f5f8">Browse page · Dark</h3>
+      <p class="desc" style="color:#9aa3b8">Same structure as #31, dark mode. Sticky compare dock has emerald glow. Toggle to light in nav.</p>
+      <span class="tag" style="background:#1a1f30;color:#9aa3b8">finals</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">browse</span><span class="tag" style="background:#1a1f30;color:#9aa3b8">dark mode</span>
+    </a>
+  </div>
+
+  <h2>★★ Stacked hybrids (round 2)</h2>
+  <p class="lede" style="margin:0 0 16px;font-size:14px">Six new hybrids stacking 4–5 references at once. <b>#22</b> is the highest-polish synthesis (Stripe gradient + Mayo serif + Stripe restraint + Sasanova numbers + Vercel precision + Apple spec-sheet cards). Open these first.</p>
+  <div class="grid" style="margin-bottom:32px">
+    <a class="card featured" href="22-stripe-mayo-sasanova-vercel-apple.html" style="border-color:#0a2540;background:#fdfcf7">
+      <p class="num">22 · ★★ FEATURED</p>
+      <h3>Stripe-bg + Mayo + Sasanova + Vercel + Apple</h3>
+      <p class="desc"><b>Built on your request.</b> Stripe gradient background + Mayo serif gravitas + Stripe restraint + Sasanova verified-numbers ribbon + Vercel precision + Apple spec-sheet cards. The highest-polish stacked synthesis. Open this first.</p>
+      <span class="tag">5-source stack</span><span class="tag">premium</span>
+    </a>
+    <a class="card" href="23-linear-mayo-sasanova-apple.html">
+      <p class="num">23</p>
+      <h3>Linear + Mayo + Sasanova + Apple</h3>
+      <p class="desc">Mono ID precision + serif gravitas + verified-numbers + spec-sheet card. Tech-meets-institution.</p>
+      <span class="tag">4-source stack</span>
+    </a>
+    <a class="card" href="24-stripe-apple-plausible.html">
+      <p class="num">24</p>
+      <h3>Stripe + Apple + Plausible</h3>
+      <p class="desc">Premium restraint + Apple spec cards + explicit "no tracking" privacy framing.</p>
+      <span class="tag">3-source stack</span>
+    </a>
+    <a class="card" href="25-mayo-vercel-sasanova-medtech.html">
+      <p class="num">25</p>
+      <h3>Mayo + Vercel + Sasanova (medical-tech)</h3>
+      <p class="desc">Institutional gravitas + tech precision + numeric credibility. "Directory engineers" framing.</p>
+      <span class="tag">3-source stack</span>
+    </a>
+    <a class="card" href="26-stripe-press-apple-sasanova.html">
+      <p class="num">26</p>
+      <h3>Stripe Press + Apple + Sasanova</h3>
+      <p class="desc">Editorial restraint + Apple spec cards + numeric credibility panel. Premium-publication feel.</p>
+      <span class="tag">3-source stack</span>
+    </a>
+    <a class="card" href="27-tailscale-mayo-stripe.html">
+      <p class="num">27</p>
+      <h3>Tailscale + Mayo + Stripe</h3>
+      <p class="desc">Friendly utility (sage + product-screenshot) + serif weight + premium restraint. Warmest stacked hybrid.</p>
+      <span class="tag">3-source stack</span>
+    </a>
+  </div>
+
+  <h2>Round 1 mockups (#00–#21)</h2>
+  <div class="grid">
+
+    <a class="card baseline" href="00-baseline-uscehub-current.html">
+      <p class="num">00</p>
+      <h3>Current uscehub.com</h3>
+      <p class="desc">Approximate re-creation of the live homepage as it exists today. Use as the "before" reference when comparing every other mockup.</p>
+      <span class="tag">baseline</span><span class="tag">no change</span>
+    </a>
+
+    <a class="card featured" href="01-mayo-stripe-recommended.html">
+      <p class="num">01</p>
+      <h3>Mayo + Stripe + GOV.UK + Sasanova</h3>
+      <p class="desc">Recommended direction. Mayo serif gravitas, Stripe color restraint, GOV.UK accessibility-first hierarchy, Sasanova verified-numbers credibility, Zocdoc three-signal listing card.</p>
+      <span class="tag">serif+sans</span><span class="tag">spacious</span><span class="tag">institutional</span>
+    </a>
+
+    <a class="card" href="02-linear-edge.html">
+      <p class="num">02</p>
+      <h3>Linear precision</h3>
+      <p class="desc">Mono ID ribbons, sharp typography, tight density, monochrome with single accent. Light theme.</p>
+      <span class="tag">sans only</span><span class="tag">tight</span><span class="tag">monochrome</span>
+    </a>
+
+    <a class="card" href="03-govuk-clean.html">
+      <p class="num">03</p>
+      <h3>GOV.UK extreme minimal</h3>
+      <p class="desc">Pure white, search-led hero, intermediate reading level, no accent color, task-oriented categories.</p>
+      <span class="tag">sans only</span><span class="tag">extra spacious</span><span class="tag">accessibility</span>
+    </a>
+
+    <a class="card" href="04-sasanova-numbers.html">
+      <p class="num">04</p>
+      <h3>Sasanova verified-numbers</h3>
+      <p class="desc">Numeric specificity above the fold, comparison-table feel, "verified [date]" anchored.</p>
+      <span class="tag">sans only</span><span class="tag">data-driven</span><span class="tag">numbers-first</span>
+    </a>
+
+    <a class="card" href="05-stripe-press-editorial.html">
+      <p class="num">05</p>
+      <h3>Stripe Press editorial</h3>
+      <p class="desc">Serif body, inventory-list rows, library aesthetic, no decorative chrome.</p>
+      <span class="tag">serif heavy</span><span class="tag">spacious</span><span class="tag">editorial</span>
+    </a>
+
+    <a class="card" href="06-airbnb-photo.html">
+      <p class="num">06</p>
+      <h3>Airbnb photo-driven</h3>
+      <p class="desc">Photo-dominant cards, calm-curated palette, mobile-phone-screen-first composition.</p>
+      <span class="tag">sans only</span><span class="tag">photo-led</span><span class="tag">warm</span>
+    </a>
+
+    <a class="card" href="07-zocdoc-clinical.html">
+      <p class="num">07</p>
+      <h3>Zocdoc medical directory</h3>
+      <p class="desc">Three-signal cards (verification + reviews + last-updated), sub-rating chips, clinical white.</p>
+      <span class="tag">sans only</span><span class="tag">clinical</span><span class="tag">medical card</span>
+    </a>
+
+    <a class="card" href="08-vercel-tech.html">
+      <p class="num">08</p>
+      <h3>Vercel tech precision</h3>
+      <p class="desc">Dark/light dual mode, borderless cards, monochrome-with-accent, modern tech feel.</p>
+      <span class="tag">sans only</span><span class="tag">dark+light</span><span class="tag">tech</span>
+    </a>
+
+    <a class="card" href="09-notion-bento.html">
+      <p class="num">09</p>
+      <h3>Notion bento layout</h3>
+      <p class="desc">Modular bento-style cards, stacked credibility markers, neutral palette.</p>
+      <span class="tag">sans only</span><span class="tag">bento</span><span class="tag">modular</span>
+    </a>
+
+    <a class="card" href="10-nyt-cooking-recipe.html">
+      <p class="num">10</p>
+      <h3>NYT Cooking recipe</h3>
+      <p class="desc">Recipe-card pattern adapted for listings: photo + short title + meta-row + warm serif.</p>
+      <span class="tag">serif heavy</span><span class="tag">photo+meta</span><span class="tag">warm editorial</span>
+    </a>
+
+    <a class="card" href="11-apple-developer.html">
+      <p class="num">11</p>
+      <h3>Apple developer</h3>
+      <p class="desc">Spec-sheet card, dense grid, institutional-tech, sharp dividers.</p>
+      <span class="tag">sans only</span><span class="tag">dense</span><span class="tag">tech-institutional</span>
+    </a>
+
+    <a class="card" href="12-tailscale-product.html">
+      <p class="num">12</p>
+      <h3>Tailscale product</h3>
+      <p class="desc">Bright white, sage accent, product-screenshot-feel hero, friendly utility.</p>
+      <span class="tag">sans only</span><span class="tag">bright</span><span class="tag">sage</span>
+    </a>
+
+    <a class="card" href="13-plausible-privacy.html">
+      <p class="num">13</p>
+      <h3>Plausible privacy-first</h3>
+      <p class="desc">Mono accents, anti-tracking ethos, minimal card chrome, privacy framing.</p>
+      <span class="tag">mono accents</span><span class="tag">privacy</span><span class="tag">minimal</span>
+    </a>
+
+    <a class="card" href="14-mayo-warm.html">
+      <p class="num">14</p>
+      <h3>Mayo warm institutional</h3>
+      <p class="desc">Cream + navy, serif headlines, warmest direction, traditional-institutional weight.</p>
+      <span class="tag">serif heavy</span><span class="tag">cream+navy</span><span class="tag">institutional</span>
+    </a>
+
+    <a class="card" href="15-govuk-mayo-hybrid.html">
+      <p class="num">15</p>
+      <h3>GOV.UK + Mayo</h3>
+      <p class="desc">Accessibility-first floor + institutional serif voice. Conservative-but-warm.</p>
+      <span class="tag">sans+serif</span><span class="tag">accessibility</span><span class="tag">conservative</span>
+    </a>
+
+    <a class="card" href="16-airbnb-zocdoc.html">
+      <p class="num">16</p>
+      <h3>Airbnb + Zocdoc</h3>
+      <p class="desc">Photo-card + medical trust signals layered together. Marketplace meets clinical.</p>
+      <span class="tag">sans only</span><span class="tag">photo+medical</span><span class="tag">marketplace</span>
+    </a>
+
+    <a class="card" href="17-linear-mayo-hybrid.html">
+      <p class="num">17</p>
+      <h3>Linear + Mayo</h3>
+      <p class="desc">Mono ID precision + serif gravitas. Tech sharpness with institutional weight.</p>
+      <span class="tag">sans+serif+mono</span><span class="tag">precise</span><span class="tag">institutional</span>
+    </a>
+
+    <a class="card" href="18-sasanova-zocdoc.html">
+      <p class="num">18</p>
+      <h3>Sasanova + Zocdoc</h3>
+      <p class="desc">Numeric proof above + medical card pattern below. Data-driven directory.</p>
+      <span class="tag">sans only</span><span class="tag">numbers+medical</span><span class="tag">directory</span>
+    </a>
+
+    <a class="card" href="19-editorial-utility.html">
+      <p class="num">19</p>
+      <h3>Stripe Press + GOV.UK</h3>
+      <p class="desc">Literary serif + accessibility-first hierarchy. Resource-publication feel.</p>
+      <span class="tag">serif+sans</span><span class="tag">editorial</span><span class="tag">utility</span>
+    </a>
+
+    <a class="card" href="20-stripe-govuk.html">
+      <p class="num">20</p>
+      <h3>Stripe + GOV.UK</h3>
+      <p class="desc">Stripe restraint + GOV.UK accessibility floor. Premium-but-accessible.</p>
+      <span class="tag">sans only</span><span class="tag">restraint</span><span class="tag">premium</span>
+    </a>
+
+    <a class="card" href="21-hybrid-everything.html">
+      <p class="num">21</p>
+      <h3>Maximalist hybrid</h3>
+      <p class="desc">Sanity-check overload — what happens if you take every "good" pattern at once. Use as a "too much" reference.</p>
+      <span class="tag">all systems</span><span class="tag">layered</span><span class="tag">sanity check</span>
+    </a>
+
+    <a class="card featured" href="22-stripe-mayo-sasanova-vercel-apple.html" style="border-color:#0a2540;background:#fdfcf7">
+      <p class="num">22</p>
+      <h3>Stripe-bg + Mayo + Sasanova + Vercel + Apple</h3>
+      <p class="desc"><b>Premium hybrid built on request.</b> Stripe gradient background + Mayo serif gravitas + Stripe restraint + Sasanova verified-numbers + Vercel precision + Apple spec-sheet cards. Highest-polish stacked synthesis.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">serif+sans+mono</span><span class="tag">premium</span>
+    </a>
+
+    <a class="card" href="23-linear-mayo-sasanova-apple.html">
+      <p class="num">23</p>
+      <h3>Linear + Mayo + Sasanova + Apple cards</h3>
+      <p class="desc">Mono ID precision + serif gravitas + verified-numbers ribbon + Apple-style spec-sheet card. Tech-meets-institution.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">mono+serif</span><span class="tag">precise</span>
+    </a>
+
+    <a class="card" href="24-stripe-apple-plausible.html">
+      <p class="num">24</p>
+      <h3>Stripe + Apple + Plausible</h3>
+      <p class="desc">Stripe restraint + Apple spec cards + Plausible privacy-first ethos. Premium with explicit "no tracking" framing.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">privacy</span><span class="tag">premium</span>
+    </a>
+
+    <a class="card" href="25-mayo-vercel-sasanova-medtech.html">
+      <p class="num">25</p>
+      <h3>Mayo + Vercel + Sasanova (medical-tech)</h3>
+      <p class="desc">Institutional gravitas + tech precision + verified-numbers credibility. Best for "we are the directory engineers" framing.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">medical-tech</span><span class="tag">monochrome</span>
+    </a>
+
+    <a class="card" href="26-stripe-press-apple-sasanova.html">
+      <p class="num">26</p>
+      <h3>Stripe Press + Apple + Sasanova</h3>
+      <p class="desc">Editorial restraint + Apple-style spec cards + numeric credibility panel. Premium-publication feel for a directory.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">editorial</span><span class="tag">spec cards</span>
+    </a>
+
+    <a class="card" href="27-tailscale-mayo-stripe.html">
+      <p class="num">27</p>
+      <h3>Tailscale + Mayo + Stripe</h3>
+      <p class="desc">Friendly utility (sage accent + product-screenshot hero) + serif weight + premium restraint. Warmest of the stacked hybrids.</p>
+      <span class="tag">stacked hybrid</span><span class="tag">sage</span><span class="tag">friendly</span>
+    </a>
+
+  </div>
+
+  <div class="legend">
+    <p style="margin: 0 0 4px; font-weight: 600;">Reading the cards</p>
+    <ul>
+      <li><b>baseline</b> = current production (no change)</li>
+      <li><b>★ RECOMMENDED</b> = the direction synthesized from research</li>
+      <li>Tags below the description summarize the typography stack, density, and visual character</li>
+    </ul>
+    <p style="margin: 12px 0 4px; font-weight: 600;">Suggested order</p>
+    <ul>
+      <li>Open #00 first to anchor your "before" reference</li>
+      <li>Open #01 next — the recommended hybrid</li>
+      <li>Then flip through #02–#21 to see alternatives</li>
+      <li>End by reopening #00 + #01 side-by-side for the final call</li>
+    </ul>
+  </div>
+
+  <footer class="page-foot">
+    Local research only · noindex/nofollow · not deployed · respects PR #42 / #44 / #47 truth-fix wins · /career untouched
+  </footer>
+</div>
+</body>
+</html>

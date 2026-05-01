@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>20 · Stripe + GOV.UK</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fff;--panel:#fff;--soft:#f7f9fc;--fg:#0a2540;--muted:#425466;--quiet:#8898aa;--line:#e3e8ee;--accent:#635bff;--accent-hover:#4f46e5;--green:#0e7c66;--green-soft:#d6f0e5;--sans:"Inter","Segoe UI","Helvetica Neue",-apple-system,sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.011em}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{background:var(--panel);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;gap:32px;font-size:14px}
+.logo{font-size:18px;font-weight:600;letter-spacing:-.02em;color:var(--fg)}
+.nav-links{display:flex;gap:24px;color:var(--muted);margin-left:auto;font-weight:500}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--fg);text-decoration:none}
+.nav-cta{height:36px;padding:0 16px;background:var(--accent);color:#fff;border-radius:18px;display:inline-flex;align-items:center;font-size:13px;font-weight:500}
+.hero{padding:88px 32px 64px;text-align:center;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:880px;margin:0 auto}
+.hero h1{font-size:56px;line-height:1.1;letter-spacing:-.025em;font-weight:600;margin:0 0 20px}
+.hero h1 .grad{background:linear-gradient(90deg,var(--accent) 0%,#0a2540 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:640px;margin:0 auto 32px}
+.cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.btn{height:42px;padding:0 22px;border-radius:21px;display:inline-flex;align-items:center;font-size:14px;font-weight:500}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);color:#fff;text-decoration:none}
+.btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--accent);text-decoration:none}
+.search{max-width:580px;margin:0 auto;display:flex;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(50,50,93,.05)}
+.search input{flex:1;height:46px;padding:0 16px;border:0;font-size:14px;color:var(--fg)}
+.search input:focus{outline:0;background:var(--soft)}
+.search button{height:46px;padding:0 22px;background:var(--fg);color:#fff;border:0;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit}
+.search button:hover{background:#0a2540}
+.metrics{background:var(--soft);border-bottom:1px solid var(--line);padding:48px 32px}
+.metrics-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:48px;text-align:center}
+@media(max-width:760px){.metrics-inner{grid-template-columns:repeat(2,1fr);gap:24px}.hero h1{font-size:36px}}
+.metric h3{font-size:42px;letter-spacing:-.03em;font-weight:600;margin:0 0 4px;line-height:1;color:var(--fg)}
+.metric p{font-size:13px;color:var(--muted);margin:0}
+.section{max-width:1200px;margin:0 auto;padding:64px 32px}
+.section .head{text-align:center;margin-bottom:40px}
+.section h2{font-size:36px;letter-spacing:-.025em;font-weight:600;margin:0 0 8px}
+.section .sub{font-size:15px;color:var(--muted);margin:0;max-width:560px;margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:980px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px -8px rgba(50,50,93,.1);transform:translateY(-2px)}
+.card .verif{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--green);background:var(--green-soft);padding:3px 10px;border-radius:99px;margin-bottom:12px}
+.card .verif::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}
+.card h3{font-size:20px;font-weight:600;letter-spacing:-.012em;margin:0 0 4px;line-height:1.3}
+.card .inst{font-size:13px;color:var(--muted);margin:0 0 14px}
+.card .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted);padding-top:14px;border-top:1px solid var(--line)}
+.card .meta span{background:var(--soft);padding:3px 8px;border-radius:4px;color:var(--fg);font-weight:500}
+.card .footer{margin-top:14px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.card .footer .more{color:var(--accent);font-weight:500}
+.card .footer .save{color:var(--quiet)}
+.principles{background:var(--soft);border-top:1px solid var(--line);padding:64px 32px}
+.principles-inner{max-width:1200px;margin:0 auto}
+.principles h2{font-size:32px;font-weight:600;letter-spacing:-.025em;margin:0 0 8px}
+.principles .sub{font-size:14px;color:var(--muted);margin:0 0 36px;max-width:480px}
+.principles .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+@media(max-width:760px){.principles .grid{grid-template-columns:1fr;gap:24px}}
+.principle h3{font-size:18px;font-weight:600;letter-spacing:-.012em;margin:0 0 8px}
+.principle p{font-size:14px;color:var(--muted);margin:0;line-height:1.65}
+.principle .num{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:.06em;margin-bottom:10px;display:block}
+.footer{padding:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footer a{color:var(--muted)}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">USCEHub</span>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Estimator</a><a href="#">Methodology</a><a href="#">For institutions</a></div>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <h1><span class="grad">Verified</span> U.S. clinical experience for IMGs.</h1>
+  <p class="lede">A directory of source-linked observerships, externships, and research positions. Each listing has a working URL, a verification status, and a date — or it doesn't ship.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">Browse 1,247 listings →</a>
+    <a class="btn btn-secondary" href="#">View methodology</a>
+  </div>
+  <form class="search" onsubmit="event.preventDefault()">
+    <input type="text" placeholder="Search by specialty, city, or institution" />
+    <button type="submit">Search</button>
+  </form>
+</div></section>
+
+<div class="metrics"><div class="metrics-inner">
+  <div class="metric"><h3>1,247</h3><p>Verified listings</p></div>
+  <div class="metric"><h3>89%</h3><p>With source link</p></div>
+  <div class="metric"><h3>47</h3><p>States covered</p></div>
+  <div class="metric"><h3>Apr 14</h3><p>Last cron run</p></div>
+</div></div>
+
+<section class="section">
+  <div class="head">
+    <h2>Recently verified opportunities</h2>
+    <p class="sub">Source-link confirmed in the last verification window. Verify program details with the institution before applying.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <span class="verif">Source verified · Apr 12</span>
+      <h3>Internal Medicine Observership</h3>
+      <p class="inst">Mount Sinai · New York, NY</p>
+      <div class="meta"><span>4 weeks</span><span>$1.5–2K</span><span>LOR</span><span>Visa</span></div>
+      <div class="footer"><a class="more" href="#">View listing →</a><span class="save">Save · Compare</span></div>
+    </article>
+    <article class="card">
+      <span class="verif">Source verified · Apr 14</span>
+      <h3>Cardiovascular Research</h3>
+      <p class="inst">Cleveland Clinic · Cleveland, OH</p>
+      <div class="meta"><span>12 weeks</span><span>Funded</span><span>Authorship</span></div>
+      <div class="footer"><a class="more" href="#">View listing →</a><span class="save">Save · Compare</span></div>
+    </article>
+    <article class="card">
+      <span class="verif">Source verified · Apr 09</span>
+      <h3>Pediatrics Externship</h3>
+      <p class="inst">Johns Hopkins · Baltimore, MD</p>
+      <div class="meta"><span>4 weeks</span><span>$2K</span><span>Certificate</span><span>Step 2 CK</span></div>
+      <div class="footer"><a class="more" href="#">View listing →</a><span class="save">Save · Compare</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="principles"><div class="principles-inner">
+  <h2>What "verified" means</h2>
+  <p class="sub">USCEHub is a directory, not a placement service. We confirm three specific things, in plain English. Anything we cannot confirm, we say so.</p>
+  <div class="grid">
+    <div class="principle"><span class="num">01</span><h3>Source link works</h3><p>An automated cron and human admins confirm the institution's application URL returns a working program page. Stale links are flagged "Needs recheck" — never silently hidden.</p></div>
+    <div class="principle"><span class="num">02</span><h3>Listing is approved</h3><p>An admin reviewed the listing copy for accuracy before publishing. We don't auto-publish poster submissions.</p></div>
+    <div class="principle"><span class="num">03</span><h3>Reviews are separate</h3><p>Community reviews are user-submitted feedback, moderated before publishing, and shown separately from source-link verification. Reviews are opinions; verification is an audit.</p></div>
+  </div>
+</div></section>
+
+<footer class="footer"><div class="footer-inner">
+  <span>© 2026 USCEHub · independent · not affiliated with NRMP / ECFMG / ERAS / AAMC</span>
+  <span><a href="#">Methodology</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></span>
+</div></footer>
+
+</body></html>

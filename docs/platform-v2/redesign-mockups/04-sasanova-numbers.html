@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>04 · Sasanova verified-numbers</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#fafafa;--panel:#fff;--fg:#0a0a0a;--muted:#525252;--quiet:#a3a3a3;--line:#e5e5e5;--accent:#0a0a0a;--green:#16a34a;--green-soft:#dcfce7;--amber:#d97706;--amber-soft:#fef3c7;--mono:ui-monospace,"SF Mono",Menlo,monospace;--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif}
+html,body{margin:0}body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}
+.nav{background:var(--panel);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;font-size:14px}
+.logo{font-weight:700;font-size:17px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:18px;color:var(--muted);margin-left:auto}
+.kbd{font-family:var(--mono);font-size:11px;background:#f5f5f5;border:1px solid var(--line);padding:2px 6px;border-radius:4px;color:var(--muted)}
+.hero{background:var(--panel);border-bottom:1px solid var(--line);padding:64px 24px}
+.hero-inner{max-width:1080px;margin:0 auto;text-align:center}
+.hero h1{font-size:50px;line-height:1.05;letter-spacing:-.035em;font-weight:700;margin:0 0 18px}
+.hero h1 .accent{color:var(--green)}
+.hero .lede{font-size:17px;color:var(--muted);max-width:680px;margin:0 auto 24px}
+.cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.btn{height:42px;padding:0 18px;border-radius:7px;display:inline-flex;align-items:center;font-size:14px;font-weight:600}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-secondary{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.tagline{font-size:13px;color:var(--quiet);font-family:var(--mono)}
+.tagline b{color:var(--fg)}
+.numbers{background:var(--panel);border-bottom:1px solid var(--line);padding:48px 24px}
+.numbers-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:760px){.numbers-inner{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:34px}}
+.num-cell{text-align:left;padding:18px;background:#fafafa;border:1px solid var(--line);border-radius:8px}
+.num-cell .label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--quiet);text-transform:uppercase;margin:0 0 8px}
+.num-cell .value{font-size:36px;font-weight:700;letter-spacing:-.025em;line-height:1;margin:0 0 6px}
+.num-cell .value sup{font-size:14px;font-weight:600;color:var(--green);margin-left:4px;vertical-align:super}
+.num-cell .desc{font-size:12px;color:var(--muted);line-height:1.4;margin:0}
+.num-cell.green .value{color:var(--green)}
+.compare{max-width:1080px;margin:0 auto;padding:64px 24px}
+.compare h2{font-size:24px;letter-spacing:-.02em;font-weight:700;margin:0 0 4px}
+.compare .sub{font-size:14px;color:var(--muted);margin:0 0 28px}
+.table{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.table th,.table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.table th{background:#fafafa;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.table tbody tr:hover{background:#fafafa}
+.table tbody tr:last-child td{border-bottom:0}
+.table .name{font-weight:600}
+.table .meta{font-size:12px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px}
+.chip.green{background:var(--green-soft);color:#15803d}
+.chip.amber{background:var(--amber-soft);color:#a16207}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7}
+.score{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--fg)}
+.section{max-width:1080px;margin:0 auto;padding:48px 24px}
+.section h2{font-size:22px;letter-spacing:-.02em;font-weight:700;margin:0 0 18px}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+@media(max-width:760px){.cats{grid-template-columns:1fr}}
+.cat{padding:14px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.cat:hover{background:#fafafa}
+.cat .count{font-family:var(--mono);font-size:11px;color:var(--quiet);background:#f5f5f5;padding:2px 7px;border-radius:99px}
+.footer{padding:32px 24px;border-top:1px solid var(--line);font-size:12px;color:var(--quiet);text-align:center}
+</style></head><body>
+
+<nav class="nav"><div class="nav-inner">
+  <span class="logo">USCEHub</span>
+  <div class="nav-links"><a href="#">Browse</a><a href="#">Compare</a><a href="#">Cost estimator</a><a href="#">For institutions</a></div>
+  <span class="kbd">⌘ K</span>
+  <a href="#" style="color:var(--muted)">Sign in</a>
+</div></nav>
+
+<section class="hero"><div class="hero-inner">
+  <h1>Stop applying to <span class="accent">dead links.</span></h1>
+  <p class="lede">USCEHub verifies every U.S. clinical experience listing's source URL — automatically and by hand — so you never email a program that's no longer accepting IMGs.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#">Browse 1,247 verified listings →</a>
+    <a class="btn btn-secondary" href="#">Estimate trip cost</a>
+  </div>
+  <p class="tagline">Free · No account needed · <b>Verified Apr 14, 2026</b></p>
+</div></section>
+
+<section class="numbers"><div class="numbers-inner">
+  <div class="num-cell green">
+    <p class="label">VERIFIED LISTINGS</p>
+    <div class="value">1,247<sup>↑ 38</sup></div>
+    <p class="desc">Source-link confirmed by cron and human admin in the last 30 days.</p>
+  </div>
+  <div class="num-cell">
+    <p class="label">WITH SOURCE LINK</p>
+    <div class="value">89%</div>
+    <p class="desc">Of approved listings carry a working institution URL. The other 11% are flagged "Source not on file."</p>
+  </div>
+  <div class="num-cell">
+    <p class="label">STATES COVERED</p>
+    <div class="value">47</div>
+    <p class="desc">Out of 50 + DC. Three states currently have zero verified listings.</p>
+  </div>
+  <div class="num-cell">
+    <p class="label">LAST CRON RUN</p>
+    <div class="value" style="font-size:24px;letter-spacing:-.02em">Apr 14<br><span style="font-size:14px;font-weight:500;color:var(--muted)">02:00 UTC</span></div>
+    <p class="desc">Cron checks every approved listing's URL daily. Failures are flagged within 24 hours.</p>
+  </div>
+</div></section>
+
+<section class="compare">
+  <h2>Recently verified — top of the queue</h2>
+  <p class="sub">Six listings ranked by recency of verification + source-link reliability + admin-approval status. Verify program details with the institution before applying.</p>
+  <table class="table">
+    <thead><tr>
+      <th>Listing</th><th>Type</th><th>Duration</th><th>Cost</th><th>Verified</th><th>Source</th><th></th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="name">Internal Medicine Observership<div class="meta">Mount Sinai · New York, NY</div></td><td>Obs</td><td>4 wk</td><td>$1.5–2K</td><td><span class="score">Apr 12</span></td><td><span class="chip green">Working</span></td><td><a href="#">View →</a></td></tr>
+      <tr><td class="name">Cardiovascular Research<div class="meta">Cleveland Clinic · Cleveland, OH</div></td><td>Res</td><td>12 wk</td><td>Funded</td><td><span class="score">Apr 14</span></td><td><span class="chip green">Working</span></td><td><a href="#">View →</a></td></tr>
+      <tr><td class="name">Pediatrics Externship<div class="meta">Johns Hopkins · Baltimore, MD</div></td><td>Ext</td><td>4 wk</td><td>$2K</td><td><span class="score">Apr 09</span></td><td><span class="chip green">Working</span></td><td><a href="#">View →</a></td></tr>
+      <tr><td class="name">Surgery Observership<div class="meta">UCLA Medical · Los Angeles, CA</div></td><td>Obs</td><td>2/4 wk</td><td>$2.5K</td><td><span class="score">Apr 08</span></td><td><span class="chip amber">Recheck</span></td><td><a href="#">View →</a></td></tr>
+      <tr><td class="name">Family Medicine Externship<div class="meta">UPMC · Pittsburgh, PA</div></td><td>Ext</td><td>4 wk</td><td>$1K</td><td><span class="score">Apr 11</span></td><td><span class="chip green">Working</span></td><td><a href="#">View →</a></td></tr>
+      <tr><td class="name">Neurology Research<div class="meta">Mass General · Boston, MA</div></td><td>Res</td><td>12 wk</td><td>Funded</td><td><span class="score">Apr 13</span></td><td><span class="chip green">Working</span></td><td><a href="#">View →</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>Browse by category</h2>
+  <div class="cats">
+    <a class="cat" href="#">Observerships<span class="count">624</span></a>
+    <a class="cat" href="#">Externships<span class="count">218</span></a>
+    <a class="cat" href="#">Research positions<span class="count">314</span></a>
+    <a class="cat" href="#">Visiting electives<span class="count">91</span></a>
+    <a class="cat" href="#">Volunteer / pre-med<span class="count">26</span></a>
+    <a class="cat" href="#">Funded only<span class="count">102</span></a>
+    <a class="cat" href="#">Internal Medicine<span class="count">238</span></a>
+    <a class="cat" href="#">Surgery<span class="count">147</span></a>
+    <a class="cat" href="#">Pediatrics<span class="count">86</span></a>
+  </div>
+</section>
+
+<footer class="footer">© 2026 USCEHub · independent · not affiliated with NRMP / ECFMG / ERAS / AAMC · last methodology update Apr 14, 2026</footer>
+
+</body></html>

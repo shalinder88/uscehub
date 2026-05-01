@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>30 · ★★ Final Dark</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#0a0e1a; --panel:#0f1320; --panel-2:#141828; --soft:#1a1f30;
+  --fg:#e8eaf0; --ink:#f4f5f8;
+  --muted:#9aa3b8; --quiet:#5c6478;
+  --line:#262b3d; --line-soft:#1d2235;
+  --accent:#f4f5f8; --accent-text:#0a0e1a;
+  /* type colors — slightly desaturated for dark */
+  --obs:#60a5fa; --obs-soft:rgba(96,165,250,.12);
+  --ext:#fb923c; --ext-soft:rgba(251,146,60,.12);
+  --res:#34d399; --res-soft:rgba(52,211,153,.12);
+  --ele:#a78bfa; --ele-soft:rgba(167,139,250,.12);
+  --vol:#f472b6; --vol-soft:rgba(244,114,182,.12);
+  /* status */
+  --ok:#34d399; --ok-soft:rgba(52,211,153,.14);
+  --warn:#fbbf24; --warn-soft:rgba(251,191,36,.14);
+  --display:"Charter","Iowan Old Style",ui-serif,Georgia,serif;
+  --sans:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;
+}
+html,body{margin:0}
+body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;letter-spacing:-.011em}
+a{color:inherit;text-decoration:none}
+
+.recommended-banner{background:rgba(52,211,153,.08);border-bottom:1px solid rgba(52,211,153,.25);color:var(--ok);padding:6px 16px;font-size:11px;font-weight:600;text-align:center;letter-spacing:.06em;font-family:var(--mono);text-transform:uppercase}
+
+/* NAV */
+.nav{background:rgba(10,14,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+.nav-inner{max-width:1280px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:32px}
+.logo{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:6px}
+.logo .dot{display:inline-block;width:8px;height:8px;background:var(--ok);border-radius:50%;box-shadow:0 0 0 3px rgba(52,211,153,.16)}
+.logo .em{color:var(--ok);font-style:italic;font-weight:600}
+.nav-links{display:flex;gap:24px;font-size:13px;color:var(--muted);margin-left:auto}
+.nav-links a:hover{color:var(--ink)}
+.kbd{font-family:var(--mono);font-size:11px;background:var(--soft);border:1px solid var(--line);padding:2px 6px;border-radius:4px;color:var(--muted)}
+.theme-toggle{height:32px;width:32px;border:1px solid var(--line);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;background:var(--panel);font-size:14px;cursor:pointer;color:var(--muted)}
+.theme-toggle:hover{color:var(--ink);border-color:var(--ok)}
+.nav-cta{height:34px;padding:0 14px;background:var(--accent);color:var(--accent-text);border-radius:8px;font-size:13px;font-weight:600;display:inline-flex;align-items:center}
+.nav-cta:hover{background:#fff;color:var(--accent-text)}
+
+/* TICKER */
+.ticker{background:var(--panel);border-bottom:1px solid var(--line);padding:10px 28px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--quiet);overflow:hidden}
+.ticker-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:14px;white-space:nowrap}
+.ticker .dot{width:6px;height:6px;background:var(--ok);border-radius:50%;box-shadow:0 0 0 3px rgba(52,211,153,.16);animation:pulse 2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.ticker .label{color:var(--ok);font-weight:700}
+.ticker .item{color:var(--muted)}
+.ticker .item b{color:var(--ink);font-weight:600}
+.ticker .sep{color:var(--line)}
+
+/* HERO — sasanova dark, dramatic gradient */
+.hero{position:relative;padding:88px 28px 56px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 70% 50% at 30% 0%,rgba(52,211,153,.10),transparent 60%),
+  radial-gradient(ellipse 50% 40% at 80% 30%,rgba(96,165,250,.08),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background-image:
+  linear-gradient(rgba(244,245,248,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(244,245,248,.025) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse 70% 70% at 50% 0%,black 0%,transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 0%,black 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;max-width:1080px;margin:0 auto;text-align:center;z-index:1}
+
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;color:var(--ok);background:var(--ok-soft);padding:5px 12px;border-radius:99px;letter-spacing:.04em;margin-bottom:22px;border:1px solid rgba(52,211,153,.25)}
+.hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 12px rgba(52,211,153,.6)}
+.hero h1{font-family:var(--display);font-size:64px;line-height:1.04;letter-spacing:-.025em;font-weight:600;margin:0 0 36px;color:var(--ink);max-width:880px;margin-left:auto;margin-right:auto}
+.hero h1 em{font-style:italic;color:var(--ok);font-weight:600}
+
+/* CTAs */
+.cta-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:10px;font-size:14px;font-weight:600;letter-spacing:-.005em;font-family:var(--sans);transition:all .15s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--accent-text);box-shadow:0 1px 2px rgba(0,0,0,.4),0 6px 16px -6px rgba(244,245,248,.20)}
+.btn-primary:hover{background:#fff;color:var(--accent-text);box-shadow:0 2px 4px rgba(0,0,0,.5),0 10px 22px -6px rgba(244,245,248,.30)}
+.btn-secondary{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--ok);background:var(--panel-2)}
+.btn-tertiary{background:transparent;color:var(--muted);padding:0 14px;height:46px}
+.btn-tertiary:hover{color:var(--ink);background:var(--soft)}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(3px)}
+.btn .badge{font-family:var(--mono);font-size:10px;font-weight:700;background:rgba(0,0,0,.18);color:var(--accent-text);padding:2px 6px;border-radius:4px;letter-spacing:.06em;margin-left:2px}
+
+.trust-chips{display:inline-flex;gap:0;flex-wrap:wrap;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.04em;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px;margin-top:8px}
+.trust-chips .chip{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:99px;font-weight:500;color:var(--muted)}
+.trust-chips .chip b{color:var(--ink);font-weight:700}
+.trust-chips .chip + .chip{border-left:1px solid var(--line)}
+.trust-chips .chip.ok{color:var(--ok)}
+.trust-chips .chip.ok::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ok);box-shadow:0 0 6px rgba(52,211,153,.5)}
+
+/* SEARCH */
+.search{max-width:760px;margin:32px auto 0;display:grid;grid-template-columns:1fr 200px 200px auto;gap:6px;padding:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.4),0 16px 40px -16px rgba(52,211,153,.15)}
+.search input,.search select{height:46px;padding:0 14px;border:0;background:transparent;font-size:14px;color:var(--ink);font-family:inherit;font-weight:500}
+.search input::placeholder{color:var(--quiet)}
+.search input:focus,.search select:focus{outline:0;background:var(--soft);border-radius:8px}
+.search input{border-right:1px solid var(--line-soft)}
+.search select{border-right:1px solid var(--line-soft);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%235c6478' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:30px;color-scheme:dark}
+.search select option{background:var(--panel);color:var(--ink)}
+.search-go{height:46px;padding:0 24px;background:var(--accent);color:var(--accent-text);border:0;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.search-go:hover{background:#fff}
+
+/* NUMBERS */
+.numbers{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.numbers-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:760px){.numbers-inner{grid-template-columns:repeat(2,1fr)}}
+.num-cell{padding:24px 28px;border-right:1px solid var(--line-soft);position:relative;display:flex;flex-direction:column;gap:6px;min-height:120px}
+.num-cell:last-child{border-right:0}
+.num-cell .lbl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--quiet);margin:0}
+.num-cell .val{font-family:var(--display);font-size:42px;font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--ink);margin:0}
+.num-cell .val .delta{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--ok);margin-left:8px;letter-spacing:0;display:inline-flex;align-items:center;gap:3px;vertical-align:middle}
+.num-cell .val .delta::before{content:"↑"}
+.num-cell .desc{font-size:12px;color:var(--muted);margin:auto 0 0;line-height:1.5}
+.num-cell.action{padding:18px 28px;justify-content:center;background:linear-gradient(135deg,var(--soft),var(--panel))}
+.num-cell.action a{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.num-cell.action a:hover{color:var(--ok)}
+.num-cell.action .small{font-family:var(--mono);font-size:10px;color:var(--quiet);letter-spacing:.06em;margin-top:2px}
+
+/* SECTION */
+.section{max-width:1280px;margin:0 auto;padding:80px 28px;position:relative}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;gap:24px;flex-wrap:wrap}
+.section-head .copy h2{font-family:var(--display);font-size:36px;line-height:1.15;letter-spacing:-.025em;font-weight:600;margin:0 0 6px;color:var(--ink)}
+.section-head .copy h2 em{font-style:italic;color:var(--ok)}
+.section-head .copy p{font-size:14px;color:var(--muted);margin:0;max-width:560px;line-height:1.6}
+.section-head .action a{font-family:var(--mono);font-size:12px;color:var(--muted);padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel);letter-spacing:.04em}
+.section-head .action a:hover{color:var(--ok);border-color:var(--ok)}
+
+/* TYPE FILTER */
+.type-filter{display:flex;gap:8px;overflow-x:auto;padding:0 0 4px;margin-bottom:24px;scrollbar-width:none}
+.type-filter::-webkit-scrollbar{display:none}
+.type-filter .chip{flex-shrink:0;font-size:13px;font-weight:500;padding:7px 14px;border-radius:99px;background:var(--panel);border:1px solid var(--line);color:var(--muted);cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;transition:all .12s}
+.type-filter .chip:hover{border-color:var(--muted);color:var(--ink)}
+.type-filter .chip.active{background:var(--accent);color:var(--accent-text);border-color:var(--accent);font-weight:600}
+.type-filter .chip .count{font-family:var(--mono);font-size:11px;color:var(--quiet);font-weight:600}
+.type-filter .chip.active .count{color:rgba(10,14,26,.5)}
+.type-filter .chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%}
+.type-filter .chip[data-type="obs"] .dot{background:var(--obs)}
+.type-filter .chip[data-type="ext"] .dot{background:var(--ext)}
+.type-filter .chip[data-type="res"] .dot{background:var(--res)}
+.type-filter .chip[data-type="ele"] .dot{background:var(--ele)}
+.type-filter .chip[data-type="vol"] .dot{background:var(--vol)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.cards{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--obs);border-radius:14px 14px 0 0}
+.card.obs::before{background:var(--obs);box-shadow:0 0 16px rgba(96,165,250,.4)}
+.card.ext::before{background:var(--ext);box-shadow:0 0 16px rgba(251,146,60,.4)}
+.card.res::before{background:var(--res);box-shadow:0 0 16px rgba(52,211,153,.4)}
+.card.ele::before{background:var(--ele);box-shadow:0 0 16px rgba(167,139,250,.4)}
+.card.vol::before{background:var(--vol);box-shadow:0 0 16px rgba(244,114,182,.4)}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -12px rgba(0,0,0,.6),0 0 0 1px var(--ok);border-color:var(--ok)}
+
+.card-head{padding:18px 22px 8px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card-type{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:99px}
+.card.obs .card-type{background:var(--obs-soft);color:var(--obs)}
+.card.ext .card-type{background:var(--ext-soft);color:var(--ext)}
+.card.res .card-type{background:var(--res-soft);color:var(--res)}
+.card.ele .card-type{background:var(--ele-soft);color:var(--ele)}
+.card.vol .card-type{background:var(--vol-soft);color:var(--vol)}
+.card-verif{display:inline-flex;align-items:center;gap:5px;font-family:var(--sans);font-size:11px;font-weight:600;color:var(--ok)}
+.card-verif::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(52,211,153,.18)}
+
+.card-body{padding:6px 22px 14px;display:flex;flex-direction:column;gap:6px}
+.card-body h3{font-family:var(--display);font-size:21px;line-height:1.3;letter-spacing:-.012em;font-weight:600;margin:0;color:var(--ink)}
+.card-inst{font-family:var(--display);font-size:14px;color:var(--muted);font-style:italic;margin:0}
+.card-meta{font-family:var(--mono);font-size:11px;color:var(--quiet);letter-spacing:.04em;text-transform:uppercase;margin-top:6px;display:flex;flex-wrap:wrap;gap:10px}
+.card-meta b{color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:12px;font-family:var(--sans)}
+
+.specsheet{padding:0 22px;display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px;font-size:12px}
+.specsheet .row{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0;border-bottom:1px solid var(--line-soft)}
+.specsheet .row:nth-last-child(-n+2){border-bottom:0}
+.specsheet .k{color:var(--quiet);font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+.specsheet .v{color:var(--ink);font-weight:600;font-family:var(--mono);font-size:11px}
+.specsheet .v.ok{color:var(--ok)}
+
+.card-foot{padding:12px 22px;background:var(--panel-2);border-top:1px solid var(--line-soft);display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px}
+.card-foot .primary{height:32px;padding:0 16px;background:var(--accent);color:var(--accent-text);border-radius:7px;font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.card-foot .primary:hover{background:#fff}
+.card-foot .actions{display:flex;gap:4px}
+.card-foot .ic{width:32px;height:32px;border:1px solid var(--line);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);cursor:pointer;background:var(--panel)}
+.card-foot .ic:hover{border-color:var(--ok);color:var(--ok)}
+
+/* USA HEX MAP — emerald palette for dark mode */
+.map-section{background:var(--panel-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.map-inner{max-width:1280px;margin:0 auto;padding:64px 28px;display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+@media(max-width:980px){.map-inner{grid-template-columns:1fr;gap:32px}}
+.map-copy h2{font-family:var(--display);font-size:32px;letter-spacing:-.022em;font-weight:600;margin:0 0 12px;color:var(--ink)}
+.map-copy h2 em{font-style:italic;color:var(--ok)}
+.map-copy p{font-size:15px;color:var(--muted);margin:0 0 18px;line-height:1.65}
+.map-copy .legend{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--quiet)}
+.map-copy .legend .row{display:flex;align-items:center;gap:10px}
+.map-copy .legend .swatch{width:20px;height:20px;border-radius:3px;border:1px solid var(--line)}
+.map-copy .legend .lbl{color:var(--ink);font-weight:600;text-transform:uppercase}
+.map-grid{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;align-items:center;justify-items:center;font-family:var(--mono)}
+.state{aspect-ratio:1;width:100%;background:var(--soft);border:1px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:var(--quiet);transition:all .12s;cursor:pointer;letter-spacing:0;position:relative}
+.state.empty{background:transparent;border:0;cursor:default}
+.state:not(.empty):hover{transform:scale(1.15);z-index:1;border-color:var(--ok);color:var(--ok)}
+.state.s1{background:rgba(52,211,153,.08);color:#a7f3d0;border-color:rgba(52,211,153,.20)}
+.state.s2{background:rgba(52,211,153,.18);color:#bbf7d0;border-color:rgba(52,211,153,.35)}
+.state.s3{background:rgba(52,211,153,.30);color:#dcfce7;border-color:rgba(52,211,153,.50)}
+.state.s4{background:var(--ok);color:#0a0e1a;border-color:var(--ok);box-shadow:0 0 12px rgba(52,211,153,.4)}
+
+/* HOW IT WORKS */
+.how{padding:80px 28px}
+.how-inner{max-width:1280px;margin:0 auto}
+.how .head{text-align:center;margin-bottom:48px}
+.how h2{font-family:var(--display);font-size:36px;letter-spacing:-.025em;font-weight:600;margin:0 0 8px;color:var(--ink)}
+.how h2 em{font-style:italic;color:var(--ok)}
+.how p.sub{font-size:15px;color:var(--muted);margin:0;max-width:520px;margin:0 auto;line-height:1.6}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--panel);padding:28px 26px;display:flex;flex-direction:column;gap:8px}
+.step-num{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--ok)}
+.step h3{font-family:var(--display);font-size:20px;letter-spacing:-.012em;font-weight:600;margin:4px 0 0;line-height:1.3;color:var(--ink)}
+.step p{font-size:13px;color:var(--muted);margin:0;line-height:1.65}
+
+/* FOOTER */
+.footer{background:var(--panel-2);border-top:1px solid var(--line);padding:48px 28px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.footer-inner{grid-template-columns:1fr 1fr}}
+.footer h5{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);margin:0 0 12px}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer li{margin-bottom:6px}
+.footer a:hover{color:var(--ok)}
+.footer-disclaimer{max-width:1280px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--quiet);line-height:1.65}
+
+@media(max-width:640px){
+  .hero{padding:48px 22px 36px}
+  .hero h1{font-size:38px;margin-bottom:24px}
+  .nav-links,.kbd{display:none}
+  .search{grid-template-columns:1fr;gap:4px}
+  .search input,.search select{border-right:0;border-bottom:1px solid var(--line-soft)}
+  .num-cell{min-height:auto}
+  .num-cell .val{font-size:32px}
+  .section{padding:56px 22px}
+  .section-head .copy h2{font-size:26px}
+  .map-inner{padding:48px 22px}
+}
+</style></head><body>
+
+<div class="recommended-banner">★★ FINAL DARK — sasanova-style dark base · same structure as #28 · emerald-pop accents</div>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="#" class="logo"><span class="dot"></span>USCE<span class="em">Hub</span></a>
+  <div class="nav-links">
+    <a href="32-browse-dark.html">Browse</a>
+    <a href="#">Compare</a>
+    <a href="#">Cost estimator</a>
+    <a href="#">Methodology</a>
+    <a href="#">For institutions</a>
+  </div>
+  <span class="kbd">⌘ K</span>
+  <a class="theme-toggle" href="28-final-light-v1.html" title="Switch to light">🌙</a>
+  <a class="nav-cta" href="#">Sign in</a>
+</div></nav>
+
+<div class="ticker"><div class="ticker-inner">
+  <span class="dot"></span>
+  <span class="label">LIVE</span>
+  <span class="item">Cron run · <b>02:00 UTC</b></span>
+  <span class="sep">·</span>
+  <span class="item"><b>OBS-2741</b> verified · Mount Sinai</span>
+  <span class="sep">·</span>
+  <span class="item"><b>RES-1158</b> verified · Cleveland Clinic</span>
+  <span class="sep">·</span>
+  <span class="item"><b>EXT-0942</b> verified · Johns Hopkins</span>
+  <span class="sep">·</span>
+  <span class="item"><b>14</b> need recheck · queued for admin</span>
+</div></div>
+
+<section class="hero"><div class="hero-inner">
+  <span class="hero-tag">Verified · Apr 14, 2026 · 1,247 listings</span>
+  <h1>Verified U.S. <em>clinical experience</em> for IMGs.</h1>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="32-browse-dark.html">Browse 1,247 listings <span class="badge">FREE</span> <span class="arrow">→</span></a>
+    <a class="btn btn-secondary" href="#">Estimate trip cost</a>
+    <a class="btn btn-tertiary" href="#">How verification works →</a>
+  </div>
+  <div class="trust-chips">
+    <span class="chip ok"><b>Free</b></span>
+    <span class="chip">No account needed</span>
+    <span class="chip"><b>89%</b> source-linked</span>
+    <span class="chip">Last reviewed <b>Apr 14</b></span>
+  </div>
+  <form class="search" onsubmit="event.preventDefault()">
+    <input type="text" placeholder="Specialty (e.g. Internal Medicine)" />
+    <select><option>Any state</option><option>New York</option><option>California</option></select>
+    <select><option>Any type</option><option>Observership</option><option>Externship</option><option>Research</option></select>
+    <button class="search-go" type="submit">Search →</button>
+  </form>
+</div></section>
+
+<section class="numbers"><div class="numbers-inner">
+  <div class="num-cell">
+    <p class="lbl">VERIFIED LISTINGS</p>
+    <p class="val">1,247<span class="delta">38</span></p>
+    <p class="desc">Cron + admin verified in last 30 days</p>
+  </div>
+  <div class="num-cell">
+    <p class="lbl">WITH SOURCE LINK</p>
+    <p class="val">89%</p>
+    <p class="desc">Other 11% flagged "Source not on file"</p>
+  </div>
+  <div class="num-cell">
+    <p class="lbl">STATES COVERED</p>
+    <p class="val">47</p>
+    <p class="desc">3 states with zero verified listings</p>
+  </div>
+  <div class="num-cell action">
+    <a href="#">Report a broken link →</a>
+    <span class="small">LAST CRON · APR 14, 02:00 UTC</span>
+  </div>
+</div></section>
+
+<section class="section">
+  <div class="section-head">
+    <div class="copy">
+      <h2>Recently <em>verified</em> opportunities</h2>
+      <p>Programs whose source links were confirmed working in the last verification window. Border color = program type.</p>
+    </div>
+    <div class="action"><a href="32-browse-dark.html">View all 1,247 →</a></div>
+  </div>
+
+  <div class="type-filter">
+    <button class="chip active">All <span class="count">1,247</span></button>
+    <button class="chip" data-type="obs"><span class="dot"></span>Observership <span class="count">624</span></button>
+    <button class="chip" data-type="ext"><span class="dot"></span>Externship <span class="count">218</span></button>
+    <button class="chip" data-type="res"><span class="dot"></span>Research <span class="count">314</span></button>
+    <button class="chip" data-type="ele"><span class="dot"></span>Elective <span class="count">91</span></button>
+    <button class="chip" data-type="vol"><span class="dot"></span>Volunteer <span class="count">26</span></button>
+    <button class="chip">Funded only <span class="count">102</span></button>
+    <button class="chip">Visa support <span class="count">438</span></button>
+  </div>
+
+  <div class="cards">
+    <article class="card obs">
+      <div class="card-head"><span class="card-type"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--obs)"></span>Observership</span><span class="card-verif">Verified</span></div>
+      <div class="card-body"><h3>Internal Medicine Observership</h3><p class="card-inst">Mount Sinai · New York, NY</p><div class="card-meta"><b>4 weeks</b> · <b>$1,500–$2,000</b></div></div>
+      <div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓ WORKS</span></div><div class="row"><span class="k">VERIFIED</span><span class="v">APR-12</span></div><div class="row"><span class="k">LOR</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">YES</span></div><div class="row"><span class="k">STEP</span><span class="v">1 PASS</span></div><div class="row"><span class="k">REVIEWS</span><span class="v">SEPARATE ›</span></div></div>
+      <div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div>
+    </article>
+    <article class="card res">
+      <div class="card-head"><span class="card-type"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--res)"></span>Research</span><span class="card-verif">Verified</span></div>
+      <div class="card-body"><h3>Cardiovascular Research</h3><p class="card-inst">Cleveland Clinic · Cleveland, OH</p><div class="card-meta"><b>12 weeks</b> · <b>Funded</b></div></div>
+      <div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓ WORKS</span></div><div class="row"><span class="k">VERIFIED</span><span class="v">APR-14</span></div><div class="row"><span class="k">AUTHOR.</span><span class="v">YES</span></div><div class="row"><span class="k">VISA</span><span class="v">CASE</span></div><div class="row"><span class="k">STIPEND</span><span class="v">YES</span></div><div class="row"><span class="k">REVIEWS</span><span class="v">SEPARATE ›</span></div></div>
+      <div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div>
+    </article>
+    <article class="card ext">
+      <div class="card-head"><span class="card-type"><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--ext)"></span>Externship</span><span class="card-verif">Verified</span></div>
+      <div class="card-body"><h3>Pediatrics Externship</h3><p class="card-inst">Johns Hopkins · Baltimore, MD</p><div class="card-meta"><b>4 weeks</b> · <b>$2,000</b></div></div>
+      <div class="specsheet"><div class="row"><span class="k">SOURCE</span><span class="v ok">✓ WORKS</span></div><div class="row"><span class="k">VERIFIED</span><span class="v">APR-09</span></div><div class="row"><span class="k">CERT.</span><span class="v">YES</span></div><div class="row"><span class="k">STEP</span><span class="v">2 CK</span></div><div class="row"><span class="k">HANDS-ON</span><span class="v">YES</span></div><div class="row"><span class="k">REVIEWS</span><span class="v">SEPARATE ›</span></div></div>
+      <div class="card-foot"><a class="primary" href="#">View →</a><div class="actions"><a class="ic" href="#">♡</a><a class="ic" href="#">⇄</a></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="map-section"><div class="map-inner">
+  <div class="map-copy">
+    <h2>Verified across <em>47 states.</em></h2>
+    <p>Each square is one U.S. state, sized in the rough geography of the country. Color shows verified-listing density. Hover any state to see counts; click to filter the directory.</p>
+    <div class="legend">
+      <div class="row"><span class="swatch" style="background:rgba(52,211,153,.08)"></span><span>1–10 listings</span></div>
+      <div class="row"><span class="swatch" style="background:rgba(52,211,153,.18)"></span><span>11–40</span></div>
+      <div class="row"><span class="swatch" style="background:rgba(52,211,153,.30)"></span><span>41–100</span></div>
+      <div class="row"><span class="swatch" style="background:var(--ok)"></span><span>100+ <span class="lbl">DENSE</span></span></div>
+      <div class="row"><span class="swatch" style="background:transparent;border-style:dashed"></span><span>Zero verified</span></div>
+    </div>
+  </div>
+  <div class="map-grid" aria-label="USA verified listings density map">
+    <span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state s1" title="Maine: 4">ME</span>
+    <span class="state s2" title="Washington: 18">WA</span><span class="state empty"></span><span class="state empty"></span><span class="state s1" title="Montana: 2">MT</span><span class="state empty"></span><span class="state s1" title="N Dakota: 2">ND</span><span class="state empty"></span><span class="state empty"></span><span class="state s2" title="Minnesota: 24">MN</span><span class="state empty"></span><span class="state s2" title="Vermont: 11">VT</span>
+    <span class="state s2" title="Oregon: 13">OR</span><span class="state s2" title="Idaho: 12">ID</span><span class="state empty"></span><span class="state s1" title="Wyoming: 3">WY</span><span class="state s1" title="S Dakota: 4">SD</span><span class="state empty"></span><span class="state s2" title="Wisconsin: 31">WI</span><span class="state empty"></span><span class="state empty"></span><span class="state s2" title="N Hampshire: 9">NH</span><span class="state empty"></span>
+    <span class="state s4" title="California: 187">CA</span><span class="state s2" title="Nevada: 17">NV</span><span class="state s2" title="Utah: 22">UT</span><span class="state empty"></span><span class="state s3" title="Nebraska: 47">NE</span><span class="state s2" title="Iowa: 28">IA</span><span class="state s4" title="Illinois: 142">IL</span><span class="state s4" title="Michigan: 116">MI</span><span class="state s3" title="New York: 98">NY</span><span class="state s3" title="Massachusetts: 89">MA</span><span class="state s2" title="Rhode Is: 8">RI</span>
+    <span class="state empty"></span><span class="state s2" title="Arizona: 39">AZ</span><span class="state s2" title="Colorado: 34">CO</span><span class="state s2" title="Kansas: 21">KS</span><span class="state s2" title="Missouri: 36">MO</span><span class="state s3" title="Indiana: 52">IN</span><span class="state s4" title="Ohio: 124">OH</span><span class="state s3" title="Pennsylvania: 78">PA</span><span class="state s3" title="New Jersey: 68">NJ</span><span class="state s2" title="Connecticut: 22">CT</span><span class="state empty"></span>
+    <span class="state empty"></span><span class="state s2" title="New Mexico: 11">NM</span><span class="state empty"></span><span class="state s1" title="Oklahoma: 9">OK</span><span class="state s2" title="Arkansas: 14">AR</span><span class="state s2" title="Tennessee: 41">TN</span><span class="state s2" title="Kentucky: 27">KY</span><span class="state s2" title="W Virginia: 16">WV</span><span class="state s3" title="Virginia: 56">VA</span><span class="state s3" title="Maryland: 71">MD</span><span class="state s1" title="Delaware: 4">DE</span>
+    <span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state s4" title="Texas: 156">TX</span><span class="state s2" title="Louisiana: 19">LA</span><span class="state s2" title="Mississippi: 12">MS</span><span class="state s2" title="Alabama: 22">AL</span><span class="state s2" title="Georgia: 38">GA</span><span class="state s3" title="N Carolina: 64">NC</span><span class="state s2" title="S Carolina: 24">SC</span><span class="state empty"></span>
+    <span class="state s2" title="Alaska: 2">AK</span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state empty"></span><span class="state s4" title="Florida: 119">FL</span><span class="state empty"></span><span class="state s1" title="DC: 7">DC</span><span class="state s1" title="Hawaii: 5">HI</span>
+  </div>
+</div></section>
+
+<section class="how"><div class="how-inner">
+  <div class="head">
+    <h2>How USCEHub <em>works</em></h2>
+    <p class="sub">A directory, not a placement service. We do not apply for you. We make sure the link works.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-num">STEP 01 · SEARCH</div><h3>Filter by what matters</h3><p>Specialty, state, fee range, visa support. Results prioritize recently verified, source-linked, approved listings.</p></div>
+    <div class="step"><div class="step-num">STEP 02 · OPEN SOURCE</div><h3>Use the institution's link</h3><p>Every approved listing carries the institution's own application URL. We verify it works; you apply at the institution.</p></div>
+    <div class="step"><div class="step-num">STEP 03 · BUDGET</div><h3>Estimate the trip</h3><p>Use the cost estimator. USMLE / ECFMG / visa / airfare fees are not included — verify those at the source.</p></div>
+  </div>
+</div></section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="logo" style="font-size:20px"><span class="dot"></span>USCE<span class="em">Hub</span></a>
+      <p style="margin:12px 0 0;font-size:13px;color:var(--quiet);max-width:340px;line-height:1.55">A directory of source-linked U.S. clinical experience programs for IMGs. Verified by cron + admin · last reviewed Apr 14, 2026.</p>
+    </div>
+    <div><h5>Browse</h5><ul><li><a href="32-browse-dark.html">All listings</a></li><li><a href="#">By state</a></li><li><a href="#">By specialty</a></li><li><a href="#">Compare</a></li></ul></div>
+    <div><h5>Tools</h5><ul><li><a href="#">Cost estimator</a></li><li><a href="#">Saved</a></li><li><a href="#">Recommend</a></li></ul></div>
+    <div><h5>About</h5><ul><li><a href="#">How it works</a></li><li><a href="#">Methodology</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <p class="footer-disclaimer">USCEHub is an independent informational platform. Not affiliated with NRMP, ECFMG, ERAS, AAMC, or any hospital or residency program. We do not guarantee placement, match, or visa outcomes. Always verify program details with the official institution before applying.</p>
+</footer>
+
+</body></html>
