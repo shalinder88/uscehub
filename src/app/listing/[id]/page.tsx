@@ -530,7 +530,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                     lastVerifiedAt: listing.lastVerifiedAt,
                   })}
                   lastVerifiedAt={listing.lastVerifiedAt}
-                  suggestUpdateUrl={`/contact-admin?category=data&subject=${encodeURIComponent(
+                  suggestUpdateUrl={`/contact-admin?category=coordinator_correction&subject=${encodeURIComponent(
                     `Correction for: ${listing.title} (id: ${listing.id})`
                   )}`}
                 />
