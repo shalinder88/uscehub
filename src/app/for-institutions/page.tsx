@@ -326,6 +326,49 @@ export default function ForInstitutionsPage() {
           </div>
         </div>
       </div>
+
+      {/* ============================================================ */}
+      {/* Coordinator correction / removal path                         */}
+      {/* ============================================================ */}
+      <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+            Are you a program coordinator or institution staff member?
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            USCEHub does not represent the institutions listed on this site.
+            We link applicants to official sources when available. If you
+            represent a listed program and want to suggest a correction,
+            request an update, or request that a listing be reviewed or
+            removed, you can reach an admin directly.
+          </p>
+          <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <Link
+              href="/contact-admin?category=coordinator_correction&subject=Coordinator%20correction"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-800 dark:text-slate-100 hover:border-slate-400 dark:hover:border-slate-500"
+            >
+              Suggest a correction
+            </Link>
+            <Link
+              href="/contact-admin?category=institution_update&subject=Institution%20%2F%20program%20update"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-800 dark:text-slate-100 hover:border-slate-400 dark:hover:border-slate-500"
+            >
+              Request an update
+            </Link>
+            <Link
+              href="/contact-admin?category=removal_request&subject=Request%20listing%20removal%20or%20review"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-800 dark:text-slate-100 hover:border-slate-400 dark:hover:border-slate-500"
+            >
+              Request removal or review
+            </Link>
+          </div>
+          <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+            All requests are reviewed before any public change. We do not
+            guarantee a response time, but every request is queued for an
+            admin to read.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
