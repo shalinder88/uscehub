@@ -5,6 +5,14 @@ Local-only sprint. Branch `local/p96-1-verification-hardening`.
 no-schema items identified by P96-0 as the next moat before any
 full 304-listing audit.
 
+## Critical caveat
+
+The content-keyword classifier exists as a pure helper but is **not
+yet invoked by the cron route**. P96-1 improves throttle / admin
+visibility / failure escalation, but it does not yet solve the core
+"HTTP alive but weak / generic / mismatched source" problem
+**operationally**. That requires P96-1B.
+
 ## 1. What changed
 
 | # | Item | Status | Files |
@@ -188,15 +196,19 @@ npx eslint <changed files>                 → exit 0 (1 expected
 + targeted lint sufficient for these focused changes; would re-run
 before any push).
 
-## 8. Risks
+## 8. Risks / watch items
 
 | Risk | Mitigation |
 | --- | --- |
 | Auto-flag floods `/admin/messages` if many listings fail simultaneously (e.g. wide outage) | 14-day dedupe window per listing; cron caps at 25 listings/run; max 25 flags possible per run |
-| Per-host throttle slows full-cycle verification for institutions with many listings | Mostly a wash: 25/day cap was already the bottleneck. Distinct-host cap raises observed throughput per host but not total. Cycle time goes from ~12 days to ~12 days (same). |
+| Per-host throttle (1 listing per hostname per cron tick) slows full-cycle verification for large institutions with many listings | Safest default. Mostly a wash: 25/day cap was already the bottleneck. Cycle time stays ~12 days. May need raising per-host cap once we observe real-world throughput. |
+| Auto-flag uses `AdminMessage` rather than a purpose-built verification queue item | Acceptable short-term — `AdminMessage.userId` is nullable and `category` is free-string so no schema work. May need a dedicated queue model later. |
+| Classifier is conservative and pure, but not yet invoked by cron | Intentional. P96-1B wires it. Until then, the operational "HTTP alive but weak / generic / mismatched" problem is **not** solved. |
+| Date-based freshness aggregation | Watch for timezone / off-by-one confusion in `/admin/freshness` totals. Current implementation uses UTC `Date.now()` which is consistent across the cluster. |
+| `/admin/freshness` may become expensive at higher listing volumes | Fine for 304 listings. Beyond ~5k may need pagination or cached aggregates. |
 | `Date.now()` in server page lint-disabled | Same pattern used in other server components; runs per-request, not per-render |
 | `maybeAutoFlag` reads from `DataVerification` then writes to `AdminMessage` non-atomically | Idempotent via dedupe window; worst case is two flags created in adjacent runs (still bounded). Acceptable for v1. |
-| Cron-side keyword classifier still not invoked | Intentional. Pure helper landed first; cron extension is a separate next PR per the plan. |
+| System still lacks persisted screenshots, source evidence snapshots, and domain-match verification | Out of P96-1 scope by design. P96-2 / P96-3 territory. |
 
 ## 9. Rollback plan
 
@@ -217,26 +229,45 @@ The branch is local-only. Rollback options, ordered easiest first:
 5. **Delete the new pure files** — zero dependencies on them outside
    the cron route once steps 2–4 are reverted.
 
+Per-PR rollback summary (when these ship):
+
+- Revert `/admin/freshness` and sidebar entry independently if admin
+  UI has issues.
+- Revert host throttle independently if cron throughput is too slow.
+- Revert auto-flag block independently if `AdminMessage` semantics
+  are wrong.
+- Keep the pure classifier even if cron wiring is delayed — it has
+  isolated tests and zero side effects.
+
 No DB migration to roll back. No production data altered by any
 local code path.
 
 ## 10. What remains before 25-listing or 304-listing sample
 
-The user's stated next step is **P96-2: 25-listing sample audit
-with persisted screenshots and source classification.** P96-1 ships
-the foundation; P96-2 still needs:
+**Recommended next task: P96-1B — wire the content-keyword
+classifier into `verify-listings` cron as a small no-schema local
+sprint.**
 
-- A way to **invoke** the new content classifier from the cron's
-  GET-and-fetch-body path. (Not in P96-1; intentional.)
+Do **not** start P96-2 yet. P96-2 should begin only after:
+
+1. classifier invocation is wired into cron, **or** intentionally
+   deferred with a documented reason,
+2. weak / generic / wrong-page classifications are represented
+   internally without overclaiming on the public surface,
+3. admin-message dedupe is verified end-to-end,
+4. `/admin/freshness` access control is manually checked,
+5. P96-1 / P96-1B are reviewed for PR split.
+
+Other prerequisites for the eventual P96-2:
+
 - Persisted screenshot pipeline (Playwright dev-dep OR
   Chrome-extension reconnect).
 - A 25-listing dry run that uses the new classifier on real
   fetched body text.
-- An admin re-link queue for the rows that come back as
+- An admin re-link queue for rows that come back as
   `LIKELY_WRONG_PAGE` / `GENERIC_HOMEPAGE`.
 
-Do not run a 25- or 304-listing audit until at least the first item
-above ships.
+Do not run a 25- or 304-listing audit until P96-1B ships.
 
 ## 11. Hard rules confirmation
 
@@ -260,3 +291,81 @@ above ships.
 - ✅ No new auth flow, no new role values.
 - ✅ Per-host throttle defaults to 1/host/run — politest possible.
 - ✅ `MAX_LISTINGS_PER_RUN` unchanged at 25.
+
+## 12. Future PR split recommendation
+
+When deployment budget allows, split this branch into three small
+PRs (plus a docs PR for this report):
+
+1. `feat/verification-content-classifier`
+   - `src/lib/content-classifier.ts`
+   - `scripts/test-content-classifier.ts`
+   - this report (`docs/platform-v2/local/P96_1_VERIFICATION_HARDENING_REPORT.md`)
+2. `feat/verification-host-throttle-auto-flag`
+   - `src/lib/host-throttle.ts`
+   - `scripts/test-host-throttle.ts`
+   - cron-route changes in `src/app/api/cron/verify-listings/route.ts`
+     (per-host partition + 3-failure `AdminMessage` auto-flag)
+3. `feat/admin-freshness-page`
+   - `src/app/admin/freshness/page.tsx`
+   - sidebar entry in `src/app/admin/layout.tsx`
+
+Keep them separate unless the user explicitly wants one combined
+PR. Order rationale: the classifier is pure and zero-risk, ships
+first; the cron changes have real runtime impact and ship second
+once the helper is in main; the admin page is independent and can
+ship in parallel with #2.
+
+## 13. Pre-PR verification checklist
+
+Manual checks needed **before** any of these PRs are pushed to
+production:
+
+- [ ] `/admin/freshness` is **not** accessible to non-admin users
+      (anonymous → `/auth/signin`; APPLICANT/POSTER role → same).
+- [ ] `/admin/freshness` performs **no writes** — verified by
+      reading the source; manually confirm no DOM control on the
+      page submits anything.
+- [ ] `AdminMessage.userId` nullable behavior works in the deployed
+      schema (Prisma client + DB column both nullable).
+- [ ] Free-string `AdminMessage.category` is already safe and used
+      elsewhere — confirmed via existing P95-A coordinator
+      categories landed in #60.
+- [ ] 3-failure auto-flag cannot spam duplicate messages beyond
+      the 14-day dedupe — re-test in dev by triggering 6
+      consecutive failures on the same listing and observing only
+      one new `AdminMessage` row.
+- [ ] Per-host throttle cannot starve large hospital systems
+      forever — confirm by tracing a multi-listing host through 12
+      consecutive cron ticks and seeing each listing eventually
+      probed.
+- [ ] Cron output JSON includes `checked / deferred_host_throttled
+      / deferred_run_cap / skipped_no_url / errors / auto_flagged
+      / verified / needs_manual_review / reverifying /
+      distinct_hosts_seen` with non-NaN integer counts.
+- [ ] No public listing copy changes were introduced.
+- [ ] No existing admin navigation layout regression — confirm by
+      visiting every existing `/admin/*` route after the layout
+      sidebar entry change.
+
+## 14. Do not do next
+
+- Do **not** start a full 304-listing audit.
+- Do **not** start P96-2 25-listing screenshot audit yet.
+- Do **not** add schema fields for domain matching yet
+  (`Organization.websiteDomain` is a future step).
+- Do **not** build the screenshot pipeline inside this branch.
+- Do **not** make public UI / source-status copy changes based on
+  classifier output yet.
+- Do **not** auto-unpublish or downgrade listings from the cron.
+- Do **not** invoke the content classifier from the cron in this
+  sprint — that's P96-1B.
+
+## 15. Correct next sequence
+
+1. **P96-1B** — wire classifier into cron conservatively.
+2. Review / split P96-1 + P96-1B into small PRs when user approves.
+3. **P96-2** — 25-listing sample audit with persisted screenshots.
+4. **P96-3** — full 304-listing audit.
+5. Card / detail description cleanup based on verified source
+   evidence.
