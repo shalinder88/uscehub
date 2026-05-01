@@ -6,12 +6,25 @@ import {
   pickProbeUrl,
   type ProbeOutcome,
 } from "@/lib/link-verification";
+import { partitionByHost } from "@/lib/host-throttle";
 import type { LinkVerificationStatus } from "@prisma/client";
 
 const TIMEOUT_MS = 10000;
 const BATCH_SIZE = 5;
 const BATCH_GAP_MS = 500;
 const MAX_LISTINGS_PER_RUN = 25;
+// P96-1: at most one probe per hostname per cron tick. Defers extras
+// to the next run (the `lastVerificationAttemptAt asc nulls first`
+// ordering picks them up naturally). Avoids slamming a single
+// hospital site with multiple parallel HEADs when several listings
+// share a host.
+const MAX_PROBES_PER_HOST_PER_RUN = 1;
+// P96-1: open one admin-review AdminMessage when a listing has had
+// this many consecutive non-VERIFIED outcomes. Deduped on a recency
+// window so the same listing can't generate noise day after day.
+const AUTO_FLAG_FAILURE_THRESHOLD = 3;
+const AUTO_FLAG_DEDUPE_WINDOW_DAYS = 14;
+const AUTO_FLAG_CATEGORY = "cron_verification_failure";
 const USER_AGENT = "USCEHub-LinkVerifier/1.0 (uscehub.com; listing verification bot)";
 const VERIFIED_BY_SENTINEL = "system:cron-verify-listings";
 
@@ -53,7 +66,13 @@ export async function GET(request: Request) {
 
   const startedAt = new Date();
 
-  const candidates = await prisma.listing.findMany({
+  // P96-1: pull a slightly larger candidate pool than MAX_LISTINGS_PER_RUN
+  // so the per-host throttle has somewhere to draw replacements from when
+  // it defers a host's extras. Still bounded; we never run more than
+  // MAX_LISTINGS_PER_RUN actual probes.
+  const CANDIDATE_OVERSCAN = Math.max(MAX_LISTINGS_PER_RUN * 2, 50);
+
+  const rawCandidates = await prisma.listing.findMany({
     where: {
       status: "APPROVED",
       linkVerificationStatus: {
@@ -66,7 +85,7 @@ export async function GET(request: Request) {
       ],
     },
     orderBy: [{ lastVerificationAttemptAt: { sort: "asc", nulls: "first" } }],
-    take: MAX_LISTINGS_PER_RUN,
+    take: CANDIDATE_OVERSCAN,
     select: {
       id: true,
       sourceUrl: true,
@@ -76,6 +95,31 @@ export async function GET(request: Request) {
     },
   });
 
+  // Pure per-host partition. Pass-through for rows with no parseable URL —
+  // the existing skip-no-url logic below catches them.
+  const throttle = partitionByHost(
+    rawCandidates.map((r) => ({
+      id: r.id,
+      probeUrl: pickProbeUrl({
+        sourceUrl: r.sourceUrl,
+        applicationUrl: r.applicationUrl,
+        websiteUrl: r.websiteUrl,
+      }),
+      _row: r,
+    })),
+    { maxPerHost: MAX_PROBES_PER_HOST_PER_RUN }
+  );
+
+  // Cap the to-probe list at MAX_LISTINGS_PER_RUN. Whatever the throttle
+  // selected beyond the cap rolls into next run via the `asc nulls first`
+  // ordering.
+  const candidates = throttle.toProbe
+    .slice(0, MAX_LISTINGS_PER_RUN)
+    .map((c) => c._row);
+  const overflowFromCap = throttle.toProbe
+    .slice(MAX_LISTINGS_PER_RUN)
+    .map((c) => ({ id: c.id, reason: "exceeds_per_run_cap" as const }));
+
   const summary = {
     timestamp: startedAt.toISOString(),
     checked: 0,
@@ -84,6 +128,10 @@ export async function GET(request: Request) {
     reverifying: 0,
     skipped_no_url: 0,
     errors: 0,
+    deferred_host_throttled: throttle.deferred.length,
+    deferred_run_cap: overflowFromCap.length,
+    auto_flagged: 0,
+    distinct_hosts_seen: throttle.hostnamesSeen.length,
     details: [] as Array<{
       id: string;
       url: string | null;
@@ -127,6 +175,15 @@ export async function GET(request: Request) {
             outcome,
             probedUrl: url,
           });
+
+          // P96-1: 3-failure auto-flag. Only after a definitive
+          // NEEDS_MANUAL_REVIEW outcome (REVERIFYING is transient and
+          // shouldn't escalate). Deduped within
+          // AUTO_FLAG_DEDUPE_WINDOW_DAYS so we don't generate noise.
+          if (classification.status === "NEEDS_MANUAL_REVIEW") {
+            const created = await maybeAutoFlag(listing.id, classification.reason);
+            if (created) summary.auto_flagged++;
+          }
 
           summary.checked++;
           if (classification.status === "VERIFIED") summary.verified++;
@@ -259,4 +316,73 @@ async function applyClassification(args: ApplyArgs): Promise<void> {
       },
     }),
   ]);
+}
+
+/**
+ * P96-1: open one admin-review AdminMessage when a listing has had
+ * AUTO_FLAG_FAILURE_THRESHOLD consecutive non-VERIFIED outcomes,
+ * deduped on AUTO_FLAG_DEDUPE_WINDOW_DAYS so we don't churn the queue.
+ *
+ * Uses AdminMessage (not FlagReport) because:
+ *   - AdminMessage has a nullable `userId` and `userEmail` — no fake
+ *     reporter required for system-generated rows.
+ *   - The category column is a free string; new categories surface
+ *     in `/admin/messages` automatically without schema work.
+ *   - Dedupe is a simple recency window via `createdAt` + body marker.
+ *
+ * Conservative-by-design:
+ *   - Reads the listing's recent DataVerification rows; only fires if
+ *     the last N events are all non-VERIFIED.
+ *   - Never auto-hides the listing.
+ *   - Never auto-marks SOURCE_DEAD or PROGRAM_CLOSED.
+ *   - Returns true if a new AdminMessage row was created, false otherwise.
+ *
+ * Failures inside this helper are swallowed: a failed flag should
+ * never break the cron's main verification path.
+ */
+async function maybeAutoFlag(listingId: string, reason: string | null): Promise<boolean> {
+  try {
+    // Look at the most recent verification events for this listing.
+    const recent = await prisma.dataVerification.findMany({
+      where: { targetType: "listing", targetId: listingId },
+      orderBy: { createdAt: "desc" },
+      take: AUTO_FLAG_FAILURE_THRESHOLD,
+      select: { statusAfter: true },
+    });
+    if (recent.length < AUTO_FLAG_FAILURE_THRESHOLD) return false;
+    if (recent.some((r) => r.statusAfter === "VERIFIED")) return false;
+
+    // Dedupe: skip if an open AdminMessage with our category mentions
+    // this listing within the dedupe window.
+    const since = new Date(Date.now() - AUTO_FLAG_DEDUPE_WINDOW_DAYS * 24 * 60 * 60 * 1000);
+    const existing = await prisma.adminMessage.findFirst({
+      where: {
+        category: AUTO_FLAG_CATEGORY,
+        body: { contains: listingId },
+        createdAt: { gte: since },
+      },
+      select: { id: true },
+    });
+    if (existing) return false;
+
+    await prisma.adminMessage.create({
+      data: {
+        userId: null,
+        userEmail: null,
+        userName: VERIFIED_BY_SENTINEL,
+        category: AUTO_FLAG_CATEGORY,
+        subject: `Verification cron flagged listing ${listingId}`,
+        body: [
+          `Listing ID: ${listingId}`,
+          `Threshold: ${AUTO_FLAG_FAILURE_THRESHOLD} consecutive non-VERIFIED outcomes.`,
+          `Most recent reason: ${reason ?? "(none)"}`,
+          `Action: review the listing's source URL via /admin/verification-queue.`,
+        ].join("\n"),
+        status: "OPEN",
+      },
+    });
+    return true;
+  } catch {
+    return false;
+  }
 }
