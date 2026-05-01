@@ -121,8 +121,13 @@ Implemented on `local/p95-hospital-correction-workflow`, not pushed:
 
 3. `src/app/listing/[id]/page.tsx`
    - Wire `suggestUpdateUrl` on `ListingTrustMetadata` to a stable
-     deep-link URL: `/contact-admin?category=data&subject=Correction%20for%20...`
+     deep-link URL: `/contact-admin?category=coordinator_correction&subject=Correction%20for%20...`
      (URL-encoded listing title + id appended to subject).
+     Default to `coordinator_correction` because the "Suggest an
+     update" affordance is intended for institution-side correction;
+     applicants can still pick any category in the form. Avoid the
+     vague `data` category now that named coordinator categories
+     exist.
 
 4. `src/app/methodology/page.tsx`
    - Replace the single "Verified" block with two sub-blocks:
