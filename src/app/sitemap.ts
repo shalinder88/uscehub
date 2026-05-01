@@ -405,6 +405,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // All routes under /career, /careers, /residency, and /fellowship are
+  // currently noindex,nofollow at the page level. Submitting them in the
+  // sitemap is a noindex/sitemap contradiction (Google asks: "you want me
+  // to crawl this AND not index it?") and is a soft SEO smell. Filter
+  // them out at the source so the sitemap only contains indexable pages.
+  // The routes themselves remain alive and noindex'd until the public
+  // pathway launch is approved separately.
+  const NOINDEX_PREFIXES = [
+    `${baseUrl}/career`,
+    `${baseUrl}/careers`,
+    `${baseUrl}/residency`,
+    `${baseUrl}/fellowship`,
+  ];
+  const isIndexable = (entry: { url: string }) =>
+    !NOINDEX_PREFIXES.some((p) => entry.url === p || entry.url.startsWith(`${p}/`));
+
   return [
     ...staticPages,
     ...statePages,
@@ -413,5 +429,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogIndex,
     ...blogPages,
     ...waiverStatePages,
-  ];
+  ].filter(isIndexable);
 }
