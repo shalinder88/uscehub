@@ -129,8 +129,11 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     },
   });
 
+  const SERIF =
+    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif";
+
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div>
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
@@ -138,29 +141,40 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         ]}
       />
       <FloatingFinder />
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Browse Opportunities</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+
+      {/* Page header — editorial masthead style. Warm paper bg, eyebrow,
+          italic-em heading, italic Charter sub. */}
+      <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="mb-2 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+            — The directory —
+          </p>
+          <h1
+            className="font-serif text-3xl font-normal tracking-tight text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]"
+            style={{ fontFamily: SERIF, letterSpacing: "-0.022em" }}
+          >
+            Browse <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">opportunities</em>
+          </h1>
+          <p className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]" style={{ fontFamily: SERIF }}>
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
 
-          <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
-            <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
+          <details className="group mt-5 rounded-lg border border-[#dfd5b8] bg-[#fcf9eb] p-4 text-sm shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+            <summary className="cursor-pointer font-mono text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:text-[#0fa595]">
               What&apos;s the difference between an observership, externship, elective, and clerkship?
             </summary>
-            <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
+            <div className="mt-3 space-y-2 text-[#4a5057] dark:text-[#bfc1c9]">
               <p>
-                <strong className="text-slate-900 dark:text-slate-50">Clinical rotation</strong> is the umbrella term. In practice the labels below overlap — the same program might call itself an observership at one hospital and an externship at another. Pick by your stage, not by the label.
+                <strong className="text-[#0d1418] dark:text-[#f7f5ec]">Clinical rotation</strong> is the umbrella term. In practice the labels below overlap — the same program might call itself an observership at one hospital and an externship at another. Pick by your stage, not by the label.
               </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Observership</strong> — Shadow-only. No hands on patients. Most common path for IMG graduates preparing for the US Match.</li>
-                <li><strong>Externship</strong> — Often used interchangeably with observership, but sometimes means hands-on activity (taking histories, presenting) under supervision. Rules vary per program.</li>
-                <li><strong>Elective / Clerkship</strong> — Formal for-credit clinical rotation, almost always 4 weeks, usually through AAMC <em>VSLO</em>. For current 4th-year US medical students (some accept international M4s via affiliation agreement).</li>
-                <li><strong>Research fellowship / postdoc</strong> — Research focus with optional clinical shadowing.</li>
-                <li><strong>Volunteer / pre-med</strong> — Structured shadow programs for undergraduates.</li>
+              <ul className="list-disc space-y-1 pl-5">
+                <li><strong className="text-[#0d1418] dark:text-[#f7f5ec]">Observership</strong> — Shadow-only. No hands on patients. Most common path for IMG graduates preparing for the US Match.</li>
+                <li><strong className="text-[#0d1418] dark:text-[#f7f5ec]">Externship</strong> — Often used interchangeably with observership, but sometimes means hands-on activity (taking histories, presenting) under supervision. Rules vary per program.</li>
+                <li><strong className="text-[#0d1418] dark:text-[#f7f5ec]">Elective / Clerkship</strong> — Formal for-credit clinical rotation, almost always 4 weeks, usually through AAMC <em>VSLO</em>. For current 4th-year US medical students (some accept international M4s via affiliation agreement).</li>
+                <li><strong className="text-[#0d1418] dark:text-[#f7f5ec]">Research fellowship / postdoc</strong> — Research focus with optional clinical shadowing.</li>
+                <li><strong className="text-[#0d1418] dark:text-[#f7f5ec]">Volunteer / pre-med</strong> — Structured shadow programs for undergraduates.</li>
               </ul>
-              <p className="text-xs text-slate-500 dark:text-slate-400 pt-1">
+              <p className="pt-1 text-xs italic text-[#7a7f88] dark:text-[#7e8089]" style={{ fontFamily: SERIF }}>
                 Use the <strong>Audience</strong> filter to narrow to programs that actually accept you (USMLE-IMG graduate, Med Student, Pre-Med/Volunteer, or Specialty Visiting).
               </p>
             </div>
@@ -168,8 +182,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-slate-800" />}>
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-[#f0e9d3] dark:bg-[#23262e]" />}>
           <ListingFilters />
         </Suspense>
 
@@ -182,10 +196,15 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
               ))}
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-20 text-center">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] py-20 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
               <div className="mx-auto max-w-sm">
-                <p className="text-lg font-medium text-slate-900 dark:text-white">No listings found</p>
-                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                <p
+                  className="font-serif text-lg font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
+                  No listings found
+                </p>
+                <p className="mt-2 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]" style={{ fontFamily: SERIF }}>
                   Try adjusting your filters or search criteria.
                 </p>
               </div>

@@ -49,10 +49,10 @@ export function ListingFilters() {
   );
 
   return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm">
+    <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="relative sm:col-span-2 lg:col-span-1">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7a7f88] dark:text-[#7e8089]" />
           <input
             type="text"
             placeholder={smartMode ? 'Try "free observerships in New York"...' : "Search hospitals, cities..."}
@@ -81,15 +81,15 @@ export function ListingFilters() {
                 return () => clearTimeout(timeout);
               }
             }}
-            className="flex h-10 w-full rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 pl-9 pr-20 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700"
+            className="flex h-10 w-full rounded-lg border border-[#dfd5b8] bg-[#faf6e8] pl-9 pr-20 py-2 text-sm text-[#0d1418] placeholder:text-[#7a7f88] focus:border-[#a87b2e] focus:outline-none dark:border-[#34373f] dark:bg-[#1d1f26] dark:text-[#f7f5ec] dark:placeholder:text-[#7e8089] dark:focus:border-[#d8a978]"
           />
           <button
             type="button"
             onClick={() => setSmartMode(!smartMode)}
-            className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-colors ${
+            className={`absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 rounded-md px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] transition-colors ${
               smartMode
-                ? "bg-slate-900 text-white"
-                : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
+                ? "bg-[#1a5454] text-white dark:bg-[#0fa595] dark:text-[#0d1418]"
+                : "bg-[#f0e9d3] text-[#4a5057] hover:bg-[#dfd5b8] dark:bg-[#2a2d36] dark:text-[#bfc1c9] dark:hover:bg-[#34373f]"
             }`}
             title="Toggle smart search — parse natural language queries"
           >
@@ -152,37 +152,37 @@ export function ListingFilters() {
         </Select>
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-3">
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-emerald-300 has-[:checked]:bg-emerald-50">
+      <div className="mt-3 flex flex-wrap gap-2.5">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#dfd5b8] px-3 py-2 text-sm transition-colors hover:bg-[#f0e9d3] has-[:checked]:border-[#1a5454] has-[:checked]:bg-[#f0e9d3] dark:border-[#34373f] dark:hover:bg-[#2a2d36] dark:has-[:checked]:border-[#0fa595] dark:has-[:checked]:bg-[#2a2d36]">
           <input
             type="checkbox"
             checked={currentFree}
             onChange={() => toggleParam("free")}
-            className="h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+            className="h-4 w-4 rounded border-[#dfd5b8] text-[#1a5454] focus:ring-[#1a5454]"
           />
-          <span className="font-medium text-slate-700 dark:text-slate-200">Free Programs Only</span>
+          <span className="font-medium text-[#4a5057] dark:text-[#bfc1c9]">Free programs only</span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-blue-300 has-[:checked]:bg-blue-50">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#dfd5b8] px-3 py-2 text-sm transition-colors hover:bg-[#f0e9d3] has-[:checked]:border-[#1a5454] has-[:checked]:bg-[#f0e9d3] dark:border-[#34373f] dark:hover:bg-[#2a2d36] dark:has-[:checked]:border-[#0fa595] dark:has-[:checked]:bg-[#2a2d36]">
           <input
             type="checkbox"
             checked={currentVisa}
             onChange={() => toggleParam("visa")}
-            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            className="h-4 w-4 rounded border-[#dfd5b8] text-[#1a5454] focus:ring-[#1a5454]"
           />
-          <span className="font-medium text-slate-700 dark:text-slate-200">Visa Support</span>
+          <span className="font-medium text-[#4a5057] dark:text-[#bfc1c9]">Visa support</span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-600 px-3 py-2 text-sm transition-colors hover:bg-slate-50 dark:hover:bg-slate-700 has-[:checked]:border-green-300 has-[:checked]:bg-green-50">
+        <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-[#dfd5b8] px-3 py-2 text-sm transition-colors hover:bg-[#f0e9d3] has-[:checked]:border-[#1a5454] has-[:checked]:bg-[#f0e9d3] dark:border-[#34373f] dark:hover:bg-[#2a2d36] dark:has-[:checked]:border-[#0fa595] dark:has-[:checked]:bg-[#2a2d36]">
           <input
             type="checkbox"
             checked={currentVerified}
             onChange={() => toggleParam("verified")}
-            className="h-4 w-4 rounded border-slate-300 text-green-600 focus:ring-green-500"
+            className="h-4 w-4 rounded border-[#dfd5b8] text-[#1a5454] focus:ring-[#1a5454]"
           />
-          <span className="font-medium text-slate-700 dark:text-slate-200">
-            <svg className="mr-1 inline h-3 w-3 text-green-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-            Verified Links
+          <span className="flex items-center gap-1 font-medium text-[#4a5057] dark:text-[#bfc1c9]">
+            <svg className="h-3 w-3 text-[#1a5454] dark:text-[#0fa595]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            Verified links
           </span>
         </label>
       </div>
