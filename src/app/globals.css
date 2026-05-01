@@ -6,26 +6,131 @@
   --font-sans: var(--font-inter);
 }
 
+/* Locked palette — Day = #1 Cream & Teal · Night = Cardiogram Charcoal.
+   Day  = plush cream #faf6e8 / dark ink #0d1418 / deep teal #1a5454 accent.
+   Night = warm charcoal #1d1f26 / warm cream #f7f5ec / medical teal #0fa595.
+   No neon. Italic display via Charter / Iowan / system serif. */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --bg: #ffffff;
-  --bg-alt: #f8fafc;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --card-bg: #ffffff;
+  --background: #faf6e8;
+  --foreground: #0d1418;
+  --bg: #faf6e8;
+  --bg-alt: #f0e9d3;
+  --text: #0d1418;
+  --text-muted: #4a5057;
+  --text-quiet: #7a7f88;
+  --border: #dfd5b8;
+  --border-soft: #ebe2c7;
+  --card-bg: #fcf9eb;
+  --brand: #1a5454;
+  --brand-deep: #0e3838;
+  --brand-soft: #dde7e3;
+  --gold: #a87b2e;
+  --coral: #9c3a2c;
+  /* Map ink density — single-hue plush. Empty fades into a clearly-tinted
+     paper (s0 not too close to bg), max-density reaches deep teal (NOT black —
+     blends with brand family). 6-step ramp keeps low-end states visible. */
+  --map-s0: #ebe2c4;
+  --map-s1: #d4c69a;
+  --map-s2: #a89674;
+  --map-s3: #6f6552;
+  --map-s4: #3d4a4a;
+  --map-s5: #1a3838;
+  --map-stroke: #dfd5b8;
+  --map-hover: #1a5454;
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --bg: #0f172a;
-  --bg-alt: #1e293b;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --card-bg: #1e293b;
+  --background: #1d1f26;
+  --foreground: #f7f5ec;
+  --bg: #1d1f26;
+  --bg-alt: #23262e;
+  --text: #f7f5ec;
+  --text-muted: #bfc1c9;
+  --text-quiet: #7e8089;
+  --border: #34373f;
+  --border-soft: #2a2d36;
+  --card-bg: #23262e;
+  --brand: #0fa595;
+  --brand-deep: #0b8378;
+  --brand-soft: rgba(15,165,149,.14);
+  --gold: #d8a978;
+  --coral: #e7958a;
+  /* Map ink — inverted scale: warm charcoal → muted brand teal. Low-end clearly
+     separated from bg, max-density reaches medium teal (not bright). */
+  --map-s0: #2a2c34;
+  --map-s1: #3a3d46;
+  --map-s2: #5a6058;
+  --map-s3: #7d8e85;
+  --map-s4: #4a8e83;
+  --map-s5: #0fa595;
+  --map-stroke: #34373f;
+  --map-hover: #0fa595;
+}
+
+/* Paper texture — single SVG noise tile, lower opacity. Browsers cache
+   data-URI as a single bitmap, so this paints once instead of recomputing
+   the fractalNoise filter every frame (the previous two-layer setup was
+   GPU-expensive on long pages). will-change + contain hints let the
+   compositor keep the texture on its own layer instead of repainting. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.40;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' seed='5' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 320px 320px;
+  mix-blend-mode: multiply;
+  will-change: opacity;
+  contain: strict;
+}
+.dark body::before, body.dark::before { mix-blend-mode: overlay; opacity: 0.18; }
+/* Make sure interactive content sits above the texture */
+body > * { position: relative; z-index: 2; }
+
+/* Layered card shadow — soft long shadow + tighter inset shadow gives day
+   cards the feel of printed cards on warm paper. Two values so each card
+   reads as a distinct object even on a textured surface. */
+.shadow-plush {
+  box-shadow:
+    0 1px 2px rgba(13, 20, 24, 0.04),
+    0 12px 28px -12px rgba(13, 20, 24, 0.10);
+}
+.shadow-plush-hover:hover {
+  box-shadow:
+    0 2px 4px rgba(13, 20, 24, 0.06),
+    0 22px 40px -16px rgba(13, 20, 24, 0.14);
+}
+.dark .shadow-plush {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 12px 28px -12px rgba(0, 0, 0, 0.55);
+}
+.dark .shadow-plush-hover:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.45),
+    0 22px 40px -16px rgba(0, 0, 0, 0.70);
+}
+
+/* Editorial section divider — double hairline rule, mirrors masthead. */
+.rule-double {
+  border-top: 1px double var(--border, #dfd5b8);
+}
+.dark .rule-double { border-top-color: #34373f; }
+
+/* Drop cap utility — used on the first paragraph of How-It-Works step 01.
+   Italic Charter / Iowan, brand-color, ~3.4em first letter, floated left. */
+.drop-cap::first-letter {
+  font-family: "Charter", "Iowan Old Style", "New York", "Source Serif Pro", ui-serif, Georgia, serif;
+  font-size: 3.4em;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0.85;
+  float: left;
+  margin: 6px 8px 0 0;
+  color: var(--brand);
 }
 
 body {

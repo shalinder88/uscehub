@@ -165,13 +165,19 @@ export default function RecommendClient() {
     setResults(null);
   };
 
+  const SERIF =
+    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif";
+
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center bg-white dark:bg-slate-900">
+      <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
-          <Loader2 className="mx-auto h-8 w-8 animate-spin text-slate-400" />
-          <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-            Finding your best matches...
+          <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#1a5454] dark:text-[#0fa595]" />
+          <p
+            className="mt-4 text-sm italic text-[#7a7f88] dark:text-[#7e8089]"
+            style={{ fontFamily: SERIF }}
+          >
+            Filtering programs that fit your answers…
           </p>
         </div>
       </div>
@@ -180,42 +186,51 @@ export default function RecommendClient() {
 
   if (showResults) {
     return (
-      <div className="bg-white dark:bg-slate-900">
-        <div className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-              Your Top Matches
+      <div>
+        <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+            <p className="mb-2 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+              — Program finder —
+            </p>
+            <h1
+              className="font-serif text-3xl font-normal text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]"
+              style={{ fontFamily: SERIF, letterSpacing: "-0.022em" }}
+            >
+              Programs that <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">fit your answers</em>
             </h1>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            <p
+              className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+              style={{ fontFamily: SERIF }}
+            >
               {results.length} {results.length === 1 ? "program" : "programs"}{" "}
-              matched your preferences
+              matched the filters you set. These are not ranked &mdash; just filtered.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           {/* Summary of selections */}
           <div className="mb-6 flex flex-wrap gap-2">
             {answers.budget && answers.budget !== "any" && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-[#dfd5b8] bg-[#fcf9eb] px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#4a5057] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#bfc1c9]">
                 <DollarSign className="h-3 w-3" />
                 {STEPS[0].options.find((o) => o.value === answers.budget)?.label}
               </span>
             )}
             {answers.specialty && answers.specialty !== "any" && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-[#dfd5b8] bg-[#fcf9eb] px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#4a5057] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#bfc1c9]">
                 <Stethoscope className="h-3 w-3" />
                 {answers.specialty}
               </span>
             )}
             {answers.visa && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-[#dfd5b8] bg-[#fcf9eb] px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#4a5057] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#bfc1c9]">
                 <Globe className="h-3 w-3" />
                 {STEPS[2].options.find((o) => o.value === answers.visa)?.label}
               </span>
             )}
             {answers.region && answers.region !== "any" && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-[#dfd5b8] bg-[#fcf9eb] px-3 py-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#4a5057] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#bfc1c9]">
                 <MapPin className="h-3 w-3" />
                 {STEPS[3].options.find((o) => o.value === answers.region)?.label}
               </span>
@@ -229,13 +244,19 @@ export default function RecommendClient() {
               ))}
             </div>
           ) : (
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-20 text-center">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] py-20 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
               <div className="mx-auto max-w-sm">
-                <Search className="mx-auto h-10 w-10 text-slate-300" />
-                <p className="mt-4 text-lg font-medium text-slate-900 dark:text-slate-100">
-                  No exact matches found
+                <Search className="mx-auto h-10 w-10 text-[#7a7f88] dark:text-[#7e8089]" />
+                <p
+                  className="mt-4 font-serif text-lg font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
+                  No matches found
                 </p>
-                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                <p
+                  className="mt-2 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+                  style={{ fontFamily: SERIF }}
+                >
                   Try broadening your criteria or browse all opportunities.
                 </p>
               </div>
@@ -248,7 +269,7 @@ export default function RecommendClient() {
               Back
             </Button>
             <Button variant="outline" onClick={restart}>
-              Start Over
+              Start over
             </Button>
           </div>
         </div>
@@ -259,14 +280,23 @@ export default function RecommendClient() {
   const Icon = currentStep.icon;
 
   return (
-    <div className="bg-white dark:bg-slate-900">
-      <div className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
-            Program Finder
+    <div>
+      <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="mb-2 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+            — Program finder —
+          </p>
+          <h1
+            className="font-serif text-3xl font-normal text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]"
+            style={{ fontFamily: SERIF, letterSpacing: "-0.022em" }}
+          >
+            Filter programs by <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">what fits you</em>
           </h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Answer a few questions and we&apos;ll find the best programs for you
+          <p
+            className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+            style={{ fontFamily: SERIF }}
+          >
+            Four short questions. We narrow the directory &mdash; we do not rank or recommend.
           </p>
         </div>
       </div>
@@ -274,15 +304,15 @@ export default function RecommendClient() {
       <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
         {/* Progress bar */}
         <div className="mb-8">
-          <div className="flex items-center justify-between text-xs text-slate-400">
+          <div className="flex items-center justify-between font-mono text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#7a7f88] dark:text-[#7e8089]">
             <span>
               Step {step + 1} of {STEPS.length}
             </span>
             <span>{Math.round(((step + 1) / STEPS.length) * 100)}%</span>
           </div>
-          <div className="mt-2 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-800">
+          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-[#f0e9d3] dark:bg-[#2a2d36]">
             <div
-              className="h-1.5 rounded-full bg-slate-900 transition-all duration-500"
+              className="h-1.5 rounded-full bg-[#1a5454] transition-all duration-500 dark:bg-[#0fa595]"
               style={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
             />
           </div>
@@ -290,13 +320,19 @@ export default function RecommendClient() {
 
         {/* Question */}
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
-            <Icon className="h-6 w-6 text-slate-700 dark:text-slate-300" />
+          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#dfd5b8] bg-[#f0e9d3] dark:border-[#34373f] dark:bg-[#2a2d36]">
+            <Icon className="h-6 w-6 text-[#1a5454] dark:text-[#0fa595]" />
           </div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+          <h2
+            className="font-serif text-xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+            style={{ fontFamily: SERIF }}
+          >
             {currentStep.title}
           </h2>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          <p
+            className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+            style={{ fontFamily: SERIF }}
+          >
             {currentStep.subtitle}
           </p>
         </div>
@@ -307,20 +343,25 @@ export default function RecommendClient() {
             <button
               key={option.value}
               onClick={() => selectOption(option.value)}
-              className={`w-full rounded-xl border p-4 text-left transition-all hover:-translate-y-0.5 hover:shadow-md ${
+              className={`w-full rounded-xl border p-4 text-left transition-all hover:-translate-y-0.5 ${
                 answers[currentStep.key] === option.value
-                  ? "border-slate-900 bg-slate-50 dark:bg-slate-800 shadow-sm"
-                  : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-300"
+                  ? "border-[#1a5454] bg-[#f0e9d3] shadow-plush dark:border-[#0fa595] dark:bg-[#2a2d36]"
+                  : "border-[#dfd5b8] bg-[#fcf9eb] hover:border-[#a87b2e] dark:border-[#34373f] dark:bg-[#23262e] dark:hover:border-[#d8a978]"
               }`}
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-slate-900 dark:text-slate-100">{option.label}</p>
-                  <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
+                  <p
+                    className="font-serif font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{ fontFamily: SERIF }}
+                  >
+                    {option.label}
+                  </p>
+                  <p className="mt-0.5 text-sm text-[#4a5057] dark:text-[#bfc1c9]">
                     {option.description}
                   </p>
                 </div>
-                <ArrowRight className="h-4 w-4 shrink-0 text-slate-400" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-[#7a7f88] dark:text-[#7e8089]" />
               </div>
             </button>
           ))}

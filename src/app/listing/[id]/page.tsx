@@ -152,13 +152,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="border-b border-slate-200 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 dark:bg-slate-900">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant={typeVariant}>
               {LISTING_TYPE_LABELS[listing.listingType] || listing.listingType}
@@ -176,20 +176,27 @@ export default async function ListingPage({ params }: ListingPageProps) {
               </Badge>
             )}
           </div>
-          <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+          <h1
+            className="mt-4 font-serif text-3xl font-normal text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]"
+            style={{
+              fontFamily:
+                "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+              letterSpacing: "-0.022em",
+            }}
+          >
             {listing.title}
           </h1>
-          <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+          <div className="mt-3 flex flex-wrap items-center gap-4 font-mono text-[11px] uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#7e8089]">
             <span className="flex items-center gap-1">
-              <MapPin className="h-4 w-4" />
+              <MapPin className="h-3.5 w-3.5" />
               {listing.city}, {US_STATES[listing.state] || listing.state}
             </span>
             <span className="flex items-center gap-1">
-              <Eye className="h-4 w-4" />
+              <Eye className="h-3.5 w-3.5" />
               {listing.views + 1} views
             </span>
             <span className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
+              <Calendar className="h-3.5 w-3.5" />
               Posted {formatDate(listing.createdAt)}
             </span>
           </div>
@@ -214,57 +221,93 @@ export default async function ListingPage({ params }: ListingPageProps) {
               />
             )}
 
-            <div className="mt-6 grid grid-cols-2 gap-4 rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5 sm:grid-cols-3">
+            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-5 rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-6 shadow-plush dark:border-[#34373f] dark:bg-[#23262e] sm:grid-cols-3">
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
                   Specialty
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                <p
+                  className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
                   {listing.specialty}
                 </p>
               </div>
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
                   Duration
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                <p
+                  className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
                   {listing.duration}
                 </p>
               </div>
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
                   Format
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                <p
+                  className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
                   {listing.format.replace("_", " ")}
                 </p>
               </div>
               {listing.numberOfSpots && (
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
-                    Spots Available
+                  <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
+                    Spots available
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                  <p
+                    className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{
+                      fontFamily:
+                        "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                    }}
+                  >
                     {listing.numberOfSpots}
                   </p>
                 </div>
               )}
               {listing.startDate && (
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
-                    Start Date
+                  <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
+                    Start date
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                  <p
+                    className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{
+                      fontFamily:
+                        "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                    }}
+                  >
                     {listing.startDate}
                   </p>
                 </div>
               )}
               {listing.applicationDeadline && (
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                  <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
                     Deadline
                   </p>
-                  <p className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100">
+                  <p
+                    className="mt-1 text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{
+                      fontFamily:
+                        "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                    }}
+                  >
                     {listing.applicationDeadline}
                   </p>
                 </div>
@@ -272,51 +315,84 @@ export default async function ListingPage({ params }: ListingPageProps) {
             </div>
 
             {(listing.stepRequirements || listing.ecfmgRequired || listing.graduationYearPref || listing.eligibilitySummary) && (
-              <div className="mt-6">
-                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Eligibility Requirements
+              <div className="mt-8">
+                <p className="mb-2 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+                  — Eligibility —
+                </p>
+                <h2
+                  className="font-serif text-xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
+                  Who this program accepts
                 </h2>
-                <div className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                <div className="mt-3 space-y-2 text-sm leading-relaxed text-[#4a5057] dark:text-[#bfc1c9]">
                   {listing.eligibilitySummary && (
                     <p>{listing.eligibilitySummary}</p>
                   )}
                   {listing.stepRequirements && (
                     <p>
-                      <span className="font-medium text-slate-700">USMLE: </span>
-                      {listing.stepRequirements}
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:text-[#0fa595]">USMLE</span>
+                      <span className="ml-2">{listing.stepRequirements}</span>
                     </p>
                   )}
                   {listing.ecfmgRequired && (
                     <p>
-                      <span className="font-medium text-slate-700">ECFMG: </span>
-                      {listing.ecfmgRequired}
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:text-[#0fa595]">ECFMG</span>
+                      <span className="ml-2">{listing.ecfmgRequired}</span>
                     </p>
                   )}
                   {listing.graduationYearPref && (
                     <p>
-                      <span className="font-medium text-slate-700">Graduation Year: </span>
-                      {listing.graduationYearPref}
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:text-[#0fa595]">Graduation year</span>
+                      <span className="ml-2">{listing.graduationYearPref}</span>
                     </p>
                   )}
                 </div>
               </div>
             )}
 
-            <div className="mt-6">
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                Description
+            <div className="mt-8">
+              <p className="mb-2 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+                — Program description —
+              </p>
+              <h2
+                className="font-serif text-xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                style={{
+                  fontFamily:
+                    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                }}
+              >
+                What the program looks like
               </h2>
-              <div className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <div
+                className="mt-3 whitespace-pre-wrap text-[15px] leading-relaxed text-[#4a5057] dark:text-[#bfc1c9]"
+                style={{
+                  fontFamily:
+                    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                }}
+              >
                 {listing.fullDescription || listing.shortDescription}
               </div>
             </div>
 
             {listing.housingSupport && (
-              <div className="mt-6">
-                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Housing Support
+              <div className="mt-8">
+                <p className="mb-2 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+                  — Housing —
+                </p>
+                <h2
+                  className="font-serif text-xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
+                  Housing support
                 </h2>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                <p className="mt-2 text-sm text-[#4a5057] dark:text-[#bfc1c9]">
                   {listing.housingSupport}
                 </p>
               </div>
@@ -325,15 +401,30 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <Separator className="my-8" />
 
             <div>
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+              <p className="mb-2 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+                — Community feedback —
+              </p>
+              <h2
+                className="font-serif text-xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                style={{
+                  fontFamily:
+                    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                }}
+              >
                 Reviews
                 {listing.reviews.length > 0 && (
-                  <span className="ml-2 text-sm font-normal text-slate-400">
+                  <span className="ml-2 text-sm font-normal italic text-[#7a7f88] dark:text-[#7e8089]">
                     ({listing.reviews.length})
                   </span>
                 )}
               </h2>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              <p
+                className="mt-2 text-xs italic leading-relaxed text-[#7a7f88] dark:text-[#7e8089]"
+                style={{
+                  fontFamily:
+                    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                }}
+              >
                 Reviews are user-submitted feedback, moderated before
                 publishing. They are separate from the verification badges
                 shown on this page, which refer to source-link checks, not
@@ -348,13 +439,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
                         key={star}
                         className={`h-5 w-5 ${
                           star <= Math.round(avgRating)
-                            ? "fill-amber-400 text-amber-400"
-                            : "text-slate-200"
+                            ? "fill-[#a87b2e] text-[#a87b2e] dark:fill-[#d8a978] dark:text-[#d8a978]"
+                            : "text-[#dfd5b8] dark:text-[#34373f]"
                         }`}
                       />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-slate-700">
+                  <span className="text-sm font-medium text-[#0d1418] dark:text-[#f7f5ec]">
                     {avgRating.toFixed(1)} out of 5
                   </span>
                 </div>
@@ -365,7 +456,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   {listing.reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="rounded-lg border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-4"
+                      className="rounded-lg border border-[#dfd5b8] bg-[#fcf9eb] p-4 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
@@ -378,12 +469,18 @@ export default async function ListingPage({ params }: ListingPageProps) {
                             size="sm"
                           />
                           <div>
-                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                            <p
+                              className="text-sm font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                              style={{
+                                fontFamily:
+                                  "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                              }}
+                            >
                               {review.anonymous
                                 ? "Anonymous"
                                 : review.user.name}
                             </p>
-                            <p className="text-xs text-slate-400">
+                            <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#7e8089]">
                               {formatDate(review.createdAt)}
                             </p>
                           </div>
@@ -394,15 +491,15 @@ export default async function ListingPage({ params }: ListingPageProps) {
                               key={star}
                               className={`h-3.5 w-3.5 ${
                                 star <= review.overallRating
-                                  ? "fill-amber-400 text-amber-400"
-                                  : "text-slate-200"
+                                  ? "fill-[#a87b2e] text-[#a87b2e] dark:fill-[#d8a978] dark:text-[#d8a978]"
+                                  : "text-[#dfd5b8] dark:text-[#34373f]"
                               }`}
                             />
                           ))}
                         </div>
                       </div>
                       {review.comment && (
-                        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+                        <p className="mt-3 text-sm text-[#4a5057] dark:text-[#bfc1c9]">
                           {review.comment}
                         </p>
                       )}
@@ -421,7 +518,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   ))}
                 </div>
               ) : (
-                <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+                <p
+                  className="mt-3 text-sm italic text-[#7a7f88] dark:text-[#7e8089]"
+                  style={{
+                    fontFamily:
+                      "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                  }}
+                >
                   No reviews yet. Be the first to share your experience.
                 </p>
               )}
@@ -433,7 +536,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
             <Separator className="my-8" />
             <div className="flex items-center justify-between">
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#7e8089]">
                 Something wrong with this listing?
               </p>
               <FlagButton listingId={listing.id} />
@@ -442,12 +545,18 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-5">
-              <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
+              <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-6 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
                 <div className="text-center">
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                  <p className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#7a7f88] dark:text-[#7e8089]">
                     Cost
                   </p>
-                  <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
+                  <p
+                    className="mt-1 font-serif text-2xl font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{
+                      fontFamily:
+                        "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                    }}
+                  >
                     {listing.cost}
                   </p>
                 </div>
@@ -472,10 +581,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
                   const caption = display.ctaCaption;
                   const captionClass =
                     decision.variant === "verified"
-                      ? "mt-2 text-center text-xs text-emerald-600 dark:text-emerald-400"
+                      ? "mt-2 text-center text-xs text-[#1a5454] dark:text-[#0fa595]"
                       : decision.variant === "official-source"
-                      ? "mt-2 text-center text-xs text-amber-700 dark:text-amber-400"
-                      : "mt-2 text-center text-xs text-slate-500 dark:text-slate-400";
+                      ? "mt-2 text-center text-xs text-[#a87b2e] dark:text-[#d8a978]"
+                      : "mt-2 text-center text-xs text-[#7a7f88] dark:text-[#7e8089]";
 
                   if (decision.href) {
                     const linkProps = decision.external
@@ -533,7 +642,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 />
 
                 {listing.contactEmail && (
-                  <p className="mt-3 text-center text-xs text-slate-400">
+                  <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#7e8089]">
                     Contact: {listing.contactEmail}
                   </p>
                 )}
@@ -541,25 +650,31 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
               {/* Organization section - only show for real posters, not system account */}
               {listing.organization && listing.organization.name !== "USCEHub Directory" && (
-                <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
+                <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-5 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700">
-                      <Building2 className="h-5 w-5 text-slate-600 dark:text-slate-300" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#dfd5b8] bg-[#f0e9d3] dark:border-[#34373f] dark:bg-[#2a2d36]">
+                      <Building2 className="h-5 w-5 text-[#1a5454] dark:text-[#0fa595]" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                      <p
+                        className="font-serif text-sm font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                        style={{
+                          fontFamily:
+                            "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                        }}
+                      >
                         {listing.organization.name}
                       </p>
                       {listing.organization.type && (
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#7a7f88] dark:text-[#7e8089]">
                           {listing.organization.type}
                         </p>
                       )}
                     </div>
                   </div>
-                  <div className="mt-3 space-y-1 text-sm text-slate-500 dark:text-slate-400">
+                  <div className="mt-3 space-y-1 text-sm text-[#4a5057] dark:text-[#bfc1c9]">
                     <p className="flex items-center gap-1.5">
-                      <MapPin className="h-3.5 w-3.5" />
+                      <MapPin className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
                       {listing.organization.city},{" "}
                       {US_STATES[listing.organization.state] ||
                         listing.organization.state}
@@ -569,7 +684,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                         href={listing.organization.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 hover:text-slate-700"
+                        className="flex items-center gap-1.5 text-[#1a5454] hover:underline dark:text-[#0fa595]"
                       >
                         <ExternalLink className="h-3.5 w-3.5" />
                         Website
@@ -579,7 +694,7 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 </div>
               )}
 
-              <div className="rounded-xl border border-slate-200 dark:border-slate-700 dark:border-slate-700 p-5">
+              <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-5 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
                 <ShareButtons title={listing.title} />
               </div>
             </div>

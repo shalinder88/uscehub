@@ -8,13 +8,20 @@ interface USMapProps {
   stateCounts: Record<string, number>;
 }
 
-function getFillColor(count: number): string {
-  if (count <= 0) return "#e2e8f0";
-  if (count <= 2) return "#93c5fd";
-  if (count <= 5) return "#60a5fa";
-  if (count <= 10) return "#3b82f6";
-  if (count <= 20) return "#2563eb";
-  return "#1d4ed8";
+/**
+ * Density level 0–5. Returned as a CSS variable name so the map respects the
+ * active theme (#37 day = navy ink density on warm paper, #38 night = warm
+ * cream density on near-black). All map vars are defined in `globals.css`
+ * under `:root` and `.dark` and are component-agnostic — the same scale will
+ * be reused by pathway 2 (jobs density) and pathway 3 (fellowship density).
+ */
+function getFillVar(count: number): string {
+  if (count <= 0) return "var(--map-s0)";
+  if (count <= 2) return "var(--map-s1)";
+  if (count <= 5) return "var(--map-s2)";
+  if (count <= 10) return "var(--map-s3)";
+  if (count <= 20) return "var(--map-s4)";
+  return "var(--map-s5)";
 }
 
 const STATE_PATHS: Record<string, string> = {
@@ -103,9 +110,11 @@ export function USMap({ stateCounts }: USMapProps) {
             <path
               key={code}
               d={path}
-              fill={isHovered ? "#1e40af" : getFillColor(count)}
-              stroke="#ffffff"
-              strokeWidth="1"
+              style={{
+                fill: isHovered ? "var(--map-hover)" : getFillVar(count),
+                stroke: "var(--map-stroke)",
+              }}
+              strokeWidth="0.75"
               className="cursor-pointer transition-colors duration-150"
               onMouseEnter={() => setHoveredState(code)}
               onMouseLeave={() => setHoveredState(null)}
@@ -117,22 +126,37 @@ export function USMap({ stateCounts }: USMapProps) {
 
       {hoveredState && (
         <div
-          className="pointer-events-none absolute z-10 rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-lg"
+          className="pointer-events-none absolute z-10 rounded-lg border border-[#dfd5b8] bg-white px-3 py-2 shadow-lg dark:border-[#34373f] dark:bg-[#23262e]"
           style={{
             left: tooltipPos.x,
             top: tooltipPos.y,
             transform: "translateX(-50%)",
           }}
         >
-          <p className="text-sm font-semibold text-slate-900">
+          <p className="text-sm font-semibold text-[#0d1418] dark:text-[#f7f5ec]">
             {US_STATES[hoveredState] || hoveredState}
           </p>
-          <p className="text-xs text-slate-500">
+          <p className="font-mono text-xs text-[#4a5057] dark:text-[#bfc1c9]">
             {stateCounts[hoveredState] || 0} listing
             {(stateCounts[hoveredState] || 0) !== 1 ? "s" : ""}
           </p>
         </div>
       )}
+
+      {/* Density legend — color marker only, no prose. Mirrors #40 mockup.
+          flex-wrap + larger gap so labels don't crowd swatches at 375px. */}
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[9.5px] font-medium uppercase tracking-[0.16em] text-[#7a7f88] dark:text-[#7e8089]">
+        <span className="whitespace-nowrap">Fewer</span>
+        <span className="inline-flex overflow-hidden rounded-[3px]">
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s0)" }} />
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s1)" }} />
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s2)" }} />
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s3)" }} />
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s4)" }} />
+          <span className="block h-2.5 w-[22px]" style={{ background: "var(--map-s5)" }} />
+        </span>
+        <span className="whitespace-nowrap">More listings</span>
+      </div>
     </div>
   );
 }

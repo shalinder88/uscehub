@@ -41,15 +41,15 @@ export function ErasCountdown() {
   if (!info) return null;
 
   return (
-    <div className="flex items-center justify-center gap-1.5 bg-slate-800 py-2 text-xs text-slate-400">
-      <Clock className="h-3 w-3" />
+    <div className="flex items-center justify-center gap-1.5 border-b border-[#dfd5b8] bg-[#f0e9d3] py-2 text-xs text-[#4a5057] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#bfc1c9]">
+      <Clock className="h-3 w-3 text-[#1a5454] dark:text-[#1a5454]" />
       {info.open ? (
         <span>
-          ERAS {info.matchYear} is <span className="font-semibold text-emerald-400">OPEN</span> — apply now!
+          ERAS {info.matchYear} is <span className="font-mono font-semibold text-[#1a5454] dark:text-[#1a5454]">OPEN</span> — apply now
         </span>
       ) : (
         <span>
-          <span className="font-semibold text-white">{info.days}</span> days until ERAS {info.matchYear} opens
+          <span className="font-mono font-semibold text-[#0d1418] dark:text-[#f7f5ec]">{info.days}</span> days until ERAS {info.matchYear} opens
         </span>
       )}
     </div>

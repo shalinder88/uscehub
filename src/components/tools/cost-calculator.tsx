@@ -35,6 +35,9 @@ interface CostCalculatorProps {
   compact?: boolean;
 }
 
+const SERIF =
+  "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif";
+
 export function CostCalculator({ compact = false }: CostCalculatorProps) {
   const [city, setCity] = useState("");
   const [duration, setDuration] = useState("");
@@ -61,17 +64,29 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
     "$" + n.toLocaleString("en-US");
 
   return (
-    <div className={compact ? "" : "rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm"}>
+    <div
+      className={
+        compact
+          ? ""
+          : "rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-6 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]"
+      }
+    >
       {!compact && (
         <div className="mb-6">
           <div className="flex items-center gap-2">
-            <Calculator className="h-5 w-5 text-slate-700 dark:text-slate-300 dark:text-slate-300" />
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
-              Cost Calculator
+            <Calculator className="h-5 w-5 text-[#1a5454] dark:text-[#0fa595]" />
+            <h3
+              className="font-serif text-lg font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+              style={{ fontFamily: SERIF }}
+            >
+              Cost estimator
             </h3>
           </div>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
-            Estimate the total cost of your clinical experience in the US
+          <p
+            className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+            style={{ fontFamily: SERIF }}
+          >
+            A rough estimate of all-in cost. Not financial advice.
           </p>
         </div>
       )}
@@ -104,17 +119,17 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
         </Select>
 
         <div className="w-full">
-          <label className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300 dark:text-slate-300">
-            Program Fee (optional)
+          <label className="mb-1.5 block text-sm font-medium text-[#4a5057] dark:text-[#bfc1c9]">
+            Program fee (optional)
           </label>
           <div className="relative">
-            <DollarSign className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <DollarSign className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7a7f88] dark:text-[#7e8089]" />
             <input
               type="number"
               placeholder="0"
               value={programFee}
               onChange={(e) => setProgramFee(e.target.value)}
-              className="flex h-10 w-full rounded-lg border border-slate-300 bg-white dark:bg-slate-900 pl-9 pr-3 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+              className="flex h-10 w-full rounded-lg border border-[#dfd5b8] bg-[#faf6e8] pl-9 pr-3 py-2 text-sm text-[#0d1418] placeholder:text-[#7a7f88] focus:border-[#a87b2e] focus:outline-none dark:border-[#34373f] dark:bg-[#1d1f26] dark:text-[#f7f5ec] dark:placeholder:text-[#7e8089] dark:focus:border-[#d8a978]"
             />
           </div>
         </div>
@@ -122,77 +137,104 @@ export function CostCalculator({ compact = false }: CostCalculatorProps) {
 
       {showEstimate && (
         <div className="mt-6">
-          <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 p-4">
-            <h4 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
-              Estimated Cost Breakdown ({durationData.label} in {city})
+          <div className="rounded-lg border border-[#dfd5b8] bg-[#f0e9d3] p-5 shadow-plush dark:border-[#34373f] dark:bg-[#2a2d36]">
+            <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+              — Breakdown —
+            </p>
+            <h4
+              className="mb-4 font-serif text-base font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+              style={{ fontFamily: SERIF }}
+            >
+              Estimated cost ({durationData.label} in {city})
             </h4>
 
             <div className="space-y-2.5">
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
-                  <DollarSign className="h-3.5 w-3.5" />
-                  Program Fee
+                <span className="flex items-center gap-2 text-[#4a5057] dark:text-[#bfc1c9]">
+                  <DollarSign className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
+                  Program fee
                 </span>
-                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                <span
+                  className="text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
                   {fee > 0 ? formatUsd(fee) : "Varies"}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
-                  <Home className="h-3.5 w-3.5" />
+                <span className="flex items-center gap-2 text-[#4a5057] dark:text-[#bfc1c9]">
+                  <Home className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
                   Housing
                 </span>
-                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                <span
+                  className="text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
                   {formatUsd(housing)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
-                  <Utensils className="h-3.5 w-3.5" />
+                <span className="flex items-center gap-2 text-[#4a5057] dark:text-[#bfc1c9]">
+                  <Utensils className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
                   Food
                 </span>
-                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                <span
+                  className="text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
                   {formatUsd(food)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
-                  <Bus className="h-3.5 w-3.5" />
+                <span className="flex items-center gap-2 text-[#4a5057] dark:text-[#bfc1c9]">
+                  <Bus className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
                   Transportation
                 </span>
-                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                <span
+                  className="text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
                   {formatUsd(transport)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <span className="flex items-center gap-2 text-slate-600 dark:text-slate-400 dark:text-slate-400">
-                  <Shield className="h-3.5 w-3.5" />
-                  Health Insurance
+                <span className="flex items-center gap-2 text-[#4a5057] dark:text-[#bfc1c9]">
+                  <Shield className="h-3.5 w-3.5 text-[#7a7f88] dark:text-[#7e8089]" />
+                  Health insurance
                 </span>
-                <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
-                  {formatUsd(insuranceMin)} - {formatUsd(insuranceMax)}
+                <span
+                  className="text-[14px] text-[#0d1418] dark:text-[#f7f5ec]"
+                  style={{ fontFamily: SERIF }}
+                >
+                  {formatUsd(insuranceMin)} – {formatUsd(insuranceMax)}
                 </span>
               </div>
 
-              <div className="border-t border-slate-200 dark:border-slate-700 pt-2.5">
+              <div className="border-t border-[#dfd5b8] pt-2.5 dark:border-[#34373f]">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">
-                    Estimated Total
+                  <span className="font-mono text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:text-[#0fa595]">
+                    Estimated total
                   </span>
-                  <span className="text-lg font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">
+                  <span
+                    className="font-serif text-lg font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+                    style={{ fontFamily: SERIF }}
+                  >
                     {formatUsd(totalMin)}
-                    {totalMin !== totalMax && ` - ${formatUsd(totalMax)}`}
+                    {totalMin !== totalMax && ` – ${formatUsd(totalMax)}`}
                   </span>
                 </div>
               </div>
             </div>
 
-            <p className="mt-3 text-xs text-slate-400">
-              Estimates based on average costs. Actual costs may vary by neighborhood, lifestyle, and time of year.
+            <p
+              className="mt-3 text-xs italic text-[#7a7f88] dark:text-[#7e8089]"
+              style={{ fontFamily: SERIF }}
+            >
+              Estimates based on average costs. Actual costs vary by neighborhood, lifestyle, and time of year.
             </p>
           </div>
         </div>

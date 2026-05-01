@@ -66,9 +66,9 @@ const FORMAT_LABELS: Record<string, string> = {
 
 function BoolCell({ value }: { value: boolean }) {
   return value ? (
-    <Check className="mx-auto h-4 w-4 text-emerald-600" />
+    <Check className="mx-auto h-4 w-4 text-[#1a5454] dark:text-[#0fa595]" />
   ) : (
-    <X className="mx-auto h-4 w-4 text-slate-300" />
+    <X className="mx-auto h-4 w-4 text-[#dfd5b8] dark:text-[#34373f]" />
   );
 }
 
@@ -87,7 +87,7 @@ function VerificationCell({ listing }: { listing: ComparedListing }) {
     lastVerifiedAt: listing.lastVerifiedAt,
   });
   if (status === "unverified") {
-    return <X className="mx-auto h-4 w-4 text-slate-300" aria-label="Source not yet verified" />;
+    return <X className="mx-auto h-4 w-4 text-[#dfd5b8] dark:text-[#34373f]" aria-label="Source not yet verified" />;
   }
   return (
     <div className="flex justify-center">
@@ -176,34 +176,51 @@ export default function CompareClient() {
     { label: "Deadline", render: (l) => l.applicationDeadline || "—" },
   ];
 
+  const SERIF =
+    "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif";
+
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-800">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-8">
+    <div className="min-h-screen">
+      <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="mb-2 font-mono text-[10.5px] font-medium uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+            — Side by side —
+          </p>
           <div className="flex items-center gap-2">
-            <GitCompareArrows className="h-5 w-5 text-slate-700 dark:text-slate-300" />
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Compare Programs</h1>
+            <GitCompareArrows className="h-5 w-5 text-[#1a5454] dark:text-[#0fa595]" />
+            <h1
+              className="font-serif text-3xl font-normal text-[#0d1418] dark:text-[#f7f5ec] sm:text-[36px]"
+              style={{ fontFamily: SERIF, letterSpacing: "-0.022em" }}
+            >
+              Compare <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">programs</em>
+            </h1>
           </div>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            Select 2-3 programs to compare side by side
+          <p
+            className="mt-1 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+            style={{ fontFamily: SERIF }}
+          >
+            Pick 2&ndash;3 programs to set them side by side. Source-linked fields where available.
           </p>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 
         {/* Selection */}
-        <div className="mb-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
+        <div className="mb-6 rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-5 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
           <div className="flex flex-wrap items-end gap-3">
             {selectedIds.map((id, i) => (
               <div key={i} className="min-w-[200px] flex-1">
-                <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+                <label className="mb-1 block font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7a7f88] dark:text-[#7e8089]">
                   Program {i + 1}
                 </label>
                 <div className="flex gap-1">
                   <select
                     value={id}
                     onChange={(e) => handleSelect(i, e.target.value)}
-                    className="flex h-10 w-full appearance-none rounded-lg border border-slate-300 bg-white dark:bg-slate-900 px-3 py-2 pr-8 text-sm text-slate-900 dark:text-slate-100 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
+                    className="flex h-10 w-full appearance-none rounded-lg border border-[#dfd5b8] bg-[#faf6e8] px-3 py-2 pr-8 text-sm text-[#0d1418] focus:border-[#a87b2e] focus:outline-none dark:border-[#34373f] dark:bg-[#1d1f26] dark:text-[#f7f5ec] dark:focus:border-[#d8a978]"
                   >
-                    <option value="">Select a program...</option>
+                    <option value="">Select a program…</option>
                     {allListings.map((l) => (
                       <option key={l.id} value={l.id}>
                         {l.title} — {l.city}, {l.state}
@@ -213,7 +230,7 @@ export default function CompareClient() {
                   {selectedIds.length > 2 && (
                     <button
                       onClick={() => removeSlot(i)}
-                      className="shrink-0 rounded-lg px-2 text-slate-400 hover:text-slate-600"
+                      className="shrink-0 rounded-lg px-2 text-[#7a7f88] hover:text-[#0d1418] dark:hover:text-[#f7f5ec]"
                     >
                       <X className="h-4 w-4" />
                     </button>
@@ -224,7 +241,7 @@ export default function CompareClient() {
             {selectedIds.length < 3 && (
               <button
                 onClick={addSlot}
-                className="h-10 rounded-lg border border-dashed border-slate-300 px-4 text-sm text-slate-500 dark:text-slate-400 hover:border-slate-400 hover:text-slate-700 dark:text-slate-300"
+                className="h-10 rounded-lg border border-dashed border-[#dfd5b8] px-4 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#7a7f88] hover:border-[#a87b2e] hover:text-[#0d1418] dark:border-[#34373f] dark:text-[#7e8089] dark:hover:border-[#d8a978] dark:hover:text-[#f7f5ec]"
               >
                 + Add
               </button>
@@ -232,27 +249,28 @@ export default function CompareClient() {
             <button
               onClick={handleCompare}
               disabled={selectedIds.filter(Boolean).length < 2 || loading}
-              className="h-10 rounded-lg bg-slate-900 px-5 text-sm font-medium text-white hover:bg-slate-800 disabled:opacity-40"
+              className="h-10 rounded-lg bg-[#1a5454] px-5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-white shadow-plush hover:bg-[#0e3838] disabled:opacity-40 dark:bg-[#0fa595] dark:hover:bg-[#0b8378]"
             >
-              {loading ? "Loading..." : "Compare"}
+              {loading ? "Loading…" : "Compare"}
             </button>
           </div>
         </div>
 
         {/* Comparison Table */}
         {compared.length >= 2 && (
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
-                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                <tr className="border-b border-[#dfd5b8] bg-[#f0e9d3] dark:border-[#34373f] dark:bg-[#2a2d36]">
+                  <th className="px-4 py-3 text-left font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7a7f88] dark:text-[#7e8089]">
                     Attribute
                   </th>
                   {compared.map((l) => (
                     <th key={l.id} className="px-4 py-3 text-center">
                       <Link
                         href={`/listing/${l.id}`}
-                        className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                        className="font-serif text-sm font-medium text-[#1a5454] hover:underline dark:text-[#0fa595]"
+                        style={{ fontFamily: SERIF }}
                       >
                         {l.title}
                       </Link>
@@ -264,28 +282,28 @@ export default function CompareClient() {
                 {rows.map((row, i) => (
                   <tr
                     key={row.label}
-                    className={i % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-slate-50/50"}
+                    className={i % 2 === 0 ? "" : "bg-[#f0e9d3]/40 dark:bg-[#2a2d36]/40"}
                   >
-                    <td className="whitespace-nowrap px-4 py-3 text-xs font-medium text-slate-600 dark:text-slate-400">
+                    <td className="whitespace-nowrap px-4 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">
                       {row.label}
                     </td>
                     {compared.map((l) => (
                       <td
                         key={l.id}
-                        className="px-4 py-3 text-center text-sm text-slate-700 dark:text-slate-300"
+                        className="px-4 py-3 text-center text-sm text-[#0d1418] dark:text-[#f7f5ec]"
                       >
                         {row.render(l)}
                       </td>
                     ))}
                   </tr>
                 ))}
-                <tr className="border-t border-slate-200 dark:border-slate-700">
-                  <td className="px-4 py-3 text-xs font-medium text-slate-600 dark:text-slate-400">Details</td>
+                <tr className="border-t border-[#dfd5b8] dark:border-[#34373f]">
+                  <td className="px-4 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">Details</td>
                   {compared.map((l) => (
                     <td key={l.id} className="px-4 py-3 text-center">
                       <Link
                         href={`/listing/${l.id}`}
-                        className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+                        className="inline-flex items-center gap-1 font-mono text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#1a5454] hover:underline dark:text-[#0fa595]"
                       >
                         View <ArrowRight className="h-3 w-3" />
                       </Link>
@@ -301,15 +319,19 @@ export default function CompareClient() {
         {compared.length >= 2 && (
           <div className="mt-6 space-y-4 sm:hidden">
             {compared.map((l) => (
-              <div key={l.id} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm">
-                <Link href={`/listing/${l.id}`} className="font-semibold text-blue-600 hover:text-blue-700">
+              <div key={l.id} className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+                <Link
+                  href={`/listing/${l.id}`}
+                  className="font-serif font-medium text-[#1a5454] hover:underline dark:text-[#0fa595]"
+                  style={{ fontFamily: SERIF }}
+                >
                   {l.title}
                 </Link>
                 <dl className="mt-3 space-y-2 text-sm">
                   {rows.map((row) => (
                     <div key={row.label} className="flex items-center justify-between">
-                      <dt className="text-xs text-slate-500 dark:text-slate-400">{row.label}</dt>
-                      <dd className="text-slate-700 dark:text-slate-300">{row.render(l)}</dd>
+                      <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">{row.label}</dt>
+                      <dd className="text-[#0d1418] dark:text-[#f7f5ec]">{row.render(l)}</dd>
                     </div>
                   ))}
                 </dl>

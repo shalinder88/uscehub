@@ -137,27 +137,39 @@ export default async function SpecialtyPage({
   };
 
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — editorial header on warm paper */}
+      <div className="border-b border-[#dfd5b8] dark:border-[#34373f]">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-1.5 text-sm text-slate-300">
-              <Stethoscope className="h-4 w-4" />
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#dfd5b8] bg-[#fcf9eb] px-4 py-1.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#1a5454] dark:border-[#34373f] dark:bg-[#23262e] dark:text-[#0fa595]">
+              <Stethoscope className="h-3.5 w-3.5" />
               {specialty}
             </div>
-            <h1 className="text-3xl font-bold sm:text-4xl">
-              {specialty} Observerships &amp; Externships
+            <h1
+              className="font-serif text-3xl font-normal text-[#0d1418] dark:text-[#f7f5ec] sm:text-[40px]"
+              style={{
+                fontFamily:
+                  "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+                letterSpacing: "-0.022em",
+              }}
+            >
+              {specialty} <em className="italic font-medium text-[#1a5454] dark:text-[#0fa595]">observerships</em> &amp; externships
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p
+              className="mt-3 text-[15px] italic text-[#4a5057] dark:text-[#bfc1c9]"
+              style={{
+                fontFamily:
+                  "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif",
+              }}
+            >
               {listings.length} {specialty.toLowerCase()}{" "}
-              {listings.length === 1 ? "opportunity" : "opportunities"} for
-              International Medical Graduates across the United States.
+              {listings.length === 1 ? "opportunity" : "opportunities"} across the United States.
             </p>
           </div>
         </div>
@@ -167,35 +179,35 @@ export default async function SpecialtyPage({
         {/* Quick Stats */}
         {listings.length > 0 && (
           <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+              <p className="font-serif text-2xl font-medium text-[#0d1418] dark:text-[#f7f5ec]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
                 {listings.length}
               </p>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">
                 Total Programs
               </p>
             </div>
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+              <p className="font-serif text-2xl font-medium text-[#0d1418] dark:text-[#f7f5ec]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
                 {freeCount}
               </p>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">
                 Free Programs
               </p>
             </div>
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+              <p className="font-serif text-2xl font-medium text-[#0d1418] dark:text-[#f7f5ec]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
                 {Object.keys(stateCounts).length}
               </p>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">
                 States
               </p>
             </div>
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-4 text-center">
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+            <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] p-4 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+              <p className="font-serif text-2xl font-medium text-[#0d1418] dark:text-[#f7f5ec]" style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}>
                 {Object.keys(typeCounts).length}
               </p>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a7f88] dark:text-[#7e8089]">
                 Program Types
               </p>
             </div>
@@ -221,7 +233,7 @@ export default async function SpecialtyPage({
                   >
                     <Badge
                       variant="default"
-                      className="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
+                      className="text-xs bg-[#f0e9d3] text-[#4a5057] hover:bg-[#dfd5b8] dark:bg-[#2a2d36] dark:text-[#bfc1c9] dark:hover:bg-[#34373f]"
                     >
                       {US_STATES[abbr] || abbr} ({count})
                     </Badge>
@@ -241,29 +253,35 @@ export default async function SpecialtyPage({
             ))}
           </div>
         ) : (
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 py-20 text-center">
-            <Stethoscope className="mx-auto h-10 w-10 text-slate-300" />
-            <h2 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">
+          <div className="rounded-xl border border-[#dfd5b8] bg-[#fcf9eb] py-20 text-center shadow-plush dark:border-[#34373f] dark:bg-[#23262e]">
+            <Stethoscope className="mx-auto h-10 w-10 text-[#7a7f88] dark:text-[#7e8089]" />
+            <h2
+              className="mt-4 font-serif text-lg font-medium text-[#0d1418] dark:text-[#f7f5ec]"
+              style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}
+            >
               No {specialty} programs listed yet
             </h2>
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            <p
+              className="mt-2 text-sm italic text-[#4a5057] dark:text-[#bfc1c9]"
+              style={{ fontFamily: "Charter, 'Iowan Old Style', 'New York', 'Source Serif Pro', ui-serif, Georgia, serif" }}
+            >
               Know a {specialty.toLowerCase()} program?{" "}
               <Link
                 href="/community/suggest-program"
-                className="text-blue-600 hover:text-blue-700"
+                className="not-italic text-[#1a5454] hover:underline dark:text-[#0fa595]"
               >
                 Suggest it
               </Link>{" "}
-              to help fellow IMGs.
+              to help future applicants.
             </p>
           </div>
         )}
 
         {/* Cross-links to other specialties */}
-        <div className="mt-14 border-t border-slate-200 dark:border-slate-700 pt-10">
-          <h2 className="mb-4 text-lg font-bold text-slate-900 dark:text-white">
-            Browse Other Specialties
-          </h2>
+        <div className="mt-14 border-t border-[#dfd5b8] pt-10 dark:border-[#34373f]">
+          <p className="mb-3 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-[#1a5454] dark:text-[#0fa595]">
+            — Browse other specialties —
+          </p>
           <div className="flex flex-wrap gap-2">
             {SPECIALTIES.filter((s) => s !== specialty).map((s) => {
               const sSlug = s
@@ -275,7 +293,7 @@ export default async function SpecialtyPage({
                 <Link
                   key={s}
                   href={`/observerships/specialty/${sSlug}`}
-                  className="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
+                  className="rounded-lg border border-[#dfd5b8] px-3 py-1.5 text-xs font-medium text-[#7a7f88] transition-colors hover:border-[#a87b2e] hover:bg-[#fcf9eb] hover:text-[#0d1418] dark:border-[#34373f] dark:text-[#7e8089] dark:hover:border-[#d8a978] dark:hover:bg-[#23262e] dark:hover:text-[#f7f5ec]"
                 >
                   {s}
                 </Link>

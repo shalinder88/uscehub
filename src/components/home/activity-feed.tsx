@@ -29,55 +29,47 @@ function generateActivity(): string {
   return action(country, program);
 }
 
+// Single-line ticker — rotates every 3.5s with crossfade. Reads as a "live
+// publication" wire-feed strip rather than a stacked notification list.
 export function ActivityFeed() {
-  const [activities, setActivities] = useState<string[]>([]);
-  const [fadeIndex, setFadeIndex] = useState(-1);
+  const [activity, setActivity] = useState<string | null>(null);
+  const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    // Client-only random seed AFTER hydration. Lazy init would cause a
-    // mismatch (server returns []; client returns 3 random items). The
-    // current pattern intentionally renders nothing on the server (per
-    // the `if (activities.length === 0) return null` guard) and seeds
-    // on mount. React 19 flags setState-in-effect as a cascading-render
-    // risk, but this is the documented client-only-after-mount pattern.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setActivities([generateActivity(), generateActivity(), generateActivity()]);
+    setActivity(generateActivity());
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const replaceIdx = Math.floor(Math.random() * 3);
-      setFadeIndex(replaceIdx);
+      setFading(true);
       setTimeout(() => {
-        setActivities((prev) => {
-          const next = [...prev];
-          next[replaceIdx] = generateActivity();
-          return next;
-        });
-        setFadeIndex(-1);
-      }, 400);
-    }, 4000);
+        setActivity(generateActivity());
+        setFading(false);
+      }, 350);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
-  if (activities.length === 0) return null;
+  if (!activity) return null;
 
   return (
-    <div className="bg-slate-900 pb-6">
-      <div className="mx-auto max-w-3xl px-4">
-        <div className="space-y-1">
-          {activities.map((activity, i) => (
-            <div
-              key={`${i}-${activity}`}
-              className={`text-center text-xs text-slate-500 transition-opacity duration-400 ${
-                fadeIndex === i ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/60" />
-              {activity}
-            </div>
-          ))}
-        </div>
+    <div className="border-b border-[#dfd5b8] bg-[#f0e9d3] py-2.5 dark:border-[#34373f] dark:bg-[#2a2d36]">
+      <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-4">
+        <span aria-hidden="true" className="font-mono text-[9.5px] font-semibold uppercase tracking-[0.22em] text-[#1a5454] dark:text-[#0fa595]">
+          Live
+        </span>
+        <span aria-hidden="true" className="relative flex h-1.5 w-1.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1a5454] opacity-60 dark:bg-[#0fa595]" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#1a5454] dark:bg-[#0fa595]" />
+        </span>
+        <span
+          className={`truncate text-center text-[12.5px] text-[#4a5057] transition-opacity duration-300 dark:text-[#bfc1c9] ${
+            fading ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          {activity}
+        </span>
       </div>
     </div>
   );
