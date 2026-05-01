@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "Learn how USCEHub works for IMG applicants and institutions. Browse opportunities, apply to programs, and manage listings — all in one free platform.",
+    "Learn how USCEHub works for IMG applicants and institutions. Browse source-linked opportunities, follow each program's official application path, and manage listings — all on one free platform.",
   alternates: {
     canonical: "https://uscehub.com/how-it-works",
   },
@@ -80,9 +80,9 @@ const institutionSteps = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: "How to Find and Apply for Observerships, Externships, and Research Programs",
+  name: "How to Find Observerships, Externships, and Research Programs and Apply via Each Program's Official Source",
   description:
-    "Step-by-step guide for International Medical Graduates to find and apply for clinical experience opportunities in the United States through USCEHub.",
+    "Step-by-step guide for International Medical Graduates to find U.S. clinical experience opportunities on USCEHub and apply via each program's official source.",
   step: [
     ...applicantSteps.map((s, i) => ({
       "@type": "HowToStep",
