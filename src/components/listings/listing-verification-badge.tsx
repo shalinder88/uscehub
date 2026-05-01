@@ -39,31 +39,31 @@ const STATUS_CONFIG: Record<
     label: "Verified link",
     icon: ShieldCheck,
     classes:
-      "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300",
+      "bg-[#dde7e3] text-[#1a5454] dark:bg-[#0fa595]/15 dark:text-[#0fa595]",
   },
   "verified-on-file": {
     label: "Official source on file",
     icon: Link2,
     classes:
-      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+      "bg-[#f0e9d3] text-[#4a5057] dark:bg-[#2a2d36] dark:text-[#bfc1c9]",
   },
   unverified: {
     label: "Source not yet verified",
     icon: ShieldAlert,
     classes:
-      "bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300",
+      "bg-[#f0e9d3] text-[#a87b2e] dark:bg-[#2a2d36] dark:text-[#d8a978]",
   },
   reverifying: {
     label: "Re-verifying link",
     icon: RefreshCw,
     classes:
-      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+      "bg-[#f0e9d3] text-[#4a5057] dark:bg-[#2a2d36] dark:text-[#bfc1c9]",
   },
   "needs-review": {
     label: "Source needs review",
     icon: AlertTriangle,
     classes:
-      "bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200",
+      "bg-[#f0e9d3] text-[#9c3a2c] dark:bg-[#2a2d36] dark:text-[#e7958a]",
   },
 };
 
