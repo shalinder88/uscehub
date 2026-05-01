@@ -64,17 +64,43 @@ export default function MethodologyPage() {
           {/* What verified means */}
           <section>
             <h2 className="text-base font-bold text-slate-900 dark:text-white mb-3">
-              What &ldquo;Verified&rdquo; Means
+              What the Trust Badges Mean
             </h2>
-            <p>A listing marked as <strong className="text-emerald-600 dark:text-emerald-400">Verified</strong> means:</p>
+            <p>
+              We use a small set of conservative badges to describe the
+              source-link state of each listing. We never claim a listing is
+              endorsed, approved, or verified by the listed institution.
+            </p>
             <ul className="mt-3 ml-4 list-disc space-y-1.5">
-              <li>The program link points to an active, institution-owned webpage</li>
-              <li>The institution is a recognized U.S. hospital, medical center, or academic institution</li>
-              <li>Program details (type, duration, cost range, specialties) have been cross-checked against the institution&apos;s published information</li>
-              <li>The link was checked and confirmed functional within the last 90 days</li>
+              <li>
+                <strong className="text-emerald-600 dark:text-emerald-400">Verified link</strong> —
+                an automated check or admin review confirmed the source URL was
+                reachable and the listing has a real verification timestamp on
+                file.
+              </li>
+              <li>
+                <strong className="text-slate-800 dark:text-slate-200">Official source on file</strong> —
+                the listing has an official institutional URL on file, but we
+                have not yet recorded a fresh verification timestamp. Common for
+                rows imported from public sources before the verification
+                pipeline existed.
+              </li>
+              <li>
+                <strong className="text-amber-700 dark:text-amber-300">Source needs review</strong> —
+                a recent check returned an error or the page changed in a way
+                that needs human review. Verify directly with the institution
+                before applying.
+              </li>
+              <li>
+                <strong className="text-slate-700 dark:text-slate-300">Source not yet verified</strong> —
+                public information only; we have not confirmed the source URL
+                ourselves yet.
+              </li>
             </ul>
             <p className="mt-3">
-              A listing without the Verified badge means we have sourced the listing from public information but have not yet confirmed all details directly. We always include the source link so users can verify independently.
+              We always include the source link so users can verify
+              independently. USCEHub is not affiliated with the listed
+              institutions and does not represent them.
             </p>
           </section>
 
@@ -84,9 +110,9 @@ export default function MethodologyPage() {
               How Often We Re-check
             </h2>
             <ul className="ml-4 list-disc space-y-1.5">
-              <li><strong className="text-slate-800 dark:text-slate-200">Link checks:</strong> All listing URLs are tested monthly. Broken links are flagged and updated within 48 hours.</li>
-              <li><strong className="text-slate-800 dark:text-slate-200">Program details:</strong> Cost, duration, and specialty information is reviewed at least once per application cycle (annually).</li>
-              <li><strong className="text-slate-800 dark:text-slate-200">Match data:</strong> NRMP match statistics are updated within one week of official release (currently reflects March 20, 2026 data).</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Link checks:</strong> Listing URLs are re-checked on a recurring schedule. Reports of broken links are queued for admin review; we do not guarantee a response time.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Program details:</strong> Cost, duration, and specialty information is reviewed periodically and on receipt of a correction request.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Match data:</strong> NRMP match statistics are updated after official release (currently reflects March 20, 2026 data).</li>
               <li><strong className="text-slate-800 dark:text-slate-200">ECFMG requirements:</strong> Pathway and exam requirements are updated as ECFMG publishes changes.</li>
             </ul>
           </section>
@@ -105,15 +131,42 @@ export default function MethodologyPage() {
             </ul>
           </section>
 
-          {/* Report an error */}
+          {/* Corrections, updates, removals */}
           <section>
             <h2 className="text-base font-bold text-slate-900 dark:text-white mb-3">
-              Report an Error
+              Corrections, Updates, and Removal Requests
             </h2>
             <p>
-              If you find incorrect information, a broken link, or a program that should be added or removed, please{" "}
-              <a href="/contact" className="text-blue-600 dark:text-blue-400 underline">contact us</a>.
-              We review all reports within 48 hours.
+              We welcome corrections and updates from applicants, program
+              coordinators, and the listed institutions themselves.
+            </p>
+            <ul className="mt-3 ml-4 list-disc space-y-1.5">
+              <li>
+                <strong className="text-slate-800 dark:text-slate-200">Report a broken link</strong> —
+                use the small &ldquo;Report broken link&rdquo; affordance under
+                the source link on any listing page.
+              </li>
+              <li>
+                <strong className="text-slate-800 dark:text-slate-200">Suggest a correction</strong> —
+                use the &ldquo;Suggest an update&rdquo; link in the listing
+                trust block, or send a structured message via{" "}
+                <a href="/contact-admin" className="text-blue-600 dark:text-blue-400 underline">contact-admin</a>{" "}
+                with the &ldquo;Data correction&rdquo; or &ldquo;Coordinator
+                correction&rdquo; category.
+              </li>
+              <li>
+                <strong className="text-slate-800 dark:text-slate-200">Request an update or removal</strong> —
+                if you represent the listed institution and want a listing
+                updated or removed, use{" "}
+                <a href="/contact-admin" className="text-blue-600 dark:text-blue-400 underline">contact-admin</a>{" "}
+                with the &ldquo;Institution / program update&rdquo; or
+                &ldquo;Request listing removal or review&rdquo; category.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Corrections, updates, and removal requests are reviewed before
+              any public change. We do not guarantee a response time, but
+              every request is queued for an admin to read.
             </p>
           </section>
 
