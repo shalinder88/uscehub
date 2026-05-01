@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "How do I apply for an observership or externship?",
     answer:
-      "Browse our listings to find programs that match your interests and qualifications. Each listing links to the institution's official source — the institution's own page is always the canonical place to apply. A small number of participating programs may also let you express interest through USCEHub, but the official source remains authoritative. Make sure you meet the eligibility requirements before applying, including any USMLE score or ECFMG certification requirements.",
+      "Browse our listings to find programs that match your interests and qualifications. Each listing links to the institution's official source — the institution's own page is always the canonical place to apply. In the future, participating programs may choose to let applicants express interest through USCEHub, but the official source remains authoritative. Make sure you meet the eligibility requirements before applying, including any USMLE score or ECFMG certification requirements.",
   },
   {
     question: "How much does an observership typically cost?",

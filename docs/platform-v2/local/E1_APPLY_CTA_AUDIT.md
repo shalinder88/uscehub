@@ -66,13 +66,17 @@ USCEHub" framing.
 | `src/app/how-it-works/page.tsx` (page metadata `description`) | "…Browse opportunities, apply to programs, and manage listings — all in one free platform." | "…Browse source-linked opportunities, follow each program's official application path, and manage listings — all on one free platform." |
 | `src/app/how-it-works/page.tsx` (JSON-LD `name`) | "How to Find and Apply for Observerships, Externships, and Research Programs" | "How to Find Observerships, Externships, and Research Programs and Apply via Each Program's Official Source" |
 | `src/app/how-it-works/page.tsx` (JSON-LD `description`) | "…find and apply for clinical experience opportunities in the United States through USCEHub." | "…find U.S. clinical experience opportunities on USCEHub and apply via each program's official source." |
-| `src/app/faq/page.tsx` (Q1 answer) | "Each listing includes specific application instructions. Some programs accept applications directly through our platform, while others redirect you to the institution's application portal." | "Each listing links to the institution's official source — the institution's own page is always the canonical place to apply. A small number of participating programs may also let you express interest through USCEHub, but the official source remains authoritative." |
+| `src/app/faq/page.tsx` (Q1 answer) | "Each listing includes specific application instructions. Some programs accept applications directly through our platform, while others redirect you to the institution's application portal." | "Each listing links to the institution's official source — the institution's own page is always the canonical place to apply. In the future, participating programs may choose to let applicants express interest through USCEHub, but the official source remains authoritative." |
 
-The FAQ entry is technically about the same product reality (some
-listings have a USCEHub `Application` row, others redirect), but the
-new framing makes the official source authoritative and the
-USCEHub intake a smaller, opt-in path — matching the Track 1 / Track
-2 doctrine in P95-E.
+The FAQ entry uses **future-tense** for the participating-program
+intake because there is no formal "participating programs" tier in
+production today: there is no `Organization.acceptsIntake` flag and
+no `Listing.isParticipating` field, and `POST /api/applications`
+accepts an application against any APPROVED listing without an
+opt-in distinction. Verified by grepping for
+`participating|acceptsIntake|isParticipating` — zero hits in
+non-doc source. The future-tense framing is honest about the
+roadmap (P95-E Track 2) without overclaiming the current state.
 
 The how-it-works metadata changes touch the rendered `<meta>`
 description, the OG-fallback description (page metadata cascades),
