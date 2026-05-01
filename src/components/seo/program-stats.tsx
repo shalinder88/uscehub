@@ -121,7 +121,7 @@ export async function ProgramStats() {
             USCEHub by the Numbers
           </h2>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Real-time statistics from the largest IMG opportunities database
+            Real-time statistics from an independent, source-linked IMG opportunities directory
           </p>
         </div>
 

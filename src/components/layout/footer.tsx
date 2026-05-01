@@ -14,9 +14,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              The largest structured database of clinical observership, externship,
-              and research opportunities for International Medical Graduates in the
-              United States.
+              An independent, source-linked directory of U.S. clinical experience
+              opportunities, including observerships, externships, research,
+              volunteer, and related programs.
             </p>
           </div>
 
