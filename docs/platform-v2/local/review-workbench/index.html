@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>P96-4A — local evidence review workbench</title>
+<style>
+  :root {
+    --bg: #faf6e8;
+    --ink: #0d1418;
+    --rule: #d8d2bc;
+    --muted: #5a5a4d;
+    --teal: #1a5454;
+    --brass: #a87b2e;
+    --coral: #9c3a2c;
+    --green: #2f6b3e;
+    --amber: #b07b00;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 12px 18px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  .header-meta { font-size: 12px; color: var(--muted); }
+  .layout { display: grid; grid-template-columns: 320px 1fr; min-height: calc(100vh - 60px); }
+  aside { border-right: 1px solid var(--rule); overflow-y: auto; max-height: calc(100vh - 60px); }
+  main { padding: 18px 22px 80px; overflow-y: auto; max-height: calc(100vh - 60px); }
+  .filters { padding: 10px 12px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; }
+  .filters label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .filters input, .filters select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: white; border-radius: 4px; }
+  .row-list { list-style: none; margin: 0; padding: 0; }
+  .row-list li { padding: 10px 12px; border-bottom: 1px solid var(--rule); cursor: pointer; }
+  .row-list li:hover { background: rgba(168,123,46,0.07); }
+  .row-list li.active { background: rgba(26,84,84,0.1); }
+  .row-title { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .row-meta { font-size: 11px; color: var(--muted); margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .b-verdict-PATH_HINTS_PROGRAM { background: #e0ecdc; color: var(--green); }
+  .b-verdict-DEEP_PATH_NO_HINT { background: #f0e8d2; color: var(--brass); }
+  .b-verdict-GENERIC_HOMEPAGE { background: #f0d9d4; color: var(--coral); }
+  .b-verdict-LIKELY_WRONG_PAGE { background: #d54a3a; color: white; }
+  .b-verdict-SOURCE_DEAD { background: #555; color: white; }
+  .b-verdict-LOGIN_REQUIRED { background: #ddd; color: #444; }
+  .b-fit-TARGET_USCE_MATCH { background: #c7e6cd; color: var(--green); }
+  .b-fit-MAYBE_TARGET_MANUAL_REVIEW { background: #f0e8d2; color: var(--brass); }
+  .b-fit-NON_TARGET_SPECIALIST_ONLY,
+  .b-fit-NON_TARGET_BASIC_RESEARCH,
+  .b-fit-NON_TARGET_NON_CLINICAL,
+  .b-fit-NON_TARGET_THIRD_PARTY_ONLY { background: #f0d9d4; color: var(--coral); }
+  .b-decision-undecided { background: #eee; color: #555; }
+  .b-decision-KEEP { background: #c7e6cd; color: var(--green); }
+  .b-decision-KEEP_WITH_CAVEATS { background: #f0e8d2; color: var(--brass); }
+  .b-decision-MODIFY { background: #cfe1ec; color: #2c5773; }
+  .b-decision-DISCARD { background: #f0d9d4; color: var(--coral); }
+  .b-decision-NEEDS_MORE_RESEARCH { background: #ddd; color: #444; }
+
+  .panel { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; margin-bottom: 18px; }
+  .panel h2 { margin: 0 0 6px; font-size: 18px; }
+  .panel h3 { margin: 18px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .meta-grid { display: grid; grid-template-columns: max-content 1fr; column-gap: 14px; row-gap: 6px; font-size: 13px; }
+  .meta-grid dt { color: var(--muted); }
+  .meta-grid dd { margin: 0; }
+  .reason-list { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--coral); }
+  .url { font-family: ui-monospace, monospace; font-size: 12px; word-break: break-all; }
+  a { color: var(--teal); }
+
+  .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .screenshot-grid figure { margin: 0; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: #fff; }
+  .screenshot-grid figcaption { padding: 6px 8px; font-size: 11px; color: var(--muted); border-bottom: 1px solid var(--rule); background: #fafafa; }
+  .screenshot-grid img { width: 100%; height: auto; display: block; }
+  .screenshot-missing { padding: 18px; text-align: center; font-size: 12px; color: var(--muted); background: #fafafa; }
+
+  .decision-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .decision-row button { padding: 8px 14px; border: 1px solid var(--rule); background: white; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
+  .decision-row button.active.KEEP { border-color: var(--green); background: #e8f3ea; }
+  .decision-row button.active.KEEP_WITH_CAVEATS { border-color: var(--brass); background: #f6efde; }
+  .decision-row button.active.MODIFY { border-color: #2c5773; background: #dcecf4; }
+  .decision-row button.active.DISCARD { border-color: var(--coral); background: #f5dad4; }
+  .decision-row button.active.NEEDS_MORE_RESEARCH { border-color: #444; background: #ddd; }
+  .decision-fields { display: none; margin-top: 12px; padding: 12px; background: #f8f4e3; border: 1px dashed var(--rule); border-radius: 4px; }
+  .decision-fields.show { display: block; }
+  .decision-fields label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 4px; }
+  .decision-fields input, .decision-fields textarea, .decision-fields select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: white; border-radius: 4px; font-family: inherit; }
+  .decision-fields textarea { min-height: 60px; }
+  .decision-fields .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .actions-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 18px; background: var(--ink); color: white; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; box-shadow: 0 -2px 6px rgba(0,0,0,0.2); }
+  .actions-bar .stats { font-size: 12px; opacity: 0.85; margin-right: auto; }
+  .actions-bar button { padding: 6px 14px; border: 1px solid #444; background: white; color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500; }
+  .actions-bar button.danger { background: var(--coral); color: white; border-color: var(--coral); }
+</style>
+</head>
+<body>
+<header>
+  <h1>P96-4A — Listing review workbench</h1>
+  <span class="header-meta" id="genMeta">loading…</span>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="filters">
+      <div>
+        <label>Search</label>
+        <input id="search" type="text" placeholder="title / url / notes" />
+      </div>
+      <div>
+        <label>Verdict filter</label>
+        <select id="verdictFilter">
+          <option value="">All</option>
+          <option value="LIKELY_WRONG_PAGE">Wrong page</option>
+          <option value="GENERIC_HOMEPAGE">Generic homepage</option>
+          <option value="DEEP_PATH_NO_HINT">Deep path no hint</option>
+          <option value="PATH_HINTS_PROGRAM">Path hints program</option>
+          <option value="SOURCE_DEAD">Source dead</option>
+        </select>
+      </div>
+      <div>
+        <label>Target-fit filter</label>
+        <select id="fitFilter">
+          <option value="">All</option>
+          <option value="MAYBE_TARGET_MANUAL_REVIEW">Maybe target</option>
+          <option value="NON_TARGET_SPECIALIST_ONLY">Non-target: specialist</option>
+          <option value="NON_TARGET_BASIC_RESEARCH">Non-target: basic research</option>
+        </select>
+      </div>
+      <div>
+        <label>Decision filter</label>
+        <select id="decisionFilter">
+          <option value="">All</option>
+          <option value="undecided">Undecided</option>
+          <option value="decided">Decided</option>
+          <option value="KEEP">Keep</option>
+          <option value="KEEP_WITH_CAVEATS">Keep with caveats</option>
+          <option value="MODIFY">Modify</option>
+          <option value="DISCARD">Discard</option>
+          <option value="NEEDS_MORE_RESEARCH">Needs more research</option>
+        </select>
+      </div>
+    </div>
+    <ul class="row-list" id="rowList"></ul>
+  </aside>
+
+  <main>
+    <div id="reviewPanel"></div>
+  </main>
+</div>
+
+<div class="actions-bar">
+  <span class="stats" id="stats">0 of 0 decided</span>
+  <button id="exportJson">Export JSON</button>
+  <button id="exportCsv">Export CSV</button>
+  <button id="copySummary">Copy summary</button>
+  <button id="clearAll" class="danger">Clear decisions</button>
+</div>
+
+<script>
+const STORAGE_KEY = 'p96-4a-decisions-v1';
+let data = null;
+let activeId = null;
+
+function loadDecisions() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch { return {}; }
+}
+function saveDecisions(map) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
+}
+
+async function init() {
+  const res = await fetch('./review-data.json', { cache: 'no-store' });
+  data = await res.json();
+  document.getElementById('genMeta').textContent =
+    `${data.questionableRowCount} questionable / ${data.totalSampleSize} sample · generated ${data.generatedAt}`;
+  renderList();
+  if (data.items.length > 0) selectItem(data.items[0].itemId);
+  bindActions();
+  updateStats();
+}
+
+function activeFilters() {
+  return {
+    q: (document.getElementById('search').value || '').toLowerCase(),
+    verdict: document.getElementById('verdictFilter').value,
+    fit: document.getElementById('fitFilter').value,
+    decision: document.getElementById('decisionFilter').value,
+  };
+}
+
+function applyFilters(items) {
+  const f = activeFilters();
+  const decisions = loadDecisions();
+  return items.filter(it => {
+    const dec = decisions[it.itemId];
+    if (f.verdict && it.sourceVerdict !== f.verdict) return false;
+    if (f.fit && it.targetFit !== f.fit) return false;
+    if (f.decision === 'undecided' && dec) return false;
+    if (f.decision === 'decided' && !dec) return false;
+    if (f.decision && f.decision !== 'undecided' && f.decision !== 'decided' && (!dec || dec.userDecision !== f.decision)) return false;
+    if (f.q) {
+      const hay = [it.title, it.sourceUrl, it.notesFromAudit, it.targetFitReason, (it.whyNeedsReview||[]).join(' ')].join(' ').toLowerCase();
+      if (!hay.includes(f.q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderList() {
+  const ul = document.getElementById('rowList');
+  ul.innerHTML = '';
+  const decisions = loadDecisions();
+  const items = applyFilters(data.items);
+  for (const it of items) {
+    const li = document.createElement('li');
+    if (it.itemId === activeId) li.classList.add('active');
+    const dec = decisions[it.itemId];
+    const decisionBadge = dec
+      ? `<span class="badge b-decision-${dec.userDecision}">${dec.userDecision.replace(/_/g,' ')}</span>`
+      : `<span class="badge b-decision-undecided">undecided</span>`;
+    li.innerHTML = `
+      <div class="row-title">${escapeHtml(it.title)}</div>
+      <div class="row-meta">
+        <span class="badge b-verdict-${it.sourceVerdict}">${(it.sourceVerdict||'').replace(/_/g,' ')}</span>
+        <span class="badge b-fit-${it.targetFit}">${(it.targetFit||'').replace(/_/g,' ')}</span>
+        ${decisionBadge}
+      </div>
+    `;
+    li.addEventListener('click', () => selectItem(it.itemId));
+    ul.appendChild(li);
+  }
+}
+
+function selectItem(id) {
+  activeId = id;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  const decisions = loadDecisions();
+  const dec = decisions[id] || {};
+  const panel = document.getElementById('reviewPanel');
+
+  panel.innerHTML = `
+    <div class="panel">
+      <h2>${escapeHtml(it.title)}</h2>
+      <div class="row-meta">
+        <span class="badge b-verdict-${it.sourceVerdict}">${(it.sourceVerdict||'').replace(/_/g,' ')}</span>
+        <span class="badge b-fit-${it.targetFit}">${(it.targetFit||'').replace(/_/g,' ')}</span>
+        <span class="badge b-decision-${dec.userDecision || 'undecided'}">${(dec.userDecision || 'undecided').replace(/_/g,' ')}</span>
+      </div>
+      <h3>Why this needs review</h3>
+      <ul class="reason-list">${(it.whyNeedsReview||[]).map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+
+      <h3>Metadata</h3>
+      <dl class="meta-grid">
+        <dt>id</dt><dd class="url">${escapeHtml(it.itemId)}</dd>
+        <dt>verdict reason</dt><dd>${escapeHtml(it.verdictReason || '')}</dd>
+        <dt>recommended</dt><dd>${escapeHtml(it.recommendedAction || '')}</dd>
+        <dt>target fit reason</dt><dd>${escapeHtml(it.targetFitReason || '')}</dd>
+        <dt>match relevance</dt><dd>${escapeHtml(it.matchRelevance || '')}</dd>
+        <dt>future lane</dt><dd>${escapeHtml(it.futureLaneCandidate || '')}</dd>
+        <dt>source URL</dt><dd class="url"><a href="${escapeAttr(it.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(it.sourceUrl || '(none)')}</a></dd>
+        <dt>USCEHub URL</dt><dd class="url"><a href="http://localhost:3000/listing/${escapeAttr(it.itemId)}" target="_blank" rel="noopener">/listing/${escapeHtml(it.itemId)}</a></dd>
+        <dt>notes from audit</dt><dd>${escapeHtml(it.notesFromAudit || '')}</dd>
+        <dt>JSON sidecar</dt><dd class="url">${escapeHtml(it.jsonSidecarPath || '')}</dd>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h3>Evidence</h3>
+      <div class="screenshot-grid">
+        ${renderShot('USCEHub listing', it.uscehubScreenshotPath)}
+        ${renderShot('Official source', it.officialSourceScreenshotPath)}
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Decision</h3>
+      <div class="decision-row" id="decisionRow">
+        ${['KEEP','KEEP_WITH_CAVEATS','MODIFY','DISCARD','NEEDS_MORE_RESEARCH'].map(d =>
+          `<button data-d="${d}" class="${dec.userDecision === d ? 'active ' + d : ''}">${d.replace(/_/g,' ')}</button>`
+        ).join('')}
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'MODIFY' ? 'show' : ''}" id="modifyFields">
+        <div class="two-col">
+          <div>
+            <label>New source URL</label>
+            <input type="text" id="newSourceUrl" value="${escapeAttr(dec.newSourceUrl || '')}" />
+          </div>
+          <div>
+            <label>New application URL</label>
+            <input type="text" id="newApplicationUrl" value="${escapeAttr(dec.newApplicationUrl || '')}" />
+          </div>
+        </div>
+        <label>Modify instructions</label>
+        <textarea id="modifyInstructions">${escapeHtml(dec.modifyInstructions || '')}</textarea>
+        <label>Fields to correct (comma-separated)</label>
+        <input type="text" id="fieldsToCorrect" value="${escapeAttr(dec.fieldsToCorrect || '')}" />
+        <label>Description rewrite notes</label>
+        <textarea id="descriptionRewriteNotes">${escapeHtml(dec.descriptionRewriteNotes || '')}</textarea>
+        <label>Priority</label>
+        <select id="priority">
+          ${['LOW','MEDIUM','HIGH','CRITICAL'].map(p => `<option value="${p}" ${dec.priority === p ? 'selected' : ''}>${p}</option>`).join('')}
+        </select>
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'KEEP_WITH_CAVEATS' ? 'show' : ''}" id="caveatFields">
+        <label>Caveat text</label>
+        <textarea id="caveatText">${escapeHtml(dec.caveatText || '')}</textarea>
+        <label>Public-display suggestion</label>
+        <textarea id="publicDisplaySuggestion">${escapeHtml(dec.publicDisplaySuggestion || '')}</textarea>
+        <label>Needs future recheck date (YYYY-MM-DD)</label>
+        <input type="text" id="needsFutureRecheckDate" value="${escapeAttr(dec.needsFutureRecheckDate || '')}" />
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'DISCARD' ? 'show' : ''}" id="discardFields">
+        <label>Discard reason</label>
+        <textarea id="discardReason">${escapeHtml(dec.discardReason || '')}</textarea>
+        <label>Future-lane candidate</label>
+        <input type="text" id="futureLaneCandidateField" value="${escapeAttr(dec.futureLaneCandidate || it.futureLaneCandidate || '')}" />
+        <label>Can reconsider later</label>
+        <select id="canReconsiderLater">
+          <option value="true" ${dec.canReconsiderLater !== false ? 'selected' : ''}>true</option>
+          <option value="false" ${dec.canReconsiderLater === false ? 'selected' : ''}>false</option>
+        </select>
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'NEEDS_MORE_RESEARCH' ? 'show' : ''}" id="researchFields">
+        <label>Research question</label>
+        <textarea id="researchQuestion">${escapeHtml(dec.researchQuestion || '')}</textarea>
+        <label>Suggested search terms</label>
+        <input type="text" id="suggestedSearchTerms" value="${escapeAttr(dec.suggestedSearchTerms || '')}" />
+        <label>Suspected correct source URL</label>
+        <input type="text" id="suspectedCorrectSource" value="${escapeAttr(dec.suspectedCorrectSource || '')}" />
+      </div>
+
+      <label style="display:block; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin: 14px 0 4px;">Reviewer notes (any decision)</label>
+      <textarea id="reviewerNotes" style="width:100%; min-height:60px; padding:6px 8px; font-size:13px; border:1px solid var(--rule); background:white; border-radius:4px; font-family:inherit;">${escapeHtml(dec.reviewerNotes || '')}</textarea>
+    </div>
+  `;
+
+  bindDecisionRow();
+}
+
+function bindDecisionRow() {
+  document.querySelectorAll('#decisionRow button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-d');
+      saveDecisionForActive(value);
+    });
+  });
+  ['modifyFields','caveatFields','discardFields','researchFields'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.querySelectorAll('input, textarea, select').forEach(input => {
+      input.addEventListener('input', () => saveDecisionForActive());
+      input.addEventListener('change', () => saveDecisionForActive());
+    });
+  });
+  const notes = document.getElementById('reviewerNotes');
+  if (notes) notes.addEventListener('input', () => saveDecisionForActive());
+}
+
+function readField(id) {
+  const el = document.getElementById(id);
+  if (!el) return '';
+  return el.value;
+}
+
+function saveDecisionForActive(forceDecision) {
+  const id = activeId;
+  if (!id) return;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  const decisions = loadDecisions();
+  const prev = decisions[id] || {};
+  const userDecision = forceDecision || prev.userDecision;
+  if (!userDecision) return;
+  const next = {
+    ...prev,
+    itemId: id,
+    listingIdOrSlug: it.itemId,
+    title: it.title,
+    institution: it.institution,
+    sourceUrl: it.sourceUrl,
+    applicationUrl: it.applicationUrl,
+    sourceVerdict: it.sourceVerdict,
+    targetFit: it.targetFit,
+    originalRecommendedAction: it.recommendedAction,
+    userDecision,
+    newSourceUrl: readField('newSourceUrl'),
+    newApplicationUrl: readField('newApplicationUrl'),
+    modifyInstructions: readField('modifyInstructions'),
+    fieldsToCorrect: readField('fieldsToCorrect'),
+    descriptionRewriteNotes: readField('descriptionRewriteNotes'),
+    caveatText: readField('caveatText'),
+    publicDisplaySuggestion: readField('publicDisplaySuggestion'),
+    needsFutureRecheckDate: readField('needsFutureRecheckDate'),
+    discardReason: readField('discardReason'),
+    futureLaneCandidate: readField('futureLaneCandidateField') || it.futureLaneCandidate || '',
+    canReconsiderLater: readField('canReconsiderLater') !== 'false',
+    researchQuestion: readField('researchQuestion'),
+    suggestedSearchTerms: readField('suggestedSearchTerms'),
+    suspectedCorrectSource: readField('suspectedCorrectSource'),
+    priority: readField('priority') || prev.priority || 'MEDIUM',
+    reviewerNotes: readField('reviewerNotes'),
+    decidedAt: new Date().toISOString(),
+  };
+  decisions[id] = next;
+  saveDecisions(decisions);
+  if (forceDecision) {
+    selectItem(id); // re-render to flip the active button + show fields
+  }
+  renderList();
+  updateStats();
+}
+
+function updateStats() {
+  const decisions = loadDecisions();
+  const decided = data.items.filter(it => decisions[it.itemId]).length;
+  document.getElementById('stats').textContent =
+    `${decided} of ${data.items.length} decided`;
+}
+
+function bindActions() {
+  ['search','verdictFilter','fitFilter','decisionFilter'].forEach(id =>
+    document.getElementById(id).addEventListener('input', renderList));
+  document.getElementById('exportJson').addEventListener('click', exportJson);
+  document.getElementById('exportCsv').addEventListener('click', exportCsv);
+  document.getElementById('copySummary').addEventListener('click', copySummary);
+  document.getElementById('clearAll').addEventListener('click', clearAll);
+}
+
+function exportJson() {
+  const decisions = loadDecisions();
+  const rows = data.items.map(it => decisions[it.itemId] || { itemId: it.itemId, title: it.title, userDecision: 'UNDECIDED' });
+  download('decision-export.json', JSON.stringify({ exportedAt: new Date().toISOString(), decisions: rows }, null, 2), 'application/json');
+}
+
+function exportCsv() {
+  const decisions = loadDecisions();
+  const cols = ['itemId','listingIdOrSlug','title','institution','sourceUrl','applicationUrl','sourceVerdict','targetFit','originalRecommendedAction','userDecision','newSourceUrl','newApplicationUrl','modifyInstructions','caveatText','discardReason','futureLaneCandidate','canReconsiderLater','priority','needsFutureRecheckDate','researchQuestion','suspectedCorrectSource','reviewerNotes','decidedAt'];
+  const lines = [cols.join(',')];
+  for (const it of data.items) {
+    const d = decisions[it.itemId] || { userDecision: 'UNDECIDED', listingIdOrSlug: it.itemId, title: it.title };
+    lines.push(cols.map(c => csvCell(d[c] !== undefined ? d[c] : (it[c] !== undefined ? it[c] : ''))).join(','));
+  }
+  download('decision-export.csv', lines.join('\n'), 'text/csv');
+}
+
+function copySummary() {
+  const decisions = loadDecisions();
+  const counts = {};
+  for (const it of data.items) {
+    const d = decisions[it.itemId];
+    const k = d ? d.userDecision : 'UNDECIDED';
+    counts[k] = (counts[k] || 0) + 1;
+  }
+  const summary = Object.entries(counts).map(([k,v]) => `${k}: ${v}`).join('\n');
+  navigator.clipboard.writeText(`P96-4A decisions (n=${data.items.length}):\n${summary}`);
+}
+
+function clearAll() {
+  if (!confirm('Clear ALL decisions? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  selectItem(activeId);
+  renderList();
+  updateStats();
+}
+
+function download(name, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function csvCell(v) {
+  if (v === null || v === undefined) return '';
+  const s = String(v);
+  return JSON.stringify(s);
+}
+
+function renderShot(label, path) {
+  if (!path || path === '(fail)') {
+    return `<figure><figcaption>${label}</figcaption><div class="screenshot-missing">Not captured</div></figure>`;
+  }
+  // The static workbench is served from the repo root via
+  // python3 -m http.server, so paths are repo-relative.
+  // Workbench's index.html lives at docs/platform-v2/local/review-workbench/,
+  // so we need to step up to repo root: ../../../..  + path.
+  const relative = '../../../../' + path;
+  return `<figure>
+    <figcaption>${label} — <a href="${escapeAttr(relative)}" target="_blank" rel="noopener">open</a></figcaption>
+    <img src="${escapeAttr(relative)}" alt="${escapeAttr(label)}" loading="lazy" />
+  </figure>`;
+}
+
+function escapeHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escapeAttr(s) {
+  return escapeHtml(s).replace(/'/g,'&#39;');
+}
+
+init().catch(err => {
+  document.getElementById('reviewPanel').innerHTML =
+    `<div class="panel"><h2>Failed to load review-data.json</h2><pre>${escapeHtml(err.message)}</pre></div>`;
+});
+</script>
+</body>
+</html>
