@@ -1,9 +1,9 @@
 /**
- * P96-2 — listing screenshot audit using Playwright.
+ * P96-2 / P96-3 — listing screenshot audit using Playwright.
  *
- * Discovers sample listings by reading the local dev server's
- * /browse page (no DB connection — dev server's Prisma pool stays
- * untouched). For each sampled listing:
+ * Discovers listings by reading the local dev server's /browse page
+ * (no DB connection — dev server's Prisma pool stays untouched).
+ * For each listing:
  *   1. Captures USCEHub listing detail (local).
  *   2. Extracts the apply-CTA href via DOM.
  *   3. Captures the official source URL (live external).
@@ -13,19 +13,40 @@
  * No DB mutation. No login. 12 s page timeout. 1.2 s per-host gap.
  *
  * Run from repo root with the dev server up at localhost:3000:
- *   npx tsx scripts/p96-2-listing-audit.ts [--n 10]
+ *   npx tsx scripts/p96-2-listing-audit.ts [--n 25]
+ *
+ * Flags:
+ *   --n <int>             — sample size (default 25)
+ *   --output-prefix <s>   — prefix for output filenames + subfolder
+ *                           (default `p96_2_25_listing_sample`).
+ *                           Use `p96_3_full_304_listing` for P96-3.
+ *   --skip-existing       — skip listings whose USCEHub screenshot
+ *                           already exists. Lets a long run resume.
+ *   --delay-ms <int>      — per-host gap (default 1200).
+ *   --timeout-ms <int>    — per-page timeout (default 12000).
+ *   --subfolder <s>       — screenshot subfolder under
+ *                           docs/platform-v2/local/screenshots/p96-existing-listings/.
+ *                           Default empty (top-level). Use `full-304`
+ *                           for P96-3.
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, stat } from "node:fs/promises";
 import { dirname } from "node:path";
 import { chromium, type Page } from "playwright";
 import { classifyContent } from "../src/lib/content-classifier";
 
 const LOCAL_BASE = "http://localhost:3000";
-const SCREENSHOTS_ROOT = "docs/platform-v2/local/screenshots/p96-existing-listings";
-const PER_PAGE_TIMEOUT_MS = 12000;
-const PER_HOST_GAP_MS = 1200;
+const SCREENSHOTS_ROOT_BASE = "docs/platform-v2/local/screenshots/p96-existing-listings";
 const VIEWPORT = { width: 1440, height: 900 };
+
+function readArg(name: string, fallback: string): string {
+  const idx = process.argv.indexOf(name);
+  if (idx < 0 || idx + 1 >= process.argv.length) return fallback;
+  return process.argv[idx + 1];
+}
+function hasFlag(name: string): boolean {
+  return process.argv.includes(name);
+}
 
 function todayStamp(): string {
   return new Date().toISOString().slice(0, 10).replace(/-/g, "");
@@ -45,10 +66,14 @@ interface SampleListing {
   category: string;
 }
 
-async function discoverSample(page: Page, n: number): Promise<SampleListing[]> {
+async function discoverSample(
+  page: Page,
+  n: number,
+  pageTimeout: number
+): Promise<SampleListing[]> {
   await page.goto(`${LOCAL_BASE}/browse`, {
     waitUntil: "domcontentloaded",
-    timeout: PER_PAGE_TIMEOUT_MS,
+    timeout: pageTimeout,
   });
   await page.waitForTimeout(1500);
   // Read every listing link on /browse and stride-sample.
@@ -91,12 +116,13 @@ interface CaptureResult {
 async function capture(
   page: Page,
   url: string,
-  outPath: string
+  outPath: string,
+  timeoutMs: number
 ): Promise<CaptureResult> {
   const start = Date.now();
   try {
     const resp = await page.goto(url, {
-      timeout: PER_PAGE_TIMEOUT_MS,
+      timeout: timeoutMs,
       waitUntil: "domcontentloaded",
     });
     await page.waitForTimeout(800);
@@ -123,7 +149,15 @@ async function capture(
 }
 
 async function main() {
-  const argN = parseInt(process.argv[process.argv.indexOf("--n") + 1] || "10", 10);
+  const argN = parseInt(readArg("--n", "25"), 10);
+  const outputPrefix = readArg("--output-prefix", "p96_2_25_listing_sample");
+  const skipExisting = hasFlag("--skip-existing");
+  const perHostGap = parseInt(readArg("--delay-ms", "1200"), 10);
+  const pageTimeout = parseInt(readArg("--timeout-ms", "12000"), 10);
+  const subfolder = readArg("--subfolder", "");
+  const SCREENSHOTS_ROOT = subfolder
+    ? `${SCREENSHOTS_ROOT_BASE}/${subfolder}`
+    : SCREENSHOTS_ROOT_BASE;
   const stamp = todayStamp();
 
   await ensureFolder(`${SCREENSHOTS_ROOT}/uscehub-listings`);
@@ -132,12 +166,16 @@ async function main() {
   await ensureFolder(`${SCREENSHOTS_ROOT}/mismatches`);
   await ensureFolder(`${SCREENSHOTS_ROOT}/failures`);
 
+  async function fileExists(p: string): Promise<boolean> {
+    try { await stat(p); return true; } catch { return false; }
+  }
+
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({ viewport: VIEWPORT });
   const page = await context.newPage();
-  page.setDefaultNavigationTimeout(PER_PAGE_TIMEOUT_MS);
+  page.setDefaultNavigationTimeout(pageTimeout);
 
-  const sample = await discoverSample(page, argN);
+  const sample = await discoverSample(page, argN, pageTimeout);
   console.log(`Sample size: ${sample.length}`);
 
   const lastPerHost: Record<string, number> = {};
@@ -145,7 +183,7 @@ async function main() {
     try {
       const host = new URL(url).hostname.toLowerCase();
       const last = lastPerHost[host] || 0;
-      const wait = PER_HOST_GAP_MS - (Date.now() - last);
+      const wait = perHostGap - (Date.now() - last);
       if (wait > 0) await new Promise((r) => setTimeout(r, wait));
       lastPerHost[host] = Date.now();
     } catch {
@@ -165,9 +203,30 @@ async function main() {
   }> = [];
 
   for (const l of sample) {
-    const uscehubUrl = `${LOCAL_BASE}/listing/${l.id}`;
     const uscehubOut = `${SCREENSHOTS_ROOT}/uscehub-listings/${l.id}-${stamp}.png`;
-    const uscehub = await capture(page, uscehubUrl, uscehubOut);
+    const sourceOut = `${SCREENSHOTS_ROOT}/official-sources/${l.id}-${stamp}.png`;
+
+    // --skip-existing: if both screenshots already exist for this
+    // listing+stamp, skip the network round-trips and synthesize
+    // fast-path CaptureResults from the cached files. Lets a
+    // long --n 304 run resume after an interrupt.
+    if (skipExisting && (await fileExists(uscehubOut)) && (await fileExists(sourceOut))) {
+      results.push({
+        listing: l,
+        uscehub: { ok: true, path: uscehubOut, finalUrl: null, httpStatus: null, errorMessage: null, captureMs: 0 },
+        source: { ok: true, path: sourceOut, finalUrl: null, httpStatus: null, errorMessage: null, captureMs: 0 },
+        sourceUrl: "",
+        contentVerdict: "UNKNOWN",
+        contentReason: "skip_existing_cached",
+        note: "Skipped: both screenshots already on disk.",
+        recommendedAction: "MANUAL_REVIEW",
+      });
+      console.log(`[${l.id}] ${l.title.slice(0, 50)} → SKIP (cached)`);
+      continue;
+    }
+
+    const uscehubUrl = `${LOCAL_BASE}/listing/${l.id}`;
+    const uscehub = await capture(page, uscehubUrl, uscehubOut, pageTimeout);
 
     // Extract apply CTA href from the just-loaded listing page.
     const sourceUrl = uscehub.ok
@@ -187,8 +246,7 @@ async function main() {
     };
     if (sourceUrl) {
       await throttleHost(sourceUrl);
-      const sourceOut = `${SCREENSHOTS_ROOT}/official-sources/${l.id}-${stamp}.png`;
-      source = await capture(page, sourceUrl, sourceOut);
+      source = await capture(page, sourceUrl, sourceOut, pageTimeout);
     }
 
     const verdict = classifyContent({
@@ -359,9 +417,11 @@ async function main() {
   md.push("- No login attempts. No credentialed access.");
   md.push("- Screenshots are local-only; the screenshots folder is gitignored.");
 
-  const mdPath = "docs/platform-v2/local/P96_2_25_LISTING_SAMPLE_AUDIT.md";
-  const csvPath = "docs/platform-v2/local/p96_2_25_listing_sample_audit.csv";
-  const manifestPath = "docs/platform-v2/local/p96_2_screenshot_manifest.csv";
+  // Output filenames keyed off --output-prefix so P96-2 sample and
+  // P96-3 full run don't overwrite each other.
+  const mdPath = `docs/platform-v2/local/${outputPrefix.toUpperCase()}_AUDIT.md`;
+  const csvPath = `docs/platform-v2/local/${outputPrefix}_audit.csv`;
+  const manifestPath = `docs/platform-v2/local/${outputPrefix}_screenshot_manifest.csv`;
   await writeFile(mdPath, md.join("\n"), "utf8");
   await writeFile(csvPath, csvRows.join("\n"), "utf8");
   await writeFile(manifestPath, manifestRows.join("\n"), "utf8");

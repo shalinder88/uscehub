@@ -87,13 +87,32 @@
   .actions-bar .stats { font-size: 12px; opacity: 0.85; margin-right: auto; }
   .actions-bar button { padding: 6px 14px; border: 1px solid #444; background: white; color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500; }
   .actions-bar button.danger { background: var(--coral); color: white; border-color: var(--coral); }
+
+  /* Dashboard counter row + quick templates + utility buttons */
+  .dashboard { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--rule); background: #fff; }
+  .dash-tile { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 4px; background: #faf6e8; font-size: 12px; cursor: pointer; }
+  .dash-tile.active { background: var(--ink); color: white; border-color: var(--ink); }
+  .dash-tile strong { display: block; font-size: 14px; line-height: 1.1; }
+  .dash-tile span { color: var(--muted); }
+  .quick-templates { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+  .quick-templates button { padding: 6px 10px; font-size: 12px; border: 1px solid var(--rule); background: #fbf7eb; border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .quick-templates button:hover { background: var(--brass); color: white; border-color: var(--brass); }
+  .util-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  .util-row button { padding: 4px 10px; font-size: 11px; border: 1px solid var(--rule); background: white; border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .toast { position: fixed; bottom: 64px; right: 18px; background: var(--ink); color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000; }
+  .toast.show { opacity: 1; }
+  .sort-row { padding: 8px 12px; border-bottom: 1px solid var(--rule); display: flex; gap: 6px; align-items: center; font-size: 11px; }
+  .sort-row label { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sort-row select { padding: 4px 8px; font-size: 11px; border: 1px solid var(--rule); background: white; border-radius: 4px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>P96-4A — Listing review workbench</h1>
+  <h1>P96 — Listing review workbench</h1>
   <span class="header-meta" id="genMeta">loading…</span>
 </header>
+
+<div class="dashboard" id="dashboard"></div>
 
 <div class="layout">
   <aside>
@@ -136,6 +155,16 @@
         </select>
       </div>
     </div>
+    <div class="sort-row">
+      <label>Sort:</label>
+      <select id="sortBy">
+        <option value="undecidedFirst">Undecided first</option>
+        <option value="severity">Recommended-action severity</option>
+        <option value="targetFitSeverity">Target-fit severity</option>
+        <option value="institution">Institution / title</option>
+        <option value="verdict">Verdict</option>
+      </select>
+    </div>
     <ul class="row-list" id="rowList"></ul>
   </aside>
 
@@ -148,9 +177,10 @@
   <span class="stats" id="stats">0 of 0 decided</span>
   <button id="exportJson">Export JSON</button>
   <button id="exportCsv">Export CSV</button>
-  <button id="copySummary">Copy summary</button>
+  <button id="copySummaryAll">Copy summary</button>
   <button id="clearAll" class="danger">Clear decisions</button>
 </div>
+<div class="toast" id="toast"></div>
 
 <script>
 const STORAGE_KEY = 'p96-4a-decisions-v1';
@@ -171,10 +201,62 @@ async function init() {
   data = await res.json();
   document.getElementById('genMeta').textContent =
     `${data.questionableRowCount} questionable / ${data.totalSampleSize} sample · generated ${data.generatedAt}`;
+  renderDashboard();
   renderList();
   if (data.items.length > 0) selectItem(data.items[0].itemId);
   bindActions();
   updateStats();
+}
+
+function renderDashboard() {
+  const decisions = loadDecisions();
+  const counters = {
+    total: data.items.length,
+    questionable: data.items.length,
+    wrong: data.items.filter(i => i.sourceVerdict === 'LIKELY_WRONG_PAGE').length,
+    generic: data.items.filter(i => i.sourceVerdict === 'GENERIC_HOMEPAGE').length,
+    deepNoHint: data.items.filter(i => i.sourceVerdict === 'DEEP_PATH_NO_HINT').length,
+    pathHints: data.items.filter(i => i.sourceVerdict === 'PATH_HINTS_PROGRAM').length,
+    sourceDead: data.items.filter(i => i.sourceVerdict === 'SOURCE_DEAD').length,
+    maybeFit: data.items.filter(i => i.targetFit === 'MAYBE_TARGET_MANUAL_REVIEW').length,
+    nonTarget: data.items.filter(i => (i.targetFit || '').startsWith('NON_TARGET')).length,
+    decided: data.items.filter(i => decisions[i.itemId]).length,
+    undecided: data.items.filter(i => !decisions[i.itemId]).length,
+    modified: Object.values(decisions).filter(d => d.userDecision === 'MODIFY').length,
+    discarded: Object.values(decisions).filter(d => d.userDecision === 'DISCARD').length,
+    needsResearch: Object.values(decisions).filter(d => d.userDecision === 'NEEDS_MORE_RESEARCH').length,
+  };
+  const tiles = [
+    { label: 'Total', key: 'total', filter: null },
+    { label: 'Wrong page', key: 'wrong', filter: { verdict: 'LIKELY_WRONG_PAGE' } },
+    { label: 'Generic home', key: 'generic', filter: { verdict: 'GENERIC_HOMEPAGE' } },
+    { label: 'Deep no hint', key: 'deepNoHint', filter: { verdict: 'DEEP_PATH_NO_HINT' } },
+    { label: 'Path hints', key: 'pathHints', filter: { verdict: 'PATH_HINTS_PROGRAM' } },
+    { label: 'Source dead', key: 'sourceDead', filter: { verdict: 'SOURCE_DEAD' } },
+    { label: 'Maybe fit', key: 'maybeFit', filter: { fit: 'MAYBE_TARGET_MANUAL_REVIEW' } },
+    { label: 'Non-target', key: 'nonTarget', filter: null },
+    { label: 'Decided', key: 'decided', filter: { decision: 'decided' } },
+    { label: 'Undecided', key: 'undecided', filter: { decision: 'undecided' } },
+    { label: 'Modified', key: 'modified', filter: { decision: 'MODIFY' } },
+    { label: 'Discarded', key: 'discarded', filter: { decision: 'DISCARD' } },
+    { label: 'Needs research', key: 'needsResearch', filter: { decision: 'NEEDS_MORE_RESEARCH' } },
+  ];
+  const dash = document.getElementById('dashboard');
+  dash.innerHTML = tiles.map(t =>
+    `<div class="dash-tile" data-filter='${JSON.stringify(t.filter || {})}'><strong>${counters[t.key]}</strong><span>${t.label}</span></div>`
+  ).join('');
+  dash.querySelectorAll('.dash-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const f = JSON.parse(tile.getAttribute('data-filter') || '{}');
+      if (f.verdict !== undefined) document.getElementById('verdictFilter').value = f.verdict;
+      else document.getElementById('verdictFilter').value = '';
+      if (f.fit !== undefined) document.getElementById('fitFilter').value = f.fit;
+      else document.getElementById('fitFilter').value = '';
+      if (f.decision !== undefined) document.getElementById('decisionFilter').value = f.decision;
+      else document.getElementById('decisionFilter').value = '';
+      renderList();
+    });
+  });
 }
 
 function activeFilters() {
@@ -204,11 +286,33 @@ function applyFilters(items) {
   });
 }
 
+const ACTION_RANK = { WRONG_PAGE_REPLACE: 1, NEEDS_BETTER_SOURCE: 2, SOURCE_DEAD_REVIEW: 3, MANUAL_REVIEW: 4, KEEP_SOURCE: 5 };
+const FIT_RANK = { NON_TARGET_SPECIALIST_ONLY: 1, NON_TARGET_BASIC_RESEARCH: 1, NON_TARGET_NON_CLINICAL: 1, NON_TARGET_THIRD_PARTY_ONLY: 1, DUPLICATE_OR_REPLACED: 1, MAYBE_TARGET_MANUAL_REVIEW: 2, TARGET_USCE_MATCH: 3 };
+const VERDICT_RANK = { LIKELY_WRONG_PAGE: 1, SOURCE_DEAD: 2, GENERIC_HOMEPAGE: 3, DEEP_PATH_NO_HINT: 4, PATH_HINTS_PROGRAM: 5, UNKNOWN: 6 };
+
+function applySort(items) {
+  const sortBy = document.getElementById('sortBy')?.value || 'undecidedFirst';
+  const decisions = loadDecisions();
+  const arr = items.slice();
+  arr.sort((a, b) => {
+    if (sortBy === 'severity') return (ACTION_RANK[a.recommendedAction] || 9) - (ACTION_RANK[b.recommendedAction] || 9);
+    if (sortBy === 'targetFitSeverity') return (FIT_RANK[a.targetFit] || 9) - (FIT_RANK[b.targetFit] || 9);
+    if (sortBy === 'institution') return (a.title || '').localeCompare(b.title || '');
+    if (sortBy === 'verdict') return (VERDICT_RANK[a.sourceVerdict] || 9) - (VERDICT_RANK[b.sourceVerdict] || 9);
+    // undecidedFirst (default)
+    const aDec = decisions[a.itemId] ? 1 : 0;
+    const bDec = decisions[b.itemId] ? 1 : 0;
+    if (aDec !== bDec) return aDec - bDec;
+    return (ACTION_RANK[a.recommendedAction] || 9) - (ACTION_RANK[b.recommendedAction] || 9);
+  });
+  return arr;
+}
+
 function renderList() {
   const ul = document.getElementById('rowList');
   ul.innerHTML = '';
   const decisions = loadDecisions();
-  const items = applyFilters(data.items);
+  const items = applySort(applyFilters(data.items));
   for (const it of items) {
     const li = document.createElement('li');
     if (it.itemId === activeId) li.classList.add('active');
@@ -272,6 +376,15 @@ function selectItem(id) {
     </div>
 
     <div class="panel">
+      <h3>Quick utilities</h3>
+      <div class="util-row">
+        <button data-act="copySource">Copy source URL</button>
+        <button data-act="copyApp">Copy application URL</button>
+        <button data-act="copySummary">Copy item summary</button>
+        <button data-act="openAll">Open all evidence (4 tabs)</button>
+        <button data-act="next">Mark reviewed → next item</button>
+      </div>
+
       <h3>Decision</h3>
       <div class="decision-row" id="decisionRow">
         ${['KEEP','KEEP_WITH_CAVEATS','MODIFY','DISCARD','NEEDS_MORE_RESEARCH'].map(d =>
@@ -334,6 +447,22 @@ function selectItem(id) {
 
       <label style="display:block; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin: 14px 0 4px;">Reviewer notes (any decision)</label>
       <textarea id="reviewerNotes" style="width:100%; min-height:60px; padding:6px 8px; font-size:13px; border:1px solid var(--rule); background:white; border-radius:4px; font-family:inherit;">${escapeHtml(dec.reviewerNotes || '')}</textarea>
+
+      <h3>Quick decision templates</h3>
+      <div class="quick-templates" id="quickTemplates">
+        <button data-tpl="keep_ok">Keep; source acceptable</button>
+        <button data-tpl="keep_weak">Keep; source weak but acceptable</button>
+        <button data-tpl="keep_caveat_generic">Keep with caveat: source is generic</button>
+        <button data-tpl="modify_source">Modify source URL</button>
+        <button data-tpl="modify_apply">Modify application URL</button>
+        <button data-tpl="fix_description">Fix description</button>
+        <button data-tpl="fit_unclear">Target-fit unclear</button>
+        <button data-tpl="specialist_only">Likely specialist/faculty only</button>
+        <button data-tpl="basic_science">Likely basic science / postdoc</button>
+        <button data-tpl="discard_wedge">Discard from current USCE wedge</button>
+        <button data-tpl="needs_better">Needs better official source</button>
+        <button data-tpl="needs_search">Needs manual web search</button>
+      </div>
     </div>
   `;
 
@@ -357,6 +486,109 @@ function bindDecisionRow() {
   });
   const notes = document.getElementById('reviewerNotes');
   if (notes) notes.addEventListener('input', () => saveDecisionForActive());
+
+  // Quick utility buttons
+  document.querySelectorAll('.util-row button').forEach(btn => {
+    btn.addEventListener('click', () => handleUtility(btn.getAttribute('data-act')));
+  });
+
+  // Quick decision templates
+  document.querySelectorAll('#quickTemplates button').forEach(btn => {
+    btn.addEventListener('click', () => applyTemplate(btn.getAttribute('data-tpl')));
+  });
+}
+
+function handleUtility(act) {
+  const it = data.items.find(x => x.itemId === activeId);
+  if (!it) return;
+  if (act === 'copySource') {
+    navigator.clipboard.writeText(it.sourceUrl || '');
+    toast('Source URL copied');
+  } else if (act === 'copyApp') {
+    navigator.clipboard.writeText(it.applicationUrl || '');
+    toast('Application URL copied');
+  } else if (act === 'copySummary') {
+    const lines = [
+      `Listing: ${it.title}`,
+      `id: ${it.itemId}`,
+      `Source: ${it.sourceUrl}`,
+      `Verdict: ${it.sourceVerdict} (${it.verdictReason})`,
+      `Target fit: ${it.targetFit} — ${it.targetFitReason}`,
+      `Recommended: ${it.recommendedAction}`,
+      `Why review: ${(it.whyNeedsReview||[]).join('; ')}`,
+    ];
+    navigator.clipboard.writeText(lines.join('\n'));
+    toast('Summary copied');
+  } else if (act === 'openAll') {
+    [it.sourceUrl, it.applicationUrl, `http://localhost:3000/listing/${it.itemId}`, it.uscehubScreenshotPath ? '../../../../' + it.uscehubScreenshotPath : null].forEach(u => {
+      if (u) window.open(u, '_blank');
+    });
+  } else if (act === 'next') {
+    const list = applySort(applyFilters(data.items));
+    const idx = list.findIndex(x => x.itemId === activeId);
+    if (idx >= 0 && idx < list.length - 1) selectItem(list[idx + 1].itemId);
+  }
+}
+
+const TEMPLATES = {
+  keep_ok:        { d: 'KEEP', notes: 'Source acceptable; keep as-is.' },
+  keep_weak:      { d: 'KEEP', notes: 'Source weak but acceptable for now.' },
+  keep_caveat_generic: { d: 'KEEP_WITH_CAVEATS', caveat: 'Source URL is a generic homepage; surface "source under review" caveat publicly until re-linked.' },
+  modify_source:  { d: 'MODIFY', mod: 'Replace source URL with a program-specific page on the institution domain.', priority: 'HIGH' },
+  modify_apply:   { d: 'MODIFY', mod: 'Replace application URL.', priority: 'MEDIUM' },
+  fix_description:{ d: 'MODIFY', mod: 'Rewrite description to match what the official source actually says.', priority: 'MEDIUM' },
+  fit_unclear:    { d: 'NEEDS_MORE_RESEARCH', research: 'Confirm whether this opportunity is for medical students/IMGs (target) or for licensed providers/specialists (non-target).' },
+  specialist_only:{ d: 'DISCARD', reason: 'Listing is for licensed providers / specialists / fellows; non-target for the current USCE & Match wedge.', lane: 'Specialist/faculty opportunities' },
+  basic_science:  { d: 'DISCARD', reason: 'Listing is basic-science / wet-lab / postdoc research; non-target for the current USCE & Match wedge.', lane: 'Basic science / postdoc research lane' },
+  discard_wedge:  { d: 'DISCARD', reason: 'Out of scope for the current USCE & Match wedge.', lane: 'Not relevant' },
+  needs_better:   { d: 'MODIFY', mod: 'Source URL is not the program page; admin must find a better official source.', priority: 'HIGH' },
+  needs_search:   { d: 'NEEDS_MORE_RESEARCH', research: 'Run a manual web search for the institution + opportunity keyword to find the correct program page.' },
+};
+
+function applyTemplate(key) {
+  const tpl = TEMPLATES[key];
+  if (!tpl) return;
+  const decisions = loadDecisions();
+  const id = activeId;
+  if (!id) return;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  // Pre-populate fields based on template
+  const prev = decisions[id] || {};
+  decisions[id] = {
+    ...prev,
+    itemId: id,
+    listingIdOrSlug: it.itemId,
+    title: it.title,
+    sourceUrl: it.sourceUrl,
+    applicationUrl: it.applicationUrl,
+    sourceVerdict: it.sourceVerdict,
+    targetFit: it.targetFit,
+    originalRecommendedAction: it.recommendedAction,
+    userDecision: tpl.d,
+    reviewerNotes: tpl.notes || prev.reviewerNotes || '',
+    caveatText: tpl.caveat || prev.caveatText || '',
+    modifyInstructions: tpl.mod || prev.modifyInstructions || '',
+    discardReason: tpl.reason || prev.discardReason || '',
+    futureLaneCandidate: tpl.lane || prev.futureLaneCandidate || it.futureLaneCandidate || '',
+    researchQuestion: tpl.research || prev.researchQuestion || '',
+    priority: tpl.priority || prev.priority || 'MEDIUM',
+    canReconsiderLater: prev.canReconsiderLater !== false,
+    decidedAt: new Date().toISOString(),
+  };
+  saveDecisions(decisions);
+  selectItem(id); // re-render
+  renderList();
+  renderDashboard();
+  updateStats();
+  toast(`Template applied: ${key.replace(/_/g, ' ')}`);
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 1800);
 }
 
 function readField(id) {
@@ -418,14 +650,18 @@ function updateStats() {
   const decided = data.items.filter(it => decisions[it.itemId]).length;
   document.getElementById('stats').textContent =
     `${decided} of ${data.items.length} decided`;
+  renderDashboard();
 }
 
 function bindActions() {
-  ['search','verdictFilter','fitFilter','decisionFilter'].forEach(id =>
-    document.getElementById(id).addEventListener('input', renderList));
+  ['search','verdictFilter','fitFilter','decisionFilter','sortBy'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => { renderList(); renderDashboard(); });
+    if (el) el.addEventListener('change', () => { renderList(); renderDashboard(); });
+  });
   document.getElementById('exportJson').addEventListener('click', exportJson);
   document.getElementById('exportCsv').addEventListener('click', exportCsv);
-  document.getElementById('copySummary').addEventListener('click', copySummary);
+  document.getElementById('copySummaryAll').addEventListener('click', copyOverallSummary);
   document.getElementById('clearAll').addEventListener('click', clearAll);
 }
 
@@ -446,7 +682,7 @@ function exportCsv() {
   download('decision-export.csv', lines.join('\n'), 'text/csv');
 }
 
-function copySummary() {
+function copyOverallSummary() {
   const decisions = loadDecisions();
   const counts = {};
   for (const it of data.items) {
@@ -455,7 +691,8 @@ function copySummary() {
     counts[k] = (counts[k] || 0) + 1;
   }
   const summary = Object.entries(counts).map(([k,v]) => `${k}: ${v}`).join('\n');
-  navigator.clipboard.writeText(`P96-4A decisions (n=${data.items.length}):\n${summary}`);
+  navigator.clipboard.writeText(`P96 decisions (n=${data.items.length}):\n${summary}`);
+  toast('Overall summary copied');
 }
 
 function clearAll() {

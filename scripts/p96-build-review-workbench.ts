@@ -1,16 +1,21 @@
 /**
  * P96-4A — build the local evidence review workbench data.
  *
- * Read-only file I/O. Reads the main 25-listing CSV + discard log
- * and writes the workbench's review-data.json. Pure post-process —
- * no DB connection, no network, no mutation.
+ * Read-only file I/O. Reads an audit CSV + discard log and writes
+ * the workbench's review-data.json. Pure post-process — no DB
+ * connection, no network, no mutation.
  *
  * The static index.html under
  * docs/platform-v2/local/review-workbench/ loads review-data.json
  * via fetch() at runtime.
  *
  * Run from repo root:
+ *   # P96-2 sample (default)
  *   npx tsx scripts/p96-build-review-workbench.ts
+ *
+ *   # P96-3 full 304 audit
+ *   npx tsx scripts/p96-build-review-workbench.ts \
+ *     --input docs/platform-v2/local/p96_3_full_304_listing_audit.csv
  */
 
 import { readFile, writeFile } from "node:fs/promises";
@@ -111,7 +116,12 @@ function whyNeedsReviewFor(row: Record<string, string>): string[] {
 }
 
 async function main() {
-  const mainCsvPath = "docs/platform-v2/local/p96_2_25_listing_sample_audit.csv";
+  const idx = process.argv.indexOf("--input");
+  const mainCsvPath =
+    idx >= 0 && idx + 1 < process.argv.length
+      ? process.argv[idx + 1]
+      : "docs/platform-v2/local/p96_2_25_listing_sample_audit.csv";
+  console.log(`Reading ${mainCsvPath}`);
   const text = await readFile(mainCsvPath, "utf8");
   const { rows } = parseCsv(text);
 

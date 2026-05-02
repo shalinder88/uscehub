@@ -1,8 +1,8 @@
-# P96-4A — Local evidence review workbench
+# P96-3 / P96-4A — Local evidence review workbench (full 304)
 
 Local-only static review tool. **No production route. No DB
 mutation. No deploy.** Lets you walk through the questionable
-listings surfaced by the P96-2 / P96-2B audit, view both the
+listings surfaced by the P96-2 / P96-2B / P96-3 audits, view both the
 USCEHub-side and official-source screenshots, and record a
 **KEEP / KEEP_WITH_CAVEATS / MODIFY / DISCARD / NEEDS_MORE_RESEARCH**
 decision per row. Exports the decisions as CSV or JSON for the
@@ -54,8 +54,15 @@ cd /Users/shelly/usmle-platform
 npx tsx scripts/p96-build-review-workbench.ts
 ```
 
+For the full 304-listing audit:
+
+```bash
+npx tsx scripts/p96-build-review-workbench.ts \
+  --input docs/platform-v2/local/p96_3_full_304_listing_audit.csv
+```
+
 The generator script:
-- reads `docs/platform-v2/local/p96_2_25_listing_sample_audit.csv`
+- reads the audit CSV passed via `--input` (default: P96-2 25-row sample)
 - includes only rows with at least one review trigger
   (`GENERIC_HOMEPAGE`, `LIKELY_WRONG_PAGE`, `DEEP_PATH_NO_HINT`,
   `MAYBE_TARGET_MANUAL_REVIEW`, `WRONG_PAGE_REPLACE`,
