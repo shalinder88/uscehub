@@ -1,25 +1,43 @@
-# P96-4B — relink research report (batches 001 + 002)
+# P96-4B — relink research final report (181/181 complete)
 
 Generated: 2026-05-02
 Branch: `local/p96-2-listing-screenshot-audit`
-Batches complete: 60 of 181 questionable rows (33%)
+Batches: 001-006 (181 of 181 questionable rows, 100%)
 
-## Cumulative distribution (batches 001 + 002)
+## Final cumulative distribution
 
-| Replacement recommendation | Count |
+| Replacement recommendation | Count | % |
+| --- | --- | --- |
+| KEEP_CURRENT_SOURCE | 50 | 28% |
+| DISCARD_FROM_CURRENT_WEDGE | 35 | 19% |
+| KEEP_WITH_CAVEAT | 27 | 15% |
+| REPLACE_SOURCE_URL | 26 | 14% |
+| REPLACE_BOTH | 23 | 13% |
+| NEEDS_MORE_RESEARCH | 20 | 11% |
+
+| Confidence | Count | % |
+| --- | --- | --- |
+| HIGH | 117 | 65% |
+| MEDIUM | 29 | 16% |
+| LOW | 35 | 19% |
+
+| Target fit (after research) | Count |
 | --- | --- |
-| REPLACE_BOTH | 9 |
-| REPLACE_SOURCE_URL | 10 |
-| KEEP_WITH_CAVEAT | 17 |
-| KEEP_CURRENT_SOURCE | 5 |
-| DISCARD_FROM_CURRENT_WEDGE | 10 |
-| NEEDS_MORE_RESEARCH | 9 |
+| MAYBE_TARGET_MANUAL_REVIEW | 92 |
+| TARGET_USCE_MATCH | 77 |
+| DUPLICATE_OR_REPLACED | 12 |
 
-| Confidence | Count |
-| --- | --- |
-| HIGH | 29 |
-| MEDIUM | 11 |
-| LOW | 20 |
+## Headline outcomes
+
+- **49 high-confidence relinks proposed** (REPLACE_SOURCE_URL + REPLACE_BOTH = 49 of 181, 27%).
+- **50 current URLs kept** as canonical (heuristic false-positives; the URL was already correct, classifier just didn't recognize the path keyword).
+- **35 discards** from the current USCE & Match wedge — all reversible, all carry a future-lane candidate. Most common reasons:
+  - `no_img_eligible` (LCME/COCA-only programs)
+  - `no_observership_offered` (hospitals with explicit no-observership policies)
+  - `no_img_no_observership` (double-block institutions)
+- **27 keep-with-caveat** rows — primarily postdoc/research positions (low-priority research_track_secondary lane), NYC H+H per-hospital pattern, and affiliation-only programs.
+- **20 still need manual research** — third-party USCE brokers (CEP, Global Medical Foundation, AMG), system-in-transition hospitals (Crozer, Interfaith, Kingsbrook, Brookdale), and a handful of community hospitals with no observership landing page surfaced.
+- **117 of 181 (65%) classified at HIGH confidence.**
 
 ## New findings from batch 002
 

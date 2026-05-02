@@ -875,7 +875,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://pathology.ucsf.edu/clinical/ap/neuropath/visiting-scholars",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UCSF Neuropath Visiting Scholars — current URL IS the program page. Specialty observership.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "specialty_only",
+        "reviewerNotes": "KEEP. Specialty path."
+      }
     },
     {
       "itemId": "cmn2111ce0010sb11kh0qbbxa",
@@ -1283,7 +1295,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.vumc.org/observational-services/welcome-vanderbilt-observational-experience-voe-program",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Vanderbilt Observational Experience (VOE) Program — current URL IS the canonical observership page.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmo3386v300331ny9u212xhza",
@@ -1314,7 +1338,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://med.virginia.edu/radiology/education/mini-fellowships/breast-imaging-international-visiting-scholars/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UVA Breast Imaging International Visiting Scholars — current URL IS the program page. Specialty/sub-specialty.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "specialty_only",
+        "reviewerNotes": "KEEP. Specialty radiology path."
+      }
     },
     {
       "itemId": "cmn21111q000csb1163kfm97r",
@@ -1470,7 +1506,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://international.weill.cornell.edu/visiting-international-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Weill Cornell Visiting International Medical Students — current URL IS the program page.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2111090008sb1118f8yxgv",
@@ -1541,7 +1589,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://www.mskcc.org/hcp-education-training/medical-students/summer-fellowship",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "MSK Medical Student Summer Research Fellowship — current URL is canonical. Per doctrine: research path = low-priority secondary lane.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Research, not USCE. Caveat applies."
+      }
     },
     {
       "itemId": "cmn21118u000qsb11lbgouwbn",
@@ -2243,7 +2303,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.med.unc.edu/ome/studentaffairs/visiting-student-program/program-requirements/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UNC Visiting Student Program Requirements — current URL is canonical. Cross-reference batch 003 for IVS path.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn211516009msb111n1uwpre",
@@ -2357,7 +2429,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://medicine.utah.edu/students/visiting",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "U Utah SFE Visiting Student Program — current URL is canonical. Cross-reference batch 004 Department-Sponsored Visitors for IMG path.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmo34f4m9001r1nxxaili4bwg",
@@ -2387,7 +2471,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/index.html",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UCSD Visiting Senior MS Program — current URL is canonical. UCSD has separate IMG paths (ACE, Bridge to Residency) per batch 003.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmo34f411000z1nxxrwp250gf",
@@ -2459,7 +2555,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://medschool.umich.edu/programs-admissions/visiting-md-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "U Michigan Visiting MD Students — current URL is canonical. Cross-reference batch 004 Global REACH for IMG path.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmo34f39e00011nxx957icy6t",
@@ -2699,7 +2807,19 @@
         "Source did not capture (PDF or dead URL)"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Screenshot capture failed: page.goto: Download is starting\\nCall log:\\n  - navigating to \\https://www.orlandohealth.com/-/media/files/orlando-health/medical-professionals/observership-application.pdf\\, waiting until \\domcontentlo.,MAYBE_TARGET_MANUAL_REVIEW,\\Visiting Scholars\\ / \\Medical Staff Services\\ wording often denotes faculty or licensed-provider programs rather than student/IMG observerships.,UNCLEAR,true,false,Specialist/faculty opportunities (if not for students/IMGs)"
+      "notesFromAudit": "Screenshot capture failed: page.goto: Download is starting\\nCall log:\\n  - navigating to \\https://www.orlandohealth.com/-/media/files/orlando-health/medical-professionals/observership-application.pdf\\, waiting until \\domcontentlo.,MAYBE_TARGET_MANUAL_REVIEW,\\Visiting Scholars\\ / \\Medical Staff Services\\ wording often denotes faculty or licensed-provider programs rather than student/IMG observerships.,UNCLEAR,true,false,Specialist/faculty opportunities (if not for students/IMGs)",
+      "relink": {
+        "candidateSourceUrl": "https://www.orlandohealth.com/-/media/files/orlando-health/medical-professionals/observership-application.pdf",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_APPLICATION_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Orlando Health Medical Staff Services Observership — institution-hosted PDF. Per P97 doctrine, institution PDFs are valid sources. Per batch 001 capture, PDF crashed Playwright but URL is correct.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP. Institution PDF."
+      }
     },
     {
       "itemId": "cmo3385cf00111ny9csmoq699",
@@ -2729,7 +2849,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://health.usf.edu/medicine/ia/international-training-programs",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "USF Morsani International Medical Trainee Observership — current URL is the program page.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmo33855r000t1ny9mcguc1mn",
@@ -2969,7 +3101,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://health.usf.edu/medicine/ia/international-training-programs",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "DUPLICATE_OR_REPLACED",
+        "evidenceText": "Duplicate USF International Training row.",
+        "searchTermsTried": "(duplicate)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Dedupe."
+      }
     },
     {
       "itemId": "cmn2111xq002asb11vcg045uc",
@@ -2999,7 +3143,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.uchicagomedicine.org/international/international-collaboration/education-and-training",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UChicago Medicine International Collaboration Education & Training — current URL is the program page.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2111mt001msb11fzpzozyu",
@@ -3406,7 +3562,19 @@
         "Source did not capture (PDF or dead URL)"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Screenshot capture failed: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\\nCall log:\\n  - navigating to \\#\\, waiting until \\domcontentloaded\\\\n."
+      "notesFromAudit": "Screenshot capture failed: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\\nCall log:\\n  - navigating to \\#\\, waiting until \\domcontentloaded\\\\n.",
+      "relink": {
+        "candidateSourceUrl": "",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "DEAD_OR_BLOCKED",
+        "confidence": "LOW",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "CEP Multi-Site — sourceUrl is literal '#' placeholder. Not researched (per batch 001 CEP, legitimacy unverified).",
+        "searchTermsTried": "(URL is placeholder)",
+        "futureLaneCandidate": "third_party_usce_brokers",
+        "reviewerNotes": "Manual due-diligence required."
+      }
     },
     {
       "itemId": "cmn2115ok00b2sb11uo7vd4v7",
@@ -4109,7 +4277,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://www.med.upenn.edu/postdoc/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Penn Medicine Postdoctoral Research: postdoctoral research positions for MD/MBBS graduates. IMGs typically work on clinical research, outcomes research, or health services research. J1 visa sponsorship usually available through the institution. Most positions found through cold-emailing faculty PIs — not centrally posted. Keep on the wedge as a low-priority secondary path.",
+        "searchTermsTried": "(doctrine reclass)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Same low-priority research caveat."
+      }
     },
     {
       "itemId": "cmn21143g007asb11c77awbh2",
@@ -4223,7 +4403,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "No URL or unparseable source."
+      "notesFromAudit": "No URL or unparseable source.",
+      "relink": {
+        "candidateSourceUrl": "",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "DEAD_OR_BLOCKED",
+        "confidence": "LOW",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Global Medical Foundation — empty sourceUrl. Third-party USCE provider; needs legitimacy verification.",
+        "searchTermsTried": "(empty URL)",
+        "futureLaneCandidate": "third_party_usce_brokers",
+        "reviewerNotes": "Verify legitimacy before keep/discard."
+      }
     },
     {
       "itemId": "cmn21140m0072sb11ez341w0z",
@@ -4252,7 +4444,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "No URL or unparseable source."
+      "notesFromAudit": "No URL or unparseable source.",
+      "relink": {
+        "candidateSourceUrl": "",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "DEAD_OR_BLOCKED",
+        "confidence": "LOW",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "AMG Medical Group — empty sourceUrl. Third-party clinical rotations provider.",
+        "searchTermsTried": "(empty URL)",
+        "futureLaneCandidate": "third_party_usce_brokers",
+        "reviewerNotes": "Verify legitimacy."
+      }
     },
     {
       "itemId": "cmn2113zw0070sb116oho28en",
@@ -4281,7 +4485,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://postdoc.duke.edu/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_GENERIC_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Duke Postdoctoral Research: postdoctoral research positions for MD/MBBS graduates. IMGs typically work on clinical research, outcomes research, or health services research. J1 visa sponsorship usually available through the institution. Most positions found through cold-emailing faculty PIs — not centrally posted. Keep on the wedge as a low-priority secondary path.",
+        "searchTermsTried": "(doctrine reclass)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Same low-priority research caveat."
+      }
     },
     {
       "itemId": "cmn2113z5006ysb11a69rap0h",
@@ -4396,7 +4612,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://www.cedars-sinai.edu/research/training/postdoctoral.html",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_GENERIC_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Cedars-Sinai Research Fellowship: postdoctoral research positions. Same low-priority research-path caveat as other postdoc rows.",
+        "searchTermsTried": "(doctrine reclass)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Research caveat."
+      }
     },
     {
       "itemId": "cmn2113ue006ssb11j9eieieh",
@@ -4596,7 +4824,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://www.hopkinsmedicine.org/research/resources/postdoctoral",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_GENERIC_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Johns Hopkins Postdoctoral Research: same low-priority research-path caveat.",
+        "searchTermsTried": "(doctrine reclass)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Research caveat."
+      }
     },
     {
       "itemId": "cmn2113qn006isb11ed3rrmyv",
@@ -4754,7 +4994,19 @@
         "Target fit ambiguous; needs human read"
       ],
       "suggestedDecision": "NEEDS_MORE_RESEARCH",
-      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed."
+      "notesFromAudit": "Source URL path matches program keyword; visual confirmation still needed.",
+      "relink": {
+        "candidateSourceUrl": "https://www.training.nih.gov/programs/postdoctoral_irta",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "NIH Clinical Center Postdoctoral IRTA: same low-priority research-path caveat.",
+        "searchTermsTried": "(doctrine reclass)",
+        "futureLaneCandidate": "research_track_secondary",
+        "reviewerNotes": "Research caveat."
+      }
     },
     {
       "itemId": "cmn2113m50066sb11sbr4jq4d",
@@ -4784,7 +5036,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.uab.edu/medicine/gme/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UAB GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2113le0064sb11a5urgvow",
@@ -4814,7 +5078,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://medicine.utah.edu/gme/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "U Utah Health GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2113kp0062sb11wyre9lqr",
@@ -5054,7 +5330,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://uthsc.edu/graduate-medical-education/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UTHSC Memphis GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2113dh005osb11qdk4antb",
@@ -5084,7 +5372,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.vumc.org/observational-services/welcome-vanderbilt-observational-experience-voe-program",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "DUPLICATE_OR_REPLACED",
+        "evidenceText": "Duplicate Vanderbilt VOE row.",
+        "searchTermsTried": "(duplicate)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Dedupe."
+      }
     },
     {
       "itemId": "cmn2113cs005msb11f4e79jnf",
@@ -5996,7 +6296,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://dom.pitt.edu/education/eop/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UPMC Department of Medicine Externship/Observership Program (EOP) — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2112m0003ysb11rxj0haiv",
@@ -6278,7 +6590,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://med.umn.edu/gme",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "U Minnesota GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn21126j002ysb11e8v08sef",
@@ -6308,7 +6632,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "NO_BETTER_SOURCE_FOUND",
+        "confidence": "LOW",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "U Maryland Medical Center current URL is umm.edu/ homepage. Try medschool.umaryland.edu for medical education programs.",
+        "searchTermsTried": "(URL is homepage)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Try medschool.umaryland.edu."
+      }
     },
     {
       "itemId": "cmn211253002usb11tv4v9ll0",
@@ -6338,7 +6674,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://med.uc.edu/gme",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UC Cincinnati GME — per batch 003: 'Observerships are not available... not accepting international students for clinical electives currently.'",
+        "searchTermsTried": "(reuse batch 003)",
+        "futureLaneCandidate": "no_img_no_observership",
+        "reviewerNotes": "Active no-IMG-observership."
+      }
     },
     {
       "itemId": "cmn21124c002ssb11sr1k6hdt",
@@ -6410,7 +6758,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://www.uhhospitals.org/medical-education/graduate-medical-education",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UH Cleveland GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn211226002msb11k9kbylwr",
@@ -6818,7 +7178,19 @@
         "Recommended action: manual review"
       ],
       "suggestedDecision": "KEEP_WITH_CAVEATS",
-      "notesFromAudit": "Deep path with no keyword hit; review page text manually."
+      "notesFromAudit": "Deep path with no keyword hit; review page text manually.",
+      "relink": {
+        "candidateSourceUrl": "https://health.ucdavis.edu/gme/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UC Davis GME — current URL is canonical.",
+        "searchTermsTried": "(verified)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "KEEP."
+      }
     },
     {
       "itemId": "cmn2111o8001qsb11j87evr4c",
@@ -7242,5 +7614,5 @@
     }
   ],
   "relinkBatch": "001",
-  "relinkResearchedCount": 150
+  "relinkResearchedCount": 181
 }
