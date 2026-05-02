@@ -6,15 +6,17 @@
 <title>P96-4A — local evidence review workbench</title>
 <style>
   :root {
-    --bg: #faf6e8;
-    --ink: #0d1418;
-    --rule: #d8d2bc;
-    --muted: #5a5a4d;
-    --teal: #1a5454;
-    --brass: #a87b2e;
-    --coral: #9c3a2c;
-    --green: #2f6b3e;
-    --amber: #b07b00;
+    --bg: #000000;
+    --panel: #0f1518;
+    --panel-2: #161d22;
+    --ink: #e8e4d4;
+    --rule: #2a3138;
+    --muted: #8b8b80;
+    --teal: #6cc6c6;
+    --brass: #d6a857;
+    --coral: #e07664;
+    --green: #7cc88a;
+    --amber: #e5b948;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
@@ -26,84 +28,92 @@
   main { padding: 18px 22px 80px; overflow-y: auto; max-height: calc(100vh - 60px); }
   .filters { padding: 10px 12px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; }
   .filters label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-  .filters input, .filters select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: white; border-radius: 4px; }
+  .filters input, .filters select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; }
   .row-list { list-style: none; margin: 0; padding: 0; }
   .row-list li { padding: 10px 12px; border-bottom: 1px solid var(--rule); cursor: pointer; }
-  .row-list li:hover { background: rgba(168,123,46,0.07); }
-  .row-list li.active { background: rgba(26,84,84,0.1); }
+  .row-list li:hover { background: rgba(214,168,87,0.08); }
+  .row-list li.active { background: rgba(108,198,198,0.12); }
   .row-title { font-size: 13px; font-weight: 600; line-height: 1.3; }
   .row-meta { font-size: 11px; color: var(--muted); margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
   .badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
-  .b-verdict-PATH_HINTS_PROGRAM { background: #e0ecdc; color: var(--green); }
-  .b-verdict-DEEP_PATH_NO_HINT { background: #f0e8d2; color: var(--brass); }
-  .b-verdict-GENERIC_HOMEPAGE { background: #f0d9d4; color: var(--coral); }
-  .b-verdict-LIKELY_WRONG_PAGE { background: #d54a3a; color: white; }
-  .b-verdict-SOURCE_DEAD { background: #555; color: white; }
-  .b-verdict-LOGIN_REQUIRED { background: #ddd; color: #444; }
-  .b-fit-TARGET_USCE_MATCH { background: #c7e6cd; color: var(--green); }
-  .b-fit-MAYBE_TARGET_MANUAL_REVIEW { background: #f0e8d2; color: var(--brass); }
+  .b-verdict-PATH_HINTS_PROGRAM { background: rgba(124,200,138,0.18); color: var(--green); }
+  .b-verdict-DEEP_PATH_NO_HINT { background: rgba(214,168,87,0.18); color: var(--brass); }
+  .b-verdict-GENERIC_HOMEPAGE { background: rgba(224,118,100,0.18); color: var(--coral); }
+  .b-verdict-LIKELY_WRONG_PAGE { background: #c8412f; color: #fff; }
+  .b-verdict-SOURCE_DEAD { background: #444a50; color: #d8d2c4; }
+  .b-verdict-LOGIN_REQUIRED { background: #2a2f33; color: #c9c5b8; }
+  .b-fit-TARGET_USCE_MATCH { background: rgba(124,200,138,0.18); color: var(--green); }
+  .b-fit-MAYBE_TARGET_MANUAL_REVIEW { background: rgba(214,168,87,0.18); color: var(--brass); }
   .b-fit-NON_TARGET_SPECIALIST_ONLY,
   .b-fit-NON_TARGET_BASIC_RESEARCH,
   .b-fit-NON_TARGET_NON_CLINICAL,
-  .b-fit-NON_TARGET_THIRD_PARTY_ONLY { background: #f0d9d4; color: var(--coral); }
-  .b-decision-undecided { background: #eee; color: #555; }
-  .b-decision-KEEP { background: #c7e6cd; color: var(--green); }
-  .b-decision-KEEP_WITH_CAVEATS { background: #f0e8d2; color: var(--brass); }
-  .b-decision-MODIFY { background: #cfe1ec; color: #2c5773; }
-  .b-decision-DISCARD { background: #f0d9d4; color: var(--coral); }
-  .b-decision-NEEDS_MORE_RESEARCH { background: #ddd; color: #444; }
+  .b-fit-NON_TARGET_THIRD_PARTY_ONLY { background: rgba(224,118,100,0.18); color: var(--coral); }
+  .b-decision-undecided { background: #2a2f33; color: #c9c5b8; }
+  .b-decision-KEEP { background: rgba(124,200,138,0.22); color: var(--green); }
+  .b-decision-KEEP_WITH_CAVEATS { background: rgba(214,168,87,0.22); color: var(--brass); }
+  .b-decision-MODIFY { background: rgba(108,198,198,0.22); color: var(--teal); }
+  .b-decision-DISCARD { background: rgba(224,118,100,0.22); color: var(--coral); }
+  .b-decision-NEEDS_MORE_RESEARCH { background: #2a2f33; color: #c9c5b8; }
+  .b-relink-HIGH { background: rgba(124,200,138,0.22); color: var(--green); }
+  .b-relink-MEDIUM { background: rgba(214,168,87,0.22); color: var(--brass); }
+  .b-relink-LOW { background: rgba(224,118,100,0.22); color: var(--coral); }
 
-  .panel { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; margin-bottom: 18px; }
+  .panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; margin-bottom: 18px; color: var(--ink); }
   .panel h2 { margin: 0 0 6px; font-size: 18px; }
   .panel h3 { margin: 18px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
   .meta-grid { display: grid; grid-template-columns: max-content 1fr; column-gap: 14px; row-gap: 6px; font-size: 13px; }
   .meta-grid dt { color: var(--muted); }
   .meta-grid dd { margin: 0; }
   .reason-list { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--coral); }
-  .url { font-family: ui-monospace, monospace; font-size: 12px; word-break: break-all; }
+  .url { font-family: ui-monospace, monospace; font-size: 12px; word-break: break-all; color: var(--teal); }
   a { color: var(--teal); }
 
   .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .screenshot-grid figure { margin: 0; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: #fff; }
-  .screenshot-grid figcaption { padding: 6px 8px; font-size: 11px; color: var(--muted); border-bottom: 1px solid var(--rule); background: #fafafa; }
+  .screenshot-grid figure { margin: 0; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--panel-2); }
+  .screenshot-grid figcaption { padding: 6px 8px; font-size: 11px; color: var(--muted); border-bottom: 1px solid var(--rule); background: var(--panel-2); }
   .screenshot-grid img { width: 100%; height: auto; display: block; }
-  .screenshot-missing { padding: 18px; text-align: center; font-size: 12px; color: var(--muted); background: #fafafa; }
+  .screenshot-missing { padding: 18px; text-align: center; font-size: 12px; color: var(--muted); background: var(--panel-2); }
 
   .decision-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-  .decision-row button { padding: 8px 14px; border: 1px solid var(--rule); background: white; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
-  .decision-row button.active.KEEP { border-color: var(--green); background: #e8f3ea; }
-  .decision-row button.active.KEEP_WITH_CAVEATS { border-color: var(--brass); background: #f6efde; }
-  .decision-row button.active.MODIFY { border-color: #2c5773; background: #dcecf4; }
-  .decision-row button.active.DISCARD { border-color: var(--coral); background: #f5dad4; }
-  .decision-row button.active.NEEDS_MORE_RESEARCH { border-color: #444; background: #ddd; }
-  .decision-fields { display: none; margin-top: 12px; padding: 12px; background: #f8f4e3; border: 1px dashed var(--rule); border-radius: 4px; }
+  .decision-row button { padding: 8px 14px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
+  .decision-row button.active.KEEP { border-color: var(--green); background: rgba(124,200,138,0.22); color: var(--green); }
+  .decision-row button.active.KEEP_WITH_CAVEATS { border-color: var(--brass); background: rgba(214,168,87,0.22); color: var(--brass); }
+  .decision-row button.active.MODIFY { border-color: var(--teal); background: rgba(108,198,198,0.22); color: var(--teal); }
+  .decision-row button.active.DISCARD { border-color: var(--coral); background: rgba(224,118,100,0.22); color: var(--coral); }
+  .decision-row button.active.NEEDS_MORE_RESEARCH { border-color: #888; background: #2a2f33; color: #d8d2c4; }
+  .decision-fields { display: none; margin-top: 12px; padding: 12px; background: var(--panel-2); border: 1px dashed var(--rule); border-radius: 4px; }
   .decision-fields.show { display: block; }
   .decision-fields label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 4px; }
-  .decision-fields input, .decision-fields textarea, .decision-fields select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: white; border-radius: 4px; font-family: inherit; }
+  .decision-fields input, .decision-fields textarea, .decision-fields select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 4px; font-family: inherit; }
   .decision-fields textarea { min-height: 60px; }
   .decision-fields .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-  .actions-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 18px; background: var(--ink); color: white; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; box-shadow: 0 -2px 6px rgba(0,0,0,0.2); }
+  header { color: var(--ink); }
+  aside { background: var(--panel); }
+
+  .actions-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 18px; background: #050709; color: var(--ink); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px solid var(--rule); box-shadow: 0 -2px 6px rgba(0,0,0,0.4); }
   .actions-bar .stats { font-size: 12px; opacity: 0.85; margin-right: auto; }
-  .actions-bar button { padding: 6px 14px; border: 1px solid #444; background: white; color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500; }
-  .actions-bar button.danger { background: var(--coral); color: white; border-color: var(--coral); }
+  .actions-bar button { padding: 6px 14px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500; }
+  .actions-bar button.danger { background: var(--coral); color: #1a0a07; border-color: var(--coral); }
 
   /* Dashboard counter row + quick templates + utility buttons */
-  .dashboard { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--rule); background: #fff; }
-  .dash-tile { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 4px; background: #faf6e8; font-size: 12px; cursor: pointer; }
-  .dash-tile.active { background: var(--ink); color: white; border-color: var(--ink); }
+  .dashboard { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--rule); background: var(--panel); }
+  .dash-tile { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--panel-2); color: var(--ink); font-size: 12px; cursor: pointer; }
+  .dash-tile.active { background: var(--brass); color: #1a1408; border-color: var(--brass); }
   .dash-tile strong { display: block; font-size: 14px; line-height: 1.1; }
   .dash-tile span { color: var(--muted); }
+  .dash-tile.active span { color: #2a2008; }
   .quick-templates { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--rule); }
-  .quick-templates button { padding: 6px 10px; font-size: 12px; border: 1px solid var(--rule); background: #fbf7eb; border-radius: 4px; cursor: pointer; color: var(--ink); }
-  .quick-templates button:hover { background: var(--brass); color: white; border-color: var(--brass); }
+  .quick-templates button { padding: 6px 10px; font-size: 12px; border: 1px solid var(--rule); background: var(--panel-2); border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .quick-templates button:hover { background: var(--brass); color: #1a1408; border-color: var(--brass); }
   .util-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
-  .util-row button { padding: 4px 10px; font-size: 11px; border: 1px solid var(--rule); background: white; border-radius: 4px; cursor: pointer; color: var(--ink); }
-  .toast { position: fixed; bottom: 64px; right: 18px; background: var(--ink); color: white; padding: 8px 14px; border-radius: 4px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000; }
+  .util-row button { padding: 4px 10px; font-size: 11px; border: 1px solid var(--rule); background: var(--panel-2); border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .util-row button:hover { background: var(--teal); color: #03191a; border-color: var(--teal); }
+  .toast { position: fixed; bottom: 64px; right: 18px; background: var(--brass); color: #1a1408; padding: 8px 14px; border-radius: 4px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000; }
   .toast.show { opacity: 1; }
   .sort-row { padding: 8px 12px; border-bottom: 1px solid var(--rule); display: flex; gap: 6px; align-items: center; font-size: 11px; }
   .sort-row label { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-  .sort-row select { padding: 4px 8px; font-size: 11px; border: 1px solid var(--rule); background: white; border-radius: 4px; }
+  .sort-row select { padding: 4px 8px; font-size: 11px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; }
 </style>
 </head>
 <body>
@@ -375,6 +385,28 @@ function selectItem(id) {
       </div>
     </div>
 
+    ${it.relink ? `
+    <div class="panel" style="border-color: var(--brass);">
+      <h3>P96-4B relink research <span class="badge b-relink-${it.relink.confidence}" style="margin-left:8px;">${it.relink.confidence}</span></h3>
+      <dl class="meta-grid">
+        <dt>recommendation</dt><dd><strong>${escapeHtml(it.relink.replacementRecommendation || '')}</strong></dd>
+        <dt>source quality</dt><dd>${escapeHtml(it.relink.sourceQuality || '')}</dd>
+        <dt>target fit (after research)</dt><dd>${escapeHtml(it.relink.targetFitAfterResearch || '')}</dd>
+        <dt>candidate source URL</dt><dd class="url">${it.relink.candidateSourceUrl ? `<a href="${escapeAttr(it.relink.candidateSourceUrl)}" target="_blank" rel="noopener">${escapeHtml(it.relink.candidateSourceUrl)}</a>` : '(none)'}</dd>
+        <dt>candidate application URL</dt><dd class="url">${it.relink.candidateApplicationUrl ? `<a href="${escapeAttr(it.relink.candidateApplicationUrl)}" target="_blank" rel="noopener">${escapeHtml(it.relink.candidateApplicationUrl)}</a>` : '(none)'}</dd>
+        <dt>future lane</dt><dd>${escapeHtml(it.relink.futureLaneCandidate || '')}</dd>
+        <dt>search terms tried</dt><dd>${escapeHtml(it.relink.searchTermsTried || '')}</dd>
+        <dt>evidence</dt><dd>${escapeHtml(it.relink.evidenceText || '')}</dd>
+        <dt>reviewer notes</dt><dd>${escapeHtml(it.relink.reviewerNotes || '')}</dd>
+      </dl>
+      <div class="util-row" style="margin-top:14px;">
+        <button data-act="acceptRelink">Accept proposed replacement</button>
+        <button data-act="rejectRelinkKeep">Keep current source</button>
+        <button data-act="rejectRelinkDiscard">Discard from wedge</button>
+        <button data-act="rejectRelinkResearch">Needs more research</button>
+      </div>
+    </div>` : ''}
+
     <div class="panel">
       <h3>Quick utilities</h3>
       <div class="util-row">
@@ -527,6 +559,36 @@ function handleUtility(act) {
     const list = applySort(applyFilters(data.items));
     const idx = list.findIndex(x => x.itemId === activeId);
     if (idx >= 0 && idx < list.length - 1) selectItem(list[idx + 1].itemId);
+  } else if (act === 'acceptRelink') {
+    if (!it.relink) return;
+    const decisions = loadDecisions();
+    decisions[it.itemId] = {
+      ...(decisions[it.itemId] || {}),
+      userDecision: 'MODIFY',
+      newSourceUrl: it.relink.candidateSourceUrl || '',
+      newApplicationUrl: it.relink.candidateApplicationUrl || '',
+      modifyInstructions: `Accepted P96-4B candidate. Confidence: ${it.relink.confidence}. ${it.relink.reviewerNotes || ''}`,
+      priority: it.relink.confidence === 'HIGH' ? 'HIGH' : 'MEDIUM',
+      reviewerNotes: (decisions[it.itemId]?.reviewerNotes || '') + ` [Accepted P96-4B: ${it.relink.replacementRecommendation}]`,
+      decidedAt: new Date().toISOString(),
+      relinkAccepted: true,
+    };
+    saveDecisions(decisions);
+    toast('Relink accepted → MODIFY');
+    selectItem(it.itemId);
+    updateStats();
+  } else if (act === 'rejectRelinkKeep') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'KEEP', reviewerNotes: (decisions[it.itemId]?.reviewerNotes || '') + ' [Rejected P96-4B candidate; keep current]', decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Kept current source'); selectItem(it.itemId); updateStats();
+  } else if (act === 'rejectRelinkDiscard') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'DISCARD', discardReason: it.relink?.evidenceText || '', futureLaneCandidate: it.relink?.futureLaneCandidate || '', canReconsiderLater: true, decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Discarded from wedge'); selectItem(it.itemId); updateStats();
+  } else if (act === 'rejectRelinkResearch') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'NEEDS_MORE_RESEARCH', researchQuestion: it.relink?.reviewerNotes || '', decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Marked needs more research'); selectItem(it.itemId); updateStats();
   }
 }
 
