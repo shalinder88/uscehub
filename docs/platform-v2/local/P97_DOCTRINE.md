@@ -281,6 +281,112 @@ P96 and P97 share:
 - the admin review queue (`AdminMessage` + `/admin/freshness`)
 - the freshness dashboard (`/admin/freshness`)
 
+## 9b. Target-fit doctrine (added by P96-2B)
+
+P97 discovery must not collect every observership / research
+result it finds. Target = useful for the current USCE & Match
+wedge: medical students, IMGs, US medical graduates, reapplicants,
+old-YOG applicants, SOAP candidates, visa-dependent applicants
+seeking U.S. clinical experience or Match support.
+
+Per-candidate target-fit classification:
+
+| Bucket | Meaning |
+| --- | --- |
+| `TARGET_USCE_MATCH` | Likely belongs in the current wedge. |
+| `MAYBE_TARGET_MANUAL_REVIEW` | Ambiguous wording; never auto-discard. |
+| `NON_TARGET_SPECIALIST_ONLY` | For specialists, attendings, fellows, visiting faculty, or established physicians only. |
+| `NON_TARGET_BASIC_RESEARCH` | Basic science / wet lab / genetics / postdoc / PhD research not framed as clinical USCE or Match-supportive. |
+| `NON_TARGET_NON_CLINICAL` | Administrative, consulting, advisory, policy, volunteer-only, patient-career, or non-clinical program. |
+| `NON_TARGET_THIRD_PARTY_ONLY` | Only found on third-party pages; no official-source support. |
+| `DUPLICATE_OR_REPLACED` | Same opportunity already exists, or a better official page exists. |
+
+### Inclusion examples (usually target-relevant)
+
+```
+observership for IMGs
+clinical observership
+medical student elective
+visiting medical student elective
+externship
+hands-on clinical experience
+clinical research opportunity for medical graduates / IMG applicants
+research observer in a clinical department with physician/medical-graduate eligibility
+program offering LOR / certificate / clinical exposure
+explicitly accepts international medical graduates or visiting students
+```
+
+### Exclusion / manual-review examples
+
+```
+"for specialists"
+"for practicing physicians"
+"for faculty"
+"for fellows"
+"subspecialty-trained physicians only"
+"postdoctoral research fellow"
+"genetics research lab"
+"molecular genetics"
+"basic science research"
+"bench research"
+"PhD preferred / required"
+"visiting scholar" without clinical observership / USCE wording
+"consulting / advisory services"
+"industry research"
+"non-clinical research assistant"
+```
+
+### Caution
+
+Do **not** reject purely because the word "research" appears.
+Research can be target-relevant if it is clinical, department-based,
+and accepts medical graduates / IMGs / students.
+
+Do reject (or mark non-target) if it is genetics / basic science /
+postdoc / lab research that is not intended as USCE or Match
+support.
+
+### Discard log requirement
+
+Every candidate that lands in any of the `NON_TARGET_*` buckets,
+plus every `DUPLICATE_OR_REPLACED` and every `MAYBE_TARGET_MANUAL_REVIEW`
+that the reviewer believes is likely non-target, must be written
+to a discard log:
+
+```
+docs/platform-v2/local/p97_discarded_or_non_target_candidates.csv
+```
+
+(P96-2B's equivalent log lives at
+`p96_2_discarded_or_non_target_links.csv` and uses the same
+schema.)
+
+Mandatory columns:
+
+```
+listingIdOrSlug, title, institution, sourceUrl, applicationUrl,
+targetFit, discardReason, evidenceQuoteOrObservedText,
+screenshotPath, jsonSidecarPath, reviewerConfidence,
+recommendedAction, canReconsiderLater, futureLaneCandidate, notes
+```
+
+Rules:
+
+1. Include the actual source URL and application URL.
+2. Include screenshot path whenever available.
+3. Include JSON sidecar path whenever available.
+4. Do not permanently delete or remove from data.
+5. Do not auto-hide from public site.
+6. If unsure, mark `MAYBE_TARGET_MANUAL_REVIEW`, not discarded.
+7. Explain whether the row belongs to a possible future lane:
+   - Specialist / faculty opportunities
+   - Basic science / postdoc research
+   - Non-clinical research
+   - General career / practice lane
+   - Not relevant
+8. Final reports must summarize the discard log (count by reason)
+   and link the CSV.
+
 ## 10. Hard rules
 
 - No new listing imported or published purely on third-party

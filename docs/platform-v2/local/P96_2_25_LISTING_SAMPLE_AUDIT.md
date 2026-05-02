@@ -506,6 +506,125 @@ Implications:
   fuzzy title+state match, to avoid re-importing existing rows
   with cosmetically different URLs.
 
+## Target-fit review
+
+P96-2B added a per-listing target-fit classification to the
+existing source-quality verdict. The two axes are independent:
+source quality asks "does the URL point at the right page?"
+target-fit asks "does this opportunity belong in the current
+USCE & Match wedge?"
+
+Target = useful for medical students, IMGs, US medical graduates,
+reapplicants, old-YOG applicants, SOAP candidates, visa-dependent
+applicants, or applicants seeking U.S. clinical experience / Match
+support.
+
+### Target-fit distribution (n=25)
+
+| Target fit | Count | % |
+| --- | --- | --- |
+| `TARGET_USCE_MATCH` | 21 | 84% |
+| `MAYBE_TARGET_MANUAL_REVIEW` | 4 | 16% |
+| `NON_TARGET_*` | 0 | 0% |
+| `DUPLICATE_OR_REPLACED` | 0 | 0% |
+
+Zero rows in the sample landed cleanly on a non-target bucket.
+Four rows are ambiguous and need a human read of the actual page
+content (impossible from URL-only classification).
+
+### Ambiguous listings requiring human review (4 of 25)
+
+1. **Ohio State Wexner International Visiting Scholars** —
+   `cmo3386di002f1ny99zepgb4w`. Title says "Scholars," which often
+   denotes visiting faculty / specialists rather than medical
+   students or IMGs. Source URL gave `DEEP_PATH_NO_HINT`.
+   Future-lane candidate: Specialist / faculty opportunities (if
+   the program is for established physicians).
+2. **Orlando Health Medical Staff Services Observership** —
+   `cmo3385mo001f1ny9t1ilrqd7`. "Medical Staff Services" wording
+   suggests credentialing / onboarding for licensed providers
+   (attendings / fellows), not a student / IMG observership. PDF
+   source not screenshottable; needs a human read of the PDF.
+   Future-lane candidate: Specialist / faculty opportunities.
+3. **Albert Einstein College of Medicine — Research Fellowship** —
+   `cmn21146x007ksb11nksfya8i`. "Research Fellowship" framing
+   without a clinical-vs-basic-science qualifier; source URL is
+   the medical school root (`einsteinmed.edu/`) so the program
+   structure cannot be confirmed. Could be clinical research
+   (target-relevant) or basic-science postdoc (non-target).
+   Future-lane candidate: Basic science / postdoc research lane.
+4. **Fred Hutchinson Cancer Center** — `cmn2113ue006ssb11j9eieieh`.
+   Fred Hutch is heavily research-oriented; many programs are
+   basic-science postdoc / wet lab. Source URL classifier did not
+   match a path keyword. Need to confirm from page content
+   whether this listing is clinical-research-for-medical-graduates
+   or basic-science postdoc. Future-lane candidate: Basic science
+   / postdoc research lane.
+
+All four are recorded with screenshot paths + JSON sidecar paths
++ reviewer confidence in the discarded log.
+
+## Discarded / non-target links log
+
+Every listing in the 25-sample whose target fit is not a clean
+`TARGET_USCE_MATCH`, plus every row with a `WRONG_PAGE_REPLACE`
+or `SOURCE_DEAD_REVIEW` source-quality recommendation, is logged
+to:
+
+```
+docs/platform-v2/local/p96_2_discarded_or_non_target_links.csv
+```
+
+5 rows in the log:
+
+| ID | Title | Reason in log |
+| --- | --- | --- |
+| `cmn2111jv001esb1197ufjp8u` | Northwell Health System | TARGET_USCE_MATCH, but source-side `WRONG_PAGE_REPLACE` (consulting-advisory page) |
+| `cmo3386di002f1ny99zepgb4w` | Ohio State Wexner International Visiting Scholars | MAYBE_TARGET — title ambiguous |
+| `cmo3385mo001f1ny9t1ilrqd7` | Orlando Health Medical Staff Services Observership | MAYBE_TARGET + SOURCE_DEAD_REVIEW (PDF capture-fail) |
+| `cmn21146x007ksb11nksfya8i` | Albert Einstein Research Fellowship | MAYBE_TARGET — clinical-vs-basic-science unclear |
+| `cmn2113ue006ssb11j9eieieh` | Fred Hutchinson Cancer Center | MAYBE_TARGET — basic-science vs clinical research unclear |
+
+Rules carried forward:
+- Nothing was deleted, hidden, or removed from the live database.
+- The 5 logged rows are still listed publicly until an admin
+  takes action.
+- If on review a row is reclassified to a non-target bucket,
+  retire it via existing admin moderation paths (set listing
+  `status` to `HIDDEN` or change `linkVerificationStatus` to
+  `NO_OFFICIAL_SOURCE`); never auto-delete.
+
+## Updated recommendation
+
+P96-2 produced two **independent** axes of evidence:
+
+| Axis | What it measures |
+| --- | --- |
+| **Source quality** | Does the URL point at the right institutional page? Captured by the content classifier (`PATH_HINTS_PROGRAM`, `GENERIC_HOMEPAGE`, `LIKELY_WRONG_PAGE`, etc.) and the recommendedAction column (`KEEP_SOURCE`, `NEEDS_BETTER_SOURCE`, `WRONG_PAGE_REPLACE`, `SOURCE_DEAD_REVIEW`, `MANUAL_REVIEW`). |
+| **Target fit** | Does this opportunity belong in the current USCE & Match wedge at all? Captured by the targetFit column (`TARGET_USCE_MATCH`, `MAYBE_TARGET_MANUAL_REVIEW`, `NON_TARGET_*`, `DUPLICATE_OR_REPLACED`). |
+
+A row can be high source-quality but wrong target fit (a verified
+URL pointing at a rigorous postdoc lab program — keep the URL,
+exclude from the wedge). A row can be low source-quality but
+correct target fit (Northwell observership pointing at the
+consulting page — fix the URL, keep the program). P96-3 must
+review **both** axes per row.
+
+Concrete next step before P96-3:
+
+- Build a one-page admin re-link UI that lets an admin paste a
+  replacement URL on rows flagged `NEEDS_BETTER_SOURCE` /
+  `WRONG_PAGE_REPLACE`. Without that, fixing the ~85 rows the
+  pilot rate implies across 304 listings is friction-heavy.
+- Add a tiny `targetFit` admin filter / column on the
+  verification queue so MAYBE-target rows can be triaged
+  separately from source-broken rows.
+- The current sample shows 0% NON_TARGET — meaning the existing
+  304 dataset was curated with target fit in mind. P96-3 should
+  confirm that rate at scale; if it stays near 0%, target-fit
+  becomes a mostly-empty cleanup queue. If it rises, build a
+  future-lane staging path before P97-3.
+
 ## Hard rules
 
 - No DB connection.
@@ -513,3 +632,6 @@ Implications:
 - 12 s per-page timeout; failures recorded, no retries.
 - No login attempts. No credentialed access.
 - Screenshots are local-only; the screenshots folder is gitignored.
+- No row deleted, hidden, or removed from the live database.
+- Target-fit classification is reversible — every logged row has
+  `canReconsiderLater = true`.
