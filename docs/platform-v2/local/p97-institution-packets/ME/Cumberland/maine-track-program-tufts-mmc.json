@@ -1,0 +1,73 @@
+{
+  "state": "Maine",
+  "stateAbbr": "ME",
+  "county": "Cumberland",
+  "institutionName": "Maine Track Program (Tufts/MMC)",
+  "institutionType": "medical_school",
+  "officialWebsite": "https://medicine.tufts.edu/academics/medicine/maine-track-md",
+  "healthSystem": "MaineHealth + TUSM",
+  "parentSystemIfAny": "Tufts University School of Medicine",
+  "countyInstitutionIndex": 2,
+  "startedAt": "2026-05-02T00:00:00Z",
+  "completedAt": "2026-05-02T03:36:12Z",
+  "searchStatus": "SEARCHED_NONE_FOUND",
+  "pagesOpened": [
+    "https://medicine.tufts.edu/academics/medicine/maine-track-md",
+    "https://medicine.tufts.edu/all-administrative-offices/registrar/away-rotations",
+    "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/maine-track-program-mainehealth-maine-medical-center"
+  ],
+  "internalSearchUsed": false,
+  "internalSearchAbsentReason": "Tufts SOM site does not expose a public internal search bar relevant to away-rotation policy beyond the registrar page; navigation through the Maine Track + Away Rotations pages was used.",
+  "siteSearchUsed": true,
+  "searchTermsTried": [
+    "site:medicine.tufts.edu Maine Track visiting",
+    "Tufts Maine Track Maine Medical Center visiting medical student observership IMG",
+    "Tufts away rotations international",
+    "visiting medical student",
+    "observership",
+    "international medical graduate",
+    "elective"
+  ],
+  "educationTreePagesOpened": [
+    "https://medicine.tufts.edu/academics/medicine/maine-track-md"
+  ],
+  "educationTreeAbsentReason": "",
+  "gmePagesOpened": [],
+  "gmeAbsentReason": "Maine Track is an UME enrollment track, not a GME program; no GME page applies.",
+  "umePagesOpened": [
+    "https://medicine.tufts.edu/academics/medicine/maine-track-md"
+  ],
+  "umeAbsentReason": "",
+  "visitingStudentPagesOpened": [
+    "https://medicine.tufts.edu/all-administrative-offices/registrar/away-rotations"
+  ],
+  "visitingStudentAbsentReason": "",
+  "medicalStudentPagesOpened": [
+    "https://medicine.tufts.edu/academics/medicine/maine-track-md"
+  ],
+  "medicalStudentAbsentReason": "",
+  "departmentPagesOpened": [],
+  "departmentPagesAbsentReason": "Maine Track is a 4-year MD enrollment track, not a clinical department with its own visiting program. The away-rotation policy is set centrally by Tufts SOM Registrar.",
+  "residencyProgramPagesOpened": [],
+  "residencyProgramAbsentReason": "Maine Track is UME, not a residency program.",
+  "internationalOfficePagesOpened": [],
+  "internationalOfficeAbsentReason": "Tufts SOM does not run an international medical student visiting program; international students are not eligible per away-rotation policy.",
+  "clinicalEducationPagesOpened": [],
+  "clinicalEducationAbsentReason": "Tufts SOM Clinical Education for Maine Track students is delivered at MMC and partner sites; not a separate page applicable to non-Tufts visitors.",
+  "candidateUrlsFound": [],
+  "rejectedUrlsLogged": [
+    "https://medicine.tufts.edu/academics/medicine/maine-track-md"
+  ],
+  "duplicateUrlsLogged": [],
+  "notFoundLogged": false,
+  "blockedLogged": false,
+  "umbrellaEvidenceUrl": "",
+  "subLocationApplicabilityChecked": false,
+  "targetFitConcerns": [
+    "Maine Track is a 4-year MD enrollment track for matriculated Tufts students who train in Maine. Not a visiting / observership / external elective program. Tufts SOM does not offer observerships for visiting students; international students explicitly not eligible per Tufts away-rotation policy."
+  ],
+  "noOpportunityReason": "Maine Track is a closed enrollment track for matriculated Tufts SOM students only. No visiting MS / IMG observership pathway exists. Logged as REJECTED_NON_TARGET (futureLaneCandidate: tufts_maine_track_md_admissions; canReconsiderLater=true if Tufts later opens a separate visiting channel).",
+  "nextResumeStep": "",
+  "evidenceSummary": "Maine Track Program is for matriculated Tufts University School of Medicine students enrolled in the Maine community track. It is not a visiting program. Tufts SOM does not offer observerships for visiting students, and international students are explicitly not eligible per the Tufts away-rotation policy. Logged as REJECTED_NON_TARGET in p97_rejected_or_non_target_candidates.csv.",
+  "reviewerSelfAudit": "Confirmed: every required field captured. 3 pages opened (≥ minimum 2 for non-teaching designation, but this is a medical school so teaching-hospital min applies — 3 ≥ 3 minimum); 7 search terms tried (≥ 3 core); UME/visiting-student/medical-student all populated; GME/department/residency/international-office/clinical-education absences explicitly explained as not applicable to a UME enrollment track. No forbidden umbrella shortcuts. The single rejected URL matches the Maine Track page logged as REJECTED_NON_TARGET in the rejected CSV."
+}
