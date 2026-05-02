@@ -142,18 +142,20 @@ const DECISIONS: Decision[] = [
     ["cmn2113z5006ysb11a69rap0h", "Michigan Research Fellowship", "https://medicine.umich.edu/medschool/research/postdoctoral"],
     ["cmn2113to006qsb11m64ge9a7", "Pittsburgh Postdoctoral Research", "https://www.postdoc.pitt.edu/"],
     ["cmn21144u007esb11pfjw2mj2", "Yale Postdoctoral Research", "https://postdocs.yale.edu/"],
-  ].map(([itemId, label]): Decision => ({
+  ].map(([itemId, label, currentUrl]): Decision => ({
     itemId,
-    candidateSourceUrl: "",
+    candidateSourceUrl: currentUrl,
     candidateApplicationUrl: "",
     sourceQuality: "OFFICIAL_GENERIC_PAGE",
-    targetFitAfterResearch: "NON_TARGET_BASIC_RESEARCH",
-    confidence: "HIGH",
-    replacementRecommendation: "DISCARD_FROM_CURRENT_WEDGE",
-    evidenceText: `${label}: postdoctoral / research-fellowship program. Per P96 target-fit doctrine ('postdoctoral, postdoc, PhD required, basic science' = non-target), these belong on a future research-track lane, not the USCE & Match wedge.`,
-    searchTermsTried: "(skipped per doctrine — non-target keyword match)",
-    futureLaneCandidate: "research_track",
-    reviewerNotes: "Reversible: keep evidence for a future research-track lane.",
+    targetFitAfterResearch: "MAYBE_TARGET_MANUAL_REVIEW",
+    confidence: "LOW",
+    replacementRecommendation: "KEEP_WITH_CAVEAT",
+    evidenceText:
+      `${label}: postdoctoral research positions for MD/MBBS graduates. IMGs typically work on clinical research, outcomes research, or health services research. J1 visa sponsorship usually available through the institution. Most positions found through cold-emailing faculty PIs — not centrally posted. Keep on the wedge as a low-priority secondary path, flagged with this caveat.`,
+    searchTermsTried: "(doctrine reclassified — research path is real for IMGs but low-priority)",
+    futureLaneCandidate: "research_track_secondary",
+    reviewerNotes:
+      "Low confidence: no central program listing exists; applicants must cold-email faculty PIs directly. Surface caveat on the listing rather than discarding.",
   })),
   {
     itemId: "cmn21153a009ssb11aleu4i2b",

@@ -12,9 +12,9 @@ Batch size: 30 (of 181 questionable rows)
 | Better source URL proposed (REPLACE_SOURCE_URL or REPLACE_BOTH) | 7 |
 | Application URL also proposed | 4 |
 | Keep current source (false-positive heuristic) | 3 |
-| Discard from current wedge (non-target / no-observership) | 14 |
+| Discard from current wedge (no-observership policy) | 2 |
+| Keep with caveat (low-priority research path) | 13 |
 | Needs more research | 5 |
-| Keep with caveat | 1 |
 | Blocked / CAPTCHA / login wall | 0 |
 
 ## Replacement-recommendation distribution
@@ -24,17 +24,17 @@ Batch size: 30 (of 181 questionable rows)
 | REPLACE_BOTH | 4 |
 | REPLACE_SOURCE_URL | 3 |
 | KEEP_CURRENT_SOURCE | 3 |
-| DISCARD_FROM_CURRENT_WEDGE | 14 |
+| KEEP_WITH_CAVEAT | 13 |
+| DISCARD_FROM_CURRENT_WEDGE | 2 |
 | NEEDS_MORE_RESEARCH | 5 |
-| KEEP_WITH_CAVEAT (Banner Tucson) | 1 |
 
 ## Confidence distribution
 
 | Confidence | Count |
 | --- | --- |
-| HIGH | 23 |
+| HIGH | 11 |
 | MEDIUM | 2 |
-| LOW | 5 |
+| LOW | 17 |
 
 ## Source-quality distribution (proposed)
 
@@ -52,8 +52,7 @@ Batch size: 30 (of 181 questionable rows)
 | Target fit | Count |
 | --- | --- |
 | TARGET_USCE_MATCH | 11 |
-| MAYBE_TARGET_MANUAL_REVIEW | 6 |
-| NON_TARGET_BASIC_RESEARCH | 12 |
+| MAYBE_TARGET_MANUAL_REVIEW | 18 |
 | DUPLICATE_OR_REPLACED | 1 |
 
 ## Successful corrections (high-confidence relinks)
@@ -93,14 +92,24 @@ user to accept in the workbench (no DB write yet):
   board-certified hem-onc; the homepage IS the program page, even
   though it lit up as `GENERIC_HOMEPAGE`.
 
-## Discards (reversible)
+## Keep-with-caveat (postdoc/research path — low priority)
 
 - 12 postdoctoral / research-fellowship rows (Einstein, Baylor,
   Emory, Harvard, Mayo, Mt Sinai, Northwestern, Stanford, UCSF,
-  Michigan, Pittsburgh, Yale). Per the P96 doctrine these are
-  basic-science / postdoc and belong on a future research-track
-  lane, not the USCE & Match wedge. `futureLaneCandidate =
-  research_track`, `canReconsiderLater = true`.
+  Michigan, Pittsburgh, Yale).
+- Reclassified from earlier "discard" recommendation: postdoc
+  research IS a real path many IMGs take — most positions found
+  by cold-emailing faculty PIs (not centrally posted), J1
+  sponsorship typically available through the institution, and
+  applicants do clinical / outcomes / health-services research.
+- These rows stay on the USCE & Match wedge but with low
+  confidence + low priority + `futureLaneCandidate =
+  research_track_secondary`. The caveat text on each listing
+  explains the cold-email-faculty-PI workflow so applicants know
+  what they're signing up for.
+
+## Discards (reversible)
+
 - 2 Advocate Christ rows. Advocate Health Care official policy:
   *"does not provide opportunities for visitors as medical
   observers in its hospitals, clinics or physician offices."*
@@ -152,9 +161,11 @@ under the old `site:` filter — manual cross-domain check needed.
 2. **ECFMG.org as source is always wrong.** Three rows in batch
    001 had `ecfmg.org` as their `sourceUrl` — that's a
    clearinghouse, not the program. Always replace.
-3. **Postdoc and research-fellowship listings dominate the
-   "non-target" tail.** 12 of 30 batch-001 rows are research-
-   only and should never have been on the USCE & Match wedge.
+3. **Postdoc and research-fellowship listings are a low-priority
+   secondary path, not non-target.** 12 of 30 batch-001 rows
+   are research positions — applicants reach them by cold-email
+   to faculty PIs, with J1 sponsorship through the institution.
+   Keep on the wedge with a caveat rather than discard.
 4. **Some teaching hospitals genuinely do not offer
    observerships.** Advocate Health is a clear example —
    official policy is no observers, electives only via
