@@ -1,8 +1,56 @@
-# P96-4B — relink research report (batch 001)
+# P96-4B — relink research report (batches 001 + 002)
 
 Generated: 2026-05-02
 Branch: `local/p96-2-listing-screenshot-audit`
-Batch size: 30 (of 181 questionable rows)
+Batches complete: 60 of 181 questionable rows (33%)
+
+## Cumulative distribution (batches 001 + 002)
+
+| Replacement recommendation | Count |
+| --- | --- |
+| REPLACE_BOTH | 9 |
+| REPLACE_SOURCE_URL | 10 |
+| KEEP_WITH_CAVEAT | 17 |
+| KEEP_CURRENT_SOURCE | 5 |
+| DISCARD_FROM_CURRENT_WEDGE | 10 |
+| NEEDS_MORE_RESEARCH | 9 |
+
+| Confidence | Count |
+| --- | --- |
+| HIGH | 29 |
+| MEDIUM | 11 |
+| LOW | 20 |
+
+## New findings from batch 002
+
+- **NYC Health + Hospitals umbrella pattern.** 5 rows in batch 002
+  (Coney Island, Harlem, Kings County, Lincoln, plus Elmhurst/Jacobi
+  with already-correct URLs) all map to the system-wide
+  `nychealthandhospitals.org/interns-and-residents/` GME page.
+  No per-hospital observership landing exists — the H+H system
+  uses per-hospital outreach. KEEP_WITH_CAVEAT for the four that
+  pointed at hospital homepages; KEEP_CURRENT_SOURCE for Elmhurst
+  and Jacobi (heuristic false positives — their existing URLs were
+  already the correct GME pages).
+- **No-IMG policy hospitals (5 rows).** Loma Linda x2, MUSC x2,
+  LSU New Orleans — all explicitly state they do not accept
+  international medical students. DISCARD_FROM_CURRENT_WEDGE
+  with `no_img_eligible` future-lane.
+- **No-observership policy hospitals (3 rows).** Conemaugh,
+  Flushing, Hennepin Healthcare — all officially state they do
+  not offer observerships/externships at all (or specifically
+  not to IMGs). DISCARD with `no_observership_offered` lane.
+- **Strong canonical replacements (9 rows).** Duke, Emory,
+  Hartford, Henry Ford x2, Cook County (clerkship), MGH
+  International Observership, MedStar International Observer,
+  + Geisinger policy PDF. All HIGH confidence with explicit
+  international/IMG-friendly content.
+- **System-in-transition (3 rows).** Crozer (Prospect bankruptcy),
+  Interfaith (One Brooklyn Health post-merger), Kingsbrook
+  (One Brooklyn Health post-merger). Need follow-up at the
+  parent system domain.
+
+## Headline numbers (batch 001 only)
 
 ## Headline numbers
 
