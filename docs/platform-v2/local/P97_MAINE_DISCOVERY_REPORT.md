@@ -1,15 +1,28 @@
-# P97-1 — Maine discovery report (state #1, pilot)
+# P97-1 — Maine discovery report (state #1, pilot, deepened pass)
 
-Generated: 2026-05-02
+Generated: 2026-05-02 (initial), 2026-05-02 (deepened)
 Branch: `local/p96-2-listing-screenshot-audit`
 Counties completed: 16 of 16 (100%)
-Institutions searched: 10
-Candidates found (APPROVED_FOR_HUMAN_REVIEW): 2
-Candidates needing manual review: 1
-Rejected (non-target): 1
-Duplicates: 1
+Institutions searched: 14 (was 10 — added per-specialty pages)
+Candidates found: 21 (was 3)
+  - APPROVED_FOR_HUMAN_REVIEW: 15
+  - NEEDS_MANUAL_REVIEW: 4
+  - REJECTED_NON_TARGET (non-target): 2
+Rejected (non-target): 2 (Tufts Maine Track + MMC LIC)
+Duplicates: 1 (MaineHealth Biddeford → MMC umbrella)
 Not found after search: 16
 Blocked / login-required: 0
+
+## Deepened-pass note
+
+The first pass used only `site:` web searches and missed
+per-specialty residency / department pages. The deepened pass
+used `WebFetch` to traverse each institution's education page
+tree directly, opening every linked sub-page. This matches the
+"start at the hospital website and search for every USCE keyword
+across each department" approach. Result: **18 additional
+candidates surfaced** (including 7 at CMHC, 8 at MMC specialty
+pages, EMMC Clinical Observational Experience).
 
 ## Counties
 
@@ -40,7 +53,44 @@ critical-access hospitals without teaching programs.
 | Waldo | COMPLETE | 0 | MaineHealth network sub-location |
 | Washington | COMPLETE | 0 | Rural — no teaching program |
 
-## Candidates (3 total)
+## Candidates (21 total after deepened pass)
+
+### Cumberland County — Maine Medical Center (10 candidates)
+
+- **ME-001 MMC main visiting MS electives** — VSLO multi-specialty hub. LCME/AOA US-only; IMGs explicitly excluded. APPROVED.
+- **ME-004 MMC General Surgery sub-I** — 4th-yr AAMC US students; q4 call. APPROVED.
+- **ME-005 MMC EM elective** — senior US MS, full month, VSLO + supplemental. APPROVED.
+- **ME-006 MMC Anesthesiology elective** — 4 wks, AAMC + AACOM, cap 2/mo. APPROVED.
+- **ME-007 MMC Interventional Radiology** — LCME/AOACOA, 2-4 wks. APPROVED.
+- **ME-008 MMC Family Medicine** — AI + Ambulatory + Sports Med. APPROVED.
+- **ME-009 MMC Pediatrics (Barbara Bush Children's)** — explicit "visiting students nationwide" wording. APPROVED.
+- **ME-010 MMC Psychiatry MS electives** — sub-page found via parent navigation. NEEDS_MANUAL_REVIEW.
+- **ME-011 MMC Diagnostic Radiology MS opportunities** — sub-page found. NEEDS_MANUAL_REVIEW.
+- **ME-012 MMC Longitudinal Integrated Clerkship** — Tufts Maine Track only. **REJECTED_NON_TARGET**.
+
+### Penobscot County — EMMC (2 candidates)
+
+- **ME-013 EMMC Clinical Observational Experience** — explicitly accepts MD/DO students + APP students + licensed practitioners + students of accredited colleges. **Big find missed in first pass.** APPROVED.
+- **ME-014 EMMC FM Residency Bangor — MS rotations** — page indexed by AMA FREIDA. NEEDS_MANUAL_REVIEW.
+
+### Kennebec County (1 candidate)
+
+- **ME-002 Togus VA Affiliated Education** — via MMC/EMMC/UNECOM. NEEDS_MANUAL_REVIEW.
+
+### Androscoggin County — CMHC (7 candidates, ALL international-eligible)
+
+- **ME-015 CMHC Family Medicine sub-I** — 4 wk, US/Canadian/INTERNATIONAL accepted. APPROVED.
+- **ME-016 CMHC Emergency Medicine elective** — same Smartsheet, international accepted. APPROVED.
+- **ME-017 CMHC OB/GYN elective** — international accepted. APPROVED.
+- **ME-018 CMHC Pediatrics elective** — international accepted. APPROVED.
+- **ME-019 CMHC Surgery elective** — international accepted. APPROVED.
+- **ME-020 CMHC Internal Medicine elective** — international accepted. APPROVED.
+- **ME-021 CMHC Rural Family Medicine elective** — international accepted. APPROVED.
+
+### Original (3 from first pass; ME-001/002/003 retained)
+
+The first-pass candidates carry over verbatim and remain
+APPROVED_FOR_HUMAN_REVIEW. The deepened pass added 18 more.
 
 ### ME-001 — Maine Medical Center Visiting Medical Student Electives (Cumberland) — HIGH
 
