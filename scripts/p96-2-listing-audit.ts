@@ -161,6 +161,7 @@ async function main() {
     contentVerdict: string;
     contentReason: string | null;
     note: string;
+    recommendedAction: string;
   }> = [];
 
   for (const l of sample) {
@@ -197,16 +198,33 @@ async function main() {
     });
 
     let note = "";
-    if (verdict.classification === "GENERIC_HOMEPAGE")
+    let recommendedAction: string;
+    if (verdict.classification === "GENERIC_HOMEPAGE") {
       note = "Source URL points at a generic homepage; re-link candidate.";
-    else if (verdict.classification === "LIKELY_WRONG_PAGE")
+      recommendedAction = "NEEDS_BETTER_SOURCE";
+    } else if (verdict.classification === "LIKELY_WRONG_PAGE") {
       note = "Source URL contains wrong-page hint; admin re-link.";
-    else if (verdict.classification === "PATH_HINTS_PROGRAM")
+      recommendedAction = "WRONG_PAGE_REPLACE";
+    } else if (verdict.classification === "PATH_HINTS_PROGRAM") {
       note = "Source URL path matches program keyword; visual confirmation still needed.";
-    else if (verdict.classification === "DEEP_PATH_NO_HINT")
+      recommendedAction = "KEEP_SOURCE";
+    } else if (verdict.classification === "DEEP_PATH_NO_HINT") {
       note = "Deep path with no keyword hit; review page text manually.";
-    else if (verdict.classification === "SOURCE_DEAD")
+      recommendedAction = "MANUAL_REVIEW";
+    } else if (verdict.classification === "SOURCE_DEAD") {
       note = "Source did not respond.";
+      recommendedAction = "SOURCE_DEAD_REVIEW";
+    } else if (verdict.classification === "LOGIN_REQUIRED") {
+      note = "Source requires login; cannot programmatically verify.";
+      recommendedAction = "MANUAL_REVIEW";
+    } else {
+      note = "No URL or unparseable source.";
+      recommendedAction = "MANUAL_REVIEW";
+    }
+    if (!source.ok && sourceUrl) {
+      note = `Screenshot capture failed: ${source.errorMessage ?? "unknown"}.`;
+      recommendedAction = "SOURCE_DEAD_REVIEW";
+    }
 
     results.push({
       listing: l,
@@ -216,6 +234,7 @@ async function main() {
       contentVerdict: verdict.classification,
       contentReason: verdict.reason,
       note,
+      recommendedAction,
     });
 
     console.log(
@@ -229,7 +248,14 @@ async function main() {
   // CSV + markdown roll-ups.
   const csvRows: string[] = [];
   csvRows.push(
-    "id,title,sourceUrl,contentVerdict,sourceHttpStatus,sourceFinalUrl,uscehubScreenshot,sourceScreenshot,note"
+    "id,title,sourceUrl,contentVerdict,contentReason,sourceHttpStatus,sourceFinalUrl,recommendedAction,uscehubScreenshot,sourceScreenshot,jsonSidecar,note"
+  );
+
+  // Separate manifest of just the screenshot + sidecar paths, easy
+  // to grep against the disk inventory.
+  const manifestRows: string[] = [];
+  manifestRows.push(
+    "listingId,title,sourceUrl,uscehubScreenshotPath,officialSourceScreenshotPath,applicationScreenshotPath,jsonSidecarPath,verdict,recommendedAction,capturedAt,errorIfAny"
   );
 
   const md: string[] = [];
@@ -271,19 +297,35 @@ async function main() {
     if (r.note) md.push(`- recommended action: ${r.note}`);
     md.push("");
 
+    const sidecarPath = `${SCREENSHOTS_ROOT}/uscehub-listings/${r.listing.id}-${stamp}.json`;
     csvRows.push([
       r.listing.id,
       JSON.stringify(r.listing.title || ""),
       JSON.stringify(r.sourceUrl),
       r.contentVerdict,
+      JSON.stringify(r.contentReason ?? ""),
       String(r.source.httpStatus ?? ""),
       JSON.stringify(r.source.finalUrl ?? ""),
+      r.recommendedAction,
       r.uscehub.path ? r.uscehub.path : "(fail)",
       r.source.path ? r.source.path : "(fail)",
+      sidecarPath,
       JSON.stringify(r.note),
     ].join(","));
 
-    const sidecarPath = `${SCREENSHOTS_ROOT}/uscehub-listings/${r.listing.id}-${stamp}.json`;
+    manifestRows.push([
+      r.listing.id,
+      JSON.stringify(r.listing.title || ""),
+      JSON.stringify(r.sourceUrl),
+      r.uscehub.path ?? "",
+      r.source.path ?? "",
+      "", // applicationScreenshotPath — not separately captured in this run
+      sidecarPath,
+      r.contentVerdict,
+      r.recommendedAction,
+      new Date().toISOString(),
+      r.source.ok ? "" : (r.source.errorMessage ?? ""),
+    ].join(","));
     await writeFile(
       sidecarPath,
       JSON.stringify(
@@ -319,10 +361,13 @@ async function main() {
 
   const mdPath = "docs/platform-v2/local/P96_2_25_LISTING_SAMPLE_AUDIT.md";
   const csvPath = "docs/platform-v2/local/p96_2_25_listing_sample_audit.csv";
+  const manifestPath = "docs/platform-v2/local/p96_2_screenshot_manifest.csv";
   await writeFile(mdPath, md.join("\n"), "utf8");
   await writeFile(csvPath, csvRows.join("\n"), "utf8");
+  await writeFile(manifestPath, manifestRows.join("\n"), "utf8");
   console.log(`\nWrote ${mdPath}`);
   console.log(`Wrote ${csvPath}`);
+  console.log(`Wrote ${manifestPath}`);
 }
 
 main().catch(async (e) => {
