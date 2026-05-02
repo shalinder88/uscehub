@@ -134,7 +134,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.mountsinai.org/about/international/programs",
+        "candidateApplicationUrl": "https://www.mountsinai.org/files/MSHealth/Assets/MSH/observer-application-2017.pdf",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Mount Sinai International Programs — observerships for physicians, nurses, management, non-clinical staff. Caveat: ISMMS electives 'not available to foreign visiting students' — observerships only.",
+        "searchTermsTried": "site:mountsinai.org observership IMG international visiting medical student elective",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Strong observership replacement; not for non-physician students."
+      }
     },
     {
       "itemId": "cmo3385r8001l1ny9zaacztke",
@@ -640,7 +652,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.mercy.net/healthcare-education/graduate/st-louis/rotations/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "DUPLICATE_OR_REPLACED",
+        "evidenceText": "Duplicate Mercy St. Louis row. Same no-IMG policy.",
+        "searchTermsTried": "(duplicate)",
+        "futureLaneCandidate": "no_img_observership_currently",
+        "reviewerNotes": "Dedupe."
+      }
     },
     {
       "itemId": "cmn2114xq009csb115qvu2i90",
@@ -773,7 +797,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.nychealthandhospitals.org/interns-and-residents/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "KEEP_WITH_CAVEAT",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Metropolitan Hospital part of NYC H+H. Use umbrella + per-hospital outreach.",
+        "searchTermsTried": "(NYC H+H umbrella)",
+        "futureLaneCandidate": "nyc_hh_per_hospital",
+        "reviewerNotes": "Same as other NYC H+H rows."
+      }
     },
     {
       "itemId": "cmn211569009usb119spp0t4q",
@@ -845,7 +881,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://med.uc.edu/education/medical-student-education/office-of-medical-education/visiting-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UC Cincinnati: 'Observerships are not available... for domestic or international visiting medical students. The College is not accepting international students for clinical electives currently.'",
+        "searchTermsTried": "site:uchealth.com OR site:med.uc.edu Cincinnati visiting medical student observership IMG",
+        "futureLaneCandidate": "no_img_no_observership",
+        "reviewerNotes": "Double no policy."
+      }
     },
     {
       "itemId": "cmn2111d40012sb11t82kblsc",
@@ -977,7 +1025,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.sbhny.org/healthcare-professionals/residency-programs/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "St. Barnabas Bronx Internal Medicine Residency: 'does not offer observership or research positions.' Other departments unclear.",
+        "searchTermsTried": "site:sbhny.org St Barnabas Bronx observership IMG visiting medical graduate",
+        "futureLaneCandidate": "no_observership_offered",
+        "reviewerNotes": "Active no-observership for IM; verify other depts before reviving."
+      }
     },
     {
       "itemId": "cmn21158f00a0sb11x9a5ozzf",
@@ -1007,7 +1067,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.summahealth.org/medicaleducation/elective-programs/senior-elective-information",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Summa Health: M-4 from LCME or AOA-accredited only. No IMG observership path.",
+        "searchTermsTried": "site:summahealth.org observership visiting medical student IMG elective",
+        "futureLaneCandidate": "no_img_eligible",
+        "reviewerNotes": "Active no-IMG policy."
+      }
     },
     {
       "itemId": "cmn2115c200aasb110ul4c1ce",
@@ -1140,7 +1212,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.nyp.org/globalservices/education-and-training",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "REPLACE_SOURCE_URL",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "NYP Global Services Education & Training. Caveat: 'NewYork-Presbyterian is no longer accepting observerships from individuals, though in some cases select departments are still coordinating these.' Columbia VSLO + dedicated visiting-student account.",
+        "searchTermsTried": "site:nyp.org observership visiting medical student IMG elective",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "General observerships paused; specialty observerships only."
+      }
     },
     {
       "itemId": "cmn2115h800aosb11kx2c04ei",
@@ -1170,7 +1254,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.ohsu.edu/school-of-medicine/md-program/visiting-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "OHSU: 'School of Medicine only accepts students from LCME or AOA accredited medical schools.' EM International Visitors Program 'not currently active'.",
+        "searchTermsTried": "site:ohsu.edu visiting medical student observership IMG elective international",
+        "futureLaneCandidate": "no_img_eligible",
+        "reviewerNotes": "Active no-IMG policy."
+      }
     },
     {
       "itemId": "cmn211184000osb11lxan6nl7",
@@ -1403,7 +1499,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+        "candidateApplicationUrl": "https://med.nyu.edu/departments-institutes/orthopedic-surgery/education/visiting-international-physicians-program",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "NYU Langone Visiting MD Students hub. CRITICAL caveat: 'NYU Grossman School of Medicine does not offer an observership opportunity or process visiting student requests from non-LCME medical schools.' Specialty Visiting International Physicians programs exist (Orthopedic Surgery).",
+        "searchTermsTried": "site:med.nyu.edu OR site:nyulangone.org observership IMG visiting medical student elective",
+        "futureLaneCandidate": "specialty_only",
+        "reviewerNotes": "LCME-only for general electives; specialty programs for international physicians."
+      }
     },
     {
       "itemId": "cmn21114k000esb11q4zw3i16",
@@ -1433,7 +1541,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.nyp.org/globalservices/education-and-training",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "REPLACE_SOURCE_URL",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "NYP Weill Cornell — same Global Services hub. Weill Cornell uses VSLO for visiting students.",
+        "searchTermsTried": "(NYP umbrella search)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Same as Columbia row."
+      }
     },
     {
       "itemId": "cmn21157p009ysb11lhl9d9fe",
@@ -1463,7 +1583,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://gme.metrohealth.org/en/medical-student-program/international-medical-students/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_SOURCE_URL",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "MetroHealth (Cleveland) International Medical Students elective page. Caveat: requires affiliation agreement with home school + $150/4-week fee.",
+        "searchTermsTried": "site:metrohealth.org observership visiting medical student IMG elective",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Affiliation-required."
+      }
     },
     {
       "itemId": "cmn2115cs00acsb11onyobib8",
@@ -1595,7 +1727,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://ehs.org/medical-education/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_GENERIC_PAGE",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "St. John's Episcopal Hospital — Episcopal Health Services Medical Education page. Multiple ACGME residencies welcoming to IMGs but no specific observership info found.",
+        "searchTermsTried": "site:ehs.org OR \"St John's Episcopal Hospital\" Far Rockaway observership IMG",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Direct contact via Education page."
+      }
     },
     {
       "itemId": "cmn2115bd00a8sb115h6bhehv",
@@ -1685,7 +1829,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://education.ochsner.org/clined/global-is-local/ochsner-international-observership-program/",
+        "candidateApplicationUrl": "https://education.ochsner.org/clined/global-is-local/international-students-observers-at-ochsner/",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Ochsner International Observership Program — open to international medical students/residents/fellows. Caveat: clinical electives policy is 'not to accept international medical students' for course work; observership is the path.",
+        "searchTermsTried": "site:ochsner.org observership IMG international visiting medical student",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Strong replacement. Faculty sponsorship + financial support evidence required."
+      }
     },
     {
       "itemId": "cmn2115dj00aesb115q0wh0yc",
@@ -1757,7 +1913,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://rumcsi.org/careers/graduate-medical-education/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_GENERIC_PAGE",
+        "confidence": "LOW",
+        "replacementRecommendation": "NEEDS_MORE_RESEARCH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Richmond University Medical Center GME page. Only residency programs surfaced; no dedicated observership landing.",
+        "searchTermsTried": "site:rumcsi.org Richmond University Medical Center observership IMG",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Try direct contact."
+      }
     },
     {
       "itemId": "cmn2114zu009isb116spgam3g",
@@ -2333,7 +2501,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://hsi.ucsd.edu/education/physicians/bridge-to-residency-program-for-physicians",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UCSD Bridge to Residency Program — current URL IS the program page. 6-12 month IMG-targeted certificate program. False-positive heuristic flag.",
+        "searchTermsTried": "(reuse UCSD HSI search)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Heuristic over-flagged. KEEP."
+      }
     },
     {
       "itemId": "cmn2114mz008osb114617lwli",
@@ -2393,7 +2573,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://ighealth.msu.edu/education/global-externship-program/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "MSU Institute for Global Health Global Externship Program — current URL is the program page. False-positive heuristic flag.",
+        "searchTermsTried": "(verified current URL)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Heuristic over-flagged. KEEP."
+      }
     },
     {
       "itemId": "cmn2114hw008asb1171avairi",
@@ -2423,7 +2615,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://hsi.ucsd.edu/education/physicians/enhanced-clinical-skills",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "KEEP_CURRENT_SOURCE",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UCSD ACE Program (Accelerated Clinical Experience) — current URL IS the program page. Specifically for IMGs preparing for ERAS. B-1 visa, 2-4 months. False-positive heuristic flag.",
+        "searchTermsTried": "site:hsi.ucsd.edu OR site:ucsd.edu Bridge to Residency ACE Program visiting medical IMG",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Heuristic over-flagged. KEEP."
+      }
     },
     {
       "itemId": "cmn2114dq007ysb119e2itzp9",
@@ -2585,7 +2789,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://medicine.uams.edu/students/visiting-students/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UAMS: 'does not sponsor observerships or externships. The University policy allows rotations by medical students currently enrolled in LCME medical schools only.'",
+        "searchTermsTried": "site:uams.edu visiting medical student observership IMG elective international",
+        "futureLaneCandidate": "no_img_no_observership",
+        "reviewerNotes": "Double no policy."
+      }
     },
     {
       "itemId": "cmn2115ud00bisb11k3wltm6f",
@@ -2729,7 +2945,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.mercy.net/healthcare-education/graduate/st-louis/rotations/",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Mercy GME St. Louis: 'no longer able to offer observerships or sponsor externships for international medical graduates/students.'",
+        "searchTermsTried": "site:mercy.net Mercy St Louis observership visiting medical student IMG",
+        "futureLaneCandidate": "no_img_observership_currently",
+        "reviewerNotes": "Active no-IMG-observership policy."
+      }
     },
     {
       "itemId": "cmn2115rj00basb112a50c40u",
@@ -2759,7 +2987,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://towerhealth.org/academic-affairs/medical-student-rotations",
+        "candidateApplicationUrl": "https://towerhealth.org/request-rotation",
+        "sourceQuality": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Tower Health/Reading Hospital Medical Student Rotations + Request a Rotation. Some VSLO-driven. No specific IMG observership info.",
+        "searchTermsTried": "site:towerhealth.org Reading Hospital visiting medical student observership",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Better than homepage."
+      }
     },
     {
       "itemId": "cmn2115q200b6sb115fxbi2gx",
@@ -3064,7 +3304,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Memorial Healthcare System: 'does not accept students for observerships or shadowing, with no exceptions. Observership or externship opportunities are not offered at this time for residency programs.'",
+        "searchTermsTried": "site:mhs.net Memorial Healthcare South Florida observership IMG visiting medical student",
+        "futureLaneCandidate": "no_observership_offered",
+        "reviewerNotes": "Active no-observership policy."
+      }
     },
     {
       "itemId": "cmn21159u00a4sb11kzzrh8a0",
@@ -3292,7 +3544,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.medstarhealth.org/education/other-educational-programs/international-observer-program",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_SOURCE_URL",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "MedStar Health system-wide International Observer Program. Same canonical page used for MedStar Georgetown.",
+        "searchTermsTried": "(reuse from batch 002 MedStar search)",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Strong replacement."
+      }
     },
     {
       "itemId": "cmn2114sz008ysb114tl0vvdr",
@@ -4178,7 +4442,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://medicine.uiowa.edu/md/student-support/visiting-student-information-and-application",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "U Iowa: LCME-accredited only (limited DO exception for Des Moines U). Pathology dept: 'does not currently provide faculty or service-specific observerships for international medical trainees.'",
+        "searchTermsTried": "site:medicine.uiowa.edu visiting medical student observership IMG elective international",
+        "futureLaneCandidate": "no_img_eligible",
+        "reviewerNotes": "Active no-IMG policy."
+      }
     },
     {
       "itemId": "cmn2113h5005ysb11u6inmy50",
@@ -4412,7 +4688,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://medicine.tulane.edu/student-affairs/visiting-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "OFFICIAL_POLICY_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Tulane: 'cannot accommodate students from medical schools located outside of the United States.' Internal Medicine: 'unable to offer observerships and externships at this time.'",
+        "searchTermsTried": "site:medicine.tulane.edu visiting medical student observership IMG international",
+        "futureLaneCandidate": "no_img_no_observership",
+        "reviewerNotes": "Double no policy."
+      }
     },
     {
       "itemId": "cmn2113bb005isb111uzkdkk6",
@@ -4676,7 +4964,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://rwjms.rutgers.edu/community-global-health/global-health-programs",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "MEDIUM",
+        "replacementRecommendation": "REPLACE_SOURCE_URL",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "RWJMS: 'does not accept international students for established clerkships and electives' but Office of Global Health offers International Global Health Experience (4-week observership) for partnering institutions.",
+        "searchTermsTried": "site:rwjms.rutgers.edu visiting medical student observership IMG elective",
+        "futureLaneCandidate": "affiliation_only_no_general_observership",
+        "reviewerNotes": "Affiliation-only path."
+      }
     },
     {
       "itemId": "cmn2112zg004ssb11ibc3ebim",
@@ -5054,7 +5354,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.med.unc.edu/oghe/visiting-international-students/ivs-elective-scheduling/",
+        "candidateApplicationUrl": "https://www.med.unc.edu/wrkunits/1dean/ome/stuaff/forms/Production/international.htm",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "UNC International Visiting Student (IVS) Program — Office of Global Health Education. Final-year international students. $2,500/elective ($500 deposit). Apply 4-6 months before.",
+        "searchTermsTried": "site:med.unc.edu UNC visiting medical student observership IMG elective international",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Strong canonical replacement."
+      }
     },
     {
       "itemId": "cmn2112mt0040sb115rkbqj9q",
@@ -5144,7 +5456,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.med.upenn.edu/globalhealth/international-trainees-scholars.html",
+        "candidateApplicationUrl": "https://www.med.upenn.edu/globalhealth/international-medical-student-clinical-application.html",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Penn Center for Global Health International Trainees & Scholars + International Medical Student Clinical Application. Caveat: affiliation-agreement only. UPHS GME observership separate (gmepc@uphs.upenn.edu).",
+        "searchTermsTried": "site:pennmedicine.org OR site:med.upenn.edu visiting medical student observership IMG",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Affiliation-required."
+      }
     },
     {
       "itemId": "cmn2112jp003ssb11zyesyyua",
@@ -5528,7 +5852,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.rushu.rush.edu/rush-medical-college/admissions/doctor-medicine-md-program/visiting-medical-students",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "Rush: 'visiting medical students from LCME-accredited or COCA-accredited medical schools only'. Some specialty observerships exist (PMR).",
+        "searchTermsTried": "site:rushu.rush.edu Rush University visiting medical student observership IMG elective",
+        "futureLaneCandidate": "no_img_eligible",
+        "reviewerNotes": "Active no-IMG policy for general path."
+      }
     },
     {
       "itemId": "cmn2111z9002esb11gli9r1qb",
@@ -5600,7 +5936,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://www.nm.org/for-medical-professionals/i-am-a-student",
+        "candidateApplicationUrl": "https://physicianforum.nm.org/uploads/1/1/9/4/119404942/clinical_observer_packet_september_2021.pdf",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "REPLACE_BOTH",
+        "targetFitAfterResearch": "TARGET_USCE_MATCH",
+        "evidenceText": "Northwestern Memorial student hub + Clinical Observer Packet PDF. Summer Observation Program (16+). Confidentiality requirements for PHI.",
+        "searchTermsTried": "site:nm.org Northwestern Memorial observership IMG visiting medical student",
+        "futureLaneCandidate": "",
+        "reviewerNotes": "Strong replacement."
+      }
     },
     {
       "itemId": "cmn2111uv0028sb11o4hirnws",
@@ -5846,7 +6194,19 @@
         "Recommended action: better source URL needed"
       ],
       "suggestedDecision": "MODIFY",
-      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate."
+      "notesFromAudit": "Source URL points at a generic homepage; re-link candidate.",
+      "relink": {
+        "candidateSourceUrl": "https://meded.ucsf.edu/visiting-student-program",
+        "candidateApplicationUrl": "",
+        "sourceQuality": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "confidence": "HIGH",
+        "replacementRecommendation": "DISCARD_FROM_CURRENT_WEDGE",
+        "targetFitAfterResearch": "MAYBE_TARGET_MANUAL_REVIEW",
+        "evidenceText": "UCSF Visiting Student Program — LCME-accredited / COCA-accredited only. Max 12 weeks.",
+        "searchTermsTried": "site:meded.ucsf.edu OR site:medschool.ucsf.edu visiting medical student observership IMG elective",
+        "futureLaneCandidate": "no_img_eligible",
+        "reviewerNotes": "Active no-IMG policy."
+      }
     },
     {
       "itemId": "cmn2111j4001csb113odjp4jt",
@@ -6162,5 +6522,5 @@
     }
   ],
   "relinkBatch": "001",
-  "relinkResearchedCount": 60
+  "relinkResearchedCount": 90
 }
