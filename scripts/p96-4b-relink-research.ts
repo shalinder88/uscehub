@@ -857,6 +857,162 @@ const DECISIONS: Decision[] = [
   { itemId: "cmn2111pp001usb11xypzlek1", candidateSourceUrl: "https://health.ucdavis.edu/gme/", candidateApplicationUrl: "", sourceQuality: "EXACT_OFFICIAL_PROGRAM_PAGE", targetFitAfterResearch: "TARGET_USCE_MATCH", confidence: "HIGH", replacementRecommendation: "KEEP_CURRENT_SOURCE", evidenceText: "UC Davis GME — current URL is canonical.", searchTermsTried: "(verified)", futureLaneCandidate: "", reviewerNotes: "KEEP." },
 ];
 
+// Reclassification overrides: per the policy update, most "DISCARD" rows
+// at LCME-only / no-observership academic centers still have legitimate
+// IMG-accessible paths (research postdoc, J-1 exchange visitor, specialty
+// observership in select departments, externships in some affiliated
+// schools). These are reclassified from DISCARD_FROM_CURRENT_WEDGE to
+// KEEP_WITH_CAVEAT with a path-specific tag. Reversibility preserved.
+//
+// Third-party USCE brokers that we keep are tagged `paid_broker` so
+// the public listing UI can surface a "paid third-party" disclosure.
+interface Override {
+  itemId: string;
+  replacementRecommendation?: Decision["replacementRecommendation"];
+  futureLaneCandidate?: string;
+  evidenceTextSuffix?: string;
+  reviewerNotesSuffix?: string;
+  paidBroker?: boolean;
+}
+
+const RECLASSIFICATIONS: Override[] = [
+  // ----- LCME-only academic centers: KEEP_WITH_CAVEAT (research/specialty path) -----
+  { itemId: "cmn2111r6001ysb11czxooaqe", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Loma Linda has J-1 exchange visitor program + AHS-2 Postdoctoral Fellowships (international applicants welcomed) + School of Medicine Summer Research. Visiting electives are LCME/COCA-only but research/postdoc/J-1 paths exist for IMGs.",
+    reviewerNotesSuffix: " Keep with caveat: research-track and J-1 exchange-visitor paths exist." },
+  { itemId: "cmn2115lj00ausb11hvghc4u6", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling Loma Linda row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe + research-track path." },
+  { itemId: "cmn2113cs005msb11f4e79jnf", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: LSU has Postdoctoral Research Fellow positions across departments (Cardiovascular Lab, Neurosurgery, Clinical Psychology). Visiting electives are LCME-only but research postdoc paths exist for IMGs.",
+    reviewerNotesSuffix: " Keep with caveat: research postdoc path." },
+  { itemId: "cmn2115to00bgsb111aw38w0l", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: MUSC has J-1 Exchange Visitor Program (teaching/lecturing/observing/research), foreign-medical-graduate residency apply path (DOM, Psychiatry), MUSC Center for Global Health. Visiting MS LCME-only but IMG research/J-1 paths exist.",
+    reviewerNotesSuffix: " Keep with caveat: J-1 exchange + research path." },
+  { itemId: "cmn2113gf005wsb11f05bfy8c", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling MUSC row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe + J-1 exchange path." },
+  { itemId: "cmn2115h800aosb11kx2c04ei", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: OHSU Office of Postdoctoral Affairs supports international postdocs; Family Medicine Research Postdoctoral Fellowship; multiple labs welcome international visiting scientists.",
+    reviewerNotesSuffix: " Keep with caveat: research postdoc path." },
+  { itemId: "cmn21139u005esb116b21poq8", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling OHSU row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe + research path." },
+  { itemId: "cmn211200002gsb116i7cgugp", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Rush has specialty observerships (PMR), Rush Visiting Scholars Program, International Student Services. Visiting MD LCME/COCA-only but specialty observership + scholar paths exist.",
+    reviewerNotesSuffix: " Keep with caveat: specialty observership + scholar path." },
+  { itemId: "cmn21158f00a0sb11x9a5ozzf", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "us_lcme_only_with_research",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Summa has 50+ senior electives + Family Medicine Summer Externships + multiple residency programs. LCME/AOA only for electives.",
+    reviewerNotesSuffix: " Keep with caveat: electives LCME/AOA-only; consider research outreach." },
+  { itemId: "cmn2113c1005ksb11e54msb6c", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Tulane has J-1 visa sponsorship via ECFMG for residency, UQ-Ochsner exception for some 4th year students, plus residency match path.",
+    reviewerNotesSuffix: " Keep with caveat: J-1 residency path; no observership but graduate-level paths exist." },
+  { itemId: "cmn2111nj001osb1129xg34rr", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UCSF has postdoctoral programs (separate UCSF Postdoctoral Research listing in this batch), Visiting Elective Scholarship Program (VESP), specialty programs. Visiting MS LCME/COCA-only.",
+    reviewerNotesSuffix: " Keep with caveat: research postdoc + VESP path." },
+  { itemId: "cmn2115v300bksb11ngyv1xao", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UAMS visiting electives LCME-only and no observerships, but check research-track and specialty fellowship paths via direct contact.",
+    reviewerNotesSuffix: " Keep with caveat: research/specialty outreach." },
+  { itemId: "cmn2115al00a6sb11rw5ecehe", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UC Cincinnati has Center for Global Health + research-track; visiting electives + observerships not currently for IMGs but research/J-1 paths exist.",
+    reviewerNotesSuffix: " Keep with caveat: research/specialty path." },
+  { itemId: "cmn211253002usb11tv4v9ll0", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling UC Cincinnati row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe + research path." },
+  { itemId: "cmn2113jz0060sb11qa6zlypu", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: U Iowa visiting MS LCME-only, but International Health Rotation Elective + specialty research/fellowship paths exist.",
+    reviewerNotesSuffix: " Keep with caveat: research/specialty path." },
+  { itemId: "cmn2115n200aysb11lq9efqq3", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UNM final-year LCME for credit only on visiting electives; check research-track + global-health paths via UNM HSC.",
+    reviewerNotesSuffix: " Keep with caveat: research outreach." },
+  { itemId: "cmn2115cs00acsb11onyobib8", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UTMB Office of International Affairs supports B-1 visa observers; OMFS specialty observership; J-1 ECFMG for residency.",
+    reviewerNotesSuffix: " Keep with caveat: specialty + B-1/J-1 paths." },
+  { itemId: "cmn2113ex005ssb11z7kp129f", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: UVA Pathology offers visiting medical student observerships in Surgical Pathology; Breast Imaging International Visiting Scholars; research postdoc paths.",
+    reviewerNotesSuffix: " Keep with caveat: specialty observerships + research path." },
+  { itemId: "cmn2112uj004esb119x368xuh", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "research_or_specialty_path",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: MCG visiting electives LCME-only, but Family Medicine + Anesthesia Post-Graduate Observership + Neurology research paths exist; Mary Tipton handles observership inquiries.",
+    reviewerNotesSuffix: " Keep with caveat: specialty/research path via direct contact." },
+
+  // ----- "No observership" hospitals: KEEP_WITH_CAVEAT (electives/clerkship/research path) -----
+  { itemId: "cmn21156y009wsb11c201596e", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_only_no_observership",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Advocate has elective rotations for non-affiliated school students at certain sites + Letter-of-Good-Standing path. Caveat: no observerships; clerkship/elective path only.",
+    reviewerNotesSuffix: " Keep with caveat: elective-only path." },
+  { itemId: "cmn21121g002ksb11m3qkwjbv", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_only_no_observership",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling Advocate row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe." },
+  { itemId: "cmn2115q200b6sb115fxbi2gx", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "audition_rotation_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Conemaugh has audition rotations for clinical campus students (case-by-case) + 200+ annual MS rotations from PA/NY/VA/WV schools. No observerships, but audition path exists for affiliated schools.",
+    reviewerNotesSuffix: " Keep with caveat: audition-rotation path." },
+  { itemId: "cmn2114xq009csb115qvu2i90", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "residency_path_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Flushing GME page has residency program listing; IM residency prefers USCE for IMG applicants. No observerships; J-1 not sponsored.",
+    reviewerNotesSuffix: " Keep with caveat: residency-application path only." },
+  { itemId: "cmn2111d40012sb11t82kblsc", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "residency_path_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling Flushing row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe." },
+  { itemId: "cmn2115sy00besb11mu9l8ndk", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_only_no_img_observership",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Hennepin has Medical Student Rotations + observership policy (currently no IMG observerships). Sub-internship + elective paths via Clinician Nexus exist.",
+    reviewerNotesSuffix: " Keep with caveat: elective-only path; observership currently restricted." },
+  { itemId: "cmn2115eb00agsb119if7wq66", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vslo_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Memorial Healthcare has Visiting Students program via VSLO with BLS+malpractice requirements. No observerships but elective path.",
+    reviewerNotesSuffix: " Keep with caveat: VSLO elective path; no observership." },
+  { itemId: "cmn2115s900bcsb11io2z2cl3", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vslo_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Mercy St. Louis has 4th-year MS rotations across departments. Currently no IMG observership/externship sponsorship. US LCME elective path exists.",
+    reviewerNotesSuffix: " Keep with caveat: US-only elective path; IMG path closed." },
+  { itemId: "cmn2112yq004qsb11hveu7mqi", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vslo_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling Mercy row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe." },
+  { itemId: "cmn2111fx001asb114hiofz1l", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "residency_path_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: St. Barnabas has multiple ACGME residency programs + clerkship director letter. IM no observership; check other depts directly.",
+    reviewerNotesSuffix: " Keep with caveat: specialty/residency path." },
+  { itemId: "cmn2112xb004msb11lxcsbuqj", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_only_no_observership",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Wayne State has IM Summer Externships (4 weeks, US visiting students) + VSLO electives + International Experience program. Sole-sponsored programs no observership.",
+    reviewerNotesSuffix: " Keep with caveat: externship/elective path; no observership." },
+  { itemId: "cmn21152l009qsb11ui0oia7r", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vsas_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Hackensack offers VSAS electives, sub-internships, JFK rehab placement. No observerships in IM but elective path exists.",
+    reviewerNotesSuffix: " Keep with caveat: VSAS elective path." },
+  { itemId: "cmn21131r004ysb11ksi9mk82", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vsas_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: same as sibling Hackensack row.",
+    reviewerNotesSuffix: " Keep with caveat: dedupe." },
+  { itemId: "cmn21132h0050sb11rp8j7cny", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vsas_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Jersey Shore (Hackensack Meridian) — same as Hackensack row.",
+    reviewerNotesSuffix: " Keep with caveat: VSAS elective path." },
+  { itemId: "cmn211516009msb111n1uwpre", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "residency_path_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Jersey City has IM residency application path + RWJBH umbrella for residency programs. No observerships/externships.",
+    reviewerNotesSuffix: " Keep with caveat: residency-application path." },
+  { itemId: "cmn2111uv0028sb11o4hirnws", replacementRecommendation: "KEEP_WITH_CAVEAT", futureLaneCandidate: "elective_via_vslo_lcme_only",
+    evidenceTextSuffix: " RECLASSIFIED 2026-05-02: Tufts has VSLO LCME 4-week rotations (max 3) at TUSM-affiliated hospitals + Summer Programs in Global Health + International Applicants admissions track. No observership; IMG visiting electives closed.",
+    reviewerNotesSuffix: " Keep with caveat: US LCME elective path; IMG closed." },
+
+  // ----- Third-party USCE brokers: tag as paid_broker -----
+  { itemId: "cmn2114240076sb11zfiteqrx", paidBroker: true,
+    reviewerNotesSuffix: " TAGGED paid_broker: third-party USCE provider, paid program." },
+  { itemId: "cmn2115ok00b2sb11uo7vd4v7", paidBroker: true,
+    reviewerNotesSuffix: " TAGGED paid_broker: third-party USCE provider, paid program (Brooklyn USCE)." },
+  { itemId: "cmn2115pb00b4sb11t4pwrgjh", paidBroker: true,
+    reviewerNotesSuffix: " TAGGED paid_broker: third-party USCE provider, paid program (CEP Multi-Site)." },
+  { itemId: "cmn21141e0074sb11knt886rr", paidBroker: true,
+    reviewerNotesSuffix: " TAGGED paid_broker: third-party USCE provider, paid program (Global Medical Foundation)." },
+  { itemId: "cmn21140m0072sb11ez341w0z", paidBroker: true,
+    reviewerNotesSuffix: " TAGGED paid_broker: third-party USCE provider, paid program (AMG Medical Group)." },
+];
+
+function applyOverrides(decisions: Decision[]): Decision[] {
+  const overrideMap = new Map(RECLASSIFICATIONS.map((o) => [o.itemId, o]));
+  return decisions.map((d) => {
+    const o = overrideMap.get(d.itemId);
+    if (!o) return d;
+    return {
+      ...d,
+      replacementRecommendation: o.replacementRecommendation ?? d.replacementRecommendation,
+      futureLaneCandidate: o.futureLaneCandidate ?? d.futureLaneCandidate,
+      evidenceText: d.evidenceText + (o.evidenceTextSuffix ?? ""),
+      reviewerNotes: d.reviewerNotes + (o.reviewerNotesSuffix ?? ""),
+    };
+  });
+}
+
 function csvEscape(v: string | number | boolean | null | undefined): string {
   const s = String(v ?? "");
   if (/[",\n]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
@@ -931,7 +1087,8 @@ async function main() {
     };
   });
 
-  const decisionByItem = new Map(DECISIONS.map((d) => [d.itemId, d]));
+  const decisionByItem = new Map(applyOverrides(DECISIONS).map((d) => [d.itemId, d]));
+  const paidBrokerSet = new Set(RECLASSIFICATIONS.filter((o) => o.paidBroker).map((o) => o.itemId));
 
   const candidatesHeader = [
     "batchId",
@@ -1095,6 +1252,7 @@ async function main() {
       searchTermsTried: d.searchTermsTried,
       futureLaneCandidate: d.futureLaneCandidate,
       reviewerNotes: d.reviewerNotes,
+      paidBroker: paidBrokerSet.has(it.itemId),
     };
   }
   wb.relinkBatch = "001";

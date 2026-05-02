@@ -387,7 +387,7 @@ function selectItem(id) {
 
     ${it.relink ? `
     <div class="panel" style="border-color: var(--brass);">
-      <h3>P96-4B relink research <span class="badge b-relink-${it.relink.confidence}" style="margin-left:8px;">${it.relink.confidence}</span></h3>
+      <h3>P96-4B relink research <span class="badge b-relink-${it.relink.confidence}" style="margin-left:8px;">${it.relink.confidence}</span>${it.relink.paidBroker ? ' <span class="badge" style="background:#5a3a1a;color:#f0c97a;margin-left:4px;">PAID BROKER</span>' : ''}</h3>
       <dl class="meta-grid">
         <dt>recommendation</dt><dd><strong>${escapeHtml(it.relink.replacementRecommendation || '')}</strong></dd>
         <dt>source quality</dt><dd>${escapeHtml(it.relink.sourceQuality || '')}</dd>

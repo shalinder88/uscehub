@@ -4,16 +4,30 @@ Generated: 2026-05-02
 Branch: `local/p96-2-listing-screenshot-audit`
 Batches: 001-006 (181 of 181 questionable rows, 100%)
 
-## Final cumulative distribution
+## Final cumulative distribution (after policy reclassification)
+
+Per the 2026-05-02 policy update: institutions that explicitly say
+"no observership" or "no IMG" almost always have OTHER paths
+(electives via VSLO/VSAS, specialty observerships in select
+departments, J-1 exchange visitor programs, postdoctoral research,
+externships, residency-application paths). These are not
+discarded — they stay on the USCE & Match wedge as
+**KEEP_WITH_CAVEAT** with an explicit path tag in
+`futureLaneCandidate`. Reversible.
+
+Third-party USCE brokers (Brooklyn USCE, Clinical Experience
+Programs, Global Medical Foundation, AMG Medical Group, CEP)
+are kept and tagged **`paid_broker`** so the public listing UI
+can surface a paid-third-party disclosure.
 
 | Replacement recommendation | Count | % |
 | --- | --- | --- |
+| KEEP_WITH_CAVEAT | 62 | 34% |
 | KEEP_CURRENT_SOURCE | 50 | 28% |
-| DISCARD_FROM_CURRENT_WEDGE | 35 | 19% |
-| KEEP_WITH_CAVEAT | 27 | 15% |
 | REPLACE_SOURCE_URL | 26 | 14% |
 | REPLACE_BOTH | 23 | 13% |
 | NEEDS_MORE_RESEARCH | 20 | 11% |
+| DISCARD_FROM_CURRENT_WEDGE | 0 | 0% |
 
 | Confidence | Count | % |
 | --- | --- | --- |
