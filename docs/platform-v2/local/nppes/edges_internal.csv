@@ -1,0 +1,14 @@
+from,to,rel,visibility,confidence,img_eligibility,match_tier,review_status,specialty,target_fit,source_ids
+Institution:maine_medical_center_mmc,NPPESOrg:1376847343,HAS_NPPES_MATCH,internal,0.95,,EXACT_NAME_ZIP,pending,,,cms_nppes
+Institution:maine_track_program_tufts_mmc,NPPESOrg:1376829598,HAS_NPPES_MATCH,internal,0.465,,NAME_ONLY,pending,,,cms_nppes
+Institution:northern_light_eastern_maine_medical_center_emmc,NPPESOrg:1790789147,HAS_NPPES_MATCH,internal,0.463,,NAME_ONLY,pending,,,cms_nppes
+Institution:northern_light_acadia_hospital_psychiatry,NPPESOrg:1568465144,HAS_NPPES_MATCH,internal,0.286,,NAME_ONLY,pending,,,cms_nppes
+Institution:mainegeneral_medical_center,NPPESOrg:1447289996,HAS_NPPES_MATCH,internal,0.95,,EXACT_NAME_ZIP,pending,,,cms_nppes
+Institution:togus_va_medical_center,NPPESOrg:1679768568,HAS_NPPES_MATCH,internal,0.95,,EXACT_NAME_ZIP,pending,,,cms_nppes
+Institution:central_maine_medical_center___central_maine_healthcare,NPPESOrg:1689653487,HAS_NPPES_MATCH,internal,0.95,,EXACT_NAME_ZIP,pending,,,cms_nppes
+Institution:university_of_new_england_college_of_osteopathic_medicine_un,NPPESOrg:1356917702,HAS_NPPES_MATCH,internal,0.468,,NAME_ONLY,pending,,,cms_nppes
+Institution:york_hospital,NPPESOrg:1134403223,HAS_NPPES_MATCH,internal,0.95,,EXACT_NAME_ZIP,pending,,,cms_nppes
+Institution:mainehealth_maine_medical_center_biddeford_former_southern_m,NPPESOrg:1376829598,HAS_NPPES_MATCH,internal,0.241,,NAME_ONLY,pending,,,cms_nppes
+Institution:maine_medical_center_mmc,Opportunity:me-001,HAS_OPPORTUNITY,public,,Likely LCME-only via VSLO; IMG status unclear from public page,,,multispecialty,TARGET_USCE_MATCH,
+Institution:togus_va_medical_center,Opportunity:me-002,HAS_OPPORTUNITY,public,,Not direct; via MMC/EMMC/UNECOM,,,multispecialty,MAYBE_TARGET_MANUAL_REVIEW,
+Institution:central_maine_medical_center___central_maine_healthcare,Opportunity:me-003,HAS_OPPORTUNITY,public,,International medical students explicitly accepted,,,multispecialty,TARGET_USCE_MATCH,

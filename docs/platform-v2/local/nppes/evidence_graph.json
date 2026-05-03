@@ -1,0 +1,1055 @@
+{
+  "nodes": [
+    {
+      "id": "Institution:maine_medical_center_mmc",
+      "type": "Institution",
+      "properties": {
+        "name": "Maine Medical Center (MMC)",
+        "state": "ME",
+        "county": "Cumberland",
+        "institution_type": "academic_medical_center",
+        "official_website": "https://www.mainehealth.org/maine-medical-center",
+        "health_system": "MaineHealth",
+        "medical_school_affiliation": "Tufts School of Medicine (Maine Track)",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "true (Togus VA)",
+        "search_status": "SEARCHED_CANDIDATES_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:mainehealth.org observership visiting medical student IMG elective"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:maine_track_program_tufts_mmc",
+      "type": "Institution",
+      "properties": {
+        "name": "Maine Track Program (Tufts/MMC)",
+        "state": "ME",
+        "county": "Cumberland",
+        "institution_type": "medical_school",
+        "official_website": "https://medicine.tufts.edu/academics/medicine/maine-track-md",
+        "health_system": "MaineHealth + TUSM",
+        "medical_school_affiliation": "Tufts SOM",
+        "teaching_hospital_likely": "false",
+        "va_affiliated": "false",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "\"Tufts Maine Track\" Maine Medical Center visiting medical student observership IMG"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:northern_light_eastern_maine_medical_center_emmc",
+      "type": "Institution",
+      "properties": {
+        "name": "Northern Light Eastern Maine Medical Center (EMMC)",
+        "state": "ME",
+        "county": "Penobscot",
+        "institution_type": "academic_medical_center",
+        "official_website": "https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center",
+        "health_system": "Northern Light Health",
+        "medical_school_affiliation": "UNECOM + MMC affiliations",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "true (Togus VA affiliate)",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "\"Northern Light\" \"Eastern Maine\" Bangor medical student elective residency rotations"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:northern_light_acadia_hospital_psychiatry",
+      "type": "Institution",
+      "properties": {
+        "name": "Northern Light Acadia Hospital (Psychiatry)",
+        "state": "ME",
+        "county": "Penobscot",
+        "institution_type": "hospital",
+        "official_website": "https://northernlighthealth.org/Our-System/Acadia-Hospital",
+        "health_system": "Northern Light Health",
+        "medical_school_affiliation": "UNECOM",
+        "teaching_hospital_likely": "false",
+        "va_affiliated": "false",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:northernlighthealth.org Acadia psychiatry residency rotations"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:mainegeneral_medical_center",
+      "type": "Institution",
+      "properties": {
+        "name": "MaineGeneral Medical Center",
+        "state": "ME",
+        "county": "Kennebec",
+        "institution_type": "hospital",
+        "official_website": "https://www.mainegeneral.org/",
+        "health_system": "MaineGeneral Health",
+        "medical_school_affiliation": "MaineHealth (clinical campus)",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "true (Togus VA, same county)",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:mainegeneral.org observership visiting medical student IMG elective"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:togus_va_medical_center",
+      "type": "Institution",
+      "properties": {
+        "name": "Togus VA Medical Center",
+        "state": "ME",
+        "county": "Kennebec",
+        "institution_type": "va_teaching_hospital",
+        "official_website": "https://www.va.gov/maine-health-care/locations/togus-va-medical-center/",
+        "health_system": "VHA",
+        "medical_school_affiliation": "MMC + EMMC + UNECOM",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "true",
+        "search_status": "SEARCHED_CANDIDATES_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:va.gov Togus Maine VA observership visiting medical student IMG elective"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:central_maine_medical_center___central_maine_healthcare",
+      "type": "Institution",
+      "properties": {
+        "name": "Central Maine Medical Center / Central Maine Healthcare",
+        "state": "ME",
+        "county": "Androscoggin",
+        "institution_type": "hospital",
+        "official_website": "https://www.cmhc.org/",
+        "health_system": "Central Maine Healthcare",
+        "medical_school_affiliation": "UNECOM clinical campus",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "false",
+        "search_status": "SEARCHED_CANDIDATES_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:cmhc.org \"Central Maine\" Lewiston observership visiting medical student IMG"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:university_of_new_england_college_of_osteopathic_medicine_un",
+      "type": "Institution",
+      "properties": {
+        "name": "University of New England College of Osteopathic Medicine (UNECOM)",
+        "state": "ME",
+        "county": "York",
+        "institution_type": "medical_school",
+        "official_website": "https://www.une.edu/com",
+        "health_system": "University of New England",
+        "medical_school_affiliation": "UNECOM",
+        "teaching_hospital_likely": "false",
+        "va_affiliated": "false",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "site:une.edu UNECOM University of New England visiting medical student observership IMG elective"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:york_hospital",
+      "type": "Institution",
+      "properties": {
+        "name": "York Hospital",
+        "state": "ME",
+        "county": "York",
+        "institution_type": "hospital",
+        "official_website": "https://www.yorkhospital.com/",
+        "health_system": "York Hospital",
+        "medical_school_affiliation": "MGH clinical affiliation",
+        "teaching_hospital_likely": "false",
+        "va_affiliated": "false",
+        "search_status": "SEARCHED_NONE_FOUND",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "\"York Hospital\" Maine observership visiting medical student IMG"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "Institution:mainehealth_maine_medical_center_biddeford_former_southern_m",
+      "type": "Institution",
+      "properties": {
+        "name": "MaineHealth Maine Medical Center Biddeford (former Southern Maine Health Care)",
+        "state": "ME",
+        "county": "York",
+        "institution_type": "hospital",
+        "official_website": "https://www.mainehealth.org/locations/mainehealth-maine-medical-center-biddeford",
+        "health_system": "MaineHealth",
+        "medical_school_affiliation": "MaineHealth + Tufts",
+        "teaching_hospital_likely": "true",
+        "va_affiliated": "false",
+        "search_status": "DUPLICATE_ONLY",
+        "_internal_packet_path": "",
+        "_internal_search_terms_tried": "MaineHealth Biddeford visiting medical student elective"
+      },
+      "source_ids": [
+        "aamc_eras_stats"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1376847343",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1376847343",
+        "_internal_org_name": "MAINE MEDICAL CENTER",
+        "_internal_pl_addr1": "887 CONGRESS ST",
+        "_internal_pl_city": "PORTLAND",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04102",
+        "_internal_taxonomy_1": "282N00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "EXACT_NAME_ZIP",
+        "_internal_match_confidence": "0.95",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1376829598",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1376829598",
+        "_internal_org_name": "MAINE MOBILE HEALTH PROGRAM, INC.",
+        "_internal_pl_addr1": "79 LEIGHTON RD",
+        "_internal_pl_city": "AUGUSTA",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04330",
+        "_internal_taxonomy_1": "261QF0400X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "NAME_ONLY",
+        "_internal_match_confidence": "0.241",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1790789147",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1790789147",
+        "_internal_org_name": "EASTERN MAINE MEDICAL CENTER",
+        "_internal_pl_addr1": "489 STATE ST",
+        "_internal_pl_city": "BANGOR",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04401",
+        "_internal_taxonomy_1": "282N00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "NAME_ONLY",
+        "_internal_match_confidence": "0.463",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1568465144",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1568465144",
+        "_internal_org_name": "NORTHERN MAINE MEDICAL CENTER",
+        "_internal_pl_addr1": "194 EAST MAIN STREET",
+        "_internal_pl_city": "FORT KENT",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04743",
+        "_internal_taxonomy_1": "282N00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "NAME_ONLY",
+        "_internal_match_confidence": "0.286",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1447289996",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1447289996",
+        "_internal_org_name": "MAINEGENERAL MEDICAL CENTER",
+        "_internal_pl_addr1": "35 MEDICAL CENTER PARKWAY",
+        "_internal_pl_city": "AUGUSTA",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04330",
+        "_internal_taxonomy_1": "273Y00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "EXACT_NAME_ZIP",
+        "_internal_match_confidence": "0.95",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1679768568",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1679768568",
+        "_internal_org_name": "TOGUS VA MEDICAL CENTER",
+        "_internal_pl_addr1": "1 VA CENTER",
+        "_internal_pl_city": "AUGUSTA",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04330",
+        "_internal_taxonomy_1": "286500000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "EXACT_NAME_ZIP",
+        "_internal_match_confidence": "0.95",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1689653487",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1689653487",
+        "_internal_org_name": "CENTRAL MAINE MEDICAL CENTER",
+        "_internal_pl_addr1": "300 MAIN ST",
+        "_internal_pl_city": "LEWISTON",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04240",
+        "_internal_taxonomy_1": "282N00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "EXACT_NAME_ZIP",
+        "_internal_match_confidence": "0.95",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1356917702",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1356917702",
+        "_internal_org_name": "UNIVERSITY OF NEW ENGLAND SCHOOL OF NURSE ANESTHESIA",
+        "_internal_pl_addr1": "716 STEVENS AVE",
+        "_internal_pl_city": "PORTLAND",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "04103",
+        "_internal_taxonomy_1": "390200000X",
+        "_internal_is_hospital_taxonomy": "False",
+        "_internal_match_tier": "NAME_ONLY",
+        "_internal_match_confidence": "0.468",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "NPPESOrg:1134403223",
+      "type": "NPPESOrg",
+      "properties": {
+        "_internal_npi": "1134403223",
+        "_internal_org_name": "YORK HOSPITAL",
+        "_internal_pl_addr1": "16 HOSPITAL DR STE C",
+        "_internal_pl_city": "YORK",
+        "_internal_pl_state": "ME",
+        "_internal_pl_zip": "03909",
+        "_internal_taxonomy_1": "282N00000X",
+        "_internal_is_hospital_taxonomy": "True",
+        "_internal_match_tier": "EXACT_NAME_ZIP",
+        "_internal_match_confidence": "0.95",
+        "_internal_deactivation_date": ""
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "id": "Opportunity:me-001",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-001",
+        "title": "Visiting Medical Student Electives",
+        "opportunity_type": "Elective",
+        "specialty": "multispecialty",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/undergraduate-medical-education/visiting-medical-student-electives-mainehealth-maine-medical-center",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "MMC accepts visiting MS via VSLO with multi-specialty electives. Housing available (request, not guaranteed).",
+        "img_eligibility": "Likely LCME-only via VSLO; IMG status unclear from public page",
+        "student_graduate_eligibility": "medical_student_visiting",
+        "visa_language": "Not explicit; J1 mentioned for residency",
+        "cost": "See specialty pages",
+        "duration": "4 weeks per specialty",
+        "deadline": "Per-specialty cohorts",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-002",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-002",
+        "title": "Togus VA Affiliated Medical Education",
+        "opportunity_type": "Elective",
+        "specialty": "multispecialty",
+        "official_source_url": "https://www.va.gov/maine-health-care/locations/togus-va-medical-center/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "Togus VA hosts MS/resident/fellow rotations through MMC + EMMC + UNECOM affiliations.",
+        "img_eligibility": "Not direct; via MMC/EMMC/UNECOM",
+        "student_graduate_eligibility": "medical_student_or_resident",
+        "visa_language": "None on VA page",
+        "cost": "See affiliated programs",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Kennebec"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-003",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-003",
+        "title": "Elective Clerkships (US/Canadian/International MS)",
+        "opportunity_type": "Clerkship",
+        "specialty": "multispecialty",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "CMHC explicitly accepts US, Canadian, and international medical school students for clerkships at Lewiston. NO observerships/externships/research/pre-match.",
+        "img_eligibility": "International medical students explicitly accepted",
+        "student_graduate_eligibility": "medical_student_only",
+        "visa_language": "Not on official page",
+        "cost": "Clerkship fees unspecified",
+        "duration": "3rd/4th-year clerkship blocks",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-004",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-004",
+        "title": "General Surgery Acting Internship + Senior Electives",
+        "opportunity_type": "Sub-internship",
+        "specialty": "general_surgery",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/students-residents-fellows/residencies/general-surgery/rotations-electives",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "MMC Gen Surg AI for 4th-year MS at AAMC-accredited US schools; 8-week 3rd-yr block + 4-wk AI; q4 call.",
+        "img_eligibility": "LCME/AAMC US-only; IMG not explicit",
+        "student_graduate_eligibility": "medical_student_4thyr",
+        "visa_language": "Not stated",
+        "cost": "Free",
+        "duration": "3rd yr 8wk; AI 4wk",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-005",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-005",
+        "title": "EM Medical Student Elective",
+        "opportunity_type": "Elective",
+        "specialty": "emergency_medicine",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/emergency-medicine-residency/medical-student-elective-emergency-medicine-residency",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "MMC EM elective for senior MS in good standing; preference for EM-bound; full month required.",
+        "img_eligibility": "Not explicit; LCME via VSLO standard",
+        "student_graduate_eligibility": "medical_student_4thyr",
+        "visa_language": "Not stated",
+        "cost": "Housing at student expense",
+        "duration": "1 month, no partial",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-006",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-006",
+        "title": "Anesthesiology Medical Student Elective",
+        "opportunity_type": "Elective",
+        "specialty": "anesthesiology",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/anesthesiology-residency/medical-student-elective",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "4-wk anesthesia elective for AAMC/AACOM 4th-yr MS; cap 2/month.",
+        "img_eligibility": "LCME/AOA US-only",
+        "student_graduate_eligibility": "medical_student_4thyr",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "4 wks",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-007",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-007",
+        "title": "IR Medical Student Elective",
+        "opportunity_type": "Elective",
+        "specialty": "interventional_radiology",
+        "official_source_url": "https://www.mainehealth.org/Maine-Medical-Center/Education-Research/Students-Residents-Fellows/Residencies/Interventional-Radiology/Medical-Student-Elective",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "IR elective: 3rd-yr 2wk / 4th-yr 4wk; LCME or AOACOA students; preference for IR/MMC ties.",
+        "img_eligibility": "LCME/AOACOA US-only",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "2-4 wks",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-008",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-008",
+        "title": "FM Acting Internship + Ambulatory + Sports Med Electives",
+        "opportunity_type": "Elective",
+        "specialty": "family_medicine",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/family-medicine-residency/medical-student-rotations",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "FM AI year-round; ambulatory + sports med electives; homelessness elective Tufts-only.",
+        "img_eligibility": "LCME via VSLO; international not explicit",
+        "student_graduate_eligibility": "medical_student_4thyr",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "1 month",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-009",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-009",
+        "title": "Pediatrics Acting Internships + Electives",
+        "opportunity_type": "Elective",
+        "specialty": "pediatrics",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/pediatrics-residency",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Peds primary teaching site for Tufts Maine Track + UNECOM + visiting students nationwide for 4th-yr AI/electives.",
+        "img_eligibility": "Not explicit; nationwide implies broad",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-010",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-010",
+        "title": "Psychiatry Medical Student Electives",
+        "opportunity_type": "Elective",
+        "specialty": "psychiatry",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/general-psychiatry-residency/medical-student-electives-general-psychiatry-residency",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "MMC Psychiatry medical-student-electives sub-page exists.",
+        "img_eligibility": "Not on parent page; check sub-page",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "",
+        "cost": "",
+        "duration": "",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-011",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-011",
+        "title": "DR Medical Student Opportunities",
+        "opportunity_type": "Elective",
+        "specialty": "diagnostic_radiology",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/diagnostic-radiology-residency/medical-student-opportunities-diagnostic-radiology-residency",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "MMC DR medical-student-opportunities sub-page exists.",
+        "img_eligibility": "Check sub-page",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "",
+        "cost": "",
+        "duration": "",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-012",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-012",
+        "title": "Longitudinal Integrated Clerkship (LIC)",
+        "opportunity_type": "Clerkship",
+        "specialty": "multispecialty",
+        "official_source_url": "https://www.mainehealth.org/maine-medical-center/education-research/undergraduate-medical-education/longitudinal-integrated-clerkship-mainehealth-maine-medical-center",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "NON_TARGET_NON_CLINICAL",
+        "target_fit_reason": "3rd-yr clerkship for matriculated Tufts Maine Track students only \u2014 not a visiting program.",
+        "img_eligibility": "No (closed program)",
+        "student_graduate_eligibility": "tufts_maine_track_only",
+        "visa_language": "None",
+        "cost": "None",
+        "duration": "9 months",
+        "deadline": "",
+        "state": "ME",
+        "county": "Cumberland"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-013",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-013",
+        "title": "EMMC Clinical Observational Experience",
+        "opportunity_type": "Observership",
+        "specialty": "multispecialty",
+        "official_source_url": "https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center/For-Medical-Professionals/Clinical-Education/Clinical-Observational-Experience",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "EMMC Clinical Observational Experience explicitly accepts medical students (MD/DO) + APP students + licensed practitioners + students of accredited colleges; multiple application portals.",
+        "img_eligibility": "Not explicit; broad eligibility language",
+        "student_graduate_eligibility": "medical_student_or_graduate_or_practitioner",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Job shadow or extended",
+        "deadline": "",
+        "state": "ME",
+        "county": "Penobscot"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-014",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-014",
+        "title": "EMMC FM Bangor Med Student Rotations",
+        "opportunity_type": "Elective",
+        "specialty": "family_medicine",
+        "official_source_url": "https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center/For-Medical-Professionals/Residency-and-Fellowship-Programs/Family-Medicine-Residency-Program/Bangor-Maine",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "target_fit_reason": "EMMC FM Bangor program \u2014 has medical-student-rotation page indexed by AMA FREIDA.",
+        "img_eligibility": "Not explicit",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "",
+        "cost": "",
+        "duration": "",
+        "deadline": "",
+        "state": "ME",
+        "county": "Penobscot"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-015",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-015",
+        "title": "CMHC FM Sub-Internship",
+        "opportunity_type": "Sub-internship",
+        "specialty": "family_medicine",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "EXACT_OFFICIAL_PROGRAM_PAGE",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "4-wk FM sub-I; inpatient + outpatient with call. International students accepted.",
+        "img_eligibility": "US/Canadian/International medical schools accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not on official page",
+        "cost": "Not stated",
+        "duration": "4 wks",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-016",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-016",
+        "title": "CMHC EM Elective",
+        "opportunity_type": "Elective",
+        "specialty": "emergency_medicine",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case EM elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-017",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-017",
+        "title": "CMHC OB/GYN Elective",
+        "opportunity_type": "Elective",
+        "specialty": "obstetrics_gynecology",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case OB/GYN elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-018",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-018",
+        "title": "CMHC Pediatrics Elective",
+        "opportunity_type": "Elective",
+        "specialty": "pediatrics",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case Peds elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-019",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-019",
+        "title": "CMHC Surgery Elective",
+        "opportunity_type": "Elective",
+        "specialty": "surgery",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case Surgery elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-020",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-020",
+        "title": "CMHC Internal Medicine Elective",
+        "opportunity_type": "Elective",
+        "specialty": "internal_medicine",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case IM elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    },
+    {
+      "id": "Opportunity:me-021",
+      "type": "Opportunity",
+      "properties": {
+        "candidate_id": "ME-021",
+        "title": "CMHC Rural FM Elective",
+        "opportunity_type": "Elective",
+        "specialty": "family_medicine_rural",
+        "official_source_url": "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
+        "source_page_type": "OFFICIAL_DEPARTMENT_PAGE_WITH_USCE_TEXT",
+        "target_fit": "TARGET_USCE_MATCH",
+        "target_fit_reason": "Case-by-case Rural FM elective; international MS accepted.",
+        "img_eligibility": "International MS accepted",
+        "student_graduate_eligibility": "medical_student",
+        "visa_language": "Not stated",
+        "cost": "Not stated",
+        "duration": "Variable",
+        "deadline": "",
+        "state": "ME",
+        "county": "Androscoggin"
+      },
+      "source_ids": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "Institution:maine_medical_center_mmc",
+      "to": "NPPESOrg:1376847343",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "EXACT_NAME_ZIP",
+        "confidence": "0.95",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:maine_track_program_tufts_mmc",
+      "to": "NPPESOrg:1376829598",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "NAME_ONLY",
+        "confidence": "0.465",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:northern_light_eastern_maine_medical_center_emmc",
+      "to": "NPPESOrg:1790789147",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "NAME_ONLY",
+        "confidence": "0.463",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:northern_light_acadia_hospital_psychiatry",
+      "to": "NPPESOrg:1568465144",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "NAME_ONLY",
+        "confidence": "0.286",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:mainegeneral_medical_center",
+      "to": "NPPESOrg:1447289996",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "EXACT_NAME_ZIP",
+        "confidence": "0.95",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:togus_va_medical_center",
+      "to": "NPPESOrg:1679768568",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "EXACT_NAME_ZIP",
+        "confidence": "0.95",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:central_maine_medical_center___central_maine_healthcare",
+      "to": "NPPESOrg:1689653487",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "EXACT_NAME_ZIP",
+        "confidence": "0.95",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:university_of_new_england_college_of_osteopathic_medicine_un",
+      "to": "NPPESOrg:1356917702",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "NAME_ONLY",
+        "confidence": "0.468",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:york_hospital",
+      "to": "NPPESOrg:1134403223",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "EXACT_NAME_ZIP",
+        "confidence": "0.95",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:mainehealth_maine_medical_center_biddeford_former_southern_m",
+      "to": "NPPESOrg:1376829598",
+      "rel": "HAS_NPPES_MATCH",
+      "visibility": "internal",
+      "properties": {
+        "match_tier": "NAME_ONLY",
+        "confidence": "0.241",
+        "review_status": "pending"
+      },
+      "source_ids": [
+        "cms_nppes"
+      ]
+    },
+    {
+      "from": "Institution:maine_medical_center_mmc",
+      "to": "Opportunity:me-001",
+      "rel": "HAS_OPPORTUNITY",
+      "visibility": "public",
+      "properties": {
+        "specialty": "multispecialty",
+        "target_fit": "TARGET_USCE_MATCH",
+        "img_eligibility": "Likely LCME-only via VSLO; IMG status unclear from public page"
+      },
+      "source_ids": []
+    },
+    {
+      "from": "Institution:togus_va_medical_center",
+      "to": "Opportunity:me-002",
+      "rel": "HAS_OPPORTUNITY",
+      "visibility": "public",
+      "properties": {
+        "specialty": "multispecialty",
+        "target_fit": "MAYBE_TARGET_MANUAL_REVIEW",
+        "img_eligibility": "Not direct; via MMC/EMMC/UNECOM"
+      },
+      "source_ids": []
+    },
+    {
+      "from": "Institution:central_maine_medical_center___central_maine_healthcare",
+      "to": "Opportunity:me-003",
+      "rel": "HAS_OPPORTUNITY",
+      "visibility": "public",
+      "properties": {
+        "specialty": "multispecialty",
+        "target_fit": "TARGET_USCE_MATCH",
+        "img_eligibility": "International medical students explicitly accepted"
+      },
+      "source_ids": []
+    }
+  ]
+}
