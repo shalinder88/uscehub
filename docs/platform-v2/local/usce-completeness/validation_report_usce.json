@@ -1,0 +1,23 @@
+{
+  "validation": "PASSED",
+  "schema_version": "v2",
+  "sections": {
+    "source_rights": true,
+    "cms_bridge": true,
+    "usce_cards": true,
+    "tsc": true
+  },
+  "hard_failure_count": 0,
+  "failures": [],
+  "rules_checked": [
+    "FORBIDDEN_FIELD_IN_PUBLIC_CARD — NPI/CCN/EIN must not appear in public cards",
+    "PUBLIC_CARD_MISSING_OFFICIAL_SOURCE — every card needs official_source_url",
+    "SUPPORTING_SOURCE_IN_PUBLIC_PREVIEW — hub/affiliated pages not as opportunity cards",
+    "DO_NOT_SHOW_IN_PUBLIC_PREVIEW — DO_NOT_SHOW excluded from preview",
+    "IMG_RELEVANT_MISSING_EXPLICIT_ELIGIBLE — READY_PUBLIC_IMG_RELEVANT requires explicit eligible_audiences",
+    "US_STUDENT_ONLY_MISSING_EXCLUSIONS — READY_PUBLIC_US_STUDENT_ONLY requires explicit exclusions",
+    "UNKNOWN_AUDIENCES_HIDDEN — unknown eligibility must be visible in card",
+    "LCME_ONLY_IN_IMG_RELEVANT_BUCKET — LCME-only cannot appear as IMG-relevant",
+    "POLICY_HUB_AS_OPPORTUNITY — policy hub pages must be SUPPORTING_SOURCE"
+  ]
+}

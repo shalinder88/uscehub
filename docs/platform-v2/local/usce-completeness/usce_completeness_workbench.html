@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>P99-0 USCE Completeness Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; font-size: 13px; color: #1a1a1a; background: #f5f5f5; }
+  header { background: #1a1a2e; color: #fff; padding: 16px 24px; }
+  header h1 { font-size: 17px; font-weight: 600; }
+  header p { font-size: 11px; color: #aaa; margin-top: 3px; }
+  .toolbar { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 10px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .toolbar select, .toolbar input { border: 1px solid #ccc; border-radius: 4px; padding: 4px 8px; font-size: 12px; }
+  .toolbar label { font-size: 11px; color: #666; }
+  .stats { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 8px 24px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .stat { font-size: 11px; color: #555; }
+  .stat strong { color: #111; font-size: 13px; }
+  .main { padding: 16px 24px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  th { background: #f0f0f0; padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 600; color: #444; border-bottom: 1px solid #ddd; white-space: nowrap; }
+  td { padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 12px; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafafa; }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+  .READY_PUBLIC      { background: #d4edda; color: #155724; }
+  .PUBLIC_WITH_UNKNOWN_FIELDS { background: #fff3cd; color: #856404; }
+  .NEEDS_REVIEW      { background: #f8d7da; color: #721c24; }
+  .DO_NOT_SHOW       { background: #343a40; color: #fff; }
+  .FUTURE_LANE_ONLY  { background: #e2d9f3; color: #4a2d8b; }
+  .APPROVE_PUBLIC    { background: #198754; color: #fff; }
+  .APPROVE_WITH_UNKNOWN_FIELDS { background: #ffc107; color: #000; }
+  .NEEDS_SOURCE_REVIEW { background: #dc3545; color: #fff; }
+  .tag-img-yes { background: #cff4fc; color: #055160; }
+  .tag-img-no  { background: #f8d7da; color: #721c24; }
+  .tag-unknown { background: #e9ecef; color: #495057; }
+  .score-bar { height: 4px; border-radius: 2px; background: #dee2e6; display: inline-block; width: 60px; vertical-align: middle; position: relative; }
+  .score-fill { height: 100%; border-radius: 2px; background: #0d6efd; }
+  .score-fill.high { background: #198754; }
+  .score-fill.med { background: #ffc107; }
+  .score-fill.low { background: #dc3545; }
+  .decision-row { display: flex; flex-direction: column; gap: 4px; }
+  .decision-sel { font-size: 11px; border: 1px solid #ccc; border-radius: 4px; padding: 2px 4px; width: 200px; }
+  .decision-note { font-size: 11px; border: 1px solid #ccc; border-radius: 4px; padding: 2px 4px; width: 200px; resize: vertical; min-height: 30px; }
+  .btn { padding: 5px 12px; border-radius: 4px; border: none; cursor: pointer; font-size: 12px; font-weight: 500; }
+  .btn-primary { background: #0d6efd; color: #fff; }
+  .btn-secondary { background: #6c757d; color: #fff; }
+  .btn-danger { background: #dc3545; color: #fff; }
+  .btn-success { background: #198754; color: #fff; }
+  .btn-sm { padding: 3px 8px; font-size: 11px; }
+  .export-bar { background: #fff; border-top: 1px solid #e0e0e0; padding: 10px 24px; display: flex; gap: 10px; align-items: center; }
+  .unknown-fields { font-size: 10px; color: #888; }
+  .fit-warning { font-size: 10px; color: #c0392b; font-weight: 600; }
+  .gate-hit { font-size: 10px; color: #6c3483; font-weight: 600; }
+  .no-data { padding: 32px; text-align: center; color: #666; }
+  .source-link { font-size: 10px; color: #0d6efd; text-decoration: none; }
+  .source-link:hover { text-decoration: underline; }
+  input[type=file] { font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>P99-0 USCE Completeness Workbench</h1>
+  <p>Review and classify USCE listing candidates for public display readiness.</p>
+</header>
+
+<div class="toolbar">
+  <div>
+    <label>Load CSV</label><br>
+    <input type="file" id="csvFile" accept=".csv">
+  </div>
+  <div>
+    <label>Status filter</label><br>
+    <select id="filterStatus">
+      <option value="">All statuses</option>
+      <option value="READY_PUBLIC">READY_PUBLIC</option>
+      <option value="PUBLIC_WITH_UNKNOWN_FIELDS">PUBLIC_WITH_UNKNOWN_FIELDS</option>
+      <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
+      <option value="DO_NOT_SHOW">DO_NOT_SHOW</option>
+      <option value="FUTURE_LANE_ONLY">FUTURE_LANE_ONLY</option>
+    </select>
+  </div>
+  <div>
+    <label>Opportunity type</label><br>
+    <select id="filterType">
+      <option value="">All types</option>
+      <option value="Elective">Elective</option>
+      <option value="Clerkship">Clerkship</option>
+      <option value="Sub-internship">Sub-internship</option>
+      <option value="Observership">Observership</option>
+    </select>
+  </div>
+  <div>
+    <label>IMG eligibility</label><br>
+    <select id="filterImg">
+      <option value="">All</option>
+      <option value="YES">IMG accepted</option>
+      <option value="NO">IMG excluded</option>
+      <option value="UNKNOWN">Unknown</option>
+    </select>
+  </div>
+  <div>
+    <label>Source quality</label><br>
+    <select id="filterSource">
+      <option value="">All</option>
+      <option value="OFFICIAL_PROGRAM_PAGE">Official program page</option>
+      <option value="OFFICIAL_DEPARTMENT_PAGE">Department page</option>
+      <option value="GENERIC_HOMEPAGE_ONLY">Generic homepage</option>
+    </select>
+  </div>
+  <div>
+    <label>Review decision</label><br>
+    <select id="filterDecision">
+      <option value="">All</option>
+      <option value="pending">Pending</option>
+      <option value="APPROVE_PUBLIC">Approved public</option>
+      <option value="APPROVE_WITH_UNKNOWN_FIELDS">Approved (unknown fields)</option>
+      <option value="NEEDS_SOURCE_REVIEW">Needs source review</option>
+      <option value="DO_NOT_SHOW">Do not show</option>
+      <option value="FUTURE_LANE_ONLY">Future lane</option>
+    </select>
+  </div>
+</div>
+
+<div class="stats" id="statsBar">
+  <div class="stat">Load <strong>usce_listing_completeness.csv</strong> to begin.</div>
+</div>
+
+<div class="main">
+  <table id="mainTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Institution / Specialty</th>
+        <th>Type</th>
+        <th>IMG</th>
+        <th>Source</th>
+        <th>Score</th>
+        <th>Status</th>
+        <th>Unknown fields / warnings</th>
+        <th>Reviewer decision</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td colspan="9" class="no-data">Load a CSV file to begin.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="export-bar">
+  <button class="btn btn-success" onclick="exportDecisions()">Export decisions CSV</button>
+  <button class="btn btn-primary" onclick="exportDecisionsJSON()">Export decisions JSON</button>
+  <button class="btn btn-secondary" onclick="exportAuditLog()">Export audit log</button>
+  <button class="btn btn-danger btn-sm" onclick="clearAllDecisions()">Clear all decisions</button>
+  <span id="exportStatus" style="font-size:11px;color:#666;margin-left:8px;"></span>
+</div>
+
+<script>
+const STORAGE_KEY = "p99_0_completeness_review_state";
+let allRows = [];
+let reviewState = {};   // listingId → { decision, note, decidedAt }
+let auditLog = [];
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      reviewState = parsed.reviewState || {};
+      auditLog = parsed.auditLog || [];
+    }
+  } catch (e) { reviewState = {}; auditLog = []; }
+}
+
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ reviewState, auditLog }));
+}
+
+function appendAuditLog(listingId, prior, next, note) {
+  auditLog.push({
+    listing_id: listingId,
+    prior_decision: prior,
+    new_decision: next,
+    note: note,
+    recorded_at: new Date().toISOString(),
+  });
+  saveState();
+}
+
+function rowKey(r) {
+  return r.listing_id;
+}
+
+// ── CSV parse ─────────────────────────────────────────────────────────
+function parseCSV(text) {
+  const lines = text.split(/\r?\n/);
+  const headers = splitCSVLine(lines[0]);
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    if (!lines[i].trim()) continue;
+    const vals = splitCSVLine(lines[i]);
+    const row = {};
+    headers.forEach((h, j) => row[h] = vals[j] || "");
+    rows.push(row);
+  }
+  return rows;
+}
+
+function splitCSVLine(line) {
+  const result = [];
+  let cur = "";
+  let inQuote = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (inQuote && line[i+1] === '"') { cur += '"'; i++; }
+      else inQuote = !inQuote;
+    } else if (c === ',' && !inQuote) {
+      result.push(cur); cur = "";
+    } else {
+      cur += c;
+    }
+  }
+  result.push(cur);
+  return result;
+}
+
+// ── File load ─────────────────────────────────────────────────────────
+document.getElementById("csvFile").addEventListener("change", function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    allRows = parseCSV(ev.target.result);
+    renderStats();
+    renderTable();
+  };
+  reader.readAsText(file);
+});
+
+// ── Filter listeners ─────────────────────────────────────────────────
+["filterStatus","filterType","filterImg","filterSource","filterDecision"].forEach(id => {
+  document.getElementById(id).addEventListener("change", renderTable);
+});
+
+function getFilteredRows() {
+  const status = document.getElementById("filterStatus").value;
+  const type = document.getElementById("filterType").value;
+  const img = document.getElementById("filterImg").value;
+  const source = document.getElementById("filterSource").value;
+  const dec = document.getElementById("filterDecision").value;
+
+  return allRows.filter(r => {
+    if (status && r.completeness_status !== status) return false;
+    if (type && r.opportunity_type !== type) return false;
+    if (img && r.img_eligibility !== img) return false;
+    if (source && r.source_status !== source) return false;
+    if (dec) {
+      const d = (reviewState[rowKey(r)] || {}).decision || "pending";
+      if (d !== dec) return false;
+    }
+    return true;
+  });
+}
+
+// ── Stats bar ────────────────────────────────────────────────────────
+function renderStats() {
+  const counts = {};
+  const decCounts = {};
+  allRows.forEach(r => {
+    counts[r.completeness_status] = (counts[r.completeness_status]||0)+1;
+    const d = (reviewState[rowKey(r)] || {}).decision || "pending";
+    decCounts[d] = (decCounts[d]||0)+1;
+  });
+  const bar = document.getElementById("statsBar");
+  bar.innerHTML = [
+    `<div class="stat">Total <strong>${allRows.length}</strong></div>`,
+    `<div class="stat">READY_PUBLIC <strong>${counts["READY_PUBLIC"]||0}</strong></div>`,
+    `<div class="stat">PUBLIC_UNKNOWN_FIELDS <strong>${counts["PUBLIC_WITH_UNKNOWN_FIELDS"]||0}</strong></div>`,
+    `<div class="stat">NEEDS_REVIEW <strong>${counts["NEEDS_REVIEW"]||0}</strong></div>`,
+    `<div class="stat">DO_NOT_SHOW <strong>${counts["DO_NOT_SHOW"]||0}</strong></div>`,
+    `<div class="stat">FUTURE_LANE <strong>${counts["FUTURE_LANE_ONLY"]||0}</strong></div>`,
+    `<div class="stat" style="margin-left:16px;border-left:1px solid #ddd;padding-left:16px;">Pending <strong>${decCounts["pending"]||allRows.length}</strong></div>`,
+    `<div class="stat">Approved <strong>${(decCounts["APPROVE_PUBLIC"]||0)+(decCounts["APPROVE_WITH_UNKNOWN_FIELDS"]||0)}</strong></div>`,
+    `<div class="stat">Rejected <strong>${decCounts["DO_NOT_SHOW"]||0}</strong></div>`,
+  ].join("");
+}
+
+// ── Table render ─────────────────────────────────────────────────────
+function renderTable() {
+  const rows = getFilteredRows();
+  const tbody = document.getElementById("tableBody");
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="9" class="no-data">No rows match the current filters.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = rows.map(r => renderRow(r)).join("");
+  tbody.querySelectorAll(".decision-sel").forEach(sel => {
+    sel.addEventListener("change", function() {
+      const lid = this.dataset.lid;
+      const prior = (reviewState[lid]||{}).decision || "pending";
+      reviewState[lid] = reviewState[lid] || {};
+      reviewState[lid].decision = this.value;
+      reviewState[lid].decidedAt = new Date().toISOString();
+      appendAuditLog(lid, prior, this.value, "");
+      saveState();
+      renderStats();
+    });
+  });
+  tbody.querySelectorAll(".decision-note").forEach(ta => {
+    ta.addEventListener("change", function() {
+      const lid = this.dataset.lid;
+      reviewState[lid] = reviewState[lid] || {};
+      reviewState[lid].note = this.value;
+      saveState();
+    });
+  });
+}
+
+function scoreClass(score, max) {
+  const pct = score / max;
+  if (pct >= 0.65) return "high";
+  if (pct >= 0.45) return "med";
+  return "low";
+}
+
+function renderRow(r) {
+  const lid = r.listing_id;
+  const state = reviewState[lid] || { decision: "pending", note: "" };
+  const score = parseInt(r.completeness_score)||0;
+  const max = parseInt(r.max_possible_score)||75;
+  const pct = Math.round(score/max*100);
+  const sc = scoreClass(score, max);
+
+  const imgBadge = r.img_eligibility === "YES"
+    ? `<span class="badge tag-img-yes">IMG OK</span>`
+    : r.img_eligibility === "NO"
+    ? `<span class="badge tag-img-no">IMG excl.</span>`
+    : `<span class="badge tag-unknown">IMG?</span>`;
+
+  const unknowns = r.unknown_fields ? r.unknown_fields.split("|").filter(Boolean) : [];
+  const warnings = r.fit_warnings ? r.fit_warnings.split("|").filter(Boolean) : [];
+  const gates = r.hard_gates_hit ? r.hard_gates_hit.split("|").filter(Boolean) : [];
+
+  const appUrl = r.application_url
+    ? `<a class="source-link" href="${r.application_url}" target="_blank">Apply ↗</a>`
+    : "";
+  const srcUrl = r.official_source_url
+    ? `<a class="source-link" href="${r.official_source_url}" target="_blank">Source ↗</a>`
+    : "";
+
+  const decOptions = ["pending","APPROVE_PUBLIC","APPROVE_WITH_UNKNOWN_FIELDS","NEEDS_SOURCE_REVIEW","DO_NOT_SHOW","FUTURE_LANE_ONLY"];
+  const selHtml = decOptions.map(d =>
+    `<option value="${d}" ${state.decision===d?"selected":""}>${d}</option>`
+  ).join("");
+
+  return `<tr>
+    <td style="font-family:monospace;font-size:11px;">${lid}</td>
+    <td>
+      <strong style="font-size:12px;">${r.institution_name}</strong><br>
+      <span style="color:#666;font-size:11px;">${r.specialty || "—"} · ${r.county||""} ${r.state||""}</span><br>
+      <div style="margin-top:3px;">${appUrl} ${srcUrl}</div>
+    </td>
+    <td><span class="badge tag-unknown">${r.opportunity_type}</span></td>
+    <td>${imgBadge}</td>
+    <td style="font-size:11px;">${r.source_status.replace(/_/g," ")}</td>
+    <td>
+      <div style="white-space:nowrap;">
+        <span class="score-bar"><span class="score-fill ${sc}" style="width:${pct}%"></span></span>
+        <span style="font-size:11px;margin-left:4px;">${score}/${max}</span>
+      </div>
+    </td>
+    <td><span class="badge ${r.completeness_status}">${r.completeness_status.replace(/_/g,"_​")}</span></td>
+    <td>
+      ${unknowns.length ? `<div class="unknown-fields">Unknown: ${unknowns.join(", ")}</div>` : ""}
+      ${warnings.length ? `<div class="fit-warning">⚠ ${warnings.join(" · ")}</div>` : ""}
+      ${gates.length ? `<div class="gate-hit">Gate: ${gates.join("|")}</div>` : ""}
+    </td>
+    <td>
+      <div class="decision-row">
+        <select class="decision-sel" data-lid="${lid}">${selHtml}</select>
+        <textarea class="decision-note" data-lid="${lid}" placeholder="Reviewer note...">${state.note||""}</textarea>
+      </div>
+    </td>
+  </tr>`;
+}
+
+// ── Export ────────────────────────────────────────────────────────────
+function exportDecisions() {
+  if (!allRows.length) { alert("No data loaded."); return; }
+  const headers = [
+    "listing_id","institution_name","state","county","specialty","opportunity_type",
+    "completeness_status","completeness_score","img_eligibility","source_status",
+    "review_decision","reviewer_note","decided_at"
+  ];
+  const csv = [headers.join(",")];
+  allRows.forEach(r => {
+    const st = reviewState[rowKey(r)] || {};
+    const vals = [
+      r.listing_id, q(r.institution_name), r.state, r.county,
+      r.specialty, r.opportunity_type, r.completeness_status, r.completeness_score,
+      r.img_eligibility, r.source_status,
+      st.decision||"pending", q(st.note||""), st.decidedAt||""
+    ];
+    csv.push(vals.join(","));
+  });
+  download("completeness_review_decisions.csv", csv.join("\n"), "text/csv");
+  document.getElementById("exportStatus").textContent = "CSV exported.";
+}
+
+function exportDecisionsJSON() {
+  if (!allRows.length) { alert("No data loaded."); return; }
+  const out = allRows.map(r => {
+    const st = reviewState[rowKey(r)] || {};
+    return {
+      listing_id: r.listing_id,
+      institution_name: r.institution_name,
+      state: r.state,
+      specialty: r.specialty,
+      completeness_status: r.completeness_status,
+      review_decision: st.decision || "pending",
+      reviewer_note: st.note || "",
+      decided_at: st.decidedAt || "",
+    };
+  });
+  download("completeness_review_decisions.json", JSON.stringify(out, null, 2), "application/json");
+  document.getElementById("exportStatus").textContent = "JSON exported.";
+}
+
+function exportAuditLog() {
+  const lines = auditLog.map(e => JSON.stringify(e)).join("\n");
+  download("completeness_review_audit_log.jsonl", lines, "application/x-ndjson");
+  document.getElementById("exportStatus").textContent = "Audit log exported.";
+}
+
+function clearAllDecisions() {
+  if (!confirm("Clear ALL review decisions? This cannot be undone.")) return;
+  reviewState = {};
+  auditLog = [];
+  saveState();
+  renderStats();
+  renderTable();
+}
+
+function q(s) {
+  if (s && (s.includes(",") || s.includes('"') || s.includes("\n"))) {
+    return '"' + String(s).replace(/"/g,'""') + '"';
+  }
+  return s || "";
+}
+
+function download(filename, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────
+loadState();
+</script>
+</body>
+</html>
