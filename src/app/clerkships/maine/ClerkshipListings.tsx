@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   ExternalLink,
   AlertCircle,
@@ -10,6 +10,9 @@ import {
   Flag,
   ChevronDown,
   ChevronUp,
+  Bookmark,
+  BookmarkCheck,
+  X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -49,6 +52,62 @@ function specialtyLabel(s: string) {
 
 const ALL_SPECIALTIES = Array.from(new Set(USCE_MAINE_CARDS.map((c) => c.specialty))).sort();
 const ALL_TYPES = Array.from(new Set(USCE_MAINE_CARDS.map((c) => c.opportunity_type))).sort();
+
+const AUDIENCE_LABELS: Record<string, string> = {
+  US_MD_DO: "US MD/DO student",
+  INTERNATIONAL_STUDENT: "International med student",
+  IMG_GRADUATE: "IMG graduate",
+  CARIBBEAN_STUDENT: "Caribbean-school student",
+};
+
+const RESTRICTION_LABELS: Record<string, string> = {
+  VSLO_REQUIRED: "VSLO required",
+  IMG_EXCLUDED: "IMG excluded",
+};
+
+function audienceLabel(a: string) {
+  return AUDIENCE_LABELS[a] ?? a.replace(/_/g, " ");
+}
+
+function restrictionLabel(t: string) {
+  return RESTRICTION_LABELS[t] ?? t.replace(/_/g, " ");
+}
+
+// ── useSavedListings ──────────────────────────────────────────────────────────
+
+const LS_KEY = "usce-saved-listings";
+
+function useSavedListings() {
+  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (raw) setSavedIds(new Set(JSON.parse(raw) as string[]));
+    } catch {}
+  }, []);
+
+  const toggle = useCallback((id: string) => {
+    setSavedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      try {
+        localStorage.setItem(LS_KEY, JSON.stringify([...next]));
+      } catch {}
+      return next;
+    });
+  }, []);
+
+  const clear = useCallback(() => {
+    setSavedIds(new Set());
+    try {
+      localStorage.removeItem(LS_KEY);
+    } catch {}
+  }, []);
+
+  return { savedIds, toggle, clear };
+}
 
 // ── Small presentational components ──────────────────────────────────────────
 
@@ -111,9 +170,252 @@ function ReportIssuePlaceholder({ onClose }: { onClose: () => void }) {
   );
 }
 
+// ── CompareTable ──────────────────────────────────────────────────────────────
+
+function CompareTable({ cards }: { cards: UsceCard[] }) {
+  const rows: { label: string; render: (c: UsceCard) => React.ReactNode }[] = [
+    {
+      label: "Institution",
+      render: (c) => (
+        <span className="text-xs text-slate-700 dark:text-slate-300 leading-snug">
+          {c.institution_name}
+        </span>
+      ),
+    },
+    {
+      label: "Specialty",
+      render: (c) => <span className="text-xs">{specialtyLabel(c.specialty)}</span>,
+    },
+    {
+      label: "Type",
+      render: (c) => <span className="text-xs">{c.opportunity_type}</span>,
+    },
+    {
+      label: "Open to",
+      render: (c) =>
+        c.eligible_audiences.length > 0 ? (
+          <div className="flex flex-col gap-0.5">
+            {c.eligible_audiences.map((a) => (
+              <span key={a} className="text-xs text-emerald-700 dark:text-emerald-400">
+                {audienceLabel(a)}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="text-xs text-slate-400">—</span>
+        ),
+    },
+    {
+      label: "Excluded",
+      render: (c) =>
+        c.excluded_audiences.length > 0 ? (
+          <div className="flex flex-col gap-0.5">
+            {c.excluded_audiences.map((a) => (
+              <span key={a} className="text-xs text-red-600 dark:text-red-400">
+                {audienceLabel(a)}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="text-xs text-slate-400">—</span>
+        ),
+    },
+    {
+      label: "Not stated",
+      render: (c) =>
+        c.unknown_audiences.length > 0 ? (
+          <div className="flex flex-col gap-0.5">
+            {c.unknown_audiences.map((a) => (
+              <span key={a} className="text-xs text-amber-700 dark:text-amber-400">
+                {audienceLabel(a)}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="text-xs text-slate-400">—</span>
+        ),
+    },
+    {
+      label: "Restrictions",
+      render: (c) =>
+        c.restriction_tags.length > 0 ? (
+          <div className="flex flex-col gap-0.5">
+            {c.restriction_tags.map((t) => (
+              <span key={t} className="text-xs text-amber-700 dark:text-amber-400">
+                {restrictionLabel(t)}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <span className="text-xs text-slate-400">—</span>
+        ),
+    },
+    {
+      label: "Apply",
+      render: (c) =>
+        c.application_url ? (
+          <a
+            href={c.application_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium text-blue-600 dark:text-blue-400 underline"
+          >
+            Apply <ExternalLink className="h-3 w-3" />
+          </a>
+        ) : (
+          <span className="text-xs text-slate-400">Via program page</span>
+        ),
+    },
+    {
+      label: "Source",
+      render: (c) => (
+        <a
+          href={c.official_source_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 underline"
+        >
+          View <ExternalLink className="h-3 w-3" />
+        </a>
+      ),
+    },
+    {
+      label: "Last reviewed",
+      render: (c) => (
+        <span className="text-xs text-slate-500 dark:text-slate-400">{c.last_reviewed_at}</span>
+      ),
+    },
+  ];
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr>
+            <th className="pr-5 pb-3 text-xs font-medium text-slate-400 dark:text-slate-500 w-28 align-bottom" />
+            {cards.map((c) => (
+              <th
+                key={c.listing_id}
+                className="pr-5 pb-3 text-xs font-semibold text-slate-700 dark:text-slate-200 align-bottom min-w-[160px]"
+              >
+                <div className="leading-snug">
+                  <span className="block">{c.institution_name.split(" / ")[0]}</span>
+                  <span className="block font-normal text-slate-400 dark:text-slate-500">
+                    {c.institution_name.split(" / ").slice(1).join(" / ")}
+                  </span>
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(({ label, render }) => (
+            <tr key={label} className="border-t border-slate-100 dark:border-slate-800">
+              <td className="py-2.5 pr-5 text-xs font-medium text-slate-400 dark:text-slate-500 align-top whitespace-nowrap">
+                {label}
+              </td>
+              {cards.map((c) => (
+                <td key={c.listing_id} className="py-2.5 pr-5 align-top">
+                  {render(c)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+// ── ComparePanel ──────────────────────────────────────────────────────────────
+
+function ComparePanel({
+  cards,
+  onClose,
+  onClear,
+}: {
+  cards: UsceCard[];
+  onClose: () => void;
+  onClear: () => void;
+}) {
+  const displayCards = cards.slice(0, 4);
+  const hasMore = cards.length > 4;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex flex-col"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Compare saved programs"
+    >
+      {/* Backdrop */}
+      <div className="flex-1 bg-black/40" onClick={onClose} />
+
+      {/* Sheet */}
+      <div className="bg-white dark:bg-slate-900 rounded-t-2xl shadow-2xl border-t border-slate-200 dark:border-slate-700 max-h-[80vh] flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800 shrink-0">
+          <div>
+            <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
+              Comparing {displayCards.length} program{displayCards.length !== 1 ? "s" : ""}
+            </h2>
+            {hasMore && (
+              <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                Showing first 4 of {cards.length} saved. Remove some to compare others.
+              </p>
+            )}
+          </div>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onClear}
+              className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+            >
+              Clear all saved
+            </button>
+            <button
+              onClick={onClose}
+              aria-label="Close compare panel"
+              className="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Pilot disclaimer */}
+        <div className="px-5 py-2.5 bg-amber-50 dark:bg-amber-950/30 border-b border-amber-100 dark:border-amber-900/40 shrink-0">
+          <p className="text-xs text-amber-700 dark:text-amber-400">
+            Source-reviewed pilot cohort — not a complete national database. Eligibility derived from
+            official program pages at time of source review and may not reflect unpublished changes.
+          </p>
+        </div>
+
+        {/* Content */}
+        <div className="overflow-auto flex-1 px-5 py-4">
+          {displayCards.length < 2 ? (
+            <p className="text-sm text-slate-500 dark:text-slate-400 text-center py-8">
+              Save at least 2 programs to use compare.
+            </p>
+          ) : (
+            <CompareTable cards={displayCards} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Card ──────────────────────────────────────────────────────────────────────
 
-function ClerkshipCard({ card }: { card: UsceCard }) {
+function ClerkshipCard({
+  card,
+  isSaved,
+  onToggleSave,
+}: {
+  card: UsceCard;
+  isSaved: boolean;
+  onToggleSave: () => void;
+}) {
   const [showReport, setShowReport] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -144,11 +446,28 @@ function ClerkshipCard({ card }: { card: UsceCard }) {
             )}
           </p>
         </div>
-        {isImgRelevant ? (
-          <Badge variant="success" className="shrink-0 whitespace-nowrap">Intl. eligible</Badge>
-        ) : (
-          <Badge variant="warning" className="shrink-0 whitespace-nowrap">US MD/DO only</Badge>
-        )}
+        <div className="flex items-center gap-1.5 shrink-0">
+          {isImgRelevant ? (
+            <Badge variant="success" className="whitespace-nowrap">Intl. eligible</Badge>
+          ) : (
+            <Badge variant="warning" className="whitespace-nowrap">US MD/DO only</Badge>
+          )}
+          <button
+            onClick={onToggleSave}
+            aria-label={isSaved ? "Remove from saved" : "Save this program"}
+            className={`rounded p-1 transition-colors ${
+              isSaved
+                ? "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                : "text-slate-300 dark:text-slate-600 hover:text-slate-500 dark:hover:text-slate-400"
+            }`}
+          >
+            {isSaved ? (
+              <BookmarkCheck className="h-4 w-4" />
+            ) : (
+              <Bookmark className="h-4 w-4" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Audience breakdown */}
@@ -245,9 +564,11 @@ interface InstitutionGroupProps {
   city: string;
   cards: UsceCard[];
   note: React.ReactNode;
+  savedIds: Set<string>;
+  onToggleSave: (id: string) => void;
 }
 
-function InstitutionGroup({ name, city, cards, note }: InstitutionGroupProps) {
+function InstitutionGroup({ name, city, cards, note, savedIds, onToggleSave }: InstitutionGroupProps) {
   if (cards.length === 0) return null;
   return (
     <section>
@@ -258,7 +579,12 @@ function InstitutionGroup({ name, city, cards, note }: InstitutionGroupProps) {
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => (
-          <ClerkshipCard key={card.listing_id} card={card} />
+          <ClerkshipCard
+            key={card.listing_id}
+            card={card}
+            isSaved={savedIds.has(card.listing_id)}
+            onToggleSave={() => onToggleSave(card.listing_id)}
+          />
         ))}
       </div>
     </section>
@@ -270,9 +596,15 @@ function InstitutionGroup({ name, city, cards, note }: InstitutionGroupProps) {
 function FilterBar({
   filters,
   onChange,
+  savedCount,
+  onOpenCompare,
+  onClearSaved,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
+  savedCount: number;
+  onOpenCompare: () => void;
+  onClearSaved: () => void;
 }) {
   const set = (patch: Partial<Filters>) => onChange({ ...filters, ...patch });
 
@@ -356,7 +688,7 @@ function FilterBar({
           Unknown eligibility
         </button>
 
-        {/* Clear */}
+        {/* Clear filters */}
         {(filters.specialty !== "all" ||
           filters.type !== "all" ||
           filters.vsloOnly ||
@@ -371,6 +703,29 @@ function FilterBar({
           </button>
         )}
       </div>
+
+      {/* Saved count + compare */}
+      {savedCount > 0 && (
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
+            {savedCount} saved
+          </span>
+          {savedCount >= 2 && (
+            <button
+              onClick={onOpenCompare}
+              className="rounded-lg border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+            >
+              Compare {Math.min(savedCount, 4)} →
+            </button>
+          )}
+          <button
+            onClick={onClearSaved}
+            className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300"
+          >
+            Clear saved
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -379,6 +734,15 @@ function FilterBar({
 
 export function ClerkshipListings() {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
+  const [compareOpen, setCompareOpen] = useState(false);
+  const { savedIds, toggle, clear } = useSavedListings();
+
+  const savedCards = USCE_MAINE_CARDS.filter((c) => savedIds.has(c.listing_id));
+
+  const handleClearSaved = useCallback(() => {
+    clear();
+    setCompareOpen(false);
+  }, [clear]);
 
   const filtered = USCE_MAINE_CARDS.filter((c) => {
     if (filters.audience === "img_relevant" && c.display_bucket !== "READY_PUBLIC_IMG_RELEVANT")
@@ -398,7 +762,13 @@ export function ClerkshipListings() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <FilterBar filters={filters} onChange={setFilters} />
+      <FilterBar
+        filters={filters}
+        onChange={setFilters}
+        savedCount={savedIds.size}
+        onOpenCompare={() => setCompareOpen(true)}
+        onClearSaved={handleClearSaved}
+      />
 
       {isEmpty ? (
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-6 py-10 text-center text-sm text-slate-500 dark:text-slate-400">
@@ -416,6 +786,8 @@ export function ClerkshipListings() {
             name="Central Maine Medical Center (CMHC)"
             city="Lewiston, ME — Androscoggin County"
             cards={imgCards}
+            savedIds={savedIds}
+            onToggleSave={toggle}
             note={
               <div className="flex items-start gap-2 rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 px-3 py-2 text-xs text-emerald-800 dark:text-emerald-300">
                 <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />
@@ -432,6 +804,8 @@ export function ClerkshipListings() {
             name="Maine Medical Center (MMC)"
             city="Portland, ME — Cumberland County"
             cards={usCards}
+            savedIds={savedIds}
+            onToggleSave={toggle}
             note={
               <div className="flex items-start gap-2 rounded-lg border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 px-3 py-2 text-xs text-red-800 dark:text-red-300">
                 <XCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
@@ -476,6 +850,15 @@ export function ClerkshipListings() {
           appears on this page.
         </p>
       </div>
+
+      {/* Compare panel */}
+      {compareOpen && (
+        <ComparePanel
+          cards={savedCards}
+          onClose={() => setCompareOpen(false)}
+          onClear={handleClearSaved}
+        />
+      )}
     </div>
   );
 }
