@@ -8,9 +8,10 @@
  *   - Save filter (saved_only / unsaved_only) implemented in component
  *   - Report-issue placeholder present in CompareTable section
  *   - "Compare shows up to 4" copy present
- *   - Card count 12 (7 IMG + 5 US-only) still holds
+ *   - Card count 12 (7 IMG + 5 US-only) still holds in source JSON AND generated runtime
  *   - Forbidden language absent from component source
  *   - Runtime guard still present in data adapter
+ *   - Generated runtime file exists and has correct counts (P99-3)
  *
  * Run: npx tsx scripts/validate-usce-save-compare.ts
  */
@@ -22,6 +23,7 @@ const BASE = path.join(__dirname, "../docs/platform-v2/local/usce-completeness")
 const CARDS_FILE_V2 = path.join(BASE, "public_listing_cards_preview_v2.json");
 const COMPONENT_FILE = path.join(__dirname, "../src/app/clerkships/maine/ClerkshipListings.tsx");
 const ADAPTER_FILE = path.join(__dirname, "../src/lib/usce-maine-data.ts");
+const RUNTIME_JSON = path.join(__dirname, "../src/data/usce/public-listings.generated.json");
 
 const FORBIDDEN_FIELDS = [
   "npi", "ccn", "cms_facility_id", "nppes_npi", "ein",
@@ -216,8 +218,31 @@ function main() {
     failures.push({ rule: "RUNTIME_GUARD_MISSING", detail: "Runtime guard missing from usce-maine-data.ts" });
   }
 
-  console.log(`      IMG count: ${imgCount} ${imgCount === 7 ? "(PASS)" : "(FAIL)"}`);
-  console.log(`      US-only count: ${usCount} ${usCount === 5 ? "(PASS)" : "(FAIL)"}`);
+  // Adapter imports from generated runtime file (P99-3)
+  const adapterImportsGenerated = adapterSrc.includes("public-listings.generated");
+  if (!adapterImportsGenerated) {
+    failures.push({ rule: "ADAPTER_IMPORTS_HARDCODED", detail: "usce-maine-data.ts does not import from generated runtime — hardcoded data detected" });
+  }
+
+  // Generated runtime file exists and has correct counts (P99-3)
+  let runtimeImgCount = -1;
+  let runtimeUsCount = -1;
+  if (fs.existsSync(RUNTIME_JSON)) {
+    const runtimeRaw = JSON.parse(fs.readFileSync(RUNTIME_JSON, "utf8"));
+    const runtimeCards: { display_bucket: string }[] = runtimeRaw.cards ?? [];
+    runtimeImgCount = runtimeCards.filter((c) => c.display_bucket === "READY_PUBLIC_IMG_RELEVANT").length;
+    runtimeUsCount = runtimeCards.filter((c) => c.display_bucket === "READY_PUBLIC_US_STUDENT_ONLY").length;
+    if (runtimeImgCount !== 7) failures.push({ rule: "RUNTIME_IMG_COUNT_WRONG", detail: `Generated runtime: expected 7 IMG cards, got ${runtimeImgCount}` });
+    if (runtimeUsCount !== 5) failures.push({ rule: "RUNTIME_US_COUNT_WRONG", detail: `Generated runtime: expected 5 US-only cards, got ${runtimeUsCount}` });
+  } else {
+    failures.push({ rule: "RUNTIME_FILE_MISSING", detail: "src/data/usce/public-listings.generated.json not found — run promote-reviewed-usce-data.ts" });
+  }
+
+  console.log(`      IMG count (source): ${imgCount} ${imgCount === 7 ? "(PASS)" : "(FAIL)"}`);
+  console.log(`      US-only count (source): ${usCount} ${usCount === 5 ? "(PASS)" : "(FAIL)"}`);
+  console.log(`      IMG count (runtime): ${runtimeImgCount} ${runtimeImgCount === 7 ? "(PASS)" : "(FAIL)"}`);
+  console.log(`      US-only count (runtime): ${runtimeUsCount} ${runtimeUsCount === 5 ? "(PASS)" : "(FAIL)"}`);
+  console.log(`      Adapter imports generated: ${adapterImportsGenerated ? "PASS" : "FAIL"}`);
   console.log(`      Forbidden language: ${langFails.length === 0 ? "PASS" : `FAIL (${langFails.join("; ")})`}`);
   console.log(`      Adapter runtime guard: ${hasGuard ? "PASS" : "FAIL"}`);
 
@@ -236,6 +261,7 @@ function main() {
     console.log(`  Save filters: saved_only + unsaved_only implemented`);
     console.log(`  Report issue: present in card + compare panel`);
     console.log(`  Compare cap: 4-card limit documented in UI`);
+    console.log(`  Generated runtime: exists, counts verified`);
   }
 
   process.exit(passed ? 0 : 1);
