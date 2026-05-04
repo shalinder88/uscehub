@@ -1,8 +1,6 @@
 export type DisplayBucket =
   | "READY_PUBLIC_IMG_RELEVANT"
-  | "READY_PUBLIC_US_STUDENT_ONLY"
-  | "NEEDS_REVIEW"
-  | "SUPPORTING_SOURCE_ONLY";
+  | "READY_PUBLIC_US_STUDENT_ONLY";
 
 export type AudienceStatus =
   | "ELIGIBLE_EXPLICIT"
@@ -18,11 +16,14 @@ export interface UsceCard {
   county: string;
   specialty: string;
   opportunity_type: string;
+  source_page_type: string;
+  listing_role: string;
   display_bucket: DisplayBucket;
   eligible_audiences: string[];
   excluded_audiences: string[];
   unknown_audiences: string[];
   restriction_tags: string[];
+  fit_warnings: string[];
   audience_detail: {
     us_md_do: AudienceStatus;
     international_student: AudienceStatus;
@@ -31,13 +32,12 @@ export interface UsceCard {
   };
   application_url: string;
   official_source_url: string;
-  completeness_score: number;
-  max_possible_score: number;
-  unknown_fields: string[];
+  source_status: string;
   last_reviewed_at: string;
 }
 
 export const USCE_MAINE_CARDS: UsceCard[] = [
+  // ── CMHC — READY_PUBLIC_IMG_RELEVANT ─────────────────────────────
   {
     listing_id: "ME-015",
     institution_name: "Central Maine Medical Center / Family Medicine",
@@ -45,11 +45,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "family_medicine",
     opportunity_type: "Sub-internship",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -58,9 +61,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 47,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -70,11 +71,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "emergency_medicine",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -83,9 +87,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -95,11 +97,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "obstetrics_gynecology",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -108,9 +113,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -120,11 +123,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "pediatrics",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -133,9 +139,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -145,11 +149,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "surgery",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -158,9 +165,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -170,11 +175,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "internal_medicine",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -183,9 +191,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -195,11 +201,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Androscoggin",
     specialty: "family_medicine_rural",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_IMG_RELEVANT",
     eligible_audiences: ["US_MD_DO", "INTERNATIONAL_STUDENT"],
     excluded_audiences: [],
     unknown_audiences: ["IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     restriction_tags: [],
+    fit_warnings: [],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "ELIGIBLE_EXPLICIT",
@@ -208,11 +217,10 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "https://app.smartsheet.com/b/form/8507f8981e874c2bab7a64404159f051",
     official_source_url: "https://www.cmhc.org/health-professionals/medical-students/elective-clerkships/",
-    completeness_score: 43,
-    max_possible_score: 75,
-    unknown_fields: ["img_graduate_eligibility", "caribbean_eligibility", "fee", "deadline"],
+    source_status: "OFFICIAL_DEPARTMENT_PAGE",
     last_reviewed_at: "2026-05-03",
   },
+  // ── MMC — READY_PUBLIC_US_STUDENT_ONLY ───────────────────────────
   {
     listing_id: "ME-004",
     institution_name: "Maine Medical Center / General Surgery",
@@ -220,11 +228,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Cumberland",
     specialty: "general_surgery",
     opportunity_type: "Sub-internship",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_US_STUDENT_ONLY",
     eligible_audiences: ["US_MD_DO"],
     excluded_audiences: ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     unknown_audiences: [],
     restriction_tags: ["IMG_EXCLUDED"],
+    fit_warnings: ["IMG_EXCLUDED"],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "EXCLUDED_EXPLICIT",
@@ -233,9 +244,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "",
     official_source_url: "https://www.mainehealth.org/maine-medical-center/education-research/students-residents-fellows/residencies/general-surgery/rotations-electives",
-    completeness_score: 61,
-    max_possible_score: 75,
-    unknown_fields: ["deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -245,11 +254,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Cumberland",
     specialty: "emergency_medicine",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_US_STUDENT_ONLY",
     eligible_audiences: ["US_MD_DO"],
     excluded_audiences: ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     unknown_audiences: [],
     restriction_tags: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
+    fit_warnings: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "EXCLUDED_EXPLICIT",
@@ -258,9 +270,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "",
     official_source_url: "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/emergency-medicine-residency/medical-student-elective-emergency-medicine-residency",
-    completeness_score: 59,
-    max_possible_score: 75,
-    unknown_fields: ["application_url", "fee", "deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -270,11 +280,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Cumberland",
     specialty: "anesthesiology",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_US_STUDENT_ONLY",
     eligible_audiences: ["US_MD_DO"],
     excluded_audiences: ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     unknown_audiences: [],
     restriction_tags: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
+    fit_warnings: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "EXCLUDED_EXPLICIT",
@@ -283,9 +296,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "",
     official_source_url: "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/anesthesiology-residency/medical-student-elective",
-    completeness_score: 57,
-    max_possible_score: 75,
-    unknown_fields: ["application_url", "fee", "deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -295,11 +306,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Cumberland",
     specialty: "interventional_radiology",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_US_STUDENT_ONLY",
     eligible_audiences: ["US_MD_DO"],
     excluded_audiences: ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     unknown_audiences: [],
     restriction_tags: ["IMG_EXCLUDED"],
+    fit_warnings: ["IMG_EXCLUDED"],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "EXCLUDED_EXPLICIT",
@@ -308,9 +322,7 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "",
     official_source_url: "https://www.mainehealth.org/Maine-Medical-Center/Education-Research/Students-Residents-Fellows/Residencies/Interventional-Radiology/Medical-Student-Elective",
-    completeness_score: 54,
-    max_possible_score: 75,
-    unknown_fields: ["fee", "deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
   {
@@ -320,11 +332,14 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     county: "Cumberland",
     specialty: "family_medicine",
     opportunity_type: "Elective",
+    source_page_type: "SPECIALTY_PAGE",
+    listing_role: "PUBLIC_OPPORTUNITY",
     display_bucket: "READY_PUBLIC_US_STUDENT_ONLY",
     eligible_audiences: ["US_MD_DO"],
     excluded_audiences: ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"],
     unknown_audiences: [],
     restriction_tags: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
+    fit_warnings: ["VSLO_REQUIRED", "IMG_EXCLUDED"],
     audience_detail: {
       us_md_do: "ELIGIBLE_EXPLICIT",
       international_student: "EXCLUDED_EXPLICIT",
@@ -333,12 +348,22 @@ export const USCE_MAINE_CARDS: UsceCard[] = [
     },
     application_url: "",
     official_source_url: "https://www.mainehealth.org/maine-medical-center/education-research/medical-education/residency-programs/family-medicine-residency/medical-student-rotations",
-    completeness_score: 52,
-    max_possible_score: 75,
-    unknown_fields: ["application_url", "fee", "deadline"],
+    source_status: "OFFICIAL_PROGRAM_PAGE",
     last_reviewed_at: "2026-05-03",
   },
 ];
+
+// Runtime guard: only public buckets may be in this module
+const _nonPublic = USCE_MAINE_CARDS.filter(
+  (c) =>
+    c.display_bucket !== "READY_PUBLIC_IMG_RELEVANT" &&
+    c.display_bucket !== "READY_PUBLIC_US_STUDENT_ONLY"
+);
+if (_nonPublic.length > 0) {
+  throw new Error(
+    `usce-maine-data: non-public buckets detected: ${_nonPublic.map((c) => c.listing_id).join(", ")}`
+  );
+}
 
 export const SPECIALTY_LABELS: Record<string, string> = {
   family_medicine: "Family Medicine",
@@ -354,3 +379,11 @@ export const SPECIALTY_LABELS: Record<string, string> = {
 };
 
 export const NEEDS_REVIEW_COUNT = 5;
+
+export const IMG_RELEVANT_COUNT = USCE_MAINE_CARDS.filter(
+  (c) => c.display_bucket === "READY_PUBLIC_IMG_RELEVANT"
+).length;
+
+export const US_ONLY_COUNT = USCE_MAINE_CARDS.filter(
+  (c) => c.display_bucket === "READY_PUBLIC_US_STUDENT_ONLY"
+).length;
