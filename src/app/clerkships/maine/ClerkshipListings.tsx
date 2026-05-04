@@ -275,13 +275,28 @@ function downloadReportsCsv(reports: LocalReport[]) {
 
 const LS_KEY = "usce-saved-listings";
 
+const VALID_LISTING_IDS = new Set(USCE_MAINE_CARDS.map((c) => c.listing_id));
+
 function useSavedListings() {
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LS_KEY);
-      if (raw) setSavedIds(new Set(JSON.parse(raw) as string[]));
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        // Dedup and strip IDs that no longer correspond to public cards
+        const valid = Array.isArray(parsed)
+          ? [...new Set((parsed as unknown[]).filter((id): id is string =>
+              typeof id === "string" && VALID_LISTING_IDS.has(id)
+            ))]
+          : [];
+        setSavedIds(new Set(valid));
+        // Rewrite if we filtered anything out
+        if (valid.length !== (parsed as unknown[]).length) {
+          try { localStorage.setItem(LS_KEY, JSON.stringify(valid)); } catch {}
+        }
+      }
     } catch {}
   }, []);
 
@@ -321,7 +336,21 @@ function useLocalReports() {
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LS_REPORTS_KEY);
-      if (raw) setReports(JSON.parse(raw) as LocalReport[]);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        // Guard: must be an array of objects with at minimum report_id and listing_id
+        if (Array.isArray(parsed)) {
+          setReports(
+            parsed.filter(
+              (r): r is LocalReport =>
+                typeof r === "object" &&
+                r !== null &&
+                typeof r.report_id === "string" &&
+                typeof r.listing_id === "string"
+            )
+          );
+        }
+      }
     } catch {}
   }, []);
 
@@ -859,17 +888,17 @@ function CompareTable({
   ];
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto -mx-1 px-1">
       <table className="w-full border-collapse text-left">
         <thead>
           <tr>
-            <th className="pr-5 pb-3 text-xs font-medium text-slate-400 dark:text-slate-500 w-28 align-bottom" />
+            <th className="pr-5 pb-3 text-xs font-medium text-slate-400 dark:text-slate-500 w-24 sm:w-28 align-bottom" />
             {cards.map((c) => (
               <th
                 key={c.listing_id}
-                className="pr-5 pb-3 text-xs font-semibold text-slate-700 dark:text-slate-200 align-bottom min-w-[160px]"
+                className="pr-5 pb-3 text-xs font-semibold text-slate-700 dark:text-slate-200 align-bottom min-w-[140px] max-w-[220px]"
               >
-                <div className="leading-snug">
+                <div className="leading-snug break-words">
                   <span className="block">{c.institution_name.split(" / ")[0]}</span>
                   <span className="block font-normal text-slate-400 dark:text-slate-500">
                     {c.institution_name.split(" / ").slice(1).join(" / ")}
@@ -1090,6 +1119,7 @@ function ClerkshipCard({
       <div className="border-t border-slate-100 dark:border-slate-800 pt-2">
         <button
           onClick={() => setShowDetails((v) => !v)}
+          aria-expanded={showDetails}
           className="flex items-center gap-1 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
         >
           {showDetails ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
@@ -1118,6 +1148,7 @@ function ClerkshipCard({
 
         <button
           onClick={onReportIssue}
+          aria-label={`Report an issue with ${specialtyLabel(card.specialty)} at ${card.institution_name.split(" / ")[0]}`}
           className="mt-1.5 flex items-center gap-1 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
         >
           <Flag className="h-3 w-3" />
@@ -1210,6 +1241,7 @@ function FilterBar({
   ];
 
   const hasSecondaryFilter =
+    filters.audience !== "all" ||
     filters.specialty !== "all" ||
     filters.type !== "all" ||
     filters.vsloOnly ||
@@ -1273,6 +1305,7 @@ function FilterBar({
 
         <button
           onClick={() => set({ vsloOnly: !filters.vsloOnly })}
+          aria-pressed={filters.vsloOnly}
           className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors border ${
             filters.vsloOnly
               ? "bg-amber-100 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-800 dark:text-amber-300"
@@ -1284,6 +1317,7 @@ function FilterBar({
 
         <button
           onClick={() => set({ unknownOnly: !filters.unknownOnly })}
+          aria-pressed={filters.unknownOnly}
           className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors border ${
             filters.unknownOnly
               ? "bg-amber-100 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700 text-amber-800 dark:text-amber-300"
@@ -1296,7 +1330,7 @@ function FilterBar({
         {hasSecondaryFilter && (
           <button
             onClick={() =>
-              set({ specialty: "all", type: "all", vsloOnly: false, unknownOnly: false, saveFilter: "all" })
+              set({ audience: "all", specialty: "all", type: "all", vsloOnly: false, unknownOnly: false, saveFilter: "all" })
             }
             className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300"
           >
@@ -1330,14 +1364,21 @@ function FilterBar({
               {savedCount} saved
             </span>
 
-            {savedCount >= 2 && (
+            {savedCount >= 2 ? (
               <button
                 onClick={onOpenCompare}
                 className="rounded-lg border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
               >
                 Compare {Math.min(savedCount, 4)} →
               </button>
+            ) : (
+              <span className="text-xs text-slate-400 dark:text-slate-500">
+                Save 1 more to compare
+              </span>
             )}
+            <span className="text-xs text-slate-400 dark:text-slate-500 ml-auto">
+              Saved listings stay on this device
+            </span>
 
             <button
               onClick={onExportJson}
@@ -1455,13 +1496,24 @@ export function ClerkshipListings() {
 
       {isEmpty ? (
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-6 py-10 text-center text-sm text-slate-500 dark:text-slate-400">
-          No programs match the selected filters.{" "}
-          <button
-            onClick={() => setFilters(DEFAULT_FILTERS)}
-            className="underline hover:text-slate-700 dark:hover:text-slate-300"
-          >
-            Clear all filters
-          </button>
+          {filters.saveFilter === "saved_only" && savedIds.size === 0 ? (
+            <>
+              No saved programs yet.{" "}
+              <span className="text-slate-400 dark:text-slate-500">
+                Use the bookmark icon on any card to save a listing.
+              </span>
+            </>
+          ) : (
+            <>
+              No programs match the selected filters.{" "}
+              <button
+                onClick={() => setFilters(DEFAULT_FILTERS)}
+                className="underline hover:text-slate-700 dark:hover:text-slate-300"
+              >
+                Clear all filters
+              </button>
+            </>
+          )}
         </div>
       ) : (
         <div className="flex flex-col gap-12">

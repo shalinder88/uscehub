@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Elective Clerkships in Maine — Verified Pilot Listings",
   description:
     "Source-reviewed elective clerkship and sub-internship programs in Maine. Eligibility clearly labeled for international medical students, IMGs, and US MD/DO students. Pilot cohort — not a complete national database.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: siteUrl("/clerkships/maine"),
   },
@@ -27,7 +31,7 @@ export default function MaineClerkshipsPage() {
           <div className="mx-auto max-w-2xl">
             <div className="mb-3 flex flex-wrap gap-2">
               <span className="inline-flex items-center rounded-full bg-blue-900/60 px-2.5 py-0.5 text-xs font-medium text-blue-300">
-                Verified pilot · Maine
+                Source-reviewed pilot · Maine
               </span>
               <span className="inline-flex items-center rounded-full bg-slate-700 px-2.5 py-0.5 text-xs font-medium text-slate-300">
                 {USCE_MAINE_CARDS.length} listings · source-reviewed
