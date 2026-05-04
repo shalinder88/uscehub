@@ -13,6 +13,7 @@ import {
   Bookmark,
   BookmarkCheck,
   X,
+  Download,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -27,9 +28,11 @@ import {
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type AudienceFilter = "all" | "img_relevant" | "us_only";
+type SaveFilter = "all" | "saved_only" | "unsaved_only";
 
 interface Filters {
   audience: AudienceFilter;
+  saveFilter: SaveFilter;
   specialty: string;
   type: string;
   vsloOnly: boolean;
@@ -38,6 +41,7 @@ interface Filters {
 
 const DEFAULT_FILTERS: Filters = {
   audience: "all",
+  saveFilter: "all",
   specialty: "all",
   type: "all",
   vsloOnly: false,
@@ -71,6 +75,95 @@ function audienceLabel(a: string) {
 
 function restrictionLabel(t: string) {
   return RESTRICTION_LABELS[t] ?? t.replace(/_/g, " ");
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+
+// Allowed export fields — no NPI, CCN, CMS, NPPES, AAMC, NRMP, ACGME, or scoring internals
+const EXPORT_FIELDS = [
+  "listing_id",
+  "institution_name",
+  "specialty",
+  "opportunity_type",
+  "display_bucket",
+  "eligible_audiences",
+  "excluded_audiences",
+  "unknown_audiences",
+  "restriction_tags",
+  "official_source_url",
+  "application_url",
+  "last_reviewed_at",
+] as const;
+
+type ExportRecord = {
+  listing_id: string;
+  institution_name: string;
+  specialty: string;
+  opportunity_type: string;
+  display_bucket: string;
+  eligible_audiences: string[];
+  excluded_audiences: string[];
+  unknown_audiences: string[];
+  restriction_tags: string[];
+  official_source_url: string;
+  application_url: string;
+  last_reviewed_at: string;
+};
+
+function buildExportPayload(cards: UsceCard[]): ExportRecord[] {
+  return cards.map((c) => ({
+    listing_id: c.listing_id,
+    institution_name: c.institution_name,
+    specialty: c.specialty,
+    opportunity_type: c.opportunity_type,
+    display_bucket: c.display_bucket,
+    eligible_audiences: c.eligible_audiences,
+    excluded_audiences: c.excluded_audiences,
+    unknown_audiences: c.unknown_audiences,
+    restriction_tags: c.restriction_tags,
+    official_source_url: c.official_source_url,
+    application_url: c.application_url,
+    last_reviewed_at: c.last_reviewed_at,
+  }));
+}
+
+function triggerDownload(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function downloadSavedJson(cards: UsceCard[]) {
+  const data = {
+    exported_at: new Date().toISOString(),
+    source: "usce-maine-pilot",
+    cards: buildExportPayload(cards),
+  };
+  triggerDownload(
+    new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
+    "usce-saved-listings.json"
+  );
+}
+
+function downloadSavedCsv(cards: UsceCard[]) {
+  const payload = buildExportPayload(cards);
+  const headers = [...EXPORT_FIELDS].join(",");
+  const rows = payload.map((r) =>
+    EXPORT_FIELDS.map((f) => {
+      const val = r[f] as string | string[];
+      const str = Array.isArray(val) ? val.join(";") : String(val ?? "");
+      return `"${str.replace(/"/g, '""')}"`;
+    }).join(",")
+  );
+  triggerDownload(
+    new Blob([[headers, ...rows].join("\n")], { type: "text/csv" }),
+    "usce-saved-listings.csv"
+  );
 }
 
 // ── useSavedListings ──────────────────────────────────────────────────────────
@@ -150,15 +243,20 @@ function ReportIssuePlaceholder({ onClose }: { onClose: () => void }) {
           "Program no longer available",
           "Fee or deadline incorrect",
           "Institution name correction",
+          "Other",
         ].map((label) => (
-          <label key={label} className="flex items-center gap-2 text-slate-500 dark:text-slate-400 cursor-not-allowed">
+          <label
+            key={label}
+            className="flex items-center gap-2 text-slate-500 dark:text-slate-400 cursor-not-allowed"
+          >
             <input type="radio" name="issue-type" disabled className="opacity-40" />
             {label}
           </label>
         ))}
       </div>
       <p className="text-slate-400 dark:text-slate-500 italic">
-        Correction submissions are not yet active. Verify directly at the official program source link.
+        Pilot placeholder — no submission is sent yet. Verify directly at the official program
+        source link.
       </p>
       <button
         onClick={onClose}
@@ -173,6 +271,8 @@ function ReportIssuePlaceholder({ onClose }: { onClose: () => void }) {
 // ── CompareTable ──────────────────────────────────────────────────────────────
 
 function CompareTable({ cards }: { cards: UsceCard[] }) {
+  const [openReportId, setOpenReportId] = useState<string | null>(null);
+
   const rows: { label: string; render: (c: UsceCard) => React.ReactNode }[] = [
     {
       label: "Institution",
@@ -321,6 +421,28 @@ function CompareTable({ cards }: { cards: UsceCard[] }) {
               ))}
             </tr>
           ))}
+
+          {/* Report issue row */}
+          <tr className="border-t border-slate-100 dark:border-slate-800">
+            <td className="py-2.5 pr-5 text-xs font-medium text-slate-400 dark:text-slate-500 align-top whitespace-nowrap">
+              Report
+            </td>
+            {cards.map((c) => (
+              <td key={c.listing_id} className="py-2.5 pr-5 align-top">
+                {openReportId === c.listing_id ? (
+                  <ReportIssuePlaceholder onClose={() => setOpenReportId(null)} />
+                ) : (
+                  <button
+                    onClick={() => setOpenReportId(c.listing_id)}
+                    className="flex items-center gap-1 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  >
+                    <Flag className="h-3 w-3" />
+                    Report issue
+                  </button>
+                )}
+              </td>
+            ))}
+          </tr>
         </tbody>
       </table>
     </div>
@@ -359,11 +481,11 @@ function ComparePanel({
             <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
               Comparing {displayCards.length} program{displayCards.length !== 1 ? "s" : ""}
             </h2>
-            {hasMore && (
-              <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
-                Showing first 4 of {cards.length} saved. Remove some to compare others.
-              </p>
-            )}
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+              {hasMore
+                ? `Showing first 4 of ${cards.length} saved. Remove some to compare others.`
+                : "Compare shows up to 4 saved listings at a time."}
+            </p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -478,7 +600,7 @@ function ClerkshipCard({
         <AudienceRow label="Caribbean-school student" status={card.audience_detail.caribbean_student} />
       </div>
 
-      {/* Fit warnings (if any beyond the always-shown audience rows) */}
+      {/* Fit warnings */}
       {hasUnknown && (
         <p className="text-xs text-amber-600 dark:text-amber-400 flex items-start gap-1.5">
           <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
@@ -599,12 +721,16 @@ function FilterBar({
   savedCount,
   onOpenCompare,
   onClearSaved,
+  onExportJson,
+  onExportCsv,
 }: {
   filters: Filters;
   onChange: (f: Filters) => void;
   savedCount: number;
   onOpenCompare: () => void;
   onClearSaved: () => void;
+  onExportJson: () => void;
+  onExportCsv: () => void;
 }) {
   const set = (patch: Partial<Filters>) => onChange({ ...filters, ...patch });
 
@@ -613,6 +739,19 @@ function FilterBar({
     { key: "img_relevant", label: "International-eligible", count: IMG_RELEVANT_COUNT },
     { key: "us_only", label: "US MD/DO only", count: US_ONLY_COUNT },
   ];
+
+  const saveFilterTabs: { key: SaveFilter; label: string; count: number }[] = [
+    { key: "all", label: "All", count: USCE_MAINE_CARDS.length },
+    { key: "saved_only", label: "Saved only", count: savedCount },
+    { key: "unsaved_only", label: "Unsaved only", count: USCE_MAINE_CARDS.length - savedCount },
+  ];
+
+  const hasSecondaryFilter =
+    filters.specialty !== "all" ||
+    filters.type !== "all" ||
+    filters.vsloOnly ||
+    filters.unknownOnly ||
+    filters.saveFilter !== "all";
 
   return (
     <div className="mb-8 flex flex-col gap-3">
@@ -688,14 +827,11 @@ function FilterBar({
           Unknown eligibility
         </button>
 
-        {/* Clear filters */}
-        {(filters.specialty !== "all" ||
-          filters.type !== "all" ||
-          filters.vsloOnly ||
-          filters.unknownOnly) && (
+        {/* Clear all secondary filters */}
+        {hasSecondaryFilter && (
           <button
             onClick={() =>
-              set({ specialty: "all", type: "all", vsloOnly: false, unknownOnly: false })
+              set({ specialty: "all", type: "all", vsloOnly: false, unknownOnly: false, saveFilter: "all" })
             }
             className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300"
           >
@@ -704,27 +840,66 @@ function FilterBar({
         )}
       </div>
 
-      {/* Saved count + compare */}
+      {/* Saved shortlist — only when something is saved */}
       {savedCount > 0 && (
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
-            {savedCount} saved
-          </span>
-          {savedCount >= 2 && (
+        <>
+          {/* Save state filter tabs */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            {saveFilterTabs.map(({ key, label, count }) => (
+              <button
+                key={key}
+                onClick={() => set({ saveFilter: key })}
+                className={`rounded px-2.5 py-1 text-xs font-medium transition-colors ${
+                  filters.saveFilter === key
+                    ? "bg-blue-600 dark:bg-blue-500 text-white"
+                    : "border border-slate-200 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                }`}
+              >
+                {label}
+                <span className="ml-1.5 opacity-70">{count}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Saved actions */}
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
+              {savedCount} saved
+            </span>
+
+            {savedCount >= 2 && (
+              <button
+                onClick={onOpenCompare}
+                className="rounded-lg border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+              >
+                Compare {Math.min(savedCount, 4)} →
+              </button>
+            )}
+
             <button
-              onClick={onOpenCompare}
-              className="rounded-lg border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 text-xs font-medium text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+              onClick={onExportJson}
+              className="inline-flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-600 px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
             >
-              Compare {Math.min(savedCount, 4)} →
+              <Download className="h-3 w-3" />
+              JSON
             </button>
-          )}
-          <button
-            onClick={onClearSaved}
-            className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300"
-          >
-            Clear saved
-          </button>
-        </div>
+
+            <button
+              onClick={onExportCsv}
+              className="inline-flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-600 px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            >
+              <Download className="h-3 w-3" />
+              CSV
+            </button>
+
+            <button
+              onClick={onClearSaved}
+              className="text-xs text-slate-400 underline hover:text-slate-600 dark:hover:text-slate-300"
+            >
+              Clear saved
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
@@ -742,13 +917,24 @@ export function ClerkshipListings() {
   const handleClearSaved = useCallback(() => {
     clear();
     setCompareOpen(false);
+    setFilters((prev) => ({ ...prev, saveFilter: "all" }));
   }, [clear]);
+
+  const handleExportJson = useCallback(() => {
+    downloadSavedJson(savedCards);
+  }, [savedCards]);
+
+  const handleExportCsv = useCallback(() => {
+    downloadSavedCsv(savedCards);
+  }, [savedCards]);
 
   const filtered = USCE_MAINE_CARDS.filter((c) => {
     if (filters.audience === "img_relevant" && c.display_bucket !== "READY_PUBLIC_IMG_RELEVANT")
       return false;
     if (filters.audience === "us_only" && c.display_bucket !== "READY_PUBLIC_US_STUDENT_ONLY")
       return false;
+    if (filters.saveFilter === "saved_only" && !savedIds.has(c.listing_id)) return false;
+    if (filters.saveFilter === "unsaved_only" && savedIds.has(c.listing_id)) return false;
     if (filters.specialty !== "all" && c.specialty !== filters.specialty) return false;
     if (filters.type !== "all" && c.opportunity_type !== filters.type) return false;
     if (filters.vsloOnly && !c.restriction_tags.includes("VSLO_REQUIRED")) return false;
@@ -768,6 +954,8 @@ export function ClerkshipListings() {
         savedCount={savedIds.size}
         onOpenCompare={() => setCompareOpen(true)}
         onClearSaved={handleClearSaved}
+        onExportJson={handleExportJson}
+        onExportCsv={handleExportCsv}
       />
 
       {isEmpty ? (
