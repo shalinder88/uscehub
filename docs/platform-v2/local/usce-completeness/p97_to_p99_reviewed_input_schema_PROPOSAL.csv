@@ -1,0 +1,34 @@
+fieldName,sourceFromP97,publicRuntimeAllowed,internalOnly,requiredBeforeImport,stripBeforeRuntime,validatorNeeded,notes
+listing_id,DERIVED_FROM_PACKET_DEDUPEKEY_OR_QUEUERANK,YES,NO,YES,NO,format_validator,Pick one ID convention before first national import (institution-slug or queueRank); Maine uses ME-NNN; lock the convention before mixing schemes
+institution_name,packet.institutionName,YES,NO,YES,NO,non_empty,Direct copy from packet
+campus_name,packet.city or packet.campusApplicability,YES,NO,YES_OR_EMPTY,NO,non_empty_or_empty,Use city if campus is single-site; use campusApplicability for multi-site systems
+state,packet.state,YES,NO,YES,NO,US_state_enum,Two-letter state code
+county,packet.county (with underscores converted to spaces),YES,NO,YES_OR_EMPTY,NO,county_format,P97 uses underscores (District_of_Columbia); P99 expects spaces
+specialty,reviewer-classified per row,YES,NO,YES,NO,specialty_enum,P97 packets do NOT carry specialty; reviewer must classify per row from sourceEvidenceShort
+opportunity_type,reviewer-classified per row,YES,NO,YES,NO,opportunity_type_enum,Sub-internship / Visiting elective / Externship / Observership — reviewer assigns
+source_page_type,DERIVED_FROM_packet.sourceUrls,YES,NO,YES,NO,source_page_type_enum,SPECIALTY_PAGE / POLICY_HUB / RESIDENCY_PROGRAM_PAGE / FREIDA_RECORD — derive from primary URL
+listing_role,reviewer-assigned,YES,NO,YES,NO,listing_role_enum,PUBLIC_OPPORTUNITY for visiting MS rotations; SUPPORTING_SOURCE_ONLY for FREIDA-residency-only evidence
+display_bucket,DERIVED_FROM_audience_translation,YES,NO,YES,NO,bucket_enum,READY_PUBLIC_IMG_RELEVANT or READY_PUBLIC_US_STUDENT_ONLY — derive from audience_detail
+eligible_audiences,DERIVED_FROM_audienceMatrix,YES,NO,YES,NO,audience_array,Per audit section 7.1 mapping
+excluded_audiences,DERIVED_FROM_audienceMatrix,YES,NO,YES,NO,audience_array,Per audit section 7.1 mapping
+unknown_audiences,DERIVED_FROM_audienceMatrix,YES,NO,YES,NO,audience_array,Per audit section 7.1 mapping; default to UNKNOWN_NOT_STATED when packet evidence is silent
+restriction_tags,DERIVED_FROM_packet+caveats,YES,NO,YES,NO,restriction_tag_enum,Per audit sections 7.2-7.5; tag-shaped not prose
+fit_warnings,DERIVED_FROM_packet+caveats,YES,NO,YES,NO,fit_warning_enum,Per audit sections 7.2-7.5; tag-shaped not prose
+audience_detail.us_md_do,DERIVED_FROM_audienceMatrix.domestic_lcme_md+domestic_aoa_do,YES,NO,YES,NO,audience_status_enum,Pick one of ELIGIBLE_EXPLICIT / EXCLUDED_EXPLICIT / UNKNOWN_NOT_STATED / ONLY_IF_AFFILIATED / ONLY_IF_LCME_COCA
+audience_detail.international_student,DERIVED_FROM_audienceMatrix.international_img_visiting_student,YES,NO,YES,NO,audience_status_enum,Same enum
+audience_detail.img_graduate,DERIVED_FROM_audienceMatrix.international_img_residency,YES,NO,YES,NO,audience_status_enum,Same enum
+audience_detail.caribbean_student,DERIVED_FROM_audienceMatrix.caribbean_us_clinical,YES,NO,YES,NO,audience_status_enum,Same enum
+application_url,DERIVED_FROM_packet.applicationMethod+packet.sourceUrls,YES,NO,YES,NO,url_format,The user-clickable URL; choose VSLO link for VSLO-method; choose direct page for direct-application; never list multiple URLs in one card
+official_source_url,packet.sourceUrls[0] (primary),YES,NO,YES,NO,url_format,The primary source quoted; for two-page captures (TJUH Saint Elizabeths) use the page that holds the load-bearing claim
+source_status,DERIVED_FROM_promotion_audit_decision,YES,NO,YES,NO,source_status_enum,VERIFIED for HUMAN_REVIEW_READY rows; PENDING_REVIEW otherwise (and the row should not be in runtime)
+last_reviewed_at,DERIVED_FROM_source_capture_batch_capture_date,YES,NO,YES,NO,iso_date_format,Use the capture date from the source-capture-batch manifest
+internal_evidence_ref.screenshot_path,P97_source-capture-batch-N/screenshots/<filename>.png,NO,YES,YES,YES,file_exists,Internal-only; reviewer reads to verify capture; never on the wire
+internal_evidence_ref.archive_url,P97_source-capture-batch-N/manifest.notes,NO,YES,YES,YES,wayback_url_format,Internal-only Wayback URL for source preservation; never on the wire
+internal_evidence_ref.packet_path,P97_packet_json_path,NO,YES,YES,YES,file_exists,Internal-only audit trail; never on the wire
+internal_reviewer_notes.audit_trail,DERIVED_FROM_promotion_audit_decision+reviewerSelfAudit,NO,YES,NO,YES,non_empty_recommended,Internal audit trail describing why row was approved; never on the wire
+internal_reviewer_notes.bridge_translation_notes,reviewer-written-per-row,NO,YES,YES,YES,non_empty,Reviewer's signed translation notes per audit section 14 checklist; never on the wire
+internal_reviewer_notes.public_copy_caveat,P97_source-capture-batch-N/public_copy_guardrails.csv,NO,YES,YES,YES,non_empty,Cross-link to source-capture batch's public-copy guardrails; never on the wire
+internal_p97_signals.sourceProofScore,packet.sourceProofScore,NO,YES,YES,YES,equals_5,Internal QA score; must be 5 for promotion; never on the wire
+internal_p97_signals.import_readiness_gate,packet.importReadiness,NO,YES,YES,YES,no_blocked_state,Must not be PENDING_PROMOTION_GATE_*_BLOCKED; never on the wire
+internal_p97_signals.promotion_audit_decision,promotion_readiness_audit_N matrix,NO,YES,YES,YES,human_review_ready_only,Must be HUMAN_REVIEW_READY; never on the wire
+internal_p97_signals.contradiction_correction_history,DERIVED_FROM_packet.reviewerSelfAudit_OR_correction_report,NO,YES,YES_IF_CORRECTED,YES,non_empty_if_correction,For Hemet/Saint Elizabeths style forward corrections; null otherwise; never on the wire
