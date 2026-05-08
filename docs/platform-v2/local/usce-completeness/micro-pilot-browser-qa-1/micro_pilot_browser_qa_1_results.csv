@@ -1,0 +1,24 @@
+qa_item,status,evidence,screenshot_path,notes,release_blocker
+ROUTE_LOAD_HTTP_200,PASS,curl HTTP 200 + Playwright HTTP 200,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Loads cleanly,NO
+ROUTE_X_ROBOTS_TAG_NOINDEX,PASS,X-Robots-Tag: noindex nofollow header set by next.config.ts global header,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,HTTP-level noindex confirmed,NO
+ROUTE_META_NOINDEX,PASS,<meta name=robots content=noindex nofollow> in HTML head,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Page-level noindex confirmed,NO
+NOT_IN_SITEMAP,PASS,sitemap.xml unchanged from prior commit,,Pilot route never added,NO
+NOT_LINKED_FROM_NAV,PASS,Site nav screenshot does not include /clerkships/pilot,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Unlinked internal access,NO
+EXACTLY_5_CARDS,PASS,5 institution names matched in HTML,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Morristown Overlook Mercy Hillcrest Highland,NO
+EXCLUDED_INSTITUTIONS_ABSENT,PASS,All 10+ blocked institution substrings returned 0 occurrences,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Mayo + Bergen + Saint Elizabeths + Hemet + TJUH + Manatee + UH SA + UPMC + Lincoln all absent,NO
+NO_BANNED_PHRASES,PASS,All banned phrases returned 0 occurrences in rendered HTML,,guaranteed placement / hospital-approved / officially approved by / IMG-friendly / apply through USCEHub / official application system / complete national directory / verified by hospital / nationwide,NO
+SOURCE_LINK_VISIBLE_PER_CARD,PASS,3 unique source URLs visible across 5 cards,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Atlantic Health (2 cards) + CCF (2 cards) + Highland (1 card),NO
+LAST_REVIEWED_VISIBLE,PASS,Each card shows formatted Last reviewed YYYY-MM-DD,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,2026-05-07 visible per card,NO
+CAVEAT_PILLS_VISIBLE,PASS,fit_warnings rendered as amber pills per card,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Tag-shaped not narrative,NO
+RESTRICTION_TAGS_EXPANDABLE,PASS,<details>/<summary> Source caveats expandable per card,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Keyboard-operable native HTML element,NO
+NO_INTERNAL_FIELD_LEAKAGE,PASS,All 9 internal field name strings returned 0 in rendered HTML,,screenshot_path / must_not_claim / not_allowed_actions / reviewer_notes / bridge_row_id / audience_public_caveat / visa_public_caveat / evidence_triple_complete / p97_readiness_status,NO
+REPORT_ISSUE_PER_CARD,FIXED_IN_SPRINT,5 per-card Report a listing issue links added pointing to /contact?ref=pilot-listing&listing_id=<id>,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Was BLOCKER per prompt; small fix applied; uses existing /contact route + flag icon,NO_AFTER_FIX
+REPORT_ISSUE_FOOTER,FIXED_IN_SPRINT,Footer call-out added with Report a listing issue link to /contact?ref=pilot-feedback,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Reuses existing contact form,NO_AFTER_FIX
+SAVE_COMPARE_NOT_WIRED,NON_BLOCKING_LIMITATION,Pilot UI is read-only; pilot copy does not promise save/compare,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Existing P99 save-compare validator still PASSES against Maine route,NO_FOR_MICRO_PILOT
+DESKTOP_LAYOUT,PASS,1440x900 viewport screenshot shows hero + 5 cards correctly stacked; pills wrap; no overflow,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png,Clean,NO
+MOBILE_LAYOUT,PASS,390x844 viewport screenshot shows cards stacked; pills wrap; no horizontal scroll; no clipping,docs/platform-v2/local/usce-completeness/micro-pilot-browser-qa-1/screenshots/pilot-mobile-home.png,Clean,NO
+CONSOLE_ERRORS,PASS,0 errors / 0 pageerror across both viewports during full-page load,,Playwright page.on('console') + page.on('pageerror') captured,NO
+HYDRATION_ERRORS,PASS,0 hydration warnings,,No 'Hydration failed' or 'did not match' warnings,NO
+TSC_CLEAN,PASS,npx tsc --noEmit returns 0 errors,,After fix applied,NO
+PILOT_VALIDATOR_PASSES,PASS,scripts/validate-micro-pilot-runtime.ts PASSED 5 cards + route gates,,No regressions after fix,NO
+EXISTING_P99_VALIDATORS_PASS,PASS,All 5 existing P99 validators (runtime / public-cards / save-compare / report-intake / pilot-release) PASS unchanged,,Maine route + Maine runtime untouched,NO

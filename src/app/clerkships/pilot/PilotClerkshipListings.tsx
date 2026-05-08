@@ -1,6 +1,7 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { ExternalLink, Flag } from "lucide-react";
 import { USCE_PILOT_CARDS, type UsceCard } from "@/lib/usce-pilot-data";
 
 const RESTRICTION_TAG_LABELS: Record<string, string> = {
@@ -121,14 +122,32 @@ export function PilotClerkshipListings() {
                 Last reviewed {new Date(c.last_reviewed_at).toLocaleDateString()}
               </span>
               <span>{c.source_status.replace(/_/g, " ").toLowerCase()}</span>
+              <Link
+                href={`/contact?ref=pilot-listing&listing_id=${encodeURIComponent(c.listing_id)}`}
+                className="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 hover:underline dark:text-slate-400 dark:hover:text-slate-200"
+              >
+                <Flag className="h-3 w-3" aria-hidden="true" />
+                Report a listing issue
+              </Link>
             </div>
           </li>
         ))}
       </ul>
 
-      <p className="mt-8 text-xs text-slate-500 dark:text-slate-500">
-        See an issue? This is a source-reviewed pilot. Email corrections to the program directly via their official source page; this page does not act as an application system.
-      </p>
+      <div className="mt-8 rounded-md border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400">
+        <p>
+          See an issue with any of these listings? Use the{" "}
+          <Link
+            href="/contact?ref=pilot-feedback"
+            className="font-medium text-blue-700 hover:underline dark:text-blue-400"
+          >
+            contact form
+          </Link>{" "}
+          to report incorrect eligibility, broken links, fee/deadline changes, or any wording that
+          does not match the official source. Always verify on the program&apos;s own page before
+          applying. This page does not act as an application system.
+        </p>
+      </div>
     </div>
   );
 }
