@@ -35,6 +35,12 @@ function formatAudience(a: string): string {
   return a.replace(/_/g, " ").toLowerCase();
 }
 
+// Deterministic ISO-prefix date so SSR and CSR hydrate identically
+// regardless of browser locale or timezone (avoids React hydration error #418).
+function formatReviewedDate(value: string): string {
+  return value?.slice(0, 10) || "Date unavailable";
+}
+
 function audienceSummary(c: UsceCard): string {
   const parts: string[] = [];
   if (c.eligible_audiences.length > 0) parts.push(`Eligible (per source): ${c.eligible_audiences.map(formatAudience).join(", ")}`);
@@ -119,7 +125,7 @@ export function PilotClerkshipListings() {
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
               </a>
               <span>
-                Last reviewed {new Date(c.last_reviewed_at).toLocaleDateString()}
+                Last reviewed {formatReviewedDate(c.last_reviewed_at)}
               </span>
               <span>{c.source_status.replace(/_/g, " ").toLowerCase()}</span>
               <Link
