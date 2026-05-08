@@ -1,0 +1,25 @@
+gate_id,gate_name,status,evidence,release_blocker,owner_next_action,notes
+G-001,Runtime generation completed,PASS,Commit 476000a; src/data/usce/public-listings-pilot.generated.json + .ts present,NO,N/A,
+G-002,Exactly 5 cards in runtime,PASS,grep -c listing_id pilot runtime JSON = 5; QA c4343df verified 5 institutions in rendered HTML,NO,N/A,Morristown + Overlook + CCF Mercy + CC Hillcrest + Highland
+G-003,Excluded rows absent,PASS,All 10+ blocked institution substrings returned 0 occurrences in rendered HTML and runtime JSON,NO,N/A,Mayo / Bergen / Saint Elizabeths / Hemet / TJUH / batch-3 rows
+G-004,Noindex metadata + HTTP header,PASS,metadata.robots.index=false + .follow=false in page.tsx; X-Robots-Tag header set by next.config.ts; rendered <meta name=robots noindex nofollow>,NO,N/A,Both layers verified in QA c4343df via curl
+G-005,Not in sitemap,PASS,grep -i pilot src/app/sitemap.ts returns 0 matches; sitemap excludes /clerkships/* entirely,NO,N/A,
+G-006,Not linked from public nav,PASS,grep -rE /clerkships/pilot src/components src/app/layout.tsx src/app/page.tsx returns 0 matches,NO,N/A,Direct URL access only
+G-007,No broad launch copy,PASS,All banned phrases (national directory / nationwide / launch / hospital-approved / verified by hospital / etc.) returned 0 occurrences,NO,N/A,
+G-008,Source links visible per card,PASS,3 unique URLs visible across 5 cards with target=_blank rel=noopener noreferrer; verified in QA,NO,N/A,Atlantic Health (2 cards) + CCF (2 cards) + Highland (1 card)
+G-009,Caveats visible per card,PASS,fit_warnings rendered as amber pills; restriction_tags as expandable details element,NO,N/A,Tag-shaped not narrative
+G-010,Last reviewed visible per card,PASS,formatted date Last reviewed 2026-05-07 visible per card,NO,N/A,
+G-011,Report issue visible,PASS_AFTER_FIX,Per-card Report a listing issue link added in QA c4343df fix; footer banner with /contact?ref=pilot-feedback link,NO,N/A,Reuses existing /contact route — no new backend
+G-012,Save/compare absence acceptable,PASS_WITH_NOTE,Pilot UI is read-only; pilot copy does not promise save/compare; existing P99 save-compare validator still PASSES against Maine route unchanged,NO,Optional post-deploy polish,Marked NON_BLOCKING_LIMITATION in QA blockers CSV
+G-013,Desktop screenshot captured + clean,PASS,365KB Playwright headless capture at 1440x900; layout clean; no overflow,NO,N/A,docs/.../micro-pilot-browser-qa-1/screenshots/pilot-desktop-home.png
+G-014,Mobile screenshot captured + clean,PASS,890KB capture at 390x844 isMobile=true; cards stack; pills wrap; no clipping,NO,N/A,
+G-015,Console clean,PASS,0 errors / 0 page errors / 0 hydration warnings during full-page load via Playwright page.on('console') + page.on('pageerror'),NO,N/A,7-9 standard Next.js dev info messages only
+G-016,Link QA passed,PASS,3 source URLs verified HTTP 200 in prior evidence-landing sprints; per-card report links resolve to existing /contact route,NO,N/A,
+G-017,Micro-pilot validator passed,PASS,scripts/validate-micro-pilot-runtime.ts: 5 cards + route gates,NO,N/A,
+G-018,Existing P99 validators passed,PASS,All 5: validate-public-runtime-data + validate-usce-public-cards + validate-usce-save-compare + validate-usce-report-intake + validate-usce-pilot-release,NO,N/A,All unchanged - Maine path frozen
+G-019,TypeScript passed,PASS,npx tsc --noEmit returns 0 errors,NO,N/A,Re-run at start of release audit
+G-020,No DB / schema changes,PASS,No prisma migration or seed changes in any pilot-related commit,NO,N/A,
+G-021,No deploy occurred,PASS,No git push / no PR / no Vercel mutation in any commit since runtime generation,NO,N/A,
+G-022,Pre-existing dirty files untouched,PASS,.claude/launch.json + Maine generated.json + Maine generated.ts remain modified-but-not-staged; not in any pilot commit,NO,Separate cleanup task,Documented in QA blockers CSV as B-005
+G-023,User push approval required,BLOCKED,Per Shelly global rule — push only happens with explicit instruction,YES,User must explicitly type push the noindex micro-pilot or equivalent affirmation,Process gate not code/data
+G-024,Post-deploy smoke test required after deploy,BLOCKED_UNTIL_DEPLOY,Cannot run until preview/prod URL exists,YES_AFTER_DEPLOY,Run after deploy: verify /clerkships/pilot loads on preview URL with noindex headers,Will be a follow-up task after user push
