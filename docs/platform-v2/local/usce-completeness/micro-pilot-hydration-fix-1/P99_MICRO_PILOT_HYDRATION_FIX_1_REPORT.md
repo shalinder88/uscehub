@@ -20,8 +20,9 @@
 | `validate-micro-pilot-runtime.ts` post-fix | PASSED (5 cards + route gates) |
 | Production main SHA | `739ab1e2...` UNCHANGED |
 | Pre-existing dirty files | untouched, NOT staged |
-| Commit + push | pending Phase H |
-| Preview re-smoke | pending Phase I |
+| Commit | `7bbc64d` |
+| Push | preview branch only (origin/main UNCHANGED) |
+| Preview re-smoke | **PASS** — React #418 GONE on `https://uscehub-8oermuntd-shalinder88s-projects.vercel.app/clerkships/pilot` |
 
 ## 2. Root cause
 
@@ -108,13 +109,29 @@ The fix is purely a render-string change. It does not touch the runtime data, th
 | Vercel project / domain / DNS / env vars | UNTOUCHED |
 | `origin/main` SHA | `739ab1e2...` UNCHANGED |
 
-## 8. Remaining steps after this report
+## 8. Push + preview re-smoke result
 
-- **Phase H:** stage exactly two paths (`src/app/clerkships/pilot/PilotClerkshipListings.tsx` + this report), commit, push to the same preview branch.
-- **Phase I:** wait for Vercel auto-build, find the new preview URL via `gh api repos/shalinder88/uscehub/deployments`, open the page in the user's authenticated Chrome session, and run `read_console_messages` to confirm React #418 is GONE.
-- **Phase J:** annotate this report with the new preview URL + post-fix console capture, then stop.
+| Step | Result |
+|------|--------|
+| Commit | `7bbc64d P99: fix pilot last-reviewed hydration mismatch` |
+| Push | YES — `origin/local/p97-discovery-integrity-guardrails` advanced from `11dddc0` → `7bbc64d` |
+| `origin/main` SHA after push | `739ab1e2...` UNCHANGED ✅ |
+| Vercel deployment ID | `4626113037` |
+| Vercel build state | `success` |
+| New preview URL | `https://uscehub-8oermuntd-shalinder88s-projects.vercel.app` |
+| `/clerkships/pilot` HTTP via Chrome SSO | 200 |
+| `<meta name="robots">` content | `noindex, nofollow` ✅ |
+| Hero count | `5 listings · 2 open to international students per source · 3 US MD/DO per source` ✅ |
+| All 5 cards render | YES (Morristown · Overlook · CCF Mercy · CC Hillcrest · Highland) |
+| `Last reviewed` rendering | uniform `Last reviewed 2026-05-07` across all 5 cards (ISO `YYYY-MM-DD`) |
+| **React #418 hydration error** | **GONE** ✅ — fresh post-reload console capture shows only the test log marker, no React errors |
+| Other console errors | 0 |
 
-After re-smoke passes, the next sprint per the user's standing rule is **USCEHUB-NEW-UI-LOCAL-QA-AND-INTEGRATION-1** — NOT a production merge. Production stays gated until the newer USCEHub interface/UI work is locally validated.
+**Verdict: `PREVIEW_SMOKE_PASS`.** All gates GREEN. The hydration mismatch is resolved. The "no console errors" gate from the noindex release checklist is now MET on the production preview.
+
+## 9. Next sprint (per user's standing rule)
+
+After this fix passes preview re-smoke, the next sprint is **USCEHUB-NEW-UI-LOCAL-QA-AND-INTEGRATION-1** — NOT a production merge. Production stays gated until the newer USCEHub interface/UI work is locally validated. The pilot preview is now in a clean releasable state, but the branch carries the full P96–P99 stack and a production merge requires its own separate scope/blast-radius audit and explicit user approval.
 
 ## 9. Hard-rule confirmation
 
