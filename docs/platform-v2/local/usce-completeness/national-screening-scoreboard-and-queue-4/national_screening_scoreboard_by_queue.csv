@@ -1,0 +1,11 @@
+queue,rows_total,completed,partial_verified,requeue,source_proof_score_5,ready_for_human_approval,stage_2_review_recommended,capture_needed,runtime_staged,runtime_active,source_file,notes
+Maine_county_sweep,16/16_counties,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,~23,UNKNOWN,UNKNOWN,0,0,T7 p97-final-qa/ME/maine-import-readiness-queue.csv,County-level sweep separate from national queues; produced 23-row import-readiness queue (file is 24 lines including header)
+Queue_1,65,65,UNKNOWN,UNKNOWN,~65,~22,UNKNOWN,UNKNOWN,0,0,T7 p97_national_institution_queue.csv + p97_national_queue_1_retier.csv (65 rows),Original Q1 seed; retier file has same 65-row count meaning all rows were retiered
+Queue_2,112,112,UNKNOWN,0,~112,~3,UNKNOWN,UNKNOWN,0,0,T7 p97_national_institution_queue_2.csv + 2a (50) + 2b (47) + 2c (15),Q2 sub-queues are VSLO-public-host (2a) + sibling-derivation (2b) + GME-future-lane (2c)
+Queue_3,196,196,UNKNOWN,3,~170,UNKNOWN,UNKNOWN,UNKNOWN,0,0,T7 queue-3/p97_national_institution_queue_3.csv + 3a (126 VSLO-remaining) + 3b (35 sibling-expansion) + 3c (35 IMG/Caribbean GME),Q3 includes the IMG/Caribbean GME-track expansion (queue 3c)
+First_pilot_candidate_pool,25,25,n/a,n/a,~25,~25,~12,~12,7,5,T7 p99_p97_first_pilot_candidate_pool.csv + selected_rows.csv,The 25-row pool that became the 12-row evidence-action queue; 5 active + 2 staged
+National_high_yield_master,370,370,UNKNOWN,n/a,347,~25 (per source-capture queue),~122,UNKNOWN,7,5,T7 high_yield_review_master.csv,Aggregated review across Q1+Q2+Q3 with rank/yieldTier/yieldClass/sourceProofScore
+Source_capture_priority_queue,348,n/a,n/a,n/a,n/a,25,122,UNKNOWN,7,5,T7 source_capture_priority_queue.csv,Has importReadiness=READY_FOR_HUMAN_APPROVAL for 25 rows + PENDING_PROMOTION_GATE for 191 + NEEDS_MORE_RESEARCH for 130
+Promotion_readiness_audit_human_review,25,25,n/a,n/a,~25,~25,n/a,n/a,7,5,T7 promotion_readiness_audit_1_human_review_queue.csv,Same-size set as candidate pool; all flagged for human reviewer
+Active_5_runtime,5,5,n/a,n/a,5,n/a,n/a,n/a,5,5,Mac-local public-listings-pilot.generated.json,Morristown + Overlook + CCF Mercy + CC Hillcrest + Highland; live on noindex preview only
+Staged_7_runtime,7,7,n/a,n/a,7,n/a,n/a,n/a,7,5,Mac-local public-listings-pilot-staged-batch-2.generated.json,Active 5 + UPMC + Lincoln; not imported by app

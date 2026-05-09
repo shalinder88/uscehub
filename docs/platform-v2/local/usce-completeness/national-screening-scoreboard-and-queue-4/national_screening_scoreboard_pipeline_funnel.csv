@@ -1,0 +1,11 @@
+stage,count,percentage_of_previous_stage,percentage_of_total_screened,definition,source,notes
+1_lead_or_institution_rows_processed,373,n/a,100.0,Total institution-level rows touched by Q1+Q2+Q3 national queue cycles (Maine sweep counted separately),T7 p97_national_institution_queue.csv + queue_2.csv + queue_3.csv,Q1+Q2+Q3 = 65+112+196
+2_completed_source_review,370,99.2,99.2,Rows that landed in the high_yield_review_master post-Q3,T7 high_yield_review_master.csv,3 rows attrited (likely deduplicated)
+3_source_proof_score_5,347,93.8,93.0,Rows where institution-source page directly verified the claim,T7 high_yield_review_master.csv sourceProofScore column,Tier-A truth-set
+4_review_eligible_or_high_yield,247,71.2,66.2,yieldClass=HIGH_USCE_YIELD,T7 high_yield_review_master.csv yieldClass column,Highest-confidence yield-classified set
+5_recommended_for_human_approval,25,10.1,6.7,importReadiness=READY_FOR_HUMAN_APPROVAL,T7 source_capture_priority_queue.csv,**THE BOTTLENECK ROW.** 25 Tier-1 institutions waiting on a curator pass.
+6_curator_approved_for_first_pilot,12,48.0,3.2,Rows with pilot-001 through pilot-012 IDs in the evidence-action queue,T7 p99_p97_first_pilot_evidence_action_queue_1.csv,The 12-row evidence-action queue from earlier in the project
+7_bridge_input_validated,2,16.7,0.5,Rows with bridge_review_status=VALIDATED_BRIDGE_INPUT,Mac-local first_pilot_mini_curator_reaudit_6_bridge_input_DRAFT.csv,Only UPMC + Lincoln are bridge-validated post-PNG-landing
+8_staged_runtime,7,~700% (denominator inverts at this stage; staged includes carry-forward of active 5),1.9,Cards in staged JSON,Mac-local public-listings-pilot-staged-batch-2.generated.json,Active 5 + UPMC + Lincoln; not imported by app
+9_active_noindex_runtime,5,71.4,1.3,Cards on /clerkships/pilot,Mac-local public-listings-pilot.generated.json,Morristown + Overlook + CCF Mercy + CC Hillcrest + Highland (noindex preview only)
+10_production_public,0,0.0,0.0,Cards visible on production at uscehub.com without preview SSO,Production main 739ab1e2... unchanged; no /clerkships/* indexed,**The funnel ends at zero.**
