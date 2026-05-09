@@ -1,0 +1,14 @@
+test_id,test_name,payload,expected_result,actual_result,queue_written,audit_written,forbidden_fields_stored,status,notes
+T-01,Valid Morristown source-link-broken,01_valid_morristown_source_link_broken,ACCEPT,ACCEPT,YES,YES,NO,PASS,Queue item priority=P2_SOURCE_LINK_OR_FEE; redacted user_message preserved verbatim (no redaction triggers)
+T-02,Valid UPMC eligibility correction,02_valid_upmc_eligibility_correction,ACCEPT,ACCEPT,YES,YES,NO,PASS,user_email present and email-shaped — accepted; user_email_present flag = true
+T-03,Valid Lincoln cost correction,03_valid_lincoln_cost_correction,ACCEPT,ACCEPT,YES,YES,NO,PASS,Priority P2; field_reported=fee_or_stipend
+T-04,Invalid missing listing_id (with non-feedback ref),04_invalid_missing_listing_id,REJECT_SCHEMA,REJECT_SCHEMA_VIOLATION,NO,NO,NO,PASS,Validator caught missing listing_id with report_ref=pilot-listing
+T-05,Forbidden passport_number + visa_document keys,05_forbidden_passport_field_REJECT,REJECT_FORBIDDEN_FIELD,REJECT_FORBIDDEN_FIELD,NO,NO,NO,PASS,No queue item written; no forbidden field VALUE ever logged anywhere
+T-06,Invalid unknown issue_type,06_invalid_unknown_issue_type,REJECT_SCHEMA,REJECT_SCHEMA_VIOLATION,NO,NO,NO,PASS,issue_type=made_up_issue_type rejected
+T-07,Valid pilot-feedback with empty listing_id,07_valid_pilot_feedback_no_listing_id,ACCEPT,ACCEPT,YES,YES,NO,PASS,Empty listing_id allowed only when report_ref=pilot-feedback; runtime_set=unknown
+T-08,Honeypot field non-empty,08_honeypot_tripped_REJECT,REJECT_HONEYPOT,REJECT_HONEYPOT_TRIPPED,NO,NO,NO,PASS,Anti-spam guard fired
+T-09,Endpoint disabled by default,n/a (no payload sent),NOT_AVAILABLE,NOT_TESTED_VIA_HTTP_THIS_SPRINT,NO,NO,NO,DEFERRED,Verified by code review of route.ts: when env flag != 'true' the route returns 404 not_available before any parsing; smoke driver covers helper-level disabled mode (writeCorrectionToQueue returns ok:false skipped_reason:intake_disabled)
+T-10,Smoke driver dry-run mode,n/a (all 8 samples),no writes,no writes,NO,NO,NO,PASS,8/8 sample classifications match expected; zero file writes
+T-11,Smoke driver commit mode in test sandbox,n/a (4 valid + 4 reject),4 writes,4 writes,NO,NO,NO,PASS,All 4 valid samples produced queue+audit pairs in test-output sandbox; 4 reject samples produced zero writes
+T-12,Queue item validator on test-output fixtures,n/a,4 PASS,4 PASS,n/a,n/a,NO,PASS,All 4 queue items conform to schema; no forbidden fields; SSN/CC redaction shape-check passes
+T-13,Audit log validator on test-output fixtures,n/a,4 PASS,4 PASS,n/a,n/a,NO,PASS,All 4 audit logs append-only conformant; unique audit_event_ids; valid action/decision/status enums

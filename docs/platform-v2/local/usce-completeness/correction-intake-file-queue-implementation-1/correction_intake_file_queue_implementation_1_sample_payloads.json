@@ -1,0 +1,139 @@
+{
+  "schema_status": "DOCS_ONLY_TEST_FIXTURE",
+  "purpose": "Synthetic payloads for the validate-p99-correction-intake-payload validator and the smoke driver. None of these are real user data.",
+  "samples": [
+    {
+      "sample_name": "01_valid_morristown_source_link_broken",
+      "expected_outcome": "ACCEPT",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "source_link_broken",
+        "user_message": "The Atlantic Health link 404s when I click it.",
+        "submitted_at": "2026-05-09T18:30:00Z",
+        "source_context": {
+          "primary_source_url": "https://ahs.atlantichealth.org/professionals-medical-education/medical-students.html",
+          "specialty_displayed": "Visiting elective"
+        }
+      }
+    },
+    {
+      "sample_name": "02_valid_upmc_eligibility_correction",
+      "expected_outcome": "ACCEPT",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-011-PA-upmc-western-psychiatric-hospital",
+        "report_ref": "pilot-listing",
+        "runtime_set": "staged",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "eligibility_incorrect",
+        "user_message": "The international program excludes graduates explicitly. Card should clarify enrolled-final-year-only.",
+        "submitted_at": "2026-05-09T18:32:00Z",
+        "source_context": {
+          "primary_source_url": "https://live-researchprograms-medschool-pitt.pantheonsite.io/international-visiting-student-program",
+          "audience_displayed": "Eligible (per source): us md do, international student"
+        },
+        "user_email": "researcher@example.edu",
+        "field_reported": "audience"
+      }
+    },
+    {
+      "sample_name": "03_valid_lincoln_cost_correction",
+      "expected_outcome": "ACCEPT",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-012-NY-nyc-health-hospitals-lincoln",
+        "report_ref": "pilot-listing",
+        "runtime_set": "staged",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "cost_or_fee_incorrect",
+        "user_message": "Stipend amount may have changed; please verify against the live MOSAIC page.",
+        "submitted_at": "2026-05-09T18:35:00Z",
+        "source_context": {
+          "primary_source_url": "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/"
+        },
+        "field_reported": "fee_or_stipend"
+      }
+    },
+    {
+      "sample_name": "04_invalid_missing_listing_id",
+      "expected_outcome": "REJECT_SCHEMA",
+      "payload": {
+        "schema_version": "v2",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "missing listing id field entirely",
+        "submitted_at": "2026-05-09T18:40:00Z",
+        "source_context": {}
+      }
+    },
+    {
+      "sample_name": "05_forbidden_passport_field_REJECT",
+      "expected_outcome": "REJECT_FORBIDDEN_FIELD",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "I am attaching my passport for verification.",
+        "submitted_at": "2026-05-09T18:42:00Z",
+        "source_context": {},
+        "passport_number": "X1234567890",
+        "visa_document": "redacted-in-fixture"
+      }
+    },
+    {
+      "sample_name": "06_invalid_unknown_issue_type",
+      "expected_outcome": "REJECT_SCHEMA",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "made_up_issue_type",
+        "user_message": "this issue type is not allowed",
+        "submitted_at": "2026-05-09T18:45:00Z",
+        "source_context": {}
+      }
+    },
+    {
+      "sample_name": "07_valid_pilot_feedback_no_listing_id",
+      "expected_outcome": "ACCEPT",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "",
+        "report_ref": "pilot-feedback",
+        "runtime_set": "unknown",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "Could you add Highland-style scholarship info pages for more institutions?",
+        "submitted_at": "2026-05-09T18:50:00Z",
+        "source_context": {}
+      }
+    },
+    {
+      "sample_name": "08_honeypot_tripped_REJECT",
+      "expected_outcome": "REJECT_HONEYPOT",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "bot filled honeypot",
+        "submitted_at": "2026-05-09T18:55:00Z",
+        "source_context": {},
+        "honeypot_field": "spammer-was-here.example/buy-cheap-things"
+      }
+    }
+  ]
+}
