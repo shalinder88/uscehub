@@ -1,0 +1,13 @@
+status,priority_default,description,terminal,allowed_next,blocks_runtime_change_until_passed,reviewer_role,notes
+RECEIVED,P3_COPY_OR_MINOR,Inbound payload validated against intake schema and written to inbox,no,TRIAGED;CLOSED,YES,intake_endpoint,Server reject sets status to RECEIVED with decision=rejected_forbidden_field if forbidden fields seen
+TRIAGED,inherits-from-priority-decision,Curator has assigned issue_type and priority,no,SOURCE_RECHECK_PENDING;CLOSED,YES,curator,P0/P1 must transition to SOURCE_RECHECK_PENDING — direct CLOSED only allowed for spam/unactionable
+SOURCE_RECHECK_PENDING,inherits,Source URL re-fetch + Wayback re-archive scheduled,no,SOURCE_RECHECK_COMPLETE,YES,source_reviewer,Reviewer must NOT bypass even for low-priority items if the issue_type implies source change
+SOURCE_RECHECK_COMPLETE,inherits,Source page re-verified; verbatim quote compared,no,NEEDS_COPY_UPDATE;NEEDS_SOURCE_URL_UPDATE;NEEDS_DELIST;NO_CHANGE;NEEDS_INSTITUTION_CONFIRMATION_LATER,YES,source_reviewer,Reviewer records evidence_checked + new archive_urls in audit log
+NEEDS_COPY_UPDATE,inherits,Surface text update only (typo / ambiguity),no,STAGED_CORRECTION,YES,curator,Caveats must NOT be removed; only refined or clarified
+NEEDS_SOURCE_URL_UPDATE,inherits,Primary source URL changed; update + re-archive,no,STAGED_CORRECTION,YES,curator,New URL re-archived to Wayback before staging
+NEEDS_DELIST,P0_SAFETY_OR_LEGAL,Program closed or no longer source-supported; remove from runtime,no,STAGED_CORRECTION,YES,senior_reviewer,Senior dual sign-off required
+NO_CHANGE,P3_COPY_OR_MINOR,Reviewer verified claim was already correct,no,CLOSED,NO,curator,Audit log still required with decision_reason
+NEEDS_INSTITUTION_CONFIRMATION_LATER,P2_SOURCE_LINK_OR_FEE,Claim is unclear; flagged for slower review with optional curator-direct outreach,no,CLOSED,NO,curator,Reopen path documented if institution responds
+STAGED_CORRECTION,inherits,Updated row content written to staged runtime artifact (NOT live),no,VALIDATED_CORRECTION,YES,curator,Active runtime change requires a separate authorized sprint
+VALIDATED_CORRECTION,inherits,All applicable validators passed against the staged update,no,CLOSED,NO_AFTER_QA,qa_reviewer,Two sign-offs (curator + QA) required before public copy actually updates
+CLOSED,n/a,Terminal state for resolved or rejected items,yes,reopened_with_audit,NO,curator,Reopen creates a new audit_event with action=reopened_with_audit; status transitions back to TRIAGED

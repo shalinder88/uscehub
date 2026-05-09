@@ -1,0 +1,149 @@
+{
+  "schema_status": "DOCS_ONLY_SPEC_NOT_IMPLEMENTED",
+  "purpose": "Synthetic sample payloads matching usce_listing_correction_intake_v2. None of these are real user data. Used by the future intake-implementation sprint as test fixtures.",
+  "samples": [
+    {
+      "sample_name": "01_source_link_broken_active_morristown",
+      "expected_outcome": "ACCEPT_AND_QUEUE",
+      "expected_priority": "P2_SOURCE_LINK_OR_FEE",
+      "expected_runtime_set_resolution": "active",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "source_link_broken",
+        "user_message": "The Atlantic Health link 404s when I click it.",
+        "submitted_at": "2026-05-09T18:30:00Z",
+        "source_context": {
+          "primary_source_url": "https://ahs.atlantichealth.org/professionals-medical-education/medical-students.html",
+          "specialty_displayed": "Visiting elective",
+          "audience_displayed": "Eligible (per source): us md do, caribbean student"
+        }
+      }
+    },
+    {
+      "sample_name": "02_eligibility_correction_upmc",
+      "expected_outcome": "ACCEPT_AND_QUEUE",
+      "expected_priority": "P1_MATERIAL_ELIGIBILITY_OR_APPLICATION",
+      "expected_runtime_set_resolution": "staged",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-011-PA-upmc-western-psychiatric-hospital",
+        "report_ref": "pilot-listing",
+        "runtime_set": "staged",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "eligibility_incorrect",
+        "user_message": "The international program now requires final-year-only AND a specific accreditation type. The card should clarify that not all international students qualify.",
+        "submitted_at": "2026-05-09T18:32:00Z",
+        "source_context": {
+          "primary_source_url": "https://live-researchprograms-medschool-pitt.pantheonsite.io/international-visiting-student-program",
+          "audience_displayed": "Eligible (per source): us md do, international student",
+          "site_specificity_displayed": "System-level UPSOM/UPMC source — Western Psychiatric site placement not separately enumerated"
+        },
+        "user_email": "researcher@example.edu",
+        "suggested_correction": "Add explicit caveat that international program excludes graduates and is final-year-only.",
+        "field_reported": "audience"
+      }
+    },
+    {
+      "sample_name": "03_cost_correction_lincoln",
+      "expected_outcome": "ACCEPT_AND_QUEUE",
+      "expected_priority": "P2_SOURCE_LINK_OR_FEE",
+      "expected_runtime_set_resolution": "staged",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-012-NY-nyc-health-hospitals-lincoln",
+        "report_ref": "pilot-listing",
+        "runtime_set": "staged",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "cost_or_fee_incorrect",
+        "user_message": "The MOSAIC stipend dollar amount appears to have changed; please verify against the live MOSAIC page.",
+        "submitted_at": "2026-05-09T18:35:00Z",
+        "source_context": {
+          "primary_source_url": "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/"
+        },
+        "field_reported": "fee_or_stipend"
+      }
+    },
+    {
+      "sample_name": "04_spam_unactionable",
+      "expected_outcome": "MARK_PRIORITY_P4_SPAM_OR_UNACTIONABLE",
+      "expected_priority": "P4_SPAM_OR_UNACTIONABLE",
+      "expected_runtime_set_resolution": "active",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "pilot-007-CA-highland-hospital-alameda-health-system",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "Visit our amazing site at totally-not-a-spam-site.example to buy USCE rotations cheap!!!",
+        "submitted_at": "2026-05-09T18:40:00Z",
+        "source_context": {}
+      }
+    },
+    {
+      "sample_name": "05_forbidden_field_attempt_REJECT",
+      "expected_outcome": "SILENT_REJECT_400_NO_QUEUE_WRITE",
+      "expected_priority": "n/a — never queued",
+      "expected_runtime_set_resolution": "n/a — payload rejected at endpoint",
+      "endpoint_behavior": "Server returns HTTP 400 with a generic body. The forbidden field name is NOT echoed back to the client. The endpoint logs an audit_event with action=intake_received, decision=rejected_forbidden_field, and changed_fields={}; the forbidden field's VALUE is never written anywhere.",
+      "payload_rejected": {
+        "schema_version": "v2",
+        "listing_id": "pilot-001-NJ-morristown-medical-center",
+        "report_ref": "pilot-listing",
+        "runtime_set": "active",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "Please find my passport details attached as I am applying.",
+        "submitted_at": "2026-05-09T18:42:00Z",
+        "source_context": {},
+        "passport_number": "REDACTED_BEFORE_DOCUMENTATION",
+        "visa_document": "REDACTED_BEFORE_DOCUMENTATION"
+      },
+      "rejection_audit_event_example": {
+        "audit_event_id": "00000000000000000000000000000005",
+        "correction_id": "n/a-no-queue-item-created",
+        "timestamp": "2026-05-09T18:42:01Z",
+        "actor_role": "intake_endpoint",
+        "actor_id_or_placeholder": "system",
+        "action": "intake_received",
+        "previous_status": "NONE",
+        "new_status": "NONE",
+        "evidence_checked": [],
+        "source_urls_checked": [],
+        "archive_urls_checked": [],
+        "decision": "rejected_forbidden_field",
+        "decision_reason": "Payload contained a forbidden field. Field value not logged.",
+        "changed_fields": {},
+        "validator_results": {},
+        "next_required_action": ""
+      }
+    },
+    {
+      "sample_name": "06_pilot_feedback_no_listing_id",
+      "expected_outcome": "ACCEPT_AND_QUEUE",
+      "expected_priority": "P3_COPY_OR_MINOR",
+      "expected_runtime_set_resolution": "unknown",
+      "payload": {
+        "schema_version": "v2",
+        "listing_id": "",
+        "report_ref": "pilot-feedback",
+        "runtime_set": "unknown",
+        "page_url": "https://uscehub.com/clerkships/pilot",
+        "issue_type": "other",
+        "user_message": "Could you add Highland-style scholarship info pages for more institutions? It's the best part of the pilot.",
+        "submitted_at": "2026-05-09T18:45:00Z",
+        "source_context": {}
+      }
+    }
+  ],
+  "what_this_file_does_not_do": [
+    "Authorize the endpoint",
+    "Imply DB schema",
+    "Modify any UI",
+    "Modify any active runtime"
+  ]
+}

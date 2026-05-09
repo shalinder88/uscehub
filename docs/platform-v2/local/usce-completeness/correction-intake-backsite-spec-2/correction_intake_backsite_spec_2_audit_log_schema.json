@@ -1,0 +1,179 @@
+{
+  "schema_name": "usce_correction_audit_log_event_v1",
+  "schema_status": "DOCS_ONLY_SPEC_NOT_IMPLEMENTED",
+  "format": "JSONL — one event per line; append-only; never edited or deleted in place",
+  "log_path_pattern": "docs/platform-v2/local/usce-corrections/audit/<correction_id>.jsonl",
+  "purpose": "Immutable, append-only audit trail for every state transition and decision on a correction queue item. Used by reviewers, QA, and any future external auditor.",
+  "required_fields": [
+    "audit_event_id",
+    "correction_id",
+    "timestamp",
+    "actor_role",
+    "actor_id_or_placeholder",
+    "action",
+    "previous_status",
+    "new_status",
+    "evidence_checked",
+    "source_urls_checked",
+    "archive_urls_checked",
+    "decision",
+    "decision_reason",
+    "changed_fields",
+    "validator_results",
+    "next_required_action"
+  ],
+  "field_specs": {
+    "audit_event_id": {
+      "type": "string",
+      "format": "uuid-v4-hex-no-dashes",
+      "pattern": "^[0-9a-f]{32}$",
+      "required": true,
+      "notes": "Globally unique. Generated at event-write time, never reused."
+    },
+    "correction_id": {
+      "type": "string",
+      "format": "uuid-v4-hex-no-dashes",
+      "required": true,
+      "notes": "Joins to the queue item filename."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": true
+    },
+    "actor_role": {
+      "type": "string",
+      "enum": [
+        "intake_endpoint",
+        "viewer",
+        "curator",
+        "source_reviewer",
+        "senior_reviewer",
+        "qa_reviewer",
+        "admin",
+        "automated_validator"
+      ],
+      "required": true
+    },
+    "actor_id_or_placeholder": {
+      "type": "string",
+      "max_length": 100,
+      "required": true,
+      "notes": "Internal user ID or 'system' / 'cli' / 'validator-X' placeholder. Never a real user PII."
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "intake_received",
+        "triaged",
+        "source_recheck_started",
+        "source_recheck_completed",
+        "evidence_captured",
+        "decision_made",
+        "correction_staged",
+        "validator_run",
+        "qa_review_started",
+        "qa_review_completed",
+        "closed",
+        "reopened_with_audit"
+      ],
+      "required": true
+    },
+    "previous_status": {
+      "type": "string",
+      "required": true,
+      "notes": "Mirror queue status enum. 'NONE' for the very first event."
+    },
+    "new_status": {
+      "type": "string",
+      "required": true,
+      "notes": "Mirror queue status enum."
+    },
+    "evidence_checked": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["html_snapshot", "wayback_archive", "live_source", "png_screenshot", "verbatim_quote", "bridge_draft", "staged_runtime", "active_runtime"]
+      },
+      "required": true,
+      "notes": "Empty array allowed only for actions that don't require evidence (e.g. intake_received, triaged spam)."
+    },
+    "source_urls_checked": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "required": true
+    },
+    "archive_urls_checked": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "required": true
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "no_decision_yet",
+        "no_change",
+        "copy_correction",
+        "source_url_update",
+        "eligibility_caveat_update",
+        "delist_or_hide",
+        "needs_institution_confirmation_later",
+        "marked_spam",
+        "rejected_forbidden_field"
+      ],
+      "required": true
+    },
+    "decision_reason": {
+      "type": "string",
+      "max_length": 2000,
+      "required": true,
+      "notes": "Free-text reviewer rationale. Required even for no_change decisions."
+    },
+    "changed_fields": {
+      "type": "object",
+      "required": true,
+      "notes": "JSON object: { field_name: { previous: <value>, new: <value> } }. Empty object {} for no_change.",
+      "forbidden_in_changed_fields": [
+        "previous user_email plaintext",
+        "previous IP address plaintext",
+        "any forbidden_fields from intake schema"
+      ]
+    },
+    "validator_results": {
+      "type": "object",
+      "required": true,
+      "notes": "{ validator_name: 'PASS'|'FAIL'|'NOT_RUN', detail?: string }",
+      "expected_validator_keys": [
+        "validate-p99-p97-bridge-input",
+        "validate-p99-staged-runtime-batch-2",
+        "validate-micro-pilot-runtime",
+        "validate-p99-runtime-prep-candidate",
+        "validate-p99-report-issue-mapping",
+        "future-validate-p99-correction-queue-item"
+      ]
+    },
+    "next_required_action": {
+      "type": "string",
+      "max_length": 500,
+      "required": true,
+      "notes": "Reviewer-or-system note about the next step. May be empty string only for terminal CLOSED events."
+    }
+  },
+  "immutability_rules": [
+    "No event line is ever modified after being written.",
+    "No event line is ever deleted from a JSONL file.",
+    "No JSONL file is ever truncated.",
+    "If a correction is reopened, a new audit_event_id with action='reopened_with_audit' is appended; the prior history remains visible.",
+    "If a forbidden field arrives at intake, the audit log records action='intake_received' with decision='rejected_forbidden_field' and changed_fields={} — without ever logging the forbidden field's value."
+  ],
+  "no_silent_overwrites": true,
+  "no_deletion_without_audit_event": true,
+  "no_public_data_update_without_validator_pass": true,
+  "no_caveat_removal_without_reviewer_reason": true,
+  "what_this_schema_does_not_do": [
+    "Implement the audit logger",
+    "Define database storage",
+    "Modify any UI",
+    "Modify any active runtime"
+  ]
+}
