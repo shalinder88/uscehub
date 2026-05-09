@@ -1,0 +1,19 @@
+metric,before,after,delta,notes
+READY_FOR_HUMAN_APPROVAL_rows_reviewed,0,25,+25,All 25 T7 rows passed through curator review in this sprint
+APPROVED_FOR_BRIDGE_INPUT_DRAFT,0,7,+7,Class B (US-only LCME) Tier-1 institutions: Jackson Memorial / Duke / Northwestern / Penn / NYU Langone Tisch / Methodist TX / IU Methodist
+NEEDS_EVIDENCE_HARDENING,0,6,+6,Class A broad-IMG (5 rows: Mayo Saint Marys / NYP Columbia / NYP Cornell / Mayo Phoenix / HCA Aventura) + Mount Sinai (1 row bot-defense block)
+NEEDS_COPY_CARVEOUT,0,9,+9,Class C: Yale / CCF Main / Hopkins / Mayo Jacksonville / ChristianaCare / Westchester / Carilion / Saint Barnabas / Grady
+DEFER_TO_FUTURE_LANE,0,3,+3,Class D residency-supporting (Newark Beth Israel / BronxCare / Englewood) — wrong lane for visiting-MS pilot
+bridge_input_DRAFT_rows,2,9,+7,Prior DRAFT (UPMC + Lincoln) plus 7 new from Promotion Batch 3
+bridge_input_validator_PASS,YES (2 rows),YES (7 rows in new DRAFT + 2 in prior DRAFT),unchanged status; new DRAFT validates,Both DRAFTs pass independently
+mac_local_HTML_snapshots_landed_for_class_B,0,7,+7,7 of 8 Class B rows have Mac-local HTML snapshots; Mount Sinai blocked
+mac_local_Wayback_archives_for_class_B,0,7,+7,6 sprint-fresh + 1 prior April 2024 (Jackson Memorial) HEAD-verified
+active_runtime_rows,5,5,0,UNCHANGED — promotion DRAFT is curator-approved but evidence_triple_complete=false; runtime activation remains gated
+staged_runtime_rows,7,7,0,UNCHANGED — staged-batch-2 file unchanged
+production_public_rows,0,0,0,UNCHANGED
+source_proofed_rows_unchanged,347,347,0,UNCHANGED
+rows_moved_closer_to_runtime,0,7,+7,**THIS SPRINT'S HEADLINE METRIC.** 7 Tier-1 AMC + Tier-1A rows now sit in a validator-passing bridge DRAFT.
+rows_blocked_by_evidence_hardening,0,15,+15,6 NEEDS_EVIDENCE_HARDENING + 9 NEEDS_COPY_CARVEOUT all need additional Mac-local work
+rows_blocked_by_UI_contact,5,9,+4,2 staged (UPMC + Lincoln) + 7 new DRAFT — all 9 share the same B-001/B-002/B-003 contact-page blocker
+rows_blocked_by_production_policy,All,All,unchanged,Production policy still gates ALL rows; this is correct doctrine
+348_to_5_funnel_bottleneck_status,UNRESOLVED,RESOLVING,positive movement,Was 347 verified → 5 active. Now 7 more rows in DRAFT pipeline = 12 verified rows in active+DRAFT pipeline.
