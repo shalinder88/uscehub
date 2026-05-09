@@ -1,0 +1,7 @@
+blocker_id,severity,blocker_type,description,blocks_runtime_activation,blocks_production,recommended_fix,notes
+NONE_NEW_THIS_SPRINT,n/a,n/a,No NEW blockers from this sprint. The cross-validator surfaces the existing B-001/B-002/B-003 (contact UI) and B-006 (rate-limit) gaps via warnings only — they are documented elsewhere.,NO,NO,N/A,
+B-001,HIGH,UI_DEFERRED,/contact/page.tsx still does not parse listing_id/ref params,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Existing; unchanged by this sprint
+B-002,HIGH,UI_DEFERRED,/contact form Send button still has no submit handler,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Existing; unchanged
+B-003,MEDIUM,UI_DEFERRED,Listing_id missing from /contact form payload,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Existing; unchanged
+B-005,LOW,DOCS_OPS_CLEANUP,Active 5 evidence files live on T7 lane,NO,NO,Resolve in P99-P97-T7-EVIDENCE-MIGRATION-OR-RECONCILIATION-1,Existing; cosmetic
+B-006,LOW,DEFERRED_RATE_LIMIT,No rate limit / Turnstile yet,NO_FOR_TEST_GATE_YES_FOR_PUBLIC_GATE,YES,Resolve in P99-P97-CORRECTION-INTAKE-RATE-LIMIT-1,Existing; deferred per implementation plan

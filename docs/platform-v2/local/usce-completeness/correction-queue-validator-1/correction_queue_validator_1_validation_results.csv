@@ -1,0 +1,15 @@
+validator,input,status,errors,warnings,notes
+tsc --noEmit,whole repo (with .next cleared),PASS,0,0,All new files compile cleanly
+validate-micro-pilot-runtime.ts,active 5-card runtime,PASS,0,0,UNCHANGED
+validate-p99-p97-bridge-input.ts,bridge DRAFT,PASS,0,0,UNCHANGED
+validate-p99-runtime-prep-candidate.ts,candidate JSON,PASS,0,0,UNCHANGED
+validate-p99-staged-runtime-batch-2.ts,staged 7-card,PASS,0,0,UNCHANGED
+validate-p99-report-issue-mapping.ts,listing map,PASS,0,1,Pre-existing advisory (B-001 contact-page gap)
+validate-p99-correction-intake-payload.ts,sample payloads,PASS,0,0,8/8 classified
+validate-p99-correction-queue-item.ts,Sprint-1 test-output,PASS,0,0,4 fixtures pass
+validate-p99-correction-audit-log.ts,Sprint-1 test-output,PASS,0,0,4 fixtures pass
+validate-p99-correction-queue-cross-join.ts (NEW),test-output-valid,PASS,0,2,4 valid fixtures cross-join cleanly; 2 expected ROW_MAPS_TO_STAGED_NOT_ACTIVE warnings (UPMC + Lincoln)
+validate-p99-correction-queue-cross-join.ts (NEW),test-output-invalid/unknown-listing,FAIL_AS_EXPECTED,3,0,Caught LISTING_ID_NOT_IN_ANY_RUNTIME + LISTING_NOT_IN_LISTING_MAP + LISTING_NOT_IN_EVIDENCE_MAP
+validate-p99-correction-queue-cross-join.ts (NEW),test-output-invalid/report-ref-mismatch,FAIL_AS_EXPECTED,1,0,Caught REPORT_REF_MISMATCH
+validate-p99-correction-queue-cross-join.ts (NEW),test-output-invalid/missing-audit,FAIL_AS_EXPECTED,1,0,Caught AUDIT_LOG_MISSING
+validate-p99-correction-queue-cross-join.ts (NEW),test-output-invalid/public-now-leak,FAIL_AS_EXPECTED,1,0,Caught FORBIDDEN_TOKEN_IN_QUEUE_ITEM
