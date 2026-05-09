@@ -1,0 +1,4 @@
+blocker_type,affected_row,exact_fix_required,prevents_next_sprint,severity,notes
+NONE_HARD,n/a,n/a,NO,N/A,No hard blockers. The staged data is data-only and not imported by app. The next sprint can decide whether to do report-issue mapping or runtime-review work without removing this artifact.
+SOFT_UI_LABELS,pilot-011 + pilot-012,Add RESTRICTION_TAG_LABELS entries for SYSTEM_PAGE_SOURCE_NO_WPIC_SPECIFIC_GUARANTEE / STEP_2_REQUIRED_FOR_PSYCHIATRIC_ELECTIVE / NO_OBSERVERSHIP_FOR_GRADUATES / SYSTEM_PAGE_SOURCE_NO_LINCOLN_SPECIFIC_GUARANTEE / STIPEND_PROVIDED / HOUSING_STIPEND_NON_NYC_METRO / EM_SITE_SPECIFIC_SECONDARY_SOURCE / URM_ENCOURAGED to PilotClerkshipListings.tsx,NO,COSMETIC,Out of scope for this sprint (no UI work). Defer to a later UI-polish sprint.
+SOFT_DRAFT_TOKEN,pilot-011 + pilot-012,Curator decision in a later sprint: keep or remove NO_PNG_BYPASS_AT_RUNTIME from bridge DRAFT,NO,GOVERNANCE,Defense-in-depth retained.

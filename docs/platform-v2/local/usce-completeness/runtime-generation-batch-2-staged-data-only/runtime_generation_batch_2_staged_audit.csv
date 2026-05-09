@@ -1,0 +1,28 @@
+check,status,details
+staged_json_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-2.generated.json (15 KB approx)
+staged_ts_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-2.generated.ts (TypeScript with PILOT_USCE_CARDS_STAGED_BATCH_2 + metadata + counts)
+staged_json_card_count,PASS,7 cards (5 active + 2 candidate)
+staged_safety_flags_present,PASS,staged_only=true; not_imported_by_app=true; not_production=true; not_public_now=true; not_import_ready=true
+active_runtime_json_unchanged,PASS,src/data/usce/public-listings-pilot.generated.json byte-for-byte identical to pre-sprint
+active_runtime_ts_unchanged,PASS,src/data/usce/public-listings-pilot.generated.ts byte-for-byte identical to pre-sprint
+active_5_cards_preserved_verbatim,PASS,Each active card's JSON serialization matches identically (validator STAGED_VS_ACTIVE_DRIFT rule confirms)
+upmc_card_present,PASS,pilot-011-PA-upmc-western-psychiatric-hospital
+lincoln_card_present,PASS,pilot-012-NY-nyc-health-hospitals-lincoln
+upmc_required_restrictions,PASS,LCME_AOA_ONLY + MS4_ONLY + FEE_REQUIRED + VISA_APPLICANT_OBTAINED_B1 + NO_J1_SPONSORSHIP + NO_H1B_SPONSORSHIP all present
+lincoln_required_restrictions,PASS,LCME_AOA_ONLY present
+upmc_audience_grad_excluded,PASS,audience_detail.img_graduate=EXCLUDED_EXPLICIT
+lincoln_audience_non_us_excluded,PASS,international_student/img_graduate/caribbean_student all EXCLUDED_EXPLICIT
+upmc_system_caveat_in_campus_name,PASS,campus_name contains 'system-level' + 'Western Psychiatric'
+lincoln_system_caveat_in_campus_name,PASS,campus_name contains 'system-level' + 'Lincoln'
+no_banned_phrases,PASS,No 'guaranteed' / 'hospital-approved' / 'IMG-friendly' / 'apply through USCEHub' / 'complete national directory' / 'verified by hospital' / 'nationwide' / 'officially approved by'
+no_forbidden_tokens,PASS,No PUBLIC_NOW / IMPORT_READY / BRIDGE_READY_TO_RUNTIME / APPROVED_FOR_PUBLICATION outside the not_public_now / not_import_ready safety-flag keys
+url_shape,PASS,All official_source_url start with http(s)://
+last_reviewed_at_iso_z,PASS,All last_reviewed_at match /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/
+audience_detail_4_keys,PASS,All 7 cards have us_md_do/international_student/img_graduate/caribbean_student keys
+allow_listed_fields_only,PASS,No card carries any field outside the active runtime allow-list (20 fields)
+import_safety_grep,PASS,No src/ TS file other than the staged file itself references the staged module's basename or exported symbols
+tsc_clean,PASS,npx tsc --noEmit produces zero source-level errors after .next clear
+active_validate_micro_pilot_runtime,PASS,5 pilot cards + noindex+nofollow gates unchanged
+bridge_input_validator,PASS,DRAFT remains schema-valid; not mutated this sprint
+candidate_runtime_prep_validator,PASS,docs-only candidate JSON unchanged; still passes
+staged_runtime_validator,PASS,Newly authored validator returns Overall: PASSED
