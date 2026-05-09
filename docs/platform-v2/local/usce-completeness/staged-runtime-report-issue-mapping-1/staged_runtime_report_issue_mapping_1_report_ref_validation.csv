@@ -1,0 +1,22 @@
+check,status,details
+all_7_listing_ids_unique,PASS,5 active + 2 staged listing IDs are all unique within the staged 7-card runtime
+all_report_refs_unique_per_listing,PASS,Each row's report URL contains a unique listing_id query param; the ref token (pilot-listing) is shared by design (it's a class label not a per-row id)
+report_links_url_safe,PASS,listing_id values are kebab-case ASCII; encodeURIComponent applied in PilotClerkshipListings.tsx line 132
+report_links_include_listing_specific_id,PASS,All 7 cards' report URL includes ?ref=pilot-listing&listing_id=<listing_id>; footer feedback link uses ?ref=pilot-feedback (no listing_id by design)
+staged_report_refs_do_not_collide_with_active,PASS,pilot-011 and pilot-012 listing IDs are distinct from the active 5; same ref token (pilot-listing) is intentional shared class
+upmc_report_ref_present,PASS,pilot-011-PA-upmc-western-psychiatric-hospital report URL is reserved (not yet routable from any public page since staged file is not imported)
+lincoln_report_ref_present,PASS,pilot-012-NY-nyc-health-hospitals-lincoln report URL is reserved (same status)
+report_refs_map_back_to_evidence_manifest,PASS,Each listing_id maps 1:1 to a row in the evidence join map and via the source URL to the candidate / staged runtime evidence manifests
+no_report_ref_uses_unsafe_human_readable_only_title,PASS,Report URLs use stable kebab-case listing_id; never the institution display name
+no_report_link_exposes_internal_evidence_paths,PASS,Report URL contains only ref + listing_id query params; no source URL / archive URL / screenshot path exposed in URL
+no_report_link_exposes_reviewer_notes,PASS,No reviewer_notes field is exposed via the report URL
+no_report_link_implies_application_through_USCEHub,PASS,Report URL is /contact (not /apply); no language in PilotClerkshipListings.tsx implies application-through-USCEHub
+contact_page_parses_listing_id,FAIL,**BLOCKER B-001:** /contact/page.tsx does NOT read the ref or listing_id query params. They are present in the URL bar but ignored. Form action is decorative — Send Message button is type=button with no submit handler. Reports for staged or active listings would currently get lost as generic contact messages.
+contact_page_parses_ref,FAIL,Same as above — ref query param is also ignored.
+contact_form_has_submit_handler,FAIL,**BLOCKER B-002:** Send Message button is type=button with no onClick or onSubmit. The contact form does not actually submit anywhere today.
+contact_form_collects_listing_id_in_payload,FAIL,**BLOCKER B-003:** Even if the form were wired up to submit, the form fields collected are firstName/lastName/email/subject/message — listing_id and ref are not added to the payload.
+report_intake_validator_covers_pilot_route,FAIL_OUT_OF_SCOPE,The existing scripts/validate-usce-report-intake.ts validates the Maine route's local-report-intake feature. The Pilot route does not have a local-report intake hook wired up; the per-card report links instead point to /contact. This sprint flags this as a separate intake-design decision.
+correction_queue_join_key_present,PASS,correction_queue_join_key column in listing_map.csv = listing_id (1:1 mapping)
+future_intake_payload_schema_present,PASS,See staged_runtime_report_issue_mapping_1_future_intake_payload_schema.json — defines required + optional fields
+correction_queue_spec_present,PASS,See staged_runtime_report_issue_mapping_1_correction_queue_spec.md — defines 10-step internal workflow
+no_sensitive_document_collection_in_schema,PASS,Future intake schema explicitly forbids passport/visa/medical/immigration documents (privacy_notes section)
