@@ -1,0 +1,19 @@
+validator_or_check,input,status,errors,warnings,notes
+validate-no-secrets,(repo-wide),PASS,0,0,1131 files scanned
+tsc --noEmit,(repo-wide),PASS,0,0,Type check clean
+validate-micro-pilot-runtime,src/data/usce/public-listings-pilot.generated.json,PASS,0,0,5 active cards preserved
+validate-p99-staged-runtime-batch-2,src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Batch 2 untouched
+validate-p99-staged-runtime-batch-3,src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,14 cards / data-only
+validate-p99-staged-runtime-batch-3-report-mapping,(no arg; fixed paths),PASS,0,0,7 listing IDs / 3 CSVs consistent / evidence files exist / banned phrase + forbidden token absent / app-import grep clean
+validate-p99-report-issue-mapping (mapping-1),docs/.../staged-runtime-report-issue-mapping-1/staged_runtime_report_issue_mapping_1_listing_map.csv,PASS,0,1,1 warning carried forward — same audited /contact gap
+validate-p99-correction-intake-payload,docs/.../correction-intake-file-queue-implementation-1/correction_intake_file_queue_implementation_1_sample_payloads.json,PASS,0,0,8 sample payloads classified
+validate-p99-correction-queue-item,docs/.../correction-intake-file-queue-implementation-1/test-output,PASS,0,0,4 queue items clear
+validate-p99-correction-audit-log,docs/.../correction-intake-file-queue-implementation-1/test-output,PASS,0,0,4 audit logs clear
+import-safety-grep,grep -rln 'public-listings-pilot-staged-batch-3' src app pages components,PASS,0,0,Returns only generated TS/JSON itself
+import-safety-grep-symbols,grep -rln 'PILOT_USCE_CARDS_STAGED_BATCH_3|PILOT_STAGED_BATCH_3' src,PASS,0,0,No app symbol imports
+active-runtime-unchanged,git status --short src/data/usce/public-listings-pilot.generated.json,PASS,0,0,Empty (no diff vs HEAD)
+batch-2-staged-unchanged,git status --short src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Empty
+batch-3-staged-unchanged-this-sprint,git status --short src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,Empty (data file from prior sprint untouched)
+clerkships-pilot-route-unchanged,git status --short src/app/clerkships/pilot,PASS,0,0,Empty
+contact-route-unchanged,git status --short src/app/contact,PASS,0,0,Empty (B-001/B-002/B-003 still open by design — to be fixed in next sprint)
+gh secret-scanning open alerts,(gh logged out),NOT_VERIFIED_THIS_TURN,0,0,Last verified state — alert #1 resolved as wont_fix; open list = []
