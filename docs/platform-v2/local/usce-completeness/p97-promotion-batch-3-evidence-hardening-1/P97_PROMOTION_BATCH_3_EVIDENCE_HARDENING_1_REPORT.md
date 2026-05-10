@@ -170,3 +170,20 @@ Alternative: `P97-PROMOTION-BATCH-3-CLASS-A-CURATOR-PASS` first (4 Class A rows 
 | No T7 mutation | CONFIRMED |
 | No staging of unrelated dirty files / `.claude/launch.json` / Maine generated / NPPES / redesign | CONFIRMED |
 | No broad `git add .` / `--no-verify` / amend / force push | CONFIRMED |
+
+---
+
+## POST-COMMIT INCIDENT NOTE (added 2026-05-09)
+
+GitHub secret scanning flagged commit `8509729` (this sprint's commit) for a Google API key in `html-snapshots/mount-sinai-wayback.html` at line 104.
+
+Root cause: the Wayback Machine snapshot of the live Mount Sinai page included Mount Sinai's own Google Maps embed (a third-party HTTP-referrer-restricted Google Maps JavaScript API key) inside the verbatim `<script>` and `<iframe>` tags of the archived HTML. We captured the Wayback HTML verbatim as evidence and did not pre-scan it for credentials before staging.
+
+Action taken in this working tree (does not modify the introducing commit):
+- Both occurrences of the Google API key in `mount-sinai-wayback.html` (lines 104 and 1326) were redacted to `[REDACTED_GOOGLE_API_KEY]`.
+- Page text content (admissions / VSP description / dates / reviewer info) is preserved verbatim. Only the Google Maps embed loader and iframe URLs lost their key, which would have rendered a map widget — not core evidence.
+- Wayback URL for Mount Sinai remains the canonical source-of-truth; the on-disk HTML is now a sanitized copy, not a bit-for-bit Wayback mirror.
+
+A new validator `scripts/validate-no-secrets.ts` is added repo-wide and passes (1114 files scanned, 0 findings). Going forward, any HTML capture must be scanned by this validator before commit. See `docs/platform-v2/local/security-incidents/2026-05-google-api-key-mountsinai-wayback/` for the full incident report, history-cleanup options, and prevention checklist.
+
+The secret value remains in git history at commit `8509729` until/unless a force-push history rewrite is explicitly authorized. Production main (`739ab1e2…`) is unaffected.
