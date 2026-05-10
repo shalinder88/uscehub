@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Clock } from "lucide-react";
+import { resolveContactContext } from "@/lib/usce-contact-context";
+import { ContactReportForm } from "./ContactReportForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -33,7 +31,14 @@ const jsonLd = {
   },
 };
 
-export default function ContactPage() {
+interface ContactPageProps {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const params = await searchParams;
+  const context = resolveContactContext(params);
+
   return (
     <div className="bg-white">
       <script
@@ -65,48 +70,7 @@ export default function ContactPage() {
               Fill out the form below and we will get back to you within 48 hours.
             </p>
 
-            <form className="mt-6 space-y-5">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <Input
-                  id="firstName"
-                  label="First Name"
-                  placeholder="John"
-                />
-                <Input
-                  id="lastName"
-                  label="Last Name"
-                  placeholder="Doe"
-                />
-              </div>
-
-              <Input
-                id="email"
-                label="Email Address"
-                type="email"
-                placeholder="john@example.com"
-              />
-
-              <Select id="subject" label="Subject">
-                <option value="">Select a subject</option>
-                <option value="general">General Inquiry</option>
-                <option value="listing">Listing Question</option>
-                <option value="account">Account Issue</option>
-                <option value="report">Report a Problem</option>
-                <option value="partnership">Partnership Inquiry</option>
-                <option value="other">Other</option>
-              </Select>
-
-              <Textarea
-                id="message"
-                label="Message"
-                placeholder="Tell us how we can help..."
-                rows={5}
-              />
-
-              <Button type="button" size="lg">
-                Send Message
-              </Button>
-            </form>
+            <ContactReportForm context={context} />
           </div>
 
           <div>

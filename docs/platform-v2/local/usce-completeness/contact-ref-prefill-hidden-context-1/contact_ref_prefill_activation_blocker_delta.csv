@@ -1,0 +1,21 @@
+blocker,before,after,delta,notes
+contact_ui_parses_listing_id,NO,YES,RESOLVED,resolveContactContext reads searchParams in /contact server component
+contact_ui_parses_ref,NO,YES,RESOLVED,Same resolver
+contact_ui_renders_visible_listing_context,NO,YES,RESOLVED,Banner shows institution + city/state + reference line
+contact_ui_includes_hidden_listing_id,NO,YES,RESOLVED,<input type="hidden" name="listing_id"> in client form
+contact_ui_includes_hidden_report_ref,NO,YES,RESOLVED,Same
+contact_ui_includes_hidden_runtime_set,NO,YES,RESOLVED,Derived from KNOWN_LISTINGS (active or staged)
+contact_ui_includes_hidden_evidence_join_key,NO,YES,RESOLVED,Defaults to listing_id when omitted; never displayed
+contact_ui_includes_hidden_page_path,NO,YES_WHEN_VALID,RESOLVED,Sanitized; injection chars stripped
+contact_ui_has_submit_handler,NO,YES,RESOLVED,Client component submits JSON to /api/usce/corrections
+contact_ui_endpoint_disabled_returns_polite_generic,N_A,YES,RESOLVED,On 404 / 4xx / 5xx the user sees a polite generic message — never echoes endpoint detail
+endpoint_default_disabled,YES,YES,UNCHANGED,USCE_CORRECTION_INTAKE_ENABLED still false-by-default
+endpoint_payload_contract_intact,YES,YES,UNCHANGED,Validator + denylist + endpoint route untouched
+contact_ui_no_file_upload,YES,YES,UNCHANGED,Validator-enforced (no type="file")
+contact_ui_no_sensitive_field_capture,YES,YES,UNCHANGED,Resolver rejects unknown query params; form has no SSN / passport / visa-doc input
+active_runtime_rows,5,5,UNCHANGED,No runtime change
+staged_rows,14,14,UNCHANGED,No staged change
+production_public_rows,0,0,UNCHANGED,Production main untouched
+remaining_blocker_endpoint_env_in_preview_or_prod,YES,YES_BUT_DOCUMENTED,UNCHANGED,Out of scope for this sprint; flip is its own follow-on after rate-limit + browser QA
+remaining_blocker_browser_qa_run,N_A,QA_CHECKLIST_AUTHORED_NOT_RUN,DOCUMENTED,Manual checklist provided
+remaining_blocker_promotion_candidate_audit,YES,YES,UNCHANGED,Next sprint will pick 1–3 safest cards for activation

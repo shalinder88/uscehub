@@ -1,0 +1,14 @@
+param,required,allowed_source,validation_rule,max_length,stored_in_payload,visible_to_user,notes
+listing_id,YES_FOR_LISTING_REF,query_string_only,must match /^pilot-\d{3}-[A-Z]{2}-[a-z0-9-]+$/ AND be in KNOWN_LISTINGS,96,YES_AS_HIDDEN_FIELD,YES_VIA_RESOLVED_NAME_AND_CITYSTATE,Sanitized + cross-checked against the 14-row KNOWN_LISTINGS map; unknown values fall back to generic
+ref,NO_BUT_RECOMMENDED,query_string_only,must be in ALLOWED_REPORT_REFS (10 values) else defaults to pilot-listing when listing_id is valid,64,YES_AS_HIDDEN_FIELD,YES_AS_REFERENCE_LINE,pilot-feedback alone is the no-listing form mode
+runtime_source,NO,query_string_only,SAFE_TOKEN_REGEX A-Za-z0-9_-./ only,96,NO_NOT_IN_PAYLOAD,NO,Informational only; canonical runtime_set is derived from KNOWN_LISTINGS
+evidence_join_key,NO,query_string_only,SAFE_TOKEN_REGEX A-Za-z0-9_-./ only,96,YES_AS_HIDDEN_FIELD_INTERNAL,NO,Defaults to listing_id when omitted; never displayed
+page_path,NO,query_string_only,must start with / and exclude < > " backtick ' \\ characters,256,YES_AS_HIDDEN_FIELD,NO,Stripped if injection chars present
+firstName,NO,user_input_form,(no enforcement at resolver level — endpoint owns user-input sanitization),(endpoint),NO_NOT_IN_INTAKE_PAYLOAD,YES,Not part of intake schema
+lastName,NO,user_input_form,(endpoint),(endpoint),NO_NOT_IN_INTAKE_PAYLOAD,YES,Not part of intake schema
+email,NO,user_input_form,EMAIL_REGEX (endpoint enforces),(endpoint),OPTIONAL_user_email,YES,Endpoint flags presence
+issue_type,NO_BUT_RECOMMENDED,user_input_form,enum from ALLOWED_ISSUE_TYPES (endpoint enforces),(endpoint),YES_AS_payload.issue_type,YES,Defaults to other
+message,YES_FOR_SUBMISSION,user_input_form,length 5..4000 (endpoint enforces),4000,YES_AS_payload.user_message,YES,Min 5 enforced both client-side and endpoint
+honeypot_field,NO,hidden_dummy,if non-empty endpoint rejects intake,(endpoint),YES_AS_payload.honeypot_field,NO,Always sent empty
+SSN / passport / visa doc / MRN / payment card / etc,NEVER,blocked_at_form_level,no input field exists; endpoint also has FORBIDDEN_PAYLOAD_KEYS_LOWER denylist,N_A,REJECTED_AT_ENDPOINT_IF_INJECTED,NO,Defense in depth — form has no upload field at all
+unknown_query_params,IGNORED,query_string,resolver picks only the 5 reserved keys; everything else is dropped,N_A,NO,NO,No echo of unknown params anywhere

@@ -1,0 +1,17 @@
+payload_field,source,required,sent_to_endpoint,visible_to_user,privacy_risk,validation,notes
+schema_version,client_constant,YES,YES,NO,LOW,must equal "v2",Endpoint enforces
+listing_id,resolver(KNOWN_LISTINGS),YES_FOR_LISTING_REF,YES,YES_VIA_BANNER,LOW,LISTING_ID_REGEX + must resolve to known listing,Cross-checked at endpoint as well
+report_ref,resolver,YES,YES,YES_AS_REFERENCE_LINE,LOW,enum ALLOWED_REPORT_REFS,Defaults to pilot-listing for valid listing context
+runtime_set,resolver(KNOWN_LISTINGS),YES,YES,NO,LOW,enum ALLOWED_RUNTIME_SETS,Always derived from known listing — never user-controlled
+page_url,client_window.location,YES,YES,NO,LOW_TO_MEDIUM,must be http(s):// at endpoint,Captured client-side and sent
+issue_type,user_input,YES,YES,YES_AS_DROPDOWN_LABEL,LOW,enum ALLOWED_ISSUE_TYPES,Defaults to other
+user_message,user_input,YES,YES,YES,MEDIUM_endpoint_redacts,length 5..4000 enforced both client and endpoint,User-typed body
+submitted_at,client_now,YES,YES,NO,LOW,ISO_Z_REGEX,Generated client-side
+source_context,client_constant_empty,YES,YES,NO,LOW,object shape,Empty for now; future expansion
+institution_name_displayed,resolver,NO,YES_OPTIONAL,YES_VIA_BANNER,LOW,string,Helps reviewer triage
+client_timestamp,client_now,NO,YES,NO,LOW,ISO_Z_REGEX,Same as submitted_at; reviewer uses for skew detection
+honeypot_field,client_constant_empty,NO,YES,NO,LOW,must be empty string,Bot-trap; if non-empty endpoint rejects
+evidence_join_key,resolver(internal),NO,NO_NOT_IN_INTAKE_PAYLOAD,NO,LOW,SAFE_TOKEN_REGEX,Stored only as DOM hidden field for future expansion; NOT in current intake payload (not in ALLOWED_PAYLOAD_KEYS)
+page_path,resolver(internal),NO,NO_NOT_IN_INTAKE_PAYLOAD,NO,LOW,leading-slash + no inject chars,Same — DOM hidden field only
+firstName / lastName / email,user_input,NO,(email maps to user_email if added later),YES,MEDIUM_endpoint_redacts,(endpoint),Currently NOT serialized into the intake POST body to keep this sprint scoped; can be wired later
+SSN / passport / visa doc / credit card / etc,N_A,NEVER,NEVER,NEVER,N_A,form has no input field; FORBIDDEN_PAYLOAD_KEYS_LOWER at endpoint,No file upload at all
