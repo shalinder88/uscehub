@@ -1,0 +1,8 @@
+listing_id,institution_name,banned_claims_absent,no_broad_img_claim,no_hospital_approved_claim,no_guarantee_claim,no_apply_through_uscehub_claim,no_visa_overclaim,no_cost_overclaim,copy_caveats_sufficient,risk_level,notes
+pilot-013-FL-jackson-memorial-hospital,Jackson Memorial Hospital,YES,YES,YES,YES,YES,YES,YES,YES_BUT_BRAND_VS_SOURCE_MISMATCH,LOW_TO_MEDIUM,Card name is the hospital brand but source is SOM page; campus_name + system-level tag mitigate but recognizable hospital name carries higher overpromise risk
+pilot-014-NC-duke-university-hospital,Duke University Hospital,YES,YES,YES,YES,YES,YES,YES,YES,LOW,Card and source both reference Duke SOM visiting-students office; VSLO requirement is explicit; no broad claim
+pilot-015-IL-northwestern-memorial-hospital,Northwestern Memorial Hospital,YES,YES,YES,YES,YES,YES,YES,YES,LOW,System-level caveat in campus_name + fit_warnings; same shape as HUP
+pilot-016-PA-hospital-of-the-university-of-pennsylvania,Hospital of the University of Pennsylvania,YES,YES,YES,YES,YES,YES,YES,YES,LOW,System-level caveat in campus_name + fit_warnings
+pilot-017-NY-nyu-langone-tisch-hospital,NYU Langone Health - Tisch Hospital,YES,YES,YES,YES,YES,YES,YES,YES,LOW,Site-level Tisch under NYU Langone named in campus_name
+pilot-018-TX-methodist-hospital-san-antonio,Methodist Hospital (San Antonio),YES,YES,YES,YES,YES,YES,YES,YES_BUT_PARTIAL_SOURCE,MEDIUM,Source detail rated PARTIAL — public copy must avoid implying full HCA GME endorsement of one site; system-level multi-site caveat present but underwritten by partial source
+pilot-019-IN-iu-health-methodist-hospital,Indiana University Health Methodist Hospital,YES,YES,YES,YES,YES,YES,YES,YES,LOW,Site-level IU Health Methodist under IU SOM Guest Students named in campus_name
