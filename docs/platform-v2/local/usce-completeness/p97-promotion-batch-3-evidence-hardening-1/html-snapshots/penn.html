@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+          
+    <base href="/student/">
+    <!--[if IE]>
+    
+    <script type="text/javascript">
+        (function() {
+            var baseTag = document.getElementsByTagName('base')[0];
+            baseTag.href = baseTag.href;
+        })();
+    </script>
+    
+    <![endif]-->
+  
+                    
+    <title> Visiting Student Overview |  MD Program | Perelman School of Medicine at the University of Pennsylvania</title>
+
+    
+    
+                    
+    
+        
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/cms_files/sites/student-2023/css/styles.css">
+
+    
+    <script src="https://kit.fontawesome.com/e166fb7e1c.js" crossorigin="anonymous"></script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/wicg-inert@3.1.1/dist/inert.min.js"></script>
+    
+    
+        
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.10.2/dist/cdn.min.js"></script>
+    
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+    
+    
+    
+        
+    
+        
+</head>
+
+<body
+    x-data="{ 'scrollY' : window.scrollY, 'scrollDelta' : 0 }" 
+    @scroll.window.debounce.50ms="scrollDelta = scrollY - window.scrollY; scrollY = window.scrollY"
+    :class="{ 'scroll-down':  (scrollDelta < 0), 'scrolled' : (scrollY > 300) }"
+>
+    
+    
+        
+    
+    
+    
+    
+    <header x-data="modal()">
+        <a class="top" id="top"></a>
+        <a href="application-and-dates.html#main" class="skip-link">Skip to main content</a>
+        
+        <button
+            class="mobile-nav-button"
+            aria-haspopup="true"
+            @click="show"
+            x-ref="trigger" 
+			type="button"
+        >
+            <i class="fas fa-2x fa-bars"></i><i class="fas fa-pipe fa-2x"></i><i class="fas fa-2x fa-search"></i>
+            <span class="sr-only">Site Navigation</span>
+        </button>
+        
+        <div class="page-block" 
+            x-cloak
+            x-bind="overlay"
+		>
+
+        <nav
+            class="mobile-nav" 
+    		@keydown.window.escape="hide"
+    		@click.outside="hide" 
+			x-ref="dialog"
+		>
+    
+            <button @click="hide" class="mobile-nav__close">
+                <span class="sr-only">Close Navigation</span>
+                <span class="fa-stack fa-2x">
+                    <i class="fa-solid fa-circle fa-2x"></i>
+                    <i class="fa-solid fa-times fa-stack-1x fa-inverse"></i>
+                </span>
+            </button>
+    
+            <form action="results.html" method="get" class="search-form">
+                <label class="mobile-search-label"><strong>Search</strong></label>
+                <input aria-label="Search" type="text" name="query" class="search-form__search" placeholder="Search">
+                <button aria-label="Submit Search" class="search-form__button" type="submit" name="form_submit"><i
+                        class="fa fa-search fa-2x"></i></button>
+            </form>
+    
+            <h2>Explore by topic</h2>
+    
+            <ul class="">
+<li class="first level1">
+    <a class="" href="/student/"  >
+        <span>MD Program Home</span>
+    </a>
+    </li>
+<li class="level1">
+    <a class="" href="umelt.html"  >
+        <span>UME Leadership Team</span>
+    </a>
+    </li>
+<li class="level1">
+    <a class="weblink" href="https://www.med.upenn.edu/admissions"  target="_blank">
+        <span>Admissions & Financial Aid</span>
+    </a>
+    </li>
+<li class="level1">
+    <a class="weblink" href="http://www.med.upenn.edu/educ_combdeg/"  target="_blank">
+        <span>Combined Degree & Physician Scholars</span>
+    </a>
+    </li>
+<li class="level1">
+    <a class="weblink" href="https://www.med.upenn.edu/ascend/about-ascend"  target="_blank">
+        <span>ASCEND</span>
+    </a>
+    </li>
+<li class="level1"><a href="lcme-accreditation/"  class="" >LCME</a></li>
+
+<li class="has-children" x-data="{ open: false } " :class="{ 'open' : open }">
+    <button @click="open = !open" aria-haspopup="true" :aria-expanded="open">
+        <span>MD Curriculum</span>
+    </button>
+    
+    <ul x-show="open" :aria-hidden="!open">
+                
+<li class="first level2">
+    <a class="" href="curriculum/"  >
+        <span>Curriculum</span>
+    </a>
+    </li>
+<li class="level2">
+    <a class="" href="advanced-educational-opportunities.html"  >
+        <span>Advanced Ed Opportunities</span>
+    </a>
+    </li>
+<li class="level2">
+    <a class="" href="areas-of-concentration.html"  >
+        <span>Areas of Concentration</span>
+    </a>
+    </li>
+<li class="level2">
+    <a class="weblink" href="https://www.med.upenn.edu/student/graduation-requirements.html"  target="_blank">
+        <span>Graduation Requirements</span>
+    </a>
+    </li>
+<li class="level2">
+    <a class="weblink" href="http://www.med.upenn.edu/clinicalresearch/"  target="_blank">
+        <span>PennMedicine Clinical Research</span>
+    </a>
+    </li>
+<li class="last level2">
+    <a class="weblink" href="https://www.med.upenn.edu/spprogram/"  target="_blank">
+        <span>Standardized Patients</span>
+    </a>
+    </li>    </ul>
+</li>
+
+<li class="level1"><a href="policies/"  class="" >Policies</a></li>
+
+<li class="has-children" x-data="{ open: false } " :class="{ 'open' : open }">
+    <button @click="open = !open" aria-haspopup="true" :aria-expanded="open">
+        <span>Pre-Medical Enrichment and Experiences</span>
+    </button>
+    
+    <ul x-show="open" :aria-hidden="!open">
+                <li 
+            class=""
+        >
+            <a href="pre-med-programs/" class="" >Overview</a>
+        </li>
+                
+<li class="first level2">
+    <a class="" href="johnson-scholars.html"  >
+        <span>Johnson Scholars</span>
+    </a>
+    </li>
+<li class="level2">
+    <a class="" href="pass-program.html"  >
+        <span>PASS Program</span>
+    </a>
+    </li>
+<li class="last level2">
+    <a class="" href="hs-premed.html"  >
+        <span>High School Pre-Medical Programs</span>
+    </a>
+    </li>    </ul>
+</li>
+
+<li class="level1"><a href="registrar/"  class="" >Registrar</a></li>
+
+<li class="level1"><a href="office-of-student-affairs/"  class="" >Student Affairs</a></li>
+
+<li class="last level1"><a href="support-and-resources/"  class="" >Support & Resources</a></li>
+</ul>                
+            <ul class="mobile-nav__quick-links">
+                                <li class="weblink"><a href="https://www.alumni.upenn.edu/s/1587/psom/index.aspx?sid=1587&gid=2&pgid=3450">Development &amp; Alumni Relations</a></li>
+                                <li class="weblink"><a href="http://www.med.upenn.edu/" target="_blank">Perelman School of Medicine</a></li>
+                <li class="weblink"><a href="http://www.upenn.edu/" target="_blank">University of Pennsylvania</a></li>
+                <li><a class="button--small" href="https://giving.apps.upenn.edu/find-fund?program=MED&amp;area=SCH">Give Today</a></li>
+            </ul>
+    
+        </nav></div>
+        
+        
+        <ul class="quick-links">
+                        <li><a href="https://www.alumni.upenn.edu/s/1587/psom/index.aspx?sid=1587&gid=2&pgid=3450">Development &amp; Alumni Relations</a></li>
+                        <li><a href="http://www.med.upenn.edu/">Perelman School of Medicine</a></li>
+            <li><a href="http://www.upenn.edu/">University of Pennsylvania</a></li>
+            <li><a class="button--small" href="https://giving.apps.upenn.edu/find-fund?program=MED&amp;area=SCH">Give Today</a></li>
+            <li>
+                <form action="results.html" method="get" class="search-form">
+                    <input aria-label="Search" type="text" name="query" class="search-form__search" placeholder="Search">
+                    <button aria-label="Submit Search" class="search-form__button" type="submit" name="form_submit"><i
+                            class="fa fa-search fa-2x"></i></button>
+                </form>
+            </li>
+        </ul>
+
+        <a href="http://www.med.upenn.edu/" target="_blank" class="psom-link">
+            <picture>
+                <!--[if IE 9]><video style="display: none;"><![endif]-->
+                <source type="image/png" srcset="https://www.med.upenn.edu/images/psom_logo_blue.png,
+                https://www.med.upenn.edu/images/psom_logo_blue@2x.png 2x">
+                <!--[if IE 9]></video><![endif]-->
+                <img src="https://www.med.upenn.edu/images/psom_logo_blue.png"
+                    alt="Perelman School of Medicine at the University of Pennsylvania" width="213" height="60">
+            </picture>
+        </a>
+
+                        <div class="site-title"><a href="/student/">MD Program</a></div>
+    </header>
+    
+
+    
+    <nav id="explore-by-audience" aria-label="Audience">
+
+        <ul class="horizontal-nav megamenu">
+            <li x-data="{ opened: false }" :class="{ 'opened' : opened }" @click.outside="opened = false">
+    <button 
+        @click="opened = !opened"
+        aria-haspopup="true"
+        aria-expanded="false"
+        :aria-expanded="opened ? 'true' : 'false'"
+        @keydown.escape.window="opened = false"
+    ><span>Current Students</span></button>
+    <ul class="megamenu__dropdown" x-show="opened" x-cloak><li>
+    <span class="megamenu__subtitle">Absence Request Forms</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://cglink.me/2qT/s13">
+        Core 1: Clinical Encounters and Small Group Absence 
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=65007">
+        Core 2: Clerkship Absence
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=255813">
+        Core 3: Electives Absence
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Critical Dates by Year</span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="ms-1-critical-dates.html">
+        MS-1
+    </a>
+</li><li >
+    <a href="ms-2-critical-dates.html">
+        MS-2
+    </a>
+</li><li >
+    <a href="ms-3-critical-dates.html">
+        MS-3
+    </a>
+</li><li >
+    <a href="ms-4-critical-dates.html">
+        MS-4
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Info for Graduating Students </span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="awards-nominations.html">
+        Award & Prize Nominations
+    </a>
+</li><li >
+    <a href="important-dates.html">
+        Important Dates
+    </a>
+</li><li >
+    <a href="outstanding-bills.html">
+        Outstanding Bills
+    </a>
+</li><li >
+    <a href="psom-graduation.html">
+        PSOM Graduation
+    </a>
+</li><li class="weblink">
+    <a href="https://commencement.upenn.edu/">
+        University Graduation
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Professionalism & Student Mistreatment</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/secure/professionalism-at-psom.html">
+        PSOM Professionalism Portal
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/student-mistreatment-portal.html">
+        Student Mistreatment Portal
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Registrar’s Request Forms</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=36892">
+        JMEC Access - PennCard Update
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=40209">
+        Jury Duty Excusal
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=12670">
+        Letter of Good Standing
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=224772">
+        Scholarly Extension
+    </a>
+</li><li class="weblink">
+    <a href="https://hosting.med.upenn.edu/forms/zulu/view.php?id=39566">
+        Transcripts
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Student Groups & Activities</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.med.upenn.edu/psom/community.html">
+        Community Outreach
+    </a>
+</li><li class="weblink">
+    <a href="https://www.pennmsg.com/">
+        Med Student Government
+    </a>
+</li><li class="weblink">
+    <a href="https://www.pennmsg.com/resources">
+        MSG Student Resources
+    </a>
+</li><li class="weblink">
+    <a href="https://teamup.com/ks652357d98753a7bf/">
+        Student Events Calendar
+    </a>
+</li><li class="weblink">
+    <a href="https://docs.google.com/spreadsheets/d/1me6MKsNkm9SANuitpZ_fk7KdTy_hvm4o3WsgKJi2XOA/edit#gid=0">
+        Student Interest Groups
+    </a>
+</li></ul>
+</li></ul></li>            <li x-data="{ opened: false }" :class="{ 'opened' : opened }" @click.outside="opened = false">
+    <button 
+        @click="opened = !opened"
+        aria-haspopup="true"
+        aria-expanded="false"
+        :aria-expanded="opened ? 'true' : 'false'"
+        @keydown.escape.window="opened = false"
+    ><span>Prospective Students</span></button>
+    <ul class="megamenu__dropdown" x-show="opened" x-cloak><li>
+    <span class="megamenu__subtitle">Academics & Policies</span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="curriculum/">
+        MD Currriculum
+    </a>
+</li><li >
+    <a href="policies/">
+        Policies
+    </a>
+</li><li class="weblink">
+    <a href="https://online.flippingbook.com/view/531129019/">
+        PSOM Brochure 2023
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/secure/professionalism-at-psom.html">
+        PSOM Professionalism Portal
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/spprogram/what-is-a-standardized-patient.html">
+        Standardized Patients
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/student-mistreatment-portal.html">
+        Student Mistreatment Portal
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Extracurricular Opportunities </span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="advanced-educational-opportunities.html">
+        Advanced Education
+    </a>
+</li><li >
+    <a href="areas-of-concentration.html">
+        Areas of Concentration
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/psom/community.html">
+        Community Outreach
+    </a>
+</li><li class="weblink">
+    <a href="http://www.med.upenn.edu/clinicalresearch/">
+        PennMedicine Clinical Research
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/mdresearchopps/">
+        Research & Fellowship
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Student Affairs </span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="advisory-deans-and-houses.html">
+        Houses & Advisory Deans
+    </a>
+</li><li >
+    <a href="office-of-student-affairs/">
+        Office of Student Affairs
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Student Groups & Activities</span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="honor-societies.html">
+        Honor Societies
+    </a>
+</li><li class="weblink">
+    <a href="https://www.pennmsg.com/">
+        Med Student Government
+    </a>
+</li><li class="weblink">
+    <a href="https://teamup.com/ks652357d98753a7bf/">
+        Student Events Calendar
+    </a>
+</li><li class="weblink">
+    <a href="https://docs.google.com/spreadsheets/d/1me6MKsNkm9SANuitpZ_fk7KdTy_hvm4o3WsgKJi2XOA/edit#gid=0">
+        Student Interest Groups
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">What Else to Know</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://home.vpul.upenn.edu/undocumentedcampusresources/">
+        Campus Resources
+    </a>
+</li><li class="weblink">
+    <a href="https://mec.aamc.org/msar-ui/#/medSchoolDetails/159">
+        MSAR Report: PSOM
+    </a>
+</li><li >
+    <a href="support-and-resources/">
+        Support & Resources
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/idealmed/wellness.html">
+        Wellness Principles
+    </a>
+</li></ul>
+</li></ul></li>            <li x-data="{ opened: false }" :class="{ 'opened' : opened }" @click.outside="opened = false">
+    <button 
+        @click="opened = !opened"
+        aria-haspopup="true"
+        aria-expanded="false"
+        :aria-expanded="opened ? 'true' : 'false'"
+        @keydown.escape.window="opened = false"
+    ><span>Visiting Students</span></button>
+    <ul class="megamenu__dropdown" x-show="opened" x-cloak><li>
+    <span class="megamenu__subtitle">Getting Started</span>
+    <ul class="megamenu__dropdown-sub"><li >
+    <a href="application-and-dates.html">
+        Visiting Student Overview
+    </a>
+</li><li class="weblink">
+    <a href="https://oasis.med.upenn.edu/public/courses/select_student_level.html">
+        Course Catalog - OASIS
+    </a>
+</li><li >
+    <a href="assets/user-content/documents/visiting-students/som-visiting-student-immunization-record-updated-2024.pdf">
+        Immunization Record
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/visiting-clerkship-and-mentorship.html">
+        Visiting Clerkship and Mentorship Program
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">COVID-19 Requirements</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.phila.gov/programs/coronavirus-disease-2019-covid-19/guidance/guidance-documents/#/">
+        City of Philadelphia
+    </a>
+</li><li class="weblink">
+    <a href="https://www.health.pa.gov/topics/disease/coronavirus/Pages/Travelers.aspx">
+        Commonwealth of Pennsylvania 
+    </a>
+</li><li class="weblink">
+    <a href="https://coronavirus.upenn.edu/">
+        University of Pennsylvania
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Housing Options</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/application-and-dates.html#:~:text=Penn%20Hospitality%20Services">
+        Short-Term Housing Information
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Pediatric Clearances</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.compass.state.pa.us/cwis/public/home">
+        Child Welfare Portal
+    </a>
+</li><li class="weblink">
+    <a href="https://epatch.pa.gov/home">
+        Criminal History Check
+    </a>
+</li><li >
+    <a href="assets/user-content/documents/visiting-students/identogo-instructions.pdf">
+        IdentoGo Instructions
+    </a>
+</li><li class="weblink">
+    <a href="https://uenroll.identogo.com/">
+        IdentoGo Enrollment
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">Transportation</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.upenn.edu/services/transportation">
+        Penn Transportation & Parking
+    </a>
+</li><li class="weblink">
+    <a href="http://www.septa.org/">
+        Public Transportation - SEPTA
+    </a>
+</li></ul>
+</li><li>
+    <span class="megamenu__subtitle">More</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/secure/professionalism-at-psom.html">
+        PSOM Professionalism Portal
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/student/student-mistreatment-portal.html">
+        Student Mistreatment Portal
+    </a>
+</li></ul>
+</li></ul></li>            <li x-data="{ opened: false }" :class="{ 'opened' : opened }" @click.outside="opened = false">
+    <button 
+        @click="opened = !opened"
+        aria-haspopup="true"
+        aria-expanded="false"
+        :aria-expanded="opened ? 'true' : 'false'"
+        @keydown.escape.window="opened = false"
+    ><span>Faculty</span></button>
+    <ul class="megamenu__dropdown" x-show="opened" x-cloak><li>
+    <span class="megamenu__subtitle">Resources</span>
+    <ul class="megamenu__dropdown-sub"><li class="weblink">
+    <a href="https://www.med.upenn.edu/oaa/faculty-career-development/">
+        Career Development
+    </a>
+</li><li class="weblink">
+    <a href="https://upenn.cloud-cme.com/default.aspx">
+        Continuing Medical and Interprofessional Education Program
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/oaa/faculty-career-development/education-officers/">
+        Education Officer Toolbox
+    </a>
+</li><li class="weblink">
+    <a href="https://www.med.upenn.edu/oaa/faculty-career-development/professionalism/">
+        Professionalism
+    </a>
+</li></ul>
+</li></ul></li>        </ul>
+
+    </nav>
+    
+    
+    
+    <nav id="main-navigation" class="main-navigation" aria-label="MD Program">
+        <ul class="horizontal-nav dropdown-nav">
+<li 
+    class="first level1   short"
+>
+    <a class="" href="/student/"  >
+                <span><i class="fa fa-home"></i></span><span class="sr-only">MD Program Home</span>
+            </a>
+    </li>
+<li 
+    class="level1   "
+>
+    <a class="" href="umelt.html"  >
+                <span>UME Leadership Team</span>
+            </a>
+    </li>
+<li 
+    class="level1 long  "
+>
+    <a class="weblink" href="https://www.med.upenn.edu/admissions"  target="_blank">
+                <span>Admissions & Financial Aid</span>
+            </a>
+    </li>
+<li 
+    class="level1 long  "
+>
+    <a class="weblink" href="http://www.med.upenn.edu/educ_combdeg/"  target="_blank">
+                <span>Combined Degree & Physician Scholars</span>
+            </a>
+    </li>
+<li 
+    class="level1   "
+>
+    <a class="weblink" href="https://www.med.upenn.edu/ascend/about-ascend"  target="_blank">
+                <span>ASCEND</span>
+            </a>
+    </li>
+<li 
+    class="level1  short"
+>
+    <a href="lcme-accreditation/"  class="">
+        <span>LCME</span>
+    </a>
+</li>
+
+<li 
+    class="level1  " 
+    x-data="{ open : false }" 
+    :class="{ open : open }"
+    @click.outside="open = false"
+>
+    <button @click="open =! open" :aria-expanded="!open">
+        <span>MD Curriculum</span>
+    </button>
+    <ul x-show="open" class="dropdown-nav__sub" :aria-hidden="!open">
+                
+<li 
+    class="first level2   "
+>
+    <a class="" href="curriculum/"  >
+                <span>Curriculum</span>
+            </a>
+    </li>
+<li 
+    class="level2 long  "
+>
+    <a class="" href="advanced-educational-opportunities.html"  >
+                <span>Advanced Ed Opportunities</span>
+            </a>
+    </li>
+<li 
+    class="level2   "
+>
+    <a class="" href="areas-of-concentration.html"  >
+                <span>Areas of Concentration</span>
+            </a>
+    </li>
+<li 
+    class="level2   "
+>
+    <a class="weblink" href="https://www.med.upenn.edu/student/graduation-requirements.html"  target="_blank">
+                <span>Graduation Requirements</span>
+            </a>
+    </li>
+<li 
+    class="level2 long  "
+>
+    <a class="weblink" href="http://www.med.upenn.edu/clinicalresearch/"  target="_blank">
+                <span>PennMedicine Clinical Research</span>
+            </a>
+    </li>
+<li 
+    class="last level2   "
+>
+    <a class="weblink" href="https://www.med.upenn.edu/spprogram/"  target="_blank">
+                <span>Standardized Patients</span>
+            </a>
+    </li>    </ul>
+</li>
+
+<li 
+    class="level1  "
+>
+    <a href="policies/"  class="">
+        <span>Policies</span>
+    </a>
+</li>
+
+<li 
+    class="level1 long " 
+    x-data="{ open : false }" 
+    :class="{ open : open }"
+    @click.outside="open = false"
+>
+    <button @click="open =! open" :aria-expanded="!open">
+        <span>Pre-Medical Enrichment and Experiences</span>
+    </button>
+    <ul x-show="open" class="dropdown-nav__sub" :aria-hidden="!open">
+                <li 
+            class=""
+        >
+            <a href="pre-med-programs/"><span>Overview</span></a>
+        </li>
+                
+<li 
+    class="first level2   "
+>
+    <a class="" href="johnson-scholars.html"  >
+                <span>Johnson Scholars</span>
+            </a>
+    </li>
+<li 
+    class="level2   "
+>
+    <a class="" href="pass-program.html"  >
+                <span>PASS Program</span>
+            </a>
+    </li>
+<li 
+    class="last level2 long  "
+>
+    <a class="" href="hs-premed.html"  >
+                <span>High School Pre-Medical Programs</span>
+            </a>
+    </li>    </ul>
+</li>
+
+<li 
+    class="level1  "
+>
+    <a href="registrar/"  class="">
+        <span>Registrar</span>
+    </a>
+</li>
+
+<li 
+    class="level1  "
+>
+    <a href="office-of-student-affairs/"  class="">
+        <span>Student Affairs</span>
+    </a>
+</li>
+
+<li 
+    class="last level1  "
+>
+    <a href="support-and-resources/"  class="">
+        <span>Support & Resources</span>
+    </a>
+</li>
+</ul>    </nav>
+    
+    
+    <div
+        x-data="{ active: [], searchTerm: ''}"
+    >   
+    
+
+
+<div class="subpage-main ">
+
+        
+        <main >
+            
+            <ul class="breadcrumbs">
+    <li><a aria-label="Home" href="/student/"><i class="fa fa-home"></i></a></li>
+    <li>Visiting Student Overview</li></ul>            
+            
+                        
+
+            
+            <h1>
+                
+                                    Visiting Student Overview                            </h1>
+            
+
+            <div id="resource-content"
+                            >
+                <p class="call-out">This application is for students from U.S. medical schools that have been accredited by the Liaison Committee on Medical Education (LCME) or by the American Osteopathic Association. Students from international medical schools can find eligibility and application information on the&nbsp;<a href="http://www.med.upenn.edu/globalhealth/international-trainees-scholars.html">Center for Global Health</a>&nbsp;website.</p>
+
+<h3>2026 Dates</h3>
+
+<h5>Applications for Summer 2026&nbsp;are open in VSLO; applications close 90 days before rotation start dates. The options showing are the only sections with current availability. If you are not seeing certain dates/courses, it is likely that they are filled for that time period or are not being offered. Summer rotation dates are as follows:</h5>
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Month</th>
+			<th scope="col">Start Date</th>
+			<th scope="col">End Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>May</td>
+			<td>April 27, 2026</td>
+			<td>May 22, 2026</td>
+		</tr>
+		<tr>
+			<td>June</td>
+			<td>May 26, 2026 (Tuesday)</td>
+			<td>June 18, 2026 (Thursday)</td>
+		</tr>
+		<tr>
+			<td>July</td>
+			<td>July 6, 2026</td>
+			<td>July 31, 2026</td>
+		</tr>
+		<tr>
+			<td>August</td>
+			<td>August 3, 2026</td>
+			<td>August 28, 2026</td>
+		</tr>
+		<tr>
+			<td>September</td>
+			<td>August 31, 2026</td>
+			<td>September 25, 2026</td>
+		</tr>
+	</tbody>
+</table>
+
+<h5>Applications for Fall 2026&nbsp;are expected to open in mid-May. Fall rotation dates are as follows:</h5>
+
+<table>
+	<thead>
+		<tr>
+			<th scope="col">Month</th>
+			<th scope="col">Start Date</th>
+			<th scope="col">End Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>October</td>
+			<td>September 28, 2026</td>
+			<td>October 23, 2026</td>
+		</tr>
+		<tr>
+			<td>November</td>
+			<td>October 26, 2026</td>
+			<td>November 20, 2026</td>
+		</tr>
+		<tr>
+			<td>December</td>
+			<td>November 23, 2026</td>
+			<td>December 18, 2026</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>How to Apply</h2>
+
+<p>A student in good standing is eligible to apply for up to&nbsp;four (4) weeks&nbsp;of electives after completing the majority of the clerkships. Minimum requirements are medicine, surgery, and the core clerkship in the area of interest. Elective offerings are visible in&nbsp;<a href="https://students-residents.aamc.org/visiting-student-learning-opportunities/visiting-student-learning-opportunities-vslo">VSLO</a>&nbsp;for visiting MD and DO students.</p>
+
+<p>Only completed applications will be considered. Elective placements will be made according to the needs and interests of individual departments, and on a space-available basis.&nbsp;<strong>Due to the volume of applications we receive and the rotating nature of electives, we will be unable to respond to inquiries regarding availability and/or application status.&nbsp;</strong>Visiting students should not contact departments or course directors regarding the application process. Applicants will be notified via VSLO as soon as a determination has been made.</p>
+
+<p>Review the elective dates to be sure that Penn's elective schedule fits with the schedule at your institution.&nbsp;You must abide by our standard, 4-week rotation dates. Shortened or altered dates are not available. This policy is non-negotiable.&nbsp;If a date option does not appear for a particular month, the course is currently full.</p>
+
+<h3>Student Health Requirements</h3>
+
+<p>All visiting students are required to submit an up-to-date&nbsp;<a href="assets/user-content/documents/visiting-students/som-visiting-student-immunization-record-updated-2024.pdf">immunization record</a>&nbsp;that has been completed in full and signed by a healthcare provider.</p>
+
+<p>Provide documentation of personal health insurance (a photocopy of your insurance card is sufficient). In the event of illness, or the need for consultation regarding health care, visiting students must seek the services of a physician. In the event of an emergency, visiting students are advised to proceed immediately to the nearest emergency room. Any questions related to coverage (including costs) should be addressed by a student directly with their insurance provider.</p>
+
+<h3>Pediatrics Patient Contact Requirements</h3>
+
+<p>If your selected courses have pediatric patient contact (site location will be listed as CHOP or Children’s Hospital of Philadelphia) the State of Pennsylvania requires the following:</p>
+
+<ul>
+	<li>PA Child Abuse Clearance <a href="https://www.compass.state.pa.us/cwis/public/home">Child Welfare Portal</a>, select&nbsp;"Employee of Child Care Services"</li>
+	<li>Pennsylvania State Police Request for Criminal History Check (<a href="https://epatch.pa.gov/">PATCH</a>)&nbsp;&nbsp;</li>
+	<li>FBI Fingerprint Criminal History Clearance via&nbsp;<a href="http://uenroll.identogo.com/">IdentoGo</a>.&nbsp;&nbsp;
+	<ul>
+		<li>Enter your 6-character service code 1KG738&nbsp;</li>
+		<li><a href="assets/user-content/documents/uep-pacard-scan-instructions.pdf">Read detailed instructions</a></li>
+	</ul>
+	</li>
+</ul>
+
+<h3>COVID-19 Requirements</h3>
+
+<ul>
+	<li>Students coming to Penn for a visiting rotation are expected to adhere to the following guidelines:
+	<ul>
+		<li><a href="https://www.health.pa.gov/topics/disease/coronavirus/Pages/Travelers.aspx">Commonwealth of Pennsylvania</a>&nbsp;</li>
+		<li><a href="https://www.phila.gov/programs/coronavirus-disease-2019-covid-19/guidance/guidance-documents/#/">City of Philadelphia</a></li>
+		<li><a href="https://coronavirus.upenn.edu/">University of Pennsylvania</a></li>
+	</ul>
+	</li>
+	<li><em>COVID-19 Patient Encounter Readiness Checklist Prep Course:</em>&nbsp;this required Canvas course will help you become ready for encounters with patients who are confirmed or suspected to have COVID-19 (link provided post-application).</li>
+</ul>
+
+<h2>Acceptance Fee &amp; Costs</h2>
+
+<p>To confirm your enrollment, you must submit a <strong>non-refundable registration fee of $200 per elective within 10 days of receiving the acceptance notification</strong>. Please be aware that this is a registration fee and&nbsp;cannot be refunded&nbsp;if you later choose to drop the course.</p>
+
+<h2>Housing, Meals, Transportation &amp; Parking</h2>
+
+<p>You are responsible for locating and paying for your own housing, meals,&nbsp;transportation, and parking. Since parking is scarce and expensive, you may want to contact&nbsp;<a href="https://www.upenn.edu/services/transportation">Penn Transportation and Parking</a>.</p>
+
+<p>Final housing arrangements should be deferred until enrollment has been confirmed, in the event we are unable to accommodate your course request.</p>
+
+<h3>Short-term Housing Opportunities</h3>
+
+<ul>
+	<li><a href="http://cms.business-services.upenn.edu/offcampusservices/?p=housing_search/temporary_housing">Penn Off-Campus Services</a></li>
+	<li><a href="https://www.rightathomehomestay.com/index.html">Right at Home Homestay program</a></li>
+	<li><a href="http://universitycity.org/accommodations">University City District Website</a></li>
+	<li><a href="https://rotatingroom.com/">The Rotating Room</a>&nbsp;(sublets)</li>
+	<li><a href="https://www.urhomeinphilly.com/">Ur Home in Philly</a></li>
+	<li><a href="https://masonchestnut.com/">The Mason on Chestnut</a></li>
+</ul>
+
+<h3>Public Transportation</h3>
+
+<p>Local and regional public transportation options are available through <a href="https://www5.septa.org/">SEPTA</a>.</p>
+
+<h2>Performance Evaluation</h2>
+
+<p>Upon the completion of your elective, you will be evaluated via <a href="http://oasis.med.upenn.edu/index.html">OASIS</a> (online evaluation system). Once your performance evaluation is available, you can log into the system using your OASIS username and password to view and print a copy for your school.<br />
+<br />
+NOTE: Our faculty are not required to complete non-Penn evaluation forms.</p>
+
+<h2>Correspondence</h2>
+
+<p>Questions about the visiting student process can be emailed to the <a href="mailto:PSOMvisiting@PennMedicine.upenn.edu">Perelman School of Medicine registrar’s office</a>.</p>
+            </div>
+            
+                        
+            
+            
+            
+        </main>
+    </div>
+        
+        
+
+    </div>
+    
+    
+    
+    
+    <footer class="site-footer">
+                        <hr>
+        <div class="site-footer__button">
+            <a class="button--large" href="https://giving.apps.upenn.edu/find-fund?program=MED&area=SCH">Give Today</a>
+        </div>
+                
+        <hr>
+
+        <div class="site-footer__2-cols">
+            <section class="news-feed">
+                <h2 class="site-footer__heading">Latest News</h2>
+                                <div class="slider" x-data="slider()">
+    <div class="slider__controls slider__controls--outside-top" x-cloak>
+        <span class="slider__buttons" x-cloak x-show="slideCount > 1">
+            <button class="is-info" @click="prev($refs.container)" :disabled="activeIndex < 1">
+                <span class="sr-only">Move to previous slide</span>
+                <span class="fa-stack fa-2x">
+                    <i class="fa-solid fa-circle fa-2x"></i>
+                    <i class="fa-solid fa-caret-left fa-stack-1x fa-inverse"></i>
+                </span>
+            </button>
+            <button class="is-info" @click="next($refs.container)" :disabled="activeIndex >= slideCount-1">
+                <span class="sr-only">Move to next slide</span>
+                <span class="fa-stack fa-2x">
+                    <i class="fa-solid fa-circle fa-2x"></i>
+                    <i class="fa-solid fa-caret-right fa-stack-1x fa-inverse"></i>
+                </span>
+            </button>
+        </span>
+    </div>
+    <ul aria-describedby="news-feed-focus-instructions" 
+        aria-label="news feed" 
+        class="slider__slides slider__slides--subtle-scroll" 
+        tabindex="0" 
+        x-ref="container"
+    >
+		<li class="slide slider__slide news-slide">
+    
+    <h3 class="news-slide__title">
+        <a href="https://www.pennmedicine.org/news/the-history-of-pennsylvania-hospital-pine-building">The history of Pennsylvania Hospital’s Pine Building</a>
+    </h3>
+    
+    
+    <p class="date">May 06, 2026</p>
+    <p>The original structure of the nation&rsquo;s first chartered hospital&mdash;home to early mental health and maternity care&mdash;is a living symbol of innovation.</p>
+</li><li class="slide slider__slide news-slide">
+    
+    <h3 class="news-slide__title">
+        <a href="https://www.pennmedicine.org/news/where-275-years-of-medical-history-come-to-life">Where 275 years of medical history come to life</a>
+    </h3>
+    
+    
+    <p class="date">May 06, 2026</p>
+    <p>The future of medicine grows from understanding its past, and Pennsylvania Hospital&rsquo;s museum brings that history to life in a milestone anniversary year.</p>
+</li><li class="slide slider__slide news-slide">
+    
+    <h3 class="news-slide__title">
+        <a href="https://www.pennmedicine.org/news/specialized-rna-molecules-could-counter-als-neurodegeneration">Specialized RNA molecules could counter ALS neurodegeneration</a>
+    </h3>
+    
+    
+    <p class="date">May 06, 2026</p>
+    <p>Newly discovered molecules bind and restore function to the primary target of ALS in an animal model, pointing toward a new RNA-based therapeutic strategy.</p>
+</li><li class="slide slider__slide news-slide">
+    
+    <h3 class="news-slide__title">
+        <a href="https://www.pennmedicine.org/news/preserving-pennsylvania-hospital-history-never-gets-old">For the archivist, preserving Pennsylvania Hospital’s history ‘never gets old’</a>
+    </h3>
+    
+    
+    <p class="date">May 06, 2026</p>
+    <p>Stacey Peeples oversees the archives of the nation&rsquo;s first chartered hospital, home to a nearly three-hundred-year collection of medical artifacts.</p>
+</li><li class="slide slider__slide news-slide">
+    
+    <h3 class="news-slide__title">
+        <a href="https://www.pennmedicine.org/news/to-grow-as-a-nurse-i-keep-saying-yes">To grow as a nurse, I keep saying &lsquo;yes'</a>
+    </h3>
+    
+    
+    <p class="date">May 04, 2026</p>
+    <p>Sara Cohen draws on her experience in the intensive care nursery, as both nurse and parent, to support families at the Penn Parenting Resource Center.</p>
+</li>	</ul>
+    <p class="slider__instructions">
+        <span class="focus-text" id="news-feed-focus-instructions">Use arrow keys to view news feed</span>
+    </p>
+</div>            </section>
+            
+                    
+            
+                                        <div><h2 class="site-footer__heading">Links</h2>
+                        <nav id="more-navigation">
+                            <div class="footer-nav"><ul><li><a href="https://students-residents.aamc.org/">AAMC</a></li><li><a href="https://www.ama-assn.org/">AMA</a></li><li><a href="https://www.alumni.upenn.edu/s/1587/psom/index.aspx?sid=1587&gid=2&pgid=40687">Notable PSOM Alumni</a></li><li><a href="https://www.med.upenn.edu/student/secure/professionalism-at-psom.html">Professionalism Portal</a></li><li><a href="data-and-facts.html">PSOM Data and Facts</a></li><li><a href="https://catalog.upenn.edu">UPenn Course Catalog</a></li><li><a href="http://uphsxnet.uphs.upenn.edu/home/">UPHS Intranet</a></li></ul></div>
+                        </nav></div>            
+        </div>
+        
+        <div class="site-footer__copyright">
+            <hr>
+        
+            <p>
+                &copy; The Trustees of the University of Pennsylvania | Site best viewed in a 
+<a href="https://www.isc.upenn.edu/how-to/current-supported-computing-products">supported browser</a>. | 
+<a href="https://accessibility.web-resources.upenn.edu/get-help">Report Accessibility Issues and Get Help</a> | 
+<a href="https://www.upenn.edu/about/privacy_policy">Privacy Policy</a> | 
+Site Design: <a href ="https://www.med.upenn.edu/pmacswebteam/">PMACS Web Team.</a> 
+                                                   | <a class="sitemap" href="sitemap.html">Sitemap</a>
+                            </p>
+        </div>
+        
+        
+        <div class="back-to-top">
+        	<a class="back-to-top__link" href="application-and-dates.html#top">
+        		<span class="back-to-top__icon"></span>
+        		<span class="back-to-top__text">Back to Top</span>
+        	</a>
+        </div>
+        
+
+    </footer>
+        
+<script src="/cms_files/sites/student-2023/js/bucket.js"></script>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1704296545" async></script></body>
+
+</html>
