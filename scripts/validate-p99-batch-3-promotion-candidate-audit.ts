@@ -174,16 +174,45 @@ function run(): void {
     }
   }
 
-  // Active runtime + batch 2 + batch 3 unchanged on disk relative to HEAD
-  // Run git status --short on those paths; expect no output.
+  // Deferred batch-3 IDs MUST NOT appear in the current active runtime data file.
+  // (This invariant survives across activation slices: an audit defers a row
+  // means that row must not be active until a separate sprint authorizes it.)
+  const DEFERRED_NOT_YET_ACTIVE_IDS = [
+    "pilot-013-FL-jackson-memorial-hospital",
+    "pilot-015-IL-northwestern-memorial-hospital",
+    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
+    "pilot-018-TX-methodist-hospital-san-antonio",
+  ];
+  try {
+    const activeJsonPath = path.join(
+      REPO_ROOT,
+      "src/data/usce/public-listings-pilot.generated.json"
+    );
+    const activeJson = JSON.parse(fs.readFileSync(activeJsonPath, "utf8"));
+    const activeIds = new Set(
+      (activeJson.cards as Array<{ listing_id: string }>).map((c) => c.listing_id)
+    );
+    for (const id of DEFERRED_NOT_YET_ACTIVE_IDS) {
+      if (activeIds.has(id)) {
+        fail("DEFERRED_ID_PRESENT_IN_ACTIVE_RUNTIME", id,
+          "deferred batch-3 id activated without separate sprint authorization");
+      }
+    }
+  } catch (e) {
+    fail("ACTIVE_RUNTIME_READ_FAILED", "(active runtime json)", String(e));
+  }
+
+  // Batch 2 / batch 3 staged DATA files unchanged relative to HEAD.
+  // (Active runtime can drift across activation slices; staged data files
+  // should not.)
   try {
     const gitOut = execSync(
-      `git status --short -- src/data/usce/public-listings-pilot.generated.json src/data/usce/public-listings-pilot-staged-batch-2.generated.json src/data/usce/public-listings-pilot-staged-batch-3.generated.json src/app/clerkships/pilot 2>/dev/null || true`,
+      `git status --short -- src/data/usce/public-listings-pilot-staged-batch-2.generated.json src/data/usce/public-listings-pilot-staged-batch-3.generated.json 2>/dev/null || true`,
       { cwd: REPO_ROOT, encoding: "utf8" }
     ).trim();
     if (gitOut.length > 0) {
-      fail("RUNTIME_DATA_CHANGED", "(git status)",
-        `runtime/staged data or pilot route changed: ${gitOut}`);
+      fail("STAGED_DATA_CHANGED", "(git status)",
+        `staged data file changed: ${gitOut}`);
     }
   } catch { /* ignore */ }
 

@@ -69,14 +69,15 @@ export const KNOWN_LISTINGS: KnownListing[] = [
   // Prior staged 2
   { listingId: "pilot-011-PA-upmc-western-psychiatric-hospital", institutionName: "UPMC Western Psychiatric Hospital", city: "Pittsburgh", state: "PA", runtimeSet: "staged" },
   { listingId: "pilot-012-NY-nyc-health-hospitals-lincoln", institutionName: "NYC Health + Hospitals/Lincoln", city: "Bronx", state: "NY", runtimeSet: "staged" },
-  // Batch 3 new 7
+  // Batch 3 — activated in noindex slice 1 (Duke / NYU Tisch / IU Methodist)
+  { listingId: "pilot-014-NC-duke-university-hospital", institutionName: "Duke University Hospital", city: "Durham", state: "NC", runtimeSet: "active" },
+  { listingId: "pilot-017-NY-nyu-langone-tisch-hospital", institutionName: "NYU Langone Health - Tisch Hospital", city: "New York", state: "NY", runtimeSet: "active" },
+  { listingId: "pilot-019-IN-iu-health-methodist-hospital", institutionName: "Indiana University Health Methodist Hospital", city: "Indianapolis", state: "IN", runtimeSet: "active" },
+  // Batch 3 — staged-only (audit-deferred; not yet in active runtime)
   { listingId: "pilot-013-FL-jackson-memorial-hospital", institutionName: "Jackson Memorial Hospital", city: "Miami", state: "FL", runtimeSet: "staged" },
-  { listingId: "pilot-014-NC-duke-university-hospital", institutionName: "Duke University Hospital", city: "Durham", state: "NC", runtimeSet: "staged" },
   { listingId: "pilot-015-IL-northwestern-memorial-hospital", institutionName: "Northwestern Memorial Hospital", city: "Chicago", state: "IL", runtimeSet: "staged" },
   { listingId: "pilot-016-PA-hospital-of-the-university-of-pennsylvania", institutionName: "Hospital of the University of Pennsylvania", city: "Philadelphia", state: "PA", runtimeSet: "staged" },
-  { listingId: "pilot-017-NY-nyu-langone-tisch-hospital", institutionName: "NYU Langone Health - Tisch Hospital", city: "New York", state: "NY", runtimeSet: "staged" },
   { listingId: "pilot-018-TX-methodist-hospital-san-antonio", institutionName: "Methodist Hospital (San Antonio)", city: "San Antonio", state: "TX", runtimeSet: "staged" },
-  { listingId: "pilot-019-IN-iu-health-methodist-hospital", institutionName: "Indiana University Health Methodist Hospital", city: "Indianapolis", state: "IN", runtimeSet: "staged" },
 ];
 
 const KNOWN_LISTINGS_BY_ID = new Map(KNOWN_LISTINGS.map((l) => [l.listingId, l]));

@@ -1,0 +1,13 @@
+metric,before,after,delta,notes
+active_runtime_card_count,5,8,+3,Original 5 preserved verbatim; 3 batch-3 cards appended
+active_runtime_us_only_count,3,6,+3,Duke + NYU Tisch + IU Methodist all READY_PUBLIC_US_STUDENT_ONLY
+active_runtime_img_relevant_count,2,2,0,No change (CCF Mercy + CCF Hillcrest)
+staged_runtime_batch_3_count,14,14,0,Staged batch 3 file unchanged (cards remain in staged inventory; activation duplicates them into active runtime)
+staged_runtime_batch_2_count,7,7,0,Batch 2 unchanged
+production_public_count,0,0,0,Production main 739ab1e2 unchanged
+deferred_batch_3_in_active,0,0,0,Jackson / Northwestern / HUP / Methodist San Antonio remain non-active (validator-enforced)
+report_mappings_for_active,7_already + this_sprint_uses_those,7,0,Mappings for the 3 newly active rows already existed from prior sprint
+contact_context_resolves_for_active,8,8,+3,Resolver KNOWN_LISTINGS already covered the 3 new IDs — banner + hidden inputs render
+production_main_sha,739ab1e232ecc52db1f10c8619bbdc1d409a190f,739ab1e232ecc52db1f10c8619bbdc1d409a190f,UNCHANGED,Production untouched throughout
+public_search_index_exposure,NOINDEX_NOFOLLOW,NOINDEX_NOFOLLOW,UNCHANGED,Route metadata not modified
+homepage_or_nav_or_sitemap_exposure,NONE,NONE,UNCHANGED,No app code outside generated data + validator changed

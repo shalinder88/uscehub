@@ -111,7 +111,7 @@ All 12 validators PASS. Detail in `batch_3_promotion_candidate_validation_result
 - no HIGH-risk row shortlisted
 - shortlisted rows already exist in the prior batch-3 report-issue listing map
 - every non-shortlisted row has a defer reason
-- no `PUBLIC_NOW` / `IMPORT_READY` token in any audit doc
+- no bare runtime-promotion token in any audit doc (`NO_PUBLIC_NOW` / `NO_IMPORT_READY` discipline)
 - no drift on `src/data/usce/public-listings-pilot.generated.{json,ts}`, `src/data/usce/public-listings-pilot-staged-batch-2.generated.json`, `src/data/usce/public-listings-pilot-staged-batch-3.generated.json`, or `src/app/clerkships/pilot/`
 - no app source imports the staged batch-3 module
 
@@ -129,7 +129,7 @@ GitHub open alerts: NOT_VERIFIED_THIS_TURN (gh CLI logged out from the prior P0 
 - No DB / schema / Prisma / seed / cron.
 - No new evidence capture, no new screening, no Queue 4 work.
 - No new public copy expansion; no audience broadening; no caveat removal.
-- No `PUBLIC_NOW` / `IMPORT_READY` token introduced.
+- `NO_PUBLIC_NOW` / `NO_IMPORT_READY` token discipline preserved.
 - No mutation of unrelated dirty files.
 
 ## 11. Recommended next sprint
@@ -185,7 +185,7 @@ The "validate, stage, audit, then activate" discipline. Today's sprint is the au
 | No `/contact/*` change | CONFIRMED |
 | No homepage / nav / sitemap exposure | CONFIRMED |
 | No app code change | CONFIRMED — only docs + 1 validator added |
-| No `PUBLIC_NOW` / `IMPORT_READY` token | CONFIRMED |
+| `NO_PUBLIC_NOW` / `NO_IMPORT_READY` token discipline | CONFIRMED |
 | No banned phrase | CONFIRMED |
 | No T7 mutation | CONFIRMED |
 | No mutation of unrelated dirty files | CONFIRMED — `.claude/launch.json`, `public-listings.generated.{json,ts}`, NPPES, redesign-mockups, frozen-internal-copy READMEs all UNTOUCHED |

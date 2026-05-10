@@ -9,7 +9,10 @@
  *
  * Hard gates:
  *   - File exists and parses
- *   - Exactly 5 cards
+ *   - Exactly EXPECTED_CARD_COUNT cards (8 after noindex slice 1)
+ *   - The 5 ORIGINAL_PILOT_IDS preserved
+ *   - The 3 SLICE_1_NEW_IDS present (Duke / NYU Tisch / IU Methodist)
+ *   - No DEFERRED_NOT_YET_ACTIVE_IDS in active runtime
  *   - No excluded institutions
  *   - 21-field allow-list (or 20-field, matching Maine runtime)
  *   - No raw P97 internal field on the wire
@@ -29,6 +32,31 @@ const BLOCKED_INSTITUTION_SUBSTRINGS = [
   "Hemet Global", "Thomas Jefferson University Hospital",
   "Manatee Memorial", "University Hospital San Antonio", "UH San Antonio",
   "UPMC Western Psychiatric", "Lincoln Medical and Mental Health",
+];
+
+const EXPECTED_CARD_COUNT = 8;
+
+const ORIGINAL_PILOT_IDS = [
+  "pilot-001-NJ-morristown-medical-center",
+  "pilot-002-NJ-overlook-medical-center",
+  "pilot-003-OH-cleveland-clinic-mercy-hospital",
+  "pilot-004-OH-cleveland-clinic-hillcrest-hospital",
+  "pilot-007-CA-highland-hospital-alameda-health-system",
+];
+
+const SLICE_1_NEW_IDS = [
+  "pilot-014-NC-duke-university-hospital",
+  "pilot-017-NY-nyu-langone-tisch-hospital",
+  "pilot-019-IN-iu-health-methodist-hospital",
+];
+
+// Batch-3 staged rows that the audit deferred — must NEVER appear in
+// active runtime until a separate sprint explicitly authorizes them.
+const DEFERRED_NOT_YET_ACTIVE_IDS = [
+  "pilot-013-FL-jackson-memorial-hospital",
+  "pilot-015-IL-northwestern-memorial-hospital",
+  "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
+  "pilot-018-TX-methodist-hospital-san-antonio",
 ];
 
 const ALLOWED_RUNTIME_FIELDS = new Set([
@@ -97,10 +125,32 @@ function main() {
   const cards: Record<string, unknown>[] = raw.cards ?? [];
 
   console.log(`Runtime file: ${RUNTIME_JSON}`);
-  console.log(`  Cards: ${cards.length} (expected 5)`);
+  console.log(`  Cards: ${cards.length} (expected ${EXPECTED_CARD_COUNT})`);
 
-  if (cards.length !== 5) {
-    failures.push({ rule: "WRONG_CARD_COUNT", detail: `Expected exactly 5; got ${cards.length}` });
+  if (cards.length !== EXPECTED_CARD_COUNT) {
+    failures.push({ rule: "WRONG_CARD_COUNT", detail: `Expected exactly ${EXPECTED_CARD_COUNT}; got ${cards.length}` });
+  }
+
+  // ID-set sanity: original 5 preserved, slice-1 3 present, deferred absent
+  const presentIds = new Set(cards.map(c => String(c.listing_id ?? "")));
+  for (const id of ORIGINAL_PILOT_IDS) {
+    if (!presentIds.has(id)) {
+      failures.push({ rule: "ORIGINAL_PILOT_ID_MISSING", detail: `Original active id '${id}' not present` });
+    }
+  }
+  for (const id of SLICE_1_NEW_IDS) {
+    if (!presentIds.has(id)) {
+      failures.push({ rule: "SLICE_1_ID_MISSING", detail: `Slice-1 new id '${id}' not present` });
+    }
+  }
+  for (const id of DEFERRED_NOT_YET_ACTIVE_IDS) {
+    if (presentIds.has(id)) {
+      failures.push({ rule: "DEFERRED_ID_PRESENT_IN_ACTIVE", detail: `Deferred batch-3 id '${id}' must not be in active runtime — needs its own sprint authorization` });
+    }
+  }
+  // No duplicates
+  if (presentIds.size !== cards.length) {
+    failures.push({ rule: "DUPLICATE_LISTING_ID", detail: `${cards.length} cards but only ${presentIds.size} unique listing_ids` });
   }
 
   // 2. Per-card checks

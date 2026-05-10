@@ -1,6 +1,6 @@
 {
-  "promoted_at": "2026-05-08T17:43:52.984Z",
-  "source": "T7:micro_pilot_runtime_prep_1_input.csv",
+  "promoted_at": "2026-05-10T00:00:00Z",
+  "source": "T7:micro_pilot_runtime_prep_1_input.csv + P99-P97-STAGED-RUNTIME-BATCH-3-NOINDEX-ACTIVATION-SLICE-1",
   "source_commit_t7": "3b9d0fa",
   "cards": [
     {
@@ -229,6 +229,129 @@
       "official_source_url": "https://www.highlandmedicine.org/visiting-elective-scholarship",
       "source_status": "OFFICIAL_SOURCE_ARCHIVED",
       "last_reviewed_at": "2026-05-07T00:00:00Z"
+    },
+    {
+      "listing_id": "pilot-014-NC-duke-university-hospital",
+      "institution_name": "Duke University Hospital",
+      "campus_name": "Duke School of Medicine visiting-students office",
+      "state": "NC",
+      "county": "",
+      "specialty": "multispecialty_visiting",
+      "opportunity_type": "Visiting elective",
+      "source_page_type": "SYSTEM_PAGE",
+      "listing_role": "PUBLIC_OPPORTUNITY",
+      "display_bucket": "READY_PUBLIC_US_STUDENT_ONLY",
+      "eligible_audiences": [
+        "US_MD_DO"
+      ],
+      "excluded_audiences": [
+        "INTERNATIONAL_STUDENT",
+        "IMG_GRADUATE",
+        "CARIBBEAN_STUDENT"
+      ],
+      "unknown_audiences": [],
+      "restriction_tags": [
+        "LCME_AOA_ONLY",
+        "COCA_OSTEO_ALSO_ELIGIBLE",
+        "VSLO_REQUIRED",
+        "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE",
+        "NO_J1_VERIFIED",
+        "NO_H1B_VERIFIED"
+      ],
+      "fit_warnings": [
+        "LCME_AOA_ONLY",
+        "VSLO_REQUIRED"
+      ],
+      "audience_detail": {
+        "us_md_do": "ELIGIBLE_EXPLICIT",
+        "international_student": "EXCLUDED_EXPLICIT",
+        "img_graduate": "EXCLUDED_EXPLICIT",
+        "caribbean_student": "EXCLUDED_EXPLICIT"
+      },
+      "application_url": "",
+      "official_source_url": "https://medschool.duke.edu/education/health-professions-education-programs/student-services/office-registrar/visiting-students",
+      "source_status": "OFFICIAL_SOURCE_ARCHIVED",
+      "last_reviewed_at": "2026-05-09T00:00:00Z"
+    },
+    {
+      "listing_id": "pilot-017-NY-nyu-langone-tisch-hospital",
+      "institution_name": "NYU Langone Health - Tisch Hospital",
+      "campus_name": "Site-level Tisch Hospital under NYU Langone Health",
+      "state": "NY",
+      "county": "",
+      "specialty": "multispecialty_visiting",
+      "opportunity_type": "Visiting elective",
+      "source_page_type": "SYSTEM_PAGE",
+      "listing_role": "PUBLIC_OPPORTUNITY",
+      "display_bucket": "READY_PUBLIC_US_STUDENT_ONLY",
+      "eligible_audiences": [
+        "US_MD_DO"
+      ],
+      "excluded_audiences": [
+        "INTERNATIONAL_STUDENT",
+        "IMG_GRADUATE",
+        "CARIBBEAN_STUDENT"
+      ],
+      "unknown_audiences": [],
+      "restriction_tags": [
+        "LCME_AOA_ONLY",
+        "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE",
+        "NO_J1_VERIFIED",
+        "NO_H1B_VERIFIED"
+      ],
+      "fit_warnings": [
+        "LCME_AOA_ONLY"
+      ],
+      "audience_detail": {
+        "us_md_do": "ELIGIBLE_EXPLICIT",
+        "international_student": "EXCLUDED_EXPLICIT",
+        "img_graduate": "EXCLUDED_EXPLICIT",
+        "caribbean_student": "EXCLUDED_EXPLICIT"
+      },
+      "application_url": "",
+      "official_source_url": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+      "source_status": "OFFICIAL_SOURCE_ARCHIVED",
+      "last_reviewed_at": "2026-05-09T00:00:00Z"
+    },
+    {
+      "listing_id": "pilot-019-IN-iu-health-methodist-hospital",
+      "institution_name": "Indiana University Health Methodist Hospital",
+      "campus_name": "Site-level IU Health Methodist Hospital under IU SOM",
+      "state": "IN",
+      "county": "",
+      "specialty": "multispecialty_visiting",
+      "opportunity_type": "Visiting elective",
+      "source_page_type": "SYSTEM_PAGE",
+      "listing_role": "PUBLIC_OPPORTUNITY",
+      "display_bucket": "READY_PUBLIC_US_STUDENT_ONLY",
+      "eligible_audiences": [
+        "US_MD_DO"
+      ],
+      "excluded_audiences": [
+        "INTERNATIONAL_STUDENT",
+        "IMG_GRADUATE",
+        "CARIBBEAN_STUDENT"
+      ],
+      "unknown_audiences": [],
+      "restriction_tags": [
+        "LCME_AOA_ONLY",
+        "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE",
+        "NO_J1_VERIFIED",
+        "NO_H1B_VERIFIED"
+      ],
+      "fit_warnings": [
+        "LCME_AOA_ONLY"
+      ],
+      "audience_detail": {
+        "us_md_do": "ELIGIBLE_EXPLICIT",
+        "international_student": "EXCLUDED_EXPLICIT",
+        "img_graduate": "EXCLUDED_EXPLICIT",
+        "caribbean_student": "EXCLUDED_EXPLICIT"
+      },
+      "application_url": "",
+      "official_source_url": "https://medicine.iu.edu/md/admissions/guest-students",
+      "source_status": "OFFICIAL_SOURCE_ARCHIVED",
+      "last_reviewed_at": "2026-05-09T00:00:00Z"
     }
   ]
 }

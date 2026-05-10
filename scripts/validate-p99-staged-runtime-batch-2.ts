@@ -148,12 +148,19 @@ function validate(stagedPath: string, repoRoot: string): Failure[] {
     }
   }
 
-  // Active 5 IDs preserved AND content matches active runtime
+  // Original-active-5 IDs preserved verbatim. (Note: this validator was authored
+  // when active runtime was exactly the original 5; later activation slices may
+  // grow the active runtime by adding new cards that were never in batch-2's
+  // snapshot. We therefore only assert that batch 2 STILL contains the original
+  // 5 with content matching their current active form, not that it contains
+  // every newly active card.)
   const activeCards = loadActiveCards(repoRoot);
   const stagedById = new Map<string, Record<string, unknown>>();
   for (const c of cards) stagedById.set(c["listing_id"] as string, c);
+  const ORIGINAL_ACTIVE_IDS_AT_BATCH_2_TIME = new Set(EXPECTED_ACTIVE_IDS);
   for (const a of activeCards) {
     const aid = a["listing_id"] as string;
+    if (!ORIGINAL_ACTIVE_IDS_AT_BATCH_2_TIME.has(aid)) continue;
     const s = stagedById.get(aid);
     if (!s) {
       failures.push({ rule: "ACTIVE_ID_MISSING", row: aid, detail: "active card not preserved in staged file" });

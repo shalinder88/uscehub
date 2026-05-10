@@ -1,0 +1,16 @@
+validator_or_check,input,status,errors,warnings,notes
+validate-no-secrets,(repo-wide),PASS,0,0,1165 files scanned
+tsc --noEmit,(repo-wide),PASS,0,0,Type check clean across modified resolver + form + page + active runtime data
+validate-micro-pilot-runtime (UPDATED 5 → 8),src/data/usce/public-listings-pilot.generated.json,PASS,0,0,8 cards / original-5 preserved / slice-1 IDs present / deferred IDs absent
+validate-p99-staged-runtime-batch-2 (UPDATED original-5 cross-check),src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Batch 2 still data-only; original-5 preserved verbatim in batch 2
+validate-p99-staged-runtime-batch-3,src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,Batch 3 staged file unchanged
+validate-p99-staged-runtime-batch-3-report-mapping,(no arg),PASS,0,0,Mapping CSVs unchanged
+validate-p99-batch-3-promotion-candidate-audit (UPDATED active-runtime-drift policy),(no arg),PASS,0,0,Replaces git-status check with deferred-IDs-not-in-active runtime data invariant
+validate-p99-contact-ref-prefill (UPDATED runtime_set assertions),(no arg),PASS,0,0,3 activated → runtime_set=active; 4 staged → runtime_set=staged
+validate-p99-correction-intake-payload,(samples),PASS,0,0,8 sample payloads
+validate-p99-correction-queue-item,(test-output),PASS,0,0,4 queue items
+validate-p99-correction-audit-log,(test-output),PASS,0,0,4 audit logs
+browser preview /clerkships/pilot,(curl + DOM),PASS,0,0,8 institution names rendered; 4 deferred absent; '8 listings' header; noindex meta; zero banned phrases; zero console errors / warnings
+browser preview /contact for 3 activated rows,(curl),PASS,0,0,Banner + hidden listing_id + hidden runtime_set=active for each of Duke / NYU Tisch / IU Methodist
+browser preview /contact?ref=pilot-feedback,(curl),PASS,0,0,Generic Subject dropdown; no banner
+gh secret-scanning open alerts,(gh logged out),NOT_VERIFIED_THIS_TURN,0,0,Last verified state — alert #1 resolved as wont_fix; open list = []

@@ -61,28 +61,38 @@ function run(): void {
   check("UPMC_RUNTIME_SET", upmcId, c2.runtimeSet === "staged",
     `runtimeSet ${c2.runtimeSet}`);
 
-  // Batch 3 new rows — all 7
-  const newIds = [
-    "pilot-013-FL-jackson-memorial-hospital",
+  // Batch 3 — activated in noindex slice 1
+  const ACTIVATED_IDS = [
     "pilot-014-NC-duke-university-hospital",
-    "pilot-015-IL-northwestern-memorial-hospital",
-    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
     "pilot-017-NY-nyu-langone-tisch-hospital",
-    "pilot-018-TX-methodist-hospital-san-antonio",
     "pilot-019-IN-iu-health-methodist-hospital",
   ];
-  for (const id of newIds) {
+  // Batch 3 — staged-only (audit-deferred)
+  const STAGED_ONLY_IDS = [
+    "pilot-013-FL-jackson-memorial-hospital",
+    "pilot-015-IL-northwestern-memorial-hospital",
+    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
+    "pilot-018-TX-methodist-hospital-san-antonio",
+  ];
+  for (const id of ACTIVATED_IDS) {
     const c = resolveContactContext({ listing_id: id, ref: "pilot-listing" });
-    check("BATCH3_VALID", id, c.status === "VALID_LISTING_CONTEXT",
+    check("BATCH3_ACTIVATED_VALID", id, c.status === "VALID_LISTING_CONTEXT",
       `status ${c.status}`);
-    check("BATCH3_RUNTIME_SET", id, c.runtimeSet === "staged",
+    check("BATCH3_ACTIVATED_RUNTIME_SET", id, c.runtimeSet === "active",
       `runtimeSet ${c.runtimeSet}`);
-    check("BATCH3_NAME_PRESENT", id, !!c.displayInstitutionName,
+    check("BATCH3_ACTIVATED_NAME_PRESENT", id, !!c.displayInstitutionName,
       `displayInstitutionName empty`);
-    check("BATCH3_CITYSTATE_PRESENT", id, !!c.displayCityState,
+    check("BATCH3_ACTIVATED_CITYSTATE_PRESENT", id, !!c.displayCityState,
       `displayCityState empty`);
-    check("BATCH3_LISTING_ID_PRESERVED", id, c.listingId === id,
+    check("BATCH3_ACTIVATED_LISTING_ID_PRESERVED", id, c.listingId === id,
       `listingId mismatch: ${c.listingId}`);
+  }
+  for (const id of STAGED_ONLY_IDS) {
+    const c = resolveContactContext({ listing_id: id, ref: "pilot-listing" });
+    check("BATCH3_STAGED_VALID", id, c.status === "VALID_LISTING_CONTEXT",
+      `status ${c.status}`);
+    check("BATCH3_STAGED_RUNTIME_SET", id, c.runtimeSet === "staged",
+      `runtimeSet ${c.runtimeSet} (deferred batch-3 row should still be 'staged')`);
   }
 
   // Invalid listing_id (regex pass but unknown)
