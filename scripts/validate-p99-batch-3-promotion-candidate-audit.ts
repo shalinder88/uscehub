@@ -174,13 +174,12 @@ function run(): void {
     }
   }
 
-  // Deferred batch-3 IDs MUST NOT appear in the current active runtime data file.
-  // (This invariant survives across activation slices: an audit defers a row
-  // means that row must not be active until a separate sprint authorizes it.)
+  // Deferred batch-3 IDs that MUST NOT appear in the current active runtime
+  // data file. After slice 2, HUP and Northwestern are no longer deferred —
+  // they were authorized into active runtime by the slice 2 sprint. Jackson
+  // and Methodist San Antonio remain deferred.
   const DEFERRED_NOT_YET_ACTIVE_IDS = [
     "pilot-013-FL-jackson-memorial-hospital",
-    "pilot-015-IL-northwestern-memorial-hospital",
-    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
     "pilot-018-TX-methodist-hospital-san-antonio",
   ];
   try {

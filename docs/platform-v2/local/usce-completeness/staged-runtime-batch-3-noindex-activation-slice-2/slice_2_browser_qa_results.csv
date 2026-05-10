@@ -1,0 +1,15 @@
+check,url,expected,actual,status,screenshot_path,notes
+clerkships_pilot_loads,/clerkships/pilot,HTTP 200 + page renders,HTTP 200 + 81535 bytes,PASS,(in-conversation),
+clerkships_pilot_count_header,/clerkships/pilot,"10 listings · 2 open to international students per source · 8 US MD/DO per source",EXACTLY MATCHES (number separated by HTML comments in markup),PASS,(in-conversation),Header copy auto-derived from updated PILOT_*_COUNT exports
+clerkships_pilot_active_8_visible,/clerkships/pilot,Original 5 + Slice-1 3 institutions present,All 8 present,PASS,(DOM eval),
+clerkships_pilot_slice2_2_visible,/clerkships/pilot,Hospital of the University of Pennsylvania + Northwestern Memorial Hospital present,Both present,PASS,(DOM eval),HUP + Northwestern rendered correctly
+clerkships_pilot_deferred_2_absent,/clerkships/pilot,Jackson + Methodist San Antonio NOT rendered,Both absent,PASS,(DOM eval),Validator-enforced absence
+clerkships_pilot_noindex_meta,/clerkships/pilot,robots meta contains 'noindex',Present,PASS,(curl HTML),Route metadata preserved
+clerkships_pilot_no_banned_phrase,/clerkships/pilot,no guaranteed / IMG-friendly / hospital-approved / apply through USCEHub / nationwide,None present,PASS,(curl + DOM),Validator deep-walk PASS
+clerkships_pilot_console_errors,/clerkships/pilot,zero,zero errors,PASS,(preview_console_logs),
+contact_banner_pilot_016_hup,/contact?ref=pilot-listing&listing_id=pilot-016-PA-hospital-of-the-university-of-pennsylvania,"banner: Hospital of the University of Pennsylvania, Philadelphia, PA + reference: pilot-listing + hidden runtime_set=active",EXACTLY MATCHES,PASS,(curl HTML),
+contact_banner_pilot_015_northwestern,/contact?ref=pilot-listing&listing_id=pilot-015-IL-northwestern-memorial-hospital,"banner: Northwestern Memorial Hospital, Chicago, IL + hidden runtime_set=active",EXACTLY MATCHES,PASS,(curl HTML),
+contact_deferred_pilot_013_jackson_remains_staged,/contact?ref=pilot-listing&listing_id=pilot-013-FL-jackson-memorial-hospital,banner present + hidden runtime_set=staged,EXACTLY MATCHES,PASS,(curl HTML),Confirms deferred status preserved
+contact_deferred_pilot_018_methodist_sa_remains_staged,/contact?ref=pilot-listing&listing_id=pilot-018-TX-methodist-hospital-san-antonio,banner present + hidden runtime_set=staged,EXACTLY MATCHES,PASS,(curl HTML),Confirms deferred status preserved
+contact_disabled_endpoint_polite_message,/api/usce/corrections POST,404 + polite generic,Verified in prior sprint with same endpoint behavior,PASS,(prior sprint),Endpoint env-flag unchanged
+prisma_homepage_pool_exhaustion,/,(out of scope; pre-existing),Pre-existing DB connection limit; not affected by this slice,DOC_OUT_OF_SCOPE,(server logs),Notable but unrelated to /clerkships/pilot or /contact

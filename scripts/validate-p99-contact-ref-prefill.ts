@@ -61,17 +61,19 @@ function run(): void {
   check("UPMC_RUNTIME_SET", upmcId, c2.runtimeSet === "staged",
     `runtimeSet ${c2.runtimeSet}`);
 
-  // Batch 3 — activated in noindex slice 1
+  // Batch 3 — activated in noindex slices 1 + 2
   const ACTIVATED_IDS = [
+    // Slice 1
     "pilot-014-NC-duke-university-hospital",
     "pilot-017-NY-nyu-langone-tisch-hospital",
     "pilot-019-IN-iu-health-methodist-hospital",
+    // Slice 2
+    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
+    "pilot-015-IL-northwestern-memorial-hospital",
   ];
-  // Batch 3 — staged-only (audit-deferred)
+  // Batch 3 — staged-only (audit-deferred; remains so after slice 2)
   const STAGED_ONLY_IDS = [
     "pilot-013-FL-jackson-memorial-hospital",
-    "pilot-015-IL-northwestern-memorial-hospital",
-    "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
     "pilot-018-TX-methodist-hospital-san-antonio",
   ];
   for (const id of ACTIVATED_IDS) {

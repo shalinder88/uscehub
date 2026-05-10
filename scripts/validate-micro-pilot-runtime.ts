@@ -9,10 +9,11 @@
  *
  * Hard gates:
  *   - File exists and parses
- *   - Exactly EXPECTED_CARD_COUNT cards (8 after noindex slice 1)
+ *   - Exactly EXPECTED_CARD_COUNT cards (10 after noindex slice 2)
  *   - The 5 ORIGINAL_PILOT_IDS preserved
  *   - The 3 SLICE_1_NEW_IDS present (Duke / NYU Tisch / IU Methodist)
- *   - No DEFERRED_NOT_YET_ACTIVE_IDS in active runtime
+ *   - The 2 SLICE_2_NEW_IDS present (HUP / Northwestern)
+ *   - No DEFERRED_NOT_YET_ACTIVE_IDS in active runtime (Jackson / Methodist San Antonio)
  *   - No excluded institutions
  *   - 21-field allow-list (or 20-field, matching Maine runtime)
  *   - No raw P97 internal field on the wire
@@ -34,7 +35,7 @@ const BLOCKED_INSTITUTION_SUBSTRINGS = [
   "UPMC Western Psychiatric", "Lincoln Medical and Mental Health",
 ];
 
-const EXPECTED_CARD_COUNT = 8;
+const EXPECTED_CARD_COUNT = 10;
 
 const ORIGINAL_PILOT_IDS = [
   "pilot-001-NJ-morristown-medical-center",
@@ -50,12 +51,15 @@ const SLICE_1_NEW_IDS = [
   "pilot-019-IN-iu-health-methodist-hospital",
 ];
 
-// Batch-3 staged rows that the audit deferred — must NEVER appear in
-// active runtime until a separate sprint explicitly authorizes them.
+const SLICE_2_NEW_IDS = [
+  "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
+  "pilot-015-IL-northwestern-memorial-hospital",
+];
+
+// Batch-3 staged rows that remain deferred after slice 2 — must NEVER appear
+// in active runtime until a separate sprint explicitly authorizes them.
 const DEFERRED_NOT_YET_ACTIVE_IDS = [
   "pilot-013-FL-jackson-memorial-hospital",
-  "pilot-015-IL-northwestern-memorial-hospital",
-  "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
   "pilot-018-TX-methodist-hospital-san-antonio",
 ];
 
@@ -141,6 +145,11 @@ function main() {
   for (const id of SLICE_1_NEW_IDS) {
     if (!presentIds.has(id)) {
       failures.push({ rule: "SLICE_1_ID_MISSING", detail: `Slice-1 new id '${id}' not present` });
+    }
+  }
+  for (const id of SLICE_2_NEW_IDS) {
+    if (!presentIds.has(id)) {
+      failures.push({ rule: "SLICE_2_ID_MISSING", detail: `Slice-2 new id '${id}' not present` });
     }
   }
   for (const id of DEFERRED_NOT_YET_ACTIVE_IDS) {
