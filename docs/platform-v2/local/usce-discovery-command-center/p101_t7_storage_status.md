@@ -1,68 +1,67 @@
 # P101 — T7 Artifact Storage Status
 
-**Last updated:** 2026-05-11 (P101-3B sprint — third check after operator clarification: "T7" = T7 Shield)
+**Last updated:** 2026-05-11 (P101-3C — canonical root reconciliation complete)
 
 ## T7 mount status
 
-| Check | P101-3 | P101-3B (initial) | P101-3B (after operator clarification) |
+| Check | P101-3 | P101-3B | P101-3C (canonical) |
 |---|---|---|---|
-| Drive identified as canonical "T7" | `/Volumes/T7` (assumed) | `/Volumes/T7` (assumed) | **`/Volumes/T7Shield_Code`** |
-| Mounted? | NO | NO | **YES** |
-| Writable? | N/A | N/A | **YES** |
-| Free space | N/A | N/A | **1.8 TB free** |
-| Evidence root (actual) | NOT CREATED | NOT CREATED | **`/Volumes/T7Shield_Code/USCEHubEvidence/p101/<ST>/<slug>/`** — created 2026-05-11 |
-| Co-tenancy note | n/a | n/a | T7 Shield also hosts `01_PROJECTS/iOS_Systolo/` (Systolo active source per memory). USCEHubEvidence is a sibling at drive root — no collision. |
-| Decision | Document PENDING | Initially blocker doc written | Operator clarified naming; blocker doc retracted; backfill ran successfully on all 10 packets |
+| Drive | `/Volumes/T7` (assumed, never mounted) | `/Volumes/T7Shield_Code` (clarified by operator) | `/Volumes/T7Shield_Code` |
+| Mounted | NO | **YES** | **YES** |
+| Writable | N/A | **YES** | **YES** |
+| Free space | N/A | 1.8 TB | 1.8 TB |
+| Evidence root | NOT CREATED | `/Volumes/T7Shield_Code/USCEHubEvidence/p101/` (**mistaken sibling root** — relocated in P101-3C) | **`/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/<ST>/<slug>/`** (canonical capsule, parallel to existing `p96/` + `p97/` evidence) |
+| Co-tenancy | n/a | n/a | USCEHub capsule holds `08_ACTIVE_ON_SHIELD_LATER/`, `09_ARCHIVES/`, `10_BACKUPS/`, `11_LOCAL_EVIDENCE/` — P101 lives in `11_LOCAL_EVIDENCE/p101/` |
+| Decision | Pending (drive offline) | Backfill ran successfully — but to wrong top-level root | Tree copied byte-identical (verified per-file SHA-256), packet+manifest paths updated, validator hardened, legacy root preserved with `LEGACY_ROOT_RELOCATED.md` pointer |
 
-## Artifacts stored (P101-3B)
+## Canonical artifact layout (P101-3C onward)
 
-| Type | Count | Storage |
+```
+/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/<STATE>/<institution-slug>/
+├── cleaned-text/  <sha1>.txt        the SHA-256 input
+├── source-pages/  <sha1>.html       raw fetched HTML
+├── metadata/      <sha1>.meta.json  fetch metadata (status, redirects, content-type, fetched-at)
+├── hashes/        <sha1>.txt.sha256 one-line SHA-256 file per cleaned-text artifact
+├── screenshots/   (PENDING — no captures this sprint)
+└── pdfs/          (PENDING — Emory + Cook County queued)
+```
+
+## Artifacts stored (P101-3B captured · P101-3C relocated)
+
+| Type | Count | Storage location |
 |---|---|---|
-| Cleaned text files | **10** | `T7/<ST>/<slug>/cleaned-text/<sha1>.txt` |
-| Raw HTML files | **10** | `T7/<ST>/<slug>/source-pages/<sha1>.html` |
-| Source hashes (real SHA-256) | **10** | recorded in packet JSON (`changeDetectionPrep.sourceHash`, `sourceEvidence[].cleanedTextHash`) AND as `.sha256` files on T7 |
-| Fetch metadata JSON | **10** | `T7/<ST>/<slug>/metadata/<sha1>.meta.json` |
-| Screenshots | 0 | PENDING — `p101-fetch-html.ts` is curl-based (no screenshot capability); preview MCP not invoked for these 10 URLs this sprint |
-| PDFs | 0 | PENDING — Emory + Cook County reference PDFs queued (helper `p101-extract-pdf-text.ts` ready) |
+| Cleaned text files | **10** | `<canonical>/<ST>/<slug>/cleaned-text/<sha1>.txt` |
+| Raw HTML files | **10** | `<canonical>/<ST>/<slug>/source-pages/<sha1>.html` |
+| Fetch metadata JSON | **10** | `<canonical>/<ST>/<slug>/metadata/<sha1>.meta.json` |
+| SHA-256 hash files | **10** | `<canonical>/<ST>/<slug>/hashes/<sha1>.txt.sha256` |
+| Source hashes (real, in packet JSON) | **10** | `changeDetectionPrep.sourceHash` + `sourceEvidence[].cleanedTextHash` |
+| Screenshots | 0 | PENDING — curl-based fetcher has no screenshot capability; not invoked via preview MCP this sprint |
+| PDFs | 0 | PENDING — Emory policy PDF + Cook County 2018 PDF queued; helper `p101-extract-pdf-text.ts` ready |
 
-## Artifacts stored
+## Relocation verification (P101-3C)
 
-| Type | Count this sprint | Storage location |
-|---|---|---|
-| Raw HTML files | 0 | (T7 pending) |
-| Cleaned text files | 0 | (T7 pending) |
-| Screenshots | 0 | (T7 pending) |
-| PDF binaries | 0 | (T7 pending) |
-| Source hashes | recorded in packet JSON `changeDetectionPrep.sourceHash` | git (string only, no binary) |
-| Wayback snapshot URLs | 0 | (deferred; no automation this sprint) |
-
-## What is pending
-
-- All 10 retrofitted packets carry `cleanedTextPath: ""`, `screenshotPath: ""`, `pdfPath: ""` for their `sourceEvidence` entries — the file paths cannot be populated until T7 is mounted in a future sprint.
-- `screenshotStatus: "PENDING"` on every sourceEvidence entry across the 10 packets.
-- The `sourceHash` field in `changeDetectionPrep` is populated from the cleaned-text hash of the SSR'd content at WebFetch time as a placeholder — the canonical hash will be re-computed when the page is actually saved to T7. This means today's hash is a *capture-time* hash; tomorrow's hash for change-detection should be compared against the next-recheck hash, not against today's placeholder. Documented in each packet's `changeDetectionPrep.notes`.
+| Check | Result |
+|---|---|
+| Source file count at legacy root | 40 |
+| Destination file count at canonical root | 40 |
+| Per-file SHA-256 diff (legacy ↔ canonical) | **0 differences** — every byte matches |
+| Packet JSONs path-rewritten (10 packets) | YES |
+| Artifact manifest CSV path-rewritten | YES |
+| Legacy root preserved | YES — `LEGACY_ROOT_RELOCATED.md` pointer written at `/Volumes/T7Shield_Code/USCEHubEvidence/LEGACY_ROOT_RELOCATED.md`, tree not deleted |
+| Validator enforces canonical-root prefix | YES — fails on `T7Shield_Code/USCEHubEvidence` prefix in any packet `cleanedTextPath` |
 
 ## Large files committed to git
 
-**NONE.** No HTML / PDF / PNG / JPEG was committed to `docs/` or any other git-tracked path during this sprint. Validator `validate-p101-discovery-command-center.ts` enforces this by scanning the command-center folder for files > 100 KB or with binary-suspect extensions; it will fail the commit if any are found.
+**NONE.** No HTML / PDF / PNG / JPEG was committed to `docs/` or any other git-tracked path during P101-3 / P101-3B / P101-3C. The validator scans the command-center folder for files > 100 KB and binary-suspect extensions and fails on any hit.
 
-## How to enable T7 storage in a future sprint
+## What is still pending (carries into P101-4+)
 
-1. Plug in the T7 (`/Volumes/T7` should mount automatically).
-2. Create the root: `mkdir -p /Volumes/T7/USCEHubEvidence/p101/`.
-3. Run the (future) backfill script `scripts/p101-backfill-t7-artifacts.ts` against each existing packet's `sourceEvidence[].sourceUrl`. The script (not yet written) would:
-   - re-fetch each sourceUrl with the existing `p101-fetch-html.ts` helper
-   - save raw HTML + cleaned text + SHA-256 hash under `/Volumes/T7/USCEHubEvidence/p101/<ST>/<slug>/source-evidence/`
-   - update the packet JSON's `cleanedTextPath`, `screenshotPath`, `pdfPath`, `screenshotStatus`, `cleanedTextHash` fields
-   - update `p101_artifact_manifest.csv` rows with `storedOnT7: true`, `captureStatus: CAPTURED`
-4. Re-run the validator. Any packet still marked PENDING after backfill should be queued for manual retry (likely bot-blocked or PDF-fail).
+- **Screenshots**: 10 PENDING across all 10 packets.
+- **PDFs**: 2 PENDING (Emory policy PDF + Cook County 2018 PDF).
+- **Secondary URL hashes**: 7 packets carry secondary `sourceEvidence` entries with `PENDING_T7_BACKFILL` hash placeholders. Primary URLs (the main one per packet) are all real now.
 
-## Why we chose "pending" over "blocking"
+## Hard rule (unchanged)
 
-If we made T7 a hard prerequisite, the entire P101-3 sprint would block until the drive is mounted. That trades one form of progress for another. Instead, we capture the *index* now (packet JSON + manifest + hashes in repo) and leave the *blobs* (HTML, text, screenshots, PDFs) for the future T7 backfill. The packet JSON itself remains the source of truth for classification and verbatim quotes — the artifacts are change-detection backup, not the primary evidence.
-
-## Hard rule
-
-Even when T7 IS mounted in future sprints, no large file is to be committed to git. The split is fixed:
-- Repo = index, schema, validators, packet JSON, manifests, hashes (strings)
-- T7 = HTML, text, screenshots, PDFs, raw evidence binaries
+Repo = index, schema, validators, packet JSON, manifests, hash strings.
+T7 = HTML, cleaned text, screenshots, PDFs, raw binaries.
+**No large file ever committed to git.**

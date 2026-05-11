@@ -70,7 +70,18 @@ const REQUIRED_DOCS = [
   // P101-3B T7 artifact backfill
   "p101_3b_artifact_backfill_queue.csv",
   "P101_3B_T7_ARTIFACT_BACKFILL_CHECKPOINT.md",
+  // P101-3C T7 evidence root reconciliation
+  "P101_3C_T7_CANONICAL_ROOT_DECISION.md",
+  "p101_3c_t7_artifact_relocation_plan.csv",
+  "P101_3C_T7_ROOT_RECONCILIATION_CHECKPOINT.md",
 ];
+
+// P101-3C: T7 evidence MUST live in the USCEHub product capsule on T7 Shield,
+// not at a sibling top-level root. Any cleanedTextPath / pdfPath /
+// screenshotPath / metadataPath that references T7 must start with this
+// canonical prefix.
+const T7_CANONICAL_ROOT_PREFIX = "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/";
+const T7_LEGACY_ROOT_PREFIX = "/Volumes/T7Shield_Code/USCEHubEvidence/p101/";
 
 // Canonical fieldQuoteMap field names for p101-3-enhanced packets.
 const ENHANCED_FIELD_NAMES = new Set([
@@ -351,6 +362,16 @@ function validateEnhanced(o: Record<string, unknown>, rel: string): void {
       if (ss !== "CAPTURED" && typeof row.screenshotPath === "string" && row.screenshotPath !== "") {
         fail("ENHANCED_SCREENSHOT_PATH_WITHOUT_CAPTURE", rel, `sourceEvidence[${i}] has screenshotPath but status ${ss}`);
       }
+      // P101-3C: any non-empty T7-anchored path must use the canonical capsule root.
+      for (const k of ["cleanedTextPath","screenshotPath","pdfPath","metadataPath","rawHtmlPath"] as const) {
+        const v = row[k];
+        if (typeof v !== "string" || v === "") continue;
+        if (v.startsWith(T7_LEGACY_ROOT_PREFIX)) {
+          fail("T7_LEGACY_ROOT_PATH", rel, `sourceEvidence[${i}].${k} uses legacy T7 root '${T7_LEGACY_ROOT_PREFIX}' — must use '${T7_CANONICAL_ROOT_PREFIX}'`);
+        } else if (v.startsWith("/Volumes/T7Shield_Code/") && !v.startsWith(T7_CANONICAL_ROOT_PREFIX)) {
+          fail("T7_NON_CANONICAL_ROOT", rel, `sourceEvidence[${i}].${k} is on T7 Shield but outside canonical capsule: '${v}'`);
+        }
+      }
     }
   }
 
@@ -470,6 +491,16 @@ function validateEnhanced(o: Record<string, unknown>, rel: string): void {
     if (typeof cdp.nextRecheckDue !== "string" || cdp.nextRecheckDue === "") fail("ENHANCED_CDP_NEXT_RECHECK_MISSING", rel, "changeDetectionPrep.nextRecheckDue empty");
     const cr = cdp.changeRisk;
     if (typeof cr !== "string" || !["LOW","MEDIUM","HIGH"].includes(cr)) fail("ENHANCED_CDP_CHANGE_RISK_INVALID", rel, `changeRisk '${String(cr)}' invalid`);
+    // P101-3C: any T7-anchored path inside changeDetectionPrep must also use canonical root.
+    for (const k of ["cleanedTextPath","rawHtmlPath","screenshotPath","pdfPath","metadataPath"]) {
+      const v = cdp[k];
+      if (typeof v !== "string" || v === "") continue;
+      if (v.startsWith(T7_LEGACY_ROOT_PREFIX)) {
+        fail("T7_LEGACY_ROOT_PATH", rel, `changeDetectionPrep.${k} uses legacy T7 root '${T7_LEGACY_ROOT_PREFIX}'`);
+      } else if (v.startsWith("/Volumes/T7Shield_Code/") && !v.startsWith(T7_CANONICAL_ROOT_PREFIX)) {
+        fail("T7_NON_CANONICAL_ROOT", rel, `changeDetectionPrep.${k} is on T7 Shield but outside canonical capsule: '${v}'`);
+      }
+    }
   }
 }
 
