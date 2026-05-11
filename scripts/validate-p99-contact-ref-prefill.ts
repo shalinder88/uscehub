@@ -72,9 +72,12 @@ function run(): void {
     "pilot-015-IL-northwestern-memorial-hospital",
   ];
   // Batch 3 — staged-only (audit-deferred; remains so after slice 2)
+  // + Batch 4 — staged-only (Queue 4 Session 1 bridge-validated; pending audit + activation)
   const STAGED_ONLY_IDS = [
     "pilot-013-FL-jackson-memorial-hospital",
     "pilot-018-TX-methodist-hospital-san-antonio",
+    "pilot-020-TN-vanderbilt-university-medical-center",
+    "pilot-021-CA-ucsf-medical-center",
   ];
   for (const id of ACTIVATED_IDS) {
     const c = resolveContactContext({ listing_id: id, ref: "pilot-listing" });
@@ -192,7 +195,7 @@ function run(): void {
 
   // KNOWN_LISTINGS sanity
   check("KNOWN_LISTINGS_COUNT", "known_listings",
-    KNOWN_LISTINGS.length === 14, `expected 14 got ${KNOWN_LISTINGS.length}`);
+    KNOWN_LISTINGS.length === 16, `expected 16 got ${KNOWN_LISTINGS.length}`);
   check("KNOWN_LISTINGS_HAS_PILOT_LISTING_REF",
     "allowed_report_refs",
     (ALLOWED_REPORT_REFS as readonly string[]).includes("pilot-listing"),
@@ -270,7 +273,7 @@ function main(): void {
 
   if (failures.length === 0) {
     console.log("\nOverall: PASSED");
-    console.log("  Resolver handles 14 known listings + invalid/oversized/injection inputs.");
+    console.log("  Resolver handles 16 known listings + invalid/oversized/injection inputs.");
     console.log("  Contact page wires context to client form. Hidden fields present.");
     console.log("  No batch-3 data import. No file upload. No forbidden token in output.");
     process.exit(0);

@@ -1,0 +1,10 @@
+validator,status,errors,notes
+validate-no-secrets,PASS,0,1268 files
+tsc --noEmit,PASS,0,
+validate-p99-staged-runtime-batch-4-report-mapping (NEW),PASS,0,2 IDs / resolver staged / no app drift / no forbidden token
+validate-p99-contact-ref-prefill (UPDATED to 16),PASS,0,Resolver KNOWN_LISTINGS_COUNT expectation bumped 14 -> 16
+validate-p99-staged-runtime-batch-4,PASS,0,Active 10 verbatim + Vanderbilt + UCSF staged
+validate-micro-pilot-runtime,PASS,0,Active 10 preserved
+validate-p99-staged-runtime-batch-3,PASS,0,Untouched
+validate-p99-staged-runtime-batch-3-report-mapping,PASS,0,Untouched
+gh secret-scanning open alerts,PASS,0,0 open

@@ -1,0 +1,10 @@
+check,result,evidence,notes
+resolver_KNOWN_LISTINGS_count,16,src/lib/usce-contact-context.ts now has 16 entries,Was 14; added pilot-020 + pilot-021 with runtimeSet=staged
+pilot-020_resolves_with_runtime_set_staged,YES,validate-p99-contact-ref-prefill.ts PASS,
+pilot-021_resolves_with_runtime_set_staged,YES,validate-p99-contact-ref-prefill.ts PASS,
+contact_page_unchanged,YES,git status --short src/app/contact -> empty,
+batch_4_staged_data_unchanged,YES,git status --short src/data/usce/public-listings-pilot-staged-batch-4.generated.json -> empty,
+active_runtime_unchanged,YES,git status --short src/data/usce/public-listings-pilot.generated.json -> empty,
+no_app_import_of_staged_batch_4,YES,validator import-safety grep clean,
+banner_renders_for_pilot_020,VERIFIED_BY_RESOLVER_VALIDATOR_TESTS,STAGED_ONLY_IDS test asserts runtime_set=staged,browser preview deferred to Sprint 3 cumulative
+banner_renders_for_pilot_021,VERIFIED_BY_RESOLVER_VALIDATOR_TESTS,STAGED_ONLY_IDS test asserts runtime_set=staged,browser preview deferred to Sprint 3 cumulative
