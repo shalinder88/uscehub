@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "University of Alabama at Birmingham Hospital",
+    "aliases": [
+      "UAB Hospital",
+      "UAB Medicine",
+      "UAB Heersink School of Medicine — International Medical Education (visiting-students lane)"
+    ],
+    "city": "Birmingham",
+    "state": "AL",
+    "officialDomain": "uab.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UAB Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 27 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "uab.edu",
+      "uabmedicine.org"
+    ],
+    "searchTermsTried": [
+      "UAB Birmingham visiting medical student elective international site:uab.edu OR site:uabmedicine.org",
+      "international visiting medical student",
+      "IVMS",
+      "international visiting medical observer",
+      "VSLO",
+      "visiting student program Heersink",
+      "fourth-year elective UAB",
+      "observership UAB"
+    ],
+    "pagesOpened": [
+      "https://www.uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "https://www.uab.edu/medicine/international/international-programs/international-visiting-medical-students/frequently-asked-questions",
+      "https://www.uab.edu/medicine/international/international-programs/observership",
+      "https://www.uab.edu/medicine/home/current-students/registrar-records/visiting-student-program",
+      "https://www.uab.edu/medicine/surgery/education/medical-students/visiting-students",
+      "https://www.uab.edu/medicine/peds/education/fourth-year-elective-acting-internship/visiting-student-rotation"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://bb.uab.edu/medicine/imresidency/apply/visiting-students",
+        "title": "Visiting Students | Tinsley Harrison Internal Medicine Residency Program",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://www.uab.edu/medicine/home/future-students/visiting-students",
+        "title": "Advanced Standing & Transfer | Heersink School of Medicine",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "Domain accessible; WebFetch returned clean content; no bot block on international medical education hub.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "pageTitle": "International Visiting Medical Students | International Medical Education",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "You must be in the final year of training at your home school or you must have completed one year of core clerkship rotations. You must be actively enrolled in a program leading to the equivalent of an MD or DO.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Maximum 8 weeks (verbatim)",
+      "specialtyDecision": "Multispecialty per catalog (Surgery, Pediatrics, Neurology, IM and others enumerated)",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FINAL_YEAR_OR_POST_CLERKSHIP_ONLY",
+        "COMMITTEE_REVIEWED_NOT_GUARANTEED — competitive applications only",
+        "TOEFL_iBT_100_MIN_22_SPEAKING_REQUIRED",
+        "B1_B2_VISA_REQUIRED_NOT_J1",
+        "ENROLLMENT_IN_HOME_SCHOOL_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "pageTitle": "International Visiting Medical Students | International Medical Education",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "The application fee of $350 is non-refundable. Cost per 4-week non-credit elective is $5,200. This includes tuition, housing and transport to and from the airport.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Per 4-week elective; max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "COST_VERBATIM_5200_PER_4_WEEK",
+        "APP_FEE_350_NON_REFUNDABLE",
+        "HOUSING_INCLUDED_IN_PROGRAM_FEE"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "pageTitle": "International Visiting Medical Students | International Medical Education",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "students participating in the IVMS Program enter the United States on a B-1/B-2 Visa with passport stamp for B-1 (Business)",
+      "quoteSupports": ["visa"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "B1_B2_VISA_REQUIRED_FOR_IVMS_PROGRAM",
+        "NOT_J1_NOT_F1"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 8,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "",
+    "weakNegativeEvidence": "Page does not enumerate every specialty available; catalog must be consulted for specialty-level availability (separate course catalog URL exists at apps.medicine.uab.edu/catalog)."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Eligible for future public-safe activation with caveats. If activated, must carry: (a) B-1/B-2 visa requirement, (b) TOEFL iBT 100 (22 speaking) requirement, (c) MS-final-year-or-post-1yr-core-clerkships restriction, (d) committee-reviewed (not guaranteed) language, (e) $5,200/4wk + $350 application fee verbatim, (f) housing-included note. Separate IMG-graduate observership lane also exists at /observership URL — that needs its own packet in a future sprint.",
+  "plainEnglishSummary": "UAB in Birmingham runs a real International Visiting Medical Students program for international medical students in their final year (or post-1-year-core-clerkships). The cost is $5,200 per 4-week rotation plus a $350 non-refundable application fee, housing included. Students enter on a B-1/B-2 visa, must score 100 on TOEFL iBT with at least 22 on speaking, and applications are committee-reviewed not guaranteed. Max 8 weeks total.",
+  "driftCheck": "This advanced national USCE discovery because Alabama gained a verified international-student-eligible USCE pathway with verbatim cost + visa + duration evidence; no noindex/backend/schema work touched."
+}

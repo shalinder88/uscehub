@@ -1,0 +1,28 @@
+metric,value,as_of,notes
+active_discovery_lane,Queue 4 Session 2 first 5 (ranks 26-30 from queue_4_candidate_rows.csv),2026-05-11,Selected from repo evidence not memory
+state_currently_active,AR -> AL -> DC -> DC -> DC (rotates across institutions),2026-05-11,STATE_GAP_FILL_THIN lane
+region_currently_active,Mixed (Little Rock / Birmingham / Washington DC),2026-05-11,
+institution_currently_being_searched,N_A_PRE_SEARCH,2026-05-11,Pre-search; Phase 5 not yet executed
+institutions_searched_in_this_sprint,0,2026-05-11,Target: 5
+official_domains_checked_in_this_sprint,0,2026-05-11,
+packets_created_in_this_sprint,0,2026-05-11,Target: 5
+candidate_usce_pages_found,0,2026-05-11,
+CURRENT_USCE_CONFIRMED,0,2026-05-11,
+POSSIBLE_USCE_NEEDS_REVIEW,0,2026-05-11,
+VSLO_US_MD_DO_ONLY,0,2026-05-11,
+INTERNATIONAL_STUDENT_CONFIRMED,0,2026-05-11,
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,2026-05-11,
+RESEARCH_ONLY,0,2026-05-11,
+FUTURE_LANE_ONLY,0,2026-05-11,
+AFFILIATED_ONLY,0,2026-05-11,
+RESIDENCY_ONLY,0,2026-05-11,
+NO_PUBLIC_USCE_LANE_FOUND,0,2026-05-11,
+BOT_BLOCKED_MANUAL_RETRY,0,2026-05-11,
+SOURCE_DEAD,0,2026-05-11,
+UNKNOWN_NEEDS_RETRY,0,2026-05-11,
+existing_packets_recovered,2,2026-05-11,Both Maine Cumberland packets
+existing_queues_recovered,3,2026-05-11,Queue 4 candidate rows + Session 1 rows + next-10 sprint plan
+existing_304_triaged,0,2026-05-11,Not in scope for P101-0
+discovery_engine_completion_pct,15,2026-05-11,Pre-sprint estimate per command-center scale
+public_v1_readiness_pct,43,2026-05-11,Post-active-12-QA estimate; unchanged
+next_exact_institution,UAMS Medical Center / Little Rock / AR / uams.edu (rank 26),2026-05-11,From queue_4_candidate_rows.csv

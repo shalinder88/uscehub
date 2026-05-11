@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "UAMS Medical Center",
+    "aliases": [
+      "University of Arkansas for Medical Sciences Medical Center",
+      "UAMS College of Medicine (visiting-students lane)",
+      "University of Arkansas College of Medicine"
+    ],
+    "city": "Little Rock",
+    "state": "AR",
+    "officialDomain": "uams.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UAMS Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 26 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "uams.edu",
+      "medicine.uams.edu"
+    ],
+    "searchTermsTried": [
+      "UAMS Medical Center Little Rock visiting medical student elective observership site:uams.edu",
+      "visiting medical student",
+      "visiting students",
+      "VSLO",
+      "medical student elective",
+      "fourth-year elective",
+      "international visiting student",
+      "observership",
+      "clinical elective"
+    ],
+    "pagesOpened": [
+      "https://medicine.uams.edu/students/visiting-students/",
+      "https://ortho.uams.edu/medical-students/elective-rotations/",
+      "https://psychiatry.uams.edu/education/medical-student-programs/",
+      "https://medicine.uams.edu/emergencymedicine/medical-students/",
+      "https://medicine.uams.edu/neurosurgery/education/elective-rotations/",
+      "https://medicine.uams.edu/pediatrics/education-training/mse/vse-scholarship/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://nwa.uams.edu/residency-and-fellowship-programs/rural-training-program-family-medicine-residency/program-information/faq/",
+        "title": "FAQ | UAMS Northwest Regional Campus (residency FAQ)",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://nwa.uams.edu/residency-and-fellowship-programs/uams-washington-regional-internal-medicine-residency/program-information/frequently-asked-questions/",
+        "title": "Frequently Asked Questions | UAMS Washington Regional IM Residency",
+        "reason": "RESIDENCY_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "Domain accessible. No bot block on visiting-students hub. WebFetch returned clean content.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.uams.edu/students/visiting-students/",
+      "pageTitle": "Visiting Students | UAMS College of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "matriculated at an LCME accredited medical school, or a school of osteopathic medicine accredited by the American Osteopathic Association",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Maximum 8 weeks; usual period 4 weeks (verbatim from source)",
+      "specialtyDecision": "Fourth-year electives only; multispecialty (Orthopaedics, Psychiatry, EM, Neurosurgery, Pediatrics, PM&R confirmed via department pages)",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "SCHOOL_LEVEL_SOURCE — Page is UAMS College of Medicine visiting-students hub; UAMS Medical Center (hospital) not separately enumerated as a placement guarantee",
+        "MS4_ONLY",
+        "AFFILIATION_AGREEMENT_REQUIRED — Dean/Associate Dean signed permission letter required",
+        "VSLO_REQUIRED",
+        "COST_NOT_STATED_ON_SOURCE",
+        "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.uams.edu/students/visiting-students/",
+      "pageTitle": "Visiting Students | UAMS College of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "may pursue elective studies at the University of Arkansas College of Medicine for no more than a total of eight (8) weeks, and the usual period is four weeks",
+      "quoteSupports": ["duration"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "8 weeks max, 4 weeks usual",
+      "specialtyDecision": "Fourth-year electives only",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_ONLY duration confirmed verbatim"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.uams.edu/students/visiting-students/",
+      "pageTitle": "Visiting Students | UAMS College of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "UAMS uses VSLO, the Visiting Student Learning Opportunities, to receive visiting student applications.",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "8 weeks max",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "VSLO_REQUIRED verbatim"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 9,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "Page restricts eligibility to LCME-accredited or AOA-accredited schools, which excludes non-US medical schools (IMG / international medical students) by definition. No language welcoming international students found on the hub or department pages opened.",
+    "weakNegativeEvidence": "No explicit IMG-exclusion statement (the exclusion is by accreditation requirement rather than by explicit wording). Cost and visa silence is also weak negative — absence of mention, not affirmative exclusion."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Defer to public activation. If activated, must carry SCHOOL_LEVEL_SOURCE caveat (UAMS College of Medicine, not UAMS Medical Center hospital-specific) and US_LCME_AOA_ONLY caveat. Cost must be recorded as NOT_STATED_ON_SOURCE (do not infer). No IMG / international claim permitted.",
+  "plainEnglishSummary": "UAMS in Little Rock offers visiting medical student electives through VSLO. Eligibility is limited to students from US LCME-accredited or AOA-accredited medical schools, meaning IMGs and international medical students are not eligible per the source. Max 8 weeks, usually 4, MS4 only, affiliation agreement with the student's home Dean required. The source page is the UAMS College of Medicine hub, not a hospital-specific page, so any future card must say so.",
+  "driftCheck": "This advanced national USCE discovery because Arkansas moved from zero-coverage to one classified institution packet (UAMS) with documented audience + application + duration evidence; no noindex/backend/schema work touched."
+}

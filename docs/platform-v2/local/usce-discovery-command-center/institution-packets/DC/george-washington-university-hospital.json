@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "George Washington University Hospital",
+    "aliases": [
+      "GW Hospital",
+      "GWU Hospital",
+      "GW SMHS visiting students lane (covering GW Hospital placement)"
+    ],
+    "city": "Washington",
+    "state": "DC",
+    "officialDomain": "gwhospital.com",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Universal Health Services (clinical) / GW SMHS (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 29 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "smhs.gwu.edu",
+      "gwhospital.com",
+      "imp.smhs.gwu.edu"
+    ],
+    "searchTermsTried": [
+      "George Washington University School of Medicine visiting medical student elective international VSLO site:gwu.edu",
+      "GW SMHS visiting students",
+      "GW Hospital visiting medical student",
+      "ICEP international clinical electives",
+      "GW VSLO away rotation",
+      "GW visiting student application fee",
+      "GW International Medicine Programs"
+    ],
+    "pagesOpened": [
+      "https://smhs.gwu.edu/academics/md-program/visiting-students",
+      "https://smhs.gwu.edu/academics/md-program/opportunities-students/vslo-away-rotation-preparation-guide",
+      "https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students",
+      "https://smhs.gwu.edu/academics/md-program/opportunities-students",
+      "https://dermatology.smhs.gwu.edu/visiting-student-rotation",
+      "https://orthopaedicsurgery.smhs.gwu.edu/medical-student-application-information/visiting-students"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://medicineresidency.smhs.gwu.edu/visiting-medical-students",
+        "title": "Visiting Medical Students | Medicine Residency",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://smhs.gwu.edu/academics/graduate-medical-education/elective-research-rotations",
+        "title": "GW Elective & Research Rotations (GME)",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://guides.himmelfarb.gwu.edu/ms4clerkships/electives",
+        "title": "MS4 Electives Research Guide",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "smhs.gwu.edu accessible; gwhospital.com (clinical site) does not surface a visiting-students lane directly. The lane lives at the SMHS hub. WebFetch returned clean content.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://smhs.gwu.edu/academics/md-program/visiting-students",
+      "pageTitle": "Visiting Students | School of Medicine and Health Sciences",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students who take an elective must be enrolled in their senior year of medical school at a U.S. LCME medical school or COCA accredited AACOM member colleges. They must be in good academic standing after completing their core rotations.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE (rolling basis only)",
+      "specialtyDecision": "Multispecialty per VSLO; named specialty pages found (Dermatology, Orthopaedic Surgery)",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "SCHOOL_LEVEL_SOURCE — GW SMHS hub; GW Hospital named as placement site but covered as part of system access",
+        "MS4_SENIOR_YEAR_ONLY",
+        "US_LCME_OR_COCA_AACOM_ONLY",
+        "GOOD_ACADEMIC_STANDING_REQUIRED_POST_CORE_ROTATIONS",
+        "VSLO_REQUIRED",
+        "ROLLING_BASIS_ACCEPTANCE"
+      ]
+    },
+    {
+      "sourceUrl": "https://smhs.gwu.edu/academics/md-program/visiting-students",
+      "pageTitle": "Visiting Students | School of Medicine and Health Sciences",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "we will provide ID access for the School of Medicine & Health Sciences (Ross Hall), the GW Hospital, and the Himmelfarb Library",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "GW_HOSPITAL_EXPLICITLY_NAMED_AS_ACCESS_SITE"
+      ]
+    },
+    {
+      "sourceUrl": "https://smhs.gwu.edu/academics/md-program/visiting-students",
+      "pageTitle": "Visiting Students | School of Medicine and Health Sciences",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "The required application fee is $75.00 (due upon acceptance)",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "APP_FEE_75_USD_DUE_UPON_ACCEPTANCE"
+      ]
+    },
+    {
+      "sourceUrl": "https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students",
+      "pageTitle": "International Clinical Electives Program (ICEP) for International Students",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "IMP can only process applications from international students that are current students at one of the ICEP-affiliated sites and have been selected by their home university to participate in an elective at GW.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week clinical elective",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "AFFILIATED_ONLY",
+      "caveats": [
+        "ICEP_LANE_IS_EXCHANGE_AFFILIATION_ONLY",
+        "NOT_OPEN_PUBLIC_PATHWAY_FOR_INTERNATIONAL_STUDENTS",
+        "ONLY_FROM_ICEP_AFFILIATED_HOME_UNIVERSITIES"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 7,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "International students lane (ICEP) is explicitly restricted to pre-affiliated home universities, not open to general international applicants or IMGs. Main visiting-students hub explicitly restricts to US LCME or COCA AACOM senior-year students.",
+    "weakNegativeEvidence": "gwhospital.com (clinical site) does not directly surface the visiting-students lane; discoverability for non-affiliated international students requires navigating to imp.smhs.gwu.edu and emailing IMP."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Eligible for public-safe activation in a future sprint with caveats: (a) SCHOOL_LEVEL_SOURCE — GW SMHS, not GW Hospital page; (b) MS4 senior year + US LCME or COCA AACOM only; (c) VSLO required; (d) $75 application fee due upon acceptance; (e) GW Hospital named as access site; (f) separate ICEP lane is affiliation-only, NOT a public international pathway — must not be misrepresented as IMG-friendly.",
+  "plainEnglishSummary": "GW Hospital accepts visiting medical students through GW SMHS's visiting-students program. Only US senior-year (MS4) students from LCME-accredited or COCA-accredited osteopathic schools may apply via VSLO. Application fee is $75 due upon acceptance. The hospital itself is explicitly named as an access site. International students have a separate ICEP lane but it's exchange-agreement-only — not open to general international applicants. Visa and duration not stated on the public hub.",
+  "driftCheck": "This advanced national USCE discovery because DC gained a second classified institution with documented audience + application + cost + source-scope evidence; explicit negative finding on international students lane (ICEP is affiliation-only) protects against future IMG-friendly overclaim."
+}

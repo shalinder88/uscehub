@@ -1,0 +1,11 @@
+queue_rank,sprint,state,region_or_county,institution_name,city,official_domain_if_known,priority,why_selected,source_of_queue_decision,search_status
+1,P101-0,AR,Pulaski,UAMS Medical Center,Little Rock,uams.edu,P1_FOR_STATE_GAP,AR thin coverage; UAMS AMC; documented Queue 4 rank 26,queue_4_candidate_rows.csv rank 26,QUEUED
+2,P101-0,AL,Jefferson,University of Alabama at Birmingham Hospital,Birmingham,uabmedicine.org,P1_FOR_STATE_GAP,AL thin (2 rows); UAB AMC HIGH yield; documented Queue 4 rank 27,queue_4_candidate_rows.csv rank 27,QUEUED
+3,P101-0,DC,N_A_DISTRICT,MedStar Washington Hospital Center,Washington,medstarwashington.org,P1_FOR_STATE_GAP,DC thin (1 row); largest DC hospital; documented Queue 4 rank 28,queue_4_candidate_rows.csv rank 28,QUEUED
+4,P101-0,DC,N_A_DISTRICT,George Washington University Hospital,Washington,gwhospital.com,P1_FOR_STATE_GAP,DC thin; GW SMHS AMC; documented Queue 4 rank 29,queue_4_candidate_rows.csv rank 29,QUEUED
+5,P101-0,DC,N_A_DISTRICT,Howard University Hospital,Washington,huhealthcare.com,P2_FOR_STATE_GAP,DC thin; HBCU AMC; documented Queue 4 rank 30,queue_4_candidate_rows.csv rank 30,QUEUED
+6,P101-1,CA,San Francisco,UCSF Medical Center,San Francisco,ucsfhealth.org,P0_AMC_GAP,Already in active runtime but discovery packet does not yet exist in command center; reconcile,queue_4_candidate_rows.csv rank 31,QUEUED_NEXT_SPRINT
+7,P101-1,CA,Los Angeles,UCLA Ronald Reagan Medical Center,Los Angeles,uclahealth.org,P0_AMC_GAP,Major CA AMC; Geffen SOM lane,queue_4_candidate_rows.csv rank 32,QUEUED_NEXT_SPRINT
+8,P101-1,CA,San Diego,UC San Diego Health,La Jolla,health.ucsd.edu,P1_AMC_GAP,Major CA AMC; UCSD SOM affiliate,queue_4_candidate_rows.csv rank 33,QUEUED_NEXT_SPRINT
+9,P101-1,CA,Sacramento,UC Davis Medical Center,Sacramento,health.ucdavis.edu,P1_AMC_GAP,Major CA AMC; UC Davis SOM affiliate,queue_4_candidate_rows.csv rank 34,QUEUED_NEXT_SPRINT
+10,P101-1,CA,Santa Clara,Stanford Health Care,Stanford,stanfordhealthcare.org,P0_AMC_GAP,Major CA AMC; Stanford SOM lane (already in active runtime per overnight),queue_4_candidate_rows.csv rank 35,QUEUED_NEXT_SPRINT
