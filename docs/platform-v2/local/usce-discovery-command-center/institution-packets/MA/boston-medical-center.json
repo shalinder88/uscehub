@@ -5,7 +5,7 @@
     "name": "Boston Medical Center",
     "aliases": [
       "BMC",
-      "Boston University Chobanian & Avedisian School of Medicine \u2014 International Student Elective Program (ISEP)"
+      "Boston University Chobanian & Avedisian School of Medicine — International Student Elective Program (ISEP)"
     ],
     "city": "Boston",
     "state": "MA",
@@ -125,14 +125,14 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 5,
     "openedPagesCount": 5,
-    "strongNegativeEvidence": "Two explicit verbatim exclusions found: Caribbean medical school students AND MD-degree-holders are not eligible for ISEP. This is the first P101 packet with both exclusions captured verbatim \u2014 important to prevent IMG-grad overclaim on BMC.",
+    "strongNegativeEvidence": "Two explicit verbatim exclusions found: Caribbean medical school students AND MD-degree-holders are not eligible for ISEP. This is the first P101 packet with both exclusions captured verbatim — important to prevent IMG-grad overclaim on BMC.",
     "weakNegativeEvidence": "Application process specifics not captured verbatim on the hub; the application instructions live on a sub-page."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC \u2014 BU CASM ISEP at BMC; (b) international final-year-MS only; (c) Caribbean-school + MD-grad explicit exclusions; (d) tuition $3,000 per 4-wk, max 2 electives; (e) B-1/B-2 visa with BUCASM invitation letter available.",
+  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC — BU CASM ISEP at BMC; (b) international final-year-MS only; (c) Caribbean-school + MD-grad explicit exclusions; (d) tuition $3,000 per 4-wk, max 2 electives; (e) B-1/B-2 visa with BUCASM invitation letter available.",
   "plainEnglishSummary": "Boston Medical Center accepts international visiting medical students through BU's International Student Elective Program. Final-year medical students only. Caribbean schools are explicitly excluded; MD graduates (observers) are explicitly excluded. Tuition is $3,000 per 4-week elective, max two electives. Students apply for a B-1/B-2 visa; BUCASM provides an invitation letter.",
-  "driftCheck": "This advanced national USCE discovery because Massachusetts gained its first P101 packet \u2014 a confirmed international-eligible IMG-relevant lane at BMC with the strongest verbatim audience-exclusion language found in P101 to date (both Caribbean and MD-grad explicit).",
+  "driftCheck": "This advanced national USCE discovery because Massachusetts gained its first P101 packet — a confirmed international-eligible IMG-relevant lane at BMC with the strongest verbatim audience-exclusion language found in P101 to date (both Caribbean and MD-grad explicit).",
   "institutionIdentity": {
     "canonicalInstitutionName": "Boston Medical Center",
     "aliases": [
@@ -162,19 +162,19 @@
       "pageTitle": "International Student Elective Program",
       "sourcePageType": "INSTITUTION_HUB",
       "sourceScope": "INSTITUTION_SPECIFIC",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "9694d37bef02475cba444533ffd4392fa537f9a998a989ac00ea55b8df2ba86d",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/boston-medical-center/cleaned-text/6e1b5bb2577e6d8b.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     },
     {
       "sourceUrl": "https://www.bumc.bu.edu/isep/student-guide/",
@@ -596,7 +596,7 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING"
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
@@ -609,12 +609,12 @@
       "Caribbean medical school students explicitly excluded (verbatim)",
       "MD graduates / IMG observers explicitly excluded (verbatim)",
       "Final-year medical students only",
-      "B-1/B-2 visa required \u2014 student arranges, BUCASM provides invitation letter",
+      "B-1/B-2 visa required — student arranges, BUCASM provides invitation letter",
       "English fluency required"
     ],
     "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED with two strong verbatim exclusions (Caribbean and MD-grad); the ISEP eligibility list is unambiguous.",
     "sourceTransparencyNote": "Verified at https://www.bumc.bu.edu/isep/ on 2026-05-11",
-    "possibleListingTitle": "Boston Medical Center \u2014 International Student Elective Program (Boston, MA)",
+    "possibleListingTitle": "Boston Medical Center — International Student Elective Program (Boston, MA)",
     "possibleMetaDescription": "BMC ISEP: international final-year MS, $3,000/4-week elective, B-1/B-2 visa, Caribbean schools and MD grads explicitly excluded. Max 8 weeks.",
     "suggestedFilters": [
       "INTERNATIONAL_MS",
@@ -625,10 +625,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "9694d37bef02475cba444533ffd4392fa537f9a998a989ac00ea55b8df2ba86d",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/boston-medical-center/cleaned-text/6e1b5bb2577e6d8b.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "cost_tuition_or_program_fee",

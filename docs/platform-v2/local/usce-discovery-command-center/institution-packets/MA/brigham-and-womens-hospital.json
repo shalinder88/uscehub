@@ -5,7 +5,7 @@
     "name": "Brigham and Women's Hospital",
     "aliases": [
       "BWH",
-      "Harvard Medical School \u2014 Visiting Students Program (covering BWH placement)"
+      "Harvard Medical School — Visiting Students Program (covering BWH placement)"
     ],
     "city": "Boston",
     "state": "MA",
@@ -56,7 +56,7 @@
       "sourceUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
       "pageTitle": "Apply | Visiting Students Program | Harvard Medical School",
       "sourcePageType": "INSTITUTION_HUB",
-      "shortQuote": "Applications are open on VSLO for international students. International students may apply for rotations from October\u2013March only.",
+      "shortQuote": "Applications are open on VSLO for international students. International students may apply for rotations from October–March only.",
       "quoteSupports": [
         "audience"
       ],
@@ -124,19 +124,19 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 4,
     "openedPagesCount": 6,
-    "strongNegativeEvidence": "International lane is restricted to October-March window only \u2014 students applying for April-September rotations are excluded.",
+    "strongNegativeEvidence": "International lane is restricted to October-March window only — students applying for April-September rotations are excluded.",
     "weakNegativeEvidence": "Tuition amount not stated on the apply sub-page (lives on Scheduling & Tuition sub-page, queued for retry). Visa policy not stated on hub or apply pages."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 HMS Visiting Students Program covers BWH + MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction; (d) $115 application fee per experience; (e) 1-3 months duration; (f) tuition amount queued for retry from Scheduling & Tuition sub-page; (g) visa policy not stated on hub.",
-  "plainEnglishSummary": "Brigham and Women's Hospital accepts visiting medical students through Harvard Medical School's Visiting Students Program. Final-year medical students apply via VSLO. International students CAN apply but are restricted to a October-March rotation window. The application fee is $115 per experience selected. Rotations run 1-3 months. BWH and MGH are both explicitly named placement sites in the program. Actual tuition amount lives on a separate Scheduling & Tuition sub-page and was not captured this turn \u2014 queued for retry.",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — HMS Visiting Students Program covers BWH + MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction; (d) $115 application fee per experience; (e) 1-3 months duration; (f) tuition amount queued for retry from Scheduling & Tuition sub-page; (g) visa policy not stated on hub.",
+  "plainEnglishSummary": "Brigham and Women's Hospital accepts visiting medical students through Harvard Medical School's Visiting Students Program. Final-year medical students apply via VSLO. International students CAN apply but are restricted to a October-March rotation window. The application fee is $115 per experience selected. Rotations run 1-3 months. BWH and MGH are both explicitly named placement sites in the program. Actual tuition amount lives on a separate Scheduling & Tuition sub-page and was not captured this turn — queued for retry.",
   "driftCheck": "This advanced national USCE discovery because BWH (HMS-affiliated) was confirmed with an international-eligible USCE lane and Oct-Mar window restriction captured verbatim; MA gained a second P101 packet.",
   "institutionIdentity": {
     "canonicalInstitutionName": "Brigham and Women's Hospital",
     "aliases": [
       "BWH",
-      "Harvard Medical School Visiting Students Program \u2014 BWH placement"
+      "Harvard Medical School Visiting Students Program — BWH placement"
     ],
     "hospitalName": "Brigham and Women's Hospital",
     "medicalSchoolName": "Harvard Medical School",
@@ -161,19 +161,19 @@
       "pageTitle": "Apply | Visiting Students Program | Harvard Medical School",
       "sourcePageType": "INSTITUTION_HUB",
       "sourceScope": "SCHOOL_LEVEL_SOURCE",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "2e4da52932847783a9839a59050cccffb84af6e045ac496b15edaebacdb84be4",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/brigham-and-womens-hospital/cleaned-text/636584f49eb276a7.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     },
     {
       "sourceUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program",
@@ -220,7 +220,7 @@
     {
       "fieldName": "audience_international_ms",
       "value": "ELIGIBLE_EXPLICIT_OCT_MARCH_ONLY",
-      "quote": "Applications are open on VSLO for international students. International students may apply for rotations from October\u2013March only.",
+      "quote": "Applications are open on VSLO for international students. International students may apply for rotations from October–March only.",
       "quoteUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
       "quoteSourcePageTitle": "Apply | Visiting Students Program | Harvard Medical School",
       "confidence": "HIGH",
@@ -300,7 +300,7 @@
     {
       "fieldName": "application_pathway",
       "value": "VSLO_REQUIRED_FOR_BOTH_US_AND_INTERNATIONAL",
-      "quote": "Applications are open on VSLO for international students. International students may apply for rotations from October\u2013March only.",
+      "quote": "Applications are open on VSLO for international students. International students may apply for rotations from October–March only.",
       "quoteUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
       "quoteSourcePageTitle": "Apply | Visiting Students Program | Harvard Medical School",
       "confidence": "HIGH",
@@ -320,7 +320,7 @@
     {
       "fieldName": "application_window",
       "value": "INTERNATIONAL_OCT_MARCH_ONLY",
-      "quote": "International students may apply for rotations from October\u2013March only.",
+      "quote": "International students may apply for rotations from October–March only.",
       "quoteUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
       "quoteSourcePageTitle": "Apply | Visiting Students Program | Harvard Medical School",
       "confidence": "HIGH",
@@ -575,8 +575,8 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING",
-      "NEEDS_MANUAL_RETRY"
+      "NEEDS_MANUAL_RETRY",
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
@@ -587,13 +587,13 @@
     "estimatedCostSummary": "$115.00 USD application fee per experience. Tuition amount not stated on apply page (queued for retry).",
     "keyCaveats": [
       "International rotations restricted to October-March window",
-      "Tuition amount not stated on apply page \u2014 see Scheduling & Tuition sub-page",
+      "Tuition amount not stated on apply page — see Scheduling & Tuition sub-page",
       "Visa policy not stated on hub",
       "BWH and MGH are both named as HMS placement sites (covers both institutions)"
     ],
     "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because the HMS apply page explicitly states international students may apply via VSLO during October-March.",
     "sourceTransparencyNote": "Verified at https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply on 2026-05-11",
-    "possibleListingTitle": "Brigham and Women's Hospital \u2014 HMS Visiting Students Program (Boston, MA)",
+    "possibleListingTitle": "Brigham and Women's Hospital — HMS Visiting Students Program (Boston, MA)",
     "possibleMetaDescription": "BWH via HMS Visiting Students Program: VSLO, final-year MS, intl window Oct-March, $115/experience. Covers both BWH and MGH placements.",
     "suggestedFilters": [
       "US_MD",
@@ -604,10 +604,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "2e4da52932847783a9839a59050cccffb84af6e045ac496b15edaebacdb84be4",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/brigham-and-womens-hospital/cleaned-text/636584f49eb276a7.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "cost_application_fee",

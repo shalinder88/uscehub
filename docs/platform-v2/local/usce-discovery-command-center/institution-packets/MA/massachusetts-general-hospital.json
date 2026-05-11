@@ -6,7 +6,7 @@
     "aliases": [
       "MGH",
       "Mass General",
-      "Harvard Medical School \u2014 Visiting Students Program (covering MGH placement)"
+      "Harvard Medical School — Visiting Students Program (covering MGH placement)"
     ],
     "city": "Boston",
     "state": "MA",
@@ -110,19 +110,19 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 4,
     "openedPagesCount": 8,
-    "strongNegativeEvidence": "MGH does NOT run an independent visiting-medical-student program. All visiting-MS access is gated by Harvard Medical School Exchange Clerkship Program (same path as BWH \u2014 see MA/brigham-and-womens-hospital.json packet). MGH-specific international-applications page is for the Surgery RESIDENCY only and is NOT a USCE pathway.",
+    "strongNegativeEvidence": "MGH does NOT run an independent visiting-medical-student program. All visiting-MS access is gated by Harvard Medical School Exchange Clerkship Program (same path as BWH — see MA/brigham-and-womens-hospital.json packet). MGH-specific international-applications page is for the Surgery RESIDENCY only and is NOT a USCE pathway.",
     "weakNegativeEvidence": "The MGH-specific page text for MGH visiting-students hub was not fully retrieved (redirects to massgeneralbrigham.org); inheriting HMS policy is the safest classification."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 HMS Exchange Clerkship Program covers MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction (inherited from HMS); (d) $115 application fee per experience (HMS); (e) 1-3 months duration; (f) MGH surgery RESIDENCY (ERAS, J-1 prelim only) is a separate non-USCE lane and must not be confused with the visiting-MS lane.",
-  "plainEnglishSummary": "MGH does not run its own visiting medical student program. All visiting medical student access goes through Harvard Medical School's Exchange Clerkship Program \u2014 same path as Brigham and Women's. Final-year medical students apply via VSLO. International students can apply but only for October-March rotations. $115 application fee per experience. Separately, MGH's Surgery Residency Program accepts IMG graduates through ERAS with J-1 visa sponsorship for prelim positions \u2014 that's a residency lane, not USCE.",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — HMS Exchange Clerkship Program covers MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction (inherited from HMS); (d) $115 application fee per experience (HMS); (e) 1-3 months duration; (f) MGH surgery RESIDENCY (ERAS, J-1 prelim only) is a separate non-USCE lane and must not be confused with the visiting-MS lane.",
+  "plainEnglishSummary": "MGH does not run its own visiting medical student program. All visiting medical student access goes through Harvard Medical School's Exchange Clerkship Program — same path as Brigham and Women's. Final-year medical students apply via VSLO. International students can apply but only for October-March rotations. $115 application fee per experience. Separately, MGH's Surgery Residency Program accepts IMG graduates through ERAS with J-1 visa sponsorship for prelim positions — that's a residency lane, not USCE.",
   "driftCheck": "This advanced national USCE discovery because MGH was correctly identified as HMS-gated rather than overclaimed as an independent USCE pathway; the Surgery Residency IMG language was correctly classified RESIDENCY_ONLY rather than misread as an open IMG observership.",
   "institutionIdentity": {
     "canonicalInstitutionName": "Massachusetts General Hospital",
     "aliases": [
       "MGH",
-      "Harvard Medical School Visiting Students Program \u2014 MGH placement"
+      "Harvard Medical School Visiting Students Program — MGH placement"
     ],
     "hospitalName": "Massachusetts General Hospital",
     "medicalSchoolName": "Harvard Medical School",
@@ -147,19 +147,19 @@
       "pageTitle": "Advanced Surgery Clerkship Program",
       "sourcePageType": "DEPARTMENT_PAGE",
       "sourceScope": "SCHOOL_LEVEL_SOURCE",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "fb34f7d6aaeeb3b19e329801259bc1585f2d5e30c37f6011dd6a4ffb04286d23",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/massachusetts-general-hospital/cleaned-text/3f7527229ecebefd.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     },
     {
       "sourceUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
@@ -220,7 +220,7 @@
       "quoteUrl": "",
       "quoteSourcePageTitle": "",
       "confidence": "MEDIUM",
-      "caveat": "MGH Surgery Residency lane is RESIDENCY_ONLY (J-1 prelim) \u2014 NOT a visiting MS pathway",
+      "caveat": "MGH Surgery Residency lane is RESIDENCY_ONLY (J-1 prelim) — NOT a visiting MS pathway",
       "notStatedOnSource": true
     },
     {
@@ -562,7 +562,7 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING"
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
@@ -572,14 +572,14 @@
     "howToApply": "VSLO via Harvard Medical School Exchange Clerkship Program (same path as BWH). $115 per experience selected. International window October-March.",
     "estimatedCostSummary": "$115 application fee per experience per HMS policy.",
     "keyCaveats": [
-      "MGH does NOT run an independent visiting-MS program \u2014 all access via HMS",
-      "MGH Surgery RESIDENCY accepts IMG grads via ERAS with J-1 \u2014 NOT a USCE pathway",
+      "MGH does NOT run an independent visiting-MS program — all access via HMS",
+      "MGH Surgery RESIDENCY accepts IMG grads via ERAS with J-1 — NOT a USCE pathway",
       "Same Oct-March international window as BWH",
       "Multispecialty placements per HMS catalog"
     ],
     "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because MGH-specific department page explicitly routes through HMS Exchange Clerkship Program (the same HMS lane confirmed in the BWH packet).",
     "sourceTransparencyNote": "Verified at https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program (MGH-specific page routing through HMS) on 2026-05-11",
-    "possibleListingTitle": "Massachusetts General Hospital \u2014 HMS Visiting Students Program (Boston, MA)",
+    "possibleListingTitle": "Massachusetts General Hospital — HMS Visiting Students Program (Boston, MA)",
     "possibleMetaDescription": "MGH via HMS Exchange Clerkship Program: VSLO, final-year MS, intl window Oct-March, $115/experience. Surgery, Radiology, Urology, Neurology placements.",
     "suggestedFilters": [
       "US_MD",
@@ -591,10 +591,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "fb34f7d6aaeeb3b19e329801259bc1585f2d5e30c37f6011dd6a4ffb04286d23",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/MA/massachusetts-general-hospital/cleaned-text/3f7527229ecebefd.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "application_window",

@@ -117,14 +117,14 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 4,
     "openedPagesCount": 5,
-    "strongNegativeEvidence": "International lane is RESTRICTED to Pathology and Pediatrics departments only \u2014 most other specialties are not open to international students. This is a critical caveat that any public-facing card must carry.",
+    "strongNegativeEvidence": "International lane is RESTRICTED to Pathology and Pediatrics departments only — most other specialties are not open to international students. This is a critical caveat that any public-facing card must carry.",
     "weakNegativeEvidence": "Parkland Hospital is named as a placement site only on the U.S.-school page (not the international page); placement at Parkland for international students depends on which department accepts them."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 UTSW SOM hub; Parkland is the major clinical site; (b) international lane RESTRICTED to Pathology + Pediatrics ONLY \u2014 critical caveat; (c) Non-LCME US citizens at international MS are also accepted; (d) $150 app fee; (e) B-1 visa sponsored by UTSW; (f) max 8 weeks (two 4-wk); (g) 4-month lead time recommended.",
-  "plainEnglishSummary": "Parkland Hospital is part of UT Southwestern's clinical site network. UTSW accepts visiting medical students through two tracks: US LCME schools via VSLO, and international medical schools via a paper/portal application. The international lane is RESTRICTED to two departments only \u2014 Pathology and Pediatrics. $150 non-refundable app fee. B-1 visa is sponsored by UTSW. Max two 4-week electives. 4-month lead time. Parkland is named as a placement site for several rotations.",
-  "driftCheck": "This advanced national USCE discovery because Texas gained its first P101 packet with an international-eligible USCE lane, but with the critical caveat that international access is limited to Pathology + Pediatrics \u2014 important to prevent overclaim that Parkland/UTSW is broadly open to international students.",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UTSW SOM hub; Parkland is the major clinical site; (b) international lane RESTRICTED to Pathology + Pediatrics ONLY — critical caveat; (c) Non-LCME US citizens at international MS are also accepted; (d) $150 app fee; (e) B-1 visa sponsored by UTSW; (f) max 8 weeks (two 4-wk); (g) 4-month lead time recommended.",
+  "plainEnglishSummary": "Parkland Hospital is part of UT Southwestern's clinical site network. UTSW accepts visiting medical students through two tracks: US LCME schools via VSLO, and international medical schools via a paper/portal application. The international lane is RESTRICTED to two departments only — Pathology and Pediatrics. $150 non-refundable app fee. B-1 visa is sponsored by UTSW. Max two 4-week electives. 4-month lead time. Parkland is named as a placement site for several rotations.",
+  "driftCheck": "This advanced national USCE discovery because Texas gained its first P101 packet with an international-eligible USCE lane, but with the critical caveat that international access is limited to Pathology + Pediatrics — important to prevent overclaim that Parkland/UTSW is broadly open to international students.",
   "institutionIdentity": {
     "canonicalInstitutionName": "Parkland Health",
     "aliases": [
@@ -154,19 +154,19 @@
       "pageTitle": "Visiting Medical Students from International Medical Schools",
       "sourcePageType": "INSTITUTION_HUB",
       "sourceScope": "SCHOOL_LEVEL_SOURCE",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "e638c1ddd2bbe1b1559125381df4d901558433198a4f27ac1f4d4373eade3c16",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/TX/parkland-health-utsw/cleaned-text/8e24eaddec444fa1.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     },
     {
       "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/",
@@ -586,7 +586,7 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING"
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
@@ -596,15 +596,15 @@
     "howToApply": "UTSW institutional application; $150 non-refundable app fee; 4-month lead time recommended; UTSW International Office contacts on acceptance for B-1 visa.",
     "estimatedCostSummary": "$150 (USD) non-refundable application fee. Tuition not separately stated on international page.",
     "keyCaveats": [
-      "CRITICAL: International lane RESTRICTED to Pathology and Pediatrics only \u2014 most specialties closed",
+      "CRITICAL: International lane RESTRICTED to Pathology and Pediatrics only — most specialties closed",
       "B-1 visa sponsored by UTSW (not student-arranged)",
       "Also accepts US-citizen students at international medical schools",
       "Max two 4-week electives (8 weeks total)",
       "4-month lead time"
     ],
-    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED but with the strongest specialty restriction in P101 to date \u2014 only two UTSW departments accept international students.",
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED but with the strongest specialty restriction in P101 to date — only two UTSW departments accept international students.",
     "sourceTransparencyNote": "Verified at https://medschool.utsouthwestern.edu/admissions/visiting/international.html on 2026-05-11",
-    "possibleListingTitle": "Parkland Health (UTSW) \u2014 International Visiting Students \u2014 Pathology & Pediatrics only (Dallas, TX)",
+    "possibleListingTitle": "Parkland Health (UTSW) — International Visiting Students — Pathology & Pediatrics only (Dallas, TX)",
     "possibleMetaDescription": "UTSW/Parkland: international visiting MS RESTRICTED to Pathology and Pediatrics only; $150 app fee; B-1 visa sponsored by UTSW. Max 8 weeks.",
     "suggestedFilters": [
       "INTERNATIONAL_MS",
@@ -614,10 +614,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "e638c1ddd2bbe1b1559125381df4d901558433198a4f27ac1f4d4373eade3c16",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/TX/parkland-health-utsw/cleaned-text/8e24eaddec444fa1.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "cost_application_fee",

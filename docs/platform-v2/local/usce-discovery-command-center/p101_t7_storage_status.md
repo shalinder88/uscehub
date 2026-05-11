@@ -1,15 +1,29 @@
 # P101 — T7 Artifact Storage Status
 
-**Last updated:** 2026-05-11 (P101-3 sprint)
+**Last updated:** 2026-05-11 (P101-3B sprint — third check after operator clarification: "T7" = T7 Shield)
 
 ## T7 mount status
 
-| Check | Result |
-|---|---|
-| Is `/Volumes/T7` mounted at sprint start? | **NO** |
-| Evidence root (preferred) | `/Volumes/T7/USCEHubEvidence/p101/<STATE>/<institution-slug>/` |
-| Evidence root (actual this sprint) | NOT CREATED — T7 not mounted |
-| Status flag in packets | `T7_ARTIFACT_STORAGE_PENDING` |
+| Check | P101-3 | P101-3B (initial) | P101-3B (after operator clarification) |
+|---|---|---|---|
+| Drive identified as canonical "T7" | `/Volumes/T7` (assumed) | `/Volumes/T7` (assumed) | **`/Volumes/T7Shield_Code`** |
+| Mounted? | NO | NO | **YES** |
+| Writable? | N/A | N/A | **YES** |
+| Free space | N/A | N/A | **1.8 TB free** |
+| Evidence root (actual) | NOT CREATED | NOT CREATED | **`/Volumes/T7Shield_Code/USCEHubEvidence/p101/<ST>/<slug>/`** — created 2026-05-11 |
+| Co-tenancy note | n/a | n/a | T7 Shield also hosts `01_PROJECTS/iOS_Systolo/` (Systolo active source per memory). USCEHubEvidence is a sibling at drive root — no collision. |
+| Decision | Document PENDING | Initially blocker doc written | Operator clarified naming; blocker doc retracted; backfill ran successfully on all 10 packets |
+
+## Artifacts stored (P101-3B)
+
+| Type | Count | Storage |
+|---|---|---|
+| Cleaned text files | **10** | `T7/<ST>/<slug>/cleaned-text/<sha1>.txt` |
+| Raw HTML files | **10** | `T7/<ST>/<slug>/source-pages/<sha1>.html` |
+| Source hashes (real SHA-256) | **10** | recorded in packet JSON (`changeDetectionPrep.sourceHash`, `sourceEvidence[].cleanedTextHash`) AND as `.sha256` files on T7 |
+| Fetch metadata JSON | **10** | `T7/<ST>/<slug>/metadata/<sha1>.meta.json` |
+| Screenshots | 0 | PENDING — `p101-fetch-html.ts` is curl-based (no screenshot capability); preview MCP not invoked for these 10 URLs this sprint |
+| PDFs | 0 | PENDING — Emory + Cook County reference PDFs queued (helper `p101-extract-pdf-text.ts` ready) |
 
 ## Artifacts stored
 

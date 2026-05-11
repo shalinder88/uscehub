@@ -5,7 +5,7 @@
     "name": "Emory University Hospital",
     "aliases": [
       "Emory Healthcare",
-      "Emory University School of Medicine \u2014 Visiting Medical Students (covering Emory Hospital placement)"
+      "Emory University School of Medicine — Visiting Medical Students (covering Emory Hospital placement)"
     ],
     "city": "Atlanta",
     "state": "GA",
@@ -149,14 +149,14 @@
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 Emory SOM hub; Emory University Hospital not separately named but the SOM operates clinical placements across Emory Healthcare; (b) two distinct lanes: US LCME/AOA fourth-year ($100 VSLO + $260 reg) AND international fourth-year ($525 + $4,500 tuition); (c) international window restricted to October-February only; (d) TOEFL iBT 20 (5/section, no exceptions) for international; (e) 5 core clerkships passed required for international; (f) visa is student responsibility; (g) 90-day lead time before elective start.",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — Emory SOM hub; Emory University Hospital not separately named but the SOM operates clinical placements across Emory Healthcare; (b) two distinct lanes: US LCME/AOA fourth-year ($100 VSLO + $260 reg) AND international fourth-year ($525 + $4,500 tuition); (c) international window restricted to October-February only; (d) TOEFL iBT 20 (5/section, no exceptions) for international; (e) 5 core clerkships passed required for international; (f) visa is student responsibility; (g) 90-day lead time before elective start.",
   "plainEnglishSummary": "Emory SOM offers two real lanes. US/Puerto Rico fourth-year MD/DO students apply via VSLO with $100 app fee + $260 registration. International fourth-year medical students apply directly with $525 + $4,500 tuition, must score TOEFL iBT 20 (5/section, no exceptions), must have passed the 5 core clerkships (IM/peds/surgery/OBGYN/psych), and can only rotate October-February. Visa is the student's responsibility.",
   "driftCheck": "This advanced national USCE discovery because Georgia gained its first P101 packet covering a confirmed international USCE lane with the strictest TOEFL + core-clerkships requirements captured verbatim, plus the explicit Oct-Feb international window constraint.",
   "institutionIdentity": {
     "canonicalInstitutionName": "Emory University Hospital",
     "aliases": [
       "Emory Healthcare",
-      "Emory University School of Medicine \u2014 Visiting Medical Students"
+      "Emory University School of Medicine — Visiting Medical Students"
     ],
     "hospitalName": "Emory University Hospital",
     "medicalSchoolName": "Emory University School of Medicine",
@@ -182,19 +182,19 @@
       "pageTitle": "Visiting Medical Students | Emory School of Medicine",
       "sourcePageType": "INSTITUTION_HUB",
       "sourceScope": "SCHOOL_LEVEL_SOURCE",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "7a5007a65c20028b8c41cbf81c20c4ae90aed2d5fef1ebb709029ef27a7097ba",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/GA/emory-university-hospital/cleaned-text/8f0343ecf58f7c3a.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     },
     {
       "sourceUrl": "https://med.emory.edu/education/_documents/visiting-student-elective-policy-requirements_08.2024.pdf",
@@ -275,7 +275,7 @@
       "quoteUrl": "",
       "quoteSourcePageTitle": "",
       "confidence": "MEDIUM",
-      "caveat": "Hub uses 'fourth year medical students' / 'currently attend an international medical school' \u2014 implicit exclusion of graduates",
+      "caveat": "Hub uses 'fourth year medical students' / 'currently attend an international medical school' — implicit exclusion of graduates",
       "notStatedOnSource": true
     },
     {
@@ -619,8 +619,8 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING",
-      "PDF_SOURCE"
+      "PDF_SOURCE",
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
@@ -634,11 +634,11 @@
       "TOEFL iBT 20 with 5+ on each section, no exceptions",
       "5 core clerkships (IM/peds/surgery/OBGYN/psych) must be passed",
       "Two distinct pricing tiers: US/PR vs international",
-      "Visa is student's responsibility \u2014 Emory does not sponsor"
+      "Visa is student's responsibility — Emory does not sponsor"
     ],
     "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because hub explicitly states 'Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory'.",
     "sourceTransparencyNote": "Verified at https://med.emory.edu/education/admissions/visiting/index.html on 2026-05-11",
-    "possibleListingTitle": "Emory University Hospital \u2014 Visiting Medical Students (Atlanta, GA)",
+    "possibleListingTitle": "Emory University Hospital — Visiting Medical Students (Atlanta, GA)",
     "possibleMetaDescription": "Emory SOM accepts US fourth-year MD/DO via VSLO ($100+$260) and intl fourth-year MS direct ($525+$4,500). TOEFL iBT 20. Intl window Oct-Feb.",
     "suggestedFilters": [
       "INTERNATIONAL_MS",
@@ -650,10 +650,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "7a5007a65c20028b8c41cbf81c20c4ae90aed2d5fef1ebb709029ef27a7097ba",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/GA/emory-university-hospital/cleaned-text/8f0343ecf58f7c3a.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "cost_application_fee",

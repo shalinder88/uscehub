@@ -67,6 +67,9 @@ const REQUIRED_DOCS = [
   "p101_3_selected_10_retrofit.csv",
   "p101_artifact_manifest.csv",
   "P101_3_ENHANCED_EVIDENCE_RETROFIT_CHECKPOINT.md",
+  // P101-3B T7 artifact backfill
+  "p101_3b_artifact_backfill_queue.csv",
+  "P101_3B_T7_ARTIFACT_BACKFILL_CHECKPOINT.md",
 ];
 
 // Canonical fieldQuoteMap field names for p101-3-enhanced packets.

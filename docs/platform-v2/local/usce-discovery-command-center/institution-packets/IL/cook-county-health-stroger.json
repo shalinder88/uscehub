@@ -98,14 +98,14 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 4,
     "openedPagesCount": 4,
-    "strongNegativeEvidence": "Cook County Health hub EXPLICITLY does not offer shadowing or observership. The only visiting-medical-student lane referenced is via affiliated school program coordinators \u2014 meaning a student's home school must already have an affiliation arrangement with Cook County Health. Not an open public pathway for self-applying IMGs.",
+    "strongNegativeEvidence": "Cook County Health hub EXPLICITLY does not offer shadowing or observership. The only visiting-medical-student lane referenced is via affiliated school program coordinators — meaning a student's home school must already have an affiliation arrangement with Cook County Health. Not an open public pathway for self-applying IMGs.",
     "weakNegativeEvidence": "The 2018 International Medical Student Packet PDF is 8 years old; verbatim retrieval of current 2026 international-specialty (Trauma/Anesthesia/Burn) policy was not achieved this turn. Queued for manual retry."
   },
   "finalClassification": "POSSIBLE_USCE_NEEDS_REVIEW",
   "finalTier": "TIER_C_NEEDS_REVIEW",
-  "nextAction": "Manual retry queued: (a) extract verbatim audience+specialty paragraph from current International-Medical-Student-Packet PDF (need scripts/p101-extract-pdf-text.ts on the URL); (b) confirm whether the 2018 PDF is still current policy. Until verified, classify as POSSIBLE_USCE_NEEDS_REVIEW \u2014 observership is verbatim NOT offered, US visiting-student lane is AFFILIATED-SCHOOL-COORDINATOR mediated only, international 3-specialty lane is unconfirmed.",
-  "plainEnglishSummary": "Cook County Health (which runs Stroger Hospital) does NOT offer shadowing or observership \u2014 that's verbatim on their education hub. They do allow fourth-year US medical students to do clinical rotations, but only through affiliated school program coordinators, not by direct student self-application. A 2018 PDF mentions international medical students may be accepted in 3 specialties (Trauma, Anesthesia, Burn) but the current 2026 policy was not directly verified this turn. Conservative classification: needs review before any public-facing claim.",
-  "driftCheck": "This advanced national USCE discovery because Cook County Stroger was correctly classified as POSSIBLE_USCE_NEEDS_REVIEW rather than overclaimed as an open IMG-friendly Chicago safety-net \u2014 the verbatim 'no observership/shadowing' protects against the most common misclassification of this institution.",
+  "nextAction": "Manual retry queued: (a) extract verbatim audience+specialty paragraph from current International-Medical-Student-Packet PDF (need scripts/p101-extract-pdf-text.ts on the URL); (b) confirm whether the 2018 PDF is still current policy. Until verified, classify as POSSIBLE_USCE_NEEDS_REVIEW — observership is verbatim NOT offered, US visiting-student lane is AFFILIATED-SCHOOL-COORDINATOR mediated only, international 3-specialty lane is unconfirmed.",
+  "plainEnglishSummary": "Cook County Health (which runs Stroger Hospital) does NOT offer shadowing or observership — that's verbatim on their education hub. They do allow fourth-year US medical students to do clinical rotations, but only through affiliated school program coordinators, not by direct student self-application. A 2018 PDF mentions international medical students may be accepted in 3 specialties (Trauma, Anesthesia, Burn) but the current 2026 policy was not directly verified this turn. Conservative classification: needs review before any public-facing claim.",
+  "driftCheck": "This advanced national USCE discovery because Cook County Stroger was correctly classified as POSSIBLE_USCE_NEEDS_REVIEW rather than overclaimed as an open IMG-friendly Chicago safety-net — the verbatim 'no observership/shadowing' protects against the most common misclassification of this institution.",
   "enhancedEvidenceVersion": "p101-3",
   "institutionIdentity": {
     "canonicalInstitutionName": "Cook County Health (Stroger Hospital)",
@@ -134,19 +134,19 @@
       "pageTitle": "Graduate Medical Education/Professional Education | Cook County Health",
       "sourcePageType": "INSTITUTION_HUB",
       "sourceScope": "INSTITUTION_SPECIFIC",
-      "accessedAt": "2026-05-11T00:00:00Z",
+      "accessedAt": "2026-05-11T07:30:00Z",
       "httpStatus": 200,
       "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
       "sourceLastUpdatedIfShown": "",
-      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "cleanedTextHash": "180ca4880fef206b445f5a36a9c60a03088640e45cd29190b9aceee22c2592ba",
       "rawHtmlSaved": false,
-      "cleanedTextPath": "",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/IL/cook-county-health-stroger/cleaned-text/9f09a9e1db269d3c.txt",
       "screenshotPath": "",
       "screenshotStatus": "PENDING",
       "pdfPath": "",
       "pdfExtractionStatus": "NOT_APPLICABLE",
       "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
-      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
     }
   ],
   "fieldQuoteMap": [
@@ -157,7 +157,7 @@
       "quoteUrl": "",
       "quoteSourcePageTitle": "",
       "confidence": "MEDIUM",
-      "caveat": "Per packet: clinical rotations for fourth-year US MS via affiliated school coordinator only \u2014 NOT self-applying",
+      "caveat": "Per packet: clinical rotations for fourth-year US MS via affiliated school coordinator only — NOT self-applying",
       "notStatedOnSource": true
     },
     {
@@ -527,26 +527,26 @@
       "OFFICIAL_SOURCE",
       "HASH_CAPTURED",
       "SCREENSHOT_PENDING",
-      "CLEANED_TEXT_PENDING",
-      "NEEDS_MANUAL_RETRY"
+      "NEEDS_MANUAL_RETRY",
+      "CLEANED_TEXT_SAVED"
     ]
   },
   "userFacingSummaryDraft": {
     "oneSentenceSummary": "Cook County Health (Stroger Hospital) explicitly does NOT offer shadowing or observership; clinical rotations available only to fourth-year US MS via affiliated school program coordinator.",
     "whoThisIsFor": "Fourth-year US medical students whose home school has an affiliation arrangement with Cook County Health.",
     "whoThisIsNotFor": "Anyone seeking shadowing or observership (explicitly excluded verbatim); IMG graduates; self-applying students without an affiliated school coordinator.",
-    "howToApply": "Through the student's home medical school's program coordinator \u2014 Cook County does not accept direct student applications for visiting status.",
+    "howToApply": "Through the student's home medical school's program coordinator — Cook County does not accept direct student applications for visiting status.",
     "estimatedCostSummary": "Cost not stated on hub.",
     "keyCaveats": [
       "CRITICAL: Observership and shadowing explicitly NOT offered (verbatim)",
       "Clinical rotations only via affiliated school program coordinator",
-      "2018 International Medical Student Packet PDF mentions 3 specialties (Trauma/Anesthesia/Burn) for international \u2014 UNVERIFIED for 2026",
-      "Safety-net public hospital \u2014 overclaim risk is high; conservative classification",
+      "2018 International Medical Student Packet PDF mentions 3 specialties (Trauma/Anesthesia/Burn) for international — UNVERIFIED for 2026",
+      "Safety-net public hospital — overclaim risk is high; conservative classification",
       "Stroger Hospital named as teaching site"
     ],
-    "whyWeClassifiedItThisWay": "POSSIBLE_USCE_NEEDS_REVIEW because the hub explicitly excludes observership and shadowing, and the only clinical lane is gated by home-school affiliation \u2014 not a public self-application pathway. 2018 international PDF unverified.",
+    "whyWeClassifiedItThisWay": "POSSIBLE_USCE_NEEDS_REVIEW because the hub explicitly excludes observership and shadowing, and the only clinical lane is gated by home-school affiliation — not a public self-application pathway. 2018 international PDF unverified.",
     "sourceTransparencyNote": "Verified at https://cookcountyhealth.org/education-and-research/ on 2026-05-11; 2018 PDF packet queued for retry",
-    "possibleListingTitle": "Cook County Health (Stroger Hospital) \u2014 Affiliated-school Clinical Rotations Only (Chicago, IL)",
+    "possibleListingTitle": "Cook County Health (Stroger Hospital) — Affiliated-school Clinical Rotations Only (Chicago, IL)",
     "possibleMetaDescription": "Cook County Health: NO observership or shadowing. Clinical rotations only for fourth-year US MS via affiliated school coordinator. Public hospital. Needs verification.",
     "suggestedFilters": [
       "AFFILIATION_REQUIRED",
@@ -556,10 +556,10 @@
     ]
   },
   "changeDetectionPrep": {
-    "sourceHash": "PENDING_T7_BACKFILL",
-    "cleanedTextPath": "",
+    "sourceHash": "180ca4880fef206b445f5a36a9c60a03088640e45cd29190b9aceee22c2592ba",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/USCEHubEvidence/p101/IL/cook-county-health-stroger/cleaned-text/9f09a9e1db269d3c.txt",
     "screenshotPath": "",
-    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
     "nextRecheckDue": "2026-08-09T00:00:00Z",
     "fieldsLikelyToChange": [
       "specialties_offered",
