@@ -2,7 +2,8 @@
 // Source: T7 prep CSV at commit 3b9d0fa + slice append per
 //   docs/platform-v2/local/usce-completeness/staged-runtime-batch-3-noindex-activation-slice-1/
 //   docs/platform-v2/local/usce-completeness/staged-runtime-batch-3-noindex-activation-slice-2/
-// Generated: 2026-05-10T01:00:00Z
+//   docs/platform-v2/local/usce-completeness/staged-runtime-batch-4-noindex-activation-slice/
+// Generated: 2026-05-10T03:00:00Z
 // DO NOT EDIT — regenerate with: npx tsx scripts/generate-micro-pilot-runtime.ts
 
 import type { UsceCard } from "@/lib/usce-maine-data";
@@ -441,9 +442,108 @@ export const PILOT_USCE_CARDS: UsceCard[] = [
     "official_source_url": "https://www.feinberg.northwestern.edu/md-education/visiting-students/index.html",
     "source_status": "OFFICIAL_SOURCE_ARCHIVED",
     "last_reviewed_at": "2026-05-09T00:00:00Z"
+  },
+  {
+    "listing_id": "pilot-020-TN-vanderbilt-university-medical-center",
+    "institution_name": "Vanderbilt University Medical Center",
+    "campus_name": "System-level Vanderbilt SOM source — Vanderbilt University Medical Center site placement not separately enumerated",
+    "state": "TN",
+    "county": "",
+    "specialty": "multispecialty_visiting",
+    "opportunity_type": "Visiting elective",
+    "source_page_type": "SYSTEM_PAGE",
+    "listing_role": "PUBLIC_OPPORTUNITY",
+    "display_bucket": "READY_PUBLIC_US_STUDENT_ONLY",
+    "eligible_audiences": [
+      "US_MD_DO"
+    ],
+    "excluded_audiences": [
+      "INTERNATIONAL_STUDENT",
+      "IMG_GRADUATE",
+      "CARIBBEAN_STUDENT"
+    ],
+    "unknown_audiences": [],
+    "restriction_tags": [
+      "LCME_AOA_ONLY",
+      "MS4_ONLY",
+      "STEP_1_OR_2_OR_COMLEX_REQUIRED",
+      "VSLO_REQUIRED",
+      "AFFILIATION_AGREEMENT_REQUIRED",
+      "FEE_REQUIRED_180",
+      "WINDOW_JUNE_TO_DECEMBER",
+      "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "NO_J1_VERIFIED",
+      "NO_H1B_VERIFIED",
+      "SYSTEM_PAGE_SOURCE_NO_VANDERBILT_UMC_SPECIFIC_GUARANTEE"
+    ],
+    "fit_warnings": [
+      "LCME_AOA_ONLY",
+      "MS4_ONLY",
+      "FEE_REQUIRED_180",
+      "WINDOW_JUNE_TO_DECEMBER",
+      "SYSTEM_PAGE_SOURCE_NO_VANDERBILT_UMC_SPECIFIC_GUARANTEE"
+    ],
+    "audience_detail": {
+      "us_md_do": "ELIGIBLE_EXPLICIT",
+      "international_student": "EXCLUDED_EXPLICIT",
+      "img_graduate": "EXCLUDED_EXPLICIT",
+      "caribbean_student": "EXCLUDED_EXPLICIT"
+    },
+    "application_url": "",
+    "official_source_url": "https://medschool.vanderbilt.edu/md/visiting-students/",
+    "source_status": "OFFICIAL_SOURCE_FETCHED",
+    "last_reviewed_at": "2026-05-10T00:00:00Z"
+  },
+  {
+    "listing_id": "pilot-021-CA-ucsf-medical-center",
+    "institution_name": "UCSF Medical Center",
+    "campus_name": "System-level UCSF SOM source — UCSF Medical Center site placement not separately enumerated",
+    "state": "CA",
+    "county": "",
+    "specialty": "multispecialty_visiting",
+    "opportunity_type": "Visiting elective",
+    "source_page_type": "SYSTEM_PAGE",
+    "listing_role": "PUBLIC_OPPORTUNITY",
+    "display_bucket": "READY_PUBLIC_US_STUDENT_ONLY",
+    "eligible_audiences": [
+      "US_MD_DO"
+    ],
+    "excluded_audiences": [
+      "INTERNATIONAL_STUDENT",
+      "IMG_GRADUATE",
+      "CARIBBEAN_STUDENT"
+    ],
+    "unknown_audiences": [],
+    "restriction_tags": [
+      "LCME_AOA_ONLY",
+      "VSLO_REQUIRED",
+      "GOOD_ACADEMIC_STANDING_REQUIRED",
+      "VISA_NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "NO_J1_VERIFIED",
+      "NO_H1B_VERIFIED",
+      "COST_NOT_STATED",
+      "WINDOW_NOT_STATED",
+      "SYSTEM_PAGE_SOURCE_NO_UCSF_MEDICAL_CENTER_SPECIFIC_GUARANTEE"
+    ],
+    "fit_warnings": [
+      "LCME_AOA_ONLY",
+      "GOOD_ACADEMIC_STANDING_REQUIRED",
+      "COST_NOT_STATED",
+      "SYSTEM_PAGE_SOURCE_NO_UCSF_MEDICAL_CENTER_SPECIFIC_GUARANTEE"
+    ],
+    "audience_detail": {
+      "us_md_do": "ELIGIBLE_EXPLICIT",
+      "international_student": "EXCLUDED_EXPLICIT",
+      "img_graduate": "EXCLUDED_EXPLICIT",
+      "caribbean_student": "EXCLUDED_EXPLICIT"
+    },
+    "application_url": "",
+    "official_source_url": "https://meded.ucsf.edu/visiting-student-program",
+    "source_status": "OFFICIAL_SOURCE_FETCHED",
+    "last_reviewed_at": "2026-05-10T00:00:00Z"
   }
 ];
 
 export const PILOT_IMG_RELEVANT_COUNT = 2;
-export const PILOT_US_ONLY_COUNT = 8;
-export const PILOT_TOTAL_COUNT = 10;
+export const PILOT_US_ONLY_COUNT = 10;
+export const PILOT_TOTAL_COUNT = 12;

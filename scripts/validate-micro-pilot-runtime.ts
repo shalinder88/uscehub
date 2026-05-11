@@ -9,10 +9,11 @@
  *
  * Hard gates:
  *   - File exists and parses
- *   - Exactly EXPECTED_CARD_COUNT cards (10 after noindex slice 2)
+ *   - Exactly EXPECTED_CARD_COUNT cards (12 after batch-4 slice)
  *   - The 5 ORIGINAL_PILOT_IDS preserved
  *   - The 3 SLICE_1_NEW_IDS present (Duke / NYU Tisch / IU Methodist)
  *   - The 2 SLICE_2_NEW_IDS present (HUP / Northwestern)
+ *   - The 2 BATCH_4_SLICE_NEW_IDS present (Vanderbilt UMC / UCSF Medical Center)
  *   - No DEFERRED_NOT_YET_ACTIVE_IDS in active runtime (Jackson / Methodist San Antonio)
  *   - No excluded institutions
  *   - 21-field allow-list (or 20-field, matching Maine runtime)
@@ -35,7 +36,7 @@ const BLOCKED_INSTITUTION_SUBSTRINGS = [
   "UPMC Western Psychiatric", "Lincoln Medical and Mental Health",
 ];
 
-const EXPECTED_CARD_COUNT = 10;
+const EXPECTED_CARD_COUNT = 12;
 
 const ORIGINAL_PILOT_IDS = [
   "pilot-001-NJ-morristown-medical-center",
@@ -54,6 +55,11 @@ const SLICE_1_NEW_IDS = [
 const SLICE_2_NEW_IDS = [
   "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
   "pilot-015-IL-northwestern-memorial-hospital",
+];
+
+const BATCH_4_SLICE_NEW_IDS = [
+  "pilot-020-TN-vanderbilt-university-medical-center",
+  "pilot-021-CA-ucsf-medical-center",
 ];
 
 // Batch-3 staged rows that remain deferred after slice 2 — must NEVER appear
@@ -150,6 +156,11 @@ function main() {
   for (const id of SLICE_2_NEW_IDS) {
     if (!presentIds.has(id)) {
       failures.push({ rule: "SLICE_2_ID_MISSING", detail: `Slice-2 new id '${id}' not present` });
+    }
+  }
+  for (const id of BATCH_4_SLICE_NEW_IDS) {
+    if (!presentIds.has(id)) {
+      failures.push({ rule: "BATCH_4_SLICE_ID_MISSING", detail: `Batch-4 slice new id '${id}' not present` });
     }
   }
   for (const id of DEFERRED_NOT_YET_ACTIVE_IDS) {

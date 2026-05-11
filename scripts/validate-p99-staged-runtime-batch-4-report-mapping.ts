@@ -80,11 +80,13 @@ function run() {
     if (!resolver.includes(`listingId: "${id}"`)) {
       fail("MISSING_IN_RESOLVER", id, `${id} not in KNOWN_LISTINGS`);
     }
-    // Find the line for this id and check runtimeSet is staged
+    // Find the line for this id and check runtimeSet is staged or active
+    // (staged before slice, active after slice — both authorized states)
     const re = new RegExp(`listingId:\\s*"${id.replace(/-/g, "\\-")}"[^}]*?runtimeSet:\\s*"([^"]+)"`, "s");
     const m = resolver.match(re);
-    if (!m || m[1] !== "staged") {
-      fail("RESOLVER_RUNTIME_SET_WRONG", id, `expected runtimeSet="staged"; got "${m?.[1] ?? "(missing)"}"`);
+    const observed = m?.[1] ?? "(missing)";
+    if (!m || (observed !== "staged" && observed !== "active")) {
+      fail("RESOLVER_RUNTIME_SET_WRONG", id, `expected runtimeSet ∈ {staged, active}; got "${observed}"`);
     }
   }
 
@@ -114,13 +116,15 @@ function run() {
     }
   }
 
-  // No staged batch-4 data drift; no app import of staged batch-4 module
+  // No staged batch-4 data drift. (Active runtime / /clerkships/pilot /
+  // /contact may legitimately change in the noindex-activation-slice sprint;
+  // those are not policed here.)
   try {
     const out = execSync(
-      `git status --short -- src/data/usce/public-listings-pilot.generated.json src/data/usce/public-listings-pilot.generated.ts src/data/usce/public-listings-pilot-staged-batch-4.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.ts src/app/clerkships/pilot src/app/contact 2>/dev/null || true`,
+      `git status --short -- src/data/usce/public-listings-pilot-staged-batch-4.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.ts 2>/dev/null || true`,
       { cwd: REPO, encoding: "utf8" }
     ).trim();
-    if (out.length) fail("PROTECTED_PATH_CHANGED", "(git status)", out);
+    if (out.length) fail("STAGED_DATA_CHANGED", "(git status)", out);
   } catch {}
 
   try {
@@ -145,7 +149,7 @@ function main() {
   try { run(); } catch (e) { fail("THREW", "(uncaught)", String(e)); }
   if (!failures.length) {
     console.log("\nOverall: PASSED");
-    console.log("  2 mapped IDs (Vanderbilt + UCSF). Resolver runtimeSet=staged. No app drift. No forbidden token.");
+    console.log("  2 mapped IDs (Vanderbilt + UCSF). Resolver runtimeSet ∈ {staged, active}. No staged-data drift. No forbidden token.");
     process.exit(0);
   }
   console.log(`\nOverall: FAILED — ${failures.length} issue(s):`);

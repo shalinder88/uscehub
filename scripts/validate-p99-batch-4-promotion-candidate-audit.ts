@@ -14,9 +14,11 @@
  *   - Every shortlisted row has US-only audience preserved (no IMG overclaim)
  *   - Every non-shortlisted row has a defer reason
  *   - No PUBLIC_NOW / IMPORT_READY anywhere in the audit folder
- *   - Active runtime / staged batch 2-4 data files unchanged on disk
+ *   - Staged batch 2/3/4 data files unchanged on disk (active runtime
+ *     change is authorized in the noindex-activation-slice sprint)
  *   - No app code import of the staged batch-4 module
- *   - Both IDs resolve in usce-contact-context with runtimeSet=staged
+ *   - Both IDs resolve in usce-contact-context with runtimeSet ∈ {staged, active}
+ *     (staged before slice; active after slice — both authorized states)
  *
  * Run:
  *   npx tsx scripts/validate-p99-batch-4-promotion-candidate-audit.ts
@@ -233,11 +235,12 @@ function run(): void {
       "s"
     );
     const m = resolverText.match(re);
-    if (!m || m[1] !== "staged") {
+    const observed = m?.[1] ?? "(missing)";
+    if (!m || (observed !== "staged" && observed !== "active")) {
       fail(
         "RESOLVER_RUNTIME_SET_WRONG",
         id,
-        `expected runtimeSet="staged"; got "${m?.[1] ?? "(missing)"}"`
+        `expected runtimeSet ∈ {staged, active}; got "${observed}"`
       );
     }
   }
@@ -256,14 +259,16 @@ function run(): void {
     }
   }
 
-  // No active runtime / staged data drift this sprint
+  // No staged data drift. (Active runtime, /clerkships/pilot, /contact may
+  // legitimately change in the noindex-activation-slice sprint; those are
+  // not policed here.)
   try {
     const gitOut = execSync(
-      `git status --short -- src/data/usce/public-listings-pilot.generated.json src/data/usce/public-listings-pilot.generated.ts src/data/usce/public-listings-pilot-staged-batch-2.generated.json src/data/usce/public-listings-pilot-staged-batch-3.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.ts src/app/clerkships/pilot src/app/contact 2>/dev/null || true`,
+      `git status --short -- src/data/usce/public-listings-pilot-staged-batch-2.generated.json src/data/usce/public-listings-pilot-staged-batch-3.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.json src/data/usce/public-listings-pilot-staged-batch-4.generated.ts 2>/dev/null || true`,
       { cwd: REPO_ROOT, encoding: "utf8" }
     ).trim();
     if (gitOut.length > 0) {
-      fail("PROTECTED_PATH_CHANGED", "(git status)", `protected path changed: ${gitOut}`);
+      fail("STAGED_DATA_CHANGED", "(git status)", `staged data file changed: ${gitOut}`);
     }
   } catch { /* ignore */ }
 
@@ -301,7 +306,7 @@ function main(): void {
     console.log("\nOverall: PASSED");
     console.log("  2 batch-4 candidates audited (Vanderbilt + UCSF).");
     console.log("  Shortlist caveated; school-level caveat preserved; US-only audience preserved.");
-    console.log("  Resolver runtimeSet=staged for both. No active/staged data drift.");
+    console.log("  Resolver runtimeSet ∈ {staged, active} for both. No staged-data drift.");
     console.log("  No app import of staged batch-4 module. No forbidden token.");
     process.exit(0);
   }

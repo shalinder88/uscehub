@@ -79,9 +79,9 @@ export const KNOWN_LISTINGS: KnownListing[] = [
   // Batch 3 — staged-only (audit-deferred; not yet in active runtime)
   { listingId: "pilot-013-FL-jackson-memorial-hospital", institutionName: "Jackson Memorial Hospital", city: "Miami", state: "FL", runtimeSet: "staged" },
   { listingId: "pilot-018-TX-methodist-hospital-san-antonio", institutionName: "Methodist Hospital (San Antonio)", city: "San Antonio", state: "TX", runtimeSet: "staged" },
-  // Batch 4 — staged-only (Queue 4 Session 1 bridge-validated; pending mapping + audit + activation)
-  { listingId: "pilot-020-TN-vanderbilt-university-medical-center", institutionName: "Vanderbilt University Medical Center", city: "Nashville", state: "TN", runtimeSet: "staged" },
-  { listingId: "pilot-021-CA-ucsf-medical-center", institutionName: "UCSF Medical Center", city: "San Francisco", state: "CA", runtimeSet: "staged" },
+  // Batch 4 — activated in noindex slice (Vanderbilt UMC + UCSF Medical Center)
+  { listingId: "pilot-020-TN-vanderbilt-university-medical-center", institutionName: "Vanderbilt University Medical Center", city: "Nashville", state: "TN", runtimeSet: "active" },
+  { listingId: "pilot-021-CA-ucsf-medical-center", institutionName: "UCSF Medical Center", city: "San Francisco", state: "CA", runtimeSet: "active" },
 ];
 
 const KNOWN_LISTINGS_BY_ID = new Map(KNOWN_LISTINGS.map((l) => [l.listingId, l]));

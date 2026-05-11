@@ -62,6 +62,7 @@ function run(): void {
     `runtimeSet ${c2.runtimeSet}`);
 
   // Batch 3 — activated in noindex slices 1 + 2
+  // + Batch 4 — activated in noindex slice (Vanderbilt + UCSF)
   const ACTIVATED_IDS = [
     // Slice 1
     "pilot-014-NC-duke-university-hospital",
@@ -70,14 +71,14 @@ function run(): void {
     // Slice 2
     "pilot-016-PA-hospital-of-the-university-of-pennsylvania",
     "pilot-015-IL-northwestern-memorial-hospital",
+    // Batch 4 slice
+    "pilot-020-TN-vanderbilt-university-medical-center",
+    "pilot-021-CA-ucsf-medical-center",
   ];
   // Batch 3 — staged-only (audit-deferred; remains so after slice 2)
-  // + Batch 4 — staged-only (Queue 4 Session 1 bridge-validated; pending audit + activation)
   const STAGED_ONLY_IDS = [
     "pilot-013-FL-jackson-memorial-hospital",
     "pilot-018-TX-methodist-hospital-san-antonio",
-    "pilot-020-TN-vanderbilt-university-medical-center",
-    "pilot-021-CA-ucsf-medical-center",
   ];
   for (const id of ACTIVATED_IDS) {
     const c = resolveContactContext({ listing_id: id, ref: "pilot-listing" });
