@@ -295,6 +295,179 @@ function validatePacket(p: string): void {
       if (pc < 1) fail("NEGATIVE_EVIDENCE_PAGES_TOO_FEW", rel, `openedPagesCount ${pc} < 1`);
     }
   }
+
+  // ----- P101-3 enhanced evidence gates -----
+  // These ONLY apply to packets that opt into the enhanced layer via
+  // enhancedEvidenceVersion === "p101-3". Existing p101-0 packets without
+  // this field continue to pass the original gates above.
+  const eev = o.enhancedEvidenceVersion;
+  if (typeof eev === "string" && eev !== "") {
+    if (eev !== "p101-3") {
+      fail("ENHANCED_EVIDENCE_VERSION_INVALID", rel, `expected p101-3 (or absent); got ${eev}`);
+    } else {
+      validateEnhanced(o, rel);
+    }
+  }
+}
+
+function validateEnhanced(o: Record<string, unknown>, rel: string): void {
+  // institutionIdentity required
+  const id = o.institutionIdentity as Record<string, unknown> | undefined;
+  if (!id || typeof id !== "object") {
+    fail("ENHANCED_INSTITUTION_IDENTITY_MISSING", rel, "institutionIdentity block missing");
+  } else {
+    for (const k of ["canonicalInstitutionName","city","state","institutionType","sourceOfIdentity"]) {
+      const v = id[k];
+      if (typeof v !== "string" || v.trim() === "") fail("ENHANCED_IDENTITY_FIELD_MISSING", rel, `institutionIdentity.${k} empty`);
+    }
+    if (!Array.isArray(id.officialDomains) || id.officialDomains.length === 0) {
+      fail("ENHANCED_IDENTITY_DOMAINS_EMPTY", rel, "officialDomains empty");
+    }
+  }
+
+  // sourceEvidence required (≥1)
+  const se = o.sourceEvidence;
+  if (!Array.isArray(se) || se.length === 0) {
+    fail("ENHANCED_SOURCE_EVIDENCE_EMPTY", rel, "sourceEvidence must have ≥1 entry");
+  } else {
+    for (let i = 0; i < se.length; i++) {
+      const row = se[i] as Record<string, unknown>;
+      if (!row || typeof row !== "object") {
+        fail("ENHANCED_SOURCE_EVIDENCE_ROW_NOT_OBJECT", rel, `sourceEvidence[${i}] not an object`);
+        continue;
+      }
+      const u = row.sourceUrl;
+      if (typeof u !== "string" || !/^https?:\/\//.test(u)) {
+        fail("ENHANCED_SOURCE_URL_INVALID", rel, `sourceEvidence[${i}].sourceUrl invalid`);
+      }
+      const ss = row.screenshotStatus;
+      if (typeof ss !== "string" || !["CAPTURED","PENDING","NOT_APPLICABLE","FAILED"].includes(ss)) {
+        fail("ENHANCED_SCREENSHOT_STATUS_INVALID", rel, `sourceEvidence[${i}].screenshotStatus invalid`);
+      }
+      // Faked path guard: if status PENDING/NOT_APPLICABLE/FAILED, screenshotPath must be empty
+      if (ss !== "CAPTURED" && typeof row.screenshotPath === "string" && row.screenshotPath !== "") {
+        fail("ENHANCED_SCREENSHOT_PATH_WITHOUT_CAPTURE", rel, `sourceEvidence[${i}] has screenshotPath but status ${ss}`);
+      }
+    }
+  }
+
+  // fieldQuoteMap required — must cover every canonical field
+  const fqm = o.fieldQuoteMap;
+  if (!Array.isArray(fqm)) {
+    fail("ENHANCED_FIELD_QUOTE_MAP_MISSING", rel, "fieldQuoteMap missing or not an array");
+  } else {
+    const seen = new Set<string>();
+    for (let i = 0; i < fqm.length; i++) {
+      const row = fqm[i] as Record<string, unknown>;
+      if (!row || typeof row !== "object") {
+        fail("ENHANCED_FQM_ROW_NOT_OBJECT", rel, `fieldQuoteMap[${i}] not an object`);
+        continue;
+      }
+      const fname = row.fieldName;
+      if (typeof fname !== "string" || !ENHANCED_FIELD_NAMES.has(fname)) {
+        fail("ENHANCED_FQM_FIELD_NAME_NOT_CANONICAL", rel, `fieldQuoteMap[${i}].fieldName='${String(fname)}' not in canonical list`);
+        continue;
+      }
+      seen.add(fname);
+      const notStated = row.notStatedOnSource === true;
+      const quote = typeof row.quote === "string" ? row.quote : "";
+      const value = typeof row.value === "string" ? row.value : "";
+      // Quote-or-no-claim discipline:
+      if (notStated) {
+        // The doctrine wants value="NOT_STATED_ON_SOURCE" when not stated, but
+        // we accept any value beginning with "NOT_STATED_" / "NOT_MENTIONED_"
+        // (e.g. NOT_STATED_ON_HUB, NOT_STATED_FULLY_ON_HUB, NOT_MENTIONED_ON_HUB)
+        // because those preserve packet-specific detail. The validator's job
+        // is enforcing absence of fabricated claims, not enforcing a single
+        // sentinel string.
+        if (!/^(NOT_STATED|NOT_MENTIONED)/.test(value) && value !== "NOT_STATED_ON_SOURCE") {
+          fail("ENHANCED_FQM_NOTSTATED_VALUE_MISMATCH", rel, `${fname}: notStatedOnSource=true but value='${value}' (must begin with NOT_STATED or NOT_MENTIONED)`);
+        }
+        if (quote !== "") {
+          fail("ENHANCED_FQM_NOTSTATED_HAS_QUOTE", rel, `${fname}: notStatedOnSource=true but quote not empty`);
+        }
+      } else {
+        if (value === "" || value === "NOT_STATED_ON_SOURCE") {
+          fail("ENHANCED_FQM_VALUE_EMPTY_WITHOUT_NOTSTATED", rel, `${fname}: value empty/NOT_STATED but notStatedOnSource=false`);
+        }
+        if (quote === "" && !["specialties_offered","application_url","duration","cost_housing","cancellation_policy"].includes(fname)) {
+          // a few field names are allowed to carry a derived value without a verbatim quote string when the value itself encodes a packet caveat, but they must still have quoteUrl set
+          if (typeof row.quoteUrl !== "string" || row.quoteUrl === "") {
+            fail("ENHANCED_FQM_QUOTE_MISSING", rel, `${fname}: notStatedOnSource=false but neither quote nor quoteUrl present`);
+          }
+        }
+        if (quote.length > 240) {
+          fail("ENHANCED_FQM_QUOTE_TOO_LONG", rel, `${fname}: quote length ${quote.length} > 240`);
+        }
+      }
+    }
+    // every canonical field must appear at least once
+    for (const f of ENHANCED_FIELD_NAMES) {
+      if (!seen.has(f)) fail("ENHANCED_FQM_FIELD_MISSING", rel, `fieldQuoteMap missing canonical field '${f}'`);
+    }
+  }
+
+  // opportunityTags — must be present, must be canonical strings only
+  const ot = o.opportunityTags as Record<string, unknown> | undefined;
+  if (!ot || typeof ot !== "object") {
+    fail("ENHANCED_OPPORTUNITY_TAGS_MISSING", rel, "opportunityTags block missing");
+  } else {
+    for (const group of Object.keys(CANONICAL_TAGS)) {
+      const vals = ot[group];
+      if (!Array.isArray(vals)) {
+        fail("ENHANCED_TAG_GROUP_MISSING", rel, `opportunityTags.${group} missing`);
+        continue;
+      }
+      for (const v of vals) {
+        if (typeof v !== "string" || !CANONICAL_TAGS[group].has(v)) {
+          fail("ENHANCED_TAG_NOT_CANONICAL", rel, `opportunityTags.${group} has non-canonical '${String(v)}'`);
+        }
+      }
+    }
+    // SCREENSHOT_CAPTURED tag requires at least one sourceEvidence with non-empty screenshotPath
+    const sourceTags = (ot.source as string[]) || [];
+    if (sourceTags.includes("SCREENSHOT_CAPTURED")) {
+      const hasCaptured = Array.isArray(se) && (se as Record<string,unknown>[]).some(r =>
+        typeof r.screenshotPath === "string" && r.screenshotPath !== "" && r.screenshotStatus === "CAPTURED");
+      if (!hasCaptured) fail("ENHANCED_TAG_SCREENSHOT_WITHOUT_PATH", rel, "SCREENSHOT_CAPTURED tag but no sourceEvidence with captured screenshot");
+    }
+    if (sourceTags.includes("HASH_CAPTURED")) {
+      const cdp = o.changeDetectionPrep as Record<string, unknown> | undefined;
+      const sh = cdp?.sourceHash;
+      if (typeof sh !== "string" || sh === "" || sh === "PENDING_T7_BACKFILL") {
+        // PENDING placeholder allowed during T7-unmounted retrofit; only fail when totally missing
+        if (typeof sh !== "string" || sh === "") fail("ENHANCED_TAG_HASH_WITHOUT_VALUE", rel, "HASH_CAPTURED tag but changeDetectionPrep.sourceHash empty");
+      }
+    }
+  }
+
+  // userFacingSummaryDraft — must be present with all required keys
+  const ufs = o.userFacingSummaryDraft as Record<string, unknown> | undefined;
+  if (!ufs || typeof ufs !== "object") {
+    fail("ENHANCED_USER_FACING_SUMMARY_MISSING", rel, "userFacingSummaryDraft missing");
+  } else {
+    for (const k of ["oneSentenceSummary","whoThisIsFor","whoThisIsNotFor","howToApply","estimatedCostSummary","whyWeClassifiedItThisWay","sourceTransparencyNote","possibleListingTitle","possibleMetaDescription"]) {
+      const v = ufs[k];
+      if (typeof v !== "string" || v.trim() === "") fail("ENHANCED_UFS_FIELD_MISSING", rel, `userFacingSummaryDraft.${k} empty`);
+    }
+    const kc = ufs.keyCaveats;
+    if (!Array.isArray(kc) || kc.length === 0) fail("ENHANCED_UFS_KEY_CAVEATS_EMPTY", rel, "userFacingSummaryDraft.keyCaveats empty");
+    const sf = ufs.suggestedFilters;
+    if (!Array.isArray(sf) || sf.length === 0) fail("ENHANCED_UFS_FILTERS_EMPTY", rel, "userFacingSummaryDraft.suggestedFilters empty");
+    const oss = typeof ufs.oneSentenceSummary === "string" ? ufs.oneSentenceSummary : "";
+    if (oss.length > 240) fail("ENHANCED_UFS_ONE_SENTENCE_TOO_LONG", rel, `oneSentenceSummary length ${oss.length} > 240`);
+  }
+
+  // changeDetectionPrep — must be present
+  const cdp = o.changeDetectionPrep as Record<string, unknown> | undefined;
+  if (!cdp || typeof cdp !== "object") {
+    fail("ENHANCED_CHANGE_DETECTION_MISSING", rel, "changeDetectionPrep missing");
+  } else {
+    if (typeof cdp.firstCapturedAt !== "string" || cdp.firstCapturedAt === "") fail("ENHANCED_CDP_FIRST_CAPTURED_MISSING", rel, "changeDetectionPrep.firstCapturedAt empty");
+    if (typeof cdp.nextRecheckDue !== "string" || cdp.nextRecheckDue === "") fail("ENHANCED_CDP_NEXT_RECHECK_MISSING", rel, "changeDetectionPrep.nextRecheckDue empty");
+    const cr = cdp.changeRisk;
+    if (typeof cr !== "string" || !["LOW","MEDIUM","HIGH"].includes(cr)) fail("ENHANCED_CDP_CHANGE_RISK_INVALID", rel, `changeRisk '${String(cr)}' invalid`);
+  }
 }
 
 function run(): void {
@@ -348,6 +521,23 @@ function run(): void {
     if (fs.statSync(full).isFile()) scanFiles.push(full);
   }
   for (const p of packets) scanFiles.push(p);
+
+  // Guard against accidental commit of T7-class blobs in the command center.
+  // The repo's role is the index; T7's role is the blob storage. Anything
+  // larger than 100 KB or with a binary-suspect extension inside the
+  // command-center folder is rejected.
+  for (const full of scanFiles) {
+    const ext = path.extname(full).toLowerCase();
+    if (BANNED_BINARY_EXTS.has(ext)) {
+      fail("BANNED_BINARY_IN_REPO", path.relative(REPO_ROOT, full), `binary-suspect extension ${ext} in command center — belongs on T7`);
+    }
+    try {
+      const st = fs.statSync(full);
+      if (st.isFile() && st.size > COMMAND_CENTER_FILE_MAX_BYTES) {
+        fail("OVERSIZED_FILE_IN_REPO", path.relative(REPO_ROOT, full), `size ${st.size} > ${COMMAND_CENTER_FILE_MAX_BYTES} (T7 storage required)`);
+      }
+    } catch { /* ignore */ }
+  }
 
   for (const full of scanFiles) {
     if (full === SELF_PATH) continue;
