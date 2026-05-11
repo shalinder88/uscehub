@@ -49,9 +49,14 @@ const REQUIRED_DOCS = [
   "p101_manual_retry_log.csv",
   "p101_classification_summary.csv",
   "P101_0_FIVE_INSTITUTION_PROOF_CHECKPOINT.md",
+  "p101_pdf_extraction_note.md",
+  "p101_1_selected_10_queue.csv",
+  "P101_1_TEN_INSTITUTION_DISCOVERY_CHECKPOINT.md",
 ];
 
-const EXPECTED_PACKET_COUNT = 5;
+// Cumulative P101 packet count: P101-0 (5) + P101-1 (10) = 15.
+// Allow ≥ this; future sprints add packets without breaking the validator.
+const EXPECTED_PACKET_MIN = 15;
 
 const QUOTE_REQUIRED_CLASSIFICATIONS = new Set([
   "CURRENT_USCE_CONFIRMED",
@@ -239,8 +244,8 @@ function run(): void {
   }
 
   const packets = listPackets();
-  if (packets.length !== EXPECTED_PACKET_COUNT) {
-    fail("WRONG_PACKET_COUNT", "(institution-packets)", `expected ${EXPECTED_PACKET_COUNT}; got ${packets.length}`);
+  if (packets.length < EXPECTED_PACKET_MIN) {
+    fail("PACKET_COUNT_BELOW_MIN", "(institution-packets)", `expected ≥ ${EXPECTED_PACKET_MIN}; got ${packets.length}`);
   }
   for (const p of packets) validatePacket(p);
 
@@ -318,7 +323,7 @@ function main(): void {
   if (failures.length === 0) {
     console.log("\nOverall: PASSED");
     console.log("  Command center + 15 docs intact.");
-    console.log(`  ${EXPECTED_PACKET_COUNT} institution packets validated, schemaVersion p101-0, quotes present for confirmed classifications.`);
+    console.log(`  ≥ ${EXPECTED_PACKET_MIN} institution packets validated, schemaVersion p101-0, quotes present for confirmed classifications.`);
     console.log("  No protected-path drift. No forbidden token. No banned phrase. No secret pattern.");
     process.exit(0);
   }

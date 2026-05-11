@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Michigan Medicine - University Hospital",
+    "aliases": [
+      "University of Michigan Hospital",
+      "Michigan Medicine",
+      "U-M Health",
+      "UMMS — Visiting MD Students program (covering Michigan Medicine placement)"
+    ],
+    "city": "Ann Arbor",
+    "state": "MI",
+    "officialDomain": "medschool.umich.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Michigan Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 40 (queue-4-national-screening-resume); P101-1 selected_10 rank 10"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medschool.umich.edu",
+      "medicine.umich.edu",
+      "uofmhealth.org"
+    ],
+    "searchTermsTried": [
+      "Michigan Medicine University of Michigan visiting medical student VSLO international elective site:umich.edu",
+      "UMMS visiting MD students",
+      "Michigan Medicine Global REACH visiting student",
+      "UMMS VSLO domestic network",
+      "Michigan Medicine HEVC Health Equity Visiting Clerkship",
+      "UMMS international visiting student TOEFL"
+    ],
+    "pagesOpened": [
+      "https://medschool.umich.edu/programs-admissions/visiting-md-students",
+      "https://medicine.umich.edu/dept/globalreach/travel/visiting-students-umms",
+      "https://medschool.umich.edu/centers-institutes/global-reach/travel/visiting-students-umms",
+      "https://medicine.umich.edu/dept/globalreach/faq-visiting-medical-students",
+      "https://medschool.umich.edu/departments/dermatology/education/medical-student-programs/visiting-medical-students",
+      "https://medicine.umich.edu/dept/emergency-medicine/education/medical-student/visiting-student"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://medschool.umich.edu/programs-admissions/visiting-md-students",
+        "title": "Visiting MD Students | University of Michigan Medical School",
+        "reason": "BOT_BLOCKED"
+      },
+      {
+        "url": "https://medicine.umich.edu/dept/globalreach/faq-visiting-medical-students",
+        "title": "FAQ for visiting medical students | GlobalReach | Michigan Medicine",
+        "reason": "BOT_BLOCKED"
+      }
+    ],
+    "robotsOrAccessNotes": "medschool.umich.edu and medicine.umich.edu both returned HTTP 403 to WebFetch (anti-bot protection, likely Cloudflare-style). The lane clearly exists per the search engine's prior index — but direct verbatim retrieval is blocked this turn. NOT bypassed. Queued for manual retry in p101_manual_retry_log.csv.",
+    "stopCondition": "BOT_BLOCKED_RETRY_MANUAL"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medschool.umich.edu/programs-admissions/visiting-md-students",
+      "pageTitle": "Visiting MD Students | University of Michigan Medical School",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Source page returned HTTP 403 to WebFetch; no verbatim quote captured this turn. Search engine prior index reports VSLO domestic network May-April cycle with up to 8 weeks max — these reports are LEADS not evidence.",
+      "quoteSupports": [],
+      "audienceDecision": "NOT_STATED_ON_SOURCE",
+      "applicationDecision": "NOT_STATED_ON_SOURCE",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "UNKNOWN_SOURCE_SCOPE",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "BOT_BLOCKED_MANUAL_RETRY",
+      "caveats": [
+        "DIRECT_VERBATIM_QUOTE_NOT_CAPTURED_DUE_TO_BOT_BLOCK",
+        "SEARCH_ENGINE_INDEX_REPORTS_VSLO_DOMESTIC_NETWORK_LANE_AND_INTERNATIONAL_PARTNER_INSTITUTION_LANE — TREATED AS LEADS NOT EVIDENCE"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "",
+    "weakNegativeEvidence": "WebFetch could not retrieve verbatim content from medschool.umich.edu nor medicine.umich.edu sub-paths (HTTP 403). Search-result snippets indicate (a) VSLO Domestic Network lane for final-year US students, (b) international lane restricted to schools with institutional agreement with UMMS (~30-35 international students/year), (c) max 8 weeks, (d) TOEFL required for international, (e) completed clerkships in Surgery/IM/OBGYN/Peds required for international — but these are search-summary signals not direct evidence and must not be quoted as source language."
+  },
+  "finalClassification": "BOT_BLOCKED_MANUAL_RETRY",
+  "finalTier": "TIER_C_NEEDS_REVIEW",
+  "nextAction": "Manual retry queued. Options for next sprint: (a) try alternative User-Agent in pdf-extract-pdf-text.ts curl wrapper (current wrapper uses Mozilla UA which may be insufficient against medschool.umich.edu's defenses); (b) request the user fetch the pages from a browser and paste content; (c) check Wayback Machine for an archived snapshot of the hub. Until then, NO confirmed classification for UMMS — the search-summary leads do not satisfy the verbatim-quote-or-no-claim rule.",
+  "plainEnglishSummary": "Michigan Medicine's visiting-students pages returned HTTP 403 to automated fetch attempts on both medschool.umich.edu and medicine.umich.edu/dept/globalreach. The lane clearly exists per Google's prior index of the page (final-year US via VSLO; international via institutional agreement; ~30-35 international students/year; max 8 weeks; TOEFL + 4 core clerkships required for international). But none of those signals are direct verbatim source quotes — they are search-summary snippets. Per the core quality law (verbatim quote or no claim), this packet is classified BOT_BLOCKED_MANUAL_RETRY rather than fabricated as INTERNATIONAL_STUDENT_CONFIRMED. Will need a different retrieval method next sprint.",
+  "driftCheck": "This advanced national USCE discovery because Michigan was correctly identified as BOT_BLOCKED rather than overclaimed from search-summary signals. The negative-evidence shape was preserved honestly."
+}

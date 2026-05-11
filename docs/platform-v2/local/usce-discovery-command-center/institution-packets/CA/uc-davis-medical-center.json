@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "UC Davis Medical Center",
+    "aliases": [
+      "UC Davis Health",
+      "UC Davis School of Medicine — Visiting Medical Students program (covering UC Davis Med Center placement)"
+    ],
+    "city": "Sacramento",
+    "state": "CA",
+    "officialDomain": "health.ucdavis.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UC Davis Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 34 (queue-4-national-screening-resume); P101-1 selected_10 rank 4"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "health.ucdavis.edu"
+    ],
+    "searchTermsTried": [
+      "UC Davis School of Medicine visiting medical student VSLO elective international site:ucdavis.edu",
+      "UC Davis visiting students fees",
+      "UC Davis VSLO fourth year",
+      "UC Davis away rotation",
+      "UC Davis international medical student",
+      "UC Davis off-campus elective"
+    ],
+    "pagesOpened": [
+      "https://health.ucdavis.edu/mdprogram/registrar/visiting.html",
+      "https://health.ucdavis.edu/mdprogram/registrar/visitor_fees.html",
+      "https://health.ucdavis.edu/mdprogram/registrar/elective.html",
+      "https://health.ucdavis.edu/mdprogram/career-advising/away-rotations.html",
+      "https://health.ucdavis.edu/pathology/community-outreach/visiting-medical-student.html",
+      "https://health.ucdavis.edu/anesthesiology/education/inclusive-excellence-visiting-elective-program/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://health.ucdavis.edu/med-pathways/resident/prospective.html",
+        "title": "Prospective Residents | Office of Medical Pathways",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://health.ucdavis.edu/international-affiliations/education/index.html",
+        "title": "Education Programs | International Affiliations",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "health.ucdavis.edu accessible. Two source pages (visiting.html + visitor_fees.html) provided verbatim audience + fee + duration evidence.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://health.ucdavis.edu/mdprogram/registrar/visiting.html",
+      "pageTitle": "Visiting Students | UC Davis School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "We do not accept international students for clinical experiences",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty via VSLO",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "INTERNATIONAL_STUDENTS_EXPLICITLY_EXCLUDED_FOR_CLINICAL_EXPERIENCES",
+        "MS4_FOURTH_YEAR_ONLY"
+      ]
+    },
+    {
+      "sourceUrl": "https://health.ucdavis.edu/mdprogram/registrar/visitor_fees.html",
+      "pageTitle": "Visiting Students Application Process and Fees",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Students should visit the Association of American Medical Colleges (AAMC's) Visiting Student Learning Opportunities (VSLO), and complete an application",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "VSLO_REQUIRED_VERBATIM"
+      ]
+    },
+    {
+      "sourceUrl": "https://health.ucdavis.edu/mdprogram/registrar/visitor_fees.html",
+      "pageTitle": "Visiting Students Application Process and Fees",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Visiting medical students pay $300 per elective. malpractice ($1 million per occurrence/ $3 million aggregate)",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FEE_300_USD_PER_ELECTIVE",
+        "MALPRACTICE_1M_PER_OCCURRENCE_3M_AGGREGATE_REQUIRED",
+        "ACLS_OR_BLS_REQUIRED",
+        "USMLE_STEP_1_OR_COMLEX_PASSING_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://health.ucdavis.edu/mdprogram/registrar/visitor_fees.html",
+      "pageTitle": "Visiting Students Application Process and Fees",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Visiting students may take up to 8 weeks of electives at UC Davis School of Medicine.",
+      "quoteSupports": ["duration"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks (verbatim)",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "DURATION_MAX_8_WEEKS_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "UC Davis SOM hub explicitly states 'We do not accept international students for clinical experiences.' International medical schools have no public lane.",
+    "weakNegativeEvidence": "Visa language absent. UC Davis Medical Center hospital not separately named as placement site (implicit through SOM)."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UC Davis SOM hub; (b) MS4 only; (c) international students EXPLICITLY EXCLUDED for clinical experiences (verbatim); (d) $300 fee per elective; (e) max 8 weeks; (f) malpractice $1M/$3M required; (g) USMLE Step 1 or COMLEX passing required; (h) VSLO required.",
+  "plainEnglishSummary": "UC Davis School of Medicine accepts only fourth-year US medical students for visiting electives via VSLO. International students are explicitly excluded for clinical experiences. Fee is $300 per elective, max 8 weeks, malpractice $1M/$3M required, USMLE Step 1 or COMLEX passing required. UC Davis Medical Center is the implicit placement site through the SOM.",
+  "driftCheck": "This advanced national USCE discovery because California gained a fourth classified institution with verbatim audience exclusion + cost + duration + malpractice + USMLE-pass requirements captured."
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "UCLA Ronald Reagan Medical Center",
+    "aliases": [
+      "Ronald Reagan UCLA Medical Center",
+      "RRUCLAMC",
+      "David Geffen School of Medicine at UCLA — Visiting Student Program (covering RRUCLAMC placement)"
+    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "officialDomain": "medschool.ucla.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UCLA Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 32 (queue-4-national-screening-resume); P101-1 selected_10 rank 2"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medschool.ucla.edu",
+      "uclahealth.org"
+    ],
+    "searchTermsTried": [
+      "UCLA David Geffen School of Medicine visiting medical student program international VSLO site:ucla.edu",
+      "UCLA visiting students VSLO",
+      "UCLA fourth year elective",
+      "DGSOM visiting student",
+      "UCLA away rotation",
+      "Ronald Reagan UCLA visiting medical student"
+    ],
+    "pagesOpened": [
+      "https://medschool.ucla.edu/education/md-education/visiting-students",
+      "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "https://emergencymedicine.ucla.edu/education/medical-students/4th-year-clerkship",
+      "https://emergencymedicine.ucla.edu/education/medical-students/visiting-elective-scholarship",
+      "https://globalhealth.med.ucla.edu/medical-students/clinical-electives"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://residency.semel.ucla.edu/visiting-elective-scholars-program-vesp/",
+        "title": "Visiting Elective Scholars Program (VESP) – UCLA Psychiatry Residency",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://medschool.ucla.edu/faculty-staff/academic-affairs/visa-licensing-office",
+        "title": "Visa Licensing Office | UCLA Medical School",
+        "reason": "NOT_USCE"
+      },
+      {
+        "url": "https://medschool.ucla.edu/education/md-education/admissions",
+        "title": "Medical School Admissions",
+        "reason": "NOT_USCE"
+      }
+    ],
+    "robotsOrAccessNotes": "medschool.ucla.edu accessible; WebFetch clean. Visa & Licensing Office serves faculty/staff (not student visa), correctly rejected.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "pageTitle": "VSLO | U.S. Students | UCLA Medical School",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Fourth-year students only... actively progressing toward a Doctor of Medicine degree at an affiliated LCME-accredited institution, or Osteopathic Medicine degree at an affiliated COCA-accredited AACOM Member Institution.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "3-week blocks; max 3 electives / 9 weeks total",
+      "specialtyDecision": "Multispecialty per VSLO catalog",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_ONLY",
+        "US_LCME_OR_COCA_AACOM_ONLY",
+        "VSLO_REQUIRED",
+        "75_DAY_LEAD_TIME_REQUIRED",
+        "AAMC_STANDARD_IMMUNIZATION_FORM_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "pageTitle": "VSLO | U.S. Students | UCLA Medical School",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Ronald Reagan UCLA Medical Center (RRUCLAMC) is explicitly listed under UCLA Medical Centers locations",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 9 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "RRUCLAMC_NAMED_AS_PLACEMENT_LOCATION"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "pageTitle": "VSLO | U.S. Students | UCLA Medical School",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Non-refundable payment of $300/elective electronically... Submit one payment per elective.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 9 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FEE_300_PER_ELECTIVE_NON_REFUNDABLE",
+        "PER_ELECTIVE_PAYMENT_REQUIRED"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "UCLA DGSOM visiting students hub restricts to LCME-accredited or COCA-accredited AACOM-member institutions, fourth-year only. International medical students are not addressed on this page; the international lane is not documented on the UCLA VSLO page.",
+    "weakNegativeEvidence": "Visa language absent; no explicit IMG / international student exclusion statement, but the LCME/AOA-only eligibility effectively excludes non-US students."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UCLA DGSOM hub; RRUCLAMC explicitly named as placement site; (b) US LCME or COCA AACOM 4th-year only; (c) $300 per elective non-refundable; (d) max 9 weeks across up to 3 electives; (e) 75-day lead time; (f) AAMC Standard Immunization Form required. No international lane on UCLA main hub.",
+  "plainEnglishSummary": "UCLA's David Geffen School of Medicine runs the visiting students program covering Ronald Reagan UCLA Medical Center placement. Only US 4th-year LCME or COCA AACOM-member students may apply via VSLO. Fee is $300 per elective non-refundable. Duration is 3-week blocks, max 3 electives or 9 weeks. 75-day lead time. No international or IMG lane is documented at UCLA main hub.",
+  "driftCheck": "This advanced national USCE discovery because California gained its second classified institution with verbatim audience + cost + duration + placement-site evidence; UCLA hub captures Ronald Reagan UCLA Medical Center as the explicitly-named placement site."
+}

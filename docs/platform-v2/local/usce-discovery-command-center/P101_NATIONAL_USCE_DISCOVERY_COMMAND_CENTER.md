@@ -1,10 +1,14 @@
 # P101 — National USCE Discovery Command Center
 
 **Reset date:** 2026-05-11
-**Sprint:** P101-0 (5-institution proof)
+**Latest sprint:** P101-1 (10-institution block; cumulative 15 packets)
 **Branch:** `local/p97-discovery-integrity-guardrails-clean`
-**Pre-sprint HEAD:** `f4207b1`
+**Latest HEAD:** see `p101_current_scoreboard.csv`
 **Production main:** `739ab1e232ecc52db1f10c8619bbdc1d409a190f` — UNCHANGED
+
+**P101 sprint history**
+- P101-0 (5-institution proof): UAMS · UAB · MedStar WHC · GW · Howard. Packets on disk: 5. Engine: ~15% → ~18%.
+- P101-1 (10-institution block): UCSF · UCLA · UCSD · UC Davis · Stanford · Keck/USC · Vanderbilt · BJH/WashU · Emory · Michigan. Packets on disk: 15 cumulative. Engine: ~18% → ~22%. Added `scripts/p101-extract-pdf-text.ts` helper. 1 BOT_BLOCKED packet (Michigan). 2 new INTERNATIONAL_STUDENT_CONFIRMED lanes (Stanford IVS, Emory).
 
 ---
 

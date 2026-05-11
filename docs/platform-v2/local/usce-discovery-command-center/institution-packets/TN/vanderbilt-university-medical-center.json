@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Vanderbilt University Medical Center",
+    "aliases": [
+      "VUMC",
+      "Vanderbilt University Hospital",
+      "Vanderbilt University School of Medicine — Visiting Medical Students (covering VUMC placement)"
+    ],
+    "city": "Nashville",
+    "state": "TN",
+    "officialDomain": "medschool.vanderbilt.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Vanderbilt Health / VUMC",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 37 (queue-4-national-screening-resume); P101-1 selected_10 rank 7; ALSO in active noindex runtime via overnight P99 work but had no P101 packet on disk; this is the canonical P101 packet"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medschool.vanderbilt.edu",
+      "vanderbilthealth.com"
+    ],
+    "searchTermsTried": [
+      "Vanderbilt visiting medical student program",
+      "VUMC visiting student VSLO",
+      "Vanderbilt international visiting medical student",
+      "Vanderbilt affiliation agreement",
+      "Vanderbilt MS4 elective",
+      "VUMC visiting clerkship section dates"
+    ],
+    "pagesOpened": [
+      "https://medschool.vanderbilt.edu/md/visiting-students/"
+    ],
+    "rejectedPages": [],
+    "robotsOrAccessNotes": "medschool.vanderbilt.edu accessible; WebFetch returned full content including specialty deadlines, section dates, and stipend info.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medschool.vanderbilt.edu/md/visiting-students/",
+      "pageTitle": "Visiting Medical Students | School of Medicine | Vanderbilt University",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Be in your 4th year of medical school. Attend a university that has an affiliation agreement with Vanderbilt University School of Medicine.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week standard; section windows June 8 to December 18, 2026",
+      "specialtyDecision": "Multispecialty; named specialties with deadlines: Ophthalmology (Mar 29), Orthopaedics (Mar 31), Urology (Mar 20), Anesthesiology (Apr 18), Emergency Medicine",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_FOURTH_YEAR_ONLY",
+        "AFFILIATION_AGREEMENT_WITH_VANDERBILT_SOM_REQUIRED",
+        "VSLO_REQUIRED",
+        "INSTITUTION_SPECIFIC_NOT_SCHOOL_LEVEL — VUMC explicitly named in elective descriptions, NOT just school-level coverage (CALIBRATION VS PRIOR P99 PACKET)"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.vanderbilt.edu/md/visiting-students/",
+      "pageTitle": "Visiting Medical Students | School of Medicine | Vanderbilt University",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Vanderbilt University School of Medicine hosts a select number of international students during the spring months from our established partner institutions. At this time, our list of partners is full and we are not seeking to expand our program.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "Spring months",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "AFFILIATED_ONLY",
+      "caveats": [
+        "INTERNATIONAL_PARTNERS_LIST_CURRENTLY_FULL_VERBATIM",
+        "NOT_OPEN_PUBLIC_PATHWAY_FOR_INTERNATIONAL_STUDENTS",
+        "ESTABLISHED_PARTNER_INSTITUTIONS_ONLY"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.vanderbilt.edu/md/visiting-students/",
+      "pageTitle": "Visiting Medical Students | School of Medicine | Vanderbilt University",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "$180.00 non-refundable processing fee for visiting students. Meharry Medical College students are exempt from this fee due to the Meharry Vanderbilt Alliance.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FEE_180_USD_NON_REFUNDABLE_VERBATIM",
+        "MEHARRY_VANDERBILT_ALLIANCE_FEE_EXEMPTION",
+        "EM_DEPT_OFFERS_2000_USD_LAUNCHING_LEADERS_STIPEND"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 1,
+    "strongNegativeEvidence": "International student lane explicitly named as currently CLOSED ('our list of partners is full and we are not seeking to expand our program'). This is not the same as 'not offered' — it is offered to partners only and currently full.",
+    "weakNegativeEvidence": "Visa language absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC — Vanderbilt SOM hub explicitly names VUMC in elective descriptions; the prior P99 'SYSTEM_PAGE_SOURCE_NO_VANDERBILT_UMC_SPECIFIC_GUARANTEE' caveat was OVERLY conservative and should be reconsidered in any future cleanup; (b) MS4 only; (c) AFFILIATION_AGREEMENT_REQUIRED with Vanderbilt SOM; (d) US LCME/AOA via VSLO + international partners-only (currently full); (e) $180 fee verbatim with Meharry exemption; (f) section windows June 8 to December 18 2026; (g) specialty-specific deadlines vary (Ophth/Ortho/Uro/Anes/EM); (h) EM department offers $2,000 Launching Leaders stipend.",
+  "plainEnglishSummary": "Vanderbilt SOM runs the VUMC visiting students program. MS4 only via VSLO with required affiliation agreement between the student's home school and Vanderbilt SOM. $180 non-refundable processing fee (Meharry students exempt). 4-week sections June-December. International students go through a separate partner-institutions-only lane which is currently FULL and not accepting new partners. Visa not stated. VUMC is explicitly named as the placement site for clinical electives — this is a notable calibration: the prior P99 noindex card carried a stronger 'system-level source no VUMC specific guarantee' caveat which the direct source does not actually justify.",
+  "driftCheck": "This advanced national USCE discovery because the Vanderbilt evidence is now properly captured in a P101 packet with direct source quotes (the prior P99 staged-batch-4 entry lacked a P101 packet); also captured an important calibration that the prior P99 caveat was too conservative — VUMC is directly named in the source."
+}

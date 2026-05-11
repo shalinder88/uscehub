@@ -1,20 +1,20 @@
-classification,count,institutions
-CURRENT_USCE_CONFIRMED,0,
-POSSIBLE_USCE_NEEDS_REVIEW,0,
-VSLO_US_MD_DO_ONLY,4,UAMS Medical Center (AR) | MedStar Washington Hospital Center (DC) | GW Hospital (DC) | Howard University Hospital (DC)
-INTERNATIONAL_STUDENT_CONFIRMED,1,UAB Hospital (AL)
-IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,
-RESEARCH_ONLY,0,
-FUTURE_LANE_ONLY,0,
-AFFILIATED_ONLY,0,
-RESIDENCY_ONLY,0,
-NO_PUBLIC_USCE_LANE_FOUND,0,
-BOT_BLOCKED_MANUAL_RETRY,0,
-SOURCE_DEAD,0,
-UNKNOWN_NEEDS_RETRY,0,
-TOTAL,5,
-TIER_A_PUBLIC_SAFE,0,
-TIER_B_CAUTION_SAFE,5,All five packets
-TIER_C_NEEDS_REVIEW,0,Sub-finding only (GW ICEP lane carries C tier but parent packet is B)
-TIER_D_REJECT_OR_HIDE,0,
-NO_TIER_NO_CANDIDATE,0,
+classification,p101_0_count,p101_1_count,cumulative_count,p101_1_institutions
+CURRENT_USCE_CONFIRMED,0,0,0,
+POSSIBLE_USCE_NEEDS_REVIEW,0,0,0,
+VSLO_US_MD_DO_ONLY,4,7,11,UCSF Medical Center (CA) | UCLA Ronald Reagan (CA) | UC San Diego Health (CA) | UC Davis Medical Center (CA) | Keck Hospital of USC (CA) | Vanderbilt University Medical Center (TN) | Barnes-Jewish Hospital / WashU (MO)
+INTERNATIONAL_STUDENT_CONFIRMED,1,2,3,Stanford Health Care (CA) | Emory University Hospital (GA)
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,0,0,
+RESEARCH_ONLY,0,0,0,
+FUTURE_LANE_ONLY,0,0,0,
+AFFILIATED_ONLY,0,0,0,
+RESIDENCY_ONLY,0,0,0,
+NO_PUBLIC_USCE_LANE_FOUND,0,0,0,
+BOT_BLOCKED_MANUAL_RETRY,0,1,1,Michigan Medicine - University Hospital (MI)
+SOURCE_DEAD,0,0,0,
+UNKNOWN_NEEDS_RETRY,0,0,0,
+TOTAL,5,10,15,
+TIER_A_PUBLIC_SAFE,0,0,0,
+TIER_B_CAUTION_SAFE,5,9,14,All P101-0 packets + 9 of 10 P101-1 packets
+TIER_C_NEEDS_REVIEW,0,1,1,Michigan Medicine (BOT_BLOCKED); also sub-findings: GW ICEP lane | UCSF Fresno follow-up | WashU intl conditional
+TIER_D_REJECT_OR_HIDE,0,0,0,
+NO_TIER_NO_CANDIDATE,0,0,0,

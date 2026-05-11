@@ -1,11 +1,21 @@
 queue_rank,sprint,state,region_or_county,institution_name,city,official_domain_if_known,priority,why_selected,source_of_queue_decision,search_status
-1,P101-0,AR,Pulaski,UAMS Medical Center,Little Rock,uams.edu,P1_FOR_STATE_GAP,AR thin coverage; UAMS AMC; documented Queue 4 rank 26,queue_4_candidate_rows.csv rank 26,QUEUED
-2,P101-0,AL,Jefferson,University of Alabama at Birmingham Hospital,Birmingham,uabmedicine.org,P1_FOR_STATE_GAP,AL thin (2 rows); UAB AMC HIGH yield; documented Queue 4 rank 27,queue_4_candidate_rows.csv rank 27,QUEUED
-3,P101-0,DC,N_A_DISTRICT,MedStar Washington Hospital Center,Washington,medstarwashington.org,P1_FOR_STATE_GAP,DC thin (1 row); largest DC hospital; documented Queue 4 rank 28,queue_4_candidate_rows.csv rank 28,QUEUED
-4,P101-0,DC,N_A_DISTRICT,George Washington University Hospital,Washington,gwhospital.com,P1_FOR_STATE_GAP,DC thin; GW SMHS AMC; documented Queue 4 rank 29,queue_4_candidate_rows.csv rank 29,QUEUED
-5,P101-0,DC,N_A_DISTRICT,Howard University Hospital,Washington,huhealthcare.com,P2_FOR_STATE_GAP,DC thin; HBCU AMC; documented Queue 4 rank 30,queue_4_candidate_rows.csv rank 30,QUEUED
-6,P101-1,CA,San Francisco,UCSF Medical Center,San Francisco,ucsfhealth.org,P0_AMC_GAP,Already in active runtime but discovery packet does not yet exist in command center; reconcile,queue_4_candidate_rows.csv rank 31,QUEUED_NEXT_SPRINT
-7,P101-1,CA,Los Angeles,UCLA Ronald Reagan Medical Center,Los Angeles,uclahealth.org,P0_AMC_GAP,Major CA AMC; Geffen SOM lane,queue_4_candidate_rows.csv rank 32,QUEUED_NEXT_SPRINT
-8,P101-1,CA,San Diego,UC San Diego Health,La Jolla,health.ucsd.edu,P1_AMC_GAP,Major CA AMC; UCSD SOM affiliate,queue_4_candidate_rows.csv rank 33,QUEUED_NEXT_SPRINT
-9,P101-1,CA,Sacramento,UC Davis Medical Center,Sacramento,health.ucdavis.edu,P1_AMC_GAP,Major CA AMC; UC Davis SOM affiliate,queue_4_candidate_rows.csv rank 34,QUEUED_NEXT_SPRINT
-10,P101-1,CA,Santa Clara,Stanford Health Care,Stanford,stanfordhealthcare.org,P0_AMC_GAP,Major CA AMC; Stanford SOM lane (already in active runtime per overnight),queue_4_candidate_rows.csv rank 35,QUEUED_NEXT_SPRINT
+1,P101-0,AR,Pulaski,UAMS Medical Center,Little Rock,uams.edu,P1_FOR_STATE_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 26,DONE
+2,P101-0,AL,Jefferson,University of Alabama at Birmingham Hospital,Birmingham,uab.edu,P1_FOR_STATE_GAP,Done. INTERNATIONAL_STUDENT_CONFIRMED classified.,queue_4_candidate_rows.csv rank 27,DONE
+3,P101-0,DC,N_A_DISTRICT,MedStar Washington Hospital Center,Washington,medstarwashington.org,P1_FOR_STATE_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 28,DONE
+4,P101-0,DC,N_A_DISTRICT,George Washington University Hospital,Washington,gwhospital.com,P1_FOR_STATE_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 29,DONE
+5,P101-0,DC,N_A_DISTRICT,Howard University Hospital,Washington,huhealthcare.com,P2_FOR_STATE_GAP,Done. VSLO_US_MD_DO_ONLY classified. PDF retry queued.,queue_4_candidate_rows.csv rank 30,DONE_RETRY_QUEUED
+6,P101-1,CA,San Francisco,UCSF Medical Center,San Francisco,meded.ucsf.edu,P0_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified. UCSF Fresno follow-up queued.,queue_4_candidate_rows.csv rank 31,DONE
+7,P101-1,CA,Los Angeles,UCLA Ronald Reagan Medical Center,Los Angeles,medschool.ucla.edu,P0_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 32,DONE
+8,P101-1,CA,San Diego,UC San Diego Health,La Jolla,medschool.ucsd.edu,P1_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 33,DONE
+9,P101-1,CA,Sacramento,UC Davis Medical Center,Sacramento,health.ucdavis.edu,P1_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 34,DONE
+10,P101-1,CA,Santa Clara,Stanford Health Care,Stanford,med.stanford.edu,P0_AMC_GAP,Done. INTERNATIONAL_STUDENT_CONFIRMED classified.,queue_4_candidate_rows.csv rank 35,DONE
+11,P101-1,CA,Los Angeles,Keck Hospital of USC,Los Angeles,keck.usc.edu,P1_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified.,queue_4_candidate_rows.csv rank 36,DONE
+12,P101-1,TN,Davidson,Vanderbilt University Medical Center,Nashville,medschool.vanderbilt.edu,P0_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified w/ important calibration vs prior P99 caveat.,queue_4_candidate_rows.csv rank 37,DONE
+13,P101-1,MO,St Louis,Barnes-Jewish Hospital / WashU,Saint Louis,md.wustl.edu,P0_AMC_GAP,Done. VSLO_US_MD_DO_ONLY classified. WashU intl-via-VSLO-Global conditional sub-finding.,queue_4_candidate_rows.csv rank 38,DONE
+14,P101-1,GA,Fulton,Emory University Hospital,Atlanta,med.emory.edu,P1_AMC_GAP,Done. INTERNATIONAL_STUDENT_CONFIRMED classified.,queue_4_candidate_rows.csv rank 39,DONE
+15,P101-1,MI,Washtenaw,Michigan Medicine - University Hospital,Ann Arbor,medschool.umich.edu,P0_AMC_GAP,Done. BOT_BLOCKED_MANUAL_RETRY classified. HIGH-PRIORITY retry queued.,queue_4_candidate_rows.csv rank 40,DONE_RETRY_QUEUED
+16,P101-2_CANDIDATE,PA,Allegheny,UPMC Presbyterian,Pittsburgh,upmc.com/locations/hospitals/presbyterian,P0_SIBLING_EXPANSION,Next in Queue 4. UPMC system index for sibling expansion.,queue_4_candidate_rows.csv rank 41,QUEUED_NEXT_SPRINT
+17,P101-2_CANDIDATE,NY,New York,Mount Sinai Hospital,New York,mountsinai.org,P0_AMC_GAP,Queued from later Queue 4 ranks; NY depth.,queue_4_candidate_rows.csv (rank tbd),QUEUED_NEXT_SPRINT
+18,P101-2_CANDIDATE,WA,King,UW Medical Center,Seattle,uwmedicine.org,P0_AMC_GAP,Queued; WA state-gap fill.,queue_4_candidate_rows.csv (rank tbd),QUEUED_NEXT_SPRINT
+19,P101-2_CANDIDATE,MA,Suffolk,Massachusetts General Hospital,Boston,massgeneral.org,P0_AMC_GAP,Queued; MA depth (0 active currently).,queue_4_candidate_rows.csv (rank tbd),QUEUED_NEXT_SPRINT
+20,P101-2_CANDIDATE,MD,Baltimore,Johns Hopkins Hospital,Baltimore,hopkinsmedicine.org,P0_AMC_GAP,Queued; in 25-row ready set per scoreboard.,queue_4_candidate_rows.csv (rank tbd),QUEUED_NEXT_SPRINT

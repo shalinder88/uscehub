@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Emory University Hospital",
+    "aliases": [
+      "Emory Healthcare",
+      "Emory University School of Medicine — Visiting Medical Students (covering Emory Hospital placement)"
+    ],
+    "city": "Atlanta",
+    "state": "GA",
+    "officialDomain": "med.emory.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Emory Healthcare",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 39 (queue-4-national-screening-resume); P101-1 selected_10 rank 9"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "med.emory.edu",
+      "emoryhealthcare.org"
+    ],
+    "searchTermsTried": [
+      "Emory University School of Medicine visiting medical student VSLO international elective site:emory.edu",
+      "Emory visiting medical students",
+      "Emory international visiting medical student application",
+      "Emory VSLO fourth year",
+      "Emory visiting student tuition fee",
+      "Emory TOEFL visiting student"
+    ],
+    "pagesOpened": [
+      "https://med.emory.edu/education/admissions/visiting/index.html",
+      "https://med.emory.edu/education/_documents/visiting-student-elective-policy-requirements_08.2024.pdf",
+      "https://med.emory.edu/education/_documents/application-for-visiting-international-student.pdf",
+      "https://med.emory.edu/education/admissions/visiting/md_files/ApplicationInstructions.PDF",
+      "https://med.emory.edu/departments/emergency-medicine/education/medical-student/m4visiting-students/index.html",
+      "https://med.emory.edu/departments/surgery/education/cardiothoracic-surgery-residencies-fellowship/medical-student-visting-rotations.html"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://med.emory.edu/departments/psychiatry/education/general_residency/visiting_elective.html",
+        "title": "Visiting Elective for URiM Students (Psychiatry)",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "med.emory.edu accessible. Direct hub provided verbatim US + international audience + cost evidence in HTML; PDF policies referenced as supplementary (extraction not invoked this turn since HTML was sufficient).",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "4-week blocks",
+      "specialtyDecision": "Multispecialty via VSLO catalog",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_FOURTH_YEAR_ONLY",
+        "US_AAMC_MEMBER_SCHOOLS_AND_PUERTO_RICO",
+        "VSLO_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "October to February only for international students",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FOURTH_YEAR_INTERNATIONAL_MS_DIRECT_APPLICATION",
+        "INTERNATIONAL_WINDOW_OCT_TO_FEB_ONLY",
+        "TOEFL_IBT_MIN_20_5_PER_SECTION_NO_EXCEPTIONS",
+        "VISA_IS_STUDENT_RESPONSIBILITY"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "US/Puerto Rico: $100 application fee + $260 registration fee. International: $525 application fee + $4,500 tuition.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "4-week blocks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "US_APP_FEE_100_VSLO_PLUS_260_REGISTRATION",
+        "INTL_APP_FEE_525_PLUS_4500_TUITION_VERBATIM",
+        "TWO_DISTINCT_PRICING_TIERS"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "The TOEFL iBT is required - the minimum score is 20, with no less than 5 scored on each individual section (no exceptions)",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Oct-Feb international",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "TOEFL_REQUIREMENT_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "International students restricted to Oct-Feb window only (verbatim) and must meet TOEFL iBT minimum 20 with no less than 5 per section (verbatim 'no exceptions'). The 5 required core clerkships (IM/peds/surgery/OBGYN/psych) must be passed prior to application.",
+    "weakNegativeEvidence": "Emory University Hospital not separately named as placement site on hub (school-level coverage implies the hospital network). Visa support not provided by Emory."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — Emory SOM hub; Emory University Hospital not separately named but the SOM operates clinical placements across Emory Healthcare; (b) two distinct lanes: US LCME/AOA fourth-year ($100 VSLO + $260 reg) AND international fourth-year ($525 + $4,500 tuition); (c) international window restricted to October-February only; (d) TOEFL iBT 20 (5/section, no exceptions) for international; (e) 5 core clerkships passed required for international; (f) visa is student responsibility; (g) 90-day lead time before elective start.",
+  "plainEnglishSummary": "Emory SOM offers two real lanes. US/Puerto Rico fourth-year MD/DO students apply via VSLO with $100 app fee + $260 registration. International fourth-year medical students apply directly with $525 + $4,500 tuition, must score TOEFL iBT 20 (5/section, no exceptions), must have passed the 5 core clerkships (IM/peds/surgery/OBGYN/psych), and can only rotate October-February. Visa is the student's responsibility.",
+  "driftCheck": "This advanced national USCE discovery because Georgia gained its first P101 packet covering a confirmed international USCE lane with the strictest TOEFL + core-clerkships requirements captured verbatim, plus the explicit Oct-Feb international window constraint."
+}

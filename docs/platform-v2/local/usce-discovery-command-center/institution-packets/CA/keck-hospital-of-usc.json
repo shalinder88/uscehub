@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Keck Hospital of USC",
+    "aliases": [
+      "Keck Medical Center of USC",
+      "Keck School of Medicine of USC — Visiting Student Clerkships (covering Keck Hospital placement)",
+      "KSOM"
+    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "officialDomain": "keck.usc.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Keck Medicine of USC",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 36 (queue-4-national-screening-resume); P101-1 selected_10 rank 6"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "keck.usc.edu",
+      "medstudent.usc.edu"
+    ],
+    "searchTermsTried": [
+      "Keck School of Medicine USC visiting medical student VSLO elective international site:usc.edu",
+      "Keck USC visiting student clerkships",
+      "Keck USC fourth year elective",
+      "USC visiting medical student",
+      "Keck international applicants",
+      "KSOM medical student rotation"
+    ],
+    "pagesOpened": [
+      "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "https://keck.usc.edu/md-student-portal/md-elective-information/",
+      "https://keck.usc.edu/emergency-medicine/training-education/medical-student-programs/medical-student-clerkship/",
+      "https://keck.usc.edu/anesthesiology/training-education/medical-student-rotation/",
+      "https://keck.usc.edu/orthopaedic-surgery/training-education/clerkship-program/",
+      "https://medstudent.usc.edu/global-health/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://keck.usc.edu/neurological-surgery/training-education/clerkship-program/",
+        "title": "Clerkship Program - Department of Neurological Surgery",
+        "reason": "AFFILIATED_ONLY"
+      },
+      {
+        "url": "https://keck.usc.edu/pphs/education/international-applicants/",
+        "title": "International Applicants - USC Keck School of Medicine",
+        "reason": "NOT_USCE"
+      },
+      {
+        "url": "https://medstudent.usc.edu/home/faculty-staff-information/keck-school-of-medicine-md-program-policy-on-criteria-and-process-for-approving-year-iii-iv-selective-and-elective-courses/",
+        "title": "Policy on Year III-IV Selective and Elective Courses",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "keck.usc.edu accessible. The search summary cited 'visiting students from schools abroad' language but the direct fetch confirmed only LCME + COCA US-based eligibility; the 'abroad' phrasing in the summary appears to refer to USC students completing electives abroad (outgoing), not international students coming to USC (incoming). Conservative classification follows.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "pageTitle": "Visiting Student Clerkships - Keck School of Medicine of USC",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students in good academic standing in their senior year at US schools of medicine accredited by the Liaison Committee on Medical Education (LCME) and students at schools accredited by the American Osteopathic Association",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks (verbatim)",
+      "specialtyDecision": "Multispecialty via VSLO catalog",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_SENIOR_YEAR_ONLY",
+        "US_LCME_OR_COCA_ONLY",
+        "GOOD_ACADEMIC_STANDING_REQUIRED",
+        "VSLO_REQUIRED",
+        "SCHOOL_LEVEL_SOURCE — KSOM hub; Keck Hospital of USC hospital not separately named as placement"
+      ]
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "pageTitle": "Visiting Student Clerkships - Keck School of Medicine of USC",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "The Keck School of Medicine accepts visiting student applications through the Visiting Student Learning Opportunities Program",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "VSLO_REQUIRED_VERBATIM"
+      ]
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "pageTitle": "Visiting Student Clerkships - Keck School of Medicine of USC",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "for a maximum of eight weeks",
+      "quoteSupports": ["duration"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MAX_8_WEEKS_VERBATIM",
+        "NO_STIPEND_PROVIDED_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "Hub restricts to US LCME and COCA accredited senior-year students. The /pphs/education/international-applicants page is for international applicants to other programs (likely public health), not for international visiting medical students into Keck. No international USCE lane found on KSOM hub.",
+    "weakNegativeEvidence": "Cost and visa absent from source. The medstudent.usc.edu/global-health page addresses USC students going abroad (outgoing), not international students coming to USC (incoming)."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — KSOM hub; Keck Hospital of USC not separately named; (b) US LCME + COCA senior-year only; (c) VSLO required; (d) max 8 weeks; (e) no stipend; (f) cost/visa NOT_STATED on hub. Conservative classification: no international USCE lane found at Keck despite an ambiguous 'visiting students from schools abroad' phrase in a search-result snippet that turned out to refer to outgoing electives (USC students traveling abroad).",
+  "plainEnglishSummary": "Keck School of Medicine of USC accepts only senior-year US LCME or COCA-accredited medical students for visiting clerkships via VSLO. Max 8 weeks. No stipend. Cost not stated on the hub. International medical students do not have a public lane at Keck despite outgoing-electives language that may look like it covers incoming international students.",
+  "driftCheck": "This advanced national USCE discovery because Keck/USC was classified with careful disambiguation between outgoing (USC students abroad) and incoming (international students into USC) language — this resulted in no IMG-friendly classification despite a misleading search-result snippet."
+}
