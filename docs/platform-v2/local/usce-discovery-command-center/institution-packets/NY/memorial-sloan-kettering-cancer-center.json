@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-4",
+  "sprint": "P101-4",
+  "institution": {
+    "name": "Memorial Sloan Kettering Cancer Center",
+    "aliases": ["MSK", "MSKCC", "Memorial Sloan Kettering"],
+    "city": "New York",
+    "state": "NY",
+    "officialDomain": "mskcc.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Memorial Sloan Kettering (independent specialty AMC)",
+    "academicAffiliation": "Weill Cornell Medicine; Gerstner Sloan Kettering Graduate School",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 72 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Memorial Sloan Kettering Cancer Center",
+    "name": "Memorial Sloan Kettering Cancer Center",
+    "aliases": ["MSK", "MSKCC", "Memorial Sloan Kettering"],
+    "officialDomains": ["mskcc.org"],
+    "city": "New York",
+    "state": "NY",
+    "institutionType": "academic_medical_center_specialty_oncology",
+    "academicAffiliation": "Weill Cornell Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 72 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["mskcc.org"],
+    "searchTermsTried": [
+      "MSKCC visiting medical student elective international",
+      "MSK clinical elective",
+      "MSK observership",
+      "MSK medical student",
+      "memorial sloan kettering visiting student"
+    ],
+    "pagesOpened": [
+      "https://www.mskcc.org/hcp-education-training",
+      "https://www.mskcc.org/hcp-education-training/medical-student-opportunities",
+      "https://www.mskcc.org/hcp-education-training/medical-students/elective",
+      "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.mskcc.org/teaching/medical-students", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://www.mskcc.org/hcp-education-training/medical/visiting-medical-students", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://www.mskcc.org/hcp-education-training/medical-students/elective/faq", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Site accessible; WebFetch returned clean content for elective and observership pages.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective",
+      "pageTitle": "MSK Clinical Elective Program",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "6acd83df6870af68850f084861f0f87b2edf3199c9cfff1a4c2c481903a89580",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/cleaned-text/bff18824a2a60df9.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/source-pages/bff18824a2a60df9.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/metadata/bff18824a2a60df9.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "MSK Clinical Elective Program — open to 3rd and 4th year medical students from US, Canada, and around the world. Course catalog lists ~43 electives across multiple departments."
+    },
+    {
+      "sourceUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships",
+      "pageTitle": "MSK Medical Student Observerships",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "856a8d4bce3bad7279fcc795843a63e37c6f63579481d49548c9d83a00382d61",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/cleaned-text/e3f9a379a6ac8197.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/source-pages/e3f9a379a6ac8197.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/metadata/e3f9a379a6ac8197.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "captureNotes": "MSK Medical Student Observerships — explicitly accepts international students; B-1 visa; max 10 days per academic year; $100 processing fee; no certificate of completion; observer (hands-off)."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective",
+      "pageTitle": "MSK Clinical Elective Program",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "clinical electives to 3rd and 4th year medical students from institutions in the US, Canada, and around the world",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT_GLOBAL",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE_ON_ELECTIVE_PAGE",
+      "durationDecision": "NOT_STATED_ON_SOURCE_ON_ELECTIVE_PAGE",
+      "specialtyDecision": "Multispecialty: ~43 electives across Anesthesiology/CCM, Medicine, Neurology, Neurosurgery, Pediatrics, Psychiatry, Radiation Oncology, Radiology, Surgery",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "3RD_AND_4TH_YEAR_ONLY",
+        "FERGUSON_NAZARETH_TRACK_FOR_UNDERREPRESENTED_BACKGROUNDS",
+        "MSK_CLINICAL_ELECTIVE_FAQ_PAGE_404_DETAIL_REQUIRES_INSTITUTIONAL_INQUIRY"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships",
+      "pageTitle": "MSK Medical Student Observerships",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "shortQuote": "International students must secure a business tourist visa (B-1 visa) for their visit. limited to 10 days per academic year.",
+      "quoteSupports": ["audience", "visa", "duration", "cost"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "PHYSICIAN_SPONSOR_REQUIRED_AND_OFFICE_OF_GME",
+      "costDecision": "STATED_VERBATIM_100_PROCESSING_FEE",
+      "visaDecision": "B1_LANGUAGE_PRESENT",
+      "durationDecision": "Max 10 days per academic year",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED_OBSERVER_ONLY",
+      "caveats": [
+        "OBSERVER_ONLY_HANDS_OFF",
+        "10_DAY_MAX_PER_ACADEMIC_YEAR",
+        "PHYSICIAN_SPONSOR_REQUIRED_FROM_MEMORIAL_HOSPITAL_STAFF",
+        "100_DOLLAR_PROCESSING_FEE_WAIVERS_AVAILABLE",
+        "TRAVEL_HOUSING_FOOD_STIPEND_NOT_PROVIDED",
+        "NO_CERTIFICATE_OF_COMPLETION",
+        "B1_BUSINESS_TOURIST_VISA_REQUIRED",
+        "MSK_DOES_NOT_PROVIDE_VISA_SPONSORSHIP"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_3RD_4TH_YEAR", "quote": "clinical electives to 3rd and 4th year medical students from institutions in the US, Canada, and around the world", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "PRESUMED_ELIGIBLE_NOT_EXPLICITLY_DISTINGUISHED", "quote": "clinical electives to 3rd and 4th year medical students from institutions in the US, Canada, and around the world", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "ELIGIBLE_EXPLICIT_GLOBAL", "quote": "clinical electives to 3rd and 4th year medical students from institutions in the US, Canada, and around the world", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "OBSERVERSHIP_ONLY_NOT_ELECTIVE", "quote": "International students must secure a business tourist visa (B-1 visa) for their visit", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "3RD_OR_4TH_YEAR_ELECTIVE", "quote": "clinical electives to 3rd and 4th year medical students", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_IN_HOME_SCHOOL", "quote": "Letter of Good Standing from medical school (dated within 6 months)", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "INSTITUTIONAL_FORM_VIA_OFFICE_OF_GME_PLUS_PHYSICIAN_SPONSOR", "quote": "Observer application materials should be submitted to the Office of Graduate Medical Education at least four weeks in advance", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "Online portal after initial acceptance — direct URL not given on source", "quote": "Complete online portal submission after initial acceptance", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "AT_LEAST_4_WEEKS_IN_ADVANCE", "quote": "Submit materials at least four weeks in advance", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "ROLLING_AT_LEAST_4_WEEKS_LEAD_TIME", "quote": "at least four weeks in advance of the observership", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "cost_application_fee", "value": "100_USD_OBSERVERSHIP_WAIVERS_AVAILABLE", "quote": "$100 processing fee (waivers available)", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "TRAVEL_HOUSING_NOT_PROVIDED_OBSERVERSHIP", "quote": "Travel, housing, food, stipends and/or allowances will not be provided", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "cost_other", "value": "NO_STIPEND_NO_ALLOWANCE", "quote": "Travel, housing, food, stipends and/or allowances will not be provided", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "duration", "value": "OBSERVERSHIP_10_DAYS_MAX_PER_ACADEMIC_YEAR_ELECTIVE_DURATION_NOT_STATED", "quote": "limited to 10 days per academic year", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "ANESTHESIOLOGY_CCM_MEDICINE_NEUROLOGY_NEUROSURGERY_PEDIATRICS_PSYCHIATRY_RAD_ONC_RADIOLOGY_SURGERY", "quote": "Anesthesiology and Critical Care Medicine, Medicine, Neurology, Neurosurgery, Pediatrics, Psychiatry and Behavioral Sciences, Radiation Oncology, Radiology, Surgery", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/elective", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "ELECTIVE_PRESUMED_HANDS_ON_OBSERVERSHIP_HANDS_OFF", "quote": "hands-off experience designed to complement a student's formal education", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-student-opportunities", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "OBSERVERSHIP_NO_CERTIFICATE_ELECTIVE_NOT_STATED", "quote": "Certificates of completion are not granted", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "B1_REQUIRED_FOR_INTERNATIONAL_OBSERVERS", "quote": "International students must secure a business tourist visa (B-1 visa) for their visit. MSK does not provide visa sponsorship.", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_DISCUSSED_B1_ONLY_NO_SPONSORSHIP", "quote": "MSK does not provide visa sponsorship", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "HEALTH_CLEARANCE_ATTESTATION_REQUIRED", "quote": "Health clearance attestation", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "OFFICE_OF_GRADUATE_MEDICAL_EDUCATION", "quote": "Inquiries should be directed to [email protected]", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_PROVIDED_OBSERVERSHIP", "quote": "Travel, housing, food, stipends and/or allowances will not be provided", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "CV_ENGLISH_OBSERVERSHIP_GUIDELINES_ATTESTATION_GOALS_STATEMENT_GOOD_STANDING_LETTER_HEALTH_CLEARANCE_PHOTO_ID_PASSPORT_FOR_INTERNATIONAL", "quote": "Curriculum Vitae (English), Signed Guidelines for Observership, Statement of Educational Goals, Letter of Good Standing, Health clearance attestation, Photo ID (passport for international)", "quoteUrl": "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "INTERNATIONAL_MS", "MS3_ALLOWED", "MS4_ONLY"],
+    "application": ["DIRECT_APPLICATION", "DETAILS_BY_COORDINATOR"],
+    "experienceType": ["CLINICAL_ELECTIVE", "OBSERVERSHIP", "OBSERVER_ONLY"],
+    "cost": ["APPLICATION_FEE", "COST_STATED"],
+    "visa": ["B1_B2_MENTIONED", "VISA_STUDENT_RESPONSIBILITY"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "MSK offers a Clinical Elective Program open to 3rd and 4th-year medical students from US, Canada, and worldwide, plus a separate Observership Program for hands-off experience on B-1 visa.",
+    "whoThisIsFor": "3rd and 4th year medical students enrolled anywhere in the world (Clinical Elective Program); international medical students needing short-term observer experience (Observership Program, max 10 days, B-1 visa).",
+    "whoThisIsNotFor": "Pre-med students; first-and-second-year medical students for the elective track (those have the Summer Research Fellowship); IMG graduates seeking hands-on rotations (observership is hands-off only).",
+    "howToApply": "Clinical Elective: institutional application via the MSK Clinical Elective Program (FAQ page 404 at capture; institutional inquiry required for full details). Observership: secure a physician sponsor on Memorial Hospital's medical staff, submit to Office of Graduate Medical Education at least four weeks in advance with required documents and $100 processing fee.",
+    "estimatedCostSummary": "Observership has a $100 processing fee (waivers available); no travel/housing/food/stipend provided. Elective fees not stated on source.",
+    "keyCaveats": [
+      "Clinical Elective requires 3rd or 4th-year status",
+      "Observership is hands-off only, max 10 days/year, no certificate",
+      "International observers must secure B-1 business tourist visa themselves; MSK does not sponsor",
+      "Elective FAQ page returned 404; full eligibility/cost/visa details require institutional inquiry",
+      "Ferguson Nazareth Clinical Scholars Program is a 4-week elective for students from historically underrepresented backgrounds"
+    ],
+    "whyWeClassifiedItThisWay": "Verbatim source quote 'clinical electives to 3rd and 4th year medical students from institutions in the US, Canada, and around the world' establishes international eligibility for the Elective track; observership page explicitly accepts international medical students on B-1 visa.",
+    "sourceTransparencyNote": "Two MSK pages captured to T7 canonical capsule with real SHA-256 hashes. Elective FAQ page (404) is a gap requiring future retry.",
+    "possibleListingTitle": "Memorial Sloan Kettering — Clinical Elective + Observership (International Students Eligible)",
+    "possibleMetaDescription": "MSK accepts 3rd and 4th-year medical students from US, Canada, and worldwide for clinical electives; separate observership program for short-term international observers on B-1 visa.",
+    "suggestedFilters": ["international_eligible", "observership_available", "specialty_oncology"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "MSKCC visiting medical student elective international",
+      "MSK clinical elective FAQ",
+      "MSK observership"
+    ],
+    "pagesOpened": [
+      "https://www.mskcc.org/hcp-education-training",
+      "https://www.mskcc.org/hcp-education-training/medical-student-opportunities",
+      "https://www.mskcc.org/hcp-education-training/medical-students/elective",
+      "https://www.mskcc.org/hcp-education-training/medical-students/medical-student-observerships"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.mskcc.org/teaching/medical-students", "reason": "DEAD_LINK_404"},
+      {"url": "https://www.mskcc.org/hcp-education-training/medical/visiting-medical-students", "reason": "DEAD_LINK_404"},
+      {"url": "https://www.mskcc.org/hcp-education-training/medical-students/elective/faq", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicLaneReason": "Not applicable — public lane found and classified.",
+    "whetherNegativeEvidenceStrong": "PARTIAL — Clinical Elective FAQ page would provide cost/visa/specifics but is currently 404. Documented for retry.",
+    "futureRetrySuggestion": "Re-fetch MSK Clinical Elective FAQ once the page is restored, or institutional inquiry via Office of GME."
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "6acd83df6870af68850f084861f0f87b2edf3199c9cfff1a4c2c481903a89580",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/cleaned-text/bff18824a2a60df9.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/memorial-sloan-kettering-cancer-center/source-pages/bff18824a2a60df9.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["specialties_offered", "course_codes", "application_window"],
+    "changeRisk": "MEDIUM",
+    "notes": "Primary hash anchors the Clinical Elective Program page; observership page hash captured separately as secondary evidence."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because MSK's international elective lane plus B-1 observership lane were documented with verbatim eligibility, cost, and visa text and dual SHA-256 hashes on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

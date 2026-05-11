@@ -1,20 +1,20 @@
-classification,p101_0_count,p101_1_count,p101_2_count,cumulative_count,notes
-CURRENT_USCE_CONFIRMED,0,0,0,0,(reserved for unambiguous institution-specific + multi-axis verbatim)
-POSSIBLE_USCE_NEEDS_REVIEW,0,0,1,1,Cook County Health (Stroger)
-VSLO_US_MD_DO_ONLY,4,7,17,28,Strong US-only-via-VSLO lane is the dominant pattern
-INTERNATIONAL_STUDENT_CONFIRMED,1,2,7,10,UAB · Stanford · Emory · UPMC Presb · BMC · Parkland · BWH · MGH · BIDMC · UPMC Children's
-IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,0,0,0,(sub-finding at USC Keck Medicine only; not a primary classification yet)
-RESEARCH_ONLY,0,0,0,0,
-FUTURE_LANE_ONLY,0,0,0,0,
-AFFILIATED_ONLY,0,0,0,0,(sub-findings: GW ICEP · Vanderbilt intl partners full · HFH intl · Maimonides intl · MGH Surgery RES is sub-finding RESIDENCY_ONLY)
-RESIDENCY_ONLY,0,0,0,0,(sub-finding only at MGH)
-NO_PUBLIC_USCE_LANE_FOUND,0,0,0,0,
-BOT_BLOCKED_MANUAL_RETRY,0,1,0,1,Michigan Medicine (P101-1)
-SOURCE_DEAD,0,0,0,0,
-UNKNOWN_NEEDS_RETRY,0,0,0,0,
-TOTAL,5,10,25,40,
-TIER_A_PUBLIC_SAFE,0,0,0,0,(no row promoted to public/staged/runtime yet)
-TIER_B_CAUTION_SAFE,5,9,24,38,Nearly all packets at Tier B (school-level or institution-specific with caveats)
-TIER_C_NEEDS_REVIEW,0,1,1,2,Michigan (bot-blocked) · Cook County (PDF stale)
-TIER_D_REJECT_OR_HIDE,0,0,0,0,
-NO_TIER_NO_CANDIDATE,0,0,0,0,
+classification,p101_0_count,p101_1_count,p101_2_count,p101_4_partial_count,cumulative_count,notes
+CURRENT_USCE_CONFIRMED,0,0,0,0,0,(reserved for unambiguous institution-specific + multi-axis verbatim)
+POSSIBLE_USCE_NEEDS_REVIEW,0,0,1,0,1,Cook County Health (Stroger)
+VSLO_US_MD_DO_ONLY,4,7,17,1,29,P101-4 adds Northwell SIUH (Zucker SOM)
+INTERNATIONAL_STUDENT_CONFIRMED,1,2,7,2,12,P101-4 adds MSKCC · Yale-New Haven Children's
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,0,0,1,1,P101-4 adds HSS Academic Visitor Program (MSK observership is a secondary classification on MSK packet not primary)
+RESEARCH_ONLY,0,0,0,0,0,
+FUTURE_LANE_ONLY,0,0,0,0,0,
+AFFILIATED_ONLY,0,0,0,0,0,(sub-findings only)
+RESIDENCY_ONLY,0,0,0,0,0,(sub-finding only at MGH)
+NO_PUBLIC_USCE_LANE_FOUND,0,0,0,1,1,P101-4 adds The Brooklyn Hospital Center
+BOT_BLOCKED_MANUAL_RETRY,0,1,0,0,1,Michigan Medicine (P101-1)
+SOURCE_DEAD,0,0,0,0,0,
+UNKNOWN_NEEDS_RETRY,0,0,0,0,0,
+TOTAL,5,10,25,5,45,
+TIER_A_PUBLIC_SAFE,0,0,0,3,3,P101-4 first packets at Tier A — Northwell SIUH · MSKCC · Yale-New Haven Children's
+TIER_B_CAUTION_SAFE,5,9,24,1,39,P101-4 adds HSS
+TIER_C_NEEDS_REVIEW,0,1,1,0,2,Michigan (bot-blocked) · Cook County (PDF stale)
+TIER_D_REJECT_OR_HIDE,0,0,0,0,0,
+NO_TIER_NO_CANDIDATE,0,0,0,1,1,P101-4 adds TBHC (no public lane found)

@@ -74,6 +74,10 @@ const REQUIRED_DOCS = [
   "P101_3C_T7_CANONICAL_ROOT_DECISION.md",
   "p101_3c_t7_artifact_relocation_plan.csv",
   "P101_3C_T7_ROOT_RECONCILIATION_CHECKPOINT.md",
+  // P101-4 next-25 enhanced discovery block (partial — paused at 5 per operator scope decision)
+  "P101_4_LANE_DECISION.md",
+  "p101_4_selected_25_queue.csv",
+  "P101_4_CHECKPOINT_AFTER_5.md",
 ];
 
 // P101-3C: T7 evidence MUST live in the USCEHub product capsule on T7 Shield,
@@ -316,8 +320,8 @@ function validatePacket(p: string): void {
   // this field continue to pass the original gates above.
   const eev = o.enhancedEvidenceVersion;
   if (typeof eev === "string" && eev !== "") {
-    if (eev !== "p101-3") {
-      fail("ENHANCED_EVIDENCE_VERSION_INVALID", rel, `expected p101-3 (or absent); got ${eev}`);
+    if (eev !== "p101-3" && eev !== "p101-4") {
+      fail("ENHANCED_EVIDENCE_VERSION_INVALID", rel, `expected p101-3 or p101-4 (or absent); got ${eev}`);
     } else {
       validateEnhanced(o, rel);
     }

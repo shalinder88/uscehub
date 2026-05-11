@@ -1,18 +1,21 @@
 metric,value,as_of,notes
-active_discovery_lane,Queue 4 ranks 26-70 covered (P101-0+1+2 cumulative),2026-05-11,
-cumulative_packets,40,2026-05-11,P101-0 5 + P101-1 10 + P101-2 25
-cumulative_states,15,2026-05-11,AR AL DC CA TN MO GA MI PA MA NY TX WA IL IN
+active_discovery_lane,Queue 4 ranks 26-74 covered (P101-0+1+2 + P101-4 partial 70-74),2026-05-11,P101-4 stopped at #5 per operator scope decision; ranks 75-94 roll to P101-5
+cumulative_packets,45,2026-05-11,P101-0 5 + P101-1 10 + P101-2 25 + P101-4 partial 5
+cumulative_states,16,2026-05-11,AR AL DC CA TN MO GA MI PA MA NY TX WA IL IN CT
+enhanced_packets,15,2026-05-11,P101-3 retrofit 10 + P101-4 partial 5
+real_artifact_backed_packets,15,2026-05-11,P101-3B 10 primary URLs + P101-4 partial 5 (6 source URLs)
+canonical_t7_backed_packets,15,2026-05-11,Every artifact under /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/
 CURRENT_USCE_CONFIRMED,0,2026-05-11,
 POSSIBLE_USCE_NEEDS_REVIEW,1,2026-05-11,Cook County
-VSLO_US_MD_DO_ONLY,28,2026-05-11,Dominant pattern
-INTERNATIONAL_STUDENT_CONFIRMED,10,2026-05-11,Strongest IMG-relevance inventory growth from P101-2 (added 7)
-IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,2026-05-11,(USC Keck sub-finding only)
-NO_PUBLIC_USCE_LANE_FOUND,0,2026-05-11,
+VSLO_US_MD_DO_ONLY,29,2026-05-11,P101-4 adds Northwell SIUH (Zucker SOM)
+INTERNATIONAL_STUDENT_CONFIRMED,12,2026-05-11,P101-4 adds MSKCC + Yale-New Haven Children's
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,1,2026-05-11,P101-4 adds HSS Academic Visitor Program
+NO_PUBLIC_USCE_LANE_FOUND,1,2026-05-11,P101-4 adds The Brooklyn Hospital Center
 BOT_BLOCKED_MANUAL_RETRY,1,2026-05-11,Michigan Medicine (P101-1)
 SOURCE_DEAD,0,2026-05-11,
-states_with_2_plus_packets,7,2026-05-11,DC(3) CA(8) MI(4) PA(4) MA(5) NY(4) IL(3) IN(2)
-states_with_only_1_packet,8,2026-05-11,AR AL TN MO GA TX WA each(1)
-manual_retry_queue_size,9,2026-05-11,7 existing + Stanford TOEFL + 2 new (UCSF Fresno + WashU VSLO Global + Cook County 2018 PDF + UW central hub + LAC+USC Keck Medicine USC observership packet)
-discovery_engine_completion_pct,30,2026-05-11,From 22% pre-P101-2; +8 pts
+states_with_2_plus_packets,7,2026-05-11,DC(3) CA(8) MI(4) PA(4) MA(5) NY(8) IL(3) IN(2)
+states_with_only_1_packet,9,2026-05-11,AR AL TN MO GA TX WA CT each(1)
+manual_retry_queue_size,9,2026-05-11,Existing 7 + Stanford TOEFL + 2 P101-1 retries; MSK Elective FAQ added to retry queue this sprint
+discovery_engine_completion_pct,34,2026-05-11,+4 pts from P101-4 partial (5 new packets / 25 quota; partial sprint)
 public_v1_readiness_pct,43,2026-05-11,Unchanged (no public-product touch)
-next_exact_institution,Queue 4 rank 70 = Brooklyn Hospital Center OR pivot to existing-304 DB triage OR state-completion lane,2026-05-11,Decision deferred to P101-3 lane-decision phase
+next_exact_institution,Queue 4 rank 75 = Hartford Hospital (P101-5 next),2026-05-11,P101-4 sprint paused at #5 of 25 per operator option-A scope decision; remaining ranks 75-94 reserved for P101-5

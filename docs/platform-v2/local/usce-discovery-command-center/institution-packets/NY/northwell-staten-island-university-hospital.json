@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-4",
+  "sprint": "P101-4",
+  "institution": {
+    "name": "Northwell Health — Staten Island University Hospital",
+    "aliases": ["SIUH", "Staten Island University Hospital", "Northwell SIUH"],
+    "city": "Staten Island",
+    "state": "NY",
+    "officialDomain": "northwell.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Northwell Health",
+    "academicAffiliation": "Donald and Barbara Zucker School of Medicine at Hofstra/Northwell",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 71 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Northwell Health — Staten Island University Hospital",
+    "name": "Northwell Health — Staten Island University Hospital",
+    "aliases": ["SIUH", "Staten Island University Hospital", "Northwell SIUH"],
+    "officialDomains": ["northwell.edu", "medicine.hofstra.edu"],
+    "city": "Staten Island",
+    "state": "NY",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "Zucker SOM at Hofstra/Northwell",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 71 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["northwell.edu", "medicine.hofstra.edu"],
+    "searchTermsTried": [
+      "staten island university hospital visiting medical student",
+      "northwell visiting medical student",
+      "zucker SOM hofstra visiting student",
+      "VSLO northwell",
+      "VSLO hofstra",
+      "northwell elective"
+    ],
+    "pagesOpened": [
+      "https://www.northwell.edu",
+      "https://www.northwell.edu/research-and-education",
+      "https://medicine.hofstra.edu",
+      "https://medicine.hofstra.edu/education",
+      "https://medicine.hofstra.edu/education/visiting/index.html"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://www.northwell.edu/education-and-research",
+        "title": "(404 not found)",
+        "reason": "DEAD_LINK"
+      },
+      {
+        "url": "https://www.northwell.edu/education-and-research/medical-students",
+        "title": "(404 not found)",
+        "reason": "DEAD_LINK"
+      }
+    ],
+    "robotsOrAccessNotes": "Northwell corporate domain returned clean homepage and Research & Education hub but neither surfaces visiting-student content; Zucker SOM page at medicine.hofstra.edu is the canonical visiting-student lane for Northwell-affiliated hospitals including SIUH.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://medicine.hofstra.edu/education/visiting/index.html",
+      "pageTitle": "Visiting Students | Donald and Barbara Zucker School of Medicine at Hofstra/Northwell",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "35206c2b8008545fc69b7cee2e17364528e8df14ab0c86988113c60f060fc2c7",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/northwell-staten-island-university-hospital/cleaned-text/39d92ac756146afc.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/northwell-staten-island-university-hospital/source-pages/39d92ac756146afc.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/northwell-staten-island-university-hospital/metadata/39d92ac756146afc.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Zucker SOM at Hofstra/Northwell visiting-student page. SIUH not explicitly named as a rotation site on this page; SIUH is a Northwell hospital so the SOM's visiting-student policy is the system-wide gate for any Northwell rotation. Specialties explicitly listed: Urology and Orthopedic Surgery (per source)."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.hofstra.edu/education/visiting/index.html",
+      "pageTitle": "Visiting Students | Zucker SOM at Hofstra/Northwell",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "Must be currently enrolled in an LCME accredited medical school or COCA accredited AACOM member college. We do not accept applicants from foreign medical schools without an affiliation agreement.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_MD_DO_ONLY_LCME_COCA",
+      "applicationDecision": "VSLO_AAMC",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "Rotation blocks ~4-5 weeks across May 2026 — April 2027 cycle",
+      "specialtyDecision": "Urology and Orthopedic Surgery explicitly listed; broader catalog implied via VSLO",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_PARENT_SOM",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FINAL_YEAR_MS4_ONLY",
+        "USMLE_STEP_1_OR_COMLEX_PASS_REQUIRED",
+        "FOREIGN_MEDICAL_SCHOOL_STUDENTS_EXCLUDED_UNLESS_AFFILIATION_AGREEMENT_EXISTS",
+        "MALPRACTICE_COVERED_BY_HOME_SCHOOL_3M_AGG_1M_INSTANCE",
+        "BLS_HIPAA_OSHA_NYS_INFECTION_CONTROL_REQUIRED",
+        "SIUH_NOT_EXPLICITLY_NAMED_AS_ROTATION_SITE_ON_VISITING_PAGE"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_LCME", "quote": "Must be currently enrolled in an LCME accredited medical school or COCA accredited AACOM member college", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_COCA", "quote": "Must be currently enrolled in an LCME accredited medical school or COCA accredited AACOM member college", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "NOT_ELIGIBLE_UNLESS_AFFILIATION_AGREEMENT", "quote": "Due to the volume of applications, we do not accept applicants from foreign medical schools that do not already have an affiliation agreement", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FINAL_YEAR_MS4_ONLY", "quote": "Must be in final year of medical school during time of elective", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_REQUIRED", "quote": "Must be currently enrolled in an LCME accredited medical school or COCA accredited AACOM member college", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "USMLE_STEP_1_OR_COMLEX_PASS_REQUIRED", "quote": "Must upload a copy of your USMLE Step 1 or COMLEX Result displaying a grade of Pass", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "VSLO_AAMC", "quote": "use the AAMC Visiting Student Learning Opportunities service (VSLO)", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "https://vslo.aamc.org/vslo/", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "VSLO_OPENS_MARCH_2", "quote": "You can begin browsing elective opportunities and submitting applications in VSLO on March 2nd", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "COVERED_BY_HOME_SCHOOL_3M_AGG_1M_INSTANCE", "quote": "Medical liability and/or malpractice insurance will be covered by the home school...in the amounts of: $3,000,000 in aggregate and $1,000,000 per instance", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "ROTATION_BLOCKS_APPROX_4_TO_5_WEEKS_MAY_2026_TO_APRIL_2027_CYCLE", "quote": "May 11 – June 7, 2026", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "UROLOGY_AND_ORTHOPEDIC_SURGERY_EXPLICIT_OTHERS_VIA_VSLO", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "PERSONAL_STATEMENT_REQUIRED", "quote": "Personal Statement - it is required that a student upload...explaining his/her interest in the elective", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_VISITING_PAGE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "REQUIRED_FOR_FOREIGN_SCHOOLS", "quote": "we do not accept applicants from foreign medical schools that do not already have an affiliation agreement", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "REQUIRED_INCLUDING_ATTESTATION_PAGE_2", "quote": "immunization form must include the attestation page (page 2)", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "REQUIRED_HOME_SCHOOL_ATTESTS_DATE_PASSED", "quote": "home school must provide date that student passed background check", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "malpractice_required", "value": "REQUIRED_HOME_SCHOOL_COVERAGE", "quote": "Medical liability and/or malpractice insurance will be covered by the home school", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "coordinator_contact", "value": "SOMRegistrar@hofstra.edu — Vanessa Gonzalez, Gina Martinez, Elyssa Thompson", "quote": "Vanessa Gonzalez, MSEd, MA - Registrar and Director of Student Records", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "CV_PHOTO_TRANSCRIPT_STEP1_OR_COMLEX_PERSONAL_STATEMENT_NYS_INFECTION_CONTROL_MEDICAL_CLEARANCE_BLS_OSHA_HIPAA", "quote": "CV, professional photograph, transcript, USMLE Step 1/COMLEX results, personal statement, NY State Infection Control Course Certificate, Northwell Health System Medical Clearance Form", "quoteUrl": "https://medicine.hofstra.edu/education/visiting/index.html", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "FINAL_YEAR_ONLY", "MS4_ONLY", "NOT_INTERNATIONAL", "NOT_IMG_GRAD", "AFFILIATION_REQUIRED"],
+    "application": ["VSLO", "SCHOOL_APPROVAL_REQUIRED", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "AWAY_ROTATION", "SUB_INTERNSHIP"],
+    "cost": ["COST_NOT_STATED", "MALPRACTICE_COST_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Visiting elective rotations at Northwell hospitals (including SIUH) are governed by the Zucker SOM at Hofstra/Northwell's visiting-student program, VSLO-only for MS4s enrolled in LCME or COCA schools.",
+    "whoThisIsFor": "Final-year MS4 students at LCME-accredited US MD schools or COCA-accredited US DO schools, applying via VSLO with USMLE Step 1 or COMLEX pass.",
+    "whoThisIsNotFor": "International medical students from foreign medical schools without an existing affiliation agreement; IMG graduates; non-final-year students.",
+    "howToApply": "Apply through VSLO (https://vslo.aamc.org/vslo/) — applications open March 2 for the May 2026 — April 2027 cycle. Home school must attest to background check and provide malpractice coverage. SIUH-specific rotation availability is determined by the VSLO catalog at search time.",
+    "estimatedCostSummary": "Tuition/program fee and housing not stated on source; malpractice covered by home school at $3M aggregate / $1M per instance.",
+    "keyCaveats": [
+      "MS4 final year only; USMLE Step 1 or COMLEX pass required",
+      "Foreign medical schools excluded unless prior affiliation agreement",
+      "Specialties explicitly listed on the visiting page are Urology and Orthopedic Surgery; broader catalog presumed via VSLO at the SOM level",
+      "Staten Island University Hospital is not separately named as a visiting-student site on this page; the SOM-level page governs rotations at Northwell-affiliated hospitals"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly limits eligibility to LCME/COCA-enrolled US MD/DO students and explicitly excludes foreign medical school applicants without affiliation. Application path is VSLO. Final-year-only. No international or IMG-graduate path disclosed.",
+    "sourceTransparencyNote": "Cleaned text of the Zucker SOM visiting-student page captured to T7 canonical capsule with real SHA-256 hash. SIUH-specific page was not located; SOM-level page is the canonical lane.",
+    "possibleListingTitle": "Northwell — Staten Island University Hospital (via Zucker SOM at Hofstra/Northwell) — VSLO MS4 Only",
+    "possibleMetaDescription": "Visiting electives at Northwell SIUH go through the Zucker SOM at Hofstra/Northwell VSLO program — US MD/DO MS4 only, foreign schools excluded.",
+    "suggestedFilters": ["vslo_only", "us_md_do_only", "ms4_only", "no_international"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "staten island university hospital visiting medical student",
+      "northwell visiting medical student",
+      "zucker SOM hofstra visiting student",
+      "VSLO northwell",
+      "northwell elective",
+      "international visiting student northwell"
+    ],
+    "pagesOpened": [
+      "https://www.northwell.edu",
+      "https://www.northwell.edu/research-and-education",
+      "https://medicine.hofstra.edu",
+      "https://medicine.hofstra.edu/education",
+      "https://medicine.hofstra.edu/education/visiting/index.html"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.northwell.edu/education-and-research", "reason": "DEAD_LINK_404"},
+      {"url": "https://www.northwell.edu/education-and-research/medical-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404", "PAGE_TYPE_NOT_VISITING_STUDENT"],
+    "noPublicLaneReason": "International / IMG-graduate lane explicitly closed unless prior affiliation agreement. US MD/DO MS4 lane is open via VSLO at the SOM level.",
+    "whetherNegativeEvidenceStrong": "STRONG for international/IMG-graduate exclusion — explicit verbatim source quote",
+    "futureRetrySuggestion": "Consider searching Northwell Health System internal documentation (professionals.northwell.edu) for any SIUH-specific visiting-student page; not surfaced via public navigation."
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "35206c2b8008545fc69b7cee2e17364528e8df14ab0c86988113c60f060fc2c7",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/northwell-staten-island-university-hospital/cleaned-text/39d92ac756146afc.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/northwell-staten-island-university-hospital/source-pages/39d92ac756146afc.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_window", "specialties_offered", "rotation_block_dates"],
+    "changeRisk": "MEDIUM",
+    "notes": "Rotation block dates and application window will rotate annually."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Northwell SIUH's VSLO-only lane via Zucker SOM was documented with verbatim eligibility/exclusion text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

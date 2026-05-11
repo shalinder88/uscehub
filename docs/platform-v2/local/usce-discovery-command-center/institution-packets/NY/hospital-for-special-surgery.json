@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-4",
+  "sprint": "P101-4",
+  "institution": {
+    "name": "Hospital for Special Surgery",
+    "aliases": ["HSS", "Hospital for Special Surgery (Manhattan)"],
+    "city": "New York",
+    "state": "NY",
+    "officialDomain": "hss.edu",
+    "institutionType": "academic_medical_center_specialty_orthopedic",
+    "healthSystem": "Hospital for Special Surgery (independent)",
+    "academicAffiliation": "Weill Cornell Medical College",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 73 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Hospital for Special Surgery",
+    "name": "Hospital for Special Surgery",
+    "aliases": ["HSS"],
+    "officialDomains": ["hss.edu"],
+    "city": "New York",
+    "state": "NY",
+    "institutionType": "academic_medical_center_specialty_orthopedic",
+    "academicAffiliation": "Weill Cornell Medical College",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 73 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["hss.edu"],
+    "searchTermsTried": [
+      "hospital for special surgery visiting medical student",
+      "HSS academic visitor program",
+      "HSS observership",
+      "HSS visiting student"
+    ],
+    "pagesOpened": [
+      "https://www.hss.edu/education",
+      "https://www.hss.edu/education-institute/academic-visitor-program"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.hss.edu/visiting-medical-students.asp", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Site accessible; WebFetch returned clean content for Academic Visitor Program page.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.hss.edu/education-institute/academic-visitor-program",
+      "pageTitle": "Academic Visitor Program | Hospital for Special Surgery",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "aca7eb136871c122bb3ce3ae31a6fcd999bceb9a0d12aea752e9d6870ef4b00a",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/hospital-for-special-surgery/cleaned-text/b464ac680e6a1d1c.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/hospital-for-special-surgery/source-pages/b464ac680e6a1d1c.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/hospital-for-special-surgery/metadata/b464ac680e6a1d1c.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "captureNotes": "HSS Academic Visitor Program — observership-style, host-driven, broad eligibility (18+, vaccinations, musculoskeletal interest). No medical-degree or international/IMG restriction explicitly stated. Duration one day to two months."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.hss.edu/education-institute/academic-visitor-program",
+      "pageTitle": "Academic Visitor Program | Hospital for Special Surgery",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "shortQuote": "Observerships are informal, non-accredited visits, designed for individuals wishing to observe surgical and clinical care. Observerships range from one day to two months.",
+      "quoteSupports": ["audience", "duration", "hands_on_status"],
+      "audienceDecision": "BROAD_AUDIENCE_NOT_LIMITED_BY_DEGREE_STATUS",
+      "applicationDecision": "HOST_DRIVEN_INSTITUTIONAL",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "ONE_DAY_TO_TWO_MONTHS",
+      "specialtyDecision": "Adult Reconstruction & Joint Replacement, Anesthesiology, Foot & Ankle, Hand & Upper Extremity, Limb Lengthening & Complex Reconstruction, Metabolic Bone, Neurology, Pediatric Orthopaedics, Perioperative Medicine, Physiatry, Radiology & Imaging, Rheumatic Diseases, Rheumatology, Spine, Surgical Arthritis",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED_OBSERVER_ONLY",
+      "caveats": [
+        "OBSERVER_ONLY_NON_ACCREDITED",
+        "HOST_REQUIRED_HSS_PHYSICIAN",
+        "COVID_AND_INFLUENZA_VACCINATION_REQUIRED",
+        "MUST_BE_18_OR_OLDER",
+        "MEDICAL_DEGREE_STATUS_NOT_RESTRICTED_ON_SOURCE",
+        "INTERNATIONAL_ELIGIBILITY_NOT_EXPLICITLY_STATED_BUT_NOT_BARRED",
+        "VISA_DETAILS_NOT_STATED_ON_SOURCE_INSTITUTIONAL_INQUIRY_REQUIRED",
+        "DURATION_RANGE_ONE_DAY_TO_TWO_MONTHS"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_PRESUMED_BROAD_AUDIENCE", "quote": "individuals wishing to observe surgical and clinical care", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_PRESUMED_BROAD_AUDIENCE", "quote": "individuals wishing to observe surgical and clinical care", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_BUT_NOT_BARRED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_BUT_NOT_BARRED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE_BROAD_18_PLUS", "quote": "Are 18 years of age or older", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "HOST_DRIVEN_EMAIL_INSTITUTIONAL", "quote": "Upon approved host form receipt, an application will be emailed to you", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "https://www.hss.edu/education-institute/academic-visitor-program", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "ONE_DAY_TO_TWO_MONTHS", "quote": "Observerships range from one day to two months", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "ORTHO_FAMILIES_AND_RELATED_MUSCULOSKELETAL_INCLUDING_RHEUMATOLOGY_PHYSIATRY_RADIOLOGY", "quote": "Adult Reconstruction, Anesthesiology, Foot & Ankle, Hand & Upper Extremity, Metabolic Bone, Pediatric Orthopaedics, Physiatry, Radiology, Rheumatology, Spine, Surgical Arthritis", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "OBSERVER_ONLY_HANDS_OFF", "quote": "Observerships are informal, non-accredited visits, designed for individuals wishing to observe surgical and clinical care", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE_NON_ACCREDITED", "quote": "Observerships are informal, non-accredited visits", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "REQUIRED_COVID_AND_INFLUENZA", "quote": "Can provide proof of current COVID-19 and influenza vaccination", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "NOT_STATED_ON_SOURCE_VIA_HSS_HOST_PHYSICIAN", "quote": "secure a host (confirmed HSS physician)", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "HOST_FORM_VACCINATION_PROOF_APPLICATION_EMAILED_AFTER_HOST_APPROVAL", "quote": "Host completes and signs host form, returns to Education Institute; Upon approved host form receipt, an application will be emailed to you; Proof of COVID-19 and influenza vaccination", "quoteUrl": "https://www.hss.edu/education-institute/academic-visitor-program", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["INTERNATIONAL_MS", "IMG_GRAD"],
+    "application": ["EMAIL_COORDINATOR", "DETAILS_BY_COORDINATOR"],
+    "experienceType": ["OBSERVERSHIP", "OBSERVER_ONLY"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "HSS Academic Visitor Program offers host-driven observerships (1 day to 2 months) for individuals 18+ interested in musculoskeletal care; no medical-degree or international/IMG restriction stated on the public page.",
+    "whoThisIsFor": "Individuals 18+ with serious interest in musculoskeletal health who can secure a host HSS physician. Public source does not restrict by degree status, so US MD, US DO, international medical students, and IMG graduates are not explicitly barred.",
+    "whoThisIsNotFor": "Anyone unable to identify an HSS physician willing to host; anyone seeking hands-on rotations (this is observer-only, non-accredited); anyone needing a certificate of accredited education.",
+    "howToApply": "Step 1: Secure a host HSS physician. Step 2: Host completes and signs host form, returns to Education Institute. Step 3: Application is emailed to the applicant. No public URL/email/window stated on source.",
+    "estimatedCostSummary": "No cost stated on source. Inquire via host or Education Institute.",
+    "keyCaveats": [
+      "Observer-only, non-accredited",
+      "Host HSS physician must be secured first",
+      "Current COVID-19 and influenza vaccination required",
+      "Duration one day to two months",
+      "Visa details not stated; international observers may need to secure visa independently",
+      "Coordinator contact not directly published on source"
+    ],
+    "whyWeClassifiedItThisWay": "Source describes a host-driven observership open to broad audience. International or IMG status is not explicitly stated as eligible or restricted; absence of restriction means observership is the IMG-relevant lane. Hands-off observer-only and non-accredited.",
+    "sourceTransparencyNote": "Cleaned text of the Academic Visitor Program page captured to T7 canonical capsule with real SHA-256 hash.",
+    "possibleListingTitle": "Hospital for Special Surgery — Academic Visitor Program (Observership, Orthopedic Specialty)",
+    "possibleMetaDescription": "HSS Academic Visitor Program: host-driven observership for orthopedic/musculoskeletal care, 1 day to 2 months, observer-only, non-accredited.",
+    "suggestedFilters": ["observership_available", "specialty_orthopedic", "host_required"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "hospital for special surgery visiting medical student",
+      "HSS academic visitor program",
+      "HSS observership",
+      "HSS visiting student"
+    ],
+    "pagesOpened": [
+      "https://www.hss.edu/education",
+      "https://www.hss.edu/education-institute/academic-visitor-program"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.hss.edu/visiting-medical-students.asp", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicLaneReason": "Not applicable — observership lane found and classified.",
+    "whetherNegativeEvidenceStrong": "PARTIAL — Academic Visitor Program Guidelines (sub-page) not retrieved; full cost/visa/specifics would require institutional inquiry or the linked Guidelines page.",
+    "futureRetrySuggestion": "Fetch the Academic Visitor Program Guidelines PDF/page if available, and/or reach out to the Education Institute for visa-specific guidance for international observers."
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "aca7eb136871c122bb3ce3ae31a6fcd999bceb9a0d12aea752e9d6870ef4b00a",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/hospital-for-special-surgery/cleaned-text/b464ac680e6a1d1c.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/hospital-for-special-surgery/source-pages/b464ac680e6a1d1c.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["vaccination_requirements", "specialties_offered"],
+    "changeRisk": "LOW"
+  },
+  "finalClassification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "driftCheck": "This advanced national USCE discovery because HSS Academic Visitor Program observership lane was documented with verbatim eligibility, duration, and host requirement and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}
