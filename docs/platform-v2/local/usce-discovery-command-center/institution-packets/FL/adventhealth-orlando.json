@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-6",
+  "sprint": "P101-6",
+  "intendedP1014PacketNumber": 11,
+  "institution": {
+    "name": "AdventHealth Orlando",
+    "aliases": ["AdventHealth Orlando", "Florida Hospital Orlando (former name)"],
+    "city": "Orlando",
+    "state": "FL",
+    "officialDomain": "adventhealth.com",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "AdventHealth",
+    "academicAffiliation": "Faith-based health system; multiple residency programs",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 80 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "AdventHealth Orlando",
+    "name": "AdventHealth Orlando",
+    "aliases": ["Florida Hospital Orlando"],
+    "officialDomains": ["adventhealth.com"],
+    "city": "Orlando",
+    "state": "FL",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "AdventHealth system",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 80"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["adventhealth.com", "jobs.adventhealth.com"],
+    "searchTermsTried": [
+      "adventhealth orlando visiting medical student",
+      "adventhealth medical education",
+      "adventhealth GME",
+      "adventhealth visiting student",
+      "adventhealth elective"
+    ],
+    "pagesOpened": [
+      "https://www.adventhealth.com/hospital/adventhealth-orlando"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.adventhealth.com/medical-education", "title": "(403 forbidden)", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com/graduate-medical-education", "title": "(403 forbidden)", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com/hospital/adventhealth-orlando/medical-education", "title": "(403 forbidden)", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com", "title": "(403 forbidden via WebFetch)", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://jobs.adventhealth.com/medical-education-opportunities", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "AdventHealth pages return 403 to WebFetch (likely UA-based bot block) but curl-helper successfully fetched the hospital landing page. Hospital landing surfaces 'Medical Education Opportunities' as a navigation item but the linked sub-pages are also 403 to WebFetch. Curl-helper can reach the landing; deeper medical-education pages remain unreachable in this sprint.",
+    "stopCondition": "BOT_BLOCKED_MANUAL_RETRY_FOR_MEDICAL_EDUCATION_SUB_PAGES"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando",
+      "pageTitle": "AdventHealth Orlando (formerly Florida Hospital Orlando)",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "18f4074cc99ae63022316c968acc30d3051e0515a6ee7c71ace2bd500c01ab06",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/adventhealth-orlando/cleaned-text/9deb07eb075afa4f.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/adventhealth-orlando/source-pages/9deb07eb075afa4f.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/adventhealth-orlando/metadata/9deb07eb075afa4f.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "HOSPITAL_LANDING",
+      "captureNotes": "AdventHealth Orlando landing page; mentions 'Medical Education Opportunities' as a nav item but linked sub-page is 403-blocked to WebFetch. No visiting-student program detail accessible this sprint."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando",
+      "pageTitle": "AdventHealth Orlando",
+      "sourcePageType": "HOSPITAL_LANDING",
+      "shortQuote": "Medical Education Opportunities",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "VISITING_STUDENT_LANE_NOT_PUBLICLY_VERIFIED_DUE_TO_BOT_BLOCK",
+      "applicationDecision": "NOT_STATED_ON_SOURCE",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "BOT_BLOCKED_MANUAL_RETRY",
+      "caveats": [
+        "ADVENTHEALTH_MEDICAL_EDUCATION_SUB_PAGES_403_TO_WEBFETCH",
+        "HOSPITAL_LANDING_LISTS_MEDICAL_EDUCATION_OPPORTUNITIES_BUT_DETAIL_NOT_ACCESSIBLE",
+        "CURL_HELPER_REACHED_LANDING_ONLY",
+        "QUEUED_FOR_MANUAL_RETRY_WITH_DIFFERENT_UA_OR_BROWSER_AUTOMATION"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "application_url", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_DETAIL_PAGES_BOT_BLOCKED", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "ADVENTHEALTH_ORLANDO_MAIN_LINE_407_303_5600", "quote": "Call AdventHealth Orlando at 407-303-5600", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.adventhealth.com/hospital/adventhealth-orlando", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["BOT_BLOCKED"],
+    "experienceType": ["UNCLEAR_HANDS_ON_STATUS"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED", "NEEDS_MANUAL_RETRY"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "AdventHealth Orlando medical education sub-pages are bot-blocked to public WebFetch; landing page lists 'Medical Education Opportunities' as a nav item but detail is not publicly retrievable this sprint.",
+    "whoThisIsFor": "Visiting-student eligibility cannot be confirmed publicly until the bot-block is bypassed or the institution provides direct documentation.",
+    "whoThisIsNotFor": "Visiting medical students seeking confirmed public details — none accessible this sprint due to 403 responses on all AdventHealth medical-education and GME paths.",
+    "howToApply": "Application path not retrievable publicly. Contact AdventHealth Orlando main line at 407-303-5600 or check the AdventHealth careers / medical education portal directly when accessible.",
+    "estimatedCostSummary": "No visiting-student cost figures retrievable this sprint.",
+    "keyCaveats": [
+      "AdventHealth domain returns HTTP 403 to WebFetch on /medical-education, /graduate-medical-education, and /hospital/.../medical-education paths",
+      "Curl-based fetcher reached the hospital landing page but no medical-education detail",
+      "Hospital landing surfaces 'Medical Education Opportunities' as a nav item — suggests a program exists but details are not publicly retrievable",
+      "Queued for manual retry with alternate user agent or browser automation"
+    ],
+    "whyWeClassifiedItThisWay": "Multiple expected AdventHealth medical-education URLs return 403 Forbidden to WebFetch. The hospital landing page (curl-fetched) confirms a 'Medical Education Opportunities' nav item exists but detail pages are not publicly retrievable. Classification reflects bot-block, not absence of program — appropriate use of BOT_BLOCKED_MANUAL_RETRY.",
+    "sourceTransparencyNote": "Cleaned text of the AdventHealth Orlando hospital landing page captured to T7 canonical capsule with real SHA-256 hash. All bot-blocked sub-pages documented in rejectedPages.",
+    "possibleListingTitle": "AdventHealth Orlando — Bot-Blocked (Manual Retry Queued)",
+    "possibleMetaDescription": "AdventHealth Orlando's medical-education details are not publicly retrievable via WebFetch; manual retry queued.",
+    "suggestedFilters": ["bot_blocked", "manual_retry_queued"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "adventhealth orlando visiting medical student",
+      "adventhealth medical education",
+      "adventhealth GME",
+      "adventhealth visiting student",
+      "adventhealth elective",
+      "adventhealth observership"
+    ],
+    "pagesOpened": [
+      "https://www.adventhealth.com/hospital/adventhealth-orlando"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.adventhealth.com/medical-education", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com/graduate-medical-education", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com/hospital/adventhealth-orlando/medical-education", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://www.adventhealth.com", "reason": "BOT_BLOCKED_403"},
+      {"url": "https://jobs.adventhealth.com/medical-education-opportunities", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["BOT_BLOCKED_403", "DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "WEAK — bot block prevents verification; this is not an absence finding.",
+    "futureRetrySuggestion": "Retry with alternate user agent (browser-mimicking) or via headless-Chrome automation. Direct inquiry to AdventHealth at 407-303-5600 for visiting-student program details.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 1
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "18f4074cc99ae63022316c968acc30d3051e0515a6ee7c71ace2bd500c01ab06",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/adventhealth-orlando/cleaned-text/9deb07eb075afa4f.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/adventhealth-orlando/source-pages/9deb07eb075afa4f.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["hospital_landing_navigation_index", "medical_education_sub_page_when_retrievable"],
+    "changeRisk": "LOW",
+    "notes": "Hash anchors the hospital landing page only; medical-education detail pages remain bot-blocked at capture time."
+  },
+  "finalClassification": "BOT_BLOCKED_MANUAL_RETRY",
+  "finalTier": "TIER_C_NEEDS_REVIEW",
+  "driftCheck": "This advanced national USCE discovery because AdventHealth Orlando's bot-block on all medical-education sub-pages was documented honestly with cleaned text of the landing page and SHA-256 hash on the canonical T7 capsule; manual retry queued; no DB/schema/noindex/homepage touched."
+}

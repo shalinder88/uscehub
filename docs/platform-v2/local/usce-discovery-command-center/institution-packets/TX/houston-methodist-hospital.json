@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-6",
+  "sprint": "P101-6",
+  "intendedP1014PacketNumber": 15,
+  "institution": {
+    "name": "Houston Methodist Hospital",
+    "aliases": ["Houston Methodist", "HMH"],
+    "city": "Houston",
+    "state": "TX",
+    "officialDomain": "houstonmethodist.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Houston Methodist",
+    "academicAffiliation": "Weill Cornell Medicine (primary), Texas A&M EnMed, multiple SOM affiliates",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 84 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Houston Methodist Hospital",
+    "name": "Houston Methodist Hospital",
+    "aliases": ["Houston Methodist", "HMH"],
+    "officialDomains": ["houstonmethodist.org"],
+    "city": "Houston",
+    "state": "TX",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "Weill Cornell + Texas A&M EnMed",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 84"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["houstonmethodist.org"],
+    "searchTermsTried": [
+      "houston methodist visiting medical student elective",
+      "houston methodist observership",
+      "houston methodist VSLO",
+      "HMH medical student rotation",
+      "houston methodist international visiting student",
+      "HMH global education office"
+    ],
+    "pagesOpened": [
+      "https://www.houstonmethodist.org/education",
+      "https://www.houstonmethodist.org/academic-institute/education/medical/",
+      "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.houstonmethodist.org/education/medical-students", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Houston Methodist Academic Institute pages accessible; Medical Student Rotations & Observerships page explicitly references HMObserver@houstonmethodist.org and Global Education Office for international physicians/residents/students.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED_DETAILS_BEHIND_INSTITUTIONAL_INQUIRY"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/",
+      "pageTitle": "Medical Student Rotations & Observerships | Houston Methodist",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "0e210840c17aca7d6c52a0321ec6d51fd541cfb223b9002436c8c02fb3a7611e",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/houston-methodist-hospital/cleaned-text/029c7821260deee3.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/houston-methodist-hospital/source-pages/029c7821260deee3.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/houston-methodist-hospital/metadata/029c7821260deee3.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "captureNotes": "Houston Methodist Medical Student Rotations & Observerships page. Two contacts: HMObserver@houstonmethodist.org for general; Global Education Office for international physicians/residents/students. Operational details (cost, duration, visa, requirements) not on public page; institutional inquiry required."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/",
+      "pageTitle": "Medical Student Rotations & Observerships | Houston Methodist",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "shortQuote": "medical student rotations and observerships at Houston Methodist. International physicians/residents/students: Contact the Global Education Office.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_LANE_REFERRED_TO_GLOBAL_EDUCATION_OFFICE",
+      "applicationDecision": "EMAIL_COORDINATOR_PLUS_INSTITUTIONAL_INQUIRY",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Inpatient teams + subspecialty one-on-one (specialties not enumerated)",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED",
+      "caveats": [
+        "OBSERVERSHIP_TRACK_EXPLICIT_HMOBSERVER_EMAIL",
+        "INTERNATIONAL_LANE_REFERRED_TO_GLOBAL_EDUCATION_OFFICE_NO_PUBLIC_DETAIL",
+        "ROTATIONS_INCLUDE_INPATIENT_TEAMS_PLUS_SUBSPECIALTY_ONE_ON_ONE",
+        "ELIGIBILITY_COST_VISA_DURATION_NOT_PUBLICLY_DISCLOSED",
+        "INSTITUTIONAL_INQUIRY_REQUIRED_FOR_DETAILS"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "REFERRED_TO_GLOBAL_EDUCATION_OFFICE_DETAILS_NOT_PUBLIC", "quote": "International physicians/residents/students: Contact the Global Education Office", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "REFERRED_TO_GLOBAL_EDUCATION_OFFICE_DETAILS_NOT_PUBLIC", "quote": "International physicians/residents/students: Contact the Global Education Office", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "EMAIL_HMOBSERVER_PLUS_GLOBAL_EDUCATION_OFFICE_FOR_INTERNATIONAL", "quote": "General inquiries: HMObserver@houstonmethodist.org; International physicians/residents/students: Contact the Global Education Office", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "EMAIL_BASED_NO_PUBLIC_PORTAL", "quote": "HMObserver@houstonmethodist.org", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "INPATIENT_TEAMS_PLUS_SUBSPECIALTY_ONE_ON_ONE_FULL_LIST_NOT_ENUMERATED", "quote": "inpatient teams and one-on-one with subspecialists", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "BOTH_ROTATIONS_AND_OBSERVERSHIPS_OFFERED", "quote": "medical student rotations and observerships", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_PAGE_INTERNATIONAL_VIA_GEO", "quote": "Contact the Global Education Office", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "HMOBSERVER_AT_HOUSTONMETHODIST_ORG_PLUS_GLOBAL_EDUCATION_OFFICE_FOR_INTERNATIONAL", "quote": "HMObserver@houstonmethodist.org; Contact the Global Education Office", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["INTERNATIONAL_MS", "IMG_GRAD"],
+    "application": ["EMAIL_COORDINATOR", "DETAILS_BY_COORDINATOR"],
+    "experienceType": ["CLINICAL_ELECTIVE", "OBSERVERSHIP"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Houston Methodist offers medical student rotations and observerships, with international physicians/residents/students directed to a Global Education Office; public page lacks cost, visa, eligibility, and duration detail.",
+    "whoThisIsFor": "Medical students seeking rotations or observerships at Houston Methodist. International physicians, residents, and students are explicitly referred to the Global Education Office. Detailed eligibility (year, USMLE, TOEFL) is not publicly disclosed.",
+    "whoThisIsNotFor": "Applicants needing immediate public answers on cost, visa, or duration — institutional inquiry is required.",
+    "howToApply": "General inquiries: email HMObserver@houstonmethodist.org. International applicants: contact the Global Education Office (specific contact not surfaced on this page).",
+    "estimatedCostSummary": "No cost figures published on source.",
+    "keyCaveats": [
+      "International lane explicit but operational details require Global Education Office inquiry",
+      "Both rotations and observerships offered",
+      "Specialties not enumerated; inpatient teams + subspecialty one-on-one",
+      "Eligibility (year, USMLE/COMLEX, TOEFL) and cost not on public source",
+      "Visa specifics not disclosed",
+      "Weill Cornell + Texas A&M EnMed affiliations imply rotations align with their respective SOMs"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly references both rotations and observerships and directs international physicians/residents/students to a Global Education Office. The lane exists but operational details require institutional inquiry. IMG_GRAD_OBSERVERSHIP_CONFIRMED is the conservative classification given the explicit observership track and international referral language.",
+    "sourceTransparencyNote": "Cleaned text of Houston Methodist Medical Student Rotations & Observerships page captured to T7 canonical capsule with real SHA-256 hash. Global Education Office sub-page deferred for future retry.",
+    "possibleListingTitle": "Houston Methodist — Medical Student Rotations + Observerships (Institutional Inquiry, International via Global Ed Office)",
+    "possibleMetaDescription": "Houston Methodist offers medical student rotations and observerships; international applicants contact the Global Education Office. Cost/visa/duration require institutional inquiry.",
+    "suggestedFilters": ["international_eligible", "observership_available", "institutional_inquiry_required"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "houston methodist visiting medical student elective",
+      "houston methodist observership",
+      "houston methodist VSLO",
+      "HMH medical student rotation",
+      "houston methodist international visiting student",
+      "HMH global education office"
+    ],
+    "pagesOpened": [
+      "https://www.houstonmethodist.org/education",
+      "https://www.houstonmethodist.org/academic-institute/education/medical/",
+      "https://www.houstonmethodist.org/academic-institute/education/medical/medical-student-rotations/"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.houstonmethodist.org/education/medical-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "MODERATE — observership lane confirmed but full eligibility/cost/visa detail requires Global Education Office contact.",
+    "futureRetrySuggestion": "Search Houston Methodist Academic Institute for Global Education Office sub-page. Email HMObserver@houstonmethodist.org for observership application package and Global Education Office for international visiting-student detail.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 3
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "0e210840c17aca7d6c52a0321ec6d51fd541cfb223b9002436c8c02fb3a7611e",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/houston-methodist-hospital/cleaned-text/029c7821260deee3.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/houston-methodist-hospital/source-pages/029c7821260deee3.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["coordinator_contacts", "global_education_office_sub_page"],
+    "changeRisk": "LOW",
+    "notes": "Hash anchors the Medical Student Rotations & Observerships page. Global Education Office sub-page would warrant a separate sourceEvidence entry when retrieved."
+  },
+  "finalClassification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Houston Methodist's explicit observership track and international-referral pathway to its Global Education Office were documented with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

@@ -1,20 +1,20 @@
-classification,p101_0_count,p101_1_count,p101_2_count,p101_4_partial_count,p101_5_partial_count,cumulative_count,notes
-CURRENT_USCE_CONFIRMED,0,0,0,0,0,0,(reserved for unambiguous institution-specific + multi-axis verbatim)
-POSSIBLE_USCE_NEEDS_REVIEW,0,0,1,0,0,1,Cook County Health (Stroger)
-VSLO_US_MD_DO_ONLY,4,7,17,1,1,30,P101-5 adds Yale-New Haven St Raphael Campus (via Yale SOM)
-INTERNATIONAL_STUDENT_CONFIRMED,1,2,7,2,1,13,P101-5 adds UMiami Miller SOM/UHealth (3-month observership + VSLO externship)
-IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,0,0,1,0,1,HSS Academic Visitor Program (P101-4)
-RESEARCH_ONLY,0,0,0,0,0,0,
-FUTURE_LANE_ONLY,0,0,0,0,0,0,
-AFFILIATED_ONLY,0,0,0,0,0,0,(sub-findings only)
-RESIDENCY_ONLY,0,0,0,0,0,0,(sub-finding only at MGH)
-NO_PUBLIC_USCE_LANE_FOUND,0,0,0,1,3,4,P101-5 adds Hartford Hospital + UF Health Shands + Tampa General
-BOT_BLOCKED_MANUAL_RETRY,0,1,0,0,0,1,Michigan Medicine (P101-1)
-SOURCE_DEAD,0,0,0,0,0,0,
-UNKNOWN_NEEDS_RETRY,0,0,0,0,0,0,
-TOTAL,5,10,25,5,5,50,
-TIER_A_PUBLIC_SAFE,0,0,0,3,2,5,P101-5 adds Yale-New Haven St Raphael Campus + UMiami Miller
-TIER_B_CAUTION_SAFE,5,9,24,1,0,39,(no Tier B added P101-5)
-TIER_C_NEEDS_REVIEW,0,1,1,0,0,2,Michigan (bot-blocked) · Cook County (PDF stale)
-TIER_D_REJECT_OR_HIDE,0,0,0,0,0,0,
-NO_TIER_NO_CANDIDATE,0,0,0,1,3,4,P101-5 adds Hartford + UF Shands + Tampa General
+classification,p101_0_count,p101_1_count,p101_2_count,p101_4_partial_count,p101_5_partial_count,p101_6_partial_count,cumulative_count,notes
+CURRENT_USCE_CONFIRMED,0,0,0,0,0,0,0,(reserved for unambiguous institution-specific + multi-axis verbatim)
+POSSIBLE_USCE_NEEDS_REVIEW,0,0,1,0,0,0,1,Cook County Health (Stroger)
+VSLO_US_MD_DO_ONLY,4,7,17,1,1,1,31,P101-6 adds Memorial Regional Hollywood
+INTERNATIONAL_STUDENT_CONFIRMED,1,2,7,2,1,2,15,P101-6 adds Orlando Health + Texas Children's (Baylor SOM)
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,0,0,1,0,1,2,P101-6 adds Houston Methodist
+RESEARCH_ONLY,0,0,0,0,0,0,0,
+FUTURE_LANE_ONLY,0,0,0,0,0,0,0,
+AFFILIATED_ONLY,0,0,0,0,0,0,0,(sub-findings only)
+RESIDENCY_ONLY,0,0,0,0,0,0,0,(sub-finding only at MGH)
+NO_PUBLIC_USCE_LANE_FOUND,0,0,0,1,3,0,4,TBHC (P101-4) + Hartford + UF Shands + Tampa General (P101-5)
+BOT_BLOCKED_MANUAL_RETRY,0,1,0,0,0,1,2,Michigan Medicine (P101-1) + AdventHealth Orlando (P101-6)
+SOURCE_DEAD,0,0,0,0,0,0,0,
+UNKNOWN_NEEDS_RETRY,0,0,0,0,0,0,0,
+TOTAL,5,10,25,5,5,5,55,
+TIER_A_PUBLIC_SAFE,0,0,0,3,2,3,8,P101-6 adds Memorial Regional + Orlando Health + Texas Children's
+TIER_B_CAUTION_SAFE,5,9,24,1,0,1,40,P101-6 adds Houston Methodist
+TIER_C_NEEDS_REVIEW,0,1,1,0,0,1,3,Michigan (bot-blocked) + Cook County (PDF stale) + AdventHealth Orlando (bot-blocked)
+TIER_D_REJECT_OR_HIDE,0,0,0,0,0,0,0,
+NO_TIER_NO_CANDIDATE,0,0,0,1,3,0,4,TBHC + Hartford + UF Shands + Tampa General

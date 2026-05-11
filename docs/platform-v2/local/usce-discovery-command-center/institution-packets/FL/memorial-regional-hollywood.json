@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-6",
+  "sprint": "P101-6",
+  "intendedP1014PacketNumber": 12,
+  "institution": {
+    "name": "Memorial Healthcare System — Memorial Regional Hospital",
+    "aliases": ["Memorial Regional Hospital Hollywood", "MHS Memorial Regional"],
+    "city": "Hollywood",
+    "state": "FL",
+    "officialDomain": "mhs.net",
+    "institutionType": "public_safety_net_hospital",
+    "healthSystem": "Memorial Healthcare System",
+    "academicAffiliation": "FAU and FIU partner institutions; multi-school rotation site via VSLO",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 81 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Memorial Healthcare System — Memorial Regional Hospital",
+    "name": "Memorial Healthcare System — Memorial Regional Hospital",
+    "aliases": ["Memorial Regional Hospital Hollywood", "MHS"],
+    "officialDomains": ["mhs.net"],
+    "city": "Hollywood",
+    "state": "FL",
+    "institutionType": "public_safety_net_hospital",
+    "academicAffiliation": "FAU + FIU partners + multi-school via VSLO",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 81"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["mhs.net"],
+    "searchTermsTried": [
+      "memorial regional hollywood visiting medical student",
+      "memorial healthcare system visiting student",
+      "MHS undergraduate medical education",
+      "MHS VSLO",
+      "MHS visiting student",
+      "MHS away rotation"
+    ],
+    "pagesOpened": [
+      "https://www.mhs.net",
+      "https://www.mhs.net/education",
+      "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.mhs.net/education/undergraduate-medical-education/rotation-dates", "title": "(not retrieved this sprint; secondary URL)", "reason": "SECONDARY_URL_DEFERRED"}
+    ],
+    "robotsOrAccessNotes": "Memorial Healthcare System pages accessible; visiting-student requirements page returned full content.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "pageTitle": "Requirements for Visiting Students | Memorial Healthcare System",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "1c02d35149568d7d0af9bd7fd04da4f9719e3d676349da1b74e599da037284bd",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/memorial-regional-hollywood/cleaned-text/9b59dd545ac7ea57.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/memorial-regional-hollywood/source-pages/9b59dd545ac7ea57.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/memorial-regional-hollywood/metadata/9b59dd545ac7ea57.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Memorial Healthcare System visiting-student requirements page. VSLO-only for LCME/COCA final-year students; FAU and FIU students must contact schools directly. 6 hospitals + ancillary facilities. Max 8-week rotation. Hands-on vs observer not stated."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "pageTitle": "Requirements for Visiting Students | Memorial Healthcare System",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "Must be in final year at LCME- or COCA-accredited medical school. Must be in good academic standing. Passed USMLE Step 1 or COMLEX Exam.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_MD_DO_FINAL_YEAR_LCME_COCA_STEP_PASS",
+      "applicationDecision": "VSLO_AAMC",
+      "costDecision": "MALPRACTICE_STATED_OTHER_NOT_STATED",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "MAX_8_WEEKS",
+      "specialtyDecision": "Multi-hospital system; Emergency Medicine provides SLOEs; full specialty list not enumerated",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_SYSTEM_LEVEL",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FINAL_YEAR_ONLY_LCME_OR_COCA",
+        "USMLE_STEP_1_OR_COMLEX_PASS_REQUIRED",
+        "MAX_8_WEEK_ROTATION",
+        "MALPRACTICE_INSURANCE_1M_PER_CLAIM_3M_AGGREGATE_STUDENT_PURCHASEABLE",
+        "BACKGROUND_CHECK_LEVEL_2_PLUS_FINGERPRINTING_PLUS_SEX_OFFENDER_PLUS_OIG_PLUS_DRUG_TEST",
+        "IMMUNIZATIONS_INCLUDE_FLU_AND_COVID_19",
+        "FAU_AND_FIU_STUDENTS_BYPASS_VSLO_CONTACT_SCHOOLS_DIRECTLY",
+        "INTERNATIONAL_AND_IMG_NOT_STATED_ON_SOURCE",
+        "HANDS_ON_VS_OBSERVER_NOT_STATED",
+        "EMERGENCY_MEDICINE_ROTATION_PROVIDES_SLOES",
+        "NO_HOUSING_OR_MEAL_TICKETS_PROVIDED",
+        "MEMORIAL_REGIONAL_NOT_SEPARATELY_NAMED_AS_ROTATION_SITE_ON_THIS_PAGE_SIX_HOSPITALS_LANGUAGE"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_LCME_FINAL_YEAR", "quote": "Must be in final year at LCME- or COCA-accredited medical school", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_COCA_FINAL_YEAR", "quote": "Must be in final year at LCME- or COCA-accredited medical school", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FINAL_YEAR_ONLY", "quote": "Must be in final year", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_AND_GOOD_STANDING", "quote": "Must be in good academic standing", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "STEP_1_OR_COMLEX_PASS_REQUIRED", "quote": "Passed USMLE Step 1 or COMLEX Exam", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "VSLO_AAMC_EXCEPT_FAU_AND_FIU_DIRECT", "quote": "Apply through VSLO; Medical students from Florida Atlantic University and Florida International University must contact the school to schedule all rotations at Memorial", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "https://students-residents.aamc.org/visiting-student-learning-opportunities/visiting-student-learning-opportunities-vslo", "quote": "https://students-residents.aamc.org/visiting-student-learning-opportunities/visiting-student-learning-opportunities-vslo", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_PRIMARY_PAGE_ROTATION_DATES_SUB_PAGE_DEFERRED", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "1M_PER_CLAIM_3M_AGGREGATE_STUDENT_PURCHASEABLE", "quote": "$1 million per claim/$3 million Aggregate", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "cost_housing", "value": "NOT_PROVIDED_BY_MEMORIAL", "quote": "Memorial Healthcare System does not provide housing or meal tickets", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "cost_other", "value": "MEALS_NOT_PROVIDED", "quote": "Memorial Healthcare System does not provide housing or meal tickets", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "duration", "value": "MAX_8_WEEKS", "quote": "A maximum of 8-weeks is permitted", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "MULTI_HOSPITAL_SYSTEM_EM_PROVIDES_SLOES_FULL_LIST_NOT_ENUMERATED", "quote": "Emergency Medicine rotation provides SLOEs", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "SLOE_PROVIDED_EM_ONLY", "quote": "Emergency Medicine rotation provides SLOEs only", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "FAU_FIU_DIRECT_OTHERS_VIA_VSLO", "quote": "Medical students from Florida Atlantic University and Florida International University must contact the school to schedule all rotations at Memorial", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "MMR_HEP_B_TDAP_VARICELLA_FLU_COVID_19_PLUS_PPD_OR_CHEST_XRAY", "quote": "MMR, Hepatitis B, TDap, Varicella, Flu, COVID-19", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "LEVEL_2_BACKGROUND_CHECK_PAST_12_MONTHS_INCLUDING_FINGERPRINTING_SEX_OFFENDER_OIG", "quote": "Level 2 Background check within the past 12 months", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "malpractice_required", "value": "1M_PER_CLAIM_3M_AGGREGATE_STUDENT_PURCHASEABLE_BEFORE_ACCEPTANCE", "quote": "$1 million per claim/$3 million Aggregate", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "coordinator_contact", "value": "VSLO_FOR_NON_FAU_FIU_FAU_FIU_DIRECT_TO_HOME_SCHOOL", "quote": "Medical students from Florida Atlantic University and Florida International University must contact the school to schedule all rotations at Memorial", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_PROVIDED", "quote": "Memorial Healthcare System does not provide housing or meal tickets", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "USMLE_COMLEX_PROOF_BRIEF_MEMO_CV_TRANSCRIPTS_PHOTO_BLS_HIPAA_DRUG_TEST_LEVEL_2_BACKGROUND_IMMUNIZATIONS", "quote": "Proof of passing Step 1 USMLE/COMLEX; brief memo; CV; official transcripts; photograph; BLS; HIPAA; drug test; Level 2 background check; immunizations", "quoteUrl": "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "FINAL_YEAR_ONLY", "MS4_ONLY", "NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["VSLO", "DIRECT_APPLICATION", "SCHOOL_APPROVAL_REQUIRED", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "SUB_INTERNSHIP"],
+    "cost": ["MALPRACTICE_COST_STATED", "COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SYSTEM_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Memorial Healthcare System (incl. Memorial Regional Hospital) accepts visiting students via VSLO — LCME/COCA final-year MS4s with USMLE Step 1 or COMLEX pass, max 8 weeks.",
+    "whoThisIsFor": "Final-year MS4 students at LCME-accredited US MD schools or COCA-accredited US DO schools who have passed USMLE Step 1 or COMLEX. Florida Atlantic University and Florida International University students bypass VSLO and contact their school directly.",
+    "whoThisIsNotFor": "International medical students and IMG graduates (not stated on source); non-final-year students; students who have not passed Step 1/COMLEX.",
+    "howToApply": "Apply via AAMC VSLO (https://students-residents.aamc.org/visiting-student-learning-opportunities/visiting-student-learning-opportunities-vslo) with USMLE/COMLEX proof, brief memo, CV, transcripts, photo, BLS cert, HIPAA cert, drug test, Level 2 background check, immunization records. FAU/FIU students contact their home school registrar directly.",
+    "estimatedCostSummary": "Malpractice insurance $1M/$3M aggregate (student-purchaseable). No housing or meal tickets provided. Application fee not stated.",
+    "keyCaveats": [
+      "Final-year only with USMLE Step 1 or COMLEX pass",
+      "Maximum 8-week rotation",
+      "Level 2 background check + drug test required",
+      "Memorial does not provide housing or meal tickets",
+      "Emergency Medicine rotation provides SLOEs",
+      "International / IMG-graduate eligibility not stated on source",
+      "Memorial Regional Hospital not separately named — '6 hospitals' system-wide language"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly requires LCME/COCA enrollment and USMLE Step 1 or COMLEX pass; final-year only. International and IMG-graduate status are not stated, so cautious classification is VSLO_US_MD_DO_ONLY rather than INTERNATIONAL_STUDENT_CONFIRMED.",
+    "sourceTransparencyNote": "Cleaned text of Memorial Healthcare System visiting-student requirements page captured to T7 canonical capsule with real SHA-256 hash.",
+    "possibleListingTitle": "Memorial Healthcare System / Memorial Regional Hospital — VSLO MS4 (Step 1/COMLEX Required, Max 8 Weeks)",
+    "possibleMetaDescription": "Memorial Healthcare System Hollywood visiting student rotations via VSLO; LCME/COCA final-year with USMLE Step 1 or COMLEX pass; max 8 weeks; $1M/$3M malpractice required.",
+    "suggestedFilters": ["vslo_only", "us_md_do_only", "ms4_only", "step_pass_required", "no_housing"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "memorial regional hollywood visiting medical student",
+      "memorial healthcare system visiting student",
+      "MHS undergraduate medical education",
+      "MHS VSLO",
+      "MHS visiting student",
+      "MHS away rotation"
+    ],
+    "pagesOpened": [
+      "https://www.mhs.net",
+      "https://www.mhs.net/education",
+      "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.mhs.net/education/undergraduate-medical-education/rotation-dates", "reason": "SECONDARY_URL_DEFERRED"}
+    ],
+    "rejectedReasons": ["SECONDARY_URL_DEFERRED"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "STRONG positive evidence for VSLO-only US MD/DO lane; international/IMG status remains genuinely unstated on source.",
+    "futureRetrySuggestion": "Fetch rotation-dates sub-page for application window/deadline detail. If international/IMG-graduate eligibility is critical, contact MHS directly.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 3
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "1c02d35149568d7d0af9bd7fd04da4f9719e3d676349da1b74e599da037284bd",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/memorial-regional-hollywood/cleaned-text/9b59dd545ac7ea57.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/memorial-regional-hollywood/source-pages/9b59dd545ac7ea57.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_window", "immunization_requirements", "background_check_requirements"],
+    "changeRisk": "MEDIUM",
+    "notes": "Hash anchors the visiting-student requirements page; rotation-dates sub-page deferred."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Memorial Healthcare System Hollywood's VSLO-only MS4 lane with verbatim malpractice, immunization, and background-check requirements was documented with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

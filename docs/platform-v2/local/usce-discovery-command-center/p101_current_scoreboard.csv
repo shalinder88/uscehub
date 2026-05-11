@@ -1,21 +1,21 @@
 metric,value,as_of,notes
-active_discovery_lane,Queue 4 ranks 26-79 covered (P101-0+1+2 + P101-4 partial 70-74 + P101-5 partial 75-79),2026-05-11,P101-5 paused at #5 per operator scope discipline; ranks 80-94 roll to P101-6
-cumulative_packets,50,2026-05-11,P101-0 5 + P101-1 10 + P101-2 25 + P101-4 partial 5 + P101-5 partial 5
+active_discovery_lane,Queue 4 ranks 26-84 covered (P101-0+1+2 + P101-4 + P101-5 + P101-6 partial 80-84),2026-05-11,P101-6 paused at #5 per 5-packet calibrated rhythm; ranks 85-94 roll to P101-7
+cumulative_packets,55,2026-05-11,P101-0 5 + P101-1 10 + P101-2 25 + P101-4 5 + P101-5 5 + P101-6 5
 cumulative_states,17,2026-05-11,AR AL DC CA TN MO GA MI PA MA NY TX WA IL IN CT FL
-enhanced_packets,20,2026-05-11,P101-3 retrofit 10 + P101-4 partial 5 + P101-5 partial 5
-real_artifact_backed_packets,20,2026-05-11,All enhanced packets carry real SHA-256 hashes on canonical T7 root
-canonical_t7_backed_packets,20,2026-05-11,Every artifact under /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/
+enhanced_packets,25,2026-05-11,P101-3 retrofit 10 + P101-4 5 + P101-5 5 + P101-6 5
+real_artifact_backed_packets,25,2026-05-11,All enhanced packets carry real SHA-256 hashes on canonical T7 root
+canonical_t7_backed_packets,25,2026-05-11,Every artifact under /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/
 CURRENT_USCE_CONFIRMED,0,2026-05-11,
 POSSIBLE_USCE_NEEDS_REVIEW,1,2026-05-11,Cook County
-VSLO_US_MD_DO_ONLY,30,2026-05-11,P101-5 adds Yale St Raphael
-INTERNATIONAL_STUDENT_CONFIRMED,13,2026-05-11,P101-5 adds UMiami Miller
-IMG_GRAD_OBSERVERSHIP_CONFIRMED,1,2026-05-11,HSS (P101-4)
-NO_PUBLIC_USCE_LANE_FOUND,4,2026-05-11,TBHC (P101-4) + Hartford + UF Shands + Tampa General (P101-5)
-BOT_BLOCKED_MANUAL_RETRY,1,2026-05-11,Michigan Medicine (P101-1)
+VSLO_US_MD_DO_ONLY,31,2026-05-11,P101-6 adds Memorial Regional Hollywood
+INTERNATIONAL_STUDENT_CONFIRMED,15,2026-05-11,P101-6 adds Orlando Health + TCH (Baylor SOM)
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,2,2026-05-11,HSS (P101-4) + Houston Methodist (P101-6)
+NO_PUBLIC_USCE_LANE_FOUND,4,2026-05-11,TBHC + Hartford + UF Shands + Tampa General
+BOT_BLOCKED_MANUAL_RETRY,2,2026-05-11,Michigan Medicine (P101-1) + AdventHealth Orlando (P101-6)
 SOURCE_DEAD,0,2026-05-11,
-states_with_2_plus_packets,8,2026-05-11,DC(3) CA(8) MI(4) PA(4) MA(5) NY(8) IL(3) IN(2) CT(2) FL(3)
-states_with_only_1_packet,7,2026-05-11,AR AL TN MO GA TX WA each(1)
-manual_retry_queue_size,12,2026-05-11,Existing + MSK Elective FAQ + UConn SOM (Hartford) + UF VSLO catalog + USF VSLO catalog
-discovery_engine_completion_pct,38,2026-05-11,+4 pts from P101-5 partial (5 new packets / 25 quota; partial sprint)
+states_with_2_plus_packets,9,2026-05-11,DC(3) CA(8) MI(4) PA(4) MA(5) NY(8) IL(3) IN(2) CT(2) FL(6) TX(3)
+states_with_only_1_packet,5,2026-05-11,AR AL TN MO GA WA each(1)
+manual_retry_queue_size,13,2026-05-11,Existing + AdventHealth Orlando deep pages
+discovery_engine_completion_pct,42,2026-05-11,+4 pts from P101-6 (5 new packets; 15/25 intended block complete)
 public_v1_readiness_pct,43,2026-05-11,Unchanged (no public-product touch)
-next_exact_institution,Queue 4 rank 80 = AdventHealth Orlando (P101-6 next),2026-05-11,P101-5 sprint paused at #5 of 20 per same operator option-A pattern; remaining ranks 80-94 reserved for P101-6
+next_exact_institution,Queue 4 rank 85 = Memorial Hermann-Texas Medical Center (P101-7 next),2026-05-11,P101-6 sprint paused at #5 of 5; next 5 = intended P101-4 packets 16-20

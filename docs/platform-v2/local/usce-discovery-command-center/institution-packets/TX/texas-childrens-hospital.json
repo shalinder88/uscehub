@@ -1,0 +1,207 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-6",
+  "sprint": "P101-6",
+  "intendedP1014PacketNumber": 14,
+  "institution": {
+    "name": "Texas Children's Hospital",
+    "aliases": ["TCH", "Texas Children's"],
+    "city": "Houston",
+    "state": "TX",
+    "officialDomain": "texaschildrens.org",
+    "institutionType": "academic_medical_center_specialty_pediatric",
+    "healthSystem": "Texas Children's Hospital",
+    "academicAffiliation": "Baylor College of Medicine (primary)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 83 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Texas Children's Hospital",
+    "name": "Texas Children's Hospital",
+    "aliases": ["TCH"],
+    "officialDomains": ["texaschildrens.org", "bcm.edu"],
+    "city": "Houston",
+    "state": "TX",
+    "institutionType": "academic_medical_center_specialty_pediatric",
+    "academicAffiliation": "Baylor College of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 83"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["bcm.edu", "texaschildrens.org"],
+    "searchTermsTried": [
+      "texas children's visiting medical student elective",
+      "baylor visiting medical student",
+      "BCM VSLO",
+      "baylor international visiting student",
+      "TCH elective",
+      "baylor SOM visiting"
+    ],
+    "pagesOpened": [
+      "https://www.bcm.edu/education/school-of-medicine",
+      "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.bcm.edu/education/medical-school-md-program/visiting-students", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://www.bcm.edu/education/visiting-students", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Baylor College of Medicine visiting medical student page retrieved successfully. TCH-specific page not separately surfaced; Baylor SOM is TCH's primary academic affiliate and governs visiting rotations.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED_VIA_PARENT_SOM_LANE"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student",
+      "pageTitle": "Visiting Medical Student | Baylor College of Medicine",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "d6854f6754cf44d97ef5b5ccca9043c0b425240a18fe4d521287e9b37d6bacaf",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/texas-childrens-hospital/cleaned-text/bd9d0340bee51959.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/texas-childrens-hospital/source-pages/bd9d0340bee51959.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/texas-childrens-hospital/metadata/bd9d0340bee51959.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Baylor SOM Visiting Medical Student page; international students explicitly admitted; F-1/J-1 required (B-1/B-2 NOT accepted); $1,000 non-refundable app fee; TOEFL 100 iBT min; Houston + Temple campuses; TCH not separately named but is Baylor SOM's primary pediatric affiliate at the Houston campus."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student",
+      "pageTitle": "Visiting Medical Student | Baylor College of Medicine",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "all International students are required to take and pass the Test of English as a Foreign Language exam (TOEFL) with a minimum Internet Based Score of 100. B-1/B-2 visa IS NOT accepted.",
+      "quoteSupports": ["audience", "english_requirement", "visa"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT_F1_J1_TOEFL_100",
+      "applicationDecision": "VSLO_AAMC_ONLY_NO_DIRECT_FACULTY",
+      "costDecision": "STATED_VERBATIM_1000_USD_INTERNATIONAL_APP_FEE",
+      "visaDecision": "F1_J1_REQUIRED_B1_B2_EXPLICITLY_REJECTED",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE_HOUSTON_AND_TEMPLE_CAMPUSES",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_PARENT_SOM",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "INTERNATIONAL_APP_WINDOW_JANUARY_THROUGH_JUNE_ANNUALLY_NO_EXCEPTIONS",
+        "TOEFL_100_IBT_MIN_REQUIRED_NON_NEGOTIABLE_US_PASSPORT_HOLDERS_EXEMPT",
+        "F1_OR_J1_VISA_REQUIRED_B1_B2_EXPLICITLY_REJECTED",
+        "1000_USD_NON_REFUNDABLE_APPLICATION_FEE_FOR_INTERNATIONAL",
+        "FINAL_YEAR_ONLY_LCME_OR_COCA_FOR_US_STUDENTS",
+        "USMLE_STEP_1_OR_COMLEX_LEVEL_1_PASS_REQUIRED",
+        "CORE_CLINICAL_CLERKSHIPS_COMPLETED_REQUIRED",
+        "VSLO_ONLY_NO_DIRECT_FACULTY_CONTACT_PERMITTED",
+        "MIN_6_WEEKS_BEFORE_START_FOR_INTERNATIONAL_APPLICATIONS",
+        "CRIMINAL_BACKGROUND_CHECK_REQUIRED",
+        "HOUSTON_AND_TEMPLE_CAMPUSES_TEMPLE_US_STUDENTS_ONLY",
+        "TCH_NOT_EXPLICITLY_NAMED_BUT_PRIMARY_BAYLOR_PEDIATRIC_AFFILIATE_AT_HOUSTON_CAMPUS"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_LCME_FINAL_YEAR", "quote": "Enrolled in the final year of medical school (or equivalent) at the start of the elective", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_COCA_FINAL_YEAR", "quote": "LCME-accredited US medical school or COCA-accredited osteopathic college", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "ELIGIBLE_EXPLICIT_INTERNATIONAL_APPLICATION_WINDOW", "quote": "Applications accepted January through June of each year. There are no exceptions to this", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FINAL_YEAR_ONLY", "quote": "Enrolled in the final year of medical school", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_AND_GOOD_STANDING_PLUS_CORE_CLERKSHIPS_COMPLETED", "quote": "Good academic standing; Completion of the home school's clinical core clerkships", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "STEP_1_OR_COMLEX_LEVEL_1_PASS_REQUIRED", "quote": "Passing score on either USMLE Step 1 or COMLEX Level 1 examination", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "english_or_toefl_required", "value": "TOEFL_100_IBT_MIN_FOR_INTERNATIONAL_US_PASSPORT_EXEMPT", "quote": "Test of English as a Foreign Language exam (TOEFL) with a minimum Internet Based Score of 100", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "application_pathway", "value": "VSLO_AAMC_ONLY_NO_DIRECT_FACULTY", "quote": "Applications are only accepted through the VSLO system; students instructed NOT to directly contact Baylor faculty and administrative staff", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "AAMC_VSLO_PORTAL", "quote": "AAMC Visiting Student Learning Opportunities (VSLO) system", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "INTERNATIONAL_JANUARY_THROUGH_JUNE_ANNUALLY", "quote": "Applications accepted January through June of each year. There are no exceptions to this", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "MIN_6_WEEKS_BEFORE_START_FOR_INTERNATIONAL", "quote": "a minimum of six weeks prior to the start of the elective", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "cost_application_fee", "value": "INTERNATIONAL_1000_USD_NON_REFUNDABLE", "quote": "Non-refundable $1,000 application fee required", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "HOUSTON_AND_TEMPLE_CAMPUSES_FULL_LIST_NOT_ENUMERATED", "quote": "Houston Campus and Temple Campus (Temple accepts US students only)", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "HANDS_ON_IMPLIED_ELECTIVE_LANGUAGE", "quote": "elective program", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "EXPLICITLY_NOT_ACCEPTED", "quote": "B-1/B-2 visa IS NOT accepted", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "visa_j1", "value": "REQUIRED_F1_OR_J1", "quote": "Must be in F-1/J-1 visa status", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_DISCUSSED_F1_J1_REQUIRED_B1_B2_REJECTED", "quote": "F-1/J-1 visa status", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "VSLO_AGREEMENT_REQUIRED", "quote": "AAMC Visiting Student Learning Opportunities (VSLO) system", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "CRIMINAL_BACKGROUND_CHECK_REQUIRED", "quote": "Criminal background check required", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "VISITINGMED_AT_BCM_EDU_713_798_7766", "quote": "Phone: 713-798-7766; Email: visitingmed@bcm.edu", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "1000_USD_INTERNATIONAL_FEE_NON_REFUNDABLE", "quote": "Non-refundable $1,000 application fee", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false},
+    {"fieldName": "required_documents", "value": "VSLO_APP_PACKAGE_PLUS_TOEFL_FOR_INTERNATIONAL_PLUS_VISA_DOCS_PLUS_BACKGROUND_CHECK", "quote": "All international students must submit required application documents", "quoteUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "INTERNATIONAL_MS", "FINAL_YEAR_ONLY", "MS4_ONLY"],
+    "application": ["VSLO", "SCHOOL_APPROVAL_REQUIRED", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "HANDS_ON"],
+    "cost": ["APPLICATION_FEE", "COST_STATED", "HIGH_COST"],
+    "visa": ["J1_MENTIONED", "F1_OPT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Texas Children's Hospital (Baylor SOM-affiliated) accepts international visiting medical students with F-1/J-1 visa, TOEFL 100 iBT minimum, and $1,000 non-refundable application fee via VSLO.",
+    "whoThisIsFor": "Final-year medical students at LCME (US MD), COCA (US DO), or international medical schools who have completed core clinical clerkships and passed USMLE Step 1 or COMLEX Level 1. International students must have F-1 or J-1 visa, TOEFL 100 iBT, and submit $1,000 non-refundable fee.",
+    "whoThisIsNotFor": "Students on B-1/B-2 tourist visa (explicitly rejected); non-final-year students; students without core clerkships or Step 1/COMLEX pass; pre-med; IMG graduates (not stated).",
+    "howToApply": "Apply via AAMC VSLO only. International students apply January through June annually with min 6 weeks before start. Do not contact Baylor faculty directly. Email visitingmed@bcm.edu or call 713-798-7766 for questions.",
+    "estimatedCostSummary": "International application fee: $1,000 non-refundable (credit/debit via VSLO portal). Tuition/malpractice/housing not stated on source.",
+    "keyCaveats": [
+      "International application window: January through June each year — no exceptions",
+      "F-1 or J-1 visa required; B-1/B-2 explicitly NOT accepted",
+      "TOEFL 100 iBT minimum (US passport holders exempt)",
+      "$1,000 non-refundable international application fee",
+      "USMLE Step 1 or COMLEX Level 1 pass required",
+      "Houston Campus and Temple Campus; Temple is US students only",
+      "Texas Children's Hospital not explicitly named on visiting page but is Baylor SOM's primary pediatric affiliate at Houston Campus",
+      "Direct faculty contact not permitted",
+      "Criminal background check required"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly admits international students with verbatim TOEFL, visa, and fee requirements. Strong international-eligibility signal anchored in three verbatim quotes; F-1/J-1 requirement is operationally significant for IMGs versus tourist-visa observerships.",
+    "sourceTransparencyNote": "Cleaned text of Baylor SOM Visiting Medical Student page captured to T7 canonical capsule with real SHA-256 hash. TCH-specific page not separately surfaced.",
+    "possibleListingTitle": "Texas Children's Hospital (via Baylor SOM) — International Eligible (F-1/J-1, $1,000 Fee, TOEFL 100)",
+    "possibleMetaDescription": "Visiting medical student rotations at TCH via Baylor SOM; international students eligible with F-1/J-1 visa, TOEFL 100, $1,000 non-refundable fee, VSLO-only.",
+    "suggestedFilters": ["international_eligible", "vslo_only", "f1_j1_visa_required", "high_application_fee", "toefl_required"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "texas children's visiting medical student elective",
+      "baylor visiting medical student",
+      "BCM VSLO",
+      "baylor international visiting student",
+      "TCH elective",
+      "baylor SOM visiting"
+    ],
+    "pagesOpened": [
+      "https://www.bcm.edu/education/school-of-medicine",
+      "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.bcm.edu/education/medical-school-md-program/visiting-students", "reason": "DEAD_LINK_404"},
+      {"url": "https://www.bcm.edu/education/visiting-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "STRONG positive evidence for international lane.",
+    "futureRetrySuggestion": "Fetch /requirements-and-criteria-for-electives sub-page for duration + specialty enumeration. Confirm TCH-specific pediatric rotation availability via BCM Pediatrics department contact.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 2
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "d6854f6754cf44d97ef5b5ccca9043c0b425240a18fe4d521287e9b37d6bacaf",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/texas-childrens-hospital/cleaned-text/bd9d0340bee51959.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/texas-childrens-hospital/source-pages/bd9d0340bee51959.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_fee_amount", "toefl_minimum_score", "application_window"],
+    "changeRisk": "MEDIUM",
+    "notes": "International application fee and TOEFL minimum may change with each cycle; visa policy (F-1/J-1 vs B-1/B-2) is the load-bearing IMG signal."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Texas Children's Hospital (via Baylor SOM) has explicit international-medical-student lane with verbatim TOEFL 100, F-1/J-1 visa requirement, and $1,000 fee documented with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}
