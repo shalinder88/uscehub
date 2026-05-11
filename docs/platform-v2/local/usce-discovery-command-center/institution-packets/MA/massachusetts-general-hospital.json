@@ -1,8 +1,13 @@
 {
   "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
   "institution": {
     "name": "Massachusetts General Hospital",
-    "aliases": ["MGH", "Mass General", "Harvard Medical School — Visiting Students Program (covering MGH placement)"],
+    "aliases": [
+      "MGH",
+      "Mass General",
+      "Harvard Medical School \u2014 Visiting Students Program (covering MGH placement)"
+    ],
     "city": "Boston",
     "state": "MA",
     "officialDomain": "massgeneral.org",
@@ -13,7 +18,11 @@
   "searchProcess": {
     "searchedAt": "2026-05-11T00:00:00Z",
     "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
-    "officialDomainsChecked": ["massgeneral.org", "hms.harvard.edu", "massgeneralbrigham.org"],
+    "officialDomainsChecked": [
+      "massgeneral.org",
+      "hms.harvard.edu",
+      "massgeneralbrigham.org"
+    ],
     "searchTermsTried": [
       "Massachusetts General Hospital visiting medical student MGH Harvard clerkship VSLO site:massgeneral.org",
       "MGH visiting clerkship",
@@ -31,8 +40,16 @@
       "https://hms.harvard.edu/departments/office-registrar/visiting-students-program"
     ],
     "rejectedPages": [
-      {"url": "https://www.massgeneral.org/urology/education/medical-student-electives.aspx", "title": "Harvard Urologic Surgery Residency Program", "reason": "RESIDENCY_ONLY"},
-      {"url": "https://www.massgeneral.org/surgery/education-and-training/international-applications", "title": "MGH Surgery Intl Applications (ERAS J-1)", "reason": "RESIDENCY_ONLY"}
+      {
+        "url": "https://www.massgeneral.org/urology/education/medical-student-electives.aspx",
+        "title": "Harvard Urologic Surgery Residency Program",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://www.massgeneral.org/surgery/education-and-training/international-applications",
+        "title": "MGH Surgery Intl Applications (ERAS J-1)",
+        "reason": "RESIDENCY_ONLY"
+      }
     ],
     "robotsOrAccessNotes": "MGH visiting-clerkship URL redirects to massgeneralbrigham.org. All department pages confirm: 'To arrange a [specialty] rotation at Mass General, apply through Harvard Medical School's Exchange Clerkship Program.' MGH does not run an independent visiting-MS lane.",
     "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
@@ -43,7 +60,10 @@
       "pageTitle": "Advanced Surgery Clerkship Program",
       "sourcePageType": "DEPARTMENT_PAGE",
       "shortQuote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
-      "quoteSupports": ["application", "sourceScope"],
+      "quoteSupports": [
+        "application",
+        "sourceScope"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -67,7 +87,9 @@
       "pageTitle": "International Medical School Graduate Applications",
       "sourcePageType": "INSTITUTION_HUB",
       "shortQuote": "The Surgical Residency Program at Massachusetts General Hospital accepts graduates of international medical schools into our program. We only sponsor J-1 visas for preliminary positions.",
-      "quoteSupports": ["audience"],
+      "quoteSupports": [
+        "audience"
+      ],
       "audienceDecision": "NOT_STATED_ON_SOURCE",
       "applicationDecision": "NOT_STATED_ON_SOURCE",
       "costDecision": "NOT_STATED_ON_SOURCE",
@@ -88,12 +110,497 @@
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 4,
     "openedPagesCount": 8,
-    "strongNegativeEvidence": "MGH does NOT run an independent visiting-medical-student program. All visiting-MS access is gated by Harvard Medical School Exchange Clerkship Program (same path as BWH — see MA/brigham-and-womens-hospital.json packet). MGH-specific international-applications page is for the Surgery RESIDENCY only and is NOT a USCE pathway.",
+    "strongNegativeEvidence": "MGH does NOT run an independent visiting-medical-student program. All visiting-MS access is gated by Harvard Medical School Exchange Clerkship Program (same path as BWH \u2014 see MA/brigham-and-womens-hospital.json packet). MGH-specific international-applications page is for the Surgery RESIDENCY only and is NOT a USCE pathway.",
     "weakNegativeEvidence": "The MGH-specific page text for MGH visiting-students hub was not fully retrieved (redirects to massgeneralbrigham.org); inheriting HMS policy is the safest classification."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — HMS Exchange Clerkship Program covers MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction (inherited from HMS); (d) $115 application fee per experience (HMS); (e) 1-3 months duration; (f) MGH surgery RESIDENCY (ERAS, J-1 prelim only) is a separate non-USCE lane and must not be confused with the visiting-MS lane.",
-  "plainEnglishSummary": "MGH does not run its own visiting medical student program. All visiting medical student access goes through Harvard Medical School's Exchange Clerkship Program — same path as Brigham and Women's. Final-year medical students apply via VSLO. International students can apply but only for October-March rotations. $115 application fee per experience. Separately, MGH's Surgery Residency Program accepts IMG graduates through ERAS with J-1 visa sponsorship for prelim positions — that's a residency lane, not USCE.",
-  "driftCheck": "This advanced national USCE discovery because MGH was correctly identified as HMS-gated rather than overclaimed as an independent USCE pathway; the Surgery Residency IMG language was correctly classified RESIDENCY_ONLY rather than misread as an open IMG observership."
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 HMS Exchange Clerkship Program covers MGH placement; (b) final-year MS only; (c) international students eligible via VSLO with Oct-Mar window restriction (inherited from HMS); (d) $115 application fee per experience (HMS); (e) 1-3 months duration; (f) MGH surgery RESIDENCY (ERAS, J-1 prelim only) is a separate non-USCE lane and must not be confused with the visiting-MS lane.",
+  "plainEnglishSummary": "MGH does not run its own visiting medical student program. All visiting medical student access goes through Harvard Medical School's Exchange Clerkship Program \u2014 same path as Brigham and Women's. Final-year medical students apply via VSLO. International students can apply but only for October-March rotations. $115 application fee per experience. Separately, MGH's Surgery Residency Program accepts IMG graduates through ERAS with J-1 visa sponsorship for prelim positions \u2014 that's a residency lane, not USCE.",
+  "driftCheck": "This advanced national USCE discovery because MGH was correctly identified as HMS-gated rather than overclaimed as an independent USCE pathway; the Surgery Residency IMG language was correctly classified RESIDENCY_ONLY rather than misread as an open IMG observership.",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Massachusetts General Hospital",
+    "aliases": [
+      "MGH",
+      "Harvard Medical School Visiting Students Program \u2014 MGH placement"
+    ],
+    "hospitalName": "Massachusetts General Hospital",
+    "medicalSchoolName": "Harvard Medical School",
+    "healthSystemName": "Mass General Brigham",
+    "city": "Boston",
+    "state": "MA",
+    "officialDomains": [
+      "hms.harvard.edu",
+      "massgeneral.org",
+      "massgeneralbrigham.org"
+    ],
+    "campusOrSiteNames": [
+      "Massachusetts General Hospital"
+    ],
+    "institutionType": "academic_medical_center",
+    "sourceOfIdentity": "P101-2 25-institution discovery block"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "finalUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "pageTitle": "Advanced Surgery Clerkship Program",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+    },
+    {
+      "sourceUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
+      "finalUrl": "https://hms.harvard.edu/departments/office-registrar/visiting-students-program/apply",
+      "pageTitle": "Apply | HMS Visiting Students Program",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "ELIGIBLE_VIA_HMS_VSLO_FINAL_YEAR",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "ELIGIBLE_VIA_HMS_VSLO_FINAL_YEAR",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_VIA_HMS_VSLO_OCT_MARCH",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "Per HMS policy: Oct-March window; verbatim from sibling BWH packet",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "MGH Surgery Residency lane is RESIDENCY_ONLY (J-1 prelim) \u2014 NOT a visiting MS pathway",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Not specifically addressed",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "FINAL_YEAR_PER_HMS_POLICY",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "HMS_EXCHANGE_CLERKSHIP_PROGRAM_VSLO",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_window",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "115_USD_PER_HMS_POLICY",
+      "quote": "In order to arrange a surgical rotation at Mass General, you must apply through Harvard Medical School's Exchange Clerkship Program for Visiting Medical Students.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "$115/experience per sibling BWH packet HMS quote",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "duration",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "MULTISPECIALTY_VIA_HMS_CATALOG_SURGERY_RADIOLOGY_UROLOGY_NEUROLOGY_RAD_ONC_VASCULAR_CONFIRMED",
+      "quote": "",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "MGH placements offered across multiple departments per HMS catalog",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "HMS hub does not state visa policy",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "J-1 only for surgery residency prelim positions (separate lane)",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_FOR_RESIDENCY_NOT_VISITING_MS",
+      "quote": "We only sponsor J-1 visas for preliminary positions.",
+      "quoteUrl": "https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program",
+      "quoteSourcePageTitle": "Advanced Surgery Clerkship Program",
+      "confidence": "HIGH",
+      "caveat": "J-1 mention is for Surgery RESIDENCY lane only, NOT for visiting MS",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "US_MD",
+      "US_DO",
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "MS4_ONLY"
+    ],
+    "application": [
+      "VSLO",
+      "VSLO_GLOBAL"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE",
+      "SUB_INTERNATIONAL"
+    ],
+    "cost": [
+      "COST_STATED",
+      "APPLICATION_FEE"
+    ],
+    "visa": [
+      "VISA_NOT_MENTIONED"
+    ],
+    "source": [
+      "SCHOOL_LEVEL_SOURCE",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "CLEANED_TEXT_PENDING"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "MGH visiting medical students apply via Harvard Medical School's Exchange Clerkship Program (VSLO); same policy as BWH; international window October-March; $115/experience.",
+    "whoThisIsFor": "Final-year medical students (US and international) seeking a rotation at MGH via the HMS Exchange Clerkship Program.",
+    "whoThisIsNotFor": "MD graduates / IMG observers (Surgery RESIDENCY is a separate lane); pre-final-year students; international applicants for April-September.",
+    "howToApply": "VSLO via Harvard Medical School Exchange Clerkship Program (same path as BWH). $115 per experience selected. International window October-March.",
+    "estimatedCostSummary": "$115 application fee per experience per HMS policy.",
+    "keyCaveats": [
+      "MGH does NOT run an independent visiting-MS program \u2014 all access via HMS",
+      "MGH Surgery RESIDENCY accepts IMG grads via ERAS with J-1 \u2014 NOT a USCE pathway",
+      "Same Oct-March international window as BWH",
+      "Multispecialty placements per HMS catalog"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because MGH-specific department page explicitly routes through HMS Exchange Clerkship Program (the same HMS lane confirmed in the BWH packet).",
+    "sourceTransparencyNote": "Verified at https://www.massgeneral.org/surgery/education-and-training/advanced-surgery-clerkship-program (MGH-specific page routing through HMS) on 2026-05-11",
+    "possibleListingTitle": "Massachusetts General Hospital \u2014 HMS Visiting Students Program (Boston, MA)",
+    "possibleMetaDescription": "MGH via HMS Exchange Clerkship Program: VSLO, final-year MS, intl window Oct-March, $115/experience. Surgery, Radiology, Urology, Neurology placements.",
+    "suggestedFilters": [
+      "US_MD",
+      "INTERNATIONAL_MS",
+      "VSLO",
+      "CLINICAL_ELECTIVE",
+      "FINAL_YEAR_ONLY",
+      "SUB_INTERNATIONAL"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "PENDING_T7_BACKFILL",
+    "cleanedTextPath": "",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "application_window",
+      "cost_application_fee"
+    ],
+    "changeRisk": "LOW",
+    "notes": "Source hash placeholder until T7 backfill; canonical hash computed when scripts/p101-backfill-t7-artifacts.ts runs against the source URL. Recheck date = first capture + 90 days."
+  }
 }

@@ -1,10 +1,11 @@
 {
   "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
   "institution": {
     "name": "Boston Medical Center",
     "aliases": [
       "BMC",
-      "Boston University Chobanian & Avedisian School of Medicine — International Student Elective Program (ISEP)"
+      "Boston University Chobanian & Avedisian School of Medicine \u2014 International Student Elective Program (ISEP)"
     ],
     "city": "Boston",
     "state": "MA",
@@ -16,7 +17,11 @@
   "searchProcess": {
     "searchedAt": "2026-05-11T00:00:00Z",
     "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
-    "officialDomainsChecked": ["bumc.bu.edu", "bu.edu", "bmc.org"],
+    "officialDomainsChecked": [
+      "bumc.bu.edu",
+      "bu.edu",
+      "bmc.org"
+    ],
     "searchTermsTried": [
       "Boston University School of Medicine visiting medical student VSLO international Boston Medical Center site:bu.edu",
       "BUCASM ISEP",
@@ -32,8 +37,16 @@
       "https://www.bumc.bu.edu/ghbusm/setupelective/outside-electives/"
     ],
     "rejectedPages": [
-      {"url": "https://www.bumc.bu.edu/emergencymedicine/clerkships/ms4/", "title": "EM MS4 Clerkship", "reason": "AFFILIATED_ONLY"},
-      {"url": "https://www.bumc.bu.edu/orthopaedics/medical-students/fourth-year-medical-student-electives/", "title": "Ortho 4Y Electives", "reason": "AFFILIATED_ONLY"}
+      {
+        "url": "https://www.bumc.bu.edu/emergencymedicine/clerkships/ms4/",
+        "title": "EM MS4 Clerkship",
+        "reason": "AFFILIATED_ONLY"
+      },
+      {
+        "url": "https://www.bumc.bu.edu/orthopaedics/medical-students/fourth-year-medical-student-electives/",
+        "title": "Ortho 4Y Electives",
+        "reason": "AFFILIATED_ONLY"
+      }
     ],
     "robotsOrAccessNotes": "bumc.bu.edu accessible; WebFetch clean.",
     "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
@@ -44,7 +57,9 @@
       "pageTitle": "International Student Elective Program",
       "sourcePageType": "INSTITUTION_HUB",
       "shortQuote": "Be in his/her final year of medical school; Be in good academic standing at his/her home institution; Be fluent in the English language; Not be enrolled in a Caribbean medical school; and Not have earned an MD degree.",
-      "quoteSupports": ["audience"],
+      "quoteSupports": [
+        "audience"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -67,7 +82,9 @@
       "pageTitle": "International Student Elective Program",
       "sourcePageType": "FEE_SCHEDULE",
       "shortQuote": "Tuition is $3000 per (four-week) elective.",
-      "quoteSupports": ["cost"],
+      "quoteSupports": [
+        "cost"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -77,14 +94,18 @@
       "sourceScopeDecision": "INSTITUTION_SPECIFIC",
       "confidenceTier": "TIER_B_CAUTION_SAFE",
       "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
-      "caveats": ["TUITION_3000_PER_4_WEEK_ELECTIVE_VERBATIM"]
+      "caveats": [
+        "TUITION_3000_PER_4_WEEK_ELECTIVE_VERBATIM"
+      ]
     },
     {
       "sourceUrl": "https://www.bumc.bu.edu/isep/",
       "pageTitle": "International Student Elective Program",
       "sourcePageType": "INSTITUTION_HUB",
       "shortQuote": "Students should request a B-1/B-2 visitor visa at their home embassy or consulate for their visit; if a student requires a letter of invitation from BUCASM for this purpose, he/she may request it.",
-      "quoteSupports": ["visa"],
+      "quoteSupports": [
+        "visa"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -94,19 +115,527 @@
       "sourceScopeDecision": "INSTITUTION_SPECIFIC",
       "confidenceTier": "TIER_B_CAUTION_SAFE",
       "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
-      "caveats": ["B1_B2_VISA_REQUIRED", "BUCASM_INVITATION_LETTER_AVAILABLE"]
+      "caveats": [
+        "B1_B2_VISA_REQUIRED",
+        "BUCASM_INVITATION_LETTER_AVAILABLE"
+      ]
     }
   ],
   "negativeEvidence": {
     "noPublicUsceLaneReason": "",
     "searchedTermsCount": 5,
     "openedPagesCount": 5,
-    "strongNegativeEvidence": "Two explicit verbatim exclusions found: Caribbean medical school students AND MD-degree-holders are not eligible for ISEP. This is the first P101 packet with both exclusions captured verbatim — important to prevent IMG-grad overclaim on BMC.",
+    "strongNegativeEvidence": "Two explicit verbatim exclusions found: Caribbean medical school students AND MD-degree-holders are not eligible for ISEP. This is the first P101 packet with both exclusions captured verbatim \u2014 important to prevent IMG-grad overclaim on BMC.",
     "weakNegativeEvidence": "Application process specifics not captured verbatim on the hub; the application instructions live on a sub-page."
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC — BU CASM ISEP at BMC; (b) international final-year-MS only; (c) Caribbean-school + MD-grad explicit exclusions; (d) tuition $3,000 per 4-wk, max 2 electives; (e) B-1/B-2 visa with BUCASM invitation letter available.",
+  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC \u2014 BU CASM ISEP at BMC; (b) international final-year-MS only; (c) Caribbean-school + MD-grad explicit exclusions; (d) tuition $3,000 per 4-wk, max 2 electives; (e) B-1/B-2 visa with BUCASM invitation letter available.",
   "plainEnglishSummary": "Boston Medical Center accepts international visiting medical students through BU's International Student Elective Program. Final-year medical students only. Caribbean schools are explicitly excluded; MD graduates (observers) are explicitly excluded. Tuition is $3,000 per 4-week elective, max two electives. Students apply for a B-1/B-2 visa; BUCASM provides an invitation letter.",
-  "driftCheck": "This advanced national USCE discovery because Massachusetts gained its first P101 packet — a confirmed international-eligible IMG-relevant lane at BMC with the strongest verbatim audience-exclusion language found in P101 to date (both Caribbean and MD-grad explicit)."
+  "driftCheck": "This advanced national USCE discovery because Massachusetts gained its first P101 packet \u2014 a confirmed international-eligible IMG-relevant lane at BMC with the strongest verbatim audience-exclusion language found in P101 to date (both Caribbean and MD-grad explicit).",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Boston Medical Center",
+    "aliases": [
+      "BMC",
+      "BU Chobanian & Avedisian School of Medicine ISEP"
+    ],
+    "hospitalName": "Boston Medical Center",
+    "medicalSchoolName": "Boston University Chobanian & Avedisian School of Medicine",
+    "healthSystemName": "Boston Medical Center Health System",
+    "city": "Boston",
+    "state": "MA",
+    "officialDomains": [
+      "bumc.bu.edu",
+      "bmc.org",
+      "bu.edu"
+    ],
+    "campusOrSiteNames": [
+      "Boston Medical Center"
+    ],
+    "institutionType": "academic_medical_center",
+    "sourceOfIdentity": "P101-2 25-institution discovery block"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.bumc.bu.edu/isep/",
+      "finalUrl": "https://www.bumc.bu.edu/isep/",
+      "pageTitle": "International Student Elective Program",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+    },
+    {
+      "sourceUrl": "https://www.bumc.bu.edu/isep/student-guide/",
+      "finalUrl": "https://www.bumc.bu.edu/isep/student-guide/",
+      "pageTitle": "ISEP Student Guide",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    },
+    {
+      "sourceUrl": "https://www.bumc.bu.edu/isep/checklist/",
+      "finalUrl": "https://www.bumc.bu.edu/isep/checklist/",
+      "pageTitle": "ISEP Checklist",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "ISEP is for international students; US lane separate",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Same as US MD",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_EXPLICIT_FINAL_YEAR",
+      "quote": "Be in his/her final year of medical school; Be in good academic standing at his/her home institution; Be fluent in the English language; Not be enrolled in a Caribbean medical school; and Not have earned an MD degree.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "EXCLUDED_EXPLICIT",
+      "quote": "Not have earned an MD degree.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "EXCLUDED_EXPLICIT",
+      "quote": "Not be enrolled in a Caribbean medical school",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Final-year MS only",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "FINAL_YEAR_ONLY",
+      "quote": "Be in his/her final year of medical school",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "ACTIVELY_ENROLLED_NOT_GRADUATE",
+      "quote": "Not have earned an MD degree.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "ENGLISH_FLUENCY_REQUIRED",
+      "quote": "Be fluent in the English language",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "INSTITUTIONAL_FORM_ISEP",
+      "quote": "Be in his/her final year of medical school",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_window",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "3000_USD_PER_4_WEEK_ELECTIVE",
+      "quote": "Tuition is $3000 per (four-week) elective.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "duration",
+      "value": "UP_TO_TWO_4_WEEK_ELECTIVES",
+      "quote": "Tuition is $3000 per (four-week) elective.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "Max 8 weeks per packet caveats",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "MULTISPECIALTY_ISEP_CATALOG",
+      "quote": "",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "Multispecialty; specific list lives on ISEP student guide sub-page",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "B1_B2_REQUIRED_INVITATION_LETTER_AVAILABLE",
+      "quote": "Students should request a B-1/B-2 visitor visa at their home embassy or consulate for their visit; if a student requires a letter of invitation from BUCASM for this purpose, he/she may request it.",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "B-1/B-2 only",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_AS_B1_B2",
+      "quote": "Students should request a B-1/B-2 visitor visa at their home embassy or consulate for their visit",
+      "quoteUrl": "https://www.bumc.bu.edu/isep/",
+      "quoteSourcePageTitle": "International Student Elective Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "MS4_ONLY",
+      "NOT_IMG_GRAD",
+      "CARIBBEAN"
+    ],
+    "application": [
+      "DIRECT_APPLICATION",
+      "ONLINE_FORM"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE"
+    ],
+    "cost": [
+      "COST_STATED",
+      "TUITION_FEE"
+    ],
+    "visa": [
+      "B1_B2_MENTIONED"
+    ],
+    "source": [
+      "INSTITUTION_SPECIFIC",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "CLEANED_TEXT_PENDING"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "BMC's ISEP accepts international final-year MS for up to two 4-week electives at $3,000/elective; Caribbean schools and MD graduates explicitly excluded; B-1/B-2 visa required.",
+    "whoThisIsFor": "International final-year medical students in good standing, fluent in English.",
+    "whoThisIsNotFor": "Caribbean medical school students (verbatim excluded); MD-degree holders / IMG observers (verbatim excluded); US LCME/COCA students.",
+    "howToApply": "ISEP institutional application; B-1/B-2 visa via home embassy; BUCASM provides invitation letter on request.",
+    "estimatedCostSummary": "Tuition is $3,000 per (four-week) elective. Max two electives (8 weeks).",
+    "keyCaveats": [
+      "Caribbean medical school students explicitly excluded (verbatim)",
+      "MD graduates / IMG observers explicitly excluded (verbatim)",
+      "Final-year medical students only",
+      "B-1/B-2 visa required \u2014 student arranges, BUCASM provides invitation letter",
+      "English fluency required"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED with two strong verbatim exclusions (Caribbean and MD-grad); the ISEP eligibility list is unambiguous.",
+    "sourceTransparencyNote": "Verified at https://www.bumc.bu.edu/isep/ on 2026-05-11",
+    "possibleListingTitle": "Boston Medical Center \u2014 International Student Elective Program (Boston, MA)",
+    "possibleMetaDescription": "BMC ISEP: international final-year MS, $3,000/4-week elective, B-1/B-2 visa, Caribbean schools and MD grads explicitly excluded. Max 8 weeks.",
+    "suggestedFilters": [
+      "INTERNATIONAL_MS",
+      "B1_B2_MENTIONED",
+      "TUITION_FEE",
+      "CLINICAL_ELECTIVE",
+      "FINAL_YEAR_ONLY"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "PENDING_T7_BACKFILL",
+    "cleanedTextPath": "",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "cost_tuition_or_program_fee",
+      "application_window",
+      "english_or_toefl_required"
+    ],
+    "changeRisk": "LOW",
+    "notes": "Source hash placeholder until T7 backfill; canonical hash computed when scripts/p101-backfill-t7-artifacts.ts runs against the source URL. Recheck date = first capture + 90 days."
+  }
 }

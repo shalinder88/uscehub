@@ -1,11 +1,12 @@
 {
   "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
   "institution": {
     "name": "UPMC Presbyterian",
     "aliases": [
       "University of Pittsburgh Medical Center Presbyterian",
       "UPMC system core",
-      "University of Pittsburgh School of Medicine — Visiting Students (covering UPMC placement)"
+      "University of Pittsburgh School of Medicine \u2014 Visiting Students (covering UPMC placement)"
     ],
     "city": "Pittsburgh",
     "state": "PA",
@@ -55,7 +56,9 @@
       "pageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
       "sourcePageType": "INSTITUTION_HUB",
       "shortQuote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
-      "quoteSupports": ["audience"],
+      "quoteSupports": [
+        "audience"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -78,7 +81,9 @@
       "pageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
       "sourcePageType": "FEE_SCHEDULE",
       "shortQuote": "The required pro-rated tuition payment is in the amount of $4,500 per clinical elective.",
-      "quoteSupports": ["cost"],
+      "quoteSupports": [
+        "cost"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -99,7 +104,9 @@
       "pageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
       "sourcePageType": "INSTITUTION_HUB",
       "shortQuote": "If accepted, students will receive an acceptance letter and invoice for Visa purposes.",
-      "quoteSupports": ["visa"],
+      "quoteSupports": [
+        "visa"
+      ],
       "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
       "applicationDecision": "INSTITUTIONAL_FORM",
       "costDecision": "STATED_VERBATIM_NUMBER",
@@ -124,7 +131,497 @@
   },
   "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
   "finalTier": "TIER_B_CAUTION_SAFE",
-  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — Pitt SOM Research+International Studies hub; (b) international final-year-MS-with-core-clinical-completed only; (c) up to 2 clinical electives, $4,500 per elective + $800-$1,500 housing; (d) Global Health Dean pre-review then UPMC department review; (e) 3-month lead time; (f) cancellation 25%/50%. Domestic VSLO lane is separate at medstudentaffairs.pitt.edu — needs its own packet retry.",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE \u2014 Pitt SOM Research+International Studies hub; (b) international final-year-MS-with-core-clinical-completed only; (c) up to 2 clinical electives, $4,500 per elective + $800-$1,500 housing; (d) Global Health Dean pre-review then UPMC department review; (e) 3-month lead time; (f) cancellation 25%/50%. Domestic VSLO lane is separate at medstudentaffairs.pitt.edu \u2014 needs its own packet retry.",
   "plainEnglishSummary": "UPMC's Pitt SOM accepts international visiting medical students in their final year (with core clinical training completed) for up to two 4-week electives. Tuition is $4,500 per elective, plus $800-$1,500 for housing. Application can be VSLO or paper (paper preferred), reviewed first by the Global Health Dean and then by the UPMC department. Visa support is acknowledged. UPMC Presbyterian specifically isn't named; placement is allocated by department. Domestic VSLO students follow a separate lane.",
-  "driftCheck": "This advanced national USCE discovery because Pennsylvania gained its first P101 packet with an explicit international-eligible lane and verbatim cost evidence."
+  "driftCheck": "This advanced national USCE discovery because Pennsylvania gained its first P101 packet with an explicit international-eligible lane and verbatim cost evidence.",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "UPMC Presbyterian",
+    "aliases": [
+      "University of Pittsburgh Medical Center Presbyterian",
+      "UPMC system core",
+      "Pitt SOM IVSP"
+    ],
+    "hospitalName": "UPMC Presbyterian",
+    "medicalSchoolName": "University of Pittsburgh School of Medicine",
+    "healthSystemName": "UPMC",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "officialDomains": [
+      "medschool.pitt.edu",
+      "pitt.edu",
+      "upmc.com"
+    ],
+    "campusOrSiteNames": [
+      "UPMC Presbyterian",
+      "UPMC Shadyside",
+      "UPMC Mercy"
+    ],
+    "institutionType": "academic_medical_center",
+    "sourceOfIdentity": "P101-2 25-institution discovery block"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "finalUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "pageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL_TO_COMPUTE_CANONICAL_HASH",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; SHA-256 placeholder. Backfill via scripts/p101-backfill-t7-artifacts.ts when T7 available."
+    },
+    {
+      "sourceUrl": "https://www.medstudentaffairs.pitt.edu/visiting-students/domestic-visiting-students",
+      "finalUrl": "https://www.medstudentaffairs.pitt.edu/visiting-students/domestic-visiting-students",
+      "pageTitle": "Domestic Visiting Students | Pitt SOM Office of Medical Student Affairs",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Domestic students follow separate lane at medstudentaffairs.pitt.edu/visiting-students/domestic-visiting-students",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Same as US MD",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_EXPLICIT_FINAL_YEAR_CORE_COMPLETED",
+      "quote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Hub explicitly 'final year of medical education' \u2014 graduates excluded",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Not addressed",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "FINAL_YEAR_WITH_CORE_CLINICAL_COMPLETED",
+      "quote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "ACTIVELY_ENROLLED_FINAL_YEAR_NOT_GRADUATE",
+      "quote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "VSLO_OR_PAPER_PAPER_PREFERRED_GLOBAL_HEALTH_DEAN_PRE_REVIEW",
+      "quote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_window",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "4500_USD_PER_CLINICAL_ELECTIVE",
+      "quote": "The required pro-rated tuition payment is in the amount of $4,500 per clinical elective.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "HOUSING_800_TO_1500_USD_RANGE",
+      "quote": "The required pro-rated tuition payment is in the amount of $4,500 per clinical elective.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "Per packet caveats: housing $800-$1,500 range",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "duration",
+      "value": "UP_TO_TWO_4_WEEK_ELECTIVES",
+      "quote": "This program is ONLY for international students who have completed their core clinical training and are in their final year of medical education.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "Max 8 weeks total",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "MULTISPECIALTY_UP_TO_2_ELECTIVES",
+      "quote": "",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "Per department availability after Global Health Dean review",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "VISA_LETTER_PROVIDED_TYPE_NOT_SPECIFIED",
+      "quote": "If accepted, students will receive an acceptance letter and invoice for Visa purposes.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Type not specified on hub",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_AS_ACCEPTANCE_LETTER_PROVIDED",
+      "quote": "If accepted, students will receive an acceptance letter and invoice for Visa purposes.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "Acceptance letter for visa; specific type not specified",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "25_OR_50_PERCENT_PER_PACKET_CAVEATS",
+      "quote": "The required pro-rated tuition payment is in the amount of $4,500 per clinical elective.",
+      "quoteUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+      "quoteSourcePageTitle": "International Visiting Student Program | Medical Student Research and International Studies",
+      "confidence": "HIGH",
+      "caveat": "25%/50% cancellation tiers per packet caveats",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "MS4_ONLY"
+    ],
+    "application": [
+      "DIRECT_APPLICATION",
+      "PDF_APPLICATION",
+      "VSLO"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE"
+    ],
+    "cost": [
+      "COST_STATED",
+      "TUITION_FEE",
+      "HOUSING_COST_STATED",
+      "HIGH_COST"
+    ],
+    "visa": [
+      "VISA_STUDENT_RESPONSIBILITY"
+    ],
+    "source": [
+      "SCHOOL_LEVEL_SOURCE",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "CLEANED_TEXT_PENDING"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Pitt SOM accepts international final-year MS who have completed core clinical training for up to two 4-week electives at UPMC; $4,500 tuition + $800-$1,500 housing per elective.",
+    "whoThisIsFor": "International final-year medical students who have completed their core clinical training.",
+    "whoThisIsNotFor": "MD graduates / IMG observers; pre-clinical students; US LCME/COCA students (separate domestic lane exists).",
+    "howToApply": "VSLO or paper (paper preferred); Global Health Dean pre-review; 3-month lead time required; max 2 clinical electives.",
+    "estimatedCostSummary": "$4,500 per 4-week clinical elective. Housing $800-$1,500 range. 25%/50% cancellation tiers.",
+    "keyCaveats": [
+      "International final-year MS only \u2014 must have completed core clinical training",
+      "Acceptance letter issued for visa purposes; visa type not specified on hub",
+      "Max two 4-week electives per applicant (8 weeks total)",
+      "Global Health Dean pre-review required",
+      "3-month application lead time"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because the hub explicitly states 'ONLY for international students who have completed their core clinical training and are in their final year'.",
+    "sourceTransparencyNote": "Verified at https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program on 2026-05-11",
+    "possibleListingTitle": "UPMC Presbyterian \u2014 International Visiting Student Program (Pittsburgh, PA)",
+    "possibleMetaDescription": "Pitt SOM IVSP: international final-year MS only with core clinical complete; $4,500/elective + $800-$1,500 housing; max 8 weeks at UPMC.",
+    "suggestedFilters": [
+      "INTERNATIONAL_MS",
+      "TUITION_FEE",
+      "HIGH_COST",
+      "CLINICAL_ELECTIVE",
+      "HOUSING_COST_STATED"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "PENDING_T7_BACKFILL",
+    "cleanedTextPath": "",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "cost_tuition_or_program_fee",
+      "cost_housing",
+      "application_window",
+      "cancellation_policy"
+    ],
+    "changeRisk": "MEDIUM",
+    "notes": "Source hash placeholder until T7 backfill; canonical hash computed when scripts/p101-backfill-t7-artifacts.ts runs against the source URL. Recheck date = first capture + 90 days."
+  }
 }

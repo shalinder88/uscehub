@@ -58,7 +58,70 @@ const REQUIRED_DOCS = [
   "P101_2_CHECKPOINT_AFTER_10.md",
   "P101_2_CHECKPOINT_AFTER_20.md",
   "P101_2_25_INSTITUTION_DISCOVERY_CHECKPOINT.md",
+  // P101-3 enhanced evidence capture layer
+  "P101_3_ENHANCED_EVIDENCE_CAPTURE_DOCTRINE.md",
+  "p101_packet_schema_v2.md",
+  "p101_tag_taxonomy.md",
+  "p101_screenshot_text_hash_pdf_policy.md",
+  "p101_t7_storage_status.md",
+  "p101_3_selected_10_retrofit.csv",
+  "p101_artifact_manifest.csv",
+  "P101_3_ENHANCED_EVIDENCE_RETROFIT_CHECKPOINT.md",
 ];
+
+// Canonical fieldQuoteMap field names for p101-3-enhanced packets.
+const ENHANCED_FIELD_NAMES = new Set([
+  "audience_us_md","audience_us_do","audience_international_ms","audience_img_graduate",
+  "audience_caribbean","audience_pre_med","year_required","graduation_status",
+  "usmle_or_comlex_required","english_or_toefl_required",
+  "application_pathway","application_url","application_window","deadline",
+  "cost_application_fee","cost_tuition_or_program_fee","cost_malpractice","cost_housing","cost_other",
+  "duration","specialties_offered","hands_on_vs_observer","lor_or_certificate",
+  "visa_b1_b2","visa_j1","visa_h1b","visa_not_mentioned",
+  "affiliation_agreement_required","immunization_required","background_check_required","malpractice_required",
+  "coordinator_contact","housing","cancellation_policy","required_documents",
+]);
+
+// Canonical opportunityTags strings per p101_tag_taxonomy.md.
+const CANONICAL_TAGS: Record<string, Set<string>> = {
+  audience: new Set([
+    "US_MD","US_DO","LCME_ONLY","COCA_ALLOWED","AOA_ALLOWED",
+    "INTERNATIONAL_MS","IMG_GRAD","CARIBBEAN","FINAL_YEAR_ONLY","MS4_ONLY","MS3_ALLOWED",
+    "AFFILIATION_REQUIRED","EXCHANGE_PARTNER_ONLY","NOT_INTERNATIONAL","NOT_IMG_GRAD",
+    "GRADUATES_EXCLUDED","CARIBBEAN_EXCLUDED",
+  ]),
+  application: new Set([
+    "VSLO","VSLO_GLOBAL","DIRECT_APPLICATION","EMAIL_COORDINATOR","ONLINE_FORM",
+    "PDF_APPLICATION","BY_INVITATION_ONLY","DETAILS_BY_COORDINATOR","CLOSED_OR_PAUSED","BOT_BLOCKED",
+    "SCHOOL_APPROVAL_REQUIRED","AFFILIATION_AGREEMENT_REQUIRED",
+  ]),
+  experienceType: new Set([
+    "CLINICAL_ELECTIVE","AWAY_ROTATION","SUB_INTERNSHIP","SUB_INTERNATIONAL","OBSERVERSHIP",
+    "EXTERNSHIP","RESEARCH_ONLY","SHADOWING","HANDS_ON","OBSERVER_ONLY",
+    "UNCLEAR_HANDS_ON_STATUS","NO_OBSERVERSHIP","NO_SHADOWING",
+  ]),
+  cost: new Set([
+    "FREE","COST_STATED","COST_NOT_STATED","APPLICATION_FEE","TUITION_FEE",
+    "HIGH_COST","HOUSING_COST_STATED","MALPRACTICE_COST_STATED","STIPEND_MENTIONED",
+  ]),
+  visa: new Set([
+    "B1_B2_MENTIONED","J1_MENTIONED","H1B_MENTIONED","F1_OPT_MENTIONED",
+    "VISA_STUDENT_RESPONSIBILITY","VISA_NOT_MENTIONED","US_ONLY_AUDIENCE",
+  ]),
+  source: new Set([
+    "INSTITUTION_SPECIFIC","SCHOOL_LEVEL_SOURCE","SYSTEM_LEVEL_SOURCE","DEPARTMENT_LEVEL_SOURCE",
+    "PDF_SOURCE","OFFICIAL_SOURCE","THIRD_PARTY_LEAD_ONLY",
+    "SCREENSHOT_CAPTURED","SCREENSHOT_PENDING","CLEANED_TEXT_SAVED","CLEANED_TEXT_PENDING",
+    "HASH_CAPTURED","NEEDS_MANUAL_RETRY",
+  ]),
+};
+
+// Per-packet 100 KB cap on git-tracked files inside command-center; enforced
+// at file-size level (not byte content), so packet JSONs that grow because of
+// rich field-level evidence are still fine — we just block accidental commits
+// of HTML/PDF/PNG blobs that belong on T7.
+const COMMAND_CENTER_FILE_MAX_BYTES = 100 * 1024;
+const BANNED_BINARY_EXTS = new Set([".html",".htm",".pdf",".png",".jpg",".jpeg",".gif",".webp",".bmp"]);
 
 // Cumulative P101 packet count: P101-0 (5) + P101-1 (10) + P101-2 (25) = 40.
 // Allow ≥ this; future sprints add packets without breaking the validator.
