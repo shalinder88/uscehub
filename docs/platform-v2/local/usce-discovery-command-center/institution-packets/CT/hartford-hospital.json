@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-5",
+  "sprint": "P101-5",
+  "intendedP1014PacketNumber": 6,
+  "institution": {
+    "name": "Hartford Hospital",
+    "aliases": ["Hartford HealthCare — Hartford Hospital"],
+    "city": "Hartford",
+    "state": "CT",
+    "officialDomain": "hartfordhospital.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Hartford HealthCare",
+    "academicAffiliation": "University of Connecticut School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 75 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Hartford Hospital",
+    "name": "Hartford Hospital",
+    "aliases": ["Hartford HealthCare Hartford Hospital"],
+    "officialDomains": ["hartfordhospital.org", "hartfordhealthcare.org"],
+    "city": "Hartford",
+    "state": "CT",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "UConn SOM",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 75"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["hartfordhospital.org", "hartfordhealthcare.org"],
+    "searchTermsTried": [
+      "hartford hospital visiting medical student elective",
+      "hartford hospital medical student",
+      "hartford hospital observership",
+      "hartford hospital UME",
+      "uconn SOM visiting student",
+      "hartford hospital VSLO"
+    ],
+    "pagesOpened": [
+      "https://hartfordhospital.org",
+      "https://hartfordhospital.org/health-professionals",
+      "https://hartfordhospital.org/health-professionals/education"
+    ],
+    "rejectedPages": [
+      {"url": "https://hartfordhospital.org/health-professionals/education/medical-students", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://hartfordhospital.org/health-professionals/education/graduate-medical-education", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://health.uconn.edu/medical-school/visiting-students/", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://medicine.uchc.edu/visiting-students", "title": "(timeout)", "reason": "TIMEOUT_NEEDS_RETRY"},
+      {"url": "https://medicine.uchc.edu/education/md-program/visiting-students/", "title": "(timeout)", "reason": "TIMEOUT_NEEDS_RETRY"}
+    ],
+    "robotsOrAccessNotes": "Hartford Hospital site accessible; Health Professionals navigation enumerates Residencies/Fellowships, Allied Health Education, CME, CESI, EMS Education, Credentialing, Center for Global Health, Education at Hartford Hospital, Health Science Libraries — but no visiting-medical-student / elective / observership entry surfaced. UConn SOM visiting-student pages timed out / 404 in this sprint; full UConn-mediated lane verification deferred.",
+    "stopCondition": "NO_PUBLIC_USCE_LANE_FOUND_ON_HOSPITAL_OWN_SITE"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://hartfordhospital.org/health-professionals",
+      "pageTitle": "Health Professionals | Hartford Hospital",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "c71835f3e6d348a80776d58d723beeba737442325b01788016c78481fc022389",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/hartford-hospital/cleaned-text/dbf682e3c06ce856.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/hartford-hospital/source-pages/dbf682e3c06ce856.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/hartford-hospital/metadata/dbf682e3c06ce856.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "PROFESSIONAL_EDUCATION_HUB",
+      "captureNotes": "Hartford Hospital Health Professionals hub — no visiting medical student / elective / observership / VSLO entry surfaced from public navigation. UConn SOM is the academic affiliate but its visiting-student pages were not retrievable this sprint (404 + timeouts)."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://hartfordhospital.org/health-professionals",
+      "pageTitle": "Health Professionals | Hartford Hospital",
+      "sourcePageType": "PROFESSIONAL_EDUCATION_HUB",
+      "shortQuote": "Residencies & Fellowships; Allied Health Education; Continuing Medical Education; CESI; EMS Education; Credentialing; Center for Global Health; Education at Hartford Hospital; Health Science Libraries",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "NO_VISITING_STUDENT_LANE_PUBLICLY_PRESENT_ON_HOSPITAL_SITE",
+      "applicationDecision": "NO_PATHWAY_DISCLOSED_ON_HOSPITAL_SITE",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "NO_TIER_NO_CANDIDATE",
+      "classification": "NO_PUBLIC_USCE_LANE_FOUND",
+      "caveats": [
+        "VISITING_STUDENT_LANE_NOT_SURFACED_ON_HARTFORD_HOSPITAL_OWN_SITE",
+        "UCONN_SOM_VISITING_STUDENT_PAGE_UNRETRIEVABLE_THIS_SPRINT_404_OR_TIMEOUT",
+        "ROTATIONS_LIKELY_AVAILABLE_VIA_UCONN_SOM_AFFILIATION_BUT_NOT_CONFIRMED_BY_DIRECT_SOURCE",
+        "QUEUED_FOR_FUTURE_RETRY_ON_UCONN_SOM_VISITING_STUDENT_LANE"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "application_url", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_MENTIONED_ON_HOSPITAL_HUB", "quote": "Residencies & Fellowships; Allied Health Education; Continuing Medical Education", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://hartfordhospital.org/health-professionals", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["DETAILS_BY_COORDINATOR"],
+    "experienceType": ["UNCLEAR_HANDS_ON_STATUS"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED", "NEEDS_MANUAL_RETRY"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Hartford Hospital's public site does not surface a visiting medical student program; UConn SOM is the academic affiliate but its visiting-student page was not retrievable this sprint.",
+    "whoThisIsFor": "No public visiting-student pathway is disclosed on Hartford Hospital's own site. UConn SOM-mediated rotations may be available but require institutional inquiry or a successful retry of the UConn SOM visiting-student page.",
+    "whoThisIsNotFor": "Visiting medical students seeking a Hartford Hospital-specific public application path — none disclosed on the hospital's own website.",
+    "howToApply": "Not disclosed on Hartford Hospital site. Prospective students should contact their home school registrar to determine whether a UConn SOM-mediated rotation at Hartford Hospital is available, or check the UConn SOM visiting-student page directly when accessible.",
+    "estimatedCostSummary": "No visiting-student cost figures published on Hartford Hospital site.",
+    "keyCaveats": [
+      "No public visiting-student lane on hartfordhospital.org",
+      "Hartford HealthCare's Health Professionals hub lists only Residencies/Fellowships, Allied Health, CME, CESI, EMS, Credentialing, Global Health, and Library — no visiting medical student program",
+      "UConn SOM affiliation may carry rotations not advertised by Hartford Hospital directly; UConn SOM visiting-student page unretrievable this sprint",
+      "Queued for manual retry on UConn SOM lane"
+    ],
+    "whyWeClassifiedItThisWay": "Hartford Hospital's public Health Professionals navigation, education sub-pages, and graduate-medical-education sub-page either returned 404 or did not surface visiting-student content. UConn SOM visiting-student pages timed out or 404'd in this sprint. Classification reflects honest absence of a publicly-discoverable hospital-direct lane.",
+    "sourceTransparencyNote": "Cleaned text of Hartford Hospital Health Professionals hub captured to T7 canonical capsule with real SHA-256 hash. UConn SOM page deferred for retry.",
+    "possibleListingTitle": "Hartford Hospital — No Public Visiting-Student Lane on Hospital Site",
+    "possibleMetaDescription": "Hartford Hospital's public website does not advertise a visiting medical student program; UConn SOM-affiliated rotations may exist but are not surfaced on the hospital's own site.",
+    "suggestedFilters": ["no_public_lane", "affiliation_mediated_only_possible", "manual_retry_queued"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "hartford hospital visiting medical student elective",
+      "hartford hospital medical student",
+      "hartford hospital observership",
+      "hartford hospital UME",
+      "uconn SOM visiting student",
+      "hartford hospital VSLO"
+    ],
+    "pagesOpened": [
+      "https://hartfordhospital.org",
+      "https://hartfordhospital.org/health-professionals",
+      "https://hartfordhospital.org/health-professionals/education"
+    ],
+    "rejectedPages": [
+      {"url": "https://hartfordhospital.org/health-professionals/education/medical-students", "reason": "DEAD_LINK_404"},
+      {"url": "https://hartfordhospital.org/health-professionals/education/graduate-medical-education", "reason": "DEAD_LINK_404"},
+      {"url": "https://health.uconn.edu/medical-school/visiting-students/", "reason": "DEAD_LINK_404"},
+      {"url": "https://medicine.uchc.edu/visiting-students", "reason": "TIMEOUT_NEEDS_RETRY"},
+      {"url": "https://medicine.uchc.edu/education/md-program/visiting-students/", "reason": "TIMEOUT_NEEDS_RETRY"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404", "TIMEOUT_NEEDS_RETRY", "PAGE_TYPE_NOT_VISITING_STUDENT"],
+    "noPublicUsceLaneReason": "Hartford Hospital's own site does not surface a visiting medical student program; UConn SOM visiting-student page unretrievable this sprint (timeouts).",
+    "noPublicLaneReason": "Hartford Hospital's own site does not surface a visiting medical student program; UConn SOM visiting-student page unretrievable this sprint (timeouts).",
+    "whetherNegativeEvidenceStrong": "PARTIAL — Hartford Hospital site strongly suggests no direct lane; UConn SOM lane verification pending due to network timeouts.",
+    "futureRetrySuggestion": "Retry UConn SOM visiting-student page at medicine.uchc.edu/education/md-program/visiting-students/ in a future sprint with longer timeout or alternate fetcher. If UConn lane exists and lists Hartford Hospital, reclassify this packet accordingly.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 3
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "c71835f3e6d348a80776d58d723beeba737442325b01788016c78481fc022389",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/hartford-hospital/cleaned-text/dbf682e3c06ce856.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/hartford-hospital/source-pages/dbf682e3c06ce856.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["health_professionals_index", "newly_added_visiting_student_program_if_introduced"],
+    "changeRisk": "LOW",
+    "notes": "Hash anchors the Hartford Hospital Health Professionals hub. UConn SOM lane retry will be a separate sourceEvidence entry when retrieved."
+  },
+  "finalClassification": "NO_PUBLIC_USCE_LANE_FOUND",
+  "finalTier": "NO_TIER_NO_CANDIDATE",
+  "driftCheck": "This advanced national USCE discovery because Hartford Hospital's absence of a publicly-discoverable visiting-student lane on its own site was documented honestly with cleaned text and SHA-256 hash on the canonical T7 capsule; UConn SOM lane queued for retry; no DB/schema/noindex/homepage touched."
+}

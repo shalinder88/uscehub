@@ -78,6 +78,9 @@ const REQUIRED_DOCS = [
   "P101_4_LANE_DECISION.md",
   "p101_4_selected_25_queue.csv",
   "P101_4_CHECKPOINT_AFTER_5.md",
+  // P101-5 continuation block (partial — paused at 5 per same operator pattern; intended P101-4 packets 6-10)
+  "p101_5_selected_20_queue.csv",
+  "P101_5_CHECKPOINT_AFTER_5.md",
 ];
 
 // P101-3C: T7 evidence MUST live in the USCEHub product capsule on T7 Shield,
@@ -320,8 +323,8 @@ function validatePacket(p: string): void {
   // this field continue to pass the original gates above.
   const eev = o.enhancedEvidenceVersion;
   if (typeof eev === "string" && eev !== "") {
-    if (eev !== "p101-3" && eev !== "p101-4") {
-      fail("ENHANCED_EVIDENCE_VERSION_INVALID", rel, `expected p101-3 or p101-4 (or absent); got ${eev}`);
+    if (eev !== "p101-3" && eev !== "p101-4" && eev !== "p101-5") {
+      fail("ENHANCED_EVIDENCE_VERSION_INVALID", rel, `expected p101-3, p101-4, or p101-5 (or absent); got ${eev}`);
     } else {
       validateEnhanced(o, rel);
     }

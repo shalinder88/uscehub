@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-5",
+  "sprint": "P101-5",
+  "intendedP1014PacketNumber": 8,
+  "institution": {
+    "name": "University of Florida Health Shands Hospital",
+    "aliases": ["UF Health Shands", "UF Shands"],
+    "city": "Gainesville",
+    "state": "FL",
+    "officialDomain": "ufhealth.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UF Health",
+    "academicAffiliation": "University of Florida College of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 77 (queue-4-national-screening-resume); FL first P101 packet"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "University of Florida Health Shands Hospital",
+    "name": "University of Florida Health Shands Hospital",
+    "aliases": ["UF Health Shands", "UF Shands"],
+    "officialDomains": ["ufhealth.org", "med.ufl.edu", "education.med.ufl.edu"],
+    "city": "Gainesville",
+    "state": "FL",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "UF College of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 77"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["ufhealth.org", "med.ufl.edu", "education.med.ufl.edu", "students.med.ufl.edu"],
+    "searchTermsTried": [
+      "UF health shands visiting medical student elective",
+      "UF college of medicine visiting student",
+      "UF SOM VSLO",
+      "UF Shands elective",
+      "UF visiting student",
+      "UF SOM away rotation"
+    ],
+    "pagesOpened": [
+      "https://med.ufl.edu/education",
+      "https://med.ufl.edu/education/md-program",
+      "https://education.med.ufl.edu/",
+      "https://education.med.ufl.edu/medical-students/programs/",
+      "https://students.med.ufl.edu/"
+    ],
+    "rejectedPages": [
+      {"url": "https://med.ufl.edu/education/md-program/medical-students/visiting-students/", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://med.ufl.edu/education/md-program/visiting-students/", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://med.ufl.edu/visiting-students", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "UF College of Medicine domain accessible; multiple expected paths return 404; medical-students/programs page lists Research & Discovery, Global Health (site under construction), Community Service, Interprofessional Education — no visiting student / elective / observership / VSLO entry. Office of Educational Affairs phone (352-273-7925) is the public contact point.",
+    "stopCondition": "NO_PUBLIC_USCE_LANE_FOUND_ON_PUBLIC_NAVIGATION"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://education.med.ufl.edu/medical-students/programs/",
+      "pageTitle": "Medical Students Programs | UF College of Medicine",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "f3bb6722188dc7affa0a694cc588d533b6595bc5c28aef8e4cb63c85d0900e43",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-florida-health-shands-hospital/cleaned-text/4f6844d1f55200d9.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-florida-health-shands-hospital/source-pages/4f6844d1f55200d9.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-florida-health-shands-hospital/metadata/4f6844d1f55200d9.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "MEDICAL_STUDENT_PROGRAMS_HUB",
+      "captureNotes": "UF College of Medicine medical-students/programs page lists Research & Discovery, Global Health (site under construction), Community Service, Interprofessional Education. No visiting medical student / elective / observership / VSLO entry surfaced. Office of Educational Affairs phone 352-273-7925 is the public contact."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://education.med.ufl.edu/medical-students/programs/",
+      "pageTitle": "Medical Students Programs | UF College of Medicine",
+      "sourcePageType": "MEDICAL_STUDENT_PROGRAMS_HUB",
+      "shortQuote": "Research & Discovery Pathways; Global Health (site under construction); Community Service; Interprofessional Education",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "NO_VISITING_STUDENT_LANE_PUBLICLY_PRESENT",
+      "applicationDecision": "NO_PATHWAY_DISCLOSED",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "NO_TIER_NO_CANDIDATE",
+      "classification": "NO_PUBLIC_USCE_LANE_FOUND",
+      "caveats": [
+        "VISITING_STUDENT_LANE_NOT_PUBLICLY_SURFACED_ON_UF_COM_PUBLIC_PAGES",
+        "GLOBAL_HEALTH_SUB_PAGE_UNDER_CONSTRUCTION",
+        "OFFICE_OF_EDUCATIONAL_AFFAIRS_352_273_7925_IS_PUBLIC_CONTACT",
+        "QUEUED_FOR_FUTURE_RETRY_ON_VSLO_CATALOG_AND_DIRECT_INQUIRY"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "application_url", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_PUBLIC_PAGES", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "OFFICE_OF_EDUCATIONAL_AFFAIRS_352_273_7925", "quote": "Phone 352-273-7925", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://education.med.ufl.edu/medical-students/programs/", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["DETAILS_BY_COORDINATOR"],
+    "experienceType": ["UNCLEAR_HANDS_ON_STATUS"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED", "NEEDS_MANUAL_RETRY"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "UF College of Medicine's public navigation does not surface a visiting medical student program; UF Health Shands is the teaching hospital but no public visiting lane was discoverable.",
+    "whoThisIsFor": "No public visiting-student pathway is disclosed on UF COM public pages. Prospective students should contact the Office of Educational Affairs at 352-273-7925.",
+    "whoThisIsNotFor": "Visiting medical students seeking a UF-direct public application path — none disclosed on the public website.",
+    "howToApply": "Not disclosed publicly. Contact UF COM Office of Educational Affairs (352-273-7925) directly. VSLO catalog should also be searched for UF Health Shands rotations.",
+    "estimatedCostSummary": "No visiting-student cost figures published.",
+    "keyCaveats": [
+      "No public visiting-student lane on UF COM public pages this sprint",
+      "Global Health sub-page under construction at capture time",
+      "Office of Educational Affairs is the public contact point",
+      "VSLO catalog and direct inquiry queued for future retry"
+    ],
+    "whyWeClassifiedItThisWay": "Multiple expected UF visiting-student URL patterns (md-program/visiting-students, /visiting-students, /medical-students/visiting-students) all returned 404. The medical-students/programs page lists only Research & Discovery, Global Health (under construction), Community Service, Interprofessional Education — no visiting-student / elective / observership entry. Classification reflects absence of public lane.",
+    "sourceTransparencyNote": "Cleaned text of UF COM medical-students/programs page captured to T7 canonical capsule with real SHA-256 hash. Multiple 404s logged for future retry.",
+    "possibleListingTitle": "University of Florida Health Shands Hospital — No Public Visiting-Student Lane (Office of Educational Affairs)",
+    "possibleMetaDescription": "UF Health Shands visiting-student lane is not publicly disclosed; contact UF COM Office of Educational Affairs at 352-273-7925.",
+    "suggestedFilters": ["no_public_lane", "manual_retry_queued", "office_contact_required"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "UF health shands visiting medical student elective",
+      "UF college of medicine visiting student",
+      "UF SOM VSLO",
+      "UF Shands elective",
+      "UF visiting student",
+      "UF SOM away rotation"
+    ],
+    "pagesOpened": [
+      "https://med.ufl.edu/education",
+      "https://med.ufl.edu/education/md-program",
+      "https://education.med.ufl.edu/",
+      "https://education.med.ufl.edu/medical-students/programs/",
+      "https://students.med.ufl.edu/"
+    ],
+    "rejectedPages": [
+      {"url": "https://med.ufl.edu/education/md-program/medical-students/visiting-students/", "reason": "DEAD_LINK_404"},
+      {"url": "https://med.ufl.edu/education/md-program/visiting-students/", "reason": "DEAD_LINK_404"},
+      {"url": "https://med.ufl.edu/visiting-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404", "PAGE_TYPE_NOT_VISITING_STUDENT"],
+    "noPublicUsceLaneReason": "UF COM public navigation does not surface a visiting student program; multiple expected paths 404'd; medical-students/programs page lists only non-visiting program categories.",
+    "noPublicLaneReason": "UF COM public navigation does not surface a visiting student program; multiple expected paths 404'd; medical-students/programs page lists only non-visiting program categories.",
+    "whetherNegativeEvidenceStrong": "STRONG — five public pages opened and three expected paths confirmed 404.",
+    "futureRetrySuggestion": "Check VSLO catalog at AAMC for UF Health Shands rotations. Direct inquiry to UF COM Office of Educational Affairs (352-273-7925). Recheck UF Global Health sub-page once construction complete.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 5
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "f3bb6722188dc7affa0a694cc588d533b6595bc5c28aef8e4cb63c85d0900e43",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-florida-health-shands-hospital/cleaned-text/4f6844d1f55200d9.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-florida-health-shands-hospital/source-pages/4f6844d1f55200d9.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["medical_students_programs_index", "global_health_sub_page_status", "newly_added_visiting_student_program_if_introduced"],
+    "changeRisk": "LOW",
+    "notes": "Hash anchors the medical-students/programs page; Global Health sub-page is under construction at capture time."
+  },
+  "finalClassification": "NO_PUBLIC_USCE_LANE_FOUND",
+  "finalTier": "NO_TIER_NO_CANDIDATE",
+  "driftCheck": "This advanced national USCE discovery because UF Health Shands' absence of a publicly-discoverable visiting-student lane on UF COM public navigation was documented honestly with cleaned text and SHA-256 hash on the canonical T7 capsule; manual retry queued; no DB/schema/noindex/homepage touched."
+}

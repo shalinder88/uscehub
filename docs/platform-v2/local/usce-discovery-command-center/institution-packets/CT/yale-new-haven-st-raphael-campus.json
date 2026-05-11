@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-5",
+  "sprint": "P101-5",
+  "intendedP1014PacketNumber": 7,
+  "institution": {
+    "name": "Yale New Haven Hospital — St Raphael Campus",
+    "aliases": ["YNHH Saint Raphael Campus", "Saint Raphael Campus"],
+    "city": "New Haven",
+    "state": "CT",
+    "officialDomain": "ynhh.org",
+    "institutionType": "academic_medical_center_campus",
+    "healthSystem": "Yale New Haven Health",
+    "academicAffiliation": "Yale School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 76 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Yale New Haven Hospital — St Raphael Campus",
+    "name": "Yale New Haven Hospital — St Raphael Campus",
+    "aliases": ["YNHH Saint Raphael Campus"],
+    "officialDomains": ["ynhh.org", "medicine.yale.edu"],
+    "city": "New Haven",
+    "state": "CT",
+    "institutionType": "academic_medical_center_campus",
+    "academicAffiliation": "Yale School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 76"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["ynhh.org", "medicine.yale.edu"],
+    "searchTermsTried": [
+      "yale new haven st raphael visiting medical student",
+      "yale visiting student saint raphael",
+      "YSM visiting students saint raphael",
+      "yale VSLO saint raphael",
+      "ynhh saint raphael elective"
+    ],
+    "pagesOpened": [
+      "https://medicine.yale.edu/md-program/visiting-students/"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.ynhh.org/saint-raphael", "title": "(not visited this sprint; same SOM lane applies)", "reason": "SOM_LEVEL_LANE_APPLIES"}
+    ],
+    "robotsOrAccessNotes": "St Raphael Campus is a YNHH campus integrated under Yale SOM; visiting student rotations at YNHH (including SR Campus) are governed by the SOM-level Visiting Student Programs page captured for the YNH Children's Hospital packet.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED_VIA_PARENT_SOM_LANE"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/",
+      "pageTitle": "Visiting Student Programs | Yale School of Medicine",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "204e437518d93f7a0ee508498ffb75688933717a86b5f0240c20b9df6da86299",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-st-raphael-campus/cleaned-text/7d0fc5ac2916f8d1.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-st-raphael-campus/source-pages/7d0fc5ac2916f8d1.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-st-raphael-campus/metadata/7d0fc5ac2916f8d1.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Yale SOM Visiting Student Programs hub; St Raphael Campus is one of YNHH's campuses and rotations there are governed by the same SOM-level visiting-student page. St Raphael Campus is not explicitly named on the SOM page; clinical sites are determined by the VSLO catalog at the elective level."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/",
+      "pageTitle": "Visiting Student Programs | Yale School of Medicine",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "students in their final year of medical studies, who are in good standing in medical school at either a U.S. LCME accredited medical school",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_MD_DO_VIA_VSLO_INTERNATIONAL_VIA_SEPARATE_INTERNATIONAL_PAGE",
+      "applicationDecision": "VSLO_AAMC",
+      "costDecision": "NOT_STATED_ON_PRIMARY_PAGE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "FOUR_WEEK_BLOCKS_ONLY_MAX_THREE_DIFFERENT_SPECIALTIES",
+      "specialtyDecision": "Multispecialty per Yale SOM elective catalog",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_PARENT_SOM",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "ST_RAPHAEL_CAMPUS_NOT_EXPLICITLY_NAMED_ON_VISITING_PAGE",
+        "ROTATION_SITE_DETERMINED_BY_VSLO_CATALOG_AT_ELECTIVE_LEVEL",
+        "PRIMARY_SOM_LANE_IS_US_MD_DO_VIA_VSLO",
+        "INTERNATIONAL_LANE_EXISTS_VIA_SEPARATE_INTERNATIONAL_PAGE_DOCUMENTED_IN_YNH_CHILDRENS_PACKET",
+        "FINAL_YEAR_ONLY_NO_OBSERVERSHIPS"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_LCME_FINAL_YEAR", "quote": "students in their final year of medical studies, who are in good standing in medical school at either a U.S. LCME accredited medical school", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_COCA_AACOM_VIA_VSLO", "quote": "participating COCA accredited AACOM member college listed in the AAMC Visiting Student Learning Opportunities (VSLO) program", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "SEPARATE_INTERNATIONAL_PAGE_GOVERNS_DOCUMENTED_IN_YNH_CHILDRENS_PACKET", "quote": "Visiting Student Programs", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FINAL_YEAR", "quote": "students in their final year of medical studies", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_AND_GOOD_STANDING", "quote": "good standing in medical school", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_PRIMARY_PAGE_INTERNATIONAL_PAGE_REQUIRES_FOR_NON_NATIVE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "application_pathway", "value": "VSLO_AAMC_NO_DIRECT_FACULTY_OUTREACH", "quote": "you must follow the application process described—and not, for example, reach out directly to faculty", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "AAMC_VSLO_PORTAL", "quote": "AAMC Visiting Student Learning Opportunities (VSLO) website", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_PRIMARY_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_PRIMARY_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_PRIMARY_PAGE_INTERNATIONAL_PAGE_4775_4WEEK", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "OFF_CAMPUS_RESOURCE_LINKED_NO_COST_FIGURE", "quote": "See this website for information on off-campus housing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "FOUR_WEEK_BLOCKS_ONLY_MAX_THREE_DIFFERENT_SPECIALTIES", "quote": "Four (4) week periods only for visiting medical students; up to three (3) four (4) week electives but these electives must be in different specialties", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "ANESTHESIOLOGY_DERMATOLOGY_EMERGENCY_FAMILY_NEUROLOGY_PEDIATRICS_PSYCHIATRY_SURGERY_AND_OTHERS_PER_CATALOG", "quote": "Anesthesiology, Dermatology, Emergency Medicine, Family Medicine, Neurology, Pediatrics, Psychiatry, Surgery", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "HANDS_ON_NO_OBSERVERSHIPS", "quote": "we do not offer observerships to visiting students", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_PRIMARY_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_PRIMARY_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "REQUIRED_VIA_VSLO_CLINICAL_TRAINING_AGREEMENT", "quote": "AAMC Visiting Student Learning Opportunities (VSLO) website", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_PRIMARY_PAGE_AAMC_STANDARDIZED_FORM_ON_INTERNATIONAL_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "global.health@yale.edu", "quote": "General Questions (US students—elective options): global.health@yale.edu", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "OFF_CAMPUS_RESOURCE_LINKED_NO_ON_CAMPUS_DETAILS", "quote": "See this website for information on off-campus housing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "PER_VSLO_PLUS_YALE_POLICY", "quote": "Elective Policy for Visiting Medical Students", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "FINAL_YEAR_ONLY", "MS4_ONLY"],
+    "application": ["VSLO", "SCHOOL_APPROVAL_REQUIRED", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "SUB_INTERNSHIP", "HANDS_ON", "NO_OBSERVERSHIP"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Yale-New Haven Hospital St Raphael Campus visiting electives are governed by the Yale SOM Visiting Student Programs — VSLO-only, final-year US MD/DO students, no observerships.",
+    "whoThisIsFor": "Final-year US MD/DO students at LCME or COCA-accredited schools applying via VSLO. International medical students must use the separate Yale international visiting page (documented in the YNH Children's Hospital packet).",
+    "whoThisIsNotFor": "IMG graduates seeking observerships (Yale offers none); pre-clinical students; non-final-year students.",
+    "howToApply": "Apply via AAMC VSLO (https://vslo.aamc.org/vslo/). Do not contact Yale faculty directly. The VSLO catalog determines specific clinical sites including St Raphael Campus when applicable.",
+    "estimatedCostSummary": "Primary page does not state cost; international page (separate) states $4,775/4-week tuition.",
+    "keyCaveats": [
+      "St Raphael Campus is not explicitly named on the Yale SOM visiting-student page; rotation site determined by VSLO catalog at elective level",
+      "Final-year only; no observerships",
+      "Direct faculty contact not permitted as application path",
+      "International students must use the separate Yale international visiting page; $4,775/4-week tuition applies there"
+    ],
+    "whyWeClassifiedItThisWay": "Primary Yale SOM visiting-student page restricts to LCME/COCA-enrolled final-year students applying via VSLO. St Raphael Campus is one of YNHH's clinical sites and is therefore governed by this SOM-level policy.",
+    "sourceTransparencyNote": "Yale SOM visiting-student primary page captured to T7 canonical capsule for this institution (identical hash to YNH Children's primary capture); international page documented separately on the YNH Children's packet.",
+    "possibleListingTitle": "Yale-New Haven Hospital St Raphael Campus (via Yale SOM VSP) — VSLO MS4 US MD/DO Only",
+    "possibleMetaDescription": "St Raphael Campus electives via Yale SOM Visiting Student Programs — VSLO-only, US MD/DO final-year, no observerships, international lane on separate Yale international page.",
+    "suggestedFilters": ["vslo_only", "us_md_do_only", "ms4_only", "yale_sibling"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "yale new haven st raphael visiting medical student",
+      "yale visiting student saint raphael",
+      "YSM visiting students saint raphael",
+      "yale VSLO saint raphael",
+      "ynhh saint raphael elective",
+      "saint raphael campus medical student"
+    ],
+    "pagesOpened": [
+      "https://medicine.yale.edu/md-program/visiting-students/"
+    ],
+    "rejectedPages": [],
+    "rejectedReasons": [],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "MODERATE — St Raphael Campus is not separately named on the SOM visiting page; rotation site is determined at the VSLO catalog level.",
+    "futureRetrySuggestion": "Fetch Yale SOM elective catalog and check whether St Raphael Campus is explicitly named in any specific electives.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 1
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "204e437518d93f7a0ee508498ffb75688933717a86b5f0240c20b9df6da86299",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-st-raphael-campus/cleaned-text/7d0fc5ac2916f8d1.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-st-raphael-campus/source-pages/7d0fc5ac2916f8d1.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_window", "specialties_offered"],
+    "changeRisk": "MEDIUM",
+    "notes": "Hash anchors the Yale SOM primary visiting page. Same upstream as the YNH Children's packet; both will diverge together if Yale changes the page."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because St Raphael Campus's VSLO-only US MD/DO visiting lane via Yale SOM was documented with verbatim eligibility text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}
