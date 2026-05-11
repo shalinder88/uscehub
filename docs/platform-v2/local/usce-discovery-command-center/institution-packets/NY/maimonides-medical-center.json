@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Maimonides Medical Center",
+    "aliases": ["Maimonides Health"],
+    "city": "Brooklyn",
+    "state": "NY",
+    "officialDomain": "maimo.org",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "Maimonides Health (SUNY Downstate rotation site)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 68; P101-2 selected_25 rank 24"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["maimo.org", "maimonidesmed.org"],
+    "searchTermsTried": ["Maimonides Medical Center Brooklyn visiting medical student observership IMG international elective"],
+    "pagesOpened": [
+      "https://maimo.org/medical-education/internships-undergraduate-medical-education/",
+      "https://maimo.org/medical-education/faqs/",
+      "https://maimo.org/medical-education/internships-undergraduate-medical-education/surgical-elective-programs/"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.maimonidesem.org/urm-visiting-students", "title": "EM Residency URM Visiting", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://www.maimonidesem.org/residency/international", "title": "EM Residency Intl", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://www.doctorsebas.com/post/3cf89da0", "title": "50 IMG hospitals listicle", "reason": "THIRD_PARTY_LEAD_ONLY"}
+    ],
+    "robotsOrAccessNotes": "maimo.org accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://maimo.org/medical-education/internships-undergraduate-medical-education/",
+      "pageTitle": "Internships and Undergraduate Medical Education | Maimonides Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Maimonides uses VSLO to receive visiting student applications from U.S. LCME and Osteopathic accredited schools, while affiliated foreign medical school students should use the Maimonides online application system.",
+      "quoteSupports": ["audience", "application"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "4th-year elective rotations",
+      "specialtyDecision": "Multispecialty (Surgical Elective Programs sub-page)",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": [
+        "US_LCME_OR_AOA_VIA_VSLO_LANE",
+        "INTERNATIONAL_LANE_IS_AFFILIATED_FOREIGN_SCHOOLS_ONLY_VIA_INSTITUTIONAL_FORM",
+        "AFFILIATED_FOREIGN_SCHOOL_LIST_NOT_PUBLISHED",
+        "MS4_ELECTIVE_ONLY"
+      ]
+    },
+    {
+      "sourceUrl": "https://maimo.org/medical-education/internships-undergraduate-medical-education/",
+      "pageTitle": "Internships and Undergraduate Medical Education | Maimonides Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Only for affiliated schools",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "AFFILIATED_ONLY",
+      "caveats": ["INTL_OBSERVERSHIP_LANE_AFFILIATED_SCHOOLS_ONLY_VERBATIM"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 3,
+    "strongNegativeEvidence": "International observership lane is 'Only for affiliated schools' verbatim — not an open IMG pathway despite Maimonides being a Brooklyn safety-net hospital.",
+    "weakNegativeEvidence": "Affiliated-foreign-school list not published; cost and visa absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) US LCME/COCA via VSLO is the primary public lane; (b) international observership is AFFILIATED_ONLY (specific home-school pre-affiliation required) — must NOT be claimed as open IMG-friendly; (c) cost/visa NOT_STATED.",
+  "plainEnglishSummary": "Maimonides Medical Center accepts visiting fourth-year medical students from US LCME or osteopathic schools via VSLO. International medical students have a separate lane but it is ONLY for affiliated foreign medical schools — there is no open IMG observership at Maimonides despite its Brooklyn safety-net status. Cost and visa not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because Brooklyn safety-net Maimonides was correctly classified as VSLO-US-only with affiliation-only intl — protects against the common 'Brooklyn safety-net = IMG-friendly' overclaim pattern."
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "University of Chicago Medicine",
+    "aliases": ["UChicago Medicine", "Pritzker School of Medicine — Visiting Students (covering UChicago Medicine placement)"],
+    "city": "Chicago",
+    "state": "IL",
+    "officialDomain": "pritzker.uchicago.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "University of Chicago Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 53; P101-2 selected_25 rank 13"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["pritzker.uchicago.edu", "uchicagomedicine.org"],
+    "searchTermsTried": [
+      "University of Chicago Pritzker School of Medicine visiting medical student international VSLO site:uchicago.edu",
+      "UChicago visiting students",
+      "Pritzker VSLO fourth year"
+    ],
+    "pagesOpened": [
+      "https://pritzker.uchicago.edu/academics/visiting-students",
+      "https://pritzker.uchicago.edu/academics/away-rotation-page",
+      "https://pritzker.uchicago.edu/academics/frequently-asked-questions",
+      "https://cgh.uchicago.edu/education/international-opportunities-uchicago",
+      "https://psomcoursecatalog.uchicago.edu/browse/CoursesOpenToVisitingStudents.aspx?year=current"
+    ],
+    "rejectedPages": [
+      {"url": "https://pritzker.uchicago.edu/academics/matter-uchicago-visiting-clerkship-program", "title": "MATTER at UChicago Visiting Clerkship Program", "reason": "AFFILIATED_ONLY"},
+      {"url": "https://pritzker.uchicago.edu/scholarly-opportunities/global-health-programs", "title": "Global Health Programs", "reason": "AFFILIATED_ONLY"}
+    ],
+    "robotsOrAccessNotes": "pritzker.uchicago.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://pritzker.uchicago.edu/academics/visiting-students",
+      "pageTitle": "Visiting Students | Pritzker School of Medicine | The University of Chicago",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Fourth-year medical students from schools fully-accredited by the Liaison Committee on Medical Education (LCME) or the Commission on Osteopathic College Accreditation (COCA)",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Up to 8 weeks without charge; Medicine/Surgery 8 weeks, Peds/OBGYN/Psych 4 weeks each",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["MS4_LCME_OR_COCA_ONLY_VERBATIM", "CORE_CLERKSHIPS_REQUIRED"]
+    },
+    {
+      "sourceUrl": "https://pritzker.uchicago.edu/academics/visiting-students",
+      "pageTitle": "Visiting Students | Pritzker School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "accepting international visiting student applications from US-affiliated medical schools located in other countries",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "8 weeks max",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": [
+        "INTERNATIONAL_LANE_RESTRICTED_TO_US_AFFILIATED_FOREIGN_SCHOOLS",
+        "FACULTY_SPONSOR_REQUIRED_FOR_INTERNATIONAL",
+        "CENTER_FOR_GLOBAL_HEALTH_GATED"
+      ]
+    },
+    {
+      "sourceUrl": "https://pritzker.uchicago.edu/academics/visiting-students",
+      "pageTitle": "Visiting Students | Pritzker School of Medicine",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Visiting students can remain eight weeks without charge. $26 fee for student wellness service. $28.00 for 6-24 hours parking.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "8 weeks free",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["NO_TUITION_8_WEEKS_FREE_VERBATIM", "$26_WELLNESS_FEE", "HOUSING_NOT_PROVIDED"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 3,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "International lane is restricted to 'US-affiliated medical schools located in other countries' — not all international applicants are eligible. Faculty sponsor required.",
+    "weakNegativeEvidence": "Visa policy absent. International cost may differ from US (not stated)."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — Pritzker hub; (b) US LCME/COCA fourth-year only via VSLO; (c) international lane is conditional (US-affiliated foreign schools + faculty sponsor); (d) 8 weeks free + $26 wellness; (e) housing not provided.",
+  "plainEnglishSummary": "University of Chicago Pritzker SOM accepts visiting fourth-year medical students from US LCME or COCA-accredited schools via VSLO. No tuition for up to 8 weeks; $26 student wellness fee. International students are accepted from 'US-affiliated medical schools located in other countries' only, with a required faculty sponsor — not an open international pathway. Housing not provided.",
+  "driftCheck": "This advanced national USCE discovery because IL gained a P101 packet with the no-tuition-8-weeks finding (notable cost difference vs other AMCs) and an explicit but RESTRICTED international lane (US-affiliated foreign schools only)."
+}

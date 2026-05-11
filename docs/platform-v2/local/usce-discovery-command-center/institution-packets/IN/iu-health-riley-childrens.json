@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Indiana University Health Riley Hospital for Children",
+    "aliases": ["Riley Children's", "IU Health Riley", "IU SOM Guest Students — Pediatric placements"],
+    "city": "Indianapolis",
+    "state": "IN",
+    "officialDomain": "medicine.iu.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "IU Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 62; P101-2 selected_25 rank 22"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["medicine.iu.edu", "rileychildrens.org"],
+    "searchTermsTried": ["IU Health Riley Children's visiting medical student pediatric elective"],
+    "pagesOpened": [
+      "https://medicine.iu.edu/md/admissions/guest-students",
+      "https://medicine.iu.edu/mse/support/guest-students"
+    ],
+    "rejectedPages": [],
+    "robotsOrAccessNotes": "Riley Children's visiting-student access is via the parent IU SOM Guest Students program (already documented in IN/iu-health-university-hospital.json).",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.iu.edu/md/admissions/guest-students",
+      "pageTitle": "Guest Medical Students - Indiana University School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Medical students enrolled at qualifying schools in the United States and Puerto Rico are eligible to apply for guest student elective study at Indiana University School of Medicine.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Pediatrics (Riley is pediatric AMC)",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "PEDIATRIC_AMC_RILEY_IS_IU_SOM_PEDIATRIC_TEACHING_SITE",
+        "ACCESS_VIA_IU_SOM_GUEST_STUDENTS_PROGRAM_SAME_AS_IU_UNIVERSITY_HOSPITAL",
+        "INTERNATIONAL_STUDENTS_EXPLICITLY_EXCLUDED_PER_IU_SOM_POLICY"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 2,
+    "strongNegativeEvidence": "Riley Children's does NOT run an independent visiting-MS lane. All access via IU SOM Guest Students program — international students explicitly excluded.",
+    "weakNegativeEvidence": "Riley-specific pediatric elective inventory was not separately captured; relies on IU SOM catalog."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Same as IU Health University Hospital: US + PR LCME/COCA only via VSLO, international explicitly excluded, Pathway program $2k stipend.",
+  "plainEnglishSummary": "Riley Children's visiting-medical-student access is via IU School of Medicine's Guest Students program — same lane as IU Health University Hospital. US and Puerto Rico medical schools only via VSLO. International students explicitly excluded. Riley is the IU SOM pediatric teaching site.",
+  "driftCheck": "This advanced national USCE discovery because IN gained its second P101 packet (sibling expansion); pediatric AMC documented."
+}

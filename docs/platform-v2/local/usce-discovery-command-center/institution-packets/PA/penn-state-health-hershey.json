@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Penn State Health Hershey Medical Center",
+    "aliases": ["Penn State Hershey", "PSHMC", "Penn State College of Medicine — Visiting Students"],
+    "city": "Hershey",
+    "state": "PA",
+    "officialDomain": "med.psu.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Penn State Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 57; P101-2 selected_25 rank 17"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["med.psu.edu", "students.med.psu.edu"],
+    "searchTermsTried": ["Penn State College of Medicine Hershey visiting medical student VSLO international elective"],
+    "pagesOpened": [
+      "https://med.psu.edu/education/academic-resources/visiting-students",
+      "https://students.med.psu.edu/academics/visiting-students/",
+      "https://med.psu.edu/education/academic-resources/clerkships",
+      "https://med.psu.edu/education/academic-resources/md-student-handbook"
+    ],
+    "rejectedPages": [],
+    "robotsOrAccessNotes": "med.psu.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.psu.edu/education/academic-resources/visiting-students",
+      "pageTitle": "Visiting DO and MD Students | Fourth-Year Electives",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "medical students in good standing in their final year from medical schools accredited by the Liaison Committee on Medical Education (LCME) and the American Osteopathic Association (AOA) within the United States and Canada",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Senior-year per VSLO policy",
+      "specialtyDecision": "Multispecialty per VSLO catalog",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FINAL_YEAR_LCME_OR_AOA_US_OR_CANADA_ONLY",
+        "VSLO_REQUIRED",
+        "MALPRACTICE_1M_PER_OCCURRENCE_3M_AGGREGATE_REQUIRED",
+        "CRIMINAL_BACKGROUND_PA_STATE_CHILD_ABUSE_FEDERAL_FINGERPRINTING_REQUIRED",
+        "PERSONAL_HEALTH_INSURANCE_REQUIRED"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Restricted to LCME or AOA schools within US OR Canada — international medical schools not eligible.",
+    "weakNegativeEvidence": "Cost and visa absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) US + Canada LCME/AOA final-year only; (b) VSLO required; (c) malpractice + criminal background + health insurance verifications required.",
+  "plainEnglishSummary": "Penn State Hershey accepts visiting fourth-year medical students from LCME or AOA-accredited schools in the US or Canada via VSLO. International medical schools not eligible. Required: $1M/$3M malpractice insurance, personal health insurance, PA criminal background + child abuse + federal fingerprinting clearances.",
+  "driftCheck": "This advanced national USCE discovery because PA gained a fourth P101 packet; notable expansion to Canadian schools (most other AMCs are US-only)."
+}

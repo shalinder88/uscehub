@@ -1,29 +1,18 @@
 metric,value,as_of,notes
-active_discovery_lane,Queue 4 Session 2 ranks 26-40 (P101-0 + P101-1 cumulative),2026-05-11,Selected from queue_4_candidate_rows.csv
-state_currently_active,Cumulative: AR · AL · DC · CA · TN · MO · GA · MI (8 states),2026-05-11,
-region_currently_active,Mixed national (Little Rock / Birmingham / DC / Bay Area / SoCal / Sacramento / Nashville / St Louis / Atlanta / Ann Arbor),2026-05-11,
-institution_currently_being_searched,N_A_POST_P101_1_CHECKPOINT,2026-05-11,Sprint complete; awaiting authorization for P101-2
-institutions_searched_p101_0,5,2026-05-11,UAMS · UAB · MedStar WHC · GW · Howard
-institutions_searched_p101_1,10,2026-05-11,UCSF · UCLA · UCSD · UC Davis · Stanford · Keck/USC · Vanderbilt · BJH/WashU · Emory · Michigan Medicine
-institutions_searched_cumulative,15,2026-05-11,P101-0 + P101-1
-official_domains_checked_cumulative,~22,2026-05-11,Includes parent + SOM + system domains
-packets_created_p101_0,5,2026-05-11,
-packets_created_p101_1,10,2026-05-11,
-packets_created_cumulative,15,2026-05-11,
-candidate_usce_pages_found_p101_0,15,2026-05-11,
-candidate_usce_pages_found_p101_1,~35,2026-05-11,Includes Stanford 4 findings; Vanderbilt 3; BJH 5; Emory 4
-CURRENT_USCE_CONFIRMED_cumulative,0,2026-05-11,Reserved for unambiguous institution-specific source w/ multi-axis verbatim
-POSSIBLE_USCE_NEEDS_REVIEW_cumulative,0,2026-05-11,(WashU intl is sub-finding only)
-VSLO_US_MD_DO_ONLY_cumulative,11,2026-05-11,UAMS · MedStar WHC · GW · Howard · UCSF · UCLA · UCSD · UC Davis · Keck/USC · Vanderbilt · BJH
-INTERNATIONAL_STUDENT_CONFIRMED_cumulative,3,2026-05-11,UAB · Stanford · Emory
-IMG_GRAD_OBSERVERSHIP_CONFIRMED_cumulative,0,2026-05-11,UAB has a SECOND lane queued for separate packet
-NO_PUBLIC_USCE_LANE_FOUND_cumulative,0,2026-05-11,
-BOT_BLOCKED_MANUAL_RETRY_cumulative,1,2026-05-11,Michigan Medicine
-SOURCE_DEAD_cumulative,0,2026-05-11,
-existing_packets_recovered,2,2026-05-11,Maine Cumberland packets (pre-P101 era; reference)
-existing_queues_recovered,3,2026-05-11,Queue 4 candidate rows + Session 1 rows + next-10 sprint plan
-existing_304_triaged,0,2026-05-11,Not in scope for P101-0 / P101-1
-manual_retry_queue_size,7,2026-05-11,Howard PDF · GW ICEP affiliates · UAB observer lane · UCSF Fresno · Stanford TOEFL · WashU VSLO Global · Michigan bot-block
-discovery_engine_completion_pct,22,2026-05-11,From 18% post-P101-0
+active_discovery_lane,Queue 4 ranks 26-70 covered (P101-0+1+2 cumulative),2026-05-11,
+cumulative_packets,40,2026-05-11,P101-0 5 + P101-1 10 + P101-2 25
+cumulative_states,15,2026-05-11,AR AL DC CA TN MO GA MI PA MA NY TX WA IL IN
+CURRENT_USCE_CONFIRMED,0,2026-05-11,
+POSSIBLE_USCE_NEEDS_REVIEW,1,2026-05-11,Cook County
+VSLO_US_MD_DO_ONLY,28,2026-05-11,Dominant pattern
+INTERNATIONAL_STUDENT_CONFIRMED,10,2026-05-11,Strongest IMG-relevance inventory growth from P101-2 (added 7)
+IMG_GRAD_OBSERVERSHIP_CONFIRMED,0,2026-05-11,(USC Keck sub-finding only)
+NO_PUBLIC_USCE_LANE_FOUND,0,2026-05-11,
+BOT_BLOCKED_MANUAL_RETRY,1,2026-05-11,Michigan Medicine (P101-1)
+SOURCE_DEAD,0,2026-05-11,
+states_with_2_plus_packets,7,2026-05-11,DC(3) CA(8) MI(4) PA(4) MA(5) NY(4) IL(3) IN(2)
+states_with_only_1_packet,8,2026-05-11,AR AL TN MO GA TX WA each(1)
+manual_retry_queue_size,9,2026-05-11,7 existing + Stanford TOEFL + 2 new (UCSF Fresno + WashU VSLO Global + Cook County 2018 PDF + UW central hub + LAC+USC Keck Medicine USC observership packet)
+discovery_engine_completion_pct,30,2026-05-11,From 22% pre-P101-2; +8 pts
 public_v1_readiness_pct,43,2026-05-11,Unchanged (no public-product touch)
-next_exact_institution,UPMC Presbyterian (system index) / Pittsburgh / PA / queue_4 rank 41 — IF P101-2 authorized,2026-05-11,Or pivot to full-state block; awaits user authorization
+next_exact_institution,Queue 4 rank 70 = Brooklyn Hospital Center OR pivot to existing-304 DB triage OR state-completion lane,2026-05-11,Decision deferred to P101-3 lane-decision phase

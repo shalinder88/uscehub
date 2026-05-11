@@ -52,11 +52,17 @@ const REQUIRED_DOCS = [
   "p101_pdf_extraction_note.md",
   "p101_1_selected_10_queue.csv",
   "P101_1_TEN_INSTITUTION_DISCOVERY_CHECKPOINT.md",
+  "p101_bot_block_retry_note.md",
+  "P101_2_LANE_DECISION.md",
+  "p101_2_selected_25_queue.csv",
+  "P101_2_CHECKPOINT_AFTER_10.md",
+  "P101_2_CHECKPOINT_AFTER_20.md",
+  "P101_2_25_INSTITUTION_DISCOVERY_CHECKPOINT.md",
 ];
 
-// Cumulative P101 packet count: P101-0 (5) + P101-1 (10) = 15.
+// Cumulative P101 packet count: P101-0 (5) + P101-1 (10) + P101-2 (25) = 40.
 // Allow ≥ this; future sprints add packets without breaking the validator.
-const EXPECTED_PACKET_MIN = 15;
+const EXPECTED_PACKET_MIN = 40;
 
 const QUOTE_REQUIRED_CLASSIFICATIONS = new Set([
   "CURRENT_USCE_CONFIRMED",
@@ -266,6 +272,11 @@ function run(): void {
     path.join(CMD, "p101_drift_guardrails.md"),
     path.join(CMD, "p101_packet_schema.md"),
     path.join(CMD, "P101_NATIONAL_USCE_DISCOVERY_COMMAND_CENTER.md"),
+    path.join(CMD, "p101_bot_block_retry_note.md"),
+    path.join(CMD, "P101_2_LANE_DECISION.md"),
+    path.join(CMD, "P101_2_CHECKPOINT_AFTER_10.md"),
+    path.join(CMD, "P101_2_CHECKPOINT_AFTER_20.md"),
+    path.join(CMD, "P101_2_25_INSTITUTION_DISCOVERY_CHECKPOINT.md"),
   ]);
 
   const scanFiles: string[] = [];

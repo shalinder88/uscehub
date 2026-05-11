@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Henry Ford Hospital",
+    "aliases": ["HFH", "Henry Ford Health"],
+    "city": "Detroit",
+    "state": "MI",
+    "officialDomain": "henryford.com",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Henry Ford Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 58; P101-2 selected_25 rank 18"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["henryford.com"],
+    "searchTermsTried": ["Henry Ford Hospital Detroit visiting medical student VSLO international elective site:henryford.com"],
+    "pagesOpened": [
+      "https://www.henryford.com/hcp/med-ed/ugme/students/visiting-students",
+      "https://www.henryford.com/hcp/med-ed/ugme/students/international-students",
+      "https://www.henryford.com/-/media/files/henry-ford/hcp/med-ed/ugme/international-student-elective-application-2016.pdf"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.henryford.com/HCP/Med-Ed/Residencies-Fellowships/Providence/Medical-Students", "title": "Providence Residency MS", "reason": "RESIDENCY_ONLY"}
+    ],
+    "robotsOrAccessNotes": "henryford.com accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.henryford.com/hcp/med-ed/ugme/students/visiting-students",
+      "pageTitle": "Visiting Students | Henry Ford Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students who are not base clerkship students of a Henry Ford Health location must use VSLO to apply for rotations. Henry Ford Hospital charges a $125 administrative fee for each elective rotation through VSLO.",
+      "quoteSupports": ["application", "cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty via VSLO",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["VSLO_REQUIRED", "ADMIN_FEE_125_USD_PER_ELECTIVE"]
+    },
+    {
+      "sourceUrl": "https://www.henryford.com/hcp/med-ed/ugme/students/international-students",
+      "pageTitle": "International Students | Henry Ford Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "International medical students are only eligible for elective rotation if they are a former HFH employee or have an immediate family member who is a current or former HFH employee/volunteer. Elective rotation only; Clerkships are not available to international students.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "Elective only",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "AFFILIATED_ONLY",
+      "caveats": [
+        "INTERNATIONAL_LANE_RESTRICTED_TO_HFH_EMPLOYEE_OR_IMMEDIATE_FAMILY",
+        "NOT_OPEN_PUBLIC_INTERNATIONAL_PATHWAY",
+        "CLERKSHIPS_NOT_AVAILABLE_TO_INTERNATIONAL_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 3,
+    "strongNegativeEvidence": "International lane is extremely restricted: only former HFH employees or immediate family of current/former HFH employees/volunteers. Not an open international pathway.",
+    "weakNegativeEvidence": "Duration not stated. Visa absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) US LCME/COCA via VSLO, $125 admin fee; (b) international lane is HFH-employee-or-family-only — must NOT be presented as an open international pathway; (c) clerkships not available to international students verbatim.",
+  "plainEnglishSummary": "Henry Ford Hospital accepts visiting medical students through VSLO with a $125 administrative fee per rotation. International medical students have an extremely narrow lane: only former HFH employees or immediate family of current/former HFH employees/volunteers may apply, elective only (no clerkships). This is essentially affiliated-only and not an open international pathway.",
+  "driftCheck": "This advanced national USCE discovery because MI gained a P101 packet with a notable HFH-employee-or-family international restriction captured verbatim — protects against overclaim that HFH is open to general IMG observers."
+}

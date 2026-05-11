@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Zuckerberg San Francisco General Hospital",
+    "aliases": ["ZSFG", "SF General", "Zuckerberg San Francisco General Hospital and Trauma Center"],
+    "city": "San Francisco",
+    "state": "CA",
+    "officialDomain": "zuckerbergsanfranciscogeneral.org",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "City and County of San Francisco (clinical) / UCSF (academic affiliate)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 48; P101-2 selected_25 rank 8"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["zuckerbergsanfranciscogeneral.org", "zsfg.ucsf.edu", "meded.ucsf.edu"],
+    "searchTermsTried": [
+      "Zuckerberg San Francisco General Hospital visiting medical student UCSF ZSFG elective rotation",
+      "ZSFG student placement",
+      "SF General medical student",
+      "UCSF ZSFG visiting student"
+    ],
+    "pagesOpened": [
+      "https://www.zuckerbergsanfranciscogeneral.org/services/student-placement-at-zsfg/",
+      "https://zsfg.ucsf.edu/about-ucsf-zsfg",
+      "https://zsfg.ucsf.edu/ucsf-medical-education-zsfg-0",
+      "https://emergency.ucsf.edu/visiting-elective-scholarship-program",
+      "https://orthosurgery.ucsf.edu/education/medical-students/Visiting-Medical-Students-Clerkship-Description",
+      "https://fcm.ucsf.edu/medical-student-courses"
+    ],
+    "rejectedPages": [
+      {"url": "https://zsfgmedicine.ucsf.edu/home", "title": "UCSF Dept of Medicine at ZSFG", "reason": "AFFILIATED_ONLY"}
+    ],
+    "robotsOrAccessNotes": "ZSFG's own site and zsfg.ucsf.edu both clean. Placement is gated by UCSF main visiting-students lane (which is US-only — see P101-1 UCSF packet).",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.zuckerbergsanfranciscogeneral.org/services/student-placement-at-zsfg/",
+      "pageTitle": "Student Placement at ZSFG",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "The University of California at San Francisco (UCSF) has a separate process for managing medical student placements. Contact the UCSF Medical Education Department for more information.",
+      "quoteSupports": ["application", "sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "EM (3 of 4 weeks at ZSFG), Orthopaedics (4 trauma slots), Family Medicine (4-week rotation) confirmed via UCSF department pages",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS_PLACEMENT_GATED_BY_UCSF_NOT_ZSFG_DIRECT",
+        "UCSF_MAIN_POLICY_APPLIES_US_LCME_OR_COCA_ONLY_INTERNATIONALS_EXCLUDED",
+        "ZSFG_NAMED_AS_PLACEMENT_SITE_FOR_SEVERAL_UCSF_DEPARTMENTS"
+      ]
+    },
+    {
+      "sourceUrl": "https://emergency.ucsf.edu/visiting-elective-scholarship-program",
+      "pageTitle": "Visiting Elective Scholarship Program | UCSF EM",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "The clinical emergency medicine rotation at UCSF is four weeks in length, with three weeks located at Zuckerberg San Francisco General Hospital and Trauma Center.",
+      "quoteSupports": ["sourceScope", "duration"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "4-week EM rotation; 3 weeks at ZSFG",
+      "specialtyDecision": "Emergency Medicine",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["EM_3_OF_4_WEEKS_AT_ZSFG_VERBATIM"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "ZSFG does NOT have its own independent visiting-medical-student lane. All medical student placements at ZSFG are gated by UCSF Medical Education Department. UCSF main hub explicitly excludes international students ('UCSF does not accept students enrolled in international institutions for clinical experiences' — see CA/ucsf-medical-center.json packet).",
+    "weakNegativeEvidence": "Per-department audience policies at ZSFG (EM, Ortho, FM) not separately captured as verbatim — they inherit UCSF main policy."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) ZSFG visiting-student access is entirely via UCSF main visiting-students lane (US LCME/COCA only, $300 fee, max 12 weeks — see UCSF packet at CA/ucsf-medical-center.json); (b) ZSFG hosts EM/Ortho/FM placements explicitly; (c) ZSFG is NOT an independent IMG-friendly safety-net for visiting medical students despite the safety-net label.",
+  "plainEnglishSummary": "ZSFG is a major SF safety-net trauma hospital and a primary UCSF teaching site, but it does not run an independent visiting-medical-student program. All visiting-student placements at ZSFG go through UCSF's main visiting-students program — which is US LCME/COCA only and explicitly excludes international medical schools. ZSFG hosts UCSF EM (3 of 4 weeks), Orthopaedics (4 trauma slots), and Family Medicine rotations.",
+  "driftCheck": "This advanced national USCE discovery because ZSFG was correctly classified as UCSF-gated rather than overclaimed as an independent IMG-friendly SF safety-net; this protects against the most common misclassification of safety-net hospitals (assuming they are IMG-open just because they are public)."
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Harborview Medical Center",
+    "aliases": [
+      "Harborview",
+      "UW Medicine Harborview",
+      "UW School of Medicine — Visiting Students (covering Harborview placement)"
+    ],
+    "city": "Seattle",
+    "state": "WA",
+    "officialDomain": "medicine.uw.edu",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "UW Medicine (Harborview is a UW teaching hospital and King County safety-net)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 47; P101-2 selected_25 rank 7"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["medicine.uw.edu", "uwmedicine.org", "derm.uw.edu", "em.uw.edu"],
+    "searchTermsTried": [
+      "UW Medicine visiting medical student VSLO international Harborview elective site:uw.edu",
+      "UW Visiting Scholars Program",
+      "Harborview visiting medical student",
+      "UW dermatology visiting students"
+    ],
+    "pagesOpened": [
+      "https://medicine.uw.edu/education/students/visiting-scholars-program",
+      "https://medicine.uw.edu/education/students",
+      "https://derm.uw.edu/education/medical-students/visiting-students",
+      "https://em.uw.edu/education/medical-students/visiting-students-non-scholarship-rotation",
+      "https://em.uw.edu/education/medical-students/visiting-students-emergency-medicine-scholars-program",
+      "https://dlmp.uw.edu/education/visitor-programs",
+      "https://obgyn.uw.edu/education/medical-students/4th-year-courses/visiting-students"
+    ],
+    "rejectedPages": [
+      {"url": "https://medicine.uw.edu/education/residents/visiting-resident-scholars", "title": "Visiting Resident Scholars", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://sites.uw.edu/anesstu/anesthesiology-visiting-scholars-program-avsp/", "title": "UW Anesthesiology Visiting Scholars", "reason": "NOT_USCE"}
+    ],
+    "robotsOrAccessNotes": "medicine.uw.edu accessible; multiple department visiting-student pages clean fetch.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.uw.edu/education/students/visiting-scholars-program",
+      "pageTitle": "Visiting Scholars Program | Department of Medicine",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "The program is limited to students currently enrolled in a US medical school.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four weeks IM elective",
+      "specialtyDecision": "Internal Medicine (this VSP page is IM-specific)",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "VSP_LIMITED_TO_US_MS_ENROLLED",
+        "FUNDING_PROVIDED_FOR_TRAVEL_AND_LODGING_AMOUNTS_NOT_SPECIFIED",
+        "PRIORITY_DEADLINE_MAY_1_2026"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.uw.edu/education/students/visiting-scholars-program",
+      "pageTitle": "Visiting Scholars Program | Department of Medicine",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "spend four weeks on an internal medicine elective at the University of Washington Medical Center or Harborview Medical Center",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "4 weeks",
+      "specialtyDecision": "Internal Medicine",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "HARBORVIEW_EXPLICITLY_NAMED_FOR_IM_VSP",
+        "UWMC_OR_HARBORVIEW_PLACEMENT"
+      ]
+    },
+    {
+      "sourceUrl": "https://derm.uw.edu/education/medical-students/visiting-students",
+      "pageTitle": "Visiting Students - UW Dermatology",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "Students will rotate at one or a combination of our teaching hospitals/clinics: UW Medical Center, Harborview Medical Center, and Roosevelt Clinic.",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "NOT_STATED_ON_SOURCE",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Dermatology",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": [
+        "HARBORVIEW_NAMED_FOR_DERMATOLOGY",
+        "DERM_AUDIENCE_NOT_VERBATIM_INTERNATIONAL_STATUS_UNVERIFIED"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 7,
+    "strongNegativeEvidence": "UW Anesthesiology does NOT accept international visiting students (per search summary, would need separate verification). UW OBGYN limits international electives due to limited numbers. Internal Medicine VSP is US-only verbatim.",
+    "weakNegativeEvidence": "No central UW Medicine visiting-students hub page found that documents all departments uniformly. Each department's visiting-students lane has its own eligibility and the central admin policy was not directly captured verbatim on a single hub."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) DEPARTMENT_LEVEL_SOURCE — different UW departments have different eligibility; the central UW Medicine hub page needs follow-up retrieval; (b) Internal Medicine VSP at Harborview is US-only with funding; (c) Dermatology lists Harborview as placement but doesn't specify audience; (d) Anesthesiology + OB/GYN per search summary do not accept international (needs verification). Manual retry queued for: central UW SOM visiting-students hub.",
+  "plainEnglishSummary": "Harborview Medical Center is a major UW Medicine teaching site for visiting students. Internal Medicine's Visiting Scholars Program at Harborview is US-medical-school-only with funded travel/lodging. Dermatology lists Harborview as a placement site. UW has different rules per department: some accept international (broad hub mentions 'approximately 50 visiting students, US and international per year'), some specifically do not (Anesthesiology, OB/GYN). The unified UW visiting-students central hub policy was not captured verbatim this turn.",
+  "driftCheck": "This advanced national USCE discovery because Washington gained its first P101 packet — Harborview placement is documented for IM (US-only) and Dermatology (audience unverified); WA was a P0 state gap before this packet."
+}

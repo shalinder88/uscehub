@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Beth Israel Deaconess Medical Center",
+    "aliases": ["BIDMC", "Harvard Medical School — Visiting Students Program (covering BIDMC placement)"],
+    "city": "Boston",
+    "state": "MA",
+    "officialDomain": "bidmc.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Beth Israel Lahey Health (clinical) / Harvard Medical School (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 52; P101-2 selected_25 rank 12"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["bidmc.org", "hms.harvard.edu"],
+    "searchTermsTried": [
+      "Beth Israel Deaconess Medical Center BIDMC visiting medical student elective Harvard HMS VSLO",
+      "BIDMC visiting students",
+      "BIDMC HMS exchange clerkship"
+    ],
+    "pagesOpened": [
+      "https://bidmc.org/education-training/medical-education",
+      "https://www.bidmc.org/medical-education/undergraduate-medical-education",
+      "https://www.shapiroinstitute.org/undergraduate-medical-education",
+      "https://bidmc.org/education-training/medical-education/emergency-medicine/fourth-year-rotation",
+      "https://hms.harvard.edu/departments/office-registrar/visiting-students-program"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.bidmcem.org/visiting-students", "title": "BIDMC EM Residency Visiting Students", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://forums.studentdoctor.net/threads/beth-israel-deaconess-medical-center-bidmc-harvard-residency-reviews.770244/", "title": "SDN Forum", "reason": "THIRD_PARTY_LEAD_ONLY"}
+    ],
+    "robotsOrAccessNotes": "bidmc.org accessible; BIDMC routes visiting medical students through HMS Office of the Registrar.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.bidmc.org/medical-education/undergraduate-medical-education",
+      "pageTitle": "Undergraduate Medical Education | BIDMC of Boston",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "To be considered for enrollment in a BIDMC elective course, students must submit application materials to the HMS Office of the Registrar.",
+      "quoteSupports": ["application", "sourceScope"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "1-3 months per HMS hub",
+      "specialtyDecision": "Multispecialty (EM, Anesthesia, Otolaryngology, Neurosurgery confirmed)",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "BIDMC_ACCESS_VIA_HMS_OFFICE_OF_REGISTRAR",
+        "BIDMC_DOES_NOT_RUN_INDEPENDENT_VISITING_MS_LANE",
+        "HMS_POLICY_APPLIES_FINAL_YEAR_MS_INTL_OCT_MAR_$115_APP_FEE",
+        "POSITIVE_ANTIBODY_TITERS_REQUIRED_NOT_VACCINATION_RECORDS"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 3,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "BIDMC does NOT run an independent visiting-medical-student program. All visiting-MS access is via HMS Office of the Registrar (same path as BWH and MGH).",
+    "weakNegativeEvidence": "BIDMC-specific audience verbatim was not captured this turn (inherits HMS policy)."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Same shape as BWH and MGH: HMS-routed; final-year MS; international Oct-Mar window; $115 app fee per experience. BIDMC-specific: positive antibody titers required (not just vaccination records).",
+  "plainEnglishSummary": "BIDMC accepts visiting medical students through Harvard Medical School's Office of the Registrar — same path as BWH and MGH. Final-year medical students apply via VSLO. International students can apply but only for October-March rotations. $115 application fee per experience. BIDMC-specific requirement: positive antibody titers (not just vaccination records).",
+  "driftCheck": "This advanced national USCE discovery because Boston cluster expanded to 4 of 5 (BMC + BWH + MGH + BIDMC); BIDMC correctly identified as HMS-routed rather than independent."
+}

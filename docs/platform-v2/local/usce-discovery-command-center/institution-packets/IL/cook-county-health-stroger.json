@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Cook County Health (Stroger Hospital)",
+    "aliases": ["John H. Stroger Jr. Hospital of Cook County", "CCHHS Stroger"],
+    "city": "Chicago",
+    "state": "IL",
+    "officialDomain": "cookcountyhealth.org",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "Cook County Health and Hospitals System",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 45; P101-2 selected_25 rank 5"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["cookcountyhealth.org", "cookcountyil.gov"],
+    "searchTermsTried": [
+      "Cook County Health Stroger Hospital visiting medical student observership IMG international elective",
+      "Cook County Health visiting student",
+      "Stroger Hospital medical student rotation",
+      "Cook County international medical student trauma anesthesia burn"
+    ],
+    "pagesOpened": [
+      "https://cookcountyhealth.org/education-and-research/",
+      "https://www.cookcountyil.gov/service/international-observership-program",
+      "https://www.cookcountyil.gov/service/shadowinginternational-observership-program",
+      "https://cookcountyhealth.org/wp-content/uploads/International-Medical-Student-Packet-5.18.18.pdf"
+    ],
+    "rejectedPages": [
+      {"url": "http://cookcountyem.com/students", "title": "Cook County EM Residency MS", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://www.doctorsebas.com/post/3cf89da0", "title": "50 IMG-rotation hospitals listicle", "reason": "THIRD_PARTY_LEAD_ONLY"}
+    ],
+    "robotsOrAccessNotes": "cookcountyhealth.org accessible. The International-Medical-Student-Packet PDF is dated 5.18.18 (2018) so likely stale. Verbatim retrieval from current 2026 policy would require PDF text-extract or operator browser visit. Direct fetch of education-and-research page yielded explicit observership-not-available statement.",
+    "stopCondition": "UNCLEAR_NEEDS_RETRY"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://cookcountyhealth.org/education-and-research/",
+      "pageTitle": "Graduate Medical Education/Professional Education | Cook County Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Cook County Health cannot provide 'shadowing' or 'observership' experiences.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE on current page; PDF packet (2018) may name Trauma/Anesthesiology/Burn but unverified",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": [
+        "OBSERVERSHIP_AND_SHADOWING_EXPLICITLY_NOT_OFFERED_VERBATIM",
+        "CLINICAL_ROTATIONS_AVAILABLE_FOR_FOURTH_YEAR_US_MS_VIA_AFFILIATED_SCHOOL_COORDINATOR",
+        "INTERNATIONAL_3_SPECIALTY_RUMOR_UNVERIFIED_FROM_2018_PDF_NEEDS_RETRY",
+        "STROGER_HOSPITAL_NAMED_ON_HUB_AS_TEACHING_SITE"
+      ]
+    },
+    {
+      "sourceUrl": "https://cookcountyhealth.org/education-and-research/",
+      "pageTitle": "Graduate Medical Education/Professional Education | Cook County Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "residents and fellows at the John H. Stroger, Jr. Hospital of Cook County continue to receive advanced training",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "NOT_STATED_ON_SOURCE",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": ["STROGER_NAMED_BUT_FOR_RESIDENCY_NOT_VISITING_STUDENT"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Cook County Health hub EXPLICITLY does not offer shadowing or observership. The only visiting-medical-student lane referenced is via affiliated school program coordinators — meaning a student's home school must already have an affiliation arrangement with Cook County Health. Not an open public pathway for self-applying IMGs.",
+    "weakNegativeEvidence": "The 2018 International Medical Student Packet PDF is 8 years old; verbatim retrieval of current 2026 international-specialty (Trauma/Anesthesia/Burn) policy was not achieved this turn. Queued for manual retry."
+  },
+  "finalClassification": "POSSIBLE_USCE_NEEDS_REVIEW",
+  "finalTier": "TIER_C_NEEDS_REVIEW",
+  "nextAction": "Manual retry queued: (a) extract verbatim audience+specialty paragraph from current International-Medical-Student-Packet PDF (need scripts/p101-extract-pdf-text.ts on the URL); (b) confirm whether the 2018 PDF is still current policy. Until verified, classify as POSSIBLE_USCE_NEEDS_REVIEW — observership is verbatim NOT offered, US visiting-student lane is AFFILIATED-SCHOOL-COORDINATOR mediated only, international 3-specialty lane is unconfirmed.",
+  "plainEnglishSummary": "Cook County Health (which runs Stroger Hospital) does NOT offer shadowing or observership — that's verbatim on their education hub. They do allow fourth-year US medical students to do clinical rotations, but only through affiliated school program coordinators, not by direct student self-application. A 2018 PDF mentions international medical students may be accepted in 3 specialties (Trauma, Anesthesia, Burn) but the current 2026 policy was not directly verified this turn. Conservative classification: needs review before any public-facing claim.",
+  "driftCheck": "This advanced national USCE discovery because Cook County Stroger was correctly classified as POSSIBLE_USCE_NEEDS_REVIEW rather than overclaimed as an open IMG-friendly Chicago safety-net — the verbatim 'no observership/shadowing' protects against the most common misclassification of this institution."
+}

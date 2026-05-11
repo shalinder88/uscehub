@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "SUNY Downstate / University Hospital of Brooklyn",
+    "aliases": ["SUNY Downstate Health Sciences University", "UHB", "University Hospital of Brooklyn"],
+    "city": "Brooklyn",
+    "state": "NY",
+    "officialDomain": "downstate.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "SUNY Downstate Health Sciences University",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 69; P101-2 selected_25 rank 25"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["downstate.edu", "sls.downstate.edu"],
+    "searchTermsTried": ["SUNY Downstate College of Medicine visiting medical student VSLO international University Hospital of Brooklyn"],
+    "pagesOpened": [
+      "https://www.downstate.edu/education-training/student-services/registrar/visiting/index.html",
+      "https://sls.downstate.edu/registrar/visiting/index.html",
+      "https://www.downstate.edu/education-training/student-services/registrar/catalog/course-book/international-students.html",
+      "https://www.downstate.edu/education-training/fellowship-residency-programs/dermatology/medical-students/visiting.html"
+    ],
+    "rejectedPages": [
+      {"url": "https://em-students.clinicalmonster.com/visiting-students/", "title": "EM Residency visiting", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://thematchguy.com/electives-us/", "title": "Match Guy listicle", "reason": "THIRD_PARTY_LEAD_ONLY"}
+    ],
+    "robotsOrAccessNotes": "downstate.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.downstate.edu/education-training/student-services/registrar/visiting/index.html",
+      "pageTitle": "Visiting Medical Student Program | Registrar | SUNY Downstate",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "SUNY Downstate only accepts students in their senior year from LCME-accredited allopathic schools in the United States, Canada and Puerto Rico with the exception of some departments which accept students from College of Osteopathic.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Senior year only; 45-day lead time pre-rotation",
+      "specialtyDecision": "Multispecialty; primarily LCME with some departments accepting COCA",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "SENIOR_YEAR_LCME_US_OR_CANADA_OR_PR",
+        "SOME_DEPTS_ACCEPT_COCA_DO",
+        "VSLO_VSAS_ONLY_NO_EXCEPTIONS",
+        "45_DAY_LEAD_TIME_NO_EXCEPTIONS"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.downstate.edu/education-training/student-services/registrar/catalog/course-book/international-students.html",
+      "pageTitle": "Procedures for Visiting International Medical Students | SUNY Downstate",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Rotations at SUNY Downstate Health Sciences University - College of Medicine are currently closed for international medical students.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "N/A (lane closed)",
+      "specialtyDecision": "N/A",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["INTERNATIONAL_LANE_CURRENTLY_CLOSED_VERBATIM"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "International medical student rotations at SUNY Downstate are 'currently closed' verbatim — important caveat. Even the Brooklyn safety-net AMC label doesn't make it IMG-open at present.",
+    "weakNegativeEvidence": "University Hospital of Brooklyn not separately named (it's the SUNY Downstate teaching hospital so implicitly covered). Cost and visa absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) Senior-year LCME US/Canada/PR (+some depts COCA); (b) international lane CURRENTLY CLOSED verbatim; (c) VSLO/VSAS only with 45-day lead time; (d) cost/visa NOT_STATED.",
+  "plainEnglishSummary": "SUNY Downstate / University Hospital of Brooklyn accepts visiting medical students through SUNY Downstate's Registrar via VSLO. Senior-year students from LCME-accredited schools in US/Canada/Puerto Rico (some departments also COCA-DO). International medical school rotations are CURRENTLY CLOSED (verbatim). 45-day lead time, no exceptions. Cost and visa not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because NY gained a fourth P101 packet; SUNY Downstate's currently-closed international lane captured verbatim — means no IMG-friendly label may be applied to SUNY Downstate based on its safety-net status."
+}

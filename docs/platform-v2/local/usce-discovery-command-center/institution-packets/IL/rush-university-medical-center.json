@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Rush University Medical Center",
+    "aliases": ["Rush UMC", "Rush Medical College — Visiting Medical Students Program"],
+    "city": "Chicago",
+    "state": "IL",
+    "officialDomain": "rushu.rush.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Rush University System for Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 54; P101-2 selected_25 rank 14"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["rushu.rush.edu", "rush.edu"],
+    "searchTermsTried": [
+      "Rush University Medical Center visiting medical student VSLO international elective site:rush.edu",
+      "Rush visiting students",
+      "Rush VSLO LCME COCA"
+    ],
+    "pagesOpened": [
+      "https://www.rushu.rush.edu/rush-medical-college/admissions/doctor-medicine-md-program/visiting-medical-students",
+      "https://www.rushu.rush.edu/rush-medical-college/admissions/doctor-medicine-md-program/curriculum/clerkship-curriculum",
+      "https://www.rushu.rush.edu/about-rush-university/faculty-affairs/global-health/students"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.rushu.rush.edu/education-training/graduate-medical-education/residency-programs/emergency-medicine-residency/visiting-students", "title": "EM Residency Visiting Students", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://www.rushu.rush.edu/about-rush-university/faculty-affairs/global-health/students/m4-elective", "title": "Rush M4 Global Health Elective", "reason": "AFFILIATED_ONLY"}
+    ],
+    "robotsOrAccessNotes": "rushu.rush.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.rushu.rush.edu/rush-medical-college/admissions/doctor-medicine-md-program/visiting-medical-students",
+      "pageTitle": "Visiting Medical Students | RUSH University",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "LCME-accredited or COCA-accredited medical schools only who want to pursue clinical elective rotations",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "4-5 weeks per rotation",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "US_LCME_OR_COCA_ONLY_VERBATIM",
+        "VSLO_REQUIRED",
+        "RUSH_UMC_NAMED_AS_PLACEMENT_SITE",
+        "TWO_PROGRAMS_OFFERED_VISITING_MS_AND_VISITING_SCHOLARS"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 3,
+    "openedPagesCount": 3,
+    "strongNegativeEvidence": "Eligibility 'LCME-accredited or COCA-accredited medical schools only' implicitly excludes international medical schools.",
+    "weakNegativeEvidence": "International student eligibility not explicitly addressed verbatim (implicit through the 'only' phrasing); cost and visa absent from hub."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) Rush UMC explicitly named as placement; (b) US LCME/COCA only; (c) VSLO required; (d) two programs (standard Visiting MS + Visiting Scholars); (e) cost + visa NOT_STATED.",
+  "plainEnglishSummary": "Rush University Medical Center accepts visiting medical students through two Rush Medical College programs: Visiting Medical Students Program and Visiting Scholars Program. Both restrict eligibility to LCME-accredited or COCA-accredited medical schools — meaning international medical students are not eligible. Applications via VSLO. Cost and visa policies not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because IL gained a second P101 packet (after UChicago); Rush UMC named explicitly as placement site."
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "LAC+USC Medical Center",
+    "aliases": [
+      "Los Angeles General Medical Center",
+      "LA General Medical Center",
+      "LA County + USC"
+    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "officialDomain": "dhs.lacounty.gov",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "LA County Department of Health Services (clinical) / Keck SOM USC (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 44; P101-2 selected_25 rank 4"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["dhs.lacounty.gov", "keck.usc.edu", "sites.usc.edu"],
+    "searchTermsTried": [
+      "LAC USC Medical Center visiting medical student elective USC Keck IMG observership",
+      "LA General Medical Center visiting medical student",
+      "LAC+USC observership",
+      "Keck USC LAC visiting student rotation"
+    ],
+    "pagesOpened": [
+      "https://dhs.lacounty.gov/lageneral/graduate-medical-education/",
+      "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "https://sites.usc.edu/healthcare-edu/observership/",
+      "https://keck.usc.edu/orthopaedic-surgery/training-education/clerkship-program/"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.uscimresidency.com/", "title": "USC/LA General IM Residency", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://dhs.lacounty.gov/lageneral/graduate-medical-education/", "title": "GME at LA General", "reason": "RESIDENCY_ONLY"}
+    ],
+    "robotsOrAccessNotes": "dhs.lacounty.gov LA General page exists but contains no visiting-student / observership content. Keck SOM hub covers LAC+USC rotations as a placement site. USC International Physician Observership is a separate broader-USC lane.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships/",
+      "pageTitle": "Visiting Student Clerkships - Keck School of Medicine of USC",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Fourth year medical students interested in doing a subinternship/clerkship in the Department of Orthopaedic Surgery spend two weeks on the trauma or hand services at Los Angeles General Medical Center.",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 8 weeks at Keck overall; LAC+USC = 2-week segment",
+      "specialtyDecision": "Department-specific (Orthopaedics trauma/hand named at LAC+USC)",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "LAC_USC_ACCESS_VIA_KECK_SOM_VISITING_STUDENTS_LANE",
+        "DEPARTMENT_DEPENDENT_PLACEMENT_LAC_USC_NAMED_FOR_ORTHO_TRAUMA_HAND",
+        "MS4_ONLY_US_LCME_AOA"
+      ]
+    },
+    {
+      "sourceUrl": "https://sites.usc.edu/healthcare-edu/observership/",
+      "pageTitle": "International Physician Observership – Keck Medicine of USC International Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Applicants must have graduated from a medical school with medical license in a foreign country. Applicants must be employed by a foreign health organization and upload a letter of recommendation from the employer or sponsor.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "IMG_GRADUATE_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Normally 1-6 months",
+      "specialtyDecision": "Multispecialty (across Keck Medicine USC)",
+      "sourceScopeDecision": "SYSTEM_LEVEL_SOURCE",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "IMG_GRAD_OBSERVERSHIP_CONFIRMED",
+      "caveats": [
+        "USC_KECK_BROADER_OBSERVERSHIP_NOT_SPECIFICALLY_LAC_USC",
+        "FOREIGN_MEDICAL_LICENSE_REQUIRED",
+        "FOREIGN_HEALTH_ORG_EMPLOYMENT_REQUIRED",
+        "APP_FEE_300_USD_NON_REFUNDABLE",
+        "TUITION_CALCULATED_PER_RESOURCES_NOT_FIXED",
+        "VALID_US_VISA_REQUIRED_BEFORE_OBSERVERSHIP",
+        "INVITATION_LETTER_AFTER_ACCEPTANCE_NOT_GUARANTEED"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "LA General Medical Center's own page (dhs.lacounty.gov/lageneral/graduate-medical-education) has zero visiting-student or observership content. Access for visiting students is entirely via Keck SOM. The USC International Physician Observership is a broader Keck Medicine USC lane — not specifically LAC+USC.",
+    "weakNegativeEvidence": "No LAC+USC-specific observership lane found. Anyone seeking a 'safety-net IMG-friendly LAC+USC observership' would be misled — the actual IMG-grad lane is via USC Keck Medicine more broadly."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) LAC+USC visiting-student access is via Keck SOM (already packetized at CA/keck-hospital-of-usc.json); LAC+USC is named as a placement site for specific departments (Orthopaedics named verbatim for trauma/hand). (b) The IMG-graduate observership is a separate USC Keck Medicine lane (covered in a sub-finding here) — requires its own packet at the system level. (c) Do NOT claim LAC+USC as an open IMG-friendly safety-net for medical students; the visiting-MS access is US LCME/COCA only via Keck.",
+  "plainEnglishSummary": "LAC+USC Medical Center (now called LA General Medical Center) does not run its own visiting-student or observership program. Visiting medical student access is entirely through Keck School of Medicine of USC — US LCME or COCA fourth-year only, via VSLO. LAC+USC is named as a placement site for specific Keck rotations (e.g., Orthopaedics trauma/hand). For IMG graduates, USC Keck Medicine runs a separate International Physician Observership ($300 app fee, variable tuition, 1-6 months, requires foreign medical license + foreign-health-org employment + valid US visa) — but it's broader than LAC+USC and not exclusive to that site.",
+  "driftCheck": "This advanced national USCE discovery because LAC+USC was correctly classified as Keck-gated rather than overclaimed as an independent IMG-friendly safety-net; also surfaced the FIRST P101 IMG_GRAD_OBSERVERSHIP_CONFIRMED finding (USC Keck Medicine broader observership lane)."
+}

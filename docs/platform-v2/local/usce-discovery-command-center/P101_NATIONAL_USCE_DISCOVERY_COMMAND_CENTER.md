@@ -9,6 +9,7 @@
 **P101 sprint history**
 - P101-0 (5-institution proof): UAMS · UAB · MedStar WHC · GW · Howard. Packets on disk: 5. Engine: ~15% → ~18%.
 - P101-1 (10-institution block): UCSF · UCLA · UCSD · UC Davis · Stanford · Keck/USC · Vanderbilt · BJH/WashU · Emory · Michigan. Packets on disk: 15 cumulative. Engine: ~18% → ~22%. Added `scripts/p101-extract-pdf-text.ts` helper. 1 BOT_BLOCKED packet (Michigan). 2 new INTERNATIONAL_STUDENT_CONFIRMED lanes (Stanford IVS, Emory).
+- P101-2 (25-institution block, Queue 4 ranks 41-69): UPMC Presb · BMC · Bellevue · LAC+USC · Cook County · Parkland · Harborview · ZSFG · BWH · MGH · Tufts · BIDMC · UChicago · Rush · UPMC Children's · Geisinger · Penn State Hershey · HFH · DMC · Beaumont · IU UH · Riley · NSUH · Maimonides · SUNY Downstate. Packets on disk: 40 cumulative. Engine: ~22% → ~30%. Added `scripts/p101-fetch-html.ts` helper + `p101_bot_block_retry_note.md`. 7 new INTERNATIONAL_STUDENT_CONFIRMED lanes. 5 "safety-net" hospitals correctly classified as VSLO-US-only or POSSIBLE_USCE_NEEDS_REVIEW. Cumulative states: 15.
 
 ---
 

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Tufts Medical Center",
+    "aliases": ["Tufts MC", "Tufts University School of Medicine — Away Rotations (covering Tufts MC)"],
+    "city": "Boston",
+    "state": "MA",
+    "officialDomain": "medicine.tufts.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Tufts Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 51; P101-2 selected_25 rank 11"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["medicine.tufts.edu", "tuftsmedicalcenter.org"],
+    "searchTermsTried": [
+      "Tufts University School of Medicine visiting medical student VSLO international Tufts Medical Center site:tufts.edu",
+      "TUSM away rotations",
+      "Tufts visiting student",
+      "TUSM VSLO international"
+    ],
+    "pagesOpened": [
+      "https://medicine.tufts.edu/about/school-medicine/administrative-offices/registrar-md-programs/away-rotations",
+      "https://medicine.tufts.edu/admissions-financial-aid/admission-program/doctor-medicine/special-md-admissions-options/international-applicants",
+      "https://sites.tufts.edu/team/application/",
+      "https://regweb.med.tufts.edu/registrar/visiting/VisitingCourseDetail.asp?CourseKey=24205"
+    ],
+    "rejectedPages": [
+      {"url": "https://medicine.tufts.edu/admissions-financial-aid/admission-program/master-public-health/international-mph-applicants", "title": "International MPH Applicants", "reason": "NOT_USCE"},
+      {"url": "https://medicine.tufts.edu/local-global-engagement/global-health-program/spring-programs", "title": "Tufts Global Health Spring", "reason": "AFFILIATED_ONLY"}
+    ],
+    "robotsOrAccessNotes": "medicine.tufts.edu accessible; WebFetch clean.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.tufts.edu/about/school-medicine/administrative-offices/registrar-md-programs/away-rotations",
+      "pageTitle": "Away Rotations - Tufts School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "final-year medical students from LCME-accredited medical schools",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 3 × 4-week rotations (12 weeks total)",
+      "specialtyDecision": "Multispecialty via VSLO",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FINAL_YEAR_MS_LCME_ONLY",
+        "VSLO_REQUIRED",
+        "MAX_3_4_WEEK_ROTATIONS_12_WEEKS_TOTAL"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.tufts.edu/about/school-medicine/administrative-offices/registrar-md-programs/away-rotations",
+      "pageTitle": "Away Rotations - Tufts School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "International students are not eligible to apply for rotations at TUSM.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["INTERNATIONAL_STUDENTS_EXPLICITLY_EXCLUDED_VERBATIM", "OBSERVERSHIPS_NOT_OFFERED_FOR_VISITING_STUDENTS"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Explicit verbatim: 'International students are not eligible to apply for rotations at TUSM.' Also 'TUSM does not offer observerships for visiting students.'",
+    "weakNegativeEvidence": "Tufts Medical Center hospital not separately named on hub page; placement is via 'TUSM-affiliated hospitals' which implicitly includes Tufts MC."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — TUSM hub; (b) US LCME final-year only; (c) international students EXPLICITLY EXCLUDED verbatim; (d) observerships NOT offered for visiting students verbatim; (e) max 12 weeks (3 × 4-week); (f) VSLO required; (g) cost/visa NOT_STATED.",
+  "plainEnglishSummary": "Tufts Medical Center accepts visiting medical students only through Tufts University School of Medicine's away-rotations program. Final-year LCME-accredited medical students only — international students are explicitly excluded. Observerships are explicitly not offered. Max 12 weeks across three 4-week rotations. VSLO required. Cost and visa policies not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because MA gained a fourth P101 packet with the explicit verbatim 'international students not eligible' and 'observerships not offered' exclusions captured — both protect against future overclaim on Tufts."
+}
