@@ -1,0 +1,138 @@
+# Source Map — The Brooklyn Hospital Center
+
+Run: p102-1-trial-2-run-2
+schemaVersion: p102-0r-1
+
+## Accepted sources (23)
+
+- **VOLUNTEER_PAGE** [https://tbh.org/volunteer](https://tbh.org/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5a3208cb83e4f51a92230ab46174fc770376d46e0af63b5015690ca530ba9583`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/volunteer.txt
+- **VOLUNTEER_PAGE** [https://tbh.org/volunteering](https://tbh.org/volunteering)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5a3208cb83e4f51a92230ab46174fc770376d46e0af63b5015690ca530ba9583`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/volunteering.txt
+- **CAREERS_PAGE** [https://tbh.org/careers](https://tbh.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `a65389d1774df843986778d24ad33665029e0b787665a01e951b6bf2c2476c50`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/careers.txt
+- **VOLUNTEER_PAGE** [https://www.tbh.org/how-to-help/how-volunteer/student-requirements](https://www.tbh.org/how-to-help/how-volunteer/student-requirements)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bf90156208543678f5d8679b7a0d9898e4f0172b46277e7e6b459569682be350`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_02f20b5523472382.txt
+- **VOLUNTEER_PAGE** [https://www.tbh.org/how-to-help/how-volunteer/requirements](https://www.tbh.org/how-to-help/how-volunteer/requirements)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a9122ad2281ef0b0ab6fb425d771b6341c761fbd6206ecce3cc57322f3f67ec5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9c49409492fb4a37.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation](https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship](https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents](https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c269ea6ebf97e3160f3e35a530eb8107e2de287f10e720fdb2d8ad8600914c47`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8fd2f0208c804925.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request](https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `b7f640dbd779ac629828e456f5be95707611bc8473787eedc1d037b276ef1d1f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_cd710ec60ed9e781.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents](https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `cdf4c844d723d8e90b6bcb75549ea90e7037545c2cd2a74f69dfe4ba5f332622`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_6f08d180cfee2af5.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements](https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `7f56bdf9954c5ce0ce311107b73395b8a7bb978601d29ebb1c99a95a9108dcfb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c556bc774e8a641e.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities](https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `ba9ab44125aeb581b4fa9bd30cac7f692471c470ead1b778f2cdf62aac438eb5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_641a5aa7528246db.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation](https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c385d98c2dbc359bc787feb1170187c38f7a823e025cb0bccb9cec9099e27639`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bf159b9aaeb7e5ea.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum](https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply](https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e9920686bd28e264d10964b47e399d125a3f12229cc839cef08250ea685a131a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bfbaaa2b08844b60.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni](https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `a9bad7fd45699170dd7e6de6c2acae0c7ec682ade2d2898f79aaa570d196a3fb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2725182cbe039ffe.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements](https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `baac4ba4b38a27c3b1e4c5d5da927d5a69f2eb26ad4dba94c0b6861ed292a824`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bbf3ff7eed536ff8.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities](https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e5e5ea793dce386eeee66e0236c4ea4dcd79fcb15fc35d1f83ad96bb761cb44e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_4f9c57440544625b.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents](https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `0c0b262f0908fefc2ee1fae4926ecbb694371bff48d31c7bf81b5196a6b829b3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_57857a15dc089654.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply](https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `838e6d59b5a966a682366b17952870571da2d4301d36658715cf688aa4889015`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c072b88dbab08a8f.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni](https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `954c4dcb2618df882d61bb0dd85f9f9547471aee001a2a34ccc64b8a1d667714`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_974a729f091745ff.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements](https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `b674e28267b3011a7f86eb73f1c94fd56b85cdfcc180ebd60bb1651293d3fb5a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_b5a176c40c4c4016.txt
+- **GME_PAGE** [https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities](https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `877662c8957439404d4dd61a4559668d93a7e74d9347d7d91752b07c3410b408`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8ab7f45b4ea9b4a9.txt
+
+## Rejected sources (36)
+
+- https://tbh.org/observership — FETCH_404 (status_404)
+- https://tbh.org/observerships — FETCH_404 (status_404)
+- https://tbh.org/observer — FETCH_404 (status_404)
+- https://tbh.org/clinical-observer — FETCH_404 (status_404)
+- https://tbh.org/visiting-student — FETCH_404 (status_404)
+- https://tbh.org/visiting-students — FETCH_404 (status_404)
+- https://tbh.org/medical-students — FETCH_404 (status_404)
+- https://tbh.org/international-students — FETCH_404 (status_404)
+- https://tbh.org/electives — FETCH_404 (status_404)
+- https://tbh.org/away-rotations — FETCH_404 (status_404)
+- https://tbh.org/clinical-elective — FETCH_404 (status_404)
+- https://tbh.org/clinical-rotation — FETCH_404 (status_404)
+- https://tbh.org/sub-internship — FETCH_404 (status_404)
+- https://tbh.org/subinternship — FETCH_404 (status_404)
+- https://tbh.org/acting-internship — FETCH_404 (status_404)
+- https://tbh.org/research — FETCH_404 (status_404)
+- https://tbh.org/student-research — FETCH_404 (status_404)
+- https://tbh.org/shadow — FETCH_404 (status_404)
+- https://tbh.org/shadowing — FETCH_404 (status_404)
+- https://tbh.org/img — FETCH_404 (status_404)
+- https://tbh.org/international-medical-graduates — FETCH_404 (status_404)
+- https://tbh.org/graduate-medical-education — FETCH_404 (status_404)
+- https://tbh.org/gme — FETCH_404 (status_404)
+- https://tbh.org/residency — FETCH_404 (status_404)
+- https://tbh.org/fellowship — FETCH_404 (status_404)
+- https://tbh.org/physician-careers — FETCH_404 (status_404)
+- https://tbh.org/provider-careers — FETCH_404 (status_404)
+- https://tbh.org/benefits — FETCH_404 (status_404)
+- https://tbh.org/visa — FETCH_404 (status_404)
+- https://tbh.org/immigration — FETCH_404 (status_404)
+- https://tbh.org/credentialing — FETCH_404 (status_404)
+- https://tbh.org/health-professionals — FETCH_404 (status_404)
+- https://tbh.org/medical-education — FETCH_404 (status_404)
+- https://tbh.org/professional-education — FETCH_404 (status_404)
+- https://tbh.org/student-affairs — FETCH_404 (status_404)
+- https://tbh.org/education — FETCH_404 (status_404)
