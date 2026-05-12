@@ -52,6 +52,10 @@ const FIXED_PATHS = [
   '/residency', '/fellowship',
   '/careers', '/physician-careers', '/provider-careers',
   '/benefits', '/visa', '/immigration', '/credentialing',
+  // P102-0B additions (Hartford-driven): institutions often nest USCE-adjacent content
+  // one layer below the standard well-known paths.
+  '/health-professionals', '/medical-education', '/professional-education',
+  '/student-affairs', '/education',
 ];
 
 interface CliArgs {
