@@ -6,14 +6,36 @@
     "CAREERS_PAGE"
   ],
   "objectsCreated": 0,
-  "claimsPromoted": 0,
+  "claimsPromoted": 1,
   "conflictsFound": [],
-  "unresolveds": [
-    "P102-0R defers model-driven claim extraction; structural skeleton only."
-  ],
+  "unresolveds": [],
   "recoveryTasks": [],
   "scoreDeltas": {
     "publicReadinessScore": 0,
-    "futureLaneValueScore": 0
-  }
+    "futureLaneValueScore": 3
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-1-trial-2-run-1_3",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "runId": "p102-1-trial-2-run-1",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "Provider Careers",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "- 2 P.M.Learn MoreHOUSTON METHODIST CYPRESS HOSPITALOnsite RN Career EventJune 1, 10 A.M - 2 P.MLearn MoreWORK WITH THE BEST IN MEDICINELearn MoreSearch JobsSearch Jobs By CategorySearch All CategoriesAdministrative JobsAdvanced Practice Provider JobsEMT JobsEducation JobsFinance and Legal JobsHIM/Medical Records JobsHuman Resources JobsImaging Services JobsInformation Technology JobsIntern JobsLaboratory Services JobsLeadership Management JobsMD/DO JobsMaintenance/Facilities JobsMedical Assista",
+      "sourceUrl": "https://houstonmethodist.org/careers",
+      "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+      "quoteVerified": true,
+      "sourceScope": "CAREERS_PORTAL",
+      "sourceFamily": "CAREERS_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    }
+  ]
 }

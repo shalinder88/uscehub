@@ -1,19 +1,25 @@
 {
   "schemaVersion": "p102-0r-1",
   "runId": "p102-0r-dry-run-1",
-  "institutionId": "inst_hartford_hospital_ct",
-  "canonicalName": "Hartford Hospital",
-  "verdict": "PASS_WITH_CAVEATS",
+  "institutionId": null,
+  "verdict": "FAIL_NEEDS_A4",
   "networkUsed": false,
   "agentUsed": false,
   "publicSafe": false,
-  "futureLaneValue": "MEDIUM",
+  "futureLaneValue": "NONE",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 0,
+  "futureLaneClaims": 0,
   "hallucinationRisks": [],
   "unsupportedClaims": [],
   "quoteVerificationFailures": [],
   "sourceScopeConflicts": [],
   "missingCriticalFields": [],
-  "negativeEvidenceFindings": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
   "requiredA4Tasks": [],
-  "finalRecommendation": "Framework dry run passed structural gates. Public extraction deferred to P102-1 with model A1/A2 enabled."
+  "finalRecommendation": "A4 recovery required; investigate missing critical fields.",
+  "a3RegatedAt": "2026-05-12T15:46:30.773Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
 }

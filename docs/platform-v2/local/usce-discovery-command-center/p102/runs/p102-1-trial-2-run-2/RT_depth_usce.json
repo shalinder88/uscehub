@@ -3,20 +3,41 @@
   "runId": "p102-1-trial-2-run-2",
   "depthPass": "USCE",
   "sourceFamiliesReviewed": [
-    "VOLUNTEER_PAGE",
-    "VOLUNTEER_PAGE",
-    "VOLUNTEER_PAGE",
     "VOLUNTEER_PAGE"
   ],
   "objectsCreated": 0,
-  "claimsPromoted": 0,
+  "claimsPromoted": 1,
   "conflictsFound": [],
   "unresolveds": [
-    "P102-0R defers model-driven claim extraction; structural skeleton only."
+    "https://www.tbh.org/how-to-help/how-volunteer/requirements: shadow/volunteer is not auto-USCE; human review"
   ],
   "recoveryTasks": [],
   "scoreDeltas": {
     "publicReadinessScore": 0,
     "futureLaneValueScore": 0
-  }
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-1-trial-2-run-2_1",
+      "institutionId": "inst_brooklyn_hospital_center_ny",
+      "runId": "p102-1-trial-2-run-2",
+      "claimType": "POSSIBLE_SHADOW_VOLUNTEER",
+      "claimText": "student volunteer",
+      "normalizedField": "lane.SHADOW.possible",
+      "quote": "Requirements | The Brooklyn Hospital CenterSkip to main contentSearchMain How to HelpABOUT TBHFFOUNDERS BALLGIVE NOWDEPARTMENTAL GRANTSHomeHow To HelpVolunteeringRequirementsRequirementsIf you are a student volunteer, please see our Student Requirements page .",
+      "sourceUrl": "https://www.tbh.org/how-to-help/how-volunteer/requirements",
+      "sourceHash": "a9122ad2281ef0b0ab6fb425d771b6341c761fbd6206ecce3cc57322f3f67ec5",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9c49409492fb4a37.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "VOLUNTEER_PAGE",
+      "confidence": "LOW",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "shadow/volunteer is not auto-USCE; human review",
+      "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+      "campusApplicabilityProof": null
+    }
+  ]
 }

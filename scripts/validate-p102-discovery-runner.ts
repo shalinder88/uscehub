@@ -31,6 +31,52 @@ function safeJson<T = unknown>(p: string): T | null {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')) as T; } catch { return null; }
 }
 
+// -------------------- Quote verification --------------------
+
+const NOT_STATED = 'NOT_STATED_ON_SOURCE';
+
+function normalizeForQuoteMatch(s: string): string {
+  return s.replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+interface ClaimRecord {
+  claimId?: string;
+  claimType?: string;
+  quote?: string;
+  sourceUrl?: string;
+  sourceHash?: string;
+  cleanedTextPath?: string;
+  quoteVerified?: boolean;
+  sourceScope?: string;
+  sourceFamily?: string;
+  confidence?: string;
+  visibility?: string;
+  publicSafeNegativeClaim?: boolean;
+  negativeEvidenceType?: string;
+  negativeEvidenceStrength?: string;
+  campusApplicabilityProof?: string;
+}
+
+const FUTURE_LANE_SOURCE_FAMILIES = new Set([
+  'GME_PAGE', 'RESIDENCY_PAGE', 'FELLOWSHIP_PAGE',
+  'CAREERS_PAGE', 'JOBS_PAGE',
+]);
+const SYSTEM_OR_SCHOOL_SCOPES = new Set([
+  'HEALTH_SYSTEM_LEVEL', 'MEDICAL_SCHOOL_LEVEL',
+]);
+
+function verifyOneQuote(quote: string, cleanedTextPath: string): { quoteVerified: boolean; reason: string } {
+  if (!quote || quote === NOT_STATED) return { quoteVerified: false, reason: 'NOT_STATED_ON_SOURCE' };
+  if (!fileExists(cleanedTextPath)) return { quoteVerified: false, reason: `cleaned_text_missing:${cleanedTextPath}` };
+  let cleaned: string;
+  try { cleaned = fs.readFileSync(cleanedTextPath, 'utf8'); }
+  catch { return { quoteVerified: false, reason: 'cleaned_text_unreadable' }; }
+  const normalizedText = normalizeForQuoteMatch(cleaned);
+  const normalizedQuote = normalizeForQuoteMatch(quote);
+  if (normalizedText.includes(normalizedQuote)) return { quoteVerified: true, reason: 'normalized_substring' };
+  return { quoteVerified: false, reason: 'not_found_in_cleaned_text' };
+}
+
 // -------------------- Spec / doctrine / contracts --------------------
 
 function checkDocs(): void {
@@ -88,6 +134,10 @@ interface RunCheckResult {
   publicSafeNegativeWithoutQuote: number;
   scopeOverclaims: number;
   artifactPathsValid: boolean;
+  claimsTotal: number;
+  claimsQuoteVerified: number;
+  claimsFutureLane: number;
+  claimsPublicSafeBlocked: number;
 }
 
 const REQUIRED_RUN_FILES = [
@@ -110,6 +160,7 @@ const REQUIRED_RUN_FILES = [
   '10_scorecard.md',
   '11_canonical_enriched.json',
   '12_canonical_enriched_v2.json',
+  '13_source_claims.json',
   '14_run_summary.json',
   'A1_5_source_completeness_audit.json',
   'RT_depth_usce.json',
@@ -137,6 +188,10 @@ function checkRun(runFolder: string): RunCheckResult {
     publicSafeNegativeWithoutQuote: 0,
     scopeOverclaims: 0,
     artifactPathsValid: true,
+    claimsTotal: 0,
+    claimsQuoteVerified: 0,
+    claimsFutureLane: 0,
+    claimsPublicSafeBlocked: 0,
   };
   for (const f of REQUIRED_RUN_FILES) {
     if (!fileExists(path.join(runFolder, f))) r.missing.push(f);
@@ -195,19 +250,98 @@ function checkRun(runFolder: string): RunCheckResult {
 
   // Source scope discipline — public-safe USCE on HEALTH_SYSTEM_LEVEL without campus proof = fail
   const srcMapJson = safeJson<{ sources?: Array<Record<string, unknown>> }>(path.join(runFolder, '01_source_map.json'));
-  if (srcMapJson && opps && Array.isArray(opps.opportunities)) {
-    const srcByUrl = new Map<string, Record<string, unknown>>();
-    for (const s of (srcMapJson.sources ?? [])) srcByUrl.set(String(s.sourceUrl), s);
-    for (const o of (opps.opportunities ?? [])) {
-      if (o.visibilityLane === 'PUBLIC_SAFE_USCE') {
-        const claimIds = (o.sourceClaimIds as string[] | undefined) ?? [];
-        if (claimIds.length === 0) {
-          // already failed above
-          continue;
-        }
-        // We'd need a separate claim store with full quote/source linkage to fully validate;
-        // P102-0R skeleton emits no PUBLIC_SAFE so this branch is effectively unused.
+  const sourcesByUrl = new Map<string, Record<string, unknown>>();
+  if (srcMapJson && Array.isArray(srcMapJson.sources)) {
+    for (const s of srcMapJson.sources) sourcesByUrl.set(String(s.sourceUrl), s);
+  }
+
+  // -------------------- Claim verification (P102-0C) --------------------
+  const claimsFile = path.join(runFolder, '13_source_claims.json');
+  const claimsDoc = safeJson<{ claims?: ClaimRecord[] }>(claimsFile);
+  if (claimsDoc && Array.isArray(claimsDoc.claims)) {
+    for (const c of claimsDoc.claims) {
+      r.claimsTotal++;
+      const claimId = c.claimId ?? '(no-id)';
+
+      // Structural requirements for every claim
+      if (!c.sourceUrl) fail(`${runId}: claim ${claimId} missing sourceUrl`);
+      if (!c.sourceHash) fail(`${runId}: claim ${claimId} missing sourceHash`);
+      if (!c.cleanedTextPath) fail(`${runId}: claim ${claimId} missing cleanedTextPath`);
+      if (c.quote === undefined || c.quote === null) fail(`${runId}: claim ${claimId} missing quote (use NOT_STATED_ON_SOURCE if absent)`);
+
+      // Quote verification
+      const isNotStated = c.quote === NOT_STATED;
+      const path_ok = !!c.cleanedTextPath && fileExists(c.cleanedTextPath);
+      const verifyResult = (c.quote && c.cleanedTextPath)
+        ? verifyOneQuote(c.quote, c.cleanedTextPath)
+        : { quoteVerified: false, reason: 'missing_quote_or_path' };
+
+      // The extractor sets quoteVerified; the validator re-checks it for correctness.
+      // If the extractor said true but the substring fails → fail.
+      // If the extractor said false → accept (claim is honestly unverified and cannot go PUBLIC_SAFE).
+      if (c.quoteVerified === true && !verifyResult.quoteVerified && !isNotStated) {
+        fail(`${runId}: claim ${claimId} quoteVerified=true but quote not found in cleaned text (${verifyResult.reason})`);
       }
+      if (verifyResult.quoteVerified) r.claimsQuoteVerified++;
+
+      // Visibility rules
+      const visibility = c.visibility ?? '';
+      const sourceFamily = (() => {
+        const s = c.sourceUrl ? sourcesByUrl.get(c.sourceUrl) : undefined;
+        return s ? String(s.sourceFamily) : (c.sourceFamily ?? '');
+      })();
+      const sourceScope = (() => {
+        const s = c.sourceUrl ? sourcesByUrl.get(c.sourceUrl) : undefined;
+        return s ? String(s.sourceScope) : (c.sourceScope ?? '');
+      })();
+
+      if (visibility === 'PUBLIC_SAFE_USCE') {
+        // Must be quote-verified
+        if (!verifyResult.quoteVerified) {
+          fail(`${runId}: claim ${claimId} PUBLIC_SAFE_USCE but quote not verified (${verifyResult.reason})`);
+          r.claimsPublicSafeBlocked++;
+        }
+        // Quote cannot be NOT_STATED
+        if (isNotStated) {
+          fail(`${runId}: claim ${claimId} PUBLIC_SAFE_USCE has quote=NOT_STATED_ON_SOURCE`);
+          r.claimsPublicSafeBlocked++;
+        }
+        // Source family cannot be future-lane only
+        if (FUTURE_LANE_SOURCE_FAMILIES.has(sourceFamily)) {
+          fail(`${runId}: claim ${claimId} PUBLIC_SAFE_USCE from future-lane source family ${sourceFamily}`);
+          r.claimsPublicSafeBlocked++;
+        }
+        // Source scope check
+        if (SYSTEM_OR_SCHOOL_SCOPES.has(sourceScope) && !c.campusApplicabilityProof) {
+          fail(`${runId}: claim ${claimId} PUBLIC_SAFE_USCE from ${sourceScope} without campusApplicabilityProof`);
+          r.claimsPublicSafeBlocked++;
+        }
+        r.publicSafeClaimsCount++;
+      } else if (visibility === 'FUTURE_LANE_ONLY') {
+        r.claimsFutureLane++;
+      }
+
+      if (!path_ok && !isNotStated) {
+        // structural fault already reported above
+      }
+    }
+  }
+
+  // Opportunity-to-claim back-reference check (existing PUBLIC_SAFE_USCE on opportunity must trace to verified claim)
+  if (opps && Array.isArray(opps.opportunities) && claimsDoc && Array.isArray(claimsDoc.claims)) {
+    const claimById = new Map<string, ClaimRecord>();
+    for (const c of claimsDoc.claims) if (c.claimId) claimById.set(c.claimId, c);
+    for (const o of opps.opportunities) {
+      if (o.visibilityLane !== 'PUBLIC_SAFE_USCE') continue;
+      const refs = (o.sourceClaimIds as string[] | undefined) ?? [];
+      if (refs.length === 0) continue;
+      let anyVerified = false;
+      for (const ref of refs) {
+        const c = claimById.get(ref);
+        if (!c) { fail(`${runId}: PUBLIC_SAFE_USCE opportunity ${String(o.opportunityId)} references missing claim ${ref}`); continue; }
+        if (c.quoteVerified === true && c.quote !== NOT_STATED) anyVerified = true;
+      }
+      if (!anyVerified) fail(`${runId}: PUBLIC_SAFE_USCE opportunity ${String(o.opportunityId)} has no verified claims`);
     }
   }
 
@@ -291,7 +425,7 @@ function main(): void {
     const runs = fs.readdirSync(runsDir).filter(n => dirExists(path.join(runsDir, n)));
     for (const run of runs) {
       const result = checkRun(path.join(runsDir, run));
-      console.log(`  Run ${result.runId}: missing=${result.missing.length}, jsonErrors=${result.jsonErrors.length}, network=${result.a3NetworkUsed}, agent=${result.a3AgentUsed}, publicSafe=${result.publicSafeClaimsCount}`);
+      console.log(`  Run ${result.runId}: missing=${result.missing.length}, jsonErrors=${result.jsonErrors.length}, network=${result.a3NetworkUsed}, agent=${result.a3AgentUsed}, claims=${result.claimsTotal} (verified=${result.claimsQuoteVerified}, futureLane=${result.claimsFutureLane}, publicSafe=${result.publicSafeClaimsCount}, blocked=${result.claimsPublicSafeBlocked})`);
     }
   } else {
     warn('No runs/ directory yet (acceptable before first dry run).');

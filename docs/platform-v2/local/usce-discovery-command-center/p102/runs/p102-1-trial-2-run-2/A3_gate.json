@@ -1,19 +1,25 @@
 {
   "schemaVersion": "p102-0r-1",
   "runId": "p102-1-trial-2-run-2",
-  "institutionId": "inst_brooklyn_hospital_center_ny",
-  "canonicalName": "The Brooklyn Hospital Center",
+  "institutionId": "1",
   "verdict": "PASS_WITH_CAVEATS",
   "networkUsed": false,
   "agentUsed": false,
   "publicSafe": false,
-  "futureLaneValue": "MEDIUM",
+  "futureLaneValue": "HIGH",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 0,
+  "futureLaneClaims": 32,
   "hallucinationRisks": [],
   "unsupportedClaims": [],
   "quoteVerificationFailures": [],
   "sourceScopeConflicts": [],
   "missingCriticalFields": [],
-  "negativeEvidenceFindings": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
   "requiredA4Tasks": [],
-  "finalRecommendation": "Framework dry run passed structural gates. Public extraction deferred to P102-1 with model A1/A2 enabled."
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-12T15:46:30.843Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
 }
