@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "description": "Machine-readable expected outcomes for the gold-set queue. The verifier (scripts/p102-gold-set-verify.ts) compares actual run results against these expectations. Each entry mirrors a row in queues/p102_gold_set_queue.csv. Expected values represent the FRAMEWORK's expected output after P102-0D model A1/A2 reader is online — NOT the deterministic baseline.",
+  "generatedAt": "2026-05-12",
+  "expectations": [
+    {
+      "institutionId": "inst_cleveland_clinic_florida",
+      "canonicalName": "Cleveland Clinic Florida",
+      "goldLabel": "Gold 1 — clear international medical student program",
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 1,
+      "expectedPublicSafeUsceMax": 5,
+      "expectedNegativeQuoteRequired": false,
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "expectedSourceFamilies": ["VISITING_STUDENT_PAGE", "OBSERVERSHIP_PAGE"],
+      "expectedParentSystem": "Cleveland Clinic",
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_vanderbilt_vumc",
+      "canonicalName": "Vanderbilt University Medical Center",
+      "goldLabel": "Gold 2 — clear US MD/DO VSLO-only",
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 1,
+      "expectedPublicSafeUsceMax": 5,
+      "expectedNegativeQuoteRequired": false,
+      "expectedNegativeQuoteAllowed": true,
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "expectedSourceFamilies": ["VISITING_STUDENT_PAGE"],
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "canonicalName": "Houston Methodist Hospital",
+      "goldLabel": "Gold 3 — clear IMG observership (with fixed-path expansion)",
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 5,
+      "expectedNegativeQuoteRequired": false,
+      "expectedFutureLaneValue": ["LOW", "MEDIUM"],
+      "expectedSourceFamilies": ["OBSERVERSHIP_PAGE"],
+      "allowedFailureMode": "FAIL_NEEDS_A4 if /observership stays as redirect and no alt path discovered"
+    },
+    {
+      "institutionId": "inst_mayo_clinic_rochester_mn",
+      "canonicalName": "Mayo Clinic",
+      "goldLabel": "Gold 4 — no public lane with explicit negative quote",
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 1,
+      "expectedNegativeQuoteRequired": true,
+      "expectedPublicSafeNoPublicOpportunityMin": 1,
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "expectedParentSystem": "Mayo Clinic",
+      "allowedFailureMode": "if Mayo's site no longer publishes the explicit-negative quote, gold-set will be re-pointed"
+    },
+    {
+      "institutionId": "inst_hartford_hospital_ct",
+      "canonicalName": "Hartford Hospital",
+      "goldLabel": "Gold 5 — no public lane by absence after broad search",
+      "expectedA3Verdict": ["PASS_WITH_CAVEATS", "FAIL_NEEDS_A4"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 0,
+      "expectedNegativeQuoteRequired": false,
+      "expectedPublicSafeNoPublicOpportunityMin": 0,
+      "expectedPublicSafeNoPublicOpportunityMax": 0,
+      "expectedFutureLaneValue": ["NONE", "LOW"],
+      "expectedParentSystem": "Hartford HealthCare",
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "canonicalName": "AdventHealth Orlando",
+      "goldLabel": "Gold 6 — parent system ambiguity",
+      "expectedA3Verdict": ["PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 0,
+      "expectedScopeConflictsMin": 0,
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "expectedParentSystem": "AdventHealth",
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_brigham_and_womens_hospital_ma",
+      "canonicalName": "Brigham and Women's Hospital",
+      "goldLabel": "Gold 7 — medical-school-level source ambiguity (BWH + HMS)",
+      "expectedA3Verdict": ["PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 2,
+      "expectedSourceFamilies": ["VISITING_STUDENT_PAGE"],
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_brooklyn_hospital_center_ny",
+      "canonicalName": "The Brooklyn Hospital Center",
+      "goldLabel": "Gold 8 — GME-rich but no USCE",
+      "expectedA3Verdict": ["PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 0,
+      "expectedNegativeQuoteRequired": false,
+      "expectedFutureLaneValue": ["HIGH"],
+      "expectedSourceFamilies": ["GME_PAGE", "RESIDENCY_PAGE", "FELLOWSHIP_PAGE", "VOLUNTEER_PAGE"],
+      "expectedHumanReviewMin": 0,
+      "expectedHumanReviewMax": 5,
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "canonicalName": "Northwell Staten Island University Hospital",
+      "goldLabel": "Gold 9 — jobs/visa-rich",
+      "expectedA3Verdict": ["PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 2,
+      "expectedFutureLaneValue": ["HIGH"],
+      "expectedSourceFamilies": ["CAREERS_PAGE"],
+      "expectedParentSystem": "Northwell Health",
+      "allowedFailureMode": null
+    },
+    {
+      "institutionId": "inst_boston_medical_center_ma",
+      "canonicalName": "Boston Medical Center",
+      "goldLabel": "Gold 10 — PDF-heavy",
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 5,
+      "expectedPdfArtifactsMin": 1,
+      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
+      "allowedFailureMode": "if no PDFs encountered, gold-set will be re-pointed"
+    },
+    {
+      "institutionId": "inst_michigan_medicine_mi",
+      "canonicalName": "Michigan Medicine",
+      "goldLabel": "Gold 11 — bot-block / timeout",
+      "expectedA3Verdict": ["FAIL_NEEDS_A4", "PASS_WITH_CAVEATS"],
+      "expectedPublicSafeUsceMin": 0,
+      "expectedPublicSafeUsceMax": 1,
+      "expectedBotBlockedSourcesMin": 1,
+      "expectedFutureLaneValue": ["NONE", "LOW", "MEDIUM"],
+      "allowedFailureMode": "bot-block expected; A4 REFETCH_FAILED_SOURCE task should be generated"
+    }
+  ]
+}
