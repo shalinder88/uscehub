@@ -96,12 +96,159 @@ const SYSTEM_REGISTRY: Array<{
     domainTokens: ['ufhealth'],
     knownCampusKeywords: ['shands', 'jacksonville', 'leesburg', 'central florida'],
   },
+  {
+    systemName: 'Atrium Health',
+    systemDomain: 'atriumhealth.org',
+    domainTokens: ['atriumhealth'],
+    knownCampusKeywords: ['carolinas medical', 'pineville', 'mercy', 'university city', 'cabarrus', 'wake forest'],
+  },
+  {
+    systemName: 'Banner Health',
+    systemDomain: 'bannerhealth.com',
+    domainTokens: ['bannerhealth'],
+    knownCampusKeywords: ['phoenix', 'tucson', 'gateway', 'desert', 'estrella', 'thunderbird', 'casa grande'],
+  },
+  {
+    systemName: 'Kaiser Permanente',
+    systemDomain: 'kaiserpermanente.org',
+    domainTokens: ['kaiserpermanente', 'kp'],
+    knownCampusKeywords: ['northern california', 'southern california', 'colorado', 'georgia', 'hawaii', 'mid-atlantic', 'northwest', 'washington', 'oakland', 'los angeles'],
+  },
+  {
+    systemName: 'Sutter Health',
+    systemDomain: 'sutterhealth.org',
+    domainTokens: ['sutterhealth'],
+    knownCampusKeywords: ['sacramento', 'palo alto', 'cpmc', 'santa rosa', 'davis', 'eden'],
+  },
+  {
+    systemName: 'Tenet Healthcare',
+    systemDomain: 'tenethealth.com',
+    domainTokens: ['tenethealth'],
+    knownCampusKeywords: ['detroit', 'dallas', 'el paso', 'palmetto', 'desert regional', 'st mary'],
+  },
+  {
+    systemName: 'CommonSpirit Health',
+    systemDomain: 'commonspirit.org',
+    domainTokens: ['commonspirit', 'catholichealth', 'dignityhealth'],
+    knownCampusKeywords: ['mercy', 'st joseph', 'st rose', 'sequoia', 'redwood', 'french hospital'],
+  },
+  {
+    systemName: 'Providence',
+    systemDomain: 'providence.org',
+    domainTokens: ['providence'],
+    knownCampusKeywords: ['st joseph', 'portland', 'olympia', 'spokane', 'mission', 'tarzana', 'little company of mary'],
+  },
+  {
+    systemName: 'Ascension',
+    systemDomain: 'ascension.org',
+    domainTokens: ['ascension'],
+    knownCampusKeywords: ['st vincent', 'sacred heart', 'seton', 'borgess', 'genesys', 'st thomas'],
+  },
+  {
+    systemName: 'Trinity Health',
+    systemDomain: 'trinity-health.org',
+    domainTokens: ['trinity-health', 'trinityhealth'],
+    knownCampusKeywords: ['st joseph', 'mercy health', 'st francis', 'loyola', 'st marys', 'holy cross'],
+  },
+  {
+    systemName: 'UPMC',
+    systemDomain: 'upmc.com',
+    domainTokens: ['upmc'],
+    knownCampusKeywords: ['presbyterian', 'shadyside', 'mercy', 'magee', 'mckeesport', 'st margaret', 'east'],
+  },
+  {
+    systemName: 'Geisinger',
+    systemDomain: 'geisinger.org',
+    domainTokens: ['geisinger'],
+    knownCampusKeywords: ['danville', 'wilkes-barre', 'scranton', 'lewistown', 'jersey shore', 'south wilkes-barre'],
+  },
+  {
+    systemName: 'Sentara Healthcare',
+    systemDomain: 'sentara.com',
+    domainTokens: ['sentara'],
+    knownCampusKeywords: ['norfolk general', 'leigh', 'princess anne', 'careplex', 'martha jefferson', 'rockingham'],
+  },
+  {
+    systemName: 'Inova Health System',
+    systemDomain: 'inova.org',
+    domainTokens: ['inova'],
+    knownCampusKeywords: ['fairfax', 'alexandria', 'loudoun', 'mount vernon', 'franconia', 'tysons'],
+  },
+  {
+    systemName: 'BJC HealthCare',
+    systemDomain: 'bjc.org',
+    domainTokens: ['bjc'],
+    knownCampusKeywords: ['barnes-jewish', 'christian', 'memorial', 'progress west', 'parkland', 'alton memorial'],
+  },
+  {
+    systemName: 'Henry Ford Health',
+    systemDomain: 'henryford.com',
+    domainTokens: ['henryford'],
+    knownCampusKeywords: ['detroit', 'macomb', 'west bloomfield', 'wyandotte', 'allegiance', 'kingswood'],
+  },
+  {
+    systemName: 'Corewell Health',
+    systemDomain: 'corewellhealth.org',
+    domainTokens: ['corewellhealth', 'spectrumhealth', 'beaumonthealth'],
+    knownCampusKeywords: ['grand rapids', 'butterworth', 'royal oak', 'troy', 'farmington hills', 'dearborn'],
+  },
+  {
+    systemName: 'Stanford Health Care',
+    systemDomain: 'stanfordhealthcare.org',
+    domainTokens: ['stanfordhealthcare'],
+    knownCampusKeywords: ['palo alto', 'tri-valley', 'valleycare', 'south bay'],
+  },
+  {
+    systemName: 'UCSF Health',
+    systemDomain: 'ucsfhealth.org',
+    domainTokens: ['ucsfhealth', 'ucsf'],
+    knownCampusKeywords: ['parnassus', 'mission bay', 'mount zion', 'benioff', 'st marys', 'st francis'],
+  },
+  {
+    systemName: 'UCLA Health',
+    systemDomain: 'uclahealth.org',
+    domainTokens: ['uclahealth', 'ucla'],
+    knownCampusKeywords: ['ronald reagan', 'santa monica', 'resnick', 'mattel', 'westwood'],
+  },
+  {
+    systemName: 'Memorial Hermann',
+    systemDomain: 'memorialhermann.org',
+    domainTokens: ['memorialhermann'],
+    knownCampusKeywords: ['tmc', 'texas medical center', 'sugar land', 'katy', 'pearland', 'cypress', 'northeast'],
+  },
+  {
+    systemName: 'Texas Health Resources',
+    systemDomain: 'texashealth.org',
+    domainTokens: ['texashealth'],
+    knownCampusKeywords: ['presbyterian', 'arlington memorial', 'fort worth', 'plano', 'denton', 'azle'],
+  },
+  {
+    systemName: 'Wellstar Health System',
+    systemDomain: 'wellstar.org',
+    domainTokens: ['wellstar'],
+    knownCampusKeywords: ['kennestone', 'cobb', 'douglas', 'paulding', 'spalding', 'windy hill'],
+  },
+  {
+    systemName: 'Piedmont Healthcare',
+    systemDomain: 'piedmont.org',
+    domainTokens: ['piedmont'],
+    knownCampusKeywords: ['atlanta', 'fayette', 'henry', 'newnan', 'mountainside', 'columbus', 'rockdale'],
+  },
 ];
 
 /**
  * Institutions known to have no parent system, despite naming patterns that
  * might otherwise suggest one. (Hartford Hospital is NOT here — it has
  * Hartford HealthCare as parent; see Hartford special case below.)
+ */
+/**
+ * Truly independent institutions (no parent system in any registry).
+ * Membership here means inferIdentity returns isStandalone=true without
+ * consulting SYSTEM_REGISTRY.
+ *
+ * IMPORTANT: only add an institution here if you are confident it has
+ * NO parent system that's in SYSTEM_REGISTRY. Otherwise the wrong
+ * lookup result will block scope discipline.
  */
 const KNOWN_STANDALONES = new Set<string>([
   'houston methodist hospital',
@@ -112,7 +259,27 @@ const KNOWN_STANDALONES = new Set<string>([
   'cook county health',
   'boston medical center',
   'tampa general hospital',
+  'cedars-sinai medical center',
+  'cedars-sinai',
+  'childrens hospital of philadelphia',
+  "children's hospital of philadelphia",
+  'chop',
+  'boston childrens hospital',
+  "boston children's hospital",
+  'cincinnati childrens hospital medical center',
+  "cincinnati children's hospital medical center",
+  'texas childrens hospital',
+  "texas children's hospital",
+  'rush university medical center',
 ]);
+
+// Mass General Brigham member campuses that should NOT match the
+// SYSTEM_REGISTRY entry because they have their own domains.
+// (The MGB systemDomain match requires the campus name OR system name
+// in the canonical; these don't include 'Mass General Brigham' in the
+// canonical so they fall through. We don't classify them as standalone
+// because they DO belong to MGB; the gold-set spec handles them via
+// the BWH+HMS scope-conflict test in Gold 7.)
 
 /**
  * Infer parent_system + aliases for an institution by name + domain.

@@ -558,6 +558,81 @@ test('compareInstitutions: standalone vs system-affiliated → UNRELATED', () =>
   assertEqual(r.relationship, 'UNRELATED');
 });
 
+// Identity registry expansion tests (P102-0N)
+test('Atrium Health Carolinas Medical Center → parent Atrium Health', () => {
+  const r = inferIdentity('Atrium Health Carolinas Medical Center', 'atriumhealth.org');
+  assertEqual(r.parentSystem, 'Atrium Health');
+});
+
+test('Banner Estrella Medical Center → parent Banner Health', () => {
+  const r = inferIdentity('Banner Estrella Medical Center', 'bannerhealth.com');
+  assertEqual(r.parentSystem, 'Banner Health');
+});
+
+test('Kaiser Permanente Oakland → parent Kaiser Permanente', () => {
+  const r = inferIdentity('Kaiser Permanente Oakland', 'kaiserpermanente.org');
+  assertEqual(r.parentSystem, 'Kaiser Permanente');
+});
+
+test('Sutter Medical Center Sacramento → parent Sutter Health', () => {
+  const r = inferIdentity('Sutter Medical Center Sacramento', 'sutterhealth.org');
+  assertEqual(r.parentSystem, 'Sutter Health');
+});
+
+test('UPMC Presbyterian → parent UPMC', () => {
+  const r = inferIdentity('UPMC Presbyterian', 'upmc.com');
+  assertEqual(r.parentSystem, 'UPMC');
+});
+
+test('Memorial Hermann TMC → parent Memorial Hermann', () => {
+  const r = inferIdentity('Memorial Hermann TMC', 'memorialhermann.org');
+  assertEqual(r.parentSystem, 'Memorial Hermann');
+});
+
+test('Stanford Health Care Palo Alto → parent Stanford Health Care', () => {
+  const r = inferIdentity('Stanford Health Care Palo Alto', 'stanfordhealthcare.org');
+  assertEqual(r.parentSystem, 'Stanford Health Care');
+});
+
+test('UCSF Health Parnassus → parent UCSF Health', () => {
+  const r = inferIdentity('UCSF Health Parnassus', 'ucsfhealth.org');
+  assertEqual(r.parentSystem, 'UCSF Health');
+});
+
+test("Children's Hospital of Philadelphia → standalone", () => {
+  const r = inferIdentity("Children's Hospital of Philadelphia", 'chop.edu');
+  assertEqual(r.isStandalone, true);
+});
+
+test('Cedars-Sinai Medical Center → standalone', () => {
+  const r = inferIdentity('Cedars-Sinai Medical Center', 'cedars-sinai.org');
+  assertEqual(r.isStandalone, true);
+});
+
+test('compareInstitutions: AdventHealth Tampa vs AdventHealth Orlando → DISTINCT_CAMPUS_SAME_SYSTEM', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'AdventHealth Tampa', officialDomain: 'adventhealth.com' },
+    { canonicalName: 'AdventHealth Orlando', officialDomain: 'adventhealth.com' },
+  );
+  assertEqual(r.relationship, 'DISTINCT_CAMPUS_SAME_SYSTEM');
+});
+
+test('compareInstitutions: UPMC Presbyterian vs UPMC Shadyside → DISTINCT_CAMPUS_SAME_SYSTEM', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'UPMC Presbyterian', officialDomain: 'upmc.com' },
+    { canonicalName: 'UPMC Shadyside', officialDomain: 'upmc.com' },
+  );
+  assertEqual(r.relationship, 'DISTINCT_CAMPUS_SAME_SYSTEM');
+});
+
+test('compareInstitutions: UPMC vs AdventHealth → UNRELATED', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'UPMC Presbyterian', officialDomain: 'upmc.com' },
+    { canonicalName: 'AdventHealth Orlando', officialDomain: 'adventhealth.com' },
+  );
+  assertEqual(r.relationship, 'UNRELATED');
+});
+
 // -------------------- Sitemap parser tests --------------------
 
 console.log('\n--- Sitemap parser ---');
