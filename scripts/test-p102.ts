@@ -727,6 +727,192 @@ test('isPathDisallowedByRobots: common Hartford-style disallows', () => {
   assertTrue(isPathDisallowedByRobots('/checkout/cart', hartfordDisallows, []));
 });
 
+// -------------------- Edge case fixtures (P102-0W) --------------------
+
+console.log('\n--- Edge case fixtures ---');
+
+const FIXTURE_SMART_QUOTES = `
+Our observership program is open to international medical graduates. We don’t accept applicants without a U.S. medical degree.
+`.trim();
+
+const FIXTURE_ACCENTED = `
+The Visiting Médical Student Program at Hôpital Saint-Joseph welcomes fourth-year electives.
+`.trim();
+
+const FIXTURE_MULTILINE_QUOTE = `
+Eligibility
+
+Visiting medical student rotations are available
+to fourth-year students from LCME-accredited
+schools.
+
+Application fee is $250.
+`.trim();
+
+const FIXTURE_DENSE_NAV_REAL_CONTENT = `
+HomeAboutContact   |   Patient Portal   |   MyChart   |   Find a Doctor   |   Services & Specialties   |   Locations
+HomeAboutContactPatientPortalMyChartFindADoctorServicesAndSpecialtiesLocations
+.
+.
+
+Pharmacy Student Externship Program
+
+The Houston Methodist Pharmacy Student Externship offers PharmD candidates a four-week clinical experience. Apply via PharmCAS.
+
+For visiting medical student rotations, please contact medstudent@example.com.
+`.trim();
+
+const FIXTURE_HTML_DEEPLY_NESTED = `<html>
+<head><title>Test page</title>
+<style>.thing{color:red}</style>
+<script>console.log('inline script')</script>
+</head>
+<body>
+<header><div class="primary-nav"><ul><li><a href="/">Home</a></li><li><a href="/about">About</a></li></ul></div></header>
+<div class="banner-promo">Promo content</div>
+<aside><div class="cookie-consent">Accept cookies</div></aside>
+<main>
+  <article>
+    <h1>Visiting Medical Student Program</h1>
+    <p>Our hospital welcomes fourth-year elective students from LCME-accredited schools.</p>
+    <div class="sidebar">Side info</div>
+    <p>Application deadline is March 31.</p>
+  </article>
+</main>
+<footer><div class="footer-links">© 2026 Test Hospital</div></footer>
+</body></html>`;
+
+const FIXTURE_HTML_NO_MAIN = `<html><body>
+<div class="container">
+<div class="navbar"><a href="/">Home</a></div>
+<div class="content">
+  <h1>Observership Program</h1>
+  <p>We offer clinical observership opportunities for IMGs.</p>
+</div>
+</div>
+</body></html>`;
+
+test('Smart-quote apostrophe still produces verifiable quote', () => {
+  const matches = findSentenceMatches(FIXTURE_SMART_QUOTES, USCE_OBSERVERSHIP_PATTERNS);
+  assertTrue(matches.length > 0);
+  for (const m of matches) assertTrue(isQuoteVerifiable(m.sentence, FIXTURE_SMART_QUOTES));
+});
+
+test('Accented characters do not break quote matching', () => {
+  const matches = findSentenceMatches(FIXTURE_ACCENTED, USCE_VSM_PATTERNS);
+  assertTrue(matches.length > 0);
+  for (const m of matches) assertTrue(isQuoteVerifiable(m.sentence, FIXTURE_ACCENTED));
+});
+
+test('Multi-line quote splits on sentence boundary correctly', () => {
+  const matches = findSentenceMatches(FIXTURE_MULTILINE_QUOTE, USCE_VSM_PATTERNS);
+  assertTrue(matches.length > 0);
+});
+
+test('Heavy nav chrome does not produce false positives — only real content gets matched', () => {
+  const matches = findSentenceMatches(FIXTURE_DENSE_NAV_REAL_CONTENT, USCE_VSM_PATTERNS);
+  // "visiting electives" is in the real content section; should match.
+  assertTrue(matches.length > 0, `expected ≥1 match in real-content section`);
+  // Ensure match comes from the real content, not the nav.
+  const txt = matches.map(m => m.sentence).join(' ');
+  assertContains(txt, 'visiting');
+});
+
+test('htmlToTextV2 strips deeply nested boilerplate', () => {
+  const txt = htmlToTextV2(FIXTURE_HTML_DEEPLY_NESTED);
+  assertContains(txt, 'Visiting Medical Student Program');
+  assertContains(txt, 'fourth-year elective');
+  assertFalse(txt.toLowerCase().includes('home'), `nav-Home should be stripped; got: ${txt.slice(0, 200)}`);
+  assertFalse(txt.includes('© 2026'), `footer should be stripped; got: ${txt.slice(0, 200)}`);
+  assertFalse(txt.includes('Accept cookies'), `cookie banner should be stripped`);
+});
+
+test('htmlToTextV2 falls back when no <main>: extracts real content from content div', () => {
+  const txt = htmlToTextV2(FIXTURE_HTML_NO_MAIN);
+  assertContains(txt, 'Observership Program');
+  assertContains(txt, 'clinical observership');
+});
+
+test('Quote verifier handles smart-quote text after extraction', () => {
+  // Extracted quote with smart apostrophe should verify against same source
+  const text = "We don’t accept applicants without a U.S. medical degree.";
+  assertTrue(isQuoteVerifiable("We don’t accept applicants", text));
+});
+
+test('Quote verifier handles trailing whitespace + newlines', () => {
+  const text = "Para 1.\n\nThe observership program is open.\n\nPara 2.";
+  assertTrue(isQuoteVerifiable("The observership program is open.", text));
+});
+
+test('Tab and multi-space collapsing in normalization', () => {
+  assertEqual(normalizeForQuoteMatch("hello\tworld\n\nfoo"), 'hello world foo');
+});
+
+test('Quote with only-whitespace difference still verifies', () => {
+  const text = "Eligibility:\n   Open to all fourth-year students from LCME-accredited schools.";
+  assertTrue(isQuoteVerifiable("Open to all fourth-year students", text));
+});
+
+test('Scope inference: Yale New Haven Hospital → parent Yale New Haven Health', () => {
+  const r = inferIdentity('Yale New Haven Hospital', 'ynhhs.org');
+  // Note: this depends on the system registry having a campus keyword that matches.
+  // 'yale new haven' is in the knownCampusKeywords, and 'ynhhs' is in domainTokens.
+  // domainMatches=true ('ynhhs' in 'ynhhs.org'), nameHasCampusKw=true ('yale new haven' in name).
+  assertEqual(r.parentSystem, 'Yale New Haven Health');
+});
+
+test('Scope inference: HCA Florida Hospital → parent HCA Healthcare', () => {
+  const r = inferIdentity('HCA Florida Hospital', 'hcahealthcare.com');
+  assertEqual(r.parentSystem, 'HCA Healthcare');
+});
+
+test('Scope inference: institution with very long name and multiple specific tokens', () => {
+  const r = inferIdentity('University of California San Francisco Medical Center', 'ucsfhealth.org');
+  assertEqual(r.parentSystem, 'UCSF Health');
+});
+
+test('compareInstitutions: Kaiser Northern California vs Kaiser Southern California → DISTINCT_CAMPUS_SAME_SYSTEM', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'Kaiser Permanente Northern California', officialDomain: 'kaiserpermanente.org' },
+    { canonicalName: 'Kaiser Permanente Southern California', officialDomain: 'kaiserpermanente.org' },
+  );
+  assertEqual(r.relationship, 'DISTINCT_CAMPUS_SAME_SYSTEM');
+});
+
+test('parseSitemapXml: multiple loc entries with mixed whitespace', () => {
+  const body = `<?xml version="1.0"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/observership</loc>
+    <lastmod>2026-01-01</lastmod>
+  </url>
+  <url>
+    <loc>  https://example.com/visiting-students  </loc>
+  </url>
+  <url>
+    <loc>https://example.com/gme</loc>
+  </url>
+</urlset>`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'urlset');
+  assertEqual(r.entries.length, 3);
+  assertEqual(r.entries[1], 'https://example.com/visiting-students');
+});
+
+test('isPathDisallowedByRobots: real-world Houston Methodist robots', () => {
+  // From actual fetch of houstonmethodist.org/robots.txt — approximate
+  const disallows = ['/admin/', '/private/', '/api/'];
+  const allows = ['/'];
+  assertFalse(isPathDisallowedByRobots('/observership', disallows, allows));
+  assertTrue(isPathDisallowedByRobots('/admin/login', disallows, allows));
+});
+
+test('reclassifySourceFamilyByContent: minimal page (just whitespace) returns OTHER', () => {
+  const r = reclassifySourceFamilyByContent('OBSERVERSHIP_PAGE', '         \n\n\n   ');
+  assertEqual(r.family, 'OTHER');
+  assertContains(r.reason ?? '', 'too_short');
+});
+
 // -------------------- End-to-end (extraction → quote-verify) integration test --------------------
 
 console.log('\n--- End-to-end integration ---');

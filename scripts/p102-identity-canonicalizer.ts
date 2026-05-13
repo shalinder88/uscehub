@@ -290,26 +290,36 @@ export function inferIdentity(canonicalName: string, officialDomain: string): Id
 
   // Try system registry
   for (const sys of SYSTEM_REGISTRY) {
-    const domainMatches = sys.domainTokens.some(t => domainLower.includes(t));
+    // Domain match: only consider it a match if the official domain IS the system
+    // domain or a subdomain of it. Substring matches were producing false positives
+    // (e.g., 'hca' is a substring of 'healthcare', so 'stanfordhealthcare.org' was
+    // wrongly matching the HCA Healthcare registry entry).
+    const sysDomainCore = sys.systemDomain.replace(/^www\./, '');
+    const domainMatches = domainLower === sysDomainCore || domainLower.endsWith('.' + sysDomainCore);
     const nameHasCampusKw = sys.knownCampusKeywords.some(kw => nameLower.includes(kw.toLowerCase()));
     const nameHasSystemName = nameLower.includes(sys.systemName.toLowerCase());
+    const matchedKw = sys.knownCampusKeywords.find(kw => nameLower.includes(kw.toLowerCase()));
 
-    if (domainMatches && (nameHasCampusKw || nameHasSystemName)) {
-      // Detect the campus
-      const matchedKw = sys.knownCampusKeywords.find(kw => nameLower.includes(kw.toLowerCase()));
+    // Strong signal: domain matches the system's domain. Treat as system member
+    // even if the canonical name doesn't include a known campus keyword (e.g.,
+    // "Stanford Health Care" on stanfordhealthcare.org, or "University of
+    // California San Francisco Medical Center" on ucsfhealth.org).
+    if (domainMatches) {
       return {
         parentSystem: sys.systemName,
         parentSystemDomain: sys.systemDomain,
-        aliases: nameHasCampusKw && matchedKw ? [matchedKw] : [],
+        aliases: matchedKw ? [matchedKw] : [],
         isStandalone: false,
-        evidence: `domain ${officialDomain} matches ${sys.systemName} (${sys.domainTokens.join('|')}); name token match: ${matchedKw ?? 'system-name-direct'}`,
+        evidence: matchedKw
+          ? `domain ${officialDomain} matches ${sys.systemName}; campus token: ${matchedKw}`
+          : `domain ${officialDomain} matches ${sys.systemName}; canonical name has no known campus token (system-level institution or unnamed campus)`,
         campusName: matchedKw ?? null,
       };
     }
     if (nameHasSystemName && nameHasCampusKw && !domainMatches) {
-      // System-named institution on a different domain (e.g., Hartford Hospital is on hartfordhospital.org,
-      // not on hartfordhealthcare.org) — still a system member but the domain is hospital-specific.
-      const matchedKw = sys.knownCampusKeywords.find(kw => nameLower.includes(kw.toLowerCase()));
+      // System-named institution on a different domain (e.g., Hartford Hospital is on
+      // hartfordhospital.org, not on hartfordhealthcare.org) — still a system member
+      // but the domain is hospital-specific.
       return {
         parentSystem: sys.systemName,
         parentSystemDomain: sys.systemDomain,
