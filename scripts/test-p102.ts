@@ -913,6 +913,53 @@ test('reclassifySourceFamilyByContent: minimal page (just whitespace) returns OT
   assertContains(r.reason ?? '', 'too_short');
 });
 
+// -------------------- PDF cascade tests (P102-0AD) --------------------
+
+console.log('\n--- PDF cascade ---');
+
+import { decidePdfToolChain, determinePdfStatus } from './p102-extraction-lib';
+
+test('decidePdfToolChain: pdftotext available → use pdftotext', () => {
+  const r = decidePdfToolChain({ pdftotext: true, pdftoppm: true, tesseract: true });
+  assertEqual(r.toolChain, 'pdftotext');
+});
+
+test('decidePdfToolChain: no pdftotext, has pdftoppm + tesseract → render+OCR', () => {
+  const r = decidePdfToolChain({ pdftotext: false, pdftoppm: true, tesseract: true });
+  assertEqual(r.toolChain, 'pdftoppm+ocr');
+});
+
+test('decidePdfToolChain: only pdftoppm (no tesseract) → none', () => {
+  const r = decidePdfToolChain({ pdftotext: false, pdftoppm: true, tesseract: false });
+  assertEqual(r.toolChain, 'none');
+  assertContains(r.reason, 'tesseract missing');
+});
+
+test('decidePdfToolChain: nothing available → none', () => {
+  const r = decidePdfToolChain({ pdftotext: false, pdftoppm: false, tesseract: false });
+  assertEqual(r.toolChain, 'none');
+});
+
+test('determinePdfStatus: text-bearing PDF → PDF_TEXT_EXTRACTED', () => {
+  assertEqual(determinePdfStatus('This is a substantial chunk of extracted PDF text from a real document.', 'pdftotext', null), 'PDF_TEXT_EXTRACTED');
+});
+
+test('determinePdfStatus: empty pdftotext result → PDF_OCR_UNAVAILABLE', () => {
+  assertEqual(determinePdfStatus('', 'pdftotext', null), 'PDF_OCR_UNAVAILABLE');
+});
+
+test('determinePdfStatus: pdftotext too short → PDF_OCR_UNAVAILABLE (likely image-only)', () => {
+  assertEqual(determinePdfStatus('   ', 'pdftotext', null), 'PDF_OCR_UNAVAILABLE');
+});
+
+test('determinePdfStatus: toolchain none + no text → PDF_BINARY_NOT_AVAILABLE', () => {
+  assertEqual(determinePdfStatus(null, 'none', null), 'PDF_BINARY_NOT_AVAILABLE');
+});
+
+test('determinePdfStatus: tool error + no text → PDF_FAILED', () => {
+  assertEqual(determinePdfStatus(null, 'pdftotext', 'pdftotext crashed'), 'PDF_FAILED');
+});
+
 // -------------------- Source-family registry tests --------------------
 
 console.log('\n--- Source-family registry classifier ---');

@@ -464,6 +464,64 @@ export function reclassifySourceFamilyByContent(
   }
 }
 
+// -------------------- PDF text extraction cascade (P102-0AD) --------------------
+
+/**
+ * PDF cascade status string used in source records.
+ */
+export type PdfStatus =
+  | 'NOT_PDF'
+  | 'PDF_TEXT_EXTRACTED'
+  | 'PDF_TEXT_EMPTY_RENDER_PENDING'
+  | 'PDF_OCR_UNAVAILABLE'
+  | 'PDF_FAILED'
+  | 'PDF_BINARY_NOT_AVAILABLE';
+
+/**
+ * Result of a PDF text extraction attempt.
+ */
+export interface PdfExtractResult {
+  status: PdfStatus;
+  text: string | null;
+  byteSize: number;
+  pageCount: number | null;
+  errorMessage: string | null;
+  toolChainUsed: 'pdftotext' | 'pdftoppm+ocr' | 'none';
+}
+
+/**
+ * Decide which tool chain to use to extract text from a PDF, given which
+ * binaries are available. Pure decision function; doesn't shell out.
+ *
+ * Returns the toolchain plus a reason.
+ */
+export function decidePdfToolChain(toolsAvailable: { pdftotext: boolean; pdftoppm: boolean; tesseract: boolean }): { toolChain: 'pdftotext' | 'pdftoppm+ocr' | 'none'; reason: string } {
+  if (toolsAvailable.pdftotext) return { toolChain: 'pdftotext', reason: 'pdftotext binary available; direct text extraction' };
+  if (toolsAvailable.pdftoppm && toolsAvailable.tesseract) return { toolChain: 'pdftoppm+ocr', reason: 'pdftoppm + tesseract available; render + OCR cascade' };
+  if (toolsAvailable.pdftoppm && !toolsAvailable.tesseract) return { toolChain: 'none', reason: 'pdftoppm available but tesseract missing; cannot extract text from image-only PDFs' };
+  return { toolChain: 'none', reason: 'no PDF text-extraction tools available' };
+}
+
+/**
+ * Decide the right PdfStatus given an extraction result.
+ */
+export function determinePdfStatus(
+  extracted: string | null,
+  toolChain: 'pdftotext' | 'pdftoppm+ocr' | 'none',
+  toolError: string | null,
+): PdfStatus {
+  if (toolError && !extracted) return 'PDF_FAILED';
+  if (toolChain === 'none') return 'PDF_BINARY_NOT_AVAILABLE';
+  if (extracted && extracted.trim().length > 50) return 'PDF_TEXT_EXTRACTED';
+  if (toolChain === 'pdftotext' && (!extracted || extracted.trim().length < 50)) {
+    // pdftotext found nothing meaningful → likely image-only PDF.
+    // Need OCR. If we lack tesseract, mark as unavailable.
+    return 'PDF_OCR_UNAVAILABLE';
+  }
+  if (extracted && extracted.trim().length === 0) return 'PDF_TEXT_EMPTY_RENDER_PENDING';
+  return 'PDF_FAILED';
+}
+
 // -------------------- Source-family registry classifier (P102-0X) --------------------
 
 export interface SourceFamilyRegistryEntry {
