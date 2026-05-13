@@ -284,6 +284,62 @@ export function classifyVisibility(input: VisibilityInput): { visibility: Visibi
   return { visibility: 'CAUTION_SAFE_INTERNAL_REVIEW', notPublicReason: 'P102-0C deterministic detection; needs model A1/A2 reader (P102-0D) for PUBLIC_SAFE_USCE promotion' };
 }
 
+// -------------------- robots.txt URL filter --------------------
+
+/**
+ * Check whether a path is disallowed by robots.txt directives for the
+ * default user-agent.
+ *
+ * Simple implementation:
+ *   - For each Disallow line, if the path starts with the disallowed prefix
+ *     AND no overriding Allow has a longer matching prefix, the path is disallowed.
+ *   - Disallow of "/" is treated as "block everything below" — but a paired
+ *     Allow of "/" overrides. (Real robots.txt parsers handle "user-agent: *"
+ *     scoping; this simple version assumes the disallows/allows lists were
+ *     already filtered for the relevant UA, which the runner's A0 does.)
+ */
+export function isPathDisallowedByRobots(
+  pathToCheck: string,
+  disallows: string[],
+  allows: string[],
+): boolean {
+  // Normalize: ensure leading /, no query/fragment
+  const p = pathToCheck.replace(/[?#].*$/, '');
+  // Empty Disallow ("Disallow:" with no value) means "allow all" — treat as no rule.
+  const validDisallows = disallows.filter(d => d && d !== '');
+  if (validDisallows.length === 0) return false;
+
+  // Longest matching rule wins (per the de-facto spec).
+  let longestDisallow = '';
+  for (const d of validDisallows) {
+    if (matchesRobotsPrefix(p, d) && d.length > longestDisallow.length) longestDisallow = d;
+  }
+  if (longestDisallow === '') return false;
+
+  let longestAllow = '';
+  for (const a of allows) {
+    if (!a || a === '') continue;
+    if (matchesRobotsPrefix(p, a) && a.length > longestAllow.length) longestAllow = a;
+  }
+  // If an Allow exists with longer prefix than the Disallow, the path is allowed.
+  if (longestAllow.length > longestDisallow.length) return false;
+  return true;
+}
+
+/**
+ * Match a path against a robots.txt prefix rule. Robots.txt supports:
+ *   - prefix matching: "/admin" matches "/admin", "/admin/foo"
+ *   - wildcards: "*" matches anything (not implemented here; conservative
+ *     enough for our purposes)
+ *   - end-of-string: "$" (also not implemented here)
+ *
+ * We do simple prefix matching only.
+ */
+function matchesRobotsPrefix(testPath: string, rulePrefix: string): boolean {
+  if (rulePrefix === '/') return true;
+  return testPath.startsWith(rulePrefix);
+}
+
 // -------------------- Sitemap XML parsing --------------------
 
 export interface SitemapParseResult {

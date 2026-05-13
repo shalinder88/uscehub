@@ -29,7 +29,7 @@ import * as path from 'node:path';
 import * as crypto from 'node:crypto';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { URL } from 'node:url';
-import { parseSitemapXml } from './p102-extraction-lib';
+import { parseSitemapXml, isPathDisallowedByRobots } from './p102-extraction-lib';
 
 const SCHEMA_VERSION = 'p102-0r-1';
 const USER_AGENT = 'USCEHub-Research/0.1 (+https://uscehub.com/contact)';
@@ -521,8 +521,31 @@ async function runA0Probe(officialDomain: string, paths: RunPaths, runId: string
   }
 
   // Fixed-path probes (HEAD first, GET on 2xx/3xx)
+  // Skip paths disallowed by robots.txt unless an Allow override makes them OK.
+  // For "Disallow: /" + "Allow: /" pattern (Hartford-style), we treat as allowed
+  // since the operator's explicit Allow / signals permission.
+  const hartfordStyle = result.robotsTxt.disallows.includes('/') && result.robotsTxt.allows.includes('/');
   for (const p of FIXED_PATHS) {
     const url = `${root}${p}`;
+    if (!hartfordStyle && isPathDisallowedByRobots(p, result.robotsTxt.disallows, result.robotsTxt.allows)) {
+      // Record as skipped-by-robots, do not fetch.
+      result.fixedPathProbes.push({
+        sourceUrl: url,
+        methodTried: 'SKIPPED_BY_ROBOTS',
+        statusCode: 0,
+        finalUrl: url,
+        contentType: '',
+        title: null,
+        sourceFamily: classifySourceFamily(url, null, null),
+        acceptedForExtraction: false,
+        rejectedReason: 'disallowed_by_robots_txt',
+        cleanedTextPath: null,
+        rawHtmlPath: null,
+        sourceHash: null,
+        error: null,
+      });
+      continue;
+    }
     const r = await headThenGet(url);
     const sourceFamily = classifySourceFamily(url, null, r.body);
     const accepted = r.statusCode >= 200 && r.statusCode < 300 && !!r.body && r.contentType.includes('html');
