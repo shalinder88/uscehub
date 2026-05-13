@@ -484,7 +484,7 @@ test('Unknown family passes through unchanged', () => {
 // -------------------- Identity canonicalizer tests --------------------
 
 import { inferIdentity, compareInstitutions } from './p102-identity-canonicalizer';
-import { parseSitemapXml, isPathDisallowedByRobots } from './p102-extraction-lib';
+import { parseSitemapXml, isPathDisallowedByRobots, classifySourceFamilyFromRegistry, type SourceFamilyRegistry } from './p102-extraction-lib';
 
 console.log('\n--- Identity canonicalizer ---');
 
@@ -911,6 +911,60 @@ test('reclassifySourceFamilyByContent: minimal page (just whitespace) returns OT
   const r = reclassifySourceFamilyByContent('OBSERVERSHIP_PAGE', '         \n\n\n   ');
   assertEqual(r.family, 'OTHER');
   assertContains(r.reason ?? '', 'too_short');
+});
+
+// -------------------- Source-family registry tests --------------------
+
+console.log('\n--- Source-family registry classifier ---');
+
+const TEST_REGISTRY: SourceFamilyRegistry = {
+  schemaVersion: 'p102-0r-1',
+  registry: [
+    { family: 'OBSERVERSHIP_PAGE', priority: 1, urlKeywords: ['observer', 'observership', 'img'], titleKeywords: ['observership'] },
+    { family: 'VISITING_STUDENT_PAGE', priority: 2, urlKeywords: ['visiting-student', 'vslo', 'elective'], titleKeywords: ['visiting student', 'VSLO'] },
+    { family: 'GME_PAGE', priority: 4, urlKeywords: ['/gme', 'graduate-medical'], titleKeywords: ['graduate medical education'] },
+    { family: 'CAREERS_PAGE', priority: 7, urlKeywords: ['careers', 'jobs'], titleKeywords: ['careers'] },
+    { family: 'OTHER', priority: 99, urlKeywords: [], titleKeywords: [] },
+  ],
+};
+
+test('registry classifier: observership URL → OBSERVERSHIP_PAGE', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/observership', null, TEST_REGISTRY);
+  assertEqual(r.family, 'OBSERVERSHIP_PAGE');
+  assertEqual(r.matchedOn, 'url');
+});
+
+test('registry classifier: GME URL → GME_PAGE', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/gme', null, TEST_REGISTRY);
+  assertEqual(r.family, 'GME_PAGE');
+});
+
+test('registry classifier: careers URL → CAREERS_PAGE', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/careers', null, TEST_REGISTRY);
+  assertEqual(r.family, 'CAREERS_PAGE');
+});
+
+test('registry classifier: unmatched URL → OTHER', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/about-us', null, TEST_REGISTRY);
+  assertEqual(r.family, 'OTHER');
+});
+
+test('registry classifier: title match works when URL is generic', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/page', 'Visiting Student Program', TEST_REGISTRY);
+  assertEqual(r.family, 'VISITING_STUDENT_PAGE');
+  assertEqual(r.matchedOn, 'title');
+});
+
+test('registry classifier: lower priority wins (observership has priority 1)', () => {
+  // URL contains both 'observership' (priority 1) and 'elective' (priority 2).
+  // Observership wins.
+  const r = classifySourceFamilyFromRegistry('https://example.com/img/observership-elective', null, TEST_REGISTRY);
+  assertEqual(r.family, 'OBSERVERSHIP_PAGE');
+});
+
+test('registry classifier: empty keyword arrays do not match anything', () => {
+  const r = classifySourceFamilyFromRegistry('https://example.com/random', null, TEST_REGISTRY);
+  assertEqual(r.family, 'OTHER');
 });
 
 // -------------------- End-to-end (extraction → quote-verify) integration test --------------------

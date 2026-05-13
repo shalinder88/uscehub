@@ -2,6 +2,32 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer`. Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0X — 2026-05-13 — Source-family registry as JSON config
+
+- Added `docs/platform-v2/local/usce-discovery-command-center/p102/specs/p102_source_family_registry.json`: external JSON config defining URL/title keyword → sourceFamily mappings with priorities.
+- Added `classifySourceFamilyFromRegistry()` to extraction-lib. Pure function; loads registry, returns lowest-priority match.
+- Tests: 7 assertions for the registry classifier. 123 total assertions PASSED.
+
+## P102-0W — 2026-05-13 — Test fixture expansion + canonicalizer bug fixes
+
+- Test fixtures expanded by 17 assertions covering smart quotes, accented characters, multi-line quotes, dense nav chrome, deeply-nested boilerplate, no-`<main>` fallback, multi-space normalization, long-name identity inference, real-world robots.
+- 2 canonicalizer bug fixes surfaced and patched:
+  - `domainMatches` used substring matching → 'hca' inside 'healthcare' wrongly matched HCA Healthcare for unrelated domains. Fix: exact host or subdomain match.
+  - System membership required name to include a known campus keyword. Failed for "Stanford Health Care" on stanfordhealthcare.org. Fix: when domain strictly matches a system's domain, treat as system member regardless of name match.
+
+## P102-0V — 2026-05-13 — Source-claim provenance tracer
+
+- Added `scripts/p102-trace-claim.ts`: given a claim ID, walks backwards through the run folder + T7 artifacts and prints the full provenance chain (claim, source, cleaned text + sha256 verification, raw HTML, JSON-LD, A3 gate context). Has `--list` mode to enumerate all claims by run.
+
+## P102-0U — 2026-05-13 — P102 section in AGENTS.md
+
+- Added a P102 section to `AGENTS.md` (the canonical agent-instruction file) pointing future sessions to the runbook, changelog, dashboard, doctrine. Lists 8 binding P102 rules, 5 validators to run before any P102 commit, pending sprints, and the trust-engine relationship.
+
+## P102-0T — 2026-05-13 — Universe inventory tool
+
+- Added `scripts/p102-universe-inventory.ts`: reads P101 packets + P102 runs, emits `P102_UNIVERSE_INVENTORY.md` + `specs/p102_universe_inventory.json`.
+- Current state: 56 institutions tracked (55 P101 packets + 4 P102 runs, with overlap), ~0.93% of estimated 6000-institution USCE-relevant universe. 0 with PUBLIC_SAFE_USCE (correct under deterministic baseline).
+
 ## P102-0S — 2026-05-13 — Anti-drift validator + CHANGELOG
 
 - Added `scripts/p102-anti-drift-validator.ts`: scans P102 docs for stale references — missing scripts, missing run folders, non-existent git commits, banned placeholder strings, schemaVersion drift, dead scripts. Exit 0 if clean, non-zero if real drift found.
@@ -173,5 +199,7 @@ All P102 scripts live in `scripts/`:
 - `scripts/p102-generate-dashboard.ts` — cross-run dashboard (P102-0M)
 - `scripts/p102-gold-set-verify.ts` — gold-set verifier (P102-0Q)
 - `scripts/p102-anti-drift-validator.ts` — doc/code consistency checker (P102-0S)
+- `scripts/p102-universe-inventory.ts` — national-coverage tracker (P102-0T)
+- `scripts/p102-trace-claim.ts` — claim provenance tracer (P102-0V)
 - `scripts/validate-p102-discovery-runner.ts` — primary validator (P102-0R, extended P102-0C)
 - `scripts/test-p102.ts` — unit test suite (P102-0E, expanded continuously)

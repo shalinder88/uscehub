@@ -464,6 +464,51 @@ export function reclassifySourceFamilyByContent(
   }
 }
 
+// -------------------- Source-family registry classifier (P102-0X) --------------------
+
+export interface SourceFamilyRegistryEntry {
+  family: string;
+  priority: number;
+  urlKeywords: string[];
+  titleKeywords: string[];
+}
+
+export interface SourceFamilyRegistry {
+  schemaVersion: string;
+  registry: SourceFamilyRegistryEntry[];
+}
+
+/**
+ * Classify a source URL + title using a registry of family definitions.
+ * Returns the family with the lowest priority value among matching entries.
+ *
+ * The registry is intended to live as JSON at
+ * docs/.../p102/specs/p102_source_family_registry.json, loaded by the runner.
+ *
+ * This function is pure; pass the parsed registry in.
+ */
+export function classifySourceFamilyFromRegistry(
+  url: string,
+  title: string | null,
+  registry: SourceFamilyRegistry,
+): { family: string; matchedEntry: SourceFamilyRegistryEntry | null; matchedOn: 'url' | 'title' | 'none' } {
+  const u = url.toLowerCase();
+  const t = (title ?? '').toLowerCase();
+
+  let best: { family: string; matchedEntry: SourceFamilyRegistryEntry; matchedOn: 'url' | 'title' } | null = null;
+  for (const entry of registry.registry) {
+    if (entry.family === 'OTHER') continue;
+    const urlMatch = entry.urlKeywords.some(kw => kw && u.includes(kw.toLowerCase()));
+    const titleMatch = entry.titleKeywords.some(kw => kw && t.includes(kw.toLowerCase()));
+    if (urlMatch || titleMatch) {
+      if (best === null || entry.priority < best.matchedEntry.priority) {
+        best = { family: entry.family, matchedEntry: entry, matchedOn: urlMatch ? 'url' : 'title' };
+      }
+    }
+  }
+  return best ?? { family: 'OTHER', matchedEntry: null, matchedOn: 'none' };
+}
+
 // -------------------- Negative-evidence strength --------------------
 
 export function negativeStrength(sourceScope: string): 'STRONG' | 'MEDIUM' | 'WEAK' {
