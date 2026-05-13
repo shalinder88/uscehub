@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "description": "Concept-pack synonym lexicon. Used by the A2.5 semantic-miss detector (and future model A1/A2 reader) to detect lane-relevant content under varied terminology. Patterns are case-insensitive regex strings (without surrounding slashes). Each pack defines a lane + synonyms it should be detected as.",
+  "generatedAt": "2026-05-13",
+  "notes": [
+    "Adding a synonym: append to the appropriate pack's `patterns` array. Patterns are passed to RegExp() with the 'i' flag.",
+    "Adding a lane: create a new pack entry with a unique 'lane' value.",
+    "Patterns are matched against cleaned text. They should use word boundaries (\\b) and avoid catastrophic backtracking.",
+    "This file is the SOURCE OF TRUTH; the runtime regex constants in p102-extraction-lib.ts are derived (and currently hand-mirrored)."
+  ],
+  "packs": [
+    {
+      "lane": "IMG_OBSERVERSHIP",
+      "description": "Clinical observership programs, especially IMG-targeted",
+      "patterns": [
+        "\\bobservership\\b",
+        "\\bobservership\\s+program\\b",
+        "\\bclinical\\s+observership\\b",
+        "\\bclinical\\s+observer\\s+program\\b",
+        "\\bphysician\\s+observer\\b",
+        "\\binternational\\s+observer",
+        "\\bvisiting\\s+observer",
+        "\\bclinical\\s+observer",
+        "\\bobserver\\s+(role|opportunity|application)",
+        "\\bIMG\\s+observership"
+      ]
+    },
+    {
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "description": "Visiting student / elective / sub-internship programs",
+      "patterns": [
+        "\\bvisiting\\s+medical\\s+student",
+        "\\bvisiting\\s+student",
+        "\\baway\\s+rotation",
+        "\\bclinical\\s+elective",
+        "\\bfourth[-\\s]year\\s+elective",
+        "\\bsenior\\s+elective",
+        "\\bsub[-\\s]?internship",
+        "\\bsub[-\\s]?I\\b",
+        "\\bacting\\s+internship",
+        "\\bacting\\s+intern\\b",
+        "\\bVSLO\\b",
+        "\\bVSAS\\b",
+        "\\binternational\\s+(medical\\s+)?(student|exchange)\\s+program",
+        "\\bISP\\b",
+        "\\bvisiting\\s+clerkship",
+        "\\baudition\\s+rotation",
+        "\\baway\\s+elective"
+      ]
+    },
+    {
+      "lane": "RESEARCH_OPPORTUNITY",
+      "description": "Medical student research programs",
+      "patterns": [
+        "\\bmedical\\s+student\\s+research",
+        "\\bstudent\\s+research\\s+(program|opportunity|fellowship)"
+      ]
+    },
+    {
+      "lane": "SHADOW_VOLUNTEER",
+      "description": "Shadowing / volunteer programs (low-confidence USCE; needs human review)",
+      "patterns": [
+        "\\bshadowing\\s+(program|opportunity)\\b",
+        "\\bstudent\\s+volunteer",
+        "\\bclinical\\s+shadow"
+      ]
+    },
+    {
+      "lane": "NEGATIVE_STRONG",
+      "description": "Explicit refusal of USCE — STRONG evidence, eligible for PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY when scope is INSTITUTION_SPECIFIC or CAMPUS_SPECIFIC",
+      "patterns": [
+        "\\bdo\\s+not\\s+(offer|accept|sponsor|host)\\s+observership",
+        "\\bdo\\s+not\\s+offer\\s+clinical\\s+observership",
+        "\\bnot\\s+accepting\\s+observers",
+        "\\bno\\s+observership\\s+(program|opportunity)",
+        "\\bno\\s+shadowing\\s+(program|opportunity)",
+        "\\bwe\\s+do\\s+not\\s+offer\\s+(visiting|clinical)\\s+elective",
+        "\\bnot\\s+available\\s+to\\s+international\\s+(medical\\s+)?(students|graduates)",
+        "\\bwe\\s+do\\s+not\\s+(host|accept|sponsor)\\s+(visiting|international)\\s+(students|graduates)",
+        "\\bdoes\\s+not\\s+(offer|host)\\s+(observerships?|visiting\\s+student)",
+        "\\bobservership\\s+(program\\s+)?(is|are)\\s+(no\\s+longer|not\\s+currently)\\s+(offered|available|accepting)",
+        "\\bunable\\s+to\\s+(host|accept|accommodate)\\s+(observers|visiting)",
+        "\\bwe\\s+have\\s+(closed|suspended|paused)\\s+our\\s+observership"
+      ]
+    },
+    {
+      "lane": "NEGATIVE_MEDIUM",
+      "description": "Eligibility restrictions (not absolute refusal) — MEDIUM evidence, becomes context for eligibility fields",
+      "patterns": [
+        "\\bonly\\s+(enrolled\\s+)?(at\\s+)?affiliated\\s+(institutions|schools)",
+        "\\bonly\\s+(LCME|COCA)\\b",
+        "\\bVSLO\\s+only",
+        "\\bU\\.?S\\.?\\s+(MD|DO)\\s+(students\\s+)?only",
+        "\\bstudents\\s+(enrolled\\s+)?at\\s+LCME\\b",
+        "\\bcurrently\\s+enrolled\\s+(US|U\\.?S\\.?|American)",
+        "\\bonly\\s+available\\s+to\\s+(students\\s+)?(from|at)\\s+affiliated",
+        "\\brestricted\\s+to\\s+(students\\s+)?(enrolled|affiliated)",
+        "\\b(no|not)\\s+IMG\\s+(observership|elective|rotation)"
+      ]
+    },
+    {
+      "lane": "GME_FUTURE",
+      "description": "Graduate medical education / residency / fellowship — future-lane only",
+      "patterns": [
+        "\\b(residency\\s+program|fellowship\\s+program)\\b",
+        "\\bgraduate\\s+medical\\s+education\\b",
+        "\\bACGME[-\\s]accredited\\b",
+        "\\bACGME\\b",
+        "\\bERAS\\b",
+        "\\bNRMP\\b",
+        "\\bresidency\\s+training",
+        "\\bfellowship\\s+training",
+        "\\bPGY[-\\s]?[12345]\\b",
+        "\\b(internal\\s+medicine|emergency\\s+medicine|pediatrics|surgery|family\\s+medicine|psychiatry|radiology|anesthesiology)\\s+residency"
+      ]
+    },
+    {
+      "lane": "JOBS_VISA_FUTURE",
+      "description": "Physician careers, visa sponsorship, faculty / hospitalist / attending jobs — future-lane only",
+      "patterns": [
+        "\\bphysician\\s+careers?\\b",
+        "\\bprovider\\s+careers?\\b",
+        "\\bfaculty\\s+position",
+        "\\bfaculty\\s+(opening|recruitment)",
+        "\\bhospitalist\\s+(position|job)",
+        "\\battending\\s+(position|opening)",
+        "\\bJ-1\\s+(visa|waiver|sponsorship)",
+        "\\bH-1B\\s+(visa|sponsorship)",
+        "\\bvisa\\s+sponsorship\\b",
+        "\\bphysician\\s+recruitment",
+        "\\bnonclinical\\s+(physician|career)",
+        "\\blocums?\\s+tenens?"
+      ]
+    },
+    {
+      "lane": "SERVICES_FUTURE",
+      "description": "Malpractice / disability / mortgage / locums — future-lane only",
+      "patterns": [
+        "\\bmalpractice\\s+insurance",
+        "\\bdisability\\s+(insurance|coverage)\\b",
+        "\\bphysician\\s+mortgage",
+        "\\blocums?\\s+tenens?"
+      ]
+    }
+  ]
+}

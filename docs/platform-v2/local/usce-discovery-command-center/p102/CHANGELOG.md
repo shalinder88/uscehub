@@ -2,6 +2,22 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer`. Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0AA — 2026-05-13 — Identity registry → JSON config + parity validator
+
+- Added `docs/.../p102/specs/p102_identity_registry.json`: 33 multi-campus systems + 20 known standalones + 1 special case (Hartford Hospital → Hartford HealthCare). Human-editable source of truth; the TS module is hand-mirrored.
+- Added `scripts/p102-validate-identity-registry.ts`: parses the TS source (regex extraction, no eval) and confirms parity with the JSON registry. Validates system names, system domains, domain tokens, campus keywords, and standalone list.
+- Initial parity check: PASSED (33 systems / 20 standalones match exactly).
+
+## P102-0Z — 2026-05-13 — Run-folder integrity validator
+
+- Added `scripts/p102-validate-run-integrity.ts`: deeper I/O checks beyond the main validator. Verifies (a) every accepted source's cleanedTextPath + rawHtmlPath exists on T7, (b) stored sha256 hashes match actual file hashes, (c) every claim's sourceUrl back-references its source_map entry, (d) every claim's cleanedTextPath exists and hash matches, (e) artifact-manifest paths exist.
+- Initial run across 4 existing P102 runs: **PASSED (0 FAIL, 0 WARN)**. Full hash chain intact end-to-end.
+
+## P102-0Y — 2026-05-13 — Concept-pack synonym lexicon JSON + sync validator
+
+- Added `docs/.../p102/specs/p102_concept_packs.json`: 9 concept packs (observership, visiting student, research, shadow/volunteer, negative-strong, negative-medium, GME-future, jobs/visa-future, services-future) with synonym patterns.
+- Added `scripts/p102-validate-concept-packs.ts`: compiles every pattern, checks regex validity, and confirms JSON ↔ lib parity. Initial run: PASSED (0 warnings).
+
 ## P102-0X — 2026-05-13 — Source-family registry as JSON config
 
 - Added `docs/platform-v2/local/usce-discovery-command-center/p102/specs/p102_source_family_registry.json`: external JSON config defining URL/title keyword → sourceFamily mappings with priorities.
@@ -201,5 +217,8 @@ All P102 scripts live in `scripts/`:
 - `scripts/p102-anti-drift-validator.ts` — doc/code consistency checker (P102-0S)
 - `scripts/p102-universe-inventory.ts` — national-coverage tracker (P102-0T)
 - `scripts/p102-trace-claim.ts` — claim provenance tracer (P102-0V)
+- `scripts/p102-validate-concept-packs.ts` — concept-pack JSON ↔ lib parity (P102-0Y)
+- `scripts/p102-validate-run-integrity.ts` — T7 artifact + hash chain integrity (P102-0Z)
+- `scripts/p102-validate-identity-registry.ts` — identity-registry JSON ↔ TS parity (P102-0AA)
 - `scripts/validate-p102-discovery-runner.ts` — primary validator (P102-0R, extended P102-0C)
 - `scripts/test-p102.ts` — unit test suite (P102-0E, expanded continuously)
