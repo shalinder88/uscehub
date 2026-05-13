@@ -2,6 +2,16 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer`. Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0AC — 2026-05-13 — Sitemap candidate keywords as JSON
+
+- Added `specs/p102_sitemap_candidate_keywords.json`: ~80 URL substring keywords used by sitemap-index recursion to filter candidate URLs. Pure data; runner will ingest in future.
+
+## P102-0AB — 2026-05-13 — Cross-validator dispatcher
+
+- Added `scripts/p102-validate-all.ts`: runs all 10 P102 validators (tsc, test-p102, validate-p102, validate-no-secrets, anti-drift, concept-packs, run-integrity, identity-registry, gold-set-verify, validate-p101) in sequence and aggregates into a single PASS/FAIL.
+- Initial run: 9/9 PASS in 9.6s (skipping tsc with --fast).
+- Recommended single command before any P102 commit.
+
 ## P102-0AA — 2026-05-13 — Identity registry → JSON config + parity validator
 
 - Added `docs/.../p102/specs/p102_identity_registry.json`: 33 multi-campus systems + 20 known standalones + 1 special case (Hartford Hospital → Hartford HealthCare). Human-editable source of truth; the TS module is hand-mirrored.
@@ -220,5 +230,6 @@ All P102 scripts live in `scripts/`:
 - `scripts/p102-validate-concept-packs.ts` — concept-pack JSON ↔ lib parity (P102-0Y)
 - `scripts/p102-validate-run-integrity.ts` — T7 artifact + hash chain integrity (P102-0Z)
 - `scripts/p102-validate-identity-registry.ts` — identity-registry JSON ↔ TS parity (P102-0AA)
+- `scripts/p102-validate-all.ts` — cross-validator dispatcher (P102-0AB)
 - `scripts/validate-p102-discovery-runner.ts` — primary validator (P102-0R, extended P102-0C)
 - `scripts/test-p102.ts` — unit test suite (P102-0E, expanded continuously)
