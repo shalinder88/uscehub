@@ -481,6 +481,82 @@ test('Unknown family passes through unchanged', () => {
   assertEqual(r.family, 'SOMETHING_ELSE');
 });
 
+// -------------------- Identity canonicalizer tests --------------------
+
+import { inferIdentity, compareInstitutions } from './p102-identity-canonicalizer';
+
+console.log('\n--- Identity canonicalizer ---');
+
+test('AdventHealth Orlando → parent AdventHealth, campus Orlando', () => {
+  const r = inferIdentity('AdventHealth Orlando', 'adventhealth.com');
+  assertEqual(r.parentSystem, 'AdventHealth');
+  assertEqual(r.campusName, 'orlando');
+  assertEqual(r.isStandalone, false);
+});
+
+test('Hartford Hospital → parent Hartford HealthCare via special case', () => {
+  const r = inferIdentity('Hartford Hospital', 'hartfordhospital.org');
+  assertEqual(r.parentSystem, 'Hartford HealthCare');
+  assertEqual(r.isStandalone, false);
+});
+
+test('Houston Methodist Hospital → standalone', () => {
+  const r = inferIdentity('Houston Methodist Hospital', 'houstonmethodist.org');
+  assertEqual(r.parentSystem, null);
+  assertEqual(r.isStandalone, true);
+});
+
+test('The Brooklyn Hospital Center → standalone', () => {
+  const r = inferIdentity('The Brooklyn Hospital Center', 'tbh.org');
+  assertEqual(r.parentSystem, null);
+  assertEqual(r.isStandalone, true);
+});
+
+test('Cleveland Clinic Florida → parent Cleveland Clinic, campus florida', () => {
+  const r = inferIdentity('Cleveland Clinic Florida', 'my.clevelandclinic.org');
+  assertEqual(r.parentSystem, 'Cleveland Clinic');
+  assertEqual(r.campusName, 'florida');
+});
+
+test('Unknown institution → standalone with rationale', () => {
+  const r = inferIdentity('Some Unknown Hospital', 'someunknownhospital.org');
+  assertEqual(r.parentSystem, null);
+  assertEqual(r.isStandalone, true);
+  assertContains(r.evidence, 'no SYSTEM_REGISTRY match');
+});
+
+test('compareInstitutions: AdventHealth Orlando vs AdventHealth Tampa → DISTINCT_CAMPUS_SAME_SYSTEM', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'AdventHealth Orlando', officialDomain: 'adventhealth.com' },
+    { canonicalName: 'AdventHealth Tampa', officialDomain: 'adventhealth.com' },
+  );
+  assertEqual(r.relationship, 'DISTINCT_CAMPUS_SAME_SYSTEM');
+});
+
+test('compareInstitutions: Houston Methodist vs Brooklyn Hospital Center → UNRELATED', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'Houston Methodist Hospital', officialDomain: 'houstonmethodist.org' },
+    { canonicalName: 'The Brooklyn Hospital Center', officialDomain: 'tbh.org' },
+  );
+  assertEqual(r.relationship, 'UNRELATED');
+});
+
+test('compareInstitutions: exact match → SAME_INSTITUTION', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'Hartford Hospital', officialDomain: 'hartfordhospital.org' },
+    { canonicalName: 'Hartford Hospital', officialDomain: 'hartfordhospital.org' },
+  );
+  assertEqual(r.relationship, 'SAME_INSTITUTION');
+});
+
+test('compareInstitutions: standalone vs system-affiliated → UNRELATED', () => {
+  const r = compareInstitutions(
+    { canonicalName: 'Houston Methodist Hospital', officialDomain: 'houstonmethodist.org' },
+    { canonicalName: 'Hartford Hospital', officialDomain: 'hartfordhospital.org' },
+  );
+  assertEqual(r.relationship, 'UNRELATED');
+});
+
 // -------------------- End-to-end (extraction → quote-verify) integration test --------------------
 
 console.log('\n--- End-to-end integration ---');
