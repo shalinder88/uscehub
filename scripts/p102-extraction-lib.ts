@@ -252,6 +252,104 @@ export function classifyVisibility(input: VisibilityInput): { visibility: Visibi
   return { visibility: 'CAUTION_SAFE_INTERNAL_REVIEW', notPublicReason: 'P102-0C deterministic detection; needs model A1/A2 reader (P102-0D) for PUBLIC_SAFE_USCE promotion' };
 }
 
+// -------------------- HTML → text v2 (strips boilerplate) --------------------
+
+/**
+ * Aggressive HTML → text conversion that drops common navigation chrome.
+ *
+ * Differences from v1 (in p102-discovery-runner.ts):
+ *  - Drops <nav>, <header>, <footer>, <aside>, role="navigation" blocks.
+ *  - Drops elements with class names matching common nav/menu/footer/sidebar.
+ *  - When a <main>, <article>, or role="main" exists, restricts to that subtree.
+ *  - Preserves paragraph breaks better.
+ */
+export function htmlToTextV2(html: string): string {
+  let s = html;
+  // Remove script/style/noscript/comments first.
+  s = s.replace(/<script[\s\S]*?<\/script>/gi, ' ');
+  s = s.replace(/<style[\s\S]*?<\/style>/gi, ' ');
+  s = s.replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ');
+  s = s.replace(/<!--[\s\S]*?-->/g, ' ');
+
+  // Try to extract <main>, <article>, or role="main" subtree.
+  const mainMatch = s.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)
+    ?? s.match(/<article\b[^>]*>([\s\S]*?)<\/article>/i)
+    ?? s.match(/<[^>]+role=["']main["'][^>]*>([\s\S]*?)<\/[^>]+>/i);
+  if (mainMatch) s = mainMatch[1];
+
+  // Remove nav / header / footer / aside elements entirely (block-level).
+  s = s.replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ');
+  s = s.replace(/<header\b[\s\S]*?<\/header>/gi, ' ');
+  s = s.replace(/<footer\b[\s\S]*?<\/footer>/gi, ' ');
+  s = s.replace(/<aside\b[\s\S]*?<\/aside>/gi, ' ');
+  // Anything with role="navigation" / "banner" / "complementary".
+  s = s.replace(/<[^>]+role=["'](navigation|banner|complementary)["'][\s\S]*?<\/[^>]+>/gi, ' ');
+
+  // Strip elements whose class or id strongly indicates boilerplate.
+  // Match opening tag → consume innerHTML → closing tag. Conservative pattern;
+  // skips if nested.
+  const boilerplateClassRe = /<([a-z]+)[^>]*(class|id)=["'][^"']*(menu|navbar|nav-|sidebar|footer|header|breadcrumb|cookie|consent|skip-nav|skip-to-content|social-share|site-search|utility-nav|sub-nav|main-nav|primary-nav)[^"']*["'][^>]*>[\s\S]*?<\/\1>/gi;
+  // Iterate a few times to clean nested boilerplate.
+  for (let i = 0; i < 3; i++) {
+    const before = s.length;
+    s = s.replace(boilerplateClassRe, ' ');
+    if (s.length === before) break;
+  }
+
+  // Now apply v1-style conversion to text.
+  s = s.replace(/<br\s*\/?>/gi, '\n');
+  s = s.replace(/<\/(p|div|li|h[1-6]|tr|article|section)>/gi, '\n');
+  s = s.replace(/<[^>]+>/g, ' ');
+  // Decode entities (subset)
+  s = s.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+  s = s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)));
+  s = s.replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)));
+  s = s.replace(/[ \t]+/g, ' ');
+  s = s.replace(/\n\s*\n+/g, '\n\n');
+  s = s.replace(/^\s+|\s+$/gm, '');
+  return s.trim();
+}
+
+// -------------------- Source-family re-classification from content --------------------
+
+/**
+ * If a URL-based source family looks wrong given the actual content
+ * (e.g., URL is /observership but the body is about pharmacy externships),
+ * downgrade to OTHER. Conservative: never upgrades.
+ */
+export function reclassifySourceFamilyByContent(
+  urlBasedFamily: string,
+  cleanedText: string,
+): { family: string; reason: string | null } {
+  if (!cleanedText || cleanedText.length < 100) return { family: 'OTHER', reason: 'content_too_short' };
+  const lower = cleanedText.toLowerCase();
+  const hasObservership = USCE_OBSERVERSHIP_PATTERNS.some(p => p.test(cleanedText));
+  const hasVisitingStudent = USCE_VSM_PATTERNS.some(p => p.test(cleanedText));
+  const hasGme = GME_PATTERNS.some(p => p.test(cleanedText));
+  const hasVolunteer = lower.includes('volunteer');
+  const hasCareer = lower.includes('career') || lower.includes('job');
+
+  switch (urlBasedFamily) {
+    case 'OBSERVERSHIP_PAGE':
+      if (!hasObservership) return { family: 'OTHER', reason: 'url_says_observership_but_content_has_no_observership_keyword' };
+      return { family: 'OBSERVERSHIP_PAGE', reason: null };
+    case 'VISITING_STUDENT_PAGE':
+      if (!hasVisitingStudent && !hasObservership) return { family: 'OTHER', reason: 'url_says_visiting_student_but_content_has_neither_keyword' };
+      return { family: 'VISITING_STUDENT_PAGE', reason: null };
+    case 'GME_PAGE':
+      if (!hasGme) return { family: 'OTHER', reason: 'url_says_gme_but_content_has_no_gme_keyword' };
+      return { family: 'GME_PAGE', reason: null };
+    case 'VOLUNTEER_PAGE':
+      if (!hasVolunteer) return { family: 'OTHER', reason: 'url_says_volunteer_but_content_has_no_volunteer_keyword' };
+      return { family: 'VOLUNTEER_PAGE', reason: null };
+    case 'CAREERS_PAGE':
+      if (!hasCareer) return { family: 'OTHER', reason: 'url_says_careers_but_content_has_no_career_keyword' };
+      return { family: 'CAREERS_PAGE', reason: null };
+    default:
+      return { family: urlBasedFamily, reason: null };
+  }
+}
+
 // -------------------- Negative-evidence strength --------------------
 
 export function negativeStrength(sourceScope: string): 'STRONG' | 'MEDIUM' | 'WEAK' {

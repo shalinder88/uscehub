@@ -14,6 +14,7 @@ import {
   GME_PATTERNS, JOBS_VISA_PATTERNS, SERVICES_PATTERNS,
   findSentenceMatches, normalizeForQuoteMatch, isQuoteVerifiable,
   inferSourceScope, classifyVisibility, negativeStrength,
+  htmlToTextV2, reclassifySourceFamilyByContent,
   FUTURE_LANE_SOURCE_FAMILIES, SYSTEM_OR_SCHOOL_SCOPES,
   SCHEMA_VERSION, NOT_STATED,
   type InstitutionContext, type SourceLike,
@@ -391,6 +392,93 @@ test('Future-lane families set is non-empty and contains GME_PAGE', () => {
 test('System-or-school scopes contains both', () => {
   assertTrue(SYSTEM_OR_SCHOOL_SCOPES.has('HEALTH_SYSTEM_LEVEL'));
   assertTrue(SYSTEM_OR_SCHOOL_SCOPES.has('MEDICAL_SCHOOL_LEVEL'));
+});
+
+// -------------------- htmlToTextV2 tests --------------------
+
+console.log('\n--- htmlToTextV2 ---');
+
+test('htmlToTextV2 strips <nav> blocks', () => {
+  const html = `<html><body><nav>Home | About | Contact</nav><main><p>Our observership program is open.</p></main></body></html>`;
+  const txt = htmlToTextV2(html);
+  assertFalse(txt.toLowerCase().includes('home'), `nav should be removed; got: ${txt}`);
+  assertContains(txt.toLowerCase(), 'observership program');
+});
+
+test('htmlToTextV2 strips <footer> and <aside>', () => {
+  const html = `<html><body><main><p>Content here.</p></main><aside>Sidebar links</aside><footer>(c) 2026 footer text</footer></body></html>`;
+  const txt = htmlToTextV2(html);
+  assertContains(txt.toLowerCase(), 'content here');
+  assertFalse(txt.toLowerCase().includes('sidebar'), `aside should be removed; got: ${txt}`);
+  assertFalse(txt.toLowerCase().includes('footer text'), `footer should be removed; got: ${txt}`);
+});
+
+test('htmlToTextV2 focuses on <main> when present', () => {
+  const html = `<html><body><header>top header</header><main><p>Main content paragraph.</p></main><footer>bottom footer</footer></body></html>`;
+  const txt = htmlToTextV2(html);
+  assertContains(txt.toLowerCase(), 'main content');
+  assertFalse(txt.toLowerCase().includes('top header'), `header outside main should not appear; got: ${txt}`);
+});
+
+test('htmlToTextV2 strips menu-class boilerplate', () => {
+  const html = `<html><body><div class="primary-nav"><a href="/">Home</a><a href="/about">About</a></div><div class="content"><p>Real content.</p></div></body></html>`;
+  const txt = htmlToTextV2(html);
+  assertContains(txt.toLowerCase(), 'real content');
+  assertFalse(txt.toLowerCase().includes('about'), `nav-class should be removed; got: ${txt}`);
+});
+
+test('htmlToTextV2 falls back gracefully when no <main>', () => {
+  const html = `<html><body><div>Just a div with some text.</div></body></html>`;
+  const txt = htmlToTextV2(html);
+  assertContains(txt, 'Just a div with some text');
+});
+
+// -------------------- reclassifySourceFamilyByContent tests --------------------
+
+console.log('\n--- reclassifySourceFamilyByContent ---');
+
+test('OBSERVERSHIP_PAGE downgraded to OTHER when content has no observership keyword', () => {
+  const fake = `Welcome to our Pharmacy Student Externship program. This is a pharmacy externship for fourth-year pharmacy students. Apply by September.`;
+  const r = reclassifySourceFamilyByContent('OBSERVERSHIP_PAGE', fake);
+  assertEqual(r.family, 'OTHER');
+  assertContains(r.reason ?? '', 'observership');
+});
+
+test('OBSERVERSHIP_PAGE kept when content has the keyword', () => {
+  const r = reclassifySourceFamilyByContent('OBSERVERSHIP_PAGE', FIXTURE_OBSERVERSHIP_HIGH_YIELD);
+  assertEqual(r.family, 'OBSERVERSHIP_PAGE');
+  assertEqual(r.reason, null);
+});
+
+test('GME_PAGE downgraded when no GME keyword', () => {
+  const r = reclassifySourceFamilyByContent('GME_PAGE', FIXTURE_OBSERVERSHIP_HIGH_YIELD);
+  assertEqual(r.family, 'OTHER');
+});
+
+test('GME_PAGE kept when ACGME/ERAS/NRMP keyword present', () => {
+  const r = reclassifySourceFamilyByContent('GME_PAGE', FIXTURE_GME_PAGE);
+  assertEqual(r.family, 'GME_PAGE');
+});
+
+test('VOLUNTEER_PAGE kept when content mentions volunteer', () => {
+  const r = reclassifySourceFamilyByContent('VOLUNTEER_PAGE', FIXTURE_VOLUNTEER_PAGE);
+  assertEqual(r.family, 'VOLUNTEER_PAGE');
+});
+
+test('VOLUNTEER_PAGE downgraded when no volunteer keyword', () => {
+  const r = reclassifySourceFamilyByContent('VOLUNTEER_PAGE', FIXTURE_GME_PAGE);
+  assertEqual(r.family, 'OTHER');
+});
+
+test('Content too short returns OTHER', () => {
+  const r = reclassifySourceFamilyByContent('OBSERVERSHIP_PAGE', 'too short');
+  assertEqual(r.family, 'OTHER');
+  assertContains(r.reason ?? '', 'too_short');
+});
+
+test('Unknown family passes through unchanged', () => {
+  const r = reclassifySourceFamilyByContent('SOMETHING_ELSE', FIXTURE_OBSERVERSHIP_HIGH_YIELD);
+  assertEqual(r.family, 'SOMETHING_ELSE');
 });
 
 // -------------------- End-to-end (extraction → quote-verify) integration test --------------------

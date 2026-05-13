@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-0r-dry-run-1",
+  "generatedAt": "2026-05-13T12:02:18.098Z",
+  "generatedBy": "p102-recleantext (diagnostic; htmlToTextV2 applied to existing raw_html, no network)",
+  "sourcesProcessed": 2,
+  "diffs": [
+    {
+      "sourceUrl": "https://hartfordhospital.org/research",
+      "urlBasedFamily": "RESEARCH_PAGE",
+      "reclassifiedFamily": "RESEARCH_PAGE",
+      "reclassifyReason": null,
+      "v1Bytes": 6170,
+      "v2Bytes": 891,
+      "v1ObservershipHits": 0,
+      "v2ObservershipHits": 0,
+      "v1VsmHits": 0,
+      "v2VsmHits": 0,
+      "v1GmeHits": 0,
+      "v2GmeHits": 0,
+      "v1JobsHits": 0,
+      "v2JobsHits": 0,
+      "v2Path": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text_v2/research.txt"
+    },
+    {
+      "sourceUrl": "https://hartfordhospital.org/careers",
+      "urlBasedFamily": "CAREERS_PAGE",
+      "reclassifiedFamily": "CAREERS_PAGE",
+      "reclassifyReason": null,
+      "v1Bytes": 5555,
+      "v2Bytes": 4139,
+      "v1ObservershipHits": 0,
+      "v2ObservershipHits": 0,
+      "v1VsmHits": 0,
+      "v2VsmHits": 0,
+      "v1GmeHits": 0,
+      "v2GmeHits": 0,
+      "v1JobsHits": 0,
+      "v2JobsHits": 0,
+      "v2Path": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text_v2/careers.txt"
+    }
+  ],
+  "summary": {
+    "totalV1Bytes": 11725,
+    "totalV2Bytes": 5030,
+    "v2BytesAsPercentOfV1": 43,
+    "v1ObservershipTotal": 0,
+    "v2ObservershipTotal": 0,
+    "v1VsmTotal": 0,
+    "v2VsmTotal": 0,
+    "v1GmeTotal": 0,
+    "v2GmeTotal": 0,
+    "reclassificationsCount": 0,
+    "reclassificationsList": []
+  }
+}
