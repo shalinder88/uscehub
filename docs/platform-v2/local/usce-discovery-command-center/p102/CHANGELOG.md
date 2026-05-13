@@ -2,6 +2,13 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer`. Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0AD — 2026-05-13 — PDF text extraction cascade
+
+- System has `pdftotext` + `pdftoppm` at `/Users/shelly/.local/bin/`; tesseract missing (OCR cascade unavailable; flagged honestly).
+- Added `decidePdfToolChain()` + `determinePdfStatus()` to extraction-lib (pure decision functions, 9 new tests).
+- Added `scripts/p102-pdf-cascade.ts`: I/O wrapper that detects binaries, shells to pdftotext when available, writes extracted cleaned_text alongside the source PDF on T7. Network-free; operates on already-captured PDFs.
+- Initial run across 4 existing P102 runs: 0 PDFs encountered (cascade dormant until PDF-bearing institutions, e.g., gold-set Gold 10 — Boston Medical Center).
+
 ## P102-0AC — 2026-05-13 — Sitemap candidate keywords as JSON
 
 - Added `specs/p102_sitemap_candidate_keywords.json`: ~80 URL substring keywords used by sitemap-index recursion to filter candidate URLs. Pure data; runner will ingest in future.
@@ -231,5 +238,6 @@ All P102 scripts live in `scripts/`:
 - `scripts/p102-validate-run-integrity.ts` — T7 artifact + hash chain integrity (P102-0Z)
 - `scripts/p102-validate-identity-registry.ts` — identity-registry JSON ↔ TS parity (P102-0AA)
 - `scripts/p102-validate-all.ts` — cross-validator dispatcher (P102-0AB)
+- `scripts/p102-pdf-cascade.ts` — PDF text extraction cascade (P102-0AD)
 - `scripts/validate-p102-discovery-runner.ts` — primary validator (P102-0R, extended P102-0C)
 - `scripts/test-p102.ts` — unit test suite (P102-0E, expanded continuously)
