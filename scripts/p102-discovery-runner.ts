@@ -29,6 +29,7 @@ import * as path from 'node:path';
 import * as crypto from 'node:crypto';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { URL } from 'node:url';
+import { parseSitemapXml } from './p102-extraction-lib';
 
 const SCHEMA_VERSION = 'p102-0r-1';
 const USER_AGENT = 'USCEHub-Research/0.1 (+https://uscehub.com/contact)';
@@ -486,8 +487,12 @@ async function runA0Probe(officialDomain: string, paths: RunPaths, runId: string
     }
   }
 
-  // sitemap.xml — try root sitemap first, then any advertised
+  // sitemap.xml — try root sitemap first, then any advertised.
+  // Sitemap-index recursion: if the body is a <sitemapindex>, fetch each child
+  // sitemap (bounded) and aggregate URLs. Bounded to avoid runaway crawl.
   const sitemapUrls: string[] = [`${root}/sitemap.xml`, ...result.robotsTxt.sitemapsAdvertised];
+  const MAX_CHILD_SITEMAPS = 10;
+  const aggregateUrls: string[] = [];
   for (const smUrl of sitemapUrls) {
     if (result.sitemapXml.fetched) break;
     await sleep(MIN_DELAY_MS);
@@ -495,9 +500,23 @@ async function runA0Probe(officialDomain: string, paths: RunPaths, runId: string
     result.sitemapXml.statusCode = smRes.statusCode;
     if (smRes.statusCode === 200 && smRes.body) {
       result.sitemapXml.fetched = true;
-      const urls = Array.from(smRes.body.matchAll(/<loc>([^<]+)<\/loc>/g)).map(m => m[1]);
-      result.sitemapXml.urlsFound = urls.length;
-      result.sitemapXml.candidatesKept = urls.filter(urlMatchesOpportunityKeyword).slice(0, 100);
+      const parsed = parseSitemapXml(smRes.body);
+      if (parsed.type === 'sitemapindex') {
+        // Recurse into child sitemaps (bounded).
+        const childSitemaps = parsed.entries.slice(0, MAX_CHILD_SITEMAPS);
+        for (const childUrl of childSitemaps) {
+          await sleep(MIN_DELAY_MS);
+          const childRes = await fetchUrl(childUrl, 'GET');
+          if (childRes.statusCode === 200 && childRes.body) {
+            const childParsed = parseSitemapXml(childRes.body);
+            if (childParsed.type === 'urlset') aggregateUrls.push(...childParsed.entries);
+          }
+        }
+      } else if (parsed.type === 'urlset') {
+        aggregateUrls.push(...parsed.entries);
+      }
+      result.sitemapXml.urlsFound = aggregateUrls.length;
+      result.sitemapXml.candidatesKept = aggregateUrls.filter(urlMatchesOpportunityKeyword).slice(0, 100);
     }
   }
 

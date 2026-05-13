@@ -26,6 +26,11 @@ export const USCE_OBSERVERSHIP_PATTERNS: RegExp[] = [
   /\bclinical\s+observership\b/i,
   /\bclinical\s+observer\s+program\b/i,
   /\bphysician\s+observer\b/i,
+  /\binternational\s+observer/i,
+  /\bvisiting\s+observer/i,
+  /\bclinical\s+observer/i,
+  /\bobserver\s+(role|opportunity|application)/i,
+  /\bIMG\s+observership/i,
 ];
 
 export const USCE_VSM_PATTERNS: RegExp[] = [
@@ -36,9 +41,16 @@ export const USCE_VSM_PATTERNS: RegExp[] = [
   /\bfourth[-\s]year\s+elective/i,
   /\bsenior\s+elective/i,
   /\bsub[-\s]?internship/i,
+  /\bsub[-\s]?I\b/i,
   /\bacting\s+internship/i,
+  /\bacting\s+intern\b/i,
   /\bVSLO\b/,
   /\bVSAS\b/,
+  /\binternational\s+(medical\s+)?(student|exchange)\s+program/i,
+  /\bISP\b/,
+  /\bvisiting\s+clerkship/i,
+  /\baudition\s+rotation/i,
+  /\baway\s+elective/i,
 ];
 
 export const USCE_RESEARCH_PATTERNS: RegExp[] = [
@@ -60,6 +72,11 @@ export const NEGATIVE_STRONG_PATTERNS: RegExp[] = [
   /\bno\s+shadowing\s+(program|opportunity)/i,
   /\bwe\s+do\s+not\s+offer\s+(visiting|clinical)\s+elective/i,
   /\bnot\s+available\s+to\s+international\s+(medical\s+)?(students|graduates)/i,
+  /\bwe\s+do\s+not\s+(host|accept|sponsor)\s+(visiting|international)\s+(students|graduates)/i,
+  /\bdoes\s+not\s+(offer|host)\s+(observerships?|visiting\s+student)/i,
+  /\bobservership\s+(program\s+)?(is|are)\s+(no\s+longer|not\s+currently)\s+(offered|available|accepting)/i,
+  /\bunable\s+to\s+(host|accept|accommodate)\s+(observers|visiting)/i,
+  /\bwe\s+have\s+(closed|suspended|paused)\s+our\s+observership/i,
 ];
 
 export const NEGATIVE_MEDIUM_PATTERNS: RegExp[] = [
@@ -67,24 +84,39 @@ export const NEGATIVE_MEDIUM_PATTERNS: RegExp[] = [
   /\bonly\s+(LCME|COCA)\b/i,
   /\bVSLO\s+only/i,
   /\bU\.?S\.?\s+(MD|DO)\s+(students\s+)?only/i,
+  /\bstudents\s+(enrolled\s+)?at\s+LCME\b/i,
+  /\bcurrently\s+enrolled\s+(US|U\.?S\.?|American)/i,
+  /\bonly\s+available\s+to\s+(students\s+)?(from|at)\s+affiliated/i,
+  /\brestricted\s+to\s+(students\s+)?(enrolled|affiliated)/i,
+  /\b(no|not)\s+IMG\s+(observership|elective|rotation)/i,
 ];
 
 export const GME_PATTERNS: RegExp[] = [
   /\b(residency\s+program|fellowship\s+program)\b/i,
   /\bgraduate\s+medical\s+education\b/i,
   /\bACGME[-\s]accredited\b/i,
+  /\bACGME\b/,
   /\bERAS\b/,
   /\bNRMP\b/,
+  /\bresidency\s+training/i,
+  /\bfellowship\s+training/i,
+  /\bPGY[-\s]?[12345]\b/i,
+  /\b(internal\s+medicine|emergency\s+medicine|pediatrics|surgery|family\s+medicine|psychiatry|radiology|anesthesiology)\s+residency/i,
 ];
 
 export const JOBS_VISA_PATTERNS: RegExp[] = [
   /\bphysician\s+careers?\b/i,
   /\bprovider\s+careers?\b/i,
   /\bfaculty\s+position/i,
+  /\bfaculty\s+(opening|recruitment)/i,
   /\bhospitalist\s+(position|job)/i,
+  /\battending\s+(position|opening)/i,
   /\bJ-1\s+(visa|waiver|sponsorship)/i,
   /\bH-1B\s+(visa|sponsorship)/i,
   /\bvisa\s+sponsorship\b/i,
+  /\bphysician\s+recruitment/i,
+  /\bnonclinical\s+(physician|career)/i,
+  /\blocums?\s+tenens?/i,
 ];
 
 export const SERVICES_PATTERNS: RegExp[] = [
@@ -250,6 +282,32 @@ export function classifyVisibility(input: VisibilityInput): { visibility: Visibi
   }
 
   return { visibility: 'CAUTION_SAFE_INTERNAL_REVIEW', notPublicReason: 'P102-0C deterministic detection; needs model A1/A2 reader (P102-0D) for PUBLIC_SAFE_USCE promotion' };
+}
+
+// -------------------- Sitemap XML parsing --------------------
+
+export interface SitemapParseResult {
+  type: 'urlset' | 'sitemapindex' | 'unknown';
+  entries: string[];
+}
+
+/**
+ * Parse a sitemap.xml body. Detects whether it is a sitemapindex (pointing
+ * to child sitemaps) or a urlset (pointing to actual URLs).
+ *
+ * The runner uses this to decide whether to recurse into child sitemaps or
+ * treat <loc> entries as candidate URLs directly.
+ */
+export function parseSitemapXml(body: string): SitemapParseResult {
+  // Detect type by root element. Both formats use <loc>; the wrapping element differs.
+  const hasSitemapIndex = /<sitemapindex\b[^>]*>/i.test(body);
+  const hasUrlset = /<urlset\b[^>]*>/i.test(body);
+  const locs = Array.from(body.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/gi)).map(m => m[1]);
+  if (hasSitemapIndex && !hasUrlset) return { type: 'sitemapindex', entries: locs };
+  if (hasUrlset && !hasSitemapIndex) return { type: 'urlset', entries: locs };
+  if (hasSitemapIndex && hasUrlset) return { type: 'sitemapindex', entries: locs }; // ambiguous: prefer index
+  if (locs.length > 0) return { type: 'urlset', entries: locs }; // best guess
+  return { type: 'unknown', entries: [] };
 }
 
 // -------------------- HTML → text v2 (strips boilerplate) --------------------

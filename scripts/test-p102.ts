@@ -484,6 +484,7 @@ test('Unknown family passes through unchanged', () => {
 // -------------------- Identity canonicalizer tests --------------------
 
 import { inferIdentity, compareInstitutions } from './p102-identity-canonicalizer';
+import { parseSitemapXml } from './p102-extraction-lib';
 
 console.log('\n--- Identity canonicalizer ---');
 
@@ -555,6 +556,47 @@ test('compareInstitutions: standalone vs system-affiliated → UNRELATED', () =>
     { canonicalName: 'Hartford Hospital', officialDomain: 'hartfordhospital.org' },
   );
   assertEqual(r.relationship, 'UNRELATED');
+});
+
+// -------------------- Sitemap parser tests --------------------
+
+console.log('\n--- Sitemap parser ---');
+
+test('parseSitemapXml: detects urlset', () => {
+  const body = `<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://example.com/page1</loc></url><url><loc>https://example.com/page2</loc></url></urlset>`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'urlset');
+  assertEqual(r.entries.length, 2);
+});
+
+test('parseSitemapXml: detects sitemapindex', () => {
+  const body = `<?xml version="1.0"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://example.com/sitemap-pages.xml</loc></sitemap><sitemap><loc>https://example.com/sitemap-blog.xml</loc></sitemap></sitemapindex>`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'sitemapindex');
+  assertEqual(r.entries.length, 2);
+});
+
+test('parseSitemapXml: empty sitemapindex returns empty entries', () => {
+  const body = `<?xml version="1.0"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></sitemapindex>`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'sitemapindex');
+  assertEqual(r.entries.length, 0);
+});
+
+test('parseSitemapXml: unknown returns empty', () => {
+  const body = `not-xml-content`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'unknown');
+  assertEqual(r.entries.length, 0);
+});
+
+test('parseSitemapXml: handles whitespace inside loc', () => {
+  const body = `<urlset><url><loc>
+    https://example.com/page
+  </loc></url></urlset>`;
+  const r = parseSitemapXml(body);
+  assertEqual(r.type, 'urlset');
+  assertEqual(r.entries[0], 'https://example.com/page');
 });
 
 // -------------------- End-to-end (extraction → quote-verify) integration test --------------------

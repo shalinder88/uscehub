@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-1-trial-2-run-3
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-13T11:59:41.130Z
+regatedAt: 2026-05-13T12:18:25.840Z
 
 **A3 read only run-folder files. No network. No Agent.**
 
@@ -10,7 +10,7 @@ regatedAt: 2026-05-13T11:59:41.130Z
 - Future lane value: MEDIUM
 - PUBLIC_SAFE_USCE claims: 0
 - CAUTION_SAFE_INTERNAL_REVIEW claims: 0
-- FUTURE_LANE_ONLY claims: 14
+- FUTURE_LANE_ONLY claims: 15
 - networkUsed: false
 - agentUsed: false
 

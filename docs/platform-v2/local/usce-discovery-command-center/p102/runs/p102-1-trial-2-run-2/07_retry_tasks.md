@@ -21,3 +21,9 @@ Claims awaiting model A1/A2 reader (P102-0D) for PUBLIC_SAFE promotion:
 
 Claims awaiting model A1/A2 reader (P102-0D) for PUBLIC_SAFE promotion:
 - NO_PUBLIC_OPPORTUNITY_FOUND on https://www.tbh.org/how-to-help/how-volunteer/requirements: shadow/volunteer is not auto-USCE; human review
+
+
+## P102-0C unresolveds (2026-05-13T12:17:51.916Z)
+
+Claims awaiting model A1/A2 reader (P102-0D) for PUBLIC_SAFE promotion:
+- NO_PUBLIC_OPPORTUNITY_FOUND on https://www.tbh.org/how-to-help/how-volunteer/requirements: shadow/volunteer is not auto-USCE; human review
