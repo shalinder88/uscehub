@@ -26,12 +26,21 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import {
+  SCHEMA_VERSION, NOT_STATED,
+  USCE_OBSERVERSHIP_PATTERNS, USCE_VSM_PATTERNS, USCE_RESEARCH_PATTERNS, USCE_SHADOW_VOLUNTEER_PATTERNS,
+  NEGATIVE_STRONG_PATTERNS, NEGATIVE_MEDIUM_PATTERNS,
+  GME_PATTERNS, JOBS_VISA_PATTERNS, SERVICES_PATTERNS,
+  findSentenceMatches as libFindSentenceMatches,
+  inferSourceScope as libInferSourceScope,
+  negativeStrength,
+  type InstitutionContext as LibInstitutionContext,
+  type SourceLike,
+} from './p102-extraction-lib';
 
-const SCHEMA_VERSION = 'p102-0r-1';
 const REPO_ROOT = path.resolve(__dirname, '..');
 const REPO_P102_ROOT = path.join(REPO_ROOT, 'docs/platform-v2/local/usce-discovery-command-center/p102');
 const RUNS_ROOT = path.join(REPO_P102_ROOT, 'runs');
-const NOT_STATED = 'NOT_STATED_ON_SOURCE';
 
 // -------------------- Types --------------------
 
@@ -49,12 +58,7 @@ interface SourceRecord {
   capturedAt: string | null;
 }
 
-interface InstitutionContext {
-  institutionId: string;
-  canonicalName: string;
-  officialDomain: string;
-  parentSystem: string | null;
-}
+type InstitutionContext = LibInstitutionContext;
 
 interface ClaimRecord {
   schemaVersion: string;
@@ -105,127 +109,17 @@ interface ScopeConflict {
   recommendedAction: string;
 }
 
-// -------------------- Concept detectors --------------------
-
+// -------------------- Concept detectors / scope inference (imported from lib) --------------------
+// (patterns + findSentenceMatches + inferSourceScope come from ./p102-extraction-lib)
+// Local alias to keep call sites short:
+const findSentenceMatches = libFindSentenceMatches;
 type DetectorMatch = { sentence: string; matched: string };
-
-function findSentenceMatches(text: string, patterns: RegExp[]): DetectorMatch[] {
-  const out: DetectorMatch[] = [];
-  // Split text into sentences/lines for quote extraction.
-  const sentences = text.split(/(?<=[.!?])\s+|\n\n+/).map(s => s.trim()).filter(Boolean);
-  for (const s of sentences) {
-    for (const pat of patterns) {
-      const m = s.match(pat);
-      if (m) { out.push({ sentence: s.slice(0, 500), matched: m[0] }); break; }
-    }
-  }
-  return out;
-}
-
-// Word-boundary i-flag regexes, conservative.
-const USCE_OBSERVERSHIP_PATTERNS: RegExp[] = [
-  /\bobservership\b/i,
-  /\bobservership\s+program\b/i,
-  /\bclinical\s+observership\b/i,
-  /\bclinical\s+observer\s+program\b/i,
-  /\bphysician\s+observer\b/i,
-];
-
-const USCE_VSM_PATTERNS: RegExp[] = [
-  /\bvisiting\s+medical\s+student/i,
-  /\bvisiting\s+student/i,
-  /\baway\s+rotation/i,
-  /\bclinical\s+elective/i,
-  /\bfourth[-\s]year\s+elective/i,
-  /\bsenior\s+elective/i,
-  /\bsub[-\s]?internship/i,
-  /\bacting\s+internship/i,
-  /\bVSLO\b/,
-  /\bVSAS\b/,
-];
-
-const USCE_RESEARCH_PATTERNS: RegExp[] = [
-  /\bmedical\s+student\s+research/i,
-  /\bstudent\s+research\s+(program|opportunity|fellowship)/i,
-];
-
-const USCE_SHADOW_VOLUNTEER_PATTERNS: RegExp[] = [
-  /\bshadowing\s+(program|opportunity)\b/i,
-  /\bstudent\s+volunteer/i,
-  /\bclinical\s+shadow/i,
-];
-
-// Negative evidence — explicit refusal sentences. STRONG = clear refusal; MEDIUM = restriction.
-const NEGATIVE_STRONG_PATTERNS: RegExp[] = [
-  /\bdo\s+not\s+(offer|accept|sponsor|host)\s+observership/i,
-  /\bdo\s+not\s+offer\s+clinical\s+observership/i,
-  /\bnot\s+accepting\s+observers/i,
-  /\bno\s+observership\s+(program|opportunity)/i,
-  /\bno\s+shadowing\s+(program|opportunity)/i,
-  /\bwe\s+do\s+not\s+offer\s+(visiting|clinical)\s+elective/i,
-  /\bnot\s+available\s+to\s+international\s+(medical\s+)?(students|graduates)/i,
-];
-
-const NEGATIVE_MEDIUM_PATTERNS: RegExp[] = [
-  /\bonly\s+(enrolled\s+)?(at\s+)?affiliated\s+(institutions|schools)/i,
-  /\bonly\s+(LCME|COCA)\b/i,
-  /\bVSLO\s+only/i,
-  /\bU\.?S\.?\s+(MD|DO)\s+(students\s+)?only/i,
-];
-
-// Future-lane (GME / residency / fellowship)
-const GME_PATTERNS: RegExp[] = [
-  /\b(residency\s+program|fellowship\s+program)\b/i,
-  /\bgraduate\s+medical\s+education\b/i,
-  /\bACGME[-\s]accredited\b/i,
-  /\bERAS\b/,
-  /\bNRMP\b/,
-];
-
-// Future-lane (jobs / visa)
-const JOBS_VISA_PATTERNS: RegExp[] = [
-  /\bphysician\s+careers?\b/i,
-  /\bprovider\s+careers?\b/i,
-  /\bfaculty\s+position/i,
-  /\bhospitalist\s+(position|job)/i,
-  /\bJ-1\s+(visa|waiver|sponsorship)/i,
-  /\bH-1B\s+(visa|sponsorship)/i,
-  /\bvisa\s+sponsorship\b/i,
-];
-
-// Future-lane (physician services)
-const SERVICES_PATTERNS: RegExp[] = [
-  /\bmalpractice\s+insurance/i,
-  /\bdisability\s+(insurance|coverage)\b/i,
-  /\bphysician\s+mortgage/i,
-  /\blocums?\s+tenens?/i,
-];
 
 // -------------------- Source-scope inference --------------------
 
+// inferSourceScope imported from p102-extraction-lib.
 function inferSourceScope(source: SourceRecord, ctx: InstitutionContext): string {
-  // If A0's classifier already produced a non-UNKNOWN result, trust it for future-lane families.
-  if (source.sourceScope && source.sourceScope !== 'UNKNOWN_SCOPE') return source.sourceScope;
-
-  // If the source domain matches the official domain
-  const officialHost = ctx.officialDomain.replace(/^www\./, '');
-  const srcHost = (source.sourceDomain ?? '').replace(/^www\./, '');
-
-  // If the institution's canonicalName has a campus token (e.g., "Orlando") and the domain doesn't
-  // include that token, the source is system-level.
-  const campusTokens = ctx.canonicalName.toLowerCase().split(/[\s,-]+/).filter(t => t.length > 3);
-  const domainTokens = officialHost.toLowerCase().split(/[.-]/);
-  // A campus token is one that appears in canonical name but not in domain.
-  // E.g., "AdventHealth Orlando" with domain "adventhealth.com": "orlando" in name, not in domain → system-level.
-  const campusInName = campusTokens.filter(t => !domainTokens.some(d => d.includes(t) || t.includes(d)));
-  const campusUnambiguouslyAbsentFromDomain = campusInName.length > 0;
-
-  if (campusUnambiguouslyAbsentFromDomain && srcHost === officialHost) return 'HEALTH_SYSTEM_LEVEL';
-
-  // Else default to INSTITUTION_SPECIFIC
-  if (srcHost === officialHost || srcHost.endsWith('.' + officialHost)) return 'INSTITUTION_SPECIFIC';
-
-  return 'UNKNOWN_SCOPE';
+  return libInferSourceScope(source as unknown as SourceLike, ctx);
 }
 
 // -------------------- Extraction over one source --------------------

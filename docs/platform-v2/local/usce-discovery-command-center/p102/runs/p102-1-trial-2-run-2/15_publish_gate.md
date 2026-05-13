@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-1-trial-2-run-2
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-12T15:46:30.843Z
+regatedAt: 2026-05-13T11:59:41.115Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

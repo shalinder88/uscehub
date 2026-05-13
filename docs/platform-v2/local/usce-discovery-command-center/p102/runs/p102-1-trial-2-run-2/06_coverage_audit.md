@@ -17,3 +17,19 @@ A2 source-family coverage is not assessed in P102-0R (model reader deferred).
 - Claims extracted: 33 (PUBLIC_SAFE_USCE=0, CAUTION_SAFE=0, FUTURE_LANE_ONLY=32, HUMAN_REVIEW=1)
 - Negative evidence claims: 0 (publicSafe=0)
 - Source-scope conflicts surfaced: 0
+
+
+## P102-0C extraction pass (2026-05-13T11:53:05.071Z)
+
+- Sources processed: 23
+- Claims extracted: 33 (PUBLIC_SAFE_USCE=0, CAUTION_SAFE=0, FUTURE_LANE_ONLY=32, HUMAN_REVIEW=1)
+- Negative evidence claims: 0 (publicSafe=0)
+- Source-scope conflicts surfaced: 0
+
+
+## P102-0C extraction pass (2026-05-13T11:59:04.355Z)
+
+- Sources processed: 23
+- Claims extracted: 33 (PUBLIC_SAFE_USCE=0, CAUTION_SAFE=0, FUTURE_LANE_ONLY=32, HUMAN_REVIEW=1)
+- Negative evidence claims: 0 (publicSafe=0)
+- Source-scope conflicts surfaced: 0

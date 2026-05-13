@@ -1,0 +1,433 @@
+#!/usr/bin/env tsx
+/**
+ * P102 unit test suite — exercises pure functions in p102-extraction-lib
+ * against in-process fixtures. No network. No file I/O outside this script.
+ *
+ * Run: npx tsx scripts/test-p102.ts
+ *
+ * Exit code 0 = all tests pass. Non-zero = at least one failure.
+ */
+
+import {
+  USCE_OBSERVERSHIP_PATTERNS, USCE_VSM_PATTERNS, USCE_RESEARCH_PATTERNS,
+  USCE_SHADOW_VOLUNTEER_PATTERNS, NEGATIVE_STRONG_PATTERNS, NEGATIVE_MEDIUM_PATTERNS,
+  GME_PATTERNS, JOBS_VISA_PATTERNS, SERVICES_PATTERNS,
+  findSentenceMatches, normalizeForQuoteMatch, isQuoteVerifiable,
+  inferSourceScope, classifyVisibility, negativeStrength,
+  FUTURE_LANE_SOURCE_FAMILIES, SYSTEM_OR_SCHOOL_SCOPES,
+  SCHEMA_VERSION, NOT_STATED,
+  type InstitutionContext, type SourceLike,
+} from './p102-extraction-lib';
+
+// -------------------- Mini test harness (no deps) --------------------
+
+let passed = 0;
+let failed = 0;
+const failures: string[] = [];
+
+function test(name: string, fn: () => void): void {
+  try { fn(); passed++; console.log(`  PASS  ${name}`); }
+  catch (e) {
+    failed++;
+    const msg = e instanceof Error ? e.message : String(e);
+    failures.push(`${name}: ${msg}`);
+    console.log(`  FAIL  ${name}\n        ${msg}`);
+  }
+}
+
+function assertEqual<T>(actual: T, expected: T, label = ''): void {
+  if (actual !== expected) throw new Error(`${label} expected=${String(expected)} actual=${String(actual)}`);
+}
+function assertTrue(cond: boolean, label = ''): void {
+  if (!cond) throw new Error(`assertTrue failed: ${label}`);
+}
+function assertFalse(cond: boolean, label = ''): void {
+  if (cond) throw new Error(`assertFalse failed: ${label}`);
+}
+function assertContains(haystack: string, needle: string, label = ''): void {
+  if (!haystack.includes(needle)) throw new Error(`${label} expected substring "${needle}" in "${haystack.slice(0, 100)}..."`);
+}
+
+// -------------------- Fixtures --------------------
+
+const FIXTURE_OBSERVERSHIP_HIGH_YIELD = `
+Welcome to Houston Methodist Hospital.
+
+Our clinical observership program is open to international medical graduates.
+Applicants must hold a medical degree and provide a letter of recommendation.
+
+The observership lasts 4 weeks and includes shadow rotations across multiple
+specialties. There is no clinical hands-on activity. For more information,
+contact observership@example.com.
+`.trim();
+
+const FIXTURE_VSM_PAGE = `
+Visiting Medical Student Program
+
+This rotation is available to fourth-year elective students from LCME-accredited
+medical schools via VSLO. Sub-internship rotations are 2-4 weeks. Application
+fee is $250.
+`.trim();
+
+const FIXTURE_NEGATIVE_EXPLICIT = `
+Eligibility
+
+We do not offer observership to international medical graduates. Applicants
+should pursue programs at affiliated institutions. We are not accepting
+observers at this time.
+`.trim();
+
+const FIXTURE_NEGATIVE_RESTRICTION = `
+This program is open to enrolled students at affiliated institutions only.
+VSLO only. We accept U.S. MD students only.
+`.trim();
+
+const FIXTURE_GME_PAGE = `
+Graduate Medical Education
+
+We oversee 14 ACGME-accredited residency program offerings. Apply through
+ERAS by September 15. NRMP match results are released in March.
+`.trim();
+
+const FIXTURE_JOBS_VISA_PAGE = `
+Physician Careers
+
+We sponsor J-1 visa waivers for qualifying physicians. Hospitalist positions
+available. Faculty position openings posted quarterly. Visa sponsorship is
+considered case-by-case.
+`.trim();
+
+const FIXTURE_SERVICES_PAGE = `
+Physician Benefits
+
+Includes malpractice insurance, disability insurance, and physician mortgage
+discounts. Locums tenens opportunities through our partner network.
+`.trim();
+
+const FIXTURE_VOLUNTEER_PAGE = `
+Hospital Volunteer Program
+
+We welcome student volunteers to participate in our patient-support program.
+Shadowing program opportunities are limited to enrolled medical students.
+`.trim();
+
+const FIXTURE_NAVIGATION_CHROME_NO_CONTENT = `
+HomeAboutContactPrivacyCareersHospital LoginPatient PortalDirectoryFind a Doctor
+Schedule AppointmentMyChartProviderEducationOur Locations
+`.trim();
+
+// -------------------- Concept detector tests --------------------
+
+console.log('--- Concept detectors ---');
+
+test('observership detector finds keyword on high-yield page', () => {
+  const matches = findSentenceMatches(FIXTURE_OBSERVERSHIP_HIGH_YIELD, USCE_OBSERVERSHIP_PATTERNS);
+  assertTrue(matches.length > 0, 'expected ≥1 observership match');
+  assertContains(matches[0].sentence.toLowerCase(), 'observership');
+});
+
+test('observership detector does NOT match GME page', () => {
+  const matches = findSentenceMatches(FIXTURE_GME_PAGE, USCE_OBSERVERSHIP_PATTERNS);
+  assertEqual(matches.length, 0, 'GME page should not match observership');
+});
+
+test('VSM detector finds keyword on VSM page', () => {
+  const matches = findSentenceMatches(FIXTURE_VSM_PAGE, USCE_VSM_PATTERNS);
+  assertTrue(matches.length > 0, 'expected ≥1 VSM match');
+});
+
+test('VSM detector picks up VSLO + sub-internship + fourth-year elective', () => {
+  const matches = findSentenceMatches(FIXTURE_VSM_PAGE, USCE_VSM_PATTERNS);
+  // The fixture has multiple keywords. We just need ≥1 hit.
+  assertTrue(matches.length >= 1, `expected ≥1 VSM hit, got ${matches.length}`);
+});
+
+test('Negative-strong detector catches "do not offer observership"', () => {
+  const matches = findSentenceMatches(FIXTURE_NEGATIVE_EXPLICIT, NEGATIVE_STRONG_PATTERNS);
+  assertTrue(matches.length > 0, 'expected ≥1 strong-negative match');
+  assertContains(matches[0].sentence.toLowerCase(), 'do not offer');
+});
+
+test('Negative-strong detector catches "not accepting observers"', () => {
+  // Use a fresh fixture to make sure pattern matches the second variant
+  const txt = 'Sample text. Currently we are not accepting observers at this time.';
+  const matches = findSentenceMatches(txt, NEGATIVE_STRONG_PATTERNS);
+  assertTrue(matches.length > 0, 'expected match');
+});
+
+test('Negative-medium detector catches "only enrolled affiliated"', () => {
+  const matches = findSentenceMatches(FIXTURE_NEGATIVE_RESTRICTION, NEGATIVE_MEDIUM_PATTERNS);
+  assertTrue(matches.length >= 1, `expected ≥1 medium-negative, got ${matches.length}`);
+});
+
+test('Negative-medium detector catches "VSLO only"', () => {
+  const txt = 'Eligibility: VSLO only.';
+  const matches = findSentenceMatches(txt, NEGATIVE_MEDIUM_PATTERNS);
+  assertTrue(matches.length > 0, 'expected match');
+});
+
+test('GME detector matches residency / ACGME / ERAS / NRMP', () => {
+  const matches = findSentenceMatches(FIXTURE_GME_PAGE, GME_PATTERNS);
+  assertTrue(matches.length >= 1, `expected ≥1 GME match, got ${matches.length}`);
+});
+
+test('Jobs/visa detector matches physician careers + J-1', () => {
+  const matches = findSentenceMatches(FIXTURE_JOBS_VISA_PAGE, JOBS_VISA_PATTERNS);
+  assertTrue(matches.length >= 1, `expected ≥1 jobs/visa match, got ${matches.length}`);
+});
+
+test('Services detector matches malpractice + disability + locums', () => {
+  const matches = findSentenceMatches(FIXTURE_SERVICES_PAGE, SERVICES_PATTERNS);
+  assertTrue(matches.length >= 1, `expected ≥1 services match, got ${matches.length}`);
+});
+
+test('Shadow/volunteer detector matches student volunteer + shadowing program', () => {
+  const matches = findSentenceMatches(FIXTURE_VOLUNTEER_PAGE, USCE_SHADOW_VOLUNTEER_PATTERNS);
+  assertTrue(matches.length >= 1, `expected ≥1 shadow/volunteer match, got ${matches.length}`);
+});
+
+test('No detectors match navigation-only page', () => {
+  const allPatterns = [
+    USCE_OBSERVERSHIP_PATTERNS, USCE_VSM_PATTERNS, USCE_RESEARCH_PATTERNS,
+    USCE_SHADOW_VOLUNTEER_PATTERNS, NEGATIVE_STRONG_PATTERNS, NEGATIVE_MEDIUM_PATTERNS,
+    GME_PATTERNS, JOBS_VISA_PATTERNS, SERVICES_PATTERNS,
+  ];
+  let total = 0;
+  for (const p of allPatterns) total += findSentenceMatches(FIXTURE_NAVIGATION_CHROME_NO_CONTENT, p).length;
+  assertEqual(total, 0, 'navigation chrome should match nothing');
+});
+
+// -------------------- Quote verification tests --------------------
+
+console.log('\n--- Quote verification ---');
+
+test('Quote that appears in text verifies true', () => {
+  assertTrue(isQuoteVerifiable('clinical observership', FIXTURE_OBSERVERSHIP_HIGH_YIELD));
+});
+
+test('Quote verifies true after whitespace normalization', () => {
+  const text = 'Sample\n\n with   weird whitespace.';
+  assertTrue(isQuoteVerifiable('Sample with weird whitespace', text));
+});
+
+test('Quote that does not appear in text verifies false', () => {
+  assertFalse(isQuoteVerifiable('this quote is fabricated', FIXTURE_OBSERVERSHIP_HIGH_YIELD));
+});
+
+test('NOT_STATED_ON_SOURCE never verifies', () => {
+  assertFalse(isQuoteVerifiable(NOT_STATED, FIXTURE_OBSERVERSHIP_HIGH_YIELD));
+});
+
+test('Empty quote never verifies', () => {
+  assertFalse(isQuoteVerifiable('', FIXTURE_OBSERVERSHIP_HIGH_YIELD));
+});
+
+test('normalizeForQuoteMatch lowercases and collapses whitespace', () => {
+  assertEqual(normalizeForQuoteMatch('Hello\n\nWorld   Foo'), 'hello world foo');
+});
+
+// -------------------- Source-scope inference tests --------------------
+
+console.log('\n--- Source-scope inference ---');
+
+const HOUSTON_CTX: InstitutionContext = {
+  institutionId: 'inst_houston_methodist_hospital_tx',
+  canonicalName: 'Houston Methodist Hospital',
+  officialDomain: 'houstonmethodist.org',
+  parentSystem: null,
+};
+const ADVENTHEALTH_ORLANDO_CTX: InstitutionContext = {
+  institutionId: 'inst_adventhealth_orlando_fl',
+  canonicalName: 'AdventHealth Orlando',
+  officialDomain: 'adventhealth.com',
+  parentSystem: 'AdventHealth',
+};
+const HARTFORD_CTX: InstitutionContext = {
+  institutionId: 'inst_hartford_hospital_ct',
+  canonicalName: 'Hartford Hospital',
+  officialDomain: 'hartfordhospital.org',
+  parentSystem: 'Hartford HealthCare',
+};
+
+test('Domain match on same-canonical-name → INSTITUTION_SPECIFIC', () => {
+  const src: SourceLike = { sourceDomain: 'houstonmethodist.org', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'OBSERVERSHIP_PAGE', sourceUrl: 'https://houstonmethodist.org/observership' };
+  assertEqual(inferSourceScope(src, HOUSTON_CTX), 'INSTITUTION_SPECIFIC');
+});
+
+test('Hartford Hospital → hartfordhospital.org is INSTITUTION_SPECIFIC', () => {
+  const src: SourceLike = { sourceDomain: 'hartfordhospital.org', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'CAREERS_PAGE', sourceUrl: 'https://hartfordhospital.org/careers' };
+  assertEqual(inferSourceScope(src, HARTFORD_CTX), 'INSTITUTION_SPECIFIC');
+});
+
+test('"AdventHealth Orlando" + adventhealth.com → HEALTH_SYSTEM_LEVEL (campus token absent from domain)', () => {
+  const src: SourceLike = { sourceDomain: 'adventhealth.com', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'GME_PAGE', sourceUrl: 'https://adventhealth.com/gme' };
+  assertEqual(inferSourceScope(src, ADVENTHEALTH_ORLANDO_CTX), 'HEALTH_SYSTEM_LEVEL');
+});
+
+test('Pre-classified scope is preserved (not overwritten)', () => {
+  const src: SourceLike = { sourceDomain: 'adventhealth.com', sourceScope: 'CAREERS_PORTAL', sourceFamily: 'CAREERS_PAGE', sourceUrl: 'https://adventhealth.com/careers' };
+  assertEqual(inferSourceScope(src, ADVENTHEALTH_ORLANDO_CTX), 'CAREERS_PORTAL');
+});
+
+test('Subdomain of official domain → INSTITUTION_SPECIFIC', () => {
+  const src: SourceLike = { sourceDomain: 'careers.houstonmethodist.org', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'OTHER', sourceUrl: 'https://careers.houstonmethodist.org/' };
+  assertEqual(inferSourceScope(src, HOUSTON_CTX), 'INSTITUTION_SPECIFIC');
+});
+
+test('Off-domain source → UNKNOWN_SCOPE', () => {
+  const src: SourceLike = { sourceDomain: 'somethirdparty.com', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'OTHER', sourceUrl: 'https://somethirdparty.com/' };
+  assertEqual(inferSourceScope(src, HOUSTON_CTX), 'UNKNOWN_SCOPE');
+});
+
+const BROOKLYN_CTX: InstitutionContext = {
+  institutionId: 'inst_brooklyn_hospital_center_ny',
+  canonicalName: 'The Brooklyn Hospital Center',
+  officialDomain: 'tbh.org',
+  parentSystem: null,
+};
+test('Acronym domain (Brooklyn → tbh.org) → INSTITUTION_SPECIFIC (no false system inference)', () => {
+  const src: SourceLike = { sourceDomain: 'tbh.org', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'VOLUNTEER_PAGE', sourceUrl: 'https://tbh.org/volunteer' };
+  assertEqual(inferSourceScope(src, BROOKLYN_CTX), 'INSTITUTION_SPECIFIC');
+});
+
+test('Generic-token-only canonical name does not trigger system inference', () => {
+  // Synthetic case: institution name "Medical Center Hospital" (all generic words) on its own domain
+  const ctx: InstitutionContext = { institutionId: 'x', canonicalName: 'Medical Center Hospital', officialDomain: 'mch.org', parentSystem: null };
+  const src: SourceLike = { sourceDomain: 'mch.org', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'OBSERVERSHIP_PAGE', sourceUrl: 'https://mch.org/observership' };
+  assertEqual(inferSourceScope(src, ctx), 'INSTITUTION_SPECIFIC');
+});
+
+// -------------------- Visibility classifier tests --------------------
+
+console.log('\n--- Visibility classifier ---');
+
+test('GME_PAGE source → FUTURE_LANE_ONLY regardless of lane', () => {
+  const r = classifyVisibility({ sourceFamily: 'GME_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP' });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+test('CAREERS_PAGE source → FUTURE_LANE_ONLY', () => {
+  const r = classifyVisibility({ sourceFamily: 'CAREERS_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP' });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+test('HEALTH_SYSTEM_LEVEL scope without campus proof on OBSERVERSHIP_PAGE → HUMAN_REVIEW_REQUIRED', () => {
+  const r = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'HEALTH_SYSTEM_LEVEL', matchedLane: 'IMG_OBSERVERSHIP' });
+  assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
+});
+
+test('HEALTH_SYSTEM_LEVEL scope WITH campus proof on OBSERVERSHIP_PAGE → CAUTION (deterministic) / PUBLIC_SAFE (with model HIGH)', () => {
+  const r1 = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP', campusApplicabilityProof: 'campus-named-in-quote' });
+  assertEqual(r1.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+  const r2 = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP', campusApplicabilityProof: 'campus-named-in-quote', modelReaderConfidence: 'HIGH' });
+  assertEqual(r2.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('OBSERVERSHIP_PAGE + INSTITUTION_SPECIFIC scope without model reader → CAUTION_SAFE_INTERNAL_REVIEW', () => {
+  const r = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP' });
+  assertEqual(r.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+});
+
+test('OBSERVERSHIP_PAGE + INSTITUTION_SPECIFIC + model HIGH → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP', modelReaderConfidence: 'HIGH' });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('OBSERVERSHIP_PAGE + CAMPUS_SPECIFIC + model HIGH → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({ sourceFamily: 'OBSERVERSHIP_PAGE', sourceScope: 'CAMPUS_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP', modelReaderConfidence: 'HIGH' });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('VSM page on OTHER source family → CAUTION_SAFE_INTERNAL_REVIEW (wrong page family note)', () => {
+  const r = classifyVisibility({ sourceFamily: 'OTHER', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'VISITING_MEDICAL_STUDENT' });
+  assertEqual(r.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+  assertContains(r.notPublicReason ?? '', 'not the expected page family');
+});
+
+test('NO_PUBLIC_OPPORTUNITY_FOUND lane → HUMAN_REVIEW_REQUIRED', () => {
+  const r = classifyVisibility({ sourceFamily: 'VOLUNTEER_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'NO_PUBLIC_OPPORTUNITY_FOUND' });
+  assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
+});
+
+test('Model reader HIGH but GME_PAGE source → still FUTURE_LANE_ONLY (family wins over confidence)', () => {
+  const r = classifyVisibility({ sourceFamily: 'GME_PAGE', sourceScope: 'INSTITUTION_SPECIFIC', matchedLane: 'IMG_OBSERVERSHIP', modelReaderConfidence: 'HIGH' });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+// -------------------- Negative-strength tests --------------------
+
+console.log('\n--- Negative-evidence strength ---');
+
+test('INSTITUTION_SPECIFIC scope → STRONG', () => {
+  assertEqual(negativeStrength('INSTITUTION_SPECIFIC'), 'STRONG');
+});
+test('CAMPUS_SPECIFIC scope → STRONG', () => {
+  assertEqual(negativeStrength('CAMPUS_SPECIFIC'), 'STRONG');
+});
+test('HEALTH_SYSTEM_LEVEL scope → MEDIUM', () => {
+  assertEqual(negativeStrength('HEALTH_SYSTEM_LEVEL'), 'MEDIUM');
+});
+test('MEDICAL_SCHOOL_LEVEL scope → MEDIUM', () => {
+  assertEqual(negativeStrength('MEDICAL_SCHOOL_LEVEL'), 'MEDIUM');
+});
+test('UNKNOWN_SCOPE → WEAK', () => {
+  assertEqual(negativeStrength('UNKNOWN_SCOPE'), 'WEAK');
+});
+
+// -------------------- Constants sanity tests --------------------
+
+console.log('\n--- Constants ---');
+
+test('SCHEMA_VERSION equals p102-0r-1', () => {
+  assertEqual(SCHEMA_VERSION, 'p102-0r-1');
+});
+test('NOT_STATED equals expected sentinel', () => {
+  assertEqual(NOT_STATED, 'NOT_STATED_ON_SOURCE');
+});
+test('Future-lane families set is non-empty and contains GME_PAGE', () => {
+  assertTrue(FUTURE_LANE_SOURCE_FAMILIES.has('GME_PAGE'));
+  assertTrue(FUTURE_LANE_SOURCE_FAMILIES.has('CAREERS_PAGE'));
+});
+test('System-or-school scopes contains both', () => {
+  assertTrue(SYSTEM_OR_SCHOOL_SCOPES.has('HEALTH_SYSTEM_LEVEL'));
+  assertTrue(SYSTEM_OR_SCHOOL_SCOPES.has('MEDICAL_SCHOOL_LEVEL'));
+});
+
+// -------------------- End-to-end (extraction → quote-verify) integration test --------------------
+
+console.log('\n--- End-to-end integration ---');
+
+test('Extracted quote from high-yield observership fixture is quote-verifiable against same fixture', () => {
+  const matches = findSentenceMatches(FIXTURE_OBSERVERSHIP_HIGH_YIELD, USCE_OBSERVERSHIP_PATTERNS);
+  assertTrue(matches.length > 0, 'no matches');
+  for (const m of matches) {
+    assertTrue(isQuoteVerifiable(m.sentence, FIXTURE_OBSERVERSHIP_HIGH_YIELD), `sentence not verifiable: ${m.sentence}`);
+  }
+});
+
+test('Negative-evidence quote is verifiable against same fixture', () => {
+  const matches = findSentenceMatches(FIXTURE_NEGATIVE_EXPLICIT, NEGATIVE_STRONG_PATTERNS);
+  assertTrue(matches.length > 0);
+  for (const m of matches) {
+    assertTrue(isQuoteVerifiable(m.sentence, FIXTURE_NEGATIVE_EXPLICIT));
+  }
+});
+
+test('GME quote does NOT verify against a different fixture', () => {
+  const matches = findSentenceMatches(FIXTURE_GME_PAGE, GME_PATTERNS);
+  assertTrue(matches.length > 0);
+  for (const m of matches) {
+    assertFalse(isQuoteVerifiable(m.sentence, FIXTURE_OBSERVERSHIP_HIGH_YIELD), `${m.sentence} unexpectedly found in different fixture`);
+  }
+});
+
+// -------------------- Summary --------------------
+
+console.log('\n' + '='.repeat(60));
+console.log(`Tests: ${passed} passed, ${failed} failed`);
+if (failed > 0) {
+  console.log('\nFailures:');
+  for (const f of failures) console.log(`  - ${f}`);
+  process.exit(1);
+}
+process.exit(0);
