@@ -1,8 +1,8 @@
-# A3 hostile-gate verdict — p102-1-trial-2-run-1
+# A3 model hostile-gate verdict — p102-1-trial-2-run-1
 
 **Verdict:** PASS_PUBLISH_READY
 
-Ledger contains zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims. All 25 claims are appropriately classified as FUTURE_LANE_ONLY (19) or HUMAN_REVIEW_REQUIRED (6). The /observership URL was correctly flagged as a Pharmacy externship lane mismatch. No scope conflicts, no overclaims, no duplicates detected. Ledger is internally consistent and safe to merge.
+No PUBLIC_SAFE_USCE claims emitted. The /observership URL was correctly re-classified by A1/A2 as a PharmD externship (not medical USCE) and held at HUMAN_REVIEW_REQUIRED. All GME/careers/education signals are confined to FUTURE_LANE_ONLY. No scope conflicts, no overclaims, no eligibility/duration/fee/contact promotions to public. Ledger is internally consistent and safe to publish as "no public USCE found" for this institution.
 
 - publicSafetyFailures: 0
 - claimsToDowngrade:    0
@@ -18,10 +18,11 @@ Ledger contains zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY
 - everyPublicSafeClaimSourceScopeChecked: true
 
 ## Metadata
-- totalClaimsReviewed: 25
+- totalClaimsReviewed: 53
 - publicSafeUSCECount: 0
 - publicSafeNoOpportunityCount: 0
-- cautionSafeInternalReviewCount: 0
-- futureLaneOnlyCount: 19
-- humanReviewRequiredCount: 6
+- cautionSafeInternalReviewCount: 5
+- futureLaneOnlyCount: 33
+- humanReviewRequiredCount: 15
 - hiddenRejectedCount: 0
+- note: claimId namespace reuses short ids (c1..c6) across multiple sources; not a duplicate per A3 rules (different sourceUrls) but downstream id-uniqueness should be enforced at merge.

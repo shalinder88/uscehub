@@ -5,30 +5,30 @@
 - opportunities: 0
 - negative-evidence: 0
 - future-lane signals: 0
-- scope conflicts: 1
+- scope conflicts: 5
 - unresolveds: 2
 
 ## src_16  https://houstonmethodist.org/research
-- claims: 0
+- claims: 1
 - opportunities: 0
 - negative-evidence: 0
-- future-lane signals: 0
-- scope conflicts: 0
-- unresolveds: 0
+- future-lane signals: 3
+- scope conflicts: 1
+- unresolveds: 2
 
 ## src_20  https://houstonmethodist.org/volunteer
-- claims: 0
+- claims: 3
 - opportunities: 0
 - negative-evidence: 0
 - future-lane signals: 0
 - scope conflicts: 0
-- unresolveds: 1
+- unresolveds: 2
 
 ## src_25  https://houstonmethodist.org/gme
 - claims: 0
 - opportunities: 0
 - negative-evidence: 0
-- future-lane signals: 4
+- future-lane signals: 6
 - scope conflicts: 0
 - unresolveds: 0
 
@@ -36,7 +36,7 @@
 - claims: 0
 - opportunities: 0
 - negative-evidence: 0
-- future-lane signals: 7
+- future-lane signals: 6
 - scope conflicts: 0
 - unresolveds: 1
 
@@ -44,6 +44,6 @@
 - claims: 0
 - opportunities: 0
 - negative-evidence: 0
-- future-lane signals: 3
+- future-lane signals: 4
 - scope conflicts: 0
 - unresolveds: 1

@@ -1,8 +1,8 @@
-# A3 hostile-gate verdict — p102-1-trial-2-run-2
+# A3 model hostile-gate verdict — p102-1-trial-2-run-2
 
 **Verdict:** PASS_PUBLISH_READY
 
-Ledger contains zero PUBLIC_SAFE_USCE claims. All USCE-flavored signals (podiatry observership/externship) are correctly classified FUTURE_LANE_ONLY because they live on GME_PAGE / DEPARTMENT_LEVEL sources and are limited to podiatric medical students. All careers/GME/residency/fellowship content is correctly future-lane. Volunteer page is appropriately HUMAN_REVIEW_REQUIRED. No scope conflicts, no overclaims, no public-safety hazards.
+Zero PUBLIC_SAFE_USCE claims emitted. All USCE-flavored signals (podiatry observership/externship) are correctly downgraded to FUTURE_LANE_ONLY because the only sourcing material lives on GME_PAGE/DEPARTMENT_LEVEL podiatry residency pages — campus-applicability and public-USCE source-family gates fail by design. Volunteer page held at HUMAN_REVIEW_REQUIRED. No scope conflicts, overclaims, or public-safety failures detected. Ledger is internally consistent and safe to merge.
 
 - publicSafetyFailures: 0
 - claimsToDowngrade:    0
@@ -18,10 +18,10 @@ Ledger contains zero PUBLIC_SAFE_USCE claims. All USCE-flavored signals (podiatr
 - everyPublicSafeClaimSourceScopeChecked: true
 
 ## Metadata
-- totalClaimsReviewed: 86
+- totalClaimsReviewed: 87
 - publicSafeUSCECount: 0
 - publicSafeNoOpportunityCount: 0
 - cautionSafeInternalReviewCount: 0
-- futureLaneOnlyCount: 85
+- futureLaneOnlyCount: 86
 - humanReviewRequiredCount: 1
 - hiddenRejectedCount: 0

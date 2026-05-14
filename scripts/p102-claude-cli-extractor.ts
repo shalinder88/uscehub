@@ -55,6 +55,7 @@ import { createHash } from 'node:crypto';
 import {
   isQuoteVerifiable,
   classifyVisibility,
+  inferSourceScope,
   type Visibility,
   type InstitutionContext as LibInstitutionContext,
 } from './p102-extraction-lib';
@@ -94,6 +95,10 @@ interface CliOptions {
   maxPdfs: number;
   tierFilter: 'all' | 'tier1' | 'tier2' | 'tier3';
   sourceFamilyFilter: string | null;
+  fetchAdditional: boolean;
+  maxAdditionalCandidates: number;
+  maxAdditionalAccepted: number;
+  maxAdditionalPdfs: number;
 }
 
 interface SourceRecord {
@@ -230,6 +235,10 @@ function parseArgs(argv: string[]): CliOptions {
     maxPdfs: 10,
     tierFilter: 'all',
     sourceFamilyFilter: null,
+    fetchAdditional: false,
+    maxAdditionalCandidates: 20,
+    maxAdditionalAccepted: 10,
+    maxAdditionalPdfs: 5,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -266,6 +275,10 @@ function parseArgs(argv: string[]): CliOptions {
     if (a === '--tiers') { opts.tierFilter = argv[++i].toLowerCase() as CliOptions['tierFilter']; continue; }
     if (a === '--source-family') { opts.sourceFamilyFilter = argv[++i]; continue; }
     if (a === '--institution-id') { ++i; continue; /* informational; runner already keys on run-id */ }
+    if (a === '--fetch-additional') { opts.fetchAdditional = true; continue; }
+    if (a === '--max-additional-candidates') { opts.maxAdditionalCandidates = parseInt(argv[++i], 10); continue; }
+    if (a === '--max-additional-accepted') { opts.maxAdditionalAccepted = parseInt(argv[++i], 10); continue; }
+    if (a === '--max-additional-pdfs') { opts.maxAdditionalPdfs = parseInt(argv[++i], 10); continue; }
     if (a === '--help' || a === '-h') { printUsage(); process.exit(0); }
     throw new Error(`unknown flag: ${a}`);
   }
@@ -783,6 +796,7 @@ function verifyAndReclassify(args: {
   runId: string;
   institutionId: string;
   phaseProducedBy: 'A1' | 'A2';
+  institutionContext?: { institutionId: string; canonicalName: string; officialDomain: string; parentSystem: string | null };
 }): { verified: VerifiedClaim[]; rejected: RejectedClaim[] } {
   const verified: VerifiedClaim[] = [];
   const rejected: RejectedClaim[] = [];
@@ -817,9 +831,29 @@ function verifyAndReclassify(args: {
     // Map the model's lane to the classifier's matchedLane.
     const matchedLane = mapLaneToClassifierInput(c.lane);
 
+    // Resolve sourceScope deterministically. The model's emitted scope is
+    // advisory ONLY. Trust the source-map's scope when set; for
+    // UNKNOWN_SCOPE, compute via inferSourceScope() using the canonical
+    // institution context (NOT the model's emission). This prevents a
+    // system-domain page from being upgraded to INSTITUTION_SPECIFIC by
+    // model suggestion alone — see P102-0G AdventHealth Redmond bug.
+    let scopeForClassifier = src.sourceScope;
+    if (scopeForClassifier === 'UNKNOWN_SCOPE') {
+      if (args.institutionContext) {
+        scopeForClassifier = inferSourceScope(
+          { sourceDomain: src.sourceDomain, sourceScope: 'UNKNOWN_SCOPE', sourceFamily: src.sourceFamily, sourceUrl: src.sourceUrl },
+          args.institutionContext,
+        );
+      }
+      // If still UNKNOWN_SCOPE (no canonical context), keep UNKNOWN — the
+      // classifier will route to CAUTION_SAFE_INTERNAL_REVIEW, not
+      // PUBLIC_SAFE_USCE. The model's `c.sourceScope` is intentionally NOT
+      // consulted.
+    }
+
     const result = classifyVisibility({
       sourceFamily: src.sourceFamily,
-      sourceScope: src.sourceScope === 'UNKNOWN_SCOPE' ? c.sourceScope : src.sourceScope,
+      sourceScope: scopeForClassifier,
       matchedLane,
       campusApplicabilityProof: null,
       modelReaderConfidence: c.confidence,
@@ -831,6 +865,11 @@ function verifyAndReclassify(args: {
       runId: args.runId,
       institutionId: args.institutionId,
       sourceFamily: src.sourceFamily,
+      // Persist the deterministic scope used for classification so the
+      // standalone p102-quote-verify re-verification reaches the same
+      // conclusion. The model's emitted c.sourceScope is intentionally
+      // overridden here.
+      sourceScope: scopeForClassifier,
       visibility: result.visibility,
       visibilityRationale: result.notPublicReason,
       quoteVerified: true,
@@ -1197,6 +1236,54 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
   if (!existsSync(sourceMapPath)) return { ok: false, summary: `01_source_map.json missing: ${sourceMapPath}` };
   if (!existsSync(canonicalPath)) return { ok: false, summary: `05_canonical_institution.json missing: ${canonicalPath}` };
 
+  // ---- Optional: bounded A4 fetch-additional (requires --deep) ----
+  // When --fetch-additional is set, shell out to scripts/p102-a4-fetch-additional.ts
+  // to execute the recovery tasks from A4_deep_recovery_tasks.json (written by
+  // a prior --deep run). HEAD-first, institution-domain only, budget-capped.
+  if (opts.fetchAdditional) {
+    if (!opts.deep) return { ok: false, summary: `${runId}: --fetch-additional requires --deep` };
+    const tasksPath = path.join(runDir, 'A4_deep_recovery_tasks.json');
+    if (!existsSync(tasksPath)) return { ok: false, summary: `${runId}: --fetch-additional needs A4_deep_recovery_tasks.json (run --deep first to generate tasks)` };
+    if (!opts.dryRun) {
+      const fetchScript = path.join(__dirname, 'p102-a4-fetch-additional.ts');
+      const args = [
+        'tsx', fetchScript,
+        '--run-id', runId, '--execute',
+        '--max-additional-candidates', String(opts.maxAdditionalCandidates),
+        '--max-additional-accepted', String(opts.maxAdditionalAccepted),
+        '--max-additional-pdfs', String(opts.maxAdditionalPdfs),
+      ];
+      if (opts.quiet) args.push('--quiet');
+      if (!opts.quiet) console.log(`    [A4 fetch-additional] ${args.slice(0, 2).join(' ')} ...`);
+      const r = await new Promise<{ code: number; stdout: string; stderr: string }>((resolveP) => {
+        const child = spawn('npx', args, { cwd: REPO_ROOT, stdio: ['ignore', 'pipe', 'pipe'] });
+        let stdout = '';
+        let stderr = '';
+        child.stdout.on('data', (d) => { stdout += d.toString(); });
+        child.stderr.on('data', (d) => { stderr += d.toString(); });
+        child.on('close', (code) => resolveP({ code: code ?? -1, stdout, stderr }));
+        child.on('error', (err) => resolveP({ code: -1, stdout, stderr: err.message }));
+      });
+      if (r.code !== 0) return { ok: false, summary: `${runId}: fetch-additional exit ${r.code}: ${r.stderr.slice(0, 200)}` };
+      if (!opts.quiet) {
+        const last5 = r.stdout.split('\n').slice(-7).join('\n');
+        console.log(`    [A4 fetch-additional] done\n${last5}`);
+      }
+      // After fetch, refresh the deep source discovery so new sources are
+      // classified into tiers before A1 picks them up.
+      const refreshArgs = ['tsx', path.join(__dirname, 'p102-deep-source-discovery.ts'), '--run-id', runId];
+      if (opts.quiet) refreshArgs.push('--quiet');
+      const rr = await new Promise<{ code: number; stderr: string }>((resolveP) => {
+        const child = spawn('npx', refreshArgs, { cwd: REPO_ROOT, stdio: ['ignore', 'ignore', 'pipe'] });
+        let stderr = '';
+        child.stderr.on('data', (d) => { stderr += d.toString(); });
+        child.on('close', (code) => resolveP({ code: code ?? -1, stderr }));
+        child.on('error', (err) => resolveP({ code: -1, stderr: err.message }));
+      });
+      if (rr.code !== 0) return { ok: false, summary: `${runId}: deep-source-discovery refresh failed: ${rr.stderr.slice(0, 200)}` };
+    }
+  }
+
   const sourceMap = readJson<SourceMap>(sourceMapPath);
   const canonical = readJson<CanonicalInstitution>(canonicalPath);
 
@@ -1350,15 +1437,23 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
     dedupedVerified = ledger.claims ?? [];
     rejected = existsSync(rejectedPath) ? (readJson<{ claims: RejectedClaim[] }>(rejectedPath).claims ?? []) : [];
   } else {
+    const instContext = {
+      institutionId: canonical.institutionId,
+      canonicalName: canonical.canonicalName,
+      officialDomain: canonical.officialDomains[0] ?? '',
+      parentSystem: canonical.parentSystem ?? null,
+    };
     const { verified: a1Verified, rejected: a1Rejected } = verifyAndReclassify({
       candidates: allCandidates.filter((c) => !('whyA1Missed' in c)),
       cleanedTextBySource, sourcesByUrl,
       runId, institutionId: canonical.institutionId, phaseProducedBy: 'A1',
+      institutionContext: instContext,
     });
     const { verified: a2Verified, rejected: a2Rejected } = verifyAndReclassify({
       candidates: allCandidates.filter((c) => 'whyA1Missed' in c),
       cleanedTextBySource, sourcesByUrl,
       runId, institutionId: canonical.institutionId, phaseProducedBy: 'A2',
+      institutionContext: instContext,
     });
 
     const verified = [...a1Verified, ...a2Verified];

@@ -1,134 +1,275 @@
 {
   "schemaVersion": "p102-quote-verify-1",
   "runId": "p102-1-trial-2-run-1",
-  "total": 25,
+  "total": 53,
   "countByStatus": {
-    "OK": 25
+    "OK": 52,
+    "NOT_STATED_FIELD_OK": 1
   },
   "failureCount": 0,
   "checks": [
     {
-      "claimId": "c_scope_conflict_1",
+      "claimId": "hm-conflict-1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_1",
+      "claimId": "hm-conflict-2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_2",
+      "claimId": "hm-conflict-3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_3",
+      "claimId": "hm-conflict-4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_4",
+      "claimId": "hm-conflict-5",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_1",
+      "claimId": "c1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_2",
+      "claimId": "f1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_3",
+      "claimId": "f2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_4",
+      "claimId": "f3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_5",
+      "claimId": "s1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_6",
+      "claimId": "hm_vol_001",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "fl_7",
+      "claimId": "hm_vol_002",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_gme_general",
+      "claimId": "hm_vol_003",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_gme_count",
+      "claimId": "c2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_postdoc_fellowships",
+      "claimId": "c3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_src16_gme_general",
+      "claimId": "c4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_src16_research_careers",
+      "claimId": "c5",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_a2_1",
+      "claimId": "c6",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_new_1",
+      "claimId": "c1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_new_2",
+      "claimId": "c2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_new_3",
+      "claimId": "c3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_new_4",
+      "claimId": "c4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_enmed_md",
+      "claimId": "c5",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_learner_count",
+      "claimId": "c6",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_cme_nav",
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-a2-1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-a2-2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-a2-3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-a2-4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-a2-5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c7",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c7",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     }

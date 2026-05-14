@@ -11,30 +11,30 @@
   "claimsToDowngrade": [],
   "deepRecoveryTasks": [
     {
-      "taskId": "t1_vslo_orlando_lookup",
+      "taskId": "rec_01",
       "missingFamily": "VISITING_STUDENT_PAGE",
       "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
-      "reason": "Benefits page navigation references 'Medical Clerkship - Orlando Campuses' and 'VSLO Opportunities Across Florida' (c_benefits_vslo_nav_signal) but no dedicated visiting-student/clerkship page was captured in this run.",
-      "suggestedNarrowAction": "Narrow A4 fetch: locate AdventHealth Orlando medical-clerkship / VSLO landing page (e.g. adventhealth.com paths under /gme, /medical-education, or /medical-clerkship for Orlando campus) and run A1/A2 on that single URL only."
+      "reason": "The only VISITING_STUDENT_PAGE captured (src_40) is for AdventHealth Redmond (GA), not AdventHealth Orlando (FL). No Orlando-specific visiting student / observership / clerkship page was located, and no explicit negative quote was captured for the Orlando campus.",
+      "suggestedNarrowAction": "Narrow search for an Orlando-specific clerkship / visiting student / observership URL on adventhealth.com path containing 'orlando' or via the Orlando GME directory; capture either a positive Orlando-scoped offer or an explicit Orlando refusal."
     },
     {
-      "taskId": "t2_loma_linda_affiliation_lookup",
-      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION",
+      "taskId": "rec_02",
+      "missingFamily": "OBSERVERSHIP_PAGE",
       "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
-      "reason": "src_25_c6 references 'Loma Linda University School of Medicine at AdventHealth Orlando' affiliation but no affiliated-student elective/observership policy was extracted.",
-      "suggestedNarrowAction": "Narrow A4 fetch: locate the Loma Linda–AdventHealth Orlando affiliation page describing whether visiting/non-affiliated medical students may rotate."
+      "reason": "No dedicated observership page captured for AdventHealth Orlando. Search yielded GME, careers, volunteer, and a Redmond clerkship, but no Orlando observership signal (positive or negative).",
+      "suggestedNarrowAction": "Targeted query for 'AdventHealth Orlando observership' or IMG-clinical-experience pages; capture explicit policy if present."
     }
   ],
   "duplicates": [],
   "institutionId": "inst_adventhealth_orlando_fl",
   "institutionName": "AdventHealth Orlando",
   "metadata": {
-    "totalClaimsReviewed": 70,
+    "totalClaimsReviewed": 84,
     "publicSafeUSCECount": 0,
     "publicSafeNoOpportunityCount": 0,
     "cautionSafeInternalReviewCount": 0,
-    "futureLaneOnlyCount": 28,
-    "humanReviewRequiredCount": 42,
+    "futureLaneOnlyCount": 24,
+    "humanReviewRequiredCount": 60,
     "hiddenRejectedCount": 0
   },
   "networkUsed": false,
@@ -47,12 +47,8 @@
   "tier1CoverageVerdict": "PASS_PARTIAL",
   "tier2CoverageVerdict": "PASS_COMPLETE",
   "tier3CoverageVerdict": "PASS_COMPLETE",
-  "unfollowedSignals": [
-    "Medical Clerkship - Orlando Campuses (benefits page navigation)",
-    "VSLO Opportunities Across Florida (benefits page navigation)",
-    "Loma Linda University School of Medicine at AdventHealth Orlando affiliation (no companion elective/visiting-student policy extracted)"
-  ],
+  "unfollowedSignals": [],
   "unresolveds": [],
   "verdict": "PASS_PUBLISH_READY",
-  "verdictSummary": "Ledger is internally consistent. Zero PUBLIC_SAFE_USCE claims; all USCE-adjacent signals (volunteer/internship, VSLO nav, Loma Linda affiliation, West-Florida DHI scope, AdventHealth Gordon scope) are correctly held at HUMAN_REVIEW_REQUIRED or FUTURE_LANE_ONLY. Scope conflicts (Kissimmee, Gordon, West Florida DHI, system-level benefits) are already surfaced as explicit SCOPE_CONFLICT claims. Tier 2 and Tier 3 coverage is strong; Tier 1 is PASS_PARTIAL — VSLO/clerkship navigation signal warrants a narrow A4 recovery fetch for the Orlando visiting-student page."
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims; ledger is internally consistent. Visiting-student, GME, careers, benefits, and DHI pages either reference wrong campuses (Redmond/Gordon/Kissimmee/DHI West FL) or are future-lane content, and the classifier has already routed them to FUTURE_LANE_ONLY or HUMAN_REVIEW_REQUIRED. Tier 1 coverage is PASS_PARTIAL: a visiting-student family was searched but only off-campus (Redmond) content surfaced; recovery tasks proposed for Orlando-scoped USCE evidence."
 }

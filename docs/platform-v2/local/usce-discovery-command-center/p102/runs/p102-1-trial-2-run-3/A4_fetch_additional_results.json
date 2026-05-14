@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-3",
+  "institutionId": "inst_adventhealth_orlando_fl",
+  "candidatesAttempted": 4,
+  "accepted": 1,
+  "rejected": 5,
+  "htmlAccepted": 1,
+  "pdfAccepted": 0,
+  "results": [
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "attemptedUrl": "https://adventhealth.com/medical-clerkship",
+      "status": "ACCEPTED",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": 43498,
+      "sourceId": "src_40_additional",
+      "sha256": "07bbb50cc7bf7c7b94c2c732050b4d8c2401e02769ce7b9150d9e74571d4d882",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/additional/cleaned_text/src_40_additional.txt",
+      "rawArtifactPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/additional/raw_html/src_40_additional.html",
+      "reason": "fetched ok",
+      "capturedAt": "2026-05-14T22:29:14.805Z"
+    }
+  ],
+  "generatedAt": "2026-05-14T22:29:22.207Z"
+}

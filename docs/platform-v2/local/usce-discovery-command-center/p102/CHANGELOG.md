@@ -2,6 +2,20 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer` (CLI extractor work on sub-branch `local/p102-cli-extractor-orchestrator`). Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0G — 2026-05-14 — Single-domain deep run + bounded A4 fetch-additional
+
+- Establishes the terminal automation operating model in writing: [`P102_TERMINAL_AUTOMATION_MODEL.md`](P102_TERMINAL_AUTOMATION_MODEL.md). One institution at a time, local `claude` CLI, no SDK, no API key, no manual chat. Future state / national mode is a serial queue.
+- Added `scripts/p102-a4-fetch-additional.ts`: bounded HEAD-first live-web recovery for A3-emitted `deepRecoveryTasks`. Same institution / same official-domain only; budgets `--max-additional-candidates 20`, `--max-additional-accepted 10`, `--max-additional-pdfs 5`. Default `--plan-only`; requires `--execute` to actually fetch. 1 s rate-limit, 10 s timeout. New artifacts stored on T7 under `additional/`. Wired into `p102-claude-cli-extractor.ts` via `--fetch-additional` (requires `--deep`).
+- Single-domain deep run on Houston Methodist Hospital: 6 sources, 53 verified claims (vs 25 base; +112%), 0 PUBLIC_SAFE_USCE (correct — `/observership` redirects to a Pharmacy P1/P2 externship; model held it at HUMAN_REVIEW_REQUIRED), 100% quote-verified, Tier 1 lane CAUTION_SAFE_INTERNAL_REVIEW (no medical-student observership page on `houstonmethodist.org`), 0 A4 tasks (model honestly concluded no Tier 1 page to recover).
+- Bounded A4 fetch-additional on AdventHealth Orlando: 6 candidate URLs (3 mined from task prose, 3 from family-path hints), 4 attempted (2 dedupe-skipped), 1 accepted (the AdventHealth Redmond medical-clerkship page at `/adventhealth-graduate-medical-education/medical-clerkship-redmond`), 3 rejected (404s on `/affiliations*`).
+- **Bug found and fixed.** The Redmond clerkship page is rich Tier 1 USCE content on the system-level `adventhealth.com` domain. After re-deep, the model emitted 5 `PUBLIC_SAFE_USCE` claims with `sourceScope: INSTITUTION_SPECIFIC` (its own emission). The orchestrator was falling back to the model's emitted scope when source-map scope was `UNKNOWN_SCOPE`, which let the wrong attribution slip through. Two fixes:
+  1. `p102-a4-fetch-additional.ts` now calls `inferSourceScope()` at fetch time → new sources land with deterministic scope (`HEALTH_SYSTEM_LEVEL` for `adventhealth.com`).
+  2. `p102-claude-cli-extractor.ts` no longer trusts the model's emitted scope. For `UNKNOWN_SCOPE` sources, it computes `inferSourceScope()` using the canonical institution context. Resolved scope is persisted into the verified-claim ledger so `p102-quote-verify` re-verification reaches the same classification.
+- Also fixed: fetched-source hash convention. Cleaned-text content hash (not raw HTML bytes) is now stored in `sourceHash` so `p102-validate-run-integrity` passes.
+- Post-fix AdventHealth Orlando: 85 verified claims, 0 PUBLIC_SAFE_USCE, 24 FUTURE_LANE_ONLY, 61 HUMAN_REVIEW_REQUIRED (including all 5 Redmond Tier 1 candidates), 100% quote-verified, 0 scope conflicts on the regate, A3 PASS_PUBLISH_READY.
+- All 11 validators pass across all 4 runs (228 / 228 claims quote-verified).
+- Production main `739ab1e` UNCHANGED. No PR, no push, no deploy.
+
 ## P102-0F — 2026-05-14 — Deep three-tier institutional extraction mode
 
 - Upgrades P102-0E from a working source/claim extractor into a deep institutional researcher. Every institution-run can now produce a `16_three_tier_institution_packet.json` covering Tier 1 (USCE & Match), Tier 2 (Trainee), Tier 3 (Practice & Career).
@@ -16,7 +30,7 @@ Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) f
 ## P102-0E — 2026-05-14 — Claude CLI claim extractor (FDD pattern; replaces P102-0D)
 
 - Replaced the SDK-based P102-0D model reader with FDD-style local CLI orchestration. `ANTHROPIC_API_KEY` no longer required — the `claude` CLI uses the operator's authenticated Claude Code session.
-- Removed `@anthropic-ai/sdk` dependency from `package.json` + `package-lock.json`. Deleted `scripts/p102-model-reader.ts`. P102-0D spec + checkpoint docs marked SUPERSEDED in-place (original at commit `6a36813`).
+- Removed `@anthropic-ai/sdk` dependency from `package.json` + `package-lock.json`. Deleted the old SDK-based model reader script (previously at scripts/p102-model-reader.ts). P102-0D spec + checkpoint docs marked SUPERSEDED in-place (original at commit `6a36813`).
 - Added `scripts/p102-claude-cli-extractor.ts`: orchestrator that invokes `claude -p --output-format json --json-schema ... --system-prompt-file ... --tools "" --no-session-persistence` per source per phase (A1 broad, A2 depth, A3 hostile gate). Strict schema validation at the CLI level + post-call quote re-verification + visibility re-classification.
 - Added `scripts/p102-quote-verify.ts`: standalone verifier over `13_model_claims_verified.json`. Re-runs `isQuoteVerifiable()` + `classifyVisibility()`. `--strict` returns non-zero on any failure.
 - Added 4 prompt files under `prompts/`: A1 reader (claims, future-lane, scope conflicts), A2 depth (additive new claims + a1ClaimsToRefine), A3 hostile gate (verdict + downgrades), A4 focused recovery (captured; not invoked this sprint).

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-3",
+  "institutionId": "inst_adventhealth_orlando_fl",
+  "institutionName": "AdventHealth Orlando",
+  "officialDomains": [
+    "adventhealth.com"
+  ],
+  "budgets": {
+    "maxCandidates": 20,
+    "maxAccepted": 10,
+    "maxPdfs": 5
+  },
+  "tasks": [
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://adventhealth.com/gme",
+        "https://adventhealth.com/medical-education",
+        "https://adventhealth.com/medical-clerkship"
+      ]
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://adventhealth.com/medical-school-affiliations",
+        "https://adventhealth.com/affiliations",
+        "https://adventhealth.com/affiliated-schools"
+      ]
+    }
+  ],
+  "mode": "execute",
+  "attestations": {
+    "networkUsed": true,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "sameInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-14T22:29:09.933Z"
+}

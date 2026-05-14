@@ -1,114 +1,64 @@
 {
   "schemaVersion": "p102-quote-verify-1",
   "runId": "p102-1-trial-2-run-3",
-  "total": 70,
+  "total": 85,
   "countByStatus": {
-    "OK": 70
+    "OK": 85
   },
   "failureCount": 0,
   "checks": [
     {
-      "claimId": "src_20_scope_01",
+      "claimId": "c_scope_01",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_volunteer_01",
+      "claimId": "src20_c1_volunteer_general",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_intern_01",
+      "claimId": "src20_c2_internship_healthcare_career",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_contact_01",
+      "claimId": "src20_c3_contact_email",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_elig_age_01",
+      "claimId": "src20_c4_internship_phone",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_duration_01",
+      "claimId": "src20_c5_age_eligibility",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_docs_01",
+      "claimId": "src20_c6_minimum_hours",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_docs_02",
+      "claimId": "src20_c7_screenings",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_docs_03",
+      "claimId": "src20_c8_vaccinations",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_intern_contact_01",
+      "claimId": "src20_c9_letters_of_rec",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_25_c1",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "src_25_c2",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "src_25_c3",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "src_25_c4",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "src_25_c5",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "src_25_c6",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "c_src28_01",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "c_src28_02",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "c_src28_03",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "c_src28_04",
-      "status": "OK",
-      "details": "quote verified + visibility consistent"
-    },
-    {
-      "claimId": "c_src28_05",
+      "claimId": "src20_sc1_kissimmee_vs_orlando",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
@@ -128,152 +78,252 @@
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_pgy1_salary",
+      "claimId": "c4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_health_plans",
+      "claimId": "c5",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_insurance_disability",
+      "claimId": "c6",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_usmle_step3",
+      "claimId": "c1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_visa_ecfmg_covered",
+      "claimId": "c2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_relocation",
+      "claimId": "c3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_pdo",
+      "claimId": "c4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_retirement",
+      "claimId": "c5",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_h1b_sponsorship",
+      "claimId": "sc1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_h1b_usmle_requirement",
+      "claimId": "c1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_h1b_greencard",
+      "claimId": "c2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_pslf",
+      "claimId": "sc1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_contact_phone",
+      "claimId": "c01",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_benefits_vslo_nav_signal",
+      "claimId": "c02",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_scope_conflict_system_vs_orlando",
+      "claimId": "c03",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_residency_usf_gi",
+      "claimId": "c04",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_fellowships",
+      "claimId": "c05",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_cme",
+      "claimId": "c06",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_fl_train_residents_fellows",
+      "claimId": "c07",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_scope_conflict_west_florida_vs_orlando",
+      "claimId": "c08",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_cost_01",
+      "claimId": "c09",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_elig_minor_01",
+      "claimId": "c10",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_elig_hepb_01",
+      "claimId": "c11",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_pathway_01",
+      "claimId": "sc01",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_negative_court_01",
+      "claimId": "fl_1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_20_a2_future_lane_01",
+      "claimId": "fl_2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "src_25_a2_c1",
+      "claimId": "fl_3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_src28_a2_01",
+      "claimId": "fl_4",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_src28_a2_02",
+      "claimId": "sc_1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "c_src28_a2_03",
+      "claimId": "c_src40_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_03",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_04",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_05",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_06",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_07",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_08",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc_src40_09",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c1_background_check",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c2_parental_consent",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c3_orientation_interview",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c4_hep_b_ed_role",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c5_negative_court_ordered",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src20_a2_c6_medicine_career_invite",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
@@ -298,62 +348,87 @@
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_stipends_perks",
+      "claimId": "a2_c01",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_h1b_duration",
+      "claimId": "a2_c02",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_veteran_education",
+      "claimId": "a2_c03",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_supplemental_perks",
+      "claimId": "a2_c04",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_medical_stipend",
+      "claimId": "a2_c05",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_gme_wellness",
+      "claimId": "a2_c06",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_benefits_policies",
+      "claimId": "a2_c07",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_wis_symposium",
+      "claimId": "a2_c08",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_wis_phone",
+      "claimId": "a2_c09",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_clinical_trials_research",
+      "claimId": "a2_new_1",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_faculty_academic_positions",
+      "claimId": "a2_new_2",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     },
     {
-      "claimId": "a2_c_general_contact_phone",
+      "claimId": "a2_new_3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_src40_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_src40_02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_src40_03",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_src40_04",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_src40_05",
       "status": "OK",
       "details": "quote verified + visibility consistent"
     }

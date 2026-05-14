@@ -2,7 +2,7 @@
 
 **Verdict:** PASS_PUBLISH_READY
 
-All three claims are correctly classified as FUTURE_LANE_ONLY from a CAREERS_PAGE source. No PUBLIC_SAFE_USCE claims exist, no scope conflicts, no overclaims, no duplicates. Ledger is internally consistent and safe to merge.
+All three merged claims are correctly classified as FUTURE_LANE_ONLY from a CAREERS_PAGE source. No PUBLIC_SAFE_USCE claims, no scope conflicts, no overclaims, no duplicates. Ledger is internally consistent — institution has no Tier-1 USCE signal in captured sources.
 
 - publicSafetyFailures: 0
 - claimsToDowngrade:    0

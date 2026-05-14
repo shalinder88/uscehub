@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-3",
+  "rejected": [
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "attemptedUrl": "https://adventhealth.com/gme",
+      "status": "REJECTED",
+      "httpStatus": null,
+      "contentType": null,
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "already in source map",
+      "capturedAt": null
+    },
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "attemptedUrl": "https://adventhealth.com/medical-education",
+      "status": "REJECTED",
+      "httpStatus": null,
+      "contentType": null,
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "already in source map",
+      "capturedAt": null
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "attemptedUrl": "https://adventhealth.com/medical-school-affiliations",
+      "status": "HEAD_NOT_OK",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "head status 404",
+      "capturedAt": null
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "attemptedUrl": "https://adventhealth.com/affiliations",
+      "status": "HEAD_NOT_OK",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "head status 404",
+      "capturedAt": null
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "attemptedUrl": "https://adventhealth.com/affiliated-schools",
+      "status": "HEAD_NOT_OK",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "head status 404",
+      "capturedAt": null
+    }
+  ],
+  "generatedAt": "2026-05-14T22:29:22.207Z"
+}
