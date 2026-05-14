@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "p102-quote-verify-1",
+  "runId": "p102-0r-dry-run-1",
+  "total": 3,
+  "countByStatus": {
+    "OK": 3
+  },
+  "failureCount": 0,
+  "checks": [
+    {
+      "claimId": "inst_hartford_hospital_ct-src_28-fl-1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "inst_hartford_hospital_ct-src_28-a2-1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "inst_hartford_hospital_ct-src_28-a2-2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    }
+  ]
+}

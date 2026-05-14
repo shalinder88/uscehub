@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://hartfordhospital.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Over 800 active research projects overseen by the IRB' but does not state whether medical students, visiting students, or external trainees may participate in research.",
+          "Page lists a 'Medical Professionals' subsection under Research but the cleaned text contains only the navigational label, not eligibility, application, or contact details.",
+          "Source scope is ambiguous: URL is hartfordhospital.org/research but page title and chrome reference 'Hartford HealthCare' system; cleaned text does not resolve whether research administration applies to Hartford Hospital specifically or the entire HHC system."
+        ],
+        "recommendedA3Focus": [
+          "Confirm sourceScope is treated as HEALTH_SYSTEM_LEVEL (Hartford HealthCare system-wide research administration) rather than INSTITUTION_SPECIFIC; block any PUBLIC_SAFE_USCE claims on this URL absent campusApplicabilityProof.",
+          "Verify no future claim infers a medical-student research elective from the generic 'Research Administration' / '800 active research projects' language — page does not mention students."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://hartfordhospital.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "inst_hartford_hospital_ct-src_28-a2-1",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/careers",
+            "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "TEL:888-985-7755",
+            "claimText": "Careers portal phone number for Hartford HealthCare; future-lane contact only.",
+            "normalizedField": "careers_phone",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "System-level careers portal; not a USCE coordinator contact.",
+            "whyA1Missed": "Phone number appears in footer-level text near copyright; A1 captured only the top-of-page title quote."
+          },
+          {
+            "claimId": "inst_hartford_hospital_ct-src_28-a2-2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/careers",
+            "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Growth & DevelopmentTuition assistance, education and training, and career progression opportunities.",
+            "claimText": "Employee tuition assistance and training benefit; future-lane employment benefit, not USCE.",
+            "normalizedField": "employee_benefit_tuition_assistance",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Benefit applies to employees, not visiting students/observers.",
+            "whyA1Missed": "A1 emitted a single broad careers-page claim and did not break out the specific tuition/education benefit signal."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "inst_hartford_hospital_ct-src_28-fl-1",
+            "refinementReason": "quote_too_general",
+            "explanation": "The A1 quote concatenates the page title with marketing taglines ('Search resultsBe part of something bigger and better.') and is not a single coherent sentence; a tighter quote anchored to careers-specific language would be stronger evidence."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'eight state-of-the-art acute care hospitals' including Hartford Hospital but does not state whether any visiting student or observership pathway exists at the Hartford Hospital campus specifically."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL / system-level Hartford HealthCare source.",
+          "Verify all claims from this source remain FUTURE_LANE_ONLY given sourceFamily=CAREERS_PAGE."
+        ]
+      }
+    }
+  ]
+}

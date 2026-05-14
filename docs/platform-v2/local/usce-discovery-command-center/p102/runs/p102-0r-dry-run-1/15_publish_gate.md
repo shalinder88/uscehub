@@ -1,16 +1,16 @@
 # Publish Gate (A3) — p102-0r-dry-run-1
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-13T12:18:25.708Z
+regatedAt: 2026-05-14T19:37:00.934Z
 
 **A3 read only run-folder files. No network. No Agent.**
 
-- Verdict: FAIL_NEEDS_A4
+- Verdict: PASS_WITH_CAVEATS
 - Public safe: false
-- Future lane value: NONE
+- Future lane value: LOW
 - PUBLIC_SAFE_USCE claims: 0
 - CAUTION_SAFE_INTERNAL_REVIEW claims: 0
-- FUTURE_LANE_ONLY claims: 0
+- FUTURE_LANE_ONLY claims: 3
 - networkUsed: false
 - agentUsed: false
 
@@ -36,4 +36,4 @@ _(none)_
 _(none)_
 
 ## Final recommendation
-A4 recovery required; investigate missing critical fields.
+Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).

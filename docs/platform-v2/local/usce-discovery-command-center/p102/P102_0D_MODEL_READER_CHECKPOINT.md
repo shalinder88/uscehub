@@ -1,8 +1,11 @@
-# P102-0D — Model Reader Checkpoint
+# P102-0D — Model Reader Checkpoint (SUPERSEDED)
+
+> ⚠️ **SUPERSEDED by P102-0E (Claude CLI extractor orchestrator).**
+> The SDK path required `ANTHROPIC_API_KEY`, which is not the desired architecture. Replaced with local `claude` CLI orchestration (FDD pattern). The `@anthropic-ai/sdk` dependency has been removed and `scripts/p102-model-reader.ts` has been deleted. See [`P102_0E_CLAUDE_CLI_EXTRACTOR_SPEC.md`](P102_0E_CLAUDE_CLI_EXTRACTOR_SPEC.md). Original P102-0D commit `6a36813` remains in history.
 
 schemaVersion: p102-0r-1
 date: 2026-05-14
-status: **BUILT & DRY-RUN VERIFIED.** Live API call **gated on `ANTHROPIC_API_KEY`** (not set on this machine).
+status: **SUPERSEDED** (was BUILT & DRY-RUN VERIFIED). The build artifacts have been removed; the FDD-style CLI path is active.
 
 ## Summary
 

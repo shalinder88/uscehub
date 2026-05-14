@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "runId": "p102-1-trial-2-run-2",
+  "institutionId": "inst_brooklyn_hospital_center_ny",
+  "institutionName": "The Brooklyn Hospital Center",
+  "networkUsed": false,
+  "agentUsed": false,
+  "phase": "A3",
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger contains zero PUBLIC_SAFE_USCE claims. All USCE-flavored signals (podiatry observership/externship) are correctly classified FUTURE_LANE_ONLY because they live on GME_PAGE / DEPARTMENT_LEVEL sources and are limited to podiatric medical students. All careers/GME/residency/fellowship content is correctly future-lane. Volunteer page is appropriately HUMAN_REVIEW_REQUIRED. No scope conflicts, no overclaims, no public-safety hazards.",
+  "publicSafetyFailures": [],
+  "claimsToDowngrade": [],
+  "scopeConflicts": [],
+  "duplicates": [],
+  "unresolveds": [],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "metadata": {
+    "totalClaimsReviewed": 86,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 85,
+    "humanReviewRequiredCount": 1,
+    "hiddenRejectedCount": 0
+  }
+}

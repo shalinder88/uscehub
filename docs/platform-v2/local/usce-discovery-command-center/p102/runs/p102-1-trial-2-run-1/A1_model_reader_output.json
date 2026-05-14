@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://houstonmethodist.org/observership",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c_scope_conflict_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://houstonmethodist.org/observership",
+            "sourceHash": "83eb6ad2ebaa6afebcbee7469f9d3b5e92f7cf95543352bc93309ebc8eb1281b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/observership.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "The Pharmacy Student Summer Externship Program at Houston Methodist Hospital is a six-week, non-compensated, hands-on experience designed to provide an introduction to hospital-based pharmacy for students enrolled in a Doctor of Pharmacy program who have completed their first or second year.",
+            "claimText": "Page is a Pharmacy (PharmD) Student Summer Externship, not a physician/medical-student USCE program. Content does not match the /observership URL's implied lane.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family was classified OBSERVERSHIP_PAGE but content describes a PharmD externship for P1/P2 pharmacy students, not a physician/IMG observership or visiting medical student rotation. Out of USCE scope; flag for A2 review."
+          }
+        ],
+        "unresolveds": [
+          "Source URL path is /observership but cleaned text describes only a Pharmacy Student Summer Externship for PharmD P1/P2 students; no physician observership, visiting medical student, or elective content is present on this page.",
+          "sourceScope is UNKNOWN_SCOPE — cannot determine INSTITUTION_SPECIFIC vs HEALTH_SYSTEM_LEVEL from this capture alone."
+        ],
+        "recommendedA2Focus": [
+          "Search houstonmethodist.org for a separate physician/IMG observership program page (e.g., /education, /gme, /international-medical-graduates, /observer-program).",
+          "Confirm whether Houston Methodist Hospital offers any visiting medical student rotations (VSLO) or international observership distinct from this pharmacy externship.",
+          "Resolve source scope: determine if houstonmethodist.org is INSTITUTION_SPECIFIC for Houston Methodist Hospital or HEALTH_SYSTEM_LEVEL across the Houston Methodist system."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://houstonmethodist.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://houstonmethodist.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Volunteer page contains only generic community-volunteer content (administrative offices, patient/unit involvement, greeting/hospitality) with no observership, shadowing, clinical experience, medical-student, or USCE signal. No claims emitted."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://houstonmethodist.org/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/gme",
+            "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Houston Methodist offers a wide variety of accredited and non-accredited residency and fellowship programs for physicians who want to pursue subspecialty training.",
+            "claimText": "Houston Methodist offers accredited and non-accredited residency and fellowship programs for subspecialty training.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/gme",
+            "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "392 Residents & Fellows52 ACGME Accredited Programs19 GMEC-Sponsored Fellowships",
+            "claimText": "GME footprint: 392 residents/fellows, 52 ACGME-accredited programs, 19 GMEC-sponsored fellowships.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_3",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/gme",
+            "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "gmeoffice@houstonmethodist.org",
+            "claimText": "GME office contact email: gmeoffice@houstonmethodist.org",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "gmeoffice@houstonmethodist.org",
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_4",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/gme",
+            "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "For more information,\ncall 713.441.4934 or email us .",
+            "claimText": "GME contact phone: 713.441.4934",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "713.441.4934",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Locate Houston Methodist visiting student / observership / IMG observer page if one exists separate from GME landing.",
+          "Check for VSLO/AAMC visiting student participation page.",
+          "Check 'Health Professionals Education' subpages for medical student rotations."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://houstonmethodist.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "fl_1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "MD/DO Jobs",
+            "normalizedField": null,
+            "claimText": "Careers portal lists MD/DO Jobs category.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Advanced Practice Provider Jobs",
+            "normalizedField": null,
+            "claimText": "Careers portal lists Advanced Practice Provider Jobs category.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_3",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Postdoctoral Fellows Jobs",
+            "normalizedField": null,
+            "claimText": "Careers portal lists Postdoctoral Fellows Jobs category.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_4",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Administrative Fellowship Program",
+            "normalizedField": null,
+            "claimText": "Students & Graduates section lists Administrative Fellowship Program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Nurse Residency Program",
+            "normalizedField": null,
+            "claimText": "Students & Graduates section lists a Nurse Residency Program (non-physician).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Nurse residency, not physician GME."
+          },
+          {
+            "claimId": "fl_6",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "TMC and The Woodlands Extern Program",
+            "normalizedField": null,
+            "claimText": "Students & Graduates section lists a TMC and The Woodlands Extern Program (audience unspecified).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Page does not specify medical-student eligibility; 'extern' here is in a careers context."
+          },
+          {
+            "claimId": "fl_7",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Hospital Administration/Operations Summer Internship Program",
+            "normalizedField": null,
+            "claimText": "Students & Graduates section lists a Hospital Administration/Operations Summer Internship Program (non-clinical).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Non-clinical internship."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a careers portal index; no observership, visiting student, or clinical USCE content is present. 'Extern Program' is listed without audience or eligibility detail."
+        ],
+        "recommendedA2Focus": [
+          "Confirm whether 'TMC and The Woodlands Extern Program' is a medical-student clinical extern or a non-clinical staff extern by inspecting the program's dedicated page.",
+          "Search houstonmethodist.org for observership / visiting student / elective pages outside the careers portal."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://houstonmethodist.org/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_gme_general",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Houston Methodist has a long tradition of training physicians in various medical and surgical specialties. Our residents and fellows join Houston Methodist from throughout the U.S. and to prestigious fellowship opportunities at institutions including Mayo Clinic, Cleveland Clinic, and Massachusetts General Hospital.",
+            "normalizedField": null,
+            "claimText": "Houston Methodist trains residents and fellows in various medical and surgical specialties.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_gme_count",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "71GME Programs",
+            "normalizedField": "71",
+            "claimText": "Institution states it has 71 GME programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Number derived from page widget; context minimal."
+          },
+          {
+            "claimId": "c_postdoc_fellowships",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Postdoctoral FellowshipsHouston Methodist provides a unique environment for postdoctoral researchers on career paths to leadership in translational medicine.",
+            "normalizedField": null,
+            "claimText": "Postdoctoral fellowships offered for translational research career paths.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source scope is UNKNOWN_SCOPE for houstonmethodist.org/education; could be HEALTH_SYSTEM_LEVEL or INSTITUTION_SPECIFIC depending on Houston Methodist Hospital scoping. Page contains no observership, visiting student, elective, or sub-internship language."
+        ],
+        "recommendedA2Focus": [
+          "Crawl the GME and Residencies subsection for residency program list.",
+          "Search for an observership/international observer program page on houstonmethodist.org.",
+          "Search for visiting medical student / elective / VSLO pages.",
+          "Determine institutional scoping (Houston Methodist Hospital vs system) for future PUBLIC_SAFE eligibility."
+        ]
+      }
+    }
+  ]
+}

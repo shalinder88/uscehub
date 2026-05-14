@@ -1,6 +1,17 @@
 # P102 Changelog
 
-Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer`. Production main at `739ab1e` UNCHANGED throughout.
+Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer` (CLI extractor work on sub-branch `local/p102-cli-extractor-orchestrator`). Production main at `739ab1e` UNCHANGED throughout.
+
+## P102-0E — 2026-05-14 — Claude CLI claim extractor (FDD pattern; replaces P102-0D)
+
+- Replaced the SDK-based P102-0D model reader with FDD-style local CLI orchestration. `ANTHROPIC_API_KEY` no longer required — the `claude` CLI uses the operator's authenticated Claude Code session.
+- Removed `@anthropic-ai/sdk` dependency from `package.json` + `package-lock.json`. Deleted `scripts/p102-model-reader.ts`. P102-0D spec + checkpoint docs marked SUPERSEDED in-place (original at commit `6a36813`).
+- Added `scripts/p102-claude-cli-extractor.ts`: orchestrator that invokes `claude -p --output-format json --json-schema ... --system-prompt-file ... --tools "" --no-session-persistence` per source per phase (A1 broad, A2 depth, A3 hostile gate). Strict schema validation at the CLI level + post-call quote re-verification + visibility re-classification.
+- Added `scripts/p102-quote-verify.ts`: standalone verifier over `13_model_claims_verified.json`. Re-runs `isQuoteVerifiable()` + `classifyVisibility()`. `--strict` returns non-zero on any failure.
+- Added 4 prompt files under `prompts/`: A1 reader (claims, future-lane, scope conflicts), A2 depth (additive new claims + a1ClaimsToRefine), A3 hostile gate (verdict + downgrades), A4 focused recovery (captured; not invoked this sprint).
+- Added P102-0E spec + checkpoint docs. Anti-drift validator extended to skip script-reference checks inside docs whose head contains `SUPERSEDED`.
+- Cross-validator dispatcher extended with `p102-quote-verify --all-existing-p102-runs --strict --quiet` as validator #10.
+- Live-run across 4 existing runs end-to-end. Per-run output: `A1_model_reader_output.json`, `A1_model_reader_report.md`, `A2_model_depth_output.json`, `A2_model_depth_report.md`, `A3_gate.json`, `A3_gate_report.md`, `13_model_claims_verified.json`, `13_model_claims_rejected.json`, per-call CLI logs.
 
 ## P102-0AD — 2026-05-13 — PDF text extraction cascade
 

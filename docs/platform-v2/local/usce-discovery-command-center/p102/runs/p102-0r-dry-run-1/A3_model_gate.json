@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "runId": "p102-0r-dry-run-1",
+  "institutionId": "inst_hartford_hospital_ct",
+  "institutionName": "Hartford Hospital",
+  "networkUsed": false,
+  "agentUsed": false,
+  "phase": "A3",
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "All three claims are correctly classified as FUTURE_LANE_ONLY from a CAREERS_PAGE source. No PUBLIC_SAFE_USCE claims exist, no scope conflicts, no overclaims, no duplicates. Ledger is internally consistent and safe to merge.",
+  "publicSafetyFailures": [],
+  "claimsToDowngrade": [],
+  "scopeConflicts": [],
+  "duplicates": [],
+  "unresolveds": [],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "metadata": {
+    "totalClaimsReviewed": 3,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 3,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  }
+}

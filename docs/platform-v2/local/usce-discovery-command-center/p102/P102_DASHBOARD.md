@@ -1,6 +1,6 @@
 # P102 Dashboard — All Runs
 
-_Generated: 2026-05-13T12:29:50.948Z by `scripts/p102-generate-dashboard.ts`. Aggregates A3 verdicts + claim counts + metrics across all P102 runs. Pure data transform; no network, no Agent._
+_Generated: 2026-05-14T19:53:45.783Z by `scripts/p102-generate-dashboard.ts`. Aggregates A3 verdicts + claim counts + metrics across all P102 runs. Pure data transform; no network, no Agent._
 
 ## Overall totals
 
@@ -22,14 +22,13 @@ _Generated: 2026-05-13T12:29:50.948Z by `scripts/p102-generate-dashboard.ts`. Ag
 
 ## A3 verdict distribution
 
-- **FAIL_NEEDS_A4**: 1 run
-- **PASS_WITH_CAVEATS**: 3 runs
+- **PASS_WITH_CAVEATS**: 4 runs
 
 ## Per-run summary
 
 | Run | Institution | State | Parent | Sources | Claims (verified / total) | PUB_SAFE | FUT_LANE | HUM_REV | NEG | Scope conflicts | A3 verdict | publicSafe | network | agent | A4 tasks | A5 | searchCompleteness |
 |---|---|---|---|---:|---|---:|---:|---:|---:|---:|---|---|---|---|---:|---|---:|
-| `p102-0r-dry-run-1` | Hartford Hospital | CT | Hartford HealthCare | 2 | 0 / 0 | 0 | 0 | 0 | 0 | 0 | FAIL_NEEDS_A4 | false | false | false | 1 | RUN_COMPLETE | 6% |
+| `p102-0r-dry-run-1` | Hartford Hospital | CT | Hartford HealthCare | 2 | 0 / 0 | 0 | 0 | 0 | 0 | 0 | PASS_WITH_CAVEATS | false | false | false | 1 | RUN_COMPLETE | 6% |
 | `p102-1-trial-2-run-1` | Houston Methodist Hospital | TX | — | 6 | 3 / 3 | 0 | 3 | 0 | 0 | 0 | PASS_WITH_CAVEATS | false | false | false | 0 | RUN_COMPLETE | 15% |
 | `p102-1-trial-2-run-2` | The Brooklyn Hospital Center | NY | — | 23 | 47 / 47 | 0 | 46 | 1 | 0 | 0 | PASS_WITH_CAVEATS | false | false | false | 0 | RUN_COMPLETE | 59% |
 | `p102-1-trial-2-run-3` | AdventHealth Orlando | FL | AdventHealth | 8 | 15 / 15 | 0 | 15 | 0 | 0 | 0 | PASS_WITH_CAVEATS | false | false | false | 0 | RUN_COMPLETE | 21% |

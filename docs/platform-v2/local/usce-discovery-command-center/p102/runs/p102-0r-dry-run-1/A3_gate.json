@@ -1,15 +1,15 @@
 {
   "schemaVersion": "p102-0r-1",
   "runId": "p102-0r-dry-run-1",
-  "institutionId": null,
-  "verdict": "FAIL_NEEDS_A4",
+  "institutionId": "hospital",
+  "verdict": "PASS_WITH_CAVEATS",
   "networkUsed": false,
   "agentUsed": false,
   "publicSafe": false,
-  "futureLaneValue": "NONE",
+  "futureLaneValue": "LOW",
   "publicSafeUsceClaims": 0,
   "cautionSafeClaims": 0,
-  "futureLaneClaims": 0,
+  "futureLaneClaims": 3,
   "hallucinationRisks": [],
   "unsupportedClaims": [],
   "quoteVerificationFailures": [],
@@ -19,7 +19,7 @@
     "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
   ],
   "requiredA4Tasks": [],
-  "finalRecommendation": "A4 recovery required; investigate missing critical fields.",
-  "a3RegatedAt": "2026-05-13T12:18:25.708Z",
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-14T19:37:00.934Z",
   "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
 }

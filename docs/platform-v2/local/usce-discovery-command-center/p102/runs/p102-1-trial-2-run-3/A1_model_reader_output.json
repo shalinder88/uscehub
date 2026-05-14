@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://adventhealth.com/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-3",
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://adventhealth.com/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-3",
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "src_20_c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/volunteer",
+            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+            "normalizedField": null,
+            "claimText": "Navigation references AdventHealth Careers Website and Physician and APP Opportunities (future-lane careers signal).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation reference, not page content."
+          }
+        ],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_20_f1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/volunteer",
+            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+            "normalizedField": null,
+            "claimText": "Future-lane careers signal: Physician and APP Opportunities link in site navigation.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation only; no content on this page."
+          }
+        ],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_20_s1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://adventhealth.com/volunteer",
+            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Volunteer | AdventHealth KissimmeeSkip to main contentLocation information for AdventHealth KissimmeeCloseAdventHealth Kissimmee,(Change Location)A part of AdventHealth Orlando",
+            "normalizedField": null,
+            "claimText": "Page is about AdventHealth Kissimmee (a part of AdventHealth Orlando), not AdventHealth Orlando directly — campus/scope mismatch with institution.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer page applies to Kissimmee campus; applicability to AdventHealth Orlando not stated."
+          }
+        ],
+        "unresolveds": [
+          "Page describes 'internship' opportunities but does not specify medical student / observership eligibility — ambiguous, not USCE-confirmed.",
+          "Source scope is UNKNOWN_SCOPE and the content explicitly references AdventHealth Kissimmee, not AdventHealth Orlando — campus applicability unresolved."
+        ],
+        "recommendedA2Focus": [
+          "Confirm whether 'internship at AdventHealth Kissimmee' includes any clinical experience for medical students or is administrative/non-clinical only.",
+          "Determine if AdventHealth Orlando (the institution) has a separate observership/visiting student page distinct from this Kissimmee volunteer page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://adventhealth.com/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-3",
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_gme_001",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/gme",
+            "sourceHash": "ce447a4e68244378fe630c0b1bc52acbc2a1656a8c8394785f079b699d574aeb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationAt AdventHealth, we believe that exceptional physicians don’t just heal patients—they transform communities. Through rigorous training, hands-on experience, and mission-driven service, our Graduate Medical Education programs prepare the next generation of doctors to lead with skill, compassion, and whole-person care.",
+            "normalizedField": null,
+            "claimText": "AdventHealth runs Graduate Medical Education programs for resident physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_gme_002",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/gme",
+            "sourceHash": "ce447a4e68244378fe630c0b1bc52acbc2a1656a8c8394785f079b699d574aeb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Family Medicine Residency at Winter ParkDonate NowFamily Medicine Residency at East OrlandoDonate nowGeneral Pediatrics ResidencyDonate NowLoma Linda University School of Medicine at AdventHealth OrlandoDonate NowGeneral Surgery Residency at Orlando",
+            "normalizedField": null,
+            "claimText": "Listed residency programs: Family Medicine (Winter Park, East Orlando), General Pediatrics, General Surgery (Orlando); Loma Linda University SOM at AdventHealth Orlando affiliation.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Verify whether AdventHealth Orlando offers any IMG observership or visiting medical student program separate from GME residencies."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://adventhealth.com/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-3",
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_001",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "AHMG Cardiovascular ICU at AdventHealth Orlando APRN or PA Physicians & Providers",
+            "claimText": "Open APRN/PA position posted for AHMG Cardiovascular ICU at AdventHealth Orlando.",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_002",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Physician - Primary Care Network, Fruitland Park, Leesburg Physicians & Providers",
+            "claimText": "Open physician position in Primary Care Network (Fruitland Park, Leesburg).",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_003",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "APP - Primary Care Network, Fruitland Park, Leesburg Physicians & Providers",
+            "claimText": "Open APP position in Primary Care Network (Fruitland Park, Leesburg).",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_004",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Physicians and APPsSkilled healer, insightful investigator, knowledgeable adviser, trusted counselor. These are just a few of the roles that come with being a physician. It’s the purpose behind your passion and AdventHealth is committed to providing you with the resources and support you need to live out your calling to the fullest.",
+            "claimText": "Physician and APP careers category present on AdventHealth careers portal.",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_005",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Nurse ResidencyThrough a combination of evidence-based content, skilled nurse preceptors and state-of-the-art simulation technology, our residency program helps you, as a graduate nurse, to grow your competencies and confidence in a safe, supportive environment as you transition into your nursing career.",
+            "claimText": "Nurse Residency program mentioned (nursing, not physician GME).",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nursing residency, not physician GME — captured for completeness."
+          },
+          {
+            "claimId": "c_fl_006",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "H1B_SPONSORSHIP_SIGNAL",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "International Recruitment",
+            "claimText": "International Recruitment link present in the footer — possible H1B/visa-related recruitment signal.",
+            "normalizedField": null,
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Link text only; no explicit physician visa or H1B language on this page."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is health-system-wide AdventHealth careers portal; AdventHealth Orlando-specific applicability requires separate campus-specific source.",
+          "No USCE (observership/visiting student/elective) content present on this careers page."
+        ],
+        "recommendedA2Focus": [
+          "Search AdventHealth Orlando-specific GME and medical-education subpages for observership / visiting student / elective programs.",
+          "Locate AdventHealth Orlando GME residency/fellowship program pages to capture future-lane physician training info.",
+          "Check for international physician recruitment / J-1 waiver pages tied to AdventHealth Orlando."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://adventhealth.com/physician-careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Physician Jobs at AdventHealth GeorgiaPhysician job opportunities at AdventHealth Georgia are growing quickly.",
+            "claimText": "Page lists physician job opportunities at AdventHealth Georgia.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Contact us to ask about any of the following available openings:AnesthesiologistGeneral Surgeon (AdventHealth Murray)GastroenterologistHospitalistMedical OncologistNeuro-Interventionalist (AdventHealth Redmond)NocturnistPrimary Care (Family Medicine, Internal Medicine, & Med/Peds)Surgical OncologistUrologist",
+            "claimText": "Lists physician job openings across multiple specialties at AdventHealth Georgia facilities.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-1-trial-2-run-3",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Physician Careers | AdventHealth GordonSkip to main contentLocation information for AdventHealth GordonCloseAdventHealth Gordon",
+            "claimText": "Source titled AdventHealth Gordon (Georgia), but institution is AdventHealth Orlando (FL); content covers AdventHealth Georgia facilities, not Orlando.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Page is about AdventHealth Gordon/Georgia, not AdventHealth Orlando."
+          }
+        ],
+        "unresolveds": [
+          "Source page is for AdventHealth Gordon/Georgia, not AdventHealth Orlando — institution mapping mismatch."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://adventhealth.com/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-3",
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "fl_001",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "H1B_SPONSORSHIP_SIGNAL",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Visa Sponsorship: H-1B Specialty Occupation",
+            "normalizedField": "h1b_sponsorship",
+            "claimText": "AdventHealth GME benefits page lists H-1B Specialty Occupation visa sponsorship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_002",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "H1B_SPONSORSHIP_SIGNAL",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "To qualify as an H-1B holding Medical Resident you MUST pass all three steps of Medical Licensing Examination (USLME) prior to AdventHealth filing your H1B petition.",
+            "normalizedField": "h1b_eligibility",
+            "claimText": "H-1B eligibility for residents requires passing all three USMLE steps before AdventHealth files the petition.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_003",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "H1B_SPONSORSHIP_SIGNAL",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "H-1B visa holders can obtain permanent residency (green card) through AdventHealth once an offer of future employment is established.",
+            "normalizedField": "green_card_pathway",
+            "claimText": "H-1B holders may pursue green card sponsorship through AdventHealth upon future employment offer.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_004",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Effective Academic Year 2026-2027\nPost Graduate Year Annual Salary\nPGY-1 $69,394\nPGY-2 $72,188\nPGY-3 $74,879\nPGY-4 $78,536\nPGY-5 $83,031\nPGY-6 $86,396\nPGY-7 $90,483",
+            "normalizedField": "resident_salary_schedule",
+            "claimText": "AdventHealth GME resident salary schedule for AY 2026-2027 ranges PGY-1 $69,394 to PGY-7 $90,483.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_005",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Visa fees and ECFMG expenses covered",
+            "normalizedField": "visa_fees_covered",
+            "claimText": "GME benefits state visa fees and ECFMG expenses are covered.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_006",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "USMLE Step III registration fees covered",
+            "normalizedField": "usmle_step3_covered",
+            "claimText": "GME benefits cover USMLE Step III registration fees.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_007",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "DISABILITY_LIFE_INSURANCE_RESOURCE",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Life and Accidental Death and Dismemberment Insurance\nShort-Term Disability Plan\nLong-Term Disability Plan\nGME Paid Leave Program",
+            "normalizedField": "disability_life_insurance",
+            "claimText": "GME benefits include life insurance, AD&D, short-term and long-term disability plans.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "fl_008",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Call 407-303-7133Main Campus 2501 N. Orange Avenue, Orlando, FL 32804",
+            "normalizedField": "gme_contact_phone",
+            "claimText": "GME contact phone 407-303-7133 at Main Campus 2501 N. Orange Avenue, Orlando, FL 32804.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source scope is UNKNOWN_SCOPE on adventhealth.com benefits page; content is system-wide GME benefits covering multiple AdventHealth campuses, so it is at minimum HEALTH_SYSTEM_LEVEL. No PUBLIC_SAFE_USCE possible regardless."
+        ],
+        "recommendedA2Focus": [
+          "Confirm whether AdventHealth Orlando publishes any USCE/observership/visiting-student pages distinct from GME benefits.",
+          "Capture VSLO Opportunities page and Medical Clerkship - Orlando Campuses page referenced in nav for USCE-relevant content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "AdventHealth Digestive Health Institute is a site for the University of South Florida College of Medicine’s residency program in Gastroenterology.",
+            "claimText": "AdventHealth Digestive Health Institute serves as a site for USF College of Medicine's Gastroenterology residency.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_2",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Our surgeons also offer accredited fellowships in Advanced Colorectal Surgery and Advanced GI and HPB Laparoscopic and Robotic Surgery.",
+            "claimText": "Accredited fellowships offered in Advanced Colorectal Surgery and Advanced GI and HPB Laparoscopic and Robotic Surgery.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c_fl_3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Our doctors train residents and fellows, pioneer new surgical approaches, are principal investigators for cancer clinical trials and widely publish and present their research in medical journals and at conferences.",
+            "claimText": "DHI doctors train residents and fellows.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Resolve whether adventhealth.com/medical-education is HEALTH_SYSTEM_LEVEL or DEPARTMENT_LEVEL (Digestive Health Institute West Florida); page references AdventHealth Digestive Health Institute, not specifically AdventHealth Orlando.",
+          "Check the linked Graduate Medical Education website for AdventHealth Orlando-specific USCE / observership / visiting student offerings.",
+          "Confirm campus applicability — page mentions West Florida, USF College of Medicine, Tampa-area phone (813), which may not apply to AdventHealth Orlando."
+        ],
+        "runId": "p102-1-trial-2-run-3",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c_scope_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Medical Education | AdventHealth Digestive Health Institute West Florida",
+            "claimText": "Page title and content refer to AdventHealth Digestive Health Institute West Florida, not AdventHealth Orlando specifically; institution-applicability not established.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Source on adventhealth.com (system-level domain) but content scoped to West Florida DHI; cannot be attributed to AdventHealth Orlando without further proof."
+          }
+        ],
+        "unresolveds": [
+          "No mention of observership, visiting medical students, electives, sub-internships, or USCE pathways in the cleaned text.",
+          "Source scope is unclear: adventhealth.com is system-level but content is scoped to Digestive Health Institute West Florida, not AdventHealth Orlando.",
+          "CME program mentioned but no eligibility / audience / cost details captured in cleaned text."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://adventhealth.com/education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_adventhealth_orlando_fl",
+        "institutionName": "AdventHealth Orlando",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-1-trial-2-run-3",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    }
+  ]
+}

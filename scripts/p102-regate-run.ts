@@ -89,7 +89,22 @@ function regate(runFolder: string): RegateResult {
   const runId = path.basename(runFolder);
 
   // A3 invariants: no network, no Agent. We are reading run-folder files only.
-  const claimsDoc = readJson<{ claims: ClaimRecord[] }>(path.join(runFolder, '13_source_claims.json'));
+  let claimsDoc = readJson<{ claims: ClaimRecord[] }>(path.join(runFolder, '13_source_claims.json'));
+  // P102-0E: if a model-claim ledger exists alongside the deterministic one,
+  // merge it in for re-gate checks. The model ledger uses the same ClaimRecord
+  // fields the regate inspects (claimId, quote, quoteVerified, visibility,
+  // sourceFamily, sourceScope, cleanedTextPath, etc.) plus extras we ignore here.
+  const modelClaimsDoc = readJson<{ claims: ClaimRecord[] }>(path.join(runFolder, '13_model_claims_verified.json'));
+  if (modelClaimsDoc && Array.isArray(modelClaimsDoc.claims) && modelClaimsDoc.claims.length > 0) {
+    if (!claimsDoc) {
+      claimsDoc = { claims: [...modelClaimsDoc.claims] };
+    } else {
+      const existingIds = new Set(claimsDoc.claims.map((c) => c.claimId));
+      for (const c of modelClaimsDoc.claims) {
+        if (!existingIds.has(c.claimId)) claimsDoc.claims.push(c);
+      }
+    }
+  }
   const opps = readJson<{ opportunities: Array<Record<string, unknown>> }>(path.join(runFolder, '03_opportunity_objects.json'));
   const negs = readJson<{ negativeClaims: NegativeClaim[] }>(path.join(runFolder, 'RT_depth_negative_evidence.json'));
   const scopeConflictsDoc = readJson<{ conflicts: Array<{ sourceUrl: string; sourceScope: string; reason: string }> }>(path.join(runFolder, 'RT_depth_source_scope_conflicts.json'));

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "runId": "p102-1-trial-2-run-1",
+  "institutionId": "inst_houston_methodist_hospital_tx",
+  "institutionName": "Houston Methodist Hospital",
+  "networkUsed": false,
+  "agentUsed": false,
+  "phase": "A3",
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger contains zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims. All 25 claims are appropriately classified as FUTURE_LANE_ONLY (19) or HUMAN_REVIEW_REQUIRED (6). The /observership URL was correctly flagged as a Pharmacy externship lane mismatch. No scope conflicts, no overclaims, no duplicates detected. Ledger is internally consistent and safe to merge.",
+  "publicSafetyFailures": [],
+  "claimsToDowngrade": [],
+  "scopeConflicts": [],
+  "duplicates": [],
+  "unresolveds": [],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "metadata": {
+    "totalClaimsReviewed": 25,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 19,
+    "humanReviewRequiredCount": 6,
+    "hiddenRejectedCount": 0
+  }
+}

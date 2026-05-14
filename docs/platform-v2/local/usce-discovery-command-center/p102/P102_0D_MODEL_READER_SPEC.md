@@ -1,9 +1,13 @@
-# P102-0D — Model A1/A2 Reader Spec
+# P102-0D — Model A1/A2 Reader Spec (SUPERSEDED)
+
+> ⚠️ **SUPERSEDED by P102-0E (Claude CLI extractor orchestrator).**
+> The SDK-based approach in this document required `ANTHROPIC_API_KEY`, which is not the desired architecture. The FDD pattern (local `claude` CLI, no API key) is the chosen path. See [`P102_0E_CLAUDE_CLI_EXTRACTOR_SPEC.md`](P102_0E_CLAUDE_CLI_EXTRACTOR_SPEC.md). The `@anthropic-ai/sdk` dependency has been removed from `package.json` and `scripts/p102-model-reader.ts` has been deleted. The original P102-0D commit `6a36813` remains in history for reference.
 
 schemaVersion: p102-0r-1
-status: BUILDING (this sprint)
+status: SUPERSEDED (was BUILDING)
 predecessor: P102-0C deterministic claim extraction (commit `a85838c`)
-branch: `local/p102-claim-extraction-layer`
+successor: P102-0E Claude CLI extractor (this sprint)
+branch: `local/p102-claim-extraction-layer` (orphaned for SDK path; CLI path continues on `local/p102-cli-extractor-orchestrator`)
 captured prompt: [`specs/P102_A1_A2_READER_PROMPT.md`](specs/P102_A1_A2_READER_PROMPT.md)
 
 ## 1. Why P102-0D exists

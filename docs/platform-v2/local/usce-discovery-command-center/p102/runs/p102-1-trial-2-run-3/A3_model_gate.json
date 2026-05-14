@@ -1,0 +1,97 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_adventhealth_orlando_fl",
+  "institutionName": "AdventHealth Orlando",
+  "metadata": {
+    "totalClaimsReviewed": 41,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 21,
+    "humanReviewRequiredCount": 20,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-1-trial-2-run-3",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [
+    {
+      "claimId": "c1",
+      "sourceUrl": "https://adventhealth.com/physician-careers",
+      "sourceScope": "CAREERS_PORTAL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Source page is AdventHealth Gordon (Georgia) physician careers; jobs listed are at Murray, Redmond, and other AdventHealth Georgia facilities — not AdventHealth Orlando. Already non-public (FUTURE_LANE_ONLY); flagged for downstream attribution review."
+    },
+    {
+      "claimId": "c2",
+      "sourceUrl": "https://adventhealth.com/physician-careers",
+      "sourceScope": "CAREERS_PORTAL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Same Gordon/Georgia source; specialty openings listed are at AdventHealth Murray and AdventHealth Redmond, not Orlando."
+    },
+    {
+      "claimId": "a2_c1",
+      "sourceUrl": "https://adventhealth.com/physician-careers",
+      "sourceScope": "CAREERS_PORTAL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Phone 706-602-7800 belongs to AdventHealth Gordon (Georgia), not AdventHealth Orlando. Non-public but attribution mismatch noted."
+    },
+    {
+      "claimId": "a2_c2",
+      "sourceUrl": "https://adventhealth.com/physician-careers",
+      "sourceScope": "CAREERS_PORTAL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Physician/APP nav lane sourced from AdventHealth Gordon page, not Orlando."
+    },
+    {
+      "claimId": "src_20_c1",
+      "sourceUrl": "https://adventhealth.com/volunteer",
+      "sourceScope": "UNKNOWN_SCOPE",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Source page is AdventHealth Kissimmee volunteer page (described as 'A part of AdventHealth Orlando' in markup, but the page is the Kissimmee campus, not Orlando proper)."
+    },
+    {
+      "claimId": "c_fl_1",
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "sourceScope": "UNKNOWN_SCOPE",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Source is AdventHealth Digestive Health Institute West Florida; USF GI residency site claim does not necessarily apply to AdventHealth Orlando campus."
+    },
+    {
+      "claimId": "c_fl_2",
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "sourceScope": "UNKNOWN_SCOPE",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "DHI West Florida fellowship claim sourced to a non-Orlando page; campus applicability not established."
+    },
+    {
+      "claimId": "c_a2_1",
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "DHI West Florida CME claim attributed to Orlando institution without explicit campus tie."
+    },
+    {
+      "claimId": "c_a2_2",
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "explanation": "Phone 813-615-7030 (Tampa area code) sourced from DHI West Florida page; not an Orlando contact."
+    }
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims; ledger contains only FUTURE_LANE_ONLY (21) and HUMAN_REVIEW_REQUIRED (20) entries. No public-safety failures, no overclaims, no duplicates. Scope mismatches (Gordon/Georgia and DHI West Florida and Kissimmee pages attributed to Orlando) are already non-public and flagged for downstream attribution review. Ledger is internally consistent and safe to merge."
+}

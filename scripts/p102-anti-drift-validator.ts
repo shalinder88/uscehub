@@ -68,6 +68,12 @@ function check(): void {
     const rel = path.relative(REPO_ROOT, doc);
     const txt = fs.readFileSync(doc, 'utf8');
 
+    // A doc that marks itself SUPERSEDED in its title or first 10 lines is
+    // exempted from missing-script-reference checks — historical references
+    // to scripts that have since been deleted are expected.
+    const docHead = txt.split('\n').slice(0, 10).join('\n');
+    const isSuperseded = /\bSUPERSEDED\b/.test(docHead);
+
     // 1) schemaVersion check — every "schemaVersion": "..." should match SCHEMA_VERSION
     const svMatches = Array.from(txt.matchAll(/(?:^|\s|")schemaVersion"?\s*:\s*"([^"]+)"/g));
     for (const m of svMatches) {
@@ -77,9 +83,11 @@ function check(): void {
     }
 
     // 2) Markdown-style file references: `scripts/p102-*.ts`
-    const scriptRefs = Array.from(txt.matchAll(/`scripts\/(p102-[\w-]+\.ts)`/g)).map(m => m[1]);
-    for (const s of scriptRefs) {
-      if (!existingScripts.has(s)) fail(`${rel}: references missing script scripts/${s}`);
+    if (!isSuperseded) {
+      const scriptRefs = Array.from(txt.matchAll(/`scripts\/(p102-[\w-]+\.ts)`/g)).map(m => m[1]);
+      for (const s of scriptRefs) {
+        if (!existingScripts.has(s)) fail(`${rel}: references missing script scripts/${s}`);
+      }
     }
 
     // 3) Run-id references in markdown

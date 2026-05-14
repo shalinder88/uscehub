@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://houstonmethodist.org/observership",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page footer 'More to Explore' lists 'GME' as a navigation link but cleaned text contains no GME program content, eligibility, or observership statements to extract from this capture.",
+          "Cleaned text contains no statement about whether Houston Methodist Hospital accepts physician observers, IMG observers, visiting medical students, or VSLO applicants — neither affirmative nor explicit refusal is present on this /observership URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's SCOPE_CONFLICT claim is preserved and that no PUBLIC_SAFE_USCE claim is emitted from this source — content is PharmD P1/P2 externship, not physician USCE.",
+          "Verify that the /observership URL is not auto-promoted to OBSERVERSHIP_PAGE family for downstream public surfacing given the content mismatch.",
+          "A3 should check whether a separate Houston Methodist physician/IMG observership or visiting medical student page exists at a different URL (e.g., /education, /gme, /international) — this capture does not resolve that question.",
+          "Verify no OFFERS_OBSERVERSHIP, OFFERS_VSLO, or OFFERS_VISITING_STUDENT claim was synthesized from pharmacy-externship logistics (duration, coordinator email, application window) on this page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://houstonmethodist.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_src16_gme_general",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/research",
+            "sourceHash": "5912c57150caa0ae9d000727a9579e068f202c3c982b3351171ffc2a24a00a1a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/research.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "EducationOur EducationCME and ProfessionalsGME and ResidenciesMedical EducationResearch Education",
+            "normalizedField": "gme_residencies_nav",
+            "claimText": "Academic Institute navigation lists 'GME and Residencies' as an education area, signaling graduate medical education content elsewhere.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation/link reference only; no program-level detail on this page.",
+            "whyA1Missed": "A1 emitted no claims for this source; the GME signal sits in dense nav text and A1 did not surface future-lane synonyms."
+          },
+          {
+            "claimId": "a2_src16_research_careers",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/research",
+            "sourceHash": "5912c57150caa0ae9d000727a9579e068f202c3c982b3351171ffc2a24a00a1a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/research.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Research CareersResearch CareersWorking with the Houston Methodist Academic Institute, employees have the unique opportunity to be involved in innovative treatments and clinical trials as well as transforming the latest discoveries into practical protocols at the bedside.",
+            "normalizedField": "research_careers",
+            "claimText": "Page promotes 'Research Careers' at the Houston Methodist Academic Institute as employment opportunities — careers/job signal, not USCE.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Refers to employees, not students or observers.",
+            "whyA1Missed": "A1 returned no claims; the careers synonym 'Research Careers' was in a 'Helpful Resources' block A1 did not parse."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Research Education' as an education area but does not state whether external/visiting medical students or observers may participate.",
+          "Page lists 'Medical Education' as an education area but provides no detail on eligibility, application pathway, or whether non-affiliated students are accepted.",
+          "sourceScope in packet is UNKNOWN_SCOPE; content (Academic Institute overview at houstonmethodist.org/research) appears HEALTH_SYSTEM_LEVEL but is not explicitly stated as such on the page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE / health-system-scope source.",
+          "Verify the FUTURE_LANE_GME_GENERAL quote is interpreted as a nav signal, not a program-level claim about Houston Methodist residency eligibility.",
+          "Check that sourceScope is reclassified from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL for downstream scope discipline."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://houstonmethodist.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://houstonmethodist.org/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_a2_1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/gme",
+            "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Affiliated with the following medical institutions:Weill Cornell Medical SchoolTexas A&M University College of Medicine",
+            "claimText": "Houston Methodist is academically affiliated with Weill Cornell Medical School and Texas A&M University College of Medicine.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Affiliation statement appears within Texas Medical Center context block; relationship may be TMC-wide rather than Houston Methodist-exclusive.",
+            "whyA1Missed": "A1 focused on the headline GME numbers and contact details; the academic-affiliation sentence appears further down in the Texas Medical Center facts block and is a synonym-family signal (affiliated medical school) that A1's vocabulary likely deprioritized."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation references parent section 'Health Professionals Education' > 'Medical Education' which may contain undergraduate/visiting medical student or observership pages not present in this GME landing text.",
+          "Page references 'For Health Professionals' subsections including 'For Physicians', 'For Nurses', 'For Pharmacists', 'For Allied Health', and 'Global Health Care Services' but does not state whether any host observership/elective opportunities.",
+          "Footer link 'Volunteering' is present but page does not describe scope, eligibility, or whether clinical observation is included."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this GME_PAGE source (source family is future-lane only).",
+          "Verify the academic-affiliation claim is gated FUTURE_LANE_ONLY and not promoted into a visiting-student eligibility inference.",
+          "Confirm A1's CONTACT_EMAIL and CONTACT_PHONE claims remain scoped to RESIDENCY_PROGRAM_INFO / GME office and are not surfaced as USCE coordinator contacts."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://houstonmethodist.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_new_1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Clinical Pastoral Education Program",
+            "normalizedField": null,
+            "claimText": "Students & Graduates section lists a Clinical Pastoral Education Program (chaplaincy training, non-physician).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Pastoral/chaplaincy education, not physician USCE.",
+            "whyA1Missed": "A1 enumerated four of the five Students & Graduates programs but skipped this entry between Administrative Fellowship and Nurse Residency."
+          },
+          {
+            "claimId": "a2_new_2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Intern Jobs",
+            "normalizedField": null,
+            "claimText": "Careers portal lists a separate 'Intern Jobs' search category distinct from the Hospital Admin Summer Internship program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Category label only; no eligibility or clinical scope specified on this page.",
+            "whyA1Missed": "Appears in the 'Search Jobs By Category' list between HIM/Medical Records and Laboratory Services; A1 captured MD/DO and APP jobs but skipped this category."
+          },
+          {
+            "claimId": "a2_new_3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Nurse Relocation",
+            "normalizedField": null,
+            "claimText": "Careers portal references a Nurse Relocation pathway (non-physician relocation signal).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nurse-specific relocation, not physician.",
+            "whyA1Missed": "Listed under the Careers Overview submenu; A1 focused on the Students & Graduates and job-category lists and skipped overview submenu items."
+          },
+          {
+            "claimId": "a2_new_4",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/careers",
+            "sourceHash": "5229830d3570e3c5233dd697619dfc7015bac63ade394330a6cf1e24c32344a5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Volunteering",
+            "normalizedField": null,
+            "claimText": "Footer links to a Volunteering page (volunteer family signal, not auto-USCE).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Single footer label; no description of who is eligible or whether clinical.",
+            "whyA1Missed": "Buried in footer 'About Us' list; A1 stopped scanning before the footer."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "fl_6",
+            "refinementReason": "quote_too_general",
+            "explanation": "A1 already flags audience as unspecified, but the quote 'TMC and The Woodlands Extern Program' sits inside Students & Graduates alongside non-clinical programs (Admin Fellowship, Pastoral Education, Hospital Admin Internship), suggesting it is more likely a non-clinical staff extern than a medical-student USCE — A3 should not let this drift toward USCE."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Intern Jobs' as a job-search category but does not state whether it refers to clinical interns (PGY-1), administrative interns, or other.",
+          "Footer 'Volunteering' link exists but page does not describe whether volunteer roles include any clinical exposure relevant to USCE.",
+          "Header references 'Research & Education' and 'International Patients' as sibling sites but does not state whether either hosts observership or visiting-student content."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL source — all seven A1 claims and the four A2 additions must remain FUTURE_LANE_ONLY.",
+          "Confirm the 'TMC and The Woodlands Extern Program' (fl_6) is not downstream promoted to OFFERS_ELECTIVE/OFFERS_EXTERNSHIP without a non-careers source proving medical-student eligibility.",
+          "Check that 'Intern Jobs' category is not mistaken for a USCE intern/sub-I program — it is a job-category label on a careers portal."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://houstonmethodist.org/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-1",
+        "institutionId": "inst_houston_methodist_hospital_tx",
+        "institutionName": "Houston Methodist Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c_enmed_md",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "The EnMed program, founded in 2019, is a collaboration between Texas A&M&rsquo;s School of Engineering Medicine and the state&rsquo;s top-ranked Houston Methodist Hospital established to transform health care through the development and training of physicianeers, the creation of medical technologies, and translational research.",
+            "normalizedField": null,
+            "claimText": "EnMed MEng/MD dual-degree program with Texas A&M School of Engineering Medicine, founded 2019.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Dual-degree program for matriculated MD students — not a visiting/USCE pathway.",
+            "whyA1Missed": "A1 covered GME and postdoc fellowships but did not surface the EnMed MD/MEng degree program described mid-page."
+          },
+          {
+            "claimId": "a2_c_learner_count",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Annually, we train more than 67,000 students, researchers, and clinicians with a team medicine and science approach that offers insight into the workings of a high performing academic medical center relentlessly focused on quality improvement, innovation, and biodesign of next generation technologies.",
+            "normalizedField": "67000",
+            "claimText": "Institution states it trains more than 67,000 students, researchers, and clinicians annually.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Aggregate marketing figure; includes non-USCE learners.",
+            "whyA1Missed": "A1 captured the 71 GME programs widget but skipped the adjacent 67,000-learner aggregate sentence."
+          },
+          {
+            "claimId": "a2_c_cme_nav",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://houstonmethodist.org/education",
+            "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Our EducationCME and ProfessionalsGME and ResidenciesMedical EducationResearch EducationAlumni Association",
+            "normalizedField": null,
+            "claimText": "Navigation lists CME and Professionals, GME and Residencies, Medical Education, Research Education subsections.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation listing only; no descriptive text on this page.",
+            "whyA1Missed": "A1 did not capture the navigation enumeration of CME / Medical Education / Research Education subsections which point to deeper crawl targets."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_gme_general",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is the Houston Methodist Academic Institute education hub (system-level), not Houston Methodist Hospital specifically. Future-lane classification is fine, but sourceScope should be HEALTH_SYSTEM_LEVEL rather than UNKNOWN_SCOPE."
+          },
+          {
+            "a1ClaimId": "c_gme_count",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote '71GME Programs' is a stripped widget token without sentence context; A3 may want a stronger surrounding-context quote or downgrade confidence."
+          },
+          {
+            "a1ClaimId": "c_postdoc_fellowships",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Postdoctoral fellowships described are research career-development positions, not ACGME clinical fellowships; FELLOWSHIP_PROGRAM_INFO lane may mislead. RESEARCH_OPPORTUNITY or research-specific lane is more accurate."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Medical Education' as a subsection but this page does not state whether Medical Education includes visiting students, electives, or observerships.",
+          "Source scope is ambiguous — page is branded 'Houston Methodist Academic Institute' (system-wide) yet institutionId is 'Houston Methodist Hospital' (a single hospital within the system).",
+          "CME and Professionals subsection mentioned in navigation but no description of audience, eligibility, or whether observership/IMG pathways exist there.",
+          "Bookout Center is described as 'hands-on clinical training facility for health care professionals' but eligibility (internal staff vs external/visiting) is not stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this system-level Academic Institute URL.",
+          "Verify sourceScope is corrected from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL given Academic Institute branding.",
+          "Confirm '71GME Programs' widget-stripped quote meets quote-verification standards or is downgraded.",
+          "Ensure postdoc-fellowship claim is not misread as ACGME clinical fellowship eligibility for IMGs."
+        ]
+      }
+    }
+  ]
+}
