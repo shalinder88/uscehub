@@ -294,3 +294,201 @@ JSON. Hostile gate output.
 ## Versioning
 
 Schema breakage is forbidden inside a sprint. Schema evolution proceeds by bumping `p102-0r-1` → `p102-0r-2` (compatible) or `p102-0r-2` → `p102-1-1` (new sprint). Past run files keep their original schemaVersion; new runs use the current version. Validators must check `schemaVersion` and emit a clear error on mismatch.
+
+---
+
+## P102-0F deep-mode additions (schemaVersion `p102-deep-0f-1`)
+
+Deep-mode artifacts are additive — the existing `p102-0r-1` files are unchanged. New files live alongside them under each run folder.
+
+### Tier enum
+
+```
+TIER_1_PRE_RESIDENCY_USCE_MATCH
+TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP
+TIER_3_POST_TRAINEE_PRACTICE_CAREER
+```
+
+### Source-family enum (deep mode)
+
+```
+HOSPITAL_HOME
+HEALTH_SYSTEM_HOME
+MEDICAL_EDUCATION
+UNDERGRADUATE_MEDICAL_EDUCATION
+VISITING_STUDENT
+OBSERVERSHIP
+EXTERNSHIP
+ELECTIVE
+SUB_INTERNSHIP
+RESEARCH_EDUCATION
+VOLUNTEER_SHADOW
+GME
+RESIDENCY
+FELLOWSHIP
+ADVANCED_FELLOWSHIP
+PHYSICIAN_CAREERS
+PROVIDER_CAREERS
+BENEFITS
+VISA_IMMIGRATION
+FACULTY_JOBS
+PHYSICIAN_SERVICES
+PDF_POLICY
+APPLICATION_PORTAL
+CONTACT_PAGE
+REJECTION_EVIDENCE
+UNKNOWN_RELEVANT
+```
+
+### Source-family coverage statuses
+
+```
+COVERED_AND_READ    # source family found, accepted, A1/A2 ran
+COVERED_REJECTED    # source family found but rejected (404, off-topic, scope)
+ABSENT_AFTER_SEARCH # candidates probed, none found
+SKIPPED_BY_BUDGET   # would have been searched but budget exhausted
+NOT_APPLICABLE      # family is irrelevant to this institution
+```
+
+### Tier coverage statuses
+
+```
+TIER_COVERAGE_COMPLETE  # all required source families for the tier are COVERED_AND_READ
+TIER_COVERAGE_PARTIAL   # >=1 required family covered; others ABSENT_AFTER_SEARCH or REJECTED
+TIER_COVERAGE_WEAK      # zero required families covered AND no explicit negative evidence
+TIER_COVERAGE_NEGATIVE  # explicit refusal sentence captured (strong negative)
+```
+
+### `threeTierInstitutionPacket` object (canonical: `16_three_tier_institution_packet.json`)
+
+```jsonc
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "string",
+  "institutionId": "string",
+  "institutionName": "string",
+  "officialDomains": ["string"],
+  "sourceScopeSummary": {
+    "primaryDomainsObserved": ["string"],
+    "campusApplicabilityProofsCaptured": ["string"],
+    "scopeConflicts": ["string (claim ids)"]
+  },
+  "tier1PreResidency": "<tierPacket>",
+  "tier2Trainee": "<tierPacket>",
+  "tier3PracticeCareer": "<tierPacket>",
+  "sourceFamilyCoverage": [
+    {
+      "family": "<SourceFamily enum>",
+      "status": "<coverage status>",
+      "searchAttempts": ["string (URLs probed)"],
+      "acceptedSources": ["string (sourceUrl)"],
+      "rejectedReason": "string | null"
+    }
+  ],
+  "rejectedSourceFamilies": ["<SourceFamily enum>"],
+  "negativeEvidence": {
+    "tier1Refusal": { "captured": "boolean", "claimIds": ["string"], "strength": "STRONG|MEDIUM|WEAK|null" },
+    "tier2Refusal": { "captured": "boolean", "claimIds": ["string"], "strength": "STRONG|MEDIUM|WEAK|null" },
+    "tier3Refusal": { "captured": "boolean", "claimIds": ["string"], "strength": "STRONG|MEDIUM|WEAK|null" }
+  },
+  "unresolveds": ["string"],
+  "A4TargetedRecoveryTasks": [
+    {
+      "taskId": "string",
+      "missingFamily": "<SourceFamily enum> | null",
+      "missingTier": "<Tier enum> | null",
+      "reason": "string",
+      "suggestedNarrowAction": "string (no broad crawl)"
+    }
+  ],
+  "publicPromotionCandidates": ["string (claim ids that may be PUBLIC_SAFE_USCE)"],
+  "futureLaneArchive": ["string (claim ids; tier 2 or 3)"],
+  "humanReviewQueue": ["string (claim ids)"],
+  "confidenceScores": {
+    "tier1Completeness": "number 0.0-1.0",
+    "tier2Completeness": "number 0.0-1.0",
+    "tier3Completeness": "number 0.0-1.0",
+    "scopeDiscipline":   "number 0.0-1.0",
+    "quoteVerificationRate": "number 0.0-1.0"
+  },
+  "artifactManifestRefs": ["string (relative paths to per-run files)"],
+  "quoteVerificationSummary": {
+    "totalClaims": "number",
+    "quoteVerifiedClaims": "number",
+    "rejectedClaims": "number",
+    "notStatedFieldClaims": "number"
+  },
+  "deepRunCompletion": "TIER_1_COMPLETE | TIER_1_AND_2 | TIER_1_2_3 | INCOMPLETE",
+  "publicReadiness": "PUBLIC_READY | PUBLIC_NEGATIVE_READY | NOT_PUBLIC_READY",
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  }
+}
+```
+
+### `tierPacket` object (one per tier)
+
+```jsonc
+{
+  "tier": "<Tier enum>",
+  "tierCoverageStatus": "<tier coverage status>",
+  "opportunities": [/* claim records */],
+  "claims": [/* every quote-backed claim assigned to this tier */],
+  "contacts": [
+    { "field": "email|phone|coordinator|director", "value": "string", "sourceClaimId": "string" }
+  ],
+  "requirements": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "costs": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "deadlines": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "documents": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "visa": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "applicationPathways": [{ "field": "string", "value": "string", "sourceClaimId": "string" }],
+  "sourceClaimIds": ["string"],
+  "sourceUrls": ["string"],
+  "sourceHashes": ["string"],
+  "quoteVerifiedSummary": { "total": "number", "verified": "number", "rejected": "number" },
+  "notStatedFields": ["string"],
+  "unresolveds": ["string"],
+  "visibilityLane": "PUBLIC_SAFE_USCE | CAUTION_SAFE_INTERNAL_REVIEW | FUTURE_LANE_ONLY | HUMAN_REVIEW_REQUIRED | PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY | HIDDEN_REJECTED | NOT_APPLICABLE"
+}
+```
+
+### A1/A2 claim record additions (deep mode)
+
+Each claim emitted by A1 or A2 in deep mode adds:
+
+- `tier`: one of `TIER_1_PRE_RESIDENCY_USCE_MATCH`, `TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP`, `TIER_3_POST_TRAINEE_PRACTICE_CAREER`, `NOT_APPLICABLE`
+- `deepSourceFamily`: one of the deep-mode SourceFamily enum values
+- `tierAssignmentRationale`: short string explaining why this tier was chosen
+
+These are advisory. The deterministic re-classifier may re-assign tier or visibility.
+
+### A3 additions
+
+The A3 hostile-gate JSON adds:
+
+- `tier1CoverageVerdict`: PASS_COMPLETE | PASS_PARTIAL | FAIL_WEAK
+- `tier2CoverageVerdict`: same
+- `tier3CoverageVerdict`: same
+- `unfollowedSignals`: array of strings naming USCE-positive signals A1/A2 saw but didn't follow
+- `overpromotionDetected`: array of claimIds where Tier 2/3 was wrongly tagged Tier 1
+
+### A4 deep recovery tasks
+
+`A4_deep_recovery_tasks.json` lists narrow follow-ups. Never a broad re-read. Each task uses the `A4TargetedRecoveryTasks` shape above.
+
+### Public-promotion gating
+
+The deterministic visibility classifier only promotes to `PUBLIC_SAFE_USCE` when:
+
+1. `tier == TIER_1_PRE_RESIDENCY_USCE_MATCH`
+2. `deepSourceFamily ∈ {OBSERVERSHIP, EXTERNSHIP, ELECTIVE, VISITING_STUDENT, SUB_INTERNSHIP, RESEARCH_EDUCATION}`
+3. `sourceScope ∈ {INSTITUTION_SPECIFIC, CAMPUS_SPECIFIC}`
+4. `modelReaderConfidence == HIGH`
+5. `quoteVerified == true`
+6. The quote contains a definite offer / eligibility / pathway statement (substring check against a curated phrase list).
+
+Tier 2 and Tier 3 claims are **never** `PUBLIC_SAFE_USCE` in P102-0F, even if the model emits that suggestion.

@@ -9,89 +9,50 @@
     "everyPublicSafeClaimSourceScopeChecked": true
   },
   "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Benefits page navigation references 'Medical Clerkship - Orlando Campuses' and 'VSLO Opportunities Across Florida' (c_benefits_vslo_nav_signal) but no dedicated visiting-student/clerkship page was captured in this run.",
+      "suggestedNarrowAction": "Narrow A4 fetch: locate AdventHealth Orlando medical-clerkship / VSLO landing page (e.g. adventhealth.com paths under /gme, /medical-education, or /medical-clerkship for Orlando campus) and run A1/A2 on that single URL only."
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "src_25_c6 references 'Loma Linda University School of Medicine at AdventHealth Orlando' affiliation but no affiliated-student elective/observership policy was extracted.",
+      "suggestedNarrowAction": "Narrow A4 fetch: locate the Loma Linda–AdventHealth Orlando affiliation page describing whether visiting/non-affiliated medical students may rotate."
+    }
+  ],
   "duplicates": [],
   "institutionId": "inst_adventhealth_orlando_fl",
   "institutionName": "AdventHealth Orlando",
   "metadata": {
-    "totalClaimsReviewed": 41,
+    "totalClaimsReviewed": 70,
     "publicSafeUSCECount": 0,
     "publicSafeNoOpportunityCount": 0,
     "cautionSafeInternalReviewCount": 0,
-    "futureLaneOnlyCount": 21,
-    "humanReviewRequiredCount": 20,
+    "futureLaneOnlyCount": 28,
+    "humanReviewRequiredCount": 42,
     "hiddenRejectedCount": 0
   },
   "networkUsed": false,
+  "overpromotionDetected": [],
   "phase": "A3",
   "publicSafetyFailures": [],
   "runId": "p102-1-trial-2-run-3",
   "schemaVersion": "p102-cli-0e-1",
-  "scopeConflicts": [
-    {
-      "claimId": "c1",
-      "sourceUrl": "https://adventhealth.com/physician-careers",
-      "sourceScope": "CAREERS_PORTAL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Source page is AdventHealth Gordon (Georgia) physician careers; jobs listed are at Murray, Redmond, and other AdventHealth Georgia facilities — not AdventHealth Orlando. Already non-public (FUTURE_LANE_ONLY); flagged for downstream attribution review."
-    },
-    {
-      "claimId": "c2",
-      "sourceUrl": "https://adventhealth.com/physician-careers",
-      "sourceScope": "CAREERS_PORTAL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Same Gordon/Georgia source; specialty openings listed are at AdventHealth Murray and AdventHealth Redmond, not Orlando."
-    },
-    {
-      "claimId": "a2_c1",
-      "sourceUrl": "https://adventhealth.com/physician-careers",
-      "sourceScope": "CAREERS_PORTAL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Phone 706-602-7800 belongs to AdventHealth Gordon (Georgia), not AdventHealth Orlando. Non-public but attribution mismatch noted."
-    },
-    {
-      "claimId": "a2_c2",
-      "sourceUrl": "https://adventhealth.com/physician-careers",
-      "sourceScope": "CAREERS_PORTAL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Physician/APP nav lane sourced from AdventHealth Gordon page, not Orlando."
-    },
-    {
-      "claimId": "src_20_c1",
-      "sourceUrl": "https://adventhealth.com/volunteer",
-      "sourceScope": "UNKNOWN_SCOPE",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Source page is AdventHealth Kissimmee volunteer page (described as 'A part of AdventHealth Orlando' in markup, but the page is the Kissimmee campus, not Orlando proper)."
-    },
-    {
-      "claimId": "c_fl_1",
-      "sourceUrl": "https://adventhealth.com/medical-education",
-      "sourceScope": "UNKNOWN_SCOPE",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Source is AdventHealth Digestive Health Institute West Florida; USF GI residency site claim does not necessarily apply to AdventHealth Orlando campus."
-    },
-    {
-      "claimId": "c_fl_2",
-      "sourceUrl": "https://adventhealth.com/medical-education",
-      "sourceScope": "UNKNOWN_SCOPE",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "DHI West Florida fellowship claim sourced to a non-Orlando page; campus applicability not established."
-    },
-    {
-      "claimId": "c_a2_1",
-      "sourceUrl": "https://adventhealth.com/medical-education",
-      "sourceScope": "DEPARTMENT_LEVEL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "DHI West Florida CME claim attributed to Orlando institution without explicit campus tie."
-    },
-    {
-      "claimId": "c_a2_2",
-      "sourceUrl": "https://adventhealth.com/medical-education",
-      "sourceScope": "DEPARTMENT_LEVEL",
-      "institutionId": "inst_adventhealth_orlando_fl",
-      "explanation": "Phone 813-615-7030 (Tampa area code) sourced from DHI West Florida page; not an Orlando contact."
-    }
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_PARTIAL",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "Medical Clerkship - Orlando Campuses (benefits page navigation)",
+    "VSLO Opportunities Across Florida (benefits page navigation)",
+    "Loma Linda University School of Medicine at AdventHealth Orlando affiliation (no companion elective/visiting-student policy extracted)"
   ],
   "unresolveds": [],
   "verdict": "PASS_PUBLISH_READY",
-  "verdictSummary": "Zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims; ledger contains only FUTURE_LANE_ONLY (21) and HUMAN_REVIEW_REQUIRED (20) entries. No public-safety failures, no overclaims, no duplicates. Scope mismatches (Gordon/Georgia and DHI West Florida and Kissimmee pages attributed to Orlando) are already non-public and flagged for downstream attribution review. Ledger is internally consistent and safe to merge."
+  "verdictSummary": "Ledger is internally consistent. Zero PUBLIC_SAFE_USCE claims; all USCE-adjacent signals (volunteer/internship, VSLO nav, Loma Linda affiliation, West-Florida DHI scope, AdventHealth Gordon scope) are correctly held at HUMAN_REVIEW_REQUIRED or FUTURE_LANE_ONLY. Scope conflicts (Kissimmee, Gordon, West Florida DHI, system-level benefits) are already surfaced as explicit SCOPE_CONFLICT claims. Tier 2 and Tier 3 coverage is strong; Tier 1 is PASS_PARTIAL — VSLO/clerkship navigation signal warrants a narrow A4 recovery fetch for the Orlando visiting-student page."
 }

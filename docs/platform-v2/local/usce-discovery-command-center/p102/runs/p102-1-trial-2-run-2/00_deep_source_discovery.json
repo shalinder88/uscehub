@@ -1,0 +1,767 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-2",
+  "institutionId": "inst_brooklyn_hospital_center_ny",
+  "institutionName": "The Brooklyn Hospital Center",
+  "officialDomains": [
+    "tbh.org"
+  ],
+  "mode": "reclassify-only",
+  "budgets": {
+    "maxDiscoveredUrls": 75,
+    "maxAcceptedSources": 40,
+    "maxPdfs": 10
+  },
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://tbh.org/observership",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://tbh.org/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://tbh.org/observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://tbh.org/clinical-observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://tbh.org/visiting-student",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://tbh.org/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://tbh.org/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://tbh.org/international-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://tbh.org/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://tbh.org/away-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://tbh.org/clinical-elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://tbh.org/clinical-rotation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://tbh.org/sub-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://tbh.org/subinternship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://tbh.org/acting-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://tbh.org/research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://tbh.org/student-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 6,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://tbh.org/shadow",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://tbh.org/shadowing",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://tbh.org/volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://tbh.org/volunteering",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://tbh.org/img",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://tbh.org/international-medical-graduates",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://tbh.org/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://tbh.org/gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://tbh.org/residency",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://tbh.org/fellowship",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 9,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://tbh.org/careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://tbh.org/physician-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 21,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://tbh.org/provider-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 22,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://tbh.org/benefits",
+      "legacyFamily": "OTHER",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 24,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://tbh.org/visa",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://tbh.org/immigration",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://tbh.org/credentialing",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://tbh.org/health-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://tbh.org/medical-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://tbh.org/professional-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://tbh.org/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://tbh.org/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://www.tbh.org/how-to-help/how-volunteer/student-requirements",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://www.tbh.org/how-to-help/how-volunteer/requirements",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "EXTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 2,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    }
+  ],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-14T21:37:49.216Z"
+}

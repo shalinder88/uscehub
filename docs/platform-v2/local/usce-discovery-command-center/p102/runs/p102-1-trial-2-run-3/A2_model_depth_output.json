@@ -16,12 +16,20 @@
         "newClaims": [],
         "a1ClaimsToRefine": [],
         "additionalUnresolveds": [
-          "Page is a physician well-being research resource list; does not address medical student research, observership, visiting student, or elective opportunities in any direction (no offer, no refusal)."
+          "Page is a physician well-being research resources page (links to outside articles); does not address visiting students, observers, IMG eligibility, residency, fellowship, or careers in any way."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE or research-elective claim is emitted from this RESEARCH_PAGE — content is physician well-being literature, not a medical student research program.",
-          "Verify sourceScope is not treated as INSTITUTION_SPECIFIC; adventhealth.com /research is HEALTH_SYSTEM_LEVEL well-being content."
-        ]
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to adventhealth.com/research — this page is a physician well-being research-articles page, system-level scope, with no USCE content.",
+          "Verify sourceScope for adventhealth.com/research is treated as HEALTH_SYSTEM_LEVEL rather than UNKNOWN_SCOPE for downstream gating."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -37,101 +45,301 @@
         "phase": "A2",
         "newClaims": [
           {
-            "claimId": "src_20_a2_c1",
-            "claimType": "CONTACT_EMAIL",
+            "claimId": "src_20_a2_cost_01",
+            "claimType": "COST_STATEMENT",
             "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
             "sourceUrl": "https://adventhealth.com/volunteer",
             "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
-            "sourceScope": "CAMPUS_SPECIFIC",
-            "quote": "Patricia Aviles-Perez | Program ManagerCall 407-944-3122\nemail : Patricia.Aviles-Perez@AdventHealth.com",
-            "normalizedField": "volunteer_program_manager_email",
-            "claimText": "Volunteer program manager contact at AdventHealth Kissimmee: Patricia Aviles-Perez, Patricia.Aviles-Perez@AdventHealth.com.",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Upon acceptance into our volunteer program, volunteers are sent for a drug screening and a TB test (paid for by AdventHealth).",
+            "normalizedField": "drug screen + TB test paid by AdventHealth",
+            "claimText": "Drug screening and TB test required after acceptance; paid for by AdventHealth.",
             "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
             "confidence": "HIGH",
-            "limitations": "Contact is for volunteer/internship at Kissimmee campus, not USCE/observership at AdventHealth Orlando.",
-            "whyA1Missed": "A1 captured only the careers nav and scope conflict; missed the explicit volunteer coordinator email and phone block."
+            "limitations": "Volunteer program — not medical-student USCE.",
+            "whyA1Missed": "A1 captured immunization and background-check items but skipped the TB/drug-screen sentence and the 'paid for by AdventHealth' cost detail.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Compliance-cost detail adjacent to typical Tier 1 USCE onboarding (TB/drug screen) but for the volunteer program."
           },
           {
-            "claimId": "src_20_a2_c2",
-            "claimType": "CONTACT_PHONE",
-            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
-            "sourceUrl": "https://adventhealth.com/volunteer",
-            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
-            "sourceScope": "CAMPUS_SPECIFIC",
-            "quote": "If you are interested in being considered for an internship at AdventHealth Kissimmee, please contact us at\nCall 407-846-4343 x6336",
-            "normalizedField": "internship_contact_phone",
-            "claimText": "Internship inquiry phone for AdventHealth Kissimmee: 407-846-4343 x6336.",
-            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
-            "confidence": "HIGH",
-            "limitations": "Internship type unspecified; may not include clinical experience for medical students.",
-            "whyA1Missed": "A1 noted internship existence in unresolveds but did not extract the explicit contact phone for it."
-          },
-          {
-            "claimId": "src_20_a2_e1",
+            "claimId": "src_20_a2_elig_minor_01",
             "claimType": "ELIGIBILITY_REQUIREMENT",
             "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
             "sourceUrl": "https://adventhealth.com/volunteer",
             "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
-            "sourceScope": "CAMPUS_SPECIFIC",
-            "quote": "Background checks will be completed on all volunteers and interns, with the exception of those under the age of 18.Upon acceptance into our volunteer program, volunteers are sent for a drug screening and a TB test (paid for by AdventHealth).Prospective volunteers must provide proof of vaccinations for Mumps, Measles, Rubella, and Chicken Pox.",
-            "normalizedField": "volunteer_intern_screening_requirements",
-            "claimText": "Volunteers/interns require background check, drug screening, TB test, and proof of MMR + Chicken Pox vaccinations.",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "You must be at least 16 years of age. Parental consent will be required for anyone under age 18.",
+            "normalizedField": "parental consent under 18",
+            "claimText": "Parental consent required for volunteers under 18.",
             "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
             "confidence": "HIGH",
-            "limitations": "Applies to volunteer/intern program at Kissimmee campus, not confirmed USCE applicants.",
-            "whyA1Missed": "A1 did not extract the screening/immunization eligibility block which is a standard concept-vocabulary signal."
+            "limitations": "Volunteer-program rule, not USCE.",
+            "whyA1Missed": "A1 captured the 16-year minimum (src_20_elig_age_01) but did not separate the parental-consent-under-18 secondary requirement.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Secondary eligibility detail tied to volunteer onboarding."
           },
           {
-            "claimId": "src_20_a2_e2",
+            "claimId": "src_20_a2_elig_hepb_01",
             "claimType": "ELIGIBILITY_REQUIREMENT",
             "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
             "sourceUrl": "https://adventhealth.com/volunteer",
             "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
-            "sourceScope": "CAMPUS_SPECIFIC",
-            "quote": "You will need to bring two (2) letters of recommendation with you to that interview.",
-            "normalizedField": "volunteer_letters_of_recommendation",
-            "claimText": "Volunteer applicants must bring two letters of recommendation to interview.",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "(Proof of Hepatitis B series vaccinations needed and candidate is preferred to be 18 years of age or older) .",
+            "normalizedField": "Hepatitis B vaccination for ED role",
+            "claimText": "ED Patient Experience Ambassador role requires Hepatitis B series vaccination; 18+ preferred.",
             "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
             "confidence": "HIGH",
-            "limitations": "Requirement is for volunteer program, not USCE.",
-            "whyA1Missed": "A1 did not capture the LOR requirement, which is a logistics signal in the eligibility family."
+            "limitations": "Role-specific volunteer requirement; not USCE.",
+            "whyA1Missed": "A1 captured MMR/Varicella but missed the role-specific Hepatitis B requirement tied to the ED ambassador role.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Department-specific immunization requirement adjacent to USCE compliance package."
           },
           {
-            "claimId": "src_20_a2_d1",
-            "claimType": "DURATION",
+            "claimId": "src_20_a2_pathway_01",
+            "claimType": "APPLICATION_PATHWAY",
             "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
             "sourceUrl": "https://adventhealth.com/volunteer",
             "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
-            "sourceScope": "CAMPUS_SPECIFIC",
-            "quote": "You must volunteer for a minimum of 100 hours. Most volunteers come in for one 4 hours shift each week, so you would reach 100 hours in six months.",
-            "normalizedField": "volunteer_minimum_hours",
-            "claimText": "Volunteer commitment minimum is 100 hours, typically reached in six months at one 4-hour shift per week.",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "You must first attend orientation and be interviewed. Your acceptance is also contingent upon your clinical and background check results.",
+            "normalizedField": "orientation -> interview -> clinical/background check",
+            "claimText": "Volunteer application pathway: orientation, interview, then clinical and background check before acceptance.",
             "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
             "confidence": "HIGH",
-            "limitations": "Volunteer-only duration; not a clinical rotation length.",
-            "whyA1Missed": "A1 did not extract the explicit duration/commitment requirement."
+            "limitations": "Pathway is for volunteer program, not medical-student USCE.",
+            "whyA1Missed": "A1 captured individual eligibility items but did not record the explicit multi-step application-pathway sentence.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Tier 1 application-pathway detail adjacent to typical USCE workflow."
+          },
+          {
+            "claimId": "src_20_a2_negative_court_01",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://adventhealth.com/volunteer",
+            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Q. Do you take court ordered service hours?A. We do not accept court ordered service hours.",
+            "normalizedField": "no court-ordered hours",
+            "claimText": "Volunteer program explicitly does not accept court-ordered service hours.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Refusal scoped to court-ordered hours, not to medical students; not promotable as a USCE refusal.",
+            "whyA1Missed": "A1 missed the explicit FAQ refusal sentence; sentence is a true negative but against the court-ordered population, not USCE.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Negative-evidence sentence in volunteer FAQ; recorded for completeness."
+          },
+          {
+            "claimId": "src_20_a2_future_lane_01",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/volunteer",
+            "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+            "normalizedField": "Physician and APP Opportunities nav link",
+            "claimText": "Site navigation surfaces an 'AdventHealth Careers Website' and a 'Physician and APP Opportunities' channel.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation reference only; no detail on physician job content on this page.",
+            "whyA1Missed": "A1 focused on volunteer body content and ignored the global nav links pointing to Tier 3 physician/APP career channels.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Physician and APP Opportunities is a Tier 3 attending/advanced-practice signal even though embedded in a Tier 1 volunteer page."
           }
         ],
         "a1ClaimsToRefine": [
           {
-            "a1ClaimId": "src_20_f1",
-            "refinementReason": "duplicate_with_lower_quality_quote",
-            "explanation": "src_20_f1 uses the identical quote and claimType as src_20_c1; both are FUTURE_LANE_JOB on the same nav fragment. Regate should dedupe to a single careers-nav signal."
+            "a1ClaimId": "src_20_volunteer_01",
+            "refinementReason": "lane_misclassified",
+            "explanation": "A1 typed this as OFFERS_OBSERVERSHIP but the quote describes generic volunteer/internship with no medical-student/IMG/observership language. Should not carry an observership type so it cannot drift into USCE promotion."
+          },
+          {
+            "a1ClaimId": "src_20_intern_01",
+            "refinementReason": "lane_misclassified",
+            "explanation": "A1 typed as OFFERS_OBSERVERSHIP, but the quote describes a generic healthcare-career internship. Internship audience is unspecified and not medical-student specific."
+          },
+          {
+            "a1ClaimId": "src_20_intern_contact_01",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Contact is tagged Tier 1 USCE-match, but the text never states the internship admits medical students or IMGs. Tier-1 USCE relevance is inferred, not stated."
+          },
+          {
+            "a1ClaimId": "src_20_scope_01",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Scope conflict correctly flagged but sourceScope remains UNKNOWN_SCOPE. Should be reclassified to CAMPUS_SPECIFIC (Kissimmee) so content cannot roll up to AdventHealth Orlando without proof."
           }
         ],
         "additionalUnresolveds": [
-          "Page describes volunteer roles (Nursing Unit Assistant, Lab Team Assistant, Imaging Team Assistant, Physical Therapy) that touch clinical departments but does not state whether medical students may participate or whether these count as USCE.",
-          "'Internship at AdventHealth Kissimmee' section does not specify whether interns are medical students, pre-health students, or administrative trainees."
+          "Page never states whether medical students, IMGs, or pre-med shadowers are eligible for the volunteer or internship pathways.",
+          "Internship description does not specify duration, fee, or whether the 100-hour minimum and 2-LOR rule also apply to interns or only to volunteers.",
+          "Navigation lists 'Physician and APP Opportunities' but page body contains no Tier 3 detail to resolve scope or visa sponsorship."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this volunteer page — content is volunteer/intern at Kissimmee campus, not USCE at AdventHealth Orlando.",
-          "Verify scope is reclassified from UNKNOWN_SCOPE to CAMPUS_SPECIFIC (Kissimmee) given explicit campus header.",
-          "Verify duplicate FUTURE_LANE_JOB claims (src_20_c1 and src_20_f1) are collapsed."
+          "Confirm no PUBLIC_SAFE_USCE claim is allowed from this volunteer page — sourceFamily is VOLUNTEER_PAGE and content is non-medical-student volunteering.",
+          "Verify all Kissimmee-scoped claims are not attributed to AdventHealth Orlando without an explicit campusApplicabilityProof.",
+          "Downgrade OFFERS_OBSERVERSHIP claims (src_20_volunteer_01, src_20_intern_01) to non-observership classifications before any promotion.",
+          "Treat 'We do not accept court ordered service hours' as in-scope negative for court-ordered population only, not as a USCE refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "src_20_a2_cost_01",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Upon acceptance into our volunteer program, volunteers are sent for a drug screening and a TB test (paid for by AdventHealth).",
+              "normalizedField": "drug screen + TB test paid by AdventHealth",
+              "claimText": "Drug screening and TB test required after acceptance; paid for by AdventHealth.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer program — not USCE.",
+              "whyA1Missed": "A1 missed the explicit cost-payer sentence.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Compliance cost adjacent to Tier 1 USCE onboarding."
+            },
+            {
+              "claimId": "src_20_a2_elig_minor_01",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "You must be at least 16 years of age. Parental consent will be required for anyone under age 18.",
+              "normalizedField": "parental consent under 18",
+              "claimText": "Parental consent required for volunteers under 18.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer rule, not USCE.",
+              "whyA1Missed": "A1 captured age 16 only.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Secondary eligibility detail."
+            },
+            {
+              "claimId": "src_20_a2_elig_hepb_01",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "(Proof of Hepatitis B series vaccinations needed and candidate is preferred to be 18 years of age or older) .",
+              "normalizedField": "Hepatitis B vaccination for ED role",
+              "claimText": "ED ambassador role requires Hepatitis B series proof; 18+ preferred.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Role-specific volunteer requirement.",
+              "whyA1Missed": "A1 captured MMR/Varicella; missed role-specific Hep B.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Department-specific immunization adjacent to USCE compliance."
+            },
+            {
+              "claimId": "src_20_a2_pathway_01",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "You must first attend orientation and be interviewed. Your acceptance is also contingent upon your clinical and background check results.",
+              "normalizedField": "orientation -> interview -> clinical/background check",
+              "claimText": "Volunteer pathway: orientation, interview, clinical + background check.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program pathway.",
+              "whyA1Missed": "A1 captured items but not the pathway sentence.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 application-pathway adjacent to USCE workflow."
+            },
+            {
+              "claimId": "src_20_a2_negative_court_01",
+              "claimType": "MISSING_FIELD",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Q. Do you take court ordered service hours?A. We do not accept court ordered service hours.",
+              "normalizedField": "no court-ordered hours",
+              "claimText": "Program explicitly does not accept court-ordered service hours.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Refusal scoped to court hours, not USCE population.",
+              "whyA1Missed": "A1 missed the FAQ refusal sentence.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Negative evidence within volunteer FAQ."
+            }
+          ],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "src_20_a2_future_lane_01",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/volunteer",
+              "sourceHash": "fa54d4c9fd94315e51174130e91eea58e539f2d7b20c1fe52efbc192be8b8a4b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+              "normalizedField": "Physician and APP Opportunities nav link",
+              "claimText": "Global nav surfaces AdventHealth Careers Website and a Physician/APP Opportunities channel.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Nav reference only; no body content for physician careers on this page.",
+              "whyA1Missed": "A1 ignored global navigation Tier 3 signals.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Physician/APP careers is a Tier 3 attending/advanced-practice signal."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_20_scope_01",
+            "scopeIssue": "campus_mismatch_kissimmee_vs_orlando",
+            "explanation": "Page describes AdventHealth Kissimmee ('A part of AdventHealth Orlando') but is filed under the AdventHealth Orlando institution. Source scope should be CAMPUS_SPECIFIC=Kissimmee, not UNKNOWN_SCOPE."
+          },
+          {
+            "claimId": "src_20_volunteer_01",
+            "scopeIssue": "claim_audience_not_medical_student",
+            "explanation": "Claim is filed Tier 1 USCE match but the quote addresses generic volunteers/interns, not medical students. Risk of being promoted as USCE downstream."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "src_20_scope_01",
+            "campusNameMentionedInQuote": "AdventHealth Kissimmee",
+            "proofQuote": "AdventHealth KissimmeeA part of AdventHealth OrlandoDirections to AdventHealth Kissimmee2450 North Orange Blossom TrailKissimmee ,\nFL34744"
+          }
+        ],
+        "newNegativeEvidenceClaims": [
+          {
+            "claimId": "src_20_a2_negative_court_01",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "Q. Do you take court ordered service hours?A. We do not accept court ordered service hours.",
+            "strength": "WEAK"
+          }
         ]
       }
     },
@@ -146,24 +354,77 @@
         "networkUsed": false,
         "agentUsed": false,
         "phase": "A2",
-        "newClaims": [],
+        "newClaims": [
+          {
+            "claimId": "src_25_a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/gme",
+            "sourceHash": "ce447a4e68244378fe630c0b1bc52acbc2a1656a8c8394785f079b699d574aeb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical Education Strategic Priorities",
+            "claimText": "Page lists a Graduate Medical Education Strategic Priorities fundraising area alongside the named residencies.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "GME strategic priorities is a Tier 2 trainee-pathway item listed among the residency support areas.",
+            "whyA1Missed": "A1 captured the five named residencies but skipped the first of the six listed support items.",
+            "limitations": "Page is a Foundation/donations listing; no program detail provided.",
+            "normalizedField": null
+          }
+        ],
         "a1ClaimsToRefine": [
           {
-            "a1ClaimId": "c_gme_002",
+            "a1ClaimId": "src_25_c6",
             "refinementReason": "quote_too_general",
-            "explanation": "The quote bundles five distinct items (four residencies plus a Loma Linda University School of Medicine affiliation) into a single FUTURE_LANE_RESIDENCY claim. The Loma Linda SOM line is a medical-school affiliation, not a residency program, and is mis-bucketed under RESIDENCY_PROGRAM_INFO."
+            "explanation": "Quote is only the institution name as listed on a Foundation donations page; it does not state any medical school program, visiting student, or elective offering. A3 should keep this HUMAN_REVIEW_REQUIRED and avoid any USCE lane assignment."
           }
         ],
         "additionalUnresolveds": [
-          "Page lists 'Loma Linda University School of Medicine at AdventHealth Orlando' but does not state whether this affiliation creates any visiting student / elective pathway for outside or international medical students.",
-          "Page mentions 'training opportunities' and 'real-world experiences' for residents but does not state whether observerships, electives, or visiting student rotations exist outside of GME residencies.",
-          "Page does not provide any GME contact email, coordinator, or application pathway information."
+          "Page references 'Loma Linda University School of Medicine at AdventHealth Orlando' but does not state whether visiting medical students or external clinical electives are accepted.",
+          "Page mentions 'our residents will have access to the best resources, training opportunities, and real-world experiences' without naming any application pathway, eligibility, or contact."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this GME_PAGE source family per P102 rule 5.",
-          "Verify the Loma Linda University SOM affiliation line is not interpreted as evidence of a visiting student / elective opportunity at AdventHealth Orlando absent an explicit statement.",
-          "Confirm absence of observership/visiting-student content on this page is recorded as NO_PUBLIC_OPPORTUNITY_FOUND rather than PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY (no explicit refusal quote present)."
-        ]
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to https://adventhealth.com/gme — page is an AdventHealth Foundation donations listing, not an observership/elective program page.",
+          "Verify the Loma Linda affiliation claim (src_25_c6) remains HUMAN_REVIEW_REQUIRED and is not promoted to a USCE lane based on the institution-name-only quote.",
+          "Check that GME-page source family blocks any PUBLIC_SAFE_USCE downstream from this URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "src_25_a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/gme",
+              "sourceHash": "ce447a4e68244378fe630c0b1bc52acbc2a1656a8c8394785f079b699d574aeb",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Graduate Medical Education Strategic Priorities",
+              "claimText": "Page lists a Graduate Medical Education Strategic Priorities fundraising area alongside the named residencies.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Strategic Priorities item is a trainee-pathway fundraising bucket on a GME page → Tier 2.",
+              "whyA1Missed": "A1 captured the five named residencies but missed the first of the six listed support items.",
+              "limitations": "Donations-page listing; no program detail.",
+              "normalizedField": null
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_25_c6",
+            "scopeIssue": "source_family_mismatch_publicSafe_on_GME",
+            "explanation": "Loma Linda School of Medicine reference appears only as a Foundation donations link on a GME page; treating it as a medical-school-scope claim would mis-attribute scope. Keep flagged for human review."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -177,29 +438,175 @@
         "networkUsed": false,
         "agentUsed": false,
         "phase": "A2",
-        "newClaims": [],
-        "a1ClaimsToRefine": [
+        "newClaims": [
           {
-            "a1ClaimId": "c_fl_005",
-            "refinementReason": "lane_misclassified",
-            "explanation": "Nurse Residency is nursing transition-to-practice, not physician GME. Lane RESIDENCY_PROGRAM_INFO implies physician residency; consider a nursing-specific lane or downgrade — quote explicitly says 'graduate nurse' and 'nursing career'."
+            "claimId": "c_src28_a2_01",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "APP - Primary Care Network, Fruitland Park, Leesburg Physicians & Providers",
+            "claimText": "Open APP posting in Primary Care Network at Fruitland Park/Leesburg (sibling to A1's physician posting).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "APP primary-care posting is post-training provider recruitment, Tier 3.",
+            "whyA1Missed": "A1 captured the physician posting one line above and the Orlando APRN posting, but skipped the parallel APP Primary Care Network listing immediately following.",
+            "limitations": "Posting is for Fruitland Park/Leesburg, not AdventHealth Orlando campus.",
+            "normalizedField": null
           },
           {
-            "a1ClaimId": "c_fl_006",
-            "refinementReason": "quote_too_general",
-            "explanation": "Quote is bare footer link text 'International Recruitment' with no surrounding context confirming physician H1B or J1 sponsorship. The nearby evidence is a 'Transcultural Assimilation Program' for International Nurses, not physicians. Visa-signal inference is weak."
+            "claimId": "c_src28_a2_02",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Team Members in AdventHealth’s Transcultural Assimilation Program Foster Connection and Growth for International Nurses",
+            "claimText": "AdventHealth runs a Transcultural Assimilation Program for international nurses — signals international workforce recruitment is nursing-focused.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "VISA_IMMIGRATION",
+            "tierAssignmentRationale": "International workforce assimilation program for nurses sits in Tier 3 post-training career/sponsorship space.",
+            "whyA1Missed": "A1 captured the bare 'International Recruitment' footer link but missed this article-level evidence clarifying the program targets international nurses, not physicians.",
+            "limitations": "Explicitly for international nurses, not physician visa sponsorship.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "c_src28_a2_03",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/careers",
+            "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Life at AdventHealth\nJoin our Talent Community\nInternational Recruitment\nNursing Residency Program\nVeterans\nIdentifying Job Scams",
+            "claimText": "Careers footer lists Veterans hiring pathway and Identifying Job Scams resource alongside International Recruitment and Nursing Residency.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Veterans hiring pathway is a Tier 3 workforce recruitment signal.",
+            "whyA1Missed": "A1 isolated only the 'International Recruitment' label and skipped the adjacent Veterans pathway and job-scam advisory in the same footer block.",
+            "limitations": "Footer link labels only; no detail on physician applicability.",
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_src28_01",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Quote is system-level 'Physicians and APPs' marketing copy on adventhealth.com/careers with no AdventHealth Orlando reference. Should not be attributed to the Orlando campus without campusApplicabilityProof."
+          },
+          {
+            "a1ClaimId": "c_src28_03",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Posting location is Fruitland Park/Leesburg, not AdventHealth Orlando. Tier 3 future-lane is fine but campus attribution to Orlando is incorrect; should be tagged as non-Orlando campus or system."
+          },
+          {
+            "a1ClaimId": "c_src28_05",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "'International Recruitment' is a bare footer label; no physician visa sponsorship language in the cleaned text. The adjacent Transcultural Assimilation Program article scopes the program to international nurses. H1B_SPONSORSHIP_SIGNAL lane likely overstated."
           }
         ],
         "additionalUnresolveds": [
-          "Footer references 'Transcultural Assimilation Program' for International Nurses but no physician-facing international recruitment or visa pathway is stated on this page.",
-          "Footer 'Veterans' link present but no veteran-physician-specific services or hiring program described in cleaned text.",
-          "Page is health-system-wide AdventHealth careers portal — AdventHealth Orlando campus-specific applicability is only proven for the single 'AHMG Cardiovascular ICU at AdventHealth Orlando' opening; broader physician/APP narrative is system-wide."
+          "Footer link 'International Recruitment' is unresolved on this page — destination content not in cleaned text; physician applicability indeterminate.",
+          "Footer link 'Veterans' unresolved — no detail on whether the pathway includes physician/APP roles.",
+          "Page lists state locations (Colorado, Florida, Georgia, Illinois, Kansas, Kentucky, Missouri, North Carolina, Texas, Wisconsin) but does not bind 'Physicians and APPs' callouts to AdventHealth Orlando specifically."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE claim cites this CAREERS_PORTAL sourceUrl — page family is CAREERS_PAGE and must remain FUTURE_LANE_ONLY.",
-          "Verify c_fl_006 (International Recruitment) is not promoted above FUTURE_LANE_ONLY / LOW confidence — quote is link text only.",
-          "Verify c_fl_005 (Nurse Residency) is not surfaced as physician residency signal — it is nursing transition-to-practice."
-        ]
+          "Verify no PUBLIC_SAFE_USCE claim cites the system-level adventhealth.com/careers URL — page is CAREERS_PORTAL, FUTURE_LANE_ONLY.",
+          "Confirm c_src28_01 and c_src28_03 are not attributed to AdventHealth Orlando campus in downstream campus-applicability checks.",
+          "Confirm c_src28_05 International Recruitment is not promoted past LOW confidence without an explicit physician visa sponsorship quote."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "c_src28_a2_01",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/careers",
+              "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "APP - Primary Care Network, Fruitland Park, Leesburg Physicians & Providers",
+              "claimText": "Open APP posting in Primary Care Network at Fruitland Park/Leesburg.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "APP primary-care posting is post-training provider recruitment, Tier 3.",
+              "whyA1Missed": "A1 captured the physician posting and the Orlando APRN posting but skipped the parallel APP Primary Care Network line.",
+              "limitations": "Posting is for Fruitland Park/Leesburg, not AdventHealth Orlando.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "c_src28_a2_02",
+              "claimType": "FUTURE_LANE_VISA",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/careers",
+              "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Team Members in AdventHealth’s Transcultural Assimilation Program Foster Connection and Growth for International Nurses",
+              "claimText": "Transcultural Assimilation Program for international nurses — international workforce signal scoped to nursing.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "VISA_IMMIGRATION",
+              "tierAssignmentRationale": "International workforce program is Tier 3 post-training space.",
+              "whyA1Missed": "A1 took only the bare 'International Recruitment' footer label and didn't read the article confirming the program targets international nurses.",
+              "limitations": "Scoped to international nurses, not physicians.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "c_src28_a2_03",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/careers",
+              "sourceHash": "6b3e116bac7b11d03cd1dcc32f4ea09a5d84325447de59ecc6ed2df32a78384f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Life at AdventHealth\nJoin our Talent Community\nInternational Recruitment\nNursing Residency Program\nVeterans\nIdentifying Job Scams",
+              "claimText": "Careers footer lists Veterans pathway and Identifying Job Scams resource as workforce signals.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Veterans hiring pathway is a Tier 3 workforce recruitment signal.",
+              "whyA1Missed": "A1 isolated only the International Recruitment label and skipped sibling footer entries.",
+              "limitations": "Footer labels only; no physician-specific detail.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_src28_01",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Physicians and APPs marketing copy is system-level on adventhealth.com/careers; no AdventHealth Orlando reference in the quote. Should not be attributed to the Orlando campus."
+          },
+          {
+            "claimId": "c_src28_03",
+            "scopeIssue": "scope_conflict_campus_mismatch",
+            "explanation": "Physician posting is for Fruitland Park/Leesburg, not AdventHealth Orlando. Campus attribution to Orlando is incorrect."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c_src28_02",
+            "campusNameMentionedInQuote": "AdventHealth Orlando",
+            "proofQuote": "AHMG Cardiovascular ICU at AdventHealth Orlando APRN or PA Physicians & Providers"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -216,59 +623,220 @@
         "newClaims": [
           {
             "claimId": "a2_c1",
-            "claimType": "CONTACT_PHONE",
-            "lane": "CAREERS_PAGE",
-            "sourceUrl": "https://adventhealth.com/physician-careers",
-            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
-            "sourceScope": "CAREERS_PORTAL",
-            "quote": "Call AdventHealth Gordon at 706-602-7800",
-            "claimText": "AdventHealth Gordon general hospital phone number listed on the careers page.",
-            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "MEDIUM",
-            "normalizedField": "phone:706-602-7800",
-            "limitations": "General hospital line for AdventHealth Gordon, not a dedicated physician-recruiter contact; institution mismatch - page is for Gordon, GA not Orlando.",
-            "whyA1Missed": "A1 focused on the job-listing block and the scope conflict; the standalone phone number in the header/footer navigation was not extracted."
-          },
-          {
-            "claimId": "a2_c2",
             "claimType": "FUTURE_LANE_JOB",
             "lane": "CAREERS_PAGE",
             "sourceUrl": "https://adventhealth.com/physician-careers",
             "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
             "sourceScope": "CAREERS_PORTAL",
-            "quote": "Physician and APP Opportunities",
-            "claimText": "Navigation exposes a dedicated 'Physician and APP Opportunities' section signaling advanced-practice provider career lane.",
+            "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+            "claimText": "Page advertises Physician and APP (Advanced Practice Provider) Opportunities as a navigation/career category.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "MEDIUM",
-            "normalizedField": null,
-            "limitations": "Navigation label only; no APP-specific listings extracted on this page.",
-            "whyA1Missed": "A1 captured the specialty job list but skipped the navigation-level 'Physician and APP Opportunities' label which signals an APP (Advanced Practice Provider) lane separate from physician specialty postings."
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Career navigation referencing Physician + APP opportunities — Tier 3 attending/APP career content.",
+            "whyA1Missed": "A1 captured only the Georgia openings list; missed the navigation-level 'Physician and APP Opportunities' label that adds APP (advanced practice provider) scope.",
+            "limitations": "Label only — no APP-specific roles or detail enumerated on page.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "With over 50 hospital campuses in 9 states, AdventHealth facilities incorporate the latest technological advancements and clinical research to serve more than 4.7 million patients annually.",
+            "claimText": "Health-system-level descriptor: AdventHealth operates 50+ hospital campuses across 9 states — system context, not Orlando-specific.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Health-system descriptor adjacent to career marketing; relevant only as context for Tier 3 career sourcing.",
+            "whyA1Missed": "A1 focused on Georgia-specific opening list and did not capture the health-system-level framing sentence.",
+            "limitations": "System-level scope; cannot be attributed to AdventHealth Orlando or any single campus.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "AdventHealth in Georgia, and its partnering physician practices and clinics, employ a workforce of approximately 3,000 including over 100 providers throughout Floyd, Gordon, and Murray Counties.",
+            "claimText": "AdventHealth Georgia employs ~3,000 staff including 100+ providers across Floyd, Gordon, and Murray Counties — campus footprint statement.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Provider-count/workforce statement supports Tier 3 career scoping.",
+            "whyA1Missed": "A1 captured only the openings list and the lead sentence; missed the workforce/provider-count quantification.",
+            "limitations": "Statement is about AdventHealth Georgia, not AdventHealth Orlando.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://adventhealth.com/physician-careers",
+            "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAMPUS_SPECIFIC",
+            "quote": "Directions to AdventHealth Gordon1035 Red Bud Road Northeast,Calhoun ,\nGA30701Call AdventHealth Gordon at 706-602-7800",
+            "claimText": "Page lists AdventHealth Gordon phone 706-602-7800 and Calhoun GA address — campus-specific, not Orlando.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Campus address/phone associated with career page — Tier 3 facility contact.",
+            "whyA1Missed": "A1 flagged the scope conflict but did not enumerate the explicit Calhoun GA address/phone proving the page belongs to Gordon, not Orlando.",
+            "limitations": "Phone is AdventHealth Gordon (Georgia), not AdventHealth Orlando.",
+            "normalizedField": null
           }
         ],
         "a1ClaimsToRefine": [
           {
             "a1ClaimId": "c1",
             "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "sourceUrl adventhealth.com/physician-careers is system-root, but claim quote describes 'AdventHealth Georgia' jobs and the page header is 'AdventHealth Gordon'. Institution mapping is AdventHealth Orlando (FL) - claim should be tagged for institution-mapping mismatch."
+            "explanation": "A1 quote correctly attributes openings to AdventHealth Georgia but the institutionId target is AdventHealth Orlando. Claim should be treated as NOT_APPLICABLE to Orlando until a separate Orlando careers source is captured."
           },
           {
             "a1ClaimId": "c2",
             "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Specialty openings are explicitly at AdventHealth Murray and AdventHealth Redmond (Georgia facilities), not AdventHealth Orlando. Should be re-attributed to AdventHealth Gordon/Georgia or held under institution-mismatch review."
+            "explanation": "Specialty openings list is for AdventHealth Georgia campuses (Murray, Redmond explicitly named). Cannot be attributed to AdventHealth Orlando — regate should suppress for the Orlando institution row."
           }
         ],
         "additionalUnresolveds": [
-          "Page says 'Contact us to ask about any of the following available openings' but no recruiter email, phone, or contact form for physician careers is provided in the cleaned text.",
-          "Navigation links 'Volunteer' and 'Clinical Trials' appear but the page provides no descriptive content for either - cannot determine whether either is a USCE-eligible pathway.",
-          "Page is served under adventhealth.com/physician-careers (system root) but renders AdventHealth Gordon (Calhoun, GA) localized content - unresolved whether the same URL serves different localized content for AdventHealth Orlando."
+          "Page nav includes 'Volunteer' link but the cleaned text provides no description of the volunteer program — cannot determine whether medical/clinical volunteering is offered.",
+          "Page nav includes 'Clinical Trials' link but no statement about medical-student research participation is present in the captured text.",
+          "Page nav links to a generic 'AdventHealth Careers Website' but the destination scope (Orlando vs Georgia vs system) is not stated in the captured text."
         ],
         "recommendedA3Focus": [
-          "Verify no PUBLIC_SAFE_USCE claim is emitted from this sourceUrl - entire page is CAREERS_PORTAL family and content is Gordon/Georgia, not Orlando.",
-          "Confirm institution mismatch handling: claims sourced from this URL should not be attributed to inst_adventhealth_orlando_fl without campusApplicabilityProof tying the openings to Orlando.",
-          "Confirm the source-capture pipeline did not mis-route an AdventHealth Gordon localized render under the Orlando institutionId; flag for re-capture under a Gordon institutionId if available."
-        ]
+          "Confirm A1 claims c1 and c2 are not surfaced as PUBLIC_SAFE_USCE or attributed to AdventHealth Orlando — they describe AdventHealth Georgia campuses.",
+          "Verify the runner re-captures an AdventHealth Orlando-specific physician/GME page; this source's content is for AdventHealth Gordon (Calhoun, GA).",
+          "Ensure no new A2 claim (a2_c1..a2_c4) is misclassified as PUBLIC_SAFE_USCE — all are Tier 3 CAREERS_PAGE FUTURE_LANE_ONLY content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/physician-careers",
+              "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "CareersAdventHealth Careers WebsitePhysician and APP Opportunities",
+              "claimText": "Page advertises Physician and APP (Advanced Practice Provider) Opportunities as a navigation/career category.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Career nav label mentions APP in addition to physician — Tier 3.",
+              "whyA1Missed": "A1 captured the openings list but not the APP nav label.",
+              "limitations": "Label only.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/physician-careers",
+              "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "With over 50 hospital campuses in 9 states, AdventHealth facilities incorporate the latest technological advancements and clinical research to serve more than 4.7 million patients annually.",
+              "claimText": "Health-system descriptor: 50+ hospital campuses across 9 states.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "System-level career framing — Tier 3 context.",
+              "whyA1Missed": "A1 focused on Georgia openings, skipped the system-level framing line.",
+              "limitations": "System scope; not Orlando-specific.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/physician-careers",
+              "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "AdventHealth in Georgia, and its partnering physician practices and clinics, employ a workforce of approximately 3,000 including over 100 providers throughout Floyd, Gordon, and Murray Counties.",
+              "claimText": "AdventHealth Georgia workforce ~3,000 including 100+ providers across Floyd/Gordon/Murray counties.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Provider-count quantification — Tier 3 career scoping.",
+              "whyA1Missed": "A1 missed the workforce quantification line.",
+              "limitations": "Georgia scope, not Orlando.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "CONTACT_PHONE",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://adventhealth.com/physician-careers",
+              "sourceHash": "c6638cc3bffb896d58a8460dd2b7982bc366345c5dca90738b9e4303b9b10133",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/physician-careers.txt",
+              "sourceScope": "CAMPUS_SPECIFIC",
+              "quote": "Directions to AdventHealth Gordon1035 Red Bud Road Northeast,Calhoun ,\nGA30701Call AdventHealth Gordon at 706-602-7800",
+              "claimText": "AdventHealth Gordon contact: 1035 Red Bud Road NE, Calhoun, GA 30701; 706-602-7800.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Campus contact tied to careers page — Tier 3 facility contact.",
+              "whyA1Missed": "A1 noted scope conflict but did not extract the explicit address/phone proof.",
+              "limitations": "AdventHealth Gordon (GA), not Orlando.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "institution_mismatch",
+            "explanation": "A1 claim c1 quote is about AdventHealth Georgia; the institutionId is AdventHealth Orlando. Page resolves to AdventHealth Gordon (Calhoun, GA). Must not be published as Orlando data."
+          },
+          {
+            "claimId": "c2",
+            "scopeIssue": "institution_mismatch",
+            "explanation": "Specialty openings list explicitly names AdventHealth Murray and AdventHealth Redmond (Georgia campuses). Cannot be attributed to AdventHealth Orlando."
+          },
+          {
+            "claimId": "a2_c4",
+            "scopeIssue": "campus_specific_to_gordon_not_orlando",
+            "explanation": "Address/phone proof is AdventHealth Gordon (Calhoun, GA 30701), confirming the entire page scope is Gordon, not Orlando."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c3",
+            "campusNameMentionedInQuote": "AdventHealth Gordon",
+            "proofQuote": "Physician Careers | AdventHealth GordonSkip to main contentLocation information for AdventHealth Gordon"
+          },
+          {
+            "claimId": "a2_c4",
+            "campusNameMentionedInQuote": "AdventHealth Gordon",
+            "proofQuote": "Directions to AdventHealth Gordon1035 Red Bud Road Northeast,Calhoun ,\nGA30701Call AdventHealth Gordon at 706-602-7800"
+          },
+          {
+            "claimId": "c2",
+            "campusNameMentionedInQuote": "AdventHealth Murray / AdventHealth Redmond",
+            "proofQuote": "General Surgeon (AdventHealth Murray)GastroenterologistHospitalistMedical OncologistNeuro-Interventionalist (AdventHealth Redmond)"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -284,135 +852,102 @@
         "phase": "A2",
         "newClaims": [
           {
-            "claimId": "fl_a2_001",
+            "claimId": "a2_c_benefits_stipends_perks",
             "claimType": "FUTURE_LANE_GME_GENERAL",
             "lane": "RESIDENCY_PROGRAM_INFO",
             "sourceUrl": "https://adventhealth.com/benefits",
             "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
             "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Moving/relocation expenses reimbursed",
-            "normalizedField": "relocation_reimbursement",
-            "claimText": "AdventHealth GME benefits include reimbursement of moving/relocation expenses for residents.",
+            "quote": "Free specialty organization memberships and resources\nUSMLE Step III registration fees covered\nFunding for national or regional presentation for accepted abstract and research institute\nVisa fees and ECFMG expenses covered\nMeal stipends\nCell phone stipends\nMoving/relocation expenses reimbursed\nAnnual education stipend for conferences, books and other materials",
+            "normalizedField": "stipends_perks",
+            "claimText": "Meal stipends, cell phone stipends, annual education stipend, specialty organization memberships, and funding for accepted abstract/research presentations provided.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "A1 grouped only insurance/wellness benefits; missed the relocation/moving line item under Additional Perks."
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Additional stipends and presentation funding for residents/fellows — Tier 2 trainee benefits.",
+            "whyA1Missed": "A1 grouped some perks but omitted meal stipends, cell phone stipends, education stipend, society memberships, and research presentation funding within the same paragraph.",
+            "limitations": null
           },
           {
-            "claimId": "fl_a2_002",
+            "claimId": "a2_c_benefits_h1b_duration",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "H1B_SPONSORSHIP_SIGNAL",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "H-1B visas are valid for up to three years, with the option to extend for another three (totaling 6 years).",
+            "normalizedField": "h1b_duration",
+            "claimText": "AdventHealth H-1B visas are valid up to 3 years with an option to extend an additional 3 years (6 total).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "VISA_IMMIGRATION",
+            "tierAssignmentRationale": "H-1B duration specifics for sponsored medical residents — Tier 2 visa logistics.",
+            "whyA1Missed": "A1 captured H-1B sponsorship and USMLE prereq but did not surface the explicit duration/extension statement.",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c_benefits_veteran_education",
             "claimType": "FUTURE_LANE_GME_GENERAL",
             "lane": "RESIDENCY_PROGRAM_INFO",
             "sourceUrl": "https://adventhealth.com/benefits",
             "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
             "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Annual education stipend for conferences, books and other materials",
-            "normalizedField": "education_stipend",
-            "claimText": "AdventHealth GME provides an annual education stipend for conferences, books, and other materials.",
+            "quote": "For Post 9/11 GI Bill® (Ch 33) students and VA Vocational Rehabilitation and Employment (Ch 31) students, our tuition policy complies with 38 USC 3679(e) which means Post 9/11 and Vocational Rehabilitation and Employment students will not be charged or otherwise penalized due to a delay in VA tuition and fee payments.",
+            "normalizedField": "veteran_education",
+            "claimText": "AdventHealth GME complies with 38 USC 3679(e) for Post 9/11 GI Bill and VA Vocational Rehab students; no penalty for delayed VA tuition payments.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "A1 captured USMLE Step III and visa fees but skipped the annual education stipend line."
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Veteran trainee tuition policy — Tier 2 trainee-facing benefit.",
+            "whyA1Missed": "A1 skipped the Veteran Education / GI Bill paragraph at the bottom of the page.",
+            "limitations": null
           },
           {
-            "claimId": "fl_a2_003",
+            "claimId": "a2_c_benefits_supplemental_perks",
             "claimType": "FUTURE_LANE_GME_GENERAL",
             "lane": "RESIDENCY_PROGRAM_INFO",
             "sourceUrl": "https://adventhealth.com/benefits",
             "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
             "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "20 paid days off (PDO) inclusive of (sick time, vacation time, holidays, and personal days) annually.",
-            "normalizedField": "paid_time_off",
-            "claimText": "Residents receive 20 paid days off annually inclusive of sick, vacation, holiday, and personal days.",
+            "quote": "Supplemental Insurance\nAdoption Assistance\nIdentity Theft Protection\nLegal Insurance\nPet Care\nEmployee Discount Program\nDiscounted gym membership at AdventHeath Wesley Chapel",
+            "normalizedField": "supplemental_perks",
+            "claimText": "Supplemental insurance, adoption assistance, identity theft protection, legal insurance, pet care, employee discount program, and discounted gym membership offered.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "A1 did not extract the PDO/paid leave allotment, a distinct benefit line."
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Additional supplemental benefits for residents/fellows — Tier 2.",
+            "whyA1Missed": "A1 captured core insurance and retirement but skipped the 'Discover Even More Benefits' supplemental-perks block.",
+            "limitations": null
           },
           {
-            "claimId": "fl_a2_004",
-            "claimType": "FUTURE_LANE_SERVICES",
-            "lane": "PHYSICIAN_SERVICES",
-            "sourceUrl": "https://adventhealth.com/benefits",
-            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
-            "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "401(a) and 403(b) Retirement Plans\n457(b) Deferred Compensation Plan\nEnrich Financial Wellness (in partnership with WebMD)",
-            "normalizedField": "retirement_plans",
-            "claimText": "AdventHealth GME offers 401(a), 403(b), and 457(b) plans plus Enrich Financial Wellness program.",
-            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "Retirement/financial section was not captured by A1."
-          },
-          {
-            "claimId": "fl_a2_005",
-            "claimType": "FUTURE_LANE_SERVICES",
-            "lane": "PHYSICIAN_SERVICES",
-            "sourceUrl": "https://adventhealth.com/benefits",
-            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
-            "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Public Service Loan Forgiveness (PSLF):\nAdventHealth team members are encouraged to apply for the federal Public Service Loan forgiveness program that will help reduce the terms and length of existing eligible federal student loans",
-            "normalizedField": "pslf_eligibility",
-            "claimText": "AdventHealth encourages PSLF eligibility for team members with eligible federal student loans.",
-            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "PSLF section appears late in the cleaned text; A1 stopped at visa content."
-          },
-          {
-            "claimId": "fl_a2_006",
+            "claimId": "a2_c_benefits_medical_stipend",
             "claimType": "FUTURE_LANE_GME_GENERAL",
             "lane": "RESIDENCY_PROGRAM_INFO",
             "sourceUrl": "https://adventhealth.com/benefits",
             "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
             "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Free specialty organization memberships and resources",
-            "normalizedField": "specialty_org_memberships",
-            "claimText": "AdventHealth GME provides free specialty organization memberships and resources to residents.",
+            "quote": "*Residents are also provided a per-pay period stipend equivalent to the employee-only coverage level of the Select Plan (Florida only) or the Health Savings Plan.",
+            "normalizedField": "medical_plan_stipend",
+            "claimText": "Residents receive a per-pay-period stipend equivalent to employee-only coverage level of the Select Plan (FL only) or Health Savings Plan.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "First line of Additional Perks not captured by A1."
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Medical-plan stipend for residents — Tier 2 compensation detail.",
+            "whyA1Missed": "A1 captured the medical plan list but missed the footnoted per-pay-period stipend explanation immediately below it.",
+            "limitations": null
           },
           {
-            "claimId": "fl_a2_007",
-            "claimType": "FUTURE_LANE_GME_GENERAL",
-            "lane": "RESIDENCY_PROGRAM_INFO",
-            "sourceUrl": "https://adventhealth.com/benefits",
-            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
-            "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Funding for national or regional presentation for accepted abstract and research institute",
-            "normalizedField": "research_presentation_funding",
-            "claimText": "AdventHealth GME funds national/regional presentations for accepted abstracts and research institute.",
-            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "Research presentation funding line is a distinct benefit A1 did not extract."
-          },
-          {
-            "claimId": "fl_a2_008",
-            "claimType": "FUTURE_LANE_SERVICES",
-            "lane": "PHYSICIAN_SERVICES",
-            "sourceUrl": "https://adventhealth.com/benefits",
-            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
-            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
-            "sourceScope": "HEALTH_SYSTEM_LEVEL",
-            "quote": "Medical Plan Options*\nPrescription Drug Coverage\nHealth Savings and Flexible Spending Accounts\nDental Plan Options\nVision Plan",
-            "normalizedField": "health_plans",
-            "claimText": "AdventHealth GME offers medical, prescription, HSA/FSA, dental, and vision plan options to residents.",
-            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
-            "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "A1 captured life/disability but skipped the health/dental/vision plan section."
-          },
-          {
-            "claimId": "fl_a2_009",
+            "claimId": "a2_c_benefits_gme_wellness",
             "claimType": "FUTURE_LANE_GME_GENERAL",
             "lane": "RESIDENCY_PROGRAM_INFO",
             "sourceUrl": "https://adventhealth.com/benefits",
@@ -421,66 +956,247 @@
             "sourceScope": "HEALTH_SYSTEM_LEVEL",
             "quote": "Our GME Wellness Program is a systemic well-being initiative to integrate self-care into medical training. It is designed to enhance resilience, improve relationships, and provide concrete strategies to reduce stress and prevent burn out.",
             "normalizedField": "gme_wellness_program",
-            "claimText": "AdventHealth offers a systemic GME Wellness Program to integrate self-care into medical training.",
+            "claimText": "AdventHealth GME runs a systemic Wellness Program with clinical services, support services, and didactic training to enhance resilience and reduce burnout.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": null,
-            "whyA1Missed": "Wellness program section not extracted by A1."
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Trainee wellness program for residents/fellows — Tier 2.",
+            "whyA1Missed": "A1 ignored the GME Wellness Program section entirely.",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c_benefits_policies",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://adventhealth.com/benefits",
+            "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "POLICIES AND PROCEDURESAdventHealth Resident AgreementLeave of Absence PolicyEligibility and Selection Policy",
+            "normalizedField": "policies",
+            "claimText": "Published GME policies include AdventHealth Resident Agreement, Leave of Absence Policy, and Eligibility and Selection Policy.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "GME policy documents apply to residents/fellows — Tier 2.",
+            "whyA1Missed": "A1 did not capture the Policies and Procedures footer references.",
+            "limitations": "Only titles; full policy text not on this page."
           }
         ],
         "a1ClaimsToRefine": [
           {
-            "a1ClaimId": "fl_001",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "sourceScope is UNKNOWN_SCOPE but the benefits page covers AdventHealth East Orlando, Ocala, Orlando, Sebring, Tampa, Wesley Chapel, and Winter Park — clearly HEALTH_SYSTEM_LEVEL. Should be updated to HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_002",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Same scope concern: system-wide GME benefits page, not Orlando-specific. sourceScope should be HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_003",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Same scope concern: system-wide GME benefits page. sourceScope should be HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_004",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Salary schedule applies across AdventHealth GME system per page nav (multiple campuses). sourceScope should be HEALTH_SYSTEM_LEVEL not UNKNOWN_SCOPE."
-          },
-          {
-            "a1ClaimId": "fl_005",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "System-wide GME benefits; sourceScope should be HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_006",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "System-wide GME benefits; sourceScope should be HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_007",
-            "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "System-wide GME benefits; sourceScope should be HEALTH_SYSTEM_LEVEL."
-          },
-          {
-            "a1ClaimId": "fl_008",
+            "a1ClaimId": "c_benefits_vslo_nav_signal",
             "refinementReason": "quote_too_general",
-            "explanation": "Quote concatenates phone and address without separator (407-303-7133Main Campus). Phone digits are correct but the run-together token is a cleaned-text artifact A3 should be aware of."
+            "explanation": "Quote is navigation text only with no eligibility, dates, or program scope. Source scope is HEALTH_SYSTEM_LEVEL on a benefits page — this nav signal should be treated as discovery pointer, not an OFFERS_VSLO claim."
+          },
+          {
+            "a1ClaimId": "c_benefits_h1b_greencard",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Tiered as TIER_3 but the page is GME-resident benefits; the green-card pathway here is described as flowing from H-1B held during/after residency. Consider TIER_2 with Tier 3 spillover, or split into a separate Tier 3 claim with explicit attending-employment language."
           }
         ],
         "additionalUnresolveds": [
-          "Page nav references 'Medical Clerkship - Orlando Campuses' and 'VSLO Opportunities Across Florida' but the benefits cleaned text does not contain their content — USCE eligibility for visiting students cannot be resolved from this source.",
-          "Page mentions 'residents, fellows and medical students across GME' under Wellness but does not state whether medical students includes visiting/external students or only affiliated clerkship students.",
-          "Veteran Education / GI Bill paragraph references tuition policy without specifying which programs charge tuition or whether visiting students are covered."
+          "Whether the listed AdventHealth Orlando residency and fellowship programs (Anesthesiology, Diagnostic Radiology, General Pediatrics, General Surgery, Internal Medicine, Neurology, OB/GYN, Orthopaedic Surgery, Urology, plus 13 fellowships) have program-specific eligibility, IMG policy, or J-1 sponsorship language — only program names appear here.",
+          "Whether 'Visa fees and ECFMG expenses covered' applies pre-employment to incoming residents or only to currently-employed residents — not clarified on this page.",
+          "Whether the GME Wellness Program services are available to visiting medical students as suggested by 'residents, fellows and medical students across GME' — visiting vs. home-school students not distinguished."
         ],
         "recommendedA3Focus": [
-          "Confirm sourceScope for all fl_001–fl_008 claims is upgraded from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL given multi-campus nav.",
-          "Verify no PUBLIC_SAFE_USCE claim is emitted from this adventhealth.com/benefits URL — content is GME-only.",
-          "Confirm fl_008 contact phone quote is acceptable despite the run-together '407-303-7133Main Campus' tokenization artifact.",
-          "Check that Medical Clerkship and VSLO pages referenced in nav are captured as separate source units in this run."
-        ]
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HEALTH_SYSTEM_LEVEL benefits page; all GME/benefits claims must be FUTURE_LANE_ONLY.",
+          "Verify the c_benefits_vslo_nav_signal OFFERS_VSLO claim is downgraded — content is a nav reference on a benefits page, not a visiting-student program description.",
+          "Confirm campus attribution: salary/benefits are AdventHealth GME system-wide and must not be auto-credited to AdventHealth Orlando without campus-applicability proof.",
+          "Confirm H-1B sponsorship claims remain FUTURE_LANE_ONLY (H1B_SPONSORSHIP_SIGNAL) and are not exposed as USCE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_deep_t2_stipends",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Meal stipends\nCell phone stipends\nMoving/relocation expenses reimbursed\nAnnual education stipend for conferences, books and other materials",
+              "normalizedField": "trainee_stipends",
+              "claimText": "Meal, cell phone, and annual education stipends provided to AdventHealth GME residents/fellows.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Trainee stipends — Tier 2 compensation detail.",
+              "whyA1Missed": "A1 emitted the relocation line only but skipped the surrounding meal/cell-phone/education stipends.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_research_funding",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Funding for national or regional presentation for accepted abstract and research institute",
+              "normalizedField": "research_presentation_funding",
+              "claimText": "AdventHealth GME funds national or regional presentations for accepted abstracts and research institute participation.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Resident/fellow research presentation funding — Tier 2.",
+              "whyA1Missed": "A1 lumped 'Additional Perks' partially; the abstract/research presentation funding line was not extracted.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_wellness",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Our program approaches well-being initiatives through a 3-pronged approach:\nClinical services\nSupport services (interactive/ experiential wellness events)\nEducation/didactic trainings",
+              "normalizedField": "gme_wellness_program_services",
+              "claimText": "GME Wellness Program uses a 3-pronged approach: clinical services, support/experiential events, and education/didactic trainings.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Wellness program structure for trainees — Tier 2.",
+              "whyA1Missed": "A1 omitted the Wellness Program section.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_h1b_duration",
+              "claimType": "FUTURE_LANE_VISA",
+              "lane": "H1B_SPONSORSHIP_SIGNAL",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "H-1B visas are valid for up to three years, with the option to extend for another three (totaling 6 years).",
+              "normalizedField": "h1b_duration",
+              "claimText": "AdventHealth H-1B sponsorship valid up to 3 years, extendable to 6 years total.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "VISA_IMMIGRATION",
+              "tierAssignmentRationale": "H-1B duration detail for residents — Tier 2.",
+              "whyA1Missed": "A1 captured surrounding sentences but skipped the explicit duration line.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_veteran_edu",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "For eligibility consideration, a Post 9/11 GI Bill student must submit a VA Certificate of Eligibility (COE) and a Vocational Rehabilitation Student must provide a VAF 28-1905 form.",
+              "normalizedField": "veteran_education_eligibility_docs",
+              "claimText": "Post 9/11 GI Bill students must submit VA COE; Voc Rehab students must provide VAF 28-1905 form.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Document requirements for veteran-trainee education benefits — Tier 2.",
+              "whyA1Missed": "A1 did not extract the Veteran Education documentation requirements paragraph.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_orlando_residency_list",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "AdventHealth OrlandoAnesthesiologyDiagnostic RadiologyGeneral PediatricsGeneral SurgeryInternal MedicineNeurologyObstetrics and GynecologyOrthopaedic SurgeryUrology",
+              "normalizedField": "orlando_residency_programs",
+              "claimText": "AdventHealth Orlando residency programs: Anesthesiology, Diagnostic Radiology, General Pediatrics, General Surgery, Internal Medicine, Neurology, OB/GYN, Orthopaedic Surgery, Urology.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Campus-specific residency program list for AdventHealth Orlando — Tier 2.",
+              "whyA1Missed": "A1 treated the nav as boilerplate and did not extract the campus-specific program list which is a campus-applicability proof.",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_deep_t2_orlando_fellowship_list",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "AdventHealth OrlandoAdvanced Heart Failure and Transplant CardiologyCardiovascular DiseaseColon and Rectal SurgeryComplex Gastrointestinal SurgicalCritical Care MedicineGastroenterologyGynecologic OncologyHead and Neck SurgeryHospice and Palliative MedicineInterventional CardiologyNeonatal-Perinatal MedicineNeurocritical CarePulmonary Disease and Critical Care Medicine",
+              "normalizedField": "orlando_fellowship_programs",
+              "claimText": "AdventHealth Orlando fellowships: Advanced Heart Failure/Transplant Cardiology, CV Disease, Colon/Rectal, Complex GI Surgical, Critical Care, GI, Gyn Onc, Head/Neck, Hospice/Palliative, Interventional Cards, Neonatal-Perinatal, Neurocrit, Pulm/CCM.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Campus-specific fellowship program list for AdventHealth Orlando — Tier 2.",
+              "whyA1Missed": "A1 did not extract the Orlando fellowship program list — important campus-applicability proof.",
+              "limitations": null
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_deep_t3_greencard_pathway_detail",
+              "claimType": "FUTURE_LANE_VISA",
+              "lane": "H1B_SPONSORSHIP_SIGNAL",
+              "sourceUrl": "https://adventhealth.com/benefits",
+              "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "H-1B visa holders can obtain permanent residency (green card) through AdventHealth once an offer of future employment is established.",
+              "normalizedField": "greencard_via_future_employment",
+              "claimText": "Green card sponsorship through AdventHealth is conditioned on an offer of future employment (post-training attending offer).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "VISA_IMMIGRATION",
+              "tierAssignmentRationale": "PR sponsorship hinges on attending-track future employment offer — Tier 3 career-stage visa signal (parallel to A1's c_benefits_h1b_greencard but conditioning emphasized).",
+              "whyA1Missed": "A1 emitted the same quote but didn't isolate the 'offer of future employment' conditioning — the key Tier 3 trigger.",
+              "limitations": "Overlaps with A1 c_benefits_h1b_greencard quote; flagged for dedupe with refinement focus on condition."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_benefits_vslo_nav_signal",
+            "scopeIssue": "navigation_link_on_system_benefits_page",
+            "explanation": "OFFERS_VSLO emitted from nav text on a HEALTH_SYSTEM_LEVEL benefits page. Should be discovery-only pointer; downgrade or convert to MISSING_FIELD until VSLO page itself is read."
+          },
+          {
+            "claimId": "c_benefits_pgy1_salary",
+            "scopeIssue": "system_wide_salary_attributed_to_orlando",
+            "explanation": "Salary table is across all AdventHealth GME campuses (East Orlando, Ocala, Orlando, Sebring, Tampa, Wesley Chapel, Winter Park). Attribution to Orlando-specific is valid only if salary applies uniformly; A1 limitations field already notes this."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "a2_deep_t2_orlando_residency_list",
+            "campusNameMentionedInQuote": "AdventHealth Orlando",
+            "proofQuote": "AdventHealth OrlandoAnesthesiologyDiagnostic RadiologyGeneral PediatricsGeneral SurgeryInternal MedicineNeurologyObstetrics and GynecologyOrthopaedic SurgeryUrology"
+          },
+          {
+            "claimId": "a2_deep_t2_orlando_fellowship_list",
+            "campusNameMentionedInQuote": "AdventHealth Orlando",
+            "proofQuote": "AdventHealth OrlandoAdvanced Heart Failure and Transplant CardiologyCardiovascular DiseaseColon and Rectal SurgeryComplex Gastrointestinal SurgicalCritical Care MedicineGastroenterologyGynecologic OncologyHead and Neck SurgeryHospice and Palliative MedicineInterventional CardiologyNeonatal-Perinatal MedicineNeurocritical CarePulmonary Disease and Critical Care Medicine"
+          },
+          {
+            "claimId": "c_benefits_contact_phone",
+            "campusNameMentionedInQuote": "Orlando, FL 32804",
+            "proofQuote": "ContactCall 407-303-7133Main Campus 2501 N. Orange Avenue, Orlando, FL 32804"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -496,23 +1212,26 @@
         "phase": "A2",
         "newClaims": [
           {
-            "claimId": "c_a2_1",
+            "claimId": "a2_c_wis_symposium",
             "claimType": "FUTURE_LANE_SERVICES",
             "lane": "PHYSICIAN_SERVICES",
             "sourceUrl": "https://adventhealth.com/medical-education",
             "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
             "sourceScope": "DEPARTMENT_LEVEL",
-            "quote": "Throughout the year, AdventHealth Digestive Health Institute offers opportunities for clinicians to earn CME credits.",
-            "normalizedField": "cme_program",
-            "claimText": "DHI offers ongoing CME credit opportunities for clinicians.",
+            "quote": "AdventHealth Digestive Health Institute surgeon Sharona Ross, MD, is the founder and chair of Women in Surgery (WIS), an organization formed to encourage women to choose careers in surgery and to support women currently in the discipline.",
+            "normalizedField": "women_in_surgery_symposium",
+            "claimText": "DHI hosts the Women in Surgery (WIS) Career Symposium, founded and chaired by Sharona Ross, MD.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": "CME audience is licensed clinicians, not USCE-seeking students or IMGs.",
-            "whyA1Missed": "A1 noted CME in unresolveds but did not emit a structured claim for the CME program offering."
+            "limitations": "Career symposium for women in surgery; not a USCE offering; West Florida DHI scope.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Career symposium for practicing/aspiring surgeons — Tier 3.",
+            "whyA1Missed": "A1 skipped the third labeled section (Women in Surgery Career Symposium) which is a separate career-oriented program."
           },
           {
-            "claimId": "c_a2_2",
+            "claimId": "a2_c_wis_phone",
             "claimType": "CONTACT_PHONE",
             "lane": "PHYSICIAN_SERVICES",
             "sourceUrl": "https://adventhealth.com/medical-education",
@@ -520,65 +1239,243 @@
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
             "sourceScope": "DEPARTMENT_LEVEL",
             "quote": "For more information, call 813-615-7030 , or visit Women-In-Surgery.com .",
-            "normalizedField": "phone_women_in_surgery",
-            "claimText": "Phone 813-615-7030 listed for Women in Surgery (WIS) Career Symposium.",
+            "normalizedField": "wis_contact_phone",
+            "claimText": "Women in Surgery Career Symposium contact phone: 813-615-7030.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "HIGH",
-            "limitations": "Phone is for WIS symposium, not USCE intake. Tampa-area area code suggests West Florida, not Orlando.",
-            "whyA1Missed": "A1 captured no contact-channel claims; phone number appears only in WIS section near end of page."
+            "limitations": "Phone is for WIS Career Symposium, not for USCE/observership inquiries.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Contact for a Tier 3 career symposium.",
+            "whyA1Missed": "A1 did not extract the contact phone tied to the WIS section."
           },
           {
-            "claimId": "c_a2_3",
+            "claimId": "a2_c_clinical_trials_research",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Our doctors train residents and fellows, pioneer new surgical approaches, are principal investigators for cancer clinical trials and widely publish and present their research in medical journals and at conferences.",
+            "normalizedField": "cancer_clinical_trials_pi",
+            "claimText": "DHI doctors are principal investigators for cancer clinical trials and publish/present research.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Faculty-level clinical-trials signal; no student/resident research elective stated.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Faculty-level clinical-trial PI work is Tier 3 practice/career, not Tier 1 student research.",
+            "whyA1Missed": "A1 reused this sentence only for the resident/fellow training signal and skipped the clinical-trials / research-PI clause."
+          },
+          {
+            "claimId": "a2_c_faculty_academic_positions",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://adventhealth.com/medical-education",
+            "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Some of them also hold academic positions at the region’s medical schools.",
+            "normalizedField": "faculty_academic_appointments",
+            "claimText": "Some DHI doctors hold academic positions at regional medical schools.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "No specific medical school named; faculty-status signal only.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Academic faculty appointments are a Tier 3 practice/career signal.",
+            "whyA1Missed": "A1 did not surface the regional-medical-school faculty affiliation signal."
+          },
+          {
+            "claimId": "a2_c_general_contact_phone",
             "claimType": "CONTACT_PHONE",
             "lane": "PHYSICIAN_SERVICES",
             "sourceUrl": "https://adventhealth.com/medical-education",
             "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
             "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
             "sourceScope": "DEPARTMENT_LEVEL",
-            "quote": "Call Us 833-288-0248Call Us 833-288-0248",
-            "normalizedField": "phone_main",
-            "claimText": "Main appointment phone listed: 833-288-0248.",
+            "quote": "Contact UsCall 833-288-0248Request an Appointment",
+            "normalizedField": "dhi_general_phone",
+            "claimText": "AdventHealth DHI general contact phone: 833-288-0248.",
             "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
             "confidence": "MEDIUM",
-            "limitations": "Number is for appointment requests, not USCE/medical-education inquiries.",
-            "whyA1Missed": "Phone number appears in chrome/header navigation; A1 focused on body content."
+            "limitations": "Patient-appointment phone, not a USCE coordinator line.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "General institutional contact, Tier 3 service.",
+            "whyA1Missed": "A1 did not extract the page header Contact Us phone."
           }
         ],
         "a1ClaimsToRefine": [
           {
-            "a1ClaimId": "c_fl_1",
+            "a1ClaimId": "c_fl_residency_usf_gi",
             "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Quote attributes the residency site to 'AdventHealth Digestive Health Institute' (West Florida per page title), not AdventHealth Orlando. Source URL is system-level adventhealth.com. Institution-applicability to AdventHealth Orlando is not established."
+            "explanation": "Tagged HEALTH_SYSTEM_LEVEL but cleaned text identifies content as AdventHealth DHI West Florida (a regional department), not the corporate system. Suggest DEPARTMENT_LEVEL or CAMPUS_SPECIFIC (West Florida)."
           },
           {
-            "a1ClaimId": "c_fl_2",
+            "a1ClaimId": "c_fl_fellowships",
             "refinementReason": "scope_conflict_health_system_level",
-            "explanation": "Fellowships are attributed to DHI surgeons; page title scopes content to West Florida DHI. Cannot be attributed to AdventHealth Orlando without campusApplicabilityProof."
+            "explanation": "Fellowships are DHI West Florida–specific; HEALTH_SYSTEM_LEVEL overstates reach. Should be DEPARTMENT_LEVEL / CAMPUS_SPECIFIC West Florida."
           },
           {
-            "a1ClaimId": "c_fl_3",
+            "a1ClaimId": "c_fl_cme",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "CME is offered by DHI specifically, not by the AdventHealth system. Re-scope to DEPARTMENT_LEVEL."
+          },
+          {
+            "a1ClaimId": "c_fl_train_residents_fellows",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Describes DHI West Florida doctors, not AdventHealth system-wide. Re-scope to DEPARTMENT_LEVEL."
+          },
+          {
+            "a1ClaimId": "c_scope_conflict_west_florida_vs_orlando",
             "refinementReason": "quote_too_general",
-            "explanation": "Quote ('Our doctors train residents and fellows...') is generic prose mixing training, research, and trials; does not cleanly evidence a discrete GME claim distinct from c_fl_1 and c_fl_2."
-          },
-          {
-            "a1ClaimId": "c_scope_1",
-            "refinementReason": "lane_misclassified",
-            "explanation": "sourceScope set to UNKNOWN_SCOPE but page title and content clearly identify Digestive Health Institute West Florida — should be DEPARTMENT_LEVEL (or CAMPUS_SPECIFIC to West Florida), not unknown."
+            "explanation": "Quote is the page <title> only. A stronger proof would tie the West Florida–vs–Orlando mismatch to body-text references; the title alone may be thin for downstream gating."
           }
         ],
         "additionalUnresolveds": [
-          "Page references 'piquing university students' interest in the medical field' but does not state whether any structured shadowing, observership, or pre-med program exists.",
-          "Page mentions linked 'Graduate Medical Education website' for fellowship info but the linked URL is not present in cleaned text.",
-          "Page mentions linked CME program 'website' but the linked URL is not present in cleaned text.",
-          "Women in Surgery symposium 'attracts national and international medical professionals and students' but does not state whether students may apply to a clinical experience.",
-          "Page does not state whether AdventHealth Orlando shares the GME / fellowship infrastructure described for DHI West Florida."
+          "Page mentions 'visit our website' for CME and 'visit our Graduate Medical Education website' for fellowships but does not provide URLs in cleaned text.",
+          "Page mentions 'region's medical schools' where DHI doctors hold academic positions but does not name any school (USF is named only in the GI residency context).",
+          "Page does not state whether AdventHealth Orlando campus participates in the USF GI residency or the Advanced Colorectal / GI-HPB fellowships.",
+          "Page is silent on observership, visiting student, elective, sub-internship, and student research — absence rather than explicit refusal."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this source — page is DEPARTMENT_LEVEL (DHI West Florida) on a system-level domain and contains no observership/visiting-student offering.",
-          "Verify that all four A1 claims tied to inst_adventhealth_orlando_fl carry an explicit campusApplicabilityProof or are downgraded — page content is West Florida DHI, not Orlando.",
-          "Confirm sourceScope is reclassified from UNKNOWN_SCOPE to DEPARTMENT_LEVEL or CAMPUS_SPECIFIC (West Florida) before any downstream gating.",
-          "Confirm CME claim is not promoted into USCE lane — CME audience is licensed clinicians, not students/IMGs."
-        ]
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this source (URL adventhealth.com/medical-education + content scoped to DHI West Florida, no observership/elective content).",
+          "Verify A1 source scope HEALTH_SYSTEM_LEVEL is downgraded to DEPARTMENT_LEVEL or CAMPUS_SPECIFIC (West Florida) for the four A1 GME/CME claims.",
+          "Verify no claim is attributed to AdventHealth Orlando without a campusApplicabilityProof — the cleaned text never names Orlando.",
+          "Confirm absence of observership/visiting-student content is gated as NO_PUBLIC_OPPORTUNITY_FOUND, not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY (no explicit refusal quote present)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c_wis_symposium",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://adventhealth.com/medical-education",
+              "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "AdventHealth Digestive Health Institute surgeon Sharona Ross, MD, is the founder and chair of Women in Surgery (WIS), an organization formed to encourage women to choose careers in surgery and to support women currently in the discipline.",
+              "normalizedField": "women_in_surgery_symposium",
+              "claimText": "DHI hosts the Women in Surgery Career Symposium, founded and chaired by Sharona Ross, MD.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Career symposium; not USCE.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Career-oriented symposium for surgeons and surgery-curious students — Tier 3.",
+              "whyA1Missed": "A1 skipped the third labeled section (Women in Surgery Career Symposium)."
+            },
+            {
+              "claimId": "a2_c_wis_phone",
+              "claimType": "CONTACT_PHONE",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://adventhealth.com/medical-education",
+              "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "For more information, call 813-615-7030 , or visit Women-In-Surgery.com .",
+              "normalizedField": "wis_contact_phone",
+              "claimText": "WIS Career Symposium phone: 813-615-7030.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Not a USCE coordinator phone.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Contact tied to a Tier 3 career symposium.",
+              "whyA1Missed": "A1 did not extract the phone in the WIS section."
+            },
+            {
+              "claimId": "a2_c_clinical_trials_research",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://adventhealth.com/medical-education",
+              "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Our doctors train residents and fellows, pioneer new surgical approaches, are principal investigators for cancer clinical trials and widely publish and present their research in medical journals and at conferences.",
+              "normalizedField": "cancer_clinical_trials_pi",
+              "claimText": "DHI doctors are PIs for cancer clinical trials and publish research.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Faculty research signal, not a student elective.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Faculty-level clinical-trial PI work is Tier 3 (practice).",
+              "whyA1Missed": "A1 used this sentence only for the GME signal and ignored the research-PI clause."
+            },
+            {
+              "claimId": "a2_c_faculty_academic_positions",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://adventhealth.com/medical-education",
+              "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Some of them also hold academic positions at the region’s medical schools.",
+              "normalizedField": "faculty_academic_appointments",
+              "claimText": "Some DHI doctors hold academic positions at regional medical schools.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "No specific medical school named.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Faculty appointments are a Tier 3 practice/career signal.",
+              "whyA1Missed": "A1 did not surface the regional-faculty signal."
+            },
+            {
+              "claimId": "a2_c_general_contact_phone",
+              "claimType": "CONTACT_PHONE",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://adventhealth.com/medical-education",
+              "sourceHash": "91143114d598a2b022d9d8f02078e798516034db70731178d8490389eda391e1",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Contact UsCall 833-288-0248Request an Appointment",
+              "normalizedField": "dhi_general_phone",
+              "claimText": "DHI general contact phone: 833-288-0248.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Patient-appointment line, not USCE coordinator.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Institutional contact, Tier 3 service.",
+              "whyA1Missed": "A1 did not extract the header Contact Us phone."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_fl_residency_usf_gi",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Tagged HEALTH_SYSTEM_LEVEL but content describes AdventHealth DHI West Florida — a regional department, not the corporate system."
+          },
+          {
+            "claimId": "c_fl_fellowships",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Fellowships are DHI West Florida–specific; HEALTH_SYSTEM_LEVEL overstates institutional reach."
+          },
+          {
+            "claimId": "c_fl_cme",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "CME is offered by DHI specifically, not by AdventHealth system as a whole."
+          },
+          {
+            "claimId": "c_fl_train_residents_fellows",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Describes DHI West Florida doctors, not AdventHealth system-wide training."
+          },
+          {
+            "claimId": "institution_under_review",
+            "scopeIssue": "scope_conflict_campus_specific",
+            "explanation": "Institution under review is AdventHealth Orlando, but cleaned text describes AdventHealth DHI West Florida and never names Orlando. No campus applicability proof for Orlando exists in this source."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
       }
     },
     {
@@ -595,16 +1492,21 @@
         "newClaims": [],
         "a1ClaimsToRefine": [],
         "additionalUnresolveds": [
-          "Page lists a 'Research' navigation item with no descriptive content ('Learn More about \"Research\"') — cannot determine whether medical student research or research observership is offered.",
-          "Page lists an 'Orientation' item with the literal note 'There is no more information provided for this item' — concept gestured at but unresolved.",
-          "Page references 'AdventHealth Learning Network' and 'AdventHealth CME' as education offerings without stating audience eligibility (physicians vs trainees vs visiting students).",
-          "Scope of source is system-level adventhealth.com/education (HEALTH_SYSTEM_LEVEL) — no campus applicability proof for AdventHealth Orlando specifically."
+          "Page mentions 'Research' as a navigation item but does not state whether research opportunities are available to visiting/external medical students or only AdventHealth physicians/APPs.",
+          "Page mentions 'Orientation' under education resources but states 'There is no more information provided for this item' — orientation scope (employees vs. visiting trainees) is unresolved."
         ],
         "recommendedA3Focus": [
-          "Confirm no PUBLIC_SAFE_USCE claim is emitted citing system-level adventhealth.com/education URL — sourceScope is HEALTH_SYSTEM_LEVEL.",
-          "Verify the page contains no observership, visiting student, elective, sub-internship, or away-rotation keywords — content is physician well-being / CME oriented at existing physicians and APPs.",
-          "Confirm 'Research' nav label is not promoted to OFFERS_RESEARCH without descriptive content."
-        ]
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this health-system-level adventhealth.com/education URL — page is Physician/APP Well-Being navigation, not a USCE opportunity page.",
+          "Verify source family remains OTHER / scope HEALTH_SYSTEM_LEVEL; do not allow upgrade to MEDICAL_SCHOOL_LEVEL or PUBLIC_SAFE_USCE on the basis of the word 'Education' in the URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
       }
     }
   ]

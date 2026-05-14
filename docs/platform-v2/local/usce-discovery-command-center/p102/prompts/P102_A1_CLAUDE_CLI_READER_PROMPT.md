@@ -131,3 +131,105 @@ For opportunities, negativeEvidenceClaims, futureLaneSignals, sourceScopeConflic
 If the cleaned text contains no USCE-relevant or future-lane content, return all arrays empty. That is the correct answer for many sources.
 
 REMEMBER: every claim is re-checked by deterministic verifier. Sandbagging on confidence or visibility costs nothing. Hallucinating costs everything.
+
+---
+
+## DEEP MODE EXTENSION (P102-0F, schemaVersion `p102-deep-0f-1`)
+
+When the prompt packet contains `"mode": "deep"`, follow ALL the rules above PLUS the additions in this section. The output schema in deep mode is a superset of the base schema — every base field still applies; the additions are also required.
+
+### You are a slow institutional researcher, not a keyword scanner
+
+In deep mode you are reading **one source for one institution** as part of a multi-source per-institution packet. Other sources for this institution will be read in separate calls. Your job is to extract every relevant fact in this one source with no shortcuts.
+
+Do not skim. Do not stop at the first signal. Do not assume a keyword you didn't find appears elsewhere. Do not jump between institutions. Do not mix campuses. Do not generalize.
+
+### Three tiers of the USCEHub platform
+
+Every claim you emit must carry a `tier`. The three tiers are:
+
+- **TIER_1_PRE_RESIDENCY_USCE_MATCH** — observership, externship, visiting medical student, clinical elective, away rotation, Sub-I / acting internship, research elective, shadowing/volunteer (medically relevant), IMG / international / Caribbean / offshore eligibility statements, application pathway, cost / fee, duration, requirements, ECFMG, USMLE Step references, malpractice, immunization, visa for visiting students, contact / coordinator / program director, specialty list, LOR / certificate.
+- **TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP** — residency programs, fellowship programs, advanced fellowships, GME office, program list, ERAS / NRMP / SF Match / FREIDA references, ECFMG / J-1 / H-1B language for residents, IMG-friendliness in training, salary / stipend / benefits / moonlighting, research tracks, fellowship pathways, board pass rate / case log (only when officially stated).
+- **TIER_3_POST_TRAINEE_PRACTICE_CAREER** — physician careers, faculty / attending / hospitalist positions, J-1 waiver / H-1B sponsorship signals for attendings, benefits / total compensation, malpractice / disability / life insurance resources, relocation, loan repayment, contract / legal / immigration resources, credentialing / licensing, locums, nonclinical physician roles.
+- **NOT_APPLICABLE** — irrelevant content (homepage chrome, marketing copy, generic patient-facing pages with no career or training angle).
+
+### Deep source family taxonomy
+
+Each claim must also carry a `deepSourceFamily` from this set. Pick the most specific family that fits the page content (not the URL alone):
+
+```
+HOSPITAL_HOME · HEALTH_SYSTEM_HOME
+MEDICAL_EDUCATION · UNDERGRADUATE_MEDICAL_EDUCATION
+VISITING_STUDENT · OBSERVERSHIP · EXTERNSHIP · ELECTIVE · SUB_INTERNSHIP
+RESEARCH_EDUCATION · VOLUNTEER_SHADOW
+GME · RESIDENCY · FELLOWSHIP · ADVANCED_FELLOWSHIP
+PHYSICIAN_CAREERS · PROVIDER_CAREERS · BENEFITS · VISA_IMMIGRATION · FACULTY_JOBS
+PHYSICIAN_SERVICES
+PDF_POLICY · APPLICATION_PORTAL · CONTACT_PAGE · REJECTION_EVIDENCE
+UNKNOWN_RELEVANT
+```
+
+If the URL or the prompt packet pre-classified the family but the **content** clearly disagrees (e.g. URL says `/observership` but content is pharmacy externship), emit a claim with `deepSourceFamily` matching the content AND record a SCOPE_CONFLICT / source-family-mismatch entry.
+
+### Concepts to look for that base mode under-extracts
+
+Base mode A1 sometimes captures only one or two claims per page. Deep mode requires you to extract ALL of the following when present in the cleaned text. Each must be its own claim with its own verbatim quote:
+
+- **Audience statements** — "for medical students," "for IMGs," "for international graduates," "for residents," "for fellows," "for attending physicians." The audience determines the tier.
+- **Eligibility specifics** — ECFMG certification status, USMLE Step 1/2/3 passes, year-of-training (MS3 / MS4 / PGY-1+), accreditation (LCME / COCA / WHO-listed med school), domestic vs international, "our students only," affiliated-school carveouts.
+- **Visa / sponsorship language** — J-1 sponsored, ECFMG sponsorship, H-1B sponsorship, "we do not sponsor visas," "no visa sponsorship offered."
+- **Application route** — VSLO, AAMC VSAS, online application, paper application, email to coordinator, recommendation letters required, transcripts required, BCLS / ACLS required.
+- **Cost** — application fee dollar amount, "no fee," waiver policy, malpractice insurance fee, housing fee.
+- **Duration** — number of weeks, minimum / maximum, recurrence rules.
+- **Contact** — coordinator name, coordinator email, coordinator phone, program director, department contact, generic info@ vs program-specific email.
+- **Documents required** — CV, letter of intent, letters of recommendation count, immunization records, background check, drug screen.
+- **Specialty / site list** — explicit lists of specialties or rotation sites that accept visiting students / observers / fellows.
+- **Negative refusal sentences** — explicit "we do not accept observers," "no visiting students at this time," "available only to our affiliated medical students," "our program is closed to outside applicants."
+
+If the cleaned text does not contain a specific field, do not invent one. Either omit, or emit a `MISSING_FIELD` claim with `quote: "NOT_STATED_ON_SOURCE"`.
+
+### Deep-mode A1 schema additions
+
+In addition to the base A1 fields, **every** claim record in deep mode includes:
+
+```jsonc
+{
+  "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH | TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP | TIER_3_POST_TRAINEE_PRACTICE_CAREER | NOT_APPLICABLE",
+  "deepSourceFamily": "<deep source family enum>",
+  "tierAssignmentRationale": "string (one sentence — why this tier was chosen based on the content of THIS source)"
+}
+```
+
+These are advisory. The deterministic re-classifier may override `tier` or downgrade `visibilityLaneSuggestedByModel` if the source family or scope doesn't permit the suggestion.
+
+### Public-promotion gate (advisory; classifier is authoritative)
+
+You may only suggest `PUBLIC_SAFE_USCE` when ALL of:
+
+1. `tier == TIER_1_PRE_RESIDENCY_USCE_MATCH`
+2. `deepSourceFamily ∈ {OBSERVERSHIP, EXTERNSHIP, ELECTIVE, VISITING_STUDENT, SUB_INTERNSHIP, RESEARCH_EDUCATION}`
+3. `sourceScope ∈ {INSTITUTION_SPECIFIC, CAMPUS_SPECIFIC}`
+4. The quote contains a definite offer/eligibility/pathway/contact statement.
+5. Your `confidence` is HIGH.
+
+Tier 2 and Tier 3 are never `PUBLIC_SAFE_USCE` in deep mode. Emit `FUTURE_LANE_ONLY` for them. The classifier enforces this.
+
+### Volunteer / shadow caution
+
+A page titled "Volunteer Opportunities" or "Shadow a Physician" is **not automatically USCE**. Emit it under VOLUNTEER_SHADOW + Tier 1 only when the page text explicitly mentions medical students, IMGs, premed clinical experience, or observership-equivalent service. Otherwise emit `HUMAN_REVIEW_REQUIRED`.
+
+### Scope discipline reminders (deep mode)
+
+- A source on `adventhealth.com` (system domain) cannot become a campus claim for "AdventHealth Orlando" unless the quote names the campus.
+- A source on `hms.harvard.edu` (med-school domain) cannot become a hospital-campus claim.
+- A department-only page does not imply institution-wide eligibility.
+
+### Per-source completeness expectation in deep mode
+
+For a typical Tier 1 observership / visiting-student / elective page, expect to emit 5-15 quote-backed claims covering audience, eligibility, application, cost, duration, contact, requirements, documents, specialty, and any negative or scope-conflict notes. If you emit only 1-2 claims for such a page, you under-read; re-scan.
+
+For a homepage / contact-only / clearly-Tier-3 page, emitting 0-3 claims is fine. Empty arrays are correct when the page genuinely has no signal.
+
+---
+
+REMEMBER (deep mode): collect broad, store structured, tag aggressively, validate completion, publish narrow. Tier-tag everything. Verbatim quotes only. The classifier has the final word.

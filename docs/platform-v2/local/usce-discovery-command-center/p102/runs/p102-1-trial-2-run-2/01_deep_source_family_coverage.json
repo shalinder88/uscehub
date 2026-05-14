@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-2",
+  "institutionId": "inst_brooklyn_hospital_center_ny",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/medical-education",
+        "https://tbh.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://tbh.org/visiting-student",
+        "https://tbh.org/visiting-students",
+        "https://tbh.org/international-students",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation"
+      ],
+      "acceptedSources": [
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/observership",
+        "https://tbh.org/observer",
+        "https://tbh.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship"
+      ],
+      "acceptedSources": [
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/electives",
+        "https://tbh.org/away-rotations",
+        "https://tbh.org/clinical-elective",
+        "https://tbh.org/clinical-rotation"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/sub-internship",
+        "https://tbh.org/subinternship",
+        "https://tbh.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://tbh.org/shadow",
+        "https://tbh.org/shadowing",
+        "https://tbh.org/volunteer",
+        "https://tbh.org/volunteering",
+        "https://www.tbh.org/how-to-help/how-volunteer/student-requirements",
+        "https://www.tbh.org/how-to-help/how-volunteer/requirements"
+      ],
+      "acceptedSources": [
+        "https://tbh.org/volunteer",
+        "https://tbh.org/volunteering",
+        "https://www.tbh.org/how-to-help/how-volunteer/student-requirements",
+        "https://www.tbh.org/how-to-help/how-volunteer/requirements"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://tbh.org/graduate-medical-education",
+        "https://tbh.org/gme",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities"
+      ],
+      "acceptedSources": [
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements",
+        "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/visa",
+        "https://tbh.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://tbh.org/careers"
+      ],
+      "acceptedSources": [
+        "https://tbh.org/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://tbh.org/observerships",
+        "https://tbh.org/medical-students",
+        "https://tbh.org/research",
+        "https://tbh.org/img",
+        "https://tbh.org/international-medical-graduates",
+        "https://tbh.org/credentialing",
+        "https://tbh.org/health-professionals",
+        "https://tbh.org/education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 6,
+    "tier2AcceptedSources": 16,
+    "tier3AcceptedSources": 1
+  },
+  "generatedAt": "2026-05-14T21:37:49.216Z"
+}

@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-0r-dry-run-1",
+  "institutionId": "inst_hartford_hospital_ct",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/visiting-student",
+        "https://hartfordhospital.org/visiting-students",
+        "https://hartfordhospital.org/international-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/observership",
+        "https://hartfordhospital.org/observer",
+        "https://hartfordhospital.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/electives",
+        "https://hartfordhospital.org/away-rotations",
+        "https://hartfordhospital.org/clinical-elective",
+        "https://hartfordhospital.org/clinical-rotation"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/sub-internship",
+        "https://hartfordhospital.org/subinternship",
+        "https://hartfordhospital.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/shadow",
+        "https://hartfordhospital.org/shadowing",
+        "https://hartfordhospital.org/volunteer",
+        "https://hartfordhospital.org/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/graduate-medical-education",
+        "https://hartfordhospital.org/gme"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/visa",
+        "https://hartfordhospital.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hartfordhospital.org/careers"
+      ],
+      "acceptedSources": [
+        "https://hartfordhospital.org/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hartfordhospital.org/observerships",
+        "https://hartfordhospital.org/medical-students",
+        "https://hartfordhospital.org/research",
+        "https://hartfordhospital.org/img",
+        "https://hartfordhospital.org/international-medical-graduates",
+        "https://hartfordhospital.org/credentialing"
+      ],
+      "acceptedSources": [
+        "https://hartfordhospital.org/research"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_WEAK",
+    "tier2": "TIER_COVERAGE_WEAK",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 0,
+    "tier2AcceptedSources": 0,
+    "tier3AcceptedSources": 1
+  },
+  "generatedAt": "2026-05-14T21:37:49.214Z"
+}

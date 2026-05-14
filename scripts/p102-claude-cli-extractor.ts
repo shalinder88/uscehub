@@ -88,6 +88,12 @@ interface CliOptions {
   model: string;
   quiet: boolean;
   rebuildLedgerFromDisk: boolean;
+  deep: boolean;
+  maxDiscoveredUrls: number;
+  maxAcceptedSources: number;
+  maxPdfs: number;
+  tierFilter: 'all' | 'tier1' | 'tier2' | 'tier3';
+  sourceFamilyFilter: string | null;
 }
 
 interface SourceRecord {
@@ -218,6 +224,12 @@ function parseArgs(argv: string[]): CliOptions {
     model: 'claude-opus-4-7',
     quiet: false,
     rebuildLedgerFromDisk: false,
+    deep: false,
+    maxDiscoveredUrls: 75,
+    maxAcceptedSources: 40,
+    maxPdfs: 10,
+    tierFilter: 'all',
+    sourceFamilyFilter: null,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -247,6 +259,13 @@ function parseArgs(argv: string[]): CliOptions {
     if (a === '--model') { opts.model = argv[++i]; continue; }
     if (a === '--quiet') { opts.quiet = true; continue; }
     if (a === '--rebuild-ledger-from-disk') { opts.rebuildLedgerFromDisk = true; continue; }
+    if (a === '--deep') { opts.deep = true; continue; }
+    if (a === '--max-discovered-urls') { opts.maxDiscoveredUrls = parseInt(argv[++i], 10); continue; }
+    if (a === '--max-accepted-sources') { opts.maxAcceptedSources = parseInt(argv[++i], 10); continue; }
+    if (a === '--max-pdfs') { opts.maxPdfs = parseInt(argv[++i], 10); continue; }
+    if (a === '--tiers') { opts.tierFilter = argv[++i].toLowerCase() as CliOptions['tierFilter']; continue; }
+    if (a === '--source-family') { opts.sourceFamilyFilter = argv[++i]; continue; }
+    if (a === '--institution-id') { ++i; continue; /* informational; runner already keys on run-id */ }
     if (a === '--help' || a === '-h') { printUsage(); process.exit(0); }
     throw new Error(`unknown flag: ${a}`);
   }
@@ -315,6 +334,15 @@ function sha256(s: string): string { return createHash('sha256').update(s, 'utf8
 
 // -------------------- JSON schemas (passed to claude --json-schema) --------------------
 
+// Deep-mode optional fields. Made optional (not in `required`) so the same
+// schema validates both base-mode and deep-mode outputs. In deep mode the
+// orchestrator instructs the model to populate these via the prompt.
+const DEEP_OPTIONAL_PROPERTIES = {
+  tier: { type: 'string', enum: ['TIER_1_PRE_RESIDENCY_USCE_MATCH', 'TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP', 'TIER_3_POST_TRAINEE_PRACTICE_CAREER', 'NOT_APPLICABLE'] },
+  deepSourceFamily: { type: 'string' },
+  tierAssignmentRationale: { type: 'string', maxLength: 400 },
+};
+
 const CLAIM_SHAPE = {
   type: 'object',
   required: ['claimId', 'claimType', 'lane', 'sourceUrl', 'sourceHash', 'cleanedTextPath', 'sourceScope', 'quote', 'claimText', 'visibilityLaneSuggestedByModel', 'confidence'],
@@ -332,6 +360,7 @@ const CLAIM_SHAPE = {
     visibilityLaneSuggestedByModel: { type: 'string' },
     confidence: { type: 'string', enum: ['HIGH', 'MEDIUM', 'LOW'] },
     limitations: { type: ['string', 'null'] },
+    ...DEEP_OPTIONAL_PROPERTIES,
   },
   additionalProperties: false,
 };
@@ -390,6 +419,57 @@ const A2_SCHEMA = {
     },
     additionalUnresolveds: { type: 'array', items: { type: 'string' } },
     recommendedA3Focus: { type: 'array', items: { type: 'string' } },
+    // Deep-mode A2 optional outputs
+    deepNewClaimsByTier: {
+      type: 'object',
+      properties: {
+        tier1: { type: 'array', items: CLAIM_SHAPE_A2 },
+        tier2: { type: 'array', items: CLAIM_SHAPE_A2 },
+        tier3: { type: 'array', items: CLAIM_SHAPE_A2 },
+      },
+      additionalProperties: false,
+    },
+    scopeConflictsDetectedInA2: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['claimId', 'scopeIssue', 'explanation'],
+        properties: {
+          claimId: { type: 'string' },
+          scopeIssue: { type: 'string' },
+          explanation: { type: 'string', maxLength: 400 },
+        },
+        additionalProperties: false,
+      },
+    },
+    campusApplicabilityProofsFound: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['claimId', 'campusNameMentionedInQuote', 'proofQuote'],
+        properties: {
+          claimId: { type: 'string' },
+          campusNameMentionedInQuote: { type: 'string' },
+          proofQuote: { type: 'string', maxLength: 400 },
+        },
+        additionalProperties: false,
+      },
+    },
+    newNegativeEvidenceClaims: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['claimId', 'refusalQuote', 'strength'],
+        properties: {
+          claimId: { type: 'string' },
+          deepSourceFamily: { type: 'string' },
+          tier: { type: 'string' },
+          refusalQuote: { type: 'string', maxLength: 400 },
+          strength: { type: 'string', enum: ['STRONG', 'MEDIUM', 'WEAK'] },
+        },
+        additionalProperties: false,
+      },
+    },
   },
   additionalProperties: false,
 };
@@ -425,11 +505,51 @@ const A3_SCHEMA = {
       },
     },
     metadata: { type: 'object' },
+    // Deep-mode A3 optional outputs
+    tier1CoverageVerdict: { type: 'string', enum: ['PASS_COMPLETE', 'PASS_PARTIAL', 'FAIL_WEAK'] },
+    tier2CoverageVerdict: { type: 'string', enum: ['PASS_COMPLETE', 'PASS_PARTIAL', 'FAIL_WEAK'] },
+    tier3CoverageVerdict: { type: 'string', enum: ['PASS_COMPLETE', 'PASS_PARTIAL', 'FAIL_WEAK'] },
+    unfollowedSignals: { type: 'array', items: { type: 'string' } },
+    overpromotionDetected: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['claimId', 'actualTier', 'modelTaggedTier', 'reason'],
+        properties: {
+          claimId: { type: 'string' },
+          actualTier: { type: 'string' },
+          modelTaggedTier: { type: 'string' },
+          reason: { type: 'string', maxLength: 400 },
+        },
+        additionalProperties: false,
+      },
+    },
+    deepRecoveryTasks: {
+      type: 'array',
+      items: {
+        type: 'object',
+        required: ['taskId', 'reason', 'suggestedNarrowAction'],
+        properties: {
+          taskId: { type: 'string' },
+          missingFamily: { type: ['string', 'null'] },
+          missingTier: { type: ['string', 'null'] },
+          reason: { type: 'string' },
+          suggestedNarrowAction: { type: 'string' },
+        },
+        additionalProperties: false,
+      },
+    },
   },
   additionalProperties: false,
 };
 
 // -------------------- Prompt-packet builders --------------------
+
+interface DeepSourceHint {
+  deepFamily: string;
+  tier: string;
+  deepFamilyMatchedOn: 'url' | 'title' | 'fallback';
+}
 
 function buildA1Packet(args: {
   runId: string;
@@ -437,8 +557,10 @@ function buildA1Packet(args: {
   institutionName: string;
   source: SourceRecord;
   cleanedText: string;
+  deepMode: boolean;
+  deepHint: DeepSourceHint | null;
 }): string {
-  return JSON.stringify({
+  const packet: Record<string, unknown> = {
     runId: args.runId,
     institutionId: args.institutionId,
     institutionName: args.institutionName,
@@ -455,8 +577,15 @@ function buildA1Packet(args: {
       cleanedTextPath: args.source.cleanedTextPath,
     },
     cleanedText: args.cleanedText,
-    instructions: 'Read the cleaned text. Emit strict JSON conforming to the A1 schema. Verbatim quotes only. NOT_STATED_ON_SOURCE if absent.',
-  });
+    instructions: args.deepMode
+      ? 'DEEP MODE. Read the cleaned text. Emit strict JSON. Every claim MUST include tier, deepSourceFamily, tierAssignmentRationale. Tag aggressively across all three tiers. Verbatim quotes only. NOT_STATED_ON_SOURCE if absent.'
+      : 'Read the cleaned text. Emit strict JSON conforming to the A1 schema. Verbatim quotes only. NOT_STATED_ON_SOURCE if absent.',
+  };
+  if (args.deepMode) {
+    packet.mode = 'deep';
+    if (args.deepHint) packet.deepSourceHint = args.deepHint;
+  }
+  return JSON.stringify(packet);
 }
 
 function buildA2Packet(args: {
@@ -467,8 +596,10 @@ function buildA2Packet(args: {
   cleanedText: string;
   a1Output: A1OutputJson;
   a1ClaimsForThisSource: ModelClaimCandidate[];
+  deepMode: boolean;
+  deepHint: DeepSourceHint | null;
 }): string {
-  return JSON.stringify({
+  const packet: Record<string, unknown> = {
     runId: args.runId,
     institutionId: args.institutionId,
     institutionName: args.institutionName,
@@ -488,8 +619,15 @@ function buildA2Packet(args: {
     a1Unresolveds: args.a1Output.unresolveds,
     a1RecommendedA2Focus: args.a1Output.recommendedA2Focus,
     cleanedText: args.cleanedText,
-    instructions: 'Emit additive new claims only — do not duplicate A1. Flag A1 claims to refine in a1ClaimsToRefine.',
-  });
+    instructions: args.deepMode
+      ? 'DEEP MODE A2. Run all four sub-passes (Tier 1 / Tier 2 / Tier 3 / scope+negative). Emit additive new claims with tier + deepSourceFamily + tierAssignmentRationale + whyA1Missed. Populate deepNewClaimsByTier, scopeConflictsDetectedInA2, campusApplicabilityProofsFound, newNegativeEvidenceClaims.'
+      : 'Emit additive new claims only — do not duplicate A1. Flag A1 claims to refine in a1ClaimsToRefine.',
+  };
+  if (args.deepMode) {
+    packet.mode = 'deep';
+    if (args.deepHint) packet.deepSourceHint = args.deepHint;
+  }
+  return JSON.stringify(packet);
 }
 
 function buildA3Packet(args: {
@@ -777,6 +915,7 @@ async function runPhaseA1ForSource(args: {
   source: SourceRecord;
   cleanedText: string;
   opts: CliOptions;
+  deepHint: DeepSourceHint | null;
 }): Promise<{ ok: boolean; output: A1OutputJson | null; error: string | null }> {
   const packet = buildA1Packet({
     runId: args.runId,
@@ -784,6 +923,8 @@ async function runPhaseA1ForSource(args: {
     institutionName: args.institutionName,
     source: args.source,
     cleanedText: args.cleanedText,
+    deepMode: args.opts.deep,
+    deepHint: args.deepHint,
   });
 
   if (args.opts.dryRun) {
@@ -839,6 +980,7 @@ async function runPhaseA2ForSource(args: {
   a1Output: A1OutputJson;
   a1ClaimsForThisSource: ModelClaimCandidate[];
   opts: CliOptions;
+  deepHint: DeepSourceHint | null;
 }): Promise<{ ok: boolean; output: A2OutputJson | null; error: string | null }> {
   const packet = buildA2Packet({
     runId: args.runId,
@@ -848,6 +990,8 @@ async function runPhaseA2ForSource(args: {
     cleanedText: args.cleanedText,
     a1Output: args.a1Output,
     a1ClaimsForThisSource: args.a1ClaimsForThisSource,
+    deepMode: args.opts.deep,
+    deepHint: args.deepHint,
   });
 
   if (args.opts.dryRun) {
@@ -1081,6 +1225,27 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
     return { ok: false, summary: `${runId}: no cleaned text readable (T7 disconnected?). skipped=${skippedSources.length}` };
   }
 
+  // ---- Deep-mode source hints ----
+  // When --deep is set, load 00_deep_source_discovery.json (written by
+  // scripts/p102-deep-source-discovery.ts) and build a map of sourceUrl
+  // → { deepFamily, tier }. Each per-source A1/A2 packet carries the hint.
+  const deepHintByUrl = new Map<string, DeepSourceHint>();
+  if (opts.deep) {
+    const deepDiscoveryPath = path.join(runDir, '00_deep_source_discovery.json');
+    if (!existsSync(deepDiscoveryPath)) {
+      return { ok: false, summary: `${runId}: --deep requires 00_deep_source_discovery.json (run scripts/p102-deep-source-discovery.ts first)` };
+    }
+    const discovery = readJson<{ perSource: Array<{ sourceUrl: string; deepFamily: string; tier: string; matchedRule: { matchedOn: 'url' | 'title' | 'fallback' } | null }> }>(deepDiscoveryPath);
+    for (const e of discovery.perSource) {
+      deepHintByUrl.set(e.sourceUrl, {
+        deepFamily: e.deepFamily,
+        tier: e.tier,
+        deepFamilyMatchedOn: e.matchedRule?.matchedOn ?? 'fallback',
+      });
+    }
+    if (!opts.quiet) console.log(`    deep mode: ${deepHintByUrl.size} source hints loaded`);
+  }
+
   const a1Outputs: { source: SourceRecord; output: A1OutputJson }[] = [];
   const a2Outputs: { source: SourceRecord; output: A2OutputJson }[] = [];
   let allCandidates: ModelClaimCandidate[] = [];
@@ -1110,6 +1275,7 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
       const r = await runPhaseA1ForSource({
         cliPath, runId, runDir, institutionId: canonical.institutionId, institutionName: canonical.canonicalName,
         source: src, cleanedText: text, opts,
+        deepHint: deepHintByUrl.get(src.sourceUrl) ?? null,
       });
       if (!r.ok) { if (!opts.quiet) console.log(`     A1 failed: ${r.error}`); continue; }
       if (r.output) {
@@ -1155,6 +1321,7 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
       const r = await runPhaseA2ForSource({
         cliPath, runId, runDir, institutionId: canonical.institutionId, institutionName: canonical.canonicalName,
         source: item.source, cleanedText: text, a1Output: item.output, a1ClaimsForThisSource, opts,
+        deepHint: deepHintByUrl.get(item.source.sourceUrl) ?? null,
       });
       if (!r.ok) { if (!opts.quiet) console.log(`     A2 failed: ${r.error}`); continue; }
       if (r.output) {
@@ -1230,9 +1397,23 @@ async function runOneInstitution(runId: string, opts: CliOptions, cliPath: strin
       applyA3Downgrades(dedupedVerified, a3.output.claimsToDowngrade as Array<{ claimId: string; toVisibility: Visibility; reason: string }>);
       writeVerifiedAndRejected(runDir, dedupedVerified, rejected);
     }
+
+    // Deep mode: write the three-tier institution packet + per-tier RT_depth files
+    // + A4 deep recovery tasks.
+    if (opts.deep) {
+      writeThreeTierInstitutionPacket({
+        runDir, runId,
+        institutionId: canonical.institutionId,
+        institutionName: canonical.canonicalName,
+        officialDomains: canonical.officialDomains,
+        verified: dedupedVerified, rejected,
+        a3Output: a3.output,
+        deepHintByUrl,
+      });
+    }
   }
 
-  return { ok: true, summary: `${runId}: A1=${a1Outputs.length}srcs A2=${a2Outputs.length}srcs verified=${dedupedVerified.length} rejected=${rejected.length}` };
+  return { ok: true, summary: `${runId}: A1=${a1Outputs.length}srcs A2=${a2Outputs.length}srcs verified=${dedupedVerified.length} rejected=${rejected.length}${opts.deep ? ' deep=on' : ''}` };
 }
 
 function applyA3Downgrades(verified: VerifiedClaim[], downgrades: Array<{ claimId: string; toVisibility: Visibility; reason: string }>): void {
@@ -1243,6 +1424,219 @@ function applyA3Downgrades(verified: VerifiedClaim[], downgrades: Array<{ claimI
     c.visibility = d.toVisibility;
     c.visibilityRationale = `A3 downgrade: ${d.reason}`;
   }
+}
+
+// -------------------- Deep-mode three-tier packet writer --------------------
+
+const DEEP_SCHEMA_VERSION = 'p102-deep-0f-1';
+
+type DeepTier = 'TIER_1_PRE_RESIDENCY_USCE_MATCH' | 'TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP' | 'TIER_3_POST_TRAINEE_PRACTICE_CAREER' | 'NOT_APPLICABLE';
+
+function tierOfClaim(c: VerifiedClaim, deepHintByUrl: Map<string, DeepSourceHint>): DeepTier {
+  // Prefer the model's tier emission when present; otherwise fall back to
+  // the URL-based deep hint; otherwise NOT_APPLICABLE.
+  const modelTier = (c as unknown as { tier?: string }).tier;
+  if (modelTier && modelTier !== 'NOT_APPLICABLE') return modelTier as DeepTier;
+  const hint = deepHintByUrl.get(c.sourceUrl);
+  if (hint && hint.tier !== 'NOT_APPLICABLE') return hint.tier as DeepTier;
+  return 'NOT_APPLICABLE';
+}
+
+function deepFamilyOfClaim(c: VerifiedClaim, deepHintByUrl: Map<string, DeepSourceHint>): string {
+  const modelFamily = (c as unknown as { deepSourceFamily?: string }).deepSourceFamily;
+  if (modelFamily) return modelFamily;
+  const hint = deepHintByUrl.get(c.sourceUrl);
+  return hint?.deepFamily ?? 'UNKNOWN_RELEVANT';
+}
+
+interface TierPacket {
+  tier: DeepTier;
+  tierCoverageStatus: string;
+  claims: VerifiedClaim[];
+  claimCount: number;
+  publicSafeUsceCount: number;
+  futureLaneOnlyCount: number;
+  humanReviewRequiredCount: number;
+  cautionSafeInternalReviewCount: number;
+  sourceUrls: string[];
+  sourceClaimIds: string[];
+  notStatedFields: string[];
+  unresolveds: string[];
+  visibilityLane: string;
+}
+
+function buildTierPacket(tier: DeepTier, claims: VerifiedClaim[], a3UnfollowedSignals: string[], coverageStatusFromA3: string | null): TierPacket {
+  const visibilityCounts = {
+    PUBLIC_SAFE_USCE: 0,
+    FUTURE_LANE_ONLY: 0,
+    HUMAN_REVIEW_REQUIRED: 0,
+    CAUTION_SAFE_INTERNAL_REVIEW: 0,
+  };
+  const sourceUrls = new Set<string>();
+  const sourceClaimIds: string[] = [];
+  const notStatedFields: string[] = [];
+  for (const c of claims) {
+    sourceUrls.add(c.sourceUrl);
+    sourceClaimIds.push(c.claimId);
+    if (c.visibility in visibilityCounts) (visibilityCounts as Record<string, number>)[c.visibility]++;
+    if (c.quote === 'NOT_STATED_ON_SOURCE') notStatedFields.push(c.normalizedField ?? c.claimType);
+  }
+
+  let lane = 'NOT_APPLICABLE';
+  if (claims.some((c) => c.visibility === 'PUBLIC_SAFE_USCE')) lane = 'PUBLIC_SAFE_USCE';
+  else if (claims.some((c) => c.visibility === 'CAUTION_SAFE_INTERNAL_REVIEW')) lane = 'CAUTION_SAFE_INTERNAL_REVIEW';
+  else if (claims.some((c) => c.visibility === 'FUTURE_LANE_ONLY')) lane = 'FUTURE_LANE_ONLY';
+  else if (claims.some((c) => c.visibility === 'HUMAN_REVIEW_REQUIRED')) lane = 'HUMAN_REVIEW_REQUIRED';
+
+  const status = coverageStatusFromA3
+    ?? (claims.length === 0 ? 'TIER_COVERAGE_WEAK' : claims.length < 3 ? 'TIER_COVERAGE_PARTIAL' : 'TIER_COVERAGE_COMPLETE');
+
+  return {
+    tier, tierCoverageStatus: status,
+    claims, claimCount: claims.length,
+    publicSafeUsceCount: visibilityCounts.PUBLIC_SAFE_USCE,
+    futureLaneOnlyCount: visibilityCounts.FUTURE_LANE_ONLY,
+    humanReviewRequiredCount: visibilityCounts.HUMAN_REVIEW_REQUIRED,
+    cautionSafeInternalReviewCount: visibilityCounts.CAUTION_SAFE_INTERNAL_REVIEW,
+    sourceUrls: Array.from(sourceUrls),
+    sourceClaimIds,
+    notStatedFields,
+    unresolveds: a3UnfollowedSignals,
+    visibilityLane: lane,
+  };
+}
+
+function writeThreeTierInstitutionPacket(args: {
+  runDir: string;
+  runId: string;
+  institutionId: string;
+  institutionName: string;
+  officialDomains: string[];
+  verified: VerifiedClaim[];
+  rejected: RejectedClaim[];
+  a3Output: A3OutputJson;
+  deepHintByUrl: Map<string, DeepSourceHint>;
+}): void {
+  const tier1Claims = args.verified.filter((c) => tierOfClaim(c, args.deepHintByUrl) === 'TIER_1_PRE_RESIDENCY_USCE_MATCH');
+  const tier2Claims = args.verified.filter((c) => tierOfClaim(c, args.deepHintByUrl) === 'TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP');
+  const tier3Claims = args.verified.filter((c) => tierOfClaim(c, args.deepHintByUrl) === 'TIER_3_POST_TRAINEE_PRACTICE_CAREER');
+
+  // Read coverage report (written by p102-deep-source-discovery.ts) for tier statuses.
+  const coveragePath = path.join(args.runDir, '01_deep_source_family_coverage.json');
+  let coverage: { tierStatuses?: { tier1: string; tier2: string; tier3: string }; perFamily?: unknown[] } = {};
+  if (existsSync(coveragePath)) coverage = readJson(coveragePath);
+
+  // Pull tier verdicts from A3 if present, otherwise from coverage report.
+  const a3Any = args.a3Output as unknown as { tier1CoverageVerdict?: string; tier2CoverageVerdict?: string; tier3CoverageVerdict?: string; unfollowedSignals?: string[]; overpromotionDetected?: unknown[]; deepRecoveryTasks?: unknown[] };
+  const t1Status = coverage.tierStatuses?.tier1 ?? 'TIER_COVERAGE_PARTIAL';
+  const t2Status = coverage.tierStatuses?.tier2 ?? 'TIER_COVERAGE_PARTIAL';
+  const t3Status = coverage.tierStatuses?.tier3 ?? 'TIER_COVERAGE_PARTIAL';
+
+  const t1Packet = buildTierPacket('TIER_1_PRE_RESIDENCY_USCE_MATCH', tier1Claims, a3Any.unfollowedSignals ?? [], t1Status);
+  const t2Packet = buildTierPacket('TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP', tier2Claims, [], t2Status);
+  const t3Packet = buildTierPacket('TIER_3_POST_TRAINEE_PRACTICE_CAREER', tier3Claims, [], t3Status);
+
+  const totalVerified = args.verified.length;
+  const totalQuoteVerified = args.verified.filter((c) => c.quoteVerified === true).length;
+  const publicSafeUsceCount = args.verified.filter((c) => c.visibility === 'PUBLIC_SAFE_USCE').length;
+
+  const packet = {
+    schemaVersion: DEEP_SCHEMA_VERSION,
+    runId: args.runId,
+    institutionId: args.institutionId,
+    institutionName: args.institutionName,
+    officialDomains: args.officialDomains,
+    sourceScopeSummary: {
+      primaryDomainsObserved: args.officialDomains,
+      campusApplicabilityProofsCaptured: [] as string[],
+      scopeConflicts: (args.a3Output.scopeConflicts as Array<{ claimId: string }> ?? []).map((s) => s.claimId).filter(Boolean),
+    },
+    tier1PreResidency: t1Packet,
+    tier2Trainee: t2Packet,
+    tier3PracticeCareer: t3Packet,
+    sourceFamilyCoverage: (coverage.perFamily as unknown[]) ?? [],
+    rejectedSourceFamilies: [] as string[],
+    negativeEvidence: {
+      tier1Refusal: { captured: false, claimIds: [] as string[], strength: null as string | null },
+      tier2Refusal: { captured: false, claimIds: [] as string[], strength: null as string | null },
+      tier3Refusal: { captured: false, claimIds: [] as string[], strength: null as string | null },
+    },
+    unresolveds: args.a3Output.unresolveds ?? [],
+    A4TargetedRecoveryTasks: a3Any.deepRecoveryTasks ?? [],
+    publicPromotionCandidates: args.verified.filter((c) => c.visibility === 'PUBLIC_SAFE_USCE').map((c) => c.claimId),
+    futureLaneArchive: args.verified.filter((c) => c.visibility === 'FUTURE_LANE_ONLY').map((c) => c.claimId),
+    humanReviewQueue: args.verified.filter((c) => c.visibility === 'HUMAN_REVIEW_REQUIRED').map((c) => c.claimId),
+    confidenceScores: {
+      tier1Completeness: t1Status === 'TIER_COVERAGE_COMPLETE' ? 1.0 : t1Status === 'TIER_COVERAGE_PARTIAL' ? 0.5 : 0.1,
+      tier2Completeness: t2Status === 'TIER_COVERAGE_COMPLETE' ? 1.0 : t2Status === 'TIER_COVERAGE_PARTIAL' ? 0.5 : 0.1,
+      tier3Completeness: t3Status === 'TIER_COVERAGE_COMPLETE' ? 1.0 : t3Status === 'TIER_COVERAGE_PARTIAL' ? 0.5 : 0.1,
+      scopeDiscipline: args.verified.length === 0 ? 1.0 : 1 - (args.a3Output.scopeConflicts.length / args.verified.length),
+      quoteVerificationRate: totalVerified === 0 ? 1.0 : totalQuoteVerified / totalVerified,
+    },
+    artifactManifestRefs: [
+      '13_model_claims_verified.json', '13_model_claims_rejected.json',
+      'A1_model_reader_output.json', 'A2_model_depth_output.json',
+      'A3_model_gate.json', 'A3_model_gate_input_summary.json',
+      '00_deep_source_discovery.json', '01_deep_source_family_coverage.json',
+    ],
+    quoteVerificationSummary: {
+      totalClaims: totalVerified,
+      quoteVerifiedClaims: totalQuoteVerified,
+      rejectedClaims: args.rejected.length,
+      notStatedFieldClaims: args.verified.filter((c) => c.quote === 'NOT_STATED_ON_SOURCE').length,
+    },
+    deepRunCompletion:
+      t1Status === 'TIER_COVERAGE_COMPLETE' && t2Status === 'TIER_COVERAGE_COMPLETE' && t3Status === 'TIER_COVERAGE_COMPLETE'
+        ? 'TIER_1_2_3'
+        : t1Status === 'TIER_COVERAGE_COMPLETE' && t2Status === 'TIER_COVERAGE_COMPLETE'
+          ? 'TIER_1_AND_2'
+          : t1Status === 'TIER_COVERAGE_COMPLETE'
+            ? 'TIER_1_COMPLETE'
+            : 'INCOMPLETE',
+    publicReadiness:
+      publicSafeUsceCount > 0 ? 'PUBLIC_READY'
+        : t1Status === 'TIER_COVERAGE_NEGATIVE' ? 'PUBLIC_NEGATIVE_READY'
+        : 'NOT_PUBLIC_READY',
+    attestations: { networkUsed: false, agentUsed: false, broadCrawlPerformed: false, oneInstitutionOnly: true },
+  };
+  writeJson(path.join(args.runDir, '16_three_tier_institution_packet.json'), packet);
+
+  // Per-tier depth files
+  writeJson(path.join(args.runDir, 'RT_depth_tier1_usce_match.json'), { schemaVersion: DEEP_SCHEMA_VERSION, runId: args.runId, ...t1Packet });
+  writeJson(path.join(args.runDir, 'RT_depth_tier2_trainee.json'),    { schemaVersion: DEEP_SCHEMA_VERSION, runId: args.runId, ...t2Packet });
+  writeJson(path.join(args.runDir, 'RT_depth_tier3_practice_career.json'), { schemaVersion: DEEP_SCHEMA_VERSION, runId: args.runId, ...t3Packet });
+  writeJson(path.join(args.runDir, 'RT_depth_scope_negative_evidence.json'), {
+    schemaVersion: DEEP_SCHEMA_VERSION, runId: args.runId,
+    scopeConflicts: args.a3Output.scopeConflicts ?? [],
+    overpromotionDetected: a3Any.overpromotionDetected ?? [],
+    negativeEvidence: packet.negativeEvidence,
+  });
+  writeJson(path.join(args.runDir, 'A4_deep_recovery_tasks.json'), {
+    schemaVersion: DEEP_SCHEMA_VERSION, runId: args.runId,
+    tasks: a3Any.deepRecoveryTasks ?? [],
+    note: 'A4 deep tasks are captured for future authorized invocation; not executed in P102-0F.',
+  });
+
+  // Human-readable summary
+  const lines: string[] = [];
+  lines.push(`# Three-tier institution packet — ${args.runDir.split('/').pop()}`);
+  lines.push('');
+  lines.push(`**Institution:** ${args.institutionName} (${args.institutionId})`);
+  lines.push(`**Deep run completion:** ${packet.deepRunCompletion}`);
+  lines.push(`**Public readiness:** ${packet.publicReadiness}`);
+  lines.push('');
+  lines.push('| Tier | Claims | PUB_SAFE | FUT_LANE | HUM_REV | CAUTION | Status |');
+  lines.push('|---|---:|---:|---:|---:|---:|---|');
+  for (const tp of [t1Packet, t2Packet, t3Packet]) {
+    lines.push(`| ${tp.tier} | ${tp.claimCount} | ${tp.publicSafeUsceCount} | ${tp.futureLaneOnlyCount} | ${tp.humanReviewRequiredCount} | ${tp.cautionSafeInternalReviewCount} | ${tp.tierCoverageStatus} |`);
+  }
+  lines.push('');
+  lines.push('## Confidence scores');
+  for (const [k, v] of Object.entries(packet.confidenceScores)) lines.push(`- ${k}: ${(v as number).toFixed(2)}`);
+  lines.push('');
+  lines.push('## Attestations');
+  for (const [k, v] of Object.entries(packet.attestations)) lines.push(`- ${k}: ${v}`);
+  writeFileSync(path.join(args.runDir, '16_three_tier_institution_packet.md'), lines.join('\n'), 'utf8');
 }
 
 // -------------------- main --------------------

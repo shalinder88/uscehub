@@ -201,3 +201,62 @@ ANTIPATTERNS — DO NOT:
 10. Cite a sourceUrl or cleanedTextPath not present in the prompt packet.
 
 REMEMBER: A2 is additive depth. Better to add 2 high-quality, quote-verified new claims than 10 speculative ones. Quote verification is deterministic; sandbagging confidence is free; hallucination is fatal.
+
+---
+
+## DEEP MODE EXTENSION (P102-0F, schemaVersion `p102-deep-0f-1`)
+
+When the prompt packet contains `"mode": "deep"`, A2 runs **four sub-passes** in a single call, all returned in the same JSON object:
+
+1. **A2_TIER1_USCE_MATCH_DEPTH** — re-read the source for Tier 1 concepts A1 missed (observership/externship/visiting student/elective/Sub-I/research/volunteer-medical / IMG / VSLO / application / cost / duration / contact / requirements / documents / specialty list / negative-refusal).
+2. **A2_TIER2_TRAINEE_DEPTH** — re-read for Tier 2 concepts A1 missed (GME programs, residency / fellowship details, ECFMG / J-1 / H-1B language, salary / benefits / moonlighting, ERAS / NRMP, research tracks, coordinator).
+3. **A2_TIER3_PRACTICE_CAREER_DEPTH** — re-read for Tier 3 concepts A1 missed (physician / faculty / hospitalist jobs, visa sponsorship for attendings, benefits / compensation, malpractice / disability / life insurance resources, locums, credentialing, nonclinical roles).
+4. **A2_SCOPE_AND_NEGATIVE_EVIDENCE_DEPTH** — explicitly look for (a) campus-applicability proofs, (b) scope conflicts (system-level claim mis-attributed to a campus), (c) explicit negative refusal sentences not yet captured.
+
+Each new claim must carry `tier`, `deepSourceFamily`, `tierAssignmentRationale`, `whyA1Missed`, plus the base A2 claim fields.
+
+### Deep-mode A2 output additions
+
+In addition to the base A2 schema, deep mode adds these arrays. Empty arrays are valid:
+
+```jsonc
+{
+  // ...base A2 fields...
+  "deepNewClaimsByTier": {
+    "tier1": [<claim records with tier=TIER_1_PRE_RESIDENCY_USCE_MATCH>],
+    "tier2": [<claim records with tier=TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP>],
+    "tier3": [<claim records with tier=TIER_3_POST_TRAINEE_PRACTICE_CAREER>]
+  },
+  "scopeConflictsDetectedInA2": [
+    { "claimId": "string (A1 or A2 claim id)", "scopeIssue": "string", "explanation": "string (<=300 chars)" }
+  ],
+  "campusApplicabilityProofsFound": [
+    { "claimId": "string", "campusNameMentionedInQuote": "string", "proofQuote": "string (verbatim, <=300 chars)" }
+  ],
+  "newNegativeEvidenceClaims": [
+    { "claimId": "string", "deepSourceFamily": "<family>", "tier": "<tier>", "refusalQuote": "string (verbatim, <=300 chars)", "strength": "STRONG | MEDIUM | WEAK" }
+  ]
+}
+```
+
+### Concepts A1 most commonly misses in deep mode (extra list)
+
+In addition to the base synonym families A1 misses (see above), look explicitly for:
+
+- **Tier 1 cost language**: "$" amounts, "fee waiver," "no charge," "free of charge," "free for affiliated students."
+- **Tier 1 duration**: "X weeks," "X months," "X-week rotation," "minimum 4 weeks," "up to 12 weeks."
+- **Tier 1 IMG language**: "IMG," "international medical graduate," "foreign medical graduate," "Caribbean," "offshore," "non-US medical school," "WHO World Directory."
+- **Tier 1 step / ECFMG**: "Step 1 passed," "Step 2 CK passed," "ECFMG-certified," "ECFMG certification required."
+- **Tier 2 program lists**: department names + "residency program" / "fellowship program."
+- **Tier 2 numbers**: PGY-1/2/3 counts, "X residents per year," "X fellows."
+- **Tier 3 sponsorship**: "J-1 waiver position," "H-1B sponsorship offered," "we sponsor visas," "no sponsorship available."
+
+### Per-source completeness in A2 deep mode
+
+A typical Tier 1 page in A2 deep mode will yield 2-6 additional claims A1 missed. Tier 2 / Tier 3 sub-passes may yield 0-3 each. The combined `newClaims` total in deep mode is typically larger than in base mode.
+
+If A2 returns zero new claims for a Tier 1 page that A1 emitted only 1-2 claims for, you have under-read. Re-scan and look for the eligibility / cost / duration / contact concepts above.
+
+---
+
+REMEMBER (deep mode A2): additive only. Tier-tag every new claim. Empty per-tier arrays are valid. The classifier has the final word on visibility.

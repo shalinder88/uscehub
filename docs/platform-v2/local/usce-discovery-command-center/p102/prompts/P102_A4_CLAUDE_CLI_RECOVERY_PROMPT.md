@@ -83,3 +83,47 @@ OUTPUT SCHEMA (strict JSON validated by --json-schema):
 `unresolveds`: strings describing residual ambiguity (e.g. "found two different application fees on the page — $200 in main text, $250 in FAQ").
 
 A4 IS NOT EXECUTED IN P102-0E. This file exists so a future sprint can wire it without re-designing the prompt.
+
+---
+
+## DEEP MODE EXTENSION (P102-0F, schemaVersion `p102-deep-0f-1`)
+
+When A3 emits `deepRecoveryTasks` in deep mode, A4 (when invoked) handles each one as a narrow, single-objective lookup. P102-0F **does not invoke A4** — recovery tasks are captured in `A4_deep_recovery_tasks.json` for future authorized sprints.
+
+### Deep-mode A4 task types (captured for future use)
+
+In addition to the base task types:
+
+- `find_tier1_observership_audience_on_<sourceUrl>` — confirm whether the page allows IMGs / international / Caribbean students.
+- `find_tier1_cost_on_<sourceUrl>` — extract application fee, malpractice fee, housing fee.
+- `find_tier1_visa_language_on_<sourceUrl>` — extract J-1 / ECFMG sponsorship statements.
+- `find_tier2_program_list_on_<sourceUrl>` — extract specialty programs offered.
+- `find_tier2_eras_nrmp_signal_on_<sourceUrl>` — extract ERAS / NRMP / FREIDA references.
+- `find_tier3_visa_sponsorship_on_<sourceUrl>` — extract J-1 waiver / H-1B sponsorship statements.
+- `find_explicit_negative_refusal_on_<sourceUrl>` — search for "we do not accept" / "no observers" / "only our students" sentences.
+- `verify_campus_applicability_on_<sourceUrl>` — confirm whether the source explicitly names the institution's campus.
+- `find_missing_source_family_<family>_on_institution_domain` — bounded probe of common path candidates for a missing source family. Only invoked in fetch-additional mode (operator-gated).
+
+### Deep-mode A4 output additions
+
+```jsonc
+{
+  // ...base A4 fields...
+  "deepTaskResults": [
+    {
+      "taskId": "string",
+      "taskType": "string (one of the deep task types above)",
+      "tier": "<tier>",
+      "deepSourceFamily": "<family>",
+      "sourceUrl": "string",
+      "result": "FOUND | NOT_FOUND",
+      "quote": "string (verbatim from cleaned text, <=500 chars; empty if NOT_FOUND)",
+      "answer": "string",
+      "confidence": "HIGH | MEDIUM | LOW",
+      "limitations": "string | null"
+    }
+  ]
+}
+```
+
+A4 deep-mode invocation is gated. P102-0F captures task definitions but does not execute them — that requires explicit operator authorization in a later sprint.

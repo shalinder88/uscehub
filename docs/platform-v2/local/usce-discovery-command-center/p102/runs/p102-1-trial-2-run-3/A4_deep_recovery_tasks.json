@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-1-trial-2-run-3",
+  "tasks": [
+    {
+      "taskId": "t1_vslo_orlando_lookup",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Benefits page navigation references 'Medical Clerkship - Orlando Campuses' and 'VSLO Opportunities Across Florida' (c_benefits_vslo_nav_signal) but no dedicated visiting-student/clerkship page was captured in this run.",
+      "suggestedNarrowAction": "Narrow A4 fetch: locate AdventHealth Orlando medical-clerkship / VSLO landing page (e.g. adventhealth.com paths under /gme, /medical-education, or /medical-clerkship for Orlando campus) and run A1/A2 on that single URL only."
+    },
+    {
+      "taskId": "t2_loma_linda_affiliation_lookup",
+      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "src_25_c6 references 'Loma Linda University School of Medicine at AdventHealth Orlando' affiliation but no affiliated-student elective/observership policy was extracted.",
+      "suggestedNarrowAction": "Narrow A4 fetch: locate the Loma Linda–AdventHealth Orlando affiliation page describing whether visiting/non-affiliated medical students may rotate."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

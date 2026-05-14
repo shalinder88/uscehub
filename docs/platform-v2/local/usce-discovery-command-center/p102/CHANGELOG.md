@@ -2,6 +2,17 @@
 
 Sprint-by-sprint history for the P102 (National Medical Opportunity Extractor) framework. Branch: `local/p102-claim-extraction-layer` (CLI extractor work on sub-branch `local/p102-cli-extractor-orchestrator`). Production main at `739ab1e` UNCHANGED throughout.
 
+## P102-0F — 2026-05-14 — Deep three-tier institutional extraction mode
+
+- Upgrades P102-0E from a working source/claim extractor into a deep institutional researcher. Every institution-run can now produce a `16_three_tier_institution_packet.json` covering Tier 1 (USCE & Match), Tier 2 (Trainee), Tier 3 (Practice & Career).
+- New doctrine doc: `P102_0F_DEEP_INSTITUTIONAL_EXTRACTION_DOCTRINE.md`. New data-contract section in `specs/P102_DATA_CONTRACTS.md` at `schemaVersion: p102-deep-0f-1` (tier enum, deep source-family enum, coverage statuses, `threeTierInstitutionPacket`, `tierPacket`).
+- Prompt files extended with DEEP MODE EXTENSION sections (A1/A2/A3/A4). Each claim in deep mode carries `tier` + `deepSourceFamily` + `tierAssignmentRationale`. A2 runs four sub-passes (Tier 1/2/3 + scope+negative). A3 emits tier coverage verdicts + `unfollowedSignals` + `deepRecoveryTasks`. A4 task types captured but A4 not invoked.
+- New `scripts/p102-deep-source-discovery.ts`: re-classifies existing captured sources into the deep taxonomy, computes per-tier coverage. `--reclassify-only` default; `--fetch-additional` captured for future authorized sprints (no new live-web traffic this sprint).
+- `scripts/p102-claude-cli-extractor.ts` extended with `--deep`, `--max-discovered-urls`, `--max-accepted-sources`, `--max-pdfs`, `--tiers`, `--source-family`, `--institution-id`. Deep mode threads source hints into A1/A2 packets and writes `16_three_tier_institution_packet.json` + per-tier `RT_depth_tier*.json` + `A4_deep_recovery_tasks.json` after A3. Schemas extended with optional deep-mode fields (backwards compatible with base mode).
+- New `scripts/p102-validate-deep-packet.ts`: enforces three-tier packet shape, Tier 2/3 cannot be PUBLIC_SAFE_USCE, attestations, quote-verification rate. Wired into `p102-validate-all.ts` as validator #11.
+- Deep-mode live run on **AdventHealth Orlando**: 8 sources, A1 + A2 + A3, **70 claims** (vs 44 in base — +59%), all quote-verified, 0 rejected, 0 PUBLIC_SAFE_USCE (correct on system-domain), 0 scope conflicts, 2 A4 recovery tasks generated (VSLO/clerkship + Loma Linda affiliation pages). Model A3 verdict PASS_PUBLISH_READY. Deterministic regate verdict PASS_WITH_CAVEATS. All 11 validators PASS.
+- Production main `739ab1e` UNCHANGED. No PR, no push, no deploy.
+
 ## P102-0E — 2026-05-14 — Claude CLI claim extractor (FDD pattern; replaces P102-0D)
 
 - Replaced the SDK-based P102-0D model reader with FDD-style local CLI orchestration. `ANTHROPIC_API_KEY` no longer required — the `claude` CLI uses the operator's authenticated Claude Code session.

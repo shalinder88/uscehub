@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-0r-dry-run-1",
+  "rejectedSources": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://hartfordhospital.org/observership",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://hartfordhospital.org/observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://hartfordhospital.org/observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://hartfordhospital.org/clinical-observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://hartfordhospital.org/visiting-student",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://hartfordhospital.org/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://hartfordhospital.org/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://hartfordhospital.org/international-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://hartfordhospital.org/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://hartfordhospital.org/away-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://hartfordhospital.org/clinical-elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://hartfordhospital.org/clinical-rotation",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://hartfordhospital.org/sub-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://hartfordhospital.org/subinternship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://hartfordhospital.org/acting-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://hartfordhospital.org/student-research",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://hartfordhospital.org/shadow",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://hartfordhospital.org/shadowing",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://hartfordhospital.org/volunteer",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://hartfordhospital.org/volunteering",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://hartfordhospital.org/img",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://hartfordhospital.org/international-medical-graduates",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://hartfordhospital.org/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://hartfordhospital.org/gme",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://hartfordhospital.org/residency",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://hartfordhospital.org/fellowship",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://hartfordhospital.org/physician-careers",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://hartfordhospital.org/provider-careers",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://hartfordhospital.org/benefits",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://hartfordhospital.org/visa",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://hartfordhospital.org/immigration",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://hartfordhospital.org/credentialing",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    }
+  ],
+  "generatedAt": "2026-05-14T21:37:49.214Z"
+}

@@ -16,7 +16,8 @@
  *   8. p102-validate-identity-registry
  *   9. p102-gold-set-verify (returns PASS if all entries AWAITING_RUN)
  *  10. p102-quote-verify (strict re-check of 13_model_claims_verified.json when present)
- *  11. validate-p101-discovery-command-center (no-regression check)
+ *  11. p102-validate-deep-packet (P102-0F three-tier packet validator, when present)
+ *  12. validate-p101-discovery-command-center (no-regression check)
  *
  * No network. No Agent. Just runs sub-scripts and aggregates.
  *
@@ -71,6 +72,7 @@ function main(): void {
     { name: 'p102-validate-identity-registry', cmd: 'npx tsx scripts/p102-validate-identity-registry.ts' },
     { name: 'p102-gold-set-verify', cmd: 'npx tsx scripts/p102-gold-set-verify.ts' },
     { name: 'p102-quote-verify (model ledgers)', cmd: 'npx tsx scripts/p102-quote-verify.ts --all-existing-p102-runs --strict --quiet' },
+    { name: 'p102-validate-deep-packet (P102-0F)', cmd: 'npx tsx scripts/p102-validate-deep-packet.ts --quiet' },
     { name: 'validate-p101-discovery-command-center', cmd: 'npx tsx scripts/validate-p101-discovery-command-center.ts' },
   ];
   if (!fast) {
