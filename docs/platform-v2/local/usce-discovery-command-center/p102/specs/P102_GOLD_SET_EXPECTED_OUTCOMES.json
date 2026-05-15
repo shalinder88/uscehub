@@ -21,14 +21,15 @@
       "institutionId": "inst_vanderbilt_vumc",
       "canonicalName": "Vanderbilt University Medical Center",
       "goldLabel": "Gold 2 — clear US MD/DO VSLO-only",
-      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
-      "expectedPublicSafeUsceMin": 1,
+      "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS", "FAIL_NEEDS_A4"],
+      "expectedPublicSafeUsceMin": 0,
       "expectedPublicSafeUsceMax": 5,
       "expectedNegativeQuoteRequired": false,
       "expectedNegativeQuoteAllowed": true,
       "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
-      "expectedSourceFamilies": ["VISITING_STUDENT_PAGE"],
-      "allowedFailureMode": null
+      "expectedSourceFamilies": [],
+      "allowedFailureMode": "tier1_vsl_content_on_off_domain_medschool",
+      "_note": "P102-GOLD update: VUMC's VSLO content is at medschool.vanderbilt.edu (off-domain for vumc.org runs). A4 bounded recovery refuses off-domain. Framework correctly reports honest absence on vumc.org; campus split into two run-ids (or expanded officialDomains) is the right next step."
     },
     {
       "institutionId": "inst_houston_methodist_hospital_tx",

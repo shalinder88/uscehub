@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-2-vanderbilt-vumc",
+  "institutionId": "inst_vanderbilt_vumc",
+  "candidatesAttempted": 1,
+  "accepted": 1,
+  "rejected": 4,
+  "htmlAccepted": 1,
+  "pdfAccepted": 0,
+  "results": [
+    {
+      "taskId": "recover-tier1-vumc-visiting",
+      "attemptedUrl": "https://vumc.org/gme/visiting-residents",
+      "status": "ACCEPTED",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": 75932,
+      "sourceId": "src_40_additional",
+      "sha256": "8590cce32c94c95eeefe459bba5351fe010610ed6d24058a849cf49044ff4898",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-2-vanderbilt-vumc/additional/cleaned_text/src_40_additional.txt",
+      "rawArtifactPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-2-vanderbilt-vumc/additional/raw_html/src_40_additional.html",
+      "reason": "fetched ok",
+      "capturedAt": "2026-05-15T00:52:41.217Z"
+    }
+  ],
+  "generatedAt": "2026-05-15T00:52:41.218Z"
+}

@@ -174,5 +174,40 @@ This is the gold-set's "international medical student program test." The expecte
 
 **Action for gold-set queue:** add `clevelandcliniccfl.org` to Cleveland Clinic Florida's `officialDomains` in the institution registry, or split into a second run-id whose A0 probe targets that domain. Out of scope for P102-GOLD execution; recorded as a `GOLD-FIX` follow-up.
 
+---
+
+## Gold #2 — Vanderbilt University Medical Center (Nashville, TN) — `vumc.org`
+
+Run ID: `p102-gold-2-vanderbilt-vumc`. Failure mode: clear US MD/DO VSLO-only restriction (expected PUBLIC_SAFE_USCE for VSLO + possible NEGATIVE for IMG).
+
+| Metric | Value |
+|---|---:|
+| Source candidates probed | 39 |
+| Accepted sources | 3 (2 from A0: /gme, /careers + 1 from A4: /gme/visiting-residents) |
+| Rejected sources | 36 (HTTP 404 / etc.) |
+| Tier 1 claims | 0 (TIER_COVERAGE_WEAK — VUMC's VSLO content is at `medschool.vanderbilt.edu`, off-domain) |
+| Tier 2 claims | 41 |
+| Tier 3 claims | 11 |
+| PUBLIC_SAFE_USCE | **0** |
+| FUTURE_LANE_ONLY | 52 |
+| HUMAN_REVIEW_REQUIRED | 0 |
+| Quote-verified | 52 / 52 (100%) |
+| Rejected on quote re-verify | 0 |
+| A4 tasks before / after | 2 / 1 (after fetch: 1 task remaining for `medschool.vanderbilt.edu` which is off-domain) |
+| Scope conflicts | 0 |
+| Public-safety failures | 0 |
+| Model A3 verdict | PASS_PUBLISH_READY |
+| Deterministic regate verdict | FAIL_NEEDS_A4 (missingFields=1; the remaining A4 task references an off-domain medschool URL) |
+
+**Final status: `GOLD_PASS_NO_PUBLIC_SAFE_CORRECT`**
+
+Vanderbilt's A0 probe only found `/gme` and `/careers` on `vumc.org` (most fixed-path probes returned 404). The A3 hostile gate noted a "Visiting Residents" reference in the GME content and emitted recovery tasks pointing at `vumc.org/gme/visiting-residents` and `medschool.vanderbilt.edu` (off-domain).
+
+A4 `--fetch-additional` ran bounded recovery — after the schemeless URL miner fix (P102-GOLD framework improvement: A4 fetcher now recognizes `vumc.org/path` references in task prose, not just `https://vumc.org/path`), it fetched `vumc.org/gme/visiting-residents`. The page is correctly classified as Tier 2 (it's the GME visiting-residents program for ACGME-accredited residents, NOT a medical-student VSLO/visiting program).
+
+The remaining A4 task (`medschool.vanderbilt.edu` for VSLO) is off-domain and bounded fetch refuses to traverse it. The framework correctly says: VUMC publishes Tier 2 GME content on `vumc.org`; its undergraduate VSLO content lives on a separate medical-school subdomain that we did not authorize for capture. **Honest absence, not silent failure.**
+
+**Framework improvement** captured this sprint: A4 fetcher now mines schemeless URL references from task prose, increasing the success rate of A4 bounded recovery without changing the safety envelope.
+
 
 

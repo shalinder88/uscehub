@@ -207,6 +207,15 @@ function mineCandidateUrls(task: DeepRecoveryTask, allowedDomains: string[]): st
     const u = m[0].replace(/[.,;:!?)\]]+$/, '');
     if (isAllowedHost(u, allowedDomains)) found.add(u);
   }
+  // 1b) Schemeless "<domain>/<path>" references — promote to https://.
+  for (const d of allowedDomains) {
+    const dd = d.replace(/^www\./, '');
+    const pattern = new RegExp(`\\b${dd.replace(/\./g, '\\.')}(\\/[A-Za-z0-9._~/\\-]+)`, 'g');
+    for (const m of Array.from(text.matchAll(pattern))) {
+      const u = 'https://' + dd + m[1];
+      if (isAllowedHost(u, allowedDomains)) found.add(u);
+    }
+  }
   // 2) Path-like substrings the model named (e.g. "/medical-clerkship", "/gme")
   // — promote each to all allowed domains.
   const pathPattern = /(?<![\w\/])\/[a-z][a-z0-9-]+(?:\/[a-z][a-z0-9-]+){0,3}\b/gi;

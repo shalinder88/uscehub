@@ -1,0 +1,166 @@
+# Source Map — Mayo Clinic
+
+Run: p102-gold-4-mayo-clinic-rochester
+schemaVersion: p102-0r-1
+
+## Accepted sources (39)
+
+- **OBSERVERSHIP_PAGE** [https://mayoclinic.org/observership](https://mayoclinic.org/observership)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/observership.txt
+- **OBSERVERSHIP_PAGE** [https://mayoclinic.org/observerships](https://mayoclinic.org/observerships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/observerships.txt
+- **OBSERVERSHIP_PAGE** [https://mayoclinic.org/observer](https://mayoclinic.org/observer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/observer.txt
+- **OBSERVERSHIP_PAGE** [https://mayoclinic.org/clinical-observer](https://mayoclinic.org/clinical-observer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/clinical-observer.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/visiting-student](https://mayoclinic.org/visiting-student)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visiting-student.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/visiting-students](https://mayoclinic.org/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visiting-students.txt
+- **OTHER** [https://mayoclinic.org/medical-students](https://mayoclinic.org/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/international-students](https://mayoclinic.org/international-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/international-students.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/electives](https://mayoclinic.org/electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/electives.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/away-rotations](https://mayoclinic.org/away-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/away-rotations.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/clinical-elective](https://mayoclinic.org/clinical-elective)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/clinical-elective.txt
+- **OTHER** [https://mayoclinic.org/clinical-rotation](https://mayoclinic.org/clinical-rotation)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/clinical-rotation.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/sub-internship](https://mayoclinic.org/sub-internship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/sub-internship.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/subinternship](https://mayoclinic.org/subinternship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/subinternship.txt
+- **VISITING_STUDENT_PAGE** [https://mayoclinic.org/acting-internship](https://mayoclinic.org/acting-internship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/acting-internship.txt
+- **RESEARCH_PAGE** [https://mayoclinic.org/research](https://mayoclinic.org/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/research.txt
+- **RESEARCH_PAGE** [https://mayoclinic.org/student-research](https://mayoclinic.org/student-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/student-research.txt
+- **RESEARCH_PAGE** [https://mayoclinic.org/shadow](https://mayoclinic.org/shadow)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/shadow.txt
+- **RESEARCH_PAGE** [https://mayoclinic.org/shadowing](https://mayoclinic.org/shadowing)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/shadowing.txt
+- **VOLUNTEER_PAGE** [https://mayoclinic.org/volunteer](https://mayoclinic.org/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/volunteer.txt
+- **VOLUNTEER_PAGE** [https://mayoclinic.org/volunteering](https://mayoclinic.org/volunteering)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/volunteering.txt
+- **OBSERVERSHIP_PAGE** [https://mayoclinic.org/img](https://mayoclinic.org/img)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/img.txt
+- **OTHER** [https://mayoclinic.org/international-medical-graduates](https://mayoclinic.org/international-medical-graduates)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/international-medical-graduates.txt
+- **GME_PAGE** [https://mayoclinic.org/graduate-medical-education](https://mayoclinic.org/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/graduate-medical-education.txt
+- **GME_PAGE** [https://mayoclinic.org/gme](https://mayoclinic.org/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/gme.txt
+- **RESIDENCY_PAGE** [https://mayoclinic.org/residency](https://mayoclinic.org/residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/residency.txt
+- **FELLOWSHIP_PAGE** [https://mayoclinic.org/fellowship](https://mayoclinic.org/fellowship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/fellowship.txt
+- **CAREERS_PAGE** [https://mayoclinic.org/careers](https://mayoclinic.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/careers.txt
+- **CAREERS_PAGE** [https://mayoclinic.org/physician-careers](https://mayoclinic.org/physician-careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/physician-careers.txt
+- **CAREERS_PAGE** [https://mayoclinic.org/provider-careers](https://mayoclinic.org/provider-careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/provider-careers.txt
+- **OTHER** [https://mayoclinic.org/benefits](https://mayoclinic.org/benefits)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/benefits.txt
+- **OTHER** [https://mayoclinic.org/visa](https://mayoclinic.org/visa)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visa.txt
+- **OTHER** [https://mayoclinic.org/immigration](https://mayoclinic.org/immigration)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/immigration.txt
+- **OTHER** [https://mayoclinic.org/credentialing](https://mayoclinic.org/credentialing)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/credentialing.txt
+- **OTHER** [https://mayoclinic.org/health-professionals](https://mayoclinic.org/health-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/health-professionals.txt
+- **OTHER** [https://mayoclinic.org/medical-education](https://mayoclinic.org/medical-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/medical-education.txt
+- **OTHER** [https://mayoclinic.org/professional-education](https://mayoclinic.org/professional-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/professional-education.txt
+- **OTHER** [https://mayoclinic.org/student-affairs](https://mayoclinic.org/student-affairs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/student-affairs.txt
+- **JSON_LD** [https://mayoclinic.org/education](https://mayoclinic.org/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt
+
+## Rejected sources (0)
+
