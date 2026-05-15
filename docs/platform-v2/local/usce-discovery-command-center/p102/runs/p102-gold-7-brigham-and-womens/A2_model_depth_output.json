@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://www.brighamandwomens.org/covid-19/covid-19-research-and-innovation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-7-brigham-and-womens",
+        "institutionId": "inst_brigham_and_womens_hospital_ma",
+        "institutionName": "Brigham and Women's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Research studies related to COVID-19 are underway across Mass General Brigham. Some studies are seeking volunteers from the general public and health care workers' but does not state whether medical students, observers, or IMGs may participate as researchers.",
+          "Navigation references 'Graduate Medical Education', 'Residency & fellowship programs', 'Prospective trainees', and 'Other Learning Opportunities' but the cleaned text contains only menu labels without program details."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this COVID-19 system-level page — it is HEALTH_SYSTEM_LEVEL Mass General Brigham scope with no observership/elective content.",
+          "Verify navigation-label mentions of 'Residency & fellowship programs' and 'Internships' are not promoted to FUTURE_LANE claims since they are global nav chrome, not page content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

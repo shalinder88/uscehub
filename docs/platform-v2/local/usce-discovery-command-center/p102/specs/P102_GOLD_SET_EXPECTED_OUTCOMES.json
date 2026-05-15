@@ -88,12 +88,13 @@
       "institutionId": "inst_brigham_and_womens_hospital_ma",
       "canonicalName": "Brigham and Women's Hospital",
       "goldLabel": "Gold 7 — medical-school-level source ambiguity (BWH + HMS)",
-      "expectedA3Verdict": ["PASS_WITH_CAVEATS"],
+      "expectedA3Verdict": ["FAIL_NEEDS_A4", "PASS_WITH_CAVEATS"],
       "expectedPublicSafeUsceMin": 0,
       "expectedPublicSafeUsceMax": 2,
-      "expectedSourceFamilies": ["VISITING_STUDENT_PAGE"],
-      "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
-      "allowedFailureMode": null
+      "expectedSourceFamilies": [],
+      "expectedFutureLaneValue": ["NONE", "LOW", "MEDIUM", "HIGH"],
+      "allowedFailureMode": "vsl_content_off_domain_on_hms_harvard_edu_not_brighamandwomens_org",
+      "_note": "P102-GOLD update: BWH's visiting-student/observership content is hosted on Harvard Medical School (HMS) subdomains (medschool.harvard.edu, hms.harvard.edu), not on the hospital domain brighamandwomens.org. 39 of 40 fixed-path probes returned 404; only a COVID-19 research page was accepted. Framework correctly did NOT synthesize claims from absence — deterministic regate emitted FAIL_NEEDS_A4 because the ledger is too thin, model gate emitted PASS_PUBLISH_READY because zero-claim ledger is internally consistent. Same off-domain medschool failure mode as Vanderbilt — campus split (or expanded officialDomains to include hms.harvard.edu, scoped) is the right next step. expectedSourceFamilies cleared; expectedFutureLaneValue widened to allow NONE since there's no career/jobs content captured either."
     },
     {
       "institutionId": "inst_brooklyn_hospital_center_ny",

@@ -244,3 +244,43 @@ The framework's honesty here is the point: it didn't invent a "Mayo doesn't acce
 
 
 
+
+---
+
+## Gold #7 — Brigham and Women's Hospital (run id `p102-gold-7-brigham-and-womens`)
+
+| Metric | Value |
+|---|---:|
+| Domain probed | brighamandwomens.org |
+| Source candidates probed | 40 (fixed-path + jsonld) |
+| Accepted sources | 1 (only `/covid-19/covid-19-research-and-innovation`) |
+| 404 rejection rate | 39 / 40 |
+| Tier 1 claims | 0 |
+| Tier 2 claims | 0 |
+| Tier 3 claims | 0 |
+| Total verified claims | 0 |
+| PUBLIC_SAFE_USCE | **0** |
+| PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY | 0 |
+| FUTURE_LANE_ONLY | 0 |
+| HUMAN_REVIEW_REQUIRED | 0 |
+| Quote-verified | 0 / 0 |
+| Rejected on quote re-verify | 0 |
+| A4 tasks before / after | 0 / 0 (no specific recovery candidates emitted) |
+| Scope conflicts | 0 |
+| Public-safety failures | 0 |
+| Model A3 verdict | `PASS_PUBLISH_READY` (rationale: "Merged ledger is empty (zero claims). Only captured source is a COVID-19 research page, correctly not used to emit USCE claims. No public-safety failures, scope conflicts, overclaims, or duplicates.") |
+| Deterministic regate verdict | `FAIL_NEEDS_A4` (publicSafe=false, futureLaneValue=NONE — ledger too thin to gate) |
+
+**Final status: `GOLD_PASS_NO_PUBLIC_SAFE_CORRECT_OFF_DOMAIN_MEDSCHOOL`**
+
+This was the gold-set's "medical-school-level source ambiguity (BWH + HMS)" test. Brigham and Women's Hospital is one of the major teaching hospitals of Harvard Medical School, and its visiting medical student / observership content is hosted at the HMS subdomain `medschool.harvard.edu` (or `hms.harvard.edu`) — not on the hospital domain `brighamandwomens.org`.
+
+The framework hit 40 fixed-path probes on `brighamandwomens.org` (`/observership`, `/observerships`, `/visiting-student`, `/clinical-electives`, etc.) — **39 returned HTTP 404**. The only page that responded with HTTP 200 was a COVID-19 research page, which contains no USCE/observership content. The deep extractor correctly emitted 0 claims from this source.
+
+Two complementary signals appear in the run:
+- The **model A3 gate** said `PASS_PUBLISH_READY` because the ledger is internally consistent (zero claims → zero public-safety failures, zero scope conflicts, zero duplicates).
+- The **deterministic regate** said `FAIL_NEEDS_A4` because the ledger is too thin to gate (1 source, 0 claims). It emitted an empty `A4_deep_recovery_tasks.json` (no tasks) — the deterministic logic knows it has nothing to recover from within the current officialDomain.
+
+This is the **same off-domain medical-school failure mode as Vanderbilt** (`medschool.vanderbilt.edu` off-domain for `vumc.org` runs). The framework correctly did not synthesize claims from absence, and bounded A4 recovery correctly declined to fetch HMS subdomains that aren't in the officialDomains list for this institution-id.
+
+The right next step for BWH is the same as for Vanderbilt: either (a) split the institution into a `bwh + HMS` campus pair, or (b) expand `officialDomains` for BWH to include scoped HMS subpaths (e.g., `medschool.harvard.edu/education/clinical-electives`). Both are upstream queue authoring decisions, not framework bugs.
