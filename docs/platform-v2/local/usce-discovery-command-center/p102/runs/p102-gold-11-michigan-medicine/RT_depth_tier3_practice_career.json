@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+  "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+  "claims": [
+    {
+      "claimId": "a2_c1",
+      "claimType": "FUTURE_LANE_JOB",
+      "lane": "CAREERS_PAGE",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+      "sourceHash": "39476d6c0429982f9e3951b3fa204da085f5e9cb3a4eb50ea92676add0f7732f",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_dd1123b2b628ae34.txt",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "quote": "Accelerate your career. Advance world health.Careers at Michigan Medicine",
+      "claimText": "Page links to Michigan Medicine general careers portal.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "LOW",
+      "whyA1Missed": "Generic site-footer careers link; A1 focused on article body about a medical student and the dermatology-resident abroad sidebar.",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "deepSourceFamily": "CAREERS",
+      "tierAssignmentRationale": "Generic careers portal link in footer — Tier 3 job-seeking signal.",
+      "limitations": "Footer/nav cruft, not page-specific content.",
+      "normalizedField": null,
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-gold-11-michigan-medicine",
+      "institutionId": "inst_michigan_medicine_mi",
+      "sourceFamily": "JSON_LD",
+      "visibility": "FUTURE_LANE_ONLY",
+      "visibilityRationale": "lane is future-lane only",
+      "quoteVerified": true,
+      "phaseProducedBy": "A2"
+    }
+  ],
+  "claimCount": 1,
+  "publicSafeUsceCount": 0,
+  "futureLaneOnlyCount": 1,
+  "humanReviewRequiredCount": 0,
+  "cautionSafeInternalReviewCount": 0,
+  "sourceUrls": [
+    "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale"
+  ],
+  "sourceClaimIds": [
+    "a2_c1"
+  ],
+  "notStatedFields": [],
+  "unresolveds": [],
+  "visibilityLane": "FUTURE_LANE_ONLY"
+}

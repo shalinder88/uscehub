@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+  "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+  "claims": [
+    {
+      "claimId": "c1",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+      "sourceHash": "39476d6c0429982f9e3951b3fa204da085f5e9cb3a4eb50ea92676add0f7732f",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_dd1123b2b628ae34.txt",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "quote": "Leaders in Dermatology at Michigan Medicine are expanding a program that enables select residents to pursue a clinical experience abroad during the final year of training, with one resident having visited China late last year and three more expected to train abroad in the coming months.",
+      "claimText": "Michigan Medicine Dermatology expanding program for select residents to pursue clinical experience abroad in final year of training.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "MEDIUM",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "deepSourceFamily": "RESIDENCY",
+      "tierAssignmentRationale": "Mentions dermatology residency program with clinical experience abroad for residents — trainee/residency signal, Tier 2.",
+      "limitations": "Mentioned in a news article snippet, not a program page.",
+      "normalizedField": null,
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-gold-11-michigan-medicine",
+      "institutionId": "inst_michigan_medicine_mi",
+      "sourceFamily": "JSON_LD",
+      "visibility": "FUTURE_LANE_ONLY",
+      "visibilityRationale": "lane is future-lane only",
+      "quoteVerified": true,
+      "phaseProducedBy": "A1"
+    }
+  ],
+  "claimCount": 1,
+  "publicSafeUsceCount": 0,
+  "futureLaneOnlyCount": 1,
+  "humanReviewRequiredCount": 0,
+  "cautionSafeInternalReviewCount": 0,
+  "sourceUrls": [
+    "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale"
+  ],
+  "sourceClaimIds": [
+    "c1"
+  ],
+  "notStatedFields": [],
+  "unresolveds": [],
+  "visibilityLane": "FUTURE_LANE_ONLY"
+}

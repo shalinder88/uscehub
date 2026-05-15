@@ -1,0 +1,121 @@
+# Source Map — Michigan Medicine
+
+Run: p102-gold-11-michigan-medicine
+schemaVersion: p102-0r-1
+
+## Accepted sources (18)
+
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells](http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `488637dc8b12e642e3daa154ef434d61c78dcac5e5cf7681f68f59fef278dd40`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_c19a84709239d6c6.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research](http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9732d1867075aec8fa8aad0804e36bcb953f4d9d040d619a1de7201fb611a3cf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_3b71b2ed3517f90e.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research](http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f7806cfbf076693dddab979f38a870c0a10fd90529d3ce772de5959fea8502be`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_9fce28502d97b65f.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says](http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e02d5098183fbb0fb8853cec438d610eec72aec4ea5d6142c2b62c6952dd2eb6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_b92da4eb62a070ea.txt
+- **GME_PAGE** [http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know](http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `f4c1a0af277b563476f4b3a931ab7dd2539321df1eb08d74e70dc2ef0f3a80ad`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_99e25a2c6a06362a.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research](http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c14612bf166a2165db2702c284a1de6c178cdefc17a96d5e9b4c1caf8fc548c2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_c0feaef2bbd0a38f.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis](http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `964eeb2a7ec4e293a61a43ab2f9d8ad770a7bb31e726d21ea198e9563e9d9941`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_4daaf3d0c01046b9.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors](http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `cc375de230c0cc19517e9b84268fba440af45bd90e40e2aa0bc34afbb42120c7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_c27a31cae411006c.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research](http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `3cc7450300656ff1c6ce83454de416ad89c408073e40f174cc83416581b80c24`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_713451e9b0111633.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target](http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d256516d504f293e659023daafeeb3e56e100cdeb39429d225599d909e977c04`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_1e17ca46f382b76c.txt
+- **JSON_LD** [http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale](http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `39476d6c0429982f9e3951b3fa204da085f5e9cb3a4eb50ea92676add0f7732f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_dd1123b2b628ae34.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections](http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9f5c226388caecc401b04939dd7245cf77def893325bb6c94414c76ae368e380`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_44ec32689b4f684b.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers](http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `634941ec6aac495e4821849c8b67506a4975795f560144208a2b261d46c12841`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_8eb7c7b1ddf21cab.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research](http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ef74cee67e86392fcbe53ecbf181fd2ff3109d3c4722f696550343307ca26383`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_f5f7ee6ce254f08e.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research](http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `28f85e0fdd5ad40f9ebeb62d8c95f0758f595322c17b2c746295c8fe73175d82`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_6df1700d164527a2.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research](http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4e8c2b3283ebf0f8f7706306d62a652237025d975226a468be27a6bf04593c0b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_a1afd24b9f71f157.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer](http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7fb45d3c5a6fa66829a0861f9ebde4b710406456070e44b3bb33299f22233727`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_2f6af90bf2886bd4.txt
+- **RESEARCH_PAGE** [http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help](http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ee6ba1a800c00abbd5d1fe97f80eddf79f9e6c3b0d1f96636bd2ab57a4aa99c7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_328cb7ae8a1ac3ba.txt
+
+## Rejected sources (39)
+
+- https://uofmhealth.org/observership — FETCH_404 (status_404)
+- https://uofmhealth.org/observerships — FETCH_403 (status_403)
+- https://uofmhealth.org/observer — FETCH_404 (status_404)
+- https://uofmhealth.org/clinical-observer — FETCH_404 (status_404)
+- https://uofmhealth.org/visiting-student — FETCH_403 (status_403)
+- https://uofmhealth.org/visiting-students — FETCH_404 (status_404)
+- https://uofmhealth.org/medical-students — FETCH_404 (status_404)
+- https://uofmhealth.org/international-students — FETCH_404 (status_404)
+- https://uofmhealth.org/electives — FETCH_403 (status_403)
+- https://uofmhealth.org/away-rotations — FETCH_403 (status_403)
+- https://uofmhealth.org/clinical-elective — FETCH_403 (status_403)
+- https://uofmhealth.org/clinical-rotation — FETCH_404 (status_404)
+- https://uofmhealth.org/sub-internship — FETCH_404 (status_404)
+- https://uofmhealth.org/subinternship — FETCH_403 (status_403)
+- https://uofmhealth.org/acting-internship — FETCH_403 (status_403)
+- https://uofmhealth.org/research — FETCH_404 (status_404)
+- https://uofmhealth.org/student-research — FETCH_404 (status_404)
+- https://uofmhealth.org/shadow — FETCH_404 (status_404)
+- https://uofmhealth.org/shadowing — FETCH_404 (status_404)
+- https://uofmhealth.org/volunteer — FETCH_404 (status_404)
+- https://uofmhealth.org/volunteering — FETCH_404 (status_404)
+- https://uofmhealth.org/img — FETCH_404 (status_404)
+- https://uofmhealth.org/international-medical-graduates — FETCH_404 (status_404)
+- https://uofmhealth.org/graduate-medical-education — FETCH_404 (status_404)
+- https://uofmhealth.org/gme — FETCH_404 (status_404)
+- https://uofmhealth.org/residency — FETCH_403 (status_403)
+- https://uofmhealth.org/fellowship — FETCH_403 (status_403)
+- https://uofmhealth.org/careers — FETCH_403 (status_403)
+- https://uofmhealth.org/physician-careers — FETCH_404 (status_404)
+- https://uofmhealth.org/provider-careers — FETCH_404 (status_404)
+- https://uofmhealth.org/benefits — FETCH_404 (status_404)
+- https://uofmhealth.org/visa — FETCH_404 (status_404)
+- https://uofmhealth.org/immigration — FETCH_404 (status_404)
+- https://uofmhealth.org/credentialing — FETCH_404 (status_404)
+- https://uofmhealth.org/health-professionals — FETCH_404 (status_404)
+- https://uofmhealth.org/medical-education — FETCH_404 (status_404)
+- https://uofmhealth.org/professional-education — FETCH_404 (status_404)
+- https://uofmhealth.org/student-affairs — FETCH_404 (status_404)
+- https://uofmhealth.org/education — FETCH_404 (status_404)

@@ -1,0 +1,690 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "institutionId": "inst_michigan_medicine_mi",
+  "institutionName": "Michigan Medicine",
+  "officialDomains": [
+    "uofmhealth.org"
+  ],
+  "mode": "reclassify-only",
+  "budgets": {
+    "maxDiscoveredUrls": 75,
+    "maxAcceptedSources": 40,
+    "maxPdfs": 10
+  },
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://uofmhealth.org/observership",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://uofmhealth.org/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://uofmhealth.org/observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://uofmhealth.org/clinical-observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://uofmhealth.org/visiting-student",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://uofmhealth.org/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://uofmhealth.org/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://uofmhealth.org/international-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://uofmhealth.org/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://uofmhealth.org/away-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://uofmhealth.org/clinical-elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://uofmhealth.org/clinical-rotation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://uofmhealth.org/sub-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://uofmhealth.org/subinternship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://uofmhealth.org/acting-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://uofmhealth.org/research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://uofmhealth.org/student-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 6,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://uofmhealth.org/shadow",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://uofmhealth.org/shadowing",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://uofmhealth.org/volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://uofmhealth.org/volunteering",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://uofmhealth.org/img",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://uofmhealth.org/international-medical-graduates",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://uofmhealth.org/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://uofmhealth.org/gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://uofmhealth.org/residency",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://uofmhealth.org/fellowship",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 9,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://uofmhealth.org/careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://uofmhealth.org/physician-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 21,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://uofmhealth.org/provider-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 22,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://uofmhealth.org/benefits",
+      "legacyFamily": "OTHER",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 24,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://uofmhealth.org/visa",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://uofmhealth.org/immigration",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://uofmhealth.org/credentialing",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://uofmhealth.org/health-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://uofmhealth.org/medical-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://uofmhealth.org/professional-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://uofmhealth.org/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://uofmhealth.org/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+      "legacyFamily": "JSON_LD",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": {
+        "priority": 33,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    }
+  ],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T04:26:07.580Z"
+}

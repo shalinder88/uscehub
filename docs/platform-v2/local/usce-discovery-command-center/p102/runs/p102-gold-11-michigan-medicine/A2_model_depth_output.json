@@ -1,0 +1,602 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Health Lab research news article about SDHA enzyme and T cell-mediated GI disease; no observership, visiting student, elective, residency, fellowship, or careers content is stated.",
+          "Global navigation lists 'Careers at Michigan Medicine' and 'Education & Training' links but the cleaned text contains no substantive content about those programs on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this research news article — the source is a Health Lab story unrelated to USCE/GME/careers.",
+          "Verify sourceFamily RESEARCH_PAGE is preserved and not promoted to a USCE-bearing family."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Health Lab news article about rare-disease research; mentions Michigan Medicine researchers but resolves no observership, visiting-student, elective, residency, fellowship, or career-pathway pathway.",
+          "Navigation menu lists 'Careers', 'Education', 'Pediatric Education & Training', and various therapy residencies/fellowships (e.g., 'Cardiovascular & Pulmonary PT Residency', 'OT Hand Fellowship') but these are non-physician training links inside chrome nav, not substantive content of this source unit."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE claim is generated from this Health Lab article — source is RESEARCH_PAGE news/feature, not a USCE pathway.",
+          "Verify the navigation-menu mentions of 'Child Life Internship & Fellowship', 'Music Therapy Internship & Fellowship', and various PT/OT residencies are not promoted to physician GME/USCE claims — these are allied-health training programs.",
+          "Ensure deepSourceHint 'UNKNOWN_RELEVANT' does not get auto-tiered; this source should remain NOT_APPLICABLE for USCE/GME/career tiers."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Article body is exclusively about Common Rule / biospecimen / cell-line privacy regulation — contains no USCE, observership, visiting student, elective, research-elective, residency, fellowship, GME, careers, or visa content to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this Health Lab news article — source family is RESEARCH_PAGE news content, not a training/opportunity page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this Health Lab research-news article yields no PUBLIC_SAFE_USCE — page is a news roundup on racial health disparities, not an observership/elective/GME/careers source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Child Life Internship & Fellowship', 'Music Therapy Internship & Fellowship', 'Exercise Physiology Internship Program', 'OT Hand Fellowship', and multiple PT residencies but the article body does not describe medical-student/physician USCE, residency, or fellowship opportunities."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Health Lab patient-education article (DEPARTMENT_LEVEL / GME_PAGE family but body is consumer health content about Retinitis Pigmentosa, not a USCE/GME/careers page).",
+          "Verify that nav-menu mentions of 'Internship', 'Fellowship', and 'Residency' (PT/OT/Music Therapy/Child Life) are not misclassified as physician GME signals."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation references 'Child Life Internship & Fellowship', 'Music Therapy Internship & Fellowship', 'OT Hand Fellowship', and several PT Residency programs but provides no eligibility, application, or USCE-relevant content — these are allied-health training programs, not physician GME or visiting-student opportunities.",
+          "Page navigation references 'Pediatric Education & Training' at Mott Children's Hospital without resolving whether it includes any visiting-student or observership pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim is emitted from this source — it is a Health Lab news article about melanoma research and a former football captain, not a USCE/GME/careers page.",
+          "Verify that allied-health training program names appearing only in global navigation (PT residencies, OT Hand Fellowship, Child Life Internship) are not promoted to physician-relevant FUTURE_LANE claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Michigan Medicine Health Lab news article about osteoarthritis cell biology research; contains no observership, visiting student, elective, residency, fellowship, or careers content to extract.",
+          "Global navigation references 'Careers at Michigan Medicine', 'Education', 'Pediatric Education & Training', and various PT/OT residencies/fellowships, but these are sitewide nav links — not source-specific opportunity statements on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Health Lab news article URL — page family is news/press, not training program.",
+          "Verify A1's empty-claims output is preserved; this source legitimately yields zero opportunity claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this Health Lab research news article (ZMYND8/IDH1 glioma study) yields no USCE, trainee, or career claims; A1 emitted zero and A2 deep pass found no concept matches across Tier 1/2/3."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this Health Lab news article about gain-of-function research yields no USCE/observership/visiting student claims; content is a press commentary, not an opportunity page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a research news article about a STAT5 protein degrader study; mentions no observership, visiting student, elective, residency, fellowship, or careers content beyond generic navigation links."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this RESEARCH_PAGE news article URL.",
+          "Verify that navigation-only mentions of 'Careers', 'Education & Training', and 'Fellowship' in the chrome are not converted into FUTURE_LANE claims since they are global header/footer links, not source-of-truth content on this page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+            "sourceHash": "39476d6c0429982f9e3951b3fa204da085f5e9cb3a4eb50ea92676add0f7732f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_dd1123b2b628ae34.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Accelerate your career. Advance world health.Careers at Michigan Medicine",
+            "claimText": "Page links to Michigan Medicine general careers portal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "whyA1Missed": "Generic site-footer careers link; A1 focused on article body about a medical student and the dermatology-resident abroad sidebar.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Generic careers portal link in footer — Tier 3 job-seeking signal.",
+            "limitations": "Footer/nav cruft, not page-specific content.",
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "sourceScope was set to UNKNOWN_SCOPE; this is a Michigan Medicine Health Lab news article (system-level news content). A3 should ensure no PUBLIC_SAFE_USCE downstream and confirm FUTURE_LANE_ONLY visibility."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Article mentions 'fourth-year medical student at the University of Michigan Medical School' but is about a home-school student, not visiting students; no visiting/elective policy stated.",
+          "Sidebar mentions 'Dermatology resident's China rotation' but no eligibility, application pathway, or whether outside applicants can join.",
+          "Nav menu lists multiple PT/OT residencies and a Child Life / Music Therapy Internship & Fellowship but page body does not describe physician GME eligibility."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Health Lab news article URL.",
+          "Verify sourceScope is reclassified from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL given uofmhealth.org Health Lab news context.",
+          "Confirm c1 dermatology-resident-abroad claim remains FUTURE_LANE_ONLY (Tier 2) — it concerns Michigan Medicine residents traveling abroad, not external visiting trainees."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+              "sourceHash": "39476d6c0429982f9e3951b3fa204da085f5e9cb3a4eb50ea92676add0f7732f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-11-michigan-medicine/cleaned_text/sm_dd1123b2b628ae34.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Accelerate your career. Advance world health.Careers at Michigan Medicine",
+              "claimText": "Page links to Michigan Medicine general careers portal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "Generic footer careers link, not in article body; A1 read article narrative.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Footer career portal link — Tier 3.",
+              "limitations": "Footer cruft.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "sourceScope_unknown_should_be_health_system_level",
+            "explanation": "A1 left sourceScope as UNKNOWN_SCOPE. The URL is uofmhealth.org/health-lab — system-level news/Health Lab content. A3 should reclassify to HEALTH_SYSTEM_LEVEL and confirm no public-safe USCE leakage."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c1",
+            "campusNameMentionedInQuote": "Michigan Medicine",
+            "proofQuote": "Leaders in Dermatology at Michigan Medicine are expanding a program that enables select residents to pursue a clinical experience abroad during the final year of training"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Health Lab news article on COVID-19 immunity research; no observership, visiting student, elective, residency, fellowship, or careers content present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm this RESEARCH_PAGE source produces no PUBLIC_SAFE_USCE or future-lane claims downstream — it is a news article unrelated to training pathways."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a podcast/news article about dementia research citations; contains no observership/elective/visiting student/residency/fellowship/careers content"
+        ],
+        "recommendedA3Focus": [
+          "Confirm this RESEARCH_PAGE source yields zero PUBLIC_SAFE_USCE claims — content is a podcast transcript about dementia prevalence research, not a USCE or trainee opportunity page"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a news release announcing the Opioid Research Institute; no Tier 1/2/3 eligibility, application, observership, elective, residency, fellowship, careers, visa, or salary content present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE news release with UNKNOWN_SCOPE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Health Lab news article about pancreatic cancer research; no observership, visiting student, elective, residency, fellowship, or careers content stated.",
+          "Global navigation mentions 'Careers', 'Education & Training', and PT/OT residencies/fellowships, but no opportunity-specific content is presented on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE (Health Lab news article).",
+          "Verify source family classification remains RESEARCH_PAGE and sourceScope is not elevated to a USCE-bearing scope."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Health Lab news article about artificial placenta research; contains no observership, visiting student, elective, residency, fellowship, GME, careers, or visa content beyond generic footer links.",
+          "Footer mentions 'Careers at Michigan Medicine' and 'Education / Programs & Admissions' as navigation links but provides no substantive content on this page to extract Tier 2 or Tier 3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm this RESEARCH_PAGE source yields zero PUBLIC_SAFE_USCE claims; it is a news article, not an opportunity page.",
+          "Verify no future-lane claims are emitted from generic footer 'Careers' or 'Education' nav links — they are site-chrome, not page content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-11-michigan-medicine",
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Pediatric Education & Training' and 'Education & Training' links under Mott / Frankel CVC / Kellogg / Von Voigtlander but the article body provides no detail on any USCE, residency, fellowship, or careers content — only a news article on cancer genetic testing.",
+          "Navigation references PT/OT residencies and Child Life / Music Therapy internships and fellowships but none are physician-pathway training and none have substantive content on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is generated from this RESEARCH_PAGE news article — content is a cancer genetic testing research story, not an opportunity page.",
+          "Verify that navigation-menu mentions of residency/fellowship/careers are not promoted to FUTURE_LANE claims without independent substantive source pages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help",
+      "output": {
+        "institutionId": "inst_michigan_medicine_mi",
+        "institutionName": "Michigan Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-gold-11-michigan-medicine",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Article is a Health Lab editorial about researcher-policymaker engagement; contains no observership, visiting student, elective, residency, fellowship, or careers content despite the page chrome listing residency/fellowship menu items."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this Health Lab article URL — body content is health policy advice, not a USCE program page.",
+          "Verify menu/navigation chrome (e.g. 'Child Life Internship & Fellowship', 'OT Hand Fellowship', PT Residencies) is not promoted to FUTURE_LANE claims since it is global site nav, not page-specific content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "institutionId": "inst_michigan_medicine_mi",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/medical-education",
+        "https://uofmhealth.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/visiting-student",
+        "https://uofmhealth.org/visiting-students",
+        "https://uofmhealth.org/international-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/observership",
+        "https://uofmhealth.org/observer",
+        "https://uofmhealth.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/electives",
+        "https://uofmhealth.org/away-rotations",
+        "https://uofmhealth.org/clinical-elective",
+        "https://uofmhealth.org/clinical-rotation"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/sub-internship",
+        "https://uofmhealth.org/subinternship",
+        "https://uofmhealth.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/shadow",
+        "https://uofmhealth.org/shadowing",
+        "https://uofmhealth.org/volunteer",
+        "https://uofmhealth.org/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/graduate-medical-education",
+        "https://uofmhealth.org/gme"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/visa",
+        "https://uofmhealth.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://uofmhealth.org/careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help"
+      ],
+      "acceptedSources": [
+        "http://www.uofmhealth.org/health-lab/health-policy-needs-data-how-can-researchers-help"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uofmhealth.org/observerships",
+        "https://uofmhealth.org/medical-students",
+        "https://uofmhealth.org/research",
+        "https://uofmhealth.org/img",
+        "https://uofmhealth.org/international-medical-graduates",
+        "https://uofmhealth.org/credentialing",
+        "https://uofmhealth.org/health-professionals",
+        "https://uofmhealth.org/education",
+        "http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells",
+        "http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research",
+        "http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research",
+        "http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says",
+        "http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know",
+        "http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research",
+        "http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis",
+        "http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors",
+        "http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research",
+        "http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target",
+        "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+        "http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections",
+        "http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers",
+        "http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research",
+        "http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research",
+        "http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research",
+        "http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer"
+      ],
+      "acceptedSources": [
+        "http://www.uofmhealth.org/health-lab/researchers-find-promising-new-approach-stop-intestinal-problems-caused-immune-cells",
+        "http://www.uofmhealth.org/health-lab/10-studies-highlight-importance-rare-disease-research",
+        "http://www.uofmhealth.org/health-lab/new-patient-privacy-rules-could-disrupt-critical-research",
+        "http://www.uofmhealth.org/health-lab/health-inequality-actually-black-and-white-issue-research-says",
+        "http://www.uofmhealth.org/health-lab/retinitis-pigmentosa-children-5-facts-families-should-know",
+        "http://www.uofmhealth.org/health-lab/former-u-m-football-captain-teams-doctor-tackle-cancer-research",
+        "http://www.uofmhealth.org/health-lab/researchers-uncover-new-cell-types-involved-osteoarthritis",
+        "http://www.uofmhealth.org/health-lab/researchers-circumvent-radiation-resistance-subtype-brain-tumors",
+        "http://www.uofmhealth.org/health-lab/virologists-call-rational-discourse-gain-function-research",
+        "http://www.uofmhealth.org/health-lab/researchers-use-new-approach-hit-undruggable-target",
+        "http://www.uofmhealth.org/health-lab/medical-student-tackles-cystic-fibrosis-global-scale",
+        "http://www.uofmhealth.org/health-lab/research-sheds-light-protections-against-covid-19-variant-infections",
+        "http://www.uofmhealth.org/minding-memory/study-most-often-cited-first-sentence-dementia-research-papers",
+        "http://www.uofmhealth.org/news-release/new-institute-support-and-catalyze-opioid-research",
+        "http://www.uofmhealth.org/health-lab/donor-pancreas-tissue-helps-define-new-normal-pancreatic-cancer-research",
+        "http://www.uofmhealth.org/health-lab/researchers-overcome-major-barrier-artificial-placenta-research",
+        "http://www.uofmhealth.org/health-lab/research-sheds-light-low-rates-genetic-testing-cancer"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_WEAK",
+    "tier2": "TIER_COVERAGE_WEAK",
+    "tier3": "TIER_COVERAGE_WEAK"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 0,
+    "tier2AcceptedSources": 0,
+    "tier3AcceptedSources": 0
+  },
+  "generatedAt": "2026-05-15T04:26:07.581Z"
+}

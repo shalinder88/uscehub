@@ -375,3 +375,42 @@ That said, BMC validated **two important framework properties**:
 2. **Tier 1 caution lane correctly held**. Despite the page being a real `VISITING_MEDICAL_STUDENT_PAGE` with `INSTITUTION_SPECIFIC` scope and `SUB_INTERNSHIP` lane, the captured quote explicitly describes the program as "designed for students interested in a career in Otolaryngology (ENT)". The framework correctly held the claim at `CAUTION_SAFE_INTERNAL_REVIEW` rather than auto-promoting to `PUBLIC_SAFE_USCE`, because the program is targeted at students with a specific career interest, not a general visiting-student offer.
 
 The PDF-heavy slot will be re-pointed in a future revision (a real PDF-heavy institution candidate would be one whose visiting-student application packets, IMG eligibility documents, or J-1 sponsorship policies are published as PDFs).
+
+---
+
+## Gold #11 — Michigan Medicine (run id `p102-gold-11-michigan-medicine`)
+
+| Metric | Value |
+|---|---:|
+| Domain probed | uofmhealth.org |
+| Source candidates probed | 57 |
+| Accepted sources | 18 |
+| status_403 (bot-block signal) | **10** |
+| status_404 | 29 |
+| JSON-LD records | 18 |
+| Tier 1 / Tier 2 / Tier 3 (deep discovery) | 0 / 0 / 0 |
+| Total verified claims | 2 |
+| Total source claims | 0 (both verified claims regated to FUTURE_LANE_ONLY by the source extractor) |
+| PUBLIC_SAFE_USCE | 0 |
+| CAUTION_SAFE_INTERNAL_REVIEW | 0 |
+| FUTURE_LANE_ONLY | 0 (source claims) |
+| HUMAN_REVIEW_REQUIRED | 0 |
+| Negative evidence | 0 |
+| A4 recovery tasks | 2 (both target off-domain medschool.umich.edu / medicine.umich.edu) |
+| Quote-verified | 2 / 2 OK |
+| Scope conflicts | 0 |
+| Model A3 verdict | `PASS_PUBLISH_READY` (rationale: "Ledger has two claims, both correctly tagged FUTURE_LANE_ONLY (a Dermatology residents-abroad item and a generic Careers link). Zero PUBLIC_SAFE_USCE claims exist, so no public-safety surface.") |
+| Deterministic regate verdict | `PASS_WITH_CAVEATS` (publicSafe=false, futureLaneValue=LOW) |
+
+**Final status: `GOLD_PASS_BOT_BLOCK_PARTIAL_OFF_DOMAIN_MEDSCHOOL`**
+
+This was the gold-set's "bot-block / timeout" test. Michigan Medicine's hospital domain (`uofmhealth.org`) exhibited a **partial bot-block**: 10 of 57 deterministic probes returned `status_403` (Forbidden — server actively refused), and 29 returned `status_404` (paths that don't exist). 18 paths succeeded and provided readable content.
+
+The bot-block was **not total** — the framework was able to capture some pages — but it correctly documented the 10 forbidden responses and did not crash. The accepted-source corpus was overwhelmingly health-lab news, research narratives, and Dermatology residents-abroad content; **no Tier 1 USCE pages were accessible** on the hospital domain.
+
+The model A3 gate emitted 2 narrow A4 recovery tasks (`rec_t1_michmed_electives` → `medschool.umich.edu/medstudents/visiting-students`, `rec_t2_michmed_gme` → `medicine.umich.edu/medschool/education/residency-programs`). Both target **off-domain medical-school subdomains** — A4 bounded recovery correctly refused to fetch them. This is the same off-domain medschool pattern as Brigham and Vanderbilt.
+
+Two framework properties validated:
+1. **Partial bot-block tolerated**: the framework recorded `status_403` honestly, captured what it could, and didn't crash or invent claims.
+2. **Off-domain A4 refusal**: the bounded A4 recovery correctly refused to fetch `medschool.umich.edu` / `medicine.umich.edu` (off-domain for `uofmhealth.org` runs). Recovery URLs are queued for upstream queue authoring (campus split or expanded officialDomains).
+
