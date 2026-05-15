@@ -61,9 +61,28 @@ interface ClaimsLedger {
 
 interface VerifyCheck {
   claimId: string;
-  status: 'OK' | 'QUOTE_NOT_IN_CLEANED_TEXT' | 'VISIBILITY_DRIFT' | 'CLEANED_TEXT_MISSING' | 'NOT_STATED_FIELD_OK';
+  status: 'OK' | 'QUOTE_NOT_IN_CLEANED_TEXT' | 'VISIBILITY_DRIFT' | 'VISIBILITY_DRIFT_MODEL_STRICTER' | 'CLEANED_TEXT_MISSING' | 'NOT_STATED_FIELD_OK';
   details: string;
   reclassifiedVisibility?: Visibility | null;
+}
+
+/**
+ * Restrictiveness ordinal: 0 = most permissive, 5 = most restrictive.
+ * Drift is only a FAIL when recorded < reclassified (model over-promoted).
+ * When recorded >= reclassified, model is using additional context (scope
+ * mismatch, off-campus content, etc.) to be stricter — the deterministic
+ * re-classifier is a SHALL_NOT_PROMOTE ceiling, not a SHALL_PROMOTE floor.
+ */
+function visibilityRestrictiveness(v: Visibility): number {
+  switch (v) {
+    case 'PUBLIC_SAFE_USCE': return 0;
+    case 'PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY': return 1;
+    case 'CAUTION_SAFE_INTERNAL_REVIEW': return 2;
+    case 'FUTURE_LANE_ONLY': return 3;
+    case 'HUMAN_REVIEW_REQUIRED': return 4;
+    case 'HIDDEN_REJECTED': return 5;
+    default: return 4;
+  }
 }
 
 interface CliOptions {
@@ -169,10 +188,23 @@ function verifyClaim(claim: VerifiedClaimOnDisk, cleanedText: string | null): Ve
   });
 
   if (reclass.visibility !== claim.visibility) {
+    const recordedRestrict = visibilityRestrictiveness(claim.visibility);
+    const reclassRestrict = visibilityRestrictiveness(reclass.visibility);
+    // Model stricter or equal: not a failure — model has scope/context the
+    // deterministic re-classifier cannot see (e.g. campus-level mismatch).
+    if (recordedRestrict >= reclassRestrict) {
+      return {
+        claimId: claim.claimId,
+        status: 'VISIBILITY_DRIFT_MODEL_STRICTER',
+        details: `recorded "${claim.visibility}" is equal-or-stricter than re-classifier "${reclass.visibility}" (model used additional context to hide; not a public-safety risk)`,
+        reclassifiedVisibility: reclass.visibility,
+      };
+    }
+    // Model over-promoted relative to the deterministic ceiling — real failure.
     return {
       claimId: claim.claimId,
       status: 'VISIBILITY_DRIFT',
-      details: `recorded visibility "${claim.visibility}" but re-classifier returned "${reclass.visibility}" (${reclass.notPublicReason ?? 'no rationale'})`,
+      details: `recorded visibility "${claim.visibility}" but re-classifier returned more-restrictive "${reclass.visibility}" (${reclass.notPublicReason ?? 'no rationale'})`,
       reclassifiedVisibility: reclass.visibility,
     };
   }
@@ -243,8 +275,20 @@ function verifyOneRun(runId: string, opts: CliOptions): RunReport {
   if (failureCount > 0) {
     lines.push('## Failures');
     lines.push('');
-    for (const c of checks.filter((c) => c.status !== 'OK' && c.status !== 'NOT_STATED_FIELD_OK')) {
+    for (const c of checks.filter((c) => c.status !== 'OK' && c.status !== 'NOT_STATED_FIELD_OK' && c.status !== 'VISIBILITY_DRIFT_MODEL_STRICTER')) {
       lines.push(`- ${c.claimId} → ${c.status}: ${c.details}`);
+    }
+  }
+
+  const stricterCount = countByStatus['VISIBILITY_DRIFT_MODEL_STRICTER'] ?? 0;
+  if (stricterCount > 0) {
+    lines.push('');
+    lines.push('## Informational: model-stricter visibility drift');
+    lines.push('');
+    lines.push(`${stricterCount} claim(s) where the model recorded a visibility equal-or-stricter than the deterministic re-classifier would emit. This is not a public-safety failure — the model used additional context (e.g. campus-level scope mismatch on a parent-system page) to hide the claim.`);
+    lines.push('');
+    for (const c of checks.filter((c) => c.status === 'VISIBILITY_DRIFT_MODEL_STRICTER')) {
+      lines.push(`- ${c.claimId} → ${c.details}`);
     }
   }
   writeText(path.join(runDir, 'quote_verify_report.md'), lines.join('\n'));

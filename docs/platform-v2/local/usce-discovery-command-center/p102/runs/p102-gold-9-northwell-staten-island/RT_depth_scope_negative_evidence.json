@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-9-northwell-staten-island",
+  "scopeConflicts": [
+    {
+      "claimId": "c_42_a2_001",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "explanation": "Page is Cohen Children's pediatric heme/onc research department, not Staten Island University Hospital. Attribution invalid."
+    },
+    {
+      "claimId": "a2_c1",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/general-pediatrics/research",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "explanation": "Page is Cohen Children's General Pediatrics research, not SIUH. Attribution invalid."
+    }
+  ],
+  "overpromotionDetected": [
+    {
+      "claimId": "c_42_a2_001",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Clinical department contact phone on a Cohen Children's research page promoted to PUBLIC_SAFE_USCE by visibility reclassifier despite no USCE offer and wrong institution."
+    },
+    {
+      "claimId": "a2_c1",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Research-coordinator email on a Cohen Children's General Pediatrics research page promoted to PUBLIC_SAFE_USCE; not a USCE pathway and not SIUH."
+    }
+  ],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

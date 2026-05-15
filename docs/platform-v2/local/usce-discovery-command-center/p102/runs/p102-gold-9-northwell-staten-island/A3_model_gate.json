@@ -1,0 +1,261 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [
+    {
+      "claimId": "c_42_a2_001",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HIDDEN_REJECTED",
+      "reason": "Department clinical phone number (718) 470-3460 for Pediatric Hematology/Oncology — not a USCE offer, sourced from a RESEARCH_PAGE on pediatrics.northwell.edu (Cohen Children's), not SIUH."
+    },
+    {
+      "claimId": "a2_c1",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HIDDEN_REJECTED",
+      "reason": "Research-contact email for Caren Steinway at Cohen Children's Division of General Pediatrics — RESEARCH_PAGE source, no USCE offer, wrong institution (Cohen Children's, not SIUH)."
+    }
+  ],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "t1",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "No Tier 1 USCE/observership/visiting-student source family was captured for SIUH specifically; only system-wide and Cohen Children's pages were read.",
+      "suggestedNarrowAction": "Narrow search for siuh.northwell.edu observership/visiting student/medical student elective pages or SIUH-specific medical education contact."
+    },
+    {
+      "taskId": "t2",
+      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SIUH is academically affiliated with Hofstra/Northwell's Zucker SOM; no affiliation or clerkship/elective page was captured.",
+      "suggestedNarrowAction": "Narrow lookup of Zucker SOM clerkship/visiting student page and SIUH-specific affiliate listing only."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "northwell-gme-size",
+      "duplicateClaimId": "fl_001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "northwell-gme-programs-count",
+      "duplicateClaimId": "fl_002",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "northwell-oaa",
+      "duplicateClaimId": "a2_fl_001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-adv-gi-mis",
+      "duplicateClaimId": "fl_027",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-cv-disease",
+      "duplicateClaimId": "fl_017",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-ccm",
+      "duplicateClaimId": "fl_019",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-gi",
+      "duplicateClaimId": "fl_021",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-hemonc",
+      "duplicateClaimId": "fl_022",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-hpm",
+      "duplicateClaimId": "fl_023",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-interv-cards",
+      "duplicateClaimId": "fl_018",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-nephro",
+      "duplicateClaimId": "fl_024",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-pccm",
+      "duplicateClaimId": "fl_020",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-scc",
+      "duplicateClaimId": "fl_026",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-fellow-vasc",
+      "duplicateClaimId": "fl_025",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-acpath",
+      "duplicateClaimId": "fl_007",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-anes",
+      "duplicateClaimId": "fl_006",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-dent",
+      "duplicateClaimId": "fl_012",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-diagrad",
+      "duplicateClaimId": "fl_008",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-em",
+      "duplicateClaimId": "fl_004",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-gensurg",
+      "duplicateClaimId": "fl_005",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-im",
+      "duplicateClaimId": "fl_003",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-neuro",
+      "duplicateClaimId": "fl_016",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-obgyn",
+      "duplicateClaimId": "fl_009",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-pedsdent",
+      "duplicateClaimId": "fl_013",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-peds",
+      "duplicateClaimId": "fl_010",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-pharm",
+      "duplicateClaimId": "fl_015",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-podiatry",
+      "duplicateClaimId": "fl_014",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "siuh-res-psych",
+      "duplicateClaimId": "fl_011",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "northwell-gme-size",
+      "duplicateClaimId": "ssc_001",
+      "duplicateReason": "same_quote_different_claimId"
+    }
+  ],
+  "institutionId": "inst_northwell_staten_island_uh_ny",
+  "institutionName": "Northwell Staten Island University Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 95,
+    "publicSafeUSCECount": 2,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 7,
+    "futureLaneOnlyCount": 72,
+    "humanReviewRequiredCount": 14,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [
+    {
+      "claimId": "c_42_a2_001",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Clinical department contact phone on a Cohen Children's research page promoted to PUBLIC_SAFE_USCE by visibility reclassifier despite no USCE offer and wrong institution."
+    },
+    {
+      "claimId": "a2_c1",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Research-coordinator email on a Cohen Children's General Pediatrics research page promoted to PUBLIC_SAFE_USCE; not a USCE pathway and not SIUH."
+    }
+  ],
+  "phase": "A3",
+  "publicSafetyFailures": [
+    {
+      "claimId": "c_42_a2_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "unsupported_publicSafeUSCE",
+      "explanation": "Quote is a clinical/research department phone number; it is not an offer of USCE/observership/visiting-student access. Source is a RESEARCH_PAGE on pediatrics.northwell.edu for Cohen Children's, not SIUH — also a scope conflict.",
+      "recommendedDisposition": "downgrade_to_HIDDEN_REJECTED"
+    },
+    {
+      "claimId": "a2_c1",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_health_system",
+      "explanation": "Email contact is for research participation at Cohen Children's General Pediatrics, hosted on pediatrics.northwell.edu — not SIUH and not a USCE offer. RESEARCH_PAGE family cannot ground a PUBLIC_SAFE_USCE claim.",
+      "recommendedDisposition": "downgrade_to_HIDDEN_REJECTED"
+    }
+  ],
+  "runId": "p102-gold-9-northwell-staten-island",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [
+    {
+      "claimId": "c_42_a2_001",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "explanation": "Page is Cohen Children's pediatric heme/onc research department, not Staten Island University Hospital. Attribution invalid."
+    },
+    {
+      "claimId": "a2_c1",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/general-pediatrics/research",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "explanation": "Page is Cohen Children's General Pediatrics research, not SIUH. Attribution invalid."
+    }
+  ],
+  "tier1CoverageVerdict": "FAIL_WEAK",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unfollowedSignals": [
+    "Northwell GME page lists SIUH residencies/fellowships but no Tier 1 visiting-student/observership channel was searched on siuh.northwell.edu",
+    "Zucker SOM affiliation (the academic medical school for Northwell SIUH) is implied but no clerkship/visiting-student page captured"
+  ],
+  "unresolveds": [
+    "Whether SIUH offers any Tier 1 USCE (observership/visiting student) at the campus is undetermined — no SIUH-specific source family was read; current ledger relies on Cohen Children's and system-wide Northwell pages."
+  ],
+  "verdict": "FAIL_PUBLIC_SAFETY",
+  "verdictSummary": "Two claims (c_42_a2_001, a2_c1) were promoted to PUBLIC_SAFE_USCE despite (a) being sourced from RESEARCH_PAGE Cohen Children's pages — not SIUH — and (b) describing clinical/research contacts, not USCE offers. Both must be hidden. Tier 1 coverage is FAIL_WEAK: no SIUH-specific visiting-student/observership source was read. Extensive A1/A2 duplication across northwell.edu/gme and /graduate-medical-education (identical hash) requires dedupe before publish."
+}

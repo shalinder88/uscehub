@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-9-northwell-staten-island",
+  "tasks": [
+    {
+      "taskId": "t1",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "No Tier 1 USCE/observership/visiting-student source family was captured for SIUH specifically; only system-wide and Cohen Children's pages were read.",
+      "suggestedNarrowAction": "Narrow search for siuh.northwell.edu observership/visiting student/medical student elective pages or SIUH-specific medical education contact."
+    },
+    {
+      "taskId": "t2",
+      "missingFamily": "MEDICAL_SCHOOL_AFFILIATION_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SIUH is academically affiliated with Hofstra/Northwell's Zucker SOM; no affiliation or clerkship/elective page was captured.",
+      "suggestedNarrowAction": "Narrow lookup of Zucker SOM clerkship/visiting student page and SIUH-specific affiliate listing only."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}
