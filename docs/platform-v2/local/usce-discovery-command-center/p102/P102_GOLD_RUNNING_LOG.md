@@ -141,5 +141,38 @@ Run ID: `p102-1-trial-2-run-3`. Failure mode: parent-system / campus ambiguity; 
 
 This is the institution that exposed the P102-0G scope-discipline bug: an A4-fetched Redmond clerkship page (rich medical-student USCE content on `adventhealth.com`) was being promoted to PUBLIC_SAFE_USCE because the orchestrator was accepting the model's emitted `INSTITUTION_SPECIFIC` scope. The fix (deterministic `inferSourceScope` ALWAYS overrides the model's emission) now correctly classifies the same content as HUMAN_REVIEW_REQUIRED for AdventHealth Orlando. This is the canonical "system-domain rich content must not auto-attribute to the campus" test, and the framework passed it (after the bug was found and fixed).
 
+---
+
+## Gold #1 — Cleveland Clinic Florida (Weston, FL) — `my.clevelandclinic.org`
+
+Run ID: `p102-gold-1-cleveland-clinic-florida`. Failure mode: clear international medical student / visiting student program test (expected to produce PUBLIC_SAFE_USCE candidates, but on a system-level domain).
+
+| Metric | Value |
+|---|---:|
+| Source candidates probed | 59 |
+| Accepted sources | 20 (live A0 capture) |
+| Rejected sources | 39 (HTTP 404/etc.) |
+| Tier 1 claims | 36 (TIER_COVERAGE_PARTIAL, lane `HUMAN_REVIEW_REQUIRED` — all held because `my.clevelandclinic.org` is a system-level domain serving Cleveland Clinic Foundation/Ohio, Cleveland Clinic Florida, Abu Dhabi, etc.) |
+| Tier 2 claims | 142 (extensive residency/fellowship content; lane FUTURE_LANE_ONLY) |
+| Tier 3 claims | 3 |
+| PUBLIC_SAFE_USCE | **0** (correct — system-domain content cannot be attributed to Cleveland Clinic Florida specifically without explicit campus-applicability proof) |
+| FUTURE_LANE_ONLY | 145 |
+| HUMAN_REVIEW_REQUIRED | 40 |
+| Quote-verified | 185 / 185 (100%) |
+| Rejected on quote re-verify | 1 (filtered during deep extraction; 0 on standalone re-verify) |
+| A4 tasks before / after | 2 / 2 (both reference off-domain `clevelandcliniccfl.org`; A4 fetch attempted 8 same-domain probes, 0 accepted — tasks remain open) |
+| Scope conflicts | 0 (deterministic classifier held every Tier 1 candidate) |
+| Public-safety failures | 0 |
+| Model A3 verdict | PASS_PUBLISH_READY |
+| Deterministic regate verdict | PASS_WITH_CAVEATS (publicSafe=false, futureLaneValue=HIGH) |
+
+**Final status: `GOLD_PASS_HUMAN_REVIEW_REQUIRED`**
+
+This is the gold-set's "international medical student program test." The expected outcome was ≥1 PUBLIC_SAFE_USCE because Cleveland Clinic does run a known IMG observership program. The actual outcome was 0 PUBLIC_SAFE_USCE because every captured source is on the enterprise `my.clevelandclinic.org` domain serving the Ohio main campus and all sister hospitals (Florida, Abu Dhabi, etc.). The classifier correctly refuses to attribute system-level content to the Cleveland Clinic Florida campus specifically.
+
+**This is the correct framework behavior** even though it's the "wrong" outcome for the gold expectation. The framework didn't fail; the source set is wrong for this test. Cleveland Clinic Florida campus-specific elective / observership pages live at `clevelandcliniccfl.org` (a separate domain) which is off-domain for this run. The A4 hostile-gate correctly emitted recovery tasks pointing at that other domain — but `--fetch-additional` is bounded to the run's `officialDomains` set and refused to traverse off-domain. The captured signal explicitly references "If you're a practicing physician or medical student from outside the U.S., consider applying for an observership" — but no detail page (eligibility, fee, duration) was reachable from within `my.clevelandclinic.org`.
+
+**Action for gold-set queue:** add `clevelandcliniccfl.org` to Cleveland Clinic Florida's `officialDomains` in the institution registry, or split into a second run-id whose A0 probe targets that domain. Out of scope for P102-GOLD execution; recorded as a `GOLD-FIX` follow-up.
+
 
 

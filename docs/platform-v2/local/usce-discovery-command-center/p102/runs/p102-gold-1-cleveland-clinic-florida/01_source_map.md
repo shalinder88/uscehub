@@ -1,0 +1,129 @@
+# Source Map — Cleveland Clinic Florida
+
+Run: p102-gold-1-cleveland-clinic-florida
+schemaVersion: p102-0r-1
+
+## Accepted sources (20)
+
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/research](https://my.clevelandclinic.org/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `2e26cdb4c3bae189aa8697537871f76c7ecf0575fca7744e2415bf12de84b65f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_c7a7ebcae8cd90e0.txt
+- **VOLUNTEER_PAGE** [https://my.clevelandclinic.org/about/community/volunteer](https://my.clevelandclinic.org/about/community/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ae44dbd47cbb112fd3f7db015ca513054cf898b9d69e6b08f9a356f62ae9584f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_7327f8c9d542024b.txt
+- **VISITING_STUDENT_PAGE** [https://my.clevelandclinic.org/departments/elective-program](https://my.clevelandclinic.org/departments/elective-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a0c97fcb41f43e7c595f37f8b67bb77a638d178b6570b69ddc0f15c640e5351d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_6ba00bc5c0a46039.txt
+- **GME_PAGE** [https://my.clevelandclinic.org/departments/graduate-medical-education](https://my.clevelandclinic.org/departments/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c911edac8bf14c6cb1983e5b4499f9324cec14d71f2caf68f496448067c37c7a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_35edc8c900a85c42.txt
+- **VISITING_STUDENT_PAGE** [https://my.clevelandclinic.org/departments/international-medical-education](https://my.clevelandclinic.org/departments/international-medical-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1f3717e2c4289d390dfc9eb286f4cb53f57b343ad0e975b4b8b3c81b25a8d501`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_377f3fe738e00fa7.txt
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research](https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7b68cfa70fdb6b79a75e50e8eb9826047868847576ebec5fbfc964f97be153ef`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_365d43ab96f33e9b.txt
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/about](https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/about)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `2996e95417ff63d4ac5be7d1b79e056cdcf9beb7ca537e861ebf91215c7ba887`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_c3e7cc67827f4fa4.txt
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/poarisk-model](https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/poarisk-model)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `34c133bef0621b7f41ae55e269803ba5ec6a1d896c6b2fd6caa341c8c5a2c412`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_6c9637abbf155a3a.txt
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/risk-quantification](https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/risk-quantification)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ccaa244b6d8a91b735c7169dcc080f746f43d471fc4c25726fea8175a6436b59`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_e22312021da4d409.txt
+- **RESEARCH_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/risk-stratification](https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/risk-stratification)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `631bd938c65c12f2dd670a45e3c6fcdb6190f199f0b3a9e08f7d968c8c241158`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_11fab6ded3d44bf0.txt
+- **RESIDENCY_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/residency](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d52cc86de06a9c1f42a924a02191f2a105b23103fa229fdc582a3a922055fa35`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_526b57ff2ffcb024.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `cb344be0a7f089fe8a8fc13b241bcde8a4763803a8ba2204de4f25b7a34b1bfa`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_849be3888e20c6c9.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/adult-cardiothoracic](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/adult-cardiothoracic)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `ff322c0e07e0c8d1ffd51a8152ed6c7a3aca1ff5bb5e52221edcc33b139bfdd6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_135f35ddb578967f.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/cardiothoracic-critical-care-anesthesiology](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/cardiothoracic-critical-care-anesthesiology)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e6a4ddcd1cf72a0046e3ac8a19c5afb61139d99f558e91d5b59b70f9c345c16a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_6bf3bc83649c47aa.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/critical-care-medicine](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/critical-care-medicine)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `4b2066af358aad7b40f4d925ce4cf7b6d41864f8008a4c45ededa050bc4e1618`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_03ecade0e41f6c09.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/liver-transplant](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/liver-transplant)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `134b3fb5d7e9c8c730d9b21b82494c4c632becf056b9f58e33aee2c0e2f1efaa`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_e574eb9826e7091c.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/neuroanesthesiology](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/neuroanesthesiology)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1d45d95e00a70a86999e846bc9c2ef4d5da851af36987b559eb9c857c5f02790`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_300a71707118c429.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/obstetrics](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/obstetrics)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `3d058571d61e3bf7011a17e60403bc8107e0e98c385602a75afb85b1e8a03b0d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_d61cb48cb62ebb3e.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/pain-medicine](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/pain-medicine)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `169287cd7b1211d7556012dfdf7e51ba25762f932bfd642746452f7bfb3454db`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_a8c3474aaa7e895d.txt
+- **FELLOWSHIP_PAGE** [https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/pediatric](https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/fellowships/pediatric)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `62ad44ef2f0e5a3c4e7967fe755e4e5b945a2f03b2a6743ab1dd87324d515748`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_3bdcb91aeca42648.txt
+
+## Rejected sources (39)
+
+- https://my.clevelandclinic.org/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://my.clevelandclinic.org/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

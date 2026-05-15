@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "institutionId": "inst_cleveland_clinic_florida",
+  "canonicalName": "Cleveland Clinic Florida",
+  "queueId": "p102_gold_deep_benchmark",
+  "startedAt": "2026-05-14T23:32:26.256Z",
+  "completedAt": "2026-05-14T23:32:26.256Z",
+  "status": "COMPLETE",
+  "currentStage": "DONE",
+  "artifactRoot": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida",
+  "repoRunFolder": "/Users/shelly/usmle-platform/docs/platform-v2/local/usce-discovery-command-center/p102/runs/p102-gold-1-cleveland-clinic-florida",
+  "sourceFamilies": [
+    "RESEARCH_PAGE",
+    "VOLUNTEER_PAGE",
+    "VISITING_STUDENT_PAGE",
+    "GME_PAGE",
+    "RESIDENCY_PAGE",
+    "FELLOWSHIP_PAGE"
+  ],
+  "scores": {
+    "searchCompletenessScore": 51,
+    "sourceConfidenceScore": 100,
+    "artifactCompletenessScore": 100,
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 50,
+    "hallucinationRiskScore": 0
+  },
+  "verdict": "PASS_WITH_CAVEATS",
+  "validators": {
+    "validateP102": "NOT_RUN",
+    "validateNoSecrets": "NOT_RUN",
+    "tsc": "NOT_RUN"
+  },
+  "nextAction": "proceed_to_trial_2_p102_1"
+}

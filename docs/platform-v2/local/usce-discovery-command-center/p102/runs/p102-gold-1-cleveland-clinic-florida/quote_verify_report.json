@@ -1,0 +1,937 @@
+{
+  "schemaVersion": "p102-quote-verify-1",
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "total": 185,
+  "countByStatus": {
+    "OK": 183,
+    "NOT_STATED_FIELD_OK": 2
+  },
+  "failureCount": 0,
+  "checks": [
+    {
+      "claimId": "ccf_research_overview_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_scope_conflict_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-006",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-007",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-elective-008",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "ccf-elective-009",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "ccf-scope-conflict-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "scope_conflict_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "s1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c7",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c8",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c10",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c11",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c12",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c13",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c14",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c15",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_006",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_007",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_008",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_009",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_010",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_011",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_fls_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_acta_scope_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_fellowship_offer",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_eligibility_pgy",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_eligibility_prior_fellowships",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_license_requirement",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_application_pathway",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_application_documents",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_ecfmg_signal",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_slots",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_contact",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_scope_conflict",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_fellowship_offer",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_sf_match",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_app_materials",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_residency_req",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_usmle_req",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_ohio_license",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_j1_visa",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_pd_contact",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_pm_contact",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_duration",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_em_combined",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cf_accm_scope_conflict",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_fellowship_offered",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_img_encouraged",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_ecfmg",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_application_package",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_lors",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_usmle",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_salary",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_program_director",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_coordinator",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_duration",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_lta_attending_opportunity",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccff_scope_conflict_ohio_main_campus",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_fellowship_offer",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_duration",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_img_eligible",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_two_fellows",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_application_pathway",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_documents",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_salary",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_funding",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_contact_director",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_contact_coordinator",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_neuroanesth_scope_conflict_location",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_006",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_scope_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf_fl_src57_scope_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-03",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-04",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-05",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-scope-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_59_sc1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-a2-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-a2-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-a2-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-a2-004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_f1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t2_fellows_count",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t1_med_school",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c7",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c8",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c9",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c10",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_51_a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_rotations_list",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_cvicu_capacity",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_research_curriculum",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_educational_offerings",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_conference_funding_signal",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_referring_physician_phone",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_other_fellowships_list",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "cl_ccf_ctica_teaching_opportunity",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-a2-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-a2-02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-a2-03",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-a2-04",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ccf-pain-fellow-a2-05",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    }
+  ]
+}
