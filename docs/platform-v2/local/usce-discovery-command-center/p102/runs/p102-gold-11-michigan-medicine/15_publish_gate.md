@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-gold-11-michigan-medicine
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T04:37:09.904Z
+regatedAt: 2026-05-15T13:37:55.031Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

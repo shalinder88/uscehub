@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-7-uab",
+  "scopeConflicts": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "Source is Heersink School of Medicine landing page (medical-school level); institution is UAB Hospital. Classifier left scope as INSTITUTION_SPECIFIC but content is school-level — campus applicability not explicitly stated."
+    },
+    {
+      "claimId": "sc01_scope",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "IVMS page is owned by UAB Heersink School of Medicine; institution under review is UAB Hospital. Implicit campus link exists (clinical rotations occur at UAB Hospital) but no explicit campusApplicabilityProof for the hospital institution."
+    },
+    {
+      "claimId": "c01_ivms_offer",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "Same Heersink-school source feeds all IVMS PUBLIC_SAFE_USCE claims. Defensible because UAB IVMS clinical rotations occur at UAB Hospital, but record the school-vs-hospital scope note for the regate."
+    }
+  ],
+  "overpromotionDetected": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SCOPE_CONFLICT claim self-describes a medical-school vs hospital mismatch yet was promoted to PUBLIC_SAFE_USCE."
+    },
+    {
+      "claimId": "sc01_scope",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SCOPE_CONFLICT meta-claim incorrectly upgraded to PUBLIC_SAFE_USCE despite documenting school-level scope."
+    },
+    {
+      "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Quote describes outbound UAB students traveling abroad — not a public USCE offer for inbound visitors."
+    }
+  ],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

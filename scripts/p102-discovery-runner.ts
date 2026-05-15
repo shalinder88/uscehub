@@ -57,6 +57,51 @@ const FIXED_PATHS = [
   // one layer below the standard well-known paths.
   '/health-professionals', '/medical-education', '/professional-education',
   '/student-affairs', '/education',
+  // -----------------------------------------------------------------
+  // P102-FIX additions (Gap A). Each path below is derived from a real
+  // P97/P101 candidate URL where TIER_A_PUBLIC_SAFE or TIER_B_CAUTION_SAFE
+  // evidence was previously confirmed. These are narrow, institution-
+  // pattern-derived paths — NOT a generic crawler. See
+  // P102_FIX_POSITIVE_CONTROL_PROMOTION_SPEC.md §6 "Gap A".
+  // -----------------------------------------------------------------
+  // MSK pattern: /hcp-education-training/medical-students/{elective,observership,...}
+  '/hcp-education-training',
+  '/hcp-education-training/medical-students',
+  '/hcp-education-training/medical-students/elective',
+  '/hcp-education-training/medical-students/medical-student-observerships',
+  // Orlando Health pattern: /medical-professionals/graduate-medical-education/clerkship-programs
+  '/medical-professionals',
+  '/medical-professionals/graduate-medical-education',
+  '/medical-professionals/graduate-medical-education/clerkship-programs',
+  // Houston Methodist pattern: /academic-institute/education/medical/medical-student-rotations
+  '/academic-institute',
+  '/academic-institute/education',
+  '/academic-institute/education/medical',
+  '/academic-institute/education/medical/medical-student-rotations',
+  // UAB pattern: /medicine/international/international-programs/international-visiting-medical-students
+  '/medicine/international',
+  '/medicine/international/international-programs',
+  '/medicine/international/international-programs/international-visiting-medical-students',
+  // Stanford pattern: /visiting-clerkships/international
+  '/visiting-clerkships',
+  '/visiting-clerkships/international',
+  // HSS pattern: /education-institute/academic-visitor-program
+  '/education-institute',
+  '/education-institute/academic-visitor-program',
+  // Memorial Healthcare / generic UME hub pattern
+  '/education/undergraduate-medical-education',
+  '/education/undergraduate-medical-education/requirements-for-visiting-students',
+  // Generic deep-path variants observed in P101 across multiple institutions
+  '/education/medical-students',
+  '/education/visiting-medical-students',
+  '/education/medical-student-electives',
+  '/medical-education/medical-student-electives',
+  '/medical-education/visiting-students',
+  '/medical-students/electives',
+  '/medical-students/elective-rotations',
+  '/medical-students/clinical-electives',
+  '/students/visiting-students',
+  '/graduate-medical-education/clerkship-programs',
 ];
 
 interface CliArgs {

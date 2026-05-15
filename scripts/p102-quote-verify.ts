@@ -42,6 +42,8 @@ interface VerifiedClaimOnDisk {
   cleanedTextPath: string;
   sourceScope: string;
   sourceFamily: string;
+  /** P102-FIX: optional content-tagged family from deep model (A1/A2). */
+  deepSourceFamily?: string | null;
   quote: string;
   normalizedField: string | null;
   claimText: string;
@@ -178,13 +180,18 @@ function verifyClaim(claim: VerifiedClaimOnDisk, cleanedText: string | null): Ve
     return { claimId: claim.claimId, status: 'QUOTE_NOT_IN_CLEANED_TEXT', details: `quote (len=${claim.quote.length}) is not a whitespace-normalized substring of cleaned text (len=${cleanedText.length})` };
   }
 
-  // Re-classify visibility.
+  // Re-classify visibility. P102-FIX: pass deepSourceFamily so the
+  // re-classifier reaches the same conclusion as the in-extractor classifier
+  // for claims discovered via JSON_LD / FIXED_PATH / SITEMAP whose content
+  // is a Tier 1 USCE family.
   const reclass = classifyVisibility({
     sourceFamily: claim.sourceFamily,
+    deepSourceFamily: claim.deepSourceFamily ?? null,
     sourceScope: claim.sourceScope,
     matchedLane: mapLane(claim.lane),
     campusApplicabilityProof: null,
     modelReaderConfidence: claim.confidence,
+    quoteIsNotStated: claim.quote === 'NOT_STATED_ON_SOURCE',
   });
 
   if (reclass.visibility !== claim.visibility) {

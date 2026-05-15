@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-gold-9-northwell-staten-island
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T02:24:38.613Z
+regatedAt: 2026-05-15T13:37:54.444Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

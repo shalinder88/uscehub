@@ -355,6 +355,220 @@ test('Model reader HIGH but GME_PAGE source → still FUTURE_LANE_ONLY (family w
   assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
 });
 
+// -------------------- P102-FIX positive-control promotion (test-first) --------------------
+
+console.log('\n--- P102-FIX positive-control promotion ---');
+
+test('P102-FIX-1: MSK-style JSON_LD discovery + ELECTIVE deep family + INST scope + HIGH → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'ELECTIVE',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-2: Orlando-style FIXED_PATH + MEDICAL_EDUCATION deep + INST + HIGH + USCE lane → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'FIXED_PATH',
+    deepSourceFamily: 'MEDICAL_EDUCATION',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-3: GME deep family must NOT promote (lane gate short-circuits before family)', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'GME',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'RESIDENCY_PROGRAM_INFO',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+test('P102-FIX-4: ELECTIVE deep family but HEALTH_SYSTEM_LEVEL scope → HUMAN_REVIEW_REQUIRED (scope wins)', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'ELECTIVE',
+    sourceScope: 'HEALTH_SYSTEM_LEVEL',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
+});
+
+test('P102-FIX-5: ELECTIVE deep + INST + HIGH but NO_PUBLIC_OPPORTUNITY_FOUND lane → HUMAN_REVIEW_REQUIRED', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'ELECTIVE',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'NO_PUBLIC_OPPORTUNITY_FOUND',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
+});
+
+test('P102-FIX-6: deep family absent + JSON_LD source → CAUTION_SAFE (existing behavior, no regression)', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+});
+
+test('P102-FIX-7: deep family CAREERS must NOT promote', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'CAREERS',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'CAREERS_PAGE',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+test('P102-FIX-8: OBSERVERSHIP deep + INST + HIGH + obs lane → PUBLIC_SAFE_USCE (covers MSK observership URL)', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'OBSERVERSHIP',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'IMG_OBSERVERSHIP',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-9: VISITING_STUDENT deep + INST + HIGH → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'FIXED_PATH',
+    deepSourceFamily: 'VISITING_STUDENT',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-10: deep family ELECTIVE + INST + MEDIUM confidence → CAUTION (model confidence still required)', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'JSON_LD',
+    deepSourceFamily: 'ELECTIVE',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'MEDIUM',
+  });
+  assertEqual(r.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+});
+
+test('P102-FIX-11: Orlando-style GME_PAGE source + VISITING_STUDENT deep + USCE lane + DEPARTMENT scope + HIGH → PUBLIC_SAFE_USCE', () => {
+  // Orlando Health hosts its visiting-medical-student clerkship landing page
+  // at /medical-professionals/graduate-medical-education/clerkship-programs.
+  // A0 tags it as GME_PAGE + DEPARTMENT_LEVEL (URL-based conservative
+  // default). The model reads the page and emits VISITING_STUDENT deep
+  // family. Both the FUTURE_LANE short-circuit AND the scope-promotion
+  // gate need to allow this through.
+  const r = classifyVisibility({
+    sourceFamily: 'GME_PAGE',
+    deepSourceFamily: 'VISITING_STUDENT',
+    sourceScope: 'DEPARTMENT_LEVEL',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-12: pure GME claim (sourceFamily=GME_PAGE, deepSourceFamily=GME, RESIDENCY lane) → FUTURE_LANE_ONLY', () => {
+  // Defensive check: a true GME page (both signals agree) must still be
+  // future-lane only. The Gap B bypass only triggers when the deep family
+  // overrides the discovery tag.
+  const r = classifyVisibility({
+    sourceFamily: 'GME_PAGE',
+    deepSourceFamily: 'GME',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'RESIDENCY_PROGRAM_INFO',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'FUTURE_LANE_ONLY');
+});
+
+test('P102-FIX-13: department scope without Tier 1 deep family → not promoted', () => {
+  // DEPARTMENT_LEVEL scope should NOT auto-promote unless deepSourceFamily
+  // is Tier 1. A page that the model didn't tag as Tier 1 stays at CAUTION.
+  const r = classifyVisibility({
+    sourceFamily: 'OBSERVERSHIP_PAGE',
+    sourceScope: 'DEPARTMENT_LEVEL',
+    matchedLane: 'IMG_OBSERVERSHIP',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'CAUTION_SAFE_INTERNAL_REVIEW');
+});
+
+test('P102-FIX-14: department scope WITH Tier 1 deep family + HIGH + USCE lane → PUBLIC_SAFE_USCE', () => {
+  const r = classifyVisibility({
+    sourceFamily: 'OBSERVERSHIP_PAGE',
+    deepSourceFamily: 'OBSERVERSHIP',
+    sourceScope: 'DEPARTMENT_LEVEL',
+    matchedLane: 'IMG_OBSERVERSHIP',
+    modelReaderConfidence: 'HIGH',
+  });
+  assertEqual(r.visibility, 'PUBLIC_SAFE_USCE');
+});
+
+test('P102-FIX-15: NOT_STATED quote MUST NOT promote even with all other gates passing', () => {
+  // BMC's `bmc_ent_subi_duration_missing` is a MISSING_FIELD claim with
+  // quote=NOT_STATED_ON_SOURCE. The model marked it as quote-verified-absent.
+  // The classifier must keep it at HUMAN_REVIEW_REQUIRED.
+  const r = classifyVisibility({
+    sourceFamily: 'OBSERVERSHIP_PAGE',
+    deepSourceFamily: 'SUB_INTERNSHIP',
+    sourceScope: 'INSTITUTION_SPECIFIC',
+    matchedLane: 'VISITING_MEDICAL_STUDENT',
+    modelReaderConfidence: 'HIGH',
+    quoteIsNotStated: true,
+  });
+  assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
+});
+
+// -------------------- P102-FIX USCE_VSM pattern additions (test-first) --------------------
+
+console.log('\n--- P102-FIX VSM pattern additions ---');
+
+function anyVsmPatternMatches(text: string): boolean {
+  return USCE_VSM_PATTERNS.some(p => p.test(text));
+}
+
+test('P102-FIX-VSM-1: "medical student elective" matches', () => {
+  assertTrue(anyVsmPatternMatches('Medical Student Elective Program: How to Apply'), 'medical student elective should match');
+});
+
+test('P102-FIX-VSM-2: "medical student rotation" matches', () => {
+  assertTrue(anyVsmPatternMatches('We offer medical student rotations for visitors.'), 'medical student rotation should match');
+});
+
+test('P102-FIX-VSM-3: "clerkship program" matches', () => {
+  assertTrue(anyVsmPatternMatches('Apply to our clerkship programs.'), 'clerkship program should match');
+});
+
+test('P102-FIX-VSM-4: "international visiting student" matches', () => {
+  assertTrue(anyVsmPatternMatches('Our international visiting student program is open year-round.'), 'international visiting student should match');
+});
+
+test('P102-FIX-VSM-5: bare "elective" does NOT match (too broad)', () => {
+  assertFalse(anyVsmPatternMatches('The fellowship elective is two years.'), 'bare elective in fellowship context should NOT match');
+});
+
+test('P102-FIX-VSM-6: "residency elective" does NOT match (would catch GME)', () => {
+  assertFalse(anyVsmPatternMatches('Our residency elective rotations span twelve months.'), 'residency elective should NOT match (would over-promote GME)');
+});
+
 // -------------------- Negative-strength tests --------------------
 
 console.log('\n--- Negative-evidence strength ---');

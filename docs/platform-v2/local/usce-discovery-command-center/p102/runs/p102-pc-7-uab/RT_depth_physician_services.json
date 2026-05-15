@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-7-uab",
+  "depthPass": "PHYSICIAN_SERVICES",
+  "sourceFamiliesReviewed": [
+    "VISITING_STUDENT_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-7-uab_9",
+      "institutionId": "inst_uab_hospital_al",
+      "runId": "p102-pc-7-uab",
+      "claimType": "FUTURE_LANE_SERVICE",
+      "claimText": "Malpractice Insurance",
+      "normalizedField": "lane.SERVICES.signal",
+      "quote": "If not approved, you will need to purchase UAB’s Health Insurance coverage before starting your course.Note: Travel Policies do not satisfy this requirement.Malpractice InsuranceEvery international visiting medical student is automatically covered for mal-practice insurance of $3 million per aggregate year and $1 million per instance.",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "VISITING_STUDENT_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "physician services content; future-lane only",
+      "lane": "PHYSICIAN_SERVICES",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

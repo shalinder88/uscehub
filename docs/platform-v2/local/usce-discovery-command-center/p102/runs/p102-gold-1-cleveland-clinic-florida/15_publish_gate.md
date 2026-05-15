@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-gold-1-cleveland-clinic-florida
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T00:42:47.463Z
+regatedAt: 2026-05-15T13:37:52.089Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

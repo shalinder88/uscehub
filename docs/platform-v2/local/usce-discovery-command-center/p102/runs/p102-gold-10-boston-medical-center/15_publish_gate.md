@@ -1,16 +1,16 @@
 # Publish Gate (A3) — p102-gold-10-boston-medical-center
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T04:15:18.554Z
+regatedAt: 2026-05-15T13:37:54.746Z
 
 **A3 read only run-folder files. No network. No Agent.**
 
 - Verdict: PASS_WITH_CAVEATS
-- Public safe: false
+- Public safe: true
 - Future lane value: HIGH
-- PUBLIC_SAFE_USCE claims: 0
-- CAUTION_SAFE_INTERNAL_REVIEW claims: 13
-- FUTURE_LANE_ONLY claims: 218
+- PUBLIC_SAFE_USCE claims: 7
+- CAUTION_SAFE_INTERNAL_REVIEW claims: 8
+- FUTURE_LANE_ONLY claims: 214
 - networkUsed: false
 - agentUsed: false
 
@@ -36,4 +36,4 @@ _(none)_
 _(none)_
 
 ## Final recommendation
-Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).
+Public-safe claims emitted; manual review before publish.

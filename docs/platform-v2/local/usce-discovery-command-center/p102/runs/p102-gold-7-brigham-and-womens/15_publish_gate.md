@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-gold-7-brigham-and-womens
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T01:45:36.044Z
+regatedAt: 2026-05-15T13:37:53.828Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

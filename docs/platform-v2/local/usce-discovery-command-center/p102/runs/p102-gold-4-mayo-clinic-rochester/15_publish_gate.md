@@ -1,15 +1,15 @@
 # Publish Gate (A3) — p102-gold-4-mayo-clinic-rochester
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T01:36:12.335Z
+regatedAt: 2026-05-15T13:37:52.959Z
 
 **A3 read only run-folder files. No network. No Agent.**
 
 - Verdict: PASS_WITH_CAVEATS
-- Public safe: false
+- Public safe: true
 - Future lane value: MEDIUM
-- PUBLIC_SAFE_USCE claims: 0
-- CAUTION_SAFE_INTERNAL_REVIEW claims: 7
+- PUBLIC_SAFE_USCE claims: 1
+- CAUTION_SAFE_INTERNAL_REVIEW claims: 6
 - FUTURE_LANE_ONLY claims: 14
 - networkUsed: false
 - agentUsed: false
@@ -36,4 +36,4 @@ _(none)_
 _(none)_
 
 ## Final recommendation
-Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).
+Public-safe claims emitted; manual review before publish.

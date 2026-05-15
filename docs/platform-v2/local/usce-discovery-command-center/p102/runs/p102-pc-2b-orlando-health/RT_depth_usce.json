@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-2b-orlando-health",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "JSON_LD"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [
+    "https://orlandohealth.com/medical-professionals: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source."
+  ],
+  "unresolveds": [
+    "https://orlandohealth.com/medical-professionals: source scope HEALTH_SYSTEM_LEVEL cannot prove Orlando Health Orlando Regional Medical Center-specific availability"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-2b-orlando-health_5",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "runId": "p102-pc-2b-orlando-health",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "Away Rotation",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "For Medical Professionals - Orlando Health - One of Central Florida's Most Comprehensive Healthcare NetworksSkip to main contentAppointmentsMyChartER Wait TimesMedical ProfessionalsMedical ProfessionalsOverviewAdvanced Practice Provider FellowshipsOverviewPediatric Primary Care FellowshipOverviewBenefitsHow To ApplyOur TeamProgram OverviewProgram RequirementsCredentialing Verification OfficeOverviewFAQsEducationOverviewContinuing Medical EducationGraduate Medical EducationRegistered Nurse Reside",
+      "sourceUrl": "https://orlandohealth.com/medical-professionals",
+      "sourceHash": "ebe8b7cb7a8d6244bd4c56a97f0f25afadafb92f48b0f995af1aed37a9fbdcb0",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2b-orlando-health/cleaned_text/medical-professionals.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "JSON_LD",
+      "confidence": "MEDIUM",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "source scope HEALTH_SYSTEM_LEVEL cannot prove Orlando Health Orlando Regional Medical Center-specific availability",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

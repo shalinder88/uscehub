@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-2b-orlando-health",
+  "depthPass": "PHYSICIAN_SERVICES",
+  "sourceFamiliesReviewed": [
+    "GME_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-2b-orlando-health_18",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "runId": "p102-pc-2b-orlando-health",
+      "claimType": "FUTURE_LANE_SERVICE",
+      "claimText": "malpractice insurance",
+      "normalizedField": "lane.SERVICES.signal",
+      "quote": "Students enrolled at LCME accredited Canadian institutions or international medical schools may find application materials as noted below.Orlando Health will charge an application/processing fee of $50.00 per approved rotation.The application must include a copy of the CV, transcripts, school&rsquo;s medical malpractice insurance ($1,000,000 occurrence / $3,000,000 annual aggregate) and a copy of current personal health insurance.",
+      "sourceUrl": "https://orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "sourceHash": "0cb16069970e8385a7b7132cec987c0bbab76c7ae3d96248098d5bfda7cd558c",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2b-orlando-health/cleaned_text/medical-professionals_graduate-medical-education_clerkship-programs.txt",
+      "quoteVerified": true,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "sourceFamily": "GME_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "physician services content; future-lane only",
+      "lane": "PHYSICIAN_SERVICES",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

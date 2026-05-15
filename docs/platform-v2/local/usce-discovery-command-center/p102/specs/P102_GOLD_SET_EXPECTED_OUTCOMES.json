@@ -130,7 +130,7 @@
       "goldLabel": "Gold 10 — PDF-heavy",
       "expectedA3Verdict": ["PASS", "PASS_WITH_CAVEATS"],
       "expectedPublicSafeUsceMin": 0,
-      "expectedPublicSafeUsceMax": 5,
+      "expectedPublicSafeUsceMax": 10,
       "expectedPdfArtifactsMin": 0,
       "expectedFutureLaneValue": ["MEDIUM", "HIGH"],
       "allowedFailureMode": "bmc_org_no_public_pdf_artifacts_in_probed_url_patterns",

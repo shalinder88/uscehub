@@ -37,12 +37,31 @@ interface ClaimRecord {
   quoteVerified: boolean;
   sourceScope: string;
   sourceFamily: string;
+  /** P102-FIX: optional content-tagged family from deep model (A1/A2). */
+  deepSourceFamily?: string | null;
   confidence: string;
   visibility: string;
   lane: string;
   notPublicReason: string | null;
   campusApplicabilityProof: string | null;
 }
+
+/**
+ * P102-FIX: Tier 1 deep content families. Mirrors the set in
+ * scripts/p102-extraction-lib.ts:TIER_1_DEEP_FAMILIES. Used by the regate to
+ * recognize when a future-lane sourceFamily (GME_PAGE etc.) is legitimately
+ * carrying Tier 1 USCE content per the model's content tag — in which case
+ * the "PUBLIC_SAFE_USCE from future-lane source family" scope conflict does
+ * NOT fire.
+ */
+const TIER_1_DEEP_FAMILIES = new Set([
+  'ELECTIVE', 'CLINICAL_ELECTIVE',
+  'VISITING_STUDENT', 'VISITING_MEDICAL_STUDENT',
+  'OBSERVERSHIP', 'EXTERNSHIP',
+  'AWAY_ROTATION', 'SUB_INTERNSHIP', 'ACTING_INTERNSHIP',
+  'MEDICAL_STUDENT_ROTATION', 'UNDERGRADUATE_MEDICAL_EDUCATION',
+  'INTERNATIONAL_VISITING_STUDENT', 'MEDICAL_EDUCATION',
+]);
 
 interface NegativeClaim {
   claimId: string;
@@ -139,7 +158,13 @@ function regate(runFolder: string): RegateResult {
         if (isNotStated) {
           quoteVerificationFailures.push(`${c.claimId}: PUBLIC_SAFE_USCE with NOT_STATED_ON_SOURCE`);
         }
-        if (FUTURE_LANE_SOURCE_FAMILIES.has(c.sourceFamily)) {
+        // P102-FIX: future-lane source family is OK if the model's content
+        // tag (deepSourceFamily) is a Tier 1 USCE family. Discovery method
+        // (URL containing /graduate-medical-education/ → GME_PAGE) is not a
+        // verdict; the model reading the page IS. Mirrors the classifier
+        // override in scripts/p102-extraction-lib.ts.
+        const deepIsTier1 = !!c.deepSourceFamily && TIER_1_DEEP_FAMILIES.has(c.deepSourceFamily);
+        if (FUTURE_LANE_SOURCE_FAMILIES.has(c.sourceFamily) && !deepIsTier1) {
           sourceScopeConflicts.push(`${c.claimId}: PUBLIC_SAFE_USCE from future-lane source family ${c.sourceFamily}`);
         }
         if (SYSTEM_OR_SCHOOL_SCOPES.has(c.sourceScope) && !c.campusApplicabilityProof) {

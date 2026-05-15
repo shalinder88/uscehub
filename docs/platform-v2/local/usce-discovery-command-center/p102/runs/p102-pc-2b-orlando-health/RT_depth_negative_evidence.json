@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-2b-orlando-health",
+  "depthPass": "NEGATIVE_EVIDENCE",
+  "negativeClaims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "negclaim_p102-pc-2b-orlando-health_14",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "runId": "p102-pc-2b-orlando-health",
+      "negativeEvidenceType": "POLICY_PAGE_RESTRICTS",
+      "quote": "Students enrolled at LCME accredited Canadian institutions or international medical schools may find application materials as noted below.Orlando Health will charge an application/processing fee of $50.00 per approved rotation.The application must include a copy of the CV, transcripts, school&rsquo;s medical malpractice insurance ($1,000,000 occurrence / $3,000,000 annual aggregate) and a copy of current personal health insurance.",
+      "sourceUrl": "https://orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "sourceHash": "0cb16069970e8385a7b7132cec987c0bbab76c7ae3d96248098d5bfda7cd558c",
+      "quoteVerified": true,
+      "exactStatement": "Students enrolled at LCME",
+      "negativeEvidenceStrength": "MEDIUM",
+      "publicSafeNegativeClaim": false,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "limitations": "restriction language; not absolute denial",
+      "nextAction": "context_for_eligibility_field"
+    }
+  ],
+  "unresolveds": []
+}

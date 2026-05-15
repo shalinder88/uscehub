@@ -837,8 +837,19 @@ function verifyAndReclassify(args: {
     // institution context (NOT the model's emission). This prevents a
     // system-domain page from being upgraded to INSTITUTION_SPECIFIC by
     // model suggestion alone — see P102-0G AdventHealth Redmond bug.
+    //
+    // P102-FIX: DEPARTMENT_LEVEL is set by the A0 classifier as a
+    // "conservative default" for GME/RESIDENCY/FELLOWSHIP family URLs. It is
+    // meant to be a "we don't know yet — refine later" placeholder, NOT a
+    // claim that the content is department-specific. When the source URL is
+    // on the institution's official host (or a subdomain of it), re-infer
+    // the scope via the same logic UNKNOWN_SCOPE uses. This unblocks Tier 1
+    // content hosted under a deep URL path like
+    // `/medical-professionals/graduate-medical-education/clerkship-programs`
+    // (Orlando Health's institution-wide clerkship landing page). It does
+    // NOT upgrade off-host pages (system/school subdomains keep their scope).
     let scopeForClassifier = src.sourceScope;
-    if (scopeForClassifier === 'UNKNOWN_SCOPE') {
+    if (scopeForClassifier === 'UNKNOWN_SCOPE' || scopeForClassifier === 'DEPARTMENT_LEVEL') {
       if (args.institutionContext) {
         scopeForClassifier = inferSourceScope(
           { sourceDomain: src.sourceDomain, sourceScope: 'UNKNOWN_SCOPE', sourceFamily: src.sourceFamily, sourceUrl: src.sourceUrl },
@@ -853,10 +864,18 @@ function verifyAndReclassify(args: {
 
     const result = classifyVisibility({
       sourceFamily: src.sourceFamily,
+      // P102-FIX: pass model-emitted content tag so the classifier can
+      // promote pages discovered via JSON_LD / SITEMAP / FIXED_PATH when
+      // the actual content is a Tier 1 USCE family (ELECTIVE,
+      // OBSERVERSHIP, VISITING_STUDENT, etc.). See P102_FIX_POSITIVE_
+      // CONTROL_PROMOTION_SPEC.md.
+      deepSourceFamily: (c as unknown as { deepSourceFamily?: string | null }).deepSourceFamily ?? null,
       sourceScope: scopeForClassifier,
       matchedLane,
       campusApplicabilityProof: null,
       modelReaderConfidence: c.confidence,
+      // P102-FIX: never auto-promote MISSING_FIELD/NOT_STATED absence markers.
+      quoteIsNotStated: c.quote === 'NOT_STATED_ON_SOURCE',
     });
 
     verified.push({

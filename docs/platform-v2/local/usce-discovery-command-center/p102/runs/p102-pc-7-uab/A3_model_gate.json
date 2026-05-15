@@ -1,0 +1,165 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HUMAN_REVIEW_REQUIRED",
+      "reason": "claimType is SCOPE_CONFLICT and the claimText itself states the source is Heersink School of Medicine (medical-school scope) and not UAB Hospital — internally contradictory to be PUBLIC_SAFE_USCE."
+    },
+    {
+      "claimId": "sc01_scope",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HUMAN_REVIEW_REQUIRED",
+      "reason": "claimType is SCOPE_CONFLICT documenting medical-school vs hospital scope mismatch; cannot be PUBLIC_SAFE_USCE."
+    },
+    {
+      "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HIDDEN_REJECTED",
+      "reason": "Quote 'Are you a current medical student at UAB looking to travel abroad...' is about OUTBOUND UAB students, not inbound USCE visitors. Not a USCE offer at all; classified MISSING_FIELD lane bidirectional."
+    },
+    {
+      "claimId": "c01_ivms_offer",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "PUBLIC_SAFE_USCE",
+      "reason": "IVMS source is uab.edu/medicine/international (Heersink School of Medicine) attributed to UAB Hospital. Strong implicit campus link (IVMS clinical rotations occur at UAB Hospital) — retain PUBLIC_SAFE_USCE but record scope note. No downgrade applied."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "c_scope_404",
+      "duplicateClaimId": "c_scope_404",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c1",
+      "duplicateClaimId": "c1",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_28_c3",
+      "duplicateClaimId": "src_31_a2_c1",
+      "duplicateReason": "same_quote_different_claimId"
+    }
+  ],
+  "institutionId": "inst_uab_hospital_al",
+  "institutionName": "UAB Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 61,
+    "publicSafeUSCECount": 30,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 9,
+    "futureLaneOnlyCount": 14,
+    "humanReviewRequiredCount": 14,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SCOPE_CONFLICT claim self-describes a medical-school vs hospital mismatch yet was promoted to PUBLIC_SAFE_USCE."
+    },
+    {
+      "claimId": "sc01_scope",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "SCOPE_CONFLICT meta-claim incorrectly upgraded to PUBLIC_SAFE_USCE despite documenting school-level scope."
+    },
+    {
+      "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Quote describes outbound UAB students traveling abroad — not a public USCE offer for inbound visitors."
+    }
+  ],
+  "phase": "A3",
+  "publicSafetyFailures": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_medical_school",
+      "explanation": "Claim is itself a SCOPE_CONFLICT meta-claim — the claimText states the source is Heersink School of Medicine, not UAB Hospital. Promoting a scope-conflict claim to PUBLIC_SAFE_USCE is contradictory.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "sc01_scope",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_medical_school",
+      "explanation": "SCOPE_CONFLICT meta-claim documenting medical-school scope (Heersink) vs UAB Hospital institution. Should not be PUBLIC_SAFE_USCE.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "unsupported_publicSafeUSCE",
+      "explanation": "Quote ('Are you a current medical student at UAB looking to travel abroad…') is addressed to UAB students going outbound, not inbound IMG/USCE applicants. Quote does not support a public USCE offer to outside visitors.",
+      "recommendedDisposition": "downgrade_to_HIDDEN_REJECTED"
+    }
+  ],
+  "runId": "p102-pc-7-uab",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "Source is Heersink School of Medicine landing page (medical-school level); institution is UAB Hospital. Classifier left scope as INSTITUTION_SPECIFIC but content is school-level — campus applicability not explicitly stated."
+    },
+    {
+      "claimId": "sc01_scope",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "IVMS page is owned by UAB Heersink School of Medicine; institution under review is UAB Hospital. Implicit campus link exists (clinical rotations occur at UAB Hospital) but no explicit campusApplicabilityProof for the hospital institution."
+    },
+    {
+      "claimId": "c01_ivms_offer",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_uab_hospital_al",
+      "explanation": "Same Heersink-school source feeds all IVMS PUBLIC_SAFE_USCE claims. Defensible because UAB IVMS clinical rotations occur at UAB Hospital, but record the school-vs-hospital scope note for the regate."
+    }
+  ],
+  "tier1CoverageVerdict": "PASS_COMPLETE",
+  "tier2CoverageVerdict": "PASS_PARTIAL",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unfollowedSignals": [
+    "International Visiting Medical Observers (referenced in src_52 nav, no claim extracted)",
+    "International Visiting Scholar Observership (referenced in src_52 nav, no dedicated page claim)"
+  ],
+  "unresolveds": [
+    "Duplicate claimIds (c_scope_404, c1) present in merged ledger — A4 dedupe required.",
+    "Multiple 404 sources captured as SCOPE_CONFLICT/MISSING_FIELD; consider pruning to avoid noise.",
+    "Campus applicability for UAB Hospital vs Heersink School of Medicine should be explicitly proved before regate publish."
+  ],
+  "verdict": "FAIL_PUBLIC_SAFETY",
+  "verdictSummary": "Three PUBLIC_SAFE_USCE classifications are unsafe: two SCOPE_CONFLICT meta-claims (c_uab_scope_conflict, sc01_scope) were self-contradictorily promoted, and c_uab_intl_med_ed_outbound_uab_students rests on a quote about outbound UAB students, not inbound USCE visitors. The IVMS program itself (c01–c18, n01, a2_*) is genuinely quote-backed and source-specific; retain after the three failures are corrected and duplicate claimIds are deduped.",
+  "deepRecoveryTasks": [
+    {
+      "taskId": "t1_campus_applicability",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "IVMS source is Heersink School of Medicine; need explicit proof the clinical rotations occur at UAB Hospital campus.",
+      "suggestedNarrowAction": "Fetch IVMS catalogue / rotation host page and extract a quote naming UAB Hospital as the clinical site."
+    },
+    {
+      "taskId": "t2_observer_program_pages",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "src_52 navigation references 'International Visiting Medical Observers' and 'International Visiting Scholar Observership' but no dedicated page was captured.",
+      "suggestedNarrowAction": "Resolve the linked observership sub-pages under uab.edu/medicine/international/international-programs/ and extract eligibility, fee, duration."
+    }
+  ]
+}

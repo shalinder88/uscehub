@@ -1,0 +1,2805 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://uab.edu/observership",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is entirely a UAB 404 error page with site chrome, cookie banner, and nondiscrimination boilerplate; no observership, visiting student, GME, or career content exists on this captured source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page despite the URL-based OBSERVERSHIP deepFamily hint.",
+          "Verify A3 keeps the 404 SCOPE_CONFLICT claim at HUMAN_REVIEW_REQUIRED and does not promote any USCE content from this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://uab.edu/observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error with no observership, visiting student, elective, or career content; no claims of any tier can be extracted from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim was emitted from this 404 page.",
+          "Verify A3 treats this source as NO_PUBLIC_OPPORTUNITY_FOUND (absence, not explicit refusal) since the URL returned a 404 rather than an explicit negative refusal sentence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://uab.edu/observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a UAB 404 error page; no observership, visiting student, residency, fellowship, or career content present. The actual UAB Hospital observership/visiting-student landing page must be located elsewhere (likely heersink-medicine.uab.edu or uab.edu/medicine)."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page; both A1 claims should remain SCOPE_CONFLICT/MISSING_FIELD with HUMAN_REVIEW_REQUIRED visibility.",
+          "Verify the source-family pre-classification (OBSERVERSHIP_PAGE based on URL slug) is not used to upgrade visibility when actual page content is a 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://uab.edu/clinical-observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no observership, visiting student, GME, or careers content; canonical UAB clinical observer URL still unknown."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page since cleaned text contains no observership content.",
+          "Verify A1's SCOPE_CONFLICT claim remains HUMAN_REVIEW_REQUIRED and is not promoted to a negative-evidence refusal (absence is not refusal)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://uab.edu/visiting-student",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page; no visiting student, observership, elective, VSLO, or program content is present to extract claims from.",
+          "No contact, coordinator, application pathway, or eligibility statement appears on the 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims were emitted from this 404 page (sourceUrl https://uab.edu/visiting-student).",
+          "Verify the canonical UAB Heersink School of Medicine visiting student / VSLO URL is captured in a separate source rather than relying on this dead URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://uab.edu/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with no substantive visiting-student, observership, or program content; no Tier 1/2/3 claims can be extracted from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or other affirmative claim was emitted from this 404 error page source",
+          "Verify the orchestrator routes A3 to seek the correct UAB Heersink School of Medicine visiting-student URL (medicine.uab.edu) rather than uab.edu/visiting-students"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://uab.edu/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no USCE, GME, residency, fellowship, or careers content; nothing actionable to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 page and that the source is excluded from any PUBLIC_SAFE_USCE attribution to UAB Hospital."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://uab.edu/international-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 'Page not found' error page with no USCE, observership, visiting student, residency, fellowship, careers, or contact content — no extractable claims of any tier."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE or future-lane claims were emitted from this 404 source; the URL uab.edu/international-students is dead and should be replaced in the source queue."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://uab.edu/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no electives, observership, visiting student, or USCE content; only generic UAB navigation, cookie policy, and nondiscrimination statement are present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page",
+          "Verify A4 retargets to medicine.uab.edu / Heersink School of Medicine visiting student page rather than the dead uab.edu/electives URL"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://uab.edu/away-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no substantive USCE, visiting student, observership, residency, fellowship, or career content; correct away-rotation URL (likely under uab.edu/medicine) was not captured."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Flag source for re-capture at the correct UAB School of Medicine visiting student / away rotation URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://uab.edu/clinical-elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error template; no clinical elective, observership, GME, or careers content is recoverable from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify the SCOPE_CONFLICT claim c1 retains HUMAN_REVIEW_REQUIRED visibility, not public-safe."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://uab.edu/clinical-rotation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no substantive clinical-rotation, observership, elective, visiting student, residency, fellowship, or careers content; only site chrome, cookie boilerplate, and nondiscrimination statement are present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim was emitted from this 404 page; cleaned text contains only error-page boilerplate.",
+          "Re-discover the correct UAB visiting student / observership / elective URL since /clinical-rotation returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://uab.edu/sub-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a UAB 404 error page with no sub-internship content; no observership/visiting student/elective information present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was generated from this 404 page; source should be marked as dead/invalid URL for this institution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://uab.edu/subinternship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page; no sub-internship, visiting student, observership, or eligibility content present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page; source should resolve to NO_PUBLIC_OPPORTUNITY_FOUND or be excluded.",
+          "Locate UAB School of Medicine canonical visiting student / sub-internship URL (likely under uab.edu/medicine/) as the /subinternship path 404s."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://uab.edu/acting-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error page with no acting internship, sub-internship, visiting student, or USCE content; canonical UAB SOM visiting student page location is unknown from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE or otherwise) are emitted from this 404 page; the source should be marked as dead-link / NO_PUBLIC_OPPORTUNITY_FOUND with low confidence rather than a NEGATIVE refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://uab.edu/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Opportunities for Undergraduates' and 'Student Research' but does not specify whether visiting/external medical students or only UAB-affiliated students are eligible.",
+          "Page lists 'Clinical Trials' and 'Find Clinical Trials' navigation items but does not state any clinical experience, observership, or rotation pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this university-wide Office of Research landing page (UNKNOWN_SCOPE, no USCE content)",
+          "Verify the page lacks any explicit refusal or negative-evidence sentence before any NEGATIVE claim is created"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://uab.edu/student-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with only site chrome (navigation, cookie banner, nondiscrimination statement); no substantive USCE, research, GME, or careers content exists to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind are emitted from this 404 source; the captured /student-research URL must be re-discovered or marked unresolvable."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://uab.edu/shadow",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error from uab.edu; no shadowing content present — cannot confirm or deny existence of a UAB shadowing/observership program from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page — the cleaned text contains only error/navigation/cookie boilerplate.",
+          "Verify sourceFamily for /shadow 404 — RESEARCH_PAGE classification appears incorrect; should likely be ERROR_PAGE or UNKNOWN."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://uab.edu/shadowing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no shadowing, observership, USCE, or future-lane content; canonical UAB shadowing/observership URL not present in this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 error page capture of https://uab.edu/shadowing.",
+          "Trigger re-discovery of a valid UAB shadowing/observership URL since the captured page returned HTTP 404 with no substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://uab.edu/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with no substantive content about volunteering, observership, or USCE at UAB Hospital."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims are emitted from this 404 page; ensure source is excluded from publishable output."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://uab.edu/volunteering",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error; no volunteer, observership, USCE, GME, or careers content exists at this URL to extract claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attributed to uab.edu/volunteering since the cleaned text is a 404 page with no opportunity content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://uab.edu/img",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source returns a 404 'Page not found' error — no observership, IMG, USCE, GME, or careers content is present on this URL.",
+          "Cleaned text is entirely UAB site chrome (navigation, cookie banner, nondiscrimination statement) with no substantive program information."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any positive claim is emitted from the uab.edu/img 404 page.",
+          "Verify A3 marks this source as NO_PUBLIC_OPPORTUNITY_FOUND (not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY) since a 404 is absence of content, not an explicit refusal.",
+          "Recommend re-capture from medicine.uab.edu for any actual UAB IMG/observership program content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://uab.edu/international-medical-graduates",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source URL returned a 404 error page; no IMG, observership, visiting student, GME, or careers content present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind are emitted from this 404 source; verify the source is excluded from PUBLIC_SAFE_USCE consideration."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://uab.edu/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 page with no GME, residency, fellowship, observership, visiting student, careers, or contact content; URL needs to be re-discovered at the correct UAB GME path."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page across A1/A2/A3.",
+          "Flag source as 404/dead and recommend re-capture at uab.edu/medicine/gme or equivalent."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://uab.edu/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Application Requirements' and 'Salary & Benefits' sub-pages but does not state the actual requirements (ECFMG/visa/IMG) or stipend amounts on this hub",
+          "Campuses navigation lists Tuscaloosa, but the GME trainee-count sentence only enumerates Birmingham, Montgomery, and Huntsville — Tuscaloosa's GME inclusion is unresolved"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this GME hub page (uab.edu/gme is a GME_PAGE family — FUTURE_LANE_ONLY)",
+          "Verify campus-applicability proof for Birmingham/Montgomery/Huntsville is preserved on uab-gme-1 quote"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "uab-gme-a2-1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://uab.edu/gme",
+              "sourceHash": "73e3c1c9fa20961460cce726768307a0c1ba0359100a61395b81ce6cd9f0cd7f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "health disparities and lack of health care access in rural Alabama also give trainees across the state opportunities to treat patients with chronic illnesses.",
+              "claimText": "UAB GME describes rural-Alabama training exposure for residents and fellows as part of the program experience.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Statement describes a trainee clinical-environment selling point on the GME hub — Tier 2 trainee-experience signal.",
+              "whyA1Missed": "A1 captured headline trainee counts but skipped the rural-Alabama trainee-environment sentence in the body paragraph."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "uab-gme-1",
+            "campusNameMentionedInQuote": "Birmingham, Montgomery, Huntsville",
+            "proofQuote": "More than 1,200 interns, residents and fellows train in every medical specialty at UAB in Birmingham, at our regional campuses in Montgomery and Huntsville."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://uab.edu/residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page; no residency, fellowship, observership, visiting student, careers, or contact content present to extract.",
+          "Page lists college/school navigation including 'Medicine' but does not link or describe residency program inventory."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page",
+          "Verify A3 treats this source as content-void (HTTP 404 surrogate) and excludes it from claim counts"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://uab.edu/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Fellowships to Consider' and 'Fellowship Recipients' navigation items but the substantive list is not on this index page; child pages might warrant separate scope tagging if ever re-crawled.",
+          "Contact info present (fellowships@uab.edu, (205) 996-4270, 420 Lister Hill Library) is for the academic-scholarship advising office, not a medical/GME coordinator — should not be emitted as a USCE CONTACT_EMAIL/CONTACT_PHONE."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE_FELLOWSHIP claim is emitted from https://uab.edu/fellowship — the URL token 'fellowship' is misleading; content is undergraduate Fulbright/Goldwater/Rhodes/Marshall advising.",
+          "Verify the URL-based FELLOWSHIP deep-family hint is overridden to UNKNOWN_RELEVANT/NOT_APPLICABLE for this source and that the run-level family classifier records the override.",
+          "Ensure the fellowships@uab.edu email and (205) 996-4270 phone are NOT promoted to CONTACT_EMAIL/CONTACT_PHONE USCE claims downstream."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_scope_1",
+            "scopeIssue": "url_family_hint_mismatch_with_content",
+            "explanation": "URL token 'fellowship' triggered FELLOWSHIP_PAGE / TIER_2 hint, but cleaned text shows this is UAB's undergraduate Nationally Competitive Fellowships advising office (Fulbright, Goldwater, Rhodes, Marshall) — not a clinical/GME fellowship program. A1's c_scope_1 captures this correctly."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://uab.edu/careers",
+      "output": {
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "runId": "p102-pc-7-uab",
+        "schemaVersion": "p102-cli-0e-1",
+        "phase": "A2",
+        "networkUsed": false,
+        "agentUsed": false,
+        "newClaims": [
+          {
+            "claimId": "src_28_a2_n1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://uab.edu/careers",
+            "sourceHash": "20c870f061e7be3513d3a0c32f589b46be309d60a29487cfe6db2b130b57e6b3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Affirmative Action and EEOC PoliciesUAB is an Equal Opportunity/Affirmative Action EmployerLearn More",
+            "claimText": "UAB declares itself an Equal Opportunity/Affirmative Action Employer with EEOC policies on the careers landing page.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "EEO/AA employer attestation is a Tier 3 hiring/employment policy signal pertinent to physicians and staff applying.",
+            "whyA1Missed": "A1 focused on job-category list and contact info; missed the explicit EEO/AA employer policy block lower in the page.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "src_28_a2_n2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://uab.edu/careers",
+            "sourceHash": "20c870f061e7be3513d3a0c32f589b46be309d60a29487cfe6db2b130b57e6b3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "ResourcesHR Connect Portal\nHR Systems\nHR Sharepoint\neLAS\nAlternate Work Options Program\nHR Monthly\nWork/Life Balance\nLeaving UAB",
+            "claimText": "UAB HR resources list includes Alternate Work Options Program and Work/Life Balance offerings for employees.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Alternate Work Options and Work/Life Balance programs are Tier 3 employee benefit/services signals supporting attendings/faculty/staff.",
+            "whyA1Missed": "A1 stopped at the executive search and talent acquisition blocks and did not enumerate the Resources sidebar items.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "src_28_c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "URL uab.edu/careers is the university-wide HR landing page, not UAB Hospital-specific. Claim text generalizes 'UAB' job categories; sourceScope is CAREERS_PORTAL covering whole institution rather than the named institution UAB Hospital."
+          },
+          {
+            "a1ClaimId": "src_28_c4",
+            "refinementReason": "quote_too_general",
+            "explanation": "'Talent Acquisition' line is a generic HR support statement, not a physician/faculty-specific recruitment claim. Confidence should remain LOW for hospital-level inference."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not specify whether UAB Medicine Careers link includes physician faculty or only nursing/staff jobs.",
+          "No language regarding visa sponsorship (J-1, H-1B) for physician or faculty hires.",
+          "No salary, benefits, or compensation figures stated on this landing page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this CAREERS_PORTAL source.",
+          "Verify A1 claims tagged to UAB Hospital institution but sourced from university-wide uab.edu/careers are flagged as scope-mismatched at health-system/university level.",
+          "Check that absence of observership/visiting-student language did not trigger any NEGATIVE refusal claim — this page is silent, not refusing."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "src_28_a2_n1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://uab.edu/careers",
+              "sourceHash": "20c870f061e7be3513d3a0c32f589b46be309d60a29487cfe6db2b130b57e6b3",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Affirmative Action and EEOC PoliciesUAB is an Equal Opportunity/Affirmative Action EmployerLearn More",
+              "claimText": "UAB declares itself an Equal Opportunity/Affirmative Action Employer with EEOC policies on the careers landing page.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "EEO/AA employer attestation is a Tier 3 employment-policy signal for applicants including physicians/faculty/staff.",
+              "whyA1Missed": "A1 focused on the visible job-category list and HR phone; skipped the EEOC/AA policy block.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "src_28_a2_n2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://uab.edu/careers",
+              "sourceHash": "20c870f061e7be3513d3a0c32f589b46be309d60a29487cfe6db2b130b57e6b3",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "ResourcesHR Connect Portal\nHR Systems\nHR Sharepoint\neLAS\nAlternate Work Options Program\nHR Monthly\nWork/Life Balance\nLeaving UAB",
+              "claimText": "UAB HR resources list includes Alternate Work Options Program and Work/Life Balance offerings for employees.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Alternate Work Options and Work/Life Balance programs are Tier 3 employee benefit signals.",
+              "whyA1Missed": "A1 did not enumerate the Resources sidebar items.",
+              "limitations": null,
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_28_c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "uab.edu/careers is the University of Alabama at Birmingham institution-wide HR portal, not UAB Hospital-specific. Claims attached here describe 'UAB' careers generically and may overstate applicability to the named institution UAB Hospital."
+          },
+          {
+            "claimId": "src_28_c2",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Executive Candidate Search refers to UAB institutional leadership recruitment, not specifically UAB Hospital physician executive roles."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://uab.edu/physician-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source returned 404 Page Not Found; no physician careers content available to extract.",
+          "Canonical UAB Medicine physician careers URL not stated on this 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claims were emitted from this 404 error page.",
+          "Verify A3 treats this source as NO_PUBLIC_OPPORTUNITY_FOUND due to 404 rather than explicit refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://uab.edu/provider-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error - no provider careers content present to extract any claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this 404 source.",
+          "Suggest replacement URL likely on uabmedicine.org for UAB provider careers."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://uab.edu/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "src_31_a2_c1",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://uab.edu/benefits",
+            "sourceHash": "f3343fe07c6823cf0c067049810660457fa4d70eccaf26cef1219da00e7a2d29",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/benefits.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Human Resources(205) 934-5321Contact Us",
+            "normalizedField": "hr_contact_phone",
+            "claimText": "UAB Human Resources contact phone is (205) 934-5321.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "University-wide HR phone, not hospital/medical-staff-specific.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "HR benefits-page contact phone is a Tier 3 employee/career resource.",
+            "whyA1Missed": "A1 focused on benefits prose and skipped the inline contact phone number near the page footer."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "src_31_s1",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Page is uab.edu (University of Alabama at Birmingham HR), not UAB Hospital / UAB Medicine. Scope should be MEDICAL_SCHOOL_LEVEL or HEALTH_SYSTEM_LEVEL rather than UNKNOWN_SCOPE; cannot attribute to UAB Hospital without campus-applicability proof."
+          },
+          {
+            "a1ClaimId": "src_31_c1",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Quote describes university-wide employee benefits on uab.edu; not UAB Hospital-specific. Scope should reflect university/medical-school level, not the hospital institution targeted by this run."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'Retirement', 'UAB for Me Portal', 'Holidays & Time Off', and 'Employee Perks & Resources' as link labels but does not state their content in the cleaned text.",
+          "No mention of physician-specific, faculty-physician, or UAB Medicine medical-staff benefits — applicability to UAB Hospital physicians cannot be established from this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from uab.edu/benefits — entire page is Tier 3 university HR.",
+          "Verify scope is corrected from UNKNOWN_SCOPE to MEDICAL_SCHOOL_LEVEL (uab.edu university HR), and that attribution to UAB Hospital requires explicit campusApplicabilityProof.",
+          "Confirm contact phone claim is FUTURE_LANE_ONLY and not surfaced as a USCE coordinator."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "src_31_a2_c1",
+              "claimType": "CONTACT_PHONE",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://uab.edu/benefits",
+              "sourceHash": "f3343fe07c6823cf0c067049810660457fa4d70eccaf26cef1219da00e7a2d29",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/benefits.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Human Resources(205) 934-5321Contact Us",
+              "normalizedField": "hr_contact_phone",
+              "claimText": "UAB Human Resources contact phone is (205) 934-5321.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "University-wide HR phone, not physician/hospital-specific.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "HR benefits-page contact phone is Tier 3 employee/career content.",
+              "whyA1Missed": "A1 captured benefit prose but did not extract the inline HR phone number."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_31_c1",
+            "scopeIssue": "university_HR_not_hospital",
+            "explanation": "uab.edu/benefits is University of Alabama at Birmingham HR for all benefit-eligible employees, not UAB Hospital / UAB Medicine medical-staff benefits. Should be MEDICAL_SCHOOL_LEVEL scope, not attributed to UAB Hospital institution."
+          },
+          {
+            "claimId": "src_31_s1",
+            "scopeIssue": "unknown_scope_should_be_medical_school_level",
+            "explanation": "sourceScope UNKNOWN_SCOPE understates the conflict — domain uab.edu and 'University of Alabama at Birmingham' branding place this at MEDICAL_SCHOOL_LEVEL/university level."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://uab.edu/visa",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with only UAB chrome/navigation and cookie/privacy boilerplate; no visa, immigration, USCE, GME, or career content is resolvable from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this 404 page",
+          "Verify the source is marked as a 404/no-content artifact and excluded from claim aggregation"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://uab.edu/immigration",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error template; no immigration, visa, J-1, or H-1B content available on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE_VISA claim was emitted from this 404 page.",
+          "Search for an active UAB international services / immigration URL to replace this dead source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://uab.edu/credentialing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error with no substantive content about credentialing, USCE, GME, or careers."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or substantive claim is emitted from this 404 error page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://uab.edu/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error placeholder with only navigation chrome, cookie notice, and nondiscrimination statement — no USCE, GME, residency, fellowship, or careers content present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page; source should remain NO_PUBLIC_OPPORTUNITY_FOUND with low confidence rather than negative-refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://uab.edu/medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is an HTTP 404 error stub with no USCE, GME, careers, or future-lane content; no claims extractable."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims attach to this 404 URL.",
+          "Verify A3 marks this source as NO_PUBLIC_OPPORTUNITY_FOUND due to 404, not as explicit negative refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://uab.edu/professional-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source is a 404 error page with no USCE, GME, Tier 2, or Tier 3 content; no substantive claims can be extracted."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claims are emitted from this 404 error page at uab.edu/professional-education."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://uab.edu/student-affairs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is the UAB university-wide Student Affairs landing page covering undergraduate/graduate student support (career center, counseling, housing, dining, recreation). No mention of medical students, visiting students, observership, electives, GME, residency, fellowship, physician careers, or visa sponsorship. Deep family hint UNDERGRADUATE_MEDICAL_EDUCATION (from URL) is not supported by content; actual scope is general university student services."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this general UAB Student Affairs page — content is undergraduate/graduate student-services, not medical education or GME.",
+          "Verify the deepSourceHint UNDERGRADUATE_MEDICAL_EDUCATION is reclassified to NON_MEDICAL_STUDENT_SERVICES or similar since URL inference does not match cleaned text."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://uab.edu/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is UAB School of Education and Human Sciences — no medical school, GME, USCE, residency, fellowship, observership, visiting student, careers, or physician-pipeline content present; not relevant to UAB Hospital physician pathways."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A3 does not promote any claim from this source to PUBLIC_SAFE_USCE — the page is the School of Education and Human Sciences (P-12 teaching, kinesiology, counseling), unrelated to UAB Hospital clinical training."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://uab.edu/hcp-education-training",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source URL returns HTTP 404; no substantive USCE, GME, or career content available on this page for any tier."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_40 yielded zero claims because the URL is a 404 error page, not because of reader error.",
+          "Replace src_40 with a working UAB Heersink School of Medicine visiting-student / observership / GME URL in a future run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://uab.edu/hcp-education-training/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error; no USCE, GME, or career content present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim was emitted from this 404 source; the cleaned text contains only navigation, cookie banner, and the 'Page not found' message."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://uab.edu/hcp-education-training/medical-students/elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error template; the actual UAB visiting student/elective page URL is not discoverable from this captured text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no USCE claims are emitted from this 404 error page; cleaned text contains only UAB site chrome and a 'Page not found' message."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://uab.edu/hcp-education-training/medical-students/medical-student-observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with only UAB site chrome and cookie/nondiscrimination boilerplate; no observership, visiting student, elective, or USCE content present to extract.",
+          "No contact, coordinator, fee, duration, or eligibility information is reachable from this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source URL.",
+          "Verify A3 treats this source as NO_PUBLIC_OPPORTUNITY_FOUND (absence due to dead URL), not as an explicit negative refusal.",
+          "Queue a replacement source discovery on uab.edu and uabmedicine.org for active observership / visiting student / elective pages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://uab.edu/medical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://uab.edu/medical-professionals/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 page with no GME, residency, fellowship, observership, or USCE content; no substantive claims can be extracted."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page.",
+          "Re-discover the live UAB GME URL since the captured /medical-professionals/graduate-medical-education path returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://uab.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error page with no clerkship, GME, observership, residency, fellowship, or careers substantive content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims emitted from this 404 page",
+          "Locate working UAB GME clerkship URL for re-capture"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://uab.edu/academic-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source is a 404 error page with no substantive USCE, GME, or career content; no actionable claims extractable."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 error page source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://uab.edu/academic-institute/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 Not Found; no substantive content about USCE, observership, electives, GME, or careers is present on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim cites this 404 page as evidence",
+          "Verify the source is excluded from any aggregate UAB opportunity rollup since it returned 404"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://uab.edu/academic-institute/education/medical",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source is a 404 error page; no USCE, GME, fellowship, or careers content present on this URL"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 error page; URL should be marked dead/non-content"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://uab.edu/academic-institute/education/medical/medical-student-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page returns HTTP 404 — no substantive USCE, GME, or careers content present; cleaned text is the UAB site-wide 404 template only."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 error page",
+          "Treat this source as NO_PUBLIC_OPPORTUNITY_FOUND with LOW confidence (absence due to broken URL, not explicit refusal)"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+            "claimType": "MISSING_FIELD",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international",
+            "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Are you a current medical student at UAB looking to travel abroad to expand your international medical knowledge?",
+            "normalizedField": null,
+            "claimText": "Office of International Medical Education also serves outbound UAB students traveling abroad — page scope is bidirectional, not USCE-inbound only.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Outbound-student content is not USCE; relevant only as scope context.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Documents the dual scope of the office on the same landing page A1 read for inbound-international claims.",
+            "whyA1Missed": "A1 focused on the inbound 'International Students' tile and skipped the parallel outbound 'UAB Students' tile, which materially changes the office scope interpretation."
+          },
+          {
+            "claimId": "c_uab_intl_med_ed_mission_leader",
+            "claimType": "OFFERS_ELECTIVE",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international",
+            "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Our mission is to create and foster global partnerships to develop innovative, collaborative and interdisciplinary educational programs and establish UAB as a leader in the training of global healthcare providers.",
+            "normalizedField": null,
+            "claimText": "Office mission statement asserts UAB position as leader in training global healthcare providers via partnership-based educational programs.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Mission language; no specific elective/observership offering, eligibility, or pathway stated.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Tier 1 USCE-adjacent mission framing for an international-medical-education office.",
+            "whyA1Missed": "A1 captured the 'About' descriptive paragraph but not the distinct mission-statement sentence under the 'Training global healthcare providers' tagline."
+          },
+          {
+            "claimId": "c_uab_missing_contact_email",
+            "claimType": "MISSING_FIELD",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international",
+            "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "NOT_STATED_ON_SOURCE",
+            "normalizedField": null,
+            "claimText": "No coordinator name, email, or phone number stated on this landing page; only a generic 'Contact' nav link is present.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Contact details likely behind the 'Contact' nav link not captured in this source.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Coordinator/contact is a core Tier 1 field absent on this overview.",
+            "whyA1Missed": "A1 flagged missing eligibility and missing application pathway but did not separately call out missing coordinator/email/phone."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_uab_intl_med_ed_mission",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a marketing prompt ('Interested in visiting the United States for medical training or research?') with no offer, eligibility, or program statement. Does not substantiate claimType OFFERS_ELECTIVE."
+          },
+          {
+            "a1ClaimId": "c_uab_intl_med_ed_about",
+            "refinementReason": "visibility_overstated",
+            "explanation": "Quote describes office activity generically ('developed many international partnerships'); it does not state that UAB offers an elective/observership to outside IMGs. OFFERS_ELECTIVE overstates the source."
+          },
+          {
+            "a1ClaimId": "c_uab_scope_conflict",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'International Medical EducationHeersink School of Medicine' is concatenated nav/header text rather than a substantive scope statement; the scope conflict is real but the quote is a poor substring anchor."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Whether the inbound 'International Students' pathway covers clinical training at UAB Hospital sites or only research/observation at Heersink School of Medicine is not stated.",
+          "The 'For the last 10 years' phrase references office history, not any program duration, eligibility window, or rotation length."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this medical-school-level landing page without a campus-applicability proof tying programs to UAB Hospital.",
+          "Verify OFFERS_ELECTIVE claims c_uab_intl_med_ed_mission and c_uab_intl_med_ed_about are downgraded — quotes are marketing/mission language, not an offer of an elective.",
+          "Verify sourceScope is corrected from UNKNOWN_SCOPE to MEDICAL_SCHOOL_LEVEL for all A1 claims on this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+              "claimType": "MISSING_FIELD",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international",
+              "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Are you a current medical student at UAB looking to travel abroad to expand your international medical knowledge?",
+              "normalizedField": null,
+              "claimText": "Office of International Medical Education also serves outbound UAB students traveling abroad — page scope is bidirectional, not USCE-inbound only.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Outbound-student content is not USCE; relevant only as scope context.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Bidirectional scope context for an office A1 framed as IMG-inbound only.",
+              "whyA1Missed": "A1 read only the inbound tile and skipped the outbound 'UAB Students' tile."
+            },
+            {
+              "claimId": "c_uab_intl_med_ed_mission_leader",
+              "claimType": "OFFERS_ELECTIVE",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international",
+              "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Our mission is to create and foster global partnerships to develop innovative, collaborative and interdisciplinary educational programs and establish UAB as a leader in the training of global healthcare providers.",
+              "normalizedField": null,
+              "claimText": "Office mission statement asserts UAB position as leader in training global healthcare providers via partnership-based educational programs.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "limitations": "Mission language; no specific offering.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Tier 1 USCE-adjacent mission framing for an international-medical-education office.",
+              "whyA1Missed": "A1 captured the 'About' paragraph but not the distinct mission sentence under the hero tagline."
+            },
+            {
+              "claimId": "c_uab_missing_contact_email",
+              "claimType": "MISSING_FIELD",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international",
+              "sourceHash": "c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "NOT_STATED_ON_SOURCE",
+              "normalizedField": null,
+              "claimText": "No coordinator name, email, or phone stated on this landing page; only a 'Contact' nav link is present.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "Contact details likely behind the 'Contact' nav link not in this source.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Coordinator/contact is a core Tier 1 field absent on this overview.",
+              "whyA1Missed": "A1 flagged missing eligibility and application but not the missing coordinator/email/phone."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_uab_intl_med_ed_mission",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is the Heersink School of Medicine 'International Medical Education' landing page (MEDICAL_SCHOOL_LEVEL). A1 set sourceScope=UNKNOWN_SCOPE; should be MEDICAL_SCHOOL_LEVEL, blocking PUBLIC_SAFE_USCE for UAB Hospital institution."
+          },
+          {
+            "claimId": "c_uab_intl_med_ed_about",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Same medical-school-level scope as above; office activity does not automatically apply to UAB Hospital clinical sites without a campus-applicability proof."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "src_52_a2_c01",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs",
+            "sourceHash": "e4a0cc9567e2e738192a3267862daa50979076c4d23cb457a4ff0cf28573608f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "to promote the global exchange of knowledge to create and sustain relationships with physicians and scientists across the globe",
+            "normalizedField": null,
+            "claimText": "UAB frames its international audience as physicians and scientists globally — broader audience signal than medical students alone.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Mission framing; not an explicit eligibility statement. Implies audience includes post-graduate physicians and researchers.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Audience framing relevant to pre-residency USCE classification; disambiguates 'scholar' programs as potentially physician/researcher targeted.",
+            "whyA1Missed": "A1 captured the 'return home' clause (c06) but missed the parallel audience phrase identifying the global audience as physicians and scientists."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "src_52_s01",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "src_52_s01 duplicates src_52_c07 — both are SCOPE_CONFLICT records using the same Heersink/School of Medicine quote. Regate should collapse to one."
+          },
+          {
+            "a1ClaimId": "src_52_f01",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "src_52_f01 duplicates src_52_c05 — both emit FUTURE_LANE_GME_GENERAL for the identical 'International Graduate Programs' quote. Regate should collapse to one."
+          },
+          {
+            "a1ClaimId": "src_52_c03",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Claim assigns lane IMG_OBSERVERSHIP for 'International Visiting Scholar Observership' but the page does not state audience (medical student vs. post-grad physician). Audience inferred."
+          },
+          {
+            "a1ClaimId": "src_52_c04",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Page does not state medical-student eligibility for 'International Visiting Scholar Research'; 'scholar' typically denotes post-graduate audience. Tier 1 assignment is speculative."
+          },
+          {
+            "a1ClaimId": "src_52_c06",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quoted mission language is framing, not eligibility. claimText reads as an inferred eligibility signal — flag for regate."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'International Visiting Medical Observers' in navigation but 'International Visiting Scholar Observership' in body — relationship between the two (same program renamed, or two distinct programs) is unresolved.",
+          "No application pathway, fee, duration, contact email, contact phone, or coordinator name on this landing page.",
+          "No ECFMG / USMLE / Step / visa / J-1 language on the page; IMG eligibility is not stated either way.",
+          "Campus applicability of Heersink SoM international programs to UAB Hospital clinical sites is not stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted on this MEDICAL_SCHOOL_LEVEL Heersink page for UAB Hospital institution.",
+          "Verify regate collapses duplicate SCOPE_CONFLICT pair (c07, s01) and duplicate FUTURE_LANE_GME pair (c05, f01).",
+          "Confirm 'International Visiting Scholar Observership' (c03) and 'International Visiting Scholar Research' (c04) are not promoted past CAUTION until sub-page evidence clarifies audience.",
+          "Confirm campusApplicabilityProof remains absent — Heersink SoM page cannot be auto-applied to UAB Hospital clinical sites."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "src_52_a2_c01",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs",
+              "sourceHash": "e4a0cc9567e2e738192a3267862daa50979076c4d23cb457a4ff0cf28573608f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "to promote the global exchange of knowledge to create and sustain relationships with physicians and scientists across the globe",
+              "normalizedField": null,
+              "claimText": "UAB frames its international audience as physicians and scientists globally — broader than medical students alone.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "limitations": "Mission framing; not an explicit eligibility statement.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Audience framing helps disambiguate 'scholar' tier signal on a USCE landing page.",
+              "whyA1Missed": "A1 captured only the 'return home' clause of the mission sentence and omitted the parallel 'physicians and scientists' audience phrase."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_52_c01",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is Heersink School of Medicine (MEDICAL_SCHOOL_LEVEL); institution is UAB Hospital. No campusApplicabilityProof on this page connecting SoM international programs to UAB Hospital clinical sites."
+          },
+          {
+            "claimId": "src_52_c02",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Same SoM-scope issue — observership category on a medical-school page cannot be applied to UAB Hospital without explicit campus-applicability statement."
+          },
+          {
+            "claimId": "src_52_c03",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "SoM-level page; UAB Hospital applicability for Scholar Observership not stated on this source."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_health_insurance",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "UAB requires all international visiting medical students to have medical health insurance. You may purchase UAB Student Health Insurance or provide your own. Non-UAB health insurance must be approved by UAB Student Health before arrival.",
+            "normalizedField": "health_insurance_requirement",
+            "claimText": "Medical health insurance required; can purchase UAB Student Health Insurance or provide own (approved by UAB Student Health).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Health insurance is a pre-arrival eligibility requirement for the IVMS visiting student program.",
+            "whyA1Missed": "A1 captured malpractice but missed the separate Health Insurance Coverage subsection."
+          },
+          {
+            "claimId": "a2_transcript_english",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "You must provide a copy of your current transcript written in English or accompanied by an English translation.",
+            "normalizedField": "transcript_language_requirement",
+            "claimText": "Current transcript must be in English or accompanied by English translation.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Eligibility/document requirement for the visiting student application.",
+            "whyA1Missed": "A1 listed documents generally but missed the explicit English-language transcript requirement."
+          },
+          {
+            "claimId": "a2_toefl_validity",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "We will only accept TOEFL scores that have been taken within a two (2) year period from the date that the application was submitted.",
+            "normalizedField": "toefl_score_validity_years",
+            "claimText": "TOEFL scores must have been taken within 2 years of application submission.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "TOEFL score validity rule — eligibility detail beyond the score thresholds A1 captured.",
+            "whyA1Missed": "A1 captured TOEFL thresholds and waivers but missed the 2-year validity window."
+          },
+          {
+            "claimId": "a2_payment_methods",
+            "claimType": "COST_STATEMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Payment can be made by a major credit card or wire transfer.",
+            "normalizedField": "payment_methods",
+            "claimText": "Payment accepted by major credit card or wire transfer.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Cost logistics — payment method detail for IVMS fees.",
+            "whyA1Missed": "A1 captured fee amounts but omitted the payment-method sentence."
+          },
+          {
+            "claimId": "a2_cancellation_90",
+            "claimType": "COST_STATEMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "For cancellation of your elective more than 90 calendar days before the start date of the elective, only half of your course elective fee will be refunded, minus any administrative or financial processing fees.",
+            "normalizedField": "cancellation_refund_policy",
+            "claimText": "Cancellation >90 days before start: 50% refund minus fees; <90 days: no refund.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Refund/cancellation policy for visiting student program.",
+            "whyA1Missed": "A1 noted no scholarships but didn't capture the cancellation/refund tiers."
+          },
+          {
+            "claimId": "a2_arrival_schedule",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The IVMS program has a strict policy for arriving and departing. Arrival is the Sunday before electives and departure is the Saturday at the end of the elective, before 11am.",
+            "normalizedField": "arrival_departure_policy",
+            "claimText": "Strict arrival/departure: arrive Sunday before elective; depart Saturday at end before 11am.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Logistics policy specific to the IVMS visiting student program.",
+            "whyA1Missed": "A1 didn't capture the arrival/departure logistics paragraph."
+          },
+          {
+            "claimId": "a2_medical_clearance",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Student Health Form Acknowledging that you must receive medical clearance prior to training. More details/instructions about how to upload documentation will be sent in pre-matriculation email sent 8 weeks prior to start date.",
+            "normalizedField": "medical_clearance_requirement",
+            "claimText": "Medical clearance required prior to training; instructions sent in pre-matriculation email 8 weeks prior.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Health clearance / immunization-style requirement for IVMS participation.",
+            "whyA1Missed": "A1's document list mentioned 'Health Compliance Documentation' but didn't extract the explicit medical-clearance requirement and 8-week pre-matric window."
+          },
+          {
+            "claimId": "a2_elective_prefs",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Elective preferences for 1 or 2 rotations based on availability in catalogue",
+            "normalizedField": "elective_preference_count",
+            "claimText": "Applicants submit preferences for 1 or 2 rotations based on catalogue availability.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Application pathway step — rotation preference selection.",
+            "whyA1Missed": "A1 grouped documents but didn't note the 1-2 rotation preference selection step."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "sc01_scope",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "A1 correctly flagged this as a scope conflict. Page is UAB Heersink School of Medicine scope; clinical site (UAB Hospital vs other UAB Medicine affiliates) is not explicitly named. Keep as SCOPE_CONFLICT; do not promote derivative claims to PUBLIC_SAFE_USCE without campus proof."
+          },
+          {
+            "a1ClaimId": "n01_no_graduates",
+            "refinementReason": "visibility_overstated",
+            "explanation": "Refusal is narrow — graduates excluded only from THIS IVMS program. Page references a separate International Visiting Medical Observers pathway. Should not be generalized into a UAB-wide refusal for IMG graduates."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references a separate 'International Visiting Medical Observers' page in side nav — observership pathway for graduates may exist there but is not described on this page.",
+          "Page mentions 'Course Catalogue' for available electives but the catalogue contents (specialties, departments, clinical sites) are not on this page.",
+          "Clinical site of rotations is not explicitly named — could be UAB Hospital, UAB Medicine clinics, or other affiliated sites."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim was emitted on this MEDICAL_SCHOOL_LEVEL source without campus applicability proof.",
+          "Confirm n01_no_graduates is scoped only to IVMS and not promoted to a global UAB-graduates refusal.",
+          "Check that the sibling 'International Visiting Medical Observers' page was captured separately for the graduate/IMG pathway."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_health_insurance",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "UAB requires all international visiting medical students to have medical health insurance. You may purchase UAB Student Health Insurance or provide your own. Non-UAB health insurance must be approved by UAB Student Health before arrival.",
+              "normalizedField": "health_insurance_requirement",
+              "claimText": "Medical health insurance required; UAB Student Health Insurance available or own-policy approval required.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Pre-arrival eligibility requirement for IVMS Tier 1 program.",
+              "whyA1Missed": "A1 captured malpractice but missed the separate Health Insurance Coverage subsection."
+            },
+            {
+              "claimId": "a2_transcript_english",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "You must provide a copy of your current transcript written in English or accompanied by an English translation.",
+              "normalizedField": "transcript_language_requirement",
+              "claimText": "Current transcript must be in English or with English translation.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Document-language eligibility detail for Tier 1 visiting student program.",
+              "whyA1Missed": "A1 listed documents collectively but omitted the explicit English-language transcript line."
+            },
+            {
+              "claimId": "a2_toefl_validity",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "We will only accept TOEFL scores that have been taken within a two (2) year period from the date that the application was submitted.",
+              "normalizedField": "toefl_score_validity_years",
+              "claimText": "TOEFL scores must be ≤2 years old at application submission.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Eligibility validity rule for English proficiency scores.",
+              "whyA1Missed": "A1 captured TOEFL thresholds/waivers but missed the 2-year recency rule."
+            },
+            {
+              "claimId": "a2_payment_methods",
+              "claimType": "COST_STATEMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Payment can be made by a major credit card or wire transfer.",
+              "normalizedField": "payment_methods",
+              "claimText": "Payment via major credit card or wire transfer.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Cost-logistics detail for Tier 1 program fees.",
+              "whyA1Missed": "A1 captured fee values but not the payment-method sentence."
+            },
+            {
+              "claimId": "a2_cancellation_90",
+              "claimType": "COST_STATEMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "For cancellation of your elective more than 90 calendar days before the start date of the elective, only half of your course elective fee will be refunded, minus any administrative or financial processing fees.",
+              "normalizedField": "cancellation_refund_policy",
+              "claimText": ">90-day cancellation = 50% refund minus fees; <90-day cancellation = no refund.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Refund/cancellation policy attached to Tier 1 IVMS fees.",
+              "whyA1Missed": "A1 didn't extract the cancellation-policy refund tiers."
+            },
+            {
+              "claimId": "a2_arrival_schedule",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The IVMS program has a strict policy for arriving and departing. Arrival is the Sunday before electives and departure is the Saturday at the end of the elective, before 11am.",
+              "normalizedField": "arrival_departure_policy",
+              "claimText": "Arrive Sunday before elective; depart Saturday before 11am at end.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Logistics policy specific to IVMS Tier 1 program.",
+              "whyA1Missed": "A1 didn't capture the arrival/departure paragraph."
+            },
+            {
+              "claimId": "a2_medical_clearance",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Student Health Form Acknowledging that you must receive medical clearance prior to training. More details/instructions about how to upload documentation will be sent in pre-matriculation email sent 8 weeks prior to start date.",
+              "normalizedField": "medical_clearance_requirement",
+              "claimText": "Medical clearance required before training; pre-matriculation email sent 8 weeks before start.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Health/immunization clearance requirement for Tier 1 visiting student program.",
+              "whyA1Missed": "A1's document list referenced 'Health Compliance Documentation' but didn't extract medical-clearance and 8-week pre-matric details."
+            },
+            {
+              "claimId": "a2_elective_prefs",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Elective preferences for 1 or 2 rotations based on availability in catalogue",
+              "normalizedField": "elective_preference_count",
+              "claimText": "Applicants submit 1 or 2 elective rotation preferences from catalogue.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Application-pathway step — rotation preference selection.",
+              "whyA1Missed": "A1 collapsed application docs into one claim and missed the rotation-preference step."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "sc01_scope",
+            "scopeIssue": "MEDICAL_SCHOOL_LEVEL source not explicitly tied to UAB Hospital",
+            "explanation": "Page is hosted under UAB Heersink School of Medicine / International Medical Education. No sentence on the page names UAB Hospital as the clinical site for IVMS rotations. Derivative claims should remain HUMAN_REVIEW_REQUIRED."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://uab.edu/visiting-clerkships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a generic UAB 404 error template with no clerkship, observership, or visiting-student content; correct URL must be located on medicine.uab.edu."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 error page.",
+          "Verify A1 correctly produced zero claims for this source given the 404 status."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://uab.edu/visiting-clerkships/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no USCE, observership, visiting student, GME, or careers content to extract"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 capture; source should be flagged as dead-link / no-content"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://uab.edu/education-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with no substantive USCE, GME, or careers content; nothing to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claims are emitted from this 404 error page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://uab.edu/education-institute/academic-visitor-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source URL returns a 404 page; the cleaned text is UAB's generic site chrome (navigation, cookie banner, nondiscrimination statement) with no academic-visitor content to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_57 is treated as a dead/404 source and yields zero PUBLIC_SAFE_USCE claims; consider replacing the URL with a working UAB academic-visitor or observership endpoint in a future capture."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://uab.edu/education/undergraduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error with no substantive content about USCE, GME, or careers"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this 404 page",
+          "Verify source should be marked as dead/404 in run manifest"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://uab.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error template; no visiting student, observership, or USCE content is present to extract.",
+          "URL path implies a UAB visiting students requirements page that has been deleted or moved; current location not stated on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is derived from this 404 error page.",
+          "Locate the live UAB School of Medicine VSLO/visiting student URL outside this run; this source contributes no claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://uab.edu/education/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an HTTP 404 error page with no substantive content about USCE, observership, visiting students, GME, careers, or visa sponsorship."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 page; downstream should mark source as non-substantive and exclude from public claim set."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://uab.edu/education/visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with no substantive USCE, GME, or career content; no additional claims can be drawn from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm c_uab_404_1 remains HUMAN_REVIEW_REQUIRED (404 / family mismatch) and is not surfaced as PUBLIC_SAFE_USCE.",
+          "A3 should ensure no claim emitted against this 404 URL leaks into public lane; the only correct downstream state is NO_PUBLIC_OPPORTUNITY_FOUND or rejection."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://uab.edu/education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with only site chrome, nondiscrimination statement, and cookie banner — no electives, observership, visiting-student, or USCE content present at this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source; cleaned text explicitly states '404 - Page not found' and contains no opportunity content.",
+          "Re-discover the correct UAB School of Medicine visiting student / electives URL (likely under medicine.uab.edu) since uab.edu/education/medical-student-electives returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://uab.edu/medical-education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page with only generic navigation and cookie-consent boilerplate; no electives, observership, visiting student, residency, or career content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source",
+          "Re-discover the correct UAB Heersink School of Medicine visiting student / VSLO elective URL in a subsequent capture run"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://uab.edu/medical-education/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 'Page not found' error template with no visiting-student, observership, elective, or USCE-related substantive content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is sourced from this 404 page",
+          "Locate the active UAB Heersink School of Medicine visiting student / VSLO landing URL outside this run"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://uab.edu/medical-students/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with only UAB site chrome; no electives, observership, or visiting student content present to evaluate."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims were emitted from this 404 page; source should be marked NO_PUBLIC_OPPORTUNITY_FOUND at best.",
+          "Locate the live UAB SOM visiting student / electives URL (likely via VSLO or uab.edu/medicine) since /medical-students/electives returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://uab.edu/medical-students/elective-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a generic UAB 404 error template — no elective rotations content available; correct UAB Heersink elective/visiting student URL still unknown."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or tiered USCE claim is emitted from this 404 page; only the existing SCOPE_CONFLICT / HUMAN_REVIEW_REQUIRED record should remain."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://uab.edu/medical-students/clinical-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a UAB 404 error page only; no substantive medical-education content present to extract additional claims from.",
+          "No UAB SOM visiting-student / observership content is reachable from this cleaned text — A3 / next sprint should locate the canonical UAB SOM visiting-students URL via VSLO listing or uab.edu/medicine."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_67 is not promoted to any PUBLIC_SAFE_USCE lane — content is a 404 error page only.",
+          "Verify no claim cites this 404 page as evidence of an actual elective/observership/visiting-student program at UAB.",
+          "Add follow-up source-capture task to find the canonical UAB School of Medicine visiting-student / clinical-electives URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://uab.edu/students/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a generic UAB 404 page with no visiting-student / observership / VSLO content; nothing extractable for Tier 1, Tier 2, or Tier 3.",
+          "Correct UAB Heersink School of Medicine visiting-student / VSLO URL (likely medicine.uab.edu) not present in this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify A1's MISSING_FIELD and SCOPE_CONFLICT claims remain HUMAN_REVIEW_REQUIRED and are not promoted.",
+          "Re-capture UAB visiting-student page at medicine.uab.edu in a follow-up run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://uab.edu/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-7-uab",
+        "institutionId": "inst_uab_hospital_al",
+        "institutionName": "UAB Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 error page with only generic UAB navigation chrome and cookie/privacy boilerplate; no clerkship, observership, visiting-student, residency, fellowship, or careers content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE, FUTURE_LANE, or NEGATIVE) are emitted from this 404 source; the page contains no substantive opportunity content.",
+          "Flag this source for re-capture with a corrected UAB GME clerkship URL since the captured URL returned HTTP 404."
+        ],
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        }
+      }
+    }
+  ]
+}

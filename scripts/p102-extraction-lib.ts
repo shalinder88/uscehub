@@ -51,6 +51,16 @@ export const USCE_VSM_PATTERNS: RegExp[] = [
   /\bvisiting\s+clerkship/i,
   /\baudition\s+rotation/i,
   /\baway\s+elective/i,
+  // P102-FIX: positive-control evidence-derived patterns. MSK uses "Medical
+  // Student Elective Program", Orlando uses "clerkship programs", Houston
+  // Methodist uses "medical student rotations". Each phrase is required to
+  // contain "medical student" + an opportunity word, OR "clerkship program",
+  // to keep specificity high. Bare "elective" or "rotation" are intentionally
+  // NOT added — they would over-promote GME/fellowship content.
+  /\bmedical\s+student\s+elective/i,
+  /\belective\s+for\s+medical\s+student/i,
+  /\bmedical\s+student\s+rotation/i,
+  /\bclerkship\s+program/i,
 ];
 
 export const USCE_RESEARCH_PATTERNS: RegExp[] = [
@@ -235,27 +245,114 @@ export type Visibility =
 
 export interface VisibilityInput {
   sourceFamily: string;
+  /**
+   * P102-FIX: optional content-tagged family emitted by the deep model
+   * (A1/A2). `sourceFamily` describes how the page was discovered
+   * (`JSON_LD`, `FIXED_PATH`, `SITEMAP`, ...) — it is provenance, not
+   * content. `deepSourceFamily` describes what the page actually contains
+   * after the model has read it (`ELECTIVE`, `OBSERVERSHIP`,
+   * `VISITING_STUDENT`, `GME`, `CAREERS`, ...). When present, the
+   * classifier uses both: a Tier 1 deep family + USCE-positive lane +
+   * institution-specific scope + HIGH confidence is allowed to promote
+   * to PUBLIC_SAFE_USCE even when `sourceFamily` is a discovery-only tag.
+   */
+  deepSourceFamily?: string | null;
   sourceScope: string;
   matchedLane: 'IMG_OBSERVERSHIP' | 'VISITING_MEDICAL_STUDENT' | 'RESEARCH_OPPORTUNITY' | 'NO_PUBLIC_OPPORTUNITY_FOUND' | 'CAREERS_PAGE' | 'RESIDENCY_PROGRAM_INFO' | 'FELLOWSHIP_PROGRAM_INFO' | 'PHYSICIAN_SERVICES';
   campusApplicabilityProof?: string | null;
   modelReaderConfidence?: 'HIGH' | 'MEDIUM' | 'LOW' | null;
+  /**
+   * P102-FIX: true when the underlying claim quote is `NOT_STATED_ON_SOURCE`,
+   * i.e. the claim is a MISSING_FIELD honest-absence marker rather than a
+   * real USCE offer. Such claims must never auto-promote to PUBLIC_SAFE_USCE
+   * even when every other gate would allow it.
+   */
+  quoteIsNotStated?: boolean;
 }
+
+/**
+ * P102-FIX: content-tagged deep families that signal Tier 1 USCE opportunity.
+ * Emitted by the deep model on a per-claim basis. These names match the
+ * model's deep-mode tagging vocabulary (see `p102-claude-cli-extractor.ts`
+ * deep-mode prompt). Discovery-time families like JSON_LD / SITEMAP /
+ * FIXED_PATH / HOMEPAGE_LINK are intentionally NOT in this set — they
+ * describe how the URL was found, not what the page contains.
+ */
+const TIER_1_DEEP_FAMILIES = new Set([
+  'ELECTIVE',
+  'CLINICAL_ELECTIVE',
+  'VISITING_STUDENT',
+  'VISITING_MEDICAL_STUDENT',
+  'OBSERVERSHIP',
+  'EXTERNSHIP',
+  'AWAY_ROTATION',
+  'SUB_INTERNSHIP',
+  'ACTING_INTERNSHIP',
+  'MEDICAL_STUDENT_ROTATION',
+  'UNDERGRADUATE_MEDICAL_EDUCATION',
+  'INTERNATIONAL_VISITING_STUDENT',
+  // MEDICAL_EDUCATION is broader (covers UME hub pages); kept here so model
+  // can promote when the lane is unambiguously USCE-positive and the
+  // scope is INSTITUTION_SPECIFIC, but the lane gate above will catch
+  // anything that's actually GME/residency/fellowship/careers content
+  // before the family check runs.
+  'MEDICAL_EDUCATION',
+]);
 
 /**
  * Deterministic visibility assignment.
  *
- * Rules:
- * - Future-lane source families (GME/RESIDENCY/FELLOWSHIP/CAREERS) → FUTURE_LANE_ONLY.
- * - System/school scope on USCE-positive match → HUMAN_REVIEW_REQUIRED (unless campusApplicabilityProof present).
- * - USCE-positive on OBSERVERSHIP_PAGE/VISITING_STUDENT_PAGE/RESEARCH_PAGE with INSTITUTION_SPECIFIC scope:
- *   - Without model reader → CAUTION_SAFE_INTERNAL_REVIEW (P102-0C deterministic baseline).
- *   - With model reader HIGH confidence + scope OK → PUBLIC_SAFE_USCE (reserved for P102-0D).
- * - Shadow/volunteer or NO_PUBLIC lane → HUMAN_REVIEW_REQUIRED.
+ * Rules (in evaluation order — first match wins):
+ *
+ * 1. Future-lane source families (GME/RESIDENCY/FELLOWSHIP/CAREERS) → FUTURE_LANE_ONLY.
+ * 2. System/school scope on USCE-positive match → HUMAN_REVIEW_REQUIRED
+ *    (unless `campusApplicabilityProof` present).
+ * 3. Future-lane lanes (CAREERS_PAGE / RESIDENCY_PROGRAM_INFO /
+ *    FELLOWSHIP_PROGRAM_INFO / PHYSICIAN_SERVICES) → FUTURE_LANE_ONLY.
+ * 4. NO_PUBLIC_OPPORTUNITY_FOUND lane → HUMAN_REVIEW_REQUIRED.
+ * 5. **P102-FIX**: `isAppropriateFamily` is widened to accept any of:
+ *    - `sourceFamily` ∈ {OBSERVERSHIP_PAGE, VISITING_STUDENT_PAGE, RESEARCH_PAGE}
+ *      (discovery-time A0 classification), OR
+ *    - `deepSourceFamily` ∈ TIER_1_DEEP_FAMILIES (model-emitted content
+ *      classification — `ELECTIVE`, `OBSERVERSHIP`, `VISITING_STUDENT`, etc.)
+ *    If neither holds → CAUTION_SAFE_INTERNAL_REVIEW.
+ * 6. USCE-positive + appropriate family + INSTITUTION_SPECIFIC/CAMPUS_SPECIFIC
+ *    + model HIGH confidence → PUBLIC_SAFE_USCE.
+ * 7. Otherwise → CAUTION_SAFE_INTERNAL_REVIEW.
+ *
+ * Rationale: `sourceFamily` is discovery method, not content category. A page
+ * found via JSON-LD or sitemap can still be a real visiting-student elective
+ * page. The model's `deepSourceFamily` field describes the actual content;
+ * the classifier consults it as a fallback when the discovery-time
+ * `sourceFamily` is a generic tag like JSON_LD / FIXED_PATH / SITEMAP.
+ *
+ * Safety gates 1-4 remain unchanged — only the family check in step 5 is
+ * widened. Existing behavior for GME / careers / system-level / off-domain
+ * is preserved.
  */
 export function classifyVisibility(input: VisibilityInput): { visibility: Visibility; notPublicReason: string | null } {
-  const { sourceFamily, sourceScope, matchedLane, campusApplicabilityProof, modelReaderConfidence } = input;
+  const { sourceFamily, deepSourceFamily, sourceScope, matchedLane, campusApplicabilityProof, modelReaderConfidence, quoteIsNotStated } = input;
 
-  if (FUTURE_LANE_SOURCE_FAMILIES.has(sourceFamily)) {
+  // P102-FIX: NOT_STATED_ON_SOURCE quotes are honest absence markers
+  // (MISSING_FIELD claim type). They are quote-verified as "absent" but they
+  // do not assert a USCE opportunity exists — they record that a specific
+  // detail (duration, fee, contact, ...) was NOT stated on the source page.
+  // They must never auto-promote to PUBLIC_SAFE_USCE.
+  if (quoteIsNotStated) {
+    return { visibility: 'HUMAN_REVIEW_REQUIRED', notPublicReason: 'NOT_STATED_ON_SOURCE absence marker; missing field requires human follow-up' };
+  }
+
+  // P102-FIX: when sourceFamily is a future-lane discovery tag (GME_PAGE,
+  // RESIDENCY_PAGE, etc.) BUT the model's content tag is a Tier 1 USCE
+  // family (VISITING_STUDENT, ELECTIVE, OBSERVERSHIP, ...), the content tag
+  // wins. Orlando Health hosts its visiting-medical-student clerkship page
+  // at /medical-professionals/graduate-medical-education/clerkship-programs,
+  // which the URL-based A0 classifier tags as GME_PAGE but whose actual
+  // content is a Tier 1 VISITING_STUDENT page. The discovery tag is a hint,
+  // not a verdict — defer to the content tag when the model has read the
+  // page and emitted a deep family.
+  const isDeepFamilyTier1 = !!deepSourceFamily && TIER_1_DEEP_FAMILIES.has(deepSourceFamily);
+  if (FUTURE_LANE_SOURCE_FAMILIES.has(sourceFamily) && !isDeepFamilyTier1) {
     return { visibility: 'FUTURE_LANE_ONLY', notPublicReason: `source family ${sourceFamily} is future-lane only` };
   }
 
@@ -271,13 +368,36 @@ export function classifyVisibility(input: VisibilityInput): { visibility: Visibi
     return { visibility: 'HUMAN_REVIEW_REQUIRED', notPublicReason: 'shadow/volunteer is not auto-USCE; human review required' };
   }
 
-  // USCE-positive lanes (OBSERVERSHIP, VSM, RESEARCH) on appropriate page families
-  const isAppropriateFamily = sourceFamily === 'OBSERVERSHIP_PAGE' || sourceFamily === 'VISITING_STUDENT_PAGE' || sourceFamily === 'RESEARCH_PAGE';
+  // P102-FIX: widen appropriate-family check to include content-tagged deep
+  // families. sourceFamily is discovery method (JSON_LD, FIXED_PATH, etc.);
+  // deepSourceFamily is content category (ELECTIVE, OBSERVERSHIP, etc.).
+  // Either signal is enough to consider the page appropriate for Tier 1
+  // promotion, subject to all the other gates above.
+  const isSourceFamilyAppropriate =
+    sourceFamily === 'OBSERVERSHIP_PAGE' ||
+    sourceFamily === 'VISITING_STUDENT_PAGE' ||
+    sourceFamily === 'RESEARCH_PAGE';
+  const isDeepFamilyAppropriate =
+    !!deepSourceFamily && TIER_1_DEEP_FAMILIES.has(deepSourceFamily);
+  const isAppropriateFamily = isSourceFamilyAppropriate || isDeepFamilyAppropriate;
+
   if (!isAppropriateFamily) {
-    return { visibility: 'CAUTION_SAFE_INTERNAL_REVIEW', notPublicReason: `USCE keyword detected on ${sourceFamily}; not the expected page family — needs review` };
+    return { visibility: 'CAUTION_SAFE_INTERNAL_REVIEW', notPublicReason: `USCE keyword detected on ${sourceFamily}${deepSourceFamily ? ` (deepSourceFamily=${deepSourceFamily})` : ''}; not the expected page family — needs review` };
   }
 
-  if (modelReaderConfidence === 'HIGH' && (sourceScope === 'INSTITUTION_SPECIFIC' || sourceScope === 'CAMPUS_SPECIFIC')) {
+  // P102-FIX: DEPARTMENT_LEVEL is set by the A0 classifier as a conservative
+  // placeholder for GME-family URLs. When the model has read the page and
+  // confirmed Tier 1 USCE content (deepSourceFamily ∈ TIER_1_DEEP_FAMILIES),
+  // a department-specific scope is still a legitimate INSTITUTION_SPECIFIC
+  // opportunity — e.g., "Cardiology Visiting Student Program at Orlando
+  // Health". The published claim carries the specific specialty context in
+  // its quote; the visibility lane simply needs to permit publication.
+  const isPromotableScope =
+    sourceScope === 'INSTITUTION_SPECIFIC' ||
+    sourceScope === 'CAMPUS_SPECIFIC' ||
+    (sourceScope === 'DEPARTMENT_LEVEL' && isDeepFamilyTier1);
+
+  if (modelReaderConfidence === 'HIGH' && isPromotableScope) {
     return { visibility: 'PUBLIC_SAFE_USCE', notPublicReason: null };
   }
 

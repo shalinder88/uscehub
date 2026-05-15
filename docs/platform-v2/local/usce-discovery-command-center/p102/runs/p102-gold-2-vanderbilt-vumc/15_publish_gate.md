@@ -1,7 +1,7 @@
 # Publish Gate (A3) — p102-gold-2-vanderbilt-vumc
 
 schemaVersion: p102-0r-1
-regatedAt: 2026-05-15T01:02:36.380Z
+regatedAt: 2026-05-15T13:37:52.374Z
 
 **A3 read only run-folder files. No network. No Agent.**
 

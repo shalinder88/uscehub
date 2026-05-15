@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-2b-orlando-health",
+  "tasks": [
+    {
+      "taskId": "t_clerkship_family_reclassify",
+      "missingFamily": "CLERKSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "clerkship-programs URL is tagged GME_PAGE which forces all Tier 1 clerkship claims to FUTURE_LANE_ONLY, yet the page literally describes a VSLO + paper-app visiting M4 clerkship with 4-week rotations, $50 fee, foreign-student CIE pathway, named coordinators, and 2026/2027 block dates. Ledger flags this internally (sc02).",
+      "suggestedNarrowAction": "Reclassify src_46 (orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs) to a Tier 1 visiting-student source family in the classifier registry, then re-gate existing c01-c16 and a2_c01-a2_c09 claims for PUBLIC_SAFE_USCE eligibility, requiring campusApplicabilityProof for ORMC since policy is system-wide."
+    },
+    {
+      "taskId": "t_m4_away_rotations_page",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Three sources reference an 'M4 Away Rotations' sub-page in Pediatric Residency navigation, but the dedicated page was not captured.",
+      "suggestedNarrowAction": "Fetch only the Pediatric Residency M4 Away Rotations sub-page; do not broad-crawl."
+    },
+    {
+      "taskId": "t_campus_applicability_proof",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Clerkship policy is explicitly system-wide ('two rotations within the Orlando Health system'); attributing to ORMC specifically needs campus-applicability proof before any PUBLIC_SAFE_USCE promotion.",
+      "suggestedNarrowAction": "Capture clerkship application form or rotation-locations sub-pages that name ORMC as a participating campus."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}
