@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-10-boston-medical-center",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "VISITING_MEDICAL_STUDENT_PAGE"
+  ],
+  "objectsCreated": 1,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [
+    "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+    "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-gold-10-boston-medical-center_64",
+      "institutionId": "inst_boston_medical_center_ma",
+      "runId": "p102-gold-10-boston-medical-center",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "sub-internship",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "This sub-internship (sub-I) is offered early in the fourth year and is designed for students interested in a career in Otolaryngology (ENT).",
+      "sourceUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "sourceHash": "35573557d8bd61933ed141c20e2a6c79b8cdf98eaf4b91768cfa8efa7d4c1e2c",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/additional/cleaned_text/src_60_additional.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-gold-10-boston-medical-center_65",
+      "institutionId": "inst_boston_medical_center_ma",
+      "runId": "p102-gold-10-boston-medical-center",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "sub-internship",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "For any questions about the sub-internship not found on the Registrar’s page or this one please contact:\nThomas McNulty\nthomas.mcnulty1@bmc.org\nEducation Coordinator\nPhone: (617) 638-7066\nFax: (617) 638-7965\nFor all patient matters please call 617-638-8124.",
+      "sourceUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "sourceHash": "35573557d8bd61933ed141c20e2a6c79b8cdf98eaf4b91768cfa8efa7d4c1e2c",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/additional/cleaned_text/src_60_additional.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

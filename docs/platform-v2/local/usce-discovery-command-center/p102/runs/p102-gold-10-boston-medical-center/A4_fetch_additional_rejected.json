@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-10-boston-medical-center",
+  "rejected": [
+    {
+      "taskId": "a4_bmc_gme_application_and_futurehousestaff",
+      "attemptedUrl": "https://bmc.org/gme/application",
+      "status": "HEAD_NOT_OK",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "head status 404",
+      "capturedAt": null
+    },
+    {
+      "taskId": "a4_bmc_gme_application_and_futurehousestaff",
+      "attemptedUrl": "https://bmc.org/gme/futurehousestaff",
+      "status": "HEAD_NOT_OK",
+      "httpStatus": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "byteLength": null,
+      "sourceId": null,
+      "sha256": null,
+      "cleanedTextPath": null,
+      "rawArtifactPath": null,
+      "reason": "head status 404",
+      "capturedAt": null
+    }
+  ],
+  "generatedAt": "2026-05-15T03:27:33.801Z"
+}

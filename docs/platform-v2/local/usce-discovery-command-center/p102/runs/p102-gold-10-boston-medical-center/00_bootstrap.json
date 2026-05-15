@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-10-boston-medical-center",
+  "queueId": "p102_gold_deep_benchmark",
+  "institutionId": "inst_boston_medical_center_ma",
+  "canonicalName": "Boston Medical Center",
+  "officialDomain": "bmc.org",
+  "state": "MA",
+  "city": "Boston",
+  "targetLanes": [
+    "IMG_OBSERVERSHIP",
+    "VISITING_MEDICAL_STUDENT",
+    "CLINICAL_ELECTIVE"
+  ],
+  "bootstrappedAt": "2026-05-15T02:30:09.247Z",
+  "runnerVersion": "p102-0r-1",
+  "notes": "Deterministic bootstrap before any model interpretation."
+}

@@ -1,0 +1,153 @@
+# Source Map — Boston Medical Center
+
+Run: p102-gold-10-boston-medical-center
+schemaVersion: p102-0r-1
+
+## Accepted sources (28)
+
+- **RESEARCH_PAGE** [https://bmc.org/research](https://bmc.org/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f22543842df32563e179f191bb2cf826b52e55bbb356186149b25f32e2693476`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/research.txt
+- **VOLUNTEER_PAGE** [https://bmc.org/volunteer](https://bmc.org/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e157aaab23be44d994967cecd82d31c8a3bc1d53cf2228c7a4ea4feb7da03a15`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/volunteer.txt
+- **GME_PAGE** [https://bmc.org/graduate-medical-education](https://bmc.org/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `308cb8216579f7c0ea36ed9c399643d4bb9ac8c28767b01ab07e6715c54225f8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/graduate-medical-education.txt
+- **GME_PAGE** [https://bmc.org/gme](https://bmc.org/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `308cb8216579f7c0ea36ed9c399643d4bb9ac8c28767b01ab07e6715c54225f8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/gme.txt
+- **RESIDENCY_PAGE** [https://bmc.org/residency](https://bmc.org/residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `11389cb8ae0477ec7855e7457ffd8193e6731f9e29ab024f51143cfe504875ec`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/residency.txt
+- **CAREERS_PAGE** [https://bmc.org/careers](https://bmc.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `dd6b8bc3e083cd400181112d6e5319b4f360984349dbc88326fdc7fda17e6248`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/careers.txt
+- **JSON_LD** [https://bmc.org/benefits](https://bmc.org/benefits)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `09b474444072be4e08725b7d65ed3c6e62af232a931837a09b7d3a19d8b50da1`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/benefits.txt
+- **JSON_LD** [https://bmc.org/education](https://bmc.org/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `308cb8216579f7c0ea36ed9c399643d4bb9ac8c28767b01ab07e6715c54225f8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/education.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/departments/anesthesiology/education/residency-program-alumni-OLD](https://www.bmc.org/departments/anesthesiology/education/residency-program-alumni-OLD)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `3ca6afb782f5cd93847167aa5acfbdaf44a0bb40617b628154b04745ba15e35f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_b22381d38b66dd54.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research/pre-award/funding-opportunities](https://www.bmc.org/research/pre-award/funding-opportunities)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `38240c21f61e964b95a73b1c7f20d9739005b1425cdfd28652fe747062b17105`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_63c5307021c522ae.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research/pre-award/assurance-contacts](https://www.bmc.org/research/pre-award/assurance-contacts)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9c30bad100b302caa84d1b2c6d353cc74665da222ccb5511fdd1a3c2f5f7b1b5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_2e365e08a1f0f817.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research/pre-award/quick-references](https://www.bmc.org/research/pre-award/quick-references)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `33439d50a6c7558b86b1aa9f2bd197a543a1e4896561a19b5a9cf05369ff7b0b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_4ce03cb7f7892572.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/pediatrics-neurology/residency-program](https://www.bmc.org/pediatrics-neurology/residency-program)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `817f945bb3f87e5cd22d6fe1d9fa473e452cd396c96aa0a1337039559e24b1e3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_80250c956a0e33a0.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/pediatrics-neurology/residency-program/pediatric-neurology-program-description](https://www.bmc.org/pediatrics-neurology/residency-program/pediatric-neurology-program-description)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c8cd8d425d2ea4ebac0539d0192c554d0c49dee45850a988114466865baedf94`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_fa06937fefc79a4b.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/pediatrics-neurology/residency-program/how-to-apply](https://www.bmc.org/pediatrics-neurology/residency-program/how-to-apply)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `5715b5429452ba97ba513fc207c3b22e2a1a2ae9e9530e5375e908f8bfe9e632`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_9c8c114adec514f7.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/welcome](https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/welcome)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `22d79d0d803f338889701d950a52240b9eb19bfbe97e19b8271a75abd813c440`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_133031c4cd5a31d8.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/pediatrics-neurology/research](https://www.bmc.org/pediatrics-neurology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `eea6f7725e12414127eea0290b06cb2120c7ae1909c629ef9a684feafb8b5caf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_c4002d7d5b8fc8d6.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty](https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `180882bc9a4c459158b80cdfd3fe7d0ccc85cc7664b8ccaa3514e45fa40dafc8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_ab99a3a91d7f98b9.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/pediatrics-infectious-disease/research](https://www.bmc.org/pediatrics-infectious-disease/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `301879d59acd4905457e7ef91c8b955a8df370c32b4ab7b3dc48a13c774aa32b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_97e0f409e433bd35.txt
+- **RESIDENCY_PAGE** [https://www.bmc.org/pediatrics-neurology/residency-program/alumni](https://www.bmc.org/pediatrics-neurology/residency-program/alumni)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `3e8747883857ca8ac0b3f447b7cf1ebb194d0cd70196f1d548241bf55256c3d6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_e969d041797fd1ad.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/research-operations-about-us-and-directory](https://www.bmc.org/research-operations/research-operations-about-us-and-directory)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f837b98e7051fba21cdea6121e82d5cb53d9379bd390cc4d6bf81aa253158a53`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_e8eb911d0f8e33b9.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/determining-research-institution](https://www.bmc.org/determining-research-institution)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c32530536d91b7d24992a2ea6f4579eb9e5dd941ab5dbb0e3426c3c5e7f5e616`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_d44f8226c281cb76.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/resources](https://www.bmc.org/research-operations/resources)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0a63fa32d8b077899ff5d74846011b2456d32b1ac21ba4c57ee00974433feceb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_2425c366d615e8ec.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/policies-procedures](https://www.bmc.org/research-operations/policies-procedures)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1799edbca1a57bc4a9f432ab83d643b6f05e807c064afe0cb2afcd7da5166746`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_9ca4c36adce824e1.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/frequently-asked-questions](https://www.bmc.org/research-operations/frequently-asked-questions)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e5c54a2f9befb3ed9d5b093320ea404edb23979ef10b5198194d9fbed103c556`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_436ea328e73be766.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/systems](https://www.bmc.org/research-operations/systems)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `220564bfb804992bd06488718fb33e384d693d9a265a3a77f09f4d5fb0bad6e0`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_767b99a165b1a31e.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/sickle-cell-disease/research-resources](https://www.bmc.org/sickle-cell-disease/research-resources)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b91828164586c7f7f34dd28d8706dd80a49419e8d75e9392da3a748d4eafd801`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_c93b54443be707bc.txt
+- **RESEARCH_PAGE** [https://www.bmc.org/research-operations/participate-research](https://www.bmc.org/research-operations/participate-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bb023b86582939d722e5c443a4eebec5105fa289aa8e653a82f45446c1dbb608`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-10-boston-medical-center/cleaned_text/sm_cbbd040cebdb9adc.txt
+
+## Rejected sources (31)
+
+- https://bmc.org/observership — FETCH_404 (status_404)
+- https://bmc.org/observerships — FETCH_404 (status_404)
+- https://bmc.org/observer — FETCH_404 (status_404)
+- https://bmc.org/clinical-observer — FETCH_404 (status_404)
+- https://bmc.org/visiting-student — FETCH_404 (status_404)
+- https://bmc.org/visiting-students — FETCH_404 (status_404)
+- https://bmc.org/medical-students — FETCH_404 (status_404)
+- https://bmc.org/international-students — FETCH_404 (status_404)
+- https://bmc.org/electives — FETCH_404 (status_404)
+- https://bmc.org/away-rotations — FETCH_404 (status_404)
+- https://bmc.org/clinical-elective — FETCH_404 (status_404)
+- https://bmc.org/clinical-rotation — FETCH_404 (status_404)
+- https://bmc.org/sub-internship — FETCH_403 (status_403)
+- https://bmc.org/subinternship — FETCH_404 (status_404)
+- https://bmc.org/acting-internship — FETCH_404 (status_404)
+- https://bmc.org/student-research — FETCH_404 (status_404)
+- https://bmc.org/shadow — FETCH_404 (status_404)
+- https://bmc.org/shadowing — FETCH_404 (status_404)
+- https://bmc.org/volunteering — FETCH_404 (status_404)
+- https://bmc.org/img — FETCH_404 (status_404)
+- https://bmc.org/international-medical-graduates — FETCH_404 (status_404)
+- https://bmc.org/fellowship — FETCH_404 (status_404)
+- https://bmc.org/physician-careers — FETCH_404 (status_404)
+- https://bmc.org/provider-careers — FETCH_404 (status_404)
+- https://bmc.org/visa — FETCH_404 (status_404)
+- https://bmc.org/immigration — FETCH_404 (status_404)
+- https://bmc.org/credentialing — FETCH_404 (status_404)
+- https://bmc.org/health-professionals — FETCH_404 (status_404)
+- https://bmc.org/medical-education — FETCH_404 (status_404)
+- https://bmc.org/professional-education — FETCH_404 (status_404)
+- https://bmc.org/student-affairs — FETCH_404 (status_404)

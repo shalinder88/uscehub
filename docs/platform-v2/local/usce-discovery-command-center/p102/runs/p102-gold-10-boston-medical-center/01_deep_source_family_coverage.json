@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-10-boston-medical-center",
+  "institutionId": "inst_boston_medical_center_ma",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/medical-education",
+        "https://bmc.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/visiting-student",
+        "https://bmc.org/visiting-students",
+        "https://bmc.org/international-students",
+        "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students"
+      ],
+      "acceptedSources": [
+        "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/observership",
+        "https://bmc.org/observer",
+        "https://bmc.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/electives",
+        "https://bmc.org/away-rotations",
+        "https://bmc.org/clinical-elective",
+        "https://bmc.org/clinical-rotation"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/sub-internship",
+        "https://bmc.org/subinternship",
+        "https://bmc.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/shadow",
+        "https://bmc.org/shadowing",
+        "https://bmc.org/volunteer",
+        "https://bmc.org/volunteering"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/volunteer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/graduate-medical-education",
+        "https://bmc.org/gme",
+        "https://bmc.org/education"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/graduate-medical-education",
+        "https://bmc.org/gme",
+        "https://bmc.org/education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/residency",
+        "https://www.bmc.org/departments/anesthesiology/education/residency-program-alumni-OLD",
+        "https://www.bmc.org/pediatrics-neurology/residency-program",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/pediatric-neurology-program-description",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/how-to-apply",
+        "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/welcome",
+        "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/alumni"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/residency",
+        "https://www.bmc.org/departments/anesthesiology/education/residency-program-alumni-OLD",
+        "https://www.bmc.org/pediatrics-neurology/residency-program",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/pediatric-neurology-program-description",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/how-to-apply",
+        "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/welcome",
+        "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+        "https://www.bmc.org/pediatrics-neurology/residency-program/alumni"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/benefits"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/benefits"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://bmc.org/visa",
+        "https://bmc.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/careers"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://bmc.org/observerships",
+        "https://bmc.org/medical-students",
+        "https://bmc.org/research",
+        "https://bmc.org/img",
+        "https://bmc.org/international-medical-graduates",
+        "https://bmc.org/credentialing",
+        "https://bmc.org/health-professionals",
+        "https://www.bmc.org/research/pre-award/funding-opportunities",
+        "https://www.bmc.org/research/pre-award/assurance-contacts",
+        "https://www.bmc.org/research/pre-award/quick-references",
+        "https://www.bmc.org/pediatrics-neurology/research",
+        "https://www.bmc.org/pediatrics-infectious-disease/research",
+        "https://www.bmc.org/research-operations/research-operations-about-us-and-directory",
+        "https://www.bmc.org/determining-research-institution",
+        "https://www.bmc.org/research-operations/resources",
+        "https://www.bmc.org/research-operations/policies-procedures",
+        "https://www.bmc.org/research-operations/frequently-asked-questions",
+        "https://www.bmc.org/research-operations/systems",
+        "https://www.bmc.org/sickle-cell-disease/research-resources",
+        "https://www.bmc.org/research-operations/participate-research"
+      ],
+      "acceptedSources": [
+        "https://bmc.org/research",
+        "https://www.bmc.org/research/pre-award/funding-opportunities",
+        "https://www.bmc.org/research/pre-award/assurance-contacts",
+        "https://www.bmc.org/research/pre-award/quick-references",
+        "https://www.bmc.org/pediatrics-neurology/research",
+        "https://www.bmc.org/pediatrics-infectious-disease/research",
+        "https://www.bmc.org/research-operations/research-operations-about-us-and-directory",
+        "https://www.bmc.org/determining-research-institution",
+        "https://www.bmc.org/research-operations/resources",
+        "https://www.bmc.org/research-operations/policies-procedures",
+        "https://www.bmc.org/research-operations/frequently-asked-questions",
+        "https://www.bmc.org/research-operations/systems",
+        "https://www.bmc.org/sickle-cell-disease/research-resources",
+        "https://www.bmc.org/research-operations/participate-research"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 2,
+    "tier2AcceptedSources": 11,
+    "tier3AcceptedSources": 2
+  },
+  "generatedAt": "2026-05-15T03:27:34.083Z"
+}

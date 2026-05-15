@@ -1,0 +1,154 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [],
+  "duplicates": [
+    {
+      "primaryClaimId": "src_24_fl_01",
+      "duplicateClaimId": "bmc-gme-001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_01",
+      "duplicateClaimId": "bmc-edu-gme-001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_02",
+      "duplicateClaimId": "bmc-gme-002",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_02",
+      "duplicateClaimId": "bmc-edu-gme-002",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_03",
+      "duplicateClaimId": "bmc-gme-003",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_03",
+      "duplicateClaimId": "bmc-edu-gme-003",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_04",
+      "duplicateClaimId": "bmc-gme-004",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_04",
+      "duplicateClaimId": "bmc-edu-gme-004",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_05",
+      "duplicateClaimId": "bmc-gme-005",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_05",
+      "duplicateClaimId": "bmc-edu-gme-006",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_06",
+      "duplicateClaimId": "bmc-gme-006",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_06",
+      "duplicateClaimId": "bmc-edu-gme-007",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_07",
+      "duplicateClaimId": "bmc-gme-007",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_07",
+      "duplicateClaimId": "bmc-edu-gme-008",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_fl_08",
+      "duplicateClaimId": "bmc-gme-002",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_24_a2_01",
+      "duplicateClaimId": "bmc-gme-010",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "src_24_a2_01",
+      "duplicateClaimId": "bmc-edu-gme-005",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "bmc-gme-a2-004",
+      "duplicateClaimId": "bmc-edu-a2-001",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "bmc-gme-a2-005",
+      "duplicateClaimId": "bmc-edu-a2-002",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "bmc-gme-a2-006",
+      "duplicateClaimId": "bmc-edu-a2-003",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_46_c8",
+      "duplicateClaimId": "c_bmc_oto_res_005",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "bmc_ent_subi_contact_name",
+      "duplicateClaimId": "bmc_ent_subi_contact_email",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    }
+  ],
+  "institutionId": "inst_boston_medical_center_ma",
+  "institutionName": "Boston Medical Center",
+  "metadata": {
+    "totalClaimsReviewed": 166,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 11,
+    "futureLaneOnlyCount": 145,
+    "humanReviewRequiredCount": 10,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-gold-10-boston-medical-center",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_PARTIAL",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "Visiting Medical Students sub-page referenced from Otolaryngology residency navigation (bmc_oto_res_vms_nav_03) — target URL not separately fetched beyond ENT sub-I page",
+    "Emergency Medicine 'Clerkships / Sub-Internship / Ultrasound Elective' navigation entries on bmc.org/residency — link targets not captured",
+    "BU Frontline Medicine affiliate link referenced from Otolaryngology residency nav — not separately captured"
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims emitted; ledger is internally consistent. ENT sub-internship signals are correctly held at CAUTION_SAFE_INTERNAL_REVIEW (pathway routes through BU Chobanian & Avedisian School of Medicine Registrar, not a direct public BMC USCE offer). Volunteer claims correctly held at HUMAN_REVIEW_REQUIRED (volunteer lane, not USCE refusal). Multiple duplicate claims flagged from the shared-hash GME/education/gme URLs for downstream dedupe. Tier 2/Tier 3 coverage strong; Tier 1 partial (only ENT visiting-students page)."
+}
