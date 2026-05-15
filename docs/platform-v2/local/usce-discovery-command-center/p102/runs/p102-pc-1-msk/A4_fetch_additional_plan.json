@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-1-msk",
+  "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+  "institutionName": "Memorial Sloan Kettering Cancer Center",
+  "officialDomains": [
+    "mskcc.org"
+  ],
+  "budgets": {
+    "maxCandidates": 20,
+    "maxAccepted": 10,
+    "maxPdfs": 5
+  },
+  "tasks": [
+    {
+      "taskId": "recovery_msk_med_student_elective_apply_page",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://mskcc.org/medical-education/visiting-students",
+        "https://mskcc.org/visiting-students",
+        "https://mskcc.org/medical-clerkship",
+        "https://mskcc.org/clerkship",
+        "https://mskcc.org/medical-students",
+        "https://mskcc.org/student-visit"
+      ]
+    },
+    {
+      "taskId": "recovery_msk_subspecialty_medical_student_opportunities",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://mskcc.org/medical-education/visiting-students",
+        "https://mskcc.org/visiting-students",
+        "https://mskcc.org/medical-clerkship",
+        "https://mskcc.org/clerkship",
+        "https://mskcc.org/medical-students",
+        "https://mskcc.org/student-visit"
+      ]
+    },
+    {
+      "taskId": "recovery_msk_gme_page",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "candidates": [
+        "https://mskcc.org/gme",
+        "https://mskcc.org/graduate-medical-education",
+        "https://mskcc.org/residency",
+        "https://mskcc.org/fellowships"
+      ]
+    }
+  ],
+  "mode": "execute",
+  "attestations": {
+    "networkUsed": true,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "sameInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T05:09:41.018Z"
+}

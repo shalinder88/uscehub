@@ -1,0 +1,319 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://orlandohealth.com/residency",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/residency",
+            "sourceHash": "b1b77a5822c98c03469ef06092bf19bb57c8b7f5bf13e4127852d84726bdfa78",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residency ProgramsGraduate Medical EducationPlease click below for more information about specific medical education residency programs (*indicates ACGME accredited programs)Emergency Medicine*General Surgery*Internal Medicine*Neurology*OB-GYN*Orthopedic Surgery*Pathology*Pediatrics*PharmacyUrology",
+            "claimText": "Orlando Health Graduate Medical Education lists ACGME-accredited residency programs: Emergency Medicine, General Surgery, Internal Medicine, Neurology, OB-GYN, Orthopedic Surgery, Pathology, Pediatrics, Pharmacy, Urology.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Page lists ACGME-accredited residency programs at the GME level — Tier 2 trainee content.",
+            "limitations": "Landing page; specific program eligibility and IMG/visa policy not stated here.",
+            "normalizedField": null
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/residency",
+            "sourceHash": "b1b77a5822c98c03469ef06092bf19bb57c8b7f5bf13e4127852d84726bdfa78",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Advanced Cardiovascular Imaging FellowshipOverviewAbout UsOverviewContact InfoFAQsProgram InfoApplication InformationImaging PublicationsProgram CurriculumEMS FellowshipGastroenterology FellowshipOverviewApplication ProcessCurriculumOverviewClinical TrainingDidactic TeachingResearchMeet the FacultyProgram Director's WelcomeSalary and BenefitsHepatology FellowshipInfectious Disease FellowshipInterventional Cardiology FellowshipNeonatal Perinatal Medicine Fellowship",
+            "claimText": "Navigation enumerates numerous Orlando Health fellowship programs (Advanced Cardiovascular Imaging, EMS, Gastroenterology, Hepatology, Infectious Disease, Interventional Cardiology, Neonatal Perinatal, etc.).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellowship program listings are GME trainee content — Tier 2.",
+            "limitations": "Names from navigation only; no eligibility detail on this page.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "f2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/residency",
+            "sourceHash": "b1b77a5822c98c03469ef06092bf19bb57c8b7f5bf13e4127852d84726bdfa78",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "PGY-1 Pharmacy Residency - OHDPHPGY-1 Pharmacy Residency - OHORMCPGY-2 Critical Care Pharmacy Residency - OHORMCPGY-2 Emergency Medicine Pharmacy Residency - OHORMCPGY-2 Oncology Pharmacy Residency - OHCIPGY-2 Pediatric Pharmacy Residency - OHAPH/OHWPH",
+            "claimText": "Pharmacy residency offerings include PGY-1 and PGY-2 tracks across Orlando Health sites including OHORMC.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Pharmacy residency listings — trainee Tier 2 content.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "negativeEvidenceClaims": [],
+        "opportunities": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page mentions 'M4 Away Rotations' under Pediatric Residency navigation, suggesting a Tier 1 USCE pathway, but no eligibility/application detail is on this landing page. Needs a dedicated capture of the M4 Away Rotations subpage.",
+          "'Clerkship Programs' appears as a top-level GME navigation entry but no clerkship details are present on this page."
+        ],
+        "recommendedA2Focus": [
+          "Capture orlandohealth.com pediatric residency 'M4 Away Rotations' subpage for Tier 1 visiting-student signal.",
+          "Capture 'Clerkship Programs' overview page under Graduate Medical Education for potential Tier 1 USCE content.",
+          "Capture Pharmacy Residency 'How to Apply' and FAQs to confirm Tier 2 eligibility (IMG/visa) language."
+        ],
+        "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+        "institutionName": "Orlando Health Orlando Regional Medical Center",
+        "networkUsed": false,
+        "runId": "p102-pc-2-orlando-health",
+        "schemaVersion": "p102-cli-0e-1"
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://orlandohealth.com/fellowship",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "orlando_health_fellowship_list_001",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Please click below for more information about specific medical education fellowship programs (*indicates ACGME accredited programs)",
+            "claimText": "Orlando Health publishes a list of medical-education fellowship programs, marking ACGME-accredited ones with an asterisk.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Page is a GME fellowship index listing subspecialty fellowships — Tier 2 trainee content.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "orlando_health_fellowship_list_002",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Adult Reconstruction FellowshipAdvanced Cardiovascular Imaging FellowshipBariatric SurgeryCardiovascular Disease Fellowship*Colon and Rectal Fellowship*Critical Care Medicine*Emergency Medicine Clinical InformaticsEmergency Medical Services (EMS)*Emergency Medical ResearchEmergency Medicine UltrasoundEmergency Medicine SimulationGastroenterology Fellowship (DHI)Hematology/Oncology*Hepatology FellowshipInfectious Diseases*Interventional Cardiology Fellowship*",
+            "claimText": "List of Orlando Health fellowship programs including ACGME-accredited cardiology, colon and rectal, critical care, EMS, hem/onc, infectious diseases, interventional cardiology.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Enumerated fellowship offerings — Tier 2 trainee future-lane content.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "orlando_health_fellowship_list_003",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Neonatal Perinatal Medicine Fellowship*NeurologyOrthopedic Hand*Orthopedic TraumaOrthopedic Sports Medicine*Pediatric Craniofacial and Maxillofacial SurgeryPediatric Critical Care Medicine*Pediatric Emergency Medicine*Pediatric Gastroenterology*Pediatric GI NutritionPediatric Hospital Medicine FellowshipPediatric Orthopedics*Pediatric Primary Care Sports Medicine Fellowship*Pulmonary Critical Care Medicine Fellowship*Sports Medicine Surgical FellowshipSurgical Critical Care*",
+            "claimText": "Additional Orlando Health fellowships: neonatal perinatal, orthopedic hand/trauma/sports, pediatric critical care, peds EM, peds GI, pulmonary CC, surgical CC.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Enumerated fellowship offerings — Tier 2 trainee future-lane content.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "orlando_health_fellowship_app_004",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Advanced Practice Provider FellowshipsBackAdvanced Practice Provider FellowshipsOverviewPediatric Primary Care Fellowship",
+            "claimText": "Orlando Health offers Advanced Practice Provider fellowships including a Pediatric Primary Care Fellowship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "APP fellowships sit in the trainee tier; navigation lists them under medical professionals.",
+            "normalizedField": null,
+            "limitations": "Navigation menu fragment; not a substantive description."
+          },
+          {
+            "claimId": "orlando_health_m4_away_005",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "AWAY_ROTATION",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "FellowshipsM4 Away RotationsMain Curriculum, Rotations, and TracksSalary, Benefits and Perks",
+            "claimText": "Pediatric Residency navigation references M4 Away Rotations, indicating fourth-year visiting student/away rotation pathway exists somewhere on the site.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "M4 Away Rotations references a Tier 1 visiting-student pathway, but only as a navigation label without details on this page.",
+            "normalizedField": null,
+            "limitations": "Only a nav label; no eligibility, application, cost, or duration content on this page."
+          },
+          {
+            "claimId": "orlando_health_clerkship_nav_006",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://orlandohealth.com/fellowship",
+            "sourceHash": "41adb7ce3dbdd049c990eae60e3afac02e2181609872008ca52beebab6e15e3a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/fellowship.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationClerkship ProgramsFellowship Programs",
+            "claimText": "Navigation indicates Orlando Health hosts Clerkship Programs under Graduate Medical Education.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Clerkship Programs label suggests Tier 1 medical-student rotations, but no details appear on this fellowship index page.",
+            "normalizedField": null,
+            "limitations": "Navigation only; this page does not describe clerkship eligibility, cost, or application."
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+        "institutionName": "Orlando Health Orlando Regional Medical Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Fetch Clerkship Programs index page to determine whether visiting medical student / observership pathway exists.",
+          "Fetch Pediatric Residency M4 Away Rotations page to extract eligibility, application, and duration for fourth-year visiting students.",
+          "Check for an Orlando Health observership / international observer page outside the GME fellowship index."
+        ],
+        "runId": "p102-pc-2-orlando-health",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a navigation/index for many fellowship programs without per-program eligibility, application, cost, or duration text. Per-program detail pages would be needed for Tier 2 specifics.",
+          "No explicit IMG/visa/ECFMG language present on this page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://orlandohealth.com/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-2-orlando-health",
+        "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+        "institutionName": "Orlando Health Orlando Regional Medical Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://orlandohealth.com/careers",
+            "sourceHash": "f7fe6442fd3e6f346b4567cc23062f31d50c7a9a814420ccd9014d1df98d5b1b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Orlando Health Is\nYour Best Place to WorkJoin Our TeamSearch Careers",
+            "claimText": "Orlando Health careers landing page promoting job search and team membership.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Page is the system-wide careers portal promoting employment opportunities, which is Tier 3 post-trainee career content.",
+            "normalizedField": null,
+            "limitations": "System-level careers portal; not campus-specific to ORMC."
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://orlandohealth.com/careers",
+            "sourceHash": "f7fe6442fd3e6f346b4567cc23062f31d50c7a9a814420ccd9014d1df98d5b1b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Physician Opportunities",
+            "claimText": "Careers page lists a dedicated 'Physician Opportunities' section/link.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "'Physician Opportunities' is a physician-jobs entry point — Tier 3 attending/faculty career content.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://orlandohealth.com/careers",
+            "sourceHash": "f7fe6442fd3e6f346b4567cc23062f31d50c7a9a814420ccd9014d1df98d5b1b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Orlando Health Orlando Regional Medical Center",
+            "claimText": "ORMC is listed among the Orlando Health hospital sites with career opportunities.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "ORMC appears in the list of system hospitals advertising career opportunities — Tier 3 content tied to campus.",
+            "normalizedField": null,
+            "limitations": "Listed only as a campus name in a system-wide hospital list."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Locate the dedicated 'Physician Opportunities' page for Orlando Health to capture J-1 waiver / H-1B sponsorship signals.",
+          "Search Orlando Health domain for observership / visiting medical student / elective pages separate from this careers portal."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://orlandohealth.com/education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+        "institutionName": "Orlando Health Orlando Regional Medical Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-pc-2-orlando-health",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    }
+  ]
+}

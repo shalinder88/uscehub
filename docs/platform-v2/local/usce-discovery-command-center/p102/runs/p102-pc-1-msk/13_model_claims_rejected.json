@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "msk_edu_a2_kravisfellow_06",
+      "claimType": "FUTURE_LANE_SERVICES",
+      "lane": "RESEARCH_OPPORTUNITY",
+      "sourceUrl": "https://mskcc.org/education",
+      "sourceHash": "aacff7f67f5f3d4ccd97325f3e43622914fc2d79508fed9fe382aee8ad6f1ce8",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-1-msk/cleaned_text/education.txt",
+      "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+      "quote": "The Marie-Josée Kravis Fellowship in Quantitative Biology\nPostdoctoral fellowship for quantitative biologists focusing on high-risk, high-impact cancer research.",
+      "normalizedField": "kravis_fellowship_quantitative_biology",
+      "claimText": "Marie-Josée Kravis Fellowship — postdoctoral fellowship in quantitative biology cancer research.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "HIGH",
+      "limitations": "Postdoctoral PhD-level fellowship — not a clinical USCE pathway.",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "deepSourceFamily": "RESEARCH_EDUCATION",
+      "tierAssignmentRationale": "Named postdoctoral research fellowship — Tier 3 post-trainee research career support.",
+      "whyA1Missed": "A1 captured the general postdoctoral training program but missed the specific named Kravis Fellowship in Quantitative Biology.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-pc-1-msk",
+      "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+      "sourceFamily": "JSON_LD",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

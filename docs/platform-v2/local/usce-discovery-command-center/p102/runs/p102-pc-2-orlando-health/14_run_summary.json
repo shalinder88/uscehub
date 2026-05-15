@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-2-orlando-health",
+  "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+  "canonicalName": "Orlando Health Orlando Regional Medical Center",
+  "queueId": "p102_positive_control_usce",
+  "startedAt": "2026-05-15T05:33:12.247Z",
+  "completedAt": "2026-05-15T05:33:12.247Z",
+  "status": "COMPLETE",
+  "currentStage": "DONE",
+  "artifactRoot": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-2-orlando-health",
+  "repoRunFolder": "/Users/shelly/usmle-platform/docs/platform-v2/local/usce-discovery-command-center/p102/runs/p102-pc-2-orlando-health",
+  "sourceFamilies": [
+    "RESIDENCY_PAGE",
+    "FELLOWSHIP_PAGE",
+    "CAREERS_PAGE",
+    "JSON_LD"
+  ],
+  "scores": {
+    "searchCompletenessScore": 10,
+    "sourceConfidenceScore": 100,
+    "artifactCompletenessScore": 100,
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 50,
+    "hallucinationRiskScore": 0
+  },
+  "verdict": "PASS_WITH_CAVEATS",
+  "validators": {
+    "validateP102": "NOT_RUN",
+    "validateNoSecrets": "NOT_RUN",
+    "tsc": "NOT_RUN"
+  },
+  "nextAction": "proceed_to_trial_2_p102_1"
+}
