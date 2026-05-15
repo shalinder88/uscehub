@@ -209,5 +209,38 @@ The remaining A4 task (`medschool.vanderbilt.edu` for VSLO) is off-domain and bo
 
 **Framework improvement** captured this sprint: A4 fetcher now mines schemeless URL references from task prose, increasing the success rate of A4 bounded recovery without changing the safety envelope.
 
+---
+
+## Gold #4 — Mayo Clinic Rochester (Rochester, MN) — `mayoclinic.org`
+
+Run ID: `p102-gold-4-mayo-clinic-rochester`. Failure mode: no public lane with explicit negative refusal quote.
+
+| Metric | Value |
+|---|---:|
+| Source candidates probed | 39 |
+| Accepted sources | 39 (substantial yield; Mayo publishes broadly) |
+| Tier 1 claims | 18 (TIER_COVERAGE_PARTIAL, lane `CAUTION_SAFE_INTERNAL_REVIEW`) |
+| Tier 2 claims | 6 |
+| Tier 3 claims | 6 |
+| PUBLIC_SAFE_USCE | **0** |
+| PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY | **0** (no explicit refusal quote captured) |
+| FUTURE_LANE_ONLY | ~6 |
+| HUMAN_REVIEW_REQUIRED | 12 |
+| Quote-verified | 31 / 31 (100%) |
+| Rejected on quote re-verify | 0 |
+| A4 tasks before / after | 2 / 2 (not executed; Mayo's recovery URLs target college.mayo.edu — off-domain) |
+| Scope conflicts | 0 |
+| Public-safety failures | 0 |
+| Model A3 verdict | PASS_PUBLISH_READY |
+| Deterministic regate verdict | PASS_WITH_CAVEATS (publicSafe=false, futureLaneValue=MEDIUM) |
+
+**Final status: `GOLD_PASS_HUMAN_REVIEW_REQUIRED`**
+
+This was the gold-set's "explicit negative quote" test (Mayo historically published "we do not accept observers" type language). The current Mayo Clinic public site (`mayoclinic.org`) yielded 31 quote-verified claims; 18 Tier 1 candidates but none with a HIGH-confidence definite offer/refusal statement that the model could promote to either PUBLIC_SAFE_USCE or PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY. The Tier 1 lane settled at `CAUTION_SAFE_INTERNAL_REVIEW`.
+
+Notably, **no explicit refusal quote was captured**. Either Mayo no longer publishes the explicit refusal language (the older P101 evidence is stale), or it lives at `college.mayo.edu` (off-domain for `mayoclinic.org` runs). The framework correctly returned 0 PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY rather than synthesizing a refusal from absence.
+
+The framework's honesty here is the point: it didn't invent a "Mayo doesn't accept observers" claim that the captured pages don't actually contain.
+
 
 

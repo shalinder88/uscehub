@@ -3,36 +3,41 @@
   "runId": "p102-gold-4-mayo-clinic-rochester",
   "depthPass": "USCE",
   "sourceFamiliesReviewed": [
-    "OBSERVERSHIP_PAGE",
-    "OBSERVERSHIP_PAGE",
-    "OBSERVERSHIP_PAGE",
-    "OBSERVERSHIP_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "VISITING_STUDENT_PAGE",
-    "RESEARCH_PAGE",
-    "RESEARCH_PAGE",
-    "RESEARCH_PAGE",
-    "RESEARCH_PAGE",
-    "VOLUNTEER_PAGE",
-    "VOLUNTEER_PAGE",
-    "OBSERVERSHIP_PAGE"
+    "JSON_LD"
   ],
-  "objectsCreated": 0,
-  "claimsPromoted": 0,
+  "objectsCreated": 1,
+  "claimsPromoted": 1,
   "conflictsFound": [],
   "unresolveds": [
-    "P102-0R defers model-driven claim extraction; structural skeleton only."
+    "https://mayoclinic.org/education: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion"
   ],
   "recoveryTasks": [],
   "scoreDeltas": {
     "publicReadinessScore": 0,
     "futureLaneValueScore": 0
-  }
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-gold-4-mayo-clinic-rochester_1",
+      "institutionId": "inst_mayo_clinic_rochester_mn",
+      "runId": "p102-gold-4-mayo-clinic-rochester",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "visiting medical student",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "and master's degrees in biomedical sciencesContinuous professional development\nContinuing education courses for medical professionalsVisiting medical student clerkships\nElective clinical rotations for visiting medical studentsNon-clinical education programs\nInternships, experiences, and opportunities for learnersLearner services and supportAcademic support and well-beingArtificial intelligence trainingOffice of Education Engagement and OutreachLibrariesMicrosurgery Training CenterSimulation cent",
+      "sourceUrl": "https://mayoclinic.org/education",
+      "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "JSON_LD",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
 }

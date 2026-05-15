@@ -1,0 +1,1310 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://mayoclinic.org/observership",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic's actual observership / visiting medical student / clinical elective page — the /observership URL returned a 404 Page Not Found. Try Mayo Clinic Alix School of Medicine visiting student program, Mayo Clinic School of Graduate Medical Education, and international observer pathways."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/observership",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/observership.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL /observership returned a 404 Page Not Found; the content is a generic Mayo Clinic site-help page, not an observership program page. Source-family hint OBSERVERSHIP from URL does not match content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 site-help page with no observership, visiting student, GME, or careers information — no tier applies.",
+            "normalizedField": null,
+            "limitations": "URL suggested OBSERVERSHIP family but page is a 404. A2 must re-discover the correct Mayo Clinic observership/visiting-student URL."
+          }
+        ],
+        "unresolveds": [
+          "Mayo Clinic's actual observership / visiting medical student program URL is unknown — the captured /observership path is a 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://mayoclinic.org/observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/observerships returned a Mayo Clinic 'Page Not Found' (404) page; no observership content present on this captured page. Need to locate canonical Mayo Clinic observership/visiting student page URL for re-capture."
+        ],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic Alix School of Medicine visiting medical student / elective program page",
+          "Locate Mayo Clinic School of Graduate Medical Education observership policy page",
+          "Search Mayo Clinic International Services pages for international physician observership program"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://mayoclinic.org/observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_3_conflict_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/observer",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/observer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL hinted OBSERVERSHIP family but the fetched content is a Mayo Clinic 404 Page Not Found with no observership information.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Source is a 404 error page; deep-source-hint family mismatches actual content.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "The page contains no observership, training, or career content — it is a 404 page, so no tier applies."
+          }
+        ],
+        "unresolveds": [
+          "URL https://mayoclinic.org/observer returned a 404 Page Not Found; the actual Mayo Clinic observership / visiting-clinician policy was not captured in this source."
+        ],
+        "recommendedA2Focus": [
+          "Recapture Mayo Clinic observership policy from a working URL (e.g. Mayo Clinic College of Medicine and Science / School of Graduate Medical Education observer or visiting clinician pages).",
+          "Confirm whether Mayo Clinic offers any public observership pathway for IMGs vs only for affiliated trainees."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://mayoclinic.org/clinical-observer",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic's actual clinical observership / visiting clerkship pages (e.g., Mayo Clinic Alix School of Medicine visiting student electives, Mayo Clinic School of Graduate Medical Education observer program) since the URL https://mayoclinic.org/clinical-observer returned a 404 Page Not Found and contained no substantive observership content."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "mayo_404_family_mismatch",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/clinical-observer",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/clinical-observer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL was pre-classified as OBSERVERSHIP_PAGE but the cleaned text is a Mayo Clinic 'Page Not Found' 404 site-help page with no observership content; source family mismatch.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "REJECTION_EVIDENCE",
+            "tierAssignmentRationale": "The cleaned text is a 404 Page Not Found site-help page with no training, USCE, or career content; not applicable to any tier.",
+            "limitations": "This is a 404 error page, not an actual observership program page. No substantive content to extract. URL-based pre-classification (OBSERVERSHIP) does not match the page content."
+          }
+        ],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/clinical-observer returned a 404 Page Not Found; the actual Mayo Clinic observership program page (if any) was not captured in this source.",
+          "sourceScope set to UNKNOWN_SCOPE for a mayoclinic.org URL — would normally be HEALTH_SYSTEM_LEVEL or INSTITUTION_SPECIFIC, but moot here because the page is a 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://mayoclinic.org/visiting-student",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_5_conflict_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/visiting-student",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visiting-student.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not Found - Site Help - Mayo Clinic",
+            "claimText": "URL/hint indicated VISITING_STUDENT page but content is a 404 Page Not Found error page; no USCE content present.",
+            "visibilityLaneSuggestedByModel": "HIDDEN_REJECTED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "The cleaned text is a 404 error page with site navigation chrome only; no visiting-student or USCE substantive content is present.",
+            "limitations": "Hint pre-classified this URL as VISITING_STUDENT/Tier 1 based on URL pattern, but the live content is a Page Not Found response."
+          }
+        ],
+        "unresolveds": [
+          "The URL https://mayoclinic.org/visiting-student returned a Page Not Found page; no visiting-student content was extractable from this source."
+        ],
+        "recommendedA2Focus": [
+          "Locate the current canonical Mayo Clinic visiting medical student / electives page (likely under college.mayo.edu or mayo.edu/mccms) since the /visiting-student URL is a 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://mayoclinic.org/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_6_conflict_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/visiting-students",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visiting-students.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL pre-classified as VISITING_STUDENT but the cleaned text is a 404 Page Not Found error page with no visiting-student content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 error page; no visiting-student program information is present despite URL hint.",
+            "normalizedField": null,
+            "limitations": "404 page; no substantive content"
+          }
+        ],
+        "unresolveds": [
+          "URL https://mayoclinic.org/visiting-students returned a 404 Page Not Found; no visiting-student content available at this URL on this capture."
+        ],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic's actual visiting medical student program page (likely at college.mayo.edu or mayo.edu/mms)",
+          "Verify canonical URL for Mayo Clinic Alix School of Medicine visiting student / clinical elective program"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://mayoclinic.org/medical-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic Alix School of Medicine visiting medical student / elective page (likely on college.mayo.edu)",
+          "Locate Mayo Clinic School of Graduate Medical Education residency/fellowship pages for Tier 2 capture",
+          "Search for Mayo Clinic observership or international clinical experience policy page"
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/medical-students returned a 'Page Not Found' (404) page; no USCE, GME, or career content was extractable from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://mayoclinic.org/international-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic's current visiting medical student / international student page; the captured URL https://mayoclinic.org/international-students returns a 404 Page Not Found."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/international-students",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/international-students.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "Captured URL resolves to a Mayo Clinic 404 Page Not Found; pre-classified deepSourceFamily VISITING_STUDENT from URL does not match content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a generic 404 site-help page with no USCE, GME, or careers signal; no tier applies.",
+            "limitations": "URL-based deepSourceHint VISITING_STUDENT is invalid because the page returns 404; no substantive content extractable."
+          }
+        ],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/international-students is a 404; the actual Mayo Clinic visiting/international medical student page URL is unknown from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://mayoclinic.org/electives",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/electives",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/electives.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "Target URL is a 404 page-not-found; no elective content present on this source.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "The cleaned text is the Mayo Clinic site-help 404 page; URL implied ELECTIVE but content does not exist, so no tier-relevant claim can be made.",
+            "limitations": "Source is a 404 page. URL-based deep-family hint (ELECTIVE) does not match content. No USCE-substantive text present.",
+            "normalizedField": null
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the live Mayo Clinic visiting medical student / elective page (likely under college.mayo.edu or mayo.edu Alix School of Medicine) since /electives returns 404.",
+          "Confirm correct URL for Mayo Clinic School of Graduate Medical Education visiting-student / elective program."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/electives",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/electives.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not Found - Site Help - Mayo Clinic",
+            "claimText": "Pre-classified source family VISITING_STUDENT_PAGE / ELECTIVE conflicts with content, which is a 404 site-help page.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 page rather than an elective page; family mismatch must be recorded.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "unresolveds": [
+          "Canonical URL for Mayo Clinic visiting medical student elective program is unknown from this source.",
+          "Mayo Clinic has multiple campuses (Rochester MN, Jacksonville FL, Scottsdale AZ); campus scope cannot be determined here."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://mayoclinic.org/away-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c_mayo_away_404_mismatch",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/away-rotations",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/away-rotations.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL pre-classified as VISITING_STUDENT_PAGE/ELECTIVE but cleaned content is a Mayo Clinic 404 Site Help page; no USCE content present.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 'Page Not Found' page with only site chrome and navigation; no tier-relevant content extractable.",
+            "limitations": "Source URL implies an away-rotations page but the captured cleaned text is Mayo's generic 404 Site Help page. Re-capture required."
+          }
+        ],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/away-rotations resolved to a 404 Site Help page; no away-rotation content was captured. A2 should recapture from the current canonical Mayo visiting-medical-student / away-rotation URL (likely on college.mayo.edu)."
+        ],
+        "recommendedA2Focus": [
+          "Recapture Mayo Clinic visiting medical student / away rotation page from its current canonical URL (college.mayo.edu Alix School of Medicine visiting student pages).",
+          "Confirm whether mayoclinic.org/away-rotations was ever a valid path or if the gold-set seed should be replaced."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://mayoclinic.org/clinical-elective",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate canonical Mayo Clinic visiting medical student / clinical elective URL (current page returned 404)",
+          "Identify Mayo Clinic School of Graduate Medical Education observership or visiting student program pages"
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/clinical-elective returns a Page Not Found (404). No USCE content present on this cleaned text to extract."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://mayoclinic.org/clinical-rotation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/clinical-rotation returns a 'Page Not Found' page with no clinical rotation content; cannot extract any USCE or future-lane claims."
+        ],
+        "recommendedA2Focus": [
+          "Locate the current canonical Mayo Clinic visiting medical student / clinical elective URL (likely under college.mayo.edu or mayo.edu education paths) since /clinical-rotation 404s."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://mayoclinic.org/sub-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc_01",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/sub-internship",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/sub-internship.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not Found - Site Help - Mayo Clinic",
+            "claimText": "URL prompt-classified as SUB_INTERNSHIP but the page content is a 404/Page Not Found site help page with no sub-internship content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 error page with no USCE, training, or career content; deep family hint (SUB_INTERNSHIP) contradicted by actual page content.",
+            "normalizedField": null,
+            "limitations": "Source returned a 404 page; no extractable USCE signals."
+          }
+        ],
+        "unresolveds": [
+          "URL /sub-internship returned a 404 Page Not Found; the actual Mayo Clinic sub-internship/visiting student page (if any) needs to be located via Mayo Clinic Alix School of Medicine or School of Graduate Medical Education."
+        ],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic Alix School of Medicine visiting student / sub-internship / clinical elective page via VSLO listing.",
+          "Check Mayo Clinic School of Graduate Medical Education for observership policy."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://mayoclinic.org/subinternship",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic Alix School of Medicine visiting student / sub-internship page; current URL returns 404 Page Not Found"
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/subinternship",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/subinternship.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL was pre-classified as SUB_INTERNSHIP via /subinternship slug but cleaned text is a 404 Page Not Found error page with no sub-internship content.",
+            "visibilityLaneSuggestedByModel": "HIDDEN_REJECTED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Page is a 404 error containing only site chrome and navigation; no Tier 1/2/3 content present.",
+            "limitations": "Source URL returns 404; no extractable USCE, GME, or careers content."
+          }
+        ],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/subinternship returns 404 Page Not Found; no sub-internship information extractable from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://mayoclinic.org/acting-internship",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "URL /acting-internship returned a Page Not Found at mayoclinic.org; search Mayo Clinic Alix School of Medicine site for current visiting student acting internship / sub-internship page."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/acting-internship",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/acting-internship.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "normalizedField": null,
+            "claimText": "URL pre-classified as SUB_INTERNSHIP/VISITING_STUDENT_PAGE but content is a 404 Page Not Found error page; no USCE content present.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Source family mismatch — URL implied an acting-internship page but the cleaned text is a generic 404 site-help page with no program-specific content.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404 Page Not Found page with only site navigation chrome and no training-, career-, or USCE-specific information."
+          }
+        ],
+        "unresolveds": [
+          "Pre-classified deepFamily SUB_INTERNSHIP does not match content; the /acting-internship URL is a dead link (404). A2 should locate the current Mayo Clinic acting internship / visiting clerkship URL via the Alix School of Medicine site."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://mayoclinic.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/research returned a Page Not Found (404) response; no substantive research content was captured on this page."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture Mayo Clinic research page from a valid URL (e.g., mayo.edu/research) to surface medical student research opportunities."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://mayoclinic.org/student-research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "URL https://mayoclinic.org/student-research returned a 404 'Page Not Found' — locate the current Mayo Clinic student research / medical student research elective page via site search or Alix School of Medicine site map."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL resolves to a Mayo Clinic 'Page Not Found' site-help page; no substantive student-research content present in cleaned text."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://mayoclinic.org/shadow",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the canonical Mayo Clinic shadowing / observership / visiting medical student page — the URL https://mayoclinic.org/shadow returned a 404 'Page Not Found' and contains no USCE content."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/shadow resolves to a 'Page Not Found' site-help page. No shadowing, observership, or visiting student content present in cleaned text."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://mayoclinic.org/shadowing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/shadowing returns a 'Page Not Found' error; no shadowing program content available on this source."
+        ],
+        "recommendedA2Focus": [
+          "Search Mayo Clinic's actual education and observership pages for any shadowing or pre-medical clinical experience programs since the /shadowing URL is a 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://mayoclinic.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL /volunteer returned a Page Not Found (404) at mayoclinic.org. No volunteer program content present to evaluate."
+        ],
+        "recommendedA2Focus": [
+          "Locate an actual Mayo Clinic volunteer or shadowing program page (likely under a different URL path) to determine USCE relevance."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://mayoclinic.org/volunteering",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/volunteering resolved to a 'Page Not Found' error page; no volunteering content present in cleaned text."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture a valid Mayo Clinic volunteering / shadowing URL if one exists, since the captured page is a 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://mayoclinic.org/img",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/img returned a Page Not Found (404) — no observership content present at this URL. A2 should locate the correct Mayo Clinic IMG/observership landing page if one exists."
+        ],
+        "recommendedA2Focus": [
+          "Search Mayo Clinic School of Graduate Medical Education for an IMG observership / international clinical observer program page",
+          "Search Mayo Clinic Alix School of Medicine for visiting medical student / VSLO / clinical elective pages",
+          "Search Mayo Clinic International Services for international physician observer pathways"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://mayoclinic.org/international-medical-graduates",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL targeted '/international-medical-graduates' but resolved to a Mayo Clinic 'Page Not Found' 404 page; no IMG content extractable from this capture."
+        ],
+        "recommendedA2Focus": [
+          "Re-locate Mayo Clinic IMG / observership / visiting student page at a current URL (e.g., college.mayo.edu pathways) since '/international-medical-graduates' returns 404."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://mayoclinic.org/graduate-medical-education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the active Mayo Clinic School of Graduate Medical Education URL (mayo.edu/mccms or college.mayo.edu) since /graduate-medical-education on mayoclinic.org returns a 404."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/graduate-medical-education",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/graduate-medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL was pre-classified as GME_PAGE but content is a 404 Page Not Found error; no GME content present.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Cleaned text is a 404 Page Not Found stub with only site navigation chrome; no tier-relevant content exists on this source.",
+            "limitations": "Source URL returns a Mayo Clinic 'Page Not Found' page; the deep family hint of GME is contradicted by the content."
+          }
+        ],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/graduate-medical-education returns a 404 Page Not Found; no GME content available from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://mayoclinic.org/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/gme resolves to a 'Page Not Found' site-help page; no GME-specific content available. The URL-based deepSourceHint of GME does not match actual page content."
+        ],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic School of Graduate Medical Education actual landing page (likely mayo.edu/mayo-clinic-school-of-graduate-medical-education) rather than the dead mayoclinic.org/gme URL."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://mayoclinic.org/residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/residency returned a 'Page Not Found' (404) page with no substantive residency content. No claims can be extracted."
+        ],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic School of Graduate Medical Education residency landing page (mayo.edu) for residency program data.",
+          "Re-capture from canonical GME URL rather than mayoclinic.org/residency which 404s."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://mayoclinic.org/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/fellowship returns a 'Page Not Found' error page; no fellowship content available for extraction."
+        ],
+        "recommendedA2Focus": [
+          "Locate canonical Mayo Clinic School of Graduate Medical Education fellowship index URL for re-capture (referenced in chrome navigation as 'Mayo Clinic School of Graduate Medical Education')."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://mayoclinic.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/careers returned a 'Page Not Found' error page; no careers content was captured. Recommend re-capture from the canonical Mayo Clinic careers domain (e.g., jobs.mayoclinic.org)."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture Mayo Clinic physician careers page from a working URL (jobs.mayoclinic.org/physicians) to extract Tier 3 attending/faculty job signals.",
+          "Capture Mayo Clinic visiting medical student / observership / clinical elective pages for Tier 1 USCE signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://mayoclinic.org/physician-careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the live Mayo Clinic physician careers URL (the captured URL returned a Page Not Found stub)."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "mayo_careers_404_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/physician-careers",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/physician-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL was pre-classified as PHYSICIAN_CAREERS but the cleaned text is a Mayo Clinic 'Page Not Found' site-help stub with no career content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is a 404/site-help page containing no Tier 1/2/3 substantive material; pre-classified family does not match content.",
+            "normalizedField": null,
+            "limitations": "Source returned a 404 stub; no physician-careers content available to extract."
+          }
+        ],
+        "unresolveds": [
+          "Captured URL https://mayoclinic.org/physician-careers resolved to a 'Page Not Found' stub; the actual physician-careers landing page was not captured."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://mayoclinic.org/provider-careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "mayo-rochester-provider-careers-404",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/provider-careers",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/provider-careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "Source URL returns a Page Not Found / 404 page; no provider-careers content available at this URL.",
+            "visibilityLaneSuggestedByModel": "HIDDEN_REJECTED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "The cleaned text is a 404 error page with no career/training content; no tier applies.",
+            "limitations": "Source is a 404 page; no substantive content to extract."
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the live Mayo Clinic provider/physician careers URL (likely different path under jobs.mayoclinic.org) to capture Tier 3 careers content."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/provider-careers returned a 404 Page Not Found; no provider-careers content was captured."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://mayoclinic.org/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/benefits returned a Page Not Found / 404 page; no benefits content available to extract."
+        ],
+        "recommendedA2Focus": [
+          "Locate live Mayo Clinic physician benefits page via careers.mayoclinic.org or jobs portal for Tier 3 benefits signal capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://mayoclinic.org/visa",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source is a 404 Page Not Found at https://mayoclinic.org/visa; no visa/immigration content present. Re-discover the correct Mayo Clinic visa/sponsorship URL (likely under careers.mayoclinic.org or jobs.mayoclinic.org) and re-capture."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c_mayo_visa_404_1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/visa",
+            "sourceHash": "50b1aff7bcfbf26ac11f748e34a3f1c01f339530bb22f648266d2421babb9c8c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/visa.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Page Not FoundThe page you are trying to reach is not available on our site.",
+            "claimText": "URL /visa pre-classified as VISA_IMMIGRATION (Tier 3) but the cleaned text is a 404 Page Not Found with no visa or sponsorship content. Source-family/content mismatch.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "REJECTION_EVIDENCE",
+            "tierAssignmentRationale": "Page is a 404 error page with no substantive content in any tier; URL-hint of VISA_IMMIGRATION does not match actual page content.",
+            "limitations": "Hint family was based on URL only; the page returns 404 and contains only site chrome and the not-found notice."
+          }
+        ],
+        "unresolveds": [
+          "Mayo Clinic visa/sponsorship policy URL is unknown — the captured /visa URL resolves to a 404 page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://mayoclinic.org/immigration",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL /immigration returns a Page Not Found (404) — no immigration/visa content present on the page. Deep-source hint VISA_IMMIGRATION cannot be validated from cleaned text."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://mayoclinic.org/credentialing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL /credentialing returned a 404 'Page Not Found' page; no credentialing content present to extract."
+        ],
+        "recommendedA2Focus": [
+          "Locate alternative Mayo Clinic credentialing or medical staff services URL via site map or search."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://mayoclinic.org/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/health-professionals resolved to a 'Page Not Found' site help page with no USCE or future-lane substantive content."
+        ],
+        "recommendedA2Focus": [
+          "Locate canonical Mayo Clinic medical professional / visiting student / observership pages (e.g., Mayo Clinic Alix School of Medicine visiting student program, Mayo Clinic School of Graduate Medical Education)."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://mayoclinic.org/medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/medical-education returns a Page Not Found (404) — no medical education content available to extract."
+        ],
+        "recommendedA2Focus": [
+          "Locate canonical Mayo Clinic medical education and visiting student/observership URLs (likely under college.mayo.edu or mayo.edu/mayo-clinic-school-of-graduate-medical-education).",
+          "Search Mayo Clinic Alix School of Medicine and Mayo Clinic School of Graduate Medical Education for visiting student / elective / observership pages."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://mayoclinic.org/professional-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/professional-education returned a Page Not Found (404) per cleaned text; no substantive USCE or future-lane content available on this source."
+        ],
+        "recommendedA2Focus": [
+          "Locate canonical Mayo Clinic professional-education / visiting clerkship / observership URL since /professional-education resolves to a 404 page"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://mayoclinic.org/student-affairs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source URL https://mayoclinic.org/student-affairs returned a Page Not Found error page; no substantive content available for claim extraction."
+        ],
+        "recommendedA2Focus": [
+          "Locate the current Mayo Clinic student affairs / visiting medical student / observership URL via Mayo Clinic Alix School of Medicine or Mayo Clinic College of Medicine and Science navigation."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://mayoclinic.org/education",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Visiting medical student clerkships\nElective clinical rotations for visiting medical students",
+            "claimText": "Mayo Clinic College of Medicine & Science offers visiting medical student clerkships described as elective clinical rotations for visiting medical students.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Page enumerates 'Visiting medical student clerkships - Elective clinical rotations for visiting medical students' which is a Tier 1 USCE-relevant signal, though this is a system-wide overview page.",
+            "normalizedField": null,
+            "limitations": "System-level/college-wide overview page; does not specify campus or eligibility for IMGs."
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Residencies and fellowships\n350+ GME programs in all medical and surgical specialties",
+            "claimText": "Mayo Clinic offers 350+ GME residency and fellowship programs across medical and surgical specialties.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Residency/fellowship program count belongs to trainee tier and is future-lane only.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "f2",
+            "claimType": "FUTURE_LANE_VISA",
+            "lane": "J1_WAIVER_SIGNAL",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Immigration and visas\nVisa classifications, requirements, and forms for international applicants",
+            "claimText": "Mayo Clinic education site references immigration and visa classifications, requirements, and forms for international applicants.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "VISA_IMMIGRATION",
+            "tierAssignmentRationale": "Generic visa/immigration resources for international learners — future-lane signal, audience not narrowed to visiting students vs. trainees.",
+            "normalizedField": null,
+            "limitations": "Audience (visiting student vs resident vs fellow) not specified in this overview text."
+          },
+          {
+            "claimId": "f3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "GME residencies and fellowships",
+            "claimText": "Site organizes GME residencies and fellowships as a major program area with admissions details.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Direct reference to GME residencies and fellowships — Tier 2 future-lane.",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_mayo_clinic_rochester_mn",
+        "institutionName": "Mayo Clinic",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Mayo Clinic Visiting Medical Student Clerkships dedicated page for eligibility, application fee, duration, VSLO requirements, IMG/international policy.",
+          "Confirm Rochester-campus-specific applicability versus system-wide policy.",
+          "Capture GME Office page for ECFMG/J-1 sponsorship language."
+        ],
+        "runId": "p102-gold-4-mayo-clinic-rochester",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "s1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-4-mayo-clinic-rochester/cleaned_text/education.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Three world-class campus locations and an extensive Midwest health system offer diverse patient populations and research opportunities.",
+            "claimText": "Page covers three Mayo Clinic campuses (Rochester, Phoenix/Scottsdale, Jacksonville) plus the Mayo Clinic Health System; cannot be attributed to Rochester campus specifically without further proof.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Scope conflict: system/college-wide overview cannot be attributed to a single campus without campus-applicability proof.",
+            "normalizedField": null,
+            "limitations": "Source scope is effectively system/college-wide; institution target is Mayo Clinic Rochester."
+          }
+        ],
+        "unresolveds": [
+          "Visiting medical student clerkship eligibility (IMG / international / domestic-only) not stated on this overview page.",
+          "Application fee, duration, and pathway (VSLO?) not stated on this overview page.",
+          "Campus-specific applicability to Mayo Clinic Rochester not stated on this overview page."
+        ]
+      }
+    }
+  ]
+}
