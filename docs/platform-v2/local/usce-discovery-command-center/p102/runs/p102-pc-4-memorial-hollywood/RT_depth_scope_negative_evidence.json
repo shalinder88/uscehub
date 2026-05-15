@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "scopeConflicts": [
+    {
+      "claimId": "c1 (mhs.net/education)",
+      "sourceUrl": "https://mhs.net/education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "mhs.net is the Memorial Healthcare System parent domain covering six hospitals. Institution under analysis is Memorial Regional Hollywood specifically; no campus-applicability proof in cleaned text."
+    },
+    {
+      "claimId": "c_offer_clinical_training_001",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "Quote covers MHS as a whole; campus-specific attribution missing."
+    },
+    {
+      "claimId": "c14 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "Quote 'You may be required to travel to more than one hospital while on your rotation' explicitly confirms system-wide scope, not campus-specific."
+    },
+    {
+      "claimId": "c7_scope_systemhub",
+      "sourceUrl": "https://mhs.net/medical-professionals",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "System hub page; correctly already at HUMAN_REVIEW_REQUIRED."
+    }
+  ],
+  "overpromotionDetected": [],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

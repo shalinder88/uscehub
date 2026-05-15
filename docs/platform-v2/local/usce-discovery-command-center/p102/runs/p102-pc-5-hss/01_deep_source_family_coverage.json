@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-5-hss",
+  "institutionId": "inst_hospital_for_special_surgery_ny",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/medical-education",
+        "https://hss.edu/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/visiting-student",
+        "https://hss.edu/visiting-students",
+        "https://hss.edu/international-students",
+        "https://hss.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://hss.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://hss.edu/education/visiting-medical-students",
+        "https://hss.edu/medical-education/visiting-students",
+        "https://hss.edu/students/visiting-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/observership",
+        "https://hss.edu/observer",
+        "https://hss.edu/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/electives",
+        "https://hss.edu/away-rotations",
+        "https://hss.edu/clinical-elective",
+        "https://hss.edu/clinical-rotation",
+        "https://hss.edu/hcp-education-training/medical-students/elective",
+        "https://hss.edu/education/medical-student-electives",
+        "https://hss.edu/medical-education/medical-student-electives",
+        "https://hss.edu/medical-students/electives",
+        "https://hss.edu/medical-students/elective-rotations",
+        "https://hss.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/sub-internship",
+        "https://hss.edu/subinternship",
+        "https://hss.edu/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hss.edu/shadow",
+        "https://hss.edu/shadowing",
+        "https://hss.edu/volunteer",
+        "https://hss.edu/volunteering",
+        "https://www.hss.edu/about/volunteer"
+      ],
+      "acceptedSources": [
+        "https://www.hss.edu/about/volunteer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/graduate-medical-education",
+        "https://hss.edu/gme",
+        "https://hss.edu/medical-professionals/graduate-medical-education",
+        "https://hss.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://hss.edu/education/undergraduate-medical-education",
+        "https://hss.edu/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hss.edu/visa",
+        "https://hss.edu/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hss.edu/careers",
+        "https://www.hss.edu/careers",
+        "https://www.hss.edu/careers/about-us",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/lab-medicine",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/radiology",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+        "https://www.hss.edu/careers/business-operational-technical-professionals",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/administrative-professionals",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/development",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/facilities",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/finance",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/human-resources"
+      ],
+      "acceptedSources": [
+        "https://hss.edu/careers",
+        "https://www.hss.edu/careers",
+        "https://www.hss.edu/careers/about-us",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/lab-medicine",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/radiology",
+        "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+        "https://www.hss.edu/careers/business-operational-technical-professionals",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/administrative-professionals",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/development",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/facilities",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/finance",
+        "https://www.hss.edu/careers/business-operational-technical-professionals/human-resources"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://www.hss.edu/about/policies/research-activities"
+      ],
+      "acceptedSources": [
+        "https://www.hss.edu/about/policies/research-activities"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hss.edu/observerships",
+        "https://hss.edu/medical-students",
+        "https://hss.edu/research",
+        "https://hss.edu/img",
+        "https://hss.edu/international-medical-graduates",
+        "https://hss.edu/credentialing",
+        "https://hss.edu/health-professionals",
+        "https://hss.edu/education",
+        "https://hss.edu/hcp-education-training",
+        "https://hss.edu/hcp-education-training/medical-students",
+        "https://hss.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://hss.edu/medical-professionals",
+        "https://hss.edu/academic-institute",
+        "https://hss.edu/academic-institute/education",
+        "https://hss.edu/academic-institute/education/medical",
+        "https://hss.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://hss.edu/medicine/international",
+        "https://hss.edu/medicine/international/international-programs",
+        "https://hss.edu/visiting-clerkships",
+        "https://hss.edu/visiting-clerkships/international",
+        "https://hss.edu/education-institute",
+        "https://hss.edu/education-institute/academic-visitor-program",
+        "https://hss.edu/education/medical-students",
+        "https://www.hss.edu/about/research-and-education"
+      ],
+      "acceptedSources": [
+        "https://hss.edu/research",
+        "https://hss.edu/education",
+        "https://hss.edu/education-institute",
+        "https://hss.edu/education-institute/academic-visitor-program",
+        "https://www.hss.edu/about/research-and-education"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_WEAK",
+    "tier2": "TIER_COVERAGE_WEAK",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 1,
+    "tier2AcceptedSources": 0,
+    "tier3AcceptedSources": 18
+  },
+  "generatedAt": "2026-05-15T17:08:24.305Z"
+}

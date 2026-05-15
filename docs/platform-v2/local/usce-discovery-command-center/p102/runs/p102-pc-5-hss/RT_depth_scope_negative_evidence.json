@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-5-hss",
+  "scopeConflicts": [],
+  "overpromotionDetected": [
+    {
+      "claimId": "hss-avp-scope-001",
+      "actualTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Claim is a meta scope-reclassification note tagged PUBLIC_SAFE_USCE; not an over-promotion across tiers but a structural over-promotion of a SCOPE_CONFLICT row to a publishable USCE row."
+    }
+  ],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

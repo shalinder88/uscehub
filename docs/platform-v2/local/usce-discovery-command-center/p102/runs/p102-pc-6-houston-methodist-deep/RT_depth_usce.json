@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-6-houston-methodist-deep",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "OTHER"
+  ],
+  "objectsCreated": 2,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [
+    "https://houstonmethodist.org/academic-institute/education/medical: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+    "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-6-houston-methodist-deep_4",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "runId": "p102-pc-6-houston-methodist-deep",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "Medical Student Rotation",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "Our rotations provide in-depth, hands-on experience in a range of fields:Medical Student Rotations & ObservershipsLearn MoreENMED ProgramBecome a \"Physicianeer\"The revolutionary EnMed program partners Houston Methodist with Texas A&M University to transform healthcare through interdisciplinary translational research, medical technology development, and the training and development of &ldquo;Physicianeers&rdquo;.ENMED programLearn MoreTexas A&M MD/PhD ProgramInnovative Educational PathHouston Met",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical",
+      "sourceHash": "ba6a49606d644a956f1646ac0ed2642cc9d4678b4ff96f7f9d74e51e2fafa79e",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-6-houston-methodist-deep/cleaned_text/academic-institute_education_medical.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "OTHER",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-6-houston-methodist-deep_5",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "runId": "p102-pc-6-houston-methodist-deep",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "Medical Student Rotation",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "Medical Student Rotations | Academic Institute | Houston MethodistHouston Methodist Main SiteAcademic InstituteGivingInternational PatientsCareersAcademic InstituteClinical TrialsMethodologyGivingEventsFaculty DirectoryAcademic InstituteResearchResearchAreas of ResearchOur LabsTechnology TransferClinical TrialsCore FacilitiesMethodologyPublicationsEventsOur FacultyEducationEducationOur EducationCME and ProfessionalsGME and ResidenciesMedical EducationResearch EducationAlumni AssociationAcademic ",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "sourceHash": "9de02eae1af06752221a068f5d8ecadebfcb61fc2e1115d376002ffa65957ba4",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-6-houston-methodist-deep/cleaned_text/academic-institute_education_medical_medical-student-rotations.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "OTHER",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "c_hss_pharmacy_careers_a2_1",
+      "claimType": "FUTURE_LANE_SERVICES",
+      "lane": "CAREERS_PAGE",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy",
+      "sourceHash": "f87c712678fe2668e094d1e87c2c9b0533fad0743cb6874596a1da9416b5ef66",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_7d85cf44061c75c9.txt",
+      "sourceScope": "CAREERS_PORTAL",
+      "quote": "From monthly continued education opportunities and professional membership fee reimbursement to stipends for attending conferences, we're committed to providing the resources and learning opportunities our people need to reach their full potential.",
+      "claimText": "HSS Pharmacy benefits include monthly CE opportunities, professional membership fee reimbursement, and conference attendance stipends.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "HIGH",
+      "tier": "NOT_APPLICABLE",
+      "deepSourceFamily": "BENEFITS",
+      "tierAssignmentRationale": "Continuing-education/professional-development benefit on allied-health pharmacy careers page; not physician pipeline tier.",
+      "limitations": "Stated on pharmacy careers page; applicability to physicians not stated.",
+      "whyA1Missed": "A1 captured tuition reimbursement but did not emit a separate benefit claim covering CE, membership fee reimbursement, and conference stipends listed in the adjacent paragraph.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-pc-5-hss",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "sourceFamily": "CAREERS_PAGE",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

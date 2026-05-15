@@ -23,7 +23,7 @@
 
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import * as path from 'node:path';
-import { classifyVisibility, type Visibility } from './p102-extraction-lib';
+import { classifyVisibility, inferSourceScope, type Visibility } from './p102-extraction-lib';
 
 /**
  * Restrictiveness ordinal: 0 = most permissive, 5 = most restrictive.
@@ -54,11 +54,19 @@ interface VerifiedClaim {
   sourceFamily: string;
   deepSourceFamily?: string | null;
   sourceScope: string;
+  sourceUrl?: string;
   quote: string;
   visibility: Visibility;
   visibilityRationale: string | null;
   confidence: 'HIGH' | 'MEDIUM' | 'LOW';
   [k: string]: unknown;
+}
+
+interface CanonicalInstitution {
+  institutionId: string;
+  canonicalName: string;
+  officialDomains: string[];
+  parentSystem: string | null;
 }
 
 interface Ledger {
@@ -95,15 +103,53 @@ function processRun(runId: string, dryRun: boolean): { changes: number; total: n
     return { changes: 0, total: 0, entries: [] };
   }
   const ledger = JSON.parse(readFileSync(ledgerPath, 'utf8')) as Ledger;
+
+  // P102-FIX: also re-infer sourceScope using the canonical institution
+  // context, so an acronym-domain system that was previously tagged
+  // INSTITUTION_SPECIFIC under a no-parentSystem canonical can be correctly
+  // downgraded to HEALTH_SYSTEM_LEVEL after parentSystem is set.
+  const canonicalPath = path.join(RUNS_DIR, runId, '05_canonical_institution.json');
+  let canonical: CanonicalInstitution | null = null;
+  if (existsSync(canonicalPath)) {
+    try {
+      canonical = JSON.parse(readFileSync(canonicalPath, 'utf8')) as CanonicalInstitution;
+    } catch {
+      canonical = null;
+    }
+  }
+
   let changes = 0;
   const entries: Array<Record<string, unknown>> = [];
 
   for (const c of ledger.claims) {
     const beforeVis = c.visibility;
+    let scopeForClassifier = c.sourceScope;
+    if (canonical && canonical.parentSystem && c.sourceUrl) {
+      // Re-infer scope when the canonical now carries a parentSystem that
+      // wasn't set at extraction time. Only override when the new inference
+      // is STRICTER than the recorded scope — never weaken a recorded
+      // HEALTH_SYSTEM_LEVEL or MEDICAL_SCHOOL_LEVEL.
+      let srcDomain = '';
+      try {
+        srcDomain = new URL(c.sourceUrl).host;
+      } catch {
+        srcDomain = '';
+      }
+      const reInferred = inferSourceScope(
+        { sourceDomain: srcDomain, sourceScope: 'UNKNOWN_SCOPE', sourceFamily: c.sourceFamily, sourceUrl: c.sourceUrl },
+        { institutionId: canonical.institutionId, officialDomain: canonical.officialDomains[0] ?? '', canonicalName: canonical.canonicalName, parentSystem: canonical.parentSystem },
+      );
+      const currentlyStrict = c.sourceScope === 'HEALTH_SYSTEM_LEVEL' || c.sourceScope === 'MEDICAL_SCHOOL_LEVEL';
+      const newIsStrict = reInferred === 'HEALTH_SYSTEM_LEVEL' || reInferred === 'MEDICAL_SCHOOL_LEVEL';
+      if (newIsStrict && !currentlyStrict) {
+        scopeForClassifier = reInferred;
+      }
+    }
+
     const reclass = classifyVisibility({
       sourceFamily: c.sourceFamily,
       deepSourceFamily: c.deepSourceFamily ?? null,
-      sourceScope: c.sourceScope,
+      sourceScope: scopeForClassifier,
       matchedLane: mapLane(c.lane),
       campusApplicabilityProof: null,
       modelReaderConfidence: c.confidence,
@@ -133,6 +179,9 @@ function processRun(runId: string, dryRun: boolean): { changes: number; total: n
       if (!dryRun) {
         c.visibility = reclass.visibility;
         c.visibilityRationale = reclass.notPublicReason;
+        if (scopeForClassifier !== c.sourceScope) {
+          c.sourceScope = scopeForClassifier;
+        }
       }
     }
   }

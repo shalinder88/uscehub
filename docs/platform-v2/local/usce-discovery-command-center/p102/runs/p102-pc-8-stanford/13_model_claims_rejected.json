@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "src_74_a2_n5",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "quote": "CTS Courses\nResident Education Conferences\nResident Resources",
+      "normalizedField": null,
+      "claimText": "Department lists CTS Courses, Resident Education Conferences, and Resident Resources — internal trainee curriculum infrastructure.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "MEDIUM",
+      "limitations": "Nav labels only; audience (internal residents vs visitors) not stated.",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "deepSourceFamily": "GME",
+      "tierAssignmentRationale": "Resident-facing curriculum/conferences/resources — Tier 2 trainee infrastructure.",
+      "whyA1Missed": "A1 did not enumerate the resident-curriculum navigation items (Courses, Conferences, Resources).",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-pc-8-stanford",
+      "institutionId": "inst_stanford_health_care_ca",
+      "sourceFamily": "RESEARCH_PAGE",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

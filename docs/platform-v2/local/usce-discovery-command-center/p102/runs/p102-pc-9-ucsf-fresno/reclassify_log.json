@@ -1,0 +1,19 @@
+{
+  "runId": "p102-pc-9-ucsf-fresno",
+  "ranAt": "2026-05-15T19:38:03.154Z",
+  "total": 74,
+  "changes": 1,
+  "entries": [
+    {
+      "claimId": "ucsf_fresno_ume_nav_visiting_students",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "sourceFamily": "GME_PAGE",
+      "deepSourceFamily": "MEDICAL_EDUCATION",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "confidence": "MEDIUM",
+      "beforeVisibility": "FUTURE_LANE_ONLY",
+      "afterVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "afterRationale": "P102-0C deterministic detection; needs model A1/A2 reader (P102-0D) for PUBLIC_SAFE_USCE promotion"
+    }
+  ]
+}

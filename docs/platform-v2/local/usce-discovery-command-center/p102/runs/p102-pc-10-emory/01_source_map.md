@@ -1,0 +1,183 @@
+# Source Map — Emory University Hospital
+
+Run: p102-pc-10-emory
+schemaVersion: p102-0r-1
+
+## Accepted sources (28)
+
+- **RESEARCH_PAGE** [https://med.emory.edu/research](https://med.emory.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `94e65f756f7826357d317a8abc1feb59dfaa49d9085842e05c16c8d6b0310bac`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/research.txt
+- **GME_PAGE** [https://med.emory.edu/gme](https://med.emory.edu/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt
+- **RESIDENCY_PAGE** [https://med.emory.edu/residency](https://med.emory.edu/residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt
+- **CAREERS_PAGE** [https://med.emory.edu/careers](https://med.emory.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt
+- **OTHER** [https://med.emory.edu/education](https://med.emory.edu/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt
+- **OTHER** [https://med.emory.edu/medicine/international](https://med.emory.edu/medicine/international)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt
+- **OTHER** [https://med.emory.edu/medicine/international/international-programs](https://med.emory.edu/medicine/international/international-programs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt
+- **VISITING_STUDENT_PAGE** [https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students](https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/core_labs/index.html](http://med.emory.edu/research/core_labs/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c473d72018a1f786810f02787a2cdadbf47f9c21df965e860ffc0852721c124f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_df9ea847337051a6.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/training/index.html](http://med.emory.edu/research/training/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-centers/index.html](http://med.emory.edu/research/research-centers/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9af821e1885e0fd8f1fc238bad88719fc7dd74468067c1e26e5e1cd546008e5e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_d43d4f1e93414bf3.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/research-admin-units/peds/index.html](http://med.emory.edu/research/conducting-research/research-admin-units/peds/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b7b085545160651a6e2b263278496a6de2245decf871c1fde8e9c11066e7c7aa`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_295469aedb528af7.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/research-admin-units/c-i/index.html](http://med.emory.edu/research/conducting-research/research-admin-units/c-i/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6b0f4a0725a0986640d33c41f085fa3baf4d69643fef7458c2ff83a1f93ffe8e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_3a695285ef4dfaec.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/research-admin-units/bsci/index.html](http://med.emory.edu/research/conducting-research/research-admin-units/bsci/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `3e3f2b8cb81a6984831225972e0d0ef6e02ac175a49fc5b549329e48fd48ae16`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_6bc4e83f018665ec.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/research-admin-units/aboss-hss/index.html](http://med.emory.edu/research/conducting-research/research-admin-units/aboss-hss/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b63355497793fbf69cd82fdd62bbf52d35f64ea1b95f4467e5a0145e8d7386ab`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_f7f01cc60e0d77e4.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/research-admin-units/index.html](http://med.emory.edu/research/conducting-research/research-admin-units/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `20a927b69bf97e622207dbd43f16abeea4e5b58becb8a63fb508dc3d3929a2a3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_1653114c0aa9ab27.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/funding-opportunities/i3-2019.html](http://med.emory.edu/research/conducting-research/funding-opportunities/i3-2019.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `610b6e022186883b4b32d3b9ea7573e0407607314bdb03add2087b560fc86027`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_34e11161e122e9ea.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/funding-opportunities/grant-writing/index.html](http://med.emory.edu/research/conducting-research/funding-opportunities/grant-writing/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `56639230891da66c856aa649aefa312d410a936a055b5e1568f81361644f29c6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_5c7de4e1d41dc609.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/funding-opportunities/index.html](http://med.emory.edu/research/conducting-research/funding-opportunities/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f769f0dfd0a0dd081fc8ebbd38519025cfb4563003a9b0d7fd2c235f5b76090a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_16bc754961baff33.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/conducting-research/index.html](http://med.emory.edu/research/conducting-research/index.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1b1dd991647c99f4711721387380c5f2cbfc04111601c9b0f0a92f35d33bee6b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_ffff1ab679cc8f50.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/resident-information.html](http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/resident-information.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4a33206a3a14fb43a5b05bdeb2fb66aaa45ee4c88d3ff5b6fccd378b70c2c750`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_0f52636bca289fb8.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/l2l-launchpad.html](http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/l2l-launchpad.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c8563b2503cfbbc35e218e91b29b485bec29c9338a40eb0883abffa94bf42c8b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_809214d3892a96ac.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/inside-the-innovation-center.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/inside-the-innovation-center.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `aa62e16badce0d396c36acfc370d4da870fffe19fd78232c8cfca7b09642586c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_06ba5ec915c20428.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/participate.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/participate.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8d215f4b9df1dd371b89815b2bc6cc9c0d26a340d207315732cd96af3fbc639a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_d56f93e022d8e265.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/education-networking.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/education-networking.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `60d1aba9e961500bc56eebb81e8f4958d69578c0a8d43c909ec7798bf1916048`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_53ea7a89a2779632.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/micromachining.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/micromachining.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `288d81c9f98e42ffdebcc1893c74f12a29af312ce2b08a8ffc79c254548c0f12`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_7f3e2c2806a1a2f2.txt
+- **RESEARCH_PAGE** [http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/3d-printing.html](http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/3d-printing.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9140960ed6b476ee46ae752ce9e9d1a4b18b3aba9736c5010e8f3d4aeec34711`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_6307905e179c859b.txt
+
+## Rejected sources (61)
+
+- https://med.emory.edu/observership — FETCH_404 (status_404)
+- https://med.emory.edu/observerships — FETCH_404 (status_404)
+- https://med.emory.edu/observer — FETCH_404 (status_404)
+- https://med.emory.edu/clinical-observer — FETCH_404 (status_404)
+- https://med.emory.edu/visiting-student — FETCH_404 (status_404)
+- https://med.emory.edu/visiting-students — FETCH_404 (status_404)
+- https://med.emory.edu/medical-students — FETCH_404 (status_404)
+- https://med.emory.edu/international-students — FETCH_404 (status_404)
+- https://med.emory.edu/electives — FETCH_404 (status_404)
+- https://med.emory.edu/away-rotations — FETCH_404 (status_404)
+- https://med.emory.edu/clinical-elective — FETCH_404 (status_404)
+- https://med.emory.edu/clinical-rotation — FETCH_404 (status_404)
+- https://med.emory.edu/sub-internship — FETCH_404 (status_404)
+- https://med.emory.edu/subinternship — FETCH_404 (status_404)
+- https://med.emory.edu/acting-internship — FETCH_404 (status_404)
+- https://med.emory.edu/student-research — FETCH_404 (status_404)
+- https://med.emory.edu/shadow — FETCH_404 (status_404)
+- https://med.emory.edu/shadowing — FETCH_404 (status_404)
+- https://med.emory.edu/volunteer — FETCH_404 (status_404)
+- https://med.emory.edu/volunteering — FETCH_404 (status_404)
+- https://med.emory.edu/img — FETCH_404 (status_404)
+- https://med.emory.edu/international-medical-graduates — FETCH_404 (status_404)
+- https://med.emory.edu/graduate-medical-education — FETCH_404 (status_404)
+- https://med.emory.edu/fellowship — FETCH_404 (status_404)
+- https://med.emory.edu/physician-careers — FETCH_404 (status_404)
+- https://med.emory.edu/provider-careers — FETCH_404 (status_404)
+- https://med.emory.edu/benefits — FETCH_404 (status_404)
+- https://med.emory.edu/visa — FETCH_404 (status_404)
+- https://med.emory.edu/immigration — FETCH_404 (status_404)
+- https://med.emory.edu/credentialing — FETCH_404 (status_404)
+- https://med.emory.edu/health-professionals — FETCH_404 (status_404)
+- https://med.emory.edu/medical-education — FETCH_404 (status_404)
+- https://med.emory.edu/professional-education — FETCH_404 (status_404)
+- https://med.emory.edu/student-affairs — FETCH_404 (status_404)
+- https://med.emory.edu/hcp-education-training — FETCH_404 (status_404)
+- https://med.emory.edu/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://med.emory.edu/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://med.emory.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://med.emory.edu/medical-professionals — FETCH_404 (status_404)
+- https://med.emory.edu/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://med.emory.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://med.emory.edu/academic-institute — FETCH_404 (status_404)
+- https://med.emory.edu/academic-institute/education — FETCH_404 (status_404)
+- https://med.emory.edu/academic-institute/education/medical — FETCH_404 (status_404)
+- https://med.emory.edu/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://med.emory.edu/visiting-clerkships — FETCH_404 (status_404)
+- https://med.emory.edu/visiting-clerkships/international — FETCH_404 (status_404)
+- https://med.emory.edu/education-institute — FETCH_404 (status_404)
+- https://med.emory.edu/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://med.emory.edu/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://med.emory.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://med.emory.edu/education/medical-students — FETCH_404 (status_404)
+- https://med.emory.edu/education/visiting-medical-students — FETCH_404 (status_404)
+- https://med.emory.edu/education/medical-student-electives — FETCH_404 (status_404)
+- https://med.emory.edu/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://med.emory.edu/medical-education/visiting-students — FETCH_404 (status_404)
+- https://med.emory.edu/medical-students/electives — FETCH_404 (status_404)
+- https://med.emory.edu/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://med.emory.edu/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://med.emory.edu/students/visiting-students — FETCH_404 (status_404)
+- https://med.emory.edu/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)

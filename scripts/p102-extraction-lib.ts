@@ -228,6 +228,24 @@ export function inferSourceScope(source: SourceLike, ctx: InstitutionContext): s
     if (parentInDomain && canonicalHasNonParentToken && notInDomain.length >= 1) return 'HEALTH_SYSTEM_LEVEL';
   }
 
+  // P102-FIX: acronym-domain system fallback. When parentSystem is explicitly
+  // set AND the source URL is on the institution's official host AND the
+  // canonical name has more tokens than the parent name does (campus
+  // differentiator), the page is system-level even when the domain is an
+  // acronym whose tokens don't match the parent name (e.g., Memorial
+  // Healthcare System on mhs.net, Sentara on sentara.com vs canonical
+  // "Sentara Norfolk General Hospital"). Without this branch, acronym-domain
+  // systems would default to INSTITUTION_SPECIFIC and incorrectly promote
+  // system-level visiting-student claims to a specific campus. The trigger
+  // is conservative: parentSystem must be set (typically by inferIdentity
+  // from a curated registry), the src must match the official host exactly,
+  // and the canonical name must contain campus tokens beyond the parent.
+  if (ctx.parentSystem && srcHost === officialHost) {
+    const parentTokens = ctx.parentSystem.toLowerCase().split(/[\s,-]+/).filter(t => t.length > 3 && !GENERIC_INSTITUTION_TOKENS.has(t));
+    const canonicalHasNonParentToken = specificTokens.some(t => !parentTokens.includes(t));
+    if (canonicalHasNonParentToken) return 'HEALTH_SYSTEM_LEVEL';
+  }
+
   if (srcHost === officialHost || srcHost.endsWith('.' + officialHost)) return 'INSTITUTION_SPECIFIC';
 
   return 'UNKNOWN_SCOPE';

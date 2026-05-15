@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-10-emory",
+  "institutionId": "inst_emory_university_hospital_ga",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/medical-education",
+        "https://med.emory.edu/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://med.emory.edu/visiting-student",
+        "https://med.emory.edu/visiting-students",
+        "https://med.emory.edu/international-students",
+        "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://med.emory.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://med.emory.edu/education/visiting-medical-students",
+        "https://med.emory.edu/medical-education/visiting-students",
+        "https://med.emory.edu/students/visiting-students"
+      ],
+      "acceptedSources": [
+        "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/observership",
+        "https://med.emory.edu/observer",
+        "https://med.emory.edu/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/electives",
+        "https://med.emory.edu/away-rotations",
+        "https://med.emory.edu/clinical-elective",
+        "https://med.emory.edu/clinical-rotation",
+        "https://med.emory.edu/hcp-education-training/medical-students/elective",
+        "https://med.emory.edu/education/medical-student-electives",
+        "https://med.emory.edu/medical-education/medical-student-electives",
+        "https://med.emory.edu/medical-students/electives",
+        "https://med.emory.edu/medical-students/elective-rotations",
+        "https://med.emory.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/sub-internship",
+        "https://med.emory.edu/subinternship",
+        "https://med.emory.edu/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/shadow",
+        "https://med.emory.edu/shadowing",
+        "https://med.emory.edu/volunteer",
+        "https://med.emory.edu/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://med.emory.edu/graduate-medical-education",
+        "https://med.emory.edu/gme",
+        "https://med.emory.edu/residency",
+        "https://med.emory.edu/medical-professionals/graduate-medical-education",
+        "https://med.emory.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://med.emory.edu/education/undergraduate-medical-education",
+        "https://med.emory.edu/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [
+        "https://med.emory.edu/gme",
+        "https://med.emory.edu/residency"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.emory.edu/visa",
+        "https://med.emory.edu/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://med.emory.edu/careers"
+      ],
+      "acceptedSources": [
+        "https://med.emory.edu/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://med.emory.edu/observerships",
+        "https://med.emory.edu/medical-students",
+        "https://med.emory.edu/research",
+        "https://med.emory.edu/img",
+        "https://med.emory.edu/international-medical-graduates",
+        "https://med.emory.edu/credentialing",
+        "https://med.emory.edu/health-professionals",
+        "https://med.emory.edu/education",
+        "https://med.emory.edu/hcp-education-training",
+        "https://med.emory.edu/hcp-education-training/medical-students",
+        "https://med.emory.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://med.emory.edu/medical-professionals",
+        "https://med.emory.edu/academic-institute",
+        "https://med.emory.edu/academic-institute/education",
+        "https://med.emory.edu/academic-institute/education/medical",
+        "https://med.emory.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://med.emory.edu/medicine/international",
+        "https://med.emory.edu/medicine/international/international-programs",
+        "https://med.emory.edu/visiting-clerkships",
+        "https://med.emory.edu/visiting-clerkships/international",
+        "https://med.emory.edu/education-institute",
+        "https://med.emory.edu/education-institute/academic-visitor-program",
+        "https://med.emory.edu/education/medical-students",
+        "http://med.emory.edu/research/core_labs/index.html",
+        "http://med.emory.edu/research/training/index.html",
+        "http://med.emory.edu/research/research-centers/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/peds/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/c-i/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/bsci/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/aboss-hss/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/index.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/i3-2019.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/grant-writing/index.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+        "http://med.emory.edu/research/conducting-research/index.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/resident-information.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/l2l-launchpad.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/inside-the-innovation-center.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/participate.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/education-networking.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/micromachining.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/3d-printing.html"
+      ],
+      "acceptedSources": [
+        "https://med.emory.edu/research",
+        "https://med.emory.edu/education",
+        "https://med.emory.edu/medicine/international",
+        "https://med.emory.edu/medicine/international/international-programs",
+        "http://med.emory.edu/research/core_labs/index.html",
+        "http://med.emory.edu/research/training/index.html",
+        "http://med.emory.edu/research/research-centers/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/peds/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/c-i/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/bsci/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/aboss-hss/index.html",
+        "http://med.emory.edu/research/conducting-research/research-admin-units/index.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/i3-2019.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/grant-writing/index.html",
+        "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+        "http://med.emory.edu/research/conducting-research/index.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/resident-information.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/l2l-launchpad.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/inside-the-innovation-center.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/participate.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/education-networking.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/micromachining.html",
+        "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/3d-printing.html"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 1,
+    "tier2AcceptedSources": 2,
+    "tier3AcceptedSources": 1
+  },
+  "generatedAt": "2026-05-15T19:02:42.514Z"
+}

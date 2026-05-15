@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "a2_mhs_careers_jdch_pediatric_jobs",
+      "claimType": "FUTURE_LANE_JOB",
+      "lane": "CAREERS_PAGE",
+      "sourceUrl": "https://mhs.net/careers",
+      "sourceHash": "5d278e128ed493bac58cf25564d5ebcef91caadf164b28ec1ab5d1c8e4b9deba",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/careers.txt",
+      "sourceScope": "CAREERS_PORTAL",
+      "quote": "Joe DiMaggio Children's Hospital — one of the leading pediatric hospitals in the nation — is located in Hollywood, FL and is part of Memorial Healthcare System",
+      "normalizedField": "campus_jdch_jobs",
+      "claimText": "Joe DiMaggio Children's Hospital (Hollywood, FL) listed as a Memorial Healthcare System career location.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "HIGH",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "deepSourceFamily": "FACULTY_JOBS",
+      "tierAssignmentRationale": "Per-campus careers block; Tier 3.",
+      "limitations": "Sibling campus.",
+      "whyA1Missed": "Per-campus block not enumerated by A1.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-pc-4-memorial-hollywood",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "sourceFamily": "CAREERS_PAGE",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

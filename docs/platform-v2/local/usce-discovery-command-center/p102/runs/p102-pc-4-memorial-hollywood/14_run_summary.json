@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "institutionId": "inst_memorial_regional_hollywood_fl",
+  "canonicalName": "Memorial Healthcare System - Memorial Regional Hollywood",
+  "queueId": "p102_positive_control_usce",
+  "startedAt": "2026-05-15T16:24:41.292Z",
+  "completedAt": "2026-05-15T16:24:41.292Z",
+  "status": "COMPLETE",
+  "currentStage": "DONE",
+  "artifactRoot": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood",
+  "repoRunFolder": "/Users/shelly/usmle-platform/docs/platform-v2/local/usce-discovery-command-center/p102/runs/p102-pc-4-memorial-hollywood",
+  "sourceFamilies": [
+    "RESEARCH_PAGE",
+    "VOLUNTEER_PAGE",
+    "GME_PAGE",
+    "FELLOWSHIP_PAGE",
+    "CAREERS_PAGE",
+    "JSON_LD",
+    "VISITING_STUDENT_PAGE"
+  ],
+  "scores": {
+    "searchCompletenessScore": 13,
+    "sourceConfidenceScore": 100,
+    "artifactCompletenessScore": 100,
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 50,
+    "hallucinationRiskScore": 0
+  },
+  "verdict": "PASS_WITH_CAVEATS",
+  "validators": {
+    "validateP102": "NOT_RUN",
+    "validateNoSecrets": "NOT_RUN",
+    "tsc": "NOT_RUN"
+  },
+  "nextAction": "proceed_to_trial_2_p102_1"
+}

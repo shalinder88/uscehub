@@ -537,6 +537,41 @@ test('P102-FIX-15: NOT_STATED quote MUST NOT promote even with all other gates p
   assertEqual(r.visibility, 'HUMAN_REVIEW_REQUIRED');
 });
 
+test('P102-FIX-16: acronym-domain system page → HEALTH_SYSTEM_LEVEL (Memorial Healthcare System on mhs.net)', () => {
+  // Memorial Hollywood lives on mhs.net (acronym domain). Without parentSystem
+  // set, the scope inference returns INSTITUTION_SPECIFIC by default — wrong,
+  // because mhs.net serves Memorial Regional Hollywood, Memorial Hospital
+  // Miramar, Memorial Hospital West, and Memorial Pembroke. With parentSystem
+  // set, the acronym-domain fallback must fire and return HEALTH_SYSTEM_LEVEL.
+  const r = inferSourceScope(
+    { sourceDomain: 'mhs.net', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'JSON_LD', sourceUrl: 'https://mhs.net/education' },
+    {
+      institutionId: 'inst_memorial_regional_hollywood_fl',
+      canonicalName: 'Memorial Healthcare System - Memorial Regional Hollywood',
+      officialDomain: 'mhs.net',
+      parentSystem: 'Memorial Healthcare System',
+    },
+  );
+  assertEqual(r, 'HEALTH_SYSTEM_LEVEL');
+});
+
+test('P102-FIX-17: acronym-domain system page WITHOUT campus differentiator → falls through to default', () => {
+  // If the canonical name is just the system name (no campus differentiator),
+  // the acronym-domain trigger must NOT fire — there's nothing to be
+  // differentiated against. This prevents a generic system-name canonical from
+  // being incorrectly tagged as HEALTH_SYSTEM_LEVEL on its own primary domain.
+  const r = inferSourceScope(
+    { sourceDomain: 'mhs.net', sourceScope: 'UNKNOWN_SCOPE', sourceFamily: 'JSON_LD', sourceUrl: 'https://mhs.net/education' },
+    {
+      institutionId: 'inst_memorial_system',
+      canonicalName: 'Memorial Healthcare System',
+      officialDomain: 'mhs.net',
+      parentSystem: 'Memorial Healthcare System',
+    },
+  );
+  assertEqual(r, 'INSTITUTION_SPECIFIC');
+});
+
 // -------------------- P102-FIX USCE_VSM pattern additions (test-first) --------------------
 
 console.log('\n--- P102-FIX VSM pattern additions ---');

@@ -30,6 +30,7 @@ import * as crypto from 'node:crypto';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { URL } from 'node:url';
 import { parseSitemapXml, isPathDisallowedByRobots } from './p102-extraction-lib';
+import { inferIdentity } from './p102-identity-canonicalizer';
 
 const SCHEMA_VERSION = 'p102-0r-1';
 const USER_AGENT = 'USCEHub-Research/0.1 (+https://uscehub.com/contact)';
@@ -752,17 +753,24 @@ function writeA1Outputs(
   writeJson(path.join(paths.repoFolder, '04_rejected_sources.json'), { schemaVersion: SCHEMA_VERSION, runId, rejected: rejected.map(r => ({ sourceUrl: r.sourceUrl, sourceStatus: r.sourceStatus, rejectedReason: r.rejectedReason })) });
 
   // 05_canonical_institution.json
+  // P102-FIX: consult identity canonicalizer to populate parentSystem
+  // when the institution belongs to a known multi-campus health system
+  // (Memorial Healthcare System, AdventHealth, HCA, etc.). The scope
+  // inference function uses parentSystem to detect HEALTH_SYSTEM_LEVEL
+  // pages on acronym-only domains like mhs.net where canonical-name
+  // tokens don't appear in the domain string.
+  const identity = inferIdentity(canonicalName, queueRow.official_domain);
   writeJson(path.join(paths.repoFolder, '05_canonical_institution.json'), {
     schemaVersion: SCHEMA_VERSION,
     institutionId,
     canonicalName,
-    aliases: [],
+    aliases: identity.aliases ?? [],
     state: queueRow.state,
     county: queueRow.county || null,
     city: queueRow.city,
     zip: null,
     address: null,
-    parentSystem: null,
+    parentSystem: identity.parentSystem,
     officialDomains: [queueRow.official_domain],
     medicalSchoolAffiliations: [],
     campusType: 'TEACHING_HOSPITAL',

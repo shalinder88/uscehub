@@ -1,0 +1,139 @@
+# Source Map — Stanford Health Care
+
+Run: p102-pc-8-stanford
+schemaVersion: p102-0r-1
+
+## Accepted sources (15)
+
+- **RESEARCH_PAGE** [https://med.stanford.edu/research.html](https://med.stanford.edu/research.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e84aedab343818b67f3a7c19f6cc0070e08e7c27d63dcd7c03c5f36168a47244`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_e8cca8750c6c16e8.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/covid19/research.html](https://med.stanford.edu/covid19/research.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `cb4ba322993ac515ab4b1fbbb77ffca7bcbd721a0af628b37ee631571c06f665`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_949599cfc3bc74c1.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/news/all-news/2020/08/Researchers-find-method-to-regrow-cartilage-in-the-joints.html](https://med.stanford.edu/news/all-news/2020/08/Researchers-find-method-to-regrow-cartilage-in-the-joints.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7277bdb3d30852f3f8da6071d44db924cae0b5c3cb771b1964a1b11d1ee9583d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_c3dbd55ed7aaa820.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/news/all-news/2008/03/stanford-researchers-develop-tool-that-sees-internal-body-details-1000-smaller.html](https://med.stanford.edu/news/all-news/2008/03/stanford-researchers-develop-tool-that-sees-internal-body-details-1000-smaller.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ca855417fbd4fd45a60d895c8ca1341b100d4b2ad428627eafcbb02567727cec`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_07e5dcb680b90b41.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/ctsurgery/research.html](https://med.stanford.edu/ctsurgery/research.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/neurosurgery/research/palmer.html](https://med.stanford.edu/neurosurgery/research/palmer.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `11006f2076843713b4b857147ddaf148ea85463941020432329d7041600d4cdc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_057cc06e29e73657.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/neurosurgery/research/shamloo.html](https://med.stanford.edu/neurosurgery/research/shamloo.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ec9cc4380e3f61918f45c5b30285a2cdf59060a960f7d3104fdd0fb025f9f32a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_4204d30a4149564c.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/neurosurgery/research/tharin.html](https://med.stanford.edu/neurosurgery/research/tharin.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bb3625133ba0091f224327e88d66419905f90e62c3f59af9f8f131c14a9c87ba`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_e4e7c8566f0203a5.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/neurosurgery/research/wong.html](https://med.stanford.edu/neurosurgery/research/wong.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bae9bb44c6eb9ad98791ac1fc394ffe66e10afc201321243603abbc3f07ceedd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_c16cecfac7686950.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/finance-administration/research-management-group](https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/finance-administration/research-management-group)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_30410bcac1fe4d27.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research](https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_6ddae2a58c825337.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/clinical-translational-research-unit](https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/clinical-translational-research-unit)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_34518fe91055e3b8.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/operations](https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/operations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_706a8743058a30db.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/spectrum](https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/spectrum)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_9d254f656b016828.txt
+- **RESEARCH_PAGE** [https://med.stanford.edu/profiles/browse?org=school-of-medicine/medicine/biomedical-informatics-research](https://med.stanford.edu/profiles/browse?org=school-of-medicine/medicine/biomedical-informatics-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e8b1fc9849298c3e420246b110ff5a42c093b041ba0b062c08f0ba93456c56bc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_dac7a6656b4f0c15.txt
+
+## Rejected sources (69)
+
+- https://med.stanford.edu/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/hcp-education-training — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/hcp-education-training/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/hcp-education-training/medical-students/elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-professionals/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/academic-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/academic-institute/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/academic-institute/education/medical — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/academic-institute/education/medical/medical-student-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medicine/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medicine/international/international-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medicine/international/international-programs/international-visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/visiting-clerkships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/visiting-clerkships/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education-institute/academic-visitor-program — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education/undergraduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education/visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-education/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-students/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-students/elective-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/medical-students/clinical-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/students/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.stanford.edu/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-10-emory",
+  "tasks": [
+    {
+      "taskId": "rec_visiting_med_students_page",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Captured 'international-visiting-medical-students' URL returned the generic DOM homepage; real visiting-medical-student content not reached. Tier 1 effectively unsearched.",
+      "suggestedNarrowAction": "Fetch SOM Education > Admissions > Visiting Medical Students page directly; no broad crawl."
+    },
+    {
+      "taskId": "rec_intl_students_admissions",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Admissions nav lists 'International Students' as a distinct sub-page; not extracted.",
+      "suggestedNarrowAction": "Fetch SOM admissions > International Students page; capture eligibility/refusal text verbatim."
+    },
+    {
+      "taskId": "rec_clerkship_programs_page",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "DOM and SOM nav both reference 'Clerkship Programs' but target page not fetched; this is where away-rotation/visiting-student content typically lives.",
+      "suggestedNarrowAction": "Fetch DOM Clerkship Programs landing page only."
+    },
+    {
+      "taskId": "rec_emory_hospital_campus_proof",
+      "missingFamily": null,
+      "missingTier": null,
+      "reason": "All claims sourced from med.emory.edu (SOM scope); no emoryhealthcare.org / Emory University Hospital campus-specific page was captured. Without campus-applicability proof, no claim can be attributed to the hospital.",
+      "suggestedNarrowAction": "Fetch an Emory University Hospital page at emoryhealthcare.org (about/teaching-hospital) plus any campus-scoped USCE/observership policy page."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

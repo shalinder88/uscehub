@@ -1,0 +1,351 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-3-um-uhealth",
+  "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/medical-education",
+        "https://med.miami.edu/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/visiting-student",
+        "https://med.miami.edu/visiting-students",
+        "https://med.miami.edu/international-students",
+        "https://med.miami.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://med.miami.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://med.miami.edu/education/visiting-medical-students",
+        "https://med.miami.edu/medical-education/visiting-students",
+        "https://med.miami.edu/students/visiting-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/observership",
+        "https://med.miami.edu/observer",
+        "https://med.miami.edu/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/electives",
+        "https://med.miami.edu/away-rotations",
+        "https://med.miami.edu/clinical-elective",
+        "https://med.miami.edu/clinical-rotation",
+        "https://med.miami.edu/hcp-education-training/medical-students/elective",
+        "https://med.miami.edu/education/medical-student-electives",
+        "https://med.miami.edu/medical-education/medical-student-electives",
+        "https://med.miami.edu/medical-students/electives",
+        "https://med.miami.edu/medical-students/elective-rotations",
+        "https://med.miami.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/sub-internship",
+        "https://med.miami.edu/subinternship",
+        "https://med.miami.edu/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/shadow",
+        "https://med.miami.edu/shadowing",
+        "https://med.miami.edu/volunteer",
+        "https://med.miami.edu/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/graduate-medical-education",
+        "https://med.miami.edu/gme",
+        "https://med.miami.edu/medical-professionals/graduate-medical-education",
+        "https://med.miami.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://med.miami.edu/education/undergraduate-medical-education",
+        "https://med.miami.edu/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/visa",
+        "https://med.miami.edu/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://med.miami.edu/careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://med.miami.edu/observerships",
+        "https://med.miami.edu/medical-students",
+        "https://med.miami.edu/research",
+        "https://med.miami.edu/img",
+        "https://med.miami.edu/international-medical-graduates",
+        "https://med.miami.edu/credentialing",
+        "https://med.miami.edu/health-professionals",
+        "https://med.miami.edu/education",
+        "https://med.miami.edu/hcp-education-training",
+        "https://med.miami.edu/hcp-education-training/medical-students",
+        "https://med.miami.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://med.miami.edu/medical-professionals",
+        "https://med.miami.edu/academic-institute",
+        "https://med.miami.edu/academic-institute/education",
+        "https://med.miami.edu/academic-institute/education/medical",
+        "https://med.miami.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://med.miami.edu/medicine/international",
+        "https://med.miami.edu/medicine/international/international-programs",
+        "https://med.miami.edu/visiting-clerkships",
+        "https://med.miami.edu/visiting-clerkships/international",
+        "https://med.miami.edu/education-institute",
+        "https://med.miami.edu/education-institute/academic-visitor-program",
+        "https://med.miami.edu/education/medical-students",
+        "https://med.miami.edu/residencies-and-fellowships",
+        "https://med.miami.edu/labs/pastori-lab/research",
+        "https://med.miami.edu/labs/paus-lab/research",
+        "https://med.miami.edu/labs/chaudhari-lab/research",
+        "https://med.miami.edu/labs/ajdic-lab/research",
+        "https://med.miami.edu/labs/eshraghi-lab/research",
+        "https://med.miami.edu/labs/lindau-lab/research",
+        "https://med.miami.edu/labs/chung-lab/research",
+        "https://med.miami.edu/labs/daunert-lab/research",
+        "https://med.miami.edu/labs/telonis-lab/research",
+        "https://med.miami.edu/labs/lassance-soares-lab/research",
+        "https://med.miami.edu/labs/pastar-lab/research",
+        "https://med.miami.edu/labs/domínguez-bendala-lab/research",
+        "https://med.miami.edu/labs/davis-lab/research",
+        "https://med.miami.edu/labs/stone-lab/research",
+        "https://med.miami.edu/labs/cejas-lab/research",
+        "https://med.miami.edu/labs/jones-weiss-lab/past-research",
+        "https://med.miami.edu/labs/jones-weiss-lab/research",
+        "https://med.miami.edu/labs/bianchi-lab/research"
+      ],
+      "acceptedSources": [
+        "https://med.miami.edu/residencies-and-fellowships",
+        "https://med.miami.edu/labs/pastori-lab/research",
+        "https://med.miami.edu/labs/paus-lab/research",
+        "https://med.miami.edu/labs/chaudhari-lab/research",
+        "https://med.miami.edu/labs/ajdic-lab/research",
+        "https://med.miami.edu/labs/eshraghi-lab/research",
+        "https://med.miami.edu/labs/lindau-lab/research",
+        "https://med.miami.edu/labs/chung-lab/research",
+        "https://med.miami.edu/labs/daunert-lab/research",
+        "https://med.miami.edu/labs/telonis-lab/research",
+        "https://med.miami.edu/labs/lassance-soares-lab/research",
+        "https://med.miami.edu/labs/pastar-lab/research",
+        "https://med.miami.edu/labs/domínguez-bendala-lab/research",
+        "https://med.miami.edu/labs/davis-lab/research",
+        "https://med.miami.edu/labs/stone-lab/research",
+        "https://med.miami.edu/labs/cejas-lab/research",
+        "https://med.miami.edu/labs/jones-weiss-lab/past-research",
+        "https://med.miami.edu/labs/jones-weiss-lab/research",
+        "https://med.miami.edu/labs/bianchi-lab/research"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_WEAK",
+    "tier2": "TIER_COVERAGE_WEAK",
+    "tier3": "TIER_COVERAGE_WEAK"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 0,
+    "tier2AcceptedSources": 0,
+    "tier3AcceptedSources": 0
+  },
+  "generatedAt": "2026-05-15T16:06:27.346Z"
+}

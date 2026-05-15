@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-5-hss",
+  "tasks": [
+    {
+      "taskId": "rec-hss-gme-pages",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "research-and-education page references orthopaedic surgery and rheumatology residency/fellowship programs but no GME landing or program-specific page was captured.",
+      "suggestedNarrowAction": "Fetch hss.edu/education-institute/academic-training and any /residency or /fellowship program URLs surfaced from that hub."
+    },
+    {
+      "taskId": "rec-hss-avp-guidelines",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "AVP main page directs applicants to an 'Academic Visitor Program Guidelines' page for fee, document, and coordinator contact details that are not stated on the captured page.",
+      "suggestedNarrowAction": "Fetch the Academic Visitor Program Guidelines child URL under hss.edu/education-institute/academic-visitor-program to recover fee, contact email, and required documents."
+    },
+    {
+      "taskId": "rec-hss-cme-eacademy",
+      "missingFamily": "CME_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "eAcademy CME portfolio referenced but no CME/eAcademy page captured for Tier 3 attending CME signal.",
+      "suggestedNarrowAction": "Fetch the eAcademy CME landing page linked from hss.edu/about/research-and-education."
+    },
+    {
+      "taskId": "rec-hss-research-postdoc",
+      "missingFamily": "RESEARCH_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Postdoctoral and Postbaccalaureate research training listed in /research navigation but no detail page captured.",
+      "suggestedNarrowAction": "Fetch the Postdoctoral/Postbaccalaureate training subpage(s) under hss.edu/research."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

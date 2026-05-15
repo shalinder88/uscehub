@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "institutionId": "inst_memorial_regional_hollywood_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/medical-education",
+        "https://mhs.net/professional-education",
+        "https://mhs.net/education"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/visiting-student",
+        "https://mhs.net/visiting-students",
+        "https://mhs.net/international-students",
+        "https://mhs.net/medicine/international/international-programs/international-visiting-medical-students",
+        "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://mhs.net/education/visiting-medical-students",
+        "https://mhs.net/medical-education/visiting-students",
+        "https://mhs.net/students/visiting-students"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/observership",
+        "https://mhs.net/observer",
+        "https://mhs.net/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/electives",
+        "https://mhs.net/away-rotations",
+        "https://mhs.net/clinical-elective",
+        "https://mhs.net/clinical-rotation",
+        "https://mhs.net/hcp-education-training/medical-students/elective",
+        "https://mhs.net/education/medical-student-electives",
+        "https://mhs.net/medical-education/medical-student-electives",
+        "https://mhs.net/medical-students/electives",
+        "https://mhs.net/medical-students/elective-rotations",
+        "https://mhs.net/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/sub-internship",
+        "https://mhs.net/subinternship",
+        "https://mhs.net/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/shadow",
+        "https://mhs.net/shadowing",
+        "https://mhs.net/volunteer",
+        "https://mhs.net/volunteering"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/volunteer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/graduate-medical-education",
+        "https://mhs.net/gme",
+        "https://mhs.net/medical-professionals/graduate-medical-education",
+        "https://mhs.net/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://mhs.net/education/undergraduate-medical-education",
+        "https://mhs.net/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/gme",
+        "https://mhs.net/education/undergraduate-medical-education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/fellowship"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/fellowship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://mhs.net/visa",
+        "https://mhs.net/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/careers"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mhs.net/observerships",
+        "https://mhs.net/medical-students",
+        "https://mhs.net/research",
+        "https://mhs.net/img",
+        "https://mhs.net/international-medical-graduates",
+        "https://mhs.net/credentialing",
+        "https://mhs.net/health-professionals",
+        "https://mhs.net/hcp-education-training",
+        "https://mhs.net/hcp-education-training/medical-students",
+        "https://mhs.net/hcp-education-training/medical-students/medical-student-observerships",
+        "https://mhs.net/medical-professionals",
+        "https://mhs.net/academic-institute",
+        "https://mhs.net/academic-institute/education",
+        "https://mhs.net/academic-institute/education/medical",
+        "https://mhs.net/academic-institute/education/medical/medical-student-rotations",
+        "https://mhs.net/medicine/international",
+        "https://mhs.net/medicine/international/international-programs",
+        "https://mhs.net/visiting-clerkships",
+        "https://mhs.net/visiting-clerkships/international",
+        "https://mhs.net/education-institute",
+        "https://mhs.net/education-institute/academic-visitor-program",
+        "https://mhs.net/education/medical-students"
+      ],
+      "acceptedSources": [
+        "https://mhs.net/research",
+        "https://mhs.net/medical-professionals"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 3,
+    "tier2AcceptedSources": 3,
+    "tier3AcceptedSources": 1
+  },
+  "generatedAt": "2026-05-15T16:24:49.808Z"
+}

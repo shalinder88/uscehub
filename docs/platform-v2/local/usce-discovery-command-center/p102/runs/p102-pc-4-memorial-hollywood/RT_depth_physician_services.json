@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "depthPass": "PHYSICIAN_SERVICES",
+  "sourceFamiliesReviewed": [
+    "VISITING_STUDENT_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-4-memorial-hollywood_17",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "runId": "p102-pc-4-memorial-hollywood",
+      "claimType": "FUTURE_LANE_SERVICE",
+      "claimText": "Malpractice insurance",
+      "normalizedField": "lane.SERVICES.signal",
+      "quote": "MHS declination form will be accepted.Health screening including negative PPD or proof of a positive PPD along with negative chest X-ray dated after the positive PPD and an attestation of no symptoms.8 panel drug test or higher within the past 12 months of your rotation (option to order after being accepted on VSLO).Level 2 Background check within the past 12 months of your rotation (option to order after being accepted on VSLO), including:Tri county (Broward, Miami Dade, Palm Beach) background ",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "sourceHash": "9c450097e6f5e2b1de046991ea58f89a1ab24b718369b971392ef3d9423986d6",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/education_undergraduate-medical-education_requirements-for-visiting-students.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "VISITING_STUDENT_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "physician services content; future-lane only",
+      "lane": "PHYSICIAN_SERVICES",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-4-memorial-hollywood_18",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "runId": "p102-pc-4-memorial-hollywood",
+      "claimType": "FUTURE_LANE_SERVICE",
+      "claimText": "malpractice insurance",
+      "normalizedField": "lane.SERVICES.signal",
+      "quote": "If student purchases malpractice insurance on their own, this must be done prior to acceptance.Certify you are HIPAA compliant.Required Information for VSLO ApplicationYour VSLO application must include the following:Proof of passing Step 1 USMLE/COMLEXA brief memo, half of a page, indicating why you are applying for rotations at Memorial Healthcare SystemCurriculum vitaeOfficial transcriptsPhotographStudents accepted for rotations with Memorial Healthcare System must complete the onboarding req",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "sourceHash": "9c450097e6f5e2b1de046991ea58f89a1ab24b718369b971392ef3d9423986d6",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/education_undergraduate-medical-education_requirements-for-visiting-students.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "VISITING_STUDENT_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "physician services content; future-lane only",
+      "lane": "PHYSICIAN_SERVICES",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

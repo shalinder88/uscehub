@@ -1,0 +1,174 @@
+# Source Map — Hospital for Special Surgery
+
+Run: p102-pc-5-hss
+schemaVersion: p102-0r-1
+
+## Accepted sources (25)
+
+- **RESEARCH_PAGE** [https://hss.edu/research](https://hss.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0d43d9a80ebd03738125a9bce326c9cc69622da989e0f406764158d297192c1e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/research.txt
+- **CAREERS_PAGE** [https://hss.edu/careers](https://hss.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/careers.txt
+- **JSON_LD** [https://hss.edu/education](https://hss.edu/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt
+- **JSON_LD** [https://hss.edu/education-institute](https://hss.edu/education-institute)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt
+- **JSON_LD** [https://hss.edu/education-institute/academic-visitor-program](https://hss.edu/education-institute/academic-visitor-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt
+- **VOLUNTEER_PAGE** [https://www.hss.edu/about/volunteer](https://www.hss.edu/about/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt
+- **RESEARCH_PAGE** [https://www.hss.edu/about/policies/research-activities](https://www.hss.edu/about/policies/research-activities)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `85ac3881101d41fdd60cb62b7ffa72d3438de5a41bd9ed8f6f84aba98a0f0321`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_6cf3b2ffdc10b740.txt
+- **RESEARCH_PAGE** [https://www.hss.edu/about/research-and-education](https://www.hss.edu/about/research-and-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8b632b98a36bd479c6955cbeaab14c47437e0473b3aa0f3afed251027e61ecca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_cdc81f7fc8edeb5b.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers](https://www.hss.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_5d0e5f60fb03f77f.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/about-us](https://www.hss.edu/careers/about-us)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `afecedaab2c3448aef6e983eb7d0249acfbf24e47f99532b28d140a5f7a4d223`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_e981d79aa424e2ca.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health](https://www.hss.edu/careers/advanced-practice-and-allied-health)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `3eff2e5546fe355071ac9cb8c725a8aca5af76e7b646e5ee7d6979bb06d906ab`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b311cc24c6dcbab0.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals](https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/lab-medicine](https://www.hss.edu/careers/advanced-practice-and-allied-health/lab-medicine)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `b5dc39d94e2ee43a3ed3a3d9fbe73d72e7c13a5d7e67a3875b04df19fcaf6904`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_ac870afcbbe11e6c.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists](https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners](https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy](https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `f87c712678fe2668e094d1e87c2c9b0533fad0743cb6874596a1da9416b5ef66`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_7d85cf44061c75c9.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants](https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/radiology](https://www.hss.edu/careers/advanced-practice-and-allied-health/radiology)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `c1e73f2dd24bcdadc941addde02e89a9189901302546cd19572c241118a057f3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_565ecaa95e43dd96.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance](https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals](https://www.hss.edu/careers/business-operational-technical-professionals)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `f3908324bc219d3e70fb0adc404be5ca96046d0d910f1c94266f78820c9d1d8a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d53d60b6813ac0f5.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals/administrative-professionals](https://www.hss.edu/careers/business-operational-technical-professionals/administrative-professionals)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `920ce932cfd496b0eeb65341a217902193d053c366c4075bf93bb2bd3f60abed`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d7ef8db3f0e98d26.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals/development](https://www.hss.edu/careers/business-operational-technical-professionals/development)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `4826d2df8e7348f5bb7dfb58c8e5b202bfbbdef8cd0dec8759c2bb4f763f0791`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_01551048757a4bc4.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals/facilities](https://www.hss.edu/careers/business-operational-technical-professionals/facilities)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `2a46d297386eb1f31e1082b56c7d640acda7b9021faba2af8ae26757cd4781b4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_f989196aead0340a.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals/finance](https://www.hss.edu/careers/business-operational-technical-professionals/finance)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `a1643c29716e79df71c4500a6c77ee81a43f7c98d547660e1dba43fa7931d7bd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_e070a7d10ede5528.txt
+- **CAREERS_PAGE** [https://www.hss.edu/careers/business-operational-technical-professionals/human-resources](https://www.hss.edu/careers/business-operational-technical-professionals/human-resources)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `394273352c756a2f5fed8501b5244c03a1276a62d1f3f479efc6191caa32c487`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_653d0a5ab1a8dffc.txt
+
+## Rejected sources (64)
+
+- https://hss.edu/observership — FETCH_404 (status_404)
+- https://hss.edu/observerships — FETCH_404 (status_404)
+- https://hss.edu/observer — FETCH_404 (status_404)
+- https://hss.edu/clinical-observer — FETCH_404 (status_404)
+- https://hss.edu/visiting-student — FETCH_404 (status_404)
+- https://hss.edu/visiting-students — FETCH_404 (status_404)
+- https://hss.edu/medical-students — FETCH_404 (status_404)
+- https://hss.edu/international-students — FETCH_404 (status_404)
+- https://hss.edu/electives — FETCH_404 (status_404)
+- https://hss.edu/away-rotations — FETCH_404 (status_404)
+- https://hss.edu/clinical-elective — FETCH_404 (status_404)
+- https://hss.edu/clinical-rotation — FETCH_404 (status_404)
+- https://hss.edu/sub-internship — FETCH_404 (status_404)
+- https://hss.edu/subinternship — FETCH_404 (status_404)
+- https://hss.edu/acting-internship — FETCH_404 (status_404)
+- https://hss.edu/student-research — FETCH_404 (status_404)
+- https://hss.edu/shadow — FETCH_404 (status_404)
+- https://hss.edu/shadowing — FETCH_404 (status_404)
+- https://hss.edu/volunteer — FETCH_404 (status_404)
+- https://hss.edu/volunteering — FETCH_404 (status_404)
+- https://hss.edu/img — FETCH_404 (status_404)
+- https://hss.edu/international-medical-graduates — FETCH_404 (status_404)
+- https://hss.edu/graduate-medical-education — FETCH_404 (status_404)
+- https://hss.edu/gme — FETCH_404 (status_404)
+- https://hss.edu/residency — FETCH_404 (status_404)
+- https://hss.edu/fellowship — FETCH_404 (status_404)
+- https://hss.edu/physician-careers — FETCH_404 (status_404)
+- https://hss.edu/provider-careers — FETCH_404 (status_404)
+- https://hss.edu/benefits — FETCH_404 (status_404)
+- https://hss.edu/visa — FETCH_404 (status_404)
+- https://hss.edu/immigration — FETCH_404 (status_404)
+- https://hss.edu/credentialing — FETCH_404 (status_404)
+- https://hss.edu/health-professionals — FETCH_404 (status_404)
+- https://hss.edu/medical-education — FETCH_404 (status_404)
+- https://hss.edu/professional-education — FETCH_404 (status_404)
+- https://hss.edu/student-affairs — FETCH_404 (status_404)
+- https://hss.edu/hcp-education-training — FETCH_404 (status_404)
+- https://hss.edu/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://hss.edu/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://hss.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://hss.edu/medical-professionals — FETCH_404 (status_404)
+- https://hss.edu/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://hss.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://hss.edu/academic-institute — FETCH_404 (status_404)
+- https://hss.edu/academic-institute/education — FETCH_404 (status_404)
+- https://hss.edu/academic-institute/education/medical — FETCH_404 (status_404)
+- https://hss.edu/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://hss.edu/medicine/international — FETCH_404 (status_404)
+- https://hss.edu/medicine/international/international-programs — FETCH_404 (status_404)
+- https://hss.edu/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://hss.edu/visiting-clerkships — FETCH_404 (status_404)
+- https://hss.edu/visiting-clerkships/international — FETCH_404 (status_404)
+- https://hss.edu/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://hss.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://hss.edu/education/medical-students — FETCH_404 (status_404)
+- https://hss.edu/education/visiting-medical-students — FETCH_404 (status_404)
+- https://hss.edu/education/medical-student-electives — FETCH_404 (status_404)
+- https://hss.edu/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://hss.edu/medical-education/visiting-students — FETCH_404 (status_404)
+- https://hss.edu/medical-students/electives — FETCH_404 (status_404)
+- https://hss.edu/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://hss.edu/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://hss.edu/students/visiting-students — FETCH_404 (status_404)
+- https://hss.edu/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)

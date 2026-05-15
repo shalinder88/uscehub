@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-8-stanford",
+  "scopeConflicts": [
+    {
+      "claimId": "src_74_s1",
+      "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_stanford_health_care_ca",
+      "explanation": "Source is med.stanford.edu (Stanford School of Medicine, medical-school-level), not Stanford Health Care hospital. All claims correctly routed to HUMAN_REVIEW_REQUIRED, but sourceScope tag of HEALTH_SYSTEM_LEVEL is misapplied — should be MEDICAL_SCHOOL_LEVEL. Self-flagged by A1."
+    }
+  ],
+  "overpromotionDetected": [],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

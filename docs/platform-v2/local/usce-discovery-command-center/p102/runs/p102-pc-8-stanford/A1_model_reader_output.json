@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://med.stanford.edu/research.html",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate Stanford School of Medicine visiting student / observership / clinical elective policy pages",
+          "Locate Stanford Medicine GME residency and fellowship program pages",
+          "Locate Stanford Health Care physician careers and visa sponsorship pages"
+        ],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a top-level research landing page on med.stanford.edu with no USCE-specific eligibility, application, cost, duration, or contact statements; scope is med-school-level rather than hospital campus."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://med.stanford.edu/covid19/research.html",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a COVID-19 research overview directory; no USCE-relevant eligibility, audience, application pathway, or training-program information present."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://med.stanford.edu/news/all-news/2020/08/Researchers-find-method-to-regrow-cartilage-in-the-joints.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a news article about cartilage regeneration research; no USCE, GME, careers, or physician-services content present."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://med.stanford.edu/news/all-news/2008/03/stanford-researchers-develop-tool-that-sees-internal-body-details-1000-smaller.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a 2008 Stanford Medicine news article about kidney cancer research (STF-62247 molecule); contains no USCE, GME, careers, or physician-pathway content relevant to any of the three tiers."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "src_74_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residencies Residencies\nIntegrated CT Surgical Training Rotations Current ResidentsFellowships Fellowships\nTraditional Cardiothoracic Surgery - Cardiac Track Traditional Cardiothoracic Surgery - General Thoracic Track Pediatric Cardiac Surgery & Research Fellowships Current Fellows",
+            "normalizedField": null,
+            "claimText": "Department lists Residencies (Integrated CT Surgical Training) and Fellowships (Cardiac, General Thoracic, Pediatric Cardiac Surgery & Research).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Page enumerates residency and fellowship training programs in the CT Surgery department — Tier 2 GME content."
+          },
+          {
+            "claimId": "src_74_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Resident, Trainee, and Student Grants and Awards",
+            "normalizedField": null,
+            "claimText": "Navigation references grants and awards for residents, trainees, and students — audience includes students but with no eligibility detail.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; no eligibility, audience, or application detail in the cleaned text."
+          },
+          {
+            "claimId": "src_74_c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Visiting Professorships",
+            "normalizedField": null,
+            "claimText": "Page advertises Visiting Professorships — faculty/attending-level, not medical-student USCE.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "limitations": "Single navigation phrase with no descriptive content; appears faculty-level not student-level.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Visiting Professorships are typically attending/faculty-level appointments, not pre-residency USCE."
+          },
+          {
+            "claimId": "src_74_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Clerkships",
+            "normalizedField": null,
+            "claimText": "Department navigation lists Clerkships as a category but no descriptive content is present in the cleaned text.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; no audience, eligibility, application, or scope details on this page.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "ELECTIVE",
+            "tierAssignmentRationale": "Clerkships are typically a Tier 1 medical-student rotation category, but this source only names the label without details."
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_74_f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Traditional Cardiothoracic Surgery - Cardiac Track Traditional Cardiothoracic Surgery - General Thoracic Track Pediatric Cardiac Surgery & Research Fellowships",
+            "normalizedField": null,
+            "claimText": "CT Surgery department offers Cardiac Track, General Thoracic Track, and Pediatric Cardiac Surgery & Research fellowships.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Explicit fellowship track enumeration — Tier 2 trainee content."
+          }
+        ],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate the Clerkships subpage to determine medical-student audience and visiting-student eligibility.",
+          "Locate the Visiting Professorships subpage to confirm faculty-level (Tier 3) vs trainee-level audience.",
+          "Locate Resident, Trainee, and Student Grants and Awards page to determine whether students (including external/visiting) are eligible."
+        ],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_74_s1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+            "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Research | Department of Cardiothoracic Surgery | Stanford Medicine",
+            "normalizedField": null,
+            "claimText": "Source is on med.stanford.edu (Stanford School of Medicine domain) at department level, not Stanford Health Care hospital scope; cannot ground hospital-level USCE claims.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Institution is Stanford Health Care, but the source domain is the Stanford School of Medicine department site.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Scope-conflict bookkeeping entry — not a tier-bearing content claim."
+          }
+        ],
+        "unresolveds": [
+          "Whether Stanford CT Surgery offers a medical-student visiting clerkship, observership, or research elective is not stated on this page.",
+          "Audience (US MD/DO, IMG, internal-only) for the Clerkships and Resident/Trainee/Student Grants categories is not stated."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://med.stanford.edu/neurosurgery/research/palmer.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://med.stanford.edu/neurosurgery/research/shamloo.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://med.stanford.edu/neurosurgery/research/tharin.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://med.stanford.edu/neurosurgery/research/wong.html",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/finance-administration/research-management-group",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/clinical-translational-research-unit",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/operations",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a CAP Profiles browse navigation/chrome page with no substantive USCE, GME, or career content in the cleaned text."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/deans-office/senior-associate-dean-for-research/spectrum",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-pc-8-stanford",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://med.stanford.edu/profiles/browse?org=school-of-medicine/medicine/biomedical-informatics-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-8-stanford",
+        "institutionId": "inst_stanford_health_care_ca",
+        "institutionName": "Stanford Health Care",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a CAP Profiles browse/navigation page on med.stanford.edu with no USCE, residency, fellowship, or careers content in the cleaned text — only site chrome and navigation links."
+        ],
+        "recommendedA2Focus": []
+      }
+    }
+  ]
+}

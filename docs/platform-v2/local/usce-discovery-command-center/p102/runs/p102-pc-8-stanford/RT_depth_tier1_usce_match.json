@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-8-stanford",
+  "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+  "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+  "claims": [
+    {
+      "claimId": "src_74_c4",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+      "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "sourceHash": "ff45c490f0959430157c149a5f21b48fc876a4ccf9da58db2bfcf88ffda813ed",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-8-stanford/cleaned_text/sm_73a23dfe71d3a93c.txt",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "quote": "Clerkships",
+      "normalizedField": null,
+      "claimText": "Department navigation lists Clerkships as a category but no descriptive content is present in the cleaned text.",
+      "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+      "confidence": "LOW",
+      "limitations": "Navigation label only; no audience, eligibility, application, or scope details on this page.",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "deepSourceFamily": "ELECTIVE",
+      "tierAssignmentRationale": "Clerkships are typically a Tier 1 medical-student rotation category, but this source only names the label without details.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-pc-8-stanford",
+      "institutionId": "inst_stanford_health_care_ca",
+      "sourceFamily": "RESEARCH_PAGE",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "visibilityRationale": "source scope HEALTH_SYSTEM_LEVEL cannot prove campus-specific availability without campusApplicabilityProof",
+      "quoteVerified": true,
+      "phaseProducedBy": "A1"
+    }
+  ],
+  "claimCount": 1,
+  "publicSafeUsceCount": 0,
+  "futureLaneOnlyCount": 0,
+  "humanReviewRequiredCount": 1,
+  "cautionSafeInternalReviewCount": 0,
+  "sourceUrls": [
+    "https://med.stanford.edu/ctsurgery/research.html"
+  ],
+  "sourceClaimIds": [
+    "src_74_c4"
+  ],
+  "notStatedFields": [],
+  "unresolveds": [
+    "Clerkships nav item present with no descriptive content captured — narrow re-fetch of the Clerkships landing page could yield definite USCE evidence or explicit affiliated-only restriction.",
+    "Visiting Professorships nav item present — faculty-level not USCE, but warrants explicit lane tagging."
+  ],
+  "visibilityLane": "HUMAN_REVIEW_REQUIRED"
+}

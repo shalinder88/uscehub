@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "institutionId": "1",
+  "verdict": "PASS_WITH_CAVEATS",
+  "networkUsed": false,
+  "agentUsed": false,
+  "publicSafe": false,
+  "futureLaneValue": "HIGH",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 0,
+  "futureLaneClaims": 50,
+  "hallucinationRisks": [],
+  "unsupportedClaims": [],
+  "quoteVerificationFailures": [],
+  "sourceScopeConflicts": [
+    "https://mhs.net/education: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+    "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+    "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+    "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+    "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+    "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source."
+  ],
+  "missingCriticalFields": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
+  "requiredA4Tasks": [],
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-15T17:02:36.645Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
+}

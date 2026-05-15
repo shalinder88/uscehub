@@ -1,0 +1,392 @@
+{
+  "schemaVersion": "p102-quote-verify-1",
+  "runId": "p102-pc-6-houston-methodist-deep",
+  "total": 76,
+  "countByStatus": {
+    "OK": 69,
+    "NOT_STATED_FIELD_OK": 7
+  },
+  "failureCount": 0,
+  "checks": [
+    {
+      "claimId": "hmh-pharm-1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hmh-pharm-conflict-1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-research-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-research-02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-research-scope-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-vol-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-vol-02",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "hm-gme-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-006",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-007",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "fl-1-gme-programs",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "fl-2-gme-count",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "fl-3-weill-cornell-phd",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "fl-4-mitie-training",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "fl-5-faculty-count",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_gme_overview",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_71_gme_programs",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_postdoc",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_enmed",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_phd_wcgs",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_bookout",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-03",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-fl-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-fl-02",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-medu-sc-01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c6",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c7",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c8",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "f1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-a2-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-a2-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-gme-a2-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-a2-001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-a2-002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-a2-003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-a2-004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "hm-careers-a2-005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-fl-cme-professionals",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-fl-weill-cornell-affiliation",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-fl-research-funding",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-fl-clinical-trials-volume",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2-fl-research-cores-external",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_t32_training",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_ogsta",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_67k_learners",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_hm_edu_cme_professionals",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    }
+  ]
+}

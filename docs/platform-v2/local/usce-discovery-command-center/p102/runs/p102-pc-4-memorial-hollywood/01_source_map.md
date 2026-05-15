@@ -1,0 +1,106 @@
+# Source Map — Memorial Healthcare System - Memorial Regional Hollywood
+
+Run: p102-pc-4-memorial-hollywood
+schemaVersion: p102-0r-1
+
+## Accepted sources (9)
+
+- **RESEARCH_PAGE** [https://mhs.net/research](https://mhs.net/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `17d632745e033b83c079c33473c43def9af7827f39b367db340c54947943e54a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/research.txt
+- **VOLUNTEER_PAGE** [https://mhs.net/volunteer](https://mhs.net/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `2a7ee3f1df9b06cdf5f56c85e5beb5821a39b616488496db16c97291df549e51`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/volunteer.txt
+- **GME_PAGE** [https://mhs.net/gme](https://mhs.net/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e96022731301083a4f99a334b298576160daadebdd321fa38361cb6ddf782cae`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/gme.txt
+- **FELLOWSHIP_PAGE** [https://mhs.net/fellowship](https://mhs.net/fellowship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `3bc0f3f0fac251b5b096a3bfa543c93c232733cc1c5b9f723cd3f572e5d7c650`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/fellowship.txt
+- **CAREERS_PAGE** [https://mhs.net/careers](https://mhs.net/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `5d278e128ed493bac58cf25564d5ebcef91caadf164b28ec1ab5d1c8e4b9deba`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/careers.txt
+- **JSON_LD** [https://mhs.net/education](https://mhs.net/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `490bba016e409fbee716a1c249ab229fa14d88055c7df0eb81f1e0641b9b3611`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/education.txt
+- **JSON_LD** [https://mhs.net/medical-professionals](https://mhs.net/medical-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `af9eba2489d162cd70a26e7088113dcd6d785ade0f6d24bf160fa1aa54803d4f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/medical-professionals.txt
+- **GME_PAGE** [https://mhs.net/education/undergraduate-medical-education](https://mhs.net/education/undergraduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `98ca4a4c49a16576f9093517d0725f0a44124122ddda7d0e55de467a31f161e4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/education_undergraduate-medical-education.txt
+- **VISITING_STUDENT_PAGE** [https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students](https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9c450097e6f5e2b1de046991ea58f89a1ab24b718369b971392ef3d9423986d6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-4-memorial-hollywood/cleaned_text/education_undergraduate-medical-education_requirements-for-visiting-students.txt
+
+## Rejected sources (60)
+
+- https://mhs.net/observership — FETCH_404 (status_404)
+- https://mhs.net/observerships — FETCH_404 (status_404)
+- https://mhs.net/observer — FETCH_404 (status_404)
+- https://mhs.net/clinical-observer — FETCH_404 (status_404)
+- https://mhs.net/visiting-student — FETCH_404 (status_404)
+- https://mhs.net/visiting-students — FETCH_404 (status_404)
+- https://mhs.net/medical-students — FETCH_404 (status_404)
+- https://mhs.net/international-students — FETCH_404 (status_404)
+- https://mhs.net/electives — FETCH_404 (status_404)
+- https://mhs.net/away-rotations — FETCH_404 (status_404)
+- https://mhs.net/clinical-elective — FETCH_404 (status_404)
+- https://mhs.net/clinical-rotation — FETCH_404 (status_404)
+- https://mhs.net/sub-internship — FETCH_404 (status_404)
+- https://mhs.net/subinternship — FETCH_404 (status_404)
+- https://mhs.net/acting-internship — FETCH_404 (status_404)
+- https://mhs.net/student-research — FETCH_404 (status_404)
+- https://mhs.net/shadow — FETCH_404 (status_404)
+- https://mhs.net/shadowing — FETCH_404 (status_404)
+- https://mhs.net/volunteering — FETCH_404 (status_404)
+- https://mhs.net/img — FETCH_404 (status_404)
+- https://mhs.net/international-medical-graduates — FETCH_404 (status_404)
+- https://mhs.net/graduate-medical-education — FETCH_404 (status_404)
+- https://mhs.net/residency — FETCH_404 (status_404)
+- https://mhs.net/physician-careers — FETCH_404 (status_404)
+- https://mhs.net/provider-careers — FETCH_404 (status_404)
+- https://mhs.net/benefits — FETCH_404 (status_404)
+- https://mhs.net/visa — FETCH_404 (status_404)
+- https://mhs.net/immigration — FETCH_404 (status_404)
+- https://mhs.net/credentialing — FETCH_404 (status_404)
+- https://mhs.net/health-professionals — FETCH_404 (status_404)
+- https://mhs.net/medical-education — FETCH_404 (status_404)
+- https://mhs.net/professional-education — FETCH_404 (status_404)
+- https://mhs.net/student-affairs — FETCH_404 (status_404)
+- https://mhs.net/hcp-education-training — FETCH_404 (status_404)
+- https://mhs.net/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://mhs.net/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://mhs.net/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://mhs.net/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://mhs.net/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://mhs.net/academic-institute — FETCH_404 (status_404)
+- https://mhs.net/academic-institute/education — FETCH_404 (status_404)
+- https://mhs.net/academic-institute/education/medical — FETCH_404 (status_404)
+- https://mhs.net/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://mhs.net/medicine/international — FETCH_404 (status_404)
+- https://mhs.net/medicine/international/international-programs — FETCH_404 (status_404)
+- https://mhs.net/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://mhs.net/visiting-clerkships — FETCH_404 (status_404)
+- https://mhs.net/visiting-clerkships/international — FETCH_404 (status_404)
+- https://mhs.net/education-institute — FETCH_404 (status_404)
+- https://mhs.net/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://mhs.net/education/medical-students — FETCH_404 (status_404)
+- https://mhs.net/education/visiting-medical-students — FETCH_404 (status_404)
+- https://mhs.net/education/medical-student-electives — FETCH_404 (status_404)
+- https://mhs.net/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://mhs.net/medical-education/visiting-students — FETCH_404 (status_404)
+- https://mhs.net/medical-students/electives — FETCH_404 (status_404)
+- https://mhs.net/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://mhs.net/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://mhs.net/students/visiting-students — FETCH_404 (status_404)
+- https://mhs.net/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
