@@ -1,0 +1,592 @@
+{
+  "generatedAt": "2026-05-16T18:56:00.068Z",
+  "totalClassified": 40,
+  "audienceCounts": {
+    "US_MD_DO_VISITING_STUDENT": 28,
+    "BOTH_STUDENT_AND_IMG_GRADUATE": 3,
+    "IMG_GRADUATE_OBSERVER": 4,
+    "INTERNATIONAL_MEDICAL_STUDENT": 5
+  },
+  "studentVsGraduateCounts": {
+    "STUDENT": 33,
+    "BOTH": 3,
+    "IMG_GRADUATE": 4
+  },
+  "classifications": [
+    {
+      "sourceUrl": "https://orlandohealth.com/fellowship",
+      "canonicalUrl": "https://orlandohealth.com/fellowship",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "AWAY_ROTATION/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "AWAY_ROTATION",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY"
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "audienceClass": "BOTH_STUDENT_AND_IMG_GRADUATE",
+      "studentVsGraduate": "BOTH",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "both VMS lane and IMG_OBSERVERSHIP lane on same page",
+      "usceLanes": [
+        "IMG_OBSERVERSHIP",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY"
+    },
+    {
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs",
+      "canonicalUrl": "https://uab.edu/medicine/international/international-programs",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "audienceClass": "BOTH_STUDENT_AND_IMG_GRADUATE",
+      "studentVsGraduate": "BOTH",
+      "audienceConfidence": "MEDIUM",
+      "audienceRationale": "international student + IMG lanes",
+      "usceLanes": [
+        "INTERNATIONAL_MEDICAL_STUDENT",
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY"
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/medical-student-electives",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/medical-student-electives",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY"
+    },
+    {
+      "sourceUrl": "https://www.adventhealth.com/adventhealth-graduate-medical-education/medical-clerkship-redmond",
+      "canonicalUrl": "https://www.adventhealth.com/adventhealth-graduate-medical-education/medical-clerkship-redmond",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/education",
+      "canonicalUrl": "https://mayoclinic.org/education",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "canonicalUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "studentVsGraduate": "IMG_GRADUATE",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "IMG_OBSERVERSHIP lane",
+      "usceLanes": [
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://nicklauschildrens.org/medical-education",
+      "canonicalUrl": "https://nicklauschildrens.org/medical-education",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "audienceClass": "BOTH_STUDENT_AND_IMG_GRADUATE",
+      "studentVsGraduate": "BOTH",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "both VMS lane and IMG_OBSERVERSHIP lane on same page",
+      "usceLanes": [
+        "CLINICAL_ELECTIVE",
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/international-medical-education",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/international-medical-education",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "INTERNATIONAL_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "INTERNATIONAL_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program",
+      "canonicalUrl": "https://keck.usc.edu/md-program",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+      "canonicalUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT/SUB_INTERNSHIP lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "SUB_INTERNSHIP"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students",
+      "canonicalUrl": "https://meded.ucsf.edu/current-students",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "canonicalUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "INTERNATIONAL_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "INTERNATIONAL_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/md-program",
+      "canonicalUrl": "https://meded.ucsf.edu/md-program",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "canonicalUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/research",
+      "canonicalUrl": "https://medschool.ucla.edu/research",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education",
+      "canonicalUrl": "https://medschool.ucla.edu/education",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education/visiting-students",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "INTERNATIONAL_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "INTERNATIONAL_MEDICAL_STUDENT",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/gme",
+      "canonicalUrl": "https://medschool.ucla.edu/gme",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "canonicalUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "INTERNATIONAL_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "INTERNATIONAL_MEDICAL_STUDENT",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "canonicalUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_SCOPE_AMBIGUITY"
+    },
+    {
+      "sourceUrl": "https://tgh.org/health-professionals",
+      "canonicalUrl": "https://tgh.org/health-professionals",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "institutionName": "Tampa General Hospital",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "studentVsGraduate": "IMG_GRADUATE",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "IMG_OBSERVERSHIP lane",
+      "usceLanes": [
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://bmc.org/residency",
+      "canonicalUrl": "https://bmc.org/residency",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "SUB_INTERNSHIP/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "SUB_INTERNSHIP",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+      "canonicalUrl": "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "canonicalUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "SUB_INTERNSHIP lane",
+      "usceLanes": [
+        "SUB_INTERNSHIP"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://bmc.org/benefits",
+      "canonicalUrl": "https://bmc.org/benefits",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://mskcc.org/medical-students",
+      "canonicalUrl": "https://mskcc.org/medical-students",
+      "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+      "institutionName": "Memorial Sloan Kettering Cancer Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://orlandohealth.com/residency",
+      "canonicalUrl": "https://orlandohealth.com/residency",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "AWAY_ROTATION/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "AWAY_ROTATION",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://mhs.net/medical-professionals",
+      "canonicalUrl": "https://mhs.net/medical-professionals",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://hss.edu/education-institute",
+      "canonicalUrl": "https://hss.edu/education-institute",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "studentVsGraduate": "IMG_GRADUATE",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "IMG_OBSERVERSHIP lane",
+      "usceLanes": [
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+      "canonicalUrl": "https://hss.edu/education-institute/academic-visitor-program",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "studentVsGraduate": "IMG_GRADUATE",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "IMG_OBSERVERSHIP lane",
+      "usceLanes": [
+        "IMG_OBSERVERSHIP"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT/CLINICAL_ELECTIVE lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT",
+        "CLINICAL_ELECTIVE"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "canonicalUrl": "https://uab.edu/medicine/international",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "INTERNATIONAL_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "INTERNATIONAL_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/research",
+      "canonicalUrl": "https://fresno.ucsf.edu/research",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/undergraduate-medical-education",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/undergraduate-medical-education",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/medical-students",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/medical-students",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/visiting-medical-students",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/visiting-medical-students",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "STUDENT",
+      "audienceConfidence": "HIGH",
+      "audienceRationale": "VISITING_MEDICAL_STUDENT lane",
+      "usceLanes": [
+        "VISITING_MEDICAL_STUDENT"
+      ],
+      "triageDecision": "HOLD_NEEDS_MORE_EVIDENCE"
+    }
+  ]
+}

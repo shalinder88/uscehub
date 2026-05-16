@@ -1,0 +1,1850 @@
+{
+  "generatedAt": "2026-05-16T18:54:11.071Z",
+  "totalValidated": 180,
+  "statusCounts": {
+    "GENERIC_PAGE_HOLD": 23,
+    "VALID_DIRECT_USCE_SOURCE": 6,
+    "INVALID_NOT_USCE_SOURCE": 151
+  },
+  "results": [
+    {
+      "sourceUrl": "https://orlandohealth.com/fellowship",
+      "canonicalUrl": "https://orlandohealth.com/fellowship",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical student program URL segment",
+      "signals": [
+        "medical student program URL segment"
+      ],
+      "urlPathDepth": 4
+    },
+    {
+      "sourceUrl": "https://uab.edu/medicine/international/international-programs",
+      "canonicalUrl": "https://uab.edu/medicine/international/international-programs",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/medical-student-electives",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/medical-student-electives",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://www.adventhealth.com/adventhealth-graduate-medical-education/medical-clerkship-redmond",
+      "canonicalUrl": "https://www.adventhealth.com/adventhealth-graduate-medical-education/medical-clerkship-redmond",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/education",
+      "canonicalUrl": "https://mayoclinic.org/education",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "canonicalUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://nicklauschildrens.org/medical-education",
+      "canonicalUrl": "https://nicklauschildrens.org/medical-education",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /medical-education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /medical-education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: elective URL segment",
+      "signals": [
+        "elective URL segment"
+      ],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/international-medical-education",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/international-medical-education",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program",
+      "canonicalUrl": "https://keck.usc.edu/md-program",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+      "canonicalUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "signals": [
+        "visiting-student URL segment",
+        "application language in quote",
+        "program-specific abbreviation in quote"
+      ],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students",
+      "canonicalUrl": "https://meded.ucsf.edu/current-students",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "canonicalUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "signals": [
+        "visiting-student URL segment",
+        "application language in quote",
+        "program-specific abbreviation in quote",
+        "application document requirement"
+      ],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/md-program",
+      "canonicalUrl": "https://meded.ucsf.edu/md-program",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "canonicalUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/research",
+      "canonicalUrl": "https://medschool.ucla.edu/research",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education",
+      "canonicalUrl": "https://medschool.ucla.edu/education",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education/visiting-students",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "signals": [
+        "visiting-student URL segment",
+        "eligibility language in quote",
+        "program-specific abbreviation in quote"
+      ],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "canonicalUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment, VSLO/VSAS URL segment",
+      "signals": [
+        "visiting-student URL segment",
+        "VSLO/VSAS URL segment",
+        "application document requirement"
+      ],
+      "urlPathDepth": 4
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/gme",
+      "canonicalUrl": "https://medschool.ucla.edu/gme",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "canonicalUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "canonicalUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "some USCE evidence but insufficient to confirm direct opportunity page (1 signals)",
+      "signals": [
+        "program-specific abbreviation in quote"
+      ],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://tgh.org/health-professionals",
+      "canonicalUrl": "https://tgh.org/health-professionals",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "institutionName": "Tampa General Hospital",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "some USCE evidence but insufficient to confirm direct opportunity page (1 signals)",
+      "signals": [
+        "application language in quote"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://bmc.org/residency",
+      "canonicalUrl": "https://bmc.org/residency",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+      "canonicalUrl": "https://www.bmc.org/otolaryngology-head-neck-surgery/residency-program/faculty",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "canonicalUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://bmc.org/benefits",
+      "canonicalUrl": "https://bmc.org/benefits",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://mskcc.org/medical-students",
+      "canonicalUrl": "https://mskcc.org/medical-students",
+      "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+      "institutionName": "Memorial Sloan Kettering Cancer Center",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://orlandohealth.com/residency",
+      "canonicalUrl": "https://orlandohealth.com/residency",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://mhs.net/medical-professionals",
+      "canonicalUrl": "https://mhs.net/medical-professionals",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://hss.edu/education-institute",
+      "canonicalUrl": "https://hss.edu/education-institute",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+      "canonicalUrl": "https://hss.edu/education-institute/academic-visitor-program",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "canonicalUrl": "https://uab.edu/medicine/international",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/research",
+      "canonicalUrl": "https://fresno.ucsf.edu/research",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/undergraduate-medical-education",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/undergraduate-medical-education",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/medical-students",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/medical-students",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education/visiting-medical-students",
+      "canonicalUrl": "https://fresno.ucsf.edu/education/visiting-medical-students",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education",
+      "canonicalUrl": "https://med.emory.edu/education",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://hss.edu/education",
+      "canonicalUrl": "https://hss.edu/education",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/education",
+      "canonicalUrl": "https://fresno.ucsf.edu/education",
+      "institutionId": "inst_ucsf_fresno_ca",
+      "institutionName": "UCSF Fresno",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://nemours.org/education",
+      "canonicalUrl": "https://nemours.org/education",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "institutionName": "Nemours Children's Hospital Orlando",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "generic landing page URL (generic /education URL) with insufficient quote evidence",
+      "signals": [
+        "generic /education URL"
+      ],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+      "canonicalUrl": "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 3
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+      "canonicalUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 5
+    },
+    {
+      "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+      "canonicalUrl": "https://jacksonhealth.org/community/volunteering",
+      "institutionId": "inst_jackson_memorial_hospital_fl",
+      "institutionName": "Jackson Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 2
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/research-programs/",
+      "canonicalUrl": "https://keck.usc.edu/research-programs",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "directLinkStatus": "GENERIC_PAGE_HOLD",
+      "directLinkReason": "very shallow URL depth (1) with no direct-opportunity signals",
+      "signals": [],
+      "urlPathDepth": 1
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+      "canonicalUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals found",
+      "signals": [],
+      "urlPathDepth": 5
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/observership",
+      "canonicalUrl": "https://houstonmethodist.org/observership",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://adventhealth.com/benefits",
+      "canonicalUrl": "https://adventhealth.com/benefits",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://nicklauschildrens.org/research",
+      "canonicalUrl": "https://nicklauschildrens.org/research",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+      "canonicalUrl": "https://nicklauschildrens.org/medical-professionals",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/benefits",
+      "canonicalUrl": "https://meded.ucsf.edu/benefits",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding",
+      "canonicalUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://orlandohealth.com/medical-professionals",
+      "canonicalUrl": "https://orlandohealth.com/medical-professionals",
+      "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mhs.net/education",
+      "canonicalUrl": "https://mhs.net/education",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_PHARMACY_OR_ALLIED_HEALTH",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/volunteer",
+      "canonicalUrl": "https://houstonmethodist.org/volunteer",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://tbh.org/volunteering",
+      "canonicalUrl": "https://tbh.org/volunteering",
+      "institutionId": "inst_brooklyn_hospital_center_ny",
+      "institutionName": "The Brooklyn Hospital Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://adventhealth.com/research",
+      "canonicalUrl": "https://adventhealth.com/research",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://adventhealth.com/volunteer",
+      "canonicalUrl": "https://adventhealth.com/volunteer",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://adventhealth.com/medical-education",
+      "canonicalUrl": "https://adventhealth.com/medical-education",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "institutionName": "AdventHealth Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/observership",
+      "canonicalUrl": "https://mayoclinic.org/observership",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/observer",
+      "canonicalUrl": "https://mayoclinic.org/observer",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/clinical-observer",
+      "canonicalUrl": "https://mayoclinic.org/clinical-observer",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/visiting-student",
+      "canonicalUrl": "https://mayoclinic.org/visiting-student",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/visiting-students",
+      "canonicalUrl": "https://mayoclinic.org/visiting-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/international-students",
+      "canonicalUrl": "https://mayoclinic.org/international-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/electives",
+      "canonicalUrl": "https://mayoclinic.org/electives",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/away-rotations",
+      "canonicalUrl": "https://mayoclinic.org/away-rotations",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/clinical-elective",
+      "canonicalUrl": "https://mayoclinic.org/clinical-elective",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/clinical-rotation",
+      "canonicalUrl": "https://mayoclinic.org/clinical-rotation",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/sub-internship",
+      "canonicalUrl": "https://mayoclinic.org/sub-internship",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/subinternship",
+      "canonicalUrl": "https://mayoclinic.org/subinternship",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/acting-internship",
+      "canonicalUrl": "https://mayoclinic.org/acting-internship",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/student-research",
+      "canonicalUrl": "https://mayoclinic.org/student-research",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/shadow",
+      "canonicalUrl": "https://mayoclinic.org/shadow",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/volunteering",
+      "canonicalUrl": "https://mayoclinic.org/volunteering",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/img",
+      "canonicalUrl": "https://mayoclinic.org/img",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/immigration",
+      "canonicalUrl": "https://mayoclinic.org/immigration",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training/medical-students/elective",
+      "canonicalUrl": "https://mayoclinic.org/hcp-education-training/medical-students/elective",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training/medical-students/medical-student-observerships",
+      "canonicalUrl": "https://mayoclinic.org/hcp-education-training/medical-students/medical-student-observerships",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-professionals",
+      "canonicalUrl": "https://mayoclinic.org/medical-professionals",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medicine/international/international-programs/international-visiting-medical-students",
+      "canonicalUrl": "https://mayoclinic.org/medicine/international/international-programs/international-visiting-medical-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/visiting-clerkships",
+      "canonicalUrl": "https://mayoclinic.org/visiting-clerkships",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "canonicalUrl": "https://mayoclinic.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/education/visiting-medical-students",
+      "canonicalUrl": "https://mayoclinic.org/education/visiting-medical-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-education/medical-student-electives",
+      "canonicalUrl": "https://mayoclinic.org/medical-education/medical-student-electives",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-education/visiting-students",
+      "canonicalUrl": "https://mayoclinic.org/medical-education/visiting-students",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-students/electives",
+      "canonicalUrl": "https://mayoclinic.org/medical-students/electives",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-students/elective-rotations",
+      "canonicalUrl": "https://mayoclinic.org/medical-students/elective-rotations",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/medical-students/clinical-electives",
+      "canonicalUrl": "https://mayoclinic.org/medical-students/clinical-electives",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "institutionName": "Mayo Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://nemours.org/volunteering",
+      "canonicalUrl": "https://nemours.org/volunteering",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "institutionName": "Nemours Children's Hospital Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://nemours.org/health-professionals",
+      "canonicalUrl": "https://nemours.org/health-professionals",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "institutionName": "Nemours Children's Hospital Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nemours.org/education/gme/physical-therapy.html",
+      "canonicalUrl": "https://www.nemours.org/education/gme/physical-therapy.html",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "institutionName": "Nemours Children's Hospital Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nemours.org/education/gme/pediatric-residency/inclusion-and-belonging.html",
+      "canonicalUrl": "https://www.nemours.org/education/gme/pediatric-residency/inclusion-and-belonging.html",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "institutionName": "Nemours Children's Hospital Orlando",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+      "canonicalUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/research",
+      "canonicalUrl": "https://baptisthealth.net/about-baptist-health/research",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/baptist-health-foundation/our-focus/research",
+      "canonicalUrl": "https://baptisthealth.net/baptist-health-foundation/our-focus/research",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials",
+      "canonicalUrl": "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+      "canonicalUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park",
+      "canonicalUrl": "https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "institutionName": "Baptist Hospital of Miami",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://tgh.org/volunteer",
+      "canonicalUrl": "https://tgh.org/volunteer",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "institutionName": "Tampa General Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+      "canonicalUrl": "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital",
+      "institutionId": "inst_jackson_memorial_hospital_fl",
+      "institutionName": "Jackson Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+      "canonicalUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing",
+      "institutionId": "inst_jackson_memorial_hospital_fl",
+      "institutionName": "Jackson Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://nicklauschildrens.org/volunteer",
+      "canonicalUrl": "https://nicklauschildrens.org/volunteer",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+      "canonicalUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+      "canonicalUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nicklauschildrens.org/treatments/elective-surgery",
+      "canonicalUrl": "https://www.nicklauschildrens.org/treatments/elective-surgery",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+      "canonicalUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant",
+      "canonicalUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant",
+      "institutionId": "inst_nicklaus_childrens_hospital_fl",
+      "institutionName": "Nicklaus Children's Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/elective",
+      "canonicalUrl": "https://leehealth.org/hcp-education-training/medical-students/elective",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+      "canonicalUrl": "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+      "canonicalUrl": "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "canonicalUrl": "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/education/visiting-medical-students",
+      "canonicalUrl": "https://leehealth.org/education/visiting-medical-students",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/medical-education/medical-student-electives",
+      "canonicalUrl": "https://leehealth.org/medical-education/medical-student-electives",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/medical-students/clinical-electives",
+      "canonicalUrl": "https://leehealth.org/medical-students/clinical-electives",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://leehealth.org/students/visiting-students",
+      "canonicalUrl": "https://leehealth.org/students/visiting-students",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+      "canonicalUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/overview",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/overview",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/to-volunteer-services",
+      "canonicalUrl": "https://www.leehealth.org/to-volunteer-services",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+      "canonicalUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/grants-scholarships",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/grants-scholarships",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+      "canonicalUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+      "canonicalUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/about/community/volunteer",
+      "canonicalUrl": "https://my.clevelandclinic.org/about/community/volunteer",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/about",
+      "canonicalUrl": "https://my.clevelandclinic.org/departments/anesthesiology/depts/outcomes-research/about",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://bmc.org/volunteer",
+      "canonicalUrl": "https://bmc.org/volunteer",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://bmc.org/careers",
+      "canonicalUrl": "https://bmc.org/careers",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://bmc.org/education",
+      "canonicalUrl": "https://bmc.org/education",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mayoclinic.org/visa",
+      "canonicalUrl": "https://mayoclinic.org/visa",
+      "institutionId": "inst_mayo_clinic_rochester_mn",
+      "institutionName": "Mayo Clinic",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://northwell.edu/volunteer",
+      "canonicalUrl": "https://northwell.edu/volunteer",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-nephrology-kidney-transplantation/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-nephrology-kidney-transplantation/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-endocrinology-diabetes/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-endocrinology-diabetes/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/general-pediatrics/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/general-pediatrics/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-neurology/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-neurology/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-allergy-and-immunology/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-allergy-and-immunology/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-neurosurgery/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-neurosurgery/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-otolaryngology/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-otolaryngology/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://keck.usc.edu/education",
+      "canonicalUrl": "https://keck.usc.edu/education",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "institutionName": "Keck School of Medicine at USC",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/careers",
+      "canonicalUrl": "https://meded.ucsf.edu/careers",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+      "canonicalUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects",
+      "canonicalUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects",
+      "institutionId": "inst_ucsf_school_of_medicine_ca",
+      "institutionName": "UCSF School of Medicine",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/medicine/international",
+      "canonicalUrl": "https://med.emory.edu/medicine/international",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+      "canonicalUrl": "https://med.emory.edu/medicine/international/international-programs",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "canonicalUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+      "canonicalUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mhs.net/volunteer",
+      "canonicalUrl": "https://mhs.net/volunteer",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.hss.edu/about/volunteer",
+      "canonicalUrl": "https://www.hss.edu/about/volunteer",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/academic-institute",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/observership",
+      "canonicalUrl": "https://uab.edu/observership",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/observer",
+      "canonicalUrl": "https://uab.edu/observer",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/clinical-observer",
+      "canonicalUrl": "https://uab.edu/clinical-observer",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/clinical-elective",
+      "canonicalUrl": "https://uab.edu/clinical-elective",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/education/visiting-medical-students",
+      "canonicalUrl": "https://uab.edu/education/visiting-medical-students",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/medical-education/medical-student-electives",
+      "canonicalUrl": "https://uab.edu/medical-education/medical-student-electives",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/medical-students/elective-rotations",
+      "canonicalUrl": "https://uab.edu/medical-students/elective-rotations",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/medical-students/clinical-electives",
+      "canonicalUrl": "https://uab.edu/medical-students/clinical-electives",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://uab.edu/students/visiting-students",
+      "canonicalUrl": "https://uab.edu/students/visiting-students",
+      "institutionId": "inst_uab_hospital_al",
+      "institutionName": "UAB Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "canonicalUrl": "https://med.stanford.edu/ctsurgery/research.html",
+      "institutionId": "inst_stanford_health_care_ca",
+      "institutionName": "Stanford Health Care",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_GME_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/research",
+      "canonicalUrl": "https://houstonmethodist.org/research",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://houstonmethodist.org/education",
+      "canonicalUrl": "https://houstonmethodist.org/education",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "institutionName": "Houston Methodist Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research",
+      "canonicalUrl": "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research",
+      "institutionId": "inst_lee_memorial_hospital_fl",
+      "institutionName": "Lee Memorial Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/research",
+      "canonicalUrl": "https://my.clevelandclinic.org/research",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "institutionName": "Cleveland Clinic Florida",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://www.bmc.org/pediatrics-neurology/research",
+      "canonicalUrl": "https://www.bmc.org/pediatrics-neurology/research",
+      "institutionId": "inst_boston_medical_center_ma",
+      "institutionName": "Boston Medical Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://northwell.edu/research",
+      "canonicalUrl": "https://northwell.edu/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-orthopaedics/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-orthopaedics/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-general-surgery/research",
+      "canonicalUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-general-surgery/research",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "institutionName": "Northwell Staten Island University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://medschool.ucla.edu/news-article/ucla-researcher-receives-nih-grant-to-develop-a-more",
+      "canonicalUrl": "https://medschool.ucla.edu/news-article/ucla-researcher-receives-nih-grant-to-develop-a-more",
+      "institutionId": "inst_ucla_school_of_medicine_ca",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://mskcc.org/education",
+      "canonicalUrl": "https://mskcc.org/education",
+      "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+      "institutionName": "Memorial Sloan Kettering Cancer Center",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "canonicalUrl": "http://med.emory.edu/research/training/index.html",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "institutionName": "Emory University Hospital",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    },
+    {
+      "sourceUrl": "https://hss.edu/research",
+      "canonicalUrl": "https://hss.edu/research",
+      "institutionId": "inst_hospital_for_special_surgery_ny",
+      "institutionName": "Hospital for Special Surgery",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "pre-rejected by triage: REJECT_RESEARCH_ONLY",
+      "signals": [],
+      "urlPathDepth": 0
+    }
+  ]
+}
