@@ -5,46 +5,38 @@ Branch: `local/p102-reviewer-workflow`
 
 ## Cumulative counts
 
-- Total review-queue entries: **184**
+- Total review-queue entries: **46**
 - Total auto-approved opportunity rows (already public-safe): **14**
-- Institutions in review queue: **26**
-- Source domains: **25**
+- Institutions in review queue: **18**
+- Source domains: **18**
 
 ## By visibility lane
 
 | Lane | Count |
 |---|---:|
-| HUMAN_REVIEW_REQUIRED | 158 |
-| CAUTION_SAFE_INTERNAL_REVIEW | 26 |
+| HUMAN_REVIEW_REQUIRED | 25 |
+| CAUTION_SAFE_INTERNAL_REVIEW | 21 |
 
 ## By source scope
 
 | Scope | Count |
 |---|---:|
-| INSTITUTION_SPECIFIC | 90 |
-| HEALTH_SYSTEM_LEVEL | 88 |
+| HEALTH_SYSTEM_LEVEL | 23 |
+| INSTITUTION_SPECIFIC | 19 |
 | DEPARTMENT_LEVEL | 4 |
-| CAREERS_PORTAL | 2 |
 
 ## By deep source family (top 15)
 
 | Deep family | Count |
 |---|---:|
-| UNKNOWN_RELEVANT | 49 |
-| MEDICAL_EDUCATION | 30 |
-| VOLUNTEER_SHADOW | 27 |
-| RESEARCH_EDUCATION | 26 |
-| VISITING_STUDENT | 17 |
-| HEALTH_SYSTEM_HOME | 6 |
+| VISITING_STUDENT | 18 |
+| MEDICAL_EDUCATION | 15 |
 | OBSERVERSHIP | 4 |
-| REJECTION_EVIDENCE | 4 |
-| UNDERGRADUATE_MEDICAL_EDUCATION | 3 |
 | ELECTIVE | 3 |
 | SUB_INTERNSHIP | 2 |
-| BENEFITS | 2 |
-| EXTERNSHIP | 1 |
-| RESEARCH_TRAINING | 1 |
-| VISA_IMMIGRATION | 1 |
+| UNDERGRADUATE_MEDICAL_EDUCATION | 2 |
+| UME_VISITING_STUDENTS | 1 |
+| VISITING_STUDENT_PAGE | 1 |
 
 ## Top 10 institutions by priority score
 
@@ -52,16 +44,16 @@ Reviewers should consider these first — they have at least one entry with the 
 
 | # | Institution | City, State | Top score | Entry count |
 |---|---|---|---:|---:|
-| 1 | Emory University Hospital | Atlanta, GA | 18 | 6 |
-| 2 | Houston Methodist Hospital | Houston, TX | 18 | 4 |
-| 3 | UCSF School of Medicine | San Francisco, CA | 16 | 10 |
-| 4 | Houston Methodist Hospital | Houston, TX | 16 | 3 |
-| 5 | David Geffen School of Medicine at UCLA | Los Angeles, CA | 15 | 7 |
-| 6 | AdventHealth Orlando | Orlando, FL | 15 | 5 |
-| 7 | Keck School of Medicine at USC | Los Angeles, CA | 15 | 4 |
-| 8 | Mayo Clinic | Rochester, MN | 14 | 11 |
-| 9 | UCSF Fresno | Fresno, CA | 14 | 6 |
-| 10 | Orlando Health Orlando Regional Medical Center | Orlando, FL | 14 | 3 |
+| 1 | Houston Methodist Hospital | Houston, TX | 16 | 2 |
+| 2 | David Geffen School of Medicine at UCLA | Los Angeles, CA | 15 | 6 |
+| 3 | UCSF School of Medicine | San Francisco, CA | 15 | 4 |
+| 4 | Keck School of Medicine at USC | Los Angeles, CA | 15 | 2 |
+| 5 | UCSF Fresno | Fresno, CA | 14 | 6 |
+| 6 | Orlando Health Orlando Regional Medical Center | Orlando, FL | 14 | 3 |
+| 7 | Mayo Clinic | Rochester, MN | 14 | 1 |
+| 8 | Emory University Hospital | Atlanta, GA | 14 | 1 |
+| 9 | Cleveland Clinic Florida | Weston, FL | 13 | 2 |
+| 10 | AdventHealth Orlando | Orlando, FL | 13 | 1 |
 
 ## Top 50 review-queue entries (machine-prioritized)
 
@@ -70,56 +62,52 @@ All top-50 rows default to `reviewerDecision=KEEP_HUMAN_REVIEW`. The reviewer mu
 
 | # | Score | Institution | Lane | Family | Source URL | Quote (truncated) |
 |---|---:|---|---|---|---|---|
-| 1 | 18 | Houston Methodist Hospital | HUMAN_REVIEW_REQUIRED | EXTERNSHIP | `https://houstonmethodist.org/observership` | Submit the following via email to Kathryn N. Pidcock, PharmD, BCPS at knpidcock@… |
-| 2 | 18 | Emory University Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://med.emory.edu/medicine/international` | Department of Medicine | Emory School of Medicine… |
-| 3 | 16 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://meded.ucsf.edu/careers` | Please note that appointments are for current and graduated UCSF Medical Student… |
-| 4 | 16 | Emory University Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://med.emory.edu/education` | Emory University School of Medicine… |
-| 5 | 16 | Emory University Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://med.emory.edu/medicine/international/international-p…` | Department of Medicine | Emory School of MedicineSkip to main contentEmory Unive… |
-| 6 | 16 | Emory University Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://med.emory.edu/medicine/international/international-p…` | Department of Medicine | Emory School of MedicineSkip to main contentEmory Unive… |
-| 7 | 16 | Emory University Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `http://med.emory.edu/research/training/index.html` | Training | Emory School of Medicine… |
-| 8 | 16 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://houstonmethodist.org/academic-institute/education/me…` | Medical student rotations at Houston Methodist give residents the proper amount … |
-| 9 | 16 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | OBSERVERSHIP | `https://houstonmethodist.org/academic-institute/education/me…` | Medical student rotations and observerships at Houston Methodist give residents … |
-| 10 | 15 | AdventHealth Orlando | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://adventhealth.com/medical-education` | Medical Education | AdventHealth Digestive Health Institute West Florida… |
-| 11 | 15 | Keck School of Medicine at USC | HUMAN_REVIEW_REQUIRED | UNDERGRADUATE_MEDICAL_EDUCATION | `https://keck.usc.edu/education` | 97.4%Match rate of 2025 Keck School MD students as they chart their paths to pra… |
-| 12 | 15 | Keck School of Medicine at USC | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://keck.usc.edu/md-program/visiting-student-clerkships` | Students in good academic standing in their senior year at US schools of medicin… |
-| 13 | 15 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://meded.ucsf.edu/current-students/visiting-student-pro…` | The UCSF School of Medicine uses the AAMC Visiting Student Application Service (… |
-| 14 | 15 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `http://meded.ucsf.edu/faculty-educators/health-professions-e…` | The Innovations Funding in Education program is one of the most impactful Academ… |
-| 15 | 15 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://medschool.ucla.edu/research` | Medical School | Medical Research | UCLA Medical School… |
-| 16 | 15 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/education/md-education/visiting-s…` | The David Geffen School of Medicine at UCLA is uses the AAMC's Visiting Student … |
-| 17 | 15 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/education/md-education/visiting-s…` | The David Geffen School of Medicine (DGSOM) at UCLA uses the AAMC Visiting Stude… |
-| 18 | 14 | Mayo Clinic | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://mayoclinic.org/education` | Visiting medical student clerkships Elective clinical rotations for visiting med… |
-| 19 | 14 | Orlando Health Orlando Regional Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://orlandohealth.com/residency` | Academic AffiliationsConferences and Other CurriculaFellowshipsM4 Away Rotations… |
-| 20 | 14 | Orlando Health Orlando Regional Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://orlandohealth.com/fellowship` | M4 Away Rotations… |
-| 21 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | ELECTIVE | `https://fresno.ucsf.edu/education` | We are a branch campus and major teaching site of the University of California, … |
-| 22 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://fresno.ucsf.edu/education/undergraduate-medical-educ…` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
-| 23 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://fresno.ucsf.edu/education/medical-students` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
-| 24 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://fresno.ucsf.edu/education/visiting-medical-students` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
-| 25 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://fresno.ucsf.edu/education/medical-student-electives` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
-| 26 | 13 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | RESEARCH_TRAINING | `https://houstonmethodist.org/education` | our GME, PhD, MD/MEng, CE and T32 pre and postdoctoral training programs are a f… |
-| 27 | 13 | AdventHealth Orlando | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://www.adventhealth.com/adventhealth-graduate-medical-e…` | At AdventHealth Redmond, we welcome medical students who are eager to learn the … |
-| 28 | 13 | Nemours Children's Hospital Orlando | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nemours.org/education` | Nemours Children's Hospital, Florida in Orlando partners with the University of … |
-| 29 | 13 | Nemours Children's Hospital Orlando | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://www.nemours.org/education/gme/physical-therapy.html` | The Therapeutic Services Department of Nemours Children’s Hospital, Delaware acc… |
-| 30 | 13 | Baptist Hospital of Miami | HUMAN_REVIEW_REQUIRED | OBSERVERSHIP | `https://baptisthealth.net/international-services/internation…` | Baptist Health is unable to sponsor visas for participants of this program.… |
-| 31 | 13 | Nicklaus Children's Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nicklauschildrens.org/medical-education` | Continuing Medical Education (CME)… |
-| 32 | 13 | Cleveland Clinic Florida | HUMAN_REVIEW_REQUIRED | ELECTIVE | `https://my.clevelandclinic.org/departments/elective-program` | Are you interested in the clinical elective program at Cleveland Clinic? Learn m… |
-| 33 | 13 | Cleveland Clinic Florida | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://my.clevelandclinic.org/departments/international-med…` | 9500 Euclid Avenue, Cleveland, Ohio 44195 | 800.223.2273 | &copy; 2026 Cleveland… |
-| 34 | 13 | Keck School of Medicine at USC | HUMAN_REVIEW_REQUIRED | UNDERGRADUATE_MEDICAL_EDUCATION | `https://keck.usc.edu/md-program` | In 2026, 201 Keck School MD Seniors matched with post-graduate training programs… |
-| 35 | 13 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `http://meded.ucsf.edu/faculty-educators/health-professions-e…` | Innovations Funding Funded ProjectsExamples of innovations include:A specific co… |
-| 36 | 13 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://medschool.ucla.edu/education` | A medical education at the David Geffen School of Medicine at UCLA is about more… |
-| 37 | 13 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://medschool.ucla.edu/education/md-education` | Doctor of Medicine | UCLA Medical School… |
-| 38 | 13 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | RESEARCH_EDUCATION | `https://houstonmethodist.org/academic-institute` | The Weill Cornell Graduate School of Medical Sciences has expanded its PhD progr… |
-| 39 | 12 | Mayo Clinic | HUMAN_REVIEW_REQUIRED | UNKNOWN_RELEVANT | `https://mayoclinic.org/electives` | Page Not Found - Site Help - Mayo Clinic… |
-| 40 | 12 | Northwell Staten Island University Hospital | HUMAN_REVIEW_REQUIRED | RESEARCH_EDUCATION | `https://pediatrics.northwell.edu/departments-services/genera…` | Cohen Children’s Medical Center is now a Children’s Environmental Health Center … |
-| 41 | 11 | Nicklaus Children's Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nicklauschildrens.org/research` | Our CommunityInspiring Patient StoriesMedical EducationNews & EventsPhone Direct… |
-| 42 | 11 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `http://meded.ucsf.edu/faculty-educators/health-professions-e…` | The Teaching Scholars Program develops educational leaders and scholars through … |
-| 43 | 11 | Memorial Sloan Kettering Cancer Center | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://mskcc.org/medical-students` | Department of Medicine: Training Opportunities | Memorial Sloan Kettering Cancer… |
-| 44 | 11 | Hospital for Special Surgery | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://hss.edu/education-institute` | HSS Education Institute… |
-| 45 | 10 | Houston Methodist Hospital | HUMAN_REVIEW_REQUIRED | RESEARCH_EDUCATION | `https://houstonmethodist.org/research` | At Houston Methodist, our researchers pioneer platform technologies that can be … |
-| 46 | 10 | Nicklaus Children's Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nicklauschildrens.org/medical-professionals` | Nicklaus Children's Hospital is committed to its role as a teaching hospital pro… |
-| 47 | 10 | Mayo Clinic | HUMAN_REVIEW_REQUIRED | UNKNOWN_RELEVANT | `https://mayoclinic.org/visiting-student` | Page Not Found - Site Help - Mayo Clinic… |
-| 48 | 10 | Mayo Clinic | HUMAN_REVIEW_REQUIRED | UNKNOWN_RELEVANT | `https://mayoclinic.org/sub-internship` | Page Not Found - Site Help - Mayo Clinic… |
-| 49 | 10 | Northwell Staten Island University Hospital | HUMAN_REVIEW_REQUIRED | UNKNOWN_RELEVANT | `https://pediatrics.northwell.edu/departments-services/pediat…` | Research - Pediatric Neurology | Northwell Health… |
-| 50 | 10 | Northwell Staten Island University Hospital | HUMAN_REVIEW_REQUIRED | RESEARCH_EDUCATION | `https://pediatrics.northwell.edu/departments-services/pediat…` | Research - Pediatric Orthopedics | Northwell Health… |
+| 1 | 16 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://houstonmethodist.org/academic-institute/education/me…` | Medical student rotations at Houston Methodist give residents the proper amount … |
+| 2 | 16 | Houston Methodist Hospital | CAUTION_SAFE_INTERNAL_REVIEW | OBSERVERSHIP | `https://houstonmethodist.org/academic-institute/education/me…` | Medical student rotations and observerships at Houston Methodist give residents … |
+| 3 | 15 | Keck School of Medicine at USC | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://keck.usc.edu/md-program/visiting-student-clerkships` | Students in good academic standing in their senior year at US schools of medicin… |
+| 4 | 15 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://meded.ucsf.edu/current-students/visiting-student-pro…` | The UCSF School of Medicine uses the AAMC Visiting Student Application Service (… |
+| 5 | 15 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/education/md-education/visiting-s…` | The David Geffen School of Medicine at UCLA is uses the AAMC's Visiting Student … |
+| 6 | 15 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/education/md-education/visiting-s…` | The David Geffen School of Medicine (DGSOM) at UCLA uses the AAMC Visiting Stude… |
+| 7 | 14 | Mayo Clinic | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://mayoclinic.org/education` | Visiting medical student clerkships Elective clinical rotations for visiting med… |
+| 8 | 14 | Emory University Hospital | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://med.emory.edu/education` | Sub linkVisiting Medical StudentsSub linkInternational Students… |
+| 9 | 14 | Orlando Health Orlando Regional Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://orlandohealth.com/residency` | Academic AffiliationsConferences and Other CurriculaFellowshipsM4 Away Rotations… |
+| 10 | 14 | Orlando Health Orlando Regional Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://orlandohealth.com/fellowship` | M4 Away Rotations… |
+| 11 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | ELECTIVE | `https://fresno.ucsf.edu/education` | We are a branch campus and major teaching site of the University of California, … |
+| 12 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://fresno.ucsf.edu/education/undergraduate-medical-educ…` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
+| 13 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://fresno.ucsf.edu/education/medical-students` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
+| 14 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://fresno.ucsf.edu/education/visiting-medical-students` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
+| 15 | 14 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://fresno.ucsf.edu/education/medical-student-electives` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
+| 16 | 13 | AdventHealth Orlando | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://www.adventhealth.com/adventhealth-graduate-medical-e…` | At AdventHealth Redmond, we welcome medical students who are eager to learn the … |
+| 17 | 13 | Baptist Hospital of Miami | HUMAN_REVIEW_REQUIRED | OBSERVERSHIP | `https://baptisthealth.net/international-services/internation…` | Baptist Health is unable to sponsor visas for participants of this program.… |
+| 18 | 13 | Cleveland Clinic Florida | HUMAN_REVIEW_REQUIRED | ELECTIVE | `https://my.clevelandclinic.org/departments/elective-program` | Are you interested in the clinical elective program at Cleveland Clinic? Learn m… |
+| 19 | 13 | Cleveland Clinic Florida | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://my.clevelandclinic.org/departments/international-med…` | Travel & HousingGet all the information you need about traveling to Cleveland.… |
+| 20 | 13 | Keck School of Medicine at USC | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://keck.usc.edu/md-program` | The Keck School of Medicine of USC medical education program is accredited by th… |
+| 21 | 11 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/research` | MD EducationAdmissionsLCME AccreditationCareer DevelopmentCurriculumCurrent Stud… |
+| 22 | 10 | Nicklaus Children's Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nicklauschildrens.org/medical-education` | Nicklaus Children's Health System extends its medical education impact beyond Fl… |
+| 23 | 10 | Nicklaus Children's Hospital | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://nicklauschildrens.org/medical-professionals` | Nicklaus Children's Hospital is committed to its role as a teaching hospital pro… |
+| 24 | 10 | Memorial Healthcare System - Memorial Regional Hollywood | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://mhs.net/education/undergraduate-medical-education/re…` | Students accepted for rotations with Memorial Healthcare System must complete th… |
+| 25 | 9 | Tampa General Hospital | CAUTION_SAFE_INTERNAL_REVIEW | OBSERVERSHIP | `https://tgh.org/health-professionals` | Physician-to-Physician Observer Application Request at TGH Main… |
+| 26 | 9 | Boston Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | SUB_INTERNSHIP | `https://bmc.org/residency` | ClerkshipsSub-InternshipUltrasound Elective… |
+| 27 | 9 | Boston Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://www.bmc.org/otolaryngology-head-neck-surgery/residen…` | BenefitsVisiting Medical StudentsAlumniBU Frontline Medicine… |
+| 28 | 9 | Memorial Sloan Kettering Cancer Center | CAUTION_SAFE_INTERNAL_REVIEW | ELECTIVE | `https://mskcc.org/medical-students` | Medical Student Elective Program: How to Apply… |
+| 29 | 9 | Hospital for Special Surgery | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://hss.edu/education` | The mission of the HSS Education Institute is to be a source for outstanding ini… |
+| 30 | 9 | Hospital for Special Surgery | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://hss.edu/education-institute` | Academic Visitor Program… |
+| 31 | 9 | UAB Hospital | CAUTION_SAFE_INTERNAL_REVIEW | MEDICAL_EDUCATION | `https://uab.edu/medicine/international` | Interested in visiting the United States for medical training or research?… |
+| 32 | 9 | UAB Hospital | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT | `https://uab.edu/medicine/international/international-program…` | Our international programs include:International Visiting Medical Students… |
+| 33 | 8 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://meded.ucsf.edu/current-students` | Anti-Oppression Curriculum InitiativeCourse and Schedule InformationEmergency Co… |
+| 34 | 8 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://meded.ucsf.edu/md-program` | Visiting Student Program… |
+| 35 | 8 | UCSF School of Medicine | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `http://meded.ucsf.edu/about-us/guidelines-policies/medical-s…` | Visiting Student ProgramAdvising and Career Development… |
+| 36 | 8 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://medschool.ucla.edu/education` | Financial Aid & ScholarshipsResearch OpportunitiesStudent Life & EventsVisiting … |
+| 37 | 8 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/education/md-education` | Visiting StudentsExpand Visiting Students submenuVSLO… |
+| 38 | 8 | David Geffen School of Medicine at UCLA | HUMAN_REVIEW_REQUIRED | VISITING_STUDENT | `https://medschool.ucla.edu/gme` | Visiting StudentsExpand Visiting Students submenuVSLO… |
+| 39 | 8 | Orlando Health Orlando Regional Medical Center | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://orlandohealth.com/medical-professionals` | Graduate Medical EducationOverviewClerkship ProgramsFellowship Programs… |
+| 40 | 8 | Memorial Healthcare System - Memorial Regional Hollywood | HUMAN_REVIEW_REQUIRED | UNDERGRADUATE_MEDICAL_EDUCATION | `https://mhs.net/education/undergraduate-medical-education` | Memorial Healthcare System provides clinical training to medical students in a d… |
+| 41 | 8 | UCSF Fresno | CAUTION_SAFE_INTERNAL_REVIEW | UME_VISITING_STUDENTS | `https://fresno.ucsf.edu/research` | Undergraduate Medical EducationSJV PRIMEResources for StudentsUME ContactsVisiti… |
+| 42 | 6 | Memorial Healthcare System - Memorial Regional Hollywood | HUMAN_REVIEW_REQUIRED | MEDICAL_EDUCATION | `https://mhs.net/education` | Undergraduate Medical EducationToggle Undergraduate Medical Education sectionReq… |
+| 43 | 4 | Boston Medical Center | HUMAN_REVIEW_REQUIRED | SUB_INTERNSHIP | `https://www.bmc.org/ear-nose-and-throat-department/residency…` | NOT_STATED_ON_SOURCE… |
+| 44 | 4 | Hospital for Special Surgery | HUMAN_REVIEW_REQUIRED | OBSERVERSHIP | `https://hss.edu/education-institute/academic-visitor-program` | NOT_STATED_ON_SOURCE… |
+| 45 | 3 | Boston Medical Center | CAUTION_SAFE_INTERNAL_REVIEW | VISITING_STUDENT_PAGE | `https://bmc.org/benefits` | Information for ApplicantsBenefitsVisiting Medical StudentsAlumniBU Frontline Me… |
+| 46 | 3 | Memorial Healthcare System - Memorial Regional Hollywood | HUMAN_REVIEW_REQUIRED | UNDERGRADUATE_MEDICAL_EDUCATION | `https://mhs.net/medical-professionals` | Medical Education OpportunitiesContinuing Medical Education (CME)Graduate Medica… |
 
 ## How to use this
 

@@ -101,6 +101,23 @@ const FUTURE_LANE_DEEP_FAMILIES = new Set([
 const SYSTEM_OR_SCHOOL_SCOPES = new Set(['HEALTH_SYSTEM_LEVEL', 'MEDICAL_SCHOOL_LEVEL']);
 
 /**
+ * Lanes the model assigns when it finds an explicit USCE opportunity.
+ * Only entries with these lanes enter the reviewer queue.
+ * Every other lane (RESIDENCY_PROGRAM_INFO, NO_PUBLIC_OPPORTUNITY_FOUND,
+ * CAREERS_PAGE, FELLOWSHIP_PROGRAM_INFO, PHYSICIAN_SERVICES, etc.) is
+ * auto-discarded — the model already decided those aren't USCE.
+ */
+const USCE_LANES = new Set([
+  'VISITING_MEDICAL_STUDENT',
+  'CLINICAL_ELECTIVE',
+  'IMG_OBSERVERSHIP',
+  'INTERNATIONAL_MEDICAL_STUDENT',
+  'SUB_INTERNSHIP',
+  'AWAY_ROTATION',
+  'INTERNATIONAL_VISITING_STUDENT',
+]);
+
+/**
  * Map the model's `lane` classification to the reviewer `proposedAudience`
  * enum. Returns empty string when the lane is ambiguous or non-USCE.
  */
@@ -398,7 +415,14 @@ function main(): void {
   const queue = readJson<ReviewQueueFile>(REVIEW_QUEUE_PATH);
   const opportunityRows = readJson<{ rows: unknown[]; summary?: { publicSafeOpportunityRows: number } }>(OPPORTUNITY_ROWS_PATH);
 
-  const scored = queue.entries.map(scoreEntry);
+  // Pre-filter: only entries where the model classified the lane as a USCE
+  // opportunity. Residency, fellowship, careers, "no opportunity found", etc.
+  // are auto-discarded — the model already made those decisions. The reviewer
+  // should only see pages where USCE content was positively identified.
+  const usceEntries = queue.entries.filter(e => USCE_LANES.has(e.lane));
+  const discarded = queue.entries.length - usceEntries.length;
+
+  const scored = usceEntries.map(scoreEntry);
   scored.sort((a, b) => b.score - a.score);
 
   // Deduplicate: collapse multiple entries from the same sourceUrl into one.
@@ -421,7 +445,9 @@ function main(): void {
 
   const collapsed = scored.length - deduped.length;
   console.log('P102 review-queue summarizer');
-  console.log(`  read queue:     ${scored.length} entries`);
+  console.log(`  read queue:     ${queue.entries.length} entries`);
+  console.log(`  non-usce discarded: ${discarded} (residency/fellowship/careers/not-found — model already decided)`);
+  console.log(`  usce entries:   ${usceEntries.length} (VISITING_MEDICAL_STUDENT / CLINICAL_ELECTIVE / IMG_OBSERVERSHIP / etc.)`);
   console.log(`  after url-dedup:${deduped.length} entries (collapsed ${collapsed} same-URL dupes)`);
   console.log(`  written:        ${SUMMARY_OUT}`);
   console.log(`  written:        ${TOP50_OUT}`);
