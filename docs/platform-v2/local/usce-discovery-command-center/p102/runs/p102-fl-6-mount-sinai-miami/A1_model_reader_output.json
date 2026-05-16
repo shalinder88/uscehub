@@ -1,0 +1,1604 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://msmc.com/observership",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/observership using a method that bypasses the Incapsula/Imperva WAF block (e.g., headless browser with realistic headers, residential IP, or alternate UA) — current capture returned only a WAF error page with no content.",
+          "Identify alternate canonical URL for Mount Sinai Medical Center Miami Beach observership/visiting student program (e.g., GME pages, medical education subpaths, or PDF policies).",
+          "Confirm sourceScope for msmc.com domain (institution-specific vs system-level) once real content is captured."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-47677822156017924') and no substantive page content. No USCE, Tier 1/2/3, or negative-refusal claims can be extracted. Source requires re-capture before any A1 reading is possible."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://msmc.com/observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82012873052000523'); the source URL https://msmc.com/observerships was not successfully fetched and no observership content is available to extract."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/observerships using a method that bypasses Incapsula bot protection (different user-agent, headless browser, or manual capture) to obtain the actual observership page content.",
+          "If re-fetch continues to fail, attempt to locate alternative Mount Sinai Medical Center Miami Beach observership/visiting student URLs (e.g., GME or medical education sections of msmc.com)."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://msmc.com/observer",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/observer — the captured cleaned text is an Incapsula WAF block page (incident ID returned), not the observership page. Use a browser-like fetcher or alternative path to retrieve actual content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105411017361985806'); no observership content was captured. No claims can be emitted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://msmc.com/clinical-observer",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry fetch of https://msmc.com/clinical-observer — current capture was blocked by Incapsula WAF and contains no content",
+          "Consider alternate fetch strategy (headers/UA, rendered fetch) for msmc.com observership page"
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69679483619512583'); no substantive content was captured for the clinical-observer page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://msmc.com/visiting-student",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-39567532331766018'); no page content was captured for https://msmc.com/visiting-student. Re-capture required."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/visiting-student bypassing Incapsula/WAF block to obtain actual visiting student page content for Mount Sinai Medical Center Miami Beach."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://msmc.com/visiting-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch blocked by Incapsula WAF; retry with alternate access method or capture page via different route to obtain real visiting-students content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101020959490052365'); no actual page content available to extract claims from."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://msmc.com/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source fetch was blocked by Incapsula WAF (incident ID 1350000680041845426-66126983025004809). Cleaned text contains no institutional content — recapture required, possibly via alternate fetch method or archive.org snapshot."
+        ],
+        "recommendedA2Focus": [
+          "Recapture https://msmc.com/medical-students using a method that bypasses Incapsula bot blocking (headless browser with realistic UA, or web archive snapshot)."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://msmc.com/international-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105436374848901390') — the page was not successfully fetched, so no USCE or future-lane content is available for extraction. Re-capture required."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/international-students with anti-bot mitigation (rotated UA, headless bypass, or manual capture) since the current cleanedText is an Incapsula WAF block, not actual page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://msmc.com/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message (incident ID 1350000680041845426-105441915356713230); no page content was captured from https://msmc.com/electives. Re-fetch required."
+        ],
+        "recommendedA2Focus": [
+          "Re-attempt capture of https://msmc.com/electives with anti-bot bypass or alternate fetch method; verify whether Mount Sinai Medical Center Miami Beach has an electives/visiting student program page accessible at this URL."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://msmc.com/away-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105446742899953934') — no page content was captured for https://msmc.com/away-rotations. Re-fetch required to extract any visiting student / away rotation claims."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/away-rotations with anti-bot bypass or alternate fetch method, since Incapsula blocked the original request and no content is available for claim extraction."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://msmc.com/clinical-elective",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula WAF; retry capture with a different fetcher or session to obtain actual clinical-elective page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93208435453464844'); no page content available for extraction."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://msmc.com/clinical-rotation",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry capture of https://msmc.com/clinical-rotation — original fetch was blocked by Incapsula WAF (incident ID 1350000680041845426-82047365934354699). Use a different fetch strategy (headless browser with realistic UA, or manual capture) before A2."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82047365934354699'). No substantive page content was captured, so no USCE, future-lane, or negative-evidence claims can be emitted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://msmc.com/sub-internship",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/sub-internship — original capture was blocked by Incapsula WAF and contains no page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66137286651547913'); no extractable USCE, GME, or career content available from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://msmc.com/subinternship",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/subinternship — current capture was blocked by Incapsula (incident ID 1350000680041845426-69699236174106887) and contains no page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69699236174106887'); no page content was retrievable for analysis."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://msmc.com/acting-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105471640825368846'); no page content was captured for https://msmc.com/acting-internship. Re-fetch required."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/acting-internship with a fetch strategy that bypasses Incapsula bot-block (e.g., headless browser with realistic UA, session warm-up) before any A1 extraction can occur."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://msmc.com/research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source was blocked by Incapsula WAF; retry capture via alternate fetch method or archived snapshot for https://msmc.com/research"
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69703273443365127') — no actual page content was captured for https://msmc.com/research, so no USCE or future-lane claims can be extracted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://msmc.com/student-research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula (WAF) — retry capture with a different fetch strategy or manual capture to obtain actual student-research page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82063411932172555'), not actual page content. No USCE or future-lane facts can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://msmc.com/shadow",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-62917749101695238') — no page content was captured for https://msmc.com/shadow. Re-fetch required."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/shadow bypassing Incapsula bot-protection (headless browser with proper UA/JS rendering) to obtain actual page content before classification."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://msmc.com/shadowing",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula WAF; retry capture with browser-fidelity fetcher or alternate route to obtain real shadowing page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-42606638305513731'); no page content was captured, so no USCE or future-lane facts can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://msmc.com/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101081686032650509'); no extractable content from https://msmc.com/volunteer. Source needs re-fetch."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/volunteer with anti-bot mitigation or alternative capture method to obtain the actual volunteer page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://msmc.com/volunteering",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/volunteering — capture was blocked by Incapsula WAF (incident ID 1350000680041845426-66149076336775433); no content available to extract."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66149076336775433') — no page content was captured, so no USCE, volunteer, or future-lane claims can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://msmc.com/img",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block notice ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93247154583638284'); no institutional content was retrieved. Re-fetch source with anti-bot bypass or alternate route to obtain actual page content."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/img — current capture returned a WAF/Incapsula block page with no extractable content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://msmc.com/international-medical-graduates",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula (bot-mitigation). Re-attempt capture with different fetch strategy or manual retrieval of https://msmc.com/international-medical-graduates before re-running A1."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-39572909630820610'); no substantive page content was captured. No USCE, future-lane, or negative-evidence claims can be made from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://msmc.com/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93255671503786252'). No actual page content available for extraction; source fetch was blocked by WAF."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/graduate-medical-education with a different fetch strategy (headers/user-agent or headless browser) to bypass Incapsula block, then re-run A1 reader."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://msmc.com/gme",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/gme — capture was blocked by Incapsula WAF (incident ID 1350000680041845426-105528257084264718); cleaned text contains no usable content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source fetch failed: cleaned text is only an Incapsula WAF block message, not actual GME page content. No claims can be extracted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://msmc.com/residency",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry capture of https://msmc.com/residency — current capture was blocked by Incapsula (incident ID 1350000680041845426-105534162664296718) and contains no page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message; no substantive page content available for claim extraction."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://msmc.com/fellowship",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source capture blocked by Incapsula WAF; retry fetch with header/UA adjustments or alternate path to obtain real fellowship page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-90287870577086730'); no fellowship content was retrieved. No claims can be extracted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://msmc.com/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105543757621235982'); no usable page content was captured for https://msmc.com/careers."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/careers using a method that bypasses Incapsula/WAF blocking (e.g., headless browser with proper headers) to obtain actual careers page content.",
+          "If careers page remains inaccessible, attempt alternative URLs for Mount Sinai Medical Center Miami Beach physician careers, GME, observership, and visiting student pages."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://msmc.com/physician-careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source blocked by Incapsula WAF; retry capture via alternate fetch path or archived snapshot for https://msmc.com/physician-careers"
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69730336032297223'); no page content was captured for extraction."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://msmc.com/provider-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text only contains an Incapsula block error message; no extractable content for any tier."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture source via alternate method (headless browser, archive.org, or different IP) to bypass Incapsula WAF block on msmc.com/provider-careers."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://msmc.com/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula request-blocked error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-47704682881487108'); no benefits or career content was retrieved from https://msmc.com/benefits."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/benefits with a browser-grade fetcher or alternate IP to bypass Incapsula bot challenge before A2 classification."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://msmc.com/visa",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/visa — capture was blocked by Incapsula/WAF and contains no content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF block message ('Request unsuccessful. Incapsula incident ID...'), not page content. No claims can be derived."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://msmc.com/immigration",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry capture of https://msmc.com/immigration — current capture was blocked by Incapsula bot protection and contains no page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source fetch blocked by Incapsula (incident ID 1350000680041845426-49472762003460360); no usable cleaned text — no claims can be emitted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://msmc.com/credentialing",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source was blocked by Incapsula WAF; retry capture with appropriate user-agent or alternative method to obtain credentialing page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message (incident ID), no substantive page content. No USCE, GME, or career signals can be extracted from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://msmc.com/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source fetch blocked by Incapsula WAF; cleaned text contains only an error message (Incapsula incident ID) with no extractable content."
+        ],
+        "recommendedA2Focus": [
+          "Retry capture of https://msmc.com/health-professionals via alternate fetch path or archived snapshot to obtain real page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://msmc.com/medical-education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry fetch of https://msmc.com/medical-education — original capture was blocked by Incapsula WAF (incident ID 1350000680041845426-69749689154932999); cleaned text contains no institutional content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source capture failed: cleaned text is a WAF (Incapsula) block page, not the actual /medical-education content. No USCE, GME, or career signal can be extracted from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://msmc.com/professional-education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/professional-education using a method that bypasses Incapsula/Imperva bot protection (e.g., headless browser with realistic user-agent, or alternative archive snapshot).",
+          "Check web.archive.org for a cached version of msmc.com/professional-education.",
+          "Search msmc.com for alternative URLs covering observership, visiting students, residency, fellowship, and careers."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula bot-block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-90329935486783754') — no extractable content. The fetch was blocked by WAF; no USCE, GME, or careers content is present in the captured source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://msmc.com/student-affairs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-62961854120857862'); no page content was captured for https://msmc.com/student-affairs. Re-fetch required."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/student-affairs with a fetch strategy that bypasses Incapsula/WAF blocking so actual student-affairs content can be analyzed."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://msmc.com/education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula WAF; retry capture with different headers/UA or alternate path to obtain msmc.com/education content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message; no institutional content available to extract claims from."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://msmc.com/hcp-education-training",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66204434170253577'); no source content was retrievable and no claims can be extracted."
+        ],
+        "recommendedA2Focus": [
+          "Retry fetch of https://msmc.com/hcp-education-training with a fetcher that bypasses the Incapsula bot challenge (rotated UA, headless browser, or archived snapshot) to capture actual HCP education/training content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source blocked by Incapsula WAF; retry capture with alternate fetch strategy (headless browser, different IP, or archive.org snapshot) for https://msmc.com/hcp-education-training/medical-students"
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82159155343134987'); no page content was captured and no claims can be extracted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students/elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93337593709990156'); no page content was retrieved and no USCE-relevant claims can be extracted. Source URL https://msmc.com/hcp-education-training/medical-students/elective should be re-fetched."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/hcp-education-training/medical-students/elective bypassing Incapsula WAF block to obtain actual elective/visiting-student page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students/medical-student-observerships",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch source with anti-bot bypass or alternate retrieval — current capture is an Incapsula block page with no institutional content.",
+          "Locate alternate URL or cached copy of msmc.com medical student observerships page."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is an Incapsula block page ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101189725934981389'), not actual page content. No claims can be emitted from this capture."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://msmc.com/medical-professionals",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry fetch of https://msmc.com/medical-professionals — original capture was blocked by Incapsula WAF and returned no content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF block notice (Incapsula incident ID), not actual page content. No USCE, training, or career claims can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://msmc.com/medical-professionals/graduate-medical-education",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch source via alternate path (cleaned text returned an Incapsula block page with no institutional content)."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93352080634679564') with no institutional content; no claims can be extracted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://msmc.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-42643506304782595'); no extractable content from the source URL."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/medical-professionals/graduate-medical-education/clerkship-programs with a browser-like client or via cached snapshot to bypass Incapsula WAF block before A1 re-read."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://msmc.com/academic-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is an Incapsula block page ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101206914394099981') and contains no extractable institutional content; source must be re-fetched."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/academic-institute with a fetcher that passes the Incapsula/WAF challenge, then re-run A1.",
+          "Locate alternate Mount Sinai Medical Center Miami Beach academic-institute / GME / visiting student URLs that are not WAF-blocked."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://msmc.com/academic-institute/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93365137335259404'); no page content was retrieved from https://msmc.com/academic-institute/education. Re-fetch with a bot-mitigation-friendly client is required before any claims can be extracted."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture msmc.com/academic-institute/education using a method that bypasses Incapsula bot blocking (e.g. headed browser, rotated UA, or alternate path) so deep-mode A1 can read actual page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://msmc.com/academic-institute/education/medical",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message (Request unsuccessful. Incapsula incident ID: 1350000680041845426-105660666631033102). No institutional content available for claim extraction."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch source with WAF-bypass strategy or alternate user agent to obtain actual page content for msmc.com/academic-institute/education/medical."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://msmc.com/academic-institute/education/medical/medical-student-rotations",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source was blocked by Incapsula bot protection; cleaned text contains only an incident-ID error string. Re-fetch via alternate method (headless browser with realistic UA, archived snapshot, or manual capture) before A2 can extract medical-student-rotations content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF (Incapsula) block page — no actual page content was captured. No claims can be extracted. Recommend re-capture of https://msmc.com/academic-institute/education/medical/medical-student-rotations."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://msmc.com/medicine/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101225052040990989'); the source page was not actually fetched, so no USCE or future-lane content is available for extraction."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/medicine/international with bot-mitigation bypass (Incapsula blocked the fetch); page title suggests possible international medicine / observership content worth a second attempt."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://msmc.com/medicine/international/international-programs",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Retry capture of https://msmc.com/medicine/international/international-programs — original fetch was blocked by Incapsula WAF (incident ID 1350000680041845426-93382218420195596); no usable content was returned."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93382218420195596'); no institutional content available for extraction."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://msmc.com/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69801035488956679') — no page content was captured. Source needs re-fetch with different headers or manual review."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/medicine/international/international-programs/international-visiting-medical-students bypassing Incapsula WAF block to extract international visiting medical student program details."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://msmc.com/visiting-clerkships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message (Request unsuccessful. Incapsula incident ID: 1350000680041845426-47748736361042180); the source page at https://msmc.com/visiting-clerkships was not retrievable and contains no extractable USCE or future-lane content. Re-capture required."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/visiting-clerkships using a capture method that bypasses Incapsula/Imperva bot protection (headless browser with real UA, residential proxy, or manual capture) before any A1/A2 claim extraction can proceed for this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://msmc.com/visiting-clerkships/international",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/visiting-clerkships/international with anti-bot bypass (Incapsula blocked initial capture); no usable content was retrieved."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105691345582428430'); no page content available to extract claims from."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://msmc.com/education-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93395657372864780'); no page content was captured. Re-fetch source with appropriate headers or via alternate route to extract any USCE/GME/careers signal."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/education-institute as the WAF block prevented content extraction.",
+          "Seek alternate Mount Sinai Medical Center Miami Beach education / GME / observership pages to populate Tier 1 and Tier 2 signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://msmc.com/education-institute/academic-visitor-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula bot-block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105701004963877134'); no page content was captured. Re-fetch with bot-mitigation bypass required before any claim can be extracted."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/education-institute/academic-visitor-program using a fetch method that bypasses Incapsula/WAF bot blocking before A1 re-read."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://msmc.com/education/undergraduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93403139205894412'); no page content was captured. Re-fetch required with appropriate headers or alternative method before any claims can be extracted."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/education/undergraduate-medical-education — current capture is a WAF/bot-block response, not real page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://msmc.com/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source was blocked by Incapsula bot protection (incident ID returned instead of page content). Retry capture via alternate fetch path, archive.org snapshot, or manual capture to obtain the visiting-students requirements page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69814770794369287') — no page content was captured, so no USCE eligibility, application, cost, duration, or contact claims can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://msmc.com/education/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF block page (Incapsula incident ID), not actual page content. No USCE or future-lane facts can be extracted from this source."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/education/medical-students with WAF-evading method or alternate access to obtain actual medical-student page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://msmc.com/education/visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101260653024907533'); no page content was retrieved, so no claims can be extracted. Source requires re-capture via an alternative method or bypass."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/education/visiting-medical-students with a method that bypasses Incapsula bot protection (headless browser, residential IP, or archived snapshot) before A1 re-read."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://msmc.com/education/medical-student-electives",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Source fetch was blocked by Incapsula (WAF); cleaned text contains only an error message. Re-fetch https://msmc.com/education/medical-student-electives with a different fetch strategy (rotate user agent, headless browser, or manual capture) to obtain the actual page content."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text for src_62 (https://msmc.com/education/medical-student-electives) contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66250639428423945') and no page content. No claims can be emitted from this source until the fetch is retried successfully."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://msmc.com/medical-education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula request-blocked error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-49528068297330952') — no page content was captured. Recapture required."
+        ],
+        "recommendedA2Focus": [
+          "Recapture https://msmc.com/medical-education/medical-student-electives via a method that bypasses Incapsula bot protection (headful browser, proper UA/headers, or alternate fetch path)."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://msmc.com/medical-education/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is a WAF block page (Incapsula incident ID); no institutional content available to extract."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/medical-education/visiting-students with a fetch strategy that bypasses Incapsula WAF block, or capture content via alternative route."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://msmc.com/medical-students/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-42655897285431555'); no page content was captured for https://msmc.com/medical-students/electives. Re-capture required (proxy/headers) before any claims can be emitted."
+        ],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/medical-students/electives with anti-bot mitigation (Incapsula bypass / headless browser / alternative IP) to obtain real elective page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://msmc.com/medical-students/elective-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula block error message (incident ID 1350000680041845426-47758086504845572) — no extractable content from msmc.com/medical-students/elective-rotations. Source needs re-fetch via alternate method (e.g., archived snapshot, headless browser with anti-bot bypass) before A1 can extract claims."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/medical-students/elective-rotations using a fetcher that bypasses Incapsula/Imperva bot protection, or substitute with an archived snapshot (Wayback Machine) to obtain the actual elective rotation page content."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://msmc.com/medical-students/clinical-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text is an Incapsula block page (Request unsuccessful. Incapsula incident ID: 1350000680041845426-82258708390088971). No source content was captured; re-fetch required with WAF bypass or alternate retrieval."
+        ],
+        "recommendedA2Focus": [
+          "Re-capture https://msmc.com/medical-students/clinical-electives — the fetch was blocked by Incapsula WAF, so no claim can be extracted from this source.",
+          "Identify alternate Mount Sinai Medical Center Miami Beach pages (medical education, visiting student, observership) that are reachable without WAF block."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://msmc.com/students/visiting-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch https://msmc.com/students/visiting-students — cleaned text contains only an Incapsula block page (incident ID 1350000680041845426-105759072921719054), not actual page content. Consider browser-based fetch with bot-evasion or alternate UA."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source returned an Incapsula WAF block page rather than actual visiting-students content; no extractable claims available."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://msmc.com/graduate-medical-education/clerkship-programs",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Re-fetch source — current capture is an Incapsula WAF block page, not real content. Use rotating user-agent or alternate fetch strategy to retrieve the clerkship programs page."
+        ],
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69836009407648007'); no substantive page content was captured, so no claims can be emitted from this source."
+        ]
+      }
+    }
+  ]
+}

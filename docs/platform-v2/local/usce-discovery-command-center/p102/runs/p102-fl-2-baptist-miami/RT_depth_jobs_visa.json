@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "depthPass": "JOBS_VISA",
+  "sourceFamiliesReviewed": [
+    "FELLOWSHIP_PAGE",
+    "RESEARCH_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 6
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-2-baptist-miami_10",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "runId": "p102-fl-2-baptist-miami",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "faculty position",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "All the Institute&rsquo;s physicians hold faculty positions in the medical school, conduct academic research and work directly with students and fellows in both the classroom and the operating room.The new UHZ Adult Reconstruction Fellowship offers intensive post-residency training in adult hip and knee reconstruction.",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+      "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+      "quoteVerified": true,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "sourceFamily": "FELLOWSHIP_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-2-baptist-miami_11",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "runId": "p102-fl-2-baptist-miami",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "faculty position",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "John Uribe, M.D., is Chairman of the Department of Orthopedics for Florida International University&rsquo;s Herbert Wertheim College of Medicine and many of the Institute&rsquo;s physicians hold faculty positions in the medical school as well.",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+      "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "RESEARCH_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

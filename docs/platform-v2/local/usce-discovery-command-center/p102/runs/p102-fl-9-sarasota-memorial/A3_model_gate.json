@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [],
+  "duplicates": [],
+  "institutionId": "inst_sarasota_memorial_hospital_fl",
+  "institutionName": "Sarasota Memorial Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 10,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 10,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-9-sarasota-memorial",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unfollowedSignals": [],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "All 10 claims are correctly classified as FUTURE_LANE_ONLY, sourced from CAREERS_PAGE and RESEARCH_PAGE families covering residency, fellowship, and job opportunities. Zero PUBLIC_SAFE_USCE claims emitted — consistent with no public observership/visiting-student offer on the reviewed sources. No scope conflicts, no duplicates, no overclaims detected."
+}

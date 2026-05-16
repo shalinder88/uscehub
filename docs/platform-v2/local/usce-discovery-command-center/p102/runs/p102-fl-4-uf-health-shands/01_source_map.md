@@ -1,0 +1,159 @@
+# Source Map — UF Health Shands Hospital
+
+Run: p102-fl-4-uf-health-shands
+schemaVersion: p102-0r-1
+
+## Accepted sources (20)
+
+- **RESEARCH_PAGE** [https://ufhealth.org/care-sheets/how-to-research-cancer](https://ufhealth.org/care-sheets/how-to-research-cancer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bc9936250e0577b5ad7e13e7d0945a5c053bd7669ef664bc382191e6a59d4228`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_36cafc9d41f213a8.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented](https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `69c7d406c76dc4d448c45b22528241885d8f73c13fe17884709d7902e3369809`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_71cdf3fc88d83f92.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors](https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `5d657a01da5a2ae945c7b3678e52f11e7fb0d2618d9c676e78443b5e560313be`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_1a704c2d4129cea6.txt
+- **RESEARCH_PAGE** [https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies](https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d42a8c3db44e768b4dc51792c16317d2a53c1c0773f91ff4c7b4dd44624dde0b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_18e9b666221cecfd.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery](https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c7d3c07e1f44b60f467b20eb3a5739a0fcdeac812d490012edd6f9c7905b48fc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_4179c5b94f95e31f.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors](https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `5748e71fd582035eae6e2cbdf371e0e30c3db9f5076707c5cdf9fe070241c385`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_2315aad5076a2db0.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations](https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c167f53444bc0fe3e8481528211bb37124f909841967fab9d40ebf6cfc233d65`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_867376cbb0d9aa18.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories](https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `5bbcfe4506ccec4a34824eb64ebae0738ba54f111a43120286f3cb2de98e5086`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_f2a7bc250920a827.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/buttock-augmentation](https://ufhealth.org/conditions-and-treatments/buttock-augmentation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `8133159401a9eaf67e4f9fae7a01553f25019fc7df9c7d62f373372bfea0bc94`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_c5d3aa9461fcb810.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors](https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `cbf87c2451b0371d0cf7cd4ec16a51ff57c5a797ef6f59c07a2880213f1c7ddb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_9fbca083b7bbae4e.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations](https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `6cd3054c4de8b078f0b909a53e891a21f4172e8e9cb99074fae3104f367d2628`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_a452404d2fbd2967.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/chin-augmentation](https://ufhealth.org/conditions-and-treatments/chin-augmentation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `67bc2bc5218d06148531468f7f5acd4bd06b08acc0447fb7a0cb991e119c6064`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_479aa0652f927a8d.txt
+- **RESEARCH_PAGE** [https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research](https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `91bba261df27cb85cdb71d2b1b45b1b1c21f8ab72cb12d8f8db591e859d9a792`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_0defdcd0f9712d10.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis](https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1398751012b6fdab87e4aad127c1ffe514166b11190817376db13f52b944189d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_473e8fedcf26d016.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti](https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `8f3b0413da886f3ff8ae2d2ef5f34858e896c83548dadc81e25a2824c50ecccd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_5c9f138289bb2ff5.txt
+- **RESEARCH_PAGE** [https://ufhealth.org/conditions-and-treatments/liver-transplant/research](https://ufhealth.org/conditions-and-treatments/liver-transplant/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `2223327b2145eddfd9151d985b7e1d9cb8dcac3ab691ef55f7161035035a2ff1`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_d8eae5894d82a8dc.txt
+- **RESEARCH_PAGE** [https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research](https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a0eeafcf83044ba5218b68cdb3e3f043645f35028ed51f5a7361454ec7c3d440`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_45b34147d5687994.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa](https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c4f4c13bf21bedf01577fae63d1ec877c959ce79b50670af4c24b08cfd282b70`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_fda521f367c6d0c3.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors](https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `0bedfc0954c3ad28ad77ce675b3b9796923d25c1cec7b21191bd872d8e443099`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_4de92aac85f43d4d.txt
+- **GME_PAGE** [https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories](https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d47fb026b1d525fd3a3a37bbf911f0307a9a9bbcb2d3c5b0c67ea4a5e1a3dfe2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-4-uf-health-shands/cleaned_text/sm_50ef0db16ff83e99.txt
+
+## Rejected sources (69)
+
+- https://ufhealth.org/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/hcp-education-training — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/hcp-education-training/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/hcp-education-training/medical-students/elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/hcp-education-training/medical-students/medical-student-observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-professionals/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/academic-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/academic-institute/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/academic-institute/education/medical — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/academic-institute/education/medical/medical-student-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medicine/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medicine/international/international-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medicine/international/international-programs/international-visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/visiting-clerkships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/visiting-clerkships/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education-institute/academic-visitor-program — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education/undergraduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education/visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-education/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-students/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-students/elective-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/medical-students/clinical-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/students/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://ufhealth.org/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

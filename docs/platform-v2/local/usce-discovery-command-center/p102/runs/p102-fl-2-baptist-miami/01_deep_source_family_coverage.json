@@ -1,0 +1,359 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "institutionId": "inst_baptist_hospital_miami_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/medical-education",
+        "https://baptisthealth.net/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/visiting-student",
+        "https://baptisthealth.net/visiting-students",
+        "https://baptisthealth.net/international-students",
+        "https://baptisthealth.net/medicine/international/international-programs/international-visiting-medical-students",
+        "https://baptisthealth.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://baptisthealth.net/education/visiting-medical-students",
+        "https://baptisthealth.net/medical-education/visiting-students",
+        "https://baptisthealth.net/students/visiting-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/observership",
+        "https://baptisthealth.net/observer",
+        "https://baptisthealth.net/clinical-observer",
+        "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/electives",
+        "https://baptisthealth.net/away-rotations",
+        "https://baptisthealth.net/clinical-elective",
+        "https://baptisthealth.net/clinical-rotation",
+        "https://baptisthealth.net/hcp-education-training/medical-students/elective",
+        "https://baptisthealth.net/education/medical-student-electives",
+        "https://baptisthealth.net/medical-education/medical-student-electives",
+        "https://baptisthealth.net/medical-students/electives",
+        "https://baptisthealth.net/medical-students/elective-rotations",
+        "https://baptisthealth.net/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/sub-internship",
+        "https://baptisthealth.net/subinternship",
+        "https://baptisthealth.net/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/shadow",
+        "https://baptisthealth.net/shadowing",
+        "https://baptisthealth.net/volunteer",
+        "https://baptisthealth.net/volunteering",
+        "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+        "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+        "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/graduate-medical-education",
+        "https://baptisthealth.net/gme",
+        "https://baptisthealth.net/medical-professionals/graduate-medical-education",
+        "https://baptisthealth.net/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://baptisthealth.net/education/undergraduate-medical-education",
+        "https://baptisthealth.net/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/residency",
+        "https://baptisthealth.net/academics/residencies-and-fellowships",
+        "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/academics/residencies-and-fellowships",
+        "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/fellowship",
+        "https://baptisthealth.net/about-baptist-health/innovations/fellowship"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/about-baptist-health/innovations/fellowship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/visa",
+        "https://baptisthealth.net/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://baptisthealth.net/careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/allied-health-program-application"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/allied-health-program-application"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://baptisthealth.net/observerships",
+        "https://baptisthealth.net/medical-students",
+        "https://baptisthealth.net/research",
+        "https://baptisthealth.net/img",
+        "https://baptisthealth.net/international-medical-graduates",
+        "https://baptisthealth.net/credentialing",
+        "https://baptisthealth.net/health-professionals",
+        "https://baptisthealth.net/education",
+        "https://baptisthealth.net/hcp-education-training",
+        "https://baptisthealth.net/hcp-education-training/medical-students",
+        "https://baptisthealth.net/hcp-education-training/medical-students/medical-student-observerships",
+        "https://baptisthealth.net/medical-professionals",
+        "https://baptisthealth.net/academic-institute",
+        "https://baptisthealth.net/academic-institute/education",
+        "https://baptisthealth.net/academic-institute/education/medical",
+        "https://baptisthealth.net/academic-institute/education/medical/medical-student-rotations",
+        "https://baptisthealth.net/medicine/international",
+        "https://baptisthealth.net/medicine/international/international-programs",
+        "https://baptisthealth.net/visiting-clerkships",
+        "https://baptisthealth.net/visiting-clerkships/international",
+        "https://baptisthealth.net/education-institute",
+        "https://baptisthealth.net/education-institute/academic-visitor-program",
+        "https://baptisthealth.net/education/medical-students",
+        "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+        "https://baptisthealth.net/about-baptist-health/research",
+        "https://baptisthealth.net/about-baptist-health/research/clinical-trials",
+        "https://baptisthealth.net/baptist-health-foundation/our-focus/research",
+        "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research",
+        "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research/clinical-trials",
+        "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials",
+        "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials/cardiovascular-clinical-trials",
+        "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+        "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+        "https://baptisthealth.net/services/orthopedic-care/research-and-education/clinical-trials",
+        "https://baptisthealth.net/doctors/jiovani-miranda-visaya/2056460",
+        "https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park"
+      ],
+      "acceptedSources": [
+        "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+        "https://baptisthealth.net/about-baptist-health/research",
+        "https://baptisthealth.net/about-baptist-health/research/clinical-trials",
+        "https://baptisthealth.net/baptist-health-foundation/our-focus/research",
+        "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research",
+        "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research/clinical-trials",
+        "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials",
+        "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials/cardiovascular-clinical-trials",
+        "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+        "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+        "https://baptisthealth.net/services/orthopedic-care/research-and-education/clinical-trials",
+        "https://baptisthealth.net/doctors/jiovani-miranda-visaya/2056460",
+        "https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_WEAK"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 3,
+    "tier2AcceptedSources": 3,
+    "tier3AcceptedSources": 0
+  },
+  "generatedAt": "2026-05-15T20:46:22.699Z"
+}

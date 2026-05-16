@@ -1,0 +1,469 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-3-tampa-general",
+  "rejectedSources": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://tgh.org/observership",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://tgh.org/observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://tgh.org/observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://tgh.org/clinical-observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://tgh.org/visiting-student",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://tgh.org/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://tgh.org/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://tgh.org/international-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://tgh.org/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://tgh.org/away-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://tgh.org/clinical-elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://tgh.org/clinical-rotation",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://tgh.org/sub-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://tgh.org/subinternship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://tgh.org/acting-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://tgh.org/research",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://tgh.org/student-research",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://tgh.org/shadow",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://tgh.org/shadowing",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://tgh.org/volunteering",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://tgh.org/img",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://tgh.org/international-medical-graduates",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://tgh.org/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://tgh.org/gme",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://tgh.org/residency",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://tgh.org/fellowship",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://tgh.org/physician-careers",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://tgh.org/provider-careers",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://tgh.org/benefits",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://tgh.org/visa",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://tgh.org/immigration",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://tgh.org/credentialing",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://tgh.org/medical-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://tgh.org/professional-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://tgh.org/student-affairs",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://tgh.org/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://tgh.org/hcp-education-training",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://tgh.org/hcp-education-training/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://tgh.org/hcp-education-training/medical-students/elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://tgh.org/hcp-education-training/medical-students/medical-student-observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://tgh.org/medical-professionals",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://tgh.org/medical-professionals/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://tgh.org/medical-professionals/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://tgh.org/academic-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://tgh.org/academic-institute/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://tgh.org/academic-institute/education/medical",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://tgh.org/academic-institute/education/medical/medical-student-rotations",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://tgh.org/medicine/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://tgh.org/medicine/international/international-programs",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://tgh.org/medicine/international/international-programs/international-visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://tgh.org/visiting-clerkships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://tgh.org/visiting-clerkships/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://tgh.org/education-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://tgh.org/education-institute/academic-visitor-program",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://tgh.org/education/undergraduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://tgh.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://tgh.org/education/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://tgh.org/education/visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://tgh.org/education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://tgh.org/medical-education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://tgh.org/medical-education/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://tgh.org/medical-students/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://tgh.org/medical-students/elective-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://tgh.org/medical-students/clinical-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://tgh.org/students/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://tgh.org/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    }
+  ],
+  "generatedAt": "2026-05-15T21:30:17.184Z"
+}

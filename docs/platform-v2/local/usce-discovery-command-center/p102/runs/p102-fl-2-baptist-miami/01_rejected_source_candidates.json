@@ -1,0 +1,490 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "rejectedSources": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://baptisthealth.net/observership",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://baptisthealth.net/observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://baptisthealth.net/observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://baptisthealth.net/clinical-observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://baptisthealth.net/visiting-student",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://baptisthealth.net/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://baptisthealth.net/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://baptisthealth.net/international-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://baptisthealth.net/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://baptisthealth.net/away-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://baptisthealth.net/clinical-elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://baptisthealth.net/clinical-rotation",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://baptisthealth.net/sub-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://baptisthealth.net/subinternship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://baptisthealth.net/acting-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://baptisthealth.net/research",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://baptisthealth.net/student-research",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://baptisthealth.net/shadow",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://baptisthealth.net/shadowing",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://baptisthealth.net/volunteer",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://baptisthealth.net/volunteering",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://baptisthealth.net/img",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://baptisthealth.net/international-medical-graduates",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://baptisthealth.net/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://baptisthealth.net/gme",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://baptisthealth.net/residency",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://baptisthealth.net/fellowship",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://baptisthealth.net/careers",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://baptisthealth.net/physician-careers",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://baptisthealth.net/provider-careers",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://baptisthealth.net/benefits",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://baptisthealth.net/visa",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://baptisthealth.net/immigration",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://baptisthealth.net/credentialing",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://baptisthealth.net/health-professionals",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://baptisthealth.net/medical-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://baptisthealth.net/professional-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://baptisthealth.net/student-affairs",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://baptisthealth.net/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://baptisthealth.net/hcp-education-training",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://baptisthealth.net/hcp-education-training/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://baptisthealth.net/hcp-education-training/medical-students/elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://baptisthealth.net/hcp-education-training/medical-students/medical-student-observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://baptisthealth.net/medical-professionals",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://baptisthealth.net/medical-professionals/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://baptisthealth.net/medical-professionals/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://baptisthealth.net/academic-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://baptisthealth.net/academic-institute/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://baptisthealth.net/academic-institute/education/medical",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://baptisthealth.net/academic-institute/education/medical/medical-student-rotations",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://baptisthealth.net/medicine/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://baptisthealth.net/medicine/international/international-programs",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://baptisthealth.net/medicine/international/international-programs/international-visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://baptisthealth.net/visiting-clerkships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://baptisthealth.net/visiting-clerkships/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://baptisthealth.net/education-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://baptisthealth.net/education-institute/academic-visitor-program",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://baptisthealth.net/education/undergraduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://baptisthealth.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://baptisthealth.net/education/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://baptisthealth.net/education/visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://baptisthealth.net/education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://baptisthealth.net/medical-education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://baptisthealth.net/medical-education/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://baptisthealth.net/medical-students/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://baptisthealth.net/medical-students/elective-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://baptisthealth.net/medical-students/clinical-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://baptisthealth.net/students/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://baptisthealth.net/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    }
+  ],
+  "generatedAt": "2026-05-15T20:46:22.699Z"
+}

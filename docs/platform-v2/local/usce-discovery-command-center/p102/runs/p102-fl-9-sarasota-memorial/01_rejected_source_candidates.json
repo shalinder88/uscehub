@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-9-sarasota-memorial",
+  "rejectedSources": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://smh.com/observership",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://smh.com/observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://smh.com/observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://smh.com/clinical-observer",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://smh.com/visiting-student",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://smh.com/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://smh.com/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://smh.com/international-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://smh.com/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://smh.com/away-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://smh.com/clinical-elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://smh.com/clinical-rotation",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://smh.com/sub-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://smh.com/subinternship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://smh.com/acting-internship",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://smh.com/student-research",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://smh.com/shadow",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://smh.com/shadowing",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://smh.com/volunteer",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://smh.com/volunteering",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://smh.com/img",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://smh.com/international-medical-graduates",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://smh.com/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://smh.com/gme",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://smh.com/residency",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://smh.com/fellowship",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://smh.com/physician-careers",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://smh.com/provider-careers",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://smh.com/benefits",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://smh.com/visa",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://smh.com/immigration",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://smh.com/credentialing",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://smh.com/health-professionals",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://smh.com/medical-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://smh.com/professional-education",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://smh.com/student-affairs",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://smh.com/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://smh.com/hcp-education-training",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://smh.com/hcp-education-training/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://smh.com/hcp-education-training/medical-students/elective",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://smh.com/hcp-education-training/medical-students/medical-student-observerships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://smh.com/medical-professionals",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://smh.com/medical-professionals/graduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://smh.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://smh.com/academic-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://smh.com/academic-institute/education",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://smh.com/academic-institute/education/medical",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://smh.com/academic-institute/education/medical/medical-student-rotations",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://smh.com/medicine/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://smh.com/medicine/international/international-programs",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://smh.com/medicine/international/international-programs/international-visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://smh.com/visiting-clerkships",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://smh.com/visiting-clerkships/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://smh.com/education-institute",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://smh.com/education-institute/academic-visitor-program",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://smh.com/education/undergraduate-medical-education",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://smh.com/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://smh.com/education/medical-students",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://smh.com/education/visiting-medical-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://smh.com/education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://smh.com/medical-education/medical-student-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://smh.com/medical-education/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://smh.com/medical-students/electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://smh.com/medical-students/elective-rotations",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://smh.com/medical-students/clinical-electives",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://smh.com/students/visiting-students",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://smh.com/graduate-medical-education/clerkship-programs",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    }
+  ],
+  "generatedAt": "2026-05-16T00:27:29.139Z"
+}

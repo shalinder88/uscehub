@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-1-mayo-clinic-florida",
+  "rejectedSources": [
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://mayoclinic.org/medicine/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://mayoclinic.org/visiting-clerkships/international",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "rejectedReason": "not accepted for extraction (no cleaned text on T7)"
+    }
+  ],
+  "generatedAt": "2026-05-15T19:58:13.042Z"
+}

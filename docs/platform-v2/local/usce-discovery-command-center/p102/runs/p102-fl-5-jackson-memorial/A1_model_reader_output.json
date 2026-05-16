@@ -1,0 +1,543 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+            "sourceHash": "902ba1b5685e5404d141d147534fd0bdc33876e8e4bf90232eb5eaf887b5cc7e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_e893d2218e359a12.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "For more information on how to become a volunteer, please contact the Volunteer Resources Department at 305-585-6541 or send an email to [email protected] .",
+            "claimText": "Baby Hugger Volunteer Program at Holtz Children's Hospital — general community volunteer role holding premature babies; no mention of medical students, IMGs, premed clinical experience, or observership.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Page describes a general community volunteer program (baby holding) with no medical-student, IMG, premed clinical, or observership-equivalent language; not USCE-relevant.",
+            "limitations": "Volunteer program described is non-clinical community volunteering; no eligibility, audience, or USCE-related criteria stated."
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Verify whether Jackson Health System operates any medical-student, premed, or observership-style volunteer/shadow programs separate from this Baby Hugger community-volunteer role."
+        ],
+        "runId": "p102-fl-5-jackson-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page does not state whether medical students or IMGs may participate; cleaned text contains no USCE-relevant eligibility, audience, or pathway information."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-5-jackson-memorial",
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-5-jackson-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://jacksonhealth.org/careers/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-5-jackson-memorial",
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://jacksonhealth.org/careers/",
+            "sourceHash": "d6cbbff270c57091235301ef3af055086273f161af75b58823811d4a109d58f7",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_0abbbb9e51aebb50.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Careers at Jackson Health SystemInterested in working together? We are too!Administrative LeadershipAllied HealthClerical/Customer Service SupportExecutive LeadershipLaborer/Service WorkerManagementNursingNursing ManagementNursing SupportPhysician StaffProfessionalsContact Us",
+            "claimText": "Jackson Health System careers page listing job categories including Physician Staff.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Page is a careers portal listing physician staff and other employment categories — practice/career tier.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://jacksonhealth.org/careers/",
+            "sourceHash": "d6cbbff270c57091235301ef3af055086273f161af75b58823811d4a109d58f7",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_0abbbb9e51aebb50.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Our Nurse Residency Program is built to support new graduates and transitioning nurses with clinical training, simulation, and mentorship in high-acuity specialties.",
+            "claimText": "Mentions a Nurse Residency Program (nursing trainee pathway, not physician GME).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Nurse residency program, not physician training; not relevant to the physician pipeline tiers.",
+            "normalizedField": null,
+            "limitations": "Nurse-specific, not physician GME."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Locate physician-specific careers listings or GME page for Jackson Memorial Hospital to capture residency/fellowship and visa sponsorship signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://jacksonhealth.org/careers-contact-us/",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://jacksonhealth.org/careers-contact-us/",
+            "sourceHash": "b61c0b36c74ff35cb4fa87483f58f2f402ad9bf5e6132902572d2fe0519f496f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_eb7e009d1add271f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Careers – Contact UsCareers – Contact us",
+            "claimText": "Page is a Careers contact form for Jackson Health System.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Careers contact page on the careers portal — Tier 3 post-trainee career content.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://jacksonhealth.org/careers-contact-us/",
+            "sourceHash": "b61c0b36c74ff35cb4fa87483f58f2f402ad9bf5e6132902572d2fe0519f496f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_eb7e009d1add271f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Contact by Phone305-585-1111",
+            "claimText": "General contact phone number 305-585-1111 listed on careers contact page.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Phone listed on careers contact page; generic system phone not specifically a careers/recruiter line.",
+            "limitations": "Generic system number, not a careers-specific recruiter line.",
+            "normalizedField": "305-585-1111"
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://jacksonhealth.org/careers-contact-us/",
+            "sourceHash": "b61c0b36c74ff35cb4fa87483f58f2f402ad9bf5e6132902572d2fe0519f496f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_eb7e009d1add271f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Graduate Medical Education",
+            "claimText": "Footer link mentioning Graduate Medical Education at Jackson Health System.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "GME footer link signals presence of residency/fellowship programs — Tier 2.",
+            "limitations": "Footer navigation reference only; no program details on this page.",
+            "normalizedField": null
+          }
+        ],
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate dedicated observership/visiting student page on jacksonhealth.org or affiliated University of Miami Miller School of Medicine domain.",
+          "Identify GME landing page for residency/fellowship program listings."
+        ],
+        "runId": "p102-fl-5-jackson-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://jacksonhealth.org/careers/nurse-residency/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-5-jackson-memorial",
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "jmh_nurse_residency_program",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://jacksonhealth.org/careers/nurse-residency/",
+            "sourceHash": "fab0131306f5aa140868735ab4704f00cd5d4885f05dd01f6139c0b11b5ac12a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_27a34afe1899a869.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "As part of a nurse residency program at Jackson Health System you will be part of a comprehensive educational program that offers clinical, classroom, and simulation learning aimed at enhancing the application of theory to practice. This program is geared towards newly graduate Registered Nurses and experienced Registered Nurses looking to gain experience in a new nursing specialty.",
+            "claimText": "Page describes a Nurse Residency Program for newly graduate and experienced Registered Nurses at Jackson Health System — not a physician program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Content is nursing residency (RN), not physician training; outside USCEHub's physician-pipeline tiers but captured as future-lane nursing-careers signal.",
+            "normalizedField": "program_audience",
+            "limitations": "Nurse residency, not physician residency. No USCE / IMG / medical-student content on page."
+          }
+        ],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "jmh_nurse_residency_family_mismatch",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/careers/nurse-residency/",
+            "sourceHash": "fab0131306f5aa140868735ab4704f00cd5d4885f05dd01f6139c0b11b5ac12a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_27a34afe1899a869.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Jackson Health System – Nurse ResidencyOverviewSpecialtiesEligibilityFAQsResidency Application & Schedule Overview",
+            "claimText": "URL-based hint classified this as RESIDENCY / Tier 2 physician training, but content is a Nurse (RN) residency program. Family should be PROVIDER_CAREERS / nursing, not physician GME.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Source hint mismatch: URL/path implied physician residency family, but cleaned text describes Registered Nurse residency — not a physician training program.",
+            "normalizedField": null,
+            "limitations": "Mismatch between deepSourceHint (RESIDENCY/Tier 2) and actual content (nurse residency)."
+          }
+        ],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Confirm no physician-residency content lives under this URL.",
+          "Re-classify this source as nursing-careers (non-physician) and exclude from physician Tier-2 pool."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Jackson Health System offers unique programs and volunteer service opportunities for professionals, seniors, students, families, and groups.",
+            "claimText": "Generic volunteer program for professionals, seniors, students, families, groups — does not explicitly mention medical students, IMGs, or observership-equivalent service.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer page may relate to pre-residency clinical/premed exposure, but audience is non-medical 'students' generally; needs human review per volunteer/shadow caution rule.",
+            "limitations": "No explicit mention of medical students, IMGs, or observership; system-level domain, ambiguous campus applicability."
+          },
+          {
+            "claimId": "c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "To become a Jackson volunteer, please complete an application, provide an immunization record, submit a letter of reference.",
+            "claimText": "Volunteer requirements: application, immunization record, letter of reference.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer requirements stated but page is not medical-student-specific.",
+            "limitations": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "We ask our volunteers to commit to four hours per week and 150 hours per year.",
+            "claimText": "Time commitment: 4 hours per week and 150 hours per year.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Time commitment for volunteer program, not USCE-specific.",
+            "limitations": null
+          },
+          {
+            "claimId": "c4",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For all inquiries please email:[email protected]",
+            "claimText": "Contact email for volunteer inquiries (redacted in cleaned text).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer contact, not USCE program contact.",
+            "limitations": "Email obfuscated in cleaned text as [email protected]."
+          },
+          {
+            "claimId": "c5",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Volunteer Resources – Adopt-A-Floor Program1611 N.W. 12th Avenue, Miami, FL 33136305-585-6541",
+            "claimText": "Adopt-A-Floor program contact phone 305-585-6541, located at Jackson Memorial Hospital address.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer program contact, not USCE-specific.",
+            "limitations": null
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Confirm whether Jackson Health System volunteer program admits premedical or medical students.",
+          "Locate Jackson Memorial Hospital-specific observership / visiting student / elective pages (separate from generic volunteering)."
+        ],
+        "runId": "p102-fl-5-jackson-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+            "sourceHash": "f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Jackson Memorial Hospital1611 N.W. 12th AvenueMiami, FL 33136Jackson North Medical Center160 N.W. 170 StreetNorth Miami Beach, FL 33169Jackson South Community Hospital9333 S.W. 152 StreetMiami, FL 33157Holtz Children’s Hospital1611 N.W. 12th AvenueMiami, FL, 33136",
+            "claimText": "Page applies across multiple Jackson Health System campuses (Jackson Memorial, Jackson North, Jackson South, Holtz Children's); health-system scope, not campus-specific.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Multi-campus health-system page; cannot promote to PUBLIC_SAFE for Jackson Memorial alone.",
+            "limitations": null
+          }
+        ],
+        "unresolveds": [
+          "Whether the volunteer program accepts medical students or premedical students is not stated.",
+          "Whether any USCE/observership pathway exists at Jackson Memorial is not addressed on this page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-5-jackson-memorial",
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "jmh-cred-001",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+            "sourceHash": "b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Jackson Health System’s Corporate Credentialing Office manages medical staff and affiliated medical staff applications, as well as the credentialing of all Jackson physicians, dentists, podiatrists and many mid-level practitioners.",
+            "claimText": "Jackson Health System Corporate Credentialing Office manages medical staff applications and credentialing for physicians, dentists, podiatrists, and mid-level practitioners.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Credentialing for staff physicians is a post-trainee/practice-stage service, Tier 3.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "jmh-cred-002",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+            "sourceHash": "b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Contact [email protected] to get started with your credentialing application or for additional question on the process.",
+            "claimText": "Credentialing application contact email: [email protected].",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Contact info for credentialing process — Tier 3 practice-stage service.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "jmh-cred-003",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+            "sourceHash": "b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "JHS Corporate Credentialing OfficeRiver Landing Executive Office\n1611 N.W. 12th Ave.\nMiami, FL 33136786-466-2940\n305-355-1530 (fax)[email protected]",
+            "claimText": "JHS Corporate Credentialing Office address and phone/fax in Miami, FL.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Office/contact details for credentialing — Tier 3 service.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "jmh-jmg-001",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+            "sourceHash": "b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For physicians and other healthcare professionals, Jackson Medical Group offers a wide range of career opportunities in both primary and specialty care.",
+            "claimText": "Jackson Medical Group offers career opportunities for physicians in primary and specialty care.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Physician career opportunities at Jackson Medical Group — Tier 3 attending/faculty jobs.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "jmh-gme-001",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+            "sourceHash": "b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Other ResourcesOur FoundationPrice TransparencyUrgent CareGraduate Medical Education",
+            "claimText": "Footer link referencing Graduate Medical Education at Jackson Health System.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Footer navigation link to GME — Tier 2 trainee content, only a navigation chrome reference here.",
+            "limitations": "Only a footer navigation label; no programmatic detail on this page.",
+            "normalizedField": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Crawl jacksonhealth.org/about-us/administrative/graduate-medical-education for Tier 2 residency/fellowship program inventory.",
+          "Locate Jackson Medical Group careers page for Tier 3 attending/faculty job listings and any J-1/H-1B sponsorship signals.",
+          "Search jacksonhealth.org and miami.edu (UM/JMH affiliation) for observership / visiting student / elective pages — Tier 1 USCE candidates."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://jacksonhealth.org/find-a-doctor/eli-avisar/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-5-jackson-memorial",
+        "institutionId": "inst_jackson_memorial_hospital_fl",
+        "institutionName": "Jackson Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    }
+  ]
+}

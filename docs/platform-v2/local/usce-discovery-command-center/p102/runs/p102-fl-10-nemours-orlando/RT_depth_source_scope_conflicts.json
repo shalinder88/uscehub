@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-10-nemours-orlando",
+  "depthPass": "SOURCE_SCOPE_CONFLICTS",
+  "conflicts": [
+    {
+      "sourceUrl": "https://nemours.org/education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    }
+  ],
+  "unresolveds": [
+    "https://nemours.org/education: Find campus-specific source or treat as system-level"
+  ]
+}

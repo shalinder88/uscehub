@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-10-nemours-orlando",
+  "tasks": [
+    {
+      "taskId": "recov_orl_tier1_usce",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "missingFamily": "USCE_OBSERVERSHIP_PAGE",
+      "reason": "No Orlando-campus-specific USCE / observership / visiting student page was captured. All negative evidence (volunteer office refuses shadowing) is Delaware-Valley scoped and cannot be projected onto the Orlando campus.",
+      "suggestedNarrowAction": "Narrow search for Nemours Children's Hospital Orlando observership/visiting-student/elective pages on nemours.org under Florida/Central Florida paths and on UCF College of Medicine affiliation pages; check for explicit Orlando-campus negative or affirmative statement."
+    },
+    {
+      "taskId": "recov_orl_tier2_gme",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "missingFamily": "GME_PAGE",
+      "reason": "All captured GME pages are 'Delaware Area Graduate Medical Education'. The Orlando campus's UCF partnership is referenced in src_39 but no Orlando-specific residency/fellowship page is in the ledger.",
+      "suggestedNarrowAction": "Narrow search for Nemours Orlando GME / UCF-Nemours residency or fellowship pages and any Orlando pediatric subspecialty fellowships."
+    },
+    {
+      "taskId": "recov_orl_visiting_scholar",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Ledger references a 'Visiting Student Scholars' fellowship and a 'Visiting Scholars Program' (src_86) but only as recruitment-pipeline mentions on the Delaware residency Inclusion page; the underlying program page was not captured.",
+      "suggestedNarrowAction": "Narrow fetch of the Visiting Student Scholars program page to determine eligibility, scope (Delaware vs. Orlando), and whether it is a Tier 1 USCE offer or a residency-recruitment pipeline only."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-1-mayo-clinic-florida",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "JSON_LD"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [
+    "https://mayoclinic.org/education: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source."
+  ],
+  "unresolveds": [
+    "https://mayoclinic.org/education: source scope HEALTH_SYSTEM_LEVEL cannot prove Mayo Clinic Florida-specific availability"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-1-mayo-clinic-florida_1",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "runId": "p102-fl-1-mayo-clinic-florida",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "visiting medical student",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "and master's degrees in biomedical sciencesContinuous professional development\nContinuing education courses for medical professionalsVisiting medical student clerkships\nElective clinical rotations for visiting medical studentsNon-clinical education programs\nInternships, experiences, and opportunities for learnersLearner services and supportAcademic support and well-beingArtificial intelligence trainingOffice of Education Engagement and OutreachLibrariesMicrosurgery Training CenterSimulation cent",
+      "sourceUrl": "https://mayoclinic.org/education",
+      "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "JSON_LD",
+      "confidence": "MEDIUM",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "source scope HEALTH_SYSTEM_LEVEL cannot prove Mayo Clinic Florida-specific availability",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

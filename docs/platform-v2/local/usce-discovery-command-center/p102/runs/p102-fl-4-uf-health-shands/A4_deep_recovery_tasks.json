@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-4-uf-health-shands",
+  "tasks": [
+    {
+      "taskId": "rec_uf_shands_t1_observership",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "No Tier 1 USCE source family (observership / visiting student / clinical elective) was captured. The 20 sources are clinical condition / treatment / research pages with no relevance to USCE.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org and med.ufl.edu observership/visiting-student/international-medical-graduate pages (e.g. com.ufl.edu international electives, med.ufl.edu/education/visiting-students)."
+    },
+    {
+      "taskId": "rec_uf_shands_t2_gme",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Sources mis-tagged as GME_PAGE are actually condition / treatment pages. No real GME / residency / fellowship page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of UF College of Medicine GME index (med.ufl.edu/gme, ufhealth.org careers/gme) and program directories."
+    },
+    {
+      "taskId": "rec_uf_shands_t3_careers",
+      "missingFamily": "CAREERS_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "No careers / physician-jobs / faculty-recruitment page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org/careers and UF physician/faculty recruitment pages."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

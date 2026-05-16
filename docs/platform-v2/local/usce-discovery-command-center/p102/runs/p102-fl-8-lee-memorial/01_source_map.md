@@ -1,0 +1,237 @@
+# Source Map — Lee Memorial Hospital
+
+Run: p102-fl-8-lee-memorial
+schemaVersion: p102-0r-1
+
+## Accepted sources (46)
+
+- **CAREERS_PAGE** [https://leehealth.org/careers](https://leehealth.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt
+- **OTHER** [https://leehealth.org/hcp-education-training/medical-students](https://leehealth.org/hcp-education-training/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/hcp-education-training_medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/hcp-education-training/medical-students/elective](https://leehealth.org/hcp-education-training/medical-students/elective)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/hcp-education-training_medical-students_elective.txt
+- **OBSERVERSHIP_PAGE** [https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships](https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/hcp-education-training_medical-students_medical-student-observerships.txt
+- **GME_PAGE** [https://leehealth.org/medical-professionals/graduate-medical-education](https://leehealth.org/medical-professionals/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-professionals_graduate-medical-education.txt
+- **GME_PAGE** [https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs](https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-professionals_graduate-medical-education_clerkship-programs.txt
+- **OTHER** [https://leehealth.org/academic-institute/education](https://leehealth.org/academic-institute/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/academic-institute_education.txt
+- **OTHER** [https://leehealth.org/academic-institute/education/medical](https://leehealth.org/academic-institute/education/medical)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/academic-institute_education_medical.txt
+- **OTHER** [https://leehealth.org/academic-institute/education/medical/medical-student-rotations](https://leehealth.org/academic-institute/education/medical/medical-student-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/academic-institute_education_medical_medical-student-rotations.txt
+- **OTHER** [https://leehealth.org/medicine/international](https://leehealth.org/medicine/international)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medicine_international.txt
+- **OTHER** [https://leehealth.org/medicine/international/international-programs](https://leehealth.org/medicine/international/international-programs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medicine_international_international-programs.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students](https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt
+- **OTHER** [https://leehealth.org/visiting-clerkships/international](https://leehealth.org/visiting-clerkships/international)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/visiting-clerkships_international.txt
+- **OTHER** [https://leehealth.org/education-institute/academic-visitor-program](https://leehealth.org/education-institute/academic-visitor-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education-institute_academic-visitor-program.txt
+- **GME_PAGE** [https://leehealth.org/education/undergraduate-medical-education](https://leehealth.org/education/undergraduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education_undergraduate-medical-education.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students](https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education_undergraduate-medical-education_requirements-for-visiting-students.txt
+- **OTHER** [https://leehealth.org/education/medical-students](https://leehealth.org/education/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education_medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/education/visiting-medical-students](https://leehealth.org/education/visiting-medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education_visiting-medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/education/medical-student-electives](https://leehealth.org/education/medical-student-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/education_medical-student-electives.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medical-education/medical-student-electives](https://leehealth.org/medical-education/medical-student-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-education_medical-student-electives.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medical-education/visiting-students](https://leehealth.org/medical-education/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-education_visiting-students.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medical-students/electives](https://leehealth.org/medical-students/electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-students_electives.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medical-students/elective-rotations](https://leehealth.org/medical-students/elective-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-students_elective-rotations.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/medical-students/clinical-electives](https://leehealth.org/medical-students/clinical-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/medical-students_clinical-electives.txt
+- **VISITING_STUDENT_PAGE** [https://leehealth.org/students/visiting-students](https://leehealth.org/students/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/students_visiting-students.txt
+- **GME_PAGE** [https://leehealth.org/graduate-medical-education/clerkship-programs](https://leehealth.org/graduate-medical-education/clerkship-programs)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1d8313820293845c0290892718d519ab64c1d16839a4fc27651375a834f10779`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/graduate-medical-education_clerkship-programs.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers](https://www.leehealth.org/for-volunteers)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `79f1870ca4ae8dcf4855e9e1969ac295826ec802c5cbeb9053c64e159a2a1d20`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_db6f6db04a7e51fe.txt
+- **GME_PAGE** [https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me](https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c9faa4a99e809e760cc435bd81ca09439e6c0447c0068c407f78417de86cd631`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_63c06e38cd2a4a8c.txt
+- **RESEARCH_PAGE** [https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen](https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7c0100e88ea8d4be9f4336821c0827ea18ecca777ac882efba4a1f8c12d1ce31`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_d9462158290d01d9.txt
+- **RESEARCH_PAGE** [https://www.leehealth.org/special-pages/lee-health-research-day](https://www.leehealth.org/special-pages/lee-health-research-day)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt
+- **CAREERS_PAGE** [https://www.leehealth.org/careers-quick-interest-form-thank-you](https://www.leehealth.org/careers-quick-interest-form-thank-you)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `33406ad0fd6c09e20a1a6a441f466b323d01b1ab0da55527a48aa2cb440c6d08`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ec825b686ef2aacd.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/overview](https://www.leehealth.org/for-volunteers/overview)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6e3ffef6e9825eecc996b8e8653636616dd8e9fd155324949b651f85641e7aae`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_8b415bd37a0b6b79.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/apply-to-volunteer](https://www.leehealth.org/for-volunteers/apply-to-volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/to-volunteer-services](https://www.leehealth.org/to-volunteer-services)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `79f1870ca4ae8dcf4855e9e1969ac295826ec802c5cbeb9053c64e159a2a1d20`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ddf98c51edc04df3.txt
+- **RESIDENCY_PAGE** [https://www.leehealth.org/utility/for-health-professionals/residency-programs](https://www.leehealth.org/utility/for-health-professionals/residency-programs)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/locations-to-volunteer](https://www.leehealth.org/for-volunteers/locations-to-volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `afa9ba19fc9719eb00133319ff28075f9a932c2a5b0c5c5a9166044b8261799c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_70895d5e3c55ee3b.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/utility/for-volunteers/student-volunteer-program](https://www.leehealth.org/utility/for-volunteers/student-volunteer-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/volunteer-education-module](https://www.leehealth.org/volunteer-education-module)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bb3e2116b6212834a82eaa96f7d53171772fdab5700b824e0f72c90b4790a2be`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_bdde19c389217bec.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare](https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b480bb7bd97207a1db8c7af9290a02e92a079a78cfb8445f6e5d6bd96ff92783`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_c5248f5dac0dc6cb.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/volunteer-faqs](https://www.leehealth.org/for-volunteers/volunteer-faqs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/grants-scholarships](https://www.leehealth.org/for-volunteers/grants-scholarships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a7e084f6fda9e997773f61204a0b64149a5a1ba8f7c8be3c185afc2e1a348cb9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_44928f1c7cbee31b.txt
+- **CAREERS_PAGE** [https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers](https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt
+- **FELLOWSHIP_PAGE** [https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships](https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/for-volunteers/contact-volunteer-resources](https://www.leehealth.org/for-volunteers/contact-volunteer-resources)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6ffc9efc4218670160a0d80cb7f497c8d30b2331df2ce21dce3ccadd61968ec7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a4a69ca137002e84.txt
+- **VOLUNTEER_PAGE** [https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program](https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a21cb717370a5a95da43e1ba1c7f977fea3ff94553842afa5826cea54062d281`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_e805a8145295ba61.txt
+- **RESEARCH_PAGE** [https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research](https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6136511dbbe0cbd746509be289eaeea96f5e9c87c81c503d3506976ab9d51489`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_c5ea3db65ad7233d.txt
+
+## Rejected sources (43)
+
+- https://leehealth.org/observership — FETCH_404 (status_404)
+- https://leehealth.org/observerships — FETCH_404 (status_404)
+- https://leehealth.org/observer — FETCH_404 (status_404)
+- https://leehealth.org/clinical-observer — FETCH_404 (status_404)
+- https://leehealth.org/visiting-student — FETCH_404 (status_404)
+- https://leehealth.org/visiting-students — FETCH_404 (status_404)
+- https://leehealth.org/medical-students — FETCH_404 (status_404)
+- https://leehealth.org/international-students — FETCH_404 (status_404)
+- https://leehealth.org/electives — FETCH_404 (status_404)
+- https://leehealth.org/away-rotations — FETCH_404 (status_404)
+- https://leehealth.org/clinical-elective — FETCH_404 (status_404)
+- https://leehealth.org/clinical-rotation — FETCH_404 (status_404)
+- https://leehealth.org/sub-internship — FETCH_404 (status_404)
+- https://leehealth.org/subinternship — FETCH_404 (status_404)
+- https://leehealth.org/acting-internship — FETCH_404 (status_404)
+- https://leehealth.org/research — FETCH_404 (status_404)
+- https://leehealth.org/student-research — FETCH_404 (status_404)
+- https://leehealth.org/shadow — FETCH_404 (status_404)
+- https://leehealth.org/shadowing — FETCH_404 (status_404)
+- https://leehealth.org/volunteer — FETCH_404 (status_404)
+- https://leehealth.org/volunteering — FETCH_404 (status_404)
+- https://leehealth.org/img — FETCH_404 (status_404)
+- https://leehealth.org/international-medical-graduates — FETCH_404 (status_404)
+- https://leehealth.org/graduate-medical-education — FETCH_404 (status_404)
+- https://leehealth.org/gme — FETCH_404 (status_404)
+- https://leehealth.org/residency — FETCH_404 (status_404)
+- https://leehealth.org/fellowship — FETCH_404 (status_404)
+- https://leehealth.org/physician-careers — FETCH_404 (status_404)
+- https://leehealth.org/provider-careers — FETCH_404 (status_404)
+- https://leehealth.org/benefits — FETCH_404 (status_404)
+- https://leehealth.org/visa — FETCH_404 (status_404)
+- https://leehealth.org/immigration — FETCH_404 (status_404)
+- https://leehealth.org/credentialing — FETCH_404 (status_404)
+- https://leehealth.org/health-professionals — FETCH_404 (status_404)
+- https://leehealth.org/medical-education — FETCH_404 (status_404)
+- https://leehealth.org/professional-education — FETCH_404 (status_404)
+- https://leehealth.org/student-affairs — FETCH_404 (status_404)
+- https://leehealth.org/education — FETCH_404 (status_404)
+- https://leehealth.org/hcp-education-training — FETCH_404 (status_404)
+- https://leehealth.org/medical-professionals — FETCH_404 (status_404)
+- https://leehealth.org/academic-institute — FETCH_404 (status_404)
+- https://leehealth.org/visiting-clerkships — FETCH_404 (status_404)
+- https://leehealth.org/education-institute — FETCH_404 (status_404)

@@ -1,0 +1,957 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-5-jackson-memorial",
+  "institutionId": "inst_jackson_memorial_hospital_fl",
+  "institutionName": "Jackson Memorial Hospital",
+  "officialDomains": [
+    "jacksonhealth.org"
+  ],
+  "mode": "reclassify-only",
+  "budgets": {
+    "maxDiscoveredUrls": 75,
+    "maxAcceptedSources": 40,
+    "maxPdfs": 10
+  },
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://jacksonhealth.org/observership",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://jacksonhealth.org/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://jacksonhealth.org/observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://jacksonhealth.org/clinical-observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://jacksonhealth.org/visiting-student",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://jacksonhealth.org/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://jacksonhealth.org/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://jacksonhealth.org/international-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://jacksonhealth.org/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://jacksonhealth.org/away-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://jacksonhealth.org/clinical-elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://jacksonhealth.org/clinical-rotation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://jacksonhealth.org/sub-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://jacksonhealth.org/subinternship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://jacksonhealth.org/acting-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://jacksonhealth.org/research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://jacksonhealth.org/student-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 6,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://jacksonhealth.org/shadow",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://jacksonhealth.org/shadowing",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://jacksonhealth.org/volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://jacksonhealth.org/volunteering",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://jacksonhealth.org/img",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://jacksonhealth.org/international-medical-graduates",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://jacksonhealth.org/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://jacksonhealth.org/gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://jacksonhealth.org/residency",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://jacksonhealth.org/fellowship",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 9,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://jacksonhealth.org/careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://jacksonhealth.org/physician-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 21,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://jacksonhealth.org/provider-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 22,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://jacksonhealth.org/benefits",
+      "legacyFamily": "OTHER",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 24,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://jacksonhealth.org/visa",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://jacksonhealth.org/immigration",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://jacksonhealth.org/credentialing",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://jacksonhealth.org/health-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://jacksonhealth.org/medical-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://jacksonhealth.org/professional-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://jacksonhealth.org/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://jacksonhealth.org/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://jacksonhealth.org/hcp-education-training",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://jacksonhealth.org/hcp-education-training/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://jacksonhealth.org/hcp-education-training/medical-students/elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://jacksonhealth.org/hcp-education-training/medical-students/medical-student-observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://jacksonhealth.org/medical-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://jacksonhealth.org/medical-professionals/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://jacksonhealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://jacksonhealth.org/academic-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://jacksonhealth.org/academic-institute/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://jacksonhealth.org/academic-institute/education/medical",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://jacksonhealth.org/academic-institute/education/medical/medical-student-rotations",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://jacksonhealth.org/medicine/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://jacksonhealth.org/medicine/international/international-programs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://jacksonhealth.org/medicine/international/international-programs/international-visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://jacksonhealth.org/visiting-clerkships",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://jacksonhealth.org/visiting-clerkships/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://jacksonhealth.org/education-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://jacksonhealth.org/education-institute/academic-visitor-program",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://jacksonhealth.org/education/undergraduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://jacksonhealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://jacksonhealth.org/education/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://jacksonhealth.org/education/visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://jacksonhealth.org/education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://jacksonhealth.org/medical-education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://jacksonhealth.org/medical-education/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://jacksonhealth.org/medical-students/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://jacksonhealth.org/medical-students/elective-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://jacksonhealth.org/medical-students/clinical-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://jacksonhealth.org/students/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://jacksonhealth.org/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://jacksonhealth.org/careers/",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://jacksonhealth.org/careers-contact-us/",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://jacksonhealth.org/careers/nurse-residency/",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://jacksonhealth.org/community/volunteering/",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://jacksonhealth.org/find-a-doctor/eli-avisar/",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    }
+  ],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T21:51:32.203Z"
+}

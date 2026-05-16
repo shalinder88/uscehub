@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-1-mayo-clinic-florida",
+  "tasks": [
+    {
+      "taskId": "rec_mcf_visiting_campus_proof",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "College-level visiting medical student clerkships are advertised at mayoclinic.org/education but no Mayo Clinic Florida campus-applicability proof or campus-specific page was captured.",
+      "suggestedNarrowAction": "Targeted fetch of Mayo Clinic Alix School of Medicine visiting student pages and any Jacksonville/Florida campus-applicability roster to confirm whether Florida campus accepts visiting medical students."
+    },
+    {
+      "taskId": "rec_mcf_observership_negative",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Every observership-keyword URL returned a 404; no explicit Mayo Clinic Florida observership refusal quote was captured (absence rather than refusal).",
+      "suggestedNarrowAction": "Narrow search for an explicit Mayo Clinic / Mayo Clinic Florida observership policy statement (accept or do-not-accept), e.g. via Alix School of Medicine FAQ or international programs page."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

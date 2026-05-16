@@ -1,0 +1,174 @@
+# Source Map — Nemours Children's Hospital Orlando
+
+Run: p102-fl-10-nemours-orlando
+schemaVersion: p102-0r-1
+
+## Accepted sources (25)
+
+- **RESEARCH_PAGE** [https://nemours.org/research](https://nemours.org/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f76ceaf7a479598460557d628cf32c985a62f8bfde8a4b2ac58b7b67fb4d9bd0`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/research.txt
+- **VOLUNTEER_PAGE** [https://nemours.org/volunteering](https://nemours.org/volunteering)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `11082f5ea168bc90fb8d2dbbb40195076aa6ef1fb54c4a8d20df7a96f5472c59`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/volunteering.txt
+- **CAREERS_PAGE** [https://nemours.org/careers](https://nemours.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `df50da3394bc59e91be1026e860e9fb88da6a2f439d5d673b9324e65a479d928`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/careers.txt
+- **OTHER** [https://nemours.org/health-professionals](https://nemours.org/health-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ad1d77c2d63b829c9d40ba3788d35688afdfc14d1dc8c3044d94239f2471c91f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/health-professionals.txt
+- **OTHER** [https://nemours.org/education](https://nemours.org/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5a985755bcae5fdd9fd15210110020cc700b349e1f7a7322aad8a77c8a91ac2a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/education.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers.html](https://www.nemours.org/careers.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `df50da3394bc59e91be1026e860e9fb88da6a2f439d5d673b9324e65a479d928`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_f17521c64d54ecba.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers/nemours-recruitment-at-wolfson.html](https://www.nemours.org/careers/nemours-recruitment-at-wolfson.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `c25e7a8674d1acb502c7d195b4ccae1b3389c10af862372e1b052c9b365fae20`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_62ddb7582f4c540d.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers/nurse.html](https://www.nemours.org/careers/nurse.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `143abefd917a2e647cb24feb044bbb9587a1e5aefb9a8ad862b8bae4fc917654`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_c84b6d8f0c69a2c8.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers/physician.html](https://www.nemours.org/careers/physician.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `b15f0fe2ba6aed1ec891d93f84eb31c341e322a396983dbfe922181abf6ce449`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_ce0141d7544f47e0.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers/faqs.html](https://www.nemours.org/careers/faqs.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `c77e9dff9fac1498e1961f2daeaf6ee5099766daec66eeff74c9e1e514add7a8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_fa9aac1fdf630967.txt
+- **CAREERS_PAGE** [https://www.nemours.org/careers/recruitment-fraud-alert.html](https://www.nemours.org/careers/recruitment-fraud-alert.html)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `2cc0499417b5283becffcd565bab0555d09acd14d34635d3fa58d8bb2685b535`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_968ae98d236dead4.txt
+- **RESEARCH_PAGE** [https://www.nemours.org/conditions-treatments/scoliosis/scoliosis-clinical-research.html](https://www.nemours.org/conditions-treatments/scoliosis/scoliosis-clinical-research.html)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1aa67a349ff998476a286edfaaf1863659c19d351da30621e9ef03a9f754bfba`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_38e652db8e90fd4a.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme.html](https://www.nemours.org/education/gme.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `396c035cabb9fcbf2f72180efe837ea7f4c4a63774794c22769a4561cfe1f09a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_0712723027d92f18.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-dental-residency.html](https://www.nemours.org/education/gme/pediatric-dental-residency.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `581351bb1d11799f89c830c73ec6a1d5b1b5d23aff088b9581d3e41415e25d64`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_7bb102172ee1a4ce.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/physical-therapy.html](https://www.nemours.org/education/gme/physical-therapy.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `6e7aa2f8edee388ee498295e7e0c5bfe2c10ca23bc475dadd5df9cf2810f53c6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_fe70a5b5ec9b8c20.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/speech-therapy.html](https://www.nemours.org/education/gme/speech-therapy.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `796bdb865e377c8717001cf55f6ed5a8b7a816bd4592838c6f83a5c7c6849f5a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_e85086db4d334442.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency.html](https://www.nemours.org/education/gme/pediatric-residency.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `8651f25ac1df943aa3e58cbe09d6c18face3f37eb4bad89664bd40aa69cb8bf4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_24b258df01f25236.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/education.html](https://www.nemours.org/education/gme/pediatric-residency/education.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `501a7bb3fcf54e9589309f2439760a15d46e069950344a451fb96398e38ebbc3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_5a8841d7e1a743b0.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/resident-life-and-wellness.html](https://www.nemours.org/education/gme/pediatric-residency/resident-life-and-wellness.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e48604a478bdb54a9df218e915926b493a493317ade8d94a02d9bdedcb178521`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_3e0f122cf9d1e246.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/curriculum-and-rotations.html](https://www.nemours.org/education/gme/pediatric-residency/curriculum-and-rotations.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `2209581939cd07ebb9762495cf881f60d7633bb729033ae06dc7252db07f5bdc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_58b13a5ecb402449.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/apply-today.html](https://www.nemours.org/education/gme/pediatric-residency/apply-today.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `23dfca478fe17e8c05eaa560be83080a32402a2c9c79426daec26717856a641a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_406d3a691eac70db.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/inclusion-and-belonging.html](https://www.nemours.org/education/gme/pediatric-residency/inclusion-and-belonging.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d1d910c8919fec60ea057a275a3ea99ffea45d42cb28c3def00c99a8fee46c55`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_11932809c7fe8bb1.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pediatric-residency/residents-alumni-leadership.html](https://www.nemours.org/education/gme/pediatric-residency/residents-alumni-leadership.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `fdb97551e632db265d834034c5be6bbf5005470c676ea3723d8e4529534076d7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_a45103f351cf62a2.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/pharmacy.html](https://www.nemours.org/education/gme/pharmacy.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `3bdd19dfc58650a3755fa8066ccb7aee307598e8be66cd1f5be48d9625b26cf2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_aa3f42459d1897f7.txt
+- **GME_PAGE** [https://www.nemours.org/education/gme/nurse-practitioner-fellowship.html](https://www.nemours.org/education/gme/nurse-practitioner-fellowship.html)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `f3e69f0179366d0f113bae4973127b6c38068cb83993a7e09eaaebfe1549f8f6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/sm_ef5784592a1a28c2.txt
+
+## Rejected sources (64)
+
+- https://nemours.org/observership — FETCH_404 (status_404)
+- https://nemours.org/observerships — FETCH_404 (status_404)
+- https://nemours.org/observer — FETCH_404 (status_404)
+- https://nemours.org/clinical-observer — FETCH_404 (status_404)
+- https://nemours.org/visiting-student — FETCH_404 (status_404)
+- https://nemours.org/visiting-students — FETCH_404 (status_404)
+- https://nemours.org/medical-students — FETCH_404 (status_404)
+- https://nemours.org/international-students — FETCH_404 (status_404)
+- https://nemours.org/electives — FETCH_404 (status_404)
+- https://nemours.org/away-rotations — FETCH_404 (status_404)
+- https://nemours.org/clinical-elective — FETCH_404 (status_404)
+- https://nemours.org/clinical-rotation — FETCH_404 (status_404)
+- https://nemours.org/sub-internship — FETCH_404 (status_404)
+- https://nemours.org/subinternship — FETCH_404 (status_404)
+- https://nemours.org/acting-internship — FETCH_404 (status_404)
+- https://nemours.org/student-research — FETCH_404 (status_404)
+- https://nemours.org/shadow — FETCH_404 (status_404)
+- https://nemours.org/shadowing — FETCH_404 (status_404)
+- https://nemours.org/volunteer — FETCH_404 (status_404)
+- https://nemours.org/img — FETCH_404 (status_404)
+- https://nemours.org/international-medical-graduates — FETCH_404 (status_404)
+- https://nemours.org/graduate-medical-education — FETCH_404 (status_404)
+- https://nemours.org/gme — FETCH_404 (status_404)
+- https://nemours.org/residency — FETCH_404 (status_404)
+- https://nemours.org/fellowship — FETCH_404 (status_404)
+- https://nemours.org/physician-careers — FETCH_404 (status_404)
+- https://nemours.org/provider-careers — FETCH_404 (status_404)
+- https://nemours.org/benefits — FETCH_404 (status_404)
+- https://nemours.org/visa — FETCH_404 (status_404)
+- https://nemours.org/immigration — FETCH_404 (status_404)
+- https://nemours.org/credentialing — FETCH_404 (status_404)
+- https://nemours.org/medical-education — FETCH_404 (status_404)
+- https://nemours.org/professional-education — FETCH_404 (status_404)
+- https://nemours.org/student-affairs — FETCH_404 (status_404)
+- https://nemours.org/hcp-education-training — FETCH_404 (status_404)
+- https://nemours.org/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://nemours.org/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://nemours.org/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://nemours.org/medical-professionals — FETCH_404 (status_404)
+- https://nemours.org/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://nemours.org/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://nemours.org/academic-institute — FETCH_404 (status_404)
+- https://nemours.org/academic-institute/education — FETCH_404 (status_404)
+- https://nemours.org/academic-institute/education/medical — FETCH_404 (status_404)
+- https://nemours.org/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://nemours.org/medicine/international — FETCH_404 (status_404)
+- https://nemours.org/medicine/international/international-programs — FETCH_404 (status_404)
+- https://nemours.org/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://nemours.org/visiting-clerkships — FETCH_404 (status_404)
+- https://nemours.org/visiting-clerkships/international — FETCH_404 (status_404)
+- https://nemours.org/education-institute — FETCH_404 (status_404)
+- https://nemours.org/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://nemours.org/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://nemours.org/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://nemours.org/education/medical-students — FETCH_404 (status_404)
+- https://nemours.org/education/visiting-medical-students — FETCH_404 (status_404)
+- https://nemours.org/education/medical-student-electives — FETCH_404 (status_404)
+- https://nemours.org/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://nemours.org/medical-education/visiting-students — FETCH_404 (status_404)
+- https://nemours.org/medical-students/electives — FETCH_404 (status_404)
+- https://nemours.org/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://nemours.org/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://nemours.org/students/visiting-students — FETCH_404 (status_404)
+- https://nemours.org/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)

@@ -1,0 +1,385 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-8-lee-memorial",
+  "institutionId": "inst_lee_memorial_hospital_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/medical-education",
+        "https://leehealth.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/visiting-student",
+        "https://leehealth.org/visiting-students",
+        "https://leehealth.org/international-students",
+        "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+        "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://leehealth.org/education/visiting-medical-students",
+        "https://leehealth.org/medical-education/visiting-students",
+        "https://leehealth.org/students/visiting-students"
+      ],
+      "acceptedSources": [
+        "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+        "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://leehealth.org/education/visiting-medical-students",
+        "https://leehealth.org/medical-education/visiting-students",
+        "https://leehealth.org/students/visiting-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/observership",
+        "https://leehealth.org/observer",
+        "https://leehealth.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/electives",
+        "https://leehealth.org/away-rotations",
+        "https://leehealth.org/clinical-elective",
+        "https://leehealth.org/clinical-rotation",
+        "https://leehealth.org/hcp-education-training/medical-students/elective",
+        "https://leehealth.org/education/medical-student-electives",
+        "https://leehealth.org/medical-education/medical-student-electives",
+        "https://leehealth.org/medical-students/electives",
+        "https://leehealth.org/medical-students/elective-rotations",
+        "https://leehealth.org/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [
+        "https://leehealth.org/hcp-education-training/medical-students/elective",
+        "https://leehealth.org/education/medical-student-electives",
+        "https://leehealth.org/medical-education/medical-student-electives",
+        "https://leehealth.org/medical-students/electives",
+        "https://leehealth.org/medical-students/elective-rotations",
+        "https://leehealth.org/medical-students/clinical-electives"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/sub-internship",
+        "https://leehealth.org/subinternship",
+        "https://leehealth.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/shadow",
+        "https://leehealth.org/shadowing",
+        "https://leehealth.org/volunteer",
+        "https://leehealth.org/volunteering",
+        "https://www.leehealth.org/for-volunteers",
+        "https://www.leehealth.org/for-volunteers/overview",
+        "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+        "https://www.leehealth.org/to-volunteer-services",
+        "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+        "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+        "https://www.leehealth.org/volunteer-education-module",
+        "https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare",
+        "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+        "https://www.leehealth.org/for-volunteers/grants-scholarships",
+        "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+        "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program"
+      ],
+      "acceptedSources": [
+        "https://www.leehealth.org/for-volunteers",
+        "https://www.leehealth.org/for-volunteers/overview",
+        "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+        "https://www.leehealth.org/to-volunteer-services",
+        "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+        "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+        "https://www.leehealth.org/volunteer-education-module",
+        "https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare",
+        "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+        "https://www.leehealth.org/for-volunteers/grants-scholarships",
+        "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+        "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/graduate-medical-education",
+        "https://leehealth.org/gme",
+        "https://leehealth.org/medical-professionals/graduate-medical-education",
+        "https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://leehealth.org/education/undergraduate-medical-education",
+        "https://leehealth.org/graduate-medical-education/clerkship-programs",
+        "https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me"
+      ],
+      "acceptedSources": [
+        "https://leehealth.org/medical-professionals/graduate-medical-education",
+        "https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://leehealth.org/education/undergraduate-medical-education",
+        "https://leehealth.org/graduate-medical-education/clerkship-programs",
+        "https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/residency",
+        "https://www.leehealth.org/utility/for-health-professionals/residency-programs"
+      ],
+      "acceptedSources": [
+        "https://www.leehealth.org/utility/for-health-professionals/residency-programs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://leehealth.org/visa",
+        "https://leehealth.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/careers",
+        "https://www.leehealth.org/careers-quick-interest-form-thank-you",
+        "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+        "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships"
+      ],
+      "acceptedSources": [
+        "https://leehealth.org/careers",
+        "https://www.leehealth.org/careers-quick-interest-form-thank-you",
+        "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+        "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://leehealth.org/observerships",
+        "https://leehealth.org/medical-students",
+        "https://leehealth.org/research",
+        "https://leehealth.org/img",
+        "https://leehealth.org/international-medical-graduates",
+        "https://leehealth.org/credentialing",
+        "https://leehealth.org/health-professionals",
+        "https://leehealth.org/education",
+        "https://leehealth.org/hcp-education-training",
+        "https://leehealth.org/hcp-education-training/medical-students",
+        "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+        "https://leehealth.org/medical-professionals",
+        "https://leehealth.org/academic-institute",
+        "https://leehealth.org/academic-institute/education",
+        "https://leehealth.org/academic-institute/education/medical",
+        "https://leehealth.org/academic-institute/education/medical/medical-student-rotations",
+        "https://leehealth.org/medicine/international",
+        "https://leehealth.org/medicine/international/international-programs",
+        "https://leehealth.org/visiting-clerkships",
+        "https://leehealth.org/visiting-clerkships/international",
+        "https://leehealth.org/education-institute",
+        "https://leehealth.org/education-institute/academic-visitor-program",
+        "https://leehealth.org/education/medical-students",
+        "https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen",
+        "https://www.leehealth.org/special-pages/lee-health-research-day",
+        "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research"
+      ],
+      "acceptedSources": [
+        "https://leehealth.org/hcp-education-training/medical-students",
+        "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+        "https://leehealth.org/academic-institute/education",
+        "https://leehealth.org/academic-institute/education/medical",
+        "https://leehealth.org/academic-institute/education/medical/medical-student-rotations",
+        "https://leehealth.org/medicine/international",
+        "https://leehealth.org/medicine/international/international-programs",
+        "https://leehealth.org/visiting-clerkships/international",
+        "https://leehealth.org/education-institute/academic-visitor-program",
+        "https://leehealth.org/education/medical-students",
+        "https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen",
+        "https://www.leehealth.org/special-pages/lee-health-research-day",
+        "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 23,
+    "tier2AcceptedSources": 6,
+    "tier3AcceptedSources": 4
+  },
+  "generatedAt": "2026-05-15T23:37:14.078Z"
+}

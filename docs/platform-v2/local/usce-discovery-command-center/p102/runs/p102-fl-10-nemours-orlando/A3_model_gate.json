@@ -1,0 +1,106 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "recov_orl_tier1_usce",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "missingFamily": "USCE_OBSERVERSHIP_PAGE",
+      "reason": "No Orlando-campus-specific USCE / observership / visiting student page was captured. All negative evidence (volunteer office refuses shadowing) is Delaware-Valley scoped and cannot be projected onto the Orlando campus.",
+      "suggestedNarrowAction": "Narrow search for Nemours Children's Hospital Orlando observership/visiting-student/elective pages on nemours.org under Florida/Central Florida paths and on UCF College of Medicine affiliation pages; check for explicit Orlando-campus negative or affirmative statement."
+    },
+    {
+      "taskId": "recov_orl_tier2_gme",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "missingFamily": "GME_PAGE",
+      "reason": "All captured GME pages are 'Delaware Area Graduate Medical Education'. The Orlando campus's UCF partnership is referenced in src_39 but no Orlando-specific residency/fellowship page is in the ledger.",
+      "suggestedNarrowAction": "Narrow search for Nemours Orlando GME / UCF-Nemours residency or fellowship pages and any Orlando pediatric subspecialty fellowships."
+    },
+    {
+      "taskId": "recov_orl_visiting_scholar",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Ledger references a 'Visiting Student Scholars' fellowship and a 'Visiting Scholars Program' (src_86) but only as recruitment-pipeline mentions on the Delaware residency Inclusion page; the underlying program page was not captured.",
+      "suggestedNarrowAction": "Narrow fetch of the Visiting Student Scholars program page to determine eligibility, scope (Delaware vs. Orlando), and whether it is a Tier 1 USCE offer or a residency-recruitment pipeline only."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "c2 (src_28 nemours.org/careers)",
+      "duplicateClaimId": "nemours-careers-physician (src_70 www.nemours.org/careers.html)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c3 (src_28 nemours.org/careers)",
+      "duplicateClaimId": "nemours-careers-app-provider (src_70)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c4 (src_28 nemours.org/careers benefits)",
+      "duplicateClaimId": "nemours-careers-benefits (src_70)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c5 (src_28 GME nav link)",
+      "duplicateClaimId": "nemours-careers-gme-link (src_70)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c6 (src_28 workforce@nemours.org)",
+      "duplicateClaimId": "nemours-careers-workforce-contact (src_70)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "sc1 (src_28 careers scope conflict)",
+      "duplicateClaimId": "nemours-careers-scope (src_70)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "c7 (src_28 multi-state operations)",
+      "duplicateClaimId": "nemours-careers-system-scope-conflict (src_70)",
+      "duplicateReason": "same_quote_different_claimId"
+    }
+  ],
+  "institutionId": "inst_nemours_childrens_orlando_fl",
+  "institutionName": "Nemours Children's Hospital Orlando",
+  "metadata": {
+    "totalClaimsReviewed": 189,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 142,
+    "humanReviewRequiredCount": 47,
+    "hiddenRejectedCount": 0,
+    "note": "Counts approximate; ledger contains 0 PUBLIC_SAFE_USCE — nothing publishes as USCE."
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-10-nemours-orlando",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "FAIL_WEAK",
+  "tier2CoverageVerdict": "PASS_PARTIAL",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "src_86 mentions 'Visiting Student Scholars fellowship' and 'Visiting Students Scholars rotation' — program page not captured",
+    "src_86 a2 references 'LGBTQ+ and Visiting Scholars Program Happy Hours' — distinct Visiting Scholars Program not investigated",
+    "src_39 states Orlando campus partners with UCF College of Medicine — UCF-Nemours rotation/elective pathway not pulled",
+    "src_35/c1 mentions 'medical student rotations' at system level — Orlando rotation page not captured"
+  ],
+  "unresolveds": [
+    "Whether Nemours Orlando offers any campus-specific USCE/observership/elective (no Orlando-specific page captured; only Delaware Valley refusal and UCF partnership mention).",
+    "Scope of 'Visiting Student Scholars fellowship/rotation' referenced on Delaware residency Inclusion & Belonging page — could be USCE-adjacent or residency-recruitment only."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger is internally consistent and publish-safe: zero PUBLIC_SAFE_USCE claims, all USCE-flavored signals are either FUTURE_LANE_ONLY or HUMAN_REVIEW_REQUIRED, and scope conflicts (Delaware-Valley vs. Orlando) are properly flagged. However, Tier 1 USCE coverage for the Orlando campus is FAIL_WEAK — no Orlando-specific USCE page was found; negative evidence is Delaware-scoped. Recommend A4 recovery tasks for Orlando-specific USCE and UCF-Nemours pathway. Multiple A1/A2 duplicates between nemours.org/careers (src_28) and www.nemours.org/careers.html (src_70 — identical hash) should be deduped downstream."
+}

@@ -1,0 +1,177 @@
+# Source Map — Nicklaus Children's Hospital
+
+Run: p102-fl-7-nicklaus-childrens
+schemaVersion: p102-0r-1
+
+## Accepted sources (26)
+
+- **RESEARCH_PAGE** [https://nicklauschildrens.org/research](https://nicklauschildrens.org/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt
+- **VOLUNTEER_PAGE** [https://nicklauschildrens.org/volunteer](https://nicklauschildrens.org/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/volunteer.txt
+- **GME_PAGE** [https://nicklauschildrens.org/gme](https://nicklauschildrens.org/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt
+- **CAREERS_PAGE** [https://nicklauschildrens.org/careers](https://nicklauschildrens.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt
+- **OTHER** [https://nicklauschildrens.org/medical-education](https://nicklauschildrens.org/medical-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt
+- **OTHER** [https://nicklauschildrens.org/medical-professionals](https://nicklauschildrens.org/medical-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt
+- **CAREERS_PAGE** [https://www.nicklauschildrens.org/careers](https://www.nicklauschildrens.org/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/medical-professionals/news-research-innovation](https://www.nicklauschildrens.org/medical-professionals/news-research-innovation)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `632a9644c67a2fdebc0f72070b5091082e6fed41d259234830934564c6e92656`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_3e82d53f39121d31.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies](https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2d2484c108084440.txt
+- **VOLUNTEER_PAGE** [https://www.nicklauschildrens.org/about-us/volunteer-resources](https://www.nicklauschildrens.org/about-us/volunteer-resources)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/medical-services/research-institute](https://www.nicklauschildrens.org/medical-services/research-institute)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_5d1e0f25e834e007.txt
+- **VOLUNTEER_PAGE** [https://www.nicklauschildrens.org/forms/camp-volunteer-application](https://www.nicklauschildrens.org/forms/camp-volunteer-application)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c37c683f6252aaccb2729f09dc37ab07473086aa0f34a4b88c29561b769f2cea`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_27ecf0ae3c5a1b01.txt
+- **GME_PAGE** [https://www.nicklauschildrens.org/conditions/skin-pigment-disorders](https://www.nicklauschildrens.org/conditions/skin-pigment-disorders)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `1787fd4314d8cc4f51b82d2a0d12b988e7cae866e4bb92c9bfbb15cd521d89a8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_1e26b6c38ba53b9a.txt
+- **GME_PAGE** [https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac)](https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac))
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `cb7d2307ab2589209071dbdef2dd0ba8dae99528bb64e07663f76b6b85927f2d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_f1adce7291fd1b95.txt
+- **GME_PAGE** [https://www.nicklauschildrens.org/treatments/bladder-augmentation](https://www.nicklauschildrens.org/treatments/bladder-augmentation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `5a1b3905858befe15d0d4012343421ba99037a50adc6c80929b4e873afcebaba`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_bc444d2690cdcadf.txt
+- **VISITING_STUDENT_PAGE** [https://www.nicklauschildrens.org/treatments/elective-surgery](https://www.nicklauschildrens.org/treatments/elective-surgery)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8f421d6c585a59645fcb1548456bcf39dc4708d66adf483e2505c103c550594e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e1b016b83158126d.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/treatments/clinical-trials-and-research](https://www.nicklauschildrens.org/treatments/clinical-trials-and-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `17b9a8721d8f6e91abdfca6c66e83c045eb0a0766c388af2a1222ff85f8084ca`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_de4c265764f51c39.txt
+- **VISITING_STUDENT_PAGE** [https://www.nicklauschildrens.org/conditions/selective-mutism](https://www.nicklauschildrens.org/conditions/selective-mutism)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `97aa2c68aadbfd6f7f9cb1b4bfe150e0f8feeb88468b49541f459f4c685a54fb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_3295e617047f5f56.txt
+- **GME_PAGE** [https://www.nicklauschildrens.org/conditions/pigmented-villonodular-synovitis](https://www.nicklauschildrens.org/conditions/pigmented-villonodular-synovitis)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `498d74699a05899aba55580fed09536a17ca9e6bf4f7ffd7c9772e50870b1f56`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_384f8f1a5ac4efcd.txt
+- **VOLUNTEER_PAGE** [https://www.nicklauschildrens.org/forms/camp-volunteer-application/thank-you](https://www.nicklauschildrens.org/forms/camp-volunteer-application/thank-you)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `25609a6f75aaf598bab13a32e980fbf2022090649a66bfff7a221de049740113`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_d9f0ab53756e8c92.txt
+- **VOLUNTEER_PAGE** [https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant](https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d81137e0e0a7e09e7e5f5db93bcdb6b3fa689c36619daab8a70e64652be39fbd`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_dae7fe2a69c461c3.txt
+- **RESIDENCY_PAGE** [https://www.nicklauschildrens.org/patient-and-family-resources/community-outreach-and-education-programs/arts-in-healing-(art-residency)](https://www.nicklauschildrens.org/patient-and-family-resources/community-outreach-and-education-programs/arts-in-healing-(art-residency))
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `6a77cb20e56088fc2bf2036ad3194adcb5a3a1f58595151aca6d63ade379e06e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e2643f83ea705602.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/medical-services/research-institute/participants-human-subjects-protection-program](https://www.nicklauschildrens.org/medical-services/research-institute/participants-human-subjects-protection-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ca2f1e8c73e2e04752bf7ecc7fe5e48aabb3b8b06ac37f9186d64a13cbd00e84`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2e0295bf19c4ceba.txt
+- **FELLOWSHIP_PAGE** [https://www.nicklauschildrens.org/medical-professionals/for-students/fellowship](https://www.nicklauschildrens.org/medical-professionals/for-students/fellowship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c3bfc859e1cf8185213c7feed92b1220089a2d72fcc3bc9a744730348b0129b4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_1f6c07695825a2da.txt
+- **RESEARCH_PAGE** [https://www.nicklauschildrens.org/medical-services/research-institute-(clinical-trials)/meet-the-team](https://www.nicklauschildrens.org/medical-services/research-institute-(clinical-trials)/meet-the-team)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9548f2a6b8fa5dc193ab750ac890a1e3c3bbc4f4c979517302f74e968ba852b2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_039628c43a4abd1e.txt
+- **VOLUNTEER_PAGE** [https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant](https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d5b70da753807ee29286050a4e6da0d8aa404c96145a379f4db34a83566c3dc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_f2e800635d1bbc0e.txt
+
+## Rejected sources (63)
+
+- https://nicklauschildrens.org/observership — FETCH_404 (status_404)
+- https://nicklauschildrens.org/observerships — FETCH_404 (status_404)
+- https://nicklauschildrens.org/observer — FETCH_404 (status_404)
+- https://nicklauschildrens.org/clinical-observer — FETCH_404 (status_404)
+- https://nicklauschildrens.org/visiting-student — FETCH_404 (status_404)
+- https://nicklauschildrens.org/visiting-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/international-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/electives — FETCH_404 (status_404)
+- https://nicklauschildrens.org/away-rotations — FETCH_404 (status_404)
+- https://nicklauschildrens.org/clinical-elective — FETCH_404 (status_404)
+- https://nicklauschildrens.org/clinical-rotation — FETCH_404 (status_404)
+- https://nicklauschildrens.org/sub-internship — FETCH_404 (status_404)
+- https://nicklauschildrens.org/subinternship — FETCH_404 (status_404)
+- https://nicklauschildrens.org/acting-internship — FETCH_404 (status_404)
+- https://nicklauschildrens.org/student-research — FETCH_404 (status_404)
+- https://nicklauschildrens.org/shadow — FETCH_404 (status_404)
+- https://nicklauschildrens.org/shadowing — FETCH_404 (status_404)
+- https://nicklauschildrens.org/volunteering — FETCH_404 (status_404)
+- https://nicklauschildrens.org/img — FETCH_404 (status_404)
+- https://nicklauschildrens.org/international-medical-graduates — FETCH_404 (status_404)
+- https://nicklauschildrens.org/graduate-medical-education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/residency — FETCH_404 (status_404)
+- https://nicklauschildrens.org/fellowship — FETCH_404 (status_404)
+- https://nicklauschildrens.org/physician-careers — FETCH_404 (status_404)
+- https://nicklauschildrens.org/provider-careers — FETCH_404 (status_404)
+- https://nicklauschildrens.org/benefits — FETCH_404 (status_404)
+- https://nicklauschildrens.org/visa — FETCH_404 (status_404)
+- https://nicklauschildrens.org/immigration — FETCH_404 (status_404)
+- https://nicklauschildrens.org/credentialing — FETCH_404 (status_404)
+- https://nicklauschildrens.org/health-professionals — FETCH_404 (status_404)
+- https://nicklauschildrens.org/professional-education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/student-affairs — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/hcp-education-training — FETCH_404 (status_404)
+- https://nicklauschildrens.org/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://nicklauschildrens.org/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://nicklauschildrens.org/academic-institute — FETCH_404 (status_404)
+- https://nicklauschildrens.org/academic-institute/education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/academic-institute/education/medical — FETCH_404 (status_404)
+- https://nicklauschildrens.org/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medicine/international — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medicine/international/international-programs — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/visiting-clerkships — FETCH_404 (status_404)
+- https://nicklauschildrens.org/visiting-clerkships/international — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education-institute — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education/medical-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education/visiting-medical-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/education/medical-student-electives — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-education/visiting-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-students/electives — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://nicklauschildrens.org/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://nicklauschildrens.org/students/visiting-students — FETCH_404 (status_404)
+- https://nicklauschildrens.org/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)

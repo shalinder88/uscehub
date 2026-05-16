@@ -1,0 +1,2704 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://mayoclinic.org/observership",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found page with no substantive content; navigation menu mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' but provides no observership, visiting student, or elective details for the Florida campus.",
+          "Navigation references 'Financial Assistance Documents – Florida' but this is patient financial assistance, not USCE; no Florida-campus observership or visiting-student program is described.",
+          "Page is on system-level mayoclinic.org domain with UNKNOWN_SCOPE; Florida campus is not named in any substantive content — only as a footer financial-assistance link."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page; the only A1 claim is a SCOPE_CONFLICT and that should remain HUMAN_REVIEW_REQUIRED or be downgraded to NO_PUBLIC_OPPORTUNITY_FOUND.",
+          "Verify the source family classification: URL pattern matched OBSERVERSHIP but actual content is a 404 — A3 should ensure deepSourceFamily reflects UNKNOWN_RELEVANT / REJECTION_EVIDENCE not OBSERVERSHIP.",
+          "Ensure no campus-applicability proof is inferred from navigation menu mentions of 'Mayo Clinic Alix School of Medicine' or 'School of Graduate Medical Education' — these are global nav links, not Florida-campus content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_scope_conflict_1",
+            "scopeIssue": "system_level_domain_no_campus_proof",
+            "explanation": "URL is on system-level mayoclinic.org with UNKNOWN_SCOPE; cleaned text contains no substantive content (404 page) and never names the Florida campus in any USCE/observership context. A1 already flagged this correctly."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://mayoclinic.org/observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Mayo Clinic 404 'Page Not Found' site-help page; no observership, visiting student, elective, GME, or career content present at this URL.",
+          "Footer navigation references 'Mayo Clinic School of Graduate Medical Education' and 'Explore careers' but no substantive content is on this page — links only."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page; cleaned text contains no opportunity content.",
+          "Verify A4 marks this source as dead-link and does not infer absence-as-refusal (no explicit refusal sentence is present).",
+          "Locate canonical Mayo Clinic Florida observership / visiting student URL under college.mayo.edu since /observerships is a dead link."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://mayoclinic.org/observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' in navigation but neither links nor describes observership/visiting student policy on this page",
+          "Page references 'Explore careers' link but no career content or visa/sponsorship language is present on this 404 page"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this 404 stub page",
+          "Verify that A1 SCOPE_CONFLICT claims remain HUMAN_REVIEW_REQUIRED and are not promoted to NEGATIVE refusal — page is a generic 404, not an explicit refusal of observership"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://mayoclinic.org/clinical-observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' error page; no observership / visiting student / elective / research / IMG / contact / fee / duration / eligibility content is present on this source to extract.",
+          "The 404 page references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' only in site-chrome navigation, not as substantive program content — no Tier 2 claim can be sourced from this page.",
+          "The 404 page references 'Explore careers' link in footer chrome only — no substantive Tier 3 career content can be extracted from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's SCOPE_CONFLICT claim src_4_scope_conflict_1 is preserved and that no PUBLIC_SAFE_USCE claim was emitted from this 404 source.",
+          "Verify the source URL https://mayoclinic.org/clinical-observer is flagged as a broken/404 capture in run metadata and not counted as a positive observership signal for Mayo Clinic Florida.",
+          "Ensure that footer-chrome mentions of 'Mayo Clinic School of Graduate Medical Education', 'Alix School of Medicine', and 'Explore careers' on this 404 page are NOT used to source any Tier 2 or Tier 3 claims downstream."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://mayoclinic.org/visiting-student",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 Page Not Found; no visiting-student, observership, elective, GME, or career content is present to extract beyond what A1 captured.",
+          "Page mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' in global navigation but these are site-wide nav links, not Florida-campus-specific visiting-student information."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source URL https://mayoclinic.org/visiting-student.",
+          "Verify the run re-captures a canonical Mayo Clinic Florida visiting-medical-student / clerkship URL in a later pass — current source yields zero substantive content.",
+          "Confirm global-nav mentions of 'School of Graduate Medical Education' and 'Alix School of Medicine' on this 404 page are not promoted to future-lane claims, since they are site-chrome links, not Florida-campus content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://mayoclinic.org/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 / Page Not Found page; navigation chrome references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but no substantive visiting-student, observership, elective, or tier-specific content is present on this URL.",
+          "Footer mentions 'Explore careers' link and 'Admissions Requirements / Degree Programs / Student & Faculty Portal' under Students, but these are navigation labels with no substantive content on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1 SCOPE_CONFLICT claim src6_conflict_404 is preserved with HUMAN_REVIEW_REQUIRED visibility and no PUBLIC_SAFE_USCE is emitted from this 404 page.",
+          "Verify no claim cites navigation-chrome strings (e.g., 'Mayo Clinic Alix School of Medicine', 'Mayo Clinic School of Graduate Medical Education') as substantive USCE content — these are site-wide menu items, not page content.",
+          "Flag this source URL for re-discovery in a future sprint: actual visiting-student / observership page for Mayo Clinic Florida is not at this URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://mayoclinic.org/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Mayo Clinic 404 'Page Not Found' template; no substantive medical-student, observership, GME, or careers content is present in the cleaned text.",
+          "Footer navigation references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' as link labels only, with no eligibility, application, or campus-specific content captured here."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page; source content is a Mayo Clinic site-help template, not a substantive medical-students page.",
+          "Ensure A3 does not infer eligibility, observership, or visiting-student offerings from the footer navigation labels (Alix School of Medicine, School of GME) on this 404 capture."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://mayoclinic.org/international-students",
+      "output": {
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' error page; no visiting-student, observership, IMG, or training program content is present to extract.",
+          "Page references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' in the global navigation only — no campus-specific Mayo Clinic Florida program info is on this page.",
+          "Page references 'Explore careers' link in footer but does not include any visa, J-1, H-1B, or career-pathway content text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 error source; the A1 SCOPE_CONFLICT claim should remain the only output for this URL.",
+          "Confirm the source is flagged for recapture — the URL https://mayoclinic.org/international-students returned a 404 and yielded no extractable program content.",
+          "Verify that nav-only mentions of 'Mayo Clinic School of Graduate Medical Education' and 'Alix School of Medicine' are not promoted to future-lane or USCE claims by downstream gates."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://mayoclinic.org/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 with no electives content; canonical Mayo Clinic visiting student / elective page likely lives on mayo.edu (Alix School of Medicine) rather than mayoclinic.org/electives.",
+          "No campus-level (Florida) content is present on this 404 page; campus applicability for Mayo Clinic Florida cannot be evaluated from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify the A1 SCOPE_CONFLICT claim remains HUMAN_REVIEW_REQUIRED and is not promoted to a negative-evidence refusal (404 is absence, not explicit refusal)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://mayoclinic.org/away-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error; cleaned text contains only Mayo Clinic site chrome (nav menus, footer links) and a generic 'Page Not Found' apology — no USCE, observership, elective, residency, fellowship, or careers content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source — only the SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED A1 claim is valid.",
+          "Verify A3 treats this source as non-substantive and does not infer offerings from navigation chrome (e.g., 'Mayo Clinic Alix School of Medicine', 'School of Graduate Medical Education') that appears only in the global site menu."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://mayoclinic.org/clinical-elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page from mayoclinic.org with no clinical-elective content; the actual Mayo Clinic Florida visiting medical student / clinical elective page was not captured here.",
+          "Site chrome references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but no substantive program info is present on this 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source — content is a Mayo Clinic site-help 'Page Not Found' page with zero clinical-elective substance.",
+          "Verify A1's SCOPE_CONFLICT claim is retained and that this source contributes nothing to USCE lanes.",
+          "Direct subsequent capture to college.mayo.edu (Mayo Clinic Alix School of Medicine / visiting medical student program) for the actual Mayo Clinic Florida clinical-elective page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://mayoclinic.org/clinical-rotation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' only in global navigation; no substantive content about visiting students, electives, or observerships on this 404 page.",
+          "Page references 'Explore careers' link in footer but no careers content is present on this 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's c_scope_404 SCOPE_CONFLICT claim is preserved and that no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify orchestrator routes A3 to canonical Mayo Clinic visiting student / clinical elective URL (likely college.mayo.edu) since this URL returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://mayoclinic.org/sub-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page; no sub-internship, observership, visiting student, or training content can be extracted from this source.",
+          "Correct Mayo Clinic Florida sub-internship / visiting student URL not represented in this capture — likely lives under college.mayo.edu/academics/mayo-clinic-alix-school-of-medicine/visiting-medical-student-clerkships or similar."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's SCOPE_CONFLICT claim (src_13_conflict_1) is preserved and that no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page.",
+          "Verify the source is excluded from any downstream USCE publication because the cleaned text contains zero training content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://mayoclinic.org/subinternship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 page; no sub-internship, observership, visiting-student, eligibility, cost, duration, contact, or campus-applicability content present to extract.",
+          "Page references generic Mayo Clinic education entities (Alix School of Medicine, School of Graduate Medical Education) only via global navigation menu, not as substantive claims about Florida campus."
+        ],
+        "recommendedA3Focus": [
+          "Confirm both A1 SCOPE_CONFLICT claims remain non-public and that no PUBLIC_SAFE_USCE was emitted from this 404 source",
+          "Verify deepSourceFamily is downgraded from SUB_INTERNSHIP (URL hint) to UNKNOWN_RELEVANT given the 404 content",
+          "Ensure no Tier 1/2/3 claims are inferred from boilerplate global navigation links (Alix School of Medicine, School of Graduate Medical Education, Postdoctoral Fellowships)"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://mayoclinic.org/acting-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' page; no acting-internship, sub-internship, observership, visiting student, or elective content is present to extract.",
+          "Page mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' only in global navigation chrome — no substantive program content on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this 404 source URL across A1/A2.",
+          "Verify the SCOPE_CONFLICT claim src_15_scope_conflict_1 is retained and that the source is flagged for re-capture at a canonical college.mayo.edu visiting clerkship URL."
+        ],
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        }
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://mayoclinic.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page; navigation menu mentions 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but no substantive content is present on this URL",
+          "Navigation links mention 'Postdoctoral Fellowships' and 'Training Grant Programs' but no detail is provided on this 404 page",
+          "Footer link 'Explore careers' is shown without any associated content on this page"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this 404/Page-Not-Found source",
+          "Verify A3 records this URL as a dead-link / non-substantive source and does not infer offerings from the navigation menu",
+          "Recommend A4/operator locate the correct Mayo Clinic Florida research/visiting-student URLs to replace the 404"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://mayoclinic.org/student-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 site-help page; no Tier 1/2/3 substantive content exists to mine.",
+          "Navigation chrome lists 'Mayo Clinic School of Graduate Medical Education' and 'Postdoctoral Fellowships' as global nav items, but these are site-wide menu links, not source-specific claims about Mayo Clinic Florida programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page, since the page content is purely an error notice plus global navigation chrome.",
+          "Verify A1's SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED handling is preserved and that the source is queued for re-capture at a working Mayo Clinic student-research URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://mayoclinic.org/shadow",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a generic Mayo Clinic 404 page; no shadowing, observership, visiting student, research, GME, or careers content is present to extract.",
+          "Page contains only global navigation links (e.g., 'Mayo Clinic School of Graduate Medical Education', 'Explore careers') but no statements about programs, eligibility, fees, or contacts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify A1's SCOPE_CONFLICT claim is retained as the sole claim for this URL and that no Tier 1/2/3 claims leak from nav-only text.",
+          "Consider marking source as NO_PUBLIC_OPPORTUNITY_FOUND (not refusal) since the URL is a 404 with no explicit refusal sentence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://mayoclinic.org/shadowing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic site-wide 404 'Page Not Found' template; it contains no shadowing, observership, visiting student, research, residency, fellowship, or careers content to extract.",
+          "Source is system-level mayoclinic.org rather than a Florida-campus-specific page; no campus applicability can be established from this 404."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any positive opportunity claim is emitted from this 404 page; the cleaned text contains only navigation chrome and a 'Page Not Found' notice.",
+          "Verify this source is excluded from any negative-evidence aggregation — a 404 is absence-of-page, not an explicit refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://mayoclinic.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a generic Mayo Clinic 'Page Not Found' site-help page; no volunteer, observership, shadowing, or USCE-relevant content present.",
+          "Page is system-level mayoclinic.org error page, not Mayo Clinic Florida campus-specific; provides no campus-applicability proof."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims are derived from this 404 page.",
+          "Locate a working Mayo Clinic Florida volunteer/observership URL in a future capture; current URL returned a 'Page Not Found' page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://mayoclinic.org/volunteering",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' page; no volunteer, observership, shadowing, or USCE content present to extract. A live Mayo Clinic Florida volunteering URL must be re-sourced before any Tier 1 volunteer/shadow signal can be evaluated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page",
+          "Verify the existing SCOPE_CONFLICT claim (src_21_c1) remains HUMAN_REVIEW_REQUIRED and is not promoted to any public lane",
+          "Re-source a live Mayo Clinic Florida volunteering / shadowing URL before assigning a Tier 1 deepSourceFamily"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://mayoclinic.org/img",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' page with only generic global navigation chrome; no observership, IMG, visiting student, GME, residency, fellowship, or careers content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 source; the only A1 claim (c1, SCOPE_CONFLICT, HUMAN_REVIEW_REQUIRED) should stand.",
+          "Recommend recapture of canonical Mayo Clinic Florida observership/visiting-student URL (likely under college.mayo.edu/academics/ or mayo.edu/medical-professionals) since https://mayoclinic.org/img is dead."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://mayoclinic.org/international-medical-graduates",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' 404 site-help page; no IMG, observership, visiting student, residency, fellowship, or careers substantive content present.",
+          "Page references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' in navigation only — no eligibility, application, or USCE detail stated.",
+          "Page footer references 'Explore careers' link but provides no careers content on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or substantive claim is emitted from this 404 Page-Not-Found source (sourceUrl https://mayoclinic.org/international-medical-graduates).",
+          "Replace this dead source with the live Mayo Clinic School of Graduate Medical Education and Mayo Clinic Alix School of Medicine pages in a future capture pass.",
+          "Verify A1 correctly produced zero claims and that the orchestrator marks the source as DEAD_OR_404 rather than NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://mayoclinic.org/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' error page — no substantive GME/USCE/career content present to extract.",
+          "Page references 'Mayo Clinic School of Graduate Medical Education' in navigation but provides no program details, eligibility, or contact info.",
+          "Page references 'Explore careers' link but no career content is on this page.",
+          "Page mentions 'International Patients' and 'International Business Collaborations' in footer but does not address international medical trainees or visiting students."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 error page — cleaned text contains only navigation chrome and a 'Page Not Found' message.",
+          "Verify A3 enforces that GME_PAGE family with sourceScope=DEPARTMENT_LEVEL but content=404 yields zero published claims.",
+          "Recommend re-capture of canonical Mayo Clinic School of Graduate Medical Education URL (likely college.mayo.edu) for a future run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://mayoclinic.org/gme",
+      "output": {
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 error; only navigation chrome and footer links are present (e.g., 'Mayo Clinic School of Graduate Medical Education', 'Explore careers'), with no substantive content about residency, fellowship, observership, visiting student, or career programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page; only the existing SCOPE_CONFLICT/NO_PUBLIC_OPPORTUNITY_FOUND claim is appropriate.",
+          "Recommend retry with canonical Mayo GME URL (college.mayo.edu/academics/explore-medical-education) in a future capture run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://mayoclinic.org/residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 'Page Not Found' site-help page with no residency, observership, visiting student, fellowship, or career content. Navigation chrome mentions 'Mayo Clinic School of Graduate Medical Education' and 'Explore careers' as menu links only, not as substantive claims about Mayo Clinic Florida.",
+          "Source URL https://mayoclinic.org/residency does not resolve to a Mayo Clinic Florida-specific page; scope is system/global at best and contains no campus-applicability proof."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero claims are emitted from this 404 page; verify no PUBLIC_SAFE_USCE or FUTURE_LANE claim cites mayoclinic.org/residency as its source.",
+          "Recommend re-capturing the actual Mayo Clinic School of Graduate Medical Education URL (college.mayo.edu) and Mayo Clinic Florida campus-specific GME/visiting-student pages in a future capture sprint."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://mayoclinic.org/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' boilerplate page; no fellowship, residency, USCE, observership, or career-specific content is present to extract claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claims are emitted from this 404 page; the only valid output for this source is the existing A1 SCOPE_CONFLICT note.",
+          "Recommend re-capture of a valid Mayo Clinic Florida fellowship URL (e.g., mayo.edu/medical-professionals or college.mayo.edu) since the captured URL returned a 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://mayoclinic.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' stub; navigation chrome mentions Mayo Clinic School of Graduate Medical Education, Alix School of Medicine, and Postdoctoral Fellowships but no substantive content resolves on this URL.",
+          "Footer anchor 'Explore careers' is present but no careers URL or content is resolved on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 stub.",
+          "Verify A1's empty claim set is preserved — page contains no substantive Tier 1/2/3 content beyond global site chrome.",
+          "Ensure A3 does not treat navigation menu mentions of 'Mayo Clinic School of Graduate Medical Education' or 'Postdoctoral Fellowships' as Tier 2 claims — these are global site chrome, not page content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://mayoclinic.org/physician-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a generic Mayo Clinic 404 site-help page; no Florida-campus-specific content present, so no Tier 1/2/3 signals can be extracted from this source.",
+          "Page lists navigational links to 'Mayo Clinic School of Graduate Medical Education' and 'Explore careers' but those are global nav, not substantive content on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this 404 page; only SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED is appropriate.",
+          "Recommend re-capture via jobs.mayoclinic.org or the canonical physician careers URL since /physician-careers returns Page Not Found."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "source_family_mismatch_publicSafe_on_CAREERS",
+            "explanation": "Pre-classified deepFamily PHYSICIAN_CAREERS was URL-based; actual content is a 404 site-help page. A1 already flagged this; no additional scope conflict beyond what A1 captured."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://mayoclinic.org/provider-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 stub; no provider careers, J-1 waiver, H-1B sponsorship, or attending job content is present to evaluate.",
+          "Page contains generic navigation links (e.g., 'Explore careers', 'Mayo Clinic School of Graduate Medical Education') but no substantive content describing those programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's MISSING_FIELD and SCOPE_CONFLICT claims are not promoted to PUBLIC_SAFE_USCE by any downstream classifier.",
+          "Verify no claim cites the 404 page as evidence of any USCE, GME, or career opportunity at Mayo Clinic Florida.",
+          "Flag this source for re-capture from a working Mayo Clinic provider careers URL before any FL national run uses it."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://mayoclinic.org/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' shell with global Mayo Clinic navigation only; no benefits, USCE, GME, careers, or Florida-campus content present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted for this 404 source; the page is a Mayo Clinic system-level Site Help shell with no substantive content.",
+          "Re-capture a working Mayo Clinic Florida benefits/careers URL (e.g. jobs.mayoclinic.org) if a Tier 3 BENEFITS signal is desired."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://mayoclinic.org/visa",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' error page; no visa/J-1/H-1B/immigration content exists to extract from this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE or FUTURE_LANE) are emitted from this 404 page URL https://mayoclinic.org/visa",
+          "Re-queue an alternate Mayo Clinic visa/immigration source (e.g., jobs.mayoclinic.org or GME visa policy page) since /visa is a dead link"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://mayoclinic.org/immigration",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a generic Mayo Clinic 404 page; no immigration/visa policy content is present anywhere in the body — A3 cannot use this URL to support any visa-sponsorship claim.",
+          "Page is system-wide Mayo Clinic chrome (Arizona/Florida/Minnesota financial-assistance links visible); not Florida-campus specific."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this 404 source, regardless of the URL hint /immigration.",
+          "Verify deepSourceFamily on c1 is reclassified away from VISA_IMMIGRATION since cleaned text contains no immigration content.",
+          "Ensure tier remains NOT_APPLICABLE for any claim derived from this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://mayoclinic.org/credentialing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 Page Not Found template; no credentialing content, no Florida-specific information, and no opportunity-related claims are present.",
+          "Page references 'Mayo Clinic School of Graduate Medical Education' and 'Postdoctoral Fellowships' only as global site navigation links, not as substantive program content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind are emitted from this 404 page; the cleaned text contains only navigation chrome and a Page Not Found notice.",
+          "Verify no Mayo Clinic Florida campus-applicability inference is made from the system-level mayoclinic.org domain on this 404 source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://mayoclinic.org/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 'Page Not Found' site-help page with no substantive USCE, GME, or careers content; navigation chrome mentions 'Mayo Clinic School of Graduate Medical Education' and 'Postdoctoral Fellowships' but provides no details usable for claims.",
+          "No campus-specific (Mayo Clinic Florida) content present — the page is system-level Mayo Clinic chrome only."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims emitted for this 404 site-help page.",
+          "Verify that navigation-chrome mentions of 'Graduate Medical Education', 'Postdoctoral Fellowships', and 'Explore careers' did not get promoted to future-lane claims — they are global menu links with no substantive content.",
+          "Flag the source for re-discovery of a working Mayo Clinic Florida health-professionals/visiting-student/observership URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://mayoclinic.org/medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic '404 Page Not Found' template containing only global navigation/footer links; no Florida-campus-specific medical education, observership, visiting student, residency, fellowship, or careers content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims are emitted from this 404 page; the cleaned text contains only navigation menu items and a 'Page Not Found' message.",
+          "Recommend re-capture of canonical Mayo Clinic Florida visiting clerkship / observership URLs (e.g., college.mayo.edu/academics/explore-health-care-careers/careers-a-z/visiting-medical-student-clerkships) since this URL returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://mayoclinic.org/professional-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' site help page with only navigation chrome — no substantive USCE, GME, or careers content can be extracted from this source.",
+          "Navigation chrome references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' but the page itself contains no descriptive content about visiting students, observerships, residency, fellowships, or careers."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404/site-help page; source is a Page Not Found with no opportunity content.",
+          "Re-discover the correct Mayo Clinic Florida visiting-student / observership / GME landing URLs (e.g., college.mayo.edu, mayo.edu/medical-professionals) in a future capture pass.",
+          "Verify sourceScope remains UNKNOWN_SCOPE and source is not promoted to any substantive lane."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://mayoclinic.org/student-affairs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' (404) site help page; it contains only global navigation chrome and no substantive student-affairs, visiting-student, observership, or USCE content to extract.",
+          "Page mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' only as global nav links, with no Florida-campus-specific applicability or program detail."
+        ],
+        "recommendedA3Focus": [
+          "Confirm the source is a 404 page and that no PUBLIC_SAFE_USCE claim is emitted from this URL by any pass.",
+          "Recapture or replace https://mayoclinic.org/student-affairs with a working Mayo Clinic Florida visiting-student / observership / student-affairs URL before re-running A1/A2.",
+          "Verify deepSourceHint UNDERGRADUATE_MEDICAL_EDUCATION is overridden to NO_CONTENT_404 / NOT_APPLICABLE downstream since the captured page is an error page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://mayoclinic.org/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "OFFERS_RESEARCH",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Biomedical research training\nPh.D. and master's degrees in biomedical sciences",
+            "normalizedField": null,
+            "claimText": "College offers biomedical research training including Ph.D. and master's degrees in biomedical sciences.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "System/college-level scope; not Florida-campus attributed in this quote.",
+            "whyA1Missed": "A1 captured visiting clerkships and GME but skipped the biomedical research training program section listed in the same Academic programs index.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "RESEARCH",
+            "tierAssignmentRationale": "Pre-residency research training (Ph.D./master's biomedical) is Tier 1 research family."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Visiting medical student clerkships\nAdmissions",
+            "normalizedField": "visiting_student_admissions_link",
+            "claimText": "College Admissions section lists 'Visiting medical student clerkships' as a discrete admissions pathway entry.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "No URL, fee, deadline, or eligibility stated in this quote.",
+            "whyA1Missed": "A1's visiting-student quote came from the Academic programs blurb; the separate Admissions-section listing was not captured.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Visiting medical student admissions pathway is Tier 1 USCE-match."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "OFFERS_RESEARCH",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Carleigh Eagle's path to Mayo Clinic began not in an engineering lab or medical school classroom, but as an intern in the Clinical Research Internship Study Program (CRISP).",
+            "normalizedField": "CRISP",
+            "claimText": "Page references the Clinical Research Internship Study Program (CRISP), a named research internship at Mayo Clinic.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Mentioned in a news blurb; eligibility, audience, and campus not stated.",
+            "whyA1Missed": "A1 did not scan the news/highlights section where CRISP is named.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "RESEARCH",
+            "tierAssignmentRationale": "Clinical research internship is Tier 1 research family."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Residencies and fellowshipsAdmissions &bull; Stipend and benefits",
+            "normalizedField": "residency_stipend_benefits",
+            "claimText": "Residencies and fellowships admissions section explicitly advertises stipend and benefits.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "System/college-level; not Florida-campus specific.",
+            "whyA1Missed": "A1 captured only the 350+ GME headline; the Admissions-section 'Stipend and benefits' line is a distinct trainee-financial signal.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Trainee stipend/benefits is Tier 2 trainee content."
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Mayo Clinic School of Graduate Medical Education",
+            "normalizedField": "school_name_gme",
+            "claimText": "Mayo Clinic operates a named 'Mayo Clinic School of Graduate Medical Education' as one of its five schools.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "System-level; campus-specific GME not attributed.",
+            "whyA1Missed": "A1 captured the '350+ GME programs' line but did not name the formal GME school listed in the schools footer.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Named GME school is Tier 2 trainee education."
+          },
+          {
+            "claimId": "a2_c6",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "More from Mayo ClinicPatient care and health informationResearch labs and clinical trialsGiving and philanthropyFor medical professionalsJob openings",
+            "normalizedField": "job_openings_link",
+            "claimText": "Page footer surfaces a 'Job openings' link signaling a system-level careers portal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Footer link only; no detail on physician/attending roles.",
+            "whyA1Missed": "A1 did not scan the footer link cluster for careers signals.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Job openings link is Tier 3 practice/career signal."
+          },
+          {
+            "claimId": "a2_c7",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Continuous professional development\nContinuing education courses for medical professionals",
+            "normalizedField": "cpd_cme",
+            "claimText": "College advertises Continuous Professional Development / continuing education courses for practicing medical professionals.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Audience is practicing professionals; not USCE-eligible content.",
+            "whyA1Missed": "A1 did not capture the CPD/CME program family targeting practicing physicians.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CME_CPD",
+            "tierAssignmentRationale": "CME/CPD for practicing physicians is Tier 3 post-trainee content."
+          },
+          {
+            "claimId": "a2_c8",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://mayoclinic.org/education",
+            "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Get in touchContact\nContact our admissions and recruitment staff",
+            "normalizedField": "admissions_contact_signal",
+            "claimText": "Page surfaces a generic admissions/recruitment contact entry (no literal email or phone stated).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "limitations": "No literal email/phone in quote; link only.",
+            "whyA1Missed": "A1 captured the immigration office but missed the admissions/recruitment contact entry.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "CONTACT",
+            "tierAssignmentRationale": "Admissions contact is Tier 1 USCE application-pathway signal."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Quote is from the multi-campus Mayo Clinic College of Medicine & Science homepage. Should be sourceScope=MEDICAL_SCHOOL_LEVEL and cannot be attributed to Mayo Clinic Florida without campus-applicability proof."
+          },
+          {
+            "a1ClaimId": "c4",
+            "refinementReason": "lane_misclassified",
+            "explanation": "'140+ programs...50 health sciences fields' is Health Sciences (allied health), not MD-track clinical electives. Lane CLINICAL_ELECTIVE / Tier 1 USCE-match is likely overclaim; should be downgraded or split."
+          },
+          {
+            "a1ClaimId": "f1",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "f1 duplicates c2 with identical quote and lane; orchestrator should dedupe."
+          },
+          {
+            "a1ClaimId": "f2",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "f2 duplicates c3 with identical quote and lane; orchestrator should dedupe."
+          },
+          {
+            "a1ClaimId": "sc1",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "sc1 substantially duplicates c5's scope-conflict finding; consolidate into one SCOPE_CONFLICT record."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists campuses Arizona / Florida / Minnesota / Wisconsin but does not state which programs (visiting clerkships, GME, research) are available at the Jacksonville Florida campus specifically.",
+          "Stipend and benefits referenced for residencies/fellowships but no dollar amounts, J-1/H-1B language, or sponsorship statement on this page.",
+          "CRISP (Clinical Research Internship Study Program) named only in a news blurb; eligibility, application route, and campus not stated.",
+          "Job openings link referenced in footer but no detail on physician/attending, faculty, hospitalist, or visa-sponsorship roles on this page."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this MEDICAL_SCHOOL_LEVEL/system-wide source without a campusApplicabilityProof tying the offering to Mayo Clinic Florida (Jacksonville).",
+          "Confirm c1 (visiting medical student clerkships) is held at HUMAN_REVIEW_REQUIRED until a Florida-campus-specific page proves applicability.",
+          "Confirm c4 (health sciences 140+ programs) is not classified as CLINICAL_ELECTIVE USCE - health sciences != MD clerkships.",
+          "Dedupe c2/f1 and c3/f2 - identical quotes and lanes.",
+          "Flag CRISP and 'Stipend and benefits' as A4 candidates for deeper page fetch on dedicated GME / research subpages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "OFFERS_RESEARCH",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Biomedical research training\nPh.D. and master's degrees in biomedical sciences",
+              "normalizedField": null,
+              "claimText": "Biomedical research training: Ph.D. and master's degrees in biomedical sciences.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "System/college-level scope.",
+              "whyA1Missed": "A1 did not capture the biomedical research training entry adjacent to clerkship/GME items.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "RESEARCH",
+              "tierAssignmentRationale": "Pre-residency research training is Tier 1 research family."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "OFFERS_VISITING_STUDENT",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Visiting medical student clerkships\nAdmissions",
+              "normalizedField": "visiting_student_admissions_link",
+              "claimText": "Admissions section lists 'Visiting medical student clerkships' as a discrete admissions pathway.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "No fee/deadline/eligibility detail in this quote.",
+              "whyA1Missed": "A1 used Academic programs blurb and missed the Admissions-section listing.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Visiting-student admissions pathway is Tier 1 USCE-match."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "OFFERS_RESEARCH",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Carleigh Eagle's path to Mayo Clinic began not in an engineering lab or medical school classroom, but as an intern in the Clinical Research Internship Study Program (CRISP).",
+              "normalizedField": "CRISP",
+              "claimText": "Clinical Research Internship Study Program (CRISP) named in news blurb.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "Mentioned in news blurb only.",
+              "whyA1Missed": "A1 skipped news/highlights blurbs.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "RESEARCH",
+              "tierAssignmentRationale": "Clinical research internship is Tier 1 research family."
+            },
+            {
+              "claimId": "a2_c8",
+              "claimType": "CONTACT_EMAIL",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Get in touchContact\nContact our admissions and recruitment staff",
+              "normalizedField": "admissions_contact_signal",
+              "claimText": "Admissions/recruitment contact entry surfaced (no literal email/phone).",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "LOW",
+              "limitations": "No literal contact info in quote.",
+              "whyA1Missed": "A1 captured immigration office but skipped the admissions contact entry.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "CONTACT",
+              "tierAssignmentRationale": "Admissions contact is Tier 1 application-pathway signal."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Residencies and fellowshipsAdmissions &bull; Stipend and benefits",
+              "normalizedField": "residency_stipend_benefits",
+              "claimText": "Residencies and fellowships admissions advertises 'Stipend and benefits'.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "System-level, not Florida-attributed.",
+              "whyA1Missed": "A1 only captured the 350+ GME headline.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Trainee stipend/benefits is Tier 2 trainee content."
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Mayo Clinic School of Graduate Medical Education",
+              "normalizedField": "school_name_gme",
+              "claimText": "Named 'Mayo Clinic School of Graduate Medical Education' identified as one of the five schools.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "System-level.",
+              "whyA1Missed": "A1 did not enumerate the schools in the footer.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Named GME school is Tier 2."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c6",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "More from Mayo ClinicPatient care and health informationResearch labs and clinical trialsGiving and philanthropyFor medical professionalsJob openings",
+              "normalizedField": "job_openings_link",
+              "claimText": "Footer surfaces 'Job openings' link indicating system-level careers portal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Footer link only.",
+              "whyA1Missed": "A1 did not scan footer link cluster.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Job openings link is Tier 3 career signal."
+            },
+            {
+              "claimId": "a2_c7",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://mayoclinic.org/education",
+              "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Continuous professional development\nContinuing education courses for medical professionals",
+              "normalizedField": "cpd_cme",
+              "claimText": "Continuous Professional Development continuing-education courses for medical professionals advertised.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "CME audience, not USCE.",
+              "whyA1Missed": "A1 skipped the CPD/CME program entry.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CME_CPD",
+              "tierAssignmentRationale": "CME/CPD for practicing physicians is Tier 3."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Visiting clerkship statement is from the multi-campus Mayo Clinic College of Medicine & Science homepage; cannot be attributed to Mayo Clinic Florida (Jacksonville) without campus-applicability proof."
+          },
+          {
+            "claimId": "c4",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "'140+ programs...50 health sciences fields' is Health Sciences at system level - not MD-track clinical electives - and not Florida-campus specific."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' (404) site-help page; only global navigation links are present (e.g., 'Mayo Clinic School of Graduate Medical Education', 'Postdoctoral Fellowships', 'Explore careers') with no substantive program content.",
+          "Navigation mentions 'Explore careers' but no career-page content is present on this URL.",
+          "Navigation mentions 'Postdoctoral Fellowships' and 'Mayo Clinic School of Graduate Medical Education' but no Tier 2 program details are present on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this 404 page; navigation link text alone is insufficient evidence.",
+          "Flag this source for re-discovery: capture the canonical Mayo Clinic Florida visiting student / observership URL (likely under college.mayo.edu) and re-run A1/A2 on the replacement source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' 404 page; no USCE, observership, visiting student, residency, fellowship, or career content was captured from this URL.",
+          "Page mentions navigation links to 'Mayo Clinic School of Graduate Medical Education', 'Mayo Clinic Alix School of Medicine', and 'Explore careers' but does not resolve any of these into substantive USCE/GME/careers content on this page.",
+          "Page does not indicate campus-specific (Jacksonville/Florida) applicability — content is a generic Mayo Clinic site-wide 404."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims are emitted from this 404 source given sourceFamily=OTHER and content is a Page Not Found page.",
+          "Re-capture a valid Mayo Clinic Florida visiting-student / observership URL (e.g., college.mayo.edu visiting clerkship or Mayo Clinic Alix School of Medicine visiting-student pages) before any state/national gating.",
+          "Verify deepNewClaimsByTier remains empty for all tiers — the 404 body offers no tierable substance."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training/medical-students/elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 site-help page with only navigation chrome; no observership, elective, visiting student, residency, fellowship, careers, visa, or contact content extractable.",
+          "Page mentions 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' only as global nav menu items, not as substantive program content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is derived from this 404 page; the only A1 claim is correctly a SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED record.",
+          "Verify deepSourceFamily was downgraded from ELECTIVE to UNKNOWN_RELEVANT given the 404 content, and that no Tier 1 claim is emitted from this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://mayoclinic.org/hcp-education-training/medical-students/medical-student-observerships",
+      "output": {
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains navigation references to 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' but these are site-chrome links, not substantive content about observerships or visiting students.",
+          "No campus-specific (Florida) content is present anywhere in the cleaned text; only system-level navigation and 404 messaging."
+        ],
+        "recommendedA3Focus": [
+          "Confirm both A1 claims (c1 MISSING_FIELD and sc1 SCOPE_CONFLICT) remain non-public — no PUBLIC_SAFE_USCE should be emitted from this 404 page.",
+          "Verify no claim attributes content to Mayo Clinic Florida campus, since the page is system-level mayoclinic.org and contains no Florida-specific text.",
+          "Confirm A1's HUMAN_REVIEW_REQUIRED visibility is preserved given the source family was pre-classified OBSERVERSHIP_PAGE but content is a 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://mayoclinic.org/medical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_phys_health_center",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://mayoclinic.org/medical-professionals",
+            "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Physician Health CenterOffering comprehensive, personalized health care services to practicing physiciansRequest appointment",
+            "normalizedField": null,
+            "claimText": "Mayo Clinic offers a Physician Health Center providing health care services to practicing physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "System-level navigation; no Florida-campus specificity.",
+            "whyA1Missed": "A1 captured careers/GME/fellowships but skipped the Physician Health Center as a Tier 3 practicing-physician service line.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Service offered to practicing physicians — Tier 3 post-trainee audience."
+          },
+          {
+            "claimId": "a2_alix_med_school",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://mayoclinic.org/medical-professionals",
+            "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Mayo Clinic Alix School of Medicine",
+            "normalizedField": null,
+            "claimText": "Page references Mayo Clinic Alix School of Medicine — the MD school that typically governs visiting-student/elective policy.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "limitations": "Navigation chrome only; no visiting-student or elective policy stated.",
+            "whyA1Missed": "A1 captured the Graduate Medical Education school but did not flag the Alix School of Medicine, which is the gatekeeper for visiting medical student / Sub-I rotations.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_SCHOOL",
+            "tierAssignmentRationale": "MD school references govern visiting student / clerkship policy — Tier 1 USCE-match audience."
+          },
+          {
+            "claimId": "a2_cme_school",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://mayoclinic.org/medical-professionals",
+            "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Continuing EducationMayo Clinic School of Continuous Professional DevelopmentCourses tailored for medical professionals",
+            "normalizedField": null,
+            "claimText": "Mayo Clinic School of Continuous Professional Development offers CME courses tailored for medical professionals.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "System-level; no Florida-campus specificity.",
+            "whyA1Missed": "A1 did not capture the CME / continuing professional development product line, which is Tier 3 practicing-physician training infrastructure.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "CME is by definition continuing education for practicing professionals — Tier 3."
+          },
+          {
+            "claimId": "a2_care_network",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://mayoclinic.org/medical-professionals",
+            "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Mayo Clinic Care NetworkPartnering with providers to bring Mayo Clinic expertise to patients where they live",
+            "normalizedField": null,
+            "claimText": "Mayo Clinic Care Network is a provider-partnership program extending Mayo expertise to community physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "System-level; not a campus-specific opportunity.",
+            "whyA1Missed": "A1 missed the Care Network — a Tier 3 provider-collaboration program relevant to attending physicians.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Partnership for practicing providers — Tier 3 post-trainee."
+          },
+          {
+            "claimId": "a2_school_list",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://mayoclinic.org/medical-professionals",
+            "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Mayo Clinic Graduate School of Biomedical SciencesMayo Clinic Alix School of MedicineMayo Clinic School of Graduate Medical EducationMayo Clinic School of Health Sciences",
+            "normalizedField": null,
+            "claimText": "Page lists Mayo Clinic schools including Graduate School of Biomedical Sciences and School of Health Sciences.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation chrome; no Florida-campus or program detail.",
+            "whyA1Missed": "A1 only emitted the GME school in isolation; the broader Mayo Clinic College of Medicine and Science school list (relevant to research / health-sciences trainee pathways) was missed.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Biomedical Sciences / Health Sciences schools house trainee-level programs — Tier 2."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_futurelane_careers_phys",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Quote and source are system-level mayoclinic.org navigation; cannot be attributed to Mayo Clinic Florida without a campus-applicability proof. Regate should verify FUTURE_LANE_ONLY and not link to FL campus profile as campus-specific."
+          },
+          {
+            "a1ClaimId": "c_futurelane_gme_school",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a bare nav label with no program, eligibility, or Florida-campus content. Keep as low-signal navigation reference only."
+          },
+          {
+            "a1ClaimId": "c_futurelane_postdoc",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote concatenates two unrelated nav items ('Postdoctoral FellowshipsTraining Grant Programs') without program detail; treat as nav-only chrome."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'Financial Assistance Documents – Florida' confirming Mayo Clinic has Florida operations, but does not connect any USCE / observership / visiting-student content to the Florida campus.",
+          "Page references 'International Services' and 'International Patients' but does not mention international medical graduates, observers, or visiting students.",
+          "Page references Mayo Clinic Alix School of Medicine but does not state visiting-student or elective policy on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HEALTH_SYSTEM_LEVEL mayoclinic.org/medical-professionals source.",
+          "Verify the existing SCOPE_CONFLICT claim remains and that all future-lane claims keep FUTURE_LANE_ONLY visibility without campus attribution to Mayo Clinic Florida.",
+          "Check that the new Alix School of Medicine MISSING_FIELD claim is routed for follow-up capture at college.mayo.edu rather than published.",
+          "Ensure A3 flags absence of any campusApplicabilityProof tying any claim to the Jacksonville/Florida campus."
+        ],
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_futurelane_careers_phys",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Careers reference appears on system-level mayoclinic.org with no Mayo Clinic Florida specificity; must not be displayed as a Florida-campus career signal without proof."
+          },
+          {
+            "claimId": "c_futurelane_gme_school",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "GME school reference is system-wide and covers AZ/FL/MN programs; cannot be attributed specifically to Mayo Clinic Florida from this page."
+          },
+          {
+            "claimId": "c_futurelane_postdoc",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Postdoctoral Fellowships and Training Grant Programs are system-level Mayo Clinic College of Medicine and Science offerings, not Florida-specific."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_alix_med_school",
+              "claimType": "MISSING_FIELD",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://mayoclinic.org/medical-professionals",
+              "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Mayo Clinic Alix School of Medicine",
+              "normalizedField": null,
+              "claimText": "Page references Mayo Clinic Alix School of Medicine — the MD school that governs visiting-student/elective policy.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "LOW",
+              "limitations": "Navigation chrome only; no policy stated.",
+              "whyA1Missed": "A1 captured GME school but not the MD school, which is the actual gatekeeper for visiting student / Sub-I rotations.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_SCHOOL",
+              "tierAssignmentRationale": "MD school governs visiting-student/clerkship policy — Tier 1."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "a2_school_list",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://mayoclinic.org/medical-professionals",
+              "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Mayo Clinic Graduate School of Biomedical SciencesMayo Clinic Alix School of MedicineMayo Clinic School of Graduate Medical EducationMayo Clinic School of Health Sciences",
+              "normalizedField": null,
+              "claimText": "Page lists Mayo Clinic schools including Graduate School of Biomedical Sciences and School of Health Sciences.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Nav chrome only; no Florida-campus or program detail.",
+              "whyA1Missed": "A1 isolated the GME school; full school-list including biomedical sciences / health sciences trainee pathways was missed.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Biomedical Sciences / Health Sciences schools host trainee programs — Tier 2."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_phys_health_center",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://mayoclinic.org/medical-professionals",
+              "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Physician Health CenterOffering comprehensive, personalized health care services to practicing physiciansRequest appointment",
+              "normalizedField": null,
+              "claimText": "Mayo Clinic Physician Health Center provides health care services to practicing physicians.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "System-level; not Florida-specific.",
+              "whyA1Missed": "A1 stopped at careers and GME; missed the Physician Health Center practitioner-service line.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Service for practicing physicians — Tier 3."
+            },
+            {
+              "claimId": "a2_cme_school",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://mayoclinic.org/medical-professionals",
+              "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Continuing EducationMayo Clinic School of Continuous Professional DevelopmentCourses tailored for medical professionals",
+              "normalizedField": null,
+              "claimText": "Mayo Clinic School of Continuous Professional Development offers CME courses for medical professionals.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "System-level; not Florida-specific.",
+              "whyA1Missed": "A1 did not capture the CME / continuing professional development product line.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "CME is by definition for practicing professionals — Tier 3."
+            },
+            {
+              "claimId": "a2_care_network",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://mayoclinic.org/medical-professionals",
+              "sourceHash": "b7126771f6435247b653e1173194fa87887a07e470f87a035999d36774eb5638",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/medical-professionals.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Mayo Clinic Care NetworkPartnering with providers to bring Mayo Clinic expertise to patients where they live",
+              "normalizedField": null,
+              "claimText": "Mayo Clinic Care Network partners with community providers to extend Mayo expertise.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "System-level; not Florida-specific.",
+              "whyA1Missed": "A1 missed the provider-partnership network relevant to attending physicians.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Partnership for practicing providers — Tier 3."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://mayoclinic.org/medical-professionals/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 Site Help page; it contains only generic navigation chrome (e.g., 'Mayo Clinic School of Graduate Medical Education') with no substantive content describing GME programs, eligibility, observership, electives, or careers.",
+          "Navigation mentions 'Mayo Clinic School of Graduate Medical Education' as a link label but no descriptive content or URL is captured; cannot infer Florida-campus applicability."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page — only the existing SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED record should survive.",
+          "Verify the run re-captures the canonical Mayo Clinic GME URL (college.mayo.edu School of Graduate Medical Education) before any Tier 2/Tier 3 inference is allowed for Mayo Clinic Florida."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://mayoclinic.org/medical-professionals/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' (404) site help page; no clerkship, observership, visiting student, or GME content is present to evaluate.",
+          "Page contains navigation references to 'Mayo Clinic School of Graduate Medical Education' but no substantive content about programs, eligibility, or application."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1 emitted zero claims for this 404 source and that no PUBLIC_SAFE_USCE or future-lane claim was attached to this URL.",
+          "Flag this source for re-capture: original /clerkship-programs URL no longer resolves — locate active Mayo Clinic School of Graduate Medical Education clerkship/visiting-student landing page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://mayoclinic.org/academic-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' template; no substantive USCE, GME, or career content available to extract",
+          "Navigation chrome mentions 'Mayo Clinic School of Graduate Medical Education' and 'Postdoctoral Fellowships' but these are global header/footer links with no Florida-campus-specific or program-specific content on this page"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 page; navigation chrome mentions of GME/fellowships are non-substantive site-wide footer/header links and must not be treated as PUBLIC_SAFE_USCE or FUTURE_LANE evidence",
+          "Recommend removing https://mayoclinic.org/academic-institute from the queue and replacing with college.mayo.edu or a Florida-campus-specific education URL"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://mayoclinic.org/academic-institute/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic global 404 'Page Not Found' chrome page; navigation mentions Mayo Clinic School of Graduate Medical Education and Mayo Clinic Alix School of Medicine but no Florida-campus-specific USCE, observership, visiting student, residency, fellowship, or careers content is stated.",
+          "Navigation references 'Postdoctoral Fellowships' as a global menu item, but the page itself does not state any Florida-campus eligibility, application pathway, or program details."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 capture; the URL resolved to a Mayo Clinic 'Page Not Found' page with only global site chrome.",
+          "Re-capture canonical Mayo Clinic Florida pages (college.mayo.edu Florida-specific visiting medical student, GME, and observership pages) in a follow-up source-capture pass; this source contributes no extractable signal.",
+          "Verify the classifier ignores menu-item mentions like 'Mayo Clinic School of Graduate Medical Education' on this 404 page — they are global navigation chrome, not Florida-scoped statements."
+        ],
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        }
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://mayoclinic.org/academic-institute/education/medical",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found shell with only global Mayo Clinic navigation chrome; no Mayo Clinic Florida-specific USCE, GME, or careers content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page — source is a dead link with only navigation chrome.",
+          "Replace dead URL https://mayoclinic.org/academic-institute/education/medical with a live Mayo Clinic Florida medical education / visiting student / observership source before re-extraction."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://mayoclinic.org/academic-institute/education/medical/medical-student-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' 404 page with only global site navigation chrome; no medical-student rotation, observership, elective, residency, fellowship, or careers content is present to extract.",
+          "Page references Mayo Clinic Alix School of Medicine and Mayo Clinic School of Graduate Medical Education only as navigation links, with no substantive content about visiting students, IMG eligibility, or Florida-campus applicability."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source given sourceFamily=OTHER and sourceScope=UNKNOWN_SCOPE.",
+          "Re-discover a working Mayo Clinic Florida (Jacksonville) visiting medical student / clerkship / observership URL for a future run; the captured URL is a dead 404.",
+          "Verify A2 emitted zero new claims is correct given the cleaned text contains only navigation chrome and a 'Page Not Found' message."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://mayoclinic.org/medicine/international/international-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page from mayoclinic.org; no substantive observership, visiting student, residency, fellowship, careers, or visa content is present to extract.",
+          "Page references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' only as navigation links, with no descriptive content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claims are emitted from this 404 page; the cleaned text contains only navigation chrome and a 'Page Not Found' message.",
+          "Verify A1's empty claim set is preserved and that this source is marked as a dead URL requiring URL re-discovery for Mayo Clinic Florida observership/visiting student pages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://mayoclinic.org/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm src_53 remains classified as MISSING_FIELD / NO_PUBLIC_OPPORTUNITY_FOUND; no PUBLIC_SAFE_USCE may be derived from this 404 page.",
+          "Re-capture live Mayo Clinic Florida international visiting medical student / observership URL in a future sprint — current URL is a Mayo Clinic 404 interstitial."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://mayoclinic.org/visiting-clerkships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only Mayo Clinic global site chrome (nav, footer) plus a generic 'Page Not Found' message — no visiting clerkship, observership, residency, fellowship, or careers content is present to evaluate.",
+          "Footer references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' but these are navigation links only, not substantive program statements about the Florida campus."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE claim is emitted from this 404 source — the only A1 claim is a SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED record, which is correct.",
+          "Flag for re-crawl: the canonical Mayo Clinic visiting clerkship URL needs to be re-discovered (likely college.mayo.edu or mayo.edu/mms) since /visiting-clerkships returns 404.",
+          "Verify A3 does not interpret footer nav tokens (e.g., 'Mayo Clinic School of Graduate Medical Education', 'Postdoctoral Fellowships') as substantive program claims — they are site chrome only."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://mayoclinic.org/education-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' / Site Help page; no substantive content on USCE, observership, residency, fellowship, or careers can be extracted.",
+          "Page lists navigation links to 'Mayo Clinic School of Graduate Medical Education' and 'Explore careers' but does not state any program details on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims are attributed to this 404 source URL.",
+          "Verify that navigation-link mentions of 'School of Graduate Medical Education' on a 404 page are not promoted to FUTURE_LANE claims without an actual GME content page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://mayoclinic.org/education-institute/academic-visitor-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' error page with only generic Mayo Clinic navigation chrome; no observership, visiting student, GME, fellowship, or careers content is resolvable from this capture.",
+          "Navigation references 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' but the page does not state any USCE, visiting student, or observership pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 error page capture.",
+          "Verify the source family for this URL is reclassified as 404_ERROR_PAGE or NOT_RELEVANT and excluded from claim aggregation.",
+          "Trigger recapture of a live Mayo Clinic academic visitor / visiting student / observership URL (likely on college.mayo.edu) before any Mayo Clinic Florida claims are surfaced."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://mayoclinic.org/education/undergraduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' template; navigation menu lists 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but no substantive content is on this page.",
+          "No campus-specific (Florida) content present — page is system-level chrome around a 404."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims are emitted from this 404 source.",
+          "Verify the source family stays GME_PAGE / 404 and no future-lane claims are derived from the navigation chrome alone.",
+          "Locate canonical Mayo Clinic Alix School of Medicine visiting student / VSLO page in a follow-up capture; this URL is dead."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://mayoclinic.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found error; no visiting-student requirements content is present to extract.",
+          "Footer references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' as navigation links but contains no substantive visiting-student content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_59 is treated as a 404/no-content source and not credited with any PUBLIC_SAFE_USCE claim.",
+          "Flag for A4/operator re-discovery of the current Mayo Clinic Alix School of Medicine visiting student requirements URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://mayoclinic.org/education/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 'Page Not Found' 404 error page with no substantive content about visiting students, observerships, or electives — only generic site navigation chrome.",
+          "Navigation lists 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but page body does not describe their programs or eligibility.",
+          "No Mayo Clinic Florida-specific USCE, observership, or visiting student policy is stated on this captured page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims are emitted from this 404 error page capture.",
+          "Flag this source for re-capture of the live Mayo Clinic Alix School of Medicine visiting student / elective URL (likely under college.mayo.edu) in a future run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://mayoclinic.org/education/visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page; no visiting student, observership, elective, GME, or careers content is present to support any additive Tier 1/2/3 claims.",
+          "Page navigation lists 'Mayo Clinic School of Graduate Medical Education' and 'Mayo Clinic Alix School of Medicine' as menu items only — no program details, eligibility, or contact information are stated on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's SCOPE_CONFLICT claim src_61_scope_conflict_1 is preserved and that no PUBLIC_SAFE_USCE is emitted from this 404 page",
+          "Verify A2 emitted zero new claims for this 404 source — empty newClaims is the correct outcome given the page contains no substantive USCE/GME/career content"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://mayoclinic.org/education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found error; no substantive elective/observership/GME/careers content present to evaluate.",
+          "Site offers a generic 'Contact us' link on the 404 page but no email, phone, or coordinator info present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page across any phase.",
+          "Locate the live Mayo Clinic visiting medical student / clinical electives URL (the hinted URL returns 404) and queue it as a new source.",
+          "Verify deepFamily=ELECTIVE inferred from URL is not used to upgrade confidence on a non-content 404 page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://mayoclinic.org/medical-education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' page; it contains site-wide navigation references to Mayo Clinic Alix School of Medicine and Mayo Clinic School of Graduate Medical Education but no medical-student elective, observership, or visiting-student content to extract.",
+          "No campus-specific (Florida vs Arizona vs Minnesota) elective content is present on this 404 page; campus applicability for Mayo Clinic Florida cannot be established from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source URL regardless of URL slug containing 'medical-student-electives'.",
+          "Verify A1's SCOPE_CONFLICT claim is retained and routed to HUMAN_REVIEW_REQUIRED / re-capture queue; no claim should be promoted to public-safe.",
+          "Flag this source for URL re-capture against the current canonical Mayo Clinic Alix School of Medicine visiting student elective page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://mayoclinic.org/medical-education/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic generic 404 'Page Not Found' template with no Mayo Clinic Florida-specific or visiting-student content; no Tier 1 / Tier 2 / Tier 3 concepts are present to extract.",
+          "Site navigation references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but no campus-specific (Jacksonville / Florida) visiting-student or observership URL is stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_64 is downgraded to NO_PUBLIC_OPPORTUNITY_FOUND / HUMAN_REVIEW_REQUIRED and that no PUBLIC_SAFE_USCE claim is emitted from this 404 page",
+          "Verify no campus-applicability proof is attributed to this source since the cleaned text is a generic system-level error template",
+          "Queue re-discovery of the correct Mayo Clinic Florida (Jacksonville) visiting-student / observership URL on college.mayo.edu before any state/national run depends on this source"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://mayoclinic.org/medical-students/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found; no USCE, elective, observership, residency, fellowship, careers, or contact content present to extract.",
+          "Page references generic navigation items (Mayo Clinic Alix School of Medicine, School of Graduate Medical Education, Admissions Requirements, Explore careers) but provides no substantive content about them on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page; only the existing SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED entry should remain.",
+          "Verify the A1 SCOPE_CONFLICT claim's quote remains a verbatim substring of the cleaned 404 text."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://mayoclinic.org/medical-students/elective-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' in navigation only; no substantive content about visiting students, electives, or observerships is present on this 404 page.",
+          "Footer mentions 'Explore careers' link but no career content is captured here; cannot infer Tier 3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 Page Not Found source.",
+          "Verify A1's SCOPE_CONFLICT claim remains routed to HUMAN_REVIEW_REQUIRED / no-publish.",
+          "Flag dead URL path; orchestrator should seek a working visiting-student URL in a separate source capture."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://mayoclinic.org/medical-students/clinical-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Mayo Clinic 404 'Page Not Found' site-help page; no substantive content about clinical electives, observerships, residency, fellowship, careers, or visa sponsorship is present to extract.",
+          "Navigation menu references 'Mayo Clinic Alix School of Medicine' and 'Mayo Clinic School of Graduate Medical Education' but provides no eligibility, application, or campus-applicability detail for Mayo Clinic Florida."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 capture; both A1 claims are MISSING_FIELD / SCOPE_CONFLICT and should remain HUMAN_REVIEW_REQUIRED or be dropped.",
+          "Verify source-family pre-classification (VISITING_STUDENT_PAGE based on URL) is overridden in downstream gating because actual content is a generic site-help 404.",
+          "Flag this source for re-capture: the intended /medical-students/clinical-electives content was not retrieved; substitute college.mayo.edu visiting clerkship page if available."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://mayoclinic.org/students/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 'Page Not Found' (404) site-help page with no visiting-student content; no USCE, eligibility, fee, duration, contact, or refusal language is present.",
+          "No campus-specific (Florida) information present on the 404 page; cannot establish campus applicability."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or negative-refusal claim is emitted from this 404 page — cleaned text contains only 'Page Not Found' boilerplate.",
+          "Verify A1's empty claim set is preserved; no Tier 1/2/3 content is extractable from this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://mayoclinic.org/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-1-mayo-clinic-florida",
+        "institutionId": "inst_mayo_clinic_florida_fl",
+        "institutionName": "Mayo Clinic Florida",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Captured page is a 404 'Page Not Found' site-help page; no clerkship, observership, visiting student, residency, fellowship, eligibility, fee, duration, or contact information is present on this source.",
+          "Navigation menu mentions 'Mayo Clinic School of Graduate Medical Education' but does not state any program details, eligibility, or USCE/visiting-student availability for the Florida (Jacksonville) campus."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim was emitted from this 404 site-help URL (sourceTitle = 'Page Not Found - Site Help - Mayo Clinic').",
+          "Verify this source is excluded from any campus-applicability proofs for Mayo Clinic Florida — page is system-level Mayo Clinic 404 with no Jacksonville mention.",
+          "Recommend re-discovery of working Mayo Clinic School of Graduate Medical Education clerkship/visiting-student URL before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

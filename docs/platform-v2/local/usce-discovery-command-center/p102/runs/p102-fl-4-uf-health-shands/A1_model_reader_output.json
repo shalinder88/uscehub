@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://ufhealth.org/care-sheets/how-to-research-cancer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a patient-facing 'How to Research Cancer' care-sheet article with no USCE, residency, fellowship, careers, or physician-services content relevant to any tier."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Source is a patient-facing condition/treatment article on Breast Augmentation Surgery; no USCE, GME, careers, or physician-pathway content present despite GME_PAGE family hint."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/chin-augmentation",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/liver-transplant/research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate UF Health / UF College of Medicine visiting medical student, observership, and elective pages with explicit eligibility, application pathway, and contact information.",
+          "Identify whether UF Health offers any medical student research elective with stated medical-student access — this liver transplant research page describes institutional research programs only, not student-facing opportunities."
+        ],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a patient-facing description of liver transplant research programs at UF Health; cleaned text contains no mention of medical students, observers, visiting students, residents, fellows, careers, or any eligibility/application pathway. No USCE-relevant or future-lane claims can be extracted from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a clinical/research overview of the MEG Lab with no mention of medical students, observers, visiting students, residents, fellows, faculty jobs, or any USCE-relevant audience. The 'Volunteer for a study' section refers to human research subject participation (compensation for participants), not a medical-student/IMG research elective, so it does not qualify as a USCE signal."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    }
+  ]
+}

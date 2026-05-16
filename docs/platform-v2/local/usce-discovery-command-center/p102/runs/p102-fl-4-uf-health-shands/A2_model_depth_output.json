@@ -1,0 +1,582 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://ufhealth.org/care-sheets/how-to-research-cancer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this patient-facing care-sheet yields zero USCE/GME/career claims across all tiers."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a patient-facing dermatology condition reference (birthmarks) with no observership, visiting student, GME, or careers content; no opportunity-related concepts to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm this URL is excluded from PUBLIC_SAFE_USCE candidates — it is a patient condition page, not a USCE or GME source.",
+          "Verify sourceFamily classification GME_PAGE is appropriate; content reads as patient-education, not GME."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a doctor-finder stub for a pigmented birthmarks condition; no opportunity, training, or career content is present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this condition/doctors stub page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies",
+      "output": {
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-4-uf-health-shands",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes patient-facing clinical trial research for brain tumors but does not state whether medical-student research electives, observerships, or trainee opportunities exist."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE — content is patient-trial enrollment, not student research opportunity.",
+          "Verify sourceScope remains non-PUBLIC_SAFE since page is a patient-facing condition/treatment page with UNKNOWN_SCOPE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source is a patient-facing condition/treatment article on Breast Augmentation Surgery with no USCE, GME, residency, fellowship, careers, observership, visiting student, or physician-pathway content present.",
+          "Source family hint is GME_PAGE but actual content is a patient education article — source family classification appears mismatched."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE or future-lane claim is emitted from this patient-education condition/treatment page.",
+          "Flag source family mismatch: hinted GME_PAGE but content is patient-facing condition article (no GME/USCE signal)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a doctors-listing for breast augmentation surgery; contains no observership, visiting student, elective, residency, fellowship, careers, visa, or USCE-related content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this department-level doctors listing page",
+          "Verify sourceFamily labeling — page is a clinical-service doctors directory, not a true GME_PAGE"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a navigation/chrome skeleton for a Breast Augmentation Surgery 'Locations' page; no clinical training, observership, visiting student, residency, fellowship, or careers content is present in the captured text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted for this source — content is a procedure-locations chrome page with no opportunity language.",
+          "Verify source family classification: page is condition/treatment locations, not GME_PAGE as hinted; A3 should reconcile sourceFamily."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this breast augmentation patient stories page yields no USCE, trainee, or career claims; it is condition/treatment marketing content with no observership, residency, fellowship, or job language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a patient-facing condition/treatment article about buttock augmentation; contains no USCE, GME, residency, fellowship, careers, or visa content despite sourceFamily=GME_PAGE classification."
+        ],
+        "recommendedA3Focus": [
+          "Verify sourceFamily=GME_PAGE classification is correct — cleaned text is a patient condition/treatment article with no GME signals; consider reclassifying as PATIENT_INFO/CONDITIONS_PAGE.",
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this URL since content is unrelated to clinical training."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a navigation/menu shell for a Buttock Augmentation 'Doctors' subpage with no actual physician listings, observership, elective, GME, or career content present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this condition/treatment doctors page — it contains no USCE, GME, or career substance.",
+          "Verify sourceFamily classification (currently GME_PAGE) is correct; cleaned text is a condition-and-treatments doctors directory page, not a GME page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a navigation/chrome stub for a Buttock Augmentation locations page with no body content about observership, electives, GME, careers, or visiting students."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this DEPARTMENT_LEVEL cosmetic-procedure locations page; content contains no USCE, GME, or career signal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/chin-augmentation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this clinical encyclopedia page (Chin Augmentation) is correctly treated as non-relevant content with no USCE, trainee, or career claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes COVID-19 research activity at UF but does not mention observership, visiting student, elective, or any structured clinical/research training opportunity for external trainees or IMGs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or research-elective claim is emitted from this COVID-19 research overview page — content is institutional research storytelling, not a trainee opportunity."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a patient-education article on Focal Segmental Glomerulosclerosis with no mention of observership, visiting student, elective, residency, fellowship, careers, or visa content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this patient-education conditions-and-treatments page; sourceFamily was tagged GME_PAGE but content is clinical patient information unrelated to GME."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a patient-education article on Incontinentia Pigmenti and contains no USCE, GME, residency, fellowship, careers, observership, visiting student, research, visa, or eligibility content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm sourceFamily classification — page content is patient-education (Conditions & Treatments), not GME_PAGE as labeled in packet; consider reclassifying to PATIENT_EDUCATION / non-USCE-relevant.",
+          "Verify no PUBLIC_SAFE_USCE claim is ever attached to this URL since it contains no opportunity content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/liver-transplant/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes liver transplant research programs aimed at patient outcomes; no student, trainee, observer, resident, fellow, career, or visa language present. No tier 1/2/3 claims extractable."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this patient-facing liver transplant research URL — content is institutional research description, not a student-facing opportunity."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this MEG Lab research page; 'Volunteer for a study' refers to human research subject participation, not a USCE/medical-student research elective."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this consumer condition page (Retinitis Pigmentosa) yields zero USCE/Tier1/Tier2/Tier3 claims; content is patient education, not GME/training.",
+          "Verify sourceFamily=GME_PAGE classification is appropriate; this page is a patient-education condition article and may warrant reclassification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this department-level patient-facing doctors page; cleaned text contains no observership, elective, visiting-student, residency, fellowship, or careers content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-4-uf-health-shands",
+        "institutionId": "inst_uf_health_shands_fl",
+        "institutionName": "UF Health Shands Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this patient-condition stories/news page (DEPARTMENT_LEVEL, no observership/visiting-student content)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

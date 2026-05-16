@@ -1,0 +1,65 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "rec_uf_shands_t1_observership",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "No Tier 1 USCE source family (observership / visiting student / clinical elective) was captured. The 20 sources are clinical condition / treatment / research pages with no relevance to USCE.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org and med.ufl.edu observership/visiting-student/international-medical-graduate pages (e.g. com.ufl.edu international electives, med.ufl.edu/education/visiting-students)."
+    },
+    {
+      "taskId": "rec_uf_shands_t2_gme",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Sources mis-tagged as GME_PAGE are actually condition / treatment pages. No real GME / residency / fellowship page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of UF College of Medicine GME index (med.ufl.edu/gme, ufhealth.org careers/gme) and program directories."
+    },
+    {
+      "taskId": "rec_uf_shands_t3_careers",
+      "missingFamily": "CAREERS_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "No careers / physician-jobs / faculty-recruitment page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org/careers and UF physician/faculty recruitment pages."
+    }
+  ],
+  "duplicates": [],
+  "institutionId": "inst_uf_health_shands_fl",
+  "institutionName": "UF Health Shands Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 0,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0,
+    "sourcesReviewed": 20,
+    "sourceFamilyMistaggingNote": "16 of 20 sources tagged GME_PAGE/RESEARCH_PAGE are actually clinical condition/treatment/research-study pages with zero USCE relevance. Source-family classifier upstream needs review."
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-4-uf-health-shands",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "FAIL_WEAK",
+  "tier2CoverageVerdict": "FAIL_WEAK",
+  "tier3CoverageVerdict": "FAIL_WEAK",
+  "unfollowedSignals": [],
+  "unresolveds": [
+    "No Tier 1, Tier 2, or Tier 3 source family was meaningfully captured. Sources are clinical condition/treatment pages mistagged as GME/RESEARCH. The search was effectively unsearched for USCE intent."
+  ],
+  "verdict": "FAIL_REVIEW_REQUIRED",
+  "verdictSummary": "Zero merged claims, but coverage is FAIL_WEAK on all three tiers — captured sources are clinical condition/treatment/research-study pages mistagged as GME_PAGE/RESEARCH_PAGE, with no observership, visiting-student, GME index, or careers page actually fetched. This is under-extraction, not genuine absence; human review and A4 narrow recovery required before declaring UF Health Shands has no public USCE."
+}

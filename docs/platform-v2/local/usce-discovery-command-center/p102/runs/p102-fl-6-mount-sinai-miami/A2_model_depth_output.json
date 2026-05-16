@@ -1,0 +1,2105 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://msmc.com/observership",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a single-line Incapsula WAF block ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-47677822156017924') containing no substantive observership, eligibility, fee, duration, contact, IMG, ECFMG, VSLO, research, residency, fellowship, careers, or negative-refusal content. No additive A2 claims can be extracted in any tier."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any tiered claim was emitted from src_1 (msmc.com/observership) since cleaned text is only a WAF block.",
+          "Verify A3 marks this source as capture-failed / requires re-fetch rather than NO_PUBLIC_OPPORTUNITY_FOUND, because absence here is WAF-block, not refusal.",
+          "Ensure sourceScope remains UNKNOWN_SCOPE for msmc.com until a real content capture is obtained."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://msmc.com/observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block message; no observership content available to depth-read.",
+          "Cannot determine sourceScope (institution vs system vs department) because the page body was never retrieved."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or NEGATIVE claim is emitted from this src_2 source — cleaned text is an Incapsula bot-protection block, not content.",
+          "Mark src_2 as FETCH_FAILED / bot-blocked so the run does not treat absence-of-content as negative evidence.",
+          "Trigger a re-fetch of https://msmc.com/observerships via a headless browser or manual capture before any downstream claim is published."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://msmc.com/observer",
+      "output": {
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message only; no observership content present. A2 cannot extract additional claims until the page is re-fetched with a browser-like fetcher."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_3 (https://msmc.com/observer) is flagged as fetch-failure (Incapsula WAF block) and that no PUBLIC_SAFE_USCE or negative-evidence claim is emitted from this source.",
+          "Queue a re-fetch of https://msmc.com/observer with browser-like headers before any classification of Mount Sinai Miami Beach observership availability."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://msmc.com/clinical-observer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69679483619512583') — no observership content available to read; deep-mode sub-passes have nothing substantive to scan."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for https://msmc.com/clinical-observer — captured cleaned text is an Incapsula block page, not real content",
+          "Recommend re-fetch of msmc.com/clinical-observer with alternate UA/headers or rendered fetch before any classifier decision"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://msmc.com/visiting-student",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message only; no page content available to read for visiting student program at Mount Sinai Medical Center Miami Beach."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for msmc.com/visiting-student until source is re-captured past the Incapsula block.",
+          "Flag source src_5 for re-fetch with WAF-bypass capture; current cleaned text contains zero substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://msmc.com/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a WAF block page (Incapsula incident ID only); no substantive content was captured, so Tier 1/2/3 concepts cannot be evaluated from this source unit."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any positive claim is emitted from this Incapsula-blocked source; the cleaned text contains zero institutional content.",
+          "Recommend re-capture of https://msmc.com/visiting-students via an alternate route before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://msmc.com/medical-students",
+      "output": {
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message; no institutional content available to read.",
+          "Cannot determine source family, scope, or any USCE/GME/career signal from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim of any kind is emitted from src_7 since cleaned text is a WAF refusal, not institutional content.",
+          "Flag src_7 for recapture via headless browser with realistic UA or archive.org snapshot before any A3 gating."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://msmc.com/international-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105436374848901390'); no actual page content is available, so no Tier 1/2/3 USCE, eligibility, cost, duration, contact, or negative-refusal content can be extracted.",
+          "URL slug 'international-students' suggests a visiting/international student page, but the body is unreadable — scope (institution vs system vs school) cannot be confirmed from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or other content-derived claim is emitted from src_8 since cleanedText is an Incapsula WAF block, not page content.",
+          "Flag src_8 for re-capture with anti-bot mitigation (rotated UA, headless bypass, or manual capture) before any classifier ingest.",
+          "Verify A3 treats this source as NO_CONTENT_AVAILABLE rather than NO_PUBLIC_OPPORTUNITY_FOUND — absence here is a fetch failure, not an actual absence of opportunities."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://msmc.com/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula bot-block message (incident ID 1350000680041845426-105441915356713230); no actual page content from https://msmc.com/electives was captured, so no Tier 1/2/3 concepts can be evaluated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for src_9 (msmc.com/electives) since cleaned text contains only an Incapsula refusal page and no substantive content.",
+          "Recommend re-capture of https://msmc.com/electives via alternate fetch (headless browser, different UA, or archived snapshot) before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://msmc.com/away-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block error ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105446742899953934'); no page content available for Tier 1, Tier 2, or Tier 3 extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from https://msmc.com/away-rotations until a successful re-fetch replaces the Incapsula block content.",
+          "Flag this source for re-capture via anti-bot bypass before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://msmc.com/clinical-elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block ('Request unsuccessful. Incapsula incident ID: ...') — no extractable page content; deep-mode sub-passes (Tier 1/2/3/scope+negative) cannot yield additive claims from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim cites https://msmc.com/clinical-elective with this Incapsula-blocked cleanedText as evidence.",
+          "Flag this source for re-capture with an alternate fetcher/session before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://msmc.com/clinical-rotation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no substantive page content available for A2 re-read."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleaned text is a WAF block page, not real content.",
+          "Recommend re-capture of https://msmc.com/clinical-rotation via headless browser with realistic UA before any downstream tier assignment."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://msmc.com/sub-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available to extract Tier 1, Tier 2, or Tier 3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleaned text contains only an Incapsula block, not page content.",
+          "Re-fetch https://msmc.com/sub-internship via alternate method (headless browser, different IP, or archive.org) before any downstream claim generation."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://msmc.com/subinternship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block page (incident ID 1350000680041845426-69699236174106887); no actual sub-internship page content is available for any tier analysis."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero claims emitted from src_14 since cleaned text contains only an Incapsula block message and no substantive content.",
+          "Re-fetch https://msmc.com/subinternship with an alternate capture method (different user agent / headless settings) to bypass Incapsula before any USCE claim is attributed to Mount Sinai Miami Beach from this URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://msmc.com/acting-internship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula bot-block message and contains no page content; cannot perform Tier 1/2/3 depth extraction until source is re-captured."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from src_15 since cleaned text contains only an Incapsula bot-block message with zero substantive content.",
+          "Verify re-capture of https://msmc.com/acting-internship before any A1/A2 claim is accepted from this URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://msmc.com/research",
+      "output": {
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available for second-pass review."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this source until capture is retried via alternate fetch or archived snapshot for https://msmc.com/research"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://msmc.com/student-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available to extract Tier 1/2/3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any tier were emitted from this WAF-blocked capture; require re-fetch via alternate strategy before reconsidering this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://msmc.com/shadow",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-protection block ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-62917749101695238'); no actual page content available for A2 depth reading."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from https://msmc.com/shadow given only an Incapsula block message was captured.",
+          "Queue a re-fetch of https://msmc.com/shadow with headless browser / JS rendering before any classification decision."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://msmc.com/shadowing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message with no page content; no Tier 1/2/3 facts extractable.",
+          "Shadowing URL content remains unverified — cannot confirm presence/absence of observership, shadowing eligibility, or negative-refusal language."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for msmc.com/shadowing given the cleaned text contains only an Incapsula block (no page content).",
+          "Flag this source for re-capture with a browser-fidelity fetcher before any USCE classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://msmc.com/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula bot-block error message; no substantive volunteer page content available for Tier 1/2/3 extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from src_20 (msmc.com/volunteer) since cleaned text is only an Incapsula bot-block message — flag source for re-fetch with anti-bot mitigation."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://msmc.com/volunteering",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66149076336775433'); no page content available for Tier 1/2/3 or scope/negative-evidence depth extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this WAF-blocked source; capture must be re-fetched out-of-band before any USCE/volunteer/future-lane claim can be derived from msmc.com/volunteering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://msmc.com/img",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula WAF block notice ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93247154583638284'); no observership, eligibility, contact, fee, or duration content is present to extract.",
+          "Source family was labeled OBSERVERSHIP_PAGE based on URL slug /img but content does not confirm — institutional content is inaccessible behind the bot-mitigation layer."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE, NEGATIVE, or future-lane claims were emitted on src_22 since the cleaned text contains only a WAF block notice.",
+          "Flag src_22 (https://msmc.com/img) for re-capture via alternate route (different UA, headless bypass, or archive.org snapshot) before any downstream claim is derived.",
+          "Verify the source remains classified as UNKNOWN_SCOPE / no-content and is excluded from per-source completeness expectations until re-fetched."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://msmc.com/international-medical-graduates",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-mitigation block message; no substantive page content available to extract Tier 1/2/3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE, future-lane, or negative) are emitted from this Incapsula-blocked source; recommend re-fetch with alternative strategy before re-running A1/A2."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://msmc.com/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source fetch was blocked by Incapsula WAF; cleaned text contains only the block message and no actual page content can be re-read in A2."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source — cleaned text contains only an Incapsula WAF block message, not page content.",
+          "Re-fetch https://msmc.com/graduate-medical-education with alternate fetch strategy (different UA or headless browser) before any future A1/A2 re-run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://msmc.com/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105528257084264718'); no GME page content available for Tier 1, Tier 2, or Tier 3 extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claims were emitted from this WAF-blocked source.",
+          "Re-fetch https://msmc.com/gme via an alternate capture method (headless browser with WAF-friendly headers) before attempting any extraction."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://msmc.com/residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105534162664296718'); no substantive content is available for any tier-1, tier-2, or tier-3 extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source since cleaned text contains only an Incapsula WAF block message and no page content.",
+          "Flag https://msmc.com/residency for re-capture with a different fetch strategy (headless browser with JS, rotating UA, or manual archival) before any downstream tier-2 RESIDENCY claims are derived."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://msmc.com/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF error message; no fellowship content retrieved, so no Tier 1/2/3 concepts can be extracted."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from src_27 (msmc.com/fellowship) since cleaned text is an Incapsula block page, not fellowship content.",
+          "Recommend re-capture of https://msmc.com/fellowship with header/UA adjustments before any A4 promotion."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://msmc.com/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a WAF block page (Incapsula incident message); no usable careers/job content was captured for https://msmc.com/careers and no claims can be extracted."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A2 emitted zero new claims because cleaned text is only an Incapsula block message and not real page content.",
+          "Ensure no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this URL until a successful re-fetch is captured."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://msmc.com/physician-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message; no substantive page content available to extract Tier 1, Tier 2, or Tier 3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this source since cleaned text contains only an Incapsula block message",
+          "Recommend re-capture via alternate fetch path or archived snapshot for https://msmc.com/physician-careers before downstream phases rely on this source"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://msmc.com/provider-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block error ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101123132467056909') — no substantive page content available for any tier of extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this source since cleaned text is solely an Incapsula block message with no extractable content.",
+          "Recommend re-capture of https://msmc.com/provider-careers via headless browser or archive.org to bypass the Incapsula WAF before any future-lane CAREERS claims are attempted."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://msmc.com/benefits",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-challenge error string; no benefits, careers, or USCE content present to classify."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source since cleaned text is solely an Incapsula block message.",
+          "Re-fetch https://msmc.com/benefits via browser-grade fetcher before any future A2 classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://msmc.com/visa",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82111171968504075') — no page content available to extract Tier 1/2/3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim is emitted from src_32 https://msmc.com/visa — cleaned text is a WAF block message, not page content.",
+          "Re-capture https://msmc.com/visa via a method that bypasses Incapsula (e.g., headless browser with proper headers) before any downstream claims are derived."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://msmc.com/immigration",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula block message; no page content available to read for visa/immigration / J-1 / H-1B signals."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim was emitted from https://msmc.com/immigration since cleaned text is an Incapsula bot-protection block, not page content.",
+          "Queue re-capture of https://msmc.com/immigration with bot-protection bypass before any Tier 3 visa/immigration claim is assigned to this institution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://msmc.com/credentialing",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block notice (incident ID); no substantive page content available to extract Tier 1/2/3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this WAF-blocked capture; recapture msmc.com/credentialing with alternate method before relying on this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://msmc.com/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF error message (incident ID); no page content is available to read for Tier 1/2/3 concepts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind are emitted from this source — cleaned text contains only an Incapsula block message.",
+          "Recapture https://msmc.com/health-professionals via alternate fetch path or archive before any promotion."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://msmc.com/medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a WAF (Incapsula) block page with no institutional content; no Tier 1/2/3 concepts extractable from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleaned text is only an Incapsula block page.",
+          "Re-capture https://msmc.com/medical-education in a future run; current artifact is unusable."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://msmc.com/professional-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a single-line Incapsula WAF bot-block error ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-90329935486783754'); no professional-education content was captured, so neither USCE, GME, nor careers signals can be confirmed or denied on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any visibility tier are emitted from src_37 since cleaned text contains only an Incapsula bot-block error and zero substantive content.",
+          "Verify the run flags https://msmc.com/professional-education as FETCH_BLOCKED/WAF and routes it for re-capture rather than NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://msmc.com/student-affairs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-62961854120857862'), not page content; no Tier 1/2/3 concepts can be evaluated from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or other substantive claim is emitted for src_38 (msmc.com/student-affairs) since the cleaned text contains only an Incapsula block message.",
+          "Flag src_38 for re-capture using a WAF-bypass fetch strategy before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://msmc.com/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no institutional content present to evaluate for Tier 1/2/3 concepts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this blocked-fetch source; recommend re-capture of msmc.com/education with alternate UA/headers before any downstream use."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://msmc.com/hcp-education-training",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no HCP education/training content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source since cleaned text contains only a WAF block.",
+          "Recommend re-fetching https://msmc.com/hcp-education-training with a bot-challenge-capable fetcher before any future A1/A2 pass."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available for A2 depth reading."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for src_41 since cleaned text contains only an Incapsula WAF error and no substantive content.",
+          "Re-capture https://msmc.com/hcp-education-training/medical-students via alternate fetch (headless browser, archive.org) before allowing this source to contribute claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students/elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available to extract any Tier 1/2/3 claims.",
+          "Source URL appears to be an elective/visiting-student page based on URL path, but actual content is inaccessible and must be re-captured via a method that bypasses Incapsula."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or negative-evidence claims were emitted from this WAF-blocked source.",
+          "Flag source src_42 for re-capture using headless browser or alternate fetch method to retrieve actual elective page content.",
+          "Verify A3 treats Incapsula-blocked cleaned text as zero-content and not as evidence of absence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://msmc.com/hcp-education-training/medical-students/medical-student-observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula bot-block page; no institutional content available to mine for Tier 1, Tier 2, or Tier 3 concepts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this Incapsula-blocked capture.",
+          "Flag this source for re-fetch with anti-bot bypass before any classifier ingestion."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://msmc.com/medical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block notice with no page content; no Tier 1/2/3 concepts present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source — cleaned text is a WAF block page (Incapsula incident ID), not substantive content.",
+          "Re-capture https://msmc.com/medical-professionals via a different fetch path (headless browser / different UA) before relying on this URL for any claims."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://msmc.com/medical-professionals/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no institutional content available for A2 depth reading."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source — cleaned text is an Incapsula block page with zero institutional content.",
+          "Recommend re-fetch via alternate path (different user-agent, archive.org snapshot) before this source is counted as scanned."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://msmc.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula WAF block message; no source content available to extract claims of any tier."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Incapsula-blocked source",
+          "Re-fetch source via browser-like client or cached snapshot before any future A1/A2 re-read"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://msmc.com/academic-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101206914394099981'); no institutional content is available to extract Tier 1, Tier 2, or Tier 3 claims from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or other substantive claim is emitted from this Incapsula-blocked capture of https://msmc.com/academic-institute.",
+          "Flag source src_47 for re-capture with a WAF-capable fetcher before any downstream classification.",
+          "Verify run does not treat absence of content here as PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY — there is no explicit negative refusal, only a WAF block."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://msmc.com/academic-institute/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula WAF block message; no page substance available for any tier of analysis.",
+          "Cannot determine source family, scope, or campus applicability because no page content was captured."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE or otherwise) were emitted for src_48 since cleaned text contains only an Incapsula block message.",
+          "Recommend re-capture of https://msmc.com/academic-institute/education with bot-mitigation-friendly client before any A1/A2 emits claims from this URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://msmc.com/academic-institute/education/medical",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no institutional content is available for any tier-1, tier-2, or tier-3 concept extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind were emitted from this WAF-blocked source; the cleaned text contains only an Incapsula incident message and cannot support PUBLIC_SAFE_USCE or any future-lane claim."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://msmc.com/academic-institute/education/medical/medical-student-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block string ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-101220907397550349'); no page content was captured, so no Tier 1/2/3 claims can be extracted on this pass."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any positive claim is emitted from this source — cleaned text is an Incapsula block page, not real content.",
+          "Flag source src_50 for re-capture via headless browser with realistic UA or archived snapshot before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://msmc.com/medicine/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-mitigation block ('Request unsuccessful. Incapsula incident ID: ...'); no actual page content was captured, so no Tier 1/2/3 concepts can be extracted."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this source; cleaned text is only an Incapsula block message and contains zero substantive content.",
+          "Re-capture https://msmc.com/medicine/international with bot-mitigation bypass before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://msmc.com/medicine/international/international-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only a WAF/Incapsula block notice; no institutional content present to extract Tier 1/2/3 claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claims were emitted from this WAF-blocked source (src_52); page contents are unavailable.",
+          "Recommend re-capture of https://msmc.com/medicine/international/international-programs via alternate fetch path before any downstream claim is published."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://msmc.com/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no page content available to extract Tier 1 visiting student details (eligibility, cost, duration, contact, application pathway).",
+          "No Tier 2 (trainee/residency/fellowship) content extractable from blocked page.",
+          "No Tier 3 (practice/career/visa) content extractable from blocked page.",
+          "No explicit negative refusal sentences extractable — block message is not a programmatic refusal of observers/visiting students."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleanedText is only an Incapsula WAF block, not page content.",
+          "Verify A3 flags this source as CAPTURE_FAILED / requires re-fetch with alternate headers or manual capture before any downstream classification.",
+          "Ensure no NEGATIVE_NO_VISITING_STUDENT claim is inferred from the WAF block — absence of content is not refusal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://msmc.com/visiting-clerkships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block message; no page content available to extract Tier 1, Tier 2, or Tier 3 claims.",
+          "Source family and scope cannot be determined from the blocked capture; re-capture required before any claim emission."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE or otherwise) are emitted for https://msmc.com/visiting-clerkships based on the Incapsula block page.",
+          "Flag this source for re-capture via headless browser with realistic UA / residential proxy before any A1/A2 re-run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://msmc.com/visiting-clerkships/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block message; no page content available for any Tier 1 / Tier 2 / Tier 3 extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleaned text contains only an Incapsula block message and zero substantive content.",
+          "Flag source for re-fetch with anti-bot bypass before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://msmc.com/education-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block message; no education-institute page content was captured, so no Tier 1/2/3 signals can be verified from this source.",
+          "Unable to confirm presence or absence of observership/visiting student/elective/GME/careers content at msmc.com/education-institute from the captured text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this source given the cleaned text is only a WAF block message.",
+          "Recommend re-capture of https://msmc.com/education-institute via alternate fetch route before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://msmc.com/education-institute/academic-visitor-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is solely an Incapsula bot-block error message ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-105701004963877134'); no page content available for A2 depth reading across any tier.",
+          "Cannot evaluate Tier 1 USCE concepts (observership, visiting student, electives, eligibility, fees, duration) — no content captured.",
+          "Cannot evaluate Tier 2 trainee concepts (residency, fellowship, ECFMG, J-1) — no content captured.",
+          "Cannot evaluate Tier 3 practice/career concepts (physician jobs, visa sponsorship, insurance) — no content captured.",
+          "Cannot assess scope, campus applicability, or negative refusal evidence — no content captured."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this source until the page is re-fetched past Incapsula/WAF bot blocking.",
+          "Verify A3 marks src_57 (msmc.com/education-institute/academic-visitor-program) as UNRESOLVED_FETCH_FAILURE rather than NO_PUBLIC_OPPORTUNITY_FOUND.",
+          "Queue re-capture of academic-visitor-program URL with bot-mitigation bypass before any downstream gate decision."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://msmc.com/education/undergraduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula WAF block response ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-93403139205894412'); no actual page content is available to read for Tier 1, Tier 2, or Tier 3 concepts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this source until the page is re-captured with a method that bypasses the Incapsula WAF block.",
+          "Verify the runner flags this source as CAPTURE_FAILED / WAF_BLOCKED rather than treating empty extraction as negative evidence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://msmc.com/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block message; no actual page content is present to extract any Tier 1, Tier 2, or Tier 3 claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this source since cleaned text is only an Incapsula block message (no page content).",
+          "Recommend recapture via archive.org or alternate fetch path for the visiting-students requirements page before any downstream lane decision."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://msmc.com/education/medical-students",
+      "output": {
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a WAF/Incapsula block page only; no page content available to extract any Tier 1, Tier 2, or Tier 3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this WAF-blocked source",
+          "Verify source is re-captured via WAF-evading method before any downstream use"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://msmc.com/education/visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a single-line Incapsula bot-protection block message; no page content available for Tier 1 visiting-student concept extraction.",
+          "No content available to assess Tier 2 GME/residency/fellowship signals from this source.",
+          "No content available to assess Tier 3 careers/visa/services signals from this source.",
+          "No content available to detect campus-applicability proofs, scope conflicts, or explicit negative refusal sentences."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is asserted against src_61 since cleaned text is an Incapsula block, not real page content.",
+          "Mark src_61 as capture-failed and require re-capture (headless browser, residential IP, or Wayback snapshot) before any A1/A2 re-read.",
+          "Verify orchestrator flags sourceHash 320104b7... as a known Incapsula-block fingerprint and excludes it from claim aggregation."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://msmc.com/education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-66250639428423945') — no page content available to read for Tier 1/2/3 concepts."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from src_62 until the page is re-fetched successfully (cleaned text is only an Incapsula block message).",
+          "Re-fetch https://msmc.com/education/medical-student-electives with a headless browser or alternate UA to bypass Incapsula WAF before re-running A1/A2 on this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://msmc.com/medical-education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block error message; no page content available for depth reading. Recapture required before A2 can extract Tier 1/2/3 claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source until the page is successfully recaptured past Incapsula protection.",
+          "Verify A3 flags this source as CAPTURE_FAILED / blocked-by-WAF rather than NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://msmc.com/medical-education/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block message with no institutional content to extract for Tier 1 visiting-student concepts.",
+          "No content available to assess Tier 2 trainee/residency/fellowship signals.",
+          "No content available to assess Tier 3 practice/career/visa signals.",
+          "No content available to assess scope, campus applicability, or explicit negative refusal sentences."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this WAF-blocked source; cleaned text contains zero substantive content.",
+          "Flag src_64 for re-fetch via alternative route (archive.org, headless browser, or manual capture) before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://msmc.com/medical-students/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block (incident ID 1350000680041845426-42655897285431555); no page content available to extract Tier 1 elective concepts.",
+          "Cannot evaluate eligibility, cost, duration, contact, or negative-refusal claims because the source returned only a bot-block message.",
+          "Cannot verify source scope (institution vs system vs department) since no content was captured."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for https://msmc.com/medical-students/electives in this run — cleaned text is a WAF block, not page content.",
+          "Flag src_65 for re-capture with Incapsula bypass (headless browser, residential proxy, or alternative IP) before any A1/A2 claims can be sourced from this URL.",
+          "Verify the cleanedText file at artifacts/p102-fl-6-mount-sinai-miami/cleaned_text/medical-students_electives.txt is the WAF block and exclude this source from downstream claim aggregation until re-fetch."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://msmc.com/medical-students/elective-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is only an Incapsula bot-block error message; no page content available for any Tier 1/2/3 extraction.",
+          "Cannot determine whether msmc.com/medical-students/elective-rotations offers visiting student electives, observerships, or is affiliated-only without re-fetching the source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims (PUBLIC_SAFE_USCE or otherwise) are emitted from this source until cleaned text is re-captured past the Incapsula block.",
+          "Verify the source is flagged for re-fetch via Wayback Machine or headless-browser bypass before any downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://msmc.com/medical-students/clinical-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block page ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-82258708390088971') — no actual page content was retrieved, so no Tier 1/2/3 concepts can be extracted from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or any positive claim is emitted from src_67 — cleaned text is solely an Incapsula WAF block, not real content.",
+          "Recommend re-capture of https://msmc.com/medical-students/clinical-electives via WAF-bypass method (headless with proper headers, cached snapshot, or alternate URL) before any claim is published."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://msmc.com/students/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text contains only an Incapsula WAF block page (incident ID 1350000680041845426-105759072921719054); no substantive visiting-students content is present to extract Tier 1 USCE concepts.",
+          "Unable to assess eligibility, application pathway, fee, duration, contact, or negative-refusal language because the underlying page content was never fetched.",
+          "Source scope (institution vs system vs department) cannot be determined from a WAF block page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — cleaned text is an Incapsula block page, not actual content.",
+          "Verify the source is re-fetched with bot-evasion or alternate UA before any claim is published from msmc.com/students/visiting-students.",
+          "Flag this source as FETCH_FAILED / WAF_BLOCKED in the run manifest so A4 does not treat absence of claims as NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://msmc.com/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-6-mount-sinai-miami",
+        "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+        "institutionName": "Mount Sinai Medical Center Miami Beach",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is an Incapsula WAF block message only ('Request unsuccessful. Incapsula incident ID: 1350000680041845426-69836009407648007'); no page content available for any tier extraction."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this source until a non-WAF capture is obtained; mark source as fetch-failed in run manifest."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

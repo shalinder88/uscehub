@@ -1,0 +1,1103 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-8-lee-memorial",
+  "institutionId": "inst_lee_memorial_hospital_fl",
+  "institutionName": "Lee Memorial Hospital",
+  "officialDomains": [
+    "leehealth.org"
+  ],
+  "mode": "reclassify-only",
+  "budgets": {
+    "maxDiscoveredUrls": 75,
+    "maxAcceptedSources": 40,
+    "maxPdfs": 10
+  },
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://leehealth.org/observership",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://leehealth.org/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://leehealth.org/observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://leehealth.org/clinical-observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://leehealth.org/visiting-student",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://leehealth.org/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://leehealth.org/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://leehealth.org/international-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://leehealth.org/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://leehealth.org/away-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://leehealth.org/clinical-elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://leehealth.org/clinical-rotation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://leehealth.org/sub-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://leehealth.org/subinternship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://leehealth.org/acting-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://leehealth.org/research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://leehealth.org/student-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 6,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://leehealth.org/shadow",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://leehealth.org/shadowing",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://leehealth.org/volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://leehealth.org/volunteering",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://leehealth.org/img",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://leehealth.org/international-medical-graduates",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://leehealth.org/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://leehealth.org/gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://leehealth.org/residency",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://leehealth.org/fellowship",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 9,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://leehealth.org/careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://leehealth.org/physician-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 21,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://leehealth.org/provider-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 22,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://leehealth.org/benefits",
+      "legacyFamily": "OTHER",
+      "deepFamily": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 24,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://leehealth.org/visa",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://leehealth.org/immigration",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://leehealth.org/credentialing",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://leehealth.org/health-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://leehealth.org/medical-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://leehealth.org/professional-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://leehealth.org/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://leehealth.org/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://leehealth.org/hcp-education-training",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://leehealth.org/medical-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://leehealth.org/medical-professionals/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://leehealth.org/academic-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://leehealth.org/academic-institute/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://leehealth.org/academic-institute/education/medical",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://leehealth.org/academic-institute/education/medical/medical-student-rotations",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://leehealth.org/medicine/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://leehealth.org/medicine/international/international-programs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://leehealth.org/visiting-clerkships",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://leehealth.org/visiting-clerkships/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://leehealth.org/education-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://leehealth.org/education-institute/academic-visitor-program",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://leehealth.org/education/undergraduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://leehealth.org/education/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://leehealth.org/education/visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://leehealth.org/education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://leehealth.org/medical-education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://leehealth.org/medical-education/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://leehealth.org/medical-students/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://leehealth.org/medical-students/elective-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://leehealth.org/medical-students/clinical-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://leehealth.org/students/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://leehealth.org/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://www.leehealth.org/careers-quick-interest-form-thank-you",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/overview",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://www.leehealth.org/to-volunteer-services",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://www.leehealth.org/volunteer-education-module",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/grants-scholarships",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 27,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": true,
+      "hasCleanedText": true
+    }
+  ],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T23:37:14.077Z"
+}
