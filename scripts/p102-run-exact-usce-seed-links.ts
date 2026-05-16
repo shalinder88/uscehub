@@ -106,6 +106,7 @@ interface SeedRunResult extends SeedRow {
 interface ExactSeedRow {
   rowId: string;
   seedId: string;
+  pageTitle: string | null;
   opportunitySignature: string;
   institutionId: string;
   institutionName: string;
@@ -214,6 +215,62 @@ function cleanHtml(html: string): string {
     .replace(/&gt;/g, '>')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/**
+ * Extract a presentable program name from <title> tag (preferred) or
+ * first <h1>. Strips the institution name suffix when it duplicates the
+ * known institution. Returns null if no usable title is found.
+ */
+function extractPageTitle(html: string, institutionName: string): string | null {
+  const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+  let raw = titleMatch ? decodeEntities(titleMatch[1]).trim() : '';
+  if (!raw) {
+    const h1Match = html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+    raw = h1Match ? decodeEntities(h1Match[1]).trim() : '';
+  }
+  if (!raw) return null;
+
+  // Strip pipe/dash-separated suffixes that contain the institution name
+  // or generic site labels.
+  const parts = raw.split(/\s*[|·–—-]\s*/).map(p => p.trim()).filter(p => p.length > 0);
+  // Only use DISTINCTIVE institution tokens — generic medical words like
+  // "medical", "hospital", "center", "school" appear in opportunity titles
+  // and should not trigger institution-name filtering.
+  const GENERIC_INST_WORDS = new Set(['medical', 'hospital', 'center', 'centre', 'university', 'school', 'health', 'clinic', 'college', 'department', 'institute', 'system', 'the', 'of', 'and']);
+  const instTokens = institutionName.toLowerCase().split(/\s+/)
+    .filter(w => w.length > 3 && !GENERIC_INST_WORDS.has(w));
+  const isInstitution = (p: string): boolean => {
+    const low = p.toLowerCase();
+    // Only drop a part if it's short AND contains a distinctive institution token
+    return instTokens.length > 0 && instTokens.some(t => low.includes(t)) && p.split(/\s+/).length <= 5;
+  };
+  const isGenericLabel = (p: string): boolean =>
+    /^(home|us\s*students|md\s*program|academic\s*institute|international\s+medical\s+education|us|usa|international)$/i.test(p.trim());
+
+  const isAcronym = (p: string): boolean => /^[A-Z]{3,8}$/.test(p);
+  const isMeaningful = (p: string): boolean => p.length >= 6 || isAcronym(p);
+
+  // Prefer the longest non-institution, non-generic, meaningful part
+  const candidates = parts.filter(p => !isInstitution(p) && !isGenericLabel(p) && isMeaningful(p));
+  if (candidates.length > 0) {
+    // Combine acronym + descriptor if they sit adjacent (e.g. "VSLO" + "U.S. Students")
+    return candidates[0];
+  }
+  // Fallback: longest part regardless, if length >= 4
+  const longest = parts.sort((a, b) => b.length - a.length)[0];
+  if (longest && longest.length >= 4 && !isInstitution(longest)) return longest;
+  return null;
+}
+
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
 }
 
 function sha256(s: string): string {
@@ -509,6 +566,8 @@ async function processSeed(seed: SeedRow, opts: { offline: boolean }): Promise<{
   const dl = validateDirectLink(seed.sourceUrl, quote);
   // Audience
   const aud = classifyAudienceFromText(seed.expectedAudience, cleaned, seed.sourceUrl);
+  // Page title (presentable opportunity name)
+  const pageTitle = extractPageTitle(html, seed.institutionName);
   result.runStatus = 'EXTRACTED';
 
   // Build rows — BOTH expands to two
@@ -527,6 +586,7 @@ async function processSeed(seed: SeedRow, opts: { offline: boolean }): Promise<{
     rows.push({
       rowId: id,
       seedId: seed.seedId,
+      pageTitle,
       opportunitySignature: sig,
       institutionId: seed.institutionId,
       institutionName: seed.institutionName,

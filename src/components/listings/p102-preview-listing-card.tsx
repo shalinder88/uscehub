@@ -52,11 +52,12 @@ export function P102PreviewListingCard({ row }: P102PreviewListingCardProps) {
   const typeLabel = OPPORTUNITY_TYPE_LABELS[row.opportunityType] ?? row.opportunityType;
   const audience = audienceLabel(row.audience);
   const previewSource = "previewSource" in row ? row.previewSource : "AUTO_REVIEWED";
+  const quoteSnippet = truncateAtSentence(row.sourceQuote, 140);
 
   return (
     <Link href={`/usce/verified-preview/${row.rowId}`}>
       <CardRoot className="group h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
-        <div className="p-5">
+        <div className="flex h-full flex-col p-5">
           <div className="mb-3 flex items-start justify-between gap-2">
             <Badge variant={opportunityTypeBadgeVariant(row.opportunityType)}>
               {typeLabel}
@@ -67,34 +68,52 @@ export function P102PreviewListingCard({ row }: P102PreviewListingCardProps) {
             </span>
           </div>
 
-          <h3 className="mb-1 line-clamp-2 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-white">
+          <p className="mb-1 text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+            {row.institutionName}
+            {row.campus ? ` · ${row.campus}` : ""}
+          </p>
+
+          <h3 className="mb-3 line-clamp-2 text-base font-semibold text-slate-900 dark:text-slate-100 group-hover:text-slate-700 dark:group-hover:text-white">
             {row.opportunityName}
           </h3>
 
-          <p className="mb-3 text-sm text-slate-600 dark:text-slate-300">
-            {row.institutionName}
-            {row.campus ? ` — ${row.campus}` : ""}
-          </p>
+          {quoteSnippet ? (
+            <blockquote className="mb-3 border-l-2 border-slate-200 pl-3 text-sm italic text-slate-600 dark:border-slate-700 dark:text-slate-300 line-clamp-3">
+              &ldquo;{quoteSnippet}&rdquo;
+            </blockquote>
+          ) : null}
 
-          <div className="mb-3 space-y-1.5">
-            <div className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400">
+          <div className="mt-auto space-y-1.5 border-t border-slate-100 pt-3 dark:border-slate-700">
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
               <MapPin className="h-3.5 w-3.5 shrink-0" />
-              <span>
-                {row.city}, {row.state}
-              </span>
+              <span>{row.city}, {row.state}</span>
             </div>
-            <div className="text-sm text-slate-500 dark:text-slate-400">
+            <div className="text-xs text-slate-500 dark:text-slate-400">
               {audience}
             </div>
+            {row.specialty ? (
+              <Badge variant="default" className="text-xs">
+                {row.specialty}
+              </Badge>
+            ) : null}
           </div>
-
-          {row.specialty ? (
-            <Badge variant="default" className="text-xs">
-              {row.specialty}
-            </Badge>
-          ) : null}
         </div>
       </CardRoot>
     </Link>
   );
+}
+
+/** Trim a quote to <= maxLen at a sentence/clause boundary if possible. */
+function truncateAtSentence(quote: string | null | undefined, maxLen: number): string {
+  if (!quote) return "";
+  const q = quote.trim();
+  if (q.length <= maxLen) return q;
+  // Prefer cutting at a period, then comma, then word
+  const window = q.slice(0, maxLen);
+  const period = window.lastIndexOf(". ");
+  if (period > maxLen * 0.5) return window.slice(0, period + 1);
+  const comma = window.lastIndexOf(", ");
+  if (comma > maxLen * 0.6) return window.slice(0, comma) + "…";
+  const space = window.lastIndexOf(" ");
+  return (space > 0 ? window.slice(0, space) : window) + "…";
 }

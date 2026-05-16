@@ -136,6 +136,7 @@ function intelligentToPreview(r: IntelligentRow): PreviewRow {
 interface ExactSeedRow {
   rowId: string;
   seedId: string;
+  pageTitle: string | null;
   institutionId: string;
   institutionName: string;
   parentSystem: string | null;
@@ -156,6 +157,10 @@ interface ExactSeedRow {
 function exactSeedToPreview(r: ExactSeedRow): PreviewRow {
   const oppType = normalizeOpportunityType(r.opportunityType);
   const audience = normalizeAudience(r.audienceClass);
+  // Prefer the real page title; fall back to generic generated label
+  const name = r.pageTitle && r.pageTitle.length >= 6
+    ? r.pageTitle
+    : opportunityTitle(r.institutionName, oppType, audience);
   return {
     rowId: r.rowId,
     reviewStatus: 'AUTO_PUBLIC_SAFE',
@@ -167,7 +172,7 @@ function exactSeedToPreview(r: ExactSeedRow): PreviewRow {
     campus: r.campus,
     city: r.city,
     state: r.state,
-    opportunityName: opportunityTitle(r.institutionName, oppType, audience),
+    opportunityName: name,
     opportunityType: oppType,
     audience,
     eligibility: null,
@@ -238,8 +243,48 @@ function loadExactSeed(): PreviewRow[] {
 function loadApproved(): PreviewRow[] {
   return getApprovedSnapshotRows().map((r) => ({
     ...r,
+    opportunityName: presentableApprovedName(r),
     previewSource: 'AUTO_REVIEWED' as const,
   }));
+}
+
+/**
+ * Reviewer-entered opportunity names were inconsistent in the early
+ * batches: some are full descriptions, some are dollar amounts, some are
+ * the bare type. Heuristic cleanup until the reviewer UI gets a stronger
+ * name-quality lint.
+ */
+function presentableApprovedName(r: P102ApprovedRow): string {
+  const n = (r.opportunityName ?? '').trim();
+  // Reject obviously-wrong names: starts with $ / digit, looks like a sentence fragment, too long
+  const looksWrong =
+    /^\$/.test(n) ||
+    /^\d/.test(n) ||
+    /\.\.\.$/.test(n) ||  // truncated descriptions
+    n.length > 90 ||
+    n.length < 4;
+  if (looksWrong) {
+    return `${r.institutionName} — ${prettyOpportunityType(r.opportunityType)}`;
+  }
+  // Bare type names: prepend institution
+  if (/^(Observership|Visiting Medical Student|Clinical Elective|Sub-?Internship|Away Rotation|International Visiting Student|Research Opportunity|Externship)$/i.test(n)) {
+    return `${r.institutionName} ${n}`;
+  }
+  return n;
+}
+
+function prettyOpportunityType(t: P102OpportunityType): string {
+  switch (t) {
+    case 'OBSERVERSHIP': return 'Observership';
+    case 'VISITING_MEDICAL_STUDENT': return 'Visiting Medical Student Program';
+    case 'CLINICAL_ELECTIVE': return 'Clinical Elective';
+    case 'SUB_INTERNSHIP': return 'Sub-Internship';
+    case 'AWAY_ROTATION': return 'Away Rotation';
+    case 'INTERNATIONAL_VISITING_STUDENT': return 'International Visiting Student Program';
+    case 'RESEARCH_OPPORTUNITY': return 'Research Opportunity';
+    case 'EXTERNSHIP': return 'Externship';
+    default: return 'USCE Opportunity';
+  }
 }
 
 // ── Dedup + merge ─────────────────────────────────────────────────────────
