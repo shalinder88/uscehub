@@ -86,6 +86,8 @@ export interface DecisionRow {
   priorityReasons: string;
   quote: string;
   warnings: string;
+  /** Number of other queue entries from the same sourceUrl that were collapsed. */
+  urlDuplicateCount: string;
   proposedOpportunityName: string;
   proposedOpportunityType: string;
   proposedAudience: string;

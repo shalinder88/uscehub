@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { readDecisions, DECISION_LABEL, type ReviewerDecision } from "@/lib/p102-review-csv";
+import { readDecisions, DECISION_LABEL, type DecisionRow, type ReviewerDecision } from "@/lib/p102-review-csv";
 import { rebuildAndSyncExports } from "../_actions";
 import { Badge } from "@/components/ui/badge";
 
@@ -20,6 +20,54 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = "force-dynamic";
+
+/**
+ * Derive the reviewer audience label from what's in the decisions row.
+ * Uses proposedAudience if pre-filled, otherwise infers from deepSourceFamily.
+ * Returns null when there's no useful signal.
+ */
+function audienceInfo(row: DecisionRow): { label: string; cls: string } | null {
+  const aud = row.proposedAudience || audienceFromFamily(row.deepSourceFamily);
+  switch (aud) {
+    case "us-md-do":
+      return {
+        label: "VMS",
+        cls: "bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+      };
+    case "img-observer":
+      return {
+        label: "IMG",
+        cls: "bg-amber-50 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+      };
+    case "international":
+      return {
+        label: "INTL",
+        cls: "bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+      };
+    default:
+      return null;
+  }
+}
+
+function audienceFromFamily(family: string): string {
+  switch (family) {
+    case "VISITING_STUDENT":
+    case "VISITING_MEDICAL_STUDENT":
+    case "MEDICAL_STUDENT_ROTATION":
+    case "CLINICAL_ELECTIVE":
+    case "SUB_INTERNSHIP":
+    case "AWAY_ROTATION":
+    case "UNDERGRADUATE_MEDICAL_EDUCATION":
+      return "us-md-do";
+    case "OBSERVERSHIP":
+    case "EXTERNSHIP":
+      return "img-observer";
+    case "INTERNATIONAL_VISITING_STUDENT":
+      return "international";
+    default:
+      return "";
+  }
+}
 
 function decisionVariant(d: string): "approved" | "rejected" | "pending" | "hidden" | "default" {
   switch (d as ReviewerDecision) {
@@ -126,8 +174,10 @@ export default async function ReviewListPage({
               <th className="px-3 py-2">#</th>
               <th className="px-3 py-2">Pri</th>
               <th className="px-3 py-2">Institution</th>
+              <th className="px-3 py-2">Audience</th>
               <th className="px-3 py-2">Scope</th>
               <th className="px-3 py-2">Deep family</th>
+              <th className="px-3 py-2" title="Same-URL entries collapsed into this row">Dupes</th>
               <th className="px-3 py-2">Quote (preview)</th>
               <th className="px-3 py-2">Decision</th>
               <th className="px-3 py-2"></th>
@@ -151,11 +201,28 @@ export default async function ReviewListPage({
                     {r.city}, {r.state}
                   </div>
                 </td>
+                <td className="px-3 py-2">
+                  {(() => {
+                    const a = audienceInfo(r);
+                    return a ? (
+                      <span className={`inline-block rounded px-1.5 py-0.5 text-xs font-semibold ${a.cls}`}>
+                        {a.label}
+                      </span>
+                    ) : (
+                      <span className="text-xs text-slate-400 dark:text-slate-600">—</span>
+                    );
+                  })()}
+                </td>
                 <td className="px-3 py-2 text-xs text-slate-600 dark:text-slate-300">
                   {r.sourceScope}
                 </td>
                 <td className="px-3 py-2 text-xs text-slate-600 dark:text-slate-300">
                   {r.deepSourceFamily}
+                </td>
+                <td className="px-3 py-2 text-xs text-slate-400 dark:text-slate-500" title="Same-URL entries collapsed into this row">
+                  {r.urlDuplicateCount && r.urlDuplicateCount !== "0"
+                    ? <span className="font-medium text-amber-600 dark:text-amber-400">+{r.urlDuplicateCount}</span>
+                    : null}
                 </td>
                 <td className="max-w-md px-3 py-2 text-xs text-slate-600 dark:text-slate-300">
                   <span className="line-clamp-2">{r.quote}</span>

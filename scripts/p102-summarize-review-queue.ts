@@ -70,6 +70,8 @@ interface ScoredEntry {
   entry: ReviewQueueEntry;
   score: number;
   reasons: string[];
+  /** How many other queue entries share the same sourceUrl (collapsed at dedup). */
+  urlDuplicateCount: number;
 }
 
 function readJson<T>(p: string): T {
@@ -98,12 +100,34 @@ const FUTURE_LANE_DEEP_FAMILIES = new Set([
 
 const SYSTEM_OR_SCHOOL_SCOPES = new Set(['HEALTH_SYSTEM_LEVEL', 'MEDICAL_SCHOOL_LEVEL']);
 
+/**
+ * Map the model's `lane` classification to the reviewer `proposedAudience`
+ * enum. Returns empty string when the lane is ambiguous or non-USCE.
+ */
+function laneToAudience(lane: string): string {
+  switch (lane) {
+    case 'VISITING_MEDICAL_STUDENT':
+    case 'CLINICAL_ELECTIVE':
+    case 'SUB_INTERNSHIP':
+    case 'AWAY_ROTATION':
+      return 'us-md-do';
+    case 'IMG_OBSERVERSHIP':
+      return 'img-observer';
+    case 'INTERNATIONAL_MEDICAL_STUDENT':
+    case 'INTERNATIONAL_VISITING_STUDENT':
+      return 'international';
+    default:
+      return '';
+  }
+}
+
 function tokensFromCanonical(name: string): string[] {
   const generic = new Set(['hospital', 'medical', 'center', 'health', 'system', 'university', 'school', 'medicine', 'college', 'clinic']);
   return name.toLowerCase().split(/[\s,-]+/).filter(t => t.length > 3 && !generic.has(t));
 }
 
 function scoreEntry(e: ReviewQueueEntry): ScoredEntry {
+  // urlDuplicateCount is filled in later during dedup; default to 0 here.
   let score = 0;
   const reasons: string[] = [];
 
@@ -169,7 +193,7 @@ function scoreEntry(e: ReviewQueueEntry): ScoredEntry {
     reasons.push('-5 quote_not_stated');
   }
 
-  return { entry: e, score, reasons };
+  return { entry: e, score, reasons, urlDuplicateCount: 0 };
 }
 
 function deriveSourceDomain(url: string): string {
@@ -192,6 +216,9 @@ const DECISION_HEADER = [
   'state', 'city', 'sourceUrl', 'sourceScope', 'deepSourceFamily',
   'visibilityLane', 'confidence', 'priorityScore', 'priorityReasons',
   'quote', 'warnings',
+  // urlDuplicateCount: how many other queue entries were collapsed into this one
+  // (same sourceUrl, lower score). Reviewer only needs to decide once per URL.
+  'urlDuplicateCount',
   'proposedOpportunityName', 'proposedOpportunityType', 'proposedAudience', 'proposedCampus',
   'reviewerDecision', 'decisionReason', 'campusApplicabilityProof',
   'approvedOpportunityRowId', 'duplicateOfRowId',
@@ -217,18 +244,19 @@ function buildDecisionRow(s: ScoredEntry, i: number): string {
     s.reasons.join(' | '),
     e.sourceQuote.length > 400 ? e.sourceQuote.slice(0, 400) + '…' : e.sourceQuote,
     (e.warnings || []).join(' | '),
-    '', // proposedOpportunityName
-    '', // proposedOpportunityType
-    '', // proposedAudience
-    '', // proposedCampus
-    'KEEP_HUMAN_REVIEW', // reviewerDecision
-    '', // decisionReason
-    '', // campusApplicabilityProof
-    '', // approvedOpportunityRowId
-    '', // duplicateOfRowId
-    '', // reviewer
-    '', // reviewedAt
-    '', // notes
+    s.urlDuplicateCount,            // urlDuplicateCount — how many same-URL entries collapsed
+    '',                              // proposedOpportunityName
+    '',                              // proposedOpportunityType
+    laneToAudience(e.lane),          // proposedAudience — pre-filled from model lane
+    '',                              // proposedCampus
+    'KEEP_HUMAN_REVIEW',             // reviewerDecision
+    '',                              // decisionReason
+    '',                              // campusApplicabilityProof
+    '',                              // approvedOpportunityRowId
+    '',                              // duplicateOfRowId
+    '',                              // reviewer
+    '',                              // reviewedAt
+    '',                              // notes
   ].map(csvEscape).join(',');
 }
 
@@ -343,6 +371,29 @@ function writeSummary(scored: ScoredEntry[], opportunityRowCount: number): void 
   safeWrite(SUMMARY_OUT, lines.join('\n') + '\n');
 }
 
+/**
+ * Deduplicate a scored list by sourceUrl: for each URL group keep only the
+ * highest-scoring entry, and annotate it with urlDuplicateCount = group
+ * size - 1. The input must already be sorted score-desc so that `group[0]`
+ * is always the winner.
+ */
+function deduplicateByUrl(scored: ScoredEntry[]): ScoredEntry[] {
+  const byUrl = new Map<string, ScoredEntry[]>();
+  for (const s of scored) {
+    const url = s.entry.sourceUrl;
+    const arr = byUrl.get(url) ?? [];
+    arr.push(s);
+    byUrl.set(url, arr);
+  }
+  const deduped: ScoredEntry[] = [];
+  for (const [, group] of byUrl) {
+    // group[0] is the winner (highest score — list is pre-sorted)
+    deduped.push({ ...group[0], urlDuplicateCount: group.length - 1 });
+  }
+  deduped.sort((a, b) => b.score - a.score);
+  return deduped;
+}
+
 function main(): void {
   const queue = readJson<ReviewQueueFile>(REVIEW_QUEUE_PATH);
   const opportunityRows = readJson<{ rows: unknown[]; summary?: { publicSafeOpportunityRows: number } }>(OPPORTUNITY_ROWS_PATH);
@@ -350,29 +401,33 @@ function main(): void {
   const scored = queue.entries.map(scoreEntry);
   scored.sort((a, b) => b.score - a.score);
 
-  writeSummary(scored, opportunityRows.summary?.publicSafeOpportunityRows ?? opportunityRows.rows?.length ?? 0);
-  writeTop50Csv(scored);
+  // Deduplicate: collapse multiple entries from the same sourceUrl into one.
+  // A reviewer only needs to make one decision per source page.
+  const deduped = deduplicateByUrl(scored);
 
-  // Phase D: full template (all 925 entries) — checked into the repo so a
-  // reviewer can pick any row, not just the top 50. Decisions still default
-  // to KEEP_HUMAN_REVIEW. Re-running the summarizer overwrites both files,
-  // so a reviewer who has started editing should save under a different
-  // filename (e.g. public_safe_review_decisions.csv) before re-running.
-  writeDecisionCsv(scored, TEMPLATE_OUT);
+  writeSummary(deduped, opportunityRows.summary?.publicSafeOpportunityRows ?? opportunityRows.rows?.length ?? 0);
+  writeTop50Csv(deduped);
+
+  // Full template (all deduped entries) — overwrites on every run.
+  // Reviewers who have started editing should save under a different filename
+  // (e.g. public_safe_review_decisions.csv) before re-running.
+  writeDecisionCsv(deduped, TEMPLATE_OUT);
 
   // Top-50 starter copy at the canonical decisions filename — created ONLY
   // if it does not already exist (don't clobber in-progress reviewer work).
   if (!existsSync(TOP50_DECISIONS_OUT)) {
-    writeDecisionCsv(scored, TOP50_DECISIONS_OUT, 50);
+    writeDecisionCsv(deduped, TOP50_DECISIONS_OUT, 50);
   }
 
+  const collapsed = scored.length - deduped.length;
   console.log('P102 review-queue summarizer');
-  console.log(`  read queue:     ${queue.entries.length} entries`);
+  console.log(`  read queue:     ${scored.length} entries`);
+  console.log(`  after url-dedup:${deduped.length} entries (collapsed ${collapsed} same-URL dupes)`);
   console.log(`  written:        ${SUMMARY_OUT}`);
   console.log(`  written:        ${TOP50_OUT}`);
   console.log(`  written:        ${TEMPLATE_OUT}`);
   console.log(`  written:        ${TOP50_DECISIONS_OUT} (only if it did not exist)`);
-  console.log(`  top 50 scores:  ${scored.slice(0, 50).map(s => s.score).join(', ')}`);
+  console.log(`  top 50 scores:  ${deduped.slice(0, 50).map(s => s.score).join(', ')}`);
 }
 
 main();
