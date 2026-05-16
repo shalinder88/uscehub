@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-hy-10-keck-usc",
+  "depthPass": "JOBS_VISA",
+  "sourceFamiliesReviewed": [
+    "GME_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 3
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-hy-10-keck-usc_3",
+      "institutionId": "inst_keck_school_of_medicine_usc_ca",
+      "runId": "p102-hy-10-keck-usc",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "visa sponsorship",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "Please visit your prospective program page in order to learn more abut how to apply, including application timeline, interview process, ranking process benefits & salary, visa sponsorship, and more.Applications FAQsWhat do I need to bring with me when I begin my residency/fellowship?“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+      "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+      "quoteVerified": true,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "sourceFamily": "GME_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

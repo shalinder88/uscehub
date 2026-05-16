@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "p102-row-contract-1",
+  "generatedAt": "2026-05-16T04:00:44.645Z",
+  "count": 3,
+  "entries": [
+    {
+      "claimId": "c_42_a2_001",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "state": "NY",
+      "visibilityLane": "HIDDEN_REJECTED",
+      "lane": "RESEARCH_OPPORTUNITY",
+      "deepSourceFamily": "RESEARCH_EDUCATION",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research",
+      "sourceQuote": "Pediatric Hematology, Oncology & Stem Cell Transplantation(718) 470-3460",
+      "extractedFromRunId": "p102-gold-9-northwell-staten-island",
+      "rationale": "A3 downgrade: Department clinical phone number (718) 470-3460 for Pediatric Hematology/Oncology — not a USCE offer, sourced from a RESEARCH_PAGE on pediatrics.northwell.edu (Cohen Children's), not SIUH.",
+      "schemaVersion": "p102-row-contract-1"
+    },
+    {
+      "claimId": "a2_c1",
+      "institutionId": "inst_northwell_staten_island_uh_ny",
+      "state": "NY",
+      "visibilityLane": "HIDDEN_REJECTED",
+      "lane": "RESEARCH_OPPORTUNITY",
+      "deepSourceFamily": "RESEARCH_EDUCATION",
+      "sourceUrl": "https://pediatrics.northwell.edu/departments-services/general-pediatrics/research",
+      "sourceQuote": "For more information on the studies above or research in the Division of General Pediatrics, please contact Caren Steinway at [email protected] .",
+      "extractedFromRunId": "p102-gold-9-northwell-staten-island",
+      "rationale": "A3 downgrade: Research-contact email for Caren Steinway at Cohen Children's Division of General Pediatrics — RESEARCH_PAGE source, no USCE offer, wrong institution (Cohen Children's, not SIUH).",
+      "schemaVersion": "p102-row-contract-1"
+    },
+    {
+      "claimId": "c_uab_intl_med_ed_outbound_uab_students",
+      "institutionId": "inst_uab_hospital_al",
+      "state": "AL",
+      "visibilityLane": "HIDDEN_REJECTED",
+      "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+      "deepSourceFamily": "MEDICAL_EDUCATION",
+      "sourceUrl": "https://uab.edu/medicine/international",
+      "sourceQuote": "Are you a current medical student at UAB looking to travel abroad to expand your international medical knowledge?",
+      "extractedFromRunId": "p102-pc-7-uab",
+      "rationale": "A3 downgrade: Quote 'Are you a current medical student at UAB looking to travel abroad...' is about OUTBOUND UAB students, not inbound USCE visitors. Not a USCE offer at all; classified MISSING_FIELD lane bidirectional.",
+      "schemaVersion": "p102-row-contract-1"
+    }
+  ]
+}

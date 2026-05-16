@@ -1,0 +1,46 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [],
+  "duplicates": [],
+  "institutionId": "inst_ucsf_school_of_medicine_ca",
+  "institutionName": "UCSF School of Medicine",
+  "metadata": {
+    "totalClaimsReviewed": 80,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 17,
+    "humanReviewRequiredCount": 63,
+    "hiddenRejectedCount": 0,
+    "claimIdCollisionsObserved": "Multiple sources reuse short claimIds (c1, c2, c3, a2_c1...) — non-globally-unique but disambiguated by sourceUrl; flagged as hygiene note, not a duplicate per spec."
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-hy-7-meded-ucsf",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_COMPLETE",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "Visiting Student Program nav crumbs on src_76, src_89, src_93 — covered by the dedicated VISITING_STUDENT_PAGE (src_78), so nav-only crumbs are redundant rather than under-extracted.",
+    "Volunteer Clinical Professors nav reference — Tier 3 affiliated-faculty signal, captured as FUTURE_LANE only."
+  ],
+  "unresolveds": [
+    "ClaimId collisions: short claim identifiers (c1, c2, c3, c4, c5, a2_c1, a2_c2, a2_c3, a2_c4) are reused across distinct sourceUrls. Disambiguated by sourceUrl, but downstream dedupe/merge should namespace claimIds by sourceId.",
+    "All 24 VISITING_STUDENT_PAGE (src_78) claims and the 2 explicit NEGATIVE refusal claims (c3/n1 international exclusion, n2 affiliated-only) were demoted by the reclassifier from PUBLIC_SAFE_USCE / PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY to HUMAN_REVIEW_REQUIRED. A3 cannot upgrade, but human reviewer should confirm whether the affiliated-LCME-only refusal qualifies for PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY for the IMG audience."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY survived reclassification — all 80 merged claims sit in FUTURE_LANE_ONLY (17) or HUMAN_REVIEW_REQUIRED (63). No scope conflicts (all sources on meded.ucsf.edu), no quote-vs-claim semantic gaps in the safe lanes, no over-promotion. Tier 1 (Visiting Student Program), Tier 2 (GME/ACGME/Match), and Tier 3 (Careers/Benefits/CME) all covered. Ledger is internally consistent and safe to merge; visiting-student and IMG-refusal claims correctly held back for human disposition."
+}

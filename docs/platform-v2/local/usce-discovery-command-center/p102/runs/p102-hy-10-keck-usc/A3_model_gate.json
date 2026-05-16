@@ -1,0 +1,74 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [
+    {
+      "primaryClaimId": "keck_usc_gme_004",
+      "duplicateClaimId": "keck_usc_gme_a2_001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "keck-vsc-04",
+      "duplicateClaimId": "keck-vsc-a2-05",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "keck-usc-gme-001",
+      "duplicateClaimId": "keck_usc_gme_002",
+      "duplicateReason": "same_quote_different_claimId"
+    }
+  ],
+  "institutionId": "inst_keck_school_of_medicine_usc_ca",
+  "institutionName": "Keck School of Medicine at USC",
+  "metadata": {
+    "totalClaimsReviewed": 69,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 30,
+    "humanReviewRequiredCount": 39,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-hy-10-keck-usc",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_PARTIAL",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unfollowedSignals": [
+    "MD Program navigation 'Health and Immunization Requirements' subpage was not crawled for visiting-student logistics",
+    "Sub-Internship Scholarship Award in General Surgery has its own dedicated subpage that was not enumerated",
+    "VSLO catalog deep-link not enumerated; rotation/department-specific availability not captured"
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger contains zero PUBLIC_SAFE_USCE claims. All visiting-student / sub-internship signals are correctly held at HUMAN_REVIEW_REQUIRED pending campus-applicability proof, and all GME/residency/fellowship signals are correctly held at FUTURE_LANE_ONLY. No scope conflicts beyond those already flagged by A1/A2. Internally consistent and safe to merge. A handful of cross-phase duplicates noted for downstream dedupe.",
+  "overpromotionDetected": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "rec-keck-vsc-international",
+      "reason": "Visiting Student Clerkships page restricts to LCME/COCA US schools but is silent on whether international students may apply through a separate pathway; A4 should confirm via a dedicated international visiting-student page or VSLO directory entry.",
+      "suggestedNarrowAction": "Fetch keck.usc.edu/md-program/visiting-student-clerkships sub-paths (international, FAQ) and VSLO Keck directory page only.",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    },
+    {
+      "taskId": "rec-keck-observership",
+      "reason": "No observership-specific page surfaced; for IMG-relevant Tier 1 USCE coverage, confirm presence or explicit absence of an observership/externship pathway at Keck.",
+      "suggestedNarrowAction": "Targeted fetch of keck.usc.edu search results for 'observership' and 'externship'; capture explicit negative quote if found, else mark NO_PUBLIC_OPPORTUNITY_FOUND.",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    }
+  ]
+}

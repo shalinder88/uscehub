@@ -1,0 +1,702 @@
+{
+  "schemaVersion": "p102-quote-verify-1",
+  "runId": "p102-hy-8-medschool-ucla",
+  "total": 138,
+  "countByStatus": {
+    "OK": 134,
+    "NOT_STATED_FIELD_OK": 4
+  },
+  "failureCount": 0,
+  "checks": [
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "f1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "s1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_fl_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_fl_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_fl_003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_fl_004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1_visiting_vslo",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f1_gme",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f2_residentsalary",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f3_visa_licensing",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "f4_credentials",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sc1_scope",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c6",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c7",
+      "status": "NOT_STATED_FIELD_OK",
+      "details": "NOT_STATED_ON_SOURCE accepted for MISSING_FIELD claimType"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c7",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c8",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c9",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c10",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c11",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c12",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c13",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c14",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c15",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c16",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c17",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c18",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c19",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c20",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c21",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c22",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c23",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_fl_1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_fl_2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_fl_3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_fl_4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_fl_5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "sm_e2c7e3ae86ae147c_scope_01",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_97_scope_conflict_1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_001",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_002",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_003",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_004",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_005",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_006",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_007",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_008",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_009",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "ucla_gme_a2_010",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t1_research_opp",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t1_volunteer",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t1_careerdev_residency_prep",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t2_star_program",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t2_biodesign_ascend",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t2_med_ed_fellowships",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t3_ucla_health_careers",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t3_ccpd_cme",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_t1_match_day",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c6",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c7",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c8",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c9",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c10",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c11",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c12",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c13",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c14",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_a2_fl_1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_a2_fl_2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_a2_fl_3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_a2_fl_4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_92_a2_fl_5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "src_94_a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "c_a2_ucla_spacemed_polar_rotation",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c2",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c3",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c4",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c5",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    }
+  ]
+}

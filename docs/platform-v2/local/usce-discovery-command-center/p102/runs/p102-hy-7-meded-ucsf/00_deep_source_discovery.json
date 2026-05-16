@@ -1,0 +1,1367 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-hy-7-meded-ucsf",
+  "institutionId": "inst_ucsf_school_of_medicine_ca",
+  "institutionName": "UCSF School of Medicine",
+  "officialDomains": [
+    "meded.ucsf.edu"
+  ],
+  "mode": "reclassify-only",
+  "budgets": {
+    "maxDiscoveredUrls": 75,
+    "maxAcceptedSources": 40,
+    "maxPdfs": 10
+  },
+  "perSource": [
+    {
+      "sourceId": "src_1",
+      "sourceUrl": "https://meded.ucsf.edu/observership",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_2",
+      "sourceUrl": "https://meded.ucsf.edu/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_3",
+      "sourceUrl": "https://meded.ucsf.edu/observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_4",
+      "sourceUrl": "https://meded.ucsf.edu/clinical-observer",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 1,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_5",
+      "sourceUrl": "https://meded.ucsf.edu/visiting-student",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_6",
+      "sourceUrl": "https://meded.ucsf.edu/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_7",
+      "sourceUrl": "https://meded.ucsf.edu/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_8",
+      "sourceUrl": "https://meded.ucsf.edu/international-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_9",
+      "sourceUrl": "https://meded.ucsf.edu/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_10",
+      "sourceUrl": "https://meded.ucsf.edu/away-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_11",
+      "sourceUrl": "https://meded.ucsf.edu/clinical-elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_12",
+      "sourceUrl": "https://meded.ucsf.edu/clinical-rotation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_13",
+      "sourceUrl": "https://meded.ucsf.edu/sub-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_14",
+      "sourceUrl": "https://meded.ucsf.edu/subinternship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_15",
+      "sourceUrl": "https://meded.ucsf.edu/acting-internship",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 5,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://meded.ucsf.edu/research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_17",
+      "sourceUrl": "https://meded.ucsf.edu/student-research",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 6,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_18",
+      "sourceUrl": "https://meded.ucsf.edu/shadow",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_19",
+      "sourceUrl": "https://meded.ucsf.edu/shadowing",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://meded.ucsf.edu/volunteer",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://meded.ucsf.edu/volunteering",
+      "legacyFamily": "VOLUNTEER_PAGE",
+      "deepFamily": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 11,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_22",
+      "sourceUrl": "https://meded.ucsf.edu/img",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_23",
+      "sourceUrl": "https://meded.ucsf.edu/international-medical-graduates",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://meded.ucsf.edu/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://meded.ucsf.edu/gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://meded.ucsf.edu/residency",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_27",
+      "sourceUrl": "https://meded.ucsf.edu/fellowship",
+      "legacyFamily": "FELLOWSHIP_PAGE",
+      "deepFamily": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 9,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://meded.ucsf.edu/careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_29",
+      "sourceUrl": "https://meded.ucsf.edu/physician-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 21,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_30",
+      "sourceUrl": "https://meded.ucsf.edu/provider-careers",
+      "legacyFamily": "CAREERS_PAGE",
+      "deepFamily": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 22,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://meded.ucsf.edu/benefits",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_32",
+      "sourceUrl": "https://meded.ucsf.edu/visa",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_33",
+      "sourceUrl": "https://meded.ucsf.edu/immigration",
+      "legacyFamily": "OTHER",
+      "deepFamily": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "matchedRule": {
+        "priority": 25,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_34",
+      "sourceUrl": "https://meded.ucsf.edu/credentialing",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://meded.ucsf.edu/health-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_37",
+      "sourceUrl": "https://meded.ucsf.edu/professional-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_38",
+      "sourceUrl": "https://meded.ucsf.edu/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://meded.ucsf.edu/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://meded.ucsf.edu/hcp-education-training",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://meded.ucsf.edu/hcp-education-training/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://meded.ucsf.edu/hcp-education-training/medical-students/elective",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://meded.ucsf.edu/hcp-education-training/medical-students/medical-student-observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://meded.ucsf.edu/medical-professionals",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://meded.ucsf.edu/medical-professionals/graduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://meded.ucsf.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://meded.ucsf.edu/academic-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://meded.ucsf.edu/academic-institute/education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://meded.ucsf.edu/academic-institute/education/medical",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://meded.ucsf.edu/academic-institute/education/medical/medical-student-rotations",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://meded.ucsf.edu/medicine/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://meded.ucsf.edu/medicine/international/international-programs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://meded.ucsf.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://meded.ucsf.edu/visiting-clerkships",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://meded.ucsf.edu/visiting-clerkships/international",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://meded.ucsf.edu/education-institute",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://meded.ucsf.edu/education-institute/academic-visitor-program",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://meded.ucsf.edu/education/undergraduate-medical-education",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://meded.ucsf.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://meded.ucsf.edu/education/medical-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://meded.ucsf.edu/education/visiting-medical-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://meded.ucsf.edu/education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education/medical-student-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://meded.ucsf.edu/medical-students/electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://meded.ucsf.edu/medical-students/elective-rotations",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://meded.ucsf.edu/medical-students/clinical-electives",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 4,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://meded.ucsf.edu/students/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://meded.ucsf.edu/graduate-medical-education/clerkship-programs",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://meded.ucsf.edu/offices/faculty-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://meded.ucsf.edu/offices/faculty-affairs/services",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://meded.ucsf.edu/offices/faculty-affairs/services/observerships",
+      "legacyFamily": "OBSERVERSHIP_PAGE",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education/student-affairs",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education/student-affairs/registrar",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://meded.ucsf.edu/medical-education/student-affairs/registrar/externships-services",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 12,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://meded.ucsf.edu/current-students",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://meded.ucsf.edu/education/md-education",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://meded.ucsf.edu/education/md-education/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://meded.ucsf.edu/education/md-education/visiting-students/vslo",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://meded.ucsf.edu/students/visiting-students/",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://meded.ucsf.edu/education/graduate-medical-education-gme",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://meded.ucsf.edu/academics/md-program",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://meded.ucsf.edu/academics/md-program/visiting-students",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://meded.ucsf.edu/medicaleducation",
+      "legacyFamily": "OTHER",
+      "deepFamily": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "matchedRule": null,
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://meded.ucsf.edu/medicaleducation/visiting-students-program",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://meded.ucsf.edu/medicaleducation/visiting-students-program/",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://meded.ucsf.edu/md-program",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_90",
+      "sourceUrl": "https://meded.ucsf.edu/md-program/visiting-student-clerkships",
+      "legacyFamily": "VISITING_STUDENT_PAGE",
+      "deepFamily": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 3,
+        "matchedOn": "url"
+      },
+      "accepted": false,
+      "hasCleanedText": false
+    },
+    {
+      "sourceId": "src_91",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/acgme-accreditation",
+      "legacyFamily": "GME_PAGE",
+      "deepFamily": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 7,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_92",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes",
+      "legacyFamily": "RESIDENCY_PAGE",
+      "deepFamily": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "matchedRule": {
+        "priority": 8,
+        "matchedOn": "url"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_93",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "legacyFamily": "OTHER",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_94",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2017-2018",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_95",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2016-2017",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_96",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2015-2016",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_97",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2014-2015",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_98",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2013-2014",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_99",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2012-2013",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_100",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2011-2012",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_101",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2010-2011",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_102",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_103",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_104",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_105",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations/education-scholarship-conference-escape",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_106",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/research-innovation/funding-opportunities",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_107",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/research-innovation/scholarship-opportunities/preparing-scholarly-projects",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_108",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_109",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    },
+    {
+      "sourceId": "src_110",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+      "legacyFamily": "RESEARCH_PAGE",
+      "deepFamily": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "matchedRule": {
+        "priority": 13,
+        "matchedOn": "title"
+      },
+      "accepted": true,
+      "hasCleanedText": true
+    }
+  ],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-16T02:45:17.304Z"
+}

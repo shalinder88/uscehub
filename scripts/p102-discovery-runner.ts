@@ -103,6 +103,40 @@ const FIXED_PATHS = [
   '/medical-students/clinical-electives',
   '/students/visiting-students',
   '/graduate-medical-education/clerkship-programs',
+  // -----------------------------------------------------------------
+  // P102-HY additions (high-yield queue evidence). Each URL below is a
+  // P101 TIER_A or TIER_B confirmed visiting-student / observership page
+  // that the previous P102-FIX additions did not cover.
+  // -----------------------------------------------------------------
+  // UM/UHealth (Miller SOM) — P101 TIER_A
+  '/offices/faculty-affairs',
+  '/offices/faculty-affairs/services',
+  '/offices/faculty-affairs/services/observerships',
+  '/medical-education/student-affairs',
+  '/medical-education/student-affairs/registrar',
+  '/medical-education/student-affairs/registrar/externships-services',
+  // UCSF (meded.ucsf.edu) — P101 TIER_B
+  '/current-students',
+  '/current-students/visiting-student-program',
+  '/current-students/visiting-student-program/visiting-student-program-overview',
+  // UCLA Geffen (medschool.ucla.edu) — P101 TIER_B
+  '/education/md-education',
+  '/education/md-education/visiting-students',
+  '/education/md-education/visiting-students/vslo',
+  // UAMS (medicine.uams.edu) — P101 TIER_B
+  '/students/visiting-students/',
+  // Howard SOM derm — P101 TIER_B
+  '/education/graduate-medical-education-gme',
+  // GW SMHS — P101 TIER_B
+  '/academics/md-program',
+  '/academics/md-program/visiting-students',
+  // Georgetown meded — P101 TIER_A
+  '/medicaleducation',
+  '/medicaleducation/visiting-students-program',
+  '/medicaleducation/visiting-students-program/',
+  // Keck USC — P101 TIER_B
+  '/md-program',
+  '/md-program/visiting-student-clerkships',
 ];
 
 interface CliArgs {

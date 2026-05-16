@@ -1,0 +1,114 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "rec_t3_visa_licensing_detail",
+      "missingFamily": "VISA_SPONSORSHIP_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "Visa & Licensing Office referenced repeatedly in navigation across research/education/GME pages, but the detail page itself was not captured. Tier-3 signal evidence is limited to nav anchors.",
+      "suggestedNarrowAction": "Fetch the single Visa & Licensing Office page at medschool.ucla.edu under Academic Affairs; no broad crawl."
+    },
+    {
+      "taskId": "rec_t3_ccpd_detail",
+      "missingFamily": "CME_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "Center for Continuing Professional Development referenced as nav cluster but no CCPD landing page captured to confirm CME offerings.",
+      "suggestedNarrowAction": "Fetch CCPD landing page only."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "src_94_c1",
+      "duplicateClaimId": "c1 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_c2",
+      "duplicateClaimId": "c2 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_c3",
+      "duplicateClaimId": "c3 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_c4",
+      "duplicateClaimId": "c5 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_c5",
+      "duplicateClaimId": "c4 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_a2_c1",
+      "duplicateClaimId": "c6 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_a2_c3",
+      "duplicateClaimId": "a2_c1 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_a2_c4",
+      "duplicateClaimId": "a2_c2 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_94_a2_c2",
+      "duplicateClaimId": "a2_c4 (life-changing-lgbtq url)",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "src_92_a2_fl_1",
+      "duplicateClaimId": "c_a2_ucla_spacemed_polar_rotation",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "f3_visa_licensing",
+      "duplicateClaimId": "c4 (education url FUTURE_LANE_VISA)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    }
+  ],
+  "institutionId": "inst_ucla_school_of_medicine_ca",
+  "institutionName": "David Geffen School of Medicine at UCLA",
+  "metadata": {
+    "totalClaimsReviewed": 138,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 51,
+    "humanReviewRequiredCount": 87,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-hy-8-medschool-ucla",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_COMPLETE",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unfollowedSignals": [
+    "DGSOM departmental Visiting Student Scholarship Programs (Anesthesiology, EM, IM, Neuro, OB/Gyn, Ophth, Peds, Psych, Radiology, Rad Onc, Surgery, Urology) — listed but individual scholarship landing pages not captured",
+    "UCLA-Caltech Medical Scientist Training Program (MSTP) — mentioned in news article but program page not captured",
+    "Pre-Med Enrichment Program / SHPEP / Re-Application Program — pre-health pipeline programs referenced in research nav, no detail pages captured"
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE survivors — the reclassifier conservatively routed all VSLO visiting-student claims to HUMAN_REVIEW_REQUIRED because the medschool.ucla.edu scope was tagged HEALTH_SYSTEM_LEVEL without campus-applicability proof. No public-safety failures, no overclaims, no surviving scope conflicts. Tier-1 USCE quote evidence (VSLO eligibility, $300/elective fee, 3-week blocks, US-only restriction, IMG-graduate exclusion, dgsomelectives@mednet.ucla.edu) is strong but appropriately gated behind human review. Tier-3 visa/CME signals exist only as nav anchors — recovery tasks suggested."
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-hy-8-medschool-ucla",
+  "tasks": [
+    {
+      "taskId": "rec_t3_visa_licensing_detail",
+      "missingFamily": "VISA_SPONSORSHIP_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "Visa & Licensing Office referenced repeatedly in navigation across research/education/GME pages, but the detail page itself was not captured. Tier-3 signal evidence is limited to nav anchors.",
+      "suggestedNarrowAction": "Fetch the single Visa & Licensing Office page at medschool.ucla.edu under Academic Affairs; no broad crawl."
+    },
+    {
+      "taskId": "rec_t3_ccpd_detail",
+      "missingFamily": "CME_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "Center for Continuing Professional Development referenced as nav cluster but no CCPD landing page captured to confirm CME offerings.",
+      "suggestedNarrowAction": "Fetch CCPD landing page only."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}
