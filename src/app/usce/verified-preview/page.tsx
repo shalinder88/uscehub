@@ -92,6 +92,17 @@ export default function VerifiedPreviewPage() {
           and read from the Prisma listing table. Preview rows are not yet
           promoted into the production data path.
         </p>
+        {process.env.NODE_ENV !== "production" ? (
+          <p className="mt-3">
+            Reviewer admin (dev-only):{" "}
+            <Link
+              href="/usce/verified-preview/admin/review"
+              className="underline"
+            >
+              /usce/verified-preview/admin/review
+            </Link>
+          </p>
+        ) : null}
       </footer>
     </div>
   );
