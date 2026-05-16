@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_006",
+  "institutionId": "inst_uab_hospital_al",
+  "institutionName": "UAB Hospital",
+  "parentSystem": "UAB Medicine",
+  "campus": "",
+  "city": "Birmingham",
+  "state": "AL",
+  "sourceUrl": "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+  "sourceDomain": "uab.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "UAB Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; explicit international-visiting-medical-students path",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_eb85066554"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_006/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_006/cleaned.txt",
+  "sourceHash": "c71ae4e90693bfe5e5de5be1a855c639558bcedf48a799bebb6779b6bfc1f6ad",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: international visiting URL segment",
+    "signals": [
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-16T20:08:59.519Z"
+}

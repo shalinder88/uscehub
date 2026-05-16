@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-05-16T20:08:59.526Z",
+  "totalHolds": 2,
+  "rows": [
+    {
+      "rowId": "exact_75c2e71d67",
+      "seedId": "seed_001",
+      "opportunitySignature": "inst_houston_methodist_hospital_tx_deep||https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "parentSystem": "Houston Methodist",
+      "campus": null,
+      "city": "Houston",
+      "state": "TX",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "sourceDomain": "houstonmethodist.org",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Residents learn in a variety of settings, such as working with inpatient teams and one-on-one with subspecialists.",
+      "quoteScore": 0,
+      "sourceHash": "821bb35bd364fd83abe7e5548b8883617b3bc4e7dd508362916f8e00a036e1e1",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment, medical student program URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment",
+        "medical student program URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-16T20:08:59.509Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_e095ffd967",
+      "seedId": "seed_001",
+      "opportunitySignature": "inst_houston_methodist_hospital_tx_deep||https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations||OBSERVERSHIP||IMG_GRADUATE_OBSERVER",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "parentSystem": "Houston Methodist",
+      "campus": null,
+      "city": "Houston",
+      "state": "TX",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "sourceDomain": "houstonmethodist.org",
+      "opportunityType": "OBSERVERSHIP",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "topQuote": "Residents learn in a variety of settings, such as working with inpatient teams and one-on-one with subspecialists.",
+      "quoteScore": 0,
+      "sourceHash": "821bb35bd364fd83abe7e5548b8883617b3bc4e7dd508362916f8e00a036e1e1",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment, medical student program URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment",
+        "medical student program URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-16T20:08:59.510Z",
+      "schemaVersion": "p102-exact-seed-1"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_008",
+  "institutionId": "inst_keck_school_medicine_usc_ca",
+  "institutionName": "Keck School of Medicine of USC",
+  "parentSystem": "USC",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+  "sourceDomain": "keck.usc.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLERKSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Keck School of Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Intelligent gate validated as VALID_DIRECT_USCE_SOURCE (visiting-student URL segment)",
+  "priorEvidenceRef": "direct_link_validation.json",
+  "notes": "Held for scope-ambiguity at school level but URL itself is direct",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_e90647e573"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_008/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_008/cleaned.txt",
+  "sourceHash": "9222d5d2754fdd41890b56bc6e90dc348edcd966c76d1b7e84ab613a51f3b7c3",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-16T20:08:59.522Z"
+}

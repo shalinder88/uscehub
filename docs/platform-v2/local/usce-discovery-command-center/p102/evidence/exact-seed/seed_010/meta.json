@@ -1,0 +1,46 @@
+{
+  "seedId": "seed_010",
+  "institutionId": "inst_ucla_school_of_medicine_ca",
+  "institutionName": "David Geffen School of Medicine at UCLA",
+  "parentSystem": "UCLA Health",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+  "sourceDomain": "medschool.ucla.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "David Geffen School of Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Intelligent gate validated as VALID_DIRECT_USCE_SOURCE (visiting-student + VSLO URL segments)",
+  "priorEvidenceRef": "direct_link_validation.json",
+  "notes": "VSLO is AAMC's portal — strong VMS signal",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_ac2021d96c"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_010/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_010/cleaned.txt",
+  "sourceHash": "314968c93adf42463f569e47718c65ae9af30102c93af2e9548cdad0ce572bd7",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, VSLO/VSAS URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "VSLO/VSAS URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-16T20:08:59.526Z"
+}

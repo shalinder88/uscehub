@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getSnapshotMetadata } from "@/lib/p102-approved-usce";
 import {
-  getAllApprovedRows,
-  getSnapshotMetadata,
-} from "@/lib/p102-approved-usce";
+  getAllPreviewRows,
+  getPreviewSummary,
+  PREVIEW_SOURCE_LABELS,
+} from "@/lib/p102-preview-rows";
 import { P102PreviewListingCard } from "@/components/listings/p102-preview-listing-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 
@@ -33,11 +35,14 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = "force-static";
+// Force dynamic so live JSON edits (intelligent + exact-seed rows) appear
+// without a rebuild during local review.
+export const dynamic = "force-dynamic";
 
 export default function VerifiedPreviewPage() {
-  const rows = getAllApprovedRows();
-  const meta = getSnapshotMetadata();
+  const rows = getAllPreviewRows();
+  const summary = getPreviewSummary();
+  const snapshotMeta = getSnapshotMetadata();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
@@ -49,15 +54,25 @@ export default function VerifiedPreviewPage() {
           Source-linked USCE preview
         </h1>
         <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-400">
-          {rows.length} quote-backed opportunity{rows.length === 1 ? "" : "s"} from {meta.summary.institutions} institutions. Each row was extracted from the official institution source page and held to{" "}
+          {summary.total} quote-backed opportunit{summary.total === 1 ? "y" : "ies"} from {summary.institutions} institutions. Each row was extracted from an official institution source page and held to{" "}
           <code className="rounded bg-slate-100 px-1 text-xs dark:bg-slate-700">
             PUBLIC_SAFE_USCE
           </code>{" "}
-          by the framework&apos;s safety discipline. Auto-approved: {meta.summary.autoApproved}; reviewer-approved: {meta.summary.reviewerApproved}.
+          by the framework&apos;s safety discipline.
         </p>
-        <p className="mt-2 text-xs text-slate-500 dark:text-slate-500">
-          Snapshot synced: {meta.syncedAt.slice(0, 10)} · canonical updated:{" "}
-          {meta.canonicalGeneratedAt.slice(0, 10)}
+        <div className="mt-3 flex flex-wrap gap-2 text-xs">
+          <span className="rounded bg-emerald-50 px-2 py-0.5 font-medium text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+            {summary.bySource.AUTO_REVIEWED} {PREVIEW_SOURCE_LABELS.AUTO_REVIEWED}
+          </span>
+          <span className="rounded bg-blue-50 px-2 py-0.5 font-medium text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+            {summary.bySource.EXACT_SEED} {PREVIEW_SOURCE_LABELS.EXACT_SEED}
+          </span>
+          <span className="rounded bg-slate-100 px-2 py-0.5 font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-300">
+            {summary.bySource.INTELLIGENT_GATE} {PREVIEW_SOURCE_LABELS.INTELLIGENT_GATE}
+          </span>
+        </div>
+        <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">
+          Reviewer snapshot synced: {snapshotMeta.syncedAt.slice(0, 10)} · merged at render time
         </p>
       </header>
 

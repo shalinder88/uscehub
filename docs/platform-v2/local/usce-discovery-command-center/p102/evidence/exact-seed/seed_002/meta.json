@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_002",
+  "institutionId": "inst_boston_medical_center_ma",
+  "institutionName": "Boston Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://www.bmc.org/ear-nose-and-throat-department/residency/visiting-medical-students",
+  "sourceDomain": "bmc.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "SUB_INTERNSHIP",
+  "expectedSpecialty": "Otolaryngology",
+  "expectedCampus": "Boston Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; URL names visiting medical students explicitly",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "Department-specific sub-internship",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f3e8716bdf"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_002/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_002/cleaned.txt",
+  "sourceHash": "07809f086438296f8a3dc6a9442f2bec60fd2bb75c917a2ced08c25c073c0f5d",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-16T20:08:59.512Z"
+}

@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_005",
+  "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+  "institutionName": "Orlando Health Orlando Regional Medical Center",
+  "parentSystem": "Orlando Health",
+  "campus": "Orlando Regional Medical Center",
+  "city": "Orlando",
+  "state": "FL",
+  "sourceUrl": "https://orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs",
+  "sourceDomain": "orlandohealth.com",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "CLERKSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Orlando Regional Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; explicit clerkship-programs path",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "Page lists both US clerkships and international visiting; splits into 2 rows",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_196f848c3b"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_005/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_005/cleaned.txt",
+  "sourceHash": "ecccfc8ca435377e38af72c6fab5aee2e699e05e734c5abc1d8c3d531d4aa6ca",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "MEDIUM",
+    "rationale": "expected BOTH but only VMS signal found"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: clerkship URL segment",
+    "signals": [
+      "clerkship URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-16T20:08:59.517Z"
+}

@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_004",
+  "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+  "institutionName": "Memorial Sloan Kettering Cancer Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://mskcc.org/medical-students",
+  "sourceDomain": "mskcc.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "Oncology",
+  "expectedCampus": "Memorial Sloan Kettering Cancer Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; direct /medical-students path",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_415be35f16"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_004/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_004/cleaned.txt",
+  "sourceHash": "edf346a3c6fc7085e72ace72bb45ce35bb238e094128278830bb7f904c6f4c5c",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment",
+    "signals": [
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-16T20:08:59.514Z"
+}

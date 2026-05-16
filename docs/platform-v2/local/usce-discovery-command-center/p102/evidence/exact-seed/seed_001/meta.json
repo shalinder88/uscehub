@@ -1,0 +1,47 @@
+{
+  "seedId": "seed_001",
+  "institutionId": "inst_houston_methodist_hospital_tx_deep",
+  "institutionName": "Houston Methodist Hospital",
+  "parentSystem": "Houston Methodist",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+  "sourceDomain": "houstonmethodist.org",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Houston Methodist Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Intelligent gate auto-promoted both VMS and IMG rows from this URL",
+  "priorEvidenceRef": "intelligent_public_safe_rows.json",
+  "notes": "Splits into 2 rows by runner",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_75c2e71d67",
+    "exact_e095ffd967"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/cleaned.txt",
+  "sourceHash": "821bb35bd364fd83abe7e5548b8883617b3bc4e7dd508362916f8e00a036e1e1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+    "confidence": "HIGH",
+    "rationale": "both VMS and IMG signals in page text"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment, medical student program URL segment",
+    "signals": [
+      "medical-students URL segment",
+      "medical student program URL segment"
+    ]
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-16T20:08:59.510Z"
+}

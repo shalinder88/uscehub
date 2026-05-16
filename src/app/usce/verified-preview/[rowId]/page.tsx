@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin } from "lucide-react";
 import {
-  getAllApprovedRows,
-  getApprovedRowById,
   OPPORTUNITY_TYPE_LABELS,
   SOURCE_SCOPE_LABELS,
   audienceLabel,
 } from "@/lib/p102-approved-usce";
+import {
+  getAllPreviewRows,
+  getPreviewRowById,
+} from "@/lib/p102-preview-rows";
 import { Badge } from "@/components/ui/badge";
 import { P102SourceQuoteEvidenceBox } from "@/components/listings/p102-source-quote-evidence-box";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
@@ -28,12 +30,12 @@ interface DetailPageParams {
 }
 
 export async function generateStaticParams() {
-  return getAllApprovedRows().map((row) => ({ rowId: row.rowId }));
+  return getAllPreviewRows().map((row) => ({ rowId: row.rowId }));
 }
 
 export async function generateMetadata({ params }: DetailPageParams): Promise<Metadata> {
   const { rowId } = await params;
-  const row = getApprovedRowById(rowId);
+  const row = getPreviewRowById(rowId);
   if (!row) {
     return {
       title: "Preview row not found — internal",
@@ -49,7 +51,7 @@ export async function generateMetadata({ params }: DetailPageParams): Promise<Me
 
 export default async function VerifiedPreviewDetailPage({ params }: DetailPageParams) {
   const { rowId } = await params;
-  const row = getApprovedRowById(rowId);
+  const row = getPreviewRowById(rowId);
   if (!row) notFound();
 
   const typeLabel = OPPORTUNITY_TYPE_LABELS[row.opportunityType] ?? row.opportunityType;

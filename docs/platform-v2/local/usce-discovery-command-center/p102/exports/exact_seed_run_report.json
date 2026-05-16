@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-05-16T20:08:59.526Z",
+  "seedFile": "docs/platform-v2/local/usce-discovery-command-center/p102/queues/p102_exact_usce_seed_links.csv",
+  "offline": true,
+  "seedsAttempted": 11,
+  "runStatusCounts": {
+    "EXTRACTED": 10,
+    "FAILED_FETCH": 1
+  },
+  "finalStatusCounts": {
+    "HOLD_REVIEW": 1,
+    "AUTO_PROMOTE": 9,
+    "FAILED": 1
+  },
+  "routeCounts": {
+    "AUTO_PROMOTE": 10,
+    "HOLD_REVIEW": 2,
+    "REJECTED": 0
+  },
+  "audienceCounts": {
+    "US_MD_DO_VISITING_STUDENT": 8,
+    "IMG_GRADUATE_OBSERVER": 3,
+    "INTERNATIONAL_MEDICAL_STUDENT": 1
+  },
+  "directLinkCounts": {
+    "VALID_DIRECT_USCE_SOURCE": 12
+  },
+  "duplicateClusters": 0,
+  "seedResults": [
+    {
+      "seedId": "seed_001",
+      "institutionName": "Houston Methodist Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "emittedRowIds": [
+        "exact_75c2e71d67",
+        "exact_e095ffd967"
+      ]
+    },
+    {
+      "seedId": "seed_002",
+      "institutionName": "Boston Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_f3e8716bdf"
+      ]
+    },
+    {
+      "seedId": "seed_003",
+      "institutionName": "Hospital for Special Surgery",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_0cbbf7c087"
+      ]
+    },
+    {
+      "seedId": "seed_004",
+      "institutionName": "Memorial Sloan Kettering Cancer Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_415be35f16"
+      ]
+    },
+    {
+      "seedId": "seed_005",
+      "institutionName": "Orlando Health Orlando Regional Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_196f848c3b"
+      ]
+    },
+    {
+      "seedId": "seed_006",
+      "institutionName": "UAB Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_eb85066554"
+      ]
+    },
+    {
+      "seedId": "seed_007",
+      "institutionName": "UCSF Fresno",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_5bd4da4606"
+      ]
+    },
+    {
+      "seedId": "seed_008",
+      "institutionName": "Keck School of Medicine of USC",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_e90647e573"
+      ]
+    },
+    {
+      "seedId": "seed_009",
+      "institutionName": "Cleveland Clinic",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_f63e0b9f4d",
+        "exact_d30ff7709f"
+      ]
+    },
+    {
+      "seedId": "seed_010",
+      "institutionName": "David Geffen School of Medicine at UCLA",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_ac2021d96c"
+      ]
+    },
+    {
+      "seedId": "seed_011",
+      "institutionName": "UCSF School of Medicine",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "offline mode but no cached raw.html",
+      "emittedRowIds": []
+    }
+  ]
+}
