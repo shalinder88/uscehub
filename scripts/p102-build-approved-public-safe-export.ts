@@ -34,7 +34,7 @@
  *   npx tsx scripts/p102-build-approved-public-safe-export.ts --decisions <path>
  */
 
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import * as path from 'node:path';
 import { createHash } from 'node:crypto';
 
@@ -375,9 +375,9 @@ function hash(s: string): string {
 function lookupSourceHashAndCleanedText(institutionId: string, sourceUrl: string, claimId: string): { sourceHash: string; cleanedTextPath: string } | null {
   // We need to look up sourceHash + cleanedTextPath from the original
   // 13_model_claims_verified.json (review queue export doesn't include them).
+  void institutionId;
   const runsDir = path.join(REPO_ROOT, 'docs/platform-v2/local/usce-discovery-command-center/p102/runs');
   if (!existsSync(runsDir)) return null;
-  const { readdirSync } = require('node:fs') as typeof import('node:fs');
   for (const runId of readdirSync(runsDir)) {
     const ledgerPath = path.join(runsDir, runId, '13_model_claims_verified.json');
     if (!existsSync(ledgerPath)) continue;

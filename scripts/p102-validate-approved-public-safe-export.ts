@@ -106,7 +106,7 @@ interface Issue { rowId: string; reviewStatus: string; institutionName: string; 
 
 function readJson<T>(p: string): T | null {
   if (!existsSync(p)) return null;
-  try { return JSON.parse(readFileSync(p, 'utf8')) as T; } catch (e) { return null; }
+  try { return JSON.parse(readFileSync(p, 'utf8')) as T; } catch { return null; }
 }
 
 function isPlaceholder(s: string | null | undefined): boolean {

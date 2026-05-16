@@ -74,6 +74,7 @@ function main(): void {
     { name: 'p102-quote-verify (model ledgers)', cmd: 'npx tsx scripts/p102-quote-verify.ts --all-existing-p102-runs --strict --quiet' },
     { name: 'p102-validate-deep-packet (P102-0F)', cmd: 'npx tsx scripts/p102-validate-deep-packet.ts --quiet' },
     { name: 'p102-validate-approved-public-safe-export', cmd: 'npx tsx scripts/p102-validate-approved-public-safe-export.ts' },
+    { name: 'p102-validate-website-approved-usce-data', cmd: 'npx tsx scripts/p102-validate-website-approved-usce-data.ts' },
     { name: 'validate-p101-discovery-command-center', cmd: 'npx tsx scripts/validate-p101-discovery-command-center.ts' },
   ];
   if (!fast) {
