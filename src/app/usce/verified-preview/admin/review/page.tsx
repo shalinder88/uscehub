@@ -22,31 +22,28 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 /**
- * Derive the reviewer audience label from what's in the decisions row.
- * Uses proposedAudience if pre-filled, otherwise infers from deepSourceFamily.
- * Returns null when there's no useful signal.
+ * Derive the reviewer audience badge(s) from the decisions row.
+ * proposedAudience is comma-separated (multi-select) — one badge per value.
+ * Falls back to a single inferred badge from deepSourceFamily when blank.
  */
-function audienceInfo(row: DecisionRow): { label: string; cls: string } | null {
-  const aud = row.proposedAudience || audienceFromFamily(row.deepSourceFamily);
-  switch (aud) {
-    case "us-md-do":
-      return {
-        label: "VMS",
-        cls: "bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
-      };
-    case "img-observer":
-      return {
-        label: "IMG",
-        cls: "bg-amber-50 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
-      };
-    case "international":
-      return {
-        label: "INTL",
-        cls: "bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
-      };
-    default:
-      return null;
-  }
+function audienceBadges(row: DecisionRow): { label: string; cls: string }[] {
+  const raw = row.proposedAudience
+    ? row.proposedAudience.split(",").map((s) => s.trim()).filter(Boolean)
+    : [audienceFromFamily(row.deepSourceFamily)].filter(Boolean);
+  return raw
+    .map((aud) => {
+      switch (aud) {
+        case "us-md-do":
+          return { label: "VMS", cls: "bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" };
+        case "img-observer":
+          return { label: "IMG", cls: "bg-amber-50 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300" };
+        case "international":
+          return { label: "INTL", cls: "bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300" };
+        default:
+          return null;
+      }
+    })
+    .filter((b): b is { label: string; cls: string } => b !== null);
 }
 
 function audienceFromFamily(family: string): string {
@@ -203,13 +200,21 @@ export default async function ReviewListPage({
                 </td>
                 <td className="px-3 py-2">
                   {(() => {
-                    const a = audienceInfo(r);
-                    return a ? (
-                      <span className={`inline-block rounded px-1.5 py-0.5 text-xs font-semibold ${a.cls}`}>
-                        {a.label}
-                      </span>
-                    ) : (
-                      <span className="text-xs text-slate-400 dark:text-slate-600">—</span>
+                    const badges = audienceBadges(r);
+                    if (badges.length === 0) {
+                      return <span className="text-xs text-slate-400 dark:text-slate-600">—</span>;
+                    }
+                    return (
+                      <div className="flex flex-wrap gap-1">
+                        {badges.map((a) => (
+                          <span
+                            key={a.label}
+                            className={`inline-block rounded px-1.5 py-0.5 text-xs font-semibold ${a.cls}`}
+                          >
+                            {a.label}
+                          </span>
+                        ))}
+                      </div>
                     );
                   })()}
                 </td>

@@ -39,6 +39,19 @@ function getString(formData: FormData, key: string): string {
 }
 
 /**
+ * Collect every value submitted under `key` as a string[]. Used for
+ * multi-select checkboxes (proposedAudience: a page can serve both VMS
+ * and IMG at the same time).
+ */
+function getStringList(formData: FormData, key: string): string[] {
+  return formData
+    .getAll(key)
+    .filter((v): v is string => typeof v === "string")
+    .map((v) => v.trim())
+    .filter((v) => v.length > 0);
+}
+
+/**
  * Save a reviewer decision. Validates server-side (defense-in-depth on
  * top of the build-time `p102-validate-approved-public-safe-export.ts`).
  *
@@ -65,10 +78,14 @@ export async function saveReviewDecision(formData: FormData): Promise<void> {
     throw new Error(`invalid proposedOpportunityType: ${proposedOpportunityType}`);
   }
 
-  const proposedAudience = getString(formData, "proposedAudience");
-  if (proposedAudience && !AUDIENCES_SET.has(proposedAudience)) {
-    throw new Error(`invalid proposedAudience: ${proposedAudience}`);
+  // Multi-select: a single source page may serve more than one audience
+  // (e.g. Houston Methodist Medical Student Rotations serves both VMS and
+  // IMG). Stored as comma-separated string for CSV compatibility.
+  const proposedAudienceList = getStringList(formData, "proposedAudience");
+  for (const a of proposedAudienceList) {
+    if (!AUDIENCES_SET.has(a)) throw new Error(`invalid proposedAudience: ${a}`);
   }
+  const proposedAudience = [...new Set(proposedAudienceList)].sort().join(",");
 
   updateDecision(reviewId, {
     reviewerDecision: reviewerDecision as ReviewerDecision,

@@ -43,6 +43,13 @@ const SYSTEM_OR_SCHOOL_SCOPES = new Set([
   "MEDICAL_SCHOOL_LEVEL",
 ]);
 
+const AUDIENCE_LABEL: Record<string, string> = {
+  "us-md-do": "US MD/DO visiting student (VMS)",
+  "img-observer": "IMG observer/extern",
+  "international": "International medical student",
+  "unknown": "Unknown",
+};
+
 interface PageProps {
   params: Promise<{ reviewId: string }>;
   searchParams: Promise<{ saved?: string }>;
@@ -209,19 +216,33 @@ export default async function ReviewEditPage({
                   ))}
                 </select>
               </Field>
-              <Field label="Audience">
-                <select
-                  name="proposedAudience"
-                  defaultValue={row.proposedAudience}
-                  className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-slate-500 focus:outline-none dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
-                >
-                  <option value="">— select —</option>
-                  {AUDIENCES.map((a) => (
-                    <option key={a} value={a}>
-                      {a}
-                    </option>
-                  ))}
-                </select>
+              <Field label="Audience (check all that apply)">
+                <div className="flex flex-wrap gap-3 rounded-md border border-slate-300 bg-white px-3 py-2 dark:border-slate-600 dark:bg-slate-800">
+                  {AUDIENCES.filter((a) => a !== "unknown").map((a) => {
+                    const selected = (row.proposedAudience || "")
+                      .split(",")
+                      .map((s) => s.trim())
+                      .filter(Boolean);
+                    return (
+                      <label
+                        key={a}
+                        className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200"
+                      >
+                        <input
+                          type="checkbox"
+                          name="proposedAudience"
+                          value={a}
+                          defaultChecked={selected.includes(a)}
+                          className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-500 dark:border-slate-500 dark:bg-slate-700"
+                        />
+                        {AUDIENCE_LABEL[a]}
+                      </label>
+                    );
+                  })}
+                </div>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-500">
+                  When the same page serves both VMS and IMG (e.g.&nbsp;Houston Methodist Medical Student Rotations), check both.
+                </p>
               </Field>
             </div>
             <Field label="Proposed campus (name the specific hospital for system/school scope)">
