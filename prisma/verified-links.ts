@@ -212,21 +212,15 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // These are paid services that place IMGs at partner hospitals
   // NOT verified as hospital programs — marked unverified so they don't appear as "verified" listings
 
-  "Brooklyn USCE — Clinical Rotations": {
-    url: "https://brooklynusce.com/",
-    verified: false,
-    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service that places IMGs at community hospitals.",
-  },
-  "AMG Medical Group — Clinical Rotations": {
-    url: "https://amgmedicalgroup.com/",
-    verified: false,
-    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service. Verify quality independently.",
-  },
-  "ValueMD Clinical Rotations": {
-    url: "https://www.valuemd.com/clinical-rotations/",
-    verified: false,
-    note: "THIRD-PARTY PLACEMENT SERVICE — not a hospital. Paid service. Has active IMG forum.",
-  },
+  // "Brooklyn USCE — Clinical Rotations" — moved to listings-hidelist.ts in
+  //   one-by-one packet #99 (third-party broker, not an institutional USCE
+  //   source; physician-owned private-clinic placement service).
+  // "AMG Medical Group — Clinical Rotations" — moved to listings-hidelist.ts
+  //   in one-by-one packet #97 (Direct Primary Care membership clinic,
+  //   $59-$129/month; not an USCE provider at all).
+  // "ValueMD Clinical Rotations" — moved to listings-hidelist.ts in
+  //   one-by-one packet #98 (forum + Caribbean med-school advertising site,
+  //   not an institutional USCE provider).
 
   // ===== DEPARTMENT-SPECIFIC ONLY (not centralized — marked unverified) =====
 
@@ -264,11 +258,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Henry Ford UGME visiting students page (VSLO-based, $125 admin fee per rotation). Updated 2026-05-16 from generic henryford.com homepage. ENT/Microvascular Surgery also runs a separate international observer program; general observation limited to two 8-hour days/year is separate.",
   },
-  "University of Michigan Health": {
-    url: "https://medicine.umich.edu/",
-    verified: false,
-    note: "Only Ophthalmology (Kellogg Eye Center) has visible observership application ($250 fee). No centralized hospital-wide program.",
-  },
+  // "University of Michigan Health" — primary entry now in one-by-one packet
+  // #92 below. Original verified:false "only Ophthalmology" stub replaced
+  // with the U-M Medical School's centralized Visiting MD Students page.
   "Ohio State University Wexner Medical Center": {
     url: "https://medicine.osu.edu/departments/office-of-global-health/international-visiting-scholars",
     verified: false,
@@ -500,11 +492,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "GME Visiting Trainees / Observers. For LCME-accredited medical school graduates or international equivalent. Typically less than 1 month. Current medical students NOT eligible.",
   },
-  "Wake Forest Baptist / Atrium Health": {
-    url: "https://school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/",
-    verified: true,
-    note: "Wake Forest SOM visiting medical students. LCME/COCA 4th-year; passed USMLE Step 1/COMLEX Level 1. INTL very limited.",
-  },
+  // "Wake Forest Baptist / Atrium Health" — key did NOT match data.js
+  // program.name ("Wake Forest Baptist Medical Center"). Primary entry now
+  // in one-by-one packet #91 below with EXACT data.js key.
   "University Hospital Newark / Rutgers NJMS": {
     url: "https://njms.rutgers.edu/education/registrar/visitingstds.php",
     verified: true,
@@ -737,11 +727,10 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Cedars-Sinai Visiting Medical Students canonical page. 4-week senior electives June-December. VSLO-based. INTL students must apply through Cedars-Sinai's academic affiliation with UCLA David Geffen SOM (not direct via VSLO). Replaces cedars-sinai.org/education/graduate-medical-education.html (GME-only). One-by-one packet #8.",
   },
 
-  "CommonSpirit Health International — Clinical Observation": {
-    url: "https://commonspiritinternational.org/education-programs/",
-    verified: false,
-    note: "CommonSpirit Health International Education Programs landing. Institutional Clinical Observation Program across 159 hospitals. URL is the official CommonSpirit International domain — page exists and is institutional but program details require institutional/organizational application (not individual). KEPT as verified:false because borderline (single-page institutional landing without per-individual application path visible). One-by-one packet #9.",
-  },
+  // "CommonSpirit Health International — Clinical Observation" — upgraded
+  // from packet #9 verified:false in one-by-one packet #94 below. Web
+  // search confirmed legitimate 4-12 week clinical observation program
+  // for international clinical professionals.
 
   "Conemaugh Memorial Medical Center": {
     url: "https://gme.conemaugh.org/resident-programs/medical-students",
@@ -1190,5 +1179,47 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://medicine.utah.edu/students/visiting",
     verified: true,
     note: "University of Utah Spencer Fox Eccles School of Medicine (SFESOM) Visiting Students canonical page (covers BOTH data.js entries with this name: medicine.utah.edu/gme/ and healthcare.utah.edu/). CLASSIFIED PROTECTED_BROWSER_REQUIRED: WebFetch returns HTTP 403 (anti-bot block) but URL is live in browser per Google index. AAMC VSLO required. Must have completed 6 of CORE Clerkships (IM, Surgery, Peds, OB/GYN, Psych, FM; Neurology may be required). Application packet: transcript + Step 1 + letter of interest + background check + 5-panel drug test. Contact visitingstudents@hsc.utah.edu. Department Sponsored Visitors Program (medicine.utah.edu/global-health-education/department-sponsored-visitors-program) is separate INTL/global-health pathway. Replaces both data.js URLs. One-by-one packet #90.",
+  },
+
+  "Wake Forest Baptist Medical Center": {
+    url: "https://school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/",
+    verified: true,
+    note: "Wake Forest University School of Medicine Visiting Medical Students canonical page (covers both Winston-Salem and Charlotte, NC campuses via Atrium Health partnership). M4 MD/DO via AAMC VSLO, opens March 13, 2026. US LCME/COCA M4 + INTL accepted (INTL face significant limits: $100 application fee + $2,500 admin fee for 4-week rotation; 5-week cancellation policy). Must have completed M3 + passed USMLE Step 1 or COMLEX Level 1. Priority: Wake Forest students > visiting domestic > INTL. Quote: 'Wake Forest University School of Medicine and Atrium Health are considering applications for visiting 4th-year medical student clinical opportunities for both Charlotte, NC, and Winston-Salem, NC, locations. Visiting MD and DO applications through VSLO® will open March 13, 2026.' Replaces school.wakehealth.edu/ homepage and prior suffix-mismatch key. One-by-one packet #91.",
+  },
+
+  "University of Michigan Health": {
+    url: "https://medschool.umich.edu/programs-admissions/visiting-md-students",
+    verified: true,
+    note: "University of Michigan Medical School Visiting MD Students canonical page (Michigan Medicine). CLASSIFIED PROTECTED_BROWSER_REQUIRED: WebFetch returns HTTP 403 (anti-bot block) but URL is live in browser per Google index. US LCME M4 only — must have completed 48 weeks of required rotations at home school. Application via AAMC VSLO Domestic Network ONLY (no out-of-VSLO applications). Max 8 weeks total. Research electives not permitted via this pathway. Only catalog electives accepted; periods set by VSLO. Replaces medicine.umich.edu/medschool/education/gme/visiting-observers (GME-only) + prior verified:false 'Ophthalmology-only' stub. One-by-one packet #92.",
+  },
+
+  "UAB Hospital (University of Alabama at Birmingham)": {
+    url: "https://www.uab.edu/medicine/home/current-students/registrar-records/visiting-student-program",
+    verified: true,
+    note: "UAB Heersink School of Medicine Visiting Student Program canonical page. US LCME or AOA accredited only — must be US citizen or permanent resident. AAMC VSLO required. Visiting students scheduled on space-available basis after UAB students. Elective catalog browsing mid-Feb; applications open early March; offers April 1. 4-week electives (2-week option in urology). 3 regional campuses (Birmingham, Huntsville, Tuscaloosa). $150 fee to secure spot after offer. International students via separate pathway at uab.edu/medicine/international/international-programs/international-visiting-medical-students. Contact visiting@uab.edu. Quote: 'All students must be US citizens or permanent residents attending an LCME-accredited medical school or osteopathic school accredited by American Osteopathic Association (AOA). We only accept students applying through the AAMC Visiting Students Learning Opportunities (VSLO) program.' Replaces uab.edu/medicine/gme/ (GME-only). One-by-one packet #93.",
+  },
+
+  "CommonSpirit Health International — Clinical Observation": {
+    url: "https://commonspiritinternational.org/education-programs/",
+    verified: true,
+    note: "CommonSpirit Health International Clinical Observation Program canonical page. Legitimate institutional INTL observation program across CommonSpirit's 159 US hospitals. 4-12 week observation, INTL physicians + nurses + allied health staff; designed to give 'international clinical professionals an informal opportunity to shadow their American colleagues in our affiliated facilities in the United States.' Federally compliant: NO patient care, NO volunteer research. Application requires institutional/organizational application (not individual student VSLO). Upgrades packet #9's verified:false. Quote (from CommonSpirit International search-confirmed): 'Observation Program participants are able to witness best practices and systems and processes in a variety of real-world settings over a 4- to 12-week period including patient care delivered in a variety of care settings (hospitals, clinics, surgery centers, etc.)' One-by-one packet #94.",
+  },
+
+  "Crozer-Chester Medical Center": {
+    url: "https://crozerem.com/medical-students/",
+    verified: false,
+    note: "Crozer-Chester Emergency Medicine Residency Medical Students page (Drexel COM clerkship affiliate). Welcomes MS3 and 'auditioning MS4' students for EM rotations but no centralized institutional M4 visiting/observership program documented; access is via Drexel-Crozer clerkship pathway. Contact Pollianne Ward-Bianchi, MD (Drexel Clerkship Director) Pollianne.Ward@crozer.org or Shayna Caliman (EM Residency Coordinator) Shayna.Caliman@crozer.org. BORDERLINE_KEEP_REVERIFY: real M4 EM auditions exist but the broader institutional visiting-medical-student program is not separately documented; per operator policy, absence of dedicated institutional page ≠ absence of program. Replaces crozerhealth.org/ homepage. One-by-one packet #95.",
+  },
+
+  "University of Texas Medical Branch (UTMB)": {
+    url: "https://www.utmb.edu/enrollmentservices/currentstudents/visiting-students",
+    verified: true,
+    note: "UTMB Office of Enrollment Services Visiting Medical Students canonical page (Galveston). US medical schools final-year M4 via AAMC VSLO; non-US students ONLY if home school has active affiliation + incoming program agreement with UTMB. Applications open mid-April or early May. $100 processing fee per course (due 10 days after acceptance). Malpractice $25K/$75K minimum. NO off-block rotations. Quote: 'Medical students from other U.S. institutions in their final year of medical school may apply to take an elective at UTMB through the VSLO Application Service.' Replaces utmb.edu/ homepage. One-by-one packet #96.",
+  },
+
+  "University of New Mexico Hospital": {
+    url: "https://hsc.unm.edu/medicine/education/md/student-affairs/visiting-medical-students/",
+    verified: true,
+    note: "UNM School of Medicine Visiting Medical Students canonical page. US LCME/COCA + INTL (if home school participates in VSLO) M4 final-year. AAMC VSLO ONLY — direct faculty contact prohibited. 4-week elective clerkships for credit. NO observerships, shadowing, research electives, or pre-clinical experiences offered. USMLE Step 1 (or COMLEX for DO) required + affiliation agreement before rotation. Rotations at UNM Hospital primarily; outside clinic assignments not made. Quote: 'The University of New Mexico School of Medicine welcomes final-year visiting medical students to participate in four-week elective clerkships for credit.' Replaces hospitals.health.unm.edu/ homepage. One-by-one packet #100.",
   },
 };

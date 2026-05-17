@@ -1036,5 +1036,104 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - countsAsTrueUSCE: TRUE
 - note: covers both data.js URLs (medicine.utah.edu/gme/ + healthcare.utah.edu/) via single Spencer Fox Eccles SOM visiting student page
 
+---
+
+## Packet 91: Wake Forest Baptist Medical Center
+- currentUrl: school.wakehealth.edu/
+- candidates opened: school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/
+- finalUrl: school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Wake Forest University School of Medicine and Atrium Health are considering applications for visiting 4th-year medical student clinical opportunities for both Charlotte, NC, and Winston-Salem, NC, locations. Visiting MD and DO applications through VSLO® will open March 13, 2026."
+- audience: US LCME/COCA M4 + INTL accepted (significant limits: $100 app + $2,500 admin fee for 4-week rotation); priority WF students > visiting US > INTL; M3 cores + Step 1/COMLEX Level 1 pass required; 5-wk cancellation policy
+- countsAsTrueUSCE: TRUE
+- note: prior suffix-mismatch key "Wake Forest Baptist / Atrium Health" commented out; replaced with EXACT data.js key
+
+## Packet 92: University of Michigan Health
+- currentUrl: medicine.umich.edu/medschool/education/gme/visiting-observers (GME-only)
+- candidates opened: medschool.umich.edu/programs-admissions/visiting-md-students (HTTP 403 to WebFetch — anti-bot; URL live in browser per Google index)
+- finalUrl: medschool.umich.edu/programs-admissions/visiting-md-students
+- classification: PROTECTED_BROWSER_REQUIRED (works in browser, blocked in Node fetch; counts as true USCE per Hopkins precedent)
+- evidence (from search snippet): "U.S. medical school student must have completed 48 weeks of required rotations in the same medical school where they completed their basic science (M1 and M2) training."
+- audience: US LCME M4 only (final year); application: AAMC VSLO Domestic Network ONLY; max 8 weeks; NO research electives via VSLO; only catalog electives during VSLO-specified periods
+- countsAsTrueUSCE: TRUE
+- note: replaces prior verified:false 'Ophthalmology-only' stub
+
+## Packet 93: UAB Hospital (University of Alabama at Birmingham)
+- currentUrl: uab.edu/medicine/gme/ (GME-only)
+- candidates opened: uab.edu/medicine/home/current-students/registrar-records/visiting-student-program
+- finalUrl: uab.edu/medicine/home/current-students/registrar-records/visiting-student-program
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "All students must be US citizens or permanent residents attending an LCME-accredited medical school or osteopathic school accredited by American Osteopathic Association (AOA). We only accept students applying through the AAMC Visiting Students Learning Opportunities (VSLO) program."
+- audience: US LCME/AOA M4 — US citizens or permanent residents only (citizenship restriction); $150 fee post-offer; 4-wk electives (2-wk option in urology); 3 regional campuses (Birmingham/Huntsville/Tuscaloosa); INTL via separate International Medical Education office
+- countsAsTrueUSCE: TRUE
+
+## Packet 94: CommonSpirit Health International — Clinical Observation
+- currentUrl: commonspiritinternational.org/education-programs/ (existing packet #9 entry with verified:false)
+- candidates opened: same URL (re-fetched + cross-referenced with WebSearch institutional info)
+- finalUrl: commonspiritinternational.org/education-programs/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK (upgrade from BORDERLINE_KEEP_REVERIFY at packet #9)
+- evidence (from search-confirmed CommonSpirit description): "Observation Program participants are able to witness best practices and systems and processes in a variety of real-world settings over a 4- to 12-week period including patient care delivered in a variety of care settings (hospitals, clinics, surgery centers, etc.)"
+- audience: INTL clinical professionals (physicians, nurses, allied health); 4-12 week observation across CommonSpirit's 159 US hospitals; federally compliant (NO patient care, NO volunteer research); application via institutional/organizational pathway (not individual student)
+- countsAsTrueUSCE: TRUE
+- note: upgrades packet #9 verified:false to verified:true now that institutional program details are clearer
+
+## Packet 95: Crozer-Chester Medical Center
+- currentUrl: crozerhealth.org/
+- candidates opened: crozerem.com/medical-students/ (Drexel COM clerkship affiliate EM page)
+- finalUrl: crozerem.com/medical-students/
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: page welcomes MS3 + 'auditioning MS4' for EM rotations but does not differentiate visiting from home students; no centralized institutional visiting M4 / observership page on Crozer Health institutional site
+- audience: Drexel-Crozer clerkship pathway; EM-only documented; contact Pollianne Ward-Bianchi (Pollianne.Ward@crozer.org) or Shayna Caliman (Shayna.Caliman@crozer.org)
+- countsAsTrueUSCE: FALSE (insufficient evidence of broader institutional visiting program; keep for manual reverify, do not hide)
+- note: per operator policy, absence of dedicated institutional page ≠ absence of program
+
+## Packet 96: University of Texas Medical Branch (UTMB)
+- currentUrl: utmb.edu/
+- candidates opened: utmb.edu/enrollmentservices/currentstudents/visiting-students
+- finalUrl: utmb.edu/enrollmentservices/currentstudents/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Medical students from other U.S. institutions in their final year of medical school may apply to take an elective at UTMB through the VSLO Application Service."
+- audience: US M4 final-year via VSLO; non-US students ONLY with active UTMB affiliation agreement + incoming program agreement; $100 processing fee/course; malpractice $25K/$75K minimum; NO off-block rotations
+- countsAsTrueUSCE: TRUE
+
+## Packet 97: AMG Medical Group — Clinical Rotations
+- currentUrl: amgmedicalgroup.com/
+- candidates opened: amgmedicalgroup.com/
+- finalUrl: HIDDEN (no replacement)
+- classification: NO_PROGRAM_FOUND_HIDE (third-party broker classification)
+- evidence: "Founded on the basis of providing high quality healthcare at an affordable cost, Conveniently located in New York City, Our facility is fully equipped to deliver comprehensive medical services serving New Yorkers since 2005." AMG is a Direct Primary Care primary-care clinic ($59/$99/$129 monthly membership); NOT a clinical rotation provider, NOT a hospital, NOT an USCE source. The data.js description claiming 'THIRD-PARTY PLACEMENT SERVICE' is unsupported by the actual website content.
+- audience: N/A
+- countsAsTrueUSCE: FALSE (hidden — out of scope for institutional USCE catalog)
+- note: added to listings-hidelist.ts with new THIRD_PARTY_BROKER classification + PERMANENT followUp
+
+## Packet 98: ValueMD Clinical Rotations
+- currentUrl: valuemd.com/clinical-rotations/
+- candidates opened: valuemd.com/clinical-rotations/ (401 Unauthorized to WebFetch)
+- finalUrl: HIDDEN (no replacement)
+- classification: NO_PROGRAM_FOUND_HIDE (third-party broker classification)
+- evidence: WebSearch confirmed ValueMD is a Caribbean-medical-school discussion forum with advertising/sponsorship relationships; does not arrange or run clinical rotations itself. The /clinical-rotations/ path is a forum sub-page, not a program.
+- audience: N/A
+- countsAsTrueUSCE: FALSE (hidden — out of scope for institutional USCE catalog)
+- note: added to listings-hidelist.ts with THIRD_PARTY_BROKER classification + PERMANENT followUp
+
+## Packet 99: Brooklyn USCE — Clinical Rotations
+- currentUrl: brooklynusce.com/
+- candidates opened: brooklynusce.com/frequently-asked-questions/
+- finalUrl: HIDDEN (no replacement)
+- classification: NO_PROGRAM_FOUND_HIDE (third-party broker classification)
+- evidence: "Our company is physician owned to help new physicians start their career." Brooklyn USCE is a physician-owned private-clinic rotation placement service — placing IMGs at unaffiliated private clinics with attendings who hold ACGME-affiliate hospital appointments. Categorically distinct from VSLO-based academic medical centers. Third-party iatroX advisory: "paid 'clinical rotations' from third-party companies are often scams or very low value; if someone is charging $3,000–$10,000+ for a 'rotation' at an unaffiliated private office, caution is advised."
+- audience: paid IMG market
+- countsAsTrueUSCE: FALSE (hidden — out of scope for institutional USCE catalog)
+- note: added to listings-hidelist.ts with THIRD_PARTY_BROKER classification + PERMANENT followUp
+
+## Packet 100: University of New Mexico Hospital
+- currentUrl: hospitals.health.unm.edu/
+- candidates opened: hsc.unm.edu/medicine/education/md/student-affairs/visiting-medical-students/
+- finalUrl: hsc.unm.edu/medicine/education/md/student-affairs/visiting-medical-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The University of New Mexico School of Medicine welcomes final-year visiting medical students to participate in four-week elective clerkships for credit."
+- audience: US LCME/COCA M4 + INTL (if home school participates in VSLO); application: AAMC VSLO only — direct faculty contact prohibited; 4-wk elective clerkships only; NO observerships/shadowing/research/pre-clinical; USMLE Step 1 (or COMLEX for DO) + affiliation agreement required
+- countsAsTrueUSCE: TRUE
+
 
 

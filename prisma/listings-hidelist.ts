@@ -28,10 +28,12 @@
 export interface HiddenProgram {
   url: string;
   reason: string;
-  // 'TLS_NETWORK_DEAD' — Node fetch + curl both fail with network error
-  // 'HTTP_404'         — persistent 404 from server
-  // 'AGGREGATOR_DEAD'  — third-party aggregator (not an institution), site dead
-  classification: 'TLS_NETWORK_DEAD' | 'HTTP_404' | 'AGGREGATOR_DEAD';
+  // 'TLS_NETWORK_DEAD'           — Node fetch + curl both fail with network error
+  // 'HTTP_404'                   — persistent 404 from server
+  // 'AGGREGATOR_DEAD'            — third-party aggregator (not an institution), site dead
+  // 'THIRD_PARTY_BROKER'         — third-party broker site is alive but not an
+  //                                 institutional USCE provider (out of scope)
+  classification: 'TLS_NETWORK_DEAD' | 'HTTP_404' | 'AGGREGATOR_DEAD' | 'THIRD_PARTY_BROKER';
   // Suggested follow-up for the operator. 'PERMANENT' = remove entirely;
   // 'REORIENT' = find a replacement URL at the same institution.
   followUp: 'PERMANENT' | 'REORIENT';
@@ -123,6 +125,35 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     classification: "HTTP_404",
     followUp: "PERMANENT",
     verifiedAt: "2026-05-16",
+  },
+
+  // ── ADDED 2026-05-17 one-by-one packets #97/98/99: third-party
+  //    broker / non-institutional sites that don't belong in an
+  //    institutional-USCE catalog. Sites are alive — hidden because
+  //    they're out of scope, not because they're dead. ──
+
+  "AMG Medical Group — Clinical Rotations": {
+    url: "https://amgmedicalgroup.com/",
+    reason: "WebFetch confirmed: AMG is a Direct Primary Care clinic operating since 2005 in NYC with $59/$99/$129 monthly membership plans for unlimited primary care visits — NOT a clinical rotation provider, NOT a hospital, NOT an USCE source. The data.js description claiming 'THIRD-PARTY PLACEMENT SERVICE' is unsupported by the actual website content. Out of scope for an institutional-USCE catalog. One-by-one packet #97.",
+    classification: "THIRD_PARTY_BROKER",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "ValueMD Clinical Rotations": {
+    url: "https://www.valuemd.com/clinical-rotations/",
+    reason: "WebFetch returned 401 Unauthorized; WebSearch confirmed ValueMD is a Caribbean-medical-school discussion forum with advertising/sponsorship relationships, not an institutional clinical rotation provider. Out of scope for an institutional-USCE catalog. Site retains an active IMG forum but does not arrange or run clinical rotations itself. One-by-one packet #98.",
+    classification: "THIRD_PARTY_BROKER",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Brooklyn USCE — Clinical Rotations": {
+    url: "https://brooklynusce.com/",
+    reason: "WebFetch FAQ confirmed: Brooklyn USCE is a physician-owned private-clinic rotation placement service ('Our company is physician owned to help new physicians start their career'), placing IMGs at unaffiliated private clinics with ACGME-affiliated attendings. Not an institutional hospital program — categorically distinct from VSLO-based academic medical centers. Per third-party iatroX advisory: 'paid clinical rotations from third-party companies are often scams or very low value; if someone is charging $3,000–$10,000+ for a rotation at an unaffiliated private office, caution is advised.' Out of scope for an institutional-USCE catalog. One-by-one packet #99.",
+    classification: "THIRD_PARTY_BROKER",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
   },
 };
 
