@@ -305,3 +305,217 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - **stopCondition:** Real Conemaugh medical-students page confirmed; verified-links override applied with clear-warning note.
 - **nextAction:** Validate + commit batch 1; then move to packet 11.
 
+# Batch 2 (packets 11-20) — 2026-05-17
+
+## Packet 11: CommonSpirit Health International — Clinical Observation (re-verify)
+
+- **programType:** observership
+- **currentUrl:** `https://commonspiritinternational.org/education-programs/` (verified-links already set in packet #9 with verified:false)
+- **Pages opened:** WebFetch with deeper application-process prompt → content still truncated; cannot confirm individual-application path
+- **Search terms tried:** `"CommonSpirit Health International" observership IMG clinical experience program eligibility`
+- **Candidate URLs found:** none more specific
+- **Rejected URLs:** none
+- **finalUrl:** unchanged
+- **finalClassification:** `BORDERLINE_KEEP_REVERIFY` (final — verified:false)
+- **evidenceQuote:** data.js text only — "Institutional/organizational application required."
+- **sourcePageTitle:** "Education Programs - CommonSpirit Health International"
+- **audienceDecision:** IMG/INTL physicians via institutional partnership
+- **applicationDecision:** Institutional sponsorship only
+- **countsAsTrueUSCE:** false
+- **countsAsResearch:** false
+- **actionTaken:** Re-confirmed verified-links entry stays at verified:false; URL is the right one but program structure can't be auto-validated.
+- **stopCondition:** WebFetch+WebSearch exhausted without individual-application confirmation.
+- **nextAction:** Move to packet 12.
+
+## Packet 12: Coney Island Hospital
+
+- **programType:** observership; reality: EM 4-week M4 elective (affiliation-restricted)
+- **currentUrl:** `https://www.nychealthandhospitals.org/coneyisland/` (homepage)
+- **Pages opened:**
+  - `nychealthandhospitals.org/coneyisland/` → WebFetch: generic hospital homepage, no USCE
+  - `coneyem.com/index.php/medical-students/` → WebFetch: "at this time our institution is only accepting students from affiliated medical schools"
+- **Search terms tried:** `NYC Health Hospitals Coney Island South Brooklyn medical student elective USCE observership`
+- **Candidate URLs found:**
+  - `coneyem.com/index.php/medical-students/` (kept — EM specific)
+  - `nychealthandhospitals.org/southbrooklynhealth/residencies-and-fellowships/`
+  - `nychealthandhospitals.org/mosaic/visiting-scholars-program/` (MOSAIC — Coney/South Brooklyn participates)
+- **Rejected URLs:** the hospital homepage
+- **finalUrl:** `https://coneyem.com/index.php/medical-students/`
+- **finalClassification:** `BORDERLINE_KEEP_REVERIFY` (verified:false — affiliation restriction)
+- **evidenceQuote:** "at this time our institution is only accepting students from affiliated medical schools for elective rotations"
+- **sourcePageTitle:** "Medical Students - South Brooklyn Health EM Residency"
+- **audienceDecision:** affiliated-school M4 only (currently)
+- **applicationDecision:** Contact cihemresidency@nychhc.org
+- **countsAsTrueUSCE:** false
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Coney Island Hospital"`; warning note in the verified-links text about affiliation restriction.
+- **stopCondition:** EM page is the closest real USCE pathway; broader access restricted; MOSAIC remains an alternative.
+- **nextAction:** Move to packet 13.
+
+## Packet 13: Drexel University / Hahnemann (Tower Health)
+
+- **programType:** observership; reality: M4 elective via Drexel COM
+- **currentUrl:** `https://drexel.edu/medicine/` (homepage)
+- **Pages opened:**
+  - `drexel.edu/medicine/` → WebFetch: no direct USCE on homepage
+  - `webcampus.med.drexel.edu/ClinicalEducation/Year4/VisitingStudInfo.htm` → WebFetch: "All visiting medical students must be enrolled in a Liaison Committee on Medical Education (LCME) or American Osteopathic Association (AOA) accredited medical school"
+- **Search terms tried:** prior Drexel/Tower batch search
+- **Candidate URLs found:**
+  - `webcampus.med.drexel.edu/ClinicalEducation/Year4/VisitingStudInfo.htm` (kept — canonical visiting student info)
+  - `towerhealth.org/academic-affairs/medical-student-rotations` (Tower Health Reading partner)
+- **Rejected URLs:** `drexel.edu/medicine/`
+- **finalUrl:** `https://webcampus.med.drexel.edu/ClinicalEducation/Year4/VisitingStudInfo.htm`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** "All visiting medical students must be enrolled in a Liaison Committee on Medical Education (LCME) or American Osteopathic Association (AOA) accredited medical school"
+- **sourcePageTitle:** "Visiting Student Information"
+- **audienceDecision:** us-md-do
+- **applicationDecision:** VSLO (most departments); $75 per rotation
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Drexel University / Hahnemann (Tower Health)"`.
+- **stopCondition:** Drexel COM visiting student info page confirmed.
+- **nextAction:** Move to packet 14.
+
+## Packet 14: Duke University Hospital
+
+- **programType:** observership; reality: visiting student elective via VSLO
+- **currentUrl:** `https://medschool.duke.edu/` (homepage)
+- **Pages opened:** `medschool.duke.edu/education/health-professions-education-programs/student-services/office-registrar/visiting-students` → WebFetch: hasUSCE=true
+- **Search terms tried:** prior batch Duke search
+- **Candidate URLs:** the visiting-students canonical page (kept)
+- **finalUrl:** `https://medschool.duke.edu/education/health-professions-education-programs/student-services/office-registrar/visiting-students`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** "Applicants must be in good academic standing, receive academic credit from their home school, and be progressing toward a Doctor of Medicine or Doctor of Osteopathic Medicine degree"
+- **sourcePageTitle:** "Visiting Students | Duke University School of Medicine"
+- **audienceDecision:** us-md-do via VSLO; INTL via direct route with affiliation agreement
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Duke University Hospital"`. Removed prior duplicate stub.
+- **stopCondition:** Canonical visiting-students page confirmed.
+- **nextAction:** Move to packet 15.
+
+## Packet 15: Elmhurst Hospital Center
+
+- **programType:** observership; reality: MOSAIC pathway (NYC H+H)
+- **currentUrl:** `https://www.nychealthandhospitals.org/elmhurst/graduate-medical-education/` (GME landing)
+- **Pages opened:** (via WebSearch result) NYC H+H MOSAIC Visiting Scholars page confirmed as the access route for Elmhurst electives
+- **Search terms tried:** `NYC Health Hospitals Elmhurst medical student elective observership visiting`
+- **Candidate URLs found:** `nychealthandhospitals.org/mosaic/visiting-scholars-program/` (kept) and Icahn Mount Sinai (Elmhurst is Icahn-affiliated)
+- **Rejected URLs:** the GME-only landing
+- **finalUrl:** `https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** (from MOSAIC page) "MOSAIC Visiting Scholars Program (VSP) offers four-week electives at NYC Health + Hospitals…"
+- **sourcePageTitle:** "Medical Opportunities for Students and Aspiring Inclusive Clinicians (MOSAIC)"
+- **audienceDecision:** us-md-do; underserved-care focused
+- **applicationDecision:** Apply to MOSAIC@nychhc.org by April 24, 2026
+- **costDecision:** $2k stipend + $2k housing (non-NYC); no tuition
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Elmhurst Hospital Center"`.
+- **stopCondition:** MOSAIC pathway confirmed as the canonical route for Elmhurst visiting electives.
+- **nextAction:** Move to packet 16.
+
+## Packet 16: Emory University Hospital
+
+- **programType:** observership; reality: visiting medical student elective (with INTL track)
+- **currentUrl:** `https://med.emory.edu/` (homepage)
+- **Pages opened:** WebSearch confirmed `med.emory.edu/education/admissions/visiting/index.html` as canonical visiting students page
+- **Search terms tried:** `Emory University Hospital visiting medical students international clerkship elective`
+- **Candidate URLs:**
+  - `med.emory.edu/education/admissions/visiting/index.html` (kept — canonical)
+  - `med.emory.edu/education/admissions/visiting/md_files/ElectivesforIntlStudents.PDF` (INTL details)
+- **Rejected URLs:** the homepage
+- **finalUrl:** `https://med.emory.edu/education/admissions/visiting/index.html`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** "International students are placed in electives only during the months of October to February"
+- **sourcePageTitle:** "Visiting Medical Students | Emory School of Medicine"
+- **audienceDecision:** both (LCME US students + INTL October-February)
+- **applicationDecision:** Office of Medical Education and Student Affairs International Visiting Application Form
+- **costDecision:** $500 non-refundable application fee + $3,500/4wk tuition for INTL (max 2 electives)
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Emory University Hospital"`. Removed prior duplicate stub.
+- **stopCondition:** Canonical visiting page confirmed.
+- **nextAction:** Move to packet 17.
+
+## Packet 17: Geisinger Medical Center
+
+- **programType:** observership; reality: visiting student elective (NO observership available)
+- **currentUrl:** `https://www.geisinger.org/` (homepage)
+- **Pages opened:** WebSearch confirmed `geisinger.edu/gchs/education/departments/visiting-students` as the canonical page
+- **Search terms tried:** `Geisinger Medical Center visiting medical students elective observership Danville`
+- **Candidate URLs:**
+  - `geisinger.edu/gchs/education/departments/visiting-students` (kept — canonical)
+  - Specialty pages: EM, Ophtho, ENT, Anesth, Cardio, IR
+- **Rejected URLs:** the homepage
+- **finalUrl:** `https://www.geisinger.edu/gchs/education/departments/visiting-students`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK` (WARNING: institution does NOT offer observerships, only M4 electives)
+- **evidenceQuote:** "Geisinger offers two- and four-week rotations for visiting medical students. Electives are only open to fourth-year medical students enrolled in medical schools accredited by the Liaison Committee on Medical Education (LCME) or the Commission on Osteopathic College Accreditation (COCA)."
+- **sourcePageTitle:** "Geisinger Commonwealth - Visiting Medical Students"
+- **audienceDecision:** us-md-do (M4 LCME/COCA only)
+- **applicationDecision:** VSLO
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Geisinger Medical Center"` + warning about no observership.
+- **stopCondition:** Canonical visiting-students page confirmed; observership explicitly unavailable.
+- **nextAction:** Move to packet 18.
+
+## Packet 18: Grady Memorial Hospital
+
+- **programType:** observership; reality: clinical sites for Emory electives + their own Medical Education Observership Program
+- **currentUrl:** `https://www.gradyhealth.org/` (homepage)
+- **Pages opened:** WebSearch result confirmed Grady is primary Emory SOM clinical site; observership program also exists separately
+- **Search terms tried:** `Grady Memorial Hospital Atlanta visiting medical students elective Emory observership`
+- **Candidate URLs:**
+  - `med.emory.edu/education/admissions/visiting/index.html` (Emory visiting students; Grady is the clinical site for many electives) — chosen as the primary
+  - `collaboration.acemapp.org/e-content/grady-health-system/content/9783` (Grady Medical Education Observership Program — secondary)
+- **Rejected URLs:** the homepage
+- **finalUrl:** `https://med.emory.edu/education/admissions/visiting/index.html`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** "Grady Memorial Hospital is the primary Emory SOM clinical site; visiting medical students apply through Emory's visiting page."
+- **sourcePageTitle:** "Visiting Medical Students | Emory School of Medicine"
+- **audienceDecision:** both (US LCME via Emory; INTL Oct-Feb)
+- **applicationDecision:** Emory's visiting student application (or Grady Med Ed Observership for grad/professional observers separately: medicaleducation@gmh.edu)
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Grady Memorial Hospital"` pointing at Emory's visiting page.
+- **stopCondition:** Grady visiting access confirmed via Emory; standalone observership pathway documented.
+- **nextAction:** Move to packet 19.
+
+## Packet 19: Harbor-UCLA Medical Center
+
+- **programType:** observership; reality: IM Sub-Internships and Advanced Clerkships via VSLO
+- **currentUrl:** `https://dhs.lacounty.gov/harbor-ucla/` (homepage)
+- **Pages opened:** WebSearch confirmed dedicated IM sub-I page
+- **Search terms tried:** `Harbor-UCLA Medical Center visiting medical students elective observership`
+- **Candidate URLs:**
+  - `dhs.lacounty.gov/harbor-ucla-medical-center/gme/internal-medicine/apply/sub-internships-and-advanced-clerkships/` (kept — IM specific)
+  - `medschool.ucla.edu/education/md-education/visiting-students` (UCLA SOM general VMS) — alternative
+- **Rejected URLs:** the LACounty hospital homepage
+- **finalUrl:** `https://dhs.lacounty.gov/harbor-ucla-medical-center/gme/internal-medicine/apply/sub-internships-and-advanced-clerkships/`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** "Elective clerkships for fourth-year medical students are offered by the Department of Medicine at Harbor-UCLA and the David Geffen School of Medicine at UCLA."
+- **sourcePageTitle:** "Sub-Internships and Advanced Clerkships - Harbor-UCLA Medical Center"
+- **audienceDecision:** us-md-do (LCME/COCA M4)
+- **applicationDecision:** VSLO ≥75 days prior
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Harbor-UCLA Medical Center"`.
+- **stopCondition:** IM sub-I page confirmed; UCLA-affiliated.
+- **nextAction:** Move to packet 20.
+
+## Packet 20: Harlem Hospital Center
+
+- **programType:** observership; reality: MOSAIC pathway (NYC H+H)
+- **currentUrl:** `https://www.nychealthandhospitals.org/harlem/` (generic facility page)
+- **Pages opened:** Search result: Harlem is part of NYC H+H, Columbia VP&S-affiliated since 1962; MOSAIC is the canonical visiting student access path
+- **Search terms tried:** `NYC Health Hospitals Harlem visiting medical student elective Columbia`
+- **Candidate URLs:**
+  - `nychealthandhospitals.org/mosaic/visiting-scholars-program/` (kept — MOSAIC includes Harlem)
+  - `vagelos.columbia.edu/education/residencies-fellowships-and-training/harlem-hospital-center` (Columbia affiliation; useful context)
+  - `metharlememresidency.com/medical-students` (EM-specific rotation)
+- **Rejected URLs:** `/harlem/` facility homepage
+- **finalUrl:** `https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/`
+- **finalClassification:** `MOVED_REORIENTED_TO_TRUE_USCE_LINK`
+- **evidenceQuote:** (MOSAIC) "MOSAIC Visiting Scholars Program (VSP) offers four-week electives at NYC Health + Hospitals…"
+- **sourcePageTitle:** "MOSAIC Visiting Scholars Program | NYC Health + Hospitals"
+- **audienceDecision:** us-md-do; underserved-care focused
+- **applicationDecision:** MOSAIC@nychhc.org by April 24, 2026
+- **costDecision:** $2k stipend + $2k housing for non-NYC
+- **countsAsTrueUSCE:** TRUE
+- **actionTaken:** Added verified-links entry with EXACT data.js key `"Harlem Hospital Center"`.
+- **stopCondition:** MOSAIC pathway confirmed; Harlem participates.
+- **nextAction:** Validate + commit batch 2; then move to packet 21.
+

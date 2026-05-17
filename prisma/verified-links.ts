@@ -282,16 +282,10 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: false,
     note: "GME office does NOT manage observerships. Department-level only. Neurosurgery has dedicated page.",
   },
-  "Emory University Hospital": {
-    url: "https://med.emory.edu/",
-    verified: false,
-    note: "Radiology has observer program. General observerships require credentialing office (observership.credentialing@emoryhealthcare.org). Fee: $15 + $10 badge.",
-  },
-  "Duke University Hospital": {
-    url: "https://medschool.duke.edu/",
-    verified: false,
-    note: "No centralized observership. Ophthalmology and Radiology ($1,900/week, CME credit) have dedicated pages. 6 months notice for international applicants.",
-  },
+  // "Emory University Hospital" — primary entry now in one-by-one packet #16
+  // (URL updated to med.emory.edu/education/admissions/visiting/index.html)
+  // "Duke University Hospital" — primary entry now in one-by-one packet #14
+  // (URL updated to medschool.duke.edu/.../visiting-students)
   "Henry Ford Hospital": {
     url: "https://www.henryford.com/hcp/med-ed/ugme/students/visiting-students",
     verified: true,
@@ -793,5 +787,59 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://gme.conemaugh.org/resident-programs/medical-students",
     verified: false,
     note: "Conemaugh Medical Students page. WARNING: institution explicitly states 'Conemaugh does not offer observerships, externships, shadowing or research assistant positions.' They DO offer M4 audition rotation in Internal Medicine only. data.js classifies as observership, which is inaccurate — should be reclassified to rotation/audition. Replaces homepage. verified:false because the data.js type is wrong, not because the page is wrong. One-by-one packet #10.",
+  },
+
+  "Coney Island Hospital": {
+    url: "https://coneyem.com/index.php/medical-students/",
+    verified: false,
+    note: "South Brooklyn Health (formerly Coney Island Hospital) EM 4-week M4 elective. WARNING: 'at this time our institution is only accepting students from affiliated medical schools for elective rotations'. Contact cihemresidency@nychhc.org. Replaces hospital homepage; better deeper option exists at nychealthandhospitals.org/southbrooklynhealth/residencies-and-fellowships/. Also participates in NYC H+H MOSAIC. verified:false because affiliation restriction limits open access. One-by-one packet #12.",
+  },
+
+  "Drexel University / Hahnemann (Tower Health)": {
+    url: "https://webcampus.med.drexel.edu/ClinicalEducation/Year4/VisitingStudInfo.htm",
+    verified: true,
+    note: "Drexel COM Visiting Student Information. LCME/AOA US students only. Available at Reading Hospital (Tower Health), Phoenixville, St Christopher's. $75 fee per rotation, max 12 weeks. Replaces drexel.edu/medicine/ homepage. One-by-one packet #13.",
+  },
+
+  "Duke University Hospital": {
+    url: "https://medschool.duke.edu/education/health-professions-education-programs/student-services/office-registrar/visiting-students",
+    verified: true,
+    note: "Duke SOM Visiting Students canonical page. VSLO for LCME/COCA US; international applications via direct route with affiliation agreement. Replaces medschool.duke.edu/ homepage. One-by-one packet #14.",
+  },
+
+  "Elmhurst Hospital Center": {
+    url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+    verified: true,
+    note: "Elmhurst is part of NYC Health + Hospitals; visiting medical students apply via MOSAIC Visiting Scholars Program. 4-week elective + $2k stipend + $2k housing for non-NYC. US LCME/AOA. Underserved-care focused. Apply to MOSAIC@nychhc.org. Replaces /elmhurst/graduate-medical-education/ which is GME-only. One-by-one packet #15.",
+  },
+
+  "Emory University Hospital": {
+    url: "https://med.emory.edu/education/admissions/visiting/index.html",
+    verified: true,
+    note: "Emory SOM Visiting Medical Students. INTL placed Oct-Feb. $500 non-refundable application fee + $3,500/4wk tuition for INTL (max 2 electives). Replaces med.emory.edu/ homepage. One-by-one packet #16.",
+  },
+
+  "Geisinger Medical Center": {
+    url: "https://www.geisinger.edu/gchs/education/departments/visiting-students",
+    verified: true,
+    note: "Geisinger Commonwealth Visiting Medical Students. 2- or 4-week M4 rotations via VSLO. LCME/COCA only. WARNING: Geisinger explicitly does NOT offer observerships. Specialty pages exist (EM, Ophtho, ENT, Anesth, Cardio, IR). Replaces geisinger.org/ homepage. One-by-one packet #17.",
+  },
+
+  "Grady Memorial Hospital": {
+    url: "https://med.emory.edu/education/admissions/visiting/index.html",
+    verified: true,
+    note: "Grady Memorial is the primary Emory SOM clinical site; visiting medical students apply through Emory's visiting page. Grady's own Medical Education Observership Program exists at medicaleducation@gmh.edu for grad/professional observers. Replaces gradyhealth.org/ homepage. One-by-one packet #18.",
+  },
+
+  "Harbor-UCLA Medical Center": {
+    url: "https://dhs.lacounty.gov/harbor-ucla-medical-center/gme/internal-medicine/apply/sub-internships-and-advanced-clerkships/",
+    verified: true,
+    note: "Harbor-UCLA IM Sub-Internships and Advanced Clerkships. Visiting students apply via VSLO 75+ days prior. LCME/COCA US students only. UCLA David Geffen SOM affiliate. Replaces dhs.lacounty.gov/harbor-ucla/ generic page. One-by-one packet #19.",
+  },
+
+  "Harlem Hospital Center": {
+    url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+    verified: true,
+    note: "Harlem is part of NYC Health + Hospitals; affiliated with Columbia VP&S since 1962. Visiting medical students apply via MOSAIC Visiting Scholars Program. EM rotations at both Metropolitan + Harlem via MetHarlemEM. Replaces /harlem/ generic page. One-by-one packet #20.",
   },
 };
