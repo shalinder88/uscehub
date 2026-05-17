@@ -1,33 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getSnapshotMetadata } from "@/lib/p102-approved-usce";
 import {
-  getAllPreviewRows,
-  getPreviewSummary,
-  PREVIEW_SOURCE_LABELS,
-} from "@/lib/p102-preview-rows";
-import { P102PreviewListingCard } from "@/components/listings/p102-preview-listing-card";
+  getDisplayEligibleClinical,
+  getDisplayEligibleResearch,
+  getDisplayEligibilityCounts,
+  type DisplayEligibleRow,
+} from "@/lib/p102-display-eligible-listings";
+import { BrowseCard } from "./browse/browse-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 
 /**
  * P102 Verified-Preview Listing Page.
  *
- * Local preview ONLY. Reads from the build-time static snapshot
- *   src/data/generated/p102-approved-usce.generated.json
- * which is synced from the canonical approved-export.
+ * REWIRED 2026-05-17 (Shape C cutover) to read directly from the
+ * display-eligibility truth layer instead of the older three-source
+ * snapshot merger. Every preview surface plus production `/browse`
+ * now share one source of truth — drift is impossible.
  *
- * Does NOT touch the Prisma `listing` table. Does NOT replace `/browse`.
- * This is a parallel preview route the team uses to evaluate the
- * source-linked corpus before deciding whether to promote into Prisma.
+ * Reads:
+ *   - getDisplayEligibleClinical() → 167 rows
+ *   - getDisplayEligibleResearch() → 9 rows
+ *   - hidden / outreach / research-reverify / manual-browser /
+ *     negative-info: excluded by construction
  *
- * SEO: noindex via robots meta + no canonical override. We do NOT want
- * search engines indexing the preview surface until rows are
- * one-time-promoted into the real listings flow.
+ * Backward compatibility:
+ *   - /usce/verified-preview/[rowId]  (snapshot-based legacy detail) — left intact
+ *   - /usce/verified-preview/admin/*  (admin reviewer flow on the CSV) — left intact
+ *   - getAllPreviewRows() / getPreviewSummary() — still exported; the
+ *     legacy detail + admin surfaces import them
+ *
+ * Does NOT mutate the Prisma `listing` table.
+ * Does NOT change `/browse`.
+ *
+ * SEO: noindex.
  */
 export const metadata: Metadata = {
   title: "Source-linked USCE preview — internal",
   description:
-    "Internal preview of source-linked, quote-backed USCE opportunities. Each row carries a verbatim quote from the official institution source page.",
+    "Internal preview of source-linked USCE opportunities sourced from the display-eligibility truth layer (Shape C). Each card carries a verified URL and a source-classification badge.",
   robots: {
     index: false,
     follow: false,
@@ -35,14 +45,56 @@ export const metadata: Metadata = {
   },
 };
 
-// Force dynamic so live JSON edits (intelligent + exact-seed rows) appear
-// without a rebuild during local review.
 export const dynamic = "force-dynamic";
 
 interface SearchParams {
   audience?: string;
   state?: string;
   type?: string;
+  lane?: "clinical" | "research" | "all";
+  q?: string;
+  badge?: string;
+  specialty?: string;
+}
+
+const SUB_TYPE_OPTIONS = [
+  "observership",
+  "visiting-student-elective",
+  "visiting-student-clerkship",
+  "sub-internship",
+  "externship",
+  "international-visiting-student",
+  "multi-rotation",
+  "research-postdoc",
+];
+
+function filterRows(
+  rows: DisplayEligibleRow[],
+  params: SearchParams
+): DisplayEligibleRow[] {
+  const q = (params.q || "").toLowerCase().trim();
+  const subType = (params.type || "").trim();
+  const state = (params.state || "").trim().toUpperCase();
+  const badge = (params.badge || "").trim().toUpperCase();
+  const specialty = (params.specialty || "").trim();
+
+  return rows.filter((r) => {
+    if (q) {
+      const blob = `${r.programName} ${r.institution} ${r.state}`.toLowerCase();
+      if (!blob.includes(q)) return false;
+    }
+    if (subType && r.subType !== subType) return false;
+    if (state && state !== "ALL" && (r.state || "").toUpperCase() !== state) return false;
+    if (badge && badge !== "ALL" && r.badge !== badge) return false;
+    if (specialty === "only" && !r.specialtyLimited) return false;
+    return true;
+  });
+}
+
+function uniqStates(rows: DisplayEligibleRow[]): string[] {
+  const s = new Set<string>();
+  for (const r of rows) if (r.state) s.add(r.state);
+  return [...s].sort();
 }
 
 export default async function VerifiedPreviewPage({
@@ -50,201 +102,221 @@ export default async function VerifiedPreviewPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const search = await searchParams;
-  const allRows = getAllPreviewRows();
-  const summary = getPreviewSummary();
-  const snapshotMeta = getSnapshotMetadata();
+  const params = await searchParams;
+  const lane: "clinical" | "research" | "all" =
+    params.lane === "research" ? "research" : params.lane === "all" ? "all" : "clinical";
 
-  // Collect filter options from all rows
-  const allStates = [...new Set(allRows.map((r) => r.state).filter(Boolean))].sort();
-  const allAudiences = [...new Set(allRows.map((r) => r.audience).filter((a): a is string => !!a))];
-  const allTypes = [...new Set(allRows.map((r) => r.opportunityType))];
+  const clinical = getDisplayEligibleClinical();
+  const research = getDisplayEligibleResearch();
+  const counts = getDisplayEligibilityCounts();
 
-  // Apply filters
-  const rows = allRows.filter((r) => {
-    if (search.audience && search.audience !== "all" && r.audience !== search.audience) return false;
-    if (search.state && search.state !== "all" && r.state !== search.state) return false;
-    if (search.type && search.type !== "all" && r.opportunityType !== search.type) return false;
-    return true;
-  });
-
-  const activeFilters = [search.audience, search.state, search.type].filter(
-    (v) => v && v !== "all",
-  ).length;
+  const laneRows =
+    lane === "research" ? research : lane === "all" ? [...clinical, ...research] : clinical;
+  const filtered = filterRows(laneRows, params);
+  const allStates = uniqStates([...clinical, ...research]);
+  const activeFilters = [
+    params.q,
+    params.type,
+    params.state && params.state !== "all" ? params.state : null,
+    params.badge,
+    params.specialty,
+  ].filter(Boolean).length;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
       <header className="mb-6">
         <div className="mb-2 text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
-          Internal preview · not indexed
+          Internal preview · not indexed · sourced from display-eligibility truth layer
         </div>
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
-          Source-linked USCE opportunities
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-50">
+          Source-linked USCE preview
         </h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600 dark:text-slate-400">
-          {summary.total} quote-backed opportunit{summary.total === 1 ? "y" : "ies"} from {summary.institutions} institutions. Each row was extracted directly from an official institution source page, with a verbatim quote, audience classification, and direct-link validation.
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          <span className="font-semibold text-slate-900 dark:text-slate-100">
+            {counts.CLINICAL_USCE}
+          </span>{" "}
+          clinical USCE ·{" "}
+          <span className="font-semibold text-slate-900 dark:text-slate-100">
+            {counts.RESEARCH}
+          </span>{" "}
+          research ·{" "}
+          <span className="font-semibold text-slate-900 dark:text-slate-100">
+            {counts.HIDDEN + counts.ARCHIVE_NEG_INFO}
+          </span>{" "}
+          not displayed (hidden / archived).
         </p>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            {summary.bySource.AUTO_REVIEWED} {PREVIEW_SOURCE_LABELS.AUTO_REVIEWED}
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 font-medium text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-            {summary.bySource.EXACT_SEED} {PREVIEW_SOURCE_LABELS.EXACT_SEED}
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700 dark:bg-slate-700 dark:text-slate-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-500" />
-            {summary.bySource.INTELLIGENT_GATE} {PREVIEW_SOURCE_LABELS.INTELLIGENT_GATE}
-          </span>
-        </div>
-        <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">
-          Reviewer snapshot synced: {snapshotMeta.syncedAt.slice(0, 10)} · merged at render time
+        <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+          Related surfaces:{" "}
+          <Link href="/browse" className="underline hover:text-slate-900 dark:hover:text-slate-100">
+            production /browse
+          </Link>
+          {" · "}
+          <Link
+            href="/usce/verified-preview/browse"
+            className="underline hover:text-slate-900 dark:hover:text-slate-100"
+          >
+            /usce/verified-preview/browse
+          </Link>
+          {" · "}
+          <Link
+            href="/usce/verified-preview/display-readiness"
+            className="underline hover:text-slate-900 dark:hover:text-slate-100"
+          >
+            /usce/verified-preview/display-readiness
+          </Link>
         </p>
       </header>
 
-      <ListingDisclaimer className="mb-6" />
+      <ListingDisclaimer className="mb-5" />
+
+      <nav className="mb-5 flex flex-wrap gap-2" aria-label="Lane">
+        {[
+          { key: "clinical", label: `Clinical USCE (${clinical.length})` },
+          { key: "research", label: `Research (${research.length})` },
+          { key: "all", label: `All active (${clinical.length + research.length})` },
+        ].map((opt) => {
+          const isActive = lane === opt.key;
+          return (
+            <Link
+              key={opt.key}
+              href={`/usce/verified-preview?lane=${opt.key}`}
+              className={`inline-flex items-center rounded border px-3 py-1 text-sm font-semibold ${
+                isActive
+                  ? "bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 border-slate-900 dark:border-slate-100"
+                  : "border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+              }`}
+            >
+              {opt.label}
+            </Link>
+          );
+        })}
+      </nav>
 
       <form
         method="get"
-        className="mb-6 flex flex-wrap items-end gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60"
+        className="mb-6 grid grid-cols-1 gap-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-4 sm:grid-cols-6"
       >
-        <FilterSelect
-          name="audience"
-          label="Audience"
-          value={search.audience ?? "all"}
-          options={[
-            { value: "all", label: `All audiences (${allRows.length})` },
-            ...allAudiences.map((a) => ({
-              value: a,
-              label: `${audienceShortLabel(a)} (${allRows.filter((r) => r.audience === a).length})`,
-            })),
-          ]}
-        />
-        <FilterSelect
-          name="state"
-          label="State"
-          value={search.state ?? "all"}
-          options={[
-            { value: "all", label: `All states (${allStates.length})` },
-            ...allStates.map((s) => ({ value: s, label: s })),
-          ]}
-        />
-        <FilterSelect
-          name="type"
-          label="Type"
-          value={search.type ?? "all"}
-          options={[
-            { value: "all", label: "All types" },
-            ...allTypes.map((t) => ({ value: t, label: prettyType(t) })),
-          ]}
-        />
-        <button
-          type="submit"
-          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
-        >
-          Apply
-        </button>
-        {activeFilters > 0 ? (
-          <Link
-            href="/usce/verified-preview"
-            className="text-sm text-slate-600 underline-offset-2 hover:underline dark:text-slate-300"
+        <input type="hidden" name="lane" value={lane} />
+        <div className="sm:col-span-2">
+          <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Search
+          </label>
+          <input
+            type="text"
+            name="q"
+            defaultValue={params.q || ""}
+            placeholder="Institution, program, state…"
+            className="mt-1 w-full rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+          />
+        </div>
+        <div>
+          <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Type
+          </label>
+          <select
+            name="type"
+            defaultValue={params.type || ""}
+            className="mt-1 w-full rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
           >
-            Clear filters
+            <option value="">Any</option>
+            {SUB_TYPE_OPTIONS.map((s) => (
+              <option key={s} value={s}>
+                {s.replace(/-/g, " ")}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            State
+          </label>
+          <select
+            name="state"
+            defaultValue={params.state || ""}
+            className="mt-1 w-full rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+          >
+            <option value="">Any</option>
+            {allStates.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Source
+          </label>
+          <select
+            name="badge"
+            defaultValue={params.badge || ""}
+            className="mt-1 w-full rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+          >
+            <option value="">Any</option>
+            <option value="DIRECT">Direct</option>
+            <option value="REORIENTED">Reoriented</option>
+            <option value="PROTECTED">Protected</option>
+            <option value="RESEARCH">Research</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Specialty
+          </label>
+          <select
+            name="specialty"
+            defaultValue={params.specialty || ""}
+            className="mt-1 w-full rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+          >
+            <option value="">Any</option>
+            <option value="only">Specialty-limited only</option>
+          </select>
+        </div>
+        <div className="flex items-end gap-2 sm:col-span-6">
+          <button
+            type="submit"
+            className="rounded bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-4 py-1.5 text-sm font-semibold hover:bg-slate-700 dark:hover:bg-white"
+          >
+            Apply
+          </button>
+          <Link
+            href={`/usce/verified-preview?lane=${lane}`}
+            className="text-sm text-slate-500 dark:text-slate-400 hover:underline"
+          >
+            Reset
           </Link>
-        ) : null}
-        <span className="ml-auto text-sm text-slate-600 dark:text-slate-400">
-          Showing <strong>{rows.length}</strong> of {allRows.length}
-        </span>
+          <span className="ml-auto text-sm text-slate-500 dark:text-slate-400">
+            {filtered.length} {filtered.length === 1 ? "row" : "rows"} match
+            {activeFilters > 0 ? ` · ${activeFilters} filter${activeFilters === 1 ? "" : "s"} active` : ""}
+          </span>
+        </div>
       </form>
 
-      {rows.length === 0 ? (
-        <div className="rounded-lg border border-slate-200 bg-white p-6 text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-          No rows match the current filters. <Link href="/usce/verified-preview" className="underline">Clear filters</Link> to see everything.
-        </div>
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rows.map((row) => (
-            <P102PreviewListingCard key={row.rowId} row={row} />
-          ))}
-        </div>
+      <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((r, i) => (
+          <BrowseCard key={`${r.programName}-${r.state}-${i}`} row={r} />
+        ))}
+      </section>
+
+      {filtered.length === 0 && (
+        <p className="mt-12 text-center text-sm text-slate-500 dark:text-slate-400">
+          No rows match these filters.{" "}
+          <Link
+            href={`/usce/verified-preview?lane=${lane}`}
+            className="underline"
+          >
+            Reset
+          </Link>
+          .
+        </p>
       )}
 
-      <footer className="mt-10 border-t border-slate-200 pt-6 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-500" id="footer">
-        <p>
-          This is an internal preview route. Production listings are served by{" "}
-          <Link href="/browse" className="underline">
-            /browse
-          </Link>{" "}
-          and read from the Prisma listing table. Preview rows are not yet
-          promoted into the production data path.
-        </p>
-        {process.env.NODE_ENV !== "production" ? (
-          <p className="mt-3">
-            Reviewer admin (dev-only):{" "}
-            <Link
-              href="/usce/verified-preview/admin/review"
-              className="underline"
-            >
-              /usce/verified-preview/admin/review
-            </Link>
-          </p>
-        ) : null}
+      <footer className="mt-12 border-t border-slate-200 dark:border-slate-700 pt-4 text-xs text-slate-500 dark:text-slate-400">
+        Sourced from the display-eligibility truth layer (Shape C
+        regeneration). Each card links to the institution&apos;s own official
+        source page; we do not host or substitute their content. Last
+        reviewed locally on 2026-05-17.
       </footer>
     </div>
   );
-}
-
-function FilterSelect({
-  name,
-  label,
-  value,
-  options,
-}: {
-  name: string;
-  label: string;
-  value: string;
-  options: { value: string; label: string }[];
-}) {
-  return (
-    <label className="block">
-      <span className="mb-1 block text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-        {label}
-      </span>
-      <select
-        name={name}
-        defaultValue={value}
-        className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-slate-500 focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100"
-      >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
-
-function audienceShortLabel(a: string): string {
-  switch (a) {
-    case "us-md-do": return "US MD/DO visiting students";
-    case "international": return "International medical students";
-    case "img-observer": return "IMG observers";
-    default: return a;
-  }
-}
-
-function prettyType(t: string): string {
-  switch (t) {
-    case "OBSERVERSHIP": return "Observership";
-    case "VISITING_MEDICAL_STUDENT": return "Visiting Medical Student";
-    case "CLINICAL_ELECTIVE": return "Clinical Elective";
-    case "SUB_INTERNSHIP": return "Sub-Internship";
-    case "AWAY_ROTATION": return "Away Rotation";
-    case "INTERNATIONAL_VISITING_STUDENT": return "International Visiting Student";
-    case "RESEARCH_OPPORTUNITY": return "Research";
-    case "EXTERNSHIP": return "Externship";
-    default: return t;
-  }
 }
