@@ -4,6 +4,7 @@ import { randomBytes } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
 import { VERIFIED_LINKS } from "./verified-links";
+import { HIDDEN_PROGRAMS, isHidden, hideListStats } from "./listings-hidelist";
 import { getSeedAdminCredentials, shouldSeedCreateAdmin } from "../src/lib/env";
 
 // ─────────────────────────────────────────────────────────────────
@@ -223,12 +224,21 @@ async function main() {
   const listingIds: string[] = [];
 
   let skipped = 0;
+  let hidden = 0;
   for (let i = 0; i < programs.length; i++) {
     const program = programs[i];
 
     // Skip pure bench science programs (not relevant for IMG clinical research)
     if (isPureBenchScience(program.specialties)) {
       skipped++;
+      continue;
+    }
+
+    // Skip programs on the hide list (URLs confirmed dead 2026-05-16; see
+    // prisma/listings-hidelist.ts for per-program reason and reorientation
+    // follow-up).
+    if (isHidden(program.name)) {
+      hidden++;
       continue;
     }
 
@@ -267,7 +277,10 @@ async function main() {
     listingIds.push(listing.id);
   }
 
-  console.log(`Created ${listingIds.length} listings from program data (skipped ${skipped} pure bench science programs).`);
+  console.log(`Created ${listingIds.length} listings from program data (skipped ${skipped} pure bench science programs, hid ${hidden} dead-URL programs).`);
+  const hls = hideListStats();
+  console.log(`Hide-list: ${hls.total} programs (${JSON.stringify(hls.byClass)}; follow-up: ${JSON.stringify(hls.byFollowUp)})`);
+  void HIDDEN_PROGRAMS;
 
   // No fake reviews — reviews will come from real users only
   console.log("No sample reviews created — reviews will come from real users.");

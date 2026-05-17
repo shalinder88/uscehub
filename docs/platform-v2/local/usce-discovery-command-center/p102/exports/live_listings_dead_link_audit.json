@@ -1,0 +1,158 @@
+{
+  "generatedAt": "2026-05-17T02:53:40.671Z",
+  "totalDead": 12,
+  "totalProtected": 6,
+  "totalOther": 1,
+  "dead": [
+    {
+      "programName": "Maimonides Medical Center",
+      "state": "NY",
+      "type": "observership",
+      "url": "https://www.maimonides.org/gme/",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Loyola University Medical Center",
+      "state": "IL",
+      "type": "observership",
+      "url": "https://ssom.luc.edu/gme/",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Interfaith Medical Center",
+      "state": "NY",
+      "type": "observership",
+      "url": "https://www.interfaithmedical.org/graduate-medical-education",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    },
+    {
+      "programName": "University of Florida Health / Shands Hospital",
+      "state": "FL",
+      "type": "observership",
+      "url": "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Brookdale University Hospital",
+      "state": "NY",
+      "type": "observership",
+      "url": "https://www.brookdalehospital.org/gme",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    },
+    {
+      "programName": "UPMC (University of Pittsburgh Medical Center)",
+      "state": "PA",
+      "type": "observership",
+      "url": "https://dom.pitt.edu/education/eop/",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Cleveland Clinic — Research Fellowship",
+      "state": "OH",
+      "type": "research",
+      "url": "https://my.clevelandclinic.org/departments/research-education/postdoctoral-programs",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Cedars-Sinai — Research Fellowship",
+      "state": "CA",
+      "type": "research",
+      "url": "https://www.cedars-sinai.edu/research/training/postdoctoral.html",
+      "finalStatus": 404,
+      "note": "HTTP 404"
+    },
+    {
+      "programName": "Emory University — Postdoctoral Research",
+      "state": "GA",
+      "type": "research",
+      "url": "https://www.postdocs.emory.edu/",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    },
+    {
+      "programName": "Global Medical Foundation — USCE Programs",
+      "state": "MULTI",
+      "type": "rotation",
+      "url": "https://www.globalmedicalfoundation.com/",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    },
+    {
+      "programName": "Clinical Experience Programs (CEP) — IMG Rotations",
+      "state": "MULTI",
+      "type": "rotation",
+      "url": "https://clinicalexperienceprograms.com/",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    },
+    {
+      "programName": "Kingsbrook Jewish Medical Center",
+      "state": "NY",
+      "type": "observership",
+      "url": "https://www.kingsbrook.org/",
+      "finalStatus": 0,
+      "note": "network: fetch failed"
+    }
+  ],
+  "protected": [
+    {
+      "programName": "Johns Hopkins Hospital",
+      "state": "MD",
+      "type": "observership",
+      "url": "https://www.hopkinsmedicine.org/volunteer-services/observerships",
+      "note": "bot-blocked"
+    },
+    {
+      "programName": "University of Michigan Health",
+      "state": "MI",
+      "type": "observership",
+      "url": "https://medicine.umich.edu/",
+      "note": "bot-blocked"
+    },
+    {
+      "programName": "NIH Clinical Center — Postdoctoral Research",
+      "state": "MD",
+      "type": "research",
+      "url": "https://www.training.nih.gov/programs/postdoctoral_irta",
+      "note": "bot-blocked"
+    },
+    {
+      "programName": "Johns Hopkins — Postdoctoral Research",
+      "state": "MD",
+      "type": "research",
+      "url": "https://www.hopkinsmedicine.org/research/resources/postdoctoral",
+      "note": "bot-blocked"
+    },
+    {
+      "programName": "University of Michigan — Research Fellowship",
+      "state": "MI",
+      "type": "research",
+      "url": "https://medicine.umich.edu/medschool/research/postdoctoral",
+      "note": "bot-blocked"
+    },
+    {
+      "programName": "Hennepin Healthcare — Minneapolis",
+      "state": "MN",
+      "type": "observership",
+      "url": "https://www.hennepinhealthcare.org/",
+      "note": "network: fetch failed"
+    }
+  ],
+  "other": [
+    {
+      "programName": "ValueMD Clinical Rotations",
+      "state": "MULTI",
+      "type": "rotation",
+      "url": "https://www.valuemd.com/clinical-rotations/",
+      "status": 401,
+      "note": "unclassified"
+    }
+  ]
+}
