@@ -24,9 +24,9 @@ Archive (negative info): 1
 
 ## Clinical USCE badge distribution
 
-- DIRECT: 100
+- DIRECT: 101
 - REORIENTED: 64
-- PROTECTED: 2
+- PROTECTED: 1
 
 ## Clinical USCE subType distribution
 

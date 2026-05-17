@@ -802,9 +802,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // Experiences (sub-I, EM, Critical Care).
 
   "Hennepin Healthcare — Minneapolis": {
-    url: "https://www.hennepinhealthcare.org/medical-education-training/medical-student-rotations/",
+    url: "https://hennepinhealthcare.org/professional-healthcare-education-and-training/professional-student-education/medical-student-rotations",
     verified: true,
-    note: "Hennepin Healthcare Medical Student Rotations canonical page. 2-4 weeks (up to 12). Department of Medicine NOT offering observerships/externships to international graduates or students currently. Cloudflare-protected to bot fetchers; works in browser. Replaces hennepinhealthcare.org/ homepage. One-by-one packet #23.",
+    note: "Hennepin Healthcare Medical Student Rotations canonical page (covers both visiting medical students AND international observer opportunities). Operator-confirmed 2026-05-17 to be live in browser; replaces the older /medical-education-training/medical-student-rotations/ URL which was also bot-blocked. Cloudflare-protected to WebFetch (returns 403) but the operator opened it directly. Classified PROTECTED_BROWSER_REQUIRED per Hopkins precedent — counts as true USCE.",
   },
 
   "Indiana University Health": {

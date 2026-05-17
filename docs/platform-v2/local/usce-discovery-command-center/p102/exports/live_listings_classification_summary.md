@@ -22,24 +22,24 @@ Programs classified: 207 (from data.js)
 ## NOT_COUNTED_AS_TRUE_USCE
 - Negative informational rows:        1
 - Hidden / no program found:          31
-- Protected / manual browser needed:  2
+- Protected / manual browser needed:  1
 - Borderline keep/reverify:           0
 - Broken / manual browser needed:     0
 
 ## LINK_STATUS
-- Direct exact official links:        100
+- Direct exact official links:        101
 - Reoriented moved links:             64
 - Generic but kept:                   0
 - Dead hidden:                        31
-- Failed / browser-manual needed:     2
+- Failed / browser-manual needed:     1
 
 ## Per-classification breakdown
 
 | Classification | Count |
 |---|---:|
-| DIRECT_TRUE_USCE_LINK | 100 |
+| DIRECT_TRUE_USCE_LINK | 101 |
 | MOVED_REORIENTED_TO_TRUE_USCE_LINK | 64 |
 | NO_PROGRAM_FOUND_HIDE | 31 |
 | RESEARCH_VALID_INSTITUTIONAL_PATHWAY | 9 |
-| PROTECTED_BROWSER_REQUIRED | 2 |
 | NEGATIVE_INFO_ROW_KEEP_OR_SEPARATE | 1 |
+| PROTECTED_BROWSER_REQUIRED | 1 |
