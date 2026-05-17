@@ -33,7 +33,16 @@ export interface HiddenProgram {
   // 'AGGREGATOR_DEAD'            — third-party aggregator (not an institution), site dead
   // 'THIRD_PARTY_BROKER'         — third-party broker site is alive but not an
   //                                 institutional USCE provider (out of scope)
-  classification: 'TLS_NETWORK_DEAD' | 'HTTP_404' | 'AGGREGATOR_DEAD' | 'THIRD_PARTY_BROKER';
+  // 'OPERATOR_HIDE_NO_DIRECT_URL' — institution exists and site is alive, but
+  //                                 operator confirmed no usable direct URL for
+  //                                 visiting M4 / observership / postdoc; hide
+  //                                 until a real linkable pathway is found
+  classification:
+    | 'TLS_NETWORK_DEAD'
+    | 'HTTP_404'
+    | 'AGGREGATOR_DEAD'
+    | 'THIRD_PARTY_BROKER'
+    | 'OPERATOR_HIDE_NO_DIRECT_URL';
   // Suggested follow-up for the operator. 'PERMANENT' = remove entirely;
   // 'REORIENT' = find a replacement URL at the same institution.
   followUp: 'PERMANENT' | 'REORIENT';
@@ -161,6 +170,103 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     reason: "data.js entry has placeholder URL '#' (no real link) and description labels it 'THIRD-PARTY PLACEMENT SERVICE (not a hospital). Arranges clinical rotations at community hospitals' — same category as Brooklyn USCE / AMG / ValueMD third-party brokers. No institutional source URL exists. Out of scope for institutional-USCE catalog. Distinct from the prior 'Clinical Experience Programs (CEP) — IMG Rotations' (AGGREGATOR_DEAD; that one is a dead domain). One-by-one packet #104.",
     classification: "THIRD_PARTY_BROKER",
     followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  // ── ADDED 2026-05-17 (operator visual QA pass on /usce/verified-
+  //    preview/display-readiness): outreach + manual-browser + research-
+  //    reverify rows where the operator confirmed no usable direct URL
+  //    exists. These were previously held in the BORDERLINE / BROKEN /
+  //    RESEARCH_TOO_GENERIC_REVERIFY buckets. Operator review converted
+  //    them into hard hides because surfacing them on the live site
+  //    would either link to a useless residency-only page or to a
+  //    generic homepage with no direct visiting / postdoc pathway.
+  //    All can be REORIENTED in the future if a real direct URL is
+  //    discovered. ──
+
+  "Jamaica Hospital Medical Center": {
+    url: "https://jamaicahospital.org/graduate-medical-education/",
+    reason: "Operator-confirmed 2026-05-17: jamaicahospital.org GME page lists residency programs only — no USCE for visiting medical students. Hidelist entry covers both data.js entries with this name (general homepage + GME landing).",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Richmond University Medical Center": {
+    url: "https://www.rumcsi.org/careers/graduate-medical-education/",
+    reason: "Operator-confirmed 2026-05-17: rumcsi.org GME page lists residency programs only — no USCE for visiting medical students at RUMC Staten Island. Hidelist entry covers both data.js entries with this name.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Advocate Christ Medical Center": {
+    url: "https://www.advocatehealth.com/education/medical-education/medical-students",
+    reason: "Operator-confirmed 2026-05-17: advocatehealth.com/education/medical-education/medical-students has nothing actionable for Advocate Christ specifically. Prior verified-links note describing electives + $2,000 EM scholarship could not be re-verified on the page as written. Hidelist entry covers both data.js entries with this name.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  // ── 7 research-reverify rows hidden 2026-05-17 (operator-confirmed
+  //    none of these have a direct postdoc URL — only generic
+  //    institution / school landing pages — and the user instructed
+  //    "disregard these too"). These can be UNHIDDEN if and when the
+  //    operator supplies a deeper postdoc-office URL. ──
+
+  "Mayo Clinic — Research Fellowship": {
+    url: "https://college.mayo.edu/",
+    reason: "Operator-confirmed 2026-05-17: college.mayo.edu is the Mayo Clinic College of Medicine and Science homepage, not a direct postdoc fellowship URL. No usable direct link. Hide until a deeper Research Fellowship office URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Mount Sinai — Postdoctoral Research": {
+    url: "https://icahn.mssm.edu/",
+    reason: "Operator-confirmed 2026-05-17: icahn.mssm.edu is the Icahn School of Medicine homepage, not a direct postdoctoral research URL. No usable direct link. Hide until a deeper postdoc office URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "University of Pittsburgh — Postdoctoral Research": {
+    url: "https://www.postdoc.pitt.edu/",
+    reason: "Operator-confirmed 2026-05-17: postdoc.pitt.edu is the Office of Postdoctoral Affairs landing, not a direct application pathway for a specific postdoctoral program. No usable direct link. Hide until a deeper program URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Fred Hutchinson Cancer Center": {
+    url: "https://www.fredhutch.org/",
+    reason: "Operator-confirmed 2026-05-17: fredhutch.org is the institution homepage, not a direct research fellowship URL. No usable direct link. Hide until a deeper research training URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Baylor College of Medicine — Postdoctoral Research": {
+    url: "https://www.bcm.edu/",
+    reason: "Operator-confirmed 2026-05-17: bcm.edu is the Baylor College of Medicine homepage, not a direct postdoctoral research URL. No usable direct link. Hide until a deeper postdoc office URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Northwestern Feinberg — Postdoctoral Research": {
+    url: "https://www.feinberg.northwestern.edu/",
+    reason: "Operator-confirmed 2026-05-17: feinberg.northwestern.edu is the Feinberg SOM homepage, not a direct postdoctoral research URL. No usable direct link. Hide until a deeper postdoc office URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Albert Einstein College of Medicine — Research Fellowship": {
+    url: "https://einsteinmed.edu/",
+    reason: "Operator-confirmed 2026-05-17: einsteinmed.edu is the Albert Einstein College of Medicine homepage, not a direct research fellowship URL. No usable direct link. Hide until a deeper research training URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
     verifiedAt: "2026-05-17",
   },
 };

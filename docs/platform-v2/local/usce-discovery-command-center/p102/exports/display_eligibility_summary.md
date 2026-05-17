@@ -8,29 +8,29 @@ Total data.js rows classified: 207
 
 | Bucket | File | Count | Display lane |
 |---|---|---:|---|
-| Clinical USCE eligible | display_eligible_clinical_usce.json | 170 | Clinical USCE |
+| Clinical USCE eligible | display_eligible_clinical_usce.json | 171 | Clinical USCE |
 | Research eligible | display_eligible_research.json | 9 | Research |
-| Outreach hold | display_hold_outreach.json | 3 | (held) |
-| Research reverify hold | display_hold_research_reverify.json | 7 | (held) |
-| Manual-browser hold | display_hold_manual_browser.json | 3 | (held) |
-| Hidden / removed | display_hidden_or_removed.json | 14 | (none) |
+| Outreach hold | display_hold_outreach.json | 0 | (held) |
+| Research reverify hold | display_hold_research_reverify.json | 0 | (held) |
+| Manual-browser hold | display_hold_manual_browser.json | 0 | (held) |
+| Hidden / removed | display_hidden_or_removed.json | 26 | (none) |
 | Archive (negative info) | display_archive_negative_info.json | 1 | (archive only) |
 | **Sum** | | **207** | |
 
-Active display (clinical + research): 179
-Held: 13
-Hidden: 14
+Active display (clinical + research): 180
+Held: 0
+Hidden: 26
 Archive (negative info): 1
 
 ## Clinical USCE badge distribution
 
 - DIRECT: 105
-- REORIENTED: 63
+- REORIENTED: 64
 - PROTECTED: 2
 
 ## Clinical USCE subType distribution
 
-- observership: 99
+- observership: 100
 - visiting-student-elective: 55
 - visiting-student-clerkship: 7
 - international-visiting-student: 3
@@ -41,20 +41,7 @@ Archive (negative info): 1
 ## Held-row institutions (need operator action)
 
 ### Outreach hold (phone call needed)
-- Jamaica Hospital Medical Center — https://jamaicahospital.org/graduate-medical-education/
-- Jamaica Hospital Medical Center — https://jamaicahospital.org/graduate-medical-education/
-- Richmond University Medical Center — https://www.rumcsi.org/careers/graduate-medical-education/
 
 ### Research-reverify hold (operator URL needed)
-- Albert Einstein College of Medicine — Research Fellowship — https://einsteinmed.edu/
-- Baylor College of Medicine — Postdoctoral Research — https://www.bcm.edu/
-- Fred Hutchinson Cancer Center — https://www.fredhutch.org/
-- Mayo Clinic — Research Fellowship — https://college.mayo.edu/
-- Mount Sinai — Postdoctoral Research — https://icahn.mssm.edu/
-- Northwestern Feinberg — Postdoctoral Research — https://www.feinberg.northwestern.edu/
-- University of Pittsburgh — Postdoctoral Research — https://www.postdoc.pitt.edu/
 
 ### Manual-browser hold (in-browser check needed)
-- Advocate Christ Medical Center — https://www.advocatehealth.com/education/medical-education/medical-students
-- Advocate Christ Medical Center — https://www.advocatehealth.com/education/medical-education/medical-students
-- Beth Israel Deaconess Medical Center — https://bidmc.org/education-training/medical-education

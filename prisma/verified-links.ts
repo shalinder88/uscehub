@@ -395,9 +395,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
 
   "Beth Israel Deaconess Medical Center": {
-    url: "https://bidmc.org/education-training/medical-education",
+    url: "https://research.bidmc.org/radiology-gme/radiology-observerships",
     verified: true,
-    note: "BIDMC Undergraduate & Medical Student Education (Harvard Medical School-affiliated). VSLO via HMS Office of Registrar, 90 days before start. Applies to multiple departments — Radiology, Emergency Medicine, Otolaryngology, Anesthesia (the latter offers $2,500 scholarship).",
+    note: "BIDMC Radiology Observerships canonical page (Body MRI, Interventional Radiology, Musculoskeletal, Abdominal, Cardiothoracic, Emergency Radiology, Neuroradiology, Nuclear Medicine — 8 subspecialties). Open to medical students, residents, fellows, visiting physicians. M4 students from outside HMS must apply via HMS VSLO separately. $2,000 USD for 4-week observership (prorated for shorter). Direct application to Katelyn Sullivan ksulli13@bidmc.harvard.edu (form + CV + LOR + personal statement). Updated 2026-05-17 from umbrella bidmc.org/education-training/medical-education page after operator review. Quote: 'All interested observers (high school students, undergraduate students, medical students, residents, fellows, visiting physicians)' can apply. Promoted from BROKEN_REQUIRES_MANUAL_BROWSER to verified true USCE via this more specific URL.",
   },
 
   "Hackensack University Medical Center": {
@@ -417,11 +417,13 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Jefferson registrar international visiting students page; includes Abington campus. Student observership up to 12 weeks; clinical electives via clinical departments.",
   },
-  "Advocate Christ Medical Center": {
-    url: "https://www.advocatehealth.com/education/medical-education/medical-students",
-    verified: true,
-    note: "Advocate Health Care medical students page. Explicit policy: no observerships, but offers electives for M4 and eligible M3 students from non-affiliated schools at primary teaching hospitals. EM elective offers $2,000 scholarships.",
-  },
+  // "Advocate Christ Medical Center" — moved to listings-hidelist.ts after
+  //   operator review 2026-05-17. The advocatehealth.com/education/medical-
+  //   education/medical-students page has no actionable visiting-student
+  //   pathway for Advocate Christ specifically; prior note describing
+  //   electives + $2,000 EM scholarship could not be re-verified on the
+  //   page as written. Hidden as OPERATOR_HIDE_NO_DIRECT_URL pending
+  //   discovery of a real Advocate Christ M4 program.
   "Banner University Medical Center — Tucson": {
     url: "https://medicine.arizona.edu/education/degree-programs/md-program/visiting-medical-students",
     verified: true,
@@ -1001,11 +1003,11 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Tower Health Academic Affairs Medical Student Rotations (Reading Hospital + Phoenixville + St Christopher's). Drexel COM partnership site. VSLO + Drexel-specific application process. $75 fee, max 12 weeks. Replaces towerhealth.org/ homepage. One-by-one packet #60.",
   },
 
-  "Richmond University Medical Center": {
-    url: "https://www.rumcsi.org/careers/graduate-medical-education/",
-    verified: false,
-    note: "RUMC (Staten Island) GME landing page lists residency programs only — no published M4 visiting student or observership program is visible on the institutional site. BORDERLINE_KEEP_REVERIFY: manual phone outreach to GME office at 844-934-2273 needed to confirm whether any departmental observership exists. Replaces rumcsi.org/ homepage. One-by-one packet #61.",
-  },
+  // "Richmond University Medical Center" — moved to listings-hidelist.ts
+  //   after operator review 2026-05-17. The rumcsi.org/careers/graduate-
+  //   medical-education/ page lists residency programs only; operator
+  //   confirmed no USCE for visiting medical students exists.
+  //   Hidden as OPERATOR_HIDE_NO_DIRECT_URL.
 
   "Rush University Medical Center": {
     url: "https://www.rushu.rush.edu/rush-medical-college/visiting-medical-students",
@@ -1067,11 +1069,11 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Icahn School of Medicine at Mount Sinai Visiting Students (LCME schools) canonical page. Same Icahn registrar pathway covers Mount Sinai Beth Israel and all Mount Sinai Health System sites. US LCME final-year M4 via VSAS. Electives primarily at Mount Sinai Hospital + James J. Peters VA + Elmhurst Hospital Center; Beth Israel campus rotations possible via departmental electives. INTL via separate icahn.mssm.edu/education/students/registrar/electives/visiting-abroad. CLASSIFIED PROTECTED_BROWSER_REQUIRED: WebFetch returns HTTP 403 (likely WAF/bot block) but URL is verified live by AAMC and direct browser. Quote from search snippet: 'Students in good standing who have not yet received their MD or DO degree are eligible to apply for an elective at the Icahn School of Medicine at Mount Sinai, and should be in their final year of medical school.' Replaces mountsinai.org/locations/beth-israel/education/graduate-medical-education (GME-only). One-by-one packet #71.",
   },
 
-  "Jamaica Hospital Medical Center": {
-    url: "https://jamaicahospital.org/graduate-medical-education/",
-    verified: false,
-    note: "Jamaica Hospital GME landing. Lists residency programs only; no public M4 visiting-student / observership pathway documented on the institutional site. Two data.js entries with this name; both resolve here. BORDERLINE_KEEP_REVERIFY: per operator policy, absence-of-page ≠ absence-of-program. Manual phone outreach to Department of Medical Education needed; community teaching hospital in Queens historically described as IMG-friendly. Reverified 2026-05-17; replaces prior 'NOT offered' note (couldn't re-confirm). One-by-one packet #72.",
-  },
+  // "Jamaica Hospital Medical Center" — moved to listings-hidelist.ts
+  //   after operator review 2026-05-17. The jamaicahospital.org GME page
+  //   lists residency programs only; operator confirmed no USCE for
+  //   visiting medical students. Hidelist entry covers both data.js
+  //   entries with this name. Hidden as OPERATOR_HIDE_NO_DIRECT_URL.
 
   "Wyckoff Heights Medical Center": {
     url: "https://whmcny.org/undergraduate-education/",
