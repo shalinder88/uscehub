@@ -49,6 +49,9 @@ const EXCLUDE_DIRS = new Set([
   "dist",
   "build",
   ".cache",
+  // Snapshots of external institutional web pages (raw.html, cleaned.txt).
+  // Third-party content; any API-key-shaped tokens are theirs, not ours.
+  "evidence",
 ]);
 
 const SKIP_EXT = new Set([

@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_017",
+  "institutionId": "inst_brown_md",
+  "institutionName": "Warren Alpert Medical School of Brown University",
+  "parentSystem": "Brown University",
+  "campus": "",
+  "city": "Providence",
+  "state": "RI",
+  "sourceUrl": "https://www.brown.edu/academics/medical/education/md-program/visiting-student-program",
+  "sourceDomain": "brown.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Warren Alpert Medical School",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Probed 200; direct visiting-student-program path",
+  "priorEvidenceRef": "batch2-probe",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_121bd6c2f3"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_017/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_017/cleaned.txt",
+  "sourceHash": "9601c90fa909e7641f66d62f668c3fe1f31dbba65728f85da72c071048665033",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:09:21.265Z"
+}

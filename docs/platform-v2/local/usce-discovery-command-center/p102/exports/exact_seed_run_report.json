@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-05-16T22:06:35.743Z",
+  "generatedAt": "2026-05-17T02:09:21.266Z",
   "seedFile": "docs/platform-v2/local/usce-discovery-command-center/p102/queues/p102_exact_usce_seed_links.csv",
   "offline": true,
-  "seedsAttempted": 11,
+  "seedsAttempted": 19,
   "runStatusCounts": {
-    "EXTRACTED": 10,
-    "FAILED_FETCH": 1
+    "EXTRACTED": 15,
+    "FAILED_FETCH": 4
   },
   "finalStatusCounts": {
-    "HOLD_REVIEW": 1,
-    "AUTO_PROMOTE": 9,
-    "FAILED": 1
+    "HOLD_REVIEW": 2,
+    "AUTO_PROMOTE": 13,
+    "FAILED": 4
   },
   "routeCounts": {
-    "AUTO_PROMOTE": 10,
-    "HOLD_REVIEW": 2,
+    "AUTO_PROMOTE": 14,
+    "HOLD_REVIEW": 3,
     "REJECTED": 0
   },
   "audienceCounts": {
-    "US_MD_DO_VISITING_STUDENT": 8,
+    "US_MD_DO_VISITING_STUDENT": 13,
     "IMG_GRADUATE_OBSERVER": 3,
     "INTERNATIONAL_MEDICAL_STUDENT": 1
   },
   "directLinkCounts": {
-    "VALID_DIRECT_USCE_SOURCE": 12
+    "VALID_DIRECT_USCE_SOURCE": 17
   },
   "duplicateClusters": 0,
   "seedResults": [
@@ -126,6 +126,75 @@
       "finalStatus": "FAILED",
       "fetchError": "offline mode but no cached raw.html",
       "emittedRowIds": []
+    },
+    {
+      "seedId": "seed_012",
+      "institutionName": "Johns Hopkins University School of Medicine",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "offline mode but no cached raw.html",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "seed_013",
+      "institutionName": "Johns Hopkins International Observer Clinical Program",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "offline mode but no cached raw.html",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "seed_014",
+      "institutionName": "University of Michigan Medical School",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "offline mode but no cached raw.html",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "seed_015",
+      "institutionName": "University of Iowa Carver College of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_0eaa0fd04c"
+      ]
+    },
+    {
+      "seedId": "seed_016",
+      "institutionName": "Vanderbilt University School of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_ea8af6430f"
+      ]
+    },
+    {
+      "seedId": "seed_017",
+      "institutionName": "Warren Alpert Medical School of Brown University",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "emittedRowIds": [
+        "exact_121bd6c2f3"
+      ]
+    },
+    {
+      "seedId": "seed_018",
+      "institutionName": "University of Vermont Larner College of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_2ef4b13291"
+      ]
+    },
+    {
+      "seedId": "seed_019",
+      "institutionName": "Rush Medical College",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "emittedRowIds": [
+        "exact_d25b24810f"
+      ]
     }
   ]
 }

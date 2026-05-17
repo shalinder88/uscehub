@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_018",
+  "institutionId": "inst_uvm_md",
+  "institutionName": "University of Vermont Larner College of Medicine",
+  "parentSystem": "UVM Medical Center",
+  "campus": "",
+  "city": "Burlington",
+  "state": "VT",
+  "sourceUrl": "https://www.med.uvm.edu/mededucation/md_program/visiting_students",
+  "sourceDomain": "med.uvm.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "UVM Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Probed 200; direct visiting_students path",
+  "priorEvidenceRef": "batch2-probe",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_2ef4b13291"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_018/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_018/cleaned.txt",
+  "sourceHash": "c60c6bc1a771ca44f1b86eb2d7f2daa89a28e3885d52ef06507cd6e750ddca1e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:09:21.266Z"
+}

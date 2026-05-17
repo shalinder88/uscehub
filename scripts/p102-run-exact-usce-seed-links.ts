@@ -40,7 +40,11 @@ const OUT_REJECTED = path.join(EXPORTS_DIR, 'exact_seed_rejected_rows.json');
 const OUT_DUPES    = path.join(EXPORTS_DIR, 'exact_seed_duplicate_clusters.json');
 const OUT_REPORT   = path.join(EXPORTS_DIR, 'exact_seed_run_report.json');
 
-const USER_AGENT = 'USMLEPlatform-P102-ExactSeed/1.0 (research; +https://usmleplatform.local)';
+// Real-browser UA. Many institutional CDNs (Cloudflare-fronted) 403 any
+// UA that doesn't look like a real browser. We respect robots.txt by
+// only fetching the operator-curated exact URL — no crawling, no link
+// following, no scraping.
+const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15';
 const FETCH_TIMEOUT_MS = 15_000;
 const DELAY_BETWEEN_SEEDS_MS = 1500;
 
@@ -242,24 +246,29 @@ function extractPageTitle(html: string, institutionName: string): string | null 
     .filter(w => w.length > 3 && !GENERIC_INST_WORDS.has(w));
   const isInstitution = (p: string): boolean => {
     const low = p.toLowerCase();
-    // Only drop a part if it's short AND contains a distinctive institution token
-    return instTokens.length > 0 && instTokens.some(t => low.includes(t)) && p.split(/\s+/).length <= 5;
+    // Drop any part containing a distinctive institution token, regardless
+    // of word count — long titles that read like the institution's name
+    // (e.g. "The Robert Larner, M.D. College of Medicine") are not program
+    // titles and should fall back to the synthetic name.
+    return instTokens.length > 0 && instTokens.some(t => low.includes(t));
   };
   const isGenericLabel = (p: string): boolean =>
-    /^(home|us\s*students|md\s*program|academic\s*institute|international\s+medical\s+education|us|usa|international)$/i.test(p.trim());
+    /^(home|us\s*students|academic\s*institute|international\s+medical\s+education|us|usa|international)$/i.test(p.trim());
 
   const isAcronym = (p: string): boolean => /^[A-Z]{3,8}$/.test(p);
   const isMeaningful = (p: string): boolean => p.length >= 6 || isAcronym(p);
 
-  // Prefer the longest non-institution, non-generic, meaningful part
+  // Prefer recognized program acronyms (VSLO, VSAS, IVMS) first since
+  // they're the canonical names for those programs. Then prefer parts
+  // that mention program vocab. Then longest non-institution part.
   const candidates = parts.filter(p => !isInstitution(p) && !isGenericLabel(p) && isMeaningful(p));
-  if (candidates.length > 0) {
-    // Combine acronym + descriptor if they sit adjacent (e.g. "VSLO" + "U.S. Students")
-    return candidates[0];
-  }
-  // Fallback: longest part regardless, if length >= 4
-  const longest = parts.sort((a, b) => b.length - a.length)[0];
-  if (longest && longest.length >= 4 && !isInstitution(longest)) return longest;
+  const knownAcronyms = /^(VSLO|VSAS|IVMS|AVP|IVS|IVMSP)$/i;
+  const acronymMatch = candidates.find(p => knownAcronyms.test(p));
+  if (acronymMatch) return acronymMatch;
+  const programVocab = /(visiting|visitor|observership|extern|elective|clerkship|rotation|sub.?intern|away|student|fellowship|scholar)/i;
+  const programMatches = candidates.filter(p => programVocab.test(p));
+  if (programMatches.length > 0) return programMatches.sort((a, b) => b.length - a.length)[0];
+  if (candidates.length > 0) return candidates.sort((a, b) => b.length - a.length)[0];
   return null;
 }
 

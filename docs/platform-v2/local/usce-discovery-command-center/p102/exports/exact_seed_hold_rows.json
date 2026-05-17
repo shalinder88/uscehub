@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-16T22:06:35.743Z",
-  "totalHolds": 2,
+  "generatedAt": "2026-05-17T02:09:21.266Z",
+  "totalHolds": 3,
   "rows": [
     {
       "rowId": "exact_75c2e71d67",
@@ -20,7 +20,7 @@
       "audienceClass": "US_MD_DO_VISITING_STUDENT",
       "topQuote": "Residents learn in a variety of settings, such as working with inpatient teams and one-on-one with subspecialists.",
       "quoteScore": 0,
-      "sourceHash": "821bb35bd364fd83abe7e5548b8883617b3bc4e7dd508362916f8e00a036e1e1",
+      "sourceHash": "93915da4c8dd9c6178a7aa6d2162d8f871efd975c68c6235672dbbe41d131e77",
       "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/cleaned.txt",
       "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
       "directLinkReason": "direct USCE URL signal: medical-students URL segment, medical student program URL segment",
@@ -35,7 +35,7 @@
         "quote: weak evidence (no application/cost/eligibility/contact signals)"
       ],
       "rejectionReason": null,
-      "fetchedAt": "2026-05-16T22:06:35.725Z",
+      "fetchedAt": "2026-05-17T02:09:21.248Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -56,7 +56,7 @@
       "audienceClass": "IMG_GRADUATE_OBSERVER",
       "topQuote": "Residents learn in a variety of settings, such as working with inpatient teams and one-on-one with subspecialists.",
       "quoteScore": 0,
-      "sourceHash": "821bb35bd364fd83abe7e5548b8883617b3bc4e7dd508362916f8e00a036e1e1",
+      "sourceHash": "93915da4c8dd9c6178a7aa6d2162d8f871efd975c68c6235672dbbe41d131e77",
       "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_001/cleaned.txt",
       "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
       "directLinkReason": "direct USCE URL signal: medical-students URL segment, medical student program URL segment",
@@ -71,7 +71,42 @@
         "quote: weak evidence (no application/cost/eligibility/contact signals)"
       ],
       "rejectionReason": null,
-      "fetchedAt": "2026-05-16T22:06:35.726Z",
+      "fetchedAt": "2026-05-17T02:09:21.248Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_121bd6c2f3",
+      "seedId": "seed_017",
+      "pageTitle": "Medical Education",
+      "opportunitySignature": "inst_brown_md||https://www.brown.edu/academics/medical/education/md-program/visiting-student-program||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_brown_md",
+      "institutionName": "Warren Alpert Medical School of Brown University",
+      "parentSystem": "Brown University",
+      "campus": null,
+      "city": "Providence",
+      "state": "RI",
+      "sourceUrl": "https://www.brown.edu/academics/medical/education/md-program/visiting-student-program",
+      "canonicalUrl": "https://www.brown.edu/academics/medical/education/md-program/visiting-student-program",
+      "sourceDomain": "brown.edu",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Medical Education The Office of Medical Education oversees the four-year, competency-based curriculum at The Warren Alpert Medical School of Brown University.",
+      "quoteScore": 0,
+      "sourceHash": "9601c90fa909e7641f66d62f668c3fe1f31dbba65728f85da72c071048665033",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_017/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "directLinkSignals": [
+        "visiting-student URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T02:09:21.265Z",
       "schemaVersion": "p102-exact-seed-1"
     }
   ]

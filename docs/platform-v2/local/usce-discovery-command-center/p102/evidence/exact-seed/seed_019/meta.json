@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_019",
+  "institutionId": "inst_rush_md",
+  "institutionName": "Rush Medical College",
+  "parentSystem": "Rush University Medical Center",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://www.rushu.rush.edu/rush-medical-college/visiting-medical-students",
+  "sourceDomain": "rushu.rush.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Rush University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Probed 200; direct visiting-medical-students path",
+  "priorEvidenceRef": "batch2-probe",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_d25b24810f"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_019/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_019/cleaned.txt",
+  "sourceHash": "04bf8cd76fb7fd72e9fe45ecc9da8ac649f708181dfcb984c2ad749c1c16d859",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 12,
+  "fetchedAt": "2026-05-17T02:09:21.266Z"
+}

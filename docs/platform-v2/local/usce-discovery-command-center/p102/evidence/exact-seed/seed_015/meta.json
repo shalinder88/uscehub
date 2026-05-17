@@ -1,0 +1,45 @@
+{
+  "seedId": "seed_015",
+  "institutionId": "inst_iowa_md",
+  "institutionName": "University of Iowa Carver College of Medicine",
+  "parentSystem": "University of Iowa Health Care",
+  "campus": "",
+  "city": "Iowa City",
+  "state": "IA",
+  "sourceUrl": "https://medicine.uiowa.edu/md/current-students/visiting-students",
+  "sourceDomain": "medicine.uiowa.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Iowa Hospitals & Clinics",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Probed 200; direct visiting-students path",
+  "priorEvidenceRef": "batch2-probe",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_0eaa0fd04c"
+  ],
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_015/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_015/cleaned.txt",
+  "sourceHash": "041df19e1855d9955f9050f4a902ad98b831b27d4329bb7779750cd5e47cc167",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T02:09:21.260Z"
+}
