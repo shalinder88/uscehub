@@ -744,3 +744,99 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - evidence: Tower Health Academic Affairs Medical Student Rotations; Drexel COM partner; VSLO + $75 fee
 - countsAsTrueUSCE: TRUE
 
+---
+
+## Packet 61: Richmond University Medical Center
+- currentUrl: rumcsi.org/
+- candidates opened: rumcsi.org/careers/graduate-medical-education/
+- finalUrl: rumcsi.org/careers/graduate-medical-education/
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: GME landing lists 5 ACGME residency programs + 1 fellowship for 145 residents; no published M4 visiting student / observership pathway visible on institutional site
+- audience/application/cost: unknown — requires phone outreach (844-934-2273)
+- countsAsTrueUSCE: FALSE (insufficient evidence; keep for manual reverify, do not hide)
+- reason: best-known landing surfaced; institution may simply not run a published visiting program
+
+## Packet 62: Rush University Medical Center
+- currentUrl: rushu.rush.edu/education-training/graduate-medical-education (GME-only)
+- candidates opened: rushu.rush.edu/rush-medical-college/visiting-medical-students
+- finalUrl: rushu.rush.edu/rush-medical-college/visiting-medical-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Rush Medical College welcomes applications for visiting medical students from LCME-accredited or COCA-accredited medical schools only, who want to pursue clinical elective rotations at Rush University Medical Center."
+- audience: US LCME/COCA M4; application: VSAS (8-wk lead); INTL not on this pathway
+- countsAsTrueUSCE: TRUE
+- note: prior stub `verified:false` (GME does not manage observerships) commented out; replaced by Rush Medical College visiting-student page
+
+## Packet 63: St. Barnabas Hospital
+- currentUrl: sbhny.org/
+- candidates opened: sbhny.org/healthcare-professionals/residency-programs/emergency-medicine-residency-program/
+- rejected: sbhny.org/EMResidency/letter-from-clerkship-director/ (404)
+- finalUrl: sbhny.org/healthcare-professionals/residency-programs/emergency-medicine-residency-program/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "This offering is open to qualified applicants from any medical school. At this time, we cannot accommodate applicants who require a U.S. visa." — 4-wk M4 EM sub-I, 10 shifts, primary-provider model; 80+ M4 visiting students annually system-wide
+- audience: any med school but no visa sponsorship → US LCME/COCA + IMGs already in US; application: direct (lroderick@sbhny.org)
+- countsAsTrueUSCE: TRUE
+
+## Packet 64: St. John's Episcopal Hospital
+- currentUrl: ehs.org/
+- candidates opened: ehs.org/medical-education/medical-student-elective/
+- finalUrl: ehs.org/medical-education/medical-student-elective/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Electives in Dermatology, OB/GYN, Ophthalmology, Pathology, Psychiatry, Surgery, Wound Care; 2-4 week duration. "Pathology: This elective provides exposure to the wide range of clinical services and research activities of the Department of Pathology and Laboratory Medicine. Two and four week rotations are available."
+- audience: affiliation-agreement schools only (US LCME + INTL via partner relationships); application: direct (fbaksh@ehs.org)
+- countsAsTrueUSCE: TRUE
+
+## Packet 65: Stony Brook University Hospital
+- currentUrl: renaissance.stonybrookmedicine.edu/gme (GME-only)
+- candidates opened: renaissance.stonybrookmedicine.edu/ugme/visiting_students
+- finalUrl: renaissance.stonybrookmedicine.edu/ugme/visiting_students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Before a student can be accepted for any elective, there must be a fully executed affiliation agreement between Stony Brook University Hospital and the student's home medical school. There are no exceptions."
+- audience: US LCME via VSLO; INTL only via approved global health education partnership; application: VSLO + 6-8 wk affiliation-agreement lead time
+- countsAsTrueUSCE: TRUE
+
+## Packet 66: Summa Health System — Akron
+- currentUrl: summahealth.org/
+- candidates opened: summahealth.org/medicaleducation/elective-programs/senior-elective-information
+- finalUrl: summahealth.org/medicaleducation/elective-programs/senior-elective-information
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Summa Health System accepts visiting student applications through the Visiting Student Learning Opportunity (VSLO) website...Note that students must be an M-4 at the time of rotation and be in good standing at an LCME- or COCA-accredited medical school."
+- audience: US LCME/COCA M4 only; application: VSLO; 50+ senior electives; meal allowance + parking + library; student provides $1M/$3M malpractice; NEOMED affiliation
+- countsAsTrueUSCE: TRUE
+
+## Packet 67: SUNY Downstate Medical Center
+- currentUrl: downstate.edu/education-training/graduate-medical-education/index.html (GME-only)
+- candidates opened: downstate.edu/education-training/student-services/registrar/visiting/index.html (same URL used in packet #31 for Kings County, shared registrar pathway)
+- finalUrl: downstate.edu/education-training/student-services/registrar/visiting/index.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "International Medical Students: Rotation at SUNY Downstate Health Sciences University - College of Medicine are currently closed for international medical students."
+- audience: US LCME M4 + Canadian + Puerto Rico (some COCA exceptions); INTL CURRENTLY CLOSED; application: VSLO 45 days min; Step1/COMLEX pass + BLS + NY infection control + bg check required
+- countsAsTrueUSCE: TRUE
+
+## Packet 68: Tampa General Hospital / USF Health
+- currentUrl: health.usf.edu/medicine/gme (GME-only)
+- candidates opened: health.usf.edu/registrar/md-visiting-students
+- rejected: health.usf.edu/medicine/registrar/md-visiting-students (404)
+- finalUrl: health.usf.edu/registrar/md-visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "students must attend an LCME or COCA accredited school"; "The USF Morsani College of Medicine does not assess tuition or fees for visiting students."
+- audience: US LCME/COCA M4 in good standing with cores completed; INTL not on this pathway; application: VSLO ≥1 month before; no tuition; student supplies health + malpractice
+- countsAsTrueUSCE: TRUE
+
+## Packet 69: Temple University Hospital
+- currentUrl: medicine.temple.edu/education/graduate-medical-education (GME-only)
+- candidates opened: medicine.temple.edu/education/md-program/visiting-students
+- finalUrl: medicine.temple.edu/education/md-program/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Applications are made through the Visiting Student Application Service (VSAS). LKSOM's annual elective catalog opens in the spring, after our own students' fourth year schedules have been finalized."
+- audience: M4 from accredited schools, all cores completed at home; BLS or ACLS + bg check (12mo) required; application: VSAS, space-available basis; contact mdvsas@temple.edu
+- countsAsTrueUSCE: TRUE
+
+## Packet 70: Tulane Medical Center
+- currentUrl: medicine.tulane.edu/
+- candidates opened: medicine.tulane.edu/student-affairs/visiting-students
+- finalUrl: medicine.tulane.edu/student-affairs/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "We are NOT able to accommodate students from medical schools located outside of the United States."
+- audience: US medical schools only — INTL explicitly excluded; M4 senior with cores + Step 1 pass + neurology before rotation; application: VSLO; $225 non-refundable processing fee/rotation; rotations do NOT carry Tulane MD credit
+- countsAsTrueUSCE: TRUE
+

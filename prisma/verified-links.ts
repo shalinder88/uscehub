@@ -254,11 +254,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Feinberg School of Medicine visiting students canonical page. LCME/AOA fourth-year US medical students; INTL students from Global Partner universities only — see /md-education/visiting-students/international-visiting-students.html. Updated 2026-05-16 (was generic nm.org homepage).",
   },
-  "Rush University Medical Center": {
-    url: "https://www.rushu.rush.edu/",
-    verified: false,
-    note: "GME office does NOT manage observerships. Department-level only. Neurosurgery has dedicated page.",
-  },
+  // "Rush University Medical Center" — primary entry now in one-by-one packet #62 below.
+  // Original stub (verified:false homepage) replaced with the Rush Medical College
+  // visiting medical students canonical URL.
   // "Emory University Hospital" — primary entry now in one-by-one packet #16
   // (URL updated to med.emory.edu/education/admissions/visiting/index.html)
   // "Duke University Hospital" — primary entry now in one-by-one packet #14
@@ -1021,5 +1019,65 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://towerhealth.org/academic-affairs/medical-student-rotations",
     verified: true,
     note: "Tower Health Academic Affairs Medical Student Rotations (Reading Hospital + Phoenixville + St Christopher's). Drexel COM partnership site. VSLO + Drexel-specific application process. $75 fee, max 12 weeks. Replaces towerhealth.org/ homepage. One-by-one packet #60.",
+  },
+
+  "Richmond University Medical Center": {
+    url: "https://www.rumcsi.org/careers/graduate-medical-education/",
+    verified: false,
+    note: "RUMC (Staten Island) GME landing page lists residency programs only — no published M4 visiting student or observership program is visible on the institutional site. BORDERLINE_KEEP_REVERIFY: manual phone outreach to GME office at 844-934-2273 needed to confirm whether any departmental observership exists. Replaces rumcsi.org/ homepage. One-by-one packet #61.",
+  },
+
+  "Rush University Medical Center": {
+    url: "https://www.rushu.rush.edu/rush-medical-college/visiting-medical-students",
+    verified: true,
+    note: "Rush Medical College Visiting Medical Students canonical page. US LCME/COCA M4 only; INTL not accepted via this pathway. Application via AAMC VSAS, due 8 weeks before rotation. M3 cores must be complete and student in good standing. Separate Rush Diversity & Inclusion Visiting Scholars Program offers stipend. Quote: 'Rush Medical College welcomes applications for visiting medical students from LCME-accredited or COCA-accredited medical schools only, who want to pursue clinical elective rotations at Rush University Medical Center.' Replaces rushu.rush.edu/ homepage and prior verified:false GME-office stub. One-by-one packet #62.",
+  },
+
+  "St. Barnabas Hospital": {
+    url: "https://www.sbhny.org/healthcare-professionals/residency-programs/emergency-medicine-residency-program/",
+    verified: true,
+    note: "SBH Health System (Bronx) Emergency Medicine residency page documents the M4 EM sub-internship for visiting students. 4-week rotation, 10 shifts, primary-provider model. Direct application (not VSAS/VSLO): Leslie Roderick lroderick@sbhny.org / 718-960-6517. Open to any accredited medical school BUT no visa sponsorship — US LCME/COCA + IMGs already in the US in practice. Quote: 'This offering is open to qualified applicants from any medical school. At this time, we cannot accommodate applicants who require a U.S. visa.' 80+ visiting students annually system-wide. CUNY SOM major teaching hospital + NYIT-COM site. Replaces sbhny.org/ homepage. One-by-one packet #63.",
+  },
+
+  "St. John's Episcopal Hospital": {
+    url: "https://www.ehs.org/medical-education/medical-student-elective/",
+    verified: true,
+    note: "Episcopal Health Services (St. John's Episcopal, Far Rockaway/Queens) Medical Student Elective page. Electives in Dermatology, OB/GYN, Ophthalmology, Pathology, Psychiatry, Surgery, Wound Care; 2-4 week duration. Affiliation-agreement schools only (US LCME + select INTL via partner relationships). Direct application via Faazia Baksh, Senior Medical Student Coordinator (fbaksh@ehs.org). Quote: 'Pathology: This elective provides exposure to the wide range of clinical services and research activities of the Department of Pathology and Laboratory Medicine. Two and four week rotations are available.' Replaces ehs.org/ homepage. One-by-one packet #64.",
+  },
+
+  "Stony Brook University Hospital": {
+    url: "https://renaissance.stonybrookmedicine.edu/ugme/visiting_students",
+    verified: true,
+    note: "Stony Brook Renaissance School of Medicine Visiting Students canonical page. US LCME via AAMC VSLO. INTL accepted only through approved Stony Brook global health education partnerships. Affiliation agreement between SBUH and home medical school is mandatory (6-8 weeks to establish), no exceptions. Applications open early May. No housing provided. Quote: 'Before a student can be accepted for any elective, there must be a fully executed affiliation agreement between Stony Brook University Hospital and the student's home medical school. There are no exceptions.' Replaces renaissance.stonybrookmedicine.edu/gme (GME-only). One-by-one packet #65.",
+  },
+
+  "Summa Health System — Akron": {
+    url: "https://www.summahealth.org/medicaleducation/elective-programs/senior-elective-information",
+    verified: true,
+    note: "Summa Health (Akron, OH) Senior Elective Information page. 50+ M4 electives via AAMC VSLO. US LCME/COCA only (M4 + good standing). NEOMED academic affiliation. Meal allowance, free parking, library access, on-call housing available; student supplies $1M/$3M malpractice. Quote: 'Summa Health System accepts visiting student applications through the Visiting Student Learning Opportunity (VSLO) website...Note that students must be an M-4 at the time of rotation and be in good standing at an LCME- or COCA-accredited medical school.' Replaces summahealth.org/ homepage. One-by-one packet #66.",
+  },
+
+  "SUNY Downstate Medical Center": {
+    url: "https://www.downstate.edu/education-training/student-services/registrar/visiting/index.html",
+    verified: true,
+    note: "SUNY Downstate Visiting Medical Student program canonical page. US LCME-accredited M4 + Canadian + Puerto Rico medical students (some COCA exceptions). INTL CURRENTLY CLOSED. Apply via AAMC VSLO (formerly VSAS) at least 45 days before start. Step 1/COMLEX pass + BLS + NY infection control cert + background check + flu/COVID vaccination required. Same URL as Kings County Hospital Center (packet #31) — shared Downstate registrar pathway. Quote: 'International Medical Students: Rotation at SUNY Downstate Health Sciences University - College of Medicine are currently closed for international medical students.' Replaces downstate.edu/education-training/graduate-medical-education/index.html (GME-only). One-by-one packet #67.",
+  },
+
+  "Tampa General Hospital / USF Health": {
+    url: "https://health.usf.edu/registrar/md-visiting-students",
+    verified: true,
+    note: "USF Health Morsani College of Medicine Visiting Students canonical page (Tampa General is the USF primary teaching hospital). US LCME or COCA-accredited M4 in good standing with required basic clerkships completed; electives only (no required rotations). VSLO application minimum 1 month before start. NO tuition/fee assessed. Student supplies health + malpractice insurance. Quote: 'students must attend an LCME or COCA accredited school' and 'The USF Morsani College of Medicine does not assess tuition or fees for visiting students.' Replaces health.usf.edu/medicine/gme (GME-only). One-by-one packet #68.",
+  },
+
+  "Temple University Hospital": {
+    url: "https://medicine.temple.edu/education/md-program/visiting-students",
+    verified: true,
+    note: "Lewis Katz School of Medicine at Temple University Visiting Students canonical page. M4 from accredited medical schools, all required clerkships completed at home institution. BLS or ACLS + criminal background check (within 12 months) required. Application via AAMC VSAS; LKSOM annual elective catalog opens spring after Temple students' fourth year schedules finalized; space-available basis. Contact mdvsas@temple.edu. Quote: 'Applications are made through the Visiting Student Application Service (VSAS). LKSOM's annual elective catalog opens in the spring, after our own students' fourth year schedules have been finalized.' Replaces medicine.temple.edu/education/graduate-medical-education (GME-only). One-by-one packet #69.",
+  },
+
+  "Tulane Medical Center": {
+    url: "https://medicine.tulane.edu/student-affairs/visiting-students",
+    verified: true,
+    note: "Tulane University School of Medicine Visiting Students canonical page. US medical schools only; INTL students explicitly NOT accommodated. Senior-year (M4) from US schools with core clerkships, Step 1 pass, and neurology completed before rotation. Application via AAMC VSLO. $225 non-refundable processing fee per rotation. Rotations do NOT carry Tulane MD credit. 2026 offerings publish on/around April 15, 2026. Quote: 'We are NOT able to accommodate students from medical schools located outside of the United States.' Replaces medicine.tulane.edu/ homepage. One-by-one packet #70.",
   },
 };
