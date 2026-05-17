@@ -269,6 +269,59 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     followUp: "REORIENT",
     verifiedAt: "2026-05-17",
   },
+
+  // ── ADDED 2026-05-17 (second operator review pass): 5 institutions
+  //    whose pages are dead, closed, or scope-restricted to a pathway
+  //    that does not match a general M4 visiting / observership audience.
+  //    All can be unhidden if a real direct URL is discovered. ──
+
+  "Conemaugh Memorial Medical Center": {
+    url: "https://gme.conemaugh.org/resident-programs/medical-students",
+    reason: "Operator-confirmed 2026-05-17: gme.conemaugh.org returns 404 to WebFetch and the institution previously stated 'Conemaugh does not offer observerships, externships, shadowing or research assistant positions' (only M4 Internal Medicine audition rotation, which is a different audience from general USCE seekers). Hide until a real M4 page is published.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "George Washington University Hospital": {
+    url: "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
+    reason: "Operator-confirmed 2026-05-17: GW's Observer Training Program is CLOSED ('IMP is no longer accepting applications for the Observer Training Program'). Reoriented in verified-links.ts to the active GW SMHS Visiting Students page (smhs.gwu.edu/academics/md-program/visiting-students) for US LCME M4 — this hidelist entry just blocks the closed observer URL.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Allegheny Health Network": {
+    url: "https://www.alleghenyinternational.org/observerships.html",
+    reason: "Operator-confirmed 2026-05-17: 'Allegheny International is currently not accepting new applications for the Observership Program.' Hide until program reopens.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Allegheny Health Network — Observership": {
+    url: "https://www.alleghenyinternational.org/observerships.html",
+    reason: "Same as Allegheny Health Network parent entry — program suspended.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "SAMS — Clinical Observership (Nonprofit)": {
+    url: "https://society.sams-usa.net/observership-program/",
+    reason: "Operator-confirmed 2026-05-17: SAMS (Syrian American Medical Society) is a third-party nonprofit that matches IMG observers with preceptors at private practices and clinics — not an institutional hospital VSLO pathway. Same scope-of-catalog rationale as Brooklyn USCE / AMG / ValueMD: out of scope for an institutional-USCE catalog. Free / no SAMS fee, but institution-specific fees and personal expenses apply.",
+    classification: "THIRD_PARTY_BROKER",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
+
+  "Crozer-Chester Medical Center": {
+    url: "https://crozerem.com/medical-students/",
+    reason: "Operator-confirmed 2026-05-17: only documented Crozer M4 pathway is the Drexel-Crozer EM clerkship for Drexel-enrolled students. No general visiting M4 pathway for students from other LCME schools. Hide until a general program URL is found.",
+    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
+    followUp: "REORIENT",
+    verifiedAt: "2026-05-17",
+  },
 };
 
 /** Returns true if the program should be skipped at seed time. */

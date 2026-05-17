@@ -8,34 +8,34 @@ Total data.js rows classified: 207
 
 | Bucket | File | Count | Display lane |
 |---|---|---:|---|
-| Clinical USCE eligible | display_eligible_clinical_usce.json | 171 | Clinical USCE |
+| Clinical USCE eligible | display_eligible_clinical_usce.json | 166 | Clinical USCE |
 | Research eligible | display_eligible_research.json | 9 | Research |
 | Outreach hold | display_hold_outreach.json | 0 | (held) |
 | Research reverify hold | display_hold_research_reverify.json | 0 | (held) |
 | Manual-browser hold | display_hold_manual_browser.json | 0 | (held) |
-| Hidden / removed | display_hidden_or_removed.json | 26 | (none) |
+| Hidden / removed | display_hidden_or_removed.json | 31 | (none) |
 | Archive (negative info) | display_archive_negative_info.json | 1 | (archive only) |
 | **Sum** | | **207** | |
 
-Active display (clinical + research): 180
+Active display (clinical + research): 175
 Held: 0
-Hidden: 26
+Hidden: 31
 Archive (negative info): 1
 
 ## Clinical USCE badge distribution
 
-- DIRECT: 105
+- DIRECT: 100
 - REORIENTED: 64
 - PROTECTED: 2
 
 ## Clinical USCE subType distribution
 
-- observership: 100
+- observership: 96
 - visiting-student-elective: 55
 - visiting-student-clerkship: 7
 - international-visiting-student: 3
-- externship: 3
 - multi-rotation: 2
+- externship: 2
 - sub-internship: 1
 
 ## Held-row institutions (need operator action)

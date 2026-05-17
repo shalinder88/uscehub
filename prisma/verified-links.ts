@@ -102,11 +102,10 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     cost: "$100 registration fee (Pediatrics)",
     note: "UCHealth 30-day observational experience + Pediatrics International Trainee Observership. No observers in July/December.",
   },
-  "Allegheny Health Network": {
-    url: "https://www.alleghenyinternational.org/observerships.html",
-    verified: true,
-    note: "Allegheny International Services manages observerships. Strictly shadowing, no patient contact.",
-  },
+  // "Allegheny Health Network" — moved to listings-hidelist.ts after operator
+  //   review 2026-05-17. WebFetch confirmed: "Allegheny International is
+  //   currently not accepting new applications for the Observership
+  //   Program." Hidden as OPERATOR_HIDE_NO_DIRECT_URL.
   // University of Washington — moved to "no observership" section (does NOT offer for IMGs)
   "University of Florida Health / Shands Hospital": {
     url: "https://osa.med.ufl.edu/students/visiting-medical-student-clerkships/",
@@ -154,10 +153,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "International Post Graduate Observership. 4 weeks. Separate from Mount Sinai NYC.",
   },
-  "Allegheny Health Network — Observership": {
-    url: "https://www.alleghenyinternational.org/observerships.html",
-    verified: true,
-  },
+  // "Allegheny Health Network — Observership" — same as above; moved to
+  //   listings-hidelist.ts 2026-05-17 (program suspended).
   "Drexel University — International Observership": {
     url: "https://drexel.edu/medicine/academics/continuing-education/physician-refresher-re-entry-program/for-prospective-students/international-students-observerships/",
     verified: true,
@@ -287,9 +284,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
 
   // "Penn Medicine (UPenn)" — primary entry now in one-by-one packet #59 below.
   "George Washington University Hospital": {
-    url: "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
-    verified: false,
-    note: "Observer Training Program exists but currently NOT ACCEPTING APPLICATIONS. Contact impinfo@gwu.edu for updates.",
+    url: "https://smhs.gwu.edu/academics/md-program/visiting-students",
+    verified: true,
+    note: "GW SMHS Visiting Students canonical page. US LCME M4 via VSLO. Separate ICEP (International Clinical Electives Program) at imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students for INTL students from ICEP-affiliated home schools only. Note: GW's Observer Training Program at imp.smhs.gwu.edu/observer-training-program-not-accepting-applications is CLOSED — reoriented away from that to the active VSLO visiting-students pathway. Updated 2026-05-17 from operator review.",
   },
   "Wayne State University / Detroit Medical Center": {
     url: "https://www.dmc.org/health-professionals/gme-at-dmc/dmc-clinical-campus/elective-visiting-students",
@@ -342,11 +339,12 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     cost: "$100 US / $775 foreign nationals",
   },
-  "SAMS — Clinical Observership (Nonprofit)": {
-    url: "https://society.sams-usa.net/observership-program/",
-    verified: true,
-    note: "Nonprofit — free or minimal cost. Multiple states.",
-  },
+  // "SAMS — Clinical Observership (Nonprofit)" — moved to listings-hidelist.ts
+  //   after operator review 2026-05-17. SAMS operates as a third-party
+  //   matchmaker between IMG observers and preceptors at private
+  //   practices/clinics — categorically distinct from institutional
+  //   VSLO-based academic medical centers. Same scope-of-catalog rationale
+  //   as Brooklyn USCE / AMG / ValueMD (THIRD_PARTY_BROKER).
   // "CommonSpirit Health International — Clinical Observation" — primary
   // entry now lives in one-by-one packet #9 below.
   // "MedStar Health — International Observer Program" — primary entry
@@ -734,11 +732,14 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // search confirmed legitimate 4-12 week clinical observation program
   // for international clinical professionals.
 
-  "Conemaugh Memorial Medical Center": {
-    url: "https://gme.conemaugh.org/resident-programs/medical-students",
-    verified: false,
-    note: "Conemaugh Medical Students page. WARNING: institution explicitly states 'Conemaugh does not offer observerships, externships, shadowing or research assistant positions.' They DO offer M4 audition rotation in Internal Medicine only. data.js classifies as observership, which is inaccurate — should be reclassified to rotation/audition. Replaces homepage. verified:false because the data.js type is wrong, not because the page is wrong. One-by-one packet #10.",
-  },
+  // "Conemaugh Memorial Medical Center" — moved to listings-hidelist.ts
+  //   after operator review 2026-05-17. Institution previously stated
+  //   "Conemaugh does not offer observerships, externships, shadowing
+  //   or research assistant positions"; only M4 audition rotation in
+  //   Internal Medicine (not a general USCE pathway). gme.conemaugh.org
+  //   URL also returns 404 to WebFetch. Hidden as
+  //   OPERATOR_HIDE_NO_DIRECT_URL.
+  // (entry body removed; hidelist now handles Conemaugh)
 
   "Coney Island Hospital": {
     url: "https://coneyem.com/index.php/medical-students/",
@@ -1207,11 +1208,12 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "CommonSpirit Health International Clinical Observation Program canonical page. Legitimate institutional INTL observation program across CommonSpirit's 159 US hospitals. 4-12 week observation, INTL physicians + nurses + allied health staff; designed to give 'international clinical professionals an informal opportunity to shadow their American colleagues in our affiliated facilities in the United States.' Federally compliant: NO patient care, NO volunteer research. Application requires institutional/organizational application (not individual student VSLO). Upgrades packet #9's verified:false. Quote (from CommonSpirit International search-confirmed): 'Observation Program participants are able to witness best practices and systems and processes in a variety of real-world settings over a 4- to 12-week period including patient care delivered in a variety of care settings (hospitals, clinics, surgery centers, etc.)' One-by-one packet #94.",
   },
 
-  "Crozer-Chester Medical Center": {
-    url: "https://crozerem.com/medical-students/",
-    verified: false,
-    note: "Crozer-Chester Emergency Medicine Residency Medical Students page (Drexel COM clerkship affiliate). Welcomes MS3 and 'auditioning MS4' students for EM rotations but no centralized institutional M4 visiting/observership program documented; access is via Drexel-Crozer clerkship pathway. Contact Pollianne Ward-Bianchi, MD (Drexel Clerkship Director) Pollianne.Ward@crozer.org or Shayna Caliman (EM Residency Coordinator) Shayna.Caliman@crozer.org. BORDERLINE_KEEP_REVERIFY: real M4 EM auditions exist but the broader institutional visiting-medical-student program is not separately documented; per operator policy, absence of dedicated institutional page ≠ absence of program. Replaces crozerhealth.org/ homepage. One-by-one packet #95.",
-  },
+  // "Crozer-Chester Medical Center" — moved to listings-hidelist.ts after
+  //   operator review 2026-05-17. Crozer's only documented M4 pathway is
+  //   the Drexel-Crozer EM clerkship for Drexel-enrolled students.
+  //   No general visiting M4 pathway exists for non-Drexel students.
+  //   Hidden as OPERATOR_HIDE_NO_DIRECT_URL (with REORIENT followUp if
+  //   a real general M4 page is discovered later).
 
   "University of Texas Medical Branch (UTMB)": {
     url: "https://www.utmb.edu/enrollmentservices/currentstudents/visiting-students",
