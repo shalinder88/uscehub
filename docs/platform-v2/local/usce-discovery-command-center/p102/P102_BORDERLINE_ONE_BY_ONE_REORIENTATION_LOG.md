@@ -626,3 +626,65 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - countsAsTrueUSCE: TRUE
 - INTL: separate contact (Dr. Irma Frank)
 
+# Batch 5 (packets 41-50) — 2026-05-17
+
+## Packet 41: MedStar Health — International Observer Program
+- finalUrl: medstarhealth.org/education/other-educational-programs/international-observer-program
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK (verified=true)
+- evidence: data.js URL already direct; MedStar GME international rotation application available
+- countsAsTrueUSCE: TRUE
+
+## Packet 42: Memorial Healthcare System
+- finalUrl: mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: VSLO + $1M/$3M liability + HIPAA; Office of Academic Affairs 954-265-4463
+- countsAsTrueUSCE: TRUE
+
+## Packet 43: Memorial Hermann Hospital / UTHealth
+- finalUrl: med.uth.edu/admissions/student-affairs/visiting-student-course-catalog/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: McGovern Medical School visiting student catalog; Memorial Hermann primary teaching site; VSLO Apr 1
+- countsAsTrueUSCE: TRUE
+
+## Packet 44: Mercy Hospital — St. Louis
+- finalUrl: mercy.net/healthcare-education/graduate/st-louis/rotations/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: M4 sub-internships in IM inpatient/clinic Jul-Feb. WARNING: "no longer able to offer observerships or sponsor externships for international medical graduates/students"
+- countsAsTrueUSCE: TRUE (M4 sub-I) — INTL excluded
+
+## Packet 45: Metro Health — Case Western Reserve
+- finalUrl: gme.metrohealth.org/medical-student-information/medical-student-guide
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: MetroHealth elective rotations; primarily CWRU-affiliated students; non-affiliated must work with UH Cleveland (separate)
+- countsAsTrueUSCE: TRUE
+
+## Packet 46: Metropolitan Hospital Center
+- finalUrl: nychealthandhospitals.org/mosaic/visiting-scholars-program/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: NY Medical College affiliate since 1875; MOSAIC is the cross-cutting visiting student access
+- countsAsTrueUSCE: TRUE
+
+## Packet 47: Montefiore / Albert Einstein
+- finalUrl: einsteinmed.edu/education/md-program/registrar/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Einstein Office of the Registrar Visiting Students; VSLO, max 3 electives/4wk; INTL NOT accepted unless via exchange
+- countsAsTrueUSCE: TRUE
+
+## Packet 48: Mount Sinai Hospital
+- finalUrl: icahn.mssm.edu/education/students/registrar/electives/visiting-lcme-schools
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Icahn SOM visiting LCME schools (VSLO); INTL students welcome via separate route (international medical schools); VEPSUM diversity URiM separately
+- countsAsTrueUSCE: TRUE
+
+## Packet 49: Mount Sinai Morningside / West
+- finalUrl: msmwem.com/students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: M4 EM 4-week rotation; sub-intern role; 12 clinical shifts; VSLO
+- countsAsTrueUSCE: TRUE
+
+## Packet 50: Newark Beth Israel Medical Center
+- finalUrl: rwjbh.org/for-health-care-professionals/medical-education/newark-beth-israel-medical-center/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Major Rutgers NJMS teaching partner for core clerkships; EM specialty electives (Peds, US, EMS); Rotators@rwjbh.org
+- countsAsTrueUSCE: TRUE (×2 since 2 data.js entries)
+

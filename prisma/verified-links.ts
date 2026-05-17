@@ -230,11 +230,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
 
   // ===== DEPARTMENT-SPECIFIC ONLY (not centralized — marked unverified) =====
 
-  "Mount Sinai Hospital": {
-    url: "https://www.mountsinai.org/about/international/programs",
-    verified: false,
-    note: "International Observer Program currently SUSPENDED. Department-level observerships may be arranged with faculty sponsor.",
-  },
+  // "Mount Sinai Hospital" — primary entry now in one-by-one packet #48.
   "NYU Langone Health": {
     url: "https://med.nyu.edu/",
     verified: false,
@@ -387,11 +383,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   // "CommonSpirit Health International — Clinical Observation" — primary
   // entry now lives in one-by-one packet #9 below.
-  "MedStar Health — International Observer Program": {
-    url: "https://www.medstarhealth.org/education",
-    verified: false,
-    note: "Observer program page may have been removed or restructured. Contact MedStar education office directly.",
-  },
+  // "MedStar Health — International Observer Program" — primary entry
+  // now in one-by-one packet #41 below.
   "Georgetown / Ruesch Center — International GI Observership": {
     url: "https://ruesch.georgetown.edu/internationalobservership/",
     verified: true,
@@ -934,5 +927,65 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
     verified: true,
     note: "Georgetown SOM Visiting Students Program (2026-2027). VSLO-based for LCME/COCA M4. VSLO opens March 30. INTL contact Dr. Irma Frank (franki@georgetown.edu). MedStar Health Diversity scholarship available. Replaces medstarhealth.org/education generic. One-by-one packet #40.",
+  },
+
+  "MedStar Health — International Observer Program": {
+    url: "https://www.medstarhealth.org/education/other-educational-programs/international-observer-program",
+    verified: true,
+    note: "MedStar Health International Physician Observership Program. For IMGs (already a direct-program URL in data.js — verified here). Apply via medstargme.net/international-rotation-application-2/. One-by-one packet #41.",
+  },
+
+  "Memorial Healthcare System": {
+    url: "https://www.mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+    verified: true,
+    note: "Memorial Healthcare System (Hollywood, Florida) Requirements for Visiting Students. VSLO-based. $1M/$3M liability + BLS + HIPAA. Office of Academic Affairs 954-265-4463. Replaces mhs.net/ homepage. One-by-one packet #42.",
+  },
+
+  "Memorial Hermann Hospital / UTHealth": {
+    url: "https://med.uth.edu/admissions/student-affairs/visiting-student-course-catalog/",
+    verified: true,
+    note: "McGovern Medical School Visiting Student Course Catalog (2026-2027). Memorial Hermann is the primary teaching site. VSLO-based, final year, max 2 electives, 30-day deadline. Apr 1 application opens; Mar 1 catalog visible. Replaces med.uth.edu/gme/ landing. One-by-one packet #43.",
+  },
+
+  "Mercy Hospital — St. Louis": {
+    url: "https://www.mercy.net/healthcare-education/graduate/st-louis/rotations/",
+    verified: true,
+    note: "Mercy GME St. Louis Rotations page. M4 sub-internships in inpatient (2/month) + clinic (1/month) Jul-Feb/Jan. WARNING: 'no longer able to offer observerships or sponsor externships for international medical graduates/students.' Replaces mercy.net/ homepage. One-by-one packet #44.",
+  },
+
+  "Metro Health — Case Western Reserve": {
+    url: "https://gme.metrohealth.org/medical-student-information/medical-student-guide",
+    verified: true,
+    note: "MetroHealth Medical Student Guide. Elective rotations open first to affiliated CWRU students. CWRU Visiting Student Program now hosted by University Hospitals Cleveland (separate). Replaces metrohealth.org/ homepage. One-by-one packet #45.",
+  },
+
+  "Metropolitan Hospital Center": {
+    url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+    verified: true,
+    note: "Metropolitan Hospital is NYC H+H; New York Medical College affiliate since 1875 (oldest US municipal/private affiliation). Visiting students apply via MOSAIC. EM rotations at MetHarlemEM. Replaces /metropolitan/ generic page. One-by-one packet #46.",
+  },
+
+  "Montefiore / Albert Einstein": {
+    url: "https://einsteinmed.edu/education/md-program/registrar/visiting-students",
+    verified: true,
+    note: "Einstein Office of the Registrar Visiting Students. VSLO; max 3 electives / 4 weeks. INTL NOT accepted (US citizen/PR/F-1 visa from home school required). Montefiore is the Einstein clinical site. Replaces montefioreeinstein.org/education/gme (GME-only). One-by-one packet #47.",
+  },
+
+  "Mount Sinai Hospital": {
+    url: "https://icahn.mssm.edu/education/students/registrar/electives/visiting-lcme-schools",
+    verified: true,
+    note: "Icahn SOM Mount Sinai visiting LCME schools page. M4 via VSLO. INTL students currently attending international medical schools welcome via separate route at icahn.mssm.edu/about/international/programs. VEPSUM (diversity 4-week elective) for URiM M4 separately. Replaces /about/international/programs which was generic. One-by-one packet #48.",
+  },
+
+  "Mount Sinai Morningside / West": {
+    url: "https://www.msmwem.com/students",
+    verified: true,
+    note: "Mount Sinai Morningside / West Students page. Separate application/selection from main Sinai Hospital. EM 4-week M4 rotation; 12 clinical shifts; sub-intern role. VSLO-based. URM scholarship available. Replaces mountsinai.org/ homepage. One-by-one packet #49.",
+  },
+
+  "Newark Beth Israel Medical Center": {
+    url: "https://www.rwjbh.org/for-health-care-professionals/medical-education/newark-beth-israel-medical-center/",
+    verified: true,
+    note: "Newark Beth Israel Medical Education Programs (RWJBH). Major teaching partner of Rutgers NJMS for core clerkships. EM electives (Peds, US, EMS) competitive; contact Rotators@rwjbh.org. 2 data.js entries with this name; both share this URL. Replaces /newark-beth-israel-medical-center main page. One-by-one packet #50.",
   },
 };
