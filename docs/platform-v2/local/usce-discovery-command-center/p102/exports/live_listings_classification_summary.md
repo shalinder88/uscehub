@@ -4,13 +4,13 @@ Generated: 2026-05-17
 Programs classified: 207 (from data.js)
 
 ## TRUE_USCE_COUNT
-- Observership:                       85
-- Visiting student elective/clerkship: 47
+- Observership:                       91
+- Visiting student elective/clerkship: 51
 - Sub-I / acting internship:          1
-- Externship:                         1
+- Externship:                         2
 - International visiting student:     3
 - Multi-site rotation:                1
-- **Total true USCE:                  138**
+- **Total true USCE:                  149**
 
 ## RESEARCH_COUNT
 - Research direct program:            0
@@ -23,13 +23,13 @@ Programs classified: 207 (from data.js)
 - Negative informational rows:        1
 - Hidden / no program found:          10
 - Protected / manual browser needed:  2
-- Borderline keep/reverify:           39
+- Borderline keep/reverify:           28
 - Broken / manual browser needed:     3
 
 ## LINK_STATUS
-- Direct exact official links:        84
-- Reoriented moved links:             52
-- Generic but kept:                   46
+- Direct exact official links:        89
+- Reoriented moved links:             58
+- Generic but kept:                   35
 - Dead hidden:                        10
 - Failed / browser-manual needed:     5
 
@@ -37,9 +37,9 @@ Programs classified: 207 (from data.js)
 
 | Classification | Count |
 |---|---:|
-| DIRECT_TRUE_USCE_LINK | 84 |
-| MOVED_REORIENTED_TO_TRUE_USCE_LINK | 52 |
-| BORDERLINE_KEEP_REVERIFY | 39 |
+| DIRECT_TRUE_USCE_LINK | 89 |
+| MOVED_REORIENTED_TO_TRUE_USCE_LINK | 58 |
+| BORDERLINE_KEEP_REVERIFY | 28 |
 | NO_PROGRAM_FOUND_HIDE | 10 |
 | RESEARCH_VALID_INSTITUTIONAL_PATHWAY | 9 |
 | RESEARCH_TOO_GENERIC_REVERIFY | 7 |

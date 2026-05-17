@@ -840,3 +840,103 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - audience: US medical schools only — INTL explicitly excluded; M4 senior with cores + Step 1 pass + neurology before rotation; application: VSLO; $225 non-refundable processing fee/rotation; rotations do NOT carry Tulane MD credit
 - countsAsTrueUSCE: TRUE
 
+---
+
+## Packet 71: Mount Sinai Beth Israel
+- currentUrl: mountsinai.org/locations/beth-israel/education/graduate-medical-education (GME-only)
+- candidates opened: icahn.mssm.edu/education/students/registrar/electives/visiting-lcme-schools (HTTP 403 to WebFetch — Cloudflare/WAF; URL is live in browser per AAMC registry + Google index)
+- finalUrl: icahn.mssm.edu/education/students/registrar/electives/visiting-lcme-schools
+- classification: PROTECTED_BROWSER_REQUIRED (works in browser, not in Node fetch — same standard as Hopkins precedent; counts as true USCE)
+- evidence (from Google snippet): "Students in good standing who have not yet received their MD or DO degree are eligible to apply for an elective at the Icahn School of Medicine at Mount Sinai, and should be in their final year of medical school."
+- audience: US LCME M4 (VSAS); INTL via separate icahn.mssm.edu/.../visiting-abroad pathway; electives at Mount Sinai Hospital + James J. Peters VA + Elmhurst Hospital Center; Beth Israel covered via departmental electives within the Icahn system
+- countsAsTrueUSCE: TRUE
+
+## Packet 72: Jamaica Hospital Medical Center
+- currentUrl: jamaicahospital.org/graduate-medical-education/
+- candidates opened: jamaicahospital.org/graduate-medical-education/ (residency-only landing)
+- finalUrl: jamaicahospital.org/graduate-medical-education/
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: no public M4 visiting-student / observership pathway documented on the institutional site; Department of Medical Education exists for graduate trainees
+- audience/application/cost: unknown — phone outreach to Department of Medical Education needed
+- countsAsTrueUSCE: FALSE (insufficient evidence; keep for manual reverify, do not hide — absence of page ≠ absence of program)
+- note: prior "WARNING: NOT offered" claim removed in this reverify because it was based on an older search I could not re-confirm; community teaching hospital in Queens historically described as IMG-friendly
+
+## Packet 73: Wyckoff Heights Medical Center
+- currentUrl: wyckoffhospital.org/
+- candidates opened: whmcny.org/undergraduate-education/
+- finalUrl: whmcny.org/undergraduate-education/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "All electives are offered for 4 week blocks." 350-bed Brooklyn-Queens border teaching hospital approved by NY State Education Department for medical student training; sub-I positions in IM, OB/GYN, Peds, Surgery + specialty
+- audience: any med school via affiliation; application: direct via Eileen T. Kruck (EKruck@wyckoffhospital.org); core + sub-I scheduling through home school; historically IMG-friendly community hospital
+- countsAsTrueUSCE: TRUE
+- note: two data.js entries with this name; both reoriented via this URL
+
+## Packet 74: UCSF Medical Center
+- currentUrl: meded.ucsf.edu/ (homepage, prior verified:false stub)
+- candidates opened: meded.ucsf.edu/visiting-student-program
+- finalUrl: meded.ucsf.edu/visiting-student-program
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The UCSF School of Medicine uses the AAMC Visiting Student Learning Opportunities (VSLO) Application Service to receive applications from US medical and osteopathic students."
+- audience: US LCME/COCA M4; INTL not on this pathway; application: VSLO; max 12 weeks; $300 fee/elective; VESP scholarship up to $2,000
+- countsAsTrueUSCE: TRUE
+- note: replaces prior verified:false meded.ucsf.edu/ homepage stub
+
+## Packet 75: UC Davis Medical Center
+- currentUrl: health.ucdavis.edu/gme/ (GME-only)
+- candidates opened: health.ucdavis.edu/mdprogram/registrar/visiting.html
+- finalUrl: health.ucdavis.edu/mdprogram/registrar/visiting.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "UC Davis School of Medicine welcomes eligible fourth year visiting medical students' participation in our fourth-year electives as space permits."
+- audience: US LCME M4 only — INTL not accepted; application: VSLO 60-day approval window; no required core clerkships; BLS/ACLS + $1M/$3M malpractice + Step 1/COMLEX pass + HIPAA + immunizations
+- countsAsTrueUSCE: TRUE
+
+## Packet 76: UC Irvine Medical Center
+- currentUrl: ucihealth.org/
+- candidates opened: medschool.uci.edu/education/medical-education/medical-degree-program/curriculum/md-program-electives
+- rejected: meded.uci.edu/curricular-affairs/visiting-students.asp (TLS cert alt-name invalid)
+- finalUrl: medschool.uci.edu/education/medical-education/medical-degree-program/curriculum/md-program-electives
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Due to the high volume of requests, the extramural application process is done through the Association of American College's AAMC Visiting Student Learning Opportunities (VSLO)."
+- audience: US LCME via VSLO; INTL ONLY from schools with UCI exchange agreement (contact comextra@hs.uci.edu); $300/course fee
+- countsAsTrueUSCE: TRUE
+
+## Packet 77: University Hospitals Cleveland
+- currentUrl: uhhospitals.org/medical-education/graduate-medical-education (GME-only)
+- candidates opened: uhhospitals.org/medical-education/undergraduate-medical-education/visiting-medical-student-program/visiting-medical-student-program-clevel
+- finalUrl: uhhospitals.org/medical-education/undergraduate-medical-education/visiting-medical-student-program/visiting-medical-student-program-clevel
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Domestic students who have completed their core clinical training and will be in the fourth year of medical education at their LCME- or AOA- accredited medical schools can apply."
+- audience: US LCME/AOA M4 via AAMC-VSLO; Case Western Reserve SOM is primary affiliate (Case students get priority scheduling); applications open mid-Jan, offers mid-Mar; covers UH Rainbow Babies & Children's, MacDonald Women's, Seidman Cancer Center
+- countsAsTrueUSCE: TRUE
+- note: prior key "University Hospitals Cleveland Medical Center" (suffix mismatch with data.js) commented out; replaced with EXACT data.js key
+
+## Packet 78: UT Southwestern Medical Center
+- currentUrl: utsouthwestern.edu/education/graduate-medical-education/ (GME-only)
+- candidates opened: medschool.utsouthwestern.edu/admissions/visiting/ (final after 301 from utsouthwestern.edu/education/medical-school/admissions/visiting/)
+- rejected: utsouthwestern.edu/education/medical-school/admissions/visiting/ (301 redirect; use canonical medschool subdomain)
+- finalUrl: medschool.utsouthwestern.edu/admissions/visiting/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Visiting students may not complete more than two four-week electives at UT Southwestern"
+- audience: US LCME/COCA M4 via AAMC VSLO; INTL via separate VMS portal at medschool.utsouthwestern.edu/admissions/visiting/international.html; max 2 four-week electives; rotation/malpractice fees apply; Castle Branch background check after acceptance
+- countsAsTrueUSCE: TRUE
+- note: two data.js entries with this name; both reoriented via this URL
+
+## Packet 79: UT Health San Antonio
+- currentUrl: uthscsa.edu/
+- candidates opened: uthscsa.edu/medicine/education/ume/student-affairs/student-wellness/visiting-students
+- finalUrl: uthscsa.edu/medicine/education/ume/student-affairs/student-wellness/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The Long School of Medicine is currently not accepting students from Non-Accredited or International Medical Schools. Allopathic (LCME) and Osteopathic (COCA) medical schools are eligible to apply."
+- audience: US LCME/COCA M4 only — INTL explicitly NOT accepted; application: AAMC VSLO (institution filter: UT HSC San Antonio Long SOM); 4-week advanced electives; affiliation agreement + immunizations required; department selections finalized 4 wks before start
+- countsAsTrueUSCE: TRUE
+
+## Packet 80: UNC Hospitals
+- currentUrl: med.unc.edu/
+- candidates opened: med.unc.edu/md/student-affairs/visiting-students/
+- finalUrl: med.unc.edu/md/student-affairs/visiting-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The University of North Carolina School of Medicine's Visiting Student Program offers domestic students in their final year of medical school the opportunity to participate in educational, engaging and challenging clinical elective experiences."
+- audience: US LCME M4 (domestic) via AAMC VSLO/VSAS; INTL via SEPARATE IVS pathway at med.unc.edu/oghe/visiting-international-students/ivs-application-requirements/ (Office of Global Health Education); affiliated sites across NC (Asheville, Chapel Hill, Charlotte, Greensboro, Raleigh, Wilmington); 1 LOR + personal statement; contact visitingstudent@med.unc.edu
+- countsAsTrueUSCE: TRUE
+
+
