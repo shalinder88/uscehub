@@ -155,6 +155,14 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     followUp: "PERMANENT",
     verifiedAt: "2026-05-17",
   },
+
+  "Clinical Experience Programs — Multi-Site": {
+    url: "#",
+    reason: "data.js entry has placeholder URL '#' (no real link) and description labels it 'THIRD-PARTY PLACEMENT SERVICE (not a hospital). Arranges clinical rotations at community hospitals' — same category as Brooklyn USCE / AMG / ValueMD third-party brokers. No institutional source URL exists. Out of scope for institutional-USCE catalog. Distinct from the prior 'Clinical Experience Programs (CEP) — IMG Rotations' (AGGREGATOR_DEAD; that one is a dead domain). One-by-one packet #104.",
+    classification: "THIRD_PARTY_BROKER",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-17",
+  },
 };
 
 /** Returns true if the program should be skipped at seed time. */

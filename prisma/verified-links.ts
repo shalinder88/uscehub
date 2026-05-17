@@ -1222,4 +1222,22 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "UNM School of Medicine Visiting Medical Students canonical page. US LCME/COCA + INTL (if home school participates in VSLO) M4 final-year. AAMC VSLO ONLY — direct faculty contact prohibited. 4-week elective clerkships for credit. NO observerships, shadowing, research electives, or pre-clinical experiences offered. USMLE Step 1 (or COMLEX for DO) required + affiliation agreement before rotation. Rotations at UNM Hospital primarily; outside clinic assignments not made. Quote: 'The University of New Mexico School of Medicine welcomes final-year visiting medical students to participate in four-week elective clerkships for credit.' Replaces hospitals.health.unm.edu/ homepage. One-by-one packet #100.",
   },
+
+  "University of Kansas Medical Center": {
+    url: "https://www.kumc.edu/academic-and-student-affairs/departments/registrars-office/forms-and-resources/visiting-medical-students.html",
+    verified: true,
+    note: "KU School of Medicine — Kansas City Campus Visiting Medical Students canonical page. US LCME-accredited MD students; AOA D.O. restricted to 3 affiliated schools (Kansas City University, Des Moines University COOM, Oklahoma State University COOM). AAMC VSLO ONLY. Fall term only. Max 1 four-week rotation per student. ~$110 fee. $1M/$3M malpractice + AAMC immunization form + TB test within 3 mo. VSLO opens March 13, 2026 for June 1, 2026+ rotations. Application due 30 days before start. INTL via separate Clinical Electives Program at kumc.edu/.../international-programs/. Quote: 'Visiting medical students may apply to any available elective at the KU School of Medicine and will be considered after KU medical students have been scheduled.' Replaces kumc.edu/ homepage; companion to existing 'University of Kansas Medical Center (KUMC)' entry for INTL observership ($3K/mo). One-by-one packet #105.",
+  },
+
+  "University of Arkansas for Medical Sciences (UAMS)": {
+    url: "https://medicine.uams.edu/students/visiting-students/",
+    verified: true,
+    note: "UAMS College of Medicine Visiting Students canonical page. US LCME or AOA-accredited M4 only — must have completed Medicine/Surgery/OB-GYN/Peds/Psych core clerkships. AAMC VSLO required. Max 8 weeks (typical 4 weeks). Written permission from home Dean/Associate Dean required. NOT allowed on longitudinal electives (L-prefix) or required Acting Internships. Health + malpractice insurance + immunizations required by U of A Board of Trustees. Quote: 'UAMS uses VSLO, the Visiting Student Learning Opportunities, to receive visiting student applications.' Replaces uams.edu/ homepage. One-by-one packet #106.",
+  },
+
+  "University of Mississippi Medical Center": {
+    url: "https://umc.edu/som/Departments%20and%20Offices/SOM%20Administrative%20Offices/SOM%20Admissions/Transfer%20and%20Visiting%20Students.html",
+    verified: true,
+    note: "University of Mississippi Medical Center School of Medicine Transfer and Visiting Students canonical page (Jackson). Senior M4 from LCME-accredited US + Canadian schools, or AOA-accredited osteopathic schools — INTL NOT explicitly listed. AAMC VSLO management. Applications open ~March 20 (department-variable). Formal home institution approval required. EM elective notable: 1-month M4 in Mississippi's only Level 1 trauma center. Quote: 'The AAMC's Visiting Student Learning Opportunities (VSLO) is used to manage the application process.' Replaces umc.edu/ homepage. One-by-one packet #107.",
+  },
 };

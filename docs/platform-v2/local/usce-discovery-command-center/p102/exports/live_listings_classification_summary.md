@@ -4,13 +4,13 @@ Generated: 2026-05-17
 Programs classified: 207 (from data.js)
 
 ## TRUE_USCE_COUNT
-- Observership:                       97
-- Visiting student elective/clerkship: 61
+- Observership:                       99
+- Visiting student elective/clerkship: 62
 - Sub-I / acting internship:          1
 - Externship:                         3
 - International visiting student:     3
 - Multi-site rotation:                2
-- **Total true USCE:                  167**
+- **Total true USCE:                  170**
 
 ## RESEARCH_COUNT
 - Research direct program:            0
@@ -21,28 +21,28 @@ Programs classified: 207 (from data.js)
 
 ## NOT_COUNTED_AS_TRUE_USCE
 - Negative informational rows:        1
-- Hidden / no program found:          13
+- Hidden / no program found:          14
 - Protected / manual browser needed:  2
-- Borderline keep/reverify:           7
+- Borderline keep/reverify:           3
 - Broken / manual browser needed:     3
 
 ## LINK_STATUS
-- Direct exact official links:        103
-- Reoriented moved links:             62
-- Generic but kept:                   14
-- Dead hidden:                        13
+- Direct exact official links:        105
+- Reoriented moved links:             63
+- Generic but kept:                   10
+- Dead hidden:                        14
 - Failed / browser-manual needed:     5
 
 ## Per-classification breakdown
 
 | Classification | Count |
 |---|---:|
-| DIRECT_TRUE_USCE_LINK | 103 |
-| MOVED_REORIENTED_TO_TRUE_USCE_LINK | 62 |
-| NO_PROGRAM_FOUND_HIDE | 13 |
+| DIRECT_TRUE_USCE_LINK | 105 |
+| MOVED_REORIENTED_TO_TRUE_USCE_LINK | 63 |
+| NO_PROGRAM_FOUND_HIDE | 14 |
 | RESEARCH_VALID_INSTITUTIONAL_PATHWAY | 9 |
-| BORDERLINE_KEEP_REVERIFY | 7 |
 | RESEARCH_TOO_GENERIC_REVERIFY | 7 |
+| BORDERLINE_KEEP_REVERIFY | 3 |
 | BROKEN_REQUIRES_MANUAL_BROWSER | 3 |
 | PROTECTED_BROWSER_REQUIRED | 2 |
 | NEGATIVE_INFO_ROW_KEEP_OR_SEPARATE | 1 |

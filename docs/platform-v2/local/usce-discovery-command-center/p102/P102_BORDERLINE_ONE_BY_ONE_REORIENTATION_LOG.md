@@ -1135,5 +1135,89 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - audience: US LCME/COCA M4 + INTL (if home school participates in VSLO); application: AAMC VSLO only — direct faculty contact prohibited; 4-wk elective clerkships only; NO observerships/shadowing/research/pre-clinical; USMLE Step 1 (or COMLEX for DO) + affiliation agreement required
 - countsAsTrueUSCE: TRUE
 
+---
+
+## Packet 101: Jamaica Hospital Medical Center (data.js entry #1)
+- currentUrl: jamaicahospital.org/graduate-medical-education/
+- finalUrl: jamaicahospital.org/graduate-medical-education/ (unchanged from packet #72)
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: same as packet #72 — GME page lists residencies only; no public M4 visiting/observership page
+- countsAsTrueUSCE: FALSE
+- note: this is the FIRST of two data.js entries with this name (both share the verified-links override). Classifier still shows as borderline because the override is verified:false. Per operator policy, kept for manual reverify — phone outreach to Department of Medical Education needed.
+
+## Packet 102: Jamaica Hospital Medical Center (data.js entry #2)
+- currentUrl: jamaicahospital.org/ (homepage; different URL than entry #1)
+- finalUrl: jamaicahospital.org/graduate-medical-education/ (same verified-links override as packet #101)
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: same as packet #101 — homepage redirects to general institutional content; no visiting-student page found
+- countsAsTrueUSCE: FALSE
+- note: second of two Jamaica data.js entries; both covered by single verified-links override but classifier reports separately because data.js currentUrl differs. Phone outreach would resolve both at once.
+
+## Packet 103: Richmond University Medical Center (data.js entry #2)
+- currentUrl: rumcsi.org/ (homepage; first data.js entry was also borderline at packet #61)
+- finalUrl: rumcsi.org/careers/graduate-medical-education/ (same verified-links override as packet #61)
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false)
+- evidence: same as packet #61 — GME landing lists residencies only; no published M4 visiting/observership page
+- countsAsTrueUSCE: FALSE
+- note: phone outreach to GME office (844-934-2273) needed to confirm whether any departmental observership exists. Per operator policy, kept BORDERLINE — absence of public page ≠ absence of program.
+
+## Packet 104: Clinical Experience Programs — Multi-Site
+- currentUrl: # (data.js placeholder; no real link)
+- candidates opened: N/A (no link to fetch)
+- finalUrl: HIDDEN (no replacement)
+- classification: NO_PROGRAM_FOUND_HIDE (THIRD_PARTY_BROKER classification)
+- evidence: data.js link is literal "#" (no real URL); description explicitly says "THIRD-PARTY PLACEMENT SERVICE (not a hospital). Arranges clinical rotations at community hospitals". No institutional source.
+- audience: N/A
+- countsAsTrueUSCE: FALSE (hidden — out of scope for institutional USCE catalog)
+- note: added to listings-hidelist.ts with THIRD_PARTY_BROKER classification + PERMANENT followUp. Distinct from prior "Clinical Experience Programs (CEP) — IMG Rotations" AGGREGATOR_DEAD entry (that one is a dead domain).
+
+## Packet 105: University of Kansas Medical Center
+- currentUrl: kumc.edu/
+- candidates opened: kumc.edu/academic-and-student-affairs/departments/registrars-office/forms-and-resources/visiting-medical-students.html
+- finalUrl: kumc.edu/academic-and-student-affairs/departments/registrars-office/forms-and-resources/visiting-medical-students.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Visiting medical students may apply to any available elective at the KU School of Medicine and will be considered after KU medical students have been scheduled."
+- audience: US LCME MD; D.O. restricted to KCU/Des Moines/OSU; Fall term only; max 1 four-week rotation per student; ~$110 fee; $1M/$3M malpractice; INTL via separate Clinical Electives Program (kumc.edu/.../international-programs/)
+- countsAsTrueUSCE: TRUE
+- note: companion to existing 'University of Kansas Medical Center (KUMC)' entry for INTL observership ($3K/mo)
+
+## Packet 106: University of Arkansas for Medical Sciences (UAMS)
+- currentUrl: uams.edu/
+- candidates opened: medicine.uams.edu/students/visiting-students/
+- finalUrl: medicine.uams.edu/students/visiting-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "UAMS uses VSLO, the Visiting Student Learning Opportunities, to receive visiting student applications."
+- audience: US LCME/AOA M4 only with all 5 cores complete; max 8 wks (typical 4); home Dean's written permission required; INTL not on this pathway; NOT allowed on longitudinal electives or required Acting Internships
+- countsAsTrueUSCE: TRUE
+
+## Packet 107: University of Mississippi Medical Center
+- currentUrl: umc.edu/
+- candidates opened: umc.edu/som/Departments%20and%20Offices/SOM%20Administrative%20Offices/SOM%20Admissions/Transfer%20and%20Visiting%20Students.html
+- finalUrl: umc.edu/som/Departments%20and%20Offices/SOM%20Administrative%20Offices/SOM%20Admissions/Transfer%20and%20Visiting%20Students.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The AAMC's Visiting Student Learning Opportunities (VSLO) is used to manage the application process."
+- audience: Senior M4 from LCME-accredited US/Canadian schools or AOA D.O. schools; INTL NOT listed as eligible; application: AAMC VSLO opens ~March 20 (department-variable); home institution approval required; EM elective notable (1-month M4 in Mississippi's only Level 1 trauma center)
+- countsAsTrueUSCE: TRUE
+
+---
+
+# Final reconciliation (packets 1-107 complete)
+
+Borderline queue exhausted. The 3 rows still reported as BORDERLINE_KEEP_REVERIFY by the classifier are intentional per operator policy:
+- 2 × Jamaica Hospital Medical Center (data.js entries #1 + #2) — no public M4 program visible; manual phone outreach required
+- 1 × Richmond University Medical Center (data.js entry #2) — no public M4 program visible; manual phone outreach required (data.js entry #1 reoriented at packet #61 with same verified:false outcome)
+
+All four of these remain BORDERLINE because the operator's "absence of page ≠ absence of program" rule applies. They are NOT hidden because hiding requires positive evidence the program doesn't exist.
+
+Final state across 11 batches:
+- 100 unique institutions processed across 107 packets (Hartford was upgraded twice; Mercy + Wyckoff + Richmond + Jamaica each have multiple data.js entries with same name)
+- 105 DIRECT + 63 REORIENTED + 2 PROTECTED = 170 true USCE
+- 14 hidden (10 original + 1 Flushing negative + 3 third-party brokers)
+- 16 research-related (9 valid + 7 reverify)
+- 3 broken (require manual browser)
+- 1 negative info (Conemaugh)
+- 3 borderline (Jamaica ×2 + Richmond ×1; intentional hold for outreach)
+
+
 
 
