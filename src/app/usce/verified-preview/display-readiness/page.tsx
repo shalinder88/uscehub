@@ -87,18 +87,18 @@ export default function DisplayReadinessPreviewPage() {
   }
 
   return (
-    <main className="mx-auto max-w-5xl px-6 py-10 text-stone-900">
+    <main className="mx-auto max-w-5xl px-6 py-10 text-stone-900 dark:text-slate-100">
       <header className="mb-8">
-        <p className="text-xs uppercase tracking-wider text-stone-500">
+        <p className="text-xs uppercase tracking-wider text-stone-500 dark:text-slate-400">
           Internal preview · noindex
         </p>
         <h1 className="text-3xl font-semibold mt-1">
           P102 Display Readiness
         </h1>
-        <p className="mt-2 text-stone-600">
+        <p className="mt-2 text-stone-600 dark:text-slate-300">
           Source of truth for what the live site is allowed to display after
           the 11-batch link-truth campaign. Rebuild with{" "}
-          <code className="rounded bg-stone-100 px-1 py-0.5 text-sm">
+          <code className="rounded bg-stone-100 dark:bg-slate-800 dark:text-slate-100 px-1 py-0.5 text-sm">
             npx tsx scripts/p102-build-display-eligibility-export.ts
           </code>
           .
@@ -106,7 +106,7 @@ export default function DisplayReadinessPreviewPage() {
       </header>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold border-b border-stone-200 pb-1 mb-3">
+        <h2 className="text-lg font-semibold border-b border-stone-200 dark:border-slate-700 pb-1 mb-3">
           Buckets
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -122,16 +122,18 @@ export default function DisplayReadinessPreviewPage() {
           ].map((b) => (
             <div
               key={b.label}
-              className="rounded border border-stone-200 bg-white px-4 py-3"
+              className="rounded border border-stone-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3"
             >
-              <div className="text-xs uppercase tracking-wider text-stone-500">
+              <div className="text-xs uppercase tracking-wider text-stone-500 dark:text-slate-400">
                 {b.label}
               </div>
-              <div className="text-2xl font-semibold mt-1">{b.count}</div>
+              <div className="text-2xl font-semibold mt-1 text-stone-900 dark:text-slate-50">
+                {b.count}
+              </div>
             </div>
           ))}
         </div>
-        <p className="mt-3 text-sm text-stone-600">
+        <p className="mt-3 text-sm text-stone-600 dark:text-slate-300">
           Active display: <strong>{activeCount}</strong> ·
           Held: <strong>{heldCount}</strong> ·
           Not active: <strong>{hidden.length + archiveNegative.length}</strong>
@@ -139,7 +141,7 @@ export default function DisplayReadinessPreviewPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold border-b border-stone-200 pb-1 mb-3">
+        <h2 className="text-lg font-semibold border-b border-stone-200 dark:border-slate-700 pb-1 mb-3">
           Clinical USCE badge distribution ({clinical.length})
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -159,7 +161,7 @@ export default function DisplayReadinessPreviewPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold border-b border-stone-200 pb-1 mb-3">
+        <h2 className="text-lg font-semibold border-b border-stone-200 dark:border-slate-700 pb-1 mb-3">
           Hold buckets (need operator action)
         </h2>
         <HoldList title="Outreach hold (phone call needed)" rows={outreach} />
@@ -168,13 +170,13 @@ export default function DisplayReadinessPreviewPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold border-b border-stone-200 pb-1 mb-3">
+        <h2 className="text-lg font-semibold border-b border-stone-200 dark:border-slate-700 pb-1 mb-3">
           Clinical USCE sample (first 25)
         </h2>
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead>
-              <tr className="border-b border-stone-200 text-left text-xs uppercase tracking-wider text-stone-500">
+              <tr className="border-b border-stone-200 dark:border-slate-700 text-left text-xs uppercase tracking-wider text-stone-500 dark:text-slate-400">
                 <th className="py-2 pr-3">Institution</th>
                 <th className="py-2 pr-3">State</th>
                 <th className="py-2 pr-3">Badge</th>
@@ -184,9 +186,9 @@ export default function DisplayReadinessPreviewPage() {
             </thead>
             <tbody>
               {clinical.slice(0, 25).map((r, i) => (
-                <tr key={`${r.programName}-${i}`} className="border-b border-stone-100">
+                <tr key={`${r.programName}-${i}`} className="border-b border-stone-100 dark:border-slate-800">
                   <td className="py-2 pr-3 font-medium">{r.programName}</td>
-                  <td className="py-2 pr-3 text-stone-600">{r.state}</td>
+                  <td className="py-2 pr-3 text-stone-600 dark:text-slate-400">{r.state}</td>
                   <td className="py-2 pr-3">
                     <span
                       className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${
@@ -196,13 +198,13 @@ export default function DisplayReadinessPreviewPage() {
                       {r.badge}
                     </span>
                   </td>
-                  <td className="py-2 pr-3 text-stone-600">{r.subType}</td>
-                  <td className="py-2 pr-3 text-stone-700">
+                  <td className="py-2 pr-3 text-stone-600 dark:text-slate-400">{r.subType}</td>
+                  <td className="py-2 pr-3 text-stone-700 dark:text-slate-300">
                     <a
                       href={r.finalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline decoration-stone-300 hover:decoration-stone-500"
+                      className="underline decoration-stone-300 dark:decoration-slate-600 hover:decoration-stone-500 dark:hover:decoration-slate-300"
                     >
                       {r.finalUrl}
                     </a>
@@ -212,16 +214,16 @@ export default function DisplayReadinessPreviewPage() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-sm text-stone-600">
+        <p className="mt-3 text-sm text-stone-600 dark:text-slate-300">
           Showing 25 of {clinical.length}. Full list in{" "}
-          <code className="rounded bg-stone-100 px-1 py-0.5 text-xs">
+          <code className="rounded bg-stone-100 dark:bg-slate-800 dark:text-slate-100 px-1 py-0.5 text-xs">
             display_eligible_clinical_usce.json
           </code>
           .
         </p>
       </section>
 
-      <footer className="mt-12 border-t border-stone-200 pt-4 text-xs text-stone-500">
+      <footer className="mt-12 border-t border-stone-200 dark:border-slate-700 pt-4 text-xs text-stone-500 dark:text-slate-400">
         Generated from{" "}
         <code>
           docs/platform-v2/local/usce-discovery-command-center/p102/exports/
@@ -239,26 +241,26 @@ function HoldList({ title, rows }: { title: string; rows: DisplayRow[] }) {
   if (rows.length === 0) {
     return (
       <div className="mb-4">
-        <h3 className="text-sm font-semibold text-stone-700">{title}</h3>
-        <p className="text-sm text-stone-500 italic">No rows.</p>
+        <h3 className="text-sm font-semibold text-stone-700 dark:text-slate-200">{title}</h3>
+        <p className="text-sm text-stone-500 dark:text-slate-400 italic">No rows.</p>
       </div>
     );
   }
   return (
     <div className="mb-4">
-      <h3 className="text-sm font-semibold text-stone-700">
+      <h3 className="text-sm font-semibold text-stone-700 dark:text-slate-200">
         {title} ({rows.length})
       </h3>
       <ul className="mt-1 space-y-1 text-sm">
         {rows.map((r, i) => (
-          <li key={`${r.programName}-${i}`} className="text-stone-700">
+          <li key={`${r.programName}-${i}`} className="text-stone-700 dark:text-slate-200">
             <span className="font-medium">{r.programName}</span>
-            <span className="text-stone-500"> — </span>
+            <span className="text-stone-500 dark:text-slate-400"> — </span>
             <a
               href={r.finalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-stone-300 hover:decoration-stone-500"
+              className="underline decoration-stone-300 dark:decoration-slate-600 hover:decoration-stone-500 dark:hover:decoration-slate-300"
             >
               {r.finalUrl}
             </a>
