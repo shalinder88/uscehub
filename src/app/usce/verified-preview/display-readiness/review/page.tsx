@@ -3,6 +3,7 @@ import Link from "next/link";
 import { readFileSync } from "node:fs";
 import * as path from "node:path";
 import { loadDecisions, getDecisionCounts } from "@/lib/p102-operator-review-decisions";
+import { VERIFIED_LINKS } from "../../../../../../prisma/verified-links";
 import { OperatorRow } from "./operator-row";
 
 /**
@@ -219,6 +220,7 @@ export default async function ReviewDashboardPage({ searchParams }: PageProps) {
                 currentBadge={badgeFor(r.classification)}
                 currentClassification={r.classification}
                 finalUrl={r.finalUrl || r.currentUrl}
+                specialtyLimited={VERIFIED_LINKS[r.listingTitle]?.specialtyLimited}
                 existingDecision={store.byProgramName[r.listingTitle] ?? null}
               />
             ))}

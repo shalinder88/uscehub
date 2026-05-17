@@ -106,6 +106,7 @@ interface DisplayRow {
   evidenceQuote: string;
   provenanceNote: string;         // pulled from VERIFIED_LINKS[programName].note when available
   verifiedFlag: boolean;
+  specialtyLimited?: string;      // present when the program is specialty/department limited
   hideReason?: string;            // present only on hidden rows
   hideClassification?: string;    // present only on hidden rows
 }
@@ -142,6 +143,7 @@ function toDisplayRow(r: ClassifierRow): DisplayRow {
     evidenceQuote: r.evidenceQuote || '',
     provenanceNote: vl?.note ?? '',
     verifiedFlag: !!vl?.verified,
+    specialtyLimited: vl?.specialtyLimited,
     hideReason: hidden?.reason,
     hideClassification: hidden?.classification,
   };

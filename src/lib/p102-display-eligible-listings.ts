@@ -60,6 +60,7 @@ export interface DisplayEligibleRow {
   evidenceQuote: string;
   provenanceNote: string;
   verifiedFlag: boolean;
+  specialtyLimited?: string;
   hideReason?: string;
   hideClassification?: string;
 }

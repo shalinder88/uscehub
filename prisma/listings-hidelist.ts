@@ -283,13 +283,12 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     verifiedAt: "2026-05-17",
   },
 
-  "George Washington University Hospital": {
-    url: "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
-    reason: "Operator-confirmed 2026-05-17: GW's Observer Training Program is CLOSED ('IMP is no longer accepting applications for the Observer Training Program'). Reoriented in verified-links.ts to the active GW SMHS Visiting Students page (smhs.gwu.edu/academics/md-program/visiting-students) for US LCME M4 — this hidelist entry just blocks the closed observer URL.",
-    classification: "OPERATOR_HIDE_NO_DIRECT_URL",
-    followUp: "PERMANENT",
-    verifiedAt: "2026-05-17",
-  },
+  // "George Washington University Hospital" — REMOVED from hidelist after
+  //   operator's second-pass decision 2026-05-17: keep the reorient to
+  //   smhs.gwu.edu/academics/md-program/visiting-students as the active
+  //   visiting-student elective pathway. The hidelist's name-key match
+  //   was incorrectly hiding the row even though the URL had been
+  //   reoriented; removing here so it surfaces in the active display.
 
   "Allegheny Health Network": {
     url: "https://www.alleghenyinternational.org/observerships.html",

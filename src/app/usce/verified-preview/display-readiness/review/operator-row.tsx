@@ -17,6 +17,7 @@ interface OperatorRowProps {
   currentBadge: string;
   currentClassification: string;
   finalUrl: string;
+  specialtyLimited?: string;
   existingDecision: OperatorDecision | null;
 }
 
@@ -70,6 +71,7 @@ export function OperatorRow({
   currentBadge,
   currentClassification,
   finalUrl,
+  specialtyLimited,
   existingDecision,
 }: OperatorRowProps) {
   const [decisionType, setDecisionType] = useState<DecisionType>(
@@ -128,6 +130,11 @@ export function OperatorRow({
           >
             {currentBadge}
           </span>
+          {specialtyLimited && (
+            <span className="inline-flex items-center rounded border border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-900/40 text-fuchsia-900 dark:text-fuchsia-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+              {specialtyLimited}
+            </span>
+          )}
           <span className="text-xs text-stone-400 dark:text-slate-500">{currentClassification}</span>
         </div>
       </td>

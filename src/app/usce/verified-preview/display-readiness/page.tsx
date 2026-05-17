@@ -41,6 +41,7 @@ interface DisplayRow {
   evidenceQuote: string;
   provenanceNote: string;
   verifiedFlag: boolean;
+  specialtyLimited?: string;
   hideReason?: string;
   hideClassification?: string;
 }
@@ -187,7 +188,14 @@ export default function DisplayReadinessPreviewPage() {
             <tbody>
               {clinical.slice(0, 25).map((r, i) => (
                 <tr key={`${r.programName}-${i}`} className="border-b border-stone-100 dark:border-slate-800">
-                  <td className="py-2 pr-3 font-medium">{r.programName}</td>
+                  <td className="py-2 pr-3 font-medium">
+                    {r.programName}
+                    {r.specialtyLimited && (
+                      <span className="ml-2 inline-flex items-center rounded border border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-900/40 text-fuchsia-900 dark:text-fuchsia-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                        Specialty: {r.specialtyLimited}
+                      </span>
+                    )}
+                  </td>
                   <td className="py-2 pr-3 text-stone-600 dark:text-slate-400">{r.state}</td>
                   <td className="py-2 pr-3">
                     <span

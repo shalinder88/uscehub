@@ -3,7 +3,29 @@
 // Last audit: March 22, 2026
 // Source: Direct web verification of each URL
 
-export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; note?: string; cost?: string }> = {
+/**
+ * VERIFIED_LINKS schema:
+ *   url:               The verified institutional URL (preferred over data.js link).
+ *   verified:          true = operator/web-confirmed direct USCE page; false = held / unverified.
+ *   note:              Free-text provenance + audience + caveats.
+ *   cost:              Optional fee string.
+ *   specialtyLimited:  When the program documented at this URL only serves a
+ *                       specific specialty / department (e.g. "Psychiatry only",
+ *                       "Internal Medicine only"). The display layer surfaces
+ *                       this as a SPECIALTY badge so users aren't misled into
+ *                       thinking the institution accepts visiting students in
+ *                       all specialties.
+ */
+export const VERIFIED_LINKS: Record<
+  string,
+  {
+    url: string;
+    verified: boolean;
+    note?: string;
+    cost?: string;
+    specialtyLimited?: string;
+  }
+> = {
 
   // ===== CONFIRMED DEDICATED OBSERVERSHIP PROGRAM PAGES =====
 
@@ -81,7 +103,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "BronxCare Health System": {
     url: "https://www.bronxcare.org/our-services/psychiatry/residency-program/volunteer-and-observership-opportunities",
     verified: true,
-    note: "Psychiatry-focused observership. 8-12 weeks, min 3 days/week. Application fee required. Covers Adult Inpatient, Addiction, C-L, Child & Adolescent.",
+    specialtyLimited: "Psychiatry",
+    note: "BronxCare Psychiatry observership — Adult Inpatient, Addiction, C-L, Child & Adolescent. 8-12 weeks, min 3 days/week. Application fee required. SPECIALTY-SPECIFIC: BronxCare has no centralized institutional visiting-student page covering other specialties; this is psychiatry only.",
   },
 
   // ===== BATCH 3 VERIFIED PROGRAMS =====
@@ -286,12 +309,12 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "George Washington University Hospital": {
     url: "https://smhs.gwu.edu/academics/md-program/visiting-students",
     verified: true,
-    note: "GW SMHS Visiting Students canonical page. US LCME M4 via VSLO. Separate ICEP (International Clinical Electives Program) at imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students for INTL students from ICEP-affiliated home schools only. Note: GW's Observer Training Program at imp.smhs.gwu.edu/observer-training-program-not-accepting-applications is CLOSED — reoriented away from that to the active VSLO visiting-students pathway. Updated 2026-05-17 from operator review.",
+    note: "GW SMHS Visiting Students canonical page. **Visiting-student elective / clerkship pathway (NOT observership)** — US LCME/COCA senior-year M4 via VSLO. Original GW Observer Training Program at imp.smhs.gwu.edu/observer-training-program-not-accepting-applications is CLOSED ('IMP is no longer accepting applications for the Observer Training Program'); reoriented to this active visiting-student page. Separate limited international pathway via ICEP (International Clinical Electives Program) at imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students for INTL students from ICEP-affiliated home schools only. Operator-confirmed 2026-05-17: keep reorientation; retype from observership to visiting-student elective.",
   },
   "Wayne State University / Detroit Medical Center": {
-    url: "https://www.dmc.org/health-professionals/gme-at-dmc/dmc-clinical-campus/elective-visiting-students",
+    url: "https://www.dmc.org/health-professionals/undergraduate-medical-education/visiting-medical-student-policy",
     verified: true,
-    note: "DMC Clinical Campus Elective Visiting Students page. Wayne State SOM itself does not run observerships, but the affiliated Detroit Medical Center does run a visiting-students program. Updated 2026-05-16 from generic med.wayne.edu homepage. (URL is Cloudflare-protected to bot fetchers; works in a real browser.)",
+    note: "DMC Undergraduate Medical Education — Visiting Medical Student Policy canonical page. Documents elective rotations for Base, Visiting, and Guest students; application must be submitted at least 60 days in advance via DMC's elective application. Wayne State SOM itself does not run observerships, but the affiliated Detroit Medical Center runs the visiting-students program. Reoriented 2026-05-17 from the older /gme-at-dmc/dmc-clinical-campus/elective-visiting-students URL (which redirected to a broader Clinical Campus page) to this more direct policy page. If this deep page becomes inaccessible, the broader DMC UME landing at dmc.org/health-professionals/undergraduate-medical-education also documents the same Base/Visiting/Guest categories. Still bot-protected to WebFetch but the operator confirmed live in browser.",
   },
   "Yale-New Haven Hospital": {
     url: "https://medicine.yale.edu/md-program/visiting-students/",
@@ -718,7 +741,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   "Carolinas Medical Center — Atrium Health": {
     url: "https://atriumhealth.org/education/graduate-medical-education/physician-residencies/internal-medicine/medical-student-information",
     verified: true,
-    note: "Atrium Carolinas Medical Center IM Medical Student Information page. 'fourth-year electives to both Wake Forest University medical students and external US allopathic and osteopathic medical students'. The generic /visiting-medical-students path was misleading (returned visiting-resident content). Replaces atriumhealth.org/ homepage. One-by-one packet #7.",
+    specialtyLimited: "Internal Medicine (other departments not documented)",
+    note: "Atrium Carolinas Medical Center IM Medical Student Information page. 'fourth-year electives to both Wake Forest University medical students and external US allopathic and osteopathic medical students'. DEPARTMENT-LIMITED: this URL only documents the Internal Medicine M4 elective; other departments may or may not accept visiting students — verify on source. The generic /visiting-medical-students path was misleading (returned visiting-resident content). Replaces atriumhealth.org/ homepage. One-by-one packet #7.",
   },
 
   "Cedars-Sinai Medical Center": {
@@ -802,9 +826,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // Experiences (sub-I, EM, Critical Care).
 
   "Hennepin Healthcare — Minneapolis": {
-    url: "https://hennepinhealthcare.org/professional-healthcare-education-and-training/professional-student-education/medical-student-rotations",
+    url: "https://hennepinhealthcare.org/professional-healthcare-education-and-training/professional-student-education/medical-student",
     verified: true,
-    note: "Hennepin Healthcare Medical Student Rotations canonical page (covers both visiting medical students AND international observer opportunities). Operator-confirmed 2026-05-17 to be live in browser; replaces the older /medical-education-training/medical-student-rotations/ URL which was also bot-blocked. Cloudflare-protected to WebFetch (returns 403) but the operator opened it directly. Classified PROTECTED_BROWSER_REQUIRED per Hopkins precedent — counts as true USCE.",
+    note: "Hennepin Healthcare canonical Medical Student page. Operator-confirmed 2026-05-17 to be live in browser AND web-fetchable. Documents directly: (1) US MD/DO/DPM visiting medical student clinical rotations; (2) international medical students considered if affiliation agreement can be made; (3) observerships for international / non-accredited-institution physicians, medical graduates, residents, fellows, APPs (2-4 weeks typical, up to 12 weeks); (4) Clinician Nexus application pathway. UPGRADED from PROTECTED_BROWSER_REQUIRED to DIRECT_TRUE_USCE_LINK after operator confirmed the page works.",
   },
 
   "Indiana University Health": {
