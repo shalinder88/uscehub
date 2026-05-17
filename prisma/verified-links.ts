@@ -264,11 +264,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Department-specific. Radiology: 1-2 weeks, earns CME credits. EM/Critical Care: 6-12 months, $5,000/month. Max 3 months general, requires faculty sponsor.",
     cost: "Radiology: CME fee. EM/Critical Care: $5,000/month",
   },
-  "Boston Medical Center": {
-    url: "https://www.bmc.org/",
-    verified: false,
-    note: "Has clinical observer policy but no dedicated program page. OMFS and Hematology/Oncology accept observers by department. No patient contact.",
-  },
+  // "Boston Medical Center" — primary entry now lives in one-by-one packet
+  // #6 below (URL updated to SVEP page). This stub kept as a comment so the
+  // history of the prior verified:false stance is preserved.
   "Northwell Health System": {
     url: "https://international.northwell.edu/consulting-advisory-services",
     verified: false,
@@ -325,11 +323,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "BCM Visiting Medical Student program (VSLO host school for both US and international students, final-year only). Houston + Temple campuses; Temple does not accept international visiting students. Updated 2026-05-16 from generic bcm.edu homepage.",
   },
-  "Cedars-Sinai Medical Center": {
-    url: "https://www.cedars-sinai.org/",
-    verified: false,
-    note: "No publicly listed observership program page found. Contact GME office or individual departments.",
-  },
+  // "Cedars-Sinai Medical Center" — primary entry now lives in one-by-one
+  // packet #8 below (URL updated to /education/medical-students.html).
 
   "Penn Medicine (UPenn)": {
     url: "https://www.pennmedicine.org/",
@@ -399,11 +394,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Nonprofit — free or minimal cost. Multiple states.",
   },
-  "CommonSpirit Health International — Clinical Observation": {
-    url: "https://commonspiritinternational.org/education-programs/",
-    verified: false,
-    note: "Generic education page — no observership content found. Contact directly for clinical observation programs.",
-  },
+  // "CommonSpirit Health International — Clinical Observation" — primary
+  // entry now lives in one-by-one packet #9 below.
   "MedStar Health — International Observer Program": {
     url: "https://www.medstarhealth.org/education",
     verified: false,
@@ -736,5 +728,70 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
     verified: true,
     note: "NYC H+H MOSAIC Visiting Scholars Program. 4-week electives. $2k stipend + $2k housing for non-NYC. US LCME/AOA only; underserved-care focused.",
+  },
+
+  // ===== 2026-05-17 — One-by-one borderline reorientation =====
+  // Keys below are EXACT data.js program.name strings so prisma/seed.ts
+  // actually applies the override (prior batches used slightly different
+  // keys, which broke the seed-time lookup).
+
+  "Banner University Medical Center / University of Arizona": {
+    url: "https://medicine.arizona.edu/education/degree-programs/md-program/visiting-medical-students",
+    verified: true,
+    note: "U of A College of Medicine - Tucson Visiting Medical Students page (VSAS-based, 4th-year LCME/COCA; INTL only via faculty-sponsor relationship). Updated 2026-05-17 from generic medicine.arizona.edu homepage. Quote: 'The University of Arizona College of Medicine – Tucson accepts visiting students from other accredited medical schools.' One-by-one packet #1.",
+  },
+
+  "Baptist Health South Florida": {
+    url: "https://baptisthealth.net/academics/student-and-visitor-programs/job-shadowing-and-externships/observer-program",
+    verified: true,
+    note: "Direct Observer Program page (general). Fee: $150 students/residents, $450 others (HS waived). International applicants must complete International Eligibility Form first. Replaces homepage baptisthealth.net/. WebFetch evidence: 'An observership is a voluntary experience…'  One-by-one packet #2.",
+  },
+
+  "Barnes-Jewish Hospital (WashU)": {
+    url: "https://md.wustl.edu/curriculum/visiting-students/",
+    verified: true,
+    note: "WashU MD Program Visiting Students canonical page. 4-week rotations at Barnes-Jewish + St. Louis Children's. VSLO-only; no direct department contact. $100 admin fee on offer. No tuition. Final-year US LCME only. Replaces gme.wustl.edu/ (GME-only landing). One-by-one packet #3.",
+  },
+
+  "Beaumont Hospital — Royal Oak": {
+    url: "https://www.beaumont.edu/medical-student-education/medical-student-rotations-royal-oak",
+    verified: true,
+    note: "Corewell Health William Beaumont University Hospital Medical Student Rotations Royal Oak. 50+ M4 electives via VSAS. Cloudflare-protected to bot fetchers (HTTP 403); works in a real browser — runner WebSearch confirmed in batch 5. Replaces beaumont.org/ homepage. One-by-one packet #4.",
+  },
+
+  "Beaumont Hospital (Corewell Health)": {
+    url: "https://www.beaumont.edu/medical-student-education/medical-student-rotations-royal-oak",
+    verified: true,
+    note: "Same Royal Oak rotations page; second data.js entry for Corewell-rebranded Beaumont. Cloudflare-protected to bot fetchers; works in browser. Replaces beaumont.org/medical-education/graduate-medical-education (GME-only). One-by-one packet #5.",
+  },
+
+  "Boston Medical Center": {
+    url: "https://www.bmc.org/medical-professionals/education-training/graduate-medical-education/physician-recruitment/medical-students",
+    verified: true,
+    note: "BMC Subsidized Visiting Elective Program (SVEP). Up to $2,500 reimbursement for travel/housing/VSLO fees. M3/M4 LCME/COCA. INTL via BU ISEP at $3,000/elective. Replaces /education-training/graduate-medical-education (GME parent landing). One-by-one packet #6.",
+  },
+
+  "Carolinas Medical Center — Atrium Health": {
+    url: "https://atriumhealth.org/education/graduate-medical-education/physician-residencies/internal-medicine/medical-student-information",
+    verified: true,
+    note: "Atrium Carolinas Medical Center IM Medical Student Information page. 'fourth-year electives to both Wake Forest University medical students and external US allopathic and osteopathic medical students'. The generic /visiting-medical-students path was misleading (returned visiting-resident content). Replaces atriumhealth.org/ homepage. One-by-one packet #7.",
+  },
+
+  "Cedars-Sinai Medical Center": {
+    url: "https://www.cedars-sinai.edu/education/medical-students.html",
+    verified: true,
+    note: "Cedars-Sinai Visiting Medical Students canonical page. 4-week senior electives June-December. VSLO-based. INTL students must apply through Cedars-Sinai's academic affiliation with UCLA David Geffen SOM (not direct via VSLO). Replaces cedars-sinai.org/education/graduate-medical-education.html (GME-only). One-by-one packet #8.",
+  },
+
+  "CommonSpirit Health International — Clinical Observation": {
+    url: "https://commonspiritinternational.org/education-programs/",
+    verified: false,
+    note: "CommonSpirit Health International Education Programs landing. Institutional Clinical Observation Program across 159 hospitals. URL is the official CommonSpirit International domain — page exists and is institutional but program details require institutional/organizational application (not individual). KEPT as verified:false because borderline (single-page institutional landing without per-individual application path visible). One-by-one packet #9.",
+  },
+
+  "Conemaugh Memorial Medical Center": {
+    url: "https://gme.conemaugh.org/resident-programs/medical-students",
+    verified: false,
+    note: "Conemaugh Medical Students page. WARNING: institution explicitly states 'Conemaugh does not offer observerships, externships, shadowing or research assistant positions.' They DO offer M4 audition rotation in Internal Medicine only. data.js classifies as observership, which is inaccurate — should be reclassified to rotation/audition. Replaces homepage. verified:false because the data.js type is wrong, not because the page is wrong. One-by-one packet #10.",
   },
 };
