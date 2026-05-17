@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_024",
+  "institutionId": "inst_live_abington_jefferson",
+  "institutionName": "Abington Hospital — Jefferson Health",
+  "parentSystem": "Jefferson Health",
+  "campus": "",
+  "city": "Abington",
+  "state": "PA",
+  "sourceUrl": "https://www.jefferson.edu/registrar/visiting-student-clinical-electives/international-visiting-medical-students.html",
+  "sourceDomain": "jefferson.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Abington Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Jefferson registrar international visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Jefferson umbrella; includes Abington campus",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_108adb2f2d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_024/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_024/cleaned.txt",
+  "sourceHash": "e327e7212a7375540b97dacd9587fb11617211b5bd87ad26f98548395c504455",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, international visiting URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:26:40.445Z"
+}

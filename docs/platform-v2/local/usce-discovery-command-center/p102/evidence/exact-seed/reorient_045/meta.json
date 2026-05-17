@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_045",
+  "institutionId": "inst_live_gwu_intl",
+  "institutionName": "George Washington University Hospital — ICEP",
+  "parentSystem": "GW Medical Faculty Associates",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students",
+  "sourceDomain": "imp.smhs.gwu.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "George Washington University Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "GWU International Clinical Electives Program for INTL students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Only via affiliated international schools",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_c6cf2a5aed"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_045/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_045/cleaned.txt",
+  "sourceHash": "47d536c44568514cff3f3665dc7daf24f634d23b99b834094c434007ef2d070a",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T03:27:21.810Z"
+}

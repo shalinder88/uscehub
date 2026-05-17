@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_027",
+  "institutionId": "inst_live_baptist_intl",
+  "institutionName": "Baptist Health South Florida — International Observerships",
+  "parentSystem": "Baptist Health South Florida",
+  "campus": "",
+  "city": "Miami",
+  "state": "FL",
+  "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+  "sourceDomain": "baptisthealth.net",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Baptist Health South Florida",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Direct International Observerships page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Replaces baptisthealth.net/ homepage; for Latin America/Caribbean physicians",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_b5a9978316"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_027/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_027/cleaned.txt",
+  "sourceHash": "5cdcab0140484949e4bcaec3c6c95c36cd9544ad6929ac1b0860abc02bf68389",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:26:47.083Z"
+}

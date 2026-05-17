@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_054",
+  "institutionId": "inst_live_penn_vms",
+  "institutionName": "Hospital of the University of Pennsylvania (HUP) / Penn Medicine",
+  "parentSystem": "Penn Medicine",
+  "campus": "",
+  "city": "Philadelphia",
+  "state": "PA",
+  "sourceUrl": "https://www.med.upenn.edu/student/visiting-clerkship-and-mentorship.html",
+  "sourceDomain": "med.upenn.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "HUP / Penn Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Penn Visiting Clerkship and Mentorship Program",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Up to 2 consecutive electives",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_19b9a66ccb"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_054/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_054/cleaned.txt",
+  "sourceHash": "4f72b8fcd129c585c5c7243e2b998c2787df5d6a656dd338ed9661e25e4d3802",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:27:37.993Z"
+}

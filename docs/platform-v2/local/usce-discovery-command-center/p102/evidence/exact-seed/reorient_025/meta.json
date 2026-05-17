@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_025",
+  "institutionId": "inst_live_advocate_christ",
+  "institutionName": "Advocate Christ Medical Center",
+  "parentSystem": "Advocate Health Care",
+  "campus": "",
+  "city": "Oak Lawn",
+  "state": "IL",
+  "sourceUrl": "https://www.advocatehealth.com/education/medical-education/medical-students",
+  "sourceDomain": "advocatehealth.com",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Advocate Christ Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Advocate Health Care medical students page; explicit policy no observerships but offers electives",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "M4 + eligible M3; non-affiliated schools eligible",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_020862f81c"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_025/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_025/cleaned.txt",
+  "sourceHash": "33713c414dab8ed57f8e780078ced80f6f7bbe6ec250c686a1bb5d6c38e757b6",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment",
+    "signals": [
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T03:26:43.249Z"
+}

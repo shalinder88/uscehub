@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_039",
+  "institutionId": "inst_live_nyp_columbia_intl",
+  "institutionName": "NewYork-Presbyterian / Columbia — International",
+  "parentSystem": "NewYork-Presbyterian",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.vagelos.columbia.edu/education/academic-programs/md-program/visiting-student-program/international-visiting-students",
+  "sourceDomain": "vagelos.columbia.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "NYP / Columbia",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Columbia INTL visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "OASIS application portal",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f9c7afc1d3"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_039/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_039/cleaned.txt",
+  "sourceHash": "a7368a4a3afe9157e1d9778eb67bee32d0e3427cc765f90676bbe55e7d975482",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, international visiting URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:27:11.082Z"
+}

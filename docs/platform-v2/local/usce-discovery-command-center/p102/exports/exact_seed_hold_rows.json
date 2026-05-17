@@ -1,5 +1,76 @@
 {
-  "generatedAt": "2026-05-17T03:07:38.972Z",
-  "totalHolds": 0,
-  "rows": []
+  "generatedAt": "2026-05-17T03:27:41.368Z",
+  "totalHolds": 2,
+  "rows": [
+    {
+      "rowId": "exact_0beade4264",
+      "seedId": "reorient_031",
+      "pageTitle": "Visiting Medical Students",
+      "opportunitySignature": "inst_live_carolinas_atrium||https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_carolinas_atrium",
+      "institutionName": "Carolinas Medical Center — Atrium Health",
+      "parentSystem": "Atrium Health",
+      "campus": null,
+      "city": "Charlotte",
+      "state": "NC",
+      "sourceUrl": "https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students",
+      "canonicalUrl": "https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students",
+      "sourceDomain": "atriumhealth.org",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "",
+      "quoteScore": -1,
+      "sourceHash": "4e125a6f28b5ef761a175263f796861e040762b2ade0acb552ca126b6d84f7ac",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_031/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "directLinkSignals": [
+        "visiting-student URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:26:54.821Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_7c38d1645a",
+      "seedId": "reorient_032",
+      "pageTitle": "Visiting Medical Students",
+      "opportunitySignature": "inst_live_cedars_vms||https://www.cedars-sinai.edu/education/medical-students.html||CLINICAL_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_cedars_vms",
+      "institutionName": "Cedars-Sinai Medical Center",
+      "parentSystem": "Cedars-Sinai",
+      "campus": null,
+      "city": "Los Angeles",
+      "state": "CA",
+      "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students.html",
+      "canonicalUrl": "https://www.cedars-sinai.edu/education/medical-students.html",
+      "sourceDomain": "cedars-sinai.edu",
+      "opportunityType": "CLINICAL_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Visiting Medical Students | Cedars-Sinai",
+      "quoteScore": 0,
+      "sourceHash": "64fc27a57018408cfcd1a602073243acf9dd1850d5820eed50dbe2bc49dbf2c2",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_032/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:26:56.873Z",
+      "schemaVersion": "p102-exact-seed-1"
+    }
+  ]
 }

@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_043",
+  "institutionId": "inst_live_maryland_vms",
+  "institutionName": "University of Maryland Medical Center",
+  "parentSystem": "University of Maryland Medical System",
+  "campus": "",
+  "city": "Baltimore",
+  "state": "MD",
+  "sourceUrl": "https://www.medschool.umaryland.edu/osa/visiting-students/",
+  "sourceDomain": "medschool.umaryland.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Maryland Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UMSOM Office of Student Affairs visiting students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME/COCA 4th-year only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a23fab85fd"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_043/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_043/cleaned.txt",
+  "sourceHash": "5037b973497491067e305f757b67bb793560926c79f8d0afd1f9b8baa3b4a315",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 15,
+  "fetchedAt": "2026-05-17T03:27:18.615Z"
+}

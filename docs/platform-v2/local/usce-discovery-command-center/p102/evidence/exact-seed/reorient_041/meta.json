@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_041",
+  "institutionId": "inst_live_weill_cornell_intl",
+  "institutionName": "NewYork-Presbyterian / Weill Cornell — International",
+  "parentSystem": "NewYork-Presbyterian",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://international.weill.cornell.edu/visiting-international-students",
+  "sourceDomain": "international.weill.cornell.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Weill Cornell",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "WCM Office of International Medical Student Education",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "INTL via WCM Global Health Education; no observerships",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a51c53e29b"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_041/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_041/cleaned.txt",
+  "sourceHash": "a4ac080ede137cbe35831034ef7c8a65bc468afd72f0603e8e0f281826306e70",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:27:14.904Z"
+}

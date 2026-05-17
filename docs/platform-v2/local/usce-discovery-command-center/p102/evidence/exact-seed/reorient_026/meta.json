@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_026",
+  "institutionId": "inst_live_banner_tucson",
+  "institutionName": "Banner University Medical Center — Tucson",
+  "parentSystem": "Banner Health / U of Arizona",
+  "campus": "",
+  "city": "Tucson",
+  "state": "AZ",
+  "sourceUrl": "https://medicine.arizona.edu/education/degree-programs/md-program/visiting-medical-students",
+  "sourceDomain": "medicine.arizona.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Banner UMC Tucson",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "U of A SOM Tucson visiting students page; Banner is the affiliate hospital",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "4th year LCME/COCA; no international students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_5c39601811"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_026/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_026/cleaned.txt",
+  "sourceHash": "a4bdb7e24c46d191e243a70a026bef5015188de3c288ab87f86a321e67e18dd6",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:26:44.950Z"
+}

@@ -111,6 +111,19 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     followUp: "PERMANENT",
     verifiedAt: "2026-05-16",
   },
+
+  // ── ADDED 2026-05-16 second-pass: NYC/Queens IMG-residency hospitals
+  //    that confirmed via WebSearch they do NOT offer formal observership
+  //    or visiting-medical-student programs. Their existing data.js
+  //    entries were misclassified as USCE — they're residency-only. ──
+
+  "Flushing Hospital Medical Center": {
+    url: "https://www.flushinghospital.org/graduate-medical-education",
+    reason: "WebSearch + FAQ confirmed: 'Observership/externship positions are not offered at Flushing Hospital Medical Center.' Residency programs only. Should not appear in USCE corpus.",
+    classification: "HTTP_404",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-16",
+  },
 };
 
 /** Returns true if the program should be skipped at seed time. */

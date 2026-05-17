@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_046",
+  "institutionId": "inst_live_iowa_uihc",
+  "institutionName": "University of Iowa Hospitals & Clinics",
+  "parentSystem": "University of Iowa Health Care",
+  "campus": "",
+  "city": "Iowa City",
+  "state": "IA",
+  "sourceUrl": "https://md.medicine.uiowa.edu/student-and-program-resources/visiting-students",
+  "sourceDomain": "md.medicine.uiowa.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Iowa Hospitals",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Carver SOM MD Program visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME-only 4th year; $75 fee",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_6aaa94cacb"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_046/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_046/cleaned.txt",
+  "sourceHash": "e82dd3095ce7cfd5227052470c3a0dc287cab8969f2f8666f5fff32232a9d574",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:27:23.638Z"
+}

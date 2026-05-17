@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_044",
+  "institutionId": "inst_live_gwu_vms",
+  "institutionName": "George Washington University Hospital",
+  "parentSystem": "GW Medical Faculty Associates",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://smhs.gwu.edu/academics/md-program/visiting-students",
+  "sourceDomain": "smhs.gwu.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "George Washington University Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "GW SMHS visiting students canonical page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO-based",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_033471d513"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_044/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_044/cleaned.txt",
+  "sourceHash": "60fde23981402b3157236db2092e49c46d0d5beec25fd864dc2d105b80f1b4c4",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:27:20.225Z"
+}

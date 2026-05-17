@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_032",
+  "institutionId": "inst_live_cedars_vms",
+  "institutionName": "Cedars-Sinai Medical Center",
+  "parentSystem": "Cedars-Sinai",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students.html",
+  "sourceDomain": "cedars-sinai.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cedars-Sinai Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Cedars-Sinai medical students/visiting electives page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "4-week electives June-December; INTL through UCLA affiliation",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_7c38d1645a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_032/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_032/cleaned.txt",
+  "sourceHash": "64fc27a57018408cfcd1a602073243acf9dd1850d5820eed50dbe2bc49dbf2c2",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment",
+    "signals": [
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T03:26:56.873Z"
+}

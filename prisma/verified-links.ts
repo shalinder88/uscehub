@@ -463,4 +463,156 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "HUMC Internal Medicine elective rotations (Hackensack Meridian Health). VSAS-based applications. Approx 100 medical students train at HUMC at any given time. Updated 2026-05-16 from generic hackensackmeridianhealth.org homepage.",
   },
+
+  // ===== ADDED 2026-05-16 via second-pass reorientation (WebSearch + runner-validated) =====
+  // Each URL: WebSearch found a real direct USCE page at the institution,
+  // WebFetch verified USCE content, runner confirmed VALID_DIRECT_USCE_SOURCE
+  // before adding. 1-by-1 sweep per the operator's "every click should
+  // directly open to a page containing USCE" requirement.
+
+  "Abington Hospital — Jefferson Health": {
+    url: "https://www.jefferson.edu/registrar/visiting-student-clinical-electives/international-visiting-medical-students.html",
+    verified: true,
+    note: "Jefferson registrar international visiting students page; includes Abington campus. Student observership up to 12 weeks; clinical electives via clinical departments.",
+  },
+  "Advocate Christ Medical Center": {
+    url: "https://www.advocatehealth.com/education/medical-education/medical-students",
+    verified: true,
+    note: "Advocate Health Care medical students page. Explicit policy: no observerships, but offers electives for M4 and eligible M3 students from non-affiliated schools at primary teaching hospitals. EM elective offers $2,000 scholarships.",
+  },
+  "Banner University Medical Center — Tucson": {
+    url: "https://medicine.arizona.edu/education/degree-programs/md-program/visiting-medical-students",
+    verified: true,
+    note: "University of Arizona SOM Tucson visiting students page (Banner is the affiliate hospital). VSAS-based. 4th-year LCME/COCA only; international students need faculty sponsor.",
+  },
+  "Baptist Health South Florida — International Observerships": {
+    url: "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+    verified: true,
+    note: "International Observership Program for Latin America/Caribbean physicians.",
+  },
+  "Baptist Health South Florida — Observer Program": {
+    url: "https://baptisthealth.net/academics/student-and-visitor-programs/job-shadowing-and-externships/observer-program",
+    verified: true,
+    note: "General Observer Program (1 day - 4 weeks). Sponsor required (Baptist employee or medical staff). Non-citizens need International Eligibility Form.",
+  },
+  "Beaumont Hospital — Royal Oak (Corewell)": {
+    url: "https://www.beaumont.edu/medical-student-education/medical-student-rotations-royal-oak",
+    verified: true,
+    note: "Corewell Health William Beaumont University Hospital Medical Student Rotations. 50+ electives for M4 students via VSAS. Replaces generic beaumont.org/medical-education/graduate-medical-education.",
+  },
+  "Boston Medical Center — Visiting Medical Students": {
+    url: "https://www.bmc.org/visiting-medical-students-1",
+    verified: true,
+    note: "Direct BMC visiting medical students page. SVEP provides up to $2,500 reimbursement for travel/housing/VSLO fees. INTL via Boston U ISEP ($3,000/elective).",
+  },
+  "Augusta University Medical Center (MCG)": {
+    url: "https://www.augusta.edu/mcg/coffice/curriculum/incoming-vslo-students.php",
+    verified: true,
+    note: "Medical College of Georgia VSLO incoming students page. LCME-only 4th year; INTL students not accepted; max 2x 4-week (8 weeks total).",
+  },
+  "University of Cincinnati Medical Center": {
+    url: "https://med.uc.edu/education/medical-student-education/office-of-medical-education/visiting-students",
+    verified: true,
+    note: "UC College of Medicine visiting students. Max 2 electives (8 weeks). $166 fee. INTL only via existing Activity Agreement schools (specific list).",
+  },
+  "NewYork-Presbyterian / Columbia — International": {
+    url: "https://www.vagelos.columbia.edu/education/academic-programs/md-program/visiting-student-program/international-visiting-students",
+    verified: true,
+    note: "Columbia VP&S International Visiting Students. Application via OASIS portal; Sackler NY Program students use VSLO.",
+  },
+  "NewYork-Presbyterian / Weill Cornell — International": {
+    url: "https://international.weill.cornell.edu/visiting-international-students",
+    verified: true,
+    note: "WCM Office of International Medical Student Education. Up to 2 months of clinical electives. INTL via WCM Global Health Education; office does NOT coordinate observerships, only clinical electives.",
+  },
+  "Albert Einstein College of Medicine": {
+    url: "https://einsteinmed.edu/education/md-program/registrar/visiting-students",
+    verified: true,
+    note: "Einstein Office of the Registrar Visiting Students. Replaces einsteinmed.edu/ homepage. INTL only via established exchange program affiliation.",
+  },
+  "University of Maryland Medical Center": {
+    url: "https://www.medschool.umaryland.edu/osa/visiting-students/",
+    verified: true,
+    note: "UMSOM Office of Student Affairs visiting students. LCME/COCA 4th-year only. Critical Care/Trauma has separate observer program. 26-27 catalog opens Mar 13.",
+  },
+  "University of Iowa Hospitals & Clinics": {
+    url: "https://md.medicine.uiowa.edu/student-and-program-resources/visiting-students",
+    verified: true,
+    note: "Carver College of Medicine MD Program visiting students. LCME-only 4th-year; $75 fee. Most departments accept; 2026 visiting opens April 1.",
+  },
+  "University of Minnesota Medical Center": {
+    url: "https://med.umn.edu/md-students/academics/clinical-experiences/visiting-students",
+    verified: true,
+    note: "UMN Medical School visiting students. Max 2 electives. INTL only via formal institutional agreement.",
+  },
+  "University of Minnesota — GME Observers": {
+    url: "https://med.umn.edu/gme/education/visiting-trainees",
+    verified: true,
+    note: "GME Visiting Trainees / Observers. For LCME-accredited medical school graduates or international equivalent. Typically less than 1 month. Current medical students NOT eligible.",
+  },
+  "Wake Forest Baptist / Atrium Health": {
+    url: "https://school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/",
+    verified: true,
+    note: "Wake Forest SOM visiting medical students. LCME/COCA 4th-year; passed USMLE Step 1/COMLEX Level 1. INTL very limited.",
+  },
+  "University Hospital Newark / Rutgers NJMS": {
+    url: "https://njms.rutgers.edu/education/registrar/visitingstds.php",
+    verified: true,
+    note: "Rutgers NJMS visiting students page; 4-week electives at University Hospital Newark and East Orange VA. Multiple departments incl. EM.",
+  },
+  "Robert Wood Johnson University Hospital / Rutgers RWJMS": {
+    url: "https://rwjms.rutgers.edu/education/md/visiting-students",
+    verified: true,
+    note: "Rutgers RWJMS visiting students; VSLO-based for LCME/COCA. $75 fee per elective. Family Medicine and OB/GYN may not be accepting for 2026-27.",
+  },
+  "Hospital of the University of Pennsylvania (HUP) / Penn Medicine": {
+    url: "https://www.med.upenn.edu/student/visiting-clerkship-and-mentorship.html",
+    verified: true,
+    note: "Penn Visiting Clerkship and Mentorship Program. M4 rotations at CHOP, HUP, Penn Presbyterian, Pennsylvania Hospital. Sub-I and elective options.",
+  },
+  "Penn Medicine — International Trainees & Scholars": {
+    url: "https://www.med.upenn.edu/globalhealth/international-trainees-scholars.html",
+    verified: true,
+    note: "Penn Center for Global Health INTL trainees. Affiliation agreement required; up to 2 consecutive electives; pediatric electives not available for INTL.",
+  },
+  "Texas Tech Health El Paso — Visiting Students": {
+    url: "https://www.elpaso.ttuhsc.edu/som/studentaffairs/visitingstudents.aspx",
+    verified: true,
+    note: "TTUHSC El Paso SOM Student Affairs visiting students. UMC El Paso is the teaching affiliate. Multiple specialty subinternships incl. orthopedics.",
+  },
+  "Texas Tech HSC — Internal Medicine Observership": {
+    url: "https://www.ttuhsc.edu/medicine/internal/observership/observership.aspx",
+    verified: true,
+    note: "TTUHSC Internal Medicine observership program. Application fee + background check + onboarding. CBC clearance report required.",
+  },
+  "University Hospitals Cleveland Medical Center": {
+    url: "https://www.uhhospitals.org/medical-education/undergraduate-medical-education/visiting-medical-student-program",
+    verified: true,
+    note: "UH Cleveland Visiting Medical Student Program. VSLO-based; INTL students may use IFOM-BSE in place of Step 1. Includes UH Rainbow, MacDonald, Seidman.",
+  },
+  "Ochsner International Observership Program": {
+    url: "https://education.ochsner.org/clined/global-is-local/ochsner-international-observership-program/",
+    verified: true,
+    note: "Ochsner Health direct International Observership Program. Requires faculty sponsor + foreign institutional sponsorship + evidence of financial support.",
+  },
+  "Ochsner Health — Medical Student Electives": {
+    url: "https://education.ochsner.org/clined/medical-student-electives/",
+    verified: true,
+    note: "Ochsner Health New Orleans direct medical student electives page. Per policy, Ochsner does NOT accept INTL students for visiting electives except via special affiliation agreements.",
+  },
+  "Mayo Clinic — Visiting Medical Student Clerkships": {
+    url: "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+    verified: true,
+    note: "Mayo Clinic VMS Clerkship Program (canonical). ~600 students/year. Replaces mayoclinic.org/education. VSLO-based; accepts ALL international medical schools (USMLE Step 1 required for INTL). 1-month rotations. No tuition for US students.",
+  },
+  "UCLA Ronald Reagan Medical Center — VSLO": {
+    url: "https://medschool.ucla.edu/education/md-education/visiting-students",
+    verified: true,
+    note: "UCLA David Geffen SOM visiting students canonical page. INTL only via pre-selected reciprocal exchange agreement.",
+  },
+  "USC Keck — International Physician Observership": {
+    url: "https://sites.usc.edu/healthcare-edu/observership/",
+    verified: true,
+    note: "Keck Medicine of USC International Physician Observership. For practicing foreign-licensed physicians; requires faculty sponsor + foreign health org employer.",
+  },
 };

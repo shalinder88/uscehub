@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_052",
+  "institutionId": "inst_live_rutgers_njms",
+  "institutionName": "University Hospital Newark / Rutgers NJMS",
+  "parentSystem": "Rutgers Health",
+  "campus": "",
+  "city": "Newark",
+  "state": "NJ",
+  "sourceUrl": "https://njms.rutgers.edu/education/registrar/visitingstds.php",
+  "sourceDomain": "njms.rutgers.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University Hospital Newark",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Rutgers NJMS visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO; multiple departments",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_155fac1d63"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_052/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_052/cleaned.txt",
+  "sourceHash": "36a2b93f155fc009677b98fd4c7d923e194902e1860069e54e78043f75101987",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T03:27:34.299Z"
+}

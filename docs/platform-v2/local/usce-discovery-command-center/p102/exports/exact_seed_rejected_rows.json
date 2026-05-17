@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-17T03:07:38.972Z",
-  "totalRejected": 5,
+  "generatedAt": "2026-05-17T03:27:41.368Z",
+  "totalRejected": 7,
   "rows": [
     {
       "rowId": "exact_0d6fd7adda",
@@ -20,7 +20,7 @@
       "audienceClass": "IMG_GRADUATE_OBSERVER",
       "topQuote": "The UPMC International Training Center offers a series of hands-on observership and management training programs at our international and domestic UPMC facilities.",
       "quoteScore": 2,
-      "sourceHash": "534c3aeb2e6c2b9ac7572766385cb2a1eccdb802a59fe20df977854962cd4d35",
+      "sourceHash": "cfd3c88338c838223fa8ae649ec2b43bf1f39ace61400267b07864a150850593",
       "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_008/cleaned.txt",
       "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
       "directLinkReason": "no direct-opportunity URL or quote signals",
@@ -30,7 +30,7 @@
       "route": "REJECTED",
       "holdReasons": [],
       "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
-      "fetchedAt": "2026-05-17T03:07:08.129Z",
+      "fetchedAt": "2026-05-17T03:26:09.691Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -51,7 +51,7 @@
       "audienceClass": "IMG_GRADUATE_OBSERVER",
       "topQuote": "Postdoctoral Program We're equipping the brightest minds in medicine with leading-edge technologies and the support to tap into their highest potential. ❮ Education & Training Home Program Overview Application Contact Join our Team Our postdoctoral program gives you hands-on experience at one of the nation’s top hospitals.",
       "quoteScore": 4,
-      "sourceHash": "1b311f031c3aabadc78a9fb1134a582cfc6861388d9194bf78b031b4b3ff47df",
+      "sourceHash": "8b76c963e604ab247f7c897cad7eb243908a4afb04ff66da58400cef810ed59b",
       "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_009/cleaned.txt",
       "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
       "directLinkReason": "no direct-opportunity URL or quote signals",
@@ -61,7 +61,7 @@
       "route": "REJECTED",
       "holdReasons": [],
       "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
-      "fetchedAt": "2026-05-17T03:07:10.134Z",
+      "fetchedAt": "2026-05-17T03:26:11.694Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -92,7 +92,7 @@
       "route": "REJECTED",
       "holdReasons": [],
       "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
-      "fetchedAt": "2026-05-17T03:07:12.336Z",
+      "fetchedAt": "2026-05-17T03:26:13.885Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -123,7 +123,7 @@
       "route": "REJECTED",
       "holdReasons": [],
       "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
-      "fetchedAt": "2026-05-17T03:07:14.104Z",
+      "fetchedAt": "2026-05-17T03:26:15.682Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -154,7 +154,69 @@
       "route": "REJECTED",
       "holdReasons": [],
       "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
-      "fetchedAt": "2026-05-17T03:07:18.107Z",
+      "fetchedAt": "2026-05-17T03:26:19.562Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_29af5603fd",
+      "seedId": "reorient_033",
+      "pageTitle": null,
+      "opportunitySignature": "inst_live_cincinnati_childrens_intl||https://www.cincinnatichildrens.org/professional/resources/international-visitor-program||OBSERVERSHIP||IMG_GRADUATE_OBSERVER",
+      "institutionId": "inst_live_cincinnati_childrens_intl",
+      "institutionName": "Cincinnati Children's Hospital — International Visitor Program",
+      "parentSystem": "Cincinnati Children's",
+      "campus": null,
+      "city": "Cincinnati",
+      "state": "OH",
+      "sourceUrl": "https://www.cincinnatichildrens.org/professional/resources/international-visitor-program",
+      "canonicalUrl": "https://www.cincinnatichildrens.org/professional/resources/international-visitor-program",
+      "sourceDomain": "cincinnatichildrens.org",
+      "opportunityType": "OBSERVERSHIP",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "topQuote": "To be eligible for the International Visitor Program at Cincinnati Children&rsquo;s, applicants must either be on staff at an abroad institution or in an accredited program during time of application and during the requested time of visit.",
+      "quoteScore": 5,
+      "sourceHash": "e278dfa269e7200a0d23e2bb06468d7499575dd62bea2d89309546e1e4a96e56",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_033/cleaned.txt",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals",
+      "directLinkSignals": [],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "REJECTED",
+      "holdReasons": [],
+      "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
+      "fetchedAt": "2026-05-17T03:26:59.030Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_c6cf2a5aed",
+      "seedId": "reorient_045",
+      "pageTitle": "School of Medicine and Health Sciences",
+      "opportunitySignature": "inst_live_gwu_intl||https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students||INTERNATIONAL_VISITING_STUDENT||INTERNATIONAL_MEDICAL_STUDENT",
+      "institutionId": "inst_live_gwu_intl",
+      "institutionName": "George Washington University Hospital — ICEP",
+      "parentSystem": "GW Medical Faculty Associates",
+      "campus": null,
+      "city": "Washington",
+      "state": "DC",
+      "sourceUrl": "https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students",
+      "canonicalUrl": "https://imp.smhs.gwu.edu/international-clinical-electives-program-icep-international-students",
+      "sourceDomain": "imp.smhs.gwu.edu",
+      "opportunityType": "INTERNATIONAL_VISITING_STUDENT",
+      "audienceClass": "INTERNATIONAL_MEDICAL_STUDENT",
+      "topQuote": "International ICEP students at GW are registered in a four-week clinical elective alongside GW SMHS medical students within a GW SMHS clinical department.",
+      "quoteScore": 2,
+      "sourceHash": "47d536c44568514cff3f3665dc7daf24f634d23b99b834094c434007ef2d070a",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_045/cleaned.txt",
+      "directLinkStatus": "INVALID_NOT_USCE_SOURCE",
+      "directLinkReason": "no direct-opportunity URL or quote signals",
+      "directLinkSignals": [],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "REJECTED",
+      "holdReasons": [],
+      "rejectionReason": "direct-link validation: INVALID_NOT_USCE_SOURCE",
+      "fetchedAt": "2026-05-17T03:27:21.810Z",
       "schemaVersion": "p102-exact-seed-1"
     }
   ]
