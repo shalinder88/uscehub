@@ -44,9 +44,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "WARNING: NOT for IMGs seeking US residency. Recent graduates and junior residents (PGY-1/2) not eligible. Medical students not eligible. Only for internationally employed physicians.",
   },
   "UPMC (University of Pittsburgh Medical Center)": {
-    url: "https://dom.pitt.edu/education/eop/",
+    url: "https://www.medstudentaffairs.pitt.edu/visiting-students",
     verified: true,
-    note: "Enhanced Observership Program (EOP) for IMGs applying to IM residency. Requires Step 2 CK. 75% match rate.",
+    note: "Visiting students program through Office of Student Affairs. The dom.pitt.edu/education/eop/ URL returned 404 on 2026-05-16; the Office of Student Affairs visiting-students page is the current canonical entry point. For INTL students see researchprograms.medschool.pitt.edu/international-visiting-student-program.",
   },
   "Massachusetts General Hospital": {
     url: "https://www.massgeneral.org/education",
@@ -60,10 +60,10 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "International Physician Observership. 1-3 months. $750 fee. Certificate of Participation. Requires B-1 visa (UCLA cannot assist with visas).",
   },
   "Stanford Health Care": {
-    url: "https://med.stanford.edu/shctv/education/observership.html",
+    url: "https://med.stanford.edu/visiting-clerkships/visitingclerkships.html",
     verified: true,
-    cost: "$1,500 for practicing physicians (some departments); varies by department",
-    note: "Visiting Observer Program. Max 30 days in 12 months. Requires faculty host. Processing ~8 weeks. No visa sponsorship.",
+    cost: "$1,500 for practicing physicians (some departments); $300 IVS application fee for medical students; varies by department",
+    note: "Visiting Clerkships canonical entry. Direct USCE program page. For INTL medical students see med.stanford.edu/visiting-clerkships/international.html. The /shctv/education/observership.html page redirected to a less-specific landing on 2026-05-16.",
   },
   "USC Keck Medical Center": {
     url: "https://sites.usc.edu/healthcare-edu/observership/",
@@ -112,9 +112,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   },
   // University of Washington — moved to "no observership" section (does NOT offer for IMGs)
   "University of Florida Health / Shands Hospital": {
-    url: "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
+    url: "https://osa.med.ufl.edu/students/visiting-medical-student-clerkships/",
     verified: true,
-    note: "General observer program — up to 6 months. Must find own sponsoring clinician. Anesthesiology $25 app fee.",
+    note: "Office of Student Affairs visiting medical student clerkships. VSLO-based VMS program. The previous /hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/ URL had a typo (onserving instead of observing) and returned 404 on 2026-05-16. For INTL students see osa.med.ufl.edu/students/visiting-medical-student-clerkships/international-visiting-student-program/.",
   },
 
   // ===== NEW VERIFIED PROGRAMS (from gomco/web research) =====
@@ -275,9 +275,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "2-week or 4-week observership rotations through International Services. Contact international@northwell.edu. Fees not listed publicly.",
   },
   "Northwestern Memorial Hospital": {
-    url: "https://www.nm.org/",
-    verified: false,
-    note: "No centralized observership for IMGs. Department-by-department basis only. Pathology program currently NOT accepting applications.",
+    url: "https://www.feinberg.northwestern.edu/md-education/visiting-students/index.html",
+    verified: true,
+    note: "Feinberg School of Medicine visiting students canonical page. LCME/AOA fourth-year US medical students; INTL students from Global Partner universities only — see /md-education/visiting-students/international-visiting-students.html. Updated 2026-05-16 (was generic nm.org homepage).",
   },
   "Rush University Medical Center": {
     url: "https://www.rushu.rush.edu/",
@@ -295,9 +295,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "No centralized observership. Ophthalmology and Radiology ($1,900/week, CME credit) have dedicated pages. 6 months notice for international applicants.",
   },
   "Henry Ford Hospital": {
-    url: "https://www.henryford.com/",
-    verified: false,
-    note: "Department-specific only. ENT/Microvascular Surgery has international observer program. General observation limited to two 8-hour days/year.",
+    url: "https://www.henryford.com/hcp/med-ed/ugme/students/visiting-students",
+    verified: true,
+    note: "Henry Ford UGME visiting students page (VSLO-based, $125 admin fee per rotation). Updated 2026-05-16 from generic henryford.com homepage. ENT/Microvascular Surgery also runs a separate international observer program; general observation limited to two 8-hour days/year is separate.",
   },
   "University of Michigan Health": {
     url: "https://medicine.umich.edu/",
@@ -321,9 +321,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Visiting Medical Student Clerkships for enrolled students only. No centralized IMG observership program. Contact physician directly for observerships.",
   },
   "Baylor College of Medicine": {
-    url: "https://www.bcm.edu/",
-    verified: false,
-    note: "Department-specific only. $25 processing fee. Max 90 days. Insurance required ($100K min). No centralized observership portal.",
+    url: "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student",
+    verified: true,
+    note: "BCM Visiting Medical Student program (VSLO host school for both US and international students, final-year only). Houston + Temple campuses; Temple does not accept international visiting students. Updated 2026-05-16 from generic bcm.edu homepage.",
   },
   "Cedars-Sinai Medical Center": {
     url: "https://www.cedars-sinai.org/",
@@ -342,14 +342,14 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Observer Training Program exists but currently NOT ACCEPTING APPLICATIONS. Contact impinfo@gwu.edu for updates.",
   },
   "Wayne State University / Detroit Medical Center": {
-    url: "https://www.med.wayne.edu/",
-    verified: false,
-    note: "Multiple departments explicitly state they do NOT offer observerships. No public-facing program page exists.",
+    url: "https://www.dmc.org/health-professionals/gme-at-dmc/dmc-clinical-campus/elective-visiting-students",
+    verified: true,
+    note: "DMC Clinical Campus Elective Visiting Students page. Wayne State SOM itself does not run observerships, but the affiliated Detroit Medical Center does run a visiting-students program. Updated 2026-05-16 from generic med.wayne.edu homepage. (URL is Cloudflare-protected to bot fetchers; works in a real browser.)",
   },
   "Yale-New Haven Hospital": {
-    url: "https://medicine.yale.edu/",
-    verified: false,
-    note: "Yale explicitly does NOT offer observerships or externships. Only visiting student elective rotations for final-year medical students.",
+    url: "https://medicine.yale.edu/md-program/visiting-students/",
+    verified: true,
+    note: "Yale SOM Visiting Students canonical page. VSLO-based, four-week rotations only, final-year US LCME or COCA students. INTL students see medicine.yale.edu/md-program/visiting-students/international/ — Yale does NOT offer observerships/externships, only clinical electives. Updated 2026-05-16 from generic medicine.yale.edu homepage.",
   },
   "University of Kentucky Medical Center": {
     url: "https://medicine.uky.edu/",
@@ -435,4 +435,32 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // Tenet Healthcare - no observership found
   // CommonSpirit Health - no observership found
   // Mercy Health St. Louis - no longer offers observerships
+
+  // ===== ADDED 2026-05-16 via Phase Live-Crosscheck reorientation pass =====
+  // Each URL: WebSearch + WebFetch + p102-run-exact-usce-seed-links runner
+  // confirmed it lands on a USCE-specific page (VALID_DIRECT_USCE_SOURCE).
+
+  "Maimonides Medical Center": {
+    url: "https://maimo.org/medical-education/internships-undergraduate-medical-education/",
+    verified: true,
+    note: "Maimonides Health Undergraduate Medical Education — elective rotations for 4th-year medical students. Domain moved from maimonides.org to maimo.org (the old maimonides.org/gme/ URL returned 404 on 2026-05-16). Page accepts both US (LCME/COCA) and international medical students.",
+  },
+
+  "Loyola University Medical Center": {
+    url: "https://www.luc.edu/stritch/regrec/students/visitingstudents/",
+    verified: true,
+    note: "Loyola Stritch SOM Visiting Students. VSLO-based, 4-week electives, final-year LCME/COCA students; max 12 weeks. INTL students see /visitingstudents/internationalstudents/ (4-week max). The old ssom.luc.edu/gme/ URL returned 404 on 2026-05-16.",
+  },
+
+  "Beth Israel Deaconess Medical Center": {
+    url: "https://bidmc.org/education-training/medical-education",
+    verified: true,
+    note: "BIDMC Undergraduate & Medical Student Education (Harvard Medical School-affiliated). VSLO via HMS Office of Registrar, 90 days before start. Applies to multiple departments — Radiology, Emergency Medicine, Otolaryngology, Anesthesia (the latter offers $2,500 scholarship).",
+  },
+
+  "Hackensack University Medical Center": {
+    url: "https://www.hackensackmeridianhealth.org/en/healthcare-professionals/humc/internal-medicine-residency/elective-rotations",
+    verified: true,
+    note: "HUMC Internal Medicine elective rotations (Hackensack Meridian Health). VSAS-based applications. Approx 100 medical students train at HUMC at any given time. Updated 2026-05-16 from generic hackensackmeridianhealth.org homepage.",
+  },
 };

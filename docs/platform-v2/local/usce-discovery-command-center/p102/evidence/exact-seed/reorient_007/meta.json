@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_007",
+  "institutionId": "inst_live_upmc_intl",
+  "institutionName": "UPMC — International Visiting Student Program",
+  "parentSystem": "UPMC",
+  "campus": "",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "sourceUrl": "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+  "sourceDomain": "researchprograms.medschool.pitt.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "UPMC",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for UPMC",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Final-year international medical students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_647422ed66"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_007/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_007/cleaned.txt",
+  "sourceHash": "aa26c44d6c73188503640ab45d2ffe6616680028cf3519d3e7eb2659dfd76303",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: international visiting URL segment",
+    "signals": [
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:07:05.998Z"
+}

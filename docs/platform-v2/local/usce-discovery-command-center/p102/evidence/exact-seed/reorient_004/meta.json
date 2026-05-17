@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_004",
+  "institutionId": "inst_live_uf_health_shands",
+  "institutionName": "University of Florida Health / Shands Hospital",
+  "parentSystem": "UF Health",
+  "campus": "",
+  "city": "Gainesville",
+  "state": "FL",
+  "sourceUrl": "https://osa.med.ufl.edu/students/visiting-medical-student-clerkships/",
+  "sourceDomain": "osa.med.ufl.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Shands Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead hr.med.ufl.edu/volunteers/onserving (typo) — Office of Student Affairs is the current page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO-based VMS program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_62479f3bef"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_004/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_004/cleaned.txt",
+  "sourceHash": "ec6091cd9e253f6471c2227a5b81ee415f3675356964391456b91361c6ab2141",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:07:00.455Z"
+}

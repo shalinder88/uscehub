@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_006",
+  "institutionId": "inst_live_upmc",
+  "institutionName": "UPMC (University of Pittsburgh Medical Center)",
+  "parentSystem": "UPMC",
+  "campus": "",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "sourceUrl": "https://www.medstudentaffairs.pitt.edu/visiting-students",
+  "sourceDomain": "medstudentaffairs.pitt.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "UPMC",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead dom.pitt.edu/education/eop/ — Office of Student Affairs visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Visiting students through Office of Student Affairs",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_44070e61d5"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_006/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_006/cleaned.txt",
+  "sourceHash": "599ac409fb045a836b13797bfeae13dc4b2b92951c0858610200e3af3edf9644",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:07:04.182Z"
+}

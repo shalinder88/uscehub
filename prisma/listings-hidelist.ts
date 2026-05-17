@@ -39,47 +39,37 @@ export interface HiddenProgram {
 }
 
 export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
-  // ── HTTP 404 (URL moved or path retired; institution may still have a USCE program at a new path) ──
-  "Maimonides Medical Center": {
-    url: "https://www.maimonides.org/gme/",
-    reason: "HTTP 404 — /gme path retired by Maimonides",
-    classification: "HTTP_404",
-    followUp: "REORIENT",
-    verifiedAt: "2026-05-16",
-  },
-  "Loyola University Medical Center": {
-    url: "https://ssom.luc.edu/gme/",
-    reason: "HTTP 404 — Loyola SOM GME path retired",
-    classification: "HTTP_404",
-    followUp: "REORIENT",
-    verifiedAt: "2026-05-16",
-  },
-  "University of Florida Health / Shands Hospital": {
-    url: "https://hr.med.ufl.edu/volunteers/onserving-shadowing-application-process/",
-    reason: "HTTP 404 — UF Health HR shadowing path retired (note original URL has typo: 'onserving' should likely be 'observing')",
-    classification: "HTTP_404",
-    followUp: "REORIENT",
-    verifiedAt: "2026-05-16",
-  },
-  "UPMC (University of Pittsburgh Medical Center)": {
-    url: "https://dom.pitt.edu/education/eop/",
-    reason: "HTTP 404 — Pitt Department of Medicine 'eop' path retired",
-    classification: "HTTP_404",
-    followUp: "REORIENT",
-    verifiedAt: "2026-05-16",
-  },
+  // ── REORIENTED 2026-05-16: Maimonides, Loyola, UF Health, UPMC now have
+  //    replacement URLs in prisma/verified-links.ts and have been removed
+  //    from this hide list. Original dead URLs documented in the verified-
+  //    links.ts note fields for that institution.
+  //
+  // ── RESEARCH/POSTDOC programs (reclassified REORIENT → PERMANENT). A
+  //    replacement URL was found for each but the page is a research /
+  //    postdoctoral program, not a Tier-1 USCE clinical opportunity. The
+  //    intelligent-extraction gate correctly rejects them as
+  //    REJECT_RESEARCH_ONLY. They stay hidden until product scope expands
+  //    to research/postdoc as a separate lane. ──
+
   "Cleveland Clinic — Research Fellowship": {
-    url: "https://my.clevelandclinic.org/departments/research-education/postdoctoral-programs",
-    reason: "HTTP 404 — CCF postdoctoral programs URL retired",
+    url: "https://www.lerner.ccf.org/education/postdoctoral-program/",
+    reason: "Replacement found at lerner.ccf.org but page is research postdoctoral program — not Tier-1 USCE per the intelligent-extraction gate (REJECT_RESEARCH_ONLY)",
     classification: "HTTP_404",
-    followUp: "REORIENT",
+    followUp: "PERMANENT",
     verifiedAt: "2026-05-16",
   },
   "Cedars-Sinai — Research Fellowship": {
-    url: "https://www.cedars-sinai.edu/research/training/postdoctoral.html",
-    reason: "HTTP 404 — Cedars-Sinai postdoctoral training page retired",
+    url: "https://www.cedars-sinai.edu/education/professional-training-programs/postdoctoral-scientist-program.html",
+    reason: "Replacement found at cedars-sinai.edu but page is Postdoctoral Scientist Program — research, not Tier-1 USCE clinical opportunity",
     classification: "HTTP_404",
-    followUp: "REORIENT",
+    followUp: "PERMANENT",
+    verifiedAt: "2026-05-16",
+  },
+  "Emory University — Postdoctoral Research": {
+    url: "https://med.emory.edu/education/postdoctoral-training/index.html",
+    reason: "Replacement found at med.emory.edu but page is research postdoctoral training (T32s, cancer biology, HIV) — not Tier-1 USCE clinical",
+    classification: "TLS_NETWORK_DEAD",
+    followUp: "PERMANENT",
     verifiedAt: "2026-05-16",
   },
 
@@ -93,9 +83,9 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
   },
   "Brookdale University Hospital": {
     url: "https://www.brookdalehospital.org/gme",
-    reason: "Network unreachable — Brookdale is part of One Brooklyn Health system; original domain retired",
+    reason: "Network unreachable — Brookdale is part of One Brooklyn Health system; original domain retired. WebSearch confirmed One Brooklyn Health publishes residency info but no observership/visiting-student program — only ACGME residencies. Stays hidden until a Tier-1 USCE page is found.",
     classification: "TLS_NETWORK_DEAD",
-    followUp: "REORIENT",
+    followUp: "PERMANENT",
     verifiedAt: "2026-05-16",
   },
   "Kingsbrook Jewish Medical Center": {
@@ -103,13 +93,6 @@ export const HIDDEN_PROGRAMS: Record<string, HiddenProgram> = {
     reason: "Network unreachable — Kingsbrook merged into One Brooklyn Health; original domain retired",
     classification: "TLS_NETWORK_DEAD",
     followUp: "PERMANENT",
-    verifiedAt: "2026-05-16",
-  },
-  "Emory University — Postdoctoral Research": {
-    url: "https://www.postdocs.emory.edu/",
-    reason: "Network unreachable — postdocs.emory.edu subdomain dead (likely consolidated under main emory.edu)",
-    classification: "TLS_NETWORK_DEAD",
-    followUp: "REORIENT",
     verifiedAt: "2026-05-16",
   },
 

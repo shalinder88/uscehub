@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_020",
+  "institutionId": "inst_live_yale_intl",
+  "institutionName": "Yale-New Haven Hospital — International",
+  "parentSystem": "Yale-New Haven Health",
+  "campus": "",
+  "city": "New Haven",
+  "state": "CT",
+  "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/international/",
+  "sourceDomain": "medicine.yale.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Yale-New Haven Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for Yale — elective program for international students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "International visiting students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_3225569761"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_020/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_020/cleaned.txt",
+  "sourceHash": "6be64059eb86ed601ebcd4afea25f53ffb00cace584b6f4bae6e41ee7f0ed445",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:07:32.073Z"
+}

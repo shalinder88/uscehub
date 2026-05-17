@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_003",
+  "institutionId": "inst_live_loyola_international",
+  "institutionName": "Loyola University Medical Center International",
+  "parentSystem": "Loyola Medicine",
+  "campus": "",
+  "city": "Maywood",
+  "state": "IL",
+  "sourceUrl": "https://www.luc.edu/stritch/regrec/students/visitingstudents/internationalstudents/",
+  "sourceDomain": "luc.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Loyola University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for Loyola; max 4-week electives",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "International students 4-week electives",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f70fcd6ace"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_003/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_003/cleaned.txt",
+  "sourceHash": "f4ab491bd770ccf02b64abf02cdb656bba03c15c28b62e8444b0c2c9e174ff38",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: international student URL segment",
+    "signals": [
+      "international student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:06:58.533Z"
+}

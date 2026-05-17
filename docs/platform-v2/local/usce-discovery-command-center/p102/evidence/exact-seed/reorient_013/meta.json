@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_013",
+  "institutionId": "inst_live_mgh_intl",
+  "institutionName": "Massachusetts General Hospital — International Observership",
+  "parentSystem": "Mass General Brigham",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://www.massgeneral.org/education/international-observership",
+  "sourceDomain": "massgeneral.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Massachusetts General Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New IMG row for MGH international observership",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "For practicing clinicians with MD/PhD/MBBS",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_4a434432ce"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_013/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_013/cleaned.txt",
+  "sourceHash": "b0f576f185c9efc642dfb097bab17c3b160f659ac7ef7b55dd7da2b65bf881ae",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T03:07:18.107Z"
+}

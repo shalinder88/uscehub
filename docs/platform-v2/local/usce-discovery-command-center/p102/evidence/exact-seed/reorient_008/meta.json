@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_008",
+  "institutionId": "inst_live_upmc_intl_clinical",
+  "institutionName": "UPMC International — Clinical Collaborations",
+  "parentSystem": "UPMC",
+  "campus": "",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "sourceUrl": "https://www.upmc.com/about/international-services/clinical-collaborations",
+  "sourceDomain": "upmc.com",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "UPMC",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New IMG row for UPMC International Services",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Clinical collaborations and training programs",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_0d6fd7adda"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_008/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_008/cleaned.txt",
+  "sourceHash": "534c3aeb2e6c2b9ac7572766385cb2a1eccdb802a59fe20df977854962cd4d35",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T03:07:08.129Z"
+}

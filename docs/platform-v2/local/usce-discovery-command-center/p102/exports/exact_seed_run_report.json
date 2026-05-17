@@ -1,572 +1,146 @@
 {
-  "generatedAt": "2026-05-17T02:40:00.481Z",
-  "seedFile": "../../../tmp/combined-seeds.csv",
+  "generatedAt": "2026-05-17T03:07:38.972Z",
+  "seedFile": "docs/platform-v2/local/usce-discovery-command-center/p102/queues/p102_reorientation_candidates.csv",
   "offline": false,
-  "seedsAttempted": 225,
+  "seedsAttempted": 23,
   "runStatusCounts": {
-    "EXTRACTED": 198,
-    "FAILED_FETCH": 27
+    "EXTRACTED": 21,
+    "FAILED_FETCH": 2
   },
   "finalStatusCounts": {
-    "HOLD_REVIEW": 6,
-    "AUTO_PROMOTE": 46,
-    "FAILED": 27,
-    "REJECTED": 146
+    "AUTO_PROMOTE": 16,
+    "REJECTED": 5,
+    "FAILED": 2
   },
   "routeCounts": {
-    "AUTO_PROMOTE": 46,
-    "HOLD_REVIEW": 7,
-    "REJECTED": 139
+    "AUTO_PROMOTE": 18,
+    "HOLD_REVIEW": 0,
+    "REJECTED": 5
   },
   "audienceCounts": {
-    "US_MD_DO_VISITING_STUDENT": 14,
-    "IMG_GRADUATE_OBSERVER": 172,
-    "INTERNATIONAL_MEDICAL_STUDENT": 1,
-    "IMG_GRADUATE_EXTERNSHIP": 3,
-    "UNKNOWN_HOLD": 2
+    "US_MD_DO_VISITING_STUDENT": 10,
+    "IMG_GRADUATE_OBSERVER": 7,
+    "INTERNATIONAL_MEDICAL_STUDENT": 6
   },
   "directLinkCounts": {
-    "VALID_DIRECT_USCE_SOURCE": 53,
-    "GENERIC_PAGE_HOLD": 5,
-    "INVALID_NOT_USCE_SOURCE": 134
+    "VALID_DIRECT_USCE_SOURCE": 18,
+    "INVALID_NOT_USCE_SOURCE": 5
   },
-  "duplicateClusters": 8,
+  "duplicateClusters": 0,
   "seedResults": [
     {
-      "seedId": "seed_001",
-      "institutionName": "Houston Methodist Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_75c2e71d67",
-        "exact_e095ffd967"
-      ]
-    },
-    {
-      "seedId": "seed_002",
-      "institutionName": "Boston Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f3e8716bdf"
-      ]
-    },
-    {
-      "seedId": "seed_003",
-      "institutionName": "Hospital for Special Surgery",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0cbbf7c087"
-      ]
-    },
-    {
-      "seedId": "seed_004",
-      "institutionName": "Memorial Sloan Kettering Cancer Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_415be35f16"
-      ]
-    },
-    {
-      "seedId": "seed_005",
-      "institutionName": "Orlando Health Orlando Regional Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_196f848c3b"
-      ]
-    },
-    {
-      "seedId": "seed_006",
-      "institutionName": "UAB Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_eb85066554"
-      ]
-    },
-    {
-      "seedId": "seed_007",
-      "institutionName": "UCSF Fresno",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5bd4da4606"
-      ]
-    },
-    {
-      "seedId": "seed_008",
-      "institutionName": "Keck School of Medicine of USC",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e90647e573"
-      ]
-    },
-    {
-      "seedId": "seed_009",
-      "institutionName": "Cleveland Clinic",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f63e0b9f4d",
-        "exact_d30ff7709f"
-      ]
-    },
-    {
-      "seedId": "seed_010",
-      "institutionName": "David Geffen School of Medicine at UCLA",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ac2021d96c"
-      ]
-    },
-    {
-      "seedId": "seed_011",
-      "institutionName": "UCSF School of Medicine",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "seed_012",
-      "institutionName": "Johns Hopkins University School of Medicine",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "seed_013",
-      "institutionName": "Johns Hopkins International Observer Clinical Program",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "seed_014",
-      "institutionName": "University of Michigan Medical School",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "seed_015",
-      "institutionName": "University of Iowa Carver College of Medicine",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0eaa0fd04c"
-      ]
-    },
-    {
-      "seedId": "seed_016",
-      "institutionName": "Vanderbilt University School of Medicine",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ea8af6430f"
-      ]
-    },
-    {
-      "seedId": "seed_017",
-      "institutionName": "Warren Alpert Medical School of Brown University",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_121bd6c2f3"
-      ]
-    },
-    {
-      "seedId": "seed_018",
-      "institutionName": "University of Vermont Larner College of Medicine",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2ef4b13291"
-      ]
-    },
-    {
-      "seedId": "seed_019",
-      "institutionName": "Rush Medical College",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d25b24810f"
-      ]
-    },
-    {
-      "seedId": "live_100",
-      "institutionName": "Mount Sinai Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_68a9da1f63"
-      ]
-    },
-    {
-      "seedId": "live_101",
-      "institutionName": "Montefiore / Albert Einstein",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f29166215c"
-      ]
-    },
-    {
-      "seedId": "live_102",
-      "institutionName": "NYU Langone Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_8e78bcb474"
-      ]
-    },
-    {
-      "seedId": "live_103",
-      "institutionName": "NewYork-Presbyterian / Columbia",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0b7482dc2a"
-      ]
-    },
-    {
-      "seedId": "live_104",
-      "institutionName": "NewYork-Presbyterian / Weill Cornell",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5188df8086"
-      ]
-    },
-    {
-      "seedId": "live_105",
-      "institutionName": "Mount Sinai Beth Israel",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_050e15332d"
-      ]
-    },
-    {
-      "seedId": "live_106",
-      "institutionName": "Mount Sinai Morningside / West",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_882b141d3c"
-      ]
-    },
-    {
-      "seedId": "live_107",
+      "seedId": "reorient_001",
       "institutionName": "Maimonides Medical Center",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_108",
-      "institutionName": "Interfaith Medical Center",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_109",
-      "institutionName": "Jacobi Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f3c3744937"
-      ]
-    },
-    {
-      "seedId": "live_110",
-      "institutionName": "Elmhurst Hospital Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0989c646f9"
-      ]
-    },
-    {
-      "seedId": "live_111",
-      "institutionName": "Lincoln Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_235700eb40"
-      ]
-    },
-    {
-      "seedId": "live_112",
-      "institutionName": "Harlem Hospital Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d3073436c4"
-      ]
-    },
-    {
-      "seedId": "live_113",
-      "institutionName": "Kings County Hospital Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_aa7dd8bef1"
-      ]
-    },
-    {
-      "seedId": "live_114",
-      "institutionName": "Coney Island Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c9f3ac3cb1"
-      ]
-    },
-    {
-      "seedId": "live_115",
-      "institutionName": "Metropolitan Hospital Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_aaeb5a5bc0"
-      ]
-    },
-    {
-      "seedId": "live_116",
-      "institutionName": "Flushing Hospital Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_af01ffac2a"
-      ]
-    },
-    {
-      "seedId": "live_117",
-      "institutionName": "Jamaica Hospital Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fa06f9c87b"
-      ]
-    },
-    {
-      "seedId": "live_118",
-      "institutionName": "Wyckoff Heights Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0e8dfaf59a"
-      ]
-    },
-    {
-      "seedId": "live_119",
-      "institutionName": "BronxCare Health System",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_9b79223d82"
-      ]
-    },
-    {
-      "seedId": "live_120",
-      "institutionName": "St. Barnabas Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c724adb037"
-      ]
-    },
-    {
-      "seedId": "live_121",
-      "institutionName": "Brookdale University Hospital",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_122",
-      "institutionName": "Northwell Health System",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d5baec2c14"
-      ]
-    },
-    {
-      "seedId": "live_123",
-      "institutionName": "SUNY Downstate Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ad882583c1"
-      ]
-    },
-    {
-      "seedId": "live_124",
-      "institutionName": "Stony Brook University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_446d58f663"
-      ]
-    },
-    {
-      "seedId": "live_125",
-      "institutionName": "Stanford Health Care",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_0ff7d7cd6e"
+        "exact_5dc0db968c",
+        "exact_842a8b86a7"
       ]
     },
     {
-      "seedId": "live_126",
-      "institutionName": "UCLA Medical Center",
+      "seedId": "reorient_002",
+      "institutionName": "Loyola University Medical Center",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_ddcc380478"
+        "exact_5697b5a0a6"
       ]
     },
     {
-      "seedId": "live_127",
-      "institutionName": "UCSF Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_396716261c"
-      ]
-    },
-    {
-      "seedId": "live_128",
-      "institutionName": "Cedars-Sinai Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5c3dae8d57"
-      ]
-    },
-    {
-      "seedId": "live_129",
-      "institutionName": "USC Keck Medical Center",
+      "seedId": "reorient_003",
+      "institutionName": "Loyola University Medical Center International",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_0caf75b7e6"
+        "exact_f70fcd6ace"
       ]
     },
     {
-      "seedId": "live_130",
-      "institutionName": "UC Davis Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_060ab2909a"
-      ]
-    },
-    {
-      "seedId": "live_131",
-      "institutionName": "UC Irvine Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_4e52d82b16"
-      ]
-    },
-    {
-      "seedId": "live_132",
-      "institutionName": "Loma Linda University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2e141232b2"
-      ]
-    },
-    {
-      "seedId": "live_133",
-      "institutionName": "Massachusetts General Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3adaa44e13"
-      ]
-    },
-    {
-      "seedId": "live_134",
-      "institutionName": "Brigham and Women's Hospital",
+      "seedId": "reorient_004",
+      "institutionName": "University of Florida Health / Shands Hospital",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_bef98b4f72"
+        "exact_62479f3bef"
       ]
     },
     {
-      "seedId": "live_135",
+      "seedId": "reorient_005",
+      "institutionName": "University of Florida Health / Shands Hospital — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a2382468ea"
+      ]
+    },
+    {
+      "seedId": "reorient_006",
+      "institutionName": "UPMC (University of Pittsburgh Medical Center)",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_44070e61d5"
+      ]
+    },
+    {
+      "seedId": "reorient_007",
+      "institutionName": "UPMC — International Visiting Student Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_647422ed66"
+      ]
+    },
+    {
+      "seedId": "reorient_008",
+      "institutionName": "UPMC International — Clinical Collaborations",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_0d6fd7adda"
+      ]
+    },
+    {
+      "seedId": "reorient_009",
+      "institutionName": "Cleveland Clinic — Research Fellowship",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7a02bed009"
+      ]
+    },
+    {
+      "seedId": "reorient_010",
+      "institutionName": "Cedars-Sinai — Research Fellowship",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7206bec0a8"
+      ]
+    },
+    {
+      "seedId": "reorient_011",
+      "institutionName": "Emory University — Postdoctoral Research",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a011d777f0"
+      ]
+    },
+    {
+      "seedId": "reorient_012",
       "institutionName": "Beth Israel Deaconess Medical Center",
       "runStatus": "FAILED_FETCH",
       "finalStatus": "FAILED",
@@ -574,1677 +148,113 @@
       "emittedRowIds": []
     },
     {
-      "seedId": "live_136",
-      "institutionName": "Boston Medical Center",
+      "seedId": "reorient_013",
+      "institutionName": "Massachusetts General Hospital — International Observership",
       "runStatus": "EXTRACTED",
       "finalStatus": "REJECTED",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_51350834cb"
+        "exact_4a434432ce"
       ]
     },
     {
-      "seedId": "live_137",
-      "institutionName": "Tufts Medical Center",
+      "seedId": "reorient_014",
+      "institutionName": "Henry Ford Hospital",
       "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
+      "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_6ea42410c9"
+        "exact_666dd46e6d"
       ]
     },
     {
-      "seedId": "live_138",
-      "institutionName": "University of Chicago Medicine",
+      "seedId": "reorient_015",
+      "institutionName": "Hackensack University Medical Center",
       "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
+      "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_0864245edc"
+        "exact_c1d2e66254"
       ]
     },
     {
-      "seedId": "live_139",
+      "seedId": "reorient_016",
       "institutionName": "Northwestern Memorial Hospital",
       "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
+      "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_5655c869a6"
+        "exact_030e76ee33"
       ]
     },
     {
-      "seedId": "live_140",
-      "institutionName": "Cook County Hospital (Stroger)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3f08ad4c47"
-      ]
-    },
-    {
-      "seedId": "live_141",
-      "institutionName": "Rush University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5f16db8eae"
-      ]
-    },
-    {
-      "seedId": "live_142",
-      "institutionName": "University of Illinois at Chicago (UIC)",
+      "seedId": "reorient_017",
+      "institutionName": "Northwestern Memorial Hospital — International",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_0ada20e049"
+        "exact_ca2a65176e"
       ]
     },
     {
-      "seedId": "live_143",
-      "institutionName": "Advocate Christ Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a4fdc357b5"
-      ]
-    },
-    {
-      "seedId": "live_144",
-      "institutionName": "Loyola University Medical Center",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_145",
-      "institutionName": "Cleveland Clinic",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c3aff7393e"
-      ]
-    },
-    {
-      "seedId": "live_146",
-      "institutionName": "University Hospitals Cleveland",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_af2132ff93"
-      ]
-    },
-    {
-      "seedId": "live_147",
-      "institutionName": "Ohio State University Wexner Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_63ea57db62"
-      ]
-    },
-    {
-      "seedId": "live_148",
-      "institutionName": "University of Cincinnati Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a4e519e3c9"
-      ]
-    },
-    {
-      "seedId": "live_149",
-      "institutionName": "Johns Hopkins Hospital",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_150",
-      "institutionName": "University of Maryland Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f619175705"
-      ]
-    },
-    {
-      "seedId": "live_151",
-      "institutionName": "MedStar Georgetown University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_32ba7e1984"
-      ]
-    },
-    {
-      "seedId": "live_152",
-      "institutionName": "George Washington University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ea49d075a1"
-      ]
-    },
-    {
-      "seedId": "live_153",
-      "institutionName": "Mayo Clinic",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f7291036a7"
-      ]
-    },
-    {
-      "seedId": "live_154",
-      "institutionName": "University of Minnesota Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_4e5fe69558"
-      ]
-    },
-    {
-      "seedId": "live_155",
-      "institutionName": "Houston Methodist Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5b14e97de0"
-      ]
-    },
-    {
-      "seedId": "live_156",
-      "institutionName": "Baylor College of Medicine",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_448eb9bc01"
-      ]
-    },
-    {
-      "seedId": "live_157",
-      "institutionName": "UT Southwestern Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e0d8da72e3"
-      ]
-    },
-    {
-      "seedId": "live_158",
-      "institutionName": "MD Anderson Cancer Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_33281e69fc"
-      ]
-    },
-    {
-      "seedId": "live_159",
-      "institutionName": "Memorial Hermann Hospital / UTHealth",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fe349d1430"
-      ]
-    },
-    {
-      "seedId": "live_160",
-      "institutionName": "UT Health San Antonio",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fd019a4fd4"
-      ]
-    },
-    {
-      "seedId": "live_161",
-      "institutionName": "Jackson Memorial Hospital (UMiami)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_544a370e2e"
-      ]
-    },
-    {
-      "seedId": "live_162",
-      "institutionName": "Cleveland Clinic Florida",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e3a9a00860"
-      ]
-    },
-    {
-      "seedId": "live_163",
-      "institutionName": "Mayo Clinic Jacksonville",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_4367cb772c"
-      ]
-    },
-    {
-      "seedId": "live_164",
-      "institutionName": "University of Florida Health / Shands Hospital",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_165",
-      "institutionName": "Tampa General Hospital / USF Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f1ddfe9152"
-      ]
-    },
-    {
-      "seedId": "live_166",
-      "institutionName": "Penn Medicine (UPenn)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_b0394eb5a6"
-      ]
-    },
-    {
-      "seedId": "live_167",
-      "institutionName": "Thomas Jefferson University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0f1f397422"
-      ]
-    },
-    {
-      "seedId": "live_168",
-      "institutionName": "Temple University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_400d2b8162"
-      ]
-    },
-    {
-      "seedId": "live_169",
-      "institutionName": "UPMC (University of Pittsburgh Medical Center)",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_170",
-      "institutionName": "Drexel University / Hahnemann (Tower Health)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_71ef79d55d"
-      ]
-    },
-    {
-      "seedId": "live_171",
-      "institutionName": "Duke University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_57a380c115"
-      ]
-    },
-    {
-      "seedId": "live_172",
-      "institutionName": "UNC Hospitals",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3fb9d9c759"
-      ]
-    },
-    {
-      "seedId": "live_173",
-      "institutionName": "Wake Forest Baptist Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5ca956ae52"
-      ]
-    },
-    {
-      "seedId": "live_174",
-      "institutionName": "Emory University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_24413a98c6"
-      ]
-    },
-    {
-      "seedId": "live_175",
-      "institutionName": "Grady Memorial Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c6c29d6dc5"
-      ]
-    },
-    {
-      "seedId": "live_176",
-      "institutionName": "Augusta University Medical Center (MCG)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fd124b59a1"
-      ]
-    },
-    {
-      "seedId": "live_177",
-      "institutionName": "University of Michigan Health",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_178",
-      "institutionName": "Henry Ford Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_9ecdefa734"
-      ]
-    },
-    {
-      "seedId": "live_179",
-      "institutionName": "Beaumont Hospital (Corewell Health)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_8a11369958"
-      ]
-    },
-    {
-      "seedId": "live_180",
+      "seedId": "reorient_018",
       "institutionName": "Wayne State University / Detroit Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_9d73c41746"
-      ]
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 403,
+      "fetchError": "HTTP 403",
+      "emittedRowIds": []
     },
     {
-      "seedId": "live_181",
-      "institutionName": "Barnes-Jewish Hospital (WashU)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_74f1ddef58"
-      ]
-    },
-    {
-      "seedId": "live_182",
-      "institutionName": "Mercy Hospital St. Louis",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3dee29a861"
-      ]
-    },
-    {
-      "seedId": "live_183",
-      "institutionName": "University of Missouri Health Care",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_51a746fa86"
-      ]
-    },
-    {
-      "seedId": "live_184",
-      "institutionName": "Robert Wood Johnson University Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fbf8503997"
-      ]
-    },
-    {
-      "seedId": "live_185",
-      "institutionName": "Newark Beth Israel Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0e05082376"
-      ]
-    },
-    {
-      "seedId": "live_186",
-      "institutionName": "Hackensack University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d14a14203d"
-      ]
-    },
-    {
-      "seedId": "live_187",
-      "institutionName": "Jersey Shore University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0de001e731"
-      ]
-    },
-    {
-      "seedId": "live_188",
+      "seedId": "reorient_019",
       "institutionName": "Yale-New Haven Hospital",
       "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
+      "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_4d256e9b4e"
+        "exact_71807914af"
       ]
     },
     {
-      "seedId": "live_189",
-      "institutionName": "Hartford Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_854c7f1a6b"
-      ]
-    },
-    {
-      "seedId": "live_190",
-      "institutionName": "Indiana University Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a5d5f2ef20"
-      ]
-    },
-    {
-      "seedId": "live_191",
-      "institutionName": "Medical College of Wisconsin / Froedtert Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_cc4ed80b59"
-      ]
-    },
-    {
-      "seedId": "live_192",
-      "institutionName": "University of Colorado Hospital",
+      "seedId": "reorient_020",
+      "institutionName": "Yale-New Haven Hospital — International",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_66faa6e042"
+        "exact_3225569761"
       ]
     },
     {
-      "seedId": "live_193",
-      "institutionName": "University of Washington Medical Center",
+      "seedId": "reorient_021",
+      "institutionName": "Stanford Health Care",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_0b68a6c510"
+        "exact_48614922c1"
       ]
     },
     {
-      "seedId": "live_194",
-      "institutionName": "Oregon Health & Science University (OHSU)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c794a69fc2"
-      ]
-    },
-    {
-      "seedId": "live_195",
-      "institutionName": "Mayo Clinic Scottsdale",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_6c34351105"
-      ]
-    },
-    {
-      "seedId": "live_196",
-      "institutionName": "Banner University Medical Center / University of Arizona",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_1e71fdc2b1"
-      ]
-    },
-    {
-      "seedId": "live_197",
-      "institutionName": "Tulane Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f816037240"
-      ]
-    },
-    {
-      "seedId": "live_198",
-      "institutionName": "LSU Health New Orleans / University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2071587249"
-      ]
-    },
-    {
-      "seedId": "live_199",
-      "institutionName": "Vanderbilt University Medical Center",
+      "seedId": "reorient_022",
+      "institutionName": "Stanford Health Care — International",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_309d5bffe1"
+        "exact_db56c791bf"
       ]
     },
     {
-      "seedId": "live_200",
-      "institutionName": "UT Health Memphis / Regional One Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_7d1e710eb0"
-      ]
-    },
-    {
-      "seedId": "live_201",
-      "institutionName": "University of Virginia Health System",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5908a3506d"
-      ]
-    },
-    {
-      "seedId": "live_202",
-      "institutionName": "VCU Health / MCV Hospitals",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_de339b1033"
-      ]
-    },
-    {
-      "seedId": "live_203",
-      "institutionName": "Medical University of South Carolina (MUSC)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f67de49187"
-      ]
-    },
-    {
-      "seedId": "live_204",
-      "institutionName": "University of Kentucky Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2498c31fc2"
-      ]
-    },
-    {
-      "seedId": "live_205",
-      "institutionName": "University of Iowa Hospitals & Clinics",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d568fe42f9"
-      ]
-    },
-    {
-      "seedId": "live_206",
-      "institutionName": "University of Nebraska Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0cb48e873f"
-      ]
-    },
-    {
-      "seedId": "live_207",
-      "institutionName": "University of Utah Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_554348d6d5"
-      ]
-    },
-    {
-      "seedId": "live_208",
-      "institutionName": "UAB Hospital (University of Alabama at Birmingham)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0649196441"
-      ]
-    },
-    {
-      "seedId": "live_209",
-      "institutionName": "NIH Clinical Center — Postdoctoral Research",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_210",
-      "institutionName": "Memorial Sloan Kettering — Observership",
+      "seedId": "reorient_023",
+      "institutionName": "Baylor College of Medicine",
       "runStatus": "EXTRACTED",
       "finalStatus": "AUTO_PROMOTE",
       "fetchHttpStatus": 200,
       "emittedRowIds": [
-        "exact_66ab0c8e88"
-      ]
-    },
-    {
-      "seedId": "live_211",
-      "institutionName": "MD Anderson Cancer Center — Observer Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_78da2efef3"
-      ]
-    },
-    {
-      "seedId": "live_212",
-      "institutionName": "Cleveland Clinic — Research Fellowship",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_213",
-      "institutionName": "Mayo Clinic — Research Fellowship",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_459a352d08"
-      ]
-    },
-    {
-      "seedId": "live_214",
-      "institutionName": "Harvard Medical School — Research Fellowship",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_38ccc8a08d"
-      ]
-    },
-    {
-      "seedId": "live_215",
-      "institutionName": "Johns Hopkins — Postdoctoral Research",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_216",
-      "institutionName": "Stanford Medicine — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0ace048366"
-      ]
-    },
-    {
-      "seedId": "live_217",
-      "institutionName": "Mount Sinai — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_5fb5bce152"
-      ]
-    },
-    {
-      "seedId": "live_218",
-      "institutionName": "University of Pittsburgh — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_953cc2d8e4"
-      ]
-    },
-    {
-      "seedId": "live_219",
-      "institutionName": "Fred Hutchinson Cancer Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e9a1d141fb"
-      ]
-    },
-    {
-      "seedId": "live_220",
-      "institutionName": "Cedars-Sinai — Research Fellowship",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 404,
-      "fetchError": "HTTP 404",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_221",
-      "institutionName": "Emory University — Postdoctoral Research",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_222",
-      "institutionName": "University of Michigan — Research Fellowship",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_223",
-      "institutionName": "Duke University — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c0a1b83418"
-      ]
-    },
-    {
-      "seedId": "live_224",
-      "institutionName": "AMG Medical Group — Clinical Rotations",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_dcb6308c11"
-      ]
-    },
-    {
-      "seedId": "live_225",
-      "institutionName": "Global Medical Foundation — USCE Programs",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_226",
-      "institutionName": "Clinical Experience Programs (CEP) — IMG Rotations",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_227",
-      "institutionName": "ValueMD Clinical Rotations",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 401,
-      "fetchError": "HTTP 401",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_228",
-      "institutionName": "UCSF — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_172864a10a"
-      ]
-    },
-    {
-      "seedId": "live_229",
-      "institutionName": "Penn Medicine — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_08a259e1aa"
-      ]
-    },
-    {
-      "seedId": "live_230",
-      "institutionName": "Yale School of Medicine — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0ed192f657"
-      ]
-    },
-    {
-      "seedId": "live_231",
-      "institutionName": "Baylor College of Medicine — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3f198d27b4"
-      ]
-    },
-    {
-      "seedId": "live_232",
-      "institutionName": "Northwestern Feinberg — Postdoctoral Research",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_536c074626"
-      ]
-    },
-    {
-      "seedId": "live_233",
-      "institutionName": "Albert Einstein College of Medicine — Research Fellowship",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a0339db038"
-      ]
-    },
-    {
-      "seedId": "live_234",
-      "institutionName": "University of Kansas Medical Center (KUMC)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_404c24c048"
-      ]
-    },
-    {
-      "seedId": "live_235",
-      "institutionName": "UAB Hospital — International Medical Observers",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_dbe9d905be"
-      ]
-    },
-    {
-      "seedId": "live_236",
-      "institutionName": "Children's Hospital of Philadelphia (CHOP)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fefb584db2"
-      ]
-    },
-    {
-      "seedId": "live_237",
-      "institutionName": "Griffin Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_8c1541c5e8"
-      ]
-    },
-    {
-      "seedId": "live_238",
-      "institutionName": "St. Mary Medical Center (Trinity Health)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_69d33b0a64"
-      ]
-    },
-    {
-      "seedId": "live_239",
-      "institutionName": "UC Davis Health — International Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_de7060f96d"
-      ]
-    },
-    {
-      "seedId": "live_240",
-      "institutionName": "USF Health — International Training",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_4dc285e5e3"
-      ]
-    },
-    {
-      "seedId": "live_241",
-      "institutionName": "Mount Sinai Medical Center — Miami Beach",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0c56eb287e"
-      ]
-    },
-    {
-      "seedId": "live_242",
-      "institutionName": "Allegheny Health Network — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f24b34122e"
-      ]
-    },
-    {
-      "seedId": "live_243",
-      "institutionName": "Drexel University — International Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_39ce902b2b"
-      ]
-    },
-    {
-      "seedId": "live_244",
-      "institutionName": "Nazareth Hospital (Trinity Health) — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d23c5d3128"
-      ]
-    },
-    {
-      "seedId": "live_245",
-      "institutionName": "Mercy Catholic Medical Center — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e923bf469a"
-      ]
-    },
-    {
-      "seedId": "live_246",
-      "institutionName": "UC San Diego — ACE Program",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_247",
-      "institutionName": "Mobile Infirmary — Observer Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_912c69c127"
-      ]
-    },
-    {
-      "seedId": "live_248",
-      "institutionName": "Hurley Medical Center (MSU) — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_c50355da08"
-      ]
-    },
-    {
-      "seedId": "live_249",
-      "institutionName": "Ochsner Health — International Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_e9f5d3d4af"
-      ]
-    },
-    {
-      "seedId": "live_250",
-      "institutionName": "Providence Swedish Medical Center — Observer Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a01f317f51"
-      ]
-    },
-    {
-      "seedId": "live_251",
-      "institutionName": "MSU Institute for Global Health — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3a88e842e8"
-      ]
-    },
-    {
-      "seedId": "live_252",
-      "institutionName": "Boston Children's Hospital — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "HOLD_REVIEW",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_b4e9d15e9d"
-      ]
-    },
-    {
-      "seedId": "live_253",
-      "institutionName": "Cincinnati Children's Hospital — International Visitor Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_79e4fc6b51"
-      ]
-    },
-    {
-      "seedId": "live_254",
-      "institutionName": "Texas Tech University HSC — Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_b0ffe4e1ab"
-      ]
-    },
-    {
-      "seedId": "live_255",
-      "institutionName": "University of Louisville — Medical Observership Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_7b9ccca9fe"
-      ]
-    },
-    {
-      "seedId": "live_256",
-      "institutionName": "UTHealth Houston — Observer Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f069db0f9c"
-      ]
-    },
-    {
-      "seedId": "live_257",
-      "institutionName": "SAMS — Clinical Observership (Nonprofit)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2737c0c324"
-      ]
-    },
-    {
-      "seedId": "live_258",
-      "institutionName": "CommonSpirit Health International — Clinical Observation",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a1942e1b5a"
-      ]
-    },
-    {
-      "seedId": "live_259",
-      "institutionName": "MedStar Health — International Observer Program",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_afafaf398b"
-      ]
-    },
-    {
-      "seedId": "live_260",
-      "institutionName": "Georgetown / Ruesch Center — International GI Observership",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_52d2c0262f"
-      ]
-    },
-    {
-      "seedId": "live_261",
-      "institutionName": "UW Pathology — Global Observership (PAID STIPEND)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d8046e8c1d"
-      ]
-    },
-    {
-      "seedId": "live_262",
-      "institutionName": "UCSD — Bridge to Residency Program",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_263",
-      "institutionName": "MSK MSO — Observership (San Diego)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_48f86c2c65"
-      ]
-    },
-    {
-      "seedId": "live_264",
-      "institutionName": "Jamaica Hospital Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_68f95e41f3"
-      ]
-    },
-    {
-      "seedId": "live_265",
-      "institutionName": "Flushing Hospital Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_001dc179dd"
-      ]
-    },
-    {
-      "seedId": "live_266",
-      "institutionName": "Kingsbrook Jewish Medical Center",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_267",
-      "institutionName": "St. John's Episcopal Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f1b4529b67"
-      ]
-    },
-    {
-      "seedId": "live_268",
-      "institutionName": "Wyckoff Heights Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_0e8dfaf59a"
-      ]
-    },
-    {
-      "seedId": "live_269",
-      "institutionName": "Richmond University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_16eec8cea9"
-      ]
-    },
-    {
-      "seedId": "live_270",
-      "institutionName": "Jersey City Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_6d0f260347"
-      ]
-    },
-    {
-      "seedId": "live_271",
-      "institutionName": "Newark Beth Israel Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_4f26f89241"
-      ]
-    },
-    {
-      "seedId": "live_272",
-      "institutionName": "Hackensack University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d14a14203d"
-      ]
-    },
-    {
-      "seedId": "live_273",
-      "institutionName": "Abington Hospital — Jefferson Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_515f359767"
-      ]
-    },
-    {
-      "seedId": "live_274",
-      "institutionName": "Crozer-Chester Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ad82dc6f71"
-      ]
-    },
-    {
-      "seedId": "live_275",
-      "institutionName": "Advocate Christ Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a4fdc357b5"
-      ]
-    },
-    {
-      "seedId": "live_276",
-      "institutionName": "Metro Health — Case Western Reserve",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_706c6ee5e0"
-      ]
-    },
-    {
-      "seedId": "live_277",
-      "institutionName": "Summa Health System — Akron",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d207763f27"
-      ]
-    },
-    {
-      "seedId": "live_278",
-      "institutionName": "Henry Ford Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_9ecdefa734"
-      ]
-    },
-    {
-      "seedId": "live_279",
-      "institutionName": "Beaumont Hospital — Royal Oak",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_148154c0cb"
-      ]
-    },
-    {
-      "seedId": "live_280",
-      "institutionName": "University of Cincinnati Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2f4a8a84bc"
-      ]
-    },
-    {
-      "seedId": "live_281",
-      "institutionName": "UT Southwestern Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f38a4d0985"
-      ]
-    },
-    {
-      "seedId": "live_282",
-      "institutionName": "JPS Health Network",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_30bff5495c"
-      ]
-    },
-    {
-      "seedId": "live_283",
-      "institutionName": "University of Texas Medical Branch (UTMB)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_89313554ff"
-      ]
-    },
-    {
-      "seedId": "live_284",
-      "institutionName": "Baptist Health South Florida",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ddb49d837c"
-      ]
-    },
-    {
-      "seedId": "live_285",
-      "institutionName": "Memorial Healthcare System",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d04da5be6c"
-      ]
-    },
-    {
-      "seedId": "live_286",
-      "institutionName": "Ochsner Health System",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_412085eedc"
-      ]
-    },
-    {
-      "seedId": "live_287",
-      "institutionName": "Carolinas Medical Center — Atrium Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_1183a957c3"
-      ]
-    },
-    {
-      "seedId": "live_288",
-      "institutionName": "Vanderbilt University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_309d5bffe1"
-      ]
-    },
-    {
-      "seedId": "live_289",
-      "institutionName": "Oregon Health & Science University (OHSU)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_390140a12d"
-      ]
-    },
-    {
-      "seedId": "live_290",
-      "institutionName": "Harbor-UCLA Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_8c2a50f91f"
-      ]
-    },
-    {
-      "seedId": "live_291",
-      "institutionName": "Olive View-UCLA Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_195095d7ef"
-      ]
-    },
-    {
-      "seedId": "live_292",
-      "institutionName": "Loma Linda University Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_2e141232b2"
-      ]
-    },
-    {
-      "seedId": "live_293",
-      "institutionName": "Banner University Medical Center — Tucson",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchError": "fetch failed",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_294",
-      "institutionName": "University of New Mexico Hospital",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d8d02bdeff"
-      ]
-    },
-    {
-      "seedId": "live_295",
-      "institutionName": "University of Utah Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_1a22f48f2e"
-      ]
-    },
-    {
-      "seedId": "live_296",
-      "institutionName": "Brooklyn USCE — Clinical Rotations",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_d7d285765f"
-      ]
-    },
-    {
-      "seedId": "live_297",
-      "institutionName": "Conemaugh Memorial Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_ce6800f45d"
-      ]
-    },
-    {
-      "seedId": "live_298",
-      "institutionName": "Geisinger Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_edd7d1cb0d"
-      ]
-    },
-    {
-      "seedId": "live_299",
-      "institutionName": "Reading Hospital — Tower Health",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_fa02a64efc"
-      ]
-    },
-    {
-      "seedId": "live_300",
-      "institutionName": "Mercy Hospital — St. Louis",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_3dee29a861"
-      ]
-    },
-    {
-      "seedId": "live_301",
-      "institutionName": "Hennepin Healthcare — Minneapolis",
-      "runStatus": "FAILED_FETCH",
-      "finalStatus": "FAILED",
-      "fetchHttpStatus": 403,
-      "fetchError": "HTTP 403",
-      "emittedRowIds": []
-    },
-    {
-      "seedId": "live_302",
-      "institutionName": "Medical University of South Carolina (MUSC)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_f67de49187"
-      ]
-    },
-    {
-      "seedId": "live_303",
-      "institutionName": "University of Kansas Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_9d7e8a25eb"
-      ]
-    },
-    {
-      "seedId": "live_304",
-      "institutionName": "University of Arkansas for Medical Sciences (UAMS)",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_a96f7cc848"
-      ]
-    },
-    {
-      "seedId": "live_305",
-      "institutionName": "University of Mississippi Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "REJECTED",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_06bb6fb2af"
+        "exact_18202c79b5",
+        "exact_59feb6c169"
       ]
     }
   ]

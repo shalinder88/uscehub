@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_014",
+  "institutionId": "inst_live_henry_ford",
+  "institutionName": "Henry Ford Hospital",
+  "parentSystem": "Henry Ford Health",
+  "campus": "",
+  "city": "Detroit",
+  "state": "MI",
+  "sourceUrl": "https://www.henryford.com/hcp/med-ed/ugme/students/visiting-students",
+  "sourceDomain": "henryford.com",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Henry Ford Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for henryford.com homepage — UGME visiting students path",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO-based VMS at Henry Ford",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_666dd46e6d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_014/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_014/cleaned.txt",
+  "sourceHash": "edef6f17d7484e4deeb6d06094ac3315ef0df12a89e9657e5ced75503bbee257",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:07:20.143Z"
+}

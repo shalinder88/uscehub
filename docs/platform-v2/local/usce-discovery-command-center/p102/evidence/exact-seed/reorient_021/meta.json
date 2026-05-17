@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_021",
+  "institutionId": "inst_live_stanford_vms",
+  "institutionName": "Stanford Health Care",
+  "parentSystem": "Stanford Medicine",
+  "campus": "",
+  "city": "Stanford",
+  "state": "CA",
+  "sourceUrl": "https://med.stanford.edu/visiting-clerkships/visitingclerkships.html",
+  "sourceDomain": "med.stanford.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Stanford Health Care",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Stanford visiting clerkships canonical page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_48614922c1"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_021/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_021/cleaned.txt",
+  "sourceHash": "34fa2f03323f1c5e84cf739303f8c161bf0f150d17dc20197f48d9b5d0de346c",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:07:33.904Z"
+}

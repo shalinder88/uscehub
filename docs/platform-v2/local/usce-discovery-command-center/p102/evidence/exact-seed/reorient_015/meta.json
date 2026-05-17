@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_015",
+  "institutionId": "inst_live_hackensack",
+  "institutionName": "Hackensack University Medical Center",
+  "parentSystem": "Hackensack Meridian Health",
+  "campus": "",
+  "city": "Hackensack",
+  "state": "NJ",
+  "sourceUrl": "https://www.hackensackmeridianhealth.org/en/healthcare-professionals/humc/internal-medicine-residency/elective-rotations",
+  "sourceDomain": "hackensackmeridianhealth.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "Internal Medicine",
+  "expectedCampus": "Hackensack University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for hackensackmeridianhealth.org/ — IM elective rotations page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Department-specific IM electives",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_c1d2e66254"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_015/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_015/cleaned.txt",
+  "sourceHash": "9e79fd62ef7270fac5e0f100ae7525bca9030adc7a6400b7bbc62dfa672434a4",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: elective URL segment",
+    "signals": [
+      "elective URL segment"
+    ]
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T03:07:22.528Z"
+}

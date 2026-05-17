@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_017",
+  "institutionId": "inst_live_northwestern_intl",
+  "institutionName": "Northwestern Memorial Hospital — International",
+  "parentSystem": "Northwestern Medicine",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://www.feinberg.northwestern.edu/md-education/visiting-students/international-visiting-students.html",
+  "sourceDomain": "feinberg.northwestern.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Northwestern Memorial Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for Northwestern",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Global Partner students only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_ca2a65176e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_017/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_017/cleaned.txt",
+  "sourceHash": "8a5ca6e5c0d6820cbb1e6e4c989584574fc6e59d6fbe86ab184eafcbd6dcd446",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, international visiting URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:07:25.937Z"
+}

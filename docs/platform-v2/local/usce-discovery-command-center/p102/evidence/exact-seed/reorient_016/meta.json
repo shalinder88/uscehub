@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_016",
+  "institutionId": "inst_live_northwestern_vms",
+  "institutionName": "Northwestern Memorial Hospital",
+  "parentSystem": "Northwestern Medicine",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://www.feinberg.northwestern.edu/md-education/visiting-students/index.html",
+  "sourceDomain": "feinberg.northwestern.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Northwestern Memorial Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Feinberg SOM visiting students page (real path; my earlier guess was wrong)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME/AOA fourth-year students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_030e76ee33"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_016/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_016/cleaned.txt",
+  "sourceHash": "aa08161d8c466d3b83ff009d1326d7f65fca1d23f72356cdbe697670890f980e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:07:24.386Z"
+}
