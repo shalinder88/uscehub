@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_073",
+  "institutionId": "inst_live_mda_observer",
+  "institutionName": "MD Anderson Cancer Center — Observer Programs",
+  "parentSystem": "UT MD Anderson",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://www.mdanderson.org/education-training/outreach-programs/observer-programs.html",
+  "sourceDomain": "mdanderson.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Oncology",
+  "expectedCampus": "MD Anderson",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "MD Anderson Observer Programs landing (replaces /education-training/outreach-programs/observer-programs/other-observership-opportunities-at-md-anderson.html which still works)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "STEP <=5 days OR up to 90 days; $500 deposit; faculty sponsor required",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_4fe2128384"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_073/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_073/cleaned.txt",
+  "sourceHash": "1802fd537401dcf38cb3054e20bc0cc02e30d8dff6c4fbc95e8a14eaafb170cf",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:39:14.616Z"
+}

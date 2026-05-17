@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_061",
+  "institutionId": "inst_live_mayo_rochester",
+  "institutionName": "Mayo Clinic — Visiting Medical Student Clerkships",
+  "parentSystem": "Mayo Clinic",
+  "campus": "",
+  "city": "Rochester",
+  "state": "MN",
+  "sourceUrl": "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Mayo Clinic",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Mayo VMS Clerkship Program canonical page (replaces mayoclinic.org/education)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "~600 students/year; accepts all international medical schools; USMLE Step 1 required for INTL",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a67d9a2709"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_061/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_061/cleaned.txt",
+  "sourceHash": "f2a10e621cd7a8d1d2602a7c3e0ae54bafc82121cdbb477c20f90bba93e978e5",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "MEDIUM",
+    "rationale": "expected BOTH but only VMS signal found"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:38:50.715Z"
+}

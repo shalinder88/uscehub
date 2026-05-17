@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_056",
+  "institutionId": "inst_live_ttuhsc_elpaso",
+  "institutionName": "Texas Tech Health El Paso",
+  "parentSystem": "TTUHSC El Paso",
+  "campus": "",
+  "city": "El Paso",
+  "state": "TX",
+  "sourceUrl": "https://www.elpaso.ttuhsc.edu/som/studentaffairs/visitingstudents.aspx",
+  "sourceDomain": "elpaso.ttuhsc.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Texas Tech Health El Paso",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "TTUHSC El Paso SOM Student Affairs visiting students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "UMC El Paso teaching affiliate",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_e1ea618153"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_056/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_056/cleaned.txt",
+  "sourceHash": "fc06f0b6bfb65efa0e2787bb3ce00a15bac3d70d1bd49f2e332f045d7b63ee99",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T03:38:40.292Z"
+}

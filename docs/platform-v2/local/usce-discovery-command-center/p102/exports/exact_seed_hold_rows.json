@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-17T03:27:41.368Z",
-  "totalHolds": 2,
+  "generatedAt": "2026-05-17T03:39:26.820Z",
+  "totalHolds": 3,
   "rows": [
     {
       "rowId": "exact_0beade4264",
@@ -20,7 +20,7 @@
       "audienceClass": "US_MD_DO_VISITING_STUDENT",
       "topQuote": "",
       "quoteScore": -1,
-      "sourceHash": "4e125a6f28b5ef761a175263f796861e040762b2ade0acb552ca126b6d84f7ac",
+      "sourceHash": "92b64013359935c1233d7f7511d931032cfbdd9ca665758ad201bbcf497fae90",
       "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_031/cleaned.txt",
       "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
       "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
@@ -34,7 +34,7 @@
         "quote: weak evidence (no application/cost/eligibility/contact signals)"
       ],
       "rejectionReason": null,
-      "fetchedAt": "2026-05-17T03:26:54.821Z",
+      "fetchedAt": "2026-05-17T03:37:52.742Z",
       "schemaVersion": "p102-exact-seed-1"
     },
     {
@@ -69,7 +69,42 @@
         "quote: weak evidence (no application/cost/eligibility/contact signals)"
       ],
       "rejectionReason": null,
-      "fetchedAt": "2026-05-17T03:26:56.873Z",
+      "fetchedAt": "2026-05-17T03:37:54.685Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_6b03b96bc5",
+      "seedId": "reorient_067",
+      "pageTitle": "Student Rotations & Research",
+      "opportunitySignature": "inst_live_cedars_senior_electives||https://www.cedars-sinai.edu/education/medical-students/senior-electives.html||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_cedars_senior_electives",
+      "institutionName": "Cedars-Sinai — Senior Electives",
+      "parentSystem": "Cedars-Sinai",
+      "campus": null,
+      "city": "Los Angeles",
+      "state": "CA",
+      "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students/senior-electives.html",
+      "canonicalUrl": "https://www.cedars-sinai.edu/education/medical-students/senior-electives.html",
+      "sourceDomain": "cedars-sinai.edu",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Student Rotations & Research | Cedars-Sinai",
+      "quoteScore": 0,
+      "sourceHash": "3f144b303dcac800a491ee7c4d5335657554079b2c3bc75f2998a8976564d034",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_067/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:39:03.373Z",
       "schemaVersion": "p102-exact-seed-1"
     }
   ]

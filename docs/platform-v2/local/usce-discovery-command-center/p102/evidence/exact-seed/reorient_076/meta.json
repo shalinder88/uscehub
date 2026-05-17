@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_076",
+  "institutionId": "inst_live_hss_avp",
+  "institutionName": "Hospital for Special Surgery — Academic Visitor Program",
+  "parentSystem": "HSS",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.hss.edu/education-institute/academic-visitor-program",
+  "sourceDomain": "hss.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Orthopedics",
+  "expectedCampus": "Hospital for Special Surgery",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "HSS Academic Visitor Program (already in data.js — confirm)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "1 day to 2 months; international + US",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_1ef7fafb9f"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_076/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_076/cleaned.txt",
+  "sourceHash": "04df8c7e808b90a68e09dc54c03c48663db8ea070359918e381d059ffe3a1dd6",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: academic visitor URL segment",
+    "signals": [
+      "academic visitor URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T03:39:20.003Z"
+}

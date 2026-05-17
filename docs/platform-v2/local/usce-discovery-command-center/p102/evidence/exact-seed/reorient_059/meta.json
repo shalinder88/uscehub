@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_059",
+  "institutionId": "inst_live_ochsner_intl_obs",
+  "institutionName": "Ochsner International Observership Program",
+  "parentSystem": "Ochsner Health",
+  "campus": "",
+  "city": "New Orleans",
+  "state": "LA",
+  "sourceUrl": "https://education.ochsner.org/clined/global-is-local/ochsner-international-observership-program/",
+  "sourceDomain": "education.ochsner.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Ochsner Health",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Ochsner direct international observership page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Faculty sponsor required + financial evidence",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_8d1ed84184"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_059/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_059/cleaned.txt",
+  "sourceHash": "3d14aed9f5dfcc2154db08c4b5d9d2e2da25b737496d5bc06d3f1e2c8b4b6dda",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:38:47.104Z"
+}

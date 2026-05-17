@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_075",
+  "institutionId": "inst_live_rush_observership",
+  "institutionName": "Rush University Medical Center — Visiting Physicians",
+  "parentSystem": "Rush University Medical Center",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://www.rushu.rush.edu/education-training/graduate-medical-education/visiting-physicians",
+  "sourceDomain": "rushu.rush.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Rush University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Rush GME Visiting Physicians program (formal observership office)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Specialty-dependent; ENT has explicit international program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a8f53af944"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_075/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_075/cleaned.txt",
+  "sourceHash": "f73365755dbfe65e54965a4db4f60f374be2b9b94c5225ed0b4b0af8143052fa",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T03:39:18.285Z"
+}

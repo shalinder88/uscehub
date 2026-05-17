@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_063",
+  "institutionId": "inst_live_keck_intl_obs",
+  "institutionName": "USC Keck — International Physician Observership",
+  "parentSystem": "USC",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://sites.usc.edu/healthcare-edu/observership/",
+  "sourceDomain": "sites.usc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Keck Medical Center of USC",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Keck International Physician Observership program",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "For practicing foreign-licensed physicians; faculty sponsor required",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_fa35c5079a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_063/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_063/cleaned.txt",
+  "sourceHash": "e4e3a3e4c86ad41aa6d4986bfc218b694c5646a2fe41c566cce92adbeef10ebd",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T03:38:55.017Z"
+}

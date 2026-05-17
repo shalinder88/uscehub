@@ -615,4 +615,126 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Keck Medicine of USC International Physician Observership. For practicing foreign-licensed physicians; requires faculty sponsor + foreign health org employer.",
   },
+
+  // ===== ADDED 2026-05-16 third-pass: INTL pathways + departmental observerships =====
+  // These are companion entries to the primary verified-links rows above.
+  // Each was WebSearch-found and runner-validated.
+
+  "Loyola University Medical Center International": {
+    url: "https://www.luc.edu/stritch/regrec/students/visitingstudents/internationalstudents/",
+    verified: true,
+    note: "Loyola Stritch INTL Visiting Students subpath. Max 4-week electives for international final-year students.",
+  },
+  "University of Florida Health / Shands Hospital — International": {
+    url: "https://osa.med.ufl.edu/students/visiting-medical-student-clerkships/international-visiting-student-program/",
+    verified: true,
+    note: "UF Office of Student Affairs International Visiting Student Program. Limited departments accept non-LCME schools.",
+  },
+  "UPMC — International Visiting Student Program": {
+    url: "https://www.researchprograms.medschool.pitt.edu/international-visiting-student-program",
+    verified: true,
+    note: "Pitt Medical Student Research and International Studies INTL program. Final-year international medical students.",
+  },
+  "Northwestern Memorial Hospital — International": {
+    url: "https://www.feinberg.northwestern.edu/md-education/visiting-students/international-visiting-students.html",
+    verified: true,
+    note: "Feinberg INTL Visiting Students. Open ONLY to students from Northwestern Global Partner universities.",
+  },
+  "Yale-New Haven Hospital — International": {
+    url: "https://medicine.yale.edu/md-program/visiting-students/international/",
+    verified: true,
+    note: "Yale SOM Visiting International Student Elective Program. Four-week rotations only. No observerships at Yale.",
+  },
+  "Stanford Health Care — International": {
+    url: "https://med.stanford.edu/visiting-clerkships/international.html",
+    verified: true,
+    note: "Stanford International Visiting Student (IVS) Program. 2-week or 4-week (up to 8 weeks max). $300 application fee.",
+  },
+  "Texas Tech HSC — Observership Program": {
+    url: "https://www.ttuhsc.edu/medicine/internal/observership/observership.aspx",
+    verified: true,
+    note: "TTUHSC Internal Medicine observership. Background check + observer fee + onboarding required.",
+  },
+  "Children's Hospital of Philadelphia (CHOP) — International Observership": {
+    url: "https://www.chop.edu/services/international-observership-program",
+    verified: true,
+    note: "CHOP International Observership Program. 2-8 weeks (4 weeks max for INTL students). $750 admin fee + background screening.",
+  },
+  "Memorial Sloan Kettering — International Observership": {
+    url: "https://www.mskcc.org/hcp-education-training/international/observership",
+    verified: true,
+    note: "MSK International Observer Program. NOT for IMGs residing in US — only for foreign-employed practicing physicians. Max 30 days.",
+  },
+  "Cleveland Clinic — Elective Program": {
+    url: "https://my.clevelandclinic.org/departments/elective-program",
+    verified: true,
+    note: "Cleveland Clinic 4-week elective program for final-year medical students. $200 US / $400 INTL processing fee.",
+  },
+  "NYU Langone / Bellevue Hospital": {
+    url: "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+    verified: true,
+    note: "NYU Grossman SOM Visiting MD Students info. LCME-approved US schools only. Bellevue is a primary clinical site.",
+  },
+  "NYU Langone Orthopedic Surgery — Visiting International Physicians": {
+    url: "https://med.nyu.edu/departments-institutes/orthopedic-surgery/education/visiting-international-physicians-program",
+    verified: true,
+    note: "NYU Orthopedic Surgery Visiting International Physicians program — department-specific INTL observership.",
+  },
+  "MD Anderson Cancer Center — Observer Programs": {
+    url: "https://www.mdanderson.org/education-training/outreach-programs/observer-programs.html",
+    verified: true,
+    note: "MD Anderson Observer Programs landing. STEP (<=5 days) or up to 90-day observerships across multiple specialties. $500 deposit. Faculty sponsor required.",
+  },
+  "Houston Methodist — Global Observership": {
+    url: "https://www.houstonmethodist.org/for-health-professionals/global-health-care-services/global-health-care-education/observerships/",
+    verified: true,
+    note: "Houston Methodist Global Observership. 2-4 weeks. Must be initiated by a Houston Methodist physician. No direct patient care.",
+  },
+  "Rush University Medical Center — Visiting Physicians": {
+    url: "https://www.rushu.rush.edu/education-training/graduate-medical-education/visiting-physicians",
+    verified: true,
+    note: "Rush GME Visiting Physicians program (formal observership office). Department-dependent acceptance.",
+  },
+  "University of Illinois Chicago — Observership Program": {
+    url: "https://medicine.uic.edu/education/international-education/observership-program/",
+    verified: true,
+    note: "UIC College of Medicine Observership Program for IMGs. Direct observership entry point.",
+  },
+
+  // === Batch 8 add ===
+  "Drexel University / Tower Health": {
+    url: "https://towerhealth.org/academic-affairs/medical-student-rotations",
+    verified: true,
+    note: "Tower Health Academic Affairs medical student rotations (Reading Hospital, St Christopher's, Phoenixville). Drexel partnership. VSLO-based; $75 per rotation; max 12 weeks.",
+  },
+  "University of Chicago Pritzker — Visiting Students": {
+    url: "https://pritzker.uchicago.edu/academics/visiting-students",
+    verified: true,
+    note: "Pritzker SOM visiting students page. 4th year LCME/COCA only via VSLO. INTL only via Ben Gurion or Sackler schools.",
+  },
+  "Tufts Medical Center": {
+    url: "https://medicine.tufts.edu/all-administrative-offices/registrar/away-rotations",
+    verified: true,
+    note: "TUSM away rotations / visiting students. VSLO-based for LCME/AOA only; INTL not eligible; no observerships.",
+  },
+  "Banner University Medical Center Phoenix": {
+    url: "https://phoenixmed.arizona.edu/visiting-students",
+    verified: true,
+    note: "University of Arizona College of Medicine Phoenix visiting students. Annual catalog opens April 15. No INTL students.",
+  },
+  "Mayo Clinic — Arizona Campus": {
+    url: "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+    verified: true,
+    note: "Mayo VMS clerkship — Arizona (Scottsdale) campus. Same canonical page as Rochester + Jacksonville. Accepts ALL international medical schools.",
+  },
+  "NYU Grossman Long Island School of Medicine": {
+    url: "https://medli.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+    verified: true,
+    note: "NYU LI SOM visiting MD students info. LCME-accredited only.",
+  },
+  "NYC Health + Hospitals — MOSAIC Visiting Scholars": {
+    url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+    verified: true,
+    note: "NYC H+H MOSAIC Visiting Scholars Program. 4-week electives. $2k stipend + $2k housing for non-NYC. US LCME/AOA only; underserved-care focused.",
+  },
 };

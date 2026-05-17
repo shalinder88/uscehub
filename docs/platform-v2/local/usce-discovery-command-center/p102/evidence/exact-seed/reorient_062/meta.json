@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_062",
+  "institutionId": "inst_live_ucla_vslo",
+  "institutionName": "UCLA Ronald Reagan Medical Center — VSLO",
+  "parentSystem": "UCLA Health",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://medschool.ucla.edu/education/md-education/visiting-students",
+  "sourceDomain": "medschool.ucla.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Ronald Reagan UCLA Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UCLA DGSOM visiting students canonical page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "INTL only via reciprocal exchange agreements",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_bb39948a90"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_062/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_062/cleaned.txt",
+  "sourceHash": "532eeb9aefcb42952d65e4c366670b8a3c35d5f2b8828374dfc7af1dc827f57e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:38:52.420Z"
+}

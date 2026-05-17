@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_067",
+  "institutionId": "inst_live_cedars_senior_electives",
+  "institutionName": "Cedars-Sinai — Senior Electives",
+  "parentSystem": "Cedars-Sinai",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students/senior-electives.html",
+  "sourceDomain": "cedars-sinai.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cedars-Sinai Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Cedars-Sinai 4-week senior electives page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Sub-I focus; INTL via UCLA affiliation",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_6b03b96bc5"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_067/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_067/cleaned.txt",
+  "sourceHash": "3f144b303dcac800a491ee7c4d5335657554079b2c3bc75f2998a8976564d034",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment",
+    "signals": [
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T03:39:03.373Z"
+}

@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_068",
+  "institutionId": "inst_live_cleveland_elective_program",
+  "institutionName": "Cleveland Clinic — Elective Program",
+  "parentSystem": "Cleveland Clinic",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+  "sourceDomain": "clevelandclinic.org",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cleveland Clinic",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Cleveland Clinic 4-week elective program (final-year medical students)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "$200 US / $400 INTL processing fee",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_bf254755b0",
+    "exact_7f4742d359"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_068/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_068/cleaned.txt",
+  "sourceHash": "aa421ad3244d8512907d81dc28bfa2ab8b71fee1fb72f9e2214cf2b0815f09f7",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+    "confidence": "HIGH",
+    "rationale": "both VMS and IMG signals in page text"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: elective URL segment",
+    "signals": [
+      "elective URL segment"
+    ]
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T03:39:05.212Z"
+}

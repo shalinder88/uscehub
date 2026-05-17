@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_058",
+  "institutionId": "inst_live_uh_cleveland",
+  "institutionName": "University Hospitals Cleveland Medical Center",
+  "parentSystem": "University Hospitals",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://www.uhhospitals.org/medical-education/undergraduate-medical-education/visiting-medical-student-program",
+  "sourceDomain": "uhhospitals.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University Hospitals Cleveland Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UH Cleveland visiting medical student program landing",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO-based; INTL with IFOM-BSE option",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_3a594db0d2"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_058/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_058/cleaned.txt",
+  "sourceHash": "8d4baed95779f3c0fe6d9d932a40221efbc67b49b041fd175743f4f6a26029ed",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T03:38:45.030Z"
+}

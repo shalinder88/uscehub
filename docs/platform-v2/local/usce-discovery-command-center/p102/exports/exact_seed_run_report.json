@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-05-17T03:27:41.368Z",
+  "generatedAt": "2026-05-17T03:39:26.820Z",
   "seedFile": "docs/platform-v2/local/usce-discovery-command-center/p102/queues/p102_reorientation_candidates.csv",
   "offline": false,
-  "seedsAttempted": 55,
+  "seedsAttempted": 79,
   "runStatusCounts": {
-    "EXTRACTED": 51,
-    "FAILED_FETCH": 4
+    "EXTRACTED": 73,
+    "FAILED_FETCH": 6
   },
   "finalStatusCounts": {
-    "AUTO_PROMOTE": 42,
-    "REJECTED": 7,
-    "FAILED": 4,
-    "HOLD_REVIEW": 2
+    "AUTO_PROMOTE": 60,
+    "REJECTED": 10,
+    "FAILED": 6,
+    "HOLD_REVIEW": 3
   },
   "routeCounts": {
-    "AUTO_PROMOTE": 44,
-    "HOLD_REVIEW": 2,
-    "REJECTED": 7
+    "AUTO_PROMOTE": 63,
+    "HOLD_REVIEW": 3,
+    "REJECTED": 10
   },
   "audienceCounts": {
-    "US_MD_DO_VISITING_STUDENT": 31,
-    "IMG_GRADUATE_OBSERVER": 11,
+    "US_MD_DO_VISITING_STUDENT": 42,
+    "IMG_GRADUATE_OBSERVER": 23,
     "INTERNATIONAL_MEDICAL_STUDENT": 11
   },
   "directLinkCounts": {
-    "VALID_DIRECT_USCE_SOURCE": 46,
-    "INVALID_NOT_USCE_SOURCE": 7
+    "VALID_DIRECT_USCE_SOURCE": 66,
+    "INVALID_NOT_USCE_SOURCE": 10
   },
   "duplicateClusters": 0,
   "seedResults": [
@@ -271,12 +271,10 @@
     {
       "seedId": "reorient_025",
       "institutionName": "Advocate Christ Medical Center",
-      "runStatus": "EXTRACTED",
-      "finalStatus": "AUTO_PROMOTE",
-      "fetchHttpStatus": 200,
-      "emittedRowIds": [
-        "exact_020862f81c"
-      ]
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "This operation was aborted",
+      "emittedRowIds": []
     },
     {
       "seedId": "reorient_026",
@@ -574,6 +572,246 @@
       "fetchHttpStatus": 200,
       "emittedRowIds": [
         "exact_64599a53f7"
+      ]
+    },
+    {
+      "seedId": "reorient_056",
+      "institutionName": "Texas Tech Health El Paso",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_e1ea618153"
+      ]
+    },
+    {
+      "seedId": "reorient_057",
+      "institutionName": "Texas Tech HSC — Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f54b326af6"
+      ]
+    },
+    {
+      "seedId": "reorient_058",
+      "institutionName": "University Hospitals Cleveland Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_3a594db0d2"
+      ]
+    },
+    {
+      "seedId": "reorient_059",
+      "institutionName": "Ochsner International Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_8d1ed84184"
+      ]
+    },
+    {
+      "seedId": "reorient_060",
+      "institutionName": "Ochsner Health — Medical Student Electives",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f7b917431e"
+      ]
+    },
+    {
+      "seedId": "reorient_061",
+      "institutionName": "Mayo Clinic — Visiting Medical Student Clerkships",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a67d9a2709"
+      ]
+    },
+    {
+      "seedId": "reorient_062",
+      "institutionName": "UCLA Ronald Reagan Medical Center — VSLO",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bb39948a90"
+      ]
+    },
+    {
+      "seedId": "reorient_063",
+      "institutionName": "USC Keck — International Physician Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_fa35c5079a"
+      ]
+    },
+    {
+      "seedId": "reorient_064",
+      "institutionName": "Children's Hospital of Philadelphia (CHOP) — International Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_8de995613c"
+      ]
+    },
+    {
+      "seedId": "reorient_065",
+      "institutionName": "Memorial Sloan Kettering — International Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_fd243cc7f6"
+      ]
+    },
+    {
+      "seedId": "reorient_066",
+      "institutionName": "Mayo Clinic Jacksonville",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_dc3d215d1d"
+      ]
+    },
+    {
+      "seedId": "reorient_067",
+      "institutionName": "Cedars-Sinai — Senior Electives",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_6b03b96bc5"
+      ]
+    },
+    {
+      "seedId": "reorient_068",
+      "institutionName": "Cleveland Clinic — Elective Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bf254755b0",
+        "exact_7f4742d359"
+      ]
+    },
+    {
+      "seedId": "reorient_069",
+      "institutionName": "NYC Health + Hospitals — MOSAIC Visiting Scholars",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7d1ad84651"
+      ]
+    },
+    {
+      "seedId": "reorient_070",
+      "institutionName": "NYU Langone / Bellevue Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_6a3101682d"
+      ]
+    },
+    {
+      "seedId": "reorient_071",
+      "institutionName": "NYU Langone Orthopedic Surgery — Visiting International Physicians",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_05c1648830"
+      ]
+    },
+    {
+      "seedId": "reorient_072",
+      "institutionName": "Children's Hospital Los Angeles — International Observership",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 403,
+      "fetchError": "HTTP 403",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_073",
+      "institutionName": "MD Anderson Cancer Center — Observer Programs",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_4fe2128384"
+      ]
+    },
+    {
+      "seedId": "reorient_074",
+      "institutionName": "Houston Methodist — Global Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_37465568d4"
+      ]
+    },
+    {
+      "seedId": "reorient_075",
+      "institutionName": "Rush University Medical Center — Visiting Physicians",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a8f53af944"
+      ]
+    },
+    {
+      "seedId": "reorient_076",
+      "institutionName": "Hospital for Special Surgery — Academic Visitor Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_1ef7fafb9f"
+      ]
+    },
+    {
+      "seedId": "reorient_077",
+      "institutionName": "Mayo Clinic — Arizona Campus",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bb25fe6672"
+      ]
+    },
+    {
+      "seedId": "reorient_078",
+      "institutionName": "NYU Grossman Long Island School of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f014053856"
+      ]
+    },
+    {
+      "seedId": "reorient_079",
+      "institutionName": "University of Illinois Chicago — Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_153d8d157e"
       ]
     }
   ]

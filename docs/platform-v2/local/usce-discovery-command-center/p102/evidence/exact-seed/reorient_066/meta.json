@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_066",
+  "institutionId": "inst_live_mayo_jacksonville",
+  "institutionName": "Mayo Clinic Jacksonville",
+  "parentSystem": "Mayo Clinic",
+  "campus": "Florida Campus",
+  "city": "Jacksonville",
+  "state": "FL",
+  "sourceUrl": "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "Mayo Clinic Florida",
+  "expectedCampus": "Mayo Clinic Jacksonville",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Mayo VMS clerkship — Florida campus",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "FL Commission for Independent Education approved schools only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_dc3d215d1d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_066/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_066/cleaned.txt",
+  "sourceHash": "dec6d07d4c8f74a1aa23971f296206304f6e3bfc14e0bcf03760c8877a9ffbcc",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:39:01.403Z"
+}

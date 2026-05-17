@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_070",
+  "institutionId": "inst_live_nyu_bellevue_vms",
+  "institutionName": "NYU Langone / Bellevue Hospital",
+  "parentSystem": "NYU Langone Health",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+  "sourceDomain": "med.nyu.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Bellevue / NYU Langone",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "NYU Grossman SOM Visiting MD Students info",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "US LCME-approved schools only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_6a3101682d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_070/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_070/cleaned.txt",
+  "sourceHash": "7ade4419151ba7c805df00407735aff8aea2d57bf41980aeeab0df11322e98c1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:39:09.174Z"
+}
