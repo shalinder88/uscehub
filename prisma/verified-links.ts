@@ -231,21 +231,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // ===== DEPARTMENT-SPECIFIC ONLY (not centralized — marked unverified) =====
 
   // "Mount Sinai Hospital" — primary entry now in one-by-one packet #48.
-  "NYU Langone Health": {
-    url: "https://med.nyu.edu/",
-    verified: false,
-    note: "No centralized observership page. Department-specific only: Dermatology, Surgery (Long Island), Ortho, Plastic Surgery, ENT, Rusk Rehab each have own pages. Faculty sponsor required.",
-  },
-  "NewYork-Presbyterian / Columbia": {
-    url: "https://www.nyp.org/",
-    verified: false,
-    note: "NYP no longer accepts individual observerships institution-wide. Select Columbia departments still run programs (Psychiatry, Neurology $250-1000, General Surgery — some closed).",
-  },
-  "NewYork-Presbyterian / Weill Cornell": {
-    url: "https://www.nyp.org/",
-    verified: false,
-    note: "Same NYP-wide policy — no individual observerships. Select departments (Pediatrics, ENT) still coordinate. Faculty sponsor required.",
-  },
+  // "NYU Langone Health" — primary entry now in one-by-one packet #54 below.
+  // "NewYork-Presbyterian / Columbia" — primary entry now in packet #51.
+  // "NewYork-Presbyterian / Weill Cornell" — primary entry now in packet #52.
   "UCSF Medical Center": {
     url: "https://meded.ucsf.edu/",
     verified: false,
@@ -260,11 +248,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // "Boston Medical Center" — primary entry now lives in one-by-one packet
   // #6 below (URL updated to SVEP page). This stub kept as a comment so the
   // history of the prior verified:false stance is preserved.
-  "Northwell Health System": {
-    url: "https://international.northwell.edu/consulting-advisory-services",
-    verified: false,
-    note: "2-week or 4-week observership rotations through International Services. Contact international@northwell.edu. Fees not listed publicly.",
-  },
+  // "Northwell Health System" — primary entry now in one-by-one packet #53 below.
   "Northwestern Memorial Hospital": {
     url: "https://www.feinberg.northwestern.edu/md-education/visiting-students/index.html",
     verified: true,
@@ -313,11 +297,7 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
   // "Cedars-Sinai Medical Center" — primary entry now lives in one-by-one
   // packet #8 below (URL updated to /education/medical-students.html).
 
-  "Penn Medicine (UPenn)": {
-    url: "https://www.pennmedicine.org/",
-    verified: false,
-    note: "No centralized observership. Department-specific only. Dermatopathology: $10,000/year. Radiology has visiting observers. Penn does NOT sponsor observerships system-wide.",
-  },
+  // "Penn Medicine (UPenn)" — primary entry now in one-by-one packet #59 below.
   "George Washington University Hospital": {
     url: "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
     verified: false,
@@ -987,5 +967,59 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.rwjbh.org/for-health-care-professionals/medical-education/newark-beth-israel-medical-center/",
     verified: true,
     note: "Newark Beth Israel Medical Education Programs (RWJBH). Major teaching partner of Rutgers NJMS for core clerkships. EM electives (Peds, US, EMS) competitive; contact Rotators@rwjbh.org. 2 data.js entries with this name; both share this URL. Replaces /newark-beth-israel-medical-center main page. One-by-one packet #50.",
+  },
+
+  "NewYork-Presbyterian / Columbia": {
+    url: "https://www.vagelos.columbia.edu/education/academic-programs/md-program/visiting-student-program",
+    verified: true,
+    note: "Columbia VP&S Visiting Student Program (canonical). VSLO for LCME/COCA; OASIS for INTL via /international-visiting-students subpath. Replaces nyp.org/ homepage. One-by-one packet #51.",
+  },
+
+  "NewYork-Presbyterian / Weill Cornell": {
+    url: "https://medicaleducation.weill.cornell.edu/student-resources/visiting-students",
+    verified: true,
+    note: "Weill Cornell Medicine Visiting Student Electives (canonical). VSLO for US MD/DO. INTL via WCM Global Health Education (international.weill.cornell.edu/visiting-international-students). No observerships — only clinical electives. Replaces weill.cornell.edu/ root. One-by-one packet #52.",
+  },
+
+  "Northwell Health System": {
+    url: "https://medicine.hofstra.edu/student-records/visiting",
+    verified: true,
+    note: "Zucker SOM at Hofstra/Northwell Visiting Medical Students elective info. VSLO for LCME/COCA US M4. INTL via Hofstra affiliation agreement schools only. Replaces northwell.edu generic. One-by-one packet #53.",
+  },
+
+  "NYU Langone Health": {
+    url: "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+    verified: true,
+    note: "NYU Grossman SOM Visiting MD Students info. VSLO; LCME-approved US schools only; Bellevue primary site. INTL students NOT processed (non-LCME). Replaces med.nyu.edu/ homepage. One-by-one packet #54.",
+  },
+
+  "Ochsner Health System": {
+    url: "https://education.ochsner.org/clined/medical-student-electives/",
+    verified: true,
+    note: "Ochsner Health Medical Student Electives (New Orleans). INTL not accepted for clinical electives except via special affiliation agreements. Separate International Observership Program for foreign-employed physicians at /clined/global-is-local/ochsner-international-observership-program/. Replaces ochsner.org/ homepage. One-by-one packet #55.",
+  },
+
+  "Olive View-UCLA Medical Center": {
+    url: "https://www.oliveviewim.org/people/students/",
+    verified: true,
+    note: "UCLA-Olive View Internal Medicine medical students page. Olive View-UCLA is a major DGSOM clinical affiliate. M4 sub-internships (general medicine wards + ICUs) + IM subspecialty electives. Applications via UCLA David Geffen SOM VSLO. Underserved-population academic county hospital. Replaces dhs.lacounty.gov/olive-view-ucla/ homepage. One-by-one packet #56.",
+  },
+
+  "Oregon Health & Science University (OHSU)": {
+    url: "https://www.ohsu.edu/school-of-medicine/visiting-students",
+    verified: true,
+    note: "OHSU School of Medicine Visiting Students canonical page. VSLO-based. 2 data.js entries with this name; both share this URL. Replaces /school-of-medicine/graduate-medical-education (GME-only). One-by-one packet #57+58.",
+  },
+
+  "Penn Medicine (UPenn)": {
+    url: "https://www.med.upenn.edu/student/visiting-clerkship-and-mentorship.html",
+    verified: true,
+    note: "Penn Visiting Clerkship and Mentorship Program. M4 rotations at CHOP, HUP, Penn Presbyterian, Pennsylvania Hospital. Sub-I + elective. INTL via med.upenn.edu/globalhealth/international-trainees-scholars.html (affiliation agreement required). Replaces pennmedicine.org/.../visiting-physicians (physician-observer-only) for student access. One-by-one packet #59.",
+  },
+
+  "Reading Hospital — Tower Health": {
+    url: "https://towerhealth.org/academic-affairs/medical-student-rotations",
+    verified: true,
+    note: "Tower Health Academic Affairs Medical Student Rotations (Reading Hospital + Phoenixville + St Christopher's). Drexel COM partnership site. VSLO + Drexel-specific application process. $75 fee, max 12 weeks. Replaces towerhealth.org/ homepage. One-by-one packet #60.",
   },
 };

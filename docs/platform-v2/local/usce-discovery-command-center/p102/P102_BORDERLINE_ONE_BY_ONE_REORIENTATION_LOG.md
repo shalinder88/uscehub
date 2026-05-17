@@ -688,3 +688,59 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - evidence: Major Rutgers NJMS teaching partner for core clerkships; EM specialty electives (Peds, US, EMS); Rotators@rwjbh.org
 - countsAsTrueUSCE: TRUE (×2 since 2 data.js entries)
 
+# Batch 6 (packets 51-60) — 2026-05-17
+
+## Packet 51: NewYork-Presbyterian / Columbia
+- finalUrl: vagelos.columbia.edu/education/academic-programs/md-program/visiting-student-program
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Columbia VP&S Visiting Student Program (canonical); VSLO + OASIS; INTL subpath
+- countsAsTrueUSCE: TRUE
+
+## Packet 52: NewYork-Presbyterian / Weill Cornell
+- finalUrl: medicaleducation.weill.cornell.edu/student-resources/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Weill Cornell Medicine Visiting Student Electives; VSLO; INTL via WCM Global Health Education
+- countsAsTrueUSCE: TRUE
+
+## Packet 53: Northwell Health System
+- finalUrl: medicine.hofstra.edu/student-records/visiting
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "All students attending US LCME accredited medical schools or COCA accredited AACOM member colleges are required to use the AAMC"
+- countsAsTrueUSCE: TRUE
+
+## Packet 54: NYU Langone Health
+- finalUrl: med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: VSLO; LCME-approved US schools only; Bellevue primary site
+- countsAsTrueUSCE: TRUE
+
+## Packet 55: Ochsner Health System
+- finalUrl: education.ochsner.org/clined/medical-student-electives/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Ochsner Medical Student Electives (New Orleans); INTL via special affiliation only; separate International Observership for foreign-employed physicians
+- countsAsTrueUSCE: TRUE
+
+## Packet 56: Olive View-UCLA Medical Center
+- finalUrl: oliveviewim.org/people/students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: M4 sub-internships on general medicine + ICUs; UCLA DGSOM VSLO application; underserved-population academic county hospital
+- countsAsTrueUSCE: TRUE
+
+## Packet 57+58: Oregon Health & Science University (OHSU) (two data.js entries, same URL)
+- finalUrl: ohsu.edu/school-of-medicine/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: OHSU SOM Visiting Students canonical; VSLO
+- countsAsTrueUSCE: TRUE (×2)
+
+## Packet 59: Penn Medicine (UPenn)
+- finalUrl: med.upenn.edu/student/visiting-clerkship-and-mentorship.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Penn Visiting Clerkship and Mentorship Program; M4 rotations at CHOP/HUP/Penn Pres/Pennsylvania; INTL via globalhealth/international-trainees-scholars
+- countsAsTrueUSCE: TRUE
+
+## Packet 60: Reading Hospital — Tower Health
+- finalUrl: towerhealth.org/academic-affairs/medical-student-rotations
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Tower Health Academic Affairs Medical Student Rotations; Drexel COM partner; VSLO + $75 fee
+- countsAsTrueUSCE: TRUE
+
