@@ -939,4 +939,102 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - audience: US LCME M4 (domestic) via AAMC VSLO/VSAS; INTL via SEPARATE IVS pathway at med.unc.edu/oghe/visiting-international-students/ivs-application-requirements/ (Office of Global Health Education); affiliated sites across NC (Asheville, Chapel Hill, Charlotte, Greensboro, Raleigh, Wilmington); 1 LOR + personal statement; contact visitingstudent@med.unc.edu
 - countsAsTrueUSCE: TRUE
 
+---
+
+## Packet 81: Mercy Hospital St. Louis
+- currentUrl: mercy.net/
+- candidates opened: mercy.net/healthcare-education/graduate/st-louis/rotations/
+- finalUrl: mercy.net/healthcare-education/graduate/st-louis/rotations/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "We are no longer able to offer observerships or sponsor externships for international medical graduates/students."
+- audience: US M4 only (Critical Care, FM, IM, OB/GYN); INTL explicitly excluded; direct application packet (form + school letter + $1-3M malpractice + immunizations + COVID/flu + PPD); 6-month lead time
+- countsAsTrueUSCE: TRUE
+- note: companion entry to packet #44 ("Mercy Hospital — St. Louis" em-dash variant); same URL, exact-key-match for the no-em-dash data.js entry
+
+## Packet 82: University of Missouri Health Care
+- currentUrl: medicine.missouri.edu/
+- candidates opened: medicine.missouri.edu/offices-programs/education/medical-education-curriculum/visiting-student-information
+- finalUrl: medicine.missouri.edu/offices-programs/education/medical-education-curriculum/visiting-student-information
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "We are only accepting visiting students from U.S. accredited LCME and COCA medical schools. Students must have completed the third-year core clerkships before their visiting rotation begins. We are not accepting international student applications."
+- audience: US LCME/COCA M4 only — INTL explicitly NOT accepted; application: AAMC VSLO; background check + 7-panel drug screen + $1M/$3M malpractice + flu shot
+- countsAsTrueUSCE: TRUE
+
+## Packet 83: Robert Wood Johnson University Hospital
+- currentUrl: rwjms.rutgers.edu/
+- candidates opened: rwjms.rutgers.edu/education/md/visiting-students
+- finalUrl: rwjms.rutgers.edu/education/md/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "For the academic year 2026–2027, all visiting rotations are coordinated through the Association of American Medical Colleges' (AAMC) Visiting Student Learning Opportunities (VSLO)."
+- audience: US LCME/COCA M4 only — INTL + Canadian NOT accepted via VSLO; application: VSLO opens Feb 2026; ~35-day review; $75/elective; max 16 weeks; no travel/housing provided
+- countsAsTrueUSCE: TRUE
+- note: prior suffix-mismatch key "Robert Wood Johnson University Hospital / Rutgers RWJMS" commented out; replaced with EXACT data.js key
+
+## Packet 84: Hartford Hospital
+- currentUrl: hartfordhospital.org/health-professionals/education/residencies-fellowships (from packet #22 prior reorientation)
+- candidates opened: medicine.uconn.edu/visiting-students/
+- finalUrl: medicine.uconn.edu/visiting-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK (upgrade from BORDERLINE_KEEP_REVERIFY in packet #22)
+- evidence: "Students must apply through the Visiting Student Learning Opportunities (VSLO) software, to receive visiting student applications."
+- audience: US LCME + AOA only — INTL explicitly NOT accepted; UConn handles centralized M4 elective VSLO; Hartford Hospital is the UConn primary teaching hospital affiliate; Advanced Clinical Experiences (sub-I, EM, Critical Care) require department application (NOT VSAS); applications open April-mid-July; contact visitingmed@uchc.edu
+- countsAsTrueUSCE: TRUE
+- note: this reverify supersedes packet #22's "verified:false / no centralized M4" finding because UConn IS the centralized application for non-advanced rotations
+
+## Packet 85: UT Health Memphis / Regional One Health
+- currentUrl: uthsc.edu/graduate-medical-education/ (GME-only)
+- candidates opened: uthsc.edu/medicine/visiting-students.php
+- finalUrl: uthsc.edu/medicine/visiting-students.php
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "U.S. LCME medical students, please complete a VSLO application for your preferred electives and dates."
+- audience: US LCME M4 (D.O. also accepted) — Regional One Health is the UTHSC public hospital affiliate; system-wide max 8 weeks across Memphis/Knoxville/Chattanooga/Nashville/Jackson; must have completed FM/Med/Neuro/Peds/Surg/Psych/OB-Gyn cores; contact visiting@uthsc.edu
+- countsAsTrueUSCE: TRUE
+
+## Packet 86: University of Virginia Health System
+- currentUrl: med.virginia.edu/
+- candidates opened: med.virginia.edu/md-program/student-affairs/visiting-student-electives/
+- finalUrl: med.virginia.edu/md-program/student-affairs/visiting-student-electives/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "We only accept visiting students from LCME Accredited Medical Schools."
+- audience: US LCME M4 only — COCA + INTL explicitly NOT accepted; application: AAMC VSLO; up to 4 weeks; FREE tuition; student must provide own malpractice insurance; 5 rotation blocks (A-E) Jun-Oct 2026
+- countsAsTrueUSCE: TRUE
+
+## Packet 87: VCU Health / MCV Hospitals
+- currentUrl: vcuhealth.org/
+- candidates opened: medschool.vcu.edu/md/m4_electives/visiting_students/ (HTTP 404 to WebFetch — anti-bot/redirect; URL live in browser per surgery.vcu.edu confirmation)
+- finalUrl: medschool.vcu.edu/md/m4_electives/visiting_students/
+- classification: PROTECTED_BROWSER_REQUIRED (works in browser, fetched via alternate VCU Surgery confirmation page; counts as true USCE per Hopkins precedent)
+- evidence (from surgery.vcu.edu/education/m4-electives/): "If you are seeking an M4 elective and NOT a student at VCU SOM you must go through AAMC's VSLO Application Service (VSLO) to apply for an elective at VCU."
+- audience: US M4 via AAMC VSLO; positions allocated after VCU's own students; 2026-27 catalog opens Feb 2026; contact Jessica.Dymon@vcuhealth.org or somregistrar@vcuhealth.org
+- countsAsTrueUSCE: TRUE
+
+## Packet 88: University of Kentucky Medical Center
+- currentUrl: med.uky.edu/graduate-medical-education (GME-only)
+- candidates opened: medicine.uky.edu/sites/meded/visiting-students
+- finalUrl: medicine.uky.edu/sites/meded/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "If you are enrolled as a fourth-year medical student at a school that is accredited by the United States Liaison Committee on Medical Education (LCME) or the American Osteopathic Association (AOA), we invite you to apply for an elective at the College of Medicine-Lexington Campus through VSLO."
+- audience: US LCME/AOA M4 (M3+M4 accepted but M4 prioritized); affiliation agreement required (otherwise rotation canceled); $75 one-time placement fee
+- countsAsTrueUSCE: TRUE
+- note: replaces prior verified:false stub (medicine.uky.edu/ homepage; "department-specific only" claim outdated)
+
+## Packet 89: University of Nebraska Medical Center
+- currentUrl: unmc.edu/
+- candidates opened: catalog.unmc.edu/medicine/visiting-students/
+- finalUrl: catalog.unmc.edu/medicine/visiting-students/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "The University of Nebraska Medical Center College of Medicine (COM) does not accept applications from students attending: foreign medical schools, non-LCME accredited M.D. institutions, non-COCA accredited D.O. institutions."
+- audience: US LCME/COCA M4 only — INTL explicitly NOT accepted; application: AAMC VSLO; 4-week rotations only, ONE rotation per student; senior/final year only; background check + USMLE Step 1/COMLEX + immunizations; contact VSLO@unmc.edu
+- countsAsTrueUSCE: TRUE
+
+## Packet 90: University of Utah Health
+- currentUrl: medicine.utah.edu/gme/ + healthcare.utah.edu/ (two data.js entries with this name)
+- candidates opened: medicine.utah.edu/students/visiting (HTTP 403 to WebFetch — anti-bot block; URL live in browser per Google index)
+- finalUrl: medicine.utah.edu/students/visiting
+- classification: PROTECTED_BROWSER_REQUIRED (works in browser, blocked in WebFetch; counts as true USCE per Hopkins precedent)
+- evidence (from search snippet): "Students need to be in the clinical phase of their training and have completed six of the CORE Clerkships (Internal Medicine, Surgery, Pediatrics, Obstetrics/Gynecology, Psychiatry, Family Medicine; Neurology may be required for some rotations) prior to the requested rotation's date to be eligible."
+- audience: US M4 (clinical phase, 6 of 7 CORE completed) via AAMC VSLO; INTL via separate Department Sponsored Visitors Program (medicine.utah.edu/global-health-education/department-sponsored-visitors-program); transcript + Step 1 + letter of interest + bg check + 5-panel drug test; contact visitingstudents@hsc.utah.edu
+- countsAsTrueUSCE: TRUE
+- note: covers both data.js URLs (medicine.utah.edu/gme/ + healthcare.utah.edu/) via single Spencer Fox Eccles SOM visiting student page
+
+
 

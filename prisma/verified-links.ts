@@ -309,11 +309,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Yale SOM Visiting Students canonical page. VSLO-based, four-week rotations only, final-year US LCME or COCA students. INTL students see medicine.yale.edu/md-program/visiting-students/international/ — Yale does NOT offer observerships/externships, only clinical electives. Updated 2026-05-16 from generic medicine.yale.edu homepage.",
   },
-  "University of Kentucky Medical Center": {
-    url: "https://medicine.uky.edu/",
-    verified: false,
-    note: "Department-specific only (Radiology, Neurology, IM Visiting Scholar). Observerships limited to 2 weeks. International observers via J-1 visa.",
-  },
+  // "University of Kentucky Medical Center" — primary entry now in one-by-one
+  // packet #88 below. Original verified:false stub replaced with the College
+  // of Medicine visiting students canonical URL.
 
   // ===== PROGRAMS THAT DO NOT OFFER OBSERVERSHIPS FOR IMGs =====
   // These should show clear warnings on the listing page
@@ -512,11 +510,9 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Rutgers NJMS visiting students page; 4-week electives at University Hospital Newark and East Orange VA. Multiple departments incl. EM.",
   },
-  "Robert Wood Johnson University Hospital / Rutgers RWJMS": {
-    url: "https://rwjms.rutgers.edu/education/md/visiting-students",
-    verified: true,
-    note: "Rutgers RWJMS visiting students; VSLO-based for LCME/COCA. $75 fee per elective. Family Medicine and OB/GYN may not be accepting for 2026-27.",
-  },
+  // "Robert Wood Johnson University Hospital / Rutgers RWJMS" — key did NOT
+  // match data.js program.name ("Robert Wood Johnson University Hospital").
+  // Primary entry now in one-by-one packet #83 below with EXACT data.js key.
   "Hospital of the University of Pennsylvania (HUP) / Penn Medicine": {
     url: "https://www.med.upenn.edu/student/visiting-clerkship-and-mentorship.html",
     verified: true,
@@ -807,11 +803,11 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     note: "Harlem is part of NYC Health + Hospitals; affiliated with Columbia VP&S since 1962. Visiting medical students apply via MOSAIC Visiting Scholars Program. EM rotations at both Metropolitan + Harlem via MetHarlemEM. Replaces /harlem/ generic page. One-by-one packet #20.",
   },
 
-  "Hartford Hospital": {
-    url: "https://hartfordhospital.org/health-professionals/education/residencies-fellowships",
-    verified: false,
-    note: "Hartford Hospital Residencies & Fellowships parent page. WARNING: No centralized M4 elective application — students contact specific department directly. Advanced Clinical Experiences (sub-I, EM, Critical Care) require department application; VSAS not used for those. Replaces hartfordhospital.org/ homepage. verified:false because access is department-by-department. One-by-one packet #22.",
-  },
+  // "Hartford Hospital" — primary entry now in one-by-one packet #84 below.
+  // Reverified 2026-05-17: Hartford is a UConn SOM teaching affiliate; M4
+  // visiting electives flow through UConn's central VSLO pathway. The prior
+  // department-by-department guidance still holds for Advanced Clinical
+  // Experiences (sub-I, EM, Critical Care).
 
   "Hennepin Healthcare — Minneapolis": {
     url: "https://www.hennepinhealthcare.org/medical-education-training/medical-student-rotations/",
@@ -1134,5 +1130,65 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.med.unc.edu/md/student-affairs/visiting-students/",
     verified: true,
     note: "UNC School of Medicine Visiting Student Program canonical page. US LCME M4 ('domestic students in their final year') via AAMC VSLO/VSAS. Affiliated sites across NC (Asheville, Chapel Hill, Charlotte, Greensboro, Raleigh, Wilmington). INTL via separate IVS pathway at med.unc.edu/oghe/visiting-international-students/ivs-application-requirements/ (Office of Global Health Education). 1 letter of recommendation + personal statement required. Contact visitingstudent@med.unc.edu (Lucas Ramsey). Quote: 'The University of North Carolina School of Medicine's Visiting Student Program offers domestic students in their final year of medical school the opportunity to participate in educational, engaging and challenging clinical elective experiences.' Replaces med.unc.edu/ homepage. One-by-one packet #80.",
+  },
+
+  "Mercy Hospital St. Louis": {
+    url: "https://www.mercy.net/healthcare-education/graduate/st-louis/rotations/",
+    verified: true,
+    note: "Mercy GME St. Louis Rotations page (no-em-dash data.js variant; companion to 'Mercy Hospital — St. Louis' em-dash entry at packet #44). M4 visiting rotations in Critical Care, Family Medicine, Internal Medicine, OB/GYN. Direct application packet (form + school letter + $1-3M malpractice + immunizations + COVID/flu + PPD + confidentiality form); submit 6 months before rotation. WARNING: 'We are no longer able to offer observerships or sponsor externships for international medical graduates/students.' Replaces mercy.net/ homepage. One-by-one packet #81.",
+  },
+
+  "University of Missouri Health Care": {
+    url: "https://medicine.missouri.edu/offices-programs/education/medical-education-curriculum/visiting-student-information",
+    verified: true,
+    note: "University of Missouri (Columbia) SOM Visiting Student Information canonical page. US LCME/COCA M4 only (must have completed M3 core clerkships); INTL explicitly NOT accepted. Application: VSLO. Background check + 7-panel drug screen + $1M/$3M malpractice + flu shot (Oct-Apr). No housing provided. No required core clerkships taken by visitors. Quote: 'We are only accepting visiting students from U.S. accredited LCME and COCA medical schools. Students must have completed the third-year core clerkships before their visiting rotation begins. We are not accepting international student applications.' Replaces medicine.missouri.edu/ homepage. One-by-one packet #82.",
+  },
+
+  "Robert Wood Johnson University Hospital": {
+    url: "https://rwjms.rutgers.edu/education/md/visiting-students",
+    verified: true,
+    note: "Rutgers Robert Wood Johnson Medical School Visiting Students canonical page. US LCME/COCA M4 only via AAMC VSLO; M3/preclinical NOT accepted; INTL + Canadian students NOT accepted via VSLO (alternative observership program may exist). $75 non-refundable fee per accepted elective. Max 16 weeks total. 2026-2027 applications open February 2026; ~35-day decision turnaround. No travel/housing/living expenses provided. Replaces rwjms.rutgers.edu/ homepage and prior suffix-mismatch key. Quote: 'For the academic year 2026–2027, all visiting rotations are coordinated through the Association of American Medical Colleges' (AAMC) Visiting Student Learning Opportunities (VSLO).' One-by-one packet #83.",
+  },
+
+  "Hartford Hospital": {
+    url: "https://medicine.uconn.edu/visiting-students/",
+    verified: true,
+    note: "Hartford Hospital is a UConn School of Medicine teaching affiliate; M4 visiting electives flow through UConn's central VSLO pathway (medicine.uconn.edu/visiting-students/). US LCME + AOA only; INTL explicitly NOT accepted. Applications open April–mid-July. Background check $75 if needed via UConn Public Safety. Advanced Clinical Experiences (sub-I, EM, Critical Care) require separate department application (NOT VSAS/VSLO) at the Hartford Hospital department directly. Contact visitingmed@uchc.edu. Reverify 2026-05-17 supersedes prior 'no centralized M4 application' packet #22 note — UConn IS the centralized application for non-advanced rotations. Quote: 'Students must apply through the Visiting Student Learning Opportunities (VSLO) software, to receive visiting student applications.' Replaces hartfordhospital.org/health-professionals/education/residencies-fellowships. One-by-one packet #84.",
+  },
+
+  "UT Health Memphis / Regional One Health": {
+    url: "https://uthsc.edu/medicine/visiting-students.php",
+    verified: true,
+    note: "UT Health Science Center Memphis College of Medicine Visiting Students canonical page (Regional One Health is UTHSC primary public hospital affiliate). Elective opportunities across Memphis, Knoxville, Chattanooga, Nashville/Murfreesboro, Jackson. US LCME M4 via VSLO; D.O. accepted (must be 'candidate for the M.D. or D.O. degree in good standing in an accredited medical school'). Max 8 weeks total experience across the system. Must have completed Family Medicine, Medicine, Neurology, Pediatrics, Surgery, Psychiatry, OB-Gyn core clerkships. Contact Karen Coleman visiting@uthsc.edu / 901.448.3843. Quote: 'U.S. LCME medical students, please complete a VSLO application for your preferred electives and dates.' Replaces uthsc.edu/graduate-medical-education/ (GME-only). One-by-one packet #85.",
+  },
+
+  "University of Virginia Health System": {
+    url: "https://med.virginia.edu/md-program/student-affairs/visiting-student-electives/",
+    verified: true,
+    note: "UVA School of Medicine Visiting Student Electives canonical page. LCME-accredited US schools ONLY — UVA does NOT accept osteopathic (COCA) or international medical students. AAMC VSLO application. Up to 4 weeks of electives across 21+ specialties. FREE tuition. Student must provide own malpractice insurance ('The malpractice insurance of the University of Virginia School of Medicine does not cover visiting students.'). 2026 rotation blocks: A 6/8-7/3, B 7/6-7/31, C 8/3-8/28, D 8/31-9/25, E 9/28-10/23. Quote: 'We only accept visiting students from LCME Accredited Medical Schools.' Replaces med.virginia.edu/ homepage. One-by-one packet #86.",
+  },
+
+  "VCU Health / MCV Hospitals": {
+    url: "https://medschool.vcu.edu/md/m4_electives/visiting_students/",
+    verified: true,
+    note: "VCU School of Medicine (Medical College of Virginia / VCU Health) Visiting Students canonical page. CLASSIFIED PROTECTED_BROWSER_REQUIRED: WebFetch returns HTTP 404 due to anti-bot/redirect protection but URL is live in browser per VCU Surgery alternate page confirmation. AAMC VSLO required for non-VCU M4 applicants; positions allocated AFTER VCU students. 2026-2027 catalog opens February 2026. Contact Visiting Student Coordinator Jessica.Dymon@vcuhealth.org or somregistrar@vcuhealth.org. Quote (from surgery.vcu.edu confirmation): 'If you are seeking an M4 elective and NOT a student at VCU SOM you must go through AAMC's VSLO Application Service (VSLO) to apply for an elective at VCU.' Replaces vcuhealth.org/ homepage. One-by-one packet #87.",
+  },
+
+  "University of Kentucky Medical Center": {
+    url: "https://medicine.uky.edu/sites/meded/visiting-students",
+    verified: true,
+    note: "University of Kentucky College of Medicine — Lexington Campus Visiting Students canonical page. US LCME/AOA M4 only via AAMC VSLO (M3+M4 accepted but M4 prioritized). Mandatory affiliation agreement between UK COM and home school (cancellation if not finalized by rotation date). $75 one-time placement fee. Quote: 'If you are enrolled as a fourth-year medical student at a school that is accredited by the United States Liaison Committee on Medical Education (LCME) or the American Osteopathic Association (AOA), we invite you to apply for an elective at the College of Medicine-Lexington Campus through VSLO.' Replaces med.uky.edu/graduate-medical-education (GME-only) and prior verified:false stub. One-by-one packet #88.",
+  },
+
+  "University of Nebraska Medical Center": {
+    url: "https://catalog.unmc.edu/medicine/visiting-students/",
+    verified: true,
+    note: "UNMC College of Medicine Visiting Students catalog canonical page. US LCME/COCA M4 only — INTL explicitly NOT accepted. Application: AAMC VSLO. 4-week rotations only (no 2-week options), one rotation per student. Senior/final year. Background check + USMLE Step 1 or COMLEX scores + immunizations required. Contact VSLO@unmc.edu. Quote: 'The University of Nebraska Medical Center College of Medicine (COM) does not accept applications from students attending: foreign medical schools, non-LCME accredited M.D. institutions, non-COCA accredited D.O. institutions.' Replaces unmc.edu/ homepage. One-by-one packet #89.",
+  },
+
+  "University of Utah Health": {
+    url: "https://medicine.utah.edu/students/visiting",
+    verified: true,
+    note: "University of Utah Spencer Fox Eccles School of Medicine (SFESOM) Visiting Students canonical page (covers BOTH data.js entries with this name: medicine.utah.edu/gme/ and healthcare.utah.edu/). CLASSIFIED PROTECTED_BROWSER_REQUIRED: WebFetch returns HTTP 403 (anti-bot block) but URL is live in browser per Google index. AAMC VSLO required. Must have completed 6 of CORE Clerkships (IM, Surgery, Peds, OB/GYN, Psych, FM; Neurology may be required). Application packet: transcript + Step 1 + letter of interest + background check + 5-panel drug test. Contact visitingstudents@hsc.utah.edu. Department Sponsored Visitors Program (medicine.utah.edu/global-health-education/department-sponsored-visitors-program) is separate INTL/global-health pathway. Replaces both data.js URLs. One-by-one packet #90.",
   },
 };
