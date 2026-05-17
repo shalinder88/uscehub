@@ -259,3 +259,34 @@ export function getDisplayCards(lane: "clinical" | "research"): DisplayCardShape
   const rows = lane === "clinical" ? getDisplayEligibleClinical() : getDisplayEligibleResearch();
   return rows.map(toDisplayCard);
 }
+
+/**
+ * URL-safe slug from a program name + state. Use this for the
+ * `/usce/verified-preview/browse/[slug]` detail route.
+ *
+ * Slugs are NOT guaranteed unique across data.js rows — same-name
+ * institutions (Wyckoff ×2, Hackensack ×2, etc.) collide. The detail
+ * route resolves by program name and shows the first matching row;
+ * the export keeps both for the list view counts.
+ */
+export function slugifyProgram(programName: string, state?: string): string {
+  const stripped = programName
+    .toLowerCase()
+    .replace(/[–—]/g, "-")           // em / en dash → hyphen
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 90);
+  const st = (state || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  return st ? `${stripped}-${st}` : stripped;
+}
+
+/** Return a slug → DisplayEligibleRow map for the active display rows. */
+export function getDisplaySlugIndex(): Map<string, DisplayEligibleRow> {
+  const idx = new Map<string, DisplayEligibleRow>();
+  const all = [...getDisplayEligibleClinical(), ...getDisplayEligibleResearch()];
+  for (const r of all) {
+    const slug = slugifyProgram(r.programName, r.state);
+    if (!idx.has(slug)) idx.set(slug, r); // first wins on duplicates
+  }
+  return idx;
+}
