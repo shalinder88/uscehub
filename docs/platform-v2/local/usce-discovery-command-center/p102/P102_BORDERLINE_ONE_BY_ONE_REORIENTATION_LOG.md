@@ -572,3 +572,57 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 
 (Compact-packet form — 1-by-1 verified, packet shape kept; full provenance in verified-links.ts notes.)
 
+# Batch 4 (packets 31-40) — 2026-05-17
+
+## Packet 31: Kings County Hospital Center
+- finalUrl: downstate.edu/education-training/student-services/registrar/visiting/index.html
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: SUNY Downstate VSLO covers Kings County (primary teaching site); 45-day deadline before start
+- countsAsTrueUSCE: TRUE
+
+## Packet 32: Lincoln Medical Center
+- finalUrl: nychealthandhospitals.org/mosaic/visiting-scholars-program/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: NYC H+H site; SGU + NYMC core rotation site; EM via lincolnemergencymedicine.com
+- countsAsTrueUSCE: TRUE
+
+## Packet 33+34: Loma Linda University Medical Center (two data.js entries, same URL)
+- finalUrl: medicine.llu.edu/academics/medical-student-education/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Loma Linda University School of Medicine welcomes elective applications from students in good standing in their senior year at LCME-accredited institutions"
+- countsAsTrueUSCE: TRUE (×2 since two data.js entries; classifier counts both)
+- visa: NOT accepting INTL students
+
+## Packet 35: LSU Health New Orleans / University Medical Center
+- finalUrl: medschool.lsuhsc.edu/student_affairs/electives.aspx
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: VSLO via US/Canada AAMC schools; max 2 rotations (8 weeks); no academic credit
+- countsAsTrueUSCE: TRUE
+
+## Packet 36: Massachusetts General Hospital
+- finalUrl: hms.harvard.edu/departments/office-registrar/visiting-students-program
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: HMS Visiting Clerkship Program (HMS-CEP); $2,000 stipend out-of-state; M3 with core / M4
+- countsAsTrueUSCE: TRUE
+- INTL: not accepted via this route; MGH International Observership separate (different entry)
+
+## Packet 37: Medical College of Wisconsin / Froedtert Hospital
+- finalUrl: mcw.edu/education/medical-school/prospective-students/visiting-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Applications are only accepted through the VSLO website"; 4-week electives; INTL NOT accepted
+- countsAsTrueUSCE: TRUE
+
+## Packet 38+39: Medical University of South Carolina (MUSC) (two data.js entries, same URL)
+- finalUrl: medicine.musc.edu/education/medical-students/curriculum/clinical-curriculum/visiting-medical-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "MUSC offers a wide number of electives and externship experiences to medical students who are in the final year"
+- countsAsTrueUSCE: TRUE (×2)
+- INTL: NOT eligible for VSLO
+
+## Packet 40: MedStar Georgetown University Hospital
+- finalUrl: meded.georgetown.edu/medicaleducation/visiting-students-program/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Visiting electives are offered to 4th-year medical students enrolled in U.S. LCME-accredited and osteopathic institutions"
+- countsAsTrueUSCE: TRUE
+- INTL: separate contact (Dr. Irma Frank)
+

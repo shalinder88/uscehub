@@ -48,11 +48,8 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Visiting students program through Office of Student Affairs. The dom.pitt.edu/education/eop/ URL returned 404 on 2026-05-16; the Office of Student Affairs visiting-students page is the current canonical entry point. For INTL students see researchprograms.medschool.pitt.edu/international-visiting-student-program.",
   },
-  "Massachusetts General Hospital": {
-    url: "https://www.massgeneral.org/education",
-    verified: false,
-    note: "International observership page no longer accessible. Redirects to generic education page. Contact MGH International Patient Center directly.",
-  },
+  // "Massachusetts General Hospital" — primary entry now in one-by-one
+  // packet #36 below (HMS Visiting Clerkship Program).
   "UCLA Medical Center": {
     url: "https://www.uclahealth.org/international-services/medical-education-training/physicians/physician-observerships",
     verified: true,
@@ -889,5 +886,53 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     url: "https://www.jpshealthnet.org/academic-affairs/undergraduate-medical-education",
     verified: true,
     note: "JPS Health Network Undergraduate Medical Education page. VSLO-based for M4 visiting clerkships. Affiliated with UT Southwestern, Baylor, TCOM, TCU/UNT HSC. Contact: Robert Sanchez, Clinical Experience Coordinator. Replaces jpshealthnet.org/ homepage. One-by-one packet #30.",
+  },
+
+  "Kings County Hospital Center": {
+    url: "https://www.downstate.edu/education-training/student-services/registrar/visiting/index.html",
+    verified: true,
+    note: "Kings County Hospital is the primary SUNY Downstate teaching site. Visiting students apply via SUNY Downstate VSLO. EM-specific page at em-students.clinicalmonster.com/visiting-students/. Replaces nychealthandhospitals.org/kingscounty/ generic facility page. One-by-one packet #31.",
+  },
+
+  "Lincoln Medical Center": {
+    url: "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+    verified: true,
+    note: "Lincoln Medical Center is part of NYC H+H; affiliated with St George's + NY Medical College for core rotations. Visiting medical students apply via MOSAIC. EM rotations also available via lincolnemergencymedicine.com/medical-students. Replaces /lincoln/ generic page. One-by-one packet #32.",
+  },
+
+  "Loma Linda University Medical Center": {
+    url: "https://medicine.llu.edu/academics/medical-student-education/visiting-students",
+    verified: true,
+    note: "Loma Linda University SOM Visiting Students. VSLO-based for LCME/COCA senior students. $275 non-refundable processing fee. INTL students NOT accepted. 2 data.js entries with this name; both share this URL. Replaces lluh.org/ generic page. One-by-one packet #33+34.",
+  },
+
+  "LSU Health New Orleans / University Medical Center": {
+    url: "https://www.medschool.lsuhsc.edu/student_affairs/electives.aspx",
+    verified: true,
+    note: "LSU Health New Orleans SOM Student Affairs Visiting Student Information. VSLO-based, US/Canada AAMC schools only. Max 2 rotations (8 weeks). No academic credit granted by LSU. Advanced EM at University Medical Center via nolaem.com. Replaces medschool.lsuhsc.edu/ homepage. One-by-one packet #35.",
+  },
+
+  "Massachusetts General Hospital": {
+    url: "https://hms.harvard.edu/departments/office-registrar/visiting-students-program",
+    verified: true,
+    note: "MGH visiting medical students apply through Harvard Medical School Visiting Clerkship Program (HMS-CEP). US/Canada citizens or permanent residents, M4 (or M3 with completed core clerkships). $2,000 stipend for out-of-state participants. International graduates ineligible for MGH's separate International Observership Program. Replaces /education/international-observership which was IMG-physician-only (kept as separate entry). One-by-one packet #36.",
+  },
+
+  "Medical College of Wisconsin / Froedtert Hospital": {
+    url: "https://www.mcw.edu/education/medical-school/prospective-students/visiting-students",
+    verified: true,
+    note: "MCW Visiting Senior Medical Students. 4-week electives via VSLO. LCME + COMLEX/USMLE Step 1 required. INTL students NOT accepted. No processing fee. Sites include Froedtert, Zablocki VA, Children's Wisconsin. Replaces mcw.edu/education/graduate-medical-education (GME-only). One-by-one packet #37.",
+  },
+
+  "Medical University of South Carolina (MUSC)": {
+    url: "https://medicine.musc.edu/education/medical-students/curriculum/clinical-curriculum/visiting-medical-students",
+    verified: true,
+    note: "MUSC Visiting Medical Students. VSLO-based, LCME/COCA US students only. Course offerings available Feb 1; apps open April 1. INTL students NOT eligible. AHEAD Visiting Student Program for URiM students separately. 2 data.js entries with this name; both share this URL. Replaces web.musc.edu/ homepage. One-by-one packet #38+39.",
+  },
+
+  "MedStar Georgetown University Hospital": {
+    url: "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
+    verified: true,
+    note: "Georgetown SOM Visiting Students Program (2026-2027). VSLO-based for LCME/COCA M4. VSLO opens March 30. INTL contact Dr. Irma Frank (franki@georgetown.edu). MedStar Health Diversity scholarship available. Replaces medstarhealth.org/education generic. One-by-one packet #40.",
   },
 };
