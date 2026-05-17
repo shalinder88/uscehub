@@ -519,3 +519,56 @@ Update to `prisma/verified-links.ts` uses **the exact `program.name` from data.j
 - **stopCondition:** MOSAIC pathway confirmed; Harlem participates.
 - **nextAction:** Validate + commit batch 2; then move to packet 21.
 
+# Batch 3 (packets 21-30) — 2026-05-17
+
+(Packet 21 = CommonSpirit, already final-state BORDERLINE in packet 11)
+
+## Packet 22: Hartford Hospital
+- finalUrl: hartfordhospital.org/health-professionals/education/residencies-fellowships
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false — department-by-department access; no centralized M4 elective application; sub-I requires direct department contact, not VSAS)
+- countsAsTrueUSCE: false (kept BORDERLINE)
+
+## Packet 23: Hennepin Healthcare — Minneapolis
+- finalUrl: hennepinhealthcare.org/medical-education-training/medical-student-rotations/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK (Cloudflare-protected to fetchers; works in browser)
+- evidence: Direct M4 rotations page; 2-4 weeks (up to 12)
+- countsAsTrueUSCE: TRUE
+
+## Packet 24: Indiana University Health
+- finalUrl: medicine.iu.edu/md/admissions/guest-students
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Medical students enrolled at a medical school in the United States can apply for the Guest Medical Student elective at IU School of Medicine."
+- countsAsTrueUSCE: TRUE
+
+## Packet 25: Jacobi Medical Center
+- finalUrl: montefioreeinstein.org/patient-care/services/emergency-medicine/education/medical-student-rotations
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: Jacobi-Montefiore-Einstein EM 4-week rotation; VSLO
+- countsAsTrueUSCE: TRUE
+
+## Packet 26+27: Jamaica Hospital Medical Center (two data.js entries, same URL)
+- finalUrl: jamaicahospital.org/graduate-medical-education/
+- classification: BORDERLINE_KEEP_REVERIFY (verified:false — GME landing; no public observership/visiting-student program documented)
+- evidence: prior search confirmed "Observership/externship positions are not offered"; only formal residency programs
+- countsAsTrueUSCE: false (kept BORDERLINE — could be reclassified NEGATIVE_INFO in a future pass)
+
+## Packet 28: Jersey City Medical Center
+- finalUrl: rwjbh.org/for-health-care-professionals/medical-education/jersey-city-medical-center/clinical-rotations/
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Jersey City Medical Center is currently accepting applications for medical student rotations through the AAMC Visiting Student Learning Opportunities program"
+- countsAsTrueUSCE: TRUE
+
+## Packet 29: Jersey Shore University Medical Center
+- finalUrl: hackensackmeridianhealth.org/en/healthcare-professionals/jsumc
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: JSUMC hosts Hackensack Meridian SOM + St George's University students; Residency/Fellowship landing
+- countsAsTrueUSCE: TRUE
+
+## Packet 30: JPS Health Network
+- finalUrl: jpshealthnet.org/academic-affairs/undergraduate-medical-education
+- classification: MOVED_REORIENTED_TO_TRUE_USCE_LINK
+- evidence: "Fourth year medical students may apply online using VSLO for elective clinical clerkships at JPS Health Network."
+- countsAsTrueUSCE: TRUE
+
+(Compact-packet form — 1-by-1 verified, packet shape kept; full provenance in verified-links.ts notes.)
+

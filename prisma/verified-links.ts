@@ -842,4 +842,52 @@ export const VERIFIED_LINKS: Record<string, { url: string; verified: boolean; no
     verified: true,
     note: "Harlem is part of NYC Health + Hospitals; affiliated with Columbia VP&S since 1962. Visiting medical students apply via MOSAIC Visiting Scholars Program. EM rotations at both Metropolitan + Harlem via MetHarlemEM. Replaces /harlem/ generic page. One-by-one packet #20.",
   },
+
+  "Hartford Hospital": {
+    url: "https://hartfordhospital.org/health-professionals/education/residencies-fellowships",
+    verified: false,
+    note: "Hartford Hospital Residencies & Fellowships parent page. WARNING: No centralized M4 elective application — students contact specific department directly. Advanced Clinical Experiences (sub-I, EM, Critical Care) require department application; VSAS not used for those. Replaces hartfordhospital.org/ homepage. verified:false because access is department-by-department. One-by-one packet #22.",
+  },
+
+  "Hennepin Healthcare — Minneapolis": {
+    url: "https://www.hennepinhealthcare.org/medical-education-training/medical-student-rotations/",
+    verified: true,
+    note: "Hennepin Healthcare Medical Student Rotations canonical page. 2-4 weeks (up to 12). Department of Medicine NOT offering observerships/externships to international graduates or students currently. Cloudflare-protected to bot fetchers; works in browser. Replaces hennepinhealthcare.org/ homepage. One-by-one packet #23.",
+  },
+
+  "Indiana University Health": {
+    url: "https://medicine.iu.edu/md/admissions/guest-students",
+    verified: true,
+    note: "IU SOM Guest Medical Students. VSLO-based for US LCME students. Pathway to Indiana Visiting Elective offers $2k stipend for out-of-state. INTL only with pre-existing IU agreement. Pathology Global Outreach Observership accepts INTL grads for 4wk rotation separately. Replaces medicine.iu.edu/gme. One-by-one packet #24.",
+  },
+
+  "Jacobi Medical Center": {
+    url: "https://montefioreeinstein.org/patient-care/services/emergency-medicine/education/medical-student-rotations",
+    verified: true,
+    note: "Jacobi is part of NYC H+H; affiliated with Albert Einstein/Montefiore. Visiting M4 elective in Emergency Medicine across Jacobi + Moses + Weiler campuses. VSLO-based. Replaces /jacobi/graduate-medical-education/ GME landing. One-by-one packet #25.",
+  },
+
+  "Jamaica Hospital Medical Center": {
+    url: "https://jamaicahospital.org/graduate-medical-education/",
+    verified: false,
+    note: "Jamaica Hospital GME landing. The institution operates a Department of Medical Education for graduate trainees but has no public visiting-medical-student or observership program documented. WARNING: prior search confirmed observership/externship positions are NOT offered at Jamaica Hospital. Two data.js entries with this name; both share this URL. One-by-one packet #26+27.",
+  },
+
+  "Jersey City Medical Center": {
+    url: "https://www.rwjbh.org/for-health-care-professionals/medical-education/jersey-city-medical-center/clinical-rotations/",
+    verified: true,
+    note: "Jersey City Medical Center (RWJBH) Clinical Rotations page. VSLO for M4 visiting rotations; non-VSLO contact bertha.orochena@rwjbh.org. IM Residency does NOT offer audition rotations. Replaces /jersey-city-medical-center/ generic facility page. One-by-one packet #28.",
+  },
+
+  "Jersey Shore University Medical Center": {
+    url: "https://www.hackensackmeridianhealth.org/en/healthcare-professionals/jsumc",
+    verified: true,
+    note: "Jersey Shore UMC (Hackensack Meridian Health) Residency & Fellowship Programs landing. Hosts Hackensack Meridian SOM + St George's University students. Replaces hackensackmeridianhealth.org/ generic homepage. One-by-one packet #29.",
+  },
+
+  "JPS Health Network": {
+    url: "https://www.jpshealthnet.org/academic-affairs/undergraduate-medical-education",
+    verified: true,
+    note: "JPS Health Network Undergraduate Medical Education page. VSLO-based for M4 visiting clerkships. Affiliated with UT Southwestern, Baylor, TCOM, TCU/UNT HSC. Contact: Robert Sanchez, Clinical Experience Coordinator. Replaces jpshealthnet.org/ homepage. One-by-one packet #30.",
+  },
 };
