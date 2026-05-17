@@ -1,0 +1,44 @@
+{
+  "seedId": "live_141",
+  "institutionId": "inst_live_rush_university_medical_center",
+  "institutionName": "Rush University Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://www.rushu.rush.edu/",
+  "sourceDomain": "www.rushu.rush.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Neurology, Orthopedics, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_5f16db8eae"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_141/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_141/cleaned.txt",
+  "sourceHash": "06806c99f78092f4ef4af54349a162c1ce06a5c130687ed169437252dabeb8c5",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:34:22.319Z"
+}

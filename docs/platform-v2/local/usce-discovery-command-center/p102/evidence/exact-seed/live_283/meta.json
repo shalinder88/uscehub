@@ -1,0 +1,44 @@
+{
+  "seedId": "live_283",
+  "institutionId": "inst_live_university_of_texas_medical_branch_utmb_",
+  "institutionName": "University of Texas Medical Branch (UTMB)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Galveston",
+  "state": "TX",
+  "sourceUrl": "https://www.utmb.edu/",
+  "sourceDomain": "www.utmb.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Family Medicine, Infectious Dise",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_89313554ff"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_283/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_283/cleaned.txt",
+  "sourceHash": "80a833379102eefaf407eb3ca464f5d803810a5ffb92f59f9281b43e7eddec3d",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:39:11.599Z"
+}

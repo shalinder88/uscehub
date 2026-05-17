@@ -1,0 +1,44 @@
+{
+  "seedId": "live_228",
+  "institutionId": "inst_live_ucsf_postdoctoral_research",
+  "institutionName": "UCSF — Postdoctoral Research",
+  "parentSystem": "",
+  "campus": "",
+  "city": "San Francisco",
+  "state": "CA",
+  "sourceUrl": "https://postdocs.ucsf.edu/",
+  "sourceDomain": "postdocs.ucsf.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Clinical Research, Global Health, Public Health, Outcomes Re",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-5 years | visa: J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_172864a10a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_228/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_228/cleaned.txt",
+  "sourceHash": "70bcf11c9eaf103bd2e13dd8f3453d4501bb548e7c4da02ebc0a23d4d4ce8840",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:37:20.248Z"
+}

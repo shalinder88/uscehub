@@ -1,0 +1,46 @@
+{
+  "seedId": "live_100",
+  "institutionId": "inst_live_mount_sinai_hospital",
+  "institutionName": "Mount Sinai Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.mountsinai.org/about/international/programs",
+  "sourceDomain": "www.mountsinai.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Department-specific — Surgery, Transplant, other departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Varies by department | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_68a9da1f63"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_100/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_100/cleaned.txt",
+  "sourceHash": "824d695f5ba71143a9caf50af7610fdb40a81fc399607a0212ed1e36a61e828e",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "GENERIC_PAGE_HOLD",
+    "reason": "generic landing page URL (generic /programs URL)",
+    "signals": [
+      "generic /programs URL"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:33:01.151Z"
+}

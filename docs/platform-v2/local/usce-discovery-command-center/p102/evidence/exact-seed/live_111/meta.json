@@ -1,0 +1,44 @@
+{
+  "seedId": "live_111",
+  "institutionId": "inst_live_lincoln_medical_center",
+  "institutionName": "Lincoln Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Bronx",
+  "state": "NY",
+  "sourceUrl": "https://www.nychealthandhospitals.org/lincoln/",
+  "sourceDomain": "www.nychealthandhospitals.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Surgery, Psychiatry, ",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_235700eb40"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_111/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_111/cleaned.txt",
+  "sourceHash": "24dffd8dc16ab400dfbd4205d6f0898b0b3006431c9b5ee98d34564ec47478ae",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:20.059Z"
+}

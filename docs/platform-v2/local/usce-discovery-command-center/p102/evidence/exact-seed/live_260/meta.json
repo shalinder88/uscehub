@@ -1,0 +1,44 @@
+{
+  "seedId": "live_260",
+  "institutionId": "inst_live_georgetown_ruesch_center_international_gi_observership",
+  "institutionName": "Georgetown / Ruesch Center — International GI Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://ruesch.georgetown.edu/internationalobservership/",
+  "sourceDomain": "ruesch.georgetown.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Gastroenterology, GI Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_52d2c0262f"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_260/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_260/cleaned.txt",
+  "sourceHash": "3856af0d5d3d61194bf7b9669dcb0d33524ba9dde6400d943bbfa8e0b8f37150",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T02:38:24.339Z"
+}

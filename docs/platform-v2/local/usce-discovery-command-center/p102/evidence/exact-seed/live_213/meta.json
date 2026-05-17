@@ -1,0 +1,44 @@
+{
+  "seedId": "live_213",
+  "institutionId": "inst_live_mayo_clinic_research_fellowship",
+  "institutionName": "Mayo Clinic — Research Fellowship",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Rochester",
+  "state": "MN",
+  "sourceUrl": "https://college.mayo.edu/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Biomedical Research, Clinical Research, Outcomes Research, A",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-3 years | visa: J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_459a352d08"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_213/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_213/cleaned.txt",
+  "sourceHash": "289874230b8870207d2ad298c3e1fd1f06ae308fc39b111162f4950c605439c8",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:51.335Z"
+}

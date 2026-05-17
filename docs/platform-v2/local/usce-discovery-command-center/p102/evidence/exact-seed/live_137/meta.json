@@ -1,0 +1,44 @@
+{
+  "seedId": "live_137",
+  "institutionId": "inst_live_tufts_medical_center",
+  "institutionName": "Tufts Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://www.tuftsmedicalcenter.org/graduate-medical-education",
+  "sourceDomain": "www.tuftsmedicalcenter.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Cardiology, Pulmonology, Nephrology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_6ea42410c9"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_137/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_137/cleaned.txt",
+  "sourceHash": "0a94d9276c0d827d5dc9c94af4a2efae72fd25a2481dcd3b319aa76288bf0adb",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:34:14.873Z"
+}

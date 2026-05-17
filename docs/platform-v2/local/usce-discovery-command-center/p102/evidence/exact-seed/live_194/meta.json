@@ -1,0 +1,44 @@
+{
+  "seedId": "live_194",
+  "institutionId": "inst_live_oregon_health_science_university_ohsu_",
+  "institutionName": "Oregon Health & Science University (OHSU)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Portland",
+  "state": "OR",
+  "sourceUrl": "https://www.ohsu.edu/school-of-medicine/graduate-medical-education",
+  "sourceDomain": "www.ohsu.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Neurology, Ophthalmology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_c794a69fc2"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_194/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_194/cleaned.txt",
+  "sourceHash": "d6d71832debd22e843d115287a0bdaf39f51f5f7eedf1c86eb12045105fcef08",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:36:09.178Z"
+}

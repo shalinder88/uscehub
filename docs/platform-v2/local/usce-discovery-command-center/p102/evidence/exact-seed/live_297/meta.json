@@ -1,0 +1,44 @@
+{
+  "seedId": "live_297",
+  "institutionId": "inst_live_conemaugh_memorial_medical_center",
+  "institutionName": "Conemaugh Memorial Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Johnstown",
+  "state": "PA",
+  "sourceUrl": "https://www.conemaugh.org/",
+  "sourceDomain": "www.conemaugh.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_ce6800f45d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_297/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_297/cleaned.txt",
+  "sourceHash": "45727039ad6666590de6a25b97c707992602d5a60cc2c7ff746aa001e2c3cb71",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:39:43.979Z"
+}

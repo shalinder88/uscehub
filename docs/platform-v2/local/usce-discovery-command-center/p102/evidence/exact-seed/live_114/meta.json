@@ -1,0 +1,44 @@
+{
+  "seedId": "live_114",
+  "institutionId": "inst_live_coney_island_hospital",
+  "institutionName": "Coney Island Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Brooklyn",
+  "state": "NY",
+  "sourceUrl": "https://www.nychealthandhospitals.org/coneyisland/",
+  "sourceDomain": "www.nychealthandhospitals.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pediatrics, Family Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_c9f3ac3cb1"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_114/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_114/cleaned.txt",
+  "sourceHash": "01d5082c396fc70204b073bd8510aae7f2b4b94335e6cce79b9a9f92440d1f60",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:24.988Z"
+}

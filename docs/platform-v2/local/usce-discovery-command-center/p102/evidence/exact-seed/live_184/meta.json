@@ -1,0 +1,44 @@
+{
+  "seedId": "live_184",
+  "institutionId": "inst_live_robert_wood_johnson_university_hospital",
+  "institutionName": "Robert Wood Johnson University Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New Brunswick",
+  "state": "NJ",
+  "sourceUrl": "https://rwjms.rutgers.edu/",
+  "sourceDomain": "rwjms.rutgers.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery, Pediatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-8 weeks | visa: J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_fbf8503997"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_184/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_184/cleaned.txt",
+  "sourceHash": "44b240333c20618811e2996a7bc598704ed527a41f11c48bd463cda9e517458d",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:35:47.940Z"
+}

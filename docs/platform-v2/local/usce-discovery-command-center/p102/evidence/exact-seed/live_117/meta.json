@@ -1,0 +1,44 @@
+{
+  "seedId": "live_117",
+  "institutionId": "inst_live_jamaica_hospital_medical_center",
+  "institutionName": "Jamaica Hospital Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Queens",
+  "state": "NY",
+  "sourceUrl": "https://jamaicahospital.org/graduate-medical-education/",
+  "sourceDomain": "jamaicahospital.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Surgery, Psychiatry",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_fa06f9c87b"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_117/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_117/cleaned.txt",
+  "sourceHash": "75c610b16c1636129006086d1043dca3cd50bdb641f86ebe7ed23c8bfa22e090",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:33:32.774Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_205",
+  "institutionId": "inst_live_university_of_iowa_hospitals_clinics",
+  "institutionName": "University of Iowa Hospitals & Clinics",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Iowa City",
+  "state": "IA",
+  "sourceUrl": "https://medicine.uiowa.edu/",
+  "sourceDomain": "medicine.uiowa.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Ophthalmology, Otolaryngology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_d568fe42f9"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_205/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_205/cleaned.txt",
+  "sourceHash": "d55f21988c1c9408d380068dc4f0c79bec8d73a2a02b11d2d9d4594066d9d413",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:31.705Z"
+}

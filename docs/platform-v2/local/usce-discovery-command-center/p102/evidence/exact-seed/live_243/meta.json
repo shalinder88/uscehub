@@ -1,0 +1,46 @@
+{
+  "seedId": "live_243",
+  "institutionId": "inst_live_drexel_university_international_observership",
+  "institutionName": "Drexel University — International Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Philadelphia",
+  "state": "PA",
+  "sourceUrl": "https://drexel.edu/medicine/academics/continuing-education/physician-refresher-re-entry-program/for-prospective-students/international-students-observerships/",
+  "sourceDomain": "drexel.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_39ce902b2b"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_243/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_243/cleaned.txt",
+  "sourceHash": "25cef6b57140e9c551e0933d6dbc2b56980d7203c225584105d584e877eb9988",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: international student URL segment",
+    "signals": [
+      "international student URL segment"
+    ]
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T02:37:48.852Z"
+}

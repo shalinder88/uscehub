@@ -1,0 +1,44 @@
+{
+  "seedId": "live_256",
+  "institutionId": "inst_live_uthealth_houston_observer_program",
+  "institutionName": "UTHealth Houston — Observer Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://med.uth.edu/gme/trainee-resources/visiting-trainees/observers/",
+  "sourceDomain": "med.uth.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Up to 2 months per department | visa: B1/B2 | cost: $100 US / $775 foreign nationals",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f069db0f9c"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_256/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_256/cleaned.txt",
+  "sourceHash": "72c4d9ecedee38640bc8b9e3243d3a6aa778c4f5d3d0d37b147c03f1f7aa908e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T02:38:15.803Z"
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "live_155",
+  "institutionId": "inst_live_houston_methodist_hospital",
+  "institutionName": "Houston Methodist Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://www.houstonmethodist.org/for-health-professionals/global-health-care-services/global-health-care-education/observerships/",
+  "sourceDomain": "www.houstonmethodist.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Cardiovascular Surgery, Transplant, Neurology, Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): 2-4 weeks. Must be initiated by a Houston Methodist physician. Certificate of completion. No direct ",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2 | cost: Contact program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_5b14e97de0"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_155/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_155/cleaned.txt",
+  "sourceHash": "27ec1b2cf2f7ff259fd104d4501c2e7ee3cfd0008b3435ed6577c044ed6353c4",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:34:49.295Z"
+}

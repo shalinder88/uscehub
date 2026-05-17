@@ -1,0 +1,44 @@
+{
+  "seedId": "live_122",
+  "institutionId": "inst_live_northwell_health_system",
+  "institutionName": "Northwell Health System",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Multiple locations",
+  "state": "NY",
+  "sourceUrl": "https://international.northwell.edu/consulting-advisory-services",
+  "sourceDomain": "international.northwell.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Cardiology, Neurology, Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_d5baec2c14"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_122/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_122/cleaned.txt",
+  "sourceHash": "48f65a82735b627a03a5434515988834136f48966180322f202a7441e05ec074",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:42.219Z"
+}

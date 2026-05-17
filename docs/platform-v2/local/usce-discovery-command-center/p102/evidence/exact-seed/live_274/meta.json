@@ -1,0 +1,44 @@
+{
+  "seedId": "live_274",
+  "institutionId": "inst_live_crozer_chester_medical_center",
+  "institutionName": "Crozer-Chester Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Upland",
+  "state": "PA",
+  "sourceUrl": "https://www.crozerhealth.org/",
+  "sourceDomain": "www.crozerhealth.org",
+  "expectedAudience": "IMG_GRADUATE_EXTERNSHIP",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Emergency Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-8 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_ad82dc6f71"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_274/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_274/cleaned.txt",
+  "sourceHash": "1f1be7c879f7931a049b0b3e16d108965e6b631f11fc0128c278909d19652c89",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_EXTERNSHIP",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG externship; weak evidence"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:38:54.011Z"
+}

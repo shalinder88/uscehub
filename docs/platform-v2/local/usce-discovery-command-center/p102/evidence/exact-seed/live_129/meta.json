@@ -1,0 +1,46 @@
+{
+  "seedId": "live_129",
+  "institutionId": "inst_live_usc_keck_medical_center",
+  "institutionName": "USC Keck Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://sites.usc.edu/healthcare-edu/observership/",
+  "sourceDomain": "sites.usc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Oncology, Urology, Ophthalmology",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): International Physician Observership. Requires foreign medical license and employment by foreign hea",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2 | cost: $300 application fee + tuition based on resources",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_0caf75b7e6"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_129/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_129/cleaned.txt",
+  "sourceHash": "e4e3a3e4c86ad41aa6d4986bfc218b694c5646a2fe41c566cce92adbeef10ebd",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T02:33:56.602Z"
+}

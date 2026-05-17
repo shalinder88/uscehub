@@ -1,0 +1,44 @@
+{
+  "seedId": "live_109",
+  "institutionId": "inst_live_jacobi_medical_center",
+  "institutionName": "Jacobi Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Bronx",
+  "state": "NY",
+  "sourceUrl": "https://www.nychealthandhospitals.org/jacobi/graduate-medical-education/",
+  "sourceDomain": "www.nychealthandhospitals.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Surgery, Pediatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_f3c3744937"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_109/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_109/cleaned.txt",
+  "sourceHash": "0bd602d4e0fd8a57fe1d923154ff113e9cea72ddbad3bd5a628557a7f4c25e8f",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:16.807Z"
+}

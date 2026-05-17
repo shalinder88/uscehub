@@ -1,0 +1,44 @@
+{
+  "seedId": "live_188",
+  "institutionId": "inst_live_yale_new_haven_hospital",
+  "institutionName": "Yale-New Haven Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New Haven",
+  "state": "CT",
+  "sourceUrl": "https://medicine.yale.edu/",
+  "sourceDomain": "medicine.yale.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Oncology, Cardiology, Psychiatry",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_4d256e9b4e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_188/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_188/cleaned.txt",
+  "sourceHash": "dc486d17907aa6e39f0baafc48ca8d57e5a2f0becd386a2b34ef318cf5c89802",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:35:56.314Z"
+}

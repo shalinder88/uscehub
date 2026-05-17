@@ -1,0 +1,44 @@
+{
+  "seedId": "live_156",
+  "institutionId": "inst_live_baylor_college_of_medicine",
+  "institutionName": "Baylor College of Medicine",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://www.bcm.edu/",
+  "sourceDomain": "www.bcm.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pediatrics, Neurology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_448eb9bc01"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_156/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_156/cleaned.txt",
+  "sourceHash": "5e211122269b4eda9d600eb01bb02744829435e136d11bea5d81987c4145de4f",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:34:51.243Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_175",
+  "institutionId": "inst_live_grady_memorial_hospital",
+  "institutionName": "Grady Memorial Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Atlanta",
+  "state": "GA",
+  "sourceUrl": "https://www.gradyhealth.org/",
+  "sourceDomain": "www.gradyhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Surgery, Trauma",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 4-8 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_c6c29d6dc5"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_175/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_175/cleaned.txt",
+  "sourceHash": "63d871f38b45316628c7f2cda22cad6fcfdbc4b9e474a570f811350fe934dd32",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:35:30.201Z"
+}

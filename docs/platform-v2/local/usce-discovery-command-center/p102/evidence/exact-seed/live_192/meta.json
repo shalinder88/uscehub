@@ -1,0 +1,44 @@
+{
+  "seedId": "live_192",
+  "institutionId": "inst_live_university_of_colorado_hospital",
+  "institutionName": "University of Colorado Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Aurora",
+  "state": "CO",
+  "sourceUrl": "https://medschool.cuanschutz.edu/pediatrics/education/international-trainee-observership-program",
+  "sourceDomain": "medschool.cuanschutz.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pulmonology, Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): UCHealth 30-day observational experience + Pediatrics International Trainee Observership. No observe",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2 | cost: $100 registration fee (Pediatrics)",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_66faa6e042"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_192/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_192/cleaned.txt",
+  "sourceHash": "37bd6b83c71270eee42f16619d25a690a066c180bca5303b1139749b621233f1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T02:36:05.605Z"
+}

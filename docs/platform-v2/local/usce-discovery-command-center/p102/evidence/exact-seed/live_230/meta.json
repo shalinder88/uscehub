@@ -1,0 +1,44 @@
+{
+  "seedId": "live_230",
+  "institutionId": "inst_live_yale_school_of_medicine_postdoctoral_research",
+  "institutionName": "Yale School of Medicine — Postdoctoral Research",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New Haven",
+  "state": "CT",
+  "sourceUrl": "https://postdocs.yale.edu/",
+  "sourceDomain": "postdocs.yale.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Clinical Research, Oncology, Infectious Disease, Outcomes Re",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-5 years | visa: J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_0ed192f657"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_230/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_230/cleaned.txt",
+  "sourceHash": "24103241a7b1d8d5f3bea8c5f3432a81640d6f335cdc6a1905a7e29bf0624f8b",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:37:23.977Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_200",
+  "institutionId": "inst_live_ut_health_memphis_regional_one_health",
+  "institutionName": "UT Health Memphis / Regional One Health",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Memphis",
+  "state": "TN",
+  "sourceUrl": "https://uthsc.edu/graduate-medical-education/",
+  "sourceDomain": "uthsc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Trauma, Emergency Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_7d1e710eb0"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_200/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_200/cleaned.txt",
+  "sourceHash": "f2a4fa1515f0997640790fbb1e033d8a7d033092d794e7b257fce4f6f75b5fe6",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:22.714Z"
+}

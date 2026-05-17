@@ -1,0 +1,44 @@
+{
+  "seedId": "live_253",
+  "institutionId": "inst_live_cincinnati_children_s_hospital_international_visitor_program",
+  "institutionName": "Cincinnati Children's Hospital — International Visitor Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Cincinnati",
+  "state": "OH",
+  "sourceUrl": "https://www.cincinnatichildrens.org/professional/resources/international-visitor-program",
+  "sourceDomain": "www.cincinnatichildrens.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Pediatrics (all subspecialties)",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 1 week to 3 months | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_79e4fc6b51"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_253/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_253/cleaned.txt",
+  "sourceHash": "00dc1185a4849042f50ed8d12aeb3e407da4b5667e4ed64c08fd2e949e62b958",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T02:38:09.801Z"
+}

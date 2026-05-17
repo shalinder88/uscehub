@@ -1,0 +1,44 @@
+{
+  "seedId": "live_152",
+  "institutionId": "inst_live_george_washington_university_hospital",
+  "institutionName": "George Washington University Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://imp.smhs.gwu.edu/observer-training-program-not-accepting-applications",
+  "sourceDomain": "imp.smhs.gwu.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Emergency Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_ea49d075a1"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_152/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_152/cleaned.txt",
+  "sourceHash": "42853effadb0430111f07710f086f31dc7dffe6046c622106a74eb5744e0fd5f",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T02:34:43.726Z"
+}

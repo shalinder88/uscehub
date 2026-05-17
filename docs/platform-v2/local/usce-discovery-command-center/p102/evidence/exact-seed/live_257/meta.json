@@ -1,0 +1,46 @@
+{
+  "seedId": "live_257",
+  "institutionId": "inst_live_sams_clinical_observership_nonprofit_",
+  "institutionName": "SAMS — Clinical Observership (Nonprofit)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Multiple States",
+  "state": "MULTI",
+  "sourceUrl": "https://society.sams-usa.net/observership-program/",
+  "sourceDomain": "society.sams-usa.net",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple specialties",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): Nonprofit — free or minimal cost. Multiple states.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-2 months | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_2737c0c324"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_257/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_257/cleaned.txt",
+  "sourceHash": "2cba6397f61557181f6358b7fc19d43082d2a04fff58c7a1ce695d0d5e3aea82",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T02:38:18.207Z"
+}

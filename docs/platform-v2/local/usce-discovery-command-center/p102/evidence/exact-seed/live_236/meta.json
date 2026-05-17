@@ -1,0 +1,44 @@
+{
+  "seedId": "live_236",
+  "institutionId": "inst_live_children_s_hospital_of_philadelphia_chop_",
+  "institutionName": "Children's Hospital of Philadelphia (CHOP)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Philadelphia",
+  "state": "PA",
+  "sourceUrl": "https://www.chop.edu/services/international-observership-program",
+  "sourceDomain": "www.chop.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Pediatrics (all subspecialties)",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-8 weeks | visa: B1/B2 | cost: $750 admin fee + background screening",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_fefb584db2"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_236/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_236/cleaned.txt",
+  "sourceHash": "696b56337a131f9bcc1f96e6feceac64da4e5d7f969417fc774276698e3fe0f5",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:37:34.994Z"
+}

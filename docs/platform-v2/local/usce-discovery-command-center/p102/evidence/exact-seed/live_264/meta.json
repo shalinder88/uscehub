@@ -1,0 +1,44 @@
+{
+  "seedId": "live_264",
+  "institutionId": "inst_live_jamaica_hospital_medical_center",
+  "institutionName": "Jamaica Hospital Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Jamaica",
+  "state": "NY",
+  "sourceUrl": "https://www.jamaicahospital.org/",
+  "sourceDomain": "www.jamaicahospital.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Pediatrics, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_68f95e41f3"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_264/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_264/cleaned.txt",
+  "sourceHash": "9201fe4c463082f2c7582b94ad3e407d67a1098e3db60e66f1bacd3360146221",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:38:32.265Z"
+}

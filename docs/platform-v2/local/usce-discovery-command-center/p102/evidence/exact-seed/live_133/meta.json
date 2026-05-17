@@ -1,0 +1,46 @@
+{
+  "seedId": "live_133",
+  "institutionId": "inst_live_massachusetts_general_hospital",
+  "institutionName": "Massachusetts General Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://www.massgeneral.org/education",
+  "sourceDomain": "www.massgeneral.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "All major specialties",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_3adaa44e13"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_133/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_133/cleaned.txt",
+  "sourceHash": "b0f576f185c9efc642dfb097bab17c3b160f659ac7ef7b55dd7da2b65bf881ae",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "GENERIC_PAGE_HOLD",
+    "reason": "generic landing page URL (generic /education URL)",
+    "signals": [
+      "generic /education URL"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:34:06.667Z"
+}

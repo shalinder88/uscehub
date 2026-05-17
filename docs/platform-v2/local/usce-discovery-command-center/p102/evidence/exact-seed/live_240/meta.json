@@ -1,0 +1,44 @@
+{
+  "seedId": "live_240",
+  "institutionId": "inst_live_usf_health_international_training",
+  "institutionName": "USF Health — International Training",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Tampa",
+  "state": "FL",
+  "sourceUrl": "https://health.usf.edu/medicine/ia/international-training-programs",
+  "sourceDomain": "health.usf.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_4dc285e5e3"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_240/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_240/cleaned.txt",
+  "sourceHash": "3799a39966f156d2acd4011e62a7d0eac7026a79d069bc5bd877bec09632d55c",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T02:37:43.222Z"
+}

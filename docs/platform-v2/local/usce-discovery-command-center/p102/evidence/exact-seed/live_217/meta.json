@@ -1,0 +1,44 @@
+{
+  "seedId": "live_217",
+  "institutionId": "inst_live_mount_sinai_postdoctoral_research",
+  "institutionName": "Mount Sinai — Postdoctoral Research",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://icahn.mssm.edu/",
+  "sourceDomain": "icahn.mssm.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Clinical Research, Data Science, Outcomes Research, Health S",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-3 years | visa: J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_5fb5bce152"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_217/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_217/cleaned.txt",
+  "sourceHash": "51d249ddae41ff67382fc0489fe414978dba6a3a1209f966d3c856e9be4f2e9a",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:36:59.218Z"
+}

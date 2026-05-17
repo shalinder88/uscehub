@@ -1,0 +1,44 @@
+{
+  "seedId": "live_304",
+  "institutionId": "inst_live_university_of_arkansas_for_medical_sciences_uams_",
+  "institutionName": "University of Arkansas for Medical Sciences (UAMS)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Little Rock",
+  "state": "AR",
+  "sourceUrl": "https://www.uams.edu/",
+  "sourceDomain": "www.uams.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery, Geriatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_a96f7cc848"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_304/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_304/cleaned.txt",
+  "sourceHash": "9f492be6b740fc28e141b5c9b0be6c7774e8fe7cb012d9f5c8b59e5d4ebacd24",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": -1,
+  "fetchedAt": "2026-05-17T02:39:56.756Z"
+}

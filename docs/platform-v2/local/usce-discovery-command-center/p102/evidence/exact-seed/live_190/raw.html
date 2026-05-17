@@ -1,0 +1,1564 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    
+
+
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/fonts/benton-sans-cond-regular.woff2" /> 
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/fonts/benton-sans-regular.woff2" /> 
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/fonts/benton-sans-cond-bold.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/fonts/benton-sans-bold.woff2" /> 
+        <link rel="preconnect" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net" crossorigin />
+
+    <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Head/iu.foundation.theming.min.js" as="script" />
+    
+
+
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.foundation.theming.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.foundation.theming.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.pagecontent.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.pagecontent.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.navigation.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.navigation.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.hero.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.hero.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.blog.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.blog.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.cta.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.cta.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.identity.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.identity.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.sitecoresearch.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.feature.sitecoresearch.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.project.common.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.project.common.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+        <link rel="preload" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.project.website.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" as="style" media="screen" />
+        <link rel="stylesheet" href="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Styles/iu.project.website.min.css?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123" media="screen" />
+
+
+
+    <title>Graduate Medical Education | IU School of Medicine</title>
+
+    <meta name="og:content-type" content="Page" />
+
+<meta name="og:is-featured" content="False" />
+
+
+    <meta name="description" content="Information on Graduate Medical Education, including residency, fellowship programs and employment benefits, offered at IU School of Medicine" />
+
+    <meta name="og:id" content="B8709F8D-865E-4A84-B38C-194947AC767C" />
+
+
+
+    <link rel="canonical" href="https://medicine.iu.edu/gme" />
+
+
+        <script type="application/ld+json">
+            {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Graduate Medical Education",
+      "item": "https://medicine.iu.edu/gme"
+    }
+  ]
+};
+        </script>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WJFT899');</script>
+<!-- End Google Tag Manager -->
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_11378.js"></script>
+
+
+
+    <link rel="preload" href="/FrontEnd/Rivet-Updates/rivet-2-custom-components.css" as="style" media="all">
+    <link rel="stylesheet" href="/FrontEnd/Rivet-Updates/rivet-2-custom-components.css" media="all">
+
+    <link rel="preload" href="/FrontEnd/Rivet-Updates/datepicker/rivet-datepicker.css" as="style" media="all">
+    <link rel="stylesheet" href="/FrontEnd/Rivet-Updates/datepicker/rivet-datepicker.css" media="all">
+
+
+    
+    
+    <style>
+        .rvt-container-lg {
+            max-width: 1240px !important;
+        }
+    </style>
+    
+</head>
+<body class=" iu-project-website-layouts-default">
+
+
+    
+
+
+    <script  src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Head/iu.foundation.theming.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	
+    
+
+    
+    
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-WJFT899"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+
+
+
+
+<header id="headerID" class="rvt-header-wrapper">
+    <a class="rvt-header-wrapper__skip-link" href="#main-content">Skip to main content</a>
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
+            <div class="rvt-header-global__inner">
+                <div class="rvt-header-global__logo-slot">
+<a href="/" class="rvt-lockup" >        <div class="rvt-lockup__tab" style="max-height: 70px">
+            <svg class="rvt-lockup__trident" viewBox="0 0 28 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Indiana University School of Medicine</title><path d="M0 4.709h8.833v2.465H7.19v13.969h3.423V2.723h-1.78V.121h9.381v2.534h-1.986v18.488h3.56V7.174h-1.574V4.64h8.833v2.534h-1.986v16.502l-3.286 3.218h-5.478v3.561h1.917v3.424h-9.45v-3.287h1.918v-3.766H5.204l-3.287-3.218V7.174H0V4.709Z" fill="#fff"/></svg>
+        </div>
+        <div class="rvt-lockup__body">
+            <span class="rvt-font-cond rvt-lockup__title">Indiana University</span>
+            <span class="rvt-font-cond rvt-lockup__subtitle">School of Medicine</span>
+        </div>
+</a>
+</div>
+
+                
+
+
+
+<div class="rvt-header-global__controls">
+    <div class="rvt-c-__999-z-index" data-rvt-disclosure="menu" data-rvt-close-click-outisde>
+        <button aria-expanded="false" class="rvt-global-toggle rvt-c-global-round rvt-global-toggle--menu rvt-hide-lg-up" data-rvt-disclosure-toggle="menu">
+            <span class="rvt-sr-only">Menu</span>
+            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="M15 4H1V2h14v2Zm0 5H1V7h14v2ZM1 14h14v-2H1v2Z"></path></svg>
+            <svg class="rvt-global-toggle__close" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m3.5 2.086 4.5 4.5 4.5-4.5L13.914 3.5 9.414 8l4.5 4.5-1.414 1.414-4.5-4.5-4.5 4.5L2.086 12.5l4.5-4.5-4.5-4.5L3.5 2.086Z"></path></svg>
+        </button>
+        <nav class="rvt-header-menu rvt-hide-lg-up" aria-label="Main" id="global-nav" data-rvt-disclosure-target="menu" hidden>
+            <ul class="rvt-header-menu__list">
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-1">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/expertise" class="rvt-header-menu__link" currentaria="" >Expertise</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-1" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-1" hidden>
+                                        <ul class="rvt-header-menu__submenu-list " id="primary-menu-toggle-1" aria-hidden="true">
+
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/alzheimers" class="rvt-header-menu__submenu-link" >Alzheimer&#39;s Disease</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/indiana-health" class="rvt-header-menu__submenu-link" >Indiana Health</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/precision-health" class="rvt-header-menu__submenu-link" >Precision Health Initiative</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/musculoskeletal-health" class="rvt-header-menu__submenu-link" >Musculoskeletal Health</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/traumatic-brain-injury" class="rvt-header-menu__submenu-link" >Traumatic Brain Injury</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/global-health" class="rvt-header-menu__submenu-link" >Global Health</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/expertise/lgbtq-health" class="rvt-header-menu__submenu-link" >LGBTQ+ Health</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-2">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/education" class="rvt-header-menu__link" currentaria="" >Education</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-2" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-2" hidden>
+                                        <ul class="rvt-header-menu__submenu-list " id="primary-menu-toggle-2" aria-hidden="true">
+
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/md" class="rvt-header-menu__submenu-link" >MD Program</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/gme" class="rvt-header-menu__submenu-link" >Graduate Medical Education</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/graduate-degrees" class="rvt-header-menu__submenu-link" >Graduate Degrees</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/dual-degrees" class="rvt-header-menu__submenu-link" >Dual Degrees</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/undergraduate-health-professions" class="rvt-header-menu__submenu-link" >Health Professions Programs</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/continuing-education" class="rvt-header-menu__submenu-link" >Continuing Education</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/point-of-care-ultrasound" class="rvt-header-menu__submenu-link" >Point of Care Ultrasound</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/medical-library" class="rvt-header-menu__submenu-link" >Medical Library</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/mental-health-services" class="rvt-header-menu__submenu-link" >Mental Health Services</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-3">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/research" class="rvt-header-menu__link" currentaria="" >Research</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-3" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-3" hidden>
+                                        <ul class="rvt-header-menu__submenu-list " id="primary-menu-toggle-3" aria-hidden="true">
+
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/research/impact" class="rvt-header-menu__submenu-link" >Our Impact</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/research-centers" class="rvt-header-menu__submenu-link" >Centers</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/institutes" class="rvt-header-menu__submenu-link" >Institutes</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/clinical-studies" class="rvt-header-menu__submenu-link" >Clinical Studies</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/faculty-labs" class="rvt-header-menu__submenu-link" >Faculty Labs</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/research/support" class="rvt-header-menu__submenu-link" >Investigator Support</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/service-cores" class="rvt-header-menu__submenu-link" >Service Cores</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/research/training-programs" class="rvt-header-menu__submenu-link" >Training Programs</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/research/give" class="rvt-header-menu__submenu-link" >Support our Research</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-4">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/campuses" class="rvt-header-menu__link" currentaria="" >Campuses</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-4" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-4" hidden>
+                                        <ul class="rvt-header-menu__submenu-list " id="primary-menu-toggle-4" aria-hidden="true">
+
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/bloomington" class="rvt-header-menu__submenu-link" >Bloomington</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/evansville" class="rvt-header-menu__submenu-link" >Evansville</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/fort-wayne" class="rvt-header-menu__submenu-link" >Fort Wayne</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/indianapolis" class="rvt-header-menu__submenu-link" >Indianapolis</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/muncie" class="rvt-header-menu__submenu-link" >Muncie</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/gary" class="rvt-header-menu__submenu-link" >Northwest - Gary</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/south-bend" class="rvt-header-menu__submenu-link" >South Bend</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/terre-haute" class="rvt-header-menu__submenu-link" >Terre Haute</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/west-lafayette" class="rvt-header-menu__submenu-link" >West Lafayette</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-5">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/departments" class="rvt-header-menu__link" currentaria="" >Departments</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-5" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right rvt-c-dropdown__menu--wide " data-rvt-dropdown-menu="primary-menu-toggle-5" hidden>
+                                        <ul class="rvt-header-menu__submenu-list rvt-nav-menu__list--child-menu-mega rvt-c-dropdown__menu--wide " id="primary-menu-toggle-5" aria-hidden="true">
+                                                <li class="rvt-header-menu__submenu-item rvt-c-header-menu__parent-submenu-item">
+                                                    <div class="rvt-nav-menu__heading">Basic Science</div>
+                                                    <ul class="rvt-header-menu__submenu-list rvt-nav-menu__list--child-menu">
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/anatomy-cell-biology-physiology" class="rvt-header-menu__submenu-link" >Anatomy, Cell Biology and Physiology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/biochemistry-molecular-biology-pharmacology" class="rvt-header-menu__submenu-link" >Biochemistry, Molecular Biology and Pharmacology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/biostatistics" class="rvt-header-menu__submenu-link" >Biostatistics and Health Data Science</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/microbiology-immunology" class="rvt-header-menu__submenu-link" >Microbiology and Immunology</a>
+                                                            </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="rvt-header-menu__submenu-item rvt-c-header-menu__parent-submenu-item">
+                                                    <div class="rvt-nav-menu__heading">Clinical Science</div>
+                                                    <ul class="rvt-header-menu__submenu-list rvt-nav-menu__list--child-menu">
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/anesthesia" class="rvt-header-menu__submenu-link" >Anesthesia</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/dermatology" class="rvt-header-menu__submenu-link" >Dermatology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/emergency-medicine" class="rvt-header-menu__submenu-link" >Emergency Medicine</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/family-medicine" class="rvt-header-menu__submenu-link" >Family Medicine</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/genetics" class="rvt-header-menu__submenu-link" >Medical and Molecular Genetics</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/internal-medicine" class="rvt-header-menu__submenu-link" >Internal Medicine</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/neurological-surgery" class="rvt-header-menu__submenu-link" >Neurological Surgery</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/neurology" class="rvt-header-menu__submenu-link" >Neurology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/obgyn" class="rvt-header-menu__submenu-link" >Obstetrics and Gynecology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/ophthalmology" class="rvt-header-menu__submenu-link" >Ophthalmology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/orthopaedic-surgery" class="rvt-header-menu__submenu-link" >Orthopaedic Surgery</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/otolaryngology" class="rvt-header-menu__submenu-link" >Otolaryngology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/pathology" class="rvt-header-menu__submenu-link" >Pathology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/pediatrics" class="rvt-header-menu__submenu-link" >Pediatrics</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/physiatry" class="rvt-header-menu__submenu-link" >Physical Medicine and Rehabilitation</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/psychiatry" class="rvt-header-menu__submenu-link" >Psychiatry</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/radiation-oncology" class="rvt-header-menu__submenu-link" >Radiation Oncology</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/radiology" class="rvt-header-menu__submenu-link" >Radiology and Imaging Sciences</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/surgery" class="rvt-header-menu__submenu-link" >Surgery</a>
+                                                            </li>
+                                                            <li class="rvt-header-menu__submenu-item rvt-nav-menu__item-account-outline">
+                                                                <a href="/urology" class="rvt-header-menu__submenu-link" >Urology</a>
+                                                            </li>
+                                                    </ul>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="rvt-header-menu__item ">
+                                <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-6">
+                                    <div class="rvt-header-menu__group">
+                                        <a href="/stories" class="rvt-header-menu__link" currentaria="" >News &amp; Stories</a>
+                                        <button class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-menu-toggle-6" aria-expanded="false">
+                                            <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                            <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                        </button>
+                                    </div>
+                                    <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-6" hidden>
+                                        <ul class="rvt-header-menu__submenu-list " id="primary-menu-toggle-6" aria-hidden="true">
+
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/news" class="rvt-header-menu__submenu-link" >Newsroom</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/blogs" class="rvt-header-menu__submenu-link" >Blog</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/magazine" class="rvt-header-menu__submenu-link" >Magazine</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/events" class="rvt-header-menu__submenu-link" >Events</a>
+                                                </li>
+                                                <li class="rvt-nav-menu__item">
+
+<a href="/communications" class="rvt-header-menu__submenu-link" >Office of Strategic Communications</a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </li>
+
+                <!-- Start More items menu -->
+
+
+                    <li class="rvt-header-menu__item">
+                        <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-menu-toggle-7">
+                            <div class="rvt-header-menu__group">
+                                <span class="rvt-header-menu__link rvt-hide-lg-up">More</span>
+                                <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle rvt-c-more-toggle" data-rvt-dropdown-toggle="primary-menu-toggle-7">
+                                    <span class="rvt-m-right-xs rvt-hide-lg-down">More</span>
+                                    <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    <span class="rvt-sr-only">More</span>
+                                </button>
+                            </div>
+                            <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-menu-toggle-7" hidden>
+                                <ul class="rvt-header-menu__submenu-list">
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/about" class="rvt-header-menu__submenu-link" >About</a>
+                                        </li>
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/faculty" class="rvt-header-menu__submenu-link" title="Faculty Affairs" >Faculty</a>
+                                        </li>
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/staff" class="rvt-header-menu__submenu-link" >Staff</a>
+                                        </li>
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/give" class="rvt-header-menu__submenu-link" >Give</a>
+                                        </li>
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/wellness" class="rvt-header-menu__submenu-link" >Wellness</a>
+                                        </li>
+                                        <li class="rvt-header-menu__submenu-item">
+                                            <a href="/careers" class="rvt-header-menu__submenu-link" >Careers</a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                <!-- End More items menu -->
+
+            </ul>
+        </nav>
+    </div>
+        <div data-rvt-disclosure="globalMenu" class="ic4-style">
+            <nav class="rvt-header-menu rvt-hide-lg-down" aria-label="Global Navigation" data-rvt-disclosure="globalMenu" data-rvt-close-click-outisde hidden>
+                <ul class="rvt-header-menu__list">
+                    <li class="rvt-header-menu__item">
+                        <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="globalMenu">
+                            <div class="rvt-header-menu__group">
+                                <button class="rvt-global-toggle rvt-global-toggle--menu rvt-dropdown__toggle rvt-header-menu__toggle rvt-c-global-menu" data-rvt-dropdown-toggle="globalMenu-1" aria-expanded="false">
+                                    <span class="rvt-m-right-xs">Global Navigation</span>
+                                    <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16" focusable="false"><path d="M15 4H1V2h14v2Zm0 5H1V7h14v2ZM1 14h14v-2H1v2Z"></path></svg>
+                                    <svg class="rvt-global-toggle__close" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m3.5 2.086 4.5 4.5 4.5-4.5L13.914 3.5 9.414 8l4.5 4.5-1.414 1.414-4.5-4.5-4.5 4.5L2.086 12.5l4.5-4.5-4.5-4.5L3.5 2.086Z"></path></svg>
+                                    <span class="rvt-sr-only">Global Navigation</span>
+                                </button>
+                            </div>
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="globalMenu-1" hidden>
+                                    <ul id="secondary-menu" class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/expertise" class="rvt-nav-menu__link" >Expertise</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/education" class="rvt-nav-menu__link" >Education</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/research" class="rvt-nav-menu__link" >Research</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/campuses" class="rvt-nav-menu__link" >Campuses</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/departments" class="rvt-nav-menu__link" >Departments</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/stories" class="rvt-nav-menu__link" >News &amp; Stories</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/about" class="rvt-nav-menu__link" >About</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/faculty" class="rvt-nav-menu__link" title="Faculty Affairs" >Faculty</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/staff" class="rvt-nav-menu__link" >Staff</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/give" class="rvt-nav-menu__link" >Give</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/wellness" class="rvt-nav-menu__link" >Wellness</a>
+                                            </li>
+                                            <li class="rvt-nav-menu__item">
+                                                <a href="/careers" class="rvt-nav-menu__link" >Careers</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+
+<input id="sitecoreSearchSuggestions" type="hidden" value="/api/sitecore/SitecoreSearch/GetSearchSuggestions" />
+<input id="sitecoreUUID" type="hidden" value="/api/sitecore/SitecoreSearch/GetUniversalUniqueIdentifier" />
+<input id="sitecoreUUIDCookieName" type="hidden" value="iu_uuid" />
+
+<div data-rvt-disclosure="search">
+    <!-- Button that shows/hides the search field -->
+    <button class="rvt-global-toggle rvt-c-global-round" data-rvt-disclosure-toggle="search" aria-expanded="false" aria-haspopup="true" aria-label="Toggle Search Box">
+        <span class="rvt-sr-only">Toggle Search Box</span>
+        <svg class="rvt-global-toggle__search" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="M7 2a5 5 0 1 0 0 10A5 5 0 0 0 7 2ZM0 7a7 7 0 1 1 12.606 4.192l3.101 3.1-1.414 1.415-3.1-3.1A7 7 0 0 1 0 7Z"></path></svg>
+    </button>
+    <!-- Search field -->
+    <form action="/search" class="rvt-header-global__search" data-rvt-disclosure-target="search" role="search" method="get" hidden aria-hidden="true">
+        <label class="rvt-sr-only" for="search">Search</label>
+        <div class="rvt-input-group">
+            <input id="search" class="sitecore-search-input rvt-input-group__input rvt-text-input" type="text" name="q">
+            <div class="rvt-sitecore-search rvt-card rvt-card--horizontal rvt-card--raised">
+                <div class="rvt-card__body">
+
+                </div>
+            </div>
+            <div class="rvt-input-group__append">
+                <button class="rvt-button" id="search-navigation-button">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+        <div class="rvt-header-local">
+            <div class="rvt-container rvt-container--center rvt-container-xl">
+                <div class="rvt-header-local__inner rvt-c-header-local__inner" data-rvt-disclosure="local-header-menu" data-rvt-close-click-outside>
+                    <span class="rvt-header-local__title">
+                        
+Graduate Medical Education
+                    </span>
+                    
+
+<button aria-expanded="false" class="rvt-global-toggle rvt-global-toggle--menu rvt-hide-lg-up" data-rvt-disclosure-toggle="local-header-menu">
+    <span class="rvt-sr-only">Toggle local menu</span>
+    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+</button>
+<!-- Secondary navigation links -->
+    <nav aria-label="Secondary" class="rvt-header-menu top-menu" data-rvt-disclosure-target="local-header-menu" hidden>
+        <ul class="rvt-header-menu__list">
+                    <li class="rvt-header-menu__item ">
+                            <div class="rvt-header-menu__dropdown rvt-dropdown rvt-c-dropdown--left-align" data-rvt-dropdown="secondary-nav-2">
+                                <div class="rvt-header-menu__group">
+                                    <!-- Link that appears in secondary navigation -->
+                                    <a href="/gme/employment-terms-benefits" class="rvt-header-menu__link" currentaria="" >Employment Terms and Benefits</a>
+                                    <!-- Button that shows/hides dropdown links -->
+                                    <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="secondary-nav-2">
+                                        <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                        <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    </button>
+                                </div>
+                                <!-- Dropdown menu -->
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="secondary-nav-2" hidden>
+                                    <ul class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/employment-terms-benefits/faq" class="rvt-header-menu__submenu-link" currentaria="" >Employment/Onboarding FAQ</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/employment-terms-benefits/mental-health-services" class="rvt-header-menu__submenu-link" currentaria="" >Mental Health Services</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/employment-terms-benefits/policies" class="rvt-header-menu__submenu-link" currentaria="" >Policies</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/employment-terms-benefits/resources" class="rvt-header-menu__submenu-link" currentaria="" >Resources</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/employment-terms-benefits/technical-standards" class="rvt-header-menu__submenu-link" currentaria="" >Technical Standards</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="rvt-header-menu__item ">
+                            <div class="rvt-header-menu__dropdown rvt-dropdown rvt-c-dropdown--left-align" data-rvt-dropdown="secondary-nav-2">
+                                <div class="rvt-header-menu__group">
+                                    <!-- Link that appears in secondary navigation -->
+                                    <a href="/gme/why-iu" class="rvt-header-menu__link" currentaria="" >Why IU</a>
+                                    <!-- Button that shows/hides dropdown links -->
+                                    <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="secondary-nav-2">
+                                        <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                        <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    </button>
+                                </div>
+                                <!-- Dropdown menu -->
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="secondary-nav-2" hidden>
+                                    <ul class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/disability-accomodations" class="rvt-header-menu__submenu-link" currentaria="" >Disability Accomodations</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/recruitment-toolkit" class="rvt-header-menu__submenu-link" currentaria="" >GME Recruitment Toolkit</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/wellness-toolkit" class="rvt-header-menu__submenu-link" currentaria="" >GME Wellness Toolkit</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/house-staff-forum" class="rvt-header-menu__submenu-link" currentaria="" >House Staff Forum</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/multicultural-physicians-alliance" class="rvt-header-menu__submenu-link" currentaria="" >Multicultural Physicians’ Alliance</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/environment" class="rvt-header-menu__submenu-link" currentaria="" >Our Environment</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/enhance-scholarship-in-residency" class="rvt-header-menu__submenu-link" currentaria="" >Program to Enhance Scholarship in Residency</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/safety-quality-council" class="rvt-header-menu__submenu-link" currentaria="" >Resident Patient Safety and Quality Council</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/training-pathways" class="rvt-header-menu__submenu-link" currentaria="" >Training Pathways</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/why-iu/training-regions" class="rvt-header-menu__submenu-link" currentaria="" >Training Regions</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="rvt-header-menu__item ">
+                            <div class="rvt-header-menu__dropdown rvt-dropdown " data-rvt-dropdown="secondary-nav-2">
+                                <div class="rvt-header-menu__group">
+                                    <!-- Link that appears in secondary navigation -->
+                                    <a href="/gme/residency-programs" class="rvt-header-menu__link" currentaria="" >Residency Programs</a>
+                                    <!-- Button that shows/hides dropdown links -->
+                                    <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="secondary-nav-2">
+                                        <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                        <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    </button>
+                                </div>
+                                <!-- Dropdown menu -->
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="secondary-nav-2" hidden>
+                                    <ul class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/residency-programs/application-requirements" class="rvt-header-menu__submenu-link" currentaria="" >Application Requirements</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/residency-programs/faq" class="rvt-header-menu__submenu-link" currentaria="" >Residency FAQ</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/residency-programs/visiting-elective" class="rvt-header-menu__submenu-link" currentaria="" >Pathway to Indiana Visiting Elective</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/residency-programs/transitional-year" class="rvt-header-menu__submenu-link" currentaria="" >Transitional Year Residency in Indianapolis</a>
+                                            </li>
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/residency-programs/transitional-year-ball-memorial" class="rvt-header-menu__submenu-link" currentaria="" >Transitional Year Residency in Muncie</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="rvt-header-menu__item ">
+                            <div class="rvt-header-menu__dropdown rvt-dropdown " data-rvt-dropdown="secondary-nav-2">
+                                <div class="rvt-header-menu__group">
+                                    <!-- Link that appears in secondary navigation -->
+                                    <a href="/gme/fellowship-programs" class="rvt-header-menu__link" currentaria="" >Fellowship Programs</a>
+                                    <!-- Button that shows/hides dropdown links -->
+                                    <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="secondary-nav-2">
+                                        <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                        <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    </button>
+                                </div>
+                                <!-- Dropdown menu -->
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="secondary-nav-2" hidden>
+                                    <ul class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/fellowship-programs/visiting-residency" class="rvt-header-menu__submenu-link" currentaria="" >Pathway to Indiana Visiting Residency </a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="rvt-header-menu__item ">
+<a href="/gme/accreditation" class="rvt-header-menu__link" currentaria="" >ACGME Accreditation</a>                    </li>
+                    <li class="rvt-header-menu__item ">
+                            <div class="rvt-header-menu__dropdown rvt-dropdown " data-rvt-dropdown="secondary-nav-2">
+                                <div class="rvt-header-menu__group">
+                                    <!-- Link that appears in secondary navigation -->
+                                    <a href="/gme/enrollment-orientation" class="rvt-header-menu__link" currentaria="" >Enrollment and Orientation</a>
+                                    <!-- Button that shows/hides dropdown links -->
+                                    <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="secondary-nav-2">
+                                        <span class="rvt-sr-only">Toggle Sub-navigation</span>
+                                        <svg class="rvt-global-toggle__open" fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"></path></svg>
+                                    </button>
+                                </div>
+                                <!-- Dropdown menu -->
+                                <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="secondary-nav-2" hidden>
+                                    <ul class="rvt-header-menu__submenu-list">
+                                            <li class="rvt-header-menu__submenu-item">
+                                                <a href="/gme/enrollment-orientation/faq" class="rvt-header-menu__submenu-link" currentaria="" >Enrollment FAQ</a>
+                                            </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    </li>
+                    <li class="rvt-header-menu__item ">
+<a href="/gme/contacts" class="rvt-header-menu__link" currentaria="" >Contacts</a>                    </li>
+
+            <li class="rvt-header-menu__search">
+                
+            </li>
+        </ul>
+    </nav>
+
+                </div>
+            </div>
+        </div>
+</header>
+
+
+<main role="main" id="main-content" class="rvt-p-top-xl rvt-p-bottom-sm">
+
+    
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container">
+
+    
+
+
+
+<div class="iu-project-common-1-column ">
+
+    
+
+
+<div class="iu-feature-hero-imagehero default-layout-margin-bottom stickToTop">
+    <div class="rvt-hero ">
+        <div class="rvt-container-lg">
+            <div class="rvt-hero__inner">
+                <div class="rvt-hero__body [ rvt-flow ]">
+                    <span class="rvt-hero__eyebrow">
+Graduate Medical Education                    </span>
+                        <h1 class="rvt-hero__title">World class training in the heart of the Midwest</h1>
+
+                    <div class="rvt-hero__teaser">
+<p>Residency and fellowship programs at Indiana University School of Medicine provide a vast array of world class inpatient and outpatient training experiences for physicians, as well as considerable opportunities in medical research.</p>
+                    </div>
+                    <div class="rvt-hero__actions ">
+                        
+                    </div>
+                </div>
+                <div class="rvt-hero__media ">
+                    <img data-src="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/education/gme/residents-august-2023.jpg?rev=1aed84f7fb3c478aa676718ee4e3d405&amp;la=en&amp;h=852&amp;w=1902&amp;hash=EC696A91A06D072F12F6053CE958CE15" class=" lazy" alt="a large, diverse group of psychiatry residents line a staircase for a group photo" fetchpriority="high" />
+                    <div class="rvt-hero__media-caption">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-lg">
+
+    
+
+
+
+<div class="iu-feature-navigation-breadcrumb">
+    <nav role="navigation" aria-label="Breadcrumb">        
+        <ol class="rvt-breadcrumbs">
+            <li>
+                <a href="/">
+                    <span class="rvt-sr-only">Home</span>
+                    <svg fill="currentColor" width="16" height="16" viewBox="0 0 16 16"><path d="m8 .798 7 4.667V15H9v-4.444H7V15H1V5.465L8 .798ZM3 6.535V13h2V8.556h6V13h2V6.535L8 3.202 3 6.535Z"></path></svg>
+                </a>
+            </li>
+
+                <li>
+                        <span>Graduate Medical Education</span>
+                </li>
+        </ol>
+    </nav>
+</div>
+
+
+
+
+<div class="iu-project-common-2-column-8-4 ">
+
+    <div class="rvt-row">
+        <div class="rvt-cols-8-md">
+            
+<div class="iu-feature-pagecontent-richtext default-layout-margin-bottom  section-content_img-responsive">
+<H2 class="rvt-heading-decoration rvt-flex rvt-column">Residency and Fellowship Programs</H2>
+    <div class="richtext-content richText_clear_fix">
+        <p>IU School of Medicine sponsors 114 ACGME-accredited and over 50 non-accredited residencies and fellowships in a broad range of specialties in locations across Indiana. IU School of Medicine is also the sponsoring institution for the accredited School of Dentistry residency and fellowship programs.</p>
+    </div>
+
+        <p class="link-wrap1">
+<a href="/gme/residency-programs" class="rvt-cta link-1 rvt-cta--button" >Explore residency programs</a>        </p>
+
+
+        <p class="link-wrap2">
+<a href="/gme/fellowship-programs" class="rvt-cta link-2 rvt-cta--button" >Explore fellowship programs</a>        </p>
+
+
+</div>
+
+        </div>
+        <div class="rvt-cols-4-md">
+            
+
+
+<div class="iu-feature-cta-no-image rvt-card--raised default-layout-margin-bottom ">
+
+    <div class="stickerStyle">
+
+        <div class="cta-paragraph">
+                <h2 class="cta-no-image-title">
+                    Verify Training
+                </h2>
+
+                <div class="cta-no-image-paragraph">
+                    Complete the Office of Graduate Medical Education form to request verification of training for an IU School of Medicine resident or fellow (past and present).
+                </div>
+        </div>
+</div>
+
+            <div class="gray-bottom-cta-no-image">
+                <div>
+<a href="https://iusm.medhub.com/functions/verifications/index.mh" class="rvt-cta rvt-cta--button firstLink" target="_blank" rel="noopener noreferrer" >Request Verification</a>                </div>
+            </div>
+
+    </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="iu-project-common-1-column ">
+
+    
+<div class="iu-feature-pagecontent-richtext default-layout-margin-bottom  section-content_img-responsive">
+            <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                Mission and Vision
+            </h2>
+
+    <div class="richtext-content richText_clear_fix">
+        <p>The mission of Indiana University School of Medicine Graduate Medical Education is to provide exemplary academic administration, accreditation support and enhanced educational experience for our sponsored programs. We support training programs in providing an inclusive learning environment that fosters continued academic excellence and advancement at both an individual and institutional level. We support our trainees with professional development and research opportunities to grow in self-efficacy and reach their career goals as they explore and augment their personal wellness.</p>
+<p>Our vision is to become a national leader in GME training, where our innovations in training a diverse group of talented physicians and supporting them to reach their professional goals will lead to improved health for the people of Indiana and transformative impacts on the practice of medicine.</p>
+    </div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container light-gray">
+
+    
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-xl">
+
+    
+
+
+
+<div class="iu-project-common-2-column-4-8 ">
+
+    <div class="rvt-row">
+        <div class="rvt-cols-4-md">
+            
+<div class="iu-feature-pagecontent-imagebanner default-layout-margin-bottom">
+
+    <img data-src="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/radiation-oncology/radiation-oncology-residents-10.jpg?rev=67e1c66fba344571a6b304ad1dfab109&amp;la=en&amp;h=2002&amp;w=3000&amp;hash=C6987D983ECF5FEEAB5E60219EC41F30" class="default-layout-responsive-image lazy" alt="" />
+
+</div>
+
+        </div>
+
+        <div class="rvt-cols-8-md">
+            
+
+    <div class="iu-feature-pagecontent-section-header section-content_img-responsive">
+
+
+
+                        <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                            Why train at IU School of Medicine?
+                        </h2>
+
+
+<p>Each year, over 1500 residents and fellows continue their training in one of our graduate medical education (GME) programs. So many trainees choose IU School of Medicine because of our robust support of residents and fellows including:
+</p>
+<ul>
+    <li>Individual attention and mentorship</li>
+    <li>Opportunities to engage in basic, clinical and translational research</li>
+    <li>Non-clinical training in leadership, medical education, global health, health outcomes and more</li>
+    <li>Innovative care in d<span style="color: rgb(51, 51, 51);">iverse hospital affiliates across the state</span></li>
+    <li><span style="color: rgb(51, 51, 51);">Leadership roles that help shape the clinical learning environment<br />
+    </span></li>
+</ul>
+
+
+    </div>
+
+
+
+
+<div class="iu-feature-cta-list default-layout-margin-bottom ">
+
+
+        <div class="no-grid">
+
+            
+
+ 
+<p class="iu-feature-cta-list-item height-container">
+    <span class="link">
+<a href="/gme/why-iu" class="rvt-cta " >Learn more</a>    </span>
+</p>
+
+        </div>
+
+</div>
+
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-lg">
+
+    
+
+
+
+<div class="iu-project-common-2-column-6-6 ">
+
+    <div class="rvt-row">
+        <div class="col-1 rvt-cols-6-md">
+            
+<div class="iu-feature-pagecontent-richtext default-layout-margin-bottom  section-content_img-responsive">
+            <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                A Welcoming Clinical Learning Environment
+            </h2>
+
+    <div class="richtext-content richText_clear_fix">
+        <p>Advancing culturally competent education, clinical care and research is a priority. Developing a culture in which all individuals within the medical school community at all nine campuses feel included, valued and respected is crucial. IU School of Medicine is committed to establishing an organizational culture in which differences of any kind are present, welcomed and highly valued.</p>
+    </div>
+
+        <p class="link-wrap1">
+<a href="/gme/why-iu/environment" class="rvt-cta link-1 " >Learn more</a>        </p>
+
+
+
+
+</div>
+
+        </div>
+          
+        <div class="col-2 rvt-cols-6-md">
+            
+<div class="iu-feature-pagecontent-imagebanner default-layout-margin-bottom">
+
+    <img data-src="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/education/gme/indy-pride_082.jpg?rev=4bb21f8bf3394b50b62ba9736f65e657&amp;la=en&amp;h=800&amp;w=1200&amp;hash=265AB2CFE77590A8D48ED7370473548D" class="default-layout-responsive-image lazy" alt="a black woman addresses the school of medicine contingent at the Indy Pride parade" />
+
+</div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="iu-project-common-1-column ">
+
+    
+
+
+
+<div class="iu-feature-pagecontent-horizontalteaser default-layout-margin-bottom  ">
+    <div class="">
+<div class="rvt-billboard rvt-billboard--reverse  ">
+                    <div class="rvt-billboard__image     ">
+<img data-src="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;h=800&amp;w=1200&amp;hash=36212834DF3BAE40C44DF13178EA838B" class="default-layout-responsive-image @titleOnlyClass2 @titleOnlyCenteredClass1 lazy" alt="Photo of students in front of building" data-sizes="(max-width: 180px) 178px, (max-width: 250px) 182px, (max-width: 490px) 252px, (max-width: 548px) 364px, (max-width: 750px) 550px, 752px" data-srcset="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=178&amp;hash=306A82777AD9439DFF8CD2B64F19B1B3 178w,https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=182&amp;hash=4C994AB8F6D266C19D46ACF139D52BD5 182w,https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=252&amp;hash=AF346469E07A52790168584CFBF43EC3 252w,https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=364&amp;hash=98189725BAEC6EAEF3C1B50F21BF979B 364w,https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=550&amp;hash=774E01456B0EB7390A617D6403EBE94D 550w,https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/department/pathology/education/2024-canal-photo-v2.jpg?rev=c8941dfb015b4ecf88653deacff8ba10&amp;la=en&amp;w=752&amp;hash=9E0501B058F0BA227CD1FFB671C6F74A 752w" />                    </div>
+                <div class="rvt-billboard__body">
+                        <h2 class="rvt-billboard__title">Prestigious Hospitals and Research Centers</h2>
+
+
+                    <div class="rvt-billboard__content [ rvt-flow ]  ">
+<p>At the IU School of Medicine Indianapolis campus, GME programs are affiliated with nationally recognized teaching hospitals, where educator physicians have a faculty appointment with IU School of Medicine. Training for residents and fellows is also provided at Rehabilitation Hospital of Indiana, the Indiana Hand Center and other clinical facilities throughout Indiana as well as in prestigious research centers, including the Krannert Institute of Cardiology, Regenstrief Institute, Walther Oncology Research Center, Wells Center for Pediatric Research, IU Simon Comprehensive Cancer Center, and Diabetes Research and Training Center.</p>
+<a href="/indianapolis/clinical-partners" class="rvt-cta @withoutCallofActionClass " >Clinical Partners</a>                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-lg">
+
+    
+
+
+
+<div class="iu-project-common-1-column ">
+
+    
+<div class="iu-feature-pagecontent-richtext default-layout-margin-bottom  section-content_img-responsive">
+            <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                Generous Benefits
+            </h2>
+
+    <div class="richtext-content richText_clear_fix">
+        <p>IU School of Medicine provides its resident and fellow physicians a generous benefits package that includes comprehensive health and medical coverage as well as mental health and personal counseling care. In addition, paid time off for residents and fellows is encouraged for the purpose of increasing personal well-being. House staff also receive on-call meals, preferential parking at no charge, and tuition discounts at Indiana University for dependents and spouse.</p>
+    </div>
+
+        <p class="link-wrap1">
+<a href="/gme/employment-terms-benefits" class="rvt-cta link-1 " >Employment Terms and Benefits</a>        </p>
+
+
+        <p class="link-wrap2">
+<a href="/mental-health-services" class="rvt-cta link-2 " >Mental Health Services</a>        </p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-xl">
+
+    
+
+
+
+<div class="iu-project-common-4-column  no-padding">
+
+    
+
+        <div class="rvt-row">
+            <div class="rvt-cols-3-md">
+                
+
+<div class="iu-feature-cta-statbox default-layout-margin-bottom rvt-p-sm white-over-red-background">
+        <div class="inner-content">
+            <span class="stat">
+                1,468
+            </span>
+
+            <span class="detail">
+                Resident and Fellow Physicians
+            </span>
+        </div>
+    </div>
+
+
+            </div>
+            <div class="rvt-cols-3-md">
+                
+
+<div class="iu-feature-cta-statbox default-layout-margin-bottom rvt-p-sm white-over-dark-red-background">
+        <div class="inner-content">
+            <span class="stat">
+                114
+            </span>
+
+            <span class="detail">
+                Accredited Residency and Fellowship Programs
+            </span>
+        </div>
+    </div>
+
+
+            </div>
+            <div class="rvt-cols-3-md">
+                
+
+<div class="iu-feature-cta-statbox default-layout-margin-bottom rvt-p-sm white-over-red-background">
+        <div class="inner-content">
+            <span class="stat">
+                55
+            </span>
+
+            <span class="detail">
+                Non-Accreditated GME Programs
+            </span>
+        </div>
+    </div>
+
+
+            </div>
+            <div class="rvt-cols-3-md">
+                
+
+<div class="iu-feature-cta-statbox default-layout-margin-bottom rvt-p-sm white-over-dark-red-background">
+        <div class="inner-content">
+            <span class="stat">
+                99%
+            </span>
+
+            <span class="detail">
+                Overall Match Rate into GME Programs
+            </span>
+        </div>
+    </div>
+
+
+            </div>
+        </div>
+
+    
+
+</div>
+
+
+</div>
+
+
+
+<div class="iu-project-common-section rvt-container rvt-container--center rvt-container-lg">
+
+    
+
+
+
+<div class="iu-project-common-1-column ">
+
+    
+<div class="iu-feature-pagecontent-richtext default-layout-margin-bottom  section-content_img-responsive">
+            <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                Meaningful Mentorship
+            </h2>
+
+    <div class="richtext-content richText_clear_fix">
+        <p>Integrating resident physicians into the local health care and wellness environment is central to the experience at IU School of Medicine, where networking opportunities and access to the academic mission of the organization complement the clinical skills gained as part of training. A mentoring program matches each resident with a faculty mentor who offers expertise and advice in the specialty area of focus. Residents also participate on professional committees to round out the experience and prepare for successful careers in medicine.</p>
+<p>Our mentorship program also takes into consideration the background of the resident when pairing with faculty mentors, who understand the importance of supporting a resident workforce that reflects the patients we serve. Our program offers a wide range of activities, social events, workshops and networking opportunities.&nbsp;&nbsp;</p><p /><p />
+    </div>
+
+
+
+
+
+</div>
+
+
+    <div class="iu-feature-pagecontent-section-header section-content_img-responsive">
+
+
+
+                        <h2 class="rvt-heading-decoration rvt-flex rvt-column">
+                            GME News
+                        </h2>
+
+
+
+
+
+    </div>
+
+<div class="iu-feature-blog-featurearticlehorizontal default-layout-margin-bottom rvt-card rvt-card--horizontal">
+
+            <div class="rvt-card__image">
+                <img data-src="https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/images/clean-up-23/d/diversity-gme.jpg?rev=a5acfc5d5fc34fb0bcc294af8b6b52eb&amp;la=en&amp;h=1000&amp;w=1000&amp;hash=059A25E628FEA57B25D96817962F4C54" class="rvt-m-bottom-xs default-layout-responsive-image lazy" maxwidth="490" alt="two residents look at patient information together in a work room" />
+            </div>
+<div class="rvt-card__body">
+
+
+    <h2 class="rvt-card__title">
+        <a href="/news/2023/01/continued-accreditation-graduate-medical-education" target="">IU School of Medicine receives continued accreditation for graduate medical education programs</a>
+    </h2>
+
+        <div class="rvt-card__content [ rvt-flow ]">
+            <p>Indiana University School of Medicine is celebrating another year of receiving continued accreditation for its graduate medical education programs.</p>
+        </div>
+
+    <div class="rvt-card__meta">
+        <time>January 31, 2023</time>
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</main>
+
+<footer>
+    <div class="rvt-footer-module-1">
+        <div class="rvt-container rvt-container--center rvt-container-xl">
+            <div class="rvt-flex-lg-up">
+                
+
+<div class="rvt-footer-module-1__info">
+    <span class="rvt-footer-module-1__inline-field rvt-footer-module-1__inline-field--emphasis">Office of Graduate Medical Education</span>
+    <span class="rvt-footer-module-1__inline-field rvt-footer-module-1__inline-field--emphasis">IU School of Medicine</span>
+
+    <br />
+
+    <address class="rvt-footer-module-1__address">
+<svg width="14" height="17" fill="none" xmlns="http://www.w3.org/2000/svg" class="rvt-footer-module-1__marker"><title>Contact Us</title><path d="M7 0a7 7 0 0 0-7 7c0 3.69 5.73 8.28 6.38 8.79a1 1 0 0 0 1.23 0C8.27 15.28 14 10.69 14 7a7 7 0 0 0-7-7Zm0 13.71C4.85 11.9 2 8.87 2 7a5 5 0 1 1 10 0c0 1.87-2.85 4.9-5 6.71Z" fill="#AAA"/><path d="M7 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="#AAA"/></svg>
+        <span class="rvt-footer-module-1__inline-field">350 W. 14th St</span>
+        <span class="rvt-footer-module-1__inline-field">Medical Education & Research Building, HA 5049 </span>
+        <span class="rvt-footer-module-1__inline-field">Indianapolis, IN 46202 </span>
+    </address>
+
+    <span class="rvt-footer-module-1__inline-field">317-274-8282 | gme@iu.edu</span>
+    <br />
+    <div class="local-social rvt-p-top-md">
+
+
+
+    </div>
+</div>
+
+<div class="rvt-footer-module-1__contact">
+    
+
+
+<a href="/gme/contacts" class="rvt-cta" >Contact Us</a>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer resources module -->
+<div aria-labelledby="resources-heading" class="rvt-footer-resources" role="complementary">
+    <!-- Heading for people using screen readers -->
+    <p class="rvt-sr-only" id="resources-heading">Additional resources</p>
+    <div class="rvt-container-xl">
+        <div class="rvt-row">
+            <!-- Address -->
+            <div class="rvt-cols-4-md">
+                
+<h3 class="rvt-footer-resources__heading">
+    Popular Topics
+</h3>
+
+
+<ul class="rvt-footer-resources__list">
+        <li class="rvt-footer-resources__list-item">
+<a href="/md/admissions" >MD Admissions</a>        </li>
+        <li class="rvt-footer-resources__list-item">
+<a href="/gme/residency-programs" >Residency Programs</a>        </li>
+        <li class="rvt-footer-resources__list-item">
+<a href="/graduate-degrees/phd" >PhD</a>        </li>
+        <li class="rvt-footer-resources__list-item">
+<a href="/facts" >Fact Sheet</a>        </li>
+        <li class="rvt-footer-resources__list-item">
+<a href="/alumni" >Alumni</a>        </li>
+        <li class="rvt-footer-resources__list-item">
+<a href="https://indiana.sharepoint.com/sites/mednet" target="_blank" rel="noopener noreferrer" >MedNet</a>        </li>
+</ul>
+
+
+
+            </div>
+            <!-- Categorized list of resource links -->
+            <div class="rvt-cols-4-md">
+                
+<h3 class="rvt-footer-resources__heading">
+    Contact
+</h3>
+
+<p class="rvt-footer-module-2__contact-title">Indiana University School of Medicine</p>
+
+<address>
+    340 West 10th Street<br>
+    Fairbanks Hall, Suite 6200<br>
+    Indianapolis, IN 46202-3082
+</address>
+
+<ul class="rvt-footer-resources__list">
+    <li class="rvt-footer-resources__list-item"><a href="tel:317-274-8157">317-274-8157</a></li>
+    <li class="rvt-footer-resources__list-item"><a href="mailto:medicine@iu.edu?subject=Contact Us" >medicine@iu.edu</a></li>
+</ul>
+
+
+
+
+            </div>
+            <!-- Categorized list of resource links -->
+            <div class="rvt-cols-4-md">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer social module -->
+<div aria-labelledby="social-heading" class="rvt-footer-social" role="complementary">
+    <div class="rvt-container-xl">
+        
+
+
+
+<!-- Heading for people using screen readers -->
+<h2 class="rvt-sr-only" id="social-heading">Social media</h2>
+<ul class="rvt-footer-social__list">
+        <li>
+<a href="https://www.facebook.com/IUMedicine" target="_blank" rel="noopener noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" height="40" width="40"><title>Facebook</title><path d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20Z" fill="#7A1705"/><path d="M24.9 10v3.2h-1.8s-1.6-.2-1.6 1.3V17h3.3l-.4 3.4h-2.9V30h-3.8v-9.7h-2.6V17h2.7v-2.9s-.3-1.6 1.1-2.9c1.4-1.3 3.3-1.2 3.3-1.2h2.7Z" fill="#F7F7F8"/></svg>                <span class="rvt-sr-only">Facebook</span>
+</a>        </li>
+        <li>
+<a href="https://www.instagram.com/iumedschool/" target="_blank" rel="noopener noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" height="40" width="40"><title>Instagram</title><path d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20Z" fill="#7A1705"/><path d="M24.3 30h-8.7c-3.1 0-5.7-2.5-5.7-5.7v-8.7c0-3.1 2.5-5.7 5.7-5.7h8.7c3.1 0 5.7 2.5 5.7 5.7v8.7c0 3.2-2.5 5.7-5.7 5.7Zm0-1.5c1.1 0 2.2-.4 2.9-1.2.7-.8 1.2-1.8 1.2-2.9v-8.7c0-1.1-.4-2.2-1.2-2.9-.8-.8-1.8-1.2-2.9-1.2h-8.7c-1.1 0-2.2.4-2.9 1.2-.8.8-1.2 1.8-1.2 2.9v8.7c0 1.1.4 2.2 1.2 2.9.8.7 1.8 1.2 2.9 1.2h8.7Z" fill="#F7F7F8"/><path d="M25.4 19.9c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4 3 0 5.4 2.5 5.4 5.4ZM20 16.4c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5Zm5.5-.6a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6Z" fill="#F7F7F8"/></svg>                <span class="rvt-sr-only">Instagram</span>
+</a>        </li>
+        <li>
+<a href="https://www.linkedin.com/edu/school?id=18346" target="_blank" rel="noopener noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" height="40" width="40"><title>LinkedIn</title><path d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20Z" fill="#7A1705"/><path d="M11.3 16H15v12h-3.7V16Zm1.9-6c1.2 0 2.2 1 2.2 2.2 0 1.2-1 2.2-2.2 2.2-1.2 0-2.2-1-2.2-2.2 0-1.2 1-2.2 2.2-2.2Zm4.2 6H21v1.6c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7V28h-3.7v-5.8c0-1.4 0-3.2-1.9-3.2s-2.2 1.5-2.2 3.1V28h-3.7V16h-.1Z" fill="#F7F7F8"/></svg>                <span class="rvt-sr-only">LinkedIn</span>
+</a>        </li>
+        <li>
+<a href="https://x.com/iumedschool" target="_blank" rel="noopener noreferrer" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40" height="40"><title>Twitter</title><path d="M20 40c11.046 0 20-8.954 20-20S31.046 0 20 0 0 8.954 0 20s8.954 20 20 20Z" fill="#7A1705"/><path d="M25.75 11h3.067l-6.7 7.625L30 29h-6.172l-4.833-6.293L13.463 29h-3.068l7.167-8.157L10 11.001h6.328l4.37 5.752L25.75 11Zm-1.075 16.173h1.7l-10.97-14.441h-1.823l11.093 14.44Z" fill="#F7F7F8"/></svg>                <span class="rvt-sr-only">Twitter</span>
+</a>        </li>
+</ul>
+
+
+
+    </div>
+</div>
+
+<!-- Base footer -->
+<div class="rvt-footer-base">
+    
+
+<div class="rvt-container-xl">
+    <div class="rvt-footer-base__inner">
+        <div class="rvt-footer-base__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><title>Indiana University School of Medicine</title><path fill="currentColor" d="M15.3 3.19V5h1.25v10.07H13.9V1.81h1.41V0H8.72v1.81h1.4v13.26H7.45V5H8.7V3.19H2.5V5h1.4v11.66l2.28 2.32h3.94v2.69h-1.4V24h6.58v-2.33h-1.4v-2.69h3.92l2.27-2.32V5h1.41V3.19h-6.2z"/></svg>
+        </div>
+        <ul class="rvt-footer-base__list">
+            <li class="rvt-footer-base__item">
+<a href="https://accessibility.iu.edu/assistance/" class="rvt-footer-base__link" title="Accessibility Help" >Accessibility Help</a>            </li>
+
+            <li class="rvt-footer-base__item">
+<a href="/about/policies-guidelines/privacy-policy" class="rvt-footer-base__link" title="Privacy Policy" >Privacy Policy</a>            </li>
+
+            <li class="rvt-footer-base__item">
+<a href="https://www.iu.edu/copyright/index.html" class="rvt-footer-base__link" target="_blank" rel="noopener noreferrer" >Copyright</a>
+                &copy; 2026  The Trustees of 
+
+<a href="https://www.iu.edu/" class="rvt-footer-base__link" target="_blank" title="Indiana University" rel="noopener noreferrer" >Indiana University</a>            </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+</footer>
+
+
+<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.pagecontent.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.navigation.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.hero.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.blog.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.cta.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.feature.sitecoresearch.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	<script defer src='https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/FrontEnd/Scripts/Body/iu.project.website.min.js?rev=042cfd35e8d9090ea6174133987f6aa1339a870a8d573bbb074264bb129fa123'></script>
+	
+
+
+
+
+
+
+<!-- Start IUSM for expected Rivet 2.0 components -->
+<script defer src="/FrontEnd/Rivet-Updates/datepicker/rivet-datepicker.min.js"></script>
+<script defer src="/FrontEnd/Rivet-Updates/lazyload.min.js"></script>
+<script defer src="/FrontEnd/Rivet-Updates/rivet-stickers.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        if (typeof Rivet !== "undefined") {
+            Rivet.init();
+
+            document.addEventListener('rvt:toggleHide', function (event) {
+                var preventEvent = false;
+                if (!preventEvent) {
+                    // console.log(event.detail.elementId)
+                } else {
+                    event.preventDefault();
+                }
+            });
+
+            jQuery(document).ready(function () {
+                var lazyLoad = new LazyLoad({
+                    elements_selector: ".lazy"
+                });
+            });
+
+            jQuery._evalUrl = function (url, options, doc) {
+                return fetch(url).then(r => r.text()).then(t => jQuery.globalEval(t, options, doc));
+            };
+        }
+    });
+
+    
+</script>
+
+
+<!-- End IUSM for expected Rivet 2.0 components -->
+
+
+</body>
+</html>

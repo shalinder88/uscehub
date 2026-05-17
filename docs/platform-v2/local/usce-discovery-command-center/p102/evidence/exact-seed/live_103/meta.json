@@ -1,0 +1,44 @@
+{
+  "seedId": "live_103",
+  "institutionId": "inst_live_newyork_presbyterian_columbia",
+  "institutionName": "NewYork-Presbyterian / Columbia",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.nyp.org/",
+  "sourceDomain": "www.nyp.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Cardiac Surgery, Neurology, Oncology, Transplant",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_0b7482dc2a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_103/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_103/cleaned.txt",
+  "sourceHash": "dc1fe85491ea07ed6532309fbdf2b20a871e97a76b74d150c458a4e00c454a05",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T02:33:06.409Z"
+}

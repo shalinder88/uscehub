@@ -1,0 +1,46 @@
+{
+  "seedId": "live_252",
+  "institutionId": "inst_live_boston_children_s_hospital_observership",
+  "institutionName": "Boston Children's Hospital — Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://bchapps.childrenshospital.org/observership/",
+  "sourceDomain": "bchapps.childrenshospital.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Pediatrics (all subspecialties)",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 1-12 weeks (most limit to 4 weeks) | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_b4e9d15e9d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_252/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_252/cleaned.txt",
+  "sourceHash": "e146ab4610d657431ab316e9f8e3007a3e1e73ff8353956bcee12f62cf0ba04e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": -1,
+  "fetchedAt": "2026-05-17T02:38:07.789Z"
+}

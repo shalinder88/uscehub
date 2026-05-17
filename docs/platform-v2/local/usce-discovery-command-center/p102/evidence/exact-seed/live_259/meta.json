@@ -1,0 +1,46 @@
+{
+  "seedId": "live_259",
+  "institutionId": "inst_live_medstar_health_international_observer_program",
+  "institutionName": "MedStar Health — International Observer Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://www.medstarhealth.org/education",
+  "sourceDomain": "www.medstarhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments (Georgetown affiliated)",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: Varies | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_afafaf398b"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_259/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_259/cleaned.txt",
+  "sourceHash": "f8b45fbc281ad86576fc1fae2fffc47b44248d26fce6f9332be0c7262fcefea7",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "GENERIC_PAGE_HOLD",
+    "reason": "generic landing page URL (generic /education URL)",
+    "signals": [
+      "generic /education URL"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T02:38:22.664Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_203",
+  "institutionId": "inst_live_medical_university_of_south_carolina_musc_",
+  "institutionName": "Medical University of South Carolina (MUSC)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Charleston",
+  "state": "SC",
+  "sourceUrl": "https://web.musc.edu/",
+  "sourceDomain": "web.musc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Cardiology, Transplant",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_f67de49187"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_203/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_203/cleaned.txt",
+  "sourceHash": "7e8725195b657509134b05439486ed7c1b9c6ec208edaebca7febeb82020436a",
+  "triage": {
+    "decision": "REJECT_CAREERS_JOBS_ONLY",
+    "reason": "careers page with no student/visiting signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:28.119Z"
+}

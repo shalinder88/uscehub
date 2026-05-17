@@ -1,0 +1,44 @@
+{
+  "seedId": "live_126",
+  "institutionId": "inst_live_ucla_medical_center",
+  "institutionName": "UCLA Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://www.uclahealth.org/international-services/medical-education-training/physicians/physician-observerships",
+  "sourceDomain": "www.uclahealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): International Physician Observership. 1-3 months. $750 fee. Certificate of Participation. Requires B",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 1-3 months | visa: B1/B2 (UCLA cannot assist with visas) | cost: $750",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_ddcc380478"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_126/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_126/cleaned.txt",
+  "sourceHash": "fc7a99e9c9ea32eaf699db4415b44347694fec135be163395cd1db0e16593457",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T02:33:50.756Z"
+}

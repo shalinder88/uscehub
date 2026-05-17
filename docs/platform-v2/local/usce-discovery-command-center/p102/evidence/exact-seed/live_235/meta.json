@@ -1,0 +1,46 @@
+{
+  "seedId": "live_235",
+  "institutionId": "inst_live_uab_hospital_international_medical_observers",
+  "institutionName": "UAB Hospital — International Medical Observers",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Birmingham",
+  "state": "AL",
+  "sourceUrl": "https://www.uab.edu/medicine/international/international-programs/observership",
+  "sourceDomain": "www.uab.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4 or 8 weeks | visa: B1/B2 | cost: $4,250 per 4-week slot",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_dbe9d905be"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_235/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_235/cleaned.txt",
+  "sourceHash": "f4e9f45f8afff8e71defda179330f0f32c3e2b4e3287f40fb5a6ef92e0a7fcb1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T02:37:33.136Z"
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "live_163",
+  "institutionId": "inst_live_mayo_clinic_jacksonville",
+  "institutionName": "Mayo Clinic Jacksonville",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Jacksonville",
+  "state": "FL",
+  "sourceUrl": "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Transplant, Hepatology, Oncology, Neurology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_4367cb772c"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_163/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_163/cleaned.txt",
+  "sourceHash": "b32b58b5e70a3aea4dc3a582f2df53969c85afe22715f16415a41b8d1b66632a",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:35:05.887Z"
+}

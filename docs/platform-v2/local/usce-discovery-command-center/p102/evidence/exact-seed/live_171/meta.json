@@ -1,0 +1,44 @@
+{
+  "seedId": "live_171",
+  "institutionId": "inst_live_duke_university_hospital",
+  "institutionName": "Duke University Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Durham",
+  "state": "NC",
+  "sourceUrl": "https://medschool.duke.edu/",
+  "sourceDomain": "medschool.duke.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Cardiology, Oncology, Surgery, Neurosurgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_57a380c115"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_171/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_171/cleaned.txt",
+  "sourceHash": "953ec75588e4fa151fd17a84393e5a4d5fa61399e0464e1e44969caee140165a",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:35:22.745Z"
+}

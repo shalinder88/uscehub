@@ -1,0 +1,44 @@
+{
+  "seedId": "live_116",
+  "institutionId": "inst_live_flushing_hospital_medical_center",
+  "institutionName": "Flushing Hospital Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Queens",
+  "state": "NY",
+  "sourceUrl": "https://www.flushinghospital.org/graduate-medical-education",
+  "sourceDomain": "www.flushinghospital.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pediatrics, OB/GYN",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_af01ffac2a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_116/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_116/cleaned.txt",
+  "sourceHash": "85051766c75142f34c5616e7a29aa8e1b87d3e1c741be743c510e8413bbbc6bc",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:33:30.370Z"
+}

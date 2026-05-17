@@ -1,0 +1,44 @@
+{
+  "seedId": "live_105",
+  "institutionId": "inst_live_mount_sinai_beth_israel",
+  "institutionName": "Mount Sinai Beth Israel",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.mountsinai.org/locations/beth-israel/education/graduate-medical-education",
+  "sourceDomain": "www.mountsinai.org",
+  "expectedAudience": "IMG_GRADUATE_EXTERNSHIP",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Geriatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_050e15332d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_105/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_105/cleaned.txt",
+  "sourceHash": "c912562a618172ea69de1c203035274cf84d65be02f402320c5331c2fedf7be0",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_EXTERNSHIP",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG externship; weak evidence"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:09.858Z"
+}

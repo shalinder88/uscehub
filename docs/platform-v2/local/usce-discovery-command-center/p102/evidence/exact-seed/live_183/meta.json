@@ -1,0 +1,44 @@
+{
+  "seedId": "live_183",
+  "institutionId": "inst_live_university_of_missouri_health_care",
+  "institutionName": "University of Missouri Health Care",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Columbia",
+  "state": "MO",
+  "sourceUrl": "https://medicine.missouri.edu/",
+  "sourceDomain": "medicine.missouri.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_51a746fa86"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_183/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_183/cleaned.txt",
+  "sourceHash": "9789d6896883b467e4259a8dac0d0ed9511549e9fa47cb56293e17a952b1d88a",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T02:35:46.093Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_255",
+  "institutionId": "inst_live_university_of_louisville_medical_observership_program",
+  "institutionName": "University of Louisville — Medical Observership Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Louisville",
+  "state": "KY",
+  "sourceUrl": "https://uoflhealth.org/careers/medical-observership-program-mop/",
+  "sourceDomain": "uoflhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2 | cost: $250",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_7b9ccca9fe"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_255/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_255/cleaned.txt",
+  "sourceHash": "36cc7a907eb688755958b59c7b1e1c11c4c5f3f8d4850099237768a91c25f700",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:38:14.022Z"
+}

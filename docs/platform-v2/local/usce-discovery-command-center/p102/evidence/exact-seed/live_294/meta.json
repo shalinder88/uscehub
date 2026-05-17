@@ -1,0 +1,44 @@
+{
+  "seedId": "live_294",
+  "institutionId": "inst_live_university_of_new_mexico_hospital",
+  "institutionName": "University of New Mexico Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Albuquerque",
+  "state": "NM",
+  "sourceUrl": "https://hospitals.health.unm.edu/",
+  "sourceDomain": "hospitals.health.unm.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Emergency Medicine, Psyc",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_d8d02bdeff"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_294/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_294/cleaned.txt",
+  "sourceHash": "327715e093b0bdff2c8ce5fc8b7fe7b28572c53ad3a8409e28582fadeec4d3c2",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:39:37.772Z"
+}

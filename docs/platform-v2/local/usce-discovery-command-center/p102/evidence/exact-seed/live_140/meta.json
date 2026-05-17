@@ -1,0 +1,44 @@
+{
+  "seedId": "live_140",
+  "institutionId": "inst_live_cook_county_hospital_stroger_",
+  "institutionName": "Cook County Hospital (Stroger)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://cookcountyhealth.org/",
+  "sourceDomain": "cookcountyhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Emergency Medicine, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: N/A | visa: N/A",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_3f08ad4c47"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_140/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_140/cleaned.txt",
+  "sourceHash": "ca0ebdd1ecc633b853db8e117024ee2521af93e8439a3fb0aae3042b7671d128",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T02:34:20.722Z"
+}

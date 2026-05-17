@@ -1,0 +1,44 @@
+{
+  "seedId": "live_143",
+  "institutionId": "inst_live_advocate_christ_medical_center",
+  "institutionName": "Advocate Christ Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Oak Lawn",
+  "state": "IL",
+  "sourceUrl": "https://www.advocatehealth.com/",
+  "sourceDomain": "www.advocatehealth.com",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Cardiology, Emergency Medicine, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_a4fdc357b5"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_143/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_143/cleaned.txt",
+  "sourceHash": "bff8d4d3609c95cc6acbf7939a6996c8ac4add93cb72bd847666aec3271b1898",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:34:25.995Z"
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "live_151",
+  "institutionId": "inst_live_medstar_georgetown_university_hospital",
+  "institutionName": "MedStar Georgetown University Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Washington",
+  "state": "DC",
+  "sourceUrl": "https://www.medstarhealth.org/education",
+  "sourceDomain": "www.medstarhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Oncology, Transplant",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_32ba7e1984"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_151/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_151/cleaned.txt",
+  "sourceHash": "abdd9f43b441cb5044b27c688f3284f0797842d24113dc2a15b9243dc41f96d3",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "GENERIC_PAGE_HOLD",
+    "reason": "generic landing page URL (generic /education URL)",
+    "signals": [
+      "generic /education URL"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T02:34:42.040Z"
+}

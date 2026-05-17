@@ -1,0 +1,44 @@
+{
+  "seedId": "live_241",
+  "institutionId": "inst_live_mount_sinai_medical_center_miami_beach",
+  "institutionName": "Mount Sinai Medical Center — Miami Beach",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Miami Beach",
+  "state": "FL",
+  "sourceUrl": "https://www.msmc.com/education/educational-courses-and-events/international-observership-courses/",
+  "sourceDomain": "www.msmc.com",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Cardiology, Infectious Disease, Internal Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): International Post Graduate Observership. 4 weeks. Separate from Mount Sinai NYC.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_0c56eb287e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_241/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_241/cleaned.txt",
+  "sourceHash": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": -1,
+  "fetchedAt": "2026-05-17T02:37:44.941Z"
+}

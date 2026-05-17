@@ -1,0 +1,44 @@
+{
+  "seedId": "live_303",
+  "institutionId": "inst_live_university_of_kansas_medical_center",
+  "institutionName": "University of Kansas Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Kansas City",
+  "state": "KS",
+  "sourceUrl": "https://www.kumc.edu/",
+  "sourceDomain": "www.kumc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery, Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_9d7e8a25eb"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_303/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_303/cleaned.txt",
+  "sourceHash": "9be60a369f65461f8268e323623dd22ccb888315e4371be21f32d3f9a32113b7",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:39:54.943Z"
+}

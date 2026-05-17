@@ -1,0 +1,46 @@
+{
+  "seedId": "live_195",
+  "institutionId": "inst_live_mayo_clinic_scottsdale",
+  "institutionName": "Mayo Clinic Scottsdale",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Scottsdale",
+  "state": "AZ",
+  "sourceUrl": "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple specialties",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_6c34351105"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_195/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_195/cleaned.txt",
+  "sourceHash": "778cdc950622c30169353a8399872ae9f344a4148552824dca469bc709be8024",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:36:10.914Z"
+}
