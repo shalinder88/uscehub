@@ -9,6 +9,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { TrustBadges } from "@/components/listings/trust-badges";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 import { ListingTrustMetadata } from "@/components/listings/listing-trust-metadata";
+import { findDisplayEligibleByName } from "@/lib/p102-display-eligible-listings";
 import { ShareButtons } from "@/components/listings/share-buttons";
 import { SaveButton } from "@/components/listings/save-button";
 import { ReviewForm } from "@/components/listings/review-form";
@@ -115,6 +116,39 @@ export default async function ListingPage({ params }: ListingPageProps) {
     | "elective"
     | "volunteer";
 
+  // ── P102 Shape A: pull this row's truth-layer enrichment (SOURCE
+  //    badge, SPECIALTY tag, verified finalUrl, evidence quote).
+  //    Lookup is O(1) on the adapter's cached index; returns null
+  //    for rows the truth layer doesn't know about (graceful
+  //    degradation — page renders as before).
+  const truthLookup = findDisplayEligibleByName(listing.title);
+  const sourceBadge = truthLookup?.row.badge as
+    | "DIRECT"
+    | "REORIENTED"
+    | "PROTECTED"
+    | "RESEARCH"
+    | undefined;
+  const specialtyLimited = truthLookup?.row.specialtyLimited;
+  const sourceFinalUrl = truthLookup?.row.finalUrl;
+  const sourceEvidenceQuote = truthLookup?.row.evidenceQuote;
+
+  const SOURCE_BADGE_CLASS: Record<string, string> = {
+    DIRECT:
+      "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/50 dark:text-emerald-100 border-emerald-300 dark:border-emerald-700",
+    REORIENTED:
+      "bg-sky-100 text-sky-900 dark:bg-sky-900/50 dark:text-sky-100 border-sky-300 dark:border-sky-700",
+    PROTECTED:
+      "bg-amber-100 text-amber-900 dark:bg-amber-900/50 dark:text-amber-100 border-amber-300 dark:border-amber-700",
+    RESEARCH:
+      "bg-violet-100 text-violet-900 dark:bg-violet-900/50 dark:text-violet-100 border-violet-300 dark:border-violet-700",
+  };
+  const SOURCE_BADGE_TITLE: Record<string, string> = {
+    DIRECT: "Direct official source",
+    REORIENTED: "Reoriented to official source",
+    PROTECTED: "Live in browser (bot-protected)",
+    RESEARCH: "Research / postdoctoral",
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOccupationalProgram",
@@ -176,6 +210,22 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 Visa Support
               </Badge>
             )}
+            {sourceBadge && (
+              <span
+                className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${SOURCE_BADGE_CLASS[sourceBadge]}`}
+                title={SOURCE_BADGE_TITLE[sourceBadge]}
+              >
+                {sourceBadge}
+              </span>
+            )}
+            {specialtyLimited && (
+              <span
+                className="inline-flex items-center rounded border border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-900/40 text-fuchsia-900 dark:text-fuchsia-200 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider"
+                title={`Specialty-limited: ${specialtyLimited}`}
+              >
+                Specialty: {specialtyLimited}
+              </span>
+            )}
           </div>
           <h1 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
             {listing.title}
@@ -201,6 +251,43 @@ export default async function ListingPage({ params }: ListingPageProps) {
         <ListingDisclaimer className="mb-6" />
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
+            {/* P102 Shape A: source-link block. Renders only when this
+                listing is in the truth-layer's display-eligibility set.
+                Different signal from <TrustBadges> below (which describes
+                the POSTER); this describes the source URL provenance from
+                the 11-batch link-truth audit. */}
+            {sourceFinalUrl && (
+              <section className="mb-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-5">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Source link
+                </h2>
+                <p className="mt-2 break-all text-sm text-slate-700 dark:text-slate-200">
+                  <a
+                    href={sourceFinalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-slate-400 dark:decoration-slate-500 hover:text-slate-900 dark:hover:text-white"
+                  >
+                    {sourceFinalUrl}
+                  </a>
+                </p>
+                <a
+                  href={sourceFinalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-4 py-1.5 text-sm font-semibold hover:bg-slate-700 dark:hover:bg-white"
+                >
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  Verify on official source
+                </a>
+                {sourceEvidenceQuote && (
+                  <blockquote className="mt-4 border-l-2 border-slate-300 dark:border-slate-600 pl-3 text-sm text-slate-700 dark:text-slate-300">
+                    {sourceEvidenceQuote}
+                  </blockquote>
+                )}
+              </section>
+            )}
+
             {/* Only show trust badges for real posters, not system-seeded listings */}
             {listing.organization?.name !== "USCEHub Directory" && (
               <TrustBadges

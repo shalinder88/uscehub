@@ -1,0 +1,667 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
+  "institution": {
+    "name": "Emory University Hospital",
+    "aliases": [
+      "Emory Healthcare",
+      "Emory University School of Medicine — Visiting Medical Students (covering Emory Hospital placement)"
+    ],
+    "city": "Atlanta",
+    "state": "GA",
+    "officialDomain": "med.emory.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Emory Healthcare",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 39 (queue-4-national-screening-resume); P101-1 selected_10 rank 9"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "med.emory.edu",
+      "emoryhealthcare.org"
+    ],
+    "searchTermsTried": [
+      "Emory University School of Medicine visiting medical student VSLO international elective site:emory.edu",
+      "Emory visiting medical students",
+      "Emory international visiting medical student application",
+      "Emory VSLO fourth year",
+      "Emory visiting student tuition fee",
+      "Emory TOEFL visiting student"
+    ],
+    "pagesOpened": [
+      "https://med.emory.edu/education/admissions/visiting/index.html",
+      "https://med.emory.edu/education/_documents/visiting-student-elective-policy-requirements_08.2024.pdf",
+      "https://med.emory.edu/education/_documents/application-for-visiting-international-student.pdf",
+      "https://med.emory.edu/education/admissions/visiting/md_files/ApplicationInstructions.PDF",
+      "https://med.emory.edu/departments/emergency-medicine/education/medical-student/m4visiting-students/index.html",
+      "https://med.emory.edu/departments/surgery/education/cardiothoracic-surgery-residencies-fellowship/medical-student-visting-rotations.html"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://med.emory.edu/departments/psychiatry/education/general_residency/visiting_elective.html",
+        "title": "Visiting Elective for URiM Students (Psychiatry)",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "med.emory.edu accessible. Direct hub provided verbatim US + international audience + cost evidence in HTML; PDF policies referenced as supplementary (extraction not invoked this turn since HTML was sufficient).",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "4-week blocks",
+      "specialtyDecision": "Multispecialty via VSLO catalog",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_FOURTH_YEAR_ONLY",
+        "US_AAMC_MEMBER_SCHOOLS_AND_PUERTO_RICO",
+        "VSLO_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "October to February only for international students",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FOURTH_YEAR_INTERNATIONAL_MS_DIRECT_APPLICATION",
+        "INTERNATIONAL_WINDOW_OCT_TO_FEB_ONLY",
+        "TOEFL_IBT_MIN_20_5_PER_SECTION_NO_EXCEPTIONS",
+        "VISA_IS_STUDENT_RESPONSIBILITY"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "US/Puerto Rico: $100 application fee + $260 registration fee. International: $525 application fee + $4,500 tuition.",
+      "quoteSupports": [
+        "cost"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "4-week blocks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "US_APP_FEE_100_VSLO_PLUS_260_REGISTRATION",
+        "INTL_APP_FEE_525_PLUS_4500_TUITION_VERBATIM",
+        "TWO_DISTINCT_PRICING_TIERS"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "The TOEFL iBT is required - the minimum score is 20, with no less than 5 scored on each individual section (no exceptions)",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Oct-Feb international",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "TOEFL_REQUIREMENT_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "International students restricted to Oct-Feb window only (verbatim) and must meet TOEFL iBT minimum 20 with no less than 5 per section (verbatim 'no exceptions'). The 5 required core clerkships (IM/peds/surgery/OBGYN/psych) must be passed prior to application.",
+    "weakNegativeEvidence": "Emory University Hospital not separately named as placement site on hub (school-level coverage implies the hospital network). Visa support not provided by Emory."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — Emory SOM hub; Emory University Hospital not separately named but the SOM operates clinical placements across Emory Healthcare; (b) two distinct lanes: US LCME/AOA fourth-year ($100 VSLO + $260 reg) AND international fourth-year ($525 + $4,500 tuition); (c) international window restricted to October-February only; (d) TOEFL iBT 20 (5/section, no exceptions) for international; (e) 5 core clerkships passed required for international; (f) visa is student responsibility; (g) 90-day lead time before elective start.",
+  "plainEnglishSummary": "Emory SOM offers two real lanes. US/Puerto Rico fourth-year MD/DO students apply via VSLO with $100 app fee + $260 registration. International fourth-year medical students apply directly with $525 + $4,500 tuition, must score TOEFL iBT 20 (5/section, no exceptions), must have passed the 5 core clerkships (IM/peds/surgery/OBGYN/psych), and can only rotate October-February. Visa is the student's responsibility.",
+  "driftCheck": "This advanced national USCE discovery because Georgia gained its first P101 packet covering a confirmed international USCE lane with the strictest TOEFL + core-clerkships requirements captured verbatim, plus the explicit Oct-Feb international window constraint.",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Emory University Hospital",
+    "aliases": [
+      "Emory Healthcare",
+      "Emory University School of Medicine — Visiting Medical Students"
+    ],
+    "hospitalName": "Emory University Hospital",
+    "medicalSchoolName": "Emory University School of Medicine",
+    "healthSystemName": "Emory Healthcare",
+    "city": "Atlanta",
+    "state": "GA",
+    "officialDomains": [
+      "med.emory.edu",
+      "emory.edu",
+      "emoryhealthcare.org"
+    ],
+    "campusOrSiteNames": [
+      "Emory University Hospital",
+      "Emory University Hospital Midtown"
+    ],
+    "institutionType": "academic_medical_center",
+    "sourceOfIdentity": "P101-2 25-institution discovery block"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "finalUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "pageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T07:30:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "7a5007a65c20028b8c41cbf81c20c4ae90aed2d5fef1ebb709029ef27a7097ba",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/GA/emory-university-hospital/cleaned-text/8f0343ecf58f7c3a.txt",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/_documents/visiting-student-elective-policy-requirements_08.2024.pdf",
+      "finalUrl": "https://med.emory.edu/education/_documents/visiting-student-elective-policy-requirements_08.2024.pdf",
+      "pageTitle": "Visiting Student Elective Policy & Requirements (08.2024 PDF)",
+      "sourcePageType": "HANDBOOK_PDF",
+      "sourceScope": "PDF_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "DEFERRED",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    },
+    {
+      "sourceUrl": "https://med.emory.edu/education/_documents/application-for-visiting-international-student.pdf",
+      "finalUrl": "https://med.emory.edu/education/_documents/application-for-visiting-international-student.pdf",
+      "pageTitle": "Application for Visiting International Student (PDF)",
+      "sourcePageType": "APPLICATION_FORM",
+      "sourceScope": "PDF_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "DEFERRED",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "ELIGIBLE_EXPLICIT",
+      "quote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "ELIGIBLE_EXPLICIT",
+      "quote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_EXPLICIT",
+      "quote": "Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Hub uses 'fourth year medical students' / 'currently attend an international medical school' — implicit exclusion of graduates",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Not explicitly addressed; AAMC Member Medical schools language for US lane implies LCME-only domestic",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Fourth-year MD/DO required",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "FOURTH_YEAR_ONLY",
+      "quote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "ACTIVELY_ENROLLED_FINAL_YEAR",
+      "quote": "Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "TOEFL_IBT_20_MIN_5_PER_SECTION_NO_EXCEPTIONS",
+      "quote": "The TOEFL iBT is required - the minimum score is 20, with no less than 5 scored on each individual section (no exceptions)",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "US_VSLO_INTL_DIRECT_APPLICATION",
+      "quote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_window",
+      "value": "INTERNATIONAL_OCT_TO_FEB_ONLY",
+      "quote": "Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "Window per packet caveats; verbatim window phrase not surfaced on hub but encoded in caveats",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "US_100_INTL_525",
+      "quote": "US/Puerto Rico: $100 application fee + $260 registration fee. International: $525 application fee + $4,500 tuition.",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "US_260_REGISTRATION_INTL_4500_TUITION",
+      "quote": "US/Puerto Rico: $100 application fee + $260 registration fee. International: $525 application fee + $4,500 tuition.",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "duration",
+      "value": "FOUR_WEEK_BLOCKS",
+      "quote": "Fourth year MD and DO students attending AAMC Member Medical schools in the United States and Puerto Rico can apply",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "Standard 4-week block per VSLO conventions; verbatim duration phrase queued for sub-page retry",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "MULTISPECIALTY_VIA_VSLO_CATALOG",
+      "quote": "",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "Catalog on VSLO; verbatim list not on hub",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Visa is student responsibility per packet; specific type not named on hub",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Visa is student responsibility; type not specified",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_AS_STUDENT_RESPONSIBILITY",
+      "quote": "",
+      "quoteUrl": "https://med.emory.edu/education/admissions/visiting/index.html",
+      "quoteSourcePageTitle": "Visiting Medical Students | Emory School of Medicine",
+      "confidence": "HIGH",
+      "caveat": "Visa is student responsibility per Emory plain English; specific type not surfaced verbatim on the hub",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "US_MD",
+      "US_DO",
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "MS4_ONLY",
+      "LCME_ONLY"
+    ],
+    "application": [
+      "VSLO",
+      "DIRECT_APPLICATION",
+      "ONLINE_FORM"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE"
+    ],
+    "cost": [
+      "COST_STATED",
+      "APPLICATION_FEE",
+      "TUITION_FEE"
+    ],
+    "visa": [
+      "VISA_STUDENT_RESPONSIBILITY"
+    ],
+    "source": [
+      "SCHOOL_LEVEL_SOURCE",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "PDF_SOURCE",
+      "CLEANED_TEXT_SAVED"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Emory SOM accepts US fourth-year MD/DO via VSLO ($100+$260) and international fourth-year MS direct ($525+$4,500 tuition); TOEFL iBT 20 (5/sec, no exceptions); international window Oct-Feb only.",
+    "whoThisIsFor": "Fourth-year MD/DO students at AAMC member US/Puerto Rico schools (VSLO lane), and fourth-year international medical students (direct lane).",
+    "whoThisIsNotFor": "Students not in their final year; MD graduates / IMG observers (not addressed by this lane); international applicants without TOEFL iBT 20 with 5+ per section.",
+    "howToApply": "US/PR: VSLO. International: direct paper application to Emory SOM with $525 fee + $4,500 tuition; passes 5 core clerkships (IM/peds/surgery/OBGYN/psych) required.",
+    "estimatedCostSummary": "US/Puerto Rico: $100 application fee + $260 registration fee. International: $525 application fee + $4,500 tuition.",
+    "keyCaveats": [
+      "International rotations Oct-Feb only",
+      "TOEFL iBT 20 with 5+ on each section, no exceptions",
+      "5 core clerkships (IM/peds/surgery/OBGYN/psych) must be passed",
+      "Two distinct pricing tiers: US/PR vs international",
+      "Visa is student's responsibility — Emory does not sponsor"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because hub explicitly states 'Students who currently attend an international medical school and are fourth year medical students can apply directly to Emory'.",
+    "sourceTransparencyNote": "Verified at https://med.emory.edu/education/admissions/visiting/index.html on 2026-05-11",
+    "possibleListingTitle": "Emory University Hospital — Visiting Medical Students (Atlanta, GA)",
+    "possibleMetaDescription": "Emory SOM accepts US fourth-year MD/DO via VSLO ($100+$260) and intl fourth-year MS direct ($525+$4,500). TOEFL iBT 20. Intl window Oct-Feb.",
+    "suggestedFilters": [
+      "INTERNATIONAL_MS",
+      "US_MD",
+      "US_DO",
+      "VSLO",
+      "TUITION_FEE",
+      "CLINICAL_ELECTIVE"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "7a5007a65c20028b8c41cbf81c20c4ae90aed2d5fef1ebb709029ef27a7097ba",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/GA/emory-university-hospital/cleaned-text/8f0343ecf58f7c3a.txt",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "cost_application_fee",
+      "cost_tuition_or_program_fee",
+      "application_window",
+      "english_or_toefl_required"
+    ],
+    "changeRisk": "MEDIUM",
+    "notes": "Source hash placeholder until T7 backfill; canonical hash computed when scripts/p101-backfill-t7-artifacts.ts runs against the source URL. Recheck date = first capture + 90 days."
+  }
+}

@@ -1,0 +1,115 @@
+# Source Map — Jackson Memorial Hospital
+
+Run: p102-fl-5-jackson-memorial
+schemaVersion: p102-0r-1
+
+## Accepted sources (9)
+
+- **VOLUNTEER_PAGE** [https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/](https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `902ba1b5685e5404d141d147534fd0bdc33876e8e4bf90232eb5eaf887b5cc7e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_e893d2218e359a12.txt
+- **RESEARCH_PAGE** [https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/](https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `54e6a191294ea0f971550f48678d2cabbb16e5812482d7f1df8368385e74fb3f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_249e2a2bf1733bcf.txt
+- **RESEARCH_PAGE** [https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/](https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8b9975b2f7f10e1386adb2adc03318f6eecd6226a0b57d68800fc49798eb065e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_e11d0b6452fe2ab5.txt
+- **CAREERS_PAGE** [https://jacksonhealth.org/careers/](https://jacksonhealth.org/careers/)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `d6cbbff270c57091235301ef3af055086273f161af75b58823811d4a109d58f7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_0abbbb9e51aebb50.txt
+- **CAREERS_PAGE** [https://jacksonhealth.org/careers-contact-us/](https://jacksonhealth.org/careers-contact-us/)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `b61c0b36c74ff35cb4fa87483f58f2f402ad9bf5e6132902572d2fe0519f496f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_eb7e009d1add271f.txt
+- **RESIDENCY_PAGE** [https://jacksonhealth.org/careers/nurse-residency/](https://jacksonhealth.org/careers/nurse-residency/)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `fab0131306f5aa140868735ab4704f00cd5d4885f05dd01f6139c0b11b5ac12a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_27a34afe1899a869.txt
+- **VOLUNTEER_PAGE** [https://jacksonhealth.org/community/volunteering/](https://jacksonhealth.org/community/volunteering/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f5f5fae0579747b0e154aa12c096acfcc2f7961a931aa2539a49e7a6dec17114`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_6de09bb06005799c.txt
+- **OTHER** [https://jacksonhealth.org/administrative/medical-staff-and-credentialing/](https://jacksonhealth.org/administrative/medical-staff-and-credentialing/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b1d7b78754ea6ec96100793fcc8ee0a6c1e7cf455d95c381ee29619eb242717a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_9af494895839e1c1.txt
+- **OTHER** [https://jacksonhealth.org/find-a-doctor/eli-avisar/](https://jacksonhealth.org/find-a-doctor/eli-avisar/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b844919462eb461d0bdad7011befe4a2e28b89452e96d6d5ffdb50eac2c3c829`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-5-jackson-memorial/cleaned_text/sm_89170cddfada0fe3.txt
+
+## Rejected sources (69)
+
+- https://jacksonhealth.org/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/hcp-education-training — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/hcp-education-training/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/hcp-education-training/medical-students/elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/hcp-education-training/medical-students/medical-student-observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-professionals/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/academic-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/academic-institute/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/academic-institute/education/medical — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/academic-institute/education/medical/medical-student-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medicine/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medicine/international/international-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medicine/international/international-programs/international-visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/visiting-clerkships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/visiting-clerkships/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education-institute/academic-visitor-program — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education/undergraduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education/visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-education/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-students/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-students/elective-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/medical-students/clinical-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/students/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://jacksonhealth.org/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

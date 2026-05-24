@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [],
+  "duplicates": [],
+  "institutionId": "inst_lee_memorial_hospital_fl",
+  "institutionName": "Lee Memorial Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 105,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 1,
+    "futureLaneOnlyCount": 45,
+    "humanReviewRequiredCount": 59,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-8-lee-memorial",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unfollowedSignals": [],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims emitted. All physician-pipeline signals (residencies, APP fellowships, careers) correctly held at FUTURE_LANE_ONLY. Volunteer/teen/auxiliary and 404 pages correctly held at HUMAN_REVIEW_REQUIRED. The explicit \"does not shadow\" negative quote sits on a Lee Health system-level volunteer page (not Lee Memorial campus-specific) and is appropriately not promoted to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY. Ledger is internally consistent and safe to merge."
+}

@@ -1,0 +1,818 @@
+{
+  "generatedAt": "2026-05-17T03:39:26.820Z",
+  "seedFile": "docs/platform-v2/local/usce-discovery-command-center/p102/queues/p102_reorientation_candidates.csv",
+  "offline": false,
+  "seedsAttempted": 79,
+  "runStatusCounts": {
+    "EXTRACTED": 73,
+    "FAILED_FETCH": 6
+  },
+  "finalStatusCounts": {
+    "AUTO_PROMOTE": 60,
+    "REJECTED": 10,
+    "FAILED": 6,
+    "HOLD_REVIEW": 3
+  },
+  "routeCounts": {
+    "AUTO_PROMOTE": 63,
+    "HOLD_REVIEW": 3,
+    "REJECTED": 10
+  },
+  "audienceCounts": {
+    "US_MD_DO_VISITING_STUDENT": 42,
+    "IMG_GRADUATE_OBSERVER": 23,
+    "INTERNATIONAL_MEDICAL_STUDENT": 11
+  },
+  "directLinkCounts": {
+    "VALID_DIRECT_USCE_SOURCE": 66,
+    "INVALID_NOT_USCE_SOURCE": 10
+  },
+  "duplicateClusters": 0,
+  "seedResults": [
+    {
+      "seedId": "reorient_001",
+      "institutionName": "Maimonides Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_5dc0db968c",
+        "exact_842a8b86a7"
+      ]
+    },
+    {
+      "seedId": "reorient_002",
+      "institutionName": "Loyola University Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_5697b5a0a6"
+      ]
+    },
+    {
+      "seedId": "reorient_003",
+      "institutionName": "Loyola University Medical Center International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f70fcd6ace"
+      ]
+    },
+    {
+      "seedId": "reorient_004",
+      "institutionName": "University of Florida Health / Shands Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_62479f3bef"
+      ]
+    },
+    {
+      "seedId": "reorient_005",
+      "institutionName": "University of Florida Health / Shands Hospital — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a2382468ea"
+      ]
+    },
+    {
+      "seedId": "reorient_006",
+      "institutionName": "UPMC (University of Pittsburgh Medical Center)",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_44070e61d5"
+      ]
+    },
+    {
+      "seedId": "reorient_007",
+      "institutionName": "UPMC — International Visiting Student Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_647422ed66"
+      ]
+    },
+    {
+      "seedId": "reorient_008",
+      "institutionName": "UPMC International — Clinical Collaborations",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_0d6fd7adda"
+      ]
+    },
+    {
+      "seedId": "reorient_009",
+      "institutionName": "Cleveland Clinic — Research Fellowship",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7a02bed009"
+      ]
+    },
+    {
+      "seedId": "reorient_010",
+      "institutionName": "Cedars-Sinai — Research Fellowship",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7206bec0a8"
+      ]
+    },
+    {
+      "seedId": "reorient_011",
+      "institutionName": "Emory University — Postdoctoral Research",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a011d777f0"
+      ]
+    },
+    {
+      "seedId": "reorient_012",
+      "institutionName": "Beth Israel Deaconess Medical Center",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "fetch failed",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_013",
+      "institutionName": "Massachusetts General Hospital — International Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_4a434432ce"
+      ]
+    },
+    {
+      "seedId": "reorient_014",
+      "institutionName": "Henry Ford Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_666dd46e6d"
+      ]
+    },
+    {
+      "seedId": "reorient_015",
+      "institutionName": "Hackensack University Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_c1d2e66254"
+      ]
+    },
+    {
+      "seedId": "reorient_016",
+      "institutionName": "Northwestern Memorial Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_030e76ee33"
+      ]
+    },
+    {
+      "seedId": "reorient_017",
+      "institutionName": "Northwestern Memorial Hospital — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_ca2a65176e"
+      ]
+    },
+    {
+      "seedId": "reorient_018",
+      "institutionName": "Wayne State University / Detroit Medical Center",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 403,
+      "fetchError": "HTTP 403",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_019",
+      "institutionName": "Yale-New Haven Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_71807914af"
+      ]
+    },
+    {
+      "seedId": "reorient_020",
+      "institutionName": "Yale-New Haven Hospital — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_3225569761"
+      ]
+    },
+    {
+      "seedId": "reorient_021",
+      "institutionName": "Stanford Health Care",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_48614922c1"
+      ]
+    },
+    {
+      "seedId": "reorient_022",
+      "institutionName": "Stanford Health Care — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_db56c791bf"
+      ]
+    },
+    {
+      "seedId": "reorient_023",
+      "institutionName": "Baylor College of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_18202c79b5",
+        "exact_59feb6c169"
+      ]
+    },
+    {
+      "seedId": "reorient_024",
+      "institutionName": "Abington Hospital — Jefferson Health",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_108adb2f2d"
+      ]
+    },
+    {
+      "seedId": "reorient_025",
+      "institutionName": "Advocate Christ Medical Center",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchError": "This operation was aborted",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_026",
+      "institutionName": "Banner University Medical Center — Tucson",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_5c39601811"
+      ]
+    },
+    {
+      "seedId": "reorient_027",
+      "institutionName": "Baptist Health South Florida — International Observerships",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_b5a9978316"
+      ]
+    },
+    {
+      "seedId": "reorient_028",
+      "institutionName": "Baptist Health South Florida — Observer Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_d642c857a5"
+      ]
+    },
+    {
+      "seedId": "reorient_029",
+      "institutionName": "Beaumont Hospital — Royal Oak (Corewell)",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_feaacad0e4"
+      ]
+    },
+    {
+      "seedId": "reorient_030",
+      "institutionName": "Boston Medical Center — Visiting Medical Students",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_c62049d7e7"
+      ]
+    },
+    {
+      "seedId": "reorient_031",
+      "institutionName": "Carolinas Medical Center — Atrium Health",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_0beade4264"
+      ]
+    },
+    {
+      "seedId": "reorient_032",
+      "institutionName": "Cedars-Sinai Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7c38d1645a"
+      ]
+    },
+    {
+      "seedId": "reorient_033",
+      "institutionName": "Cincinnati Children's Hospital — International Visitor Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_29af5603fd"
+      ]
+    },
+    {
+      "seedId": "reorient_034",
+      "institutionName": "Augusta University Medical Center (MCG)",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_dc1dfc74f0"
+      ]
+    },
+    {
+      "seedId": "reorient_035",
+      "institutionName": "Duke University Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_2f47f78a59"
+      ]
+    },
+    {
+      "seedId": "reorient_036",
+      "institutionName": "University of Cincinnati Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_21bdfac3bb"
+      ]
+    },
+    {
+      "seedId": "reorient_037",
+      "institutionName": "Mount Sinai Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_e7031dae76"
+      ]
+    },
+    {
+      "seedId": "reorient_038",
+      "institutionName": "NewYork-Presbyterian / Columbia",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_8e27dc678c"
+      ]
+    },
+    {
+      "seedId": "reorient_039",
+      "institutionName": "NewYork-Presbyterian / Columbia — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f9c7afc1d3"
+      ]
+    },
+    {
+      "seedId": "reorient_040",
+      "institutionName": "NewYork-Presbyterian / Weill Cornell",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_b4ee1499bf"
+      ]
+    },
+    {
+      "seedId": "reorient_041",
+      "institutionName": "NewYork-Presbyterian / Weill Cornell — International",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a51c53e29b"
+      ]
+    },
+    {
+      "seedId": "reorient_042",
+      "institutionName": "Albert Einstein College of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_590a44d0ea"
+      ]
+    },
+    {
+      "seedId": "reorient_043",
+      "institutionName": "University of Maryland Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a23fab85fd"
+      ]
+    },
+    {
+      "seedId": "reorient_044",
+      "institutionName": "George Washington University Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_033471d513"
+      ]
+    },
+    {
+      "seedId": "reorient_045",
+      "institutionName": "George Washington University Hospital — ICEP",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_c6cf2a5aed"
+      ]
+    },
+    {
+      "seedId": "reorient_046",
+      "institutionName": "University of Iowa Hospitals & Clinics",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_6aaa94cacb"
+      ]
+    },
+    {
+      "seedId": "reorient_047",
+      "institutionName": "University of Minnesota Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_dac76469e4"
+      ]
+    },
+    {
+      "seedId": "reorient_048",
+      "institutionName": "University of Minnesota — GME Observers",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_ee4654fd2a"
+      ]
+    },
+    {
+      "seedId": "reorient_049",
+      "institutionName": "Hennepin Healthcare — Minneapolis",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 403,
+      "fetchError": "HTTP 403",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_050",
+      "institutionName": "Tampa General Hospital / USF Health",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 404,
+      "fetchError": "HTTP 404",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_051",
+      "institutionName": "Wake Forest Baptist / Atrium Health",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_54527beef7"
+      ]
+    },
+    {
+      "seedId": "reorient_052",
+      "institutionName": "University Hospital Newark / Rutgers NJMS",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_155fac1d63"
+      ]
+    },
+    {
+      "seedId": "reorient_053",
+      "institutionName": "Robert Wood Johnson University Hospital / Rutgers RWJMS",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_3e44690592"
+      ]
+    },
+    {
+      "seedId": "reorient_054",
+      "institutionName": "Hospital of the University of Pennsylvania (HUP) / Penn Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_19b9a66ccb"
+      ]
+    },
+    {
+      "seedId": "reorient_055",
+      "institutionName": "Penn Medicine — International Trainees & Scholars",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_64599a53f7"
+      ]
+    },
+    {
+      "seedId": "reorient_056",
+      "institutionName": "Texas Tech Health El Paso",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_e1ea618153"
+      ]
+    },
+    {
+      "seedId": "reorient_057",
+      "institutionName": "Texas Tech HSC — Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f54b326af6"
+      ]
+    },
+    {
+      "seedId": "reorient_058",
+      "institutionName": "University Hospitals Cleveland Medical Center",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_3a594db0d2"
+      ]
+    },
+    {
+      "seedId": "reorient_059",
+      "institutionName": "Ochsner International Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_8d1ed84184"
+      ]
+    },
+    {
+      "seedId": "reorient_060",
+      "institutionName": "Ochsner Health — Medical Student Electives",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f7b917431e"
+      ]
+    },
+    {
+      "seedId": "reorient_061",
+      "institutionName": "Mayo Clinic — Visiting Medical Student Clerkships",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a67d9a2709"
+      ]
+    },
+    {
+      "seedId": "reorient_062",
+      "institutionName": "UCLA Ronald Reagan Medical Center — VSLO",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bb39948a90"
+      ]
+    },
+    {
+      "seedId": "reorient_063",
+      "institutionName": "USC Keck — International Physician Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_fa35c5079a"
+      ]
+    },
+    {
+      "seedId": "reorient_064",
+      "institutionName": "Children's Hospital of Philadelphia (CHOP) — International Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_8de995613c"
+      ]
+    },
+    {
+      "seedId": "reorient_065",
+      "institutionName": "Memorial Sloan Kettering — International Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_fd243cc7f6"
+      ]
+    },
+    {
+      "seedId": "reorient_066",
+      "institutionName": "Mayo Clinic Jacksonville",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_dc3d215d1d"
+      ]
+    },
+    {
+      "seedId": "reorient_067",
+      "institutionName": "Cedars-Sinai — Senior Electives",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "HOLD_REVIEW",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_6b03b96bc5"
+      ]
+    },
+    {
+      "seedId": "reorient_068",
+      "institutionName": "Cleveland Clinic — Elective Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bf254755b0",
+        "exact_7f4742d359"
+      ]
+    },
+    {
+      "seedId": "reorient_069",
+      "institutionName": "NYC Health + Hospitals — MOSAIC Visiting Scholars",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_7d1ad84651"
+      ]
+    },
+    {
+      "seedId": "reorient_070",
+      "institutionName": "NYU Langone / Bellevue Hospital",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_6a3101682d"
+      ]
+    },
+    {
+      "seedId": "reorient_071",
+      "institutionName": "NYU Langone Orthopedic Surgery — Visiting International Physicians",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_05c1648830"
+      ]
+    },
+    {
+      "seedId": "reorient_072",
+      "institutionName": "Children's Hospital Los Angeles — International Observership",
+      "runStatus": "FAILED_FETCH",
+      "finalStatus": "FAILED",
+      "fetchHttpStatus": 403,
+      "fetchError": "HTTP 403",
+      "emittedRowIds": []
+    },
+    {
+      "seedId": "reorient_073",
+      "institutionName": "MD Anderson Cancer Center — Observer Programs",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_4fe2128384"
+      ]
+    },
+    {
+      "seedId": "reorient_074",
+      "institutionName": "Houston Methodist — Global Observership",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_37465568d4"
+      ]
+    },
+    {
+      "seedId": "reorient_075",
+      "institutionName": "Rush University Medical Center — Visiting Physicians",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_a8f53af944"
+      ]
+    },
+    {
+      "seedId": "reorient_076",
+      "institutionName": "Hospital for Special Surgery — Academic Visitor Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_1ef7fafb9f"
+      ]
+    },
+    {
+      "seedId": "reorient_077",
+      "institutionName": "Mayo Clinic — Arizona Campus",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_bb25fe6672"
+      ]
+    },
+    {
+      "seedId": "reorient_078",
+      "institutionName": "NYU Grossman Long Island School of Medicine",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "REJECTED",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_f014053856"
+      ]
+    },
+    {
+      "seedId": "reorient_079",
+      "institutionName": "University of Illinois Chicago — Observership Program",
+      "runStatus": "EXTRACTED",
+      "finalStatus": "AUTO_PROMOTE",
+      "fetchHttpStatus": 200,
+      "emittedRowIds": [
+        "exact_153d8d157e"
+      ]
+    }
+  ]
+}

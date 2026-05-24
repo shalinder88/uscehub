@@ -1,0 +1,46 @@
+{
+  "seedId": "live_153",
+  "institutionId": "inst_live_mayo_clinic",
+  "institutionName": "Mayo Clinic",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Rochester",
+  "state": "MN",
+  "sourceUrl": "https://college.mayo.edu/academics/visiting-medical-student-clerkships/",
+  "sourceDomain": "college.mayo.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "All major specialties",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 2-4 weeks | visa: B1/B2 | cost: $350 non-refundable application fee (for clerkships)",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_f7291036a7"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_153/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_153/cleaned.txt",
+  "sourceHash": "7f5d9bdbb50c88d7454e8bf0b277700e51e2cabc94c54ea20e9bcfb97fa5b9d7",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:34:45.581Z"
+}

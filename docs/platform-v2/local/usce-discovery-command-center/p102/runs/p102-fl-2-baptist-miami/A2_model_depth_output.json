@@ -1,0 +1,2260 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "src_70_a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+            "sourceHash": "a149c21c3bc53d80e8fe89c5e25d63dd7faaacf96fd608cdb98977c2dbde1821",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_108e0a313c6ead8d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Through these programs, Baptist Health employees can work with Baptist Health Innovations to identify practitioner-defined needs and opportunities that may lie well before or after invention.",
+            "normalizedField": "audience_internal_employees_only",
+            "claimText": "Applied Research and Education programs are described as available to Baptist Health employees (internal clinicians/admin), not to external visiting students or observers.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Eligibility stated for the Research/Education program generally, not specifically for the Knight Fellowship; not an explicit refusal of external trainees.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Internal-employee innovation programming with no clinical USCE, GME, or attending-career mapping; does not fit Tiers 1–3.",
+            "whyA1Missed": "A1 captured the Knight Fellowship blurb but missed the upstream sentence narrowing the program's audience to Baptist Health employees."
+          },
+          {
+            "claimId": "src_70_a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education",
+            "sourceHash": "a149c21c3bc53d80e8fe89c5e25d63dd7faaacf96fd608cdb98977c2dbde1821",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_108e0a313c6ead8d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Design and fabrication capabilities &ndash; including 3D printing &ndash; for proof-of-concept and supply chain resiliency efforts in partnership with Florida International University and Florida Atlantic University.",
+            "normalizedField": "academic_partners_FIU_FAU",
+            "claimText": "Baptist Health Innovations partners with Florida International University and Florida Atlantic University for design/fabrication and 3D printing in the Research and Education Program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Partnership relates to engineering/design capabilities, not clinical USCE or student rotations.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Institutional research partnership signal; no direct trainee-pathway claim.",
+            "whyA1Missed": "A1 focused on the Knight Fellowship and scope-conflict and did not surface the named FIU/FAU academic-partner signal."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "src_70_c1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Knight Fellowship audience is partially clarified upstream in the same source: 'Baptist Health employees can work with Baptist Health Innovations...' Consider tightening the limitations field to note the program is positioned for internal employees, while the Knight Fellowship line itself broadens to 'visionaries and entrepreneurs'."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Knight Foundation Fellowship application process, deadline, fee, duration, and whether physicians-in-training (residents/fellows/medical students) are eligible are not stated.",
+          "No campus-specific applicability statement tying any of these offerings to Baptist Hospital of Miami specifically.",
+          "'Contact Us' is referenced but no opportunity-specific coordinator email is present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this system-level baptisthealth.net source.",
+          "Verify the Knight Fellowship claim remains tier=NOT_APPLICABLE and visibility=HUMAN_REVIEW_REQUIRED (innovation/entrepreneurship, not ACGME).",
+          "Confirm src_70_a2_c1 eligibility quote is treated as audience-scoping signal, not as an EXPLICIT_NEGATIVE refusal of observers/visiting students."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src_70_a2_c2",
+            "scopeIssue": "system_level_partnership_not_campus_specific",
+            "explanation": "FIU/FAU partnership is stated at the Baptist Health Innovations (system) level with no tie to Baptist Hospital of Miami campus; cannot be attributed to the campus without further proof."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+            "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Willingness and ability to attend 10 in-person, four-hour sessions scheduled from September to June in Miami, Florida, and to participate in hybrid team-based sessions approximately six hours per month.",
+            "normalizedField": null,
+            "claimText": "Attendance commitment: 10 in-person four-hour sessions Sept-June in Miami plus ~6 hours/month hybrid team sessions.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Time/location commitment for Tier 3 non-clinical innovation fellowship.",
+            "limitations": null,
+            "whyA1Missed": "A1 captured residency/degree/employment bullets but skipped the attendance/time-commitment bullet from the eligibility list."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+            "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Support from immediate supervisor and, if applicable, external employer.",
+            "normalizedField": null,
+            "claimText": "Applicants must have support from immediate supervisor (and external employer if applicable).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Employer-support eligibility constraint for the Tier 3 working-professional fellowship.",
+            "limitations": null,
+            "whyA1Missed": "A1 omitted this bullet from the eligibility list."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+            "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "If you are an external candidate not employed at Baptist Health and do not have a Baptist Health email, select the link on the bottom left to complete a brief questionnaire. Please allow 24 hours to receive your login information, direct link to access the application and additional documentation via email.",
+            "normalizedField": null,
+            "claimText": "External (non-Baptist Health) candidates complete a brief questionnaire and receive login info within 24 hours.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Application pathway mechanic for external (non-employee) candidates of the Tier 3 fellowship.",
+            "limitations": null,
+            "whyA1Missed": "A1 captured documents and rolling deadline only; missed the bifurcated internal/external pathway and 24-hour login process."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+            "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Passion or interest in healthcare, innovation and entrepreneurship.",
+            "normalizedField": null,
+            "claimText": "Applicants must demonstrate passion/interest in healthcare, innovation, and entrepreneurship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Subjective eligibility criterion for Tier 3 innovation fellowship.",
+            "limitations": null,
+            "whyA1Missed": "A1 skipped this bullet of the eligibility list."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c5",
+            "refinementReason": "lane_misclassified",
+            "explanation": "A1 tagged this as claimType OFFERS_ELECTIVE, but the quote merely describes the fellowship's intended audience. It is not a clinical elective offering; should be reclassified as ELIGIBILITY_REQUIREMENT/AUDIENCE."
+          },
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is Baptist Health South Florida system-level Innovations page, not Baptist Hospital of Miami campus-specific. sourceScope DEPARTMENT_LEVEL is incorrect and no campusApplicabilityProof ties the program to Baptist Hospital of Miami."
+          },
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Same system-level scope issue: residency criterion covers four-county South Florida region, not Baptist Hospital of Miami campus specifically. sourceScope should be HEALTH_SYSTEM_LEVEL."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page never names Baptist Hospital of Miami; cohort meets 'in Miami, Florida' but no statement ties the fellowship to the Baptist Hospital of Miami campus specifically.",
+          "No clinical GME / ACGME residency or fellowship information appears on this page; whether Baptist Hospital of Miami has any clinical fellowships is unresolved by this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this FELLOWSHIP_PAGE — all claims must remain FUTURE_LANE_ONLY.",
+          "Verify A1 sc1 SCOPE_CONFLICT is preserved and that c1–c9 sourceScope is corrected from DEPARTMENT_LEVEL to HEALTH_SYSTEM_LEVEL given page is Baptist Health Innovations (system) not Baptist Hospital of Miami (campus).",
+          "Verify A1 c5 is reclassified away from OFFERS_ELECTIVE; the quote is an audience description, not an elective offering."
+        ],
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "system_level_attributed_to_campus",
+            "explanation": "Knight Foundation Fellowship is a Baptist Health South Florida system-wide innovations program. A1 set sourceScope DEPARTMENT_LEVEL and bound it to Baptist Hospital of Miami without campus-applicability proof in text."
+          },
+          {
+            "claimId": "c5",
+            "scopeIssue": "claim_type_mismatch",
+            "explanation": "OFFERS_ELECTIVE is reserved for clinical electives. The audience-descriptor quote does not establish a clinical elective offering and should be retyped."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+              "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Willingness and ability to attend 10 in-person, four-hour sessions scheduled from September to June in Miami, Florida, and to participate in hybrid team-based sessions approximately six hours per month.",
+              "normalizedField": null,
+              "claimText": "Attendance commitment: 10 in-person four-hour sessions Sept-June in Miami plus ~6 hours/month hybrid.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Time/location commitment for Tier 3 working-professional innovation fellowship.",
+              "limitations": null,
+              "whyA1Missed": "A1 captured residency/degree/employment bullets but skipped time-commitment bullet."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+              "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Support from immediate supervisor and, if applicable, external employer.",
+              "normalizedField": null,
+              "claimText": "Supervisor/employer support required.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Employer-support eligibility constraint for Tier 3 fellowship.",
+              "limitations": null,
+              "whyA1Missed": "A1 omitted this bullet of the eligibility list."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+              "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "If you are an external candidate not employed at Baptist Health and do not have a Baptist Health email, select the link on the bottom left to complete a brief questionnaire. Please allow 24 hours to receive your login information, direct link to access the application and additional documentation via email.",
+              "normalizedField": null,
+              "claimText": "External candidates submit questionnaire; receive login credentials within 24 hours.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Application pathway for non-employee candidates of Tier 3 fellowship.",
+              "limitations": null,
+              "whyA1Missed": "A1 missed bifurcated internal/external pathway and 24-hour login process."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/innovations/fellowship",
+              "sourceHash": "aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Passion or interest in healthcare, innovation and entrepreneurship.",
+              "normalizedField": null,
+              "claimText": "Passion/interest in healthcare, innovation, and entrepreneurship required.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Subjective eligibility criterion for Tier 3 fellowship.",
+              "limitations": null,
+              "whyA1Missed": "A1 skipped this bullet."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+            "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "During this process, the individual shadowing does not actively engage in any tasks, and the time spent in the department is not credited as service hours.",
+            "normalizedField": null,
+            "claimText": "Shadowing is strictly passive; participants do not engage in tasks, and shadow time does not count as volunteer service hours.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Defines shadowing scope on a system-level volunteer page; does not address medical-student/IMG eligibility.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Clarifies the nature/limits of the shadow/observation pathway; pre-residency USCE-adjacent context.",
+            "whyA1Missed": "A1 captured the lead sentence that shadowing is exclusively for students but did not extract the passive-only / no-service-credit qualifier in the next sentence."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+            "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "most volunteers report to their assignment once or twice a week for a 3-to-4-hour shift.",
+            "normalizedField": null,
+            "claimText": "Volunteer shift pattern: once or twice a week, 3-to-4-hour shifts.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-program shift cadence; not USCE rotation duration.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Shift-cadence detail for student-eligible volunteer track in pre-residency tier context.",
+            "whyA1Missed": "A1 captured the 50-100 service-hours commitment but not the weekly cadence / shift-length sentence preceding it."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+            "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Benefits of being a Baptist Health volunteer include: free parking, complimentary meals/snacks (in most locations with cafeterias), volunteer recognition celebration and discounts on the medical bill for eligible volunteers.",
+            "normalizedField": null,
+            "claimText": "Volunteer benefits: free parking, complimentary meals/snacks, recognition, medical-bill discounts for eligible volunteers.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Benefits scoped to volunteers, not USCE participants.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Benefits/perks tied to volunteer onboarding; same Tier 1 family.",
+            "whyA1Missed": "A1 captured onboarding requirements but not the FAQ answer enumerating benefits."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c6",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Quote is a list of volunteer application tracks (Adult / Undergraduate-Graduate Students / Teen), not a visiting medical student program. claimType OFFERS_VISITING_STUDENT overstates what the text supports."
+          },
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Quote says shadowing is 'exclusively for students' but does not specify medical students or IMGs. A1's claimType OFFERS_OBSERVERSHIP may overstate eligibility scope."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page footer links to 'Residencies & Fellowships', 'Student & Visitor Programs', and 'Continuing Medical Education' but the cleaned text contains only the link labels, not program eligibility or details.",
+          "Whether shadowing/observation at Baptist Hospital (8900 N Kendall Drive) is administered through the system-level Baptist Health Academics URL or a campus-specific contact is not stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HEALTH_SYSTEM_LEVEL volunteer page — all claims must remain NO_PUBLIC_OPPORTUNITY_FOUND / HUMAN_REVIEW_REQUIRED.",
+          "Verify c6 (OFFERS_VISITING_STUDENT) is downgraded — quote describes a volunteer application track, not a visiting medical student program.",
+          "Verify campus applicability is anchored to the 'Baptist Hospital 8900 N Kendall Drive, Miami Florida 33176' block only and not to other Baptist Health campuses listed on the same page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+              "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "During this process, the individual shadowing does not actively engage in any tasks, and the time spent in the department is not credited as service hours.",
+              "normalizedField": null,
+              "claimText": "Shadowing is strictly passive; participants do not engage in tasks, and shadow time does not count as volunteer service hours.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Defines shadowing scope on a system-level volunteer page; does not address medical-student/IMG eligibility.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Clarifies nature/limits of shadow/observation pathway; pre-residency USCE-adjacent.",
+              "whyA1Missed": "A1 took the lead shadowing sentence but not the follow-up qualifier about passive participation and no service-hour credit."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+              "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "most volunteers report to their assignment once or twice a week for a 3-to-4-hour shift.",
+              "normalizedField": null,
+              "claimText": "Volunteer shift pattern: once or twice a week, 3-to-4-hour shifts.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program cadence, not USCE duration.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Shift-cadence detail for student-eligible volunteer track.",
+              "whyA1Missed": "A1 captured 50-100 service-hours commitment but not the weekly cadence sentence preceding it."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/about-baptist-health/become-a-volunteer",
+              "sourceHash": "b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Benefits of being a Baptist Health volunteer include: free parking, complimentary meals/snacks (in most locations with cafeterias), volunteer recognition celebration and discounts on the medical bill for eligible volunteers.",
+              "normalizedField": null,
+              "claimText": "Volunteer benefits: free parking, complimentary meals/snacks, recognition, medical-bill discounts for eligible volunteers.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Benefits scoped to volunteers, not USCE.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer benefits sit in Tier 1 family.",
+              "whyA1Missed": "A1 captured onboarding requirements but skipped the FAQ benefits enumeration."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Shadowing rule appears on a Baptist Health South Florida system-level volunteer FAQ spanning 12+ campuses; treating as Baptist Hospital of Miami-specific without campus applicability proof would over-attribute."
+          },
+          {
+            "claimId": "c6",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Application track labels are listed under the Baptist Hospital campus block but on a system-wide page; OFFERS_VISITING_STUDENT also misreads a volunteer track as a medical student program."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c5",
+            "campusNameMentionedInQuote": "Baptist Hospital",
+            "proofQuote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net"
+          }
+        ],
+        "newNegativeEvidenceClaims": [
+          {
+            "claimId": "a2_neg1",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "At any Baptist Health facility, only licensed employees perform clinical duties. While never taking direct care, some volunteers may have patient interaction.",
+            "strength": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Footer references a 'Volunteer' link and 'Volunteer Handbook' under About Baptist Health, but the page does not state whether volunteer/observer/shadowing is offered at Baptist Hospital of Miami specifically.",
+          "Footer references 'International Services' and 'International Patients' but in patient-care context only; no statement about international medical graduates, observers, or visiting students.",
+          "Page references 'For Physicians', 'For Nurses', 'For Employees' as professional portals but no career, USCE, or trainee content is on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm c1 (footer-chrome GME nav) stays at HEALTH_SYSTEM_LEVEL + FUTURE_LANE_ONLY and is not elevated to PUBLIC_SAFE_USCE.",
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this baptisthealth.net system-level research page.",
+          "Verify campus-applicability proof for Baptist Hospital of Miami is absent — page references Baptist Health system and Baptist Health Miami Cancer Institute (AAHRPP), not Baptist Hospital of Miami specifically."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://baptisthealth.net/about-baptist-health/research/clinical-trials",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Footer/nav references 'Residencies & Fellowships', 'Student & Visitor Programs', 'Volunteer', 'Volunteer Handbook', 'Continuing Medical Education', and 'Research' as link labels only — no descriptive content about audience, eligibility, IMG access, or application pathway is present on this page.",
+          "General contact phone '786-596-2000' appears in an appointment-reminder modal context, not tied to any USCE/GME/research office, so it cannot be claimed as a USCE or program contact.",
+          "Scope between baptisthealth.net (health-system) and Baptist Hospital of Miami (campus) is not resolved on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this health-system-level baptisthealth.net Clinical Trials index URL (sourceScope UNKNOWN/HEALTH_SYSTEM_LEVEL, RESEARCH_PAGE family with no substantive content).",
+          "Verify that nav-only link labels (Residencies & Fellowships, Student & Visitor Programs, Volunteer, Research) are not promoted into USCE or future-lane claims without a substantive linked-source capture.",
+          "Confirm campus-applicability between baptisthealth.net and Baptist Hospital of Miami remains unresolved for this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://baptisthealth.net/baptist-health-foundation/our-focus/research",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c3_footer_residencies",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a concatenated footer navigation string ('Residencies & FellowshipsCertificate ProgramsStudent & Visitor Programs') with no descriptive content. Useful as a navigation breadcrumb only; should not seed any USCE/GME claim about this campus."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'For Physicians' footer link but does not state physician careers/visa policies.",
+          "Page references 'International Patients' link unrelated to international medical trainees.",
+          "Foundation contact (786-467-5400, Giving@BaptistHealth.net, 6855 Red Road Coral Gables) is philanthropy contact, not a USCE/GME coordinator."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this system-level Baptist Health Foundation research/fundraising page.",
+          "Verify c1_research_fellows and c2_innovation_fellows remain FUTURE_LANE_ONLY and are not promoted to fellowship offers — page is fundraising statistics only.",
+          "Confirm c3_footer_residencies is flagged as footer-navigation-only with no descriptive program content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1_research_fellows",
+            "scopeIssue": "system_level_attribution_to_campus",
+            "explanation": "Statistic '10 research associates & fellows at Miami Cancer Institute' is system/institute-level, not Baptist Hospital of Miami campus-specific. Already noted by c4 but worth reaffirming for c1."
+          },
+          {
+            "claimId": "c2_innovation_fellows",
+            "scopeIssue": "system_level_attribution_to_campus",
+            "explanation": "'25 innovation fellows' is a Baptist Health system-wide philanthropy metric with no campus attribution to Baptist Hospital of Miami."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+            "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Please indicate &ldquo;International Observer&rdquo; in the email subject line.",
+            "normalizedField": null,
+            "claimText": "Applicants must indicate 'International Observer' in the email subject line when submitting the International Eligibility Form.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "System-level instruction; not campus-specific.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Application submission instruction for the observership pathway — Tier 1 logistics.",
+            "whyA1Missed": "A1 captured the email/form pathway but omitted the explicit subject-line instruction sentence."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+            "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Continuing medical education including: video conferences, live webcasts and self-study courses.",
+            "normalizedField": null,
+            "claimText": "Program includes continuing medical education via video conferences, live webcasts and self-study courses.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "CME component is virtual/non-clinical; does not by itself constitute on-site USCE.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "CME content component of the International Medical Education Program — Tier 1.",
+            "whyA1Missed": "A1 captured the program's clinical-experience description but skipped the CME modality bullet."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+            "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Medical symposiums",
+            "normalizedField": null,
+            "claimText": "Program includes medical symposiums as a component.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Single-word bullet; details not stated.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Symposium component of the International Medical Education Program — Tier 1.",
+            "whyA1Missed": "A1 omitted the discrete 'Medical symposiums' bullet from the program-includes list."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is branded 'Baptist Health South Florida' system-wide; sourceScope should be HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE. No campus-applicability proof for Baptist Hospital of Miami."
+          },
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "System-level page. sourceScope should be HEALTH_SYSTEM_LEVEL. Eligibility applies to Baptist Health system program, not specifically Baptist Hospital of Miami."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Visa policy stated at Baptist Health system level; sourceScope should be HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE."
+          },
+          {
+            "a1ClaimId": "c4",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Application pathway routes through the system-level International@BaptistHealth.net mailbox; sourceScope should be HEALTH_SYSTEM_LEVEL."
+          },
+          {
+            "a1ClaimId": "c5",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Contact email is the generic Baptist Health system mailbox; scope is HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE."
+          },
+          {
+            "a1ClaimId": "c6",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Phone number is the system contact (also shown in page header 'Call 1-786-596-2373'); scope is HEALTH_SYSTEM_LEVEL."
+          },
+          {
+            "a1ClaimId": "c7",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Program described 'as practiced at Baptist Health' (the system). sourceScope should be HEALTH_SYSTEM_LEVEL; not specific to Baptist Hospital of Miami campus."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not name Baptist Hospital of Miami specifically; only references 'Baptist Health South Florida facilities' generically.",
+          "Program duration, application fee, document/CV/LOR/immunization requirements, specialty list, and ECFMG/USMLE requirements are not stated.",
+          "Whether observership clinical placements occur at Baptist Hospital of Miami vs. other Baptist Health South Florida facilities is not stated."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted on this HEALTH_SYSTEM_LEVEL source absent a campusApplicabilityProof citing Baptist Hospital of Miami.",
+          "Confirm c1–c7 sourceScope is upgraded from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL in the regate before any public publication.",
+          "Confirm the FUTURE_LANE_VISA claim (c3) is preserved as internal-only and not exposed as a USCE eligibility signal at campus level."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "IMG_OBSERVERSHIP",
+              "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+              "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Please indicate &ldquo;International Observer&rdquo; in the email subject line.",
+              "normalizedField": null,
+              "claimText": "Applicants must indicate 'International Observer' in the email subject line when submitting the International Eligibility Form.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "System-level instruction.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "OBSERVERSHIP",
+              "tierAssignmentRationale": "Application submission detail for the observership pathway — Tier 1.",
+              "whyA1Missed": "A1 captured pathway but skipped subject-line instruction sentence."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "OFFERS_OBSERVERSHIP",
+              "lane": "IMG_OBSERVERSHIP",
+              "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+              "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Continuing medical education including: video conferences, live webcasts and self-study courses.",
+              "normalizedField": null,
+              "claimText": "Program includes continuing medical education via video conferences, live webcasts and self-study courses.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Virtual CME component.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "OBSERVERSHIP",
+              "tierAssignmentRationale": "CME content component of program — Tier 1.",
+              "whyA1Missed": "A1 omitted the CME-modality bullet from the program-includes list."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "OFFERS_OBSERVERSHIP",
+              "lane": "IMG_OBSERVERSHIP",
+              "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+              "sourceHash": "ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Medical symposiums",
+              "normalizedField": null,
+              "claimText": "Program includes medical symposiums as a component.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "Single-word bullet; details not stated.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "OBSERVERSHIP",
+              "tierAssignmentRationale": "Symposium component of program — Tier 1.",
+              "whyA1Missed": "A1 omitted discrete 'Medical symposiums' bullet."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Page is Baptist Health South Florida system-level; no Baptist Hospital of Miami campus mention. UNKNOWN_SCOPE should be HEALTH_SYSTEM_LEVEL."
+          },
+          {
+            "claimId": "c2",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Eligibility statement is system-wide, not campus-specific. Upgrade scope."
+          },
+          {
+            "claimId": "c4",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Application routes through system mailbox International@BaptistHealth.net; campus applicability not established."
+          },
+          {
+            "claimId": "c7",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "'as practiced at Baptist Health' is system-wide language, not Baptist Hospital of Miami-specific."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes patient-facing oncology clinical trials only; no medical-student research, observership, trainee, or career content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no USCE/Tier1 claim is later attributed to this patient-clinical-trials page (RESEARCH_PAGE family is patient-research, not medical-student research)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research/clinical-trials",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Lynn Cancer Institute (Boca Raton) clinical-trials navigation/landing shell with no trial listings, no medical-student / observership / research-elective content, and no GME or careers content visible.",
+          "Scope mismatch: page belongs to Boca Raton campus while the named institution is Baptist Hospital of Miami; no campus-applicability proof to Baptist Hospital of Miami is present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or research-elective claim is attached to this Lynn Cancer Institute (Boca Raton) URL for Baptist Hospital of Miami — scope mismatch.",
+          "Verify this source is classified RESEARCH_PAGE / UNKNOWN_SCOPE with NO_PUBLIC_OPPORTUNITY_FOUND (not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY) since no explicit refusal sentence exists."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1_baptist_hospital_volunteer_contact_phone",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net",
+            "normalizedField": "786-596-6073",
+            "claimText": "Baptist Hospital (8900 N Kendall Drive) volunteer services contact phone is 786-596-6073.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-services contact, not observership contact; shadowing inquiries are routed to Baptist Health Academics.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Campus-specific volunteer-services contact for Baptist Hospital; Tier 1 pathway-adjacent pointer.",
+            "whyA1Missed": "A1 captured shadow/observation policy but did not enumerate the per-campus contact block."
+          },
+          {
+            "claimId": "a2_c2_baptist_hospital_volunteer_contact_email",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net",
+            "normalizedField": "BHVolunteerServices@BaptistHealth.net",
+            "claimText": "Baptist Hospital volunteer services email is BHVolunteerServices@BaptistHealth.net.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-services email; shadowing inquiries go to Baptist Health Academics.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Campus-specific volunteer email; Tier 1 pathway-adjacent pointer.",
+            "whyA1Missed": "A1 did not enumerate the per-campus contact block."
+          },
+          {
+            "claimId": "a2_c3_undergrad_grad_student_application",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Adult Volunteer ApplicationUndergraduate/Graduate StudentsTeen Volunteer Application",
+            "normalizedField": null,
+            "claimText": "Baptist Hospital lists separate volunteer application tracks including Undergraduate/Graduate Students.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "'Undergraduate/Graduate Students' is not explicitly medical-student-scoped; this is volunteer enrollment, not observership.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Student-tracked volunteer pathway adjacent to USCE pipeline.",
+            "whyA1Missed": "A1 did not enumerate the per-campus application-type list."
+          },
+          {
+            "claimId": "a2_c4_volunteer_duration",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "most volunteers report to their assignment once or twice a week for a 3-to-4-hour shift. Generally, we seek individuals willing to commit between 50 and 100 service hours during their term.",
+            "normalizedField": "50-100 service hours; 3-4 hour shifts; 1-2x/week",
+            "claimText": "Volunteer commitment: once or twice weekly, 3-4 hour shifts, 50-100 service hours per term.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-role duration; shadow time is explicitly not credited as service hours.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer-only duration; shadow/observership duration not stated on this page.",
+            "whyA1Missed": "A1 omitted the duration FAQ answer."
+          },
+          {
+            "claimId": "a2_c5_volunteer_benefits",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Benefits of being a Baptist Health volunteer include: free parking, complimentary meals/snacks (in most locations with cafeterias), volunteer recognition celebration and discounts on the medical bill for eligible volunteers.",
+            "normalizedField": null,
+            "claimText": "Baptist Health volunteer benefits include free parking, meals/snacks, recognition, and medical-bill discounts.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer benefits; not applicable to shadow/observership.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer-only benefits; outside USCE tier scope.",
+            "whyA1Missed": "A1 omitted the benefits FAQ answer."
+          },
+          {
+            "claimId": "a2_c6_fellowships_menu_pointer",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+            "normalizedField": null,
+            "claimText": "Miami Cancer Institute For-Healthcare-Professionals nav lists a Fellowships link.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nav pointer only; no fellowship details on this page.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Fellowships nav link is a Tier 2 trainee signal.",
+            "whyA1Missed": "A1 skipped For Healthcare Professionals menu items in favor of the volunteer FAQ body."
+          },
+          {
+            "claimId": "a2_c7_physician_recruitment_menu_pointer",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+            "normalizedField": null,
+            "claimText": "Miami Cancer Institute For-Healthcare-Professionals nav lists a Physician Recruitment link.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nav pointer only; no recruitment / sponsorship detail on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Physician Recruitment nav link is a Tier 3 career signal.",
+            "whyA1Missed": "A1 ignored navigation links."
+          },
+          {
+            "claimId": "a2_c8_cme_menu_pointer",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+            "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+            "normalizedField": null,
+            "claimText": "Miami Cancer Institute For-Healthcare-Professionals nav lists Continuing Medical Education.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nav pointer only; CME is post-graduate professional education.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "CME is post-trainee continuing education; Tier 3.",
+            "whyA1Missed": "A1 did not enumerate the For Healthcare Professionals menu."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1_shadow_students_only",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "'Students' is unqualified in the source — does not specify medical students vs. high-school/undergrad. Downstream consumers should not infer medical-student eligibility from this quote."
+          },
+          {
+            "a1ClaimId": "sc1_system_vs_campus",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is a system-domain page listing 12+ campuses. Campus applicability to Baptist Hospital of Miami should be anchored on the per-campus address/contact block (8900 N Kendall Drive), not solely on the Miami-Cancer-Institute department sentence."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Whether 'Undergraduate/Graduate Students' volunteer application includes medical students or is limited to non-medical undergrad/grad students is not stated.",
+          "Whether the shadowing pathway routed to Baptist Health Academics accepts IMGs or medical graduates is not addressed on this page.",
+          "No observership/elective/sub-internship/USCE language appears on this page; only volunteer + shadowing are described."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this volunteer/shadow page — visibility cap is HUMAN_REVIEW_REQUIRED or FUTURE_LANE_ONLY only.",
+          "Verify A1 c1 shadow-students-only claim is not promoted upward; 'students' eligibility is ambiguous.",
+          "Confirm campusApplicabilityProof for Baptist Hospital of Miami is anchored on the '8900 N Kendall Drive' contact block.",
+          "Schedule a follow-up source capture of academics.baptisthealth.net observer-program URL to resolve actual observership eligibility/cost/duration."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1_baptist_hospital_volunteer_contact_phone",
+              "claimType": "CONTACT_PHONE",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net",
+              "normalizedField": "786-596-6073",
+              "claimText": "Baptist Hospital (8900 N Kendall Drive) volunteer services phone is 786-596-6073.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-services contact, not observership contact.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Campus-specific volunteer contact; Tier 1 pathway-adjacent pointer.",
+              "whyA1Missed": "A1 did not enumerate per-campus contact blocks."
+            },
+            {
+              "claimId": "a2_c2_baptist_hospital_volunteer_contact_email",
+              "claimType": "CONTACT_EMAIL",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net",
+              "normalizedField": "BHVolunteerServices@BaptistHealth.net",
+              "claimText": "Baptist Hospital volunteer services email is BHVolunteerServices@BaptistHealth.net.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-services email only.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Campus-specific volunteer email; Tier 1 pathway-adjacent pointer.",
+              "whyA1Missed": "A1 did not enumerate per-campus contact blocks."
+            },
+            {
+              "claimId": "a2_c3_undergrad_grad_student_application",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Adult Volunteer ApplicationUndergraduate/Graduate StudentsTeen Volunteer Application",
+              "normalizedField": null,
+              "claimText": "Baptist Hospital provides a separate Undergraduate/Graduate Students volunteer application.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "Not explicitly medical-student-scoped.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Student-tracked volunteer pathway adjacent to USCE pipeline.",
+              "whyA1Missed": "A1 did not enumerate the per-campus application-type list."
+            },
+            {
+              "claimId": "a2_c4_volunteer_duration",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "most volunteers report to their assignment once or twice a week for a 3-to-4-hour shift. Generally, we seek individuals willing to commit between 50 and 100 service hours during their term.",
+              "normalizedField": "50-100 service hours; 3-4 hour shifts; 1-2x/week",
+              "claimText": "Volunteer commitment: once or twice weekly, 3-4 hour shifts, 50-100 service hours per term.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer duration only; shadow/observership duration not stated.",
+              "tier": "NOT_APPLICABLE",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer-only duration; not USCE tier-scoped.",
+              "whyA1Missed": "A1 omitted the duration FAQ answer."
+            },
+            {
+              "claimId": "a2_c5_volunteer_benefits",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Benefits of being a Baptist Health volunteer include: free parking, complimentary meals/snacks (in most locations with cafeterias), volunteer recognition celebration and discounts on the medical bill for eligible volunteers.",
+              "normalizedField": null,
+              "claimText": "Baptist Health volunteer benefits include free parking, meals/snacks, recognition, and medical-bill discounts.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer benefits; not applicable to shadow/observership.",
+              "tier": "NOT_APPLICABLE",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer-only benefits.",
+              "whyA1Missed": "A1 omitted the benefits FAQ answer."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "a2_c6_fellowships_menu_pointer",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+              "normalizedField": null,
+              "claimText": "Miami Cancer Institute nav exposes a Fellowships link.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Nav pointer only; no fellowship details on this page.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Fellowships nav link is a Tier 2 trainee signal.",
+              "whyA1Missed": "A1 skipped For Healthcare Professionals menu items."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c7_physician_recruitment_menu_pointer",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+              "normalizedField": null,
+              "claimText": "Miami Cancer Institute nav exposes a Physician Recruitment link.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Nav pointer only.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Physician Recruitment nav link is a Tier 3 career signal.",
+              "whyA1Missed": "A1 skipped For Healthcare Professionals menu items."
+            },
+            {
+              "claimId": "a2_c8_cme_menu_pointer",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities",
+              "sourceHash": "a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "For Healthcare ProfessionalsNursingPhysician RecruitmentReferring PatientsContinuing Medical EducationFellowships",
+              "normalizedField": null,
+              "claimText": "Miami Cancer Institute nav exposes a Continuing Medical Education link.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Nav pointer only.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "CME is post-trainee continuing education; Tier 3.",
+              "whyA1Missed": "A1 skipped For Healthcare Professionals menu items."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "sc1_system_vs_campus",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Source on baptisthealth.net system domain listing 12+ campuses. Applicability to Baptist Hospital of Miami should be anchored on the per-campus '8900 N Kendall Drive' contact block, not solely on the Miami-Cancer-Institute parent statement."
+          },
+          {
+            "claimId": "c1_shadow_students_only",
+            "scopeIssue": "eligibility_inferred_not_stated",
+            "explanation": "'Students' in the shadow policy is unqualified. Medical-student eligibility cannot be inferred from this quote."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "sc1_system_vs_campus",
+            "campusNameMentionedInQuote": "Baptist Hospital",
+            "proofQuote": "Baptist Hospital8900 N Kendall Drive, Miami Florida 33176Contact: 786-596-6073Email: BHVolunteerServices@BaptistHealth.net"
+          },
+          {
+            "claimId": "sc1_system_vs_campus",
+            "campusNameMentionedInQuote": "Baptist Hospital (via Miami Cancer Institute department relationship)",
+            "proofQuote": "Miami Cancer Institute is a department of Baptist Hospital ."
+          }
+        ],
+        "newNegativeEvidenceClaims": [
+          {
+            "claimId": "a2_neg1_volunteers_no_clinical_duties",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "At any Baptist Health facility, only licensed employees perform clinical duties.",
+            "strength": "STRONG"
+          },
+          {
+            "claimId": "a2_neg2_shadowing_not_credited",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "the individual shadowing does not actively engage in any tasks, and the time spent in the department is not credited as service hours.",
+            "strength": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_fl_fellowships_nav",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'For Healthcare ProfessionalsPhysician RecruitmentFellowships' is concatenated navigation chrome with no fellowship program detail. Confidence LOW is appropriate; A3 should keep this as a navigation-only signal."
+          },
+          {
+            "a1ClaimId": "c_fl_physician_recruitment_nav",
+            "refinementReason": "quote_too_general",
+            "explanation": "Same concatenated nav quote; no recruitment, visa, or job detail appears on this page. Should remain a LOW-confidence navigation signal only."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page is Baptist Health South Florida system-level cardiovascular research marketing covering both Miami Cardiac & Vascular Institute and Christine E. Lynn Heart & Vascular Institute at Boca Raton Regional Hospital; campus-specific applicability to Baptist Hospital of Miami is not stated.",
+          "Phone numbers 786-596-5974 and 561-955-4800 are for patient clinical trial enrollment, not for trainee/observer contact; no USCE-relevant coordinator info present.",
+          "Navigation labels 'Physician Recruitment' and 'Fellowships' resolve elsewhere; this page has no program list, eligibility, ECFMG, J-1/H-1B, or visa sponsorship language."
+        ],
+        "recommendedA3Focus": [
+          "Confirm sourceScope is upgraded from UNKNOWN_SCOPE to HEALTH_SYSTEM_LEVEL (Baptist Health South Florida) since the page covers multiple campuses and lacks a Baptist Hospital of Miami campus-specific anchor.",
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE; content is patient-facing clinical trials marketing, not a trainee research opportunity.",
+          "Confirm both A1 nav claims remain FUTURE_LANE_ONLY with LOW confidence and are not promoted to substantive fellowship/recruitment claims."
+        ],
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_fl_fellowships_nav",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Source is Baptist Health South Florida system-level cardiovascular research page covering Miami Cardiac & Vascular Institute and Boca Raton Regional Hospital; no campus-specific anchor tying fellowships to Baptist Hospital of Miami."
+          },
+          {
+            "claimId": "c_fl_physician_recruitment_nav",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Physician Recruitment nav label belongs to Baptist Health system, not specifically Baptist Hospital of Miami. Campus applicability not proven on this page."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        }
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials/cardiovascular-clinical-trials",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page contains 'Fellowships' navigation link but no fellowship details, eligibility, or program list in cleaned text",
+          "Page contains 'Physician Recruitment' navigation link but no recruitment, job, or visa sponsorship details visible",
+          "Page contains 'Research & Clinical Trials' heading but no trial details, audience, or eligibility content rendered"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this navigation-only RESEARCH_PAGE source",
+          "Verify navigation tokens 'Fellowships' and 'Physician Recruitment' did not produce FUTURE_LANE claims absent substantive content"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c01",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "All the Institute&rsquo;s physicians hold faculty positions in the medical school, conduct academic research and work directly with students and fellows in both the classroom and the operating room.",
+            "claimText": "Institute physicians hold FIU Herbert Wertheim School of Medicine faculty positions and work directly with students and fellows.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Faculty/student/fellow education infrastructure is trainee-stage Tier 2 detail.",
+            "whyA1Missed": "A1 captured the FIU affiliation sentence but skipped the second sentence that names faculty positions and the medical-school teaching role.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c02",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Student athletes come from Miami- Dade County Public Schools, Florida International University, Barry University and St. Thomas University. Professional athletes include the NFL Miami Dolphins, NBA Miami HEAT, NHL Florida Panthers and NAS Miami FC.",
+            "claimText": "Sports Medicine fellows treat student athletes from FIU/Barry/St. Thomas and pro athletes from Dolphins/HEAT/Panthers/Miami FC.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Clinical exposure pool for fellowship trainees — Tier 2.",
+            "whyA1Missed": "A1 emitted the program description and history but skipped the substantive clinical-exposure paragraph naming the athlete populations served.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c03",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Fellows also participate at other events such as Orange Bowl, Miami Open, Miami Marathon and Half Marathon, Escape Miami Triathlon and the Miami Beach Bowl.",
+            "claimText": "Sports Medicine fellows cover events including Orange Bowl, Miami Open, Miami Marathon, Escape Miami Triathlon, and Miami Beach Bowl.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Trainee event-coverage scope — Tier 2.",
+            "whyA1Missed": "A1 stopped at the program description sentence and did not capture the events-coverage detail.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c04",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Two attending surgeons serve as the foot and ankle consultants to several of Miami&rsquo;s professional and collegiate sports teams.",
+            "claimText": "Foot and Ankle Fellowship: two attendings serve as foot/ankle consultants to Miami pro and collegiate sports teams.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Faculty clinical role tied to fellowship exposure — Tier 2.",
+            "whyA1Missed": "A1 captured the opening description but did not pull the consultant-to-sports-teams sentence.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c05",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The first graduate of the program, Giovanni Paraliticci, M.D., joined the Institute as an orthopedic oncologist, in addition to practicing at Miami Cancer Institute.",
+            "claimText": "UHZ Adult Reconstruction Fellowship first graduate joined the Institute as orthopedic oncologist (career-outcome / hire signal).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Post-fellowship hire / attending placement is Tier 3 career outcome.",
+            "whyA1Missed": "A1 captured the parent UHZ fellowship sentence but treated the next sentence as redundant; it actually documents an attending hire pathway.",
+            "normalizedField": null,
+            "limitations": "Single-physician anecdote, not a recurring jobs program."
+          },
+          {
+            "claimId": "a2_c06",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+            "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Need Help? Call 1-833-556-6764",
+            "claimText": "Baptist Health general help line: 1-833-556-6764 (system-wide, not fellowship coordinator).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "On a fellowship page; phone is system-level help line — limited utility but only contact stated.",
+            "whyA1Missed": "A1 ignored the page-chrome help-line phone; it is the only contact number stated for fellowship inquiries.",
+            "normalizedField": null,
+            "limitations": "System-level help line, not a fellowship coordinator. No coordinator email/phone is stated."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c01",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source URL is baptisthealth.net (system) on a department-level orthopedic page. Cleaned text never names Baptist Hospital of Miami; institution attribution to inst_baptist_hospital_miami_fl is unproven."
+          },
+          {
+            "a1ClaimId": "c02",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "UHZ Adult Reconstruction Fellowship is described at the Baptist Health Orthopedic Care Institute level; cleaned text does not tie it specifically to Baptist Hospital of Miami campus."
+          },
+          {
+            "a1ClaimId": "c03",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Sports Medicine Fellowship is on the Baptist Health system orthopedic page; campus site (Baptist Hospital of Miami vs. Doctors Hospital vs. West Kendall) is not stated in cleaned text."
+          },
+          {
+            "a1ClaimId": "c06",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Foot and Ankle Fellowship description does not name the host campus; cannot be attributed to Baptist Hospital of Miami from this text alone."
+          },
+          {
+            "a1ClaimId": "c08",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Adult Hip and Knee Reconstruction Fellowship campus host not stated in cleaned text; system-level page does not map to target institution."
+          },
+          {
+            "a1ClaimId": "sc01",
+            "refinementReason": "quote_too_general",
+            "explanation": "Scope-conflict claim only cites the West Kendall sentence; the broader scope problem is that NONE of the fellowships are tied in-text to Baptist Hospital of Miami, not just the family-medicine one."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page nav lists 'Continuing Medical Education' and 'Research and Education > Clinical Trials' but cleaned text contains no body content for those sections.",
+          "Cleaned text does not state ERAS, NRMP, SF Match participation, application deadline, fellowship application fee, salary/stipend, or visa/J-1/H-1B sponsorship for any of the four fellowships.",
+          "No mention anywhere in cleaned text of observership, visiting medical student, elective, sub-internship, externship, shadowing, or research electives — these are absent, not refused.",
+          "Page does not state which fellowships are sited at Baptist Hospital of Miami specifically; only Family Medicine–Sports Medicine has a campus tag (West Kendall Baptist Hospital).",
+          "No coordinator name, email, or phone for any fellowship; only system-level appointment/help phones (1-833-556-6764, 786-596-2000) appear."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this FELLOWSHIP_PAGE source family — all 11 A1 claims plus the 6 A2 additions must remain FUTURE_LANE_ONLY.",
+          "Verify no claim from this source is attributed to Baptist Hospital of Miami without a campusApplicabilityProof; cleaned text never names the target campus.",
+          "Confirm A1 c11 (Family Medicine–Sports Medicine fellowship at West Kendall Baptist Hospital) is either reattributed to the West Kendall campus or downgraded for the Baptist Hospital of Miami run.",
+          "Verify that absence of observership/visiting-student language is recorded as NO_PUBLIC_OPPORTUNITY_FOUND rather than promoted to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY (no explicit refusal sentence exists)."
+        ],
+        "campusApplicabilityProofsFound": [],
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c01",
+            "scopeIssue": "system_level_attributed_to_named_campus",
+            "explanation": "Statement is at Baptist Health Orthopedic Care Institute (system) level; cleaned text never names Baptist Hospital of Miami, so attributing the FIU affiliation to that specific campus is unsupported."
+          },
+          {
+            "claimId": "c02",
+            "scopeIssue": "system_level_attributed_to_named_campus",
+            "explanation": "UHZ Adult Reconstruction Fellowship is described without naming a host campus in the cleaned text."
+          },
+          {
+            "claimId": "c11",
+            "scopeIssue": "wrong_campus_named",
+            "explanation": "Cleaned text explicitly sites the Family Medicine–Sports Medicine Fellowship at West Kendall Baptist Hospital, which is a sibling campus, not Baptist Hospital of Miami."
+          }
+        ],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c01",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "All the Institute&rsquo;s physicians hold faculty positions in the medical school, conduct academic research and work directly with students and fellows in both the classroom and the operating room.",
+              "claimText": "Institute physicians hold FIU Herbert Wertheim School of Medicine faculty positions and work directly with students and fellows.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Faculty/student/fellow infrastructure is Tier 2.",
+              "whyA1Missed": "A1 stopped at the FIU affiliation sentence and did not pull the adjacent faculty/teaching sentence.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c02",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Student athletes come from Miami- Dade County Public Schools, Florida International University, Barry University and St. Thomas University. Professional athletes include the NFL Miami Dolphins, NBA Miami HEAT, NHL Florida Panthers and NAS Miami FC.",
+              "claimText": "Sports Medicine fellows treat student athletes from FIU/Barry/St. Thomas and pro athletes from Dolphins/HEAT/Panthers/Miami FC.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Clinical exposure pool for fellowship trainees.",
+              "whyA1Missed": "A1 emitted history and faculty but missed the clinical-population paragraph.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c03",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Fellows also participate at other events such as Orange Bowl, Miami Open, Miami Marathon and Half Marathon, Escape Miami Triathlon and the Miami Beach Bowl.",
+              "claimText": "Sports Medicine fellows cover events including Orange Bowl, Miami Open, Miami Marathon, Escape Miami Triathlon, and Miami Beach Bowl.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Trainee event coverage detail.",
+              "whyA1Missed": "Sentence sits between the program description and the history paragraph; A1 jumped over it.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c04",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Two attending surgeons serve as the foot and ankle consultants to several of Miami&rsquo;s professional and collegiate sports teams.",
+              "claimText": "Foot and Ankle Fellowship: two attendings serve as foot/ankle consultants to Miami pro and collegiate sports teams.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Faculty clinical role tied to fellowship exposure.",
+              "whyA1Missed": "A1 captured opening description and the named director sentence; skipped the consultant-coverage sentence.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c06",
+              "claimType": "CONTACT_PHONE",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Need Help? Call 1-833-556-6764",
+              "claimText": "Baptist Health general help line: 1-833-556-6764.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Only contact phone present on this fellowship page.",
+              "whyA1Missed": "A1 treated header chrome as boilerplate.",
+              "normalizedField": null,
+              "limitations": "System-level help line, not a fellowship coordinator."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c05",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships",
+              "sourceHash": "bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The first graduate of the program, Giovanni Paraliticci, M.D., joined the Institute as an orthopedic oncologist, in addition to practicing at Miami Cancer Institute.",
+              "claimText": "UHZ Adult Reconstruction Fellowship first graduate joined the Institute as an attending orthopedic oncologist.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Post-fellowship attending placement is Tier 3.",
+              "whyA1Missed": "A1 read the UHZ fellowship sentence as a single unit and dropped the next sentence documenting an attending hire.",
+              "normalizedField": null,
+              "limitations": "Single-physician anecdote, not a recurring jobs program."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+            "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "For Healthcare ProfessionalsContinuing Medical EducationFellowshipsPhysician ResourcesResearch and Education",
+            "claimText": "Site exposes a 'Continuing Medical Education' navigation entry under For Healthcare Professionals, indicating a CME pathway alongside Fellowships.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "whyA1Missed": "A1 focused on the Fellowships/FIU paragraphs in body text and skipped the For-Healthcare-Professionals nav block listing CME and Physician Resources.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "CME generally serves practicing physicians and trainees; placing in Tier 2 as a trainee-adjacent education signal.",
+            "limitations": "Nav-only mention; no description of CME content, eligibility, or audience on this page.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+            "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Prefer to talk to a member of our team? We’re here to help. Call 786-596-2000 .",
+            "claimText": "General contact phone number 786-596-2000 listed for Baptist Health team contact.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 stayed within the Research/Fellowships substantive paragraphs and did not extract the appointment-form footer phone number.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Phone is generic Baptist Health contact; tied to fellowship/CME context only via this page's housing.",
+            "limitations": "Number is for general appointment inquiries, not specifically for fellowship or USCE coordinators.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+            "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Orthopedic surgeons from around the world travel to practice in the bioskills lab.",
+            "claimText": "International practicing orthopedic surgeons reportedly travel to the Institute's bioskills lab to practice — a post-trainee/CME-style training signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "whyA1Missed": "A1 captured the fellow-training use of the bioskills lab but skipped the separate sentence describing international surgeons practicing there.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PRACTICING_PHYSICIAN_TRAINING",
+            "tierAssignmentRationale": "Audience is practicing orthopedic surgeons (post-trainee), which is Tier 3 practice/career-stage education.",
+            "limitations": "No formal program, application path, eligibility, or campus binding stated.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+            "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "The Institute’s physicians serve as principal investigators for numerous studies now in progress. Our physicians are regularly published and present at conferences.",
+            "claimText": "Institute physicians serve as principal investigators on active studies and present at conferences — research infrastructure signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "whyA1Missed": "A1 captured fellowships and FIU affiliation but did not record the explicit research-activity paragraph that opens the page.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESEARCH",
+            "tierAssignmentRationale": "Research infrastructure that supports trainee/fellow research engagement; Tier 2.",
+            "limitations": "No mention of student/observer/visitor research access or application route.",
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Quote names 'Baptist Health Orthopedic Care' (system-level Institute), not Baptist Hospital of Miami specifically. Future-lane fellowship claim needs campus applicability proof before binding to this institution."
+          },
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Bioskills lab is described as part of 'the Institute' (Baptist Health Orthopedic Care). No campus-level binding to Baptist Hospital of Miami."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "FIU affiliation is described at the Institute/Baptist Health Orthopedic Care level. Faculty appointments at FIU do not establish a Baptist Hospital of Miami-specific trainee pathway."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Continuing Medical Education' and 'Physician Resources' but body text does not describe their audience, eligibility, or whether they extend to IMG observers/visiting students.",
+          "Fellowships are described generically ('one-year fellowships') without subspecialty list, count per year, ECFMG/visa policy, or application pathway.",
+          "Page references 'training future surgeons' in the BioSkills Lab without specifying whether this includes medical students, residents, or fellows from outside institutions."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE/HEALTH_SYSTEM_LEVEL source — content is fellowship/research-level only.",
+          "Verify all three A1 fellowship/affiliation claims (c1, c2, c3) carry FUTURE_LANE_ONLY visibility and are flagged as system-level pending campus applicability proof for Baptist Hospital of Miami.",
+          "Check that nav-only CME mention is not promoted beyond a low-confidence Tier-2 signal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+              "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "For Healthcare ProfessionalsContinuing Medical EducationFellowshipsPhysician ResourcesResearch and Education",
+              "claimText": "Nav lists 'Continuing Medical Education' under For Healthcare Professionals.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "whyA1Missed": "A1 skipped the For-Healthcare-Professionals nav block.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "CME serves trainees and physicians; Tier 2.",
+              "limitations": "Nav-only mention.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "CONTACT_PHONE",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+              "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Prefer to talk to a member of our team? We’re here to help. Call 786-596-2000 .",
+              "claimText": "Contact phone 786-596-2000.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 ignored footer/appointment-form phone.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "General contact tied to a fellowship-context page.",
+              "limitations": "Generic appointment line, not coordinator-specific.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+              "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "The Institute’s physicians serve as principal investigators for numerous studies now in progress. Our physicians are regularly published and present at conferences.",
+              "claimText": "Active research with PI-led studies and conference output.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "whyA1Missed": "A1 missed the opening research-activity paragraph.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESEARCH",
+              "tierAssignmentRationale": "Research infrastructure adjacent to trainee research; Tier 2.",
+              "limitations": "No external participation pathway stated.",
+              "normalizedField": null
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+              "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Orthopedic surgeons from around the world travel to practice in the bioskills lab.",
+              "claimText": "International practicing surgeons train in the bioskills lab.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "whyA1Missed": "A1 caught the fellow-training sentence but missed the separate sentence about international practicing surgeons.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PRACTICING_PHYSICIAN_TRAINING",
+              "tierAssignmentRationale": "Audience is practicing surgeons; Tier 3.",
+              "limitations": "Marketing language; no application path or formal program described.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Fellowship offer is at 'Baptist Health Orthopedic Care' (system Institute), not Baptist Hospital of Miami. No campus-binding language in the source."
+          },
+          {
+            "claimId": "c2",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "BioSkills lab is described at Institute level. No statement places it at Baptist Hospital of Miami."
+          },
+          {
+            "claimId": "c3",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "FIU partnership is between the Institute and HWCOM; not bound to Baptist Hospital of Miami specifically."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education/clinical-trials",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a navigational shell with no substantive content about trial eligibility, audience, or training opportunities.",
+          "Navigation mentions 'Fellowships' and 'Continuing Medical Education' but page does not resolve eligibility or USCE/GME details for those linked sections."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims emitted from this navigational shell page.",
+          "Verify sourceScope remains UNKNOWN_SCOPE / HEALTH_SYSTEM_LEVEL since URL is baptisthealth.net system domain, not campus-specific to Baptist Hospital of Miami."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://baptisthealth.net/doctors/jiovani-miranda-visaya/2056460",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Footer nav lists 'Residencies & Fellowships', 'Student & Visitor Programs', 'Volunteer', and 'Research' as global site links but provides no campus-specific or program-specific content on this provider-profile page.",
+          "Provider's hospital affiliations on this page are Bethesda Hospital, Boca Raton Regional Hospital, and South Miami Hospital — Baptist Hospital of Miami is not named, so no campus applicability can be inferred for the target institution."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim cites this individual provider-profile URL as a source of institutional USCE/GME/careers offers.",
+          "Verify any future Tier 1/2/3 capture is taken from the dedicated 'Student & Visitor Programs' and 'Residencies & Fellowships' pages with explicit Baptist Hospital of Miami campus applicability."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Global site footer lists 'Residencies & Fellowships', 'Student & Visitor Programs', 'Continuing Medical Education', and 'Research' as navigation links, but no descriptive content about any of these programs appears on this surgery-center page.",
+          "Footer also mentions 'Volunteer' and 'Volunteer Handbook' as nav items, but no volunteer program details are present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm the existing SCOPE_CONFLICT claim (src_86_scope_conflict_1) remains the only output for this surgery-center facility page and that no PUBLIC_SAFE_USCE, FUTURE_LANE, or research claim is emitted based on footer nav labels alone.",
+          "Verify no future-lane claim is generated from the generic footer nav strings 'Residencies & Fellowships' or 'Student & Visitor Programs' since they are sitewide chrome, not page-specific content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships",
+            "sourceHash": "df0aaad0debb5acf5e34d3e12f44b0d87c4881896abee5ebfdd89ea48669c868",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cff1f920069e20a2.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Research & Library Services\nContinuing Medical EducationBaptist Health",
+            "normalizedField": "continuing_medical_education",
+            "claimText": "Baptist Health offers Continuing Medical Education (CME) — Tier 3 post-trainee resource.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation link only; no CME program details on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "Continuing Medical Education is targeted at practicing physicians — Tier 3.",
+            "whyA1Missed": "A1 focused on the residency/fellowship body content and did not capture the CME nav link, which is a Tier 3 signal."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships",
+            "sourceHash": "df0aaad0debb5acf5e34d3e12f44b0d87c4881896abee5ebfdd89ea48669c868",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cff1f920069e20a2.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Why Choose Baptist Health?Open DrawerWhy Choose Baptist Health?Academic PartnersCenter LeadershipConnection StoriesFunding Our FutureLife in South Florida",
+            "normalizedField": "academic_partners",
+            "claimText": "Page references 'Academic Partners' navigation — signal of medical school affiliation relevant to scope of GME programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Nav label only; specific partners not named on this page.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Academic Partners is the affiliation surface for GME programs — Tier 2 context.",
+            "whyA1Missed": "A1 did not flag the 'Academic Partners' nav as a Tier 2 affiliation signal."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "f1",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "A1 emitted c1 and f1 as two FUTURE_LANE_GME_GENERAL claims with overlapping content from the same paragraph. f1's quote is a superset of c1's; orchestrator should dedupe to one."
+          },
+          {
+            "a1ClaimId": "f3",
+            "refinementReason": "quote_too_general",
+            "explanation": "Claim bundles seven distinct nav items into one quote ('Job Shadowing & Externships', 'Student Rotations for School Credit', 'Bethesda College', etc.). The Tier 1 leads are real but the quote conflates them; A3 should split or downgrade confidence."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Bethesda College of Health Sciences' but does not state whether it accepts visiting / IMG students.",
+          "Page references 'Academic Partners' but does not name the medical school or residency partners.",
+          "Page lists Allied Health, Medical, Nursing and APP, Pharmacy, Spiritual Care residency categories but does not enumerate specific programs or specialties."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESIDENCY_PAGE source family (all claims must be FUTURE_LANE_ONLY or HUMAN_REVIEW_REQUIRED).",
+          "Verify c1 and f1 are deduped — they describe the same GME landing-page statement.",
+          "Confirm f3 is not promoted to PUBLIC_SAFE_USCE — it is a nav-only Tier 1 lead with no opportunity details on this page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships",
+              "sourceHash": "df0aaad0debb5acf5e34d3e12f44b0d87c4881896abee5ebfdd89ea48669c868",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cff1f920069e20a2.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Why Choose Baptist Health?Open DrawerWhy Choose Baptist Health?Academic PartnersCenter LeadershipConnection StoriesFunding Our FutureLife in South Florida",
+              "normalizedField": "academic_partners",
+              "claimText": "Page references 'Academic Partners' navigation — signal of medical school affiliation relevant to scope of GME programs.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Nav label only; specific partners not named on this page.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Academic Partners is the affiliation surface for GME programs — Tier 2 context.",
+              "whyA1Missed": "A1 did not flag the 'Academic Partners' nav as a Tier 2 affiliation signal."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships",
+              "sourceHash": "df0aaad0debb5acf5e34d3e12f44b0d87c4881896abee5ebfdd89ea48669c868",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cff1f920069e20a2.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Research & Library Services\nContinuing Medical EducationBaptist Health",
+              "normalizedField": "continuing_medical_education",
+              "claimText": "Baptist Health offers Continuing Medical Education (CME) — Tier 3 post-trainee resource.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Navigation link only; no CME program details on this page.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "Continuing Medical Education is targeted at practicing physicians — Tier 3.",
+              "whyA1Missed": "A1 focused on the residency/fellowship body content and did not capture the CME nav link, which is a Tier 3 signal."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/allied-health-program-application",
+      "output": {
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-2-baptist-miami",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Navigation references 'Job Shadowing & Externships' and 'Student Rotations for School Credit' under Student & Visitor Programs but this page renders no eligibility, audience, or application detail for those programs.",
+          "Page title implies an application form for an Allied Health Program but the form fields, eligibility, fees, duration, and contact information did not render in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this DEPARTMENT_LEVEL Allied Health application portal — content is chrome only.",
+          "Verify that downstream A3/A4 does not promote the navigation token 'Job Shadowing & Externships' to a USCE claim without an explicit eligibility/audience quote from a different source unit."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-2-baptist-miami",
+        "institutionId": "inst_baptist_hospital_miami_fl",
+        "institutionName": "Baptist Hospital of Miami",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "DURATION",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency",
+            "sourceHash": "b8d8de7ba809a28662295104cb465cfe52472357d25bd657357f34da74fd1776",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_7b5c3b89bbe29599.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Our program curriculum incorporates block rotations lasting 3 months each, giving residents exposure to a variety of learning experiences throughout the duration of the program.RotationsOrthopedic Sports MedicineOrthopedic Foot and Ankle SurgeryHand SurgeryPrimary Care Sports Medicine",
+            "normalizedField": "rotation_block_length_months",
+            "claimText": "Curriculum uses 3-month block rotations across Orthopedic Sports Medicine, Foot/Ankle, Hand, and Primary Care Sports Medicine.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Allied health athletic training residency, not physician GME.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Curriculum block-rotation length is a Tier 2 trainee program detail.",
+            "whyA1Missed": "A1 captured eligibility/application/contact but skipped the Curriculum section listing 3-month block rotations and the four named clinical rotation areas."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency",
+            "sourceHash": "b8d8de7ba809a28662295104cb465cfe52472357d25bd657357f34da74fd1776",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_7b5c3b89bbe29599.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Our program incorporates longitudinal rotations, immersing trainees in particular areas of study throughout the entire duration of the training program.RotationsClinicOperating RoomDidactics (Lectures, Case Presentation, and Journal Club)Research",
+            "normalizedField": "longitudinal_rotation_areas",
+            "claimText": "Longitudinal rotations span Clinic, OR, Didactics (lectures/case presentation/journal club), and Research throughout program duration.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Allied health athletic training residency.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Longitudinal curriculum components are Tier 2 trainee program details.",
+            "whyA1Missed": "A1 stopped at Application Timeline and did not extract the Longitudinal Experiences subsection of the curriculum."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Page is 'Baptist Health South Florida' system-level; training sites listed are Doctors Hospital, Miami HEAT Sports Medicine Center, Plantation, Orthopedic Complex — Baptist Hospital of Miami itself is not listed as a training site. Attribution to inst_baptist_hospital_miami_fl is system-level, not campus-specific."
+          },
+          {
+            "a1ClaimId": "c6",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Program is run by Baptist Health South Florida across multiple campuses; not specifically Baptist Hospital of Miami. PD/coordinator/accreditation belong to the system-level allied health residency, not the named campus."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Job Shadowing & Externships' and 'Student Rotations for School Credit' under Student & Visitor Programs but provides no eligibility, audience, or application detail on this page.",
+          "Page mentions 'Two of the four operating rooms have windows for viewing capabilities and student observation' at Miami HEAT Sports Medicine Center but does not specify whether outside medical students may observe.",
+          "Phrase 'visiting students provide support for resident research' appears without defining who the visiting students are, eligibility, or how to engage."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESIDENCY_PAGE / allied-health / DEPARTMENT_LEVEL source.",
+          "Verify scope-conflict flags on c1 and c6: Baptist Health South Florida system-level program attributed to Baptist Hospital of Miami without campus applicability proof.",
+          "Verify Tier 2 future-lane classification holds for all six A1 claims plus the two A2 additions; this is allied-health (Athletic Training), not physician GME."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "DURATION",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency",
+              "sourceHash": "b8d8de7ba809a28662295104cb465cfe52472357d25bd657357f34da74fd1776",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_7b5c3b89bbe29599.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Our program curriculum incorporates block rotations lasting 3 months each, giving residents exposure to a variety of learning experiences throughout the duration of the program.RotationsOrthopedic Sports MedicineOrthopedic Foot and Ankle SurgeryHand SurgeryPrimary Care Sports Medicine",
+              "normalizedField": "rotation_block_length_months",
+              "claimText": "Curriculum uses 3-month block rotations across Orthopedic Sports Medicine, Foot/Ankle, Hand, and Primary Care Sports Medicine.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Allied health athletic training residency, not physician GME.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Curriculum block-rotation length is a Tier 2 trainee program detail.",
+              "whyA1Missed": "A1 captured eligibility/application/contact but skipped the Curriculum section listing 3-month block rotations and the four named clinical rotation areas."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency",
+              "sourceHash": "b8d8de7ba809a28662295104cb465cfe52472357d25bd657357f34da74fd1776",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_7b5c3b89bbe29599.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Our program incorporates longitudinal rotations, immersing trainees in particular areas of study throughout the entire duration of the training program.RotationsClinicOperating RoomDidactics (Lectures, Case Presentation, and Journal Club)Research",
+              "normalizedField": "longitudinal_rotation_areas",
+              "claimText": "Longitudinal rotations span Clinic, OR, Didactics (lectures/case presentation/journal club), and Research throughout program duration.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Allied health athletic training residency.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Longitudinal curriculum components are Tier 2 trainee program details.",
+              "whyA1Missed": "A1 stopped at Application Timeline and did not extract the Longitudinal Experiences subsection of the curriculum."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "system_level_attributed_to_specific_campus",
+            "explanation": "Program is 'Baptist Health South Florida Athletic Training – Orthopedic Residency' run across Doctors Hospital, Miami HEAT Sports Medicine Center, Plantation, and the Orthopedic Complex. Baptist Hospital of Miami is not enumerated as a training site."
+          },
+          {
+            "claimId": "c6",
+            "scopeIssue": "system_level_attributed_to_specific_campus",
+            "explanation": "Program accreditation, size, and director apply to the system-level Baptist Health SF allied-health residency, not specifically to Baptist Hospital of Miami campus."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

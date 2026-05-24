@@ -1,0 +1,8 @@
+blocker_id,severity,blocker_type,description,blocks_runtime_activation,blocks_production,recommended_fix,notes
+NONE_HARD,n/a,n/a,No hard blockers from this sprint. The implementation is feature-complete for Sprint 1 of the implementation plan.,NO,NO,N/A,The intake pipe + file queue + audit log + 3 validators all work end-to-end against synthetic fixtures.
+B-001,HIGH,UI_DEFERRED,/contact/page.tsx still does not parse searchParams.ref or searchParams.listing_id.,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Out of scope for this sprint; UI-adjacent.
+B-002,HIGH,UI_DEFERRED,/contact form Send button still has no submit handler.,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Same as B-001.
+B-003,MEDIUM,UI_DEFERRED,Listing_id missing from /contact form payload (form needs to add hidden inputs and POST to /api/usce/corrections).,YES,YES,Resolve in P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,Endpoint is now ready to receive a correctly-formed payload — only the form wiring is missing.
+B-004,LOW,RESOLVED_IN_THIS_SPRINT,No intake backend endpoint existed.,NO,NO,Resolved by /api/usce/corrections route handler in this sprint.,Endpoint disabled by default; tested via smoke driver against the test-output sandbox.
+B-005,LOW,DOCS_OPS_CLEANUP,Active 5 evidence files live on T7 lane.,NO,NO,Resolve in P99-P97-T7-EVIDENCE-MIGRATION-OR-RECONCILIATION-1,Pre-existing condition; cosmetic.
+B-006,LOW,DEFERRED_RATE_LIMIT,No rate limit / Turnstile in this sprint.,NO_FOR_TEST_GATE_YES_FOR_PUBLIC_GATE,YES,Resolve in a later spam-and-rate-limit sprint per the implementation plan.,Endpoint is env-flag gated; no public exposure expected before rate-limit lands.

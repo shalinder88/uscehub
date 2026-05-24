@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_048",
+  "institutionId": "inst_live_minnesota_gme_observer",
+  "institutionName": "University of Minnesota — GME Observers",
+  "parentSystem": "M Health Fairview",
+  "campus": "",
+  "city": "Minneapolis",
+  "state": "MN",
+  "sourceUrl": "https://med.umn.edu/gme/education/visiting-trainees",
+  "sourceDomain": "med.umn.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Minnesota",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "GME Visiting Trainees / Observers page for IMG graduates",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Sub-1-month for medical school graduates",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_ee4654fd2a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_048/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_048/cleaned.txt",
+  "sourceHash": "d0f7e183693bbd5f01a867bea3255194862334ad130b202a1c1ae036cca85b9f",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:38:23.729Z"
+}

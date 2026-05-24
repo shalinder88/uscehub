@@ -1,0 +1,17 @@
+check_id,check,method,result,evidence
+M1,Dev server starts against /Users/shelly/usmle-platform,preview_start name=usmle-p1-2b -> npm run dev,PASS,Server on port 3000; Next.js 16.2.1 Turbopack; "✓ Ready in 918ms"
+M2,/clerkships/pilot returns 200,fetch from page context,PASS,GET /clerkships/pilot 200 (multiple successful requests in server logs)
+M3,Robots meta = noindex+nofollow,DOM querySelector('meta[name=robots]'),PASS,"<meta name=robots content=noindex, nofollow>"
+M4,Page title set correctly,document.title,PASS,USCE Pilot Listings — Source-Reviewed Preview — USCEHub
+M5,H1 reads USCE Pilot Listings,document.querySelector('h1').innerText,PASS,USCE Pilot Listings
+M6,Count badge correct text,DOM scan for badge span,PASS,12 listings · 2 open to international students per source · 10 US MD/DO per source
+M7,All 12 listing IDs render in SSR,regex /pilot-NNN-SS-slug/ over fetched HTML,PASS,All 12 unique IDs found in correct order pilot-001..pilot-021
+M8,Deferred batch-3 IDs absent,regex scan for pilot-013 / pilot-018,PASS,Neither appears in SSR HTML
+M9,All 12 institution names render,document.body.innerText.includes(name),PASS,Morristown/Overlook/Mercy/Hillcrest/Highland/Duke/NYU Tisch/IU Methodist/HUP/Northwestern/Vanderbilt/UCSF all present
+M10,No raw token leaks (e.g., SYSTEM_PAGE_SOURCE_NO_*_SPECIFIC_GUARANTEE in user-facing text),page text scan,PASS,Renderer maps internal tokens to human-readable strings ("system page source no vanderbilt umc specific guarantee" caveat label)
+M11,No banned phrase without negation,regex scan with negation tolerance,PASS,Only "guarantee" hit is in "no site specific guarantee" negation context
+M12,Mobile 375x812 no horizontal overflow,window.documentElement scrollWidth vs clientWidth at preset=mobile,PASS,scrollWidth=375 clientWidth=375 overflow=false
+M13,Mobile renders all 12 cards,body.innerText.includes scan @ 375x812,PASS,All 12 institutions present
+M14,Console errors on pilot/contact routes,preview_console_logs level=error,PASS,No client-side console errors
+M15,Server warnings on pilot/contact routes,preview_logs search=/clerkships/pilot,PASS,All requests 200; no runtime errors scoped to these routes
+M16,Disabled correction endpoint returns 404 not_available,fetch POST /api/usce/corrections,PASS,status=404 body={ok:false error:not_available}

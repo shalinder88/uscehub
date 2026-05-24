@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-6-houston-methodist-deep",
+  "depthPass": "GME_RESIDENCY_FELLOWSHIP",
+  "sourceFamiliesReviewed": [
+    "GME_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 6
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-6-houston-methodist-deep_1",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "runId": "p102-pc-6-houston-methodist-deep",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "claimText": "Graduate Medical Education",
+      "normalizedField": "lane.RESIDENCY.signal",
+      "quote": "Graduate Medical Education | Houston MethodistHouston Methodist Main SiteAcademic InstituteGivingInternational PatientsCareersFind a DoctorGet Care NowMyChart LoginContact UsPricing TransparencyHouston Methodist Main SitePatients & VisitorsPatients & VisitorsGetting StartedGetting StartedWhy Choose Houston MethodistSchedule a Doctor's AppointmentSchedule a MammogramSchedule an Imaging AppointmentVisit a Same Day ClinicVisit a Same Day Orthopedic ClinicUse Virtual Urgent CareFind a Clinical Trial",
+      "sourceUrl": "https://houstonmethodist.org/gme",
+      "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-6-houston-methodist-deep/cleaned_text/gme.txt",
+      "quoteVerified": true,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "sourceFamily": "GME_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "GME/residency/fellowship content; future-lane only",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-6-houston-methodist-deep_2",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "runId": "p102-pc-6-houston-methodist-deep",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "claimText": "Graduate Medical Education",
+      "normalizedField": "lane.RESIDENCY.signal",
+      "quote": "Watch what makes Houston Methodist a great place to continue your education.Mission StatementThe Houston Methodist Office of Graduate Medical Education is committed to providing an excellent academic health care environment that promotes comprehensive learning opportunities for graduate medical education trainees and an organized administrative system to ensure the commitment of appropriate resources to support the residents, their faculty, their educational environment, and the programs of grad",
+      "sourceUrl": "https://houstonmethodist.org/gme",
+      "sourceHash": "253bf5b7d73672ffc22a529faba29bf98a088042daaed9a0a3520a71e9a8ef59",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-6-houston-methodist-deep/cleaned_text/gme.txt",
+      "quoteVerified": true,
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "sourceFamily": "GME_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "GME/residency/fellowship content; future-lane only",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

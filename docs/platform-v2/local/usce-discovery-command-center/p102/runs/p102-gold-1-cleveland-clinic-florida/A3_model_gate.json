@@ -1,0 +1,58 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "recovery_ccf_florida_campus_specific",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "All captured sources are on the enterprise my.clevelandclinic.org domain anchored to the Cleveland, Ohio main campus. Cleveland Clinic Florida (Weston) campus-specific elective/observership eligibility, application, fee, and coordinator details are not directly captured. The system-level elective page only references 'Train in Florida' at Weston without Florida-specific eligibility/duration/contact.",
+      "suggestedNarrowAction": "Targeted fetch of any clevelandcliniccfl.org / Florida-campus subpath for visiting student / elective / observership eligibility (do not broad-crawl)."
+    },
+    {
+      "taskId": "recovery_ccf_observership_specifics",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Source src_42 references an observership pathway ('If you're a practicing physician or medical student from outside the U.S., consider applying for an observership') but no observership detail page (eligibility, fee, duration, contact, hands-on vs hands-off) was captured.",
+      "suggestedNarrowAction": "Targeted fetch of the linked observership detail page from the elective program landing for IMG observership eligibility and Florida applicability."
+    }
+  ],
+  "duplicates": [],
+  "institutionId": "inst_cleveland_clinic_florida",
+  "institutionName": "Cleveland Clinic Florida",
+  "metadata": {
+    "totalClaimsReviewed": 177,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 130,
+    "humanReviewRequiredCount": 47,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_PARTIAL",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unfollowedSignals": [
+    "src_42 mentions an observership pathway for non-U.S. physicians and medical students but no observership detail page was captured",
+    "src_44 (CIME) advertises 'International Visitor Programs' for the global medical community but no specific program eligibility / fee / duration page was captured",
+    "ccf-elective-006 references practicing-physician observership but does not link to an extracted detail page in this ledger"
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims survived reclassification — every USCE-flavored signal was correctly downgraded to HUMAN_REVIEW_REQUIRED on grounds that the source is the Cleveland Clinic enterprise/Ohio main-campus domain without Florida-campus applicability proof, and every Tier 2/3 signal is correctly tagged FUTURE_LANE_ONLY. Ledger is internally consistent and safe to merge as a 'no public USCE published' outcome for Cleveland Clinic Florida. Tier 1 coverage flagged PASS_PARTIAL because Florida-campus-specific elective/observership pages were not directly captured (recovery task proposed)."
+}

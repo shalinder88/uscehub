@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_010",
+  "institutionId": "inst_live_cedars_sinai_research",
+  "institutionName": "Cedars-Sinai — Research Fellowship",
+  "parentSystem": "Cedars-Sinai",
+  "campus": "",
+  "city": "Los Angeles",
+  "state": "CA",
+  "sourceUrl": "https://www.cedars-sinai.edu/education/professional-training-programs/postdoctoral-scientist-program.html",
+  "sourceDomain": "cedars-sinai.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cedars-Sinai Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead /research/training/postdoctoral.html — new path is /education/professional-training-programs/",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Postdoctoral Scientist Program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_7206bec0a8"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_010/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_010/cleaned.txt",
+  "sourceHash": "b429a5484cb3217edafa4e04613a0ba1ebf0553038639831f91954e479073b27",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "page text very short (<200 chars)"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T03:36:59.880Z"
+}

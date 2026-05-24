@@ -1,0 +1,272 @@
+{
+  "schema_name": "usce_listing_correction_intake_v2",
+  "schema_version": "v2",
+  "schema_status": "DOCS_ONLY_SPEC_NOT_IMPLEMENTED",
+  "not_db_migration": true,
+  "not_active_runtime": true,
+  "not_production": true,
+  "privacy_minimization_required": true,
+  "max_payload_bytes": 16384,
+  "supersedes": "usce_listing_correction_intake_v1 (defined in staged-runtime-report-issue-mapping-1)",
+  "purpose": "Server-side intake payload contract for the future /api/contact (or server action) endpoint. Captures user-reported corrections for active and staged USCE listings, mapped 1:1 to listing_id, without collecting sensitive personal documents.",
+  "required_fields": [
+    "schema_version",
+    "listing_id",
+    "report_ref",
+    "runtime_set",
+    "page_url",
+    "issue_type",
+    "user_message",
+    "submitted_at",
+    "source_context"
+  ],
+  "optional_fields": [
+    "user_email",
+    "suggested_correction",
+    "source_url",
+    "institution_name_displayed",
+    "field_reported",
+    "browser_user_agent",
+    "client_timestamp",
+    "honeypot_field",
+    "turnstile_token_or_future_spam_token"
+  ],
+  "field_specs": {
+    "schema_version": {
+      "type": "string",
+      "const": "v2",
+      "required": true,
+      "notes": "Pinned per release. Server rejects mismatched versions."
+    },
+    "listing_id": {
+      "type": "string",
+      "format": "kebab-case-ascii",
+      "pattern": "^pilot-\\d{3}-[A-Z]{2}-[a-z0-9-]+$|^$",
+      "required": true,
+      "max_length": 120,
+      "notes": "Empty string only allowed when report_ref='pilot-feedback'. Server cross-checks against runtime listing maps."
+    },
+    "report_ref": {
+      "type": "string",
+      "enum": [
+        "pilot-listing",
+        "pilot-feedback",
+        "pilot-source-link-broken",
+        "pilot-eligibility",
+        "pilot-visa",
+        "pilot-cost",
+        "pilot-application",
+        "pilot-program-closed",
+        "pilot-duplicate",
+        "pilot-other"
+      ],
+      "required": true
+    },
+    "runtime_set": {
+      "type": "string",
+      "enum": ["active", "staged", "bridge_draft", "maine", "unknown"],
+      "required": true,
+      "notes": "Server-resolved by joining listing_id against runtime maps; never trusted from the client alone."
+    },
+    "page_url": {
+      "type": "string",
+      "format": "uri",
+      "required": true,
+      "max_length": 500,
+      "notes": "URL the user was on when filing the report. Server normalizes and validates."
+    },
+    "issue_type": {
+      "type": "string",
+      "enum": [
+        "source_link_broken",
+        "eligibility_incorrect",
+        "visa_information_incorrect",
+        "cost_or_fee_incorrect",
+        "application_process_incorrect",
+        "program_closed",
+        "duplicate_listing",
+        "wrong_institution",
+        "outdated_information",
+        "source_does_not_support_claim",
+        "other"
+      ],
+      "required": true
+    },
+    "user_message": {
+      "type": "string",
+      "min_length": 5,
+      "max_length": 4000,
+      "required": true,
+      "notes": "Free-text correction details. Server applies length bounds and a redaction pass for SSN-shaped / passport-shaped / email-pattern strings before storing."
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": true,
+      "notes": "Browser-side timestamp. Server stamps received_at independently."
+    },
+    "source_context": {
+      "type": "object",
+      "required": true,
+      "notes": "Limited shape — server validates each subfield independently.",
+      "subfields": {
+        "primary_source_url": {
+          "type": "string",
+          "format": "uri",
+          "required": false
+        },
+        "specialty_displayed": {
+          "type": "string",
+          "max_length": 200,
+          "required": false
+        },
+        "audience_displayed": {
+          "type": "string",
+          "max_length": 200,
+          "required": false
+        },
+        "visa_displayed": {
+          "type": "string",
+          "max_length": 200,
+          "required": false
+        },
+        "fee_displayed": {
+          "type": "string",
+          "max_length": 200,
+          "required": false
+        },
+        "site_specificity_displayed": {
+          "type": "string",
+          "max_length": 200,
+          "required": false
+        }
+      }
+    },
+    "user_email": {
+      "type": "string",
+      "format": "email",
+      "required": false,
+      "max_length": 254,
+      "notes": "Optional. Used only for follow-up. Never displayed publicly. Never sold. Never used for marketing."
+    },
+    "suggested_correction": {
+      "type": "string",
+      "max_length": 2000,
+      "required": false
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "max_length": 500,
+      "required": false,
+      "notes": "User-provided source URL supporting the correction."
+    },
+    "institution_name_displayed": {
+      "type": "string",
+      "max_length": 200,
+      "required": false,
+      "notes": "Echoed back from the card the user reported against — for cross-check only; never authoritative."
+    },
+    "field_reported": {
+      "type": "string",
+      "enum": [
+        "audience",
+        "visa",
+        "fee_or_stipend",
+        "application_process",
+        "site_specificity",
+        "specialty",
+        "source_link",
+        "general"
+      ],
+      "required": false
+    },
+    "browser_user_agent": {
+      "type": "string",
+      "max_length": 300,
+      "required": false,
+      "notes": "Optional spam-pattern signal. Stored hashed (sha256-truncated) — never raw."
+    },
+    "client_timestamp": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": false
+    },
+    "honeypot_field": {
+      "type": "string",
+      "max_length": 0,
+      "required": false,
+      "notes": "Bot-trap. Hidden in the future form. If non-empty, request is silently rejected."
+    },
+    "turnstile_token_or_future_spam_token": {
+      "type": "string",
+      "max_length": 4096,
+      "required": false,
+      "notes": "Cloudflare Turnstile or equivalent. Verified server-side."
+    }
+  },
+  "forbidden_fields": [
+    "passport_number",
+    "passport_document",
+    "passport_image",
+    "visa_number",
+    "visa_document",
+    "visa_image",
+    "ecfmg_id",
+    "ecfmg_document",
+    "usmle_id",
+    "nrmp_id",
+    "aamc_id",
+    "acgme_id",
+    "ssn",
+    "social_security_number",
+    "tax_id",
+    "ein",
+    "date_of_birth",
+    "dob",
+    "medical_record",
+    "mrn",
+    "phi",
+    "patient_identifier",
+    "immigration_document",
+    "i20_document",
+    "ds2019_document",
+    "credential_document",
+    "diploma_image",
+    "transcript_image",
+    "cv_upload",
+    "resume_upload",
+    "photo_id_upload",
+    "headshot_upload",
+    "drivers_license",
+    "card_number",
+    "credit_card",
+    "bank_account_number",
+    "iban",
+    "payment_token"
+  ],
+  "rate_limit_spec": {
+    "per_ip_per_hour": 10,
+    "per_listing_per_ip_per_day": 5,
+    "captcha_required_after": 3,
+    "ip_storage": "sha256-truncated; never raw IP",
+    "ip_retention_hours": 24,
+    "notes": "Implementation deferred — spec only."
+  },
+  "transport_security_spec": {
+    "tls_required": true,
+    "store_at_rest_encryption_required": true,
+    "deletion_on_user_request": "honored within 30 days, subject to legal hold",
+    "no_third_party_share": true,
+    "no_advertising_use": true
+  },
+  "what_this_schema_does_not_do": [
+    "Define a database table",
+    "Define a server endpoint implementation",
+    "Modify the contact page UI",
+    "Modify the pilot route UI",
+    "Activate staged runtime data",
+    "Promote any row to PUBLIC_NOW or IMPORT_READY",
+    "Permit upload of any sensitive document"
+  ]
+}

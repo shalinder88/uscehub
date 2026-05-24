@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_042",
+  "institutionId": "inst_live_einstein_vms",
+  "institutionName": "Albert Einstein College of Medicine",
+  "parentSystem": "Montefiore Einstein",
+  "campus": "",
+  "city": "Bronx",
+  "state": "NY",
+  "sourceUrl": "https://einsteinmed.edu/education/md-program/registrar/visiting-students",
+  "sourceDomain": "einsteinmed.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Albert Einstein",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Einstein Office of the Registrar Visiting Students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Replaces einsteinmed.edu/ homepage; no INTL except exchange",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_590a44d0ea"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_042/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_042/cleaned.txt",
+  "sourceHash": "8261a087601584abb10b9b7eb4b9ad0ad06de9a466f10606495cb8c1a0e99e10",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:13.843Z"
+}

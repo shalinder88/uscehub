@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "institutionId": "inst_cleveland_clinic_florida",
+  "institutionName": "Cleveland Clinic Florida",
+  "officialDomains": [
+    "my.clevelandclinic.org"
+  ],
+  "budgets": {
+    "maxCandidates": 20,
+    "maxAccepted": 10,
+    "maxPdfs": 5
+  },
+  "tasks": [
+    {
+      "taskId": "recovery_ccf_florida_campus_specific",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://my.clevelandclinic.org/medical-education/visiting-students",
+        "https://my.clevelandclinic.org/visiting-students",
+        "https://my.clevelandclinic.org/medical-clerkship",
+        "https://my.clevelandclinic.org/clerkship",
+        "https://my.clevelandclinic.org/medical-students",
+        "https://my.clevelandclinic.org/student-visit"
+      ]
+    },
+    {
+      "taskId": "recovery_ccf_observership_specifics",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://my.clevelandclinic.org/medical-education/visiting-students",
+        "https://my.clevelandclinic.org/visiting-students",
+        "https://my.clevelandclinic.org/medical-clerkship",
+        "https://my.clevelandclinic.org/clerkship",
+        "https://my.clevelandclinic.org/medical-students",
+        "https://my.clevelandclinic.org/student-visit"
+      ]
+    }
+  ],
+  "mode": "execute",
+  "attestations": {
+    "networkUsed": true,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "sameInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T00:39:18.930Z"
+}

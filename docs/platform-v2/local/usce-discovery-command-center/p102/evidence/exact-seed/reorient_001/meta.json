@@ -1,0 +1,45 @@
+{
+  "seedId": "reorient_001",
+  "institutionId": "inst_live_maimonides_medical_center",
+  "institutionName": "Maimonides Medical Center",
+  "parentSystem": "Maimonides Health",
+  "campus": "",
+  "city": "Brooklyn",
+  "state": "NY",
+  "sourceUrl": "https://maimo.org/medical-education/internships-undergraduate-medical-education/",
+  "sourceDomain": "maimo.org",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Maimonides Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead maimonides.org/gme/ — WebSearch + WebFetch confirmed",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "New domain maimo.org; offers elective rotations to 4th year medical students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_5dc0db968c",
+    "exact_842a8b86a7"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_001/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_001/cleaned.txt",
+  "sourceHash": "7a15ae38d077c4d334ccdf511c46e8ca496ba792fd290c5fb65a1cc5e11307d6",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+    "confidence": "HIGH",
+    "rationale": "both VMS and IMG signals in page text"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:36:43.425Z"
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_053",
+  "institutionId": "inst_live_rutgers_rwj",
+  "institutionName": "Robert Wood Johnson University Hospital / Rutgers RWJMS",
+  "parentSystem": "Rutgers Health",
+  "campus": "",
+  "city": "New Brunswick",
+  "state": "NJ",
+  "sourceUrl": "https://rwjms.rutgers.edu/education/md/visiting-students",
+  "sourceDomain": "rwjms.rutgers.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Robert Wood Johnson University Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Rutgers RWJMS visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO; LCME/COCA US only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_3e44690592"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_053/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_053/cleaned.txt",
+  "sourceHash": "72344abd2b74fe5ec08f5152bc986f42b10b7ff844da9e92a44b68a800b8d334",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T03:38:32.570Z"
+}

@@ -1,0 +1,198 @@
+# Source Map — UCSF School of Medicine
+
+Run: p102-hy-7-meded-ucsf
+schemaVersion: p102-0r-1
+
+## Accepted sources (26)
+
+- **GME_PAGE** [https://meded.ucsf.edu/gme](https://meded.ucsf.edu/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `de6805a08f8daeb965277f211c70cdd600ca6e644564bb02d701db452d43853c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/gme.txt
+- **CAREERS_PAGE** [https://meded.ucsf.edu/careers](https://meded.ucsf.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `cb56505a77cf49449de6ff907199e786224973742ff08b02a9943f32054c6bab`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/careers.txt
+- **OTHER** [https://meded.ucsf.edu/benefits](https://meded.ucsf.edu/benefits)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt
+- **OTHER** [https://meded.ucsf.edu/current-students](https://meded.ucsf.edu/current-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `506e635de24b8e77c9fcefe867479272e52619ee767538e9e413c47523aad898`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students.txt
+- **VISITING_STUDENT_PAGE** [https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview](https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt
+- **OTHER** [https://meded.ucsf.edu/md-program](https://meded.ucsf.edu/md-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `576193e3d98591c9547a7b8274a0fc6e659be4dbe733bdc6dfd1d0d8bddddf4b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/md-program.txt
+- **GME_PAGE** [http://meded.ucsf.edu/about-us/acgme-accreditation](http://meded.ucsf.edu/about-us/acgme-accreditation)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `61d67b0061a081774d0ebd36e99f4166a35b914127be159d3f590439a5580d03`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_70caa86a3db2fee3.txt
+- **RESIDENCY_PAGE** [http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes](http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `c5769e0bfeff623856ec92ca88266f8877ac3159dcdfccd336f16db23243c6d3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_fd468a9cec855b43.txt
+- **OTHER** [http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies](http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `07b42ceca87f7648910147574a364889ecb91bcfa3d38c425bd3d10f3a4561b9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_5dc95842de0059d6.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2017-2018](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2017-2018)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a47179898a038331abdd1b426c2348db1146063eff7e05e9c4cf1e890e340afb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_6d0ac5406c893d38.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2016-2017](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2016-2017)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1ad6bf577cbfa45c0fcfec5c2c7a6163a2d7464caf92c69b70193c9688acfd88`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_81618aa352aa3e1f.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2015-2016](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2015-2016)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b56243dd582633062a7d9e13db5fb156260dd65b40d0c196e4d83a204f0b497f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_28de9c42420aeb65.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2014-2015](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2014-2015)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6f49bccd28c00e9c6fc2da4caec805c48354e70a3ceaa87b75846cadefb4bb82`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_34aab29751c296a0.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2013-2014](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2013-2014)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b186378d4669442bee6fa22bc5c7f3c17f3d1a719cbb51bff05db4501bcd6708`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_7ed63db26a6bd65b.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2012-2013](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2012-2013)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6f7552e1c49728d78bc283fd797e8d9fc7ba4d5b96aaf9832b451472a561269b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_2d36c6ab4c937f4e.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2011-2012](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2011-2012)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `71aa6a015a5ba9d51d2957c095da63123cd982427ef14683ee1da35d3e59d11f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_05e5529e434db6cc.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2010-2011](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2010-2011)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d510ccdd3cbb5f702ada6249fd1879d1cc66349d463c6d4cf62f86c7ebcf7ff5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_1e7723e869664298.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d61909c92555d2dc13d2e76d57b90adb0830a0c5ace73931a3def44c7056edb4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_66c6528ccdefa71a.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations](http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `3323c985731a5a2218c021c0ba68976d0ceedc9bf7acdb2910a684c16c69e99a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_b962feae0d1ec4de.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d47826c2da8fa4d560541ce499df7b39ddf632eff5286bc848c0c81fe05a7306`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_164ce79bc41f144a.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations/education-scholarship-conference-escape](http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations/education-scholarship-conference-escape)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `fd18c694e243a05ca99243c5edea5ad874cd4b0f1bea83a0c7e91205946f25af`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_81331484c05c774b.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/research-innovation/funding-opportunities](http://meded.ucsf.edu/faculty-educators/research-innovation/funding-opportunities)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `25f23ddbf8c5c8e903f49e83a39e6d097ba272fe2ead710d81085b18b573f97b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_a5ed33ae7188e1bf.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/research-innovation/scholarship-opportunities/preparing-scholarly-projects](http://meded.ucsf.edu/faculty-educators/research-innovation/scholarship-opportunities/preparing-scholarly-projects)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a8635f77bb07f5cdbde0d19e40f10dc4165ae7123ca55f9eeb7731737d3ac20d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_9a11ea75c1818e43.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5b9dd8a89a75b1bb69ff8345a81b506a5c0ea293bb336dbd6227a7da7b961c9e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_b40f9ecb9b657765.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects](http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `825645a09e66ce82a71e8405c2e579bb09d9e3525a0d1fd3d678ffb312a75878`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_ec91f11707479aba.txt
+- **RESEARCH_PAGE** [http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities](http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7c0d2d391a14627a3d9c414fd32b7bce3ccbf90a5ee55478095025353ae1c3dc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_cb6406563936dd40.txt
+
+## Rejected sources (84)
+
+- https://meded.ucsf.edu/observership — FETCH_404 (status_404)
+- https://meded.ucsf.edu/observerships — FETCH_404 (status_404)
+- https://meded.ucsf.edu/observer — FETCH_404 (status_404)
+- https://meded.ucsf.edu/clinical-observer — FETCH_404 (status_404)
+- https://meded.ucsf.edu/visiting-student — FETCH_404 (status_404)
+- https://meded.ucsf.edu/visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/international-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/electives — FETCH_404 (status_404)
+- https://meded.ucsf.edu/away-rotations — FETCH_404 (status_404)
+- https://meded.ucsf.edu/clinical-elective — FETCH_404 (status_404)
+- https://meded.ucsf.edu/clinical-rotation — FETCH_404 (status_404)
+- https://meded.ucsf.edu/sub-internship — FETCH_404 (status_404)
+- https://meded.ucsf.edu/subinternship — FETCH_404 (status_404)
+- https://meded.ucsf.edu/acting-internship — FETCH_404 (status_404)
+- https://meded.ucsf.edu/research — FETCH_404 (status_404)
+- https://meded.ucsf.edu/student-research — FETCH_404 (status_404)
+- https://meded.ucsf.edu/shadow — FETCH_404 (status_404)
+- https://meded.ucsf.edu/shadowing — FETCH_404 (status_404)
+- https://meded.ucsf.edu/volunteer — FETCH_404 (status_404)
+- https://meded.ucsf.edu/volunteering — FETCH_404 (status_404)
+- https://meded.ucsf.edu/img — FETCH_404 (status_404)
+- https://meded.ucsf.edu/international-medical-graduates — FETCH_404 (status_404)
+- https://meded.ucsf.edu/graduate-medical-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/residency — FETCH_404 (status_404)
+- https://meded.ucsf.edu/fellowship — FETCH_404 (status_404)
+- https://meded.ucsf.edu/physician-careers — FETCH_404 (status_404)
+- https://meded.ucsf.edu/provider-careers — FETCH_404 (status_404)
+- https://meded.ucsf.edu/visa — FETCH_404 (status_404)
+- https://meded.ucsf.edu/immigration — FETCH_404 (status_404)
+- https://meded.ucsf.edu/credentialing — FETCH_404 (status_404)
+- https://meded.ucsf.edu/health-professionals — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/professional-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/student-affairs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/hcp-education-training — FETCH_404 (status_404)
+- https://meded.ucsf.edu/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://meded.ucsf.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-professionals — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academic-institute — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academic-institute/education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academic-institute/education/medical — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicine/international — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicine/international/international-programs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/visiting-clerkships — FETCH_404 (status_404)
+- https://meded.ucsf.edu/visiting-clerkships/international — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education-institute — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/medical-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/visiting-medical-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/medical-student-electives — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education/visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-students/electives — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://meded.ucsf.edu/students/visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/offices/faculty-affairs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/offices/faculty-affairs/services — FETCH_404 (status_404)
+- https://meded.ucsf.edu/offices/faculty-affairs/services/observerships — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education/student-affairs — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education/student-affairs/registrar — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medical-education/student-affairs/registrar/externships-services — FETCH_404 (status_404)
+- https://meded.ucsf.edu/current-students/visiting-student-program — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/md-education — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/md-education/visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/md-education/visiting-students/vslo — FETCH_404 (status_404)
+- https://meded.ucsf.edu/students/visiting-students/ — FETCH_404 (status_404)
+- https://meded.ucsf.edu/education/graduate-medical-education-gme — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academics/md-program — FETCH_404 (status_404)
+- https://meded.ucsf.edu/academics/md-program/visiting-students — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicaleducation — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicaleducation/visiting-students-program — FETCH_404 (status_404)
+- https://meded.ucsf.edu/medicaleducation/visiting-students-program/ — FETCH_404 (status_404)
+- https://meded.ucsf.edu/md-program/visiting-student-clerkships — FETCH_404 (status_404)

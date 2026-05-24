@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://hartfordhospital.org/research",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-0r-dry-run-1",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://hartfordhospital.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "inst_hartford_hospital_ct-src_28-fl-1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/careers",
+            "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Careers at Hartford Healthcare | Hartford Healthcare jobsSearch resultsBe part of something bigger and better.",
+            "claimText": "Hartford Healthcare careers portal page; future-lane job content, not USCE.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Careers portal scope; system-level (Hartford HealthCare), not Hartford Hospital-specific USCE."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    }
+  ]
+}

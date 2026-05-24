@@ -1,0 +1,44 @@
+{
+  "seedId": "live_201",
+  "institutionId": "inst_live_university_of_virginia_health_system",
+  "institutionName": "University of Virginia Health System",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Charlottesville",
+  "state": "VA",
+  "sourceUrl": "https://med.virginia.edu/",
+  "sourceDomain": "med.virginia.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Cardiology, Neurosurgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_5908a3506d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_201/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_201/cleaned.txt",
+  "sourceHash": "d6ee573c5a5943a763498a2c3ccb9d3d9ffead89688fc04245c46eb9a19aa6b1",
+  "triage": {
+    "decision": "REJECT_GME_ONLY",
+    "reason": "GME-only page with no medical student/visiting signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:24.434Z"
+}

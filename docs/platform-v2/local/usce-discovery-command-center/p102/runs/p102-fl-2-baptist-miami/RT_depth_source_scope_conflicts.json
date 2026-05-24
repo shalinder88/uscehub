@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "depthPass": "SOURCE_SCOPE_CONFLICTS",
+  "conflicts": [
+    {
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "IMG_OBSERVERSHIP",
+      "reason": "Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+      "recommendedAction": "Find campus-specific source or downgrade to system-level claim"
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "IMG_OBSERVERSHIP",
+      "reason": "Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+      "recommendedAction": "Find campus-specific source or downgrade to system-level claim"
+    },
+    {
+      "sourceUrl": "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "IMG_OBSERVERSHIP",
+      "reason": "Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+      "recommendedAction": "Find campus-specific source or downgrade to system-level claim"
+    }
+  ],
+  "unresolveds": [
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Find campus-specific source or downgrade to system-level claim",
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Find campus-specific source or downgrade to system-level claim",
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Find campus-specific source or downgrade to system-level claim"
+  ]
+}

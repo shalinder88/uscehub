@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-hy-10-keck-usc",
+  "tasks": [
+    {
+      "taskId": "rec-keck-vsc-international",
+      "reason": "Visiting Student Clerkships page restricts to LCME/COCA US schools but is silent on whether international students may apply through a separate pathway; A4 should confirm via a dedicated international visiting-student page or VSLO directory entry.",
+      "suggestedNarrowAction": "Fetch keck.usc.edu/md-program/visiting-student-clerkships sub-paths (international, FAQ) and VSLO Keck directory page only.",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    },
+    {
+      "taskId": "rec-keck-observership",
+      "reason": "No observership-specific page surfaced; for IMG-relevant Tier 1 USCE coverage, confirm presence or explicit absence of an observership/externship pathway at Keck.",
+      "suggestedNarrowAction": "Targeted fetch of keck.usc.edu search results for 'observership' and 'externship'; capture explicit negative quote if found, else mark NO_PUBLIC_OPPORTUNITY_FOUND.",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

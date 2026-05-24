@@ -1,0 +1,46 @@
+{
+  "seedId": "live_210",
+  "institutionId": "inst_live_memorial_sloan_kettering_observership",
+  "institutionName": "Memorial Sloan Kettering — Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.mskcc.org/hcp-education-training/international/observership",
+  "sourceDomain": "www.mskcc.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Oncology, Surgical Oncology, Radiation Oncology, Medical Onc",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): WARNING: NOT for IMGs seeking US residency. Recent graduates and junior residents (PGY-1/2) not elig",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_66ab0c8e88"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_210/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_210/cleaned.txt",
+  "sourceHash": "c37d1be7cc71ca551a814858dc675f4172fb8724296af0051a491246d4f26c3d",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T02:36:45.606Z"
+}

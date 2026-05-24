@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-2-vanderbilt-vumc",
+  "institutionId": "inst_vanderbilt_vumc",
+  "institutionName": "Vanderbilt University Medical Center",
+  "officialDomains": [
+    "vumc.org"
+  ],
+  "budgets": {
+    "maxCandidates": 20,
+    "maxAccepted": 10,
+    "maxPdfs": 5
+  },
+  "tasks": [
+    {
+      "taskId": "recover-tier1-vumc-visiting",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://vumc.org/gme/visiting-residents"
+      ]
+    },
+    {
+      "taskId": "recover-tier1-vumc-observership",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://vumc.org/observership",
+        "https://vumc.org/observerships",
+        "https://vumc.org/observer",
+        "https://vumc.org/clinical-observer"
+      ]
+    }
+  ],
+  "mode": "execute",
+  "attestations": {
+    "networkUsed": true,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "sameInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T00:52:38.846Z"
+}

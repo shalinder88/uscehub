@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_orlando_health_orlando_regional_medical_center_fl",
+  "institutionName": "Orlando Health Orlando Regional Medical Center",
+  "metadata": {
+    "totalClaimsReviewed": 29,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 29,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-pc-2-orlando-health",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unresolveds": [
+    "ClaimId collision: 'c1' is used for two distinct claims (FUTURE_LANE_RESIDENCY from /residency and FUTURE_LANE_JOB from /careers). Downstream dedupe/merge will need stable unique IDs.",
+    "Navigation signals 'M4 Away Rotations' (orlando_health_m4_away_005, a2c1) and 'Clerkship Programs' (orlando_health_clerkship_nav_006, a2c2) hint at Tier 1 USCE pathways but no Tier 1 quote-backed detail was captured; correctly held at FUTURE_LANE_ONLY but worth A4 narrow recovery on the GME/clerkship subpages."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger has zero PUBLIC_SAFE_USCE claims; all 29 claims are FUTURE_LANE_ONLY, sourced from RESIDENCY_PAGE, FELLOWSHIP_PAGE, or CAREERS_PAGE families and correctly held in the future-lane bucket. No scope conflicts, no overclaims, no negative-evidence misclassification. Two soft signals (M4 Away Rotations, Clerkship Programs navigation) noted as unresolved for possible A4 narrow recovery. ClaimId 'c1' is reused for two distinct claims — flagged in unresolveds for downstream ID hygiene."
+}

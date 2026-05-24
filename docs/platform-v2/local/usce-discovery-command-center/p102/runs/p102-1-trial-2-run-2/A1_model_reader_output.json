@@ -1,0 +1,1260 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://tbh.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Volunteer page describes generic non-clinical volunteer positions (administrative aide, greeter, patient visitor, spiritual care visitor) with no observership, shadowing, or medical-student clinical experience signal. Source scope is UNKNOWN_SCOPE. No USCE-relevant or future-lane claim emitted."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_21",
+      "sourceUrl": "https://tbh.org/volunteering",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate dedicated observership or clinical observer program page on tbh.org separate from the general hospital volunteering page.",
+          "Check Professional Medical Education link referenced in footer for visiting student / observership policies."
+        ],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "tbhc_volunteer_scope_unknown",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://tbh.org/volunteering",
+            "sourceHash": "5a3208cb83e4f51a92230ab46174fc770376d46e0af63b5015690ca530ba9583",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/volunteering.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Thank you for your interest in volunteering at The Brooklyn Hospital Center. We welcome your support!",
+            "normalizedField": null,
+            "claimText": "VOLUNTEER_PAGE with UNKNOWN_SCOPE; content describes general hospital volunteer roles (administrative aide, greeter, patient visitor, spiritual care visitor), not a clinical observership or medical student rotation. No USCE applicability.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page is a general volunteering page; volunteer positions listed are non-clinical and do not mention physicians, medical students, IMGs, observers, or clinical experience."
+          }
+        ],
+        "unresolveds": [
+          "Page is a general hospital volunteer program, not a clinical observership or visiting student program. No explicit refusal of observership is stated, so absence cannot be converted to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY.",
+          "Source scope is UNKNOWN_SCOPE; cannot determine institution-specific applicability without further proof."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://tbh.org/careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://tbh.org/careers",
+            "sourceHash": "a65389d1774df843986778d24ad33665029e0b787665a01e951b6bf2c2476c50",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Health Care Jobs in Brooklyn, NYNew and Returning CandidatesVisit the External Career Center if you would like to apply for a position or check the status of a current application.",
+            "claimText": "TBHC operates an external career center for job applications.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://tbh.org/careers",
+            "sourceHash": "a65389d1774df843986778d24ad33665029e0b787665a01e951b6bf2c2476c50",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "What are the employment options offered at The Brooklyn Hospital Center?\nWe offer different employment options to fit every schedule. These options include Full Time; Part Time; Per Diem; Per Session; and Temporary.",
+            "claimText": "Employment options include Full Time, Part Time, Per Diem, Per Session, and Temporary.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://tbh.org/careers",
+            "sourceHash": "a65389d1774df843986778d24ad33665029e0b787665a01e951b6bf2c2476c50",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Visit the Brooklyn Talent Pipeline to provide us with your resume and contact information if you can't find an open position but would like to be considered should a position become available.",
+            "claimText": "Brooklyn Talent Pipeline accepts resumes for future consideration.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Check tbh.org for Professional Medical Education page (referenced in footer) for observership/elective signals",
+          "Investigate Mount Sinai clinical/academic affiliation pages for visiting student or observership pathways",
+          "Check volunteer page (volunteers@tbh.org) for any USCE-adjacent signals — but volunteer is not USCE"
+        ],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page mentions 'Professional Medical Education' and 'Clinical Affiliate of The Mount Sinai Hospital, Academic Affiliate of The Icahn School of Medicine at Mount Sinai' in footer but no observership/visiting student detail on this page"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_40",
+      "sourceUrl": "https://www.tbh.org/how-to-help/how-volunteer/student-requirements",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://www.tbh.org/how-to-help/how-volunteer/requirements",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "It is the program’s policy to offer an Observership experience to medical/surgical students in their third and fourth years in podiatric medical school.",
+            "claimText": "TBHC podiatry program offers observership to 3rd/4th year podiatric medical school students.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Source family is GME_PAGE and scope is DEPARTMENT_LEVEL; content is USCE-relevant (observership for podiatric medical students) but page-family/scope is future-lane. Audience is podiatric students, not allopathic/osteopathic MD/DO."
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [
+          {
+            "claimId": "o1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "It is the program’s policy to offer an Observership experience to medical/surgical students in their third and fourth years in podiatric medical school.",
+            "claimText": "Eligibility limited to 3rd and 4th year podiatric medical school students.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Podiatry-specific; not allopathic/osteopathic MD/DO USCE."
+          },
+          {
+            "claimId": "o2",
+            "claimType": "DURATION",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Podiatry Observership may range from one to 10 days.",
+            "claimText": "Podiatry observership duration is 1 to 10 days.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          },
+          {
+            "claimId": "o3",
+            "claimType": "COST_STATEMENT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Students will not be remunerated for Observership duration. You will be responsible for all expenses",
+            "claimText": "No remuneration; students responsible for all expenses.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          },
+          {
+            "claimId": "o4",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "All request forms must be sent via email to the Administrative Office for Podiatric Residency. Request must be emailed to Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org",
+            "claimText": "Applications via email to Podiatry Residency Coordinator Maritza Garcia.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          },
+          {
+            "claimId": "o5",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Questions may be addressed to Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org",
+            "claimText": "Contact: Maritza Garcia, Podiatry Residency Coordinator, mgarcia@tbh.org.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          },
+          {
+            "claimId": "o6",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Students must complete the Visiting Student Information form and provide all information on form before an approval for an Observership can be considered",
+            "claimText": "Visiting Student Information form required before approval.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          },
+          {
+            "claimId": "o7",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Requests must be submitted one week prior to start date.",
+            "claimText": "Requests must be submitted at least one week prior to start date.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page family GME_PAGE; podiatry-specific."
+          }
+        ],
+        "recommendedA2Focus": [
+          "Confirm whether TBHC offers an observership/visiting-student program for allopathic (MD) or osteopathic (DO) medical students, since this page is specifically for podiatric medical students.",
+          "Verify whether IMGs (post-graduate) are eligible for any TBHC observership program — this podiatry policy is student-only."
+        ],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation",
+            "sourceHash": "1ed8a7ff017f26c6085f967556656d10786f8b57b31e71d45effe80dba731529",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_9605ffb3c8066165.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Podiatric Medicine & Surgery Medical Student Visitation (PMSR RRA)",
+            "claimText": "USCE-relevant observership content lives on a GME_PAGE / DEPARTMENT_LEVEL podiatry residency page — page family and scope are future-lane; cannot emit PUBLIC_SAFE_USCE.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Page-family/content mismatch: observership policy exists but is hosted under graduate medical education / podiatry residency department."
+          }
+        ],
+        "unresolveds": [
+          "Audience scope for non-podiatric medical students is not addressed on this page.",
+          "Page does not state IMG eligibility, visa sponsorship, or malpractice/insurance coverage."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_ELECTIVE",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The purpose of the Externship Program at The Brooklyn Hospital Center is to provide the student with a well-rounded educational experience in the hospital environment and a familiarity with the residency training program of the hospital.",
+            "claimText": "Brooklyn Hospital Center offers a Podiatric Medicine & Surgery Externship Program for medical students.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Source family is GME_PAGE and scope is DEPARTMENT_LEVEL; program is specifically for podiatric medical students, not MD/DO USCE. Needs human review for lane classification.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "the hospital accepts students from all podiatric medical colleges, up to six per month",
+            "claimText": "Open to students from all podiatric medical colleges; up to six per month.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Eligibility restricted to podiatric medical college students, not standard MD/DO USCE.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "DURATION",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Upon the completion of the one-month Externship rotation",
+            "claimText": "Externship rotation duration is one month.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Podiatric externship; not MD/DO USCE.",
+            "normalizedField": "1 month"
+          },
+          {
+            "claimId": "c4",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "All clerkship applications must be submitted through the American Association of Colleges of Podiatric Medicine AACPM Clerkship Application process via www.dpmclerkships.org .",
+            "claimText": "Applications submitted via AACPM Clerkship Application (dpmclerkships.org).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "AACPM pathway is podiatry-specific, not standard VSLO/USCE.",
+            "normalizedField": "AACPM dpmclerkships.org"
+          },
+          {
+            "claimId": "c5",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "please contact Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org",
+            "claimText": "Contact Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Department-level contact specific to podiatry.",
+            "normalizedField": "mgarcia@tbh.org"
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Confirm whether podiatric externship falls within USCEHub scope or is excluded as non-MD/DO pathway",
+          "Review department-level scope vs. institution-level applicability for podiatry externship"
+        ],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "CLINICAL_ELECTIVE",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship",
+            "sourceHash": "17d01231f0783c51e534de29360211edbbac75b527842309d4c35cb7a2230796",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_aa0cbfcc354f4ba7.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Podiatric Medicine & Surgery Externship for Medical Students (PMSR RRA)",
+            "claimText": "Source family is GME_PAGE and scope is DEPARTMENT_LEVEL; externship is for podiatric medical students, blocking PUBLIC_SAFE_USCE.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "unresolveds": [
+          "Whether USCEHub scope includes DPM/podiatric medical student externships or is restricted to MD/DO USCE"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_44_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents",
+            "sourceHash": "c269ea6ebf97e3160f3e35a530eb8107e2de287f10e720fdb2d8ad8600914c47",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8fd2f0208c804925.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationEmergency Medicine Residency ProgramOur Residents",
+            "normalizedField": null,
+            "claimText": "Page is the 'Our Residents' roster page for The Brooklyn Hospital Center Emergency Medicine Residency Program (GME).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "GME/residency content; future-lane only — not USCE."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request",
+            "sourceHash": "b7f640dbd779ac629828e456f5be95707611bc8473787eedc1d037b276ef1d1f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_cd710ec60ed9e781.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Certificate of Insurance (COI) template for COI request for new employer",
+            "claimText": "GME COI request administrative page for residents/fellows transitioning to new employers.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "normalizedField": null,
+            "limitations": "Administrative COI request page within GME section; no USCE content."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents",
+            "sourceHash": "cdf4c844d723d8e90b6bcb75549ea90e7037545c2cd2a74f69dfe4ba5f332622",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_6f08d180cfee2af5.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationPharmacy Residency ProgramOur Residents",
+            "claimText": "Page lists current Pharmacy Residency residents under Graduate Medical Education — GME/residency content, future-lane.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_47",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements",
+            "sourceHash": "7f56bdf9954c5ce0ce311107b73395b8a7bb978601d29ebb1c99a95a9108dcfb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c556bc774e8a641e.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Pharmacy Residency ProgramProgram Requirements For GraduationProgram Requirements for GraduationUnder Construction",
+            "claimText": "Pharmacy Residency Program requirements page is under construction; no content available.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Page is under construction; non-physician (pharmacy) GME content."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page marked 'Under Construction' — no substantive program requirements content available for extraction."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "fl_pharmacy_residency_scholarly",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities",
+            "sourceHash": "ba9ab44125aeb581b4fa9bd30cac7f692471c470ead1b778f2cdf62aac438eb5",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_641a5aa7528246db.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Professional Medical EducationGraduate Medical EducationPharmacy Residency ProgramScholarly Activities & Research",
+            "normalizedField": null,
+            "claimText": "Page is part of the Pharmacy Residency Program under Graduate Medical Education — future-lane GME content.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Scholarly activities/publications listing for pharmacy residents; no USCE-relevant content."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_gme_pharmacy_schedules",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation",
+            "sourceHash": "c385d98c2dbc359bc787feb1170187c38f7a823e025cb0bccb9cec9099e27639",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bf159b9aaeb7e5ea.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationPharmacy Residency ProgramSchedules & VacationSchedules & VacationUnder Construction",
+            "claimText": "GME Pharmacy Residency Program schedules & vacation page, currently under construction.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": "Page content is 'Under Construction'; no substantive USCE or program details present."
+          }
+        ],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_50_fl_1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+            "sourceHash": "a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The Pharmacy Residency Program at The Brooklyn Hospital Center has grown, both in size and in quality, since its inception in 2004.",
+            "normalizedField": null,
+            "claimText": "TBHC operates a Pharmacy Residency Program since 2004 (GME, future-lane).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "src_50_fl_2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+            "sourceHash": "a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The PGY-1 Pharmacy Residency experience is intended to prepare the graduate to function as a pharmacotherapist within the typical health system.",
+            "normalizedField": null,
+            "claimText": "PGY-1 Pharmacy Residency program described (future-lane GME).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "src_50_fl_3",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+            "sourceHash": "a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Combined Pharmacy Residency (PGY-2)/Fellowship Program in Infectious Diseases",
+            "normalizedField": null,
+            "claimText": "Combined PGY-2/Fellowship in Infectious Diseases (future-lane).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "src_50_fl_4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+            "sourceHash": "a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Pharmacy Residency Program (PGY-2) ​Emergency Medicine",
+            "normalizedField": null,
+            "claimText": "PGY-2 Emergency Medicine Pharmacy Residency (future-lane).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "src_50_fl_5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum",
+            "sourceHash": "a7792f02594628414e830ab1ef033cf58653906d0daf1ef2dcfec2702dc7f2bb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2fe72a71becab037.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Pharmacy Residency Program (PGY-2) ​Ambulatory Care",
+            "normalizedField": null,
+            "claimText": "PGY-2 Ambulatory Care Pharmacy Residency (future-lane).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_tbh_em_apply_001",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+            "sourceHash": "e9920686bd28e264d10964b47e399d125a3f12229cc839cef08250ea685a131a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bfbaaa2b08844b60.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Applications to the Residency Training Program in Emergency Medicine are accepted only through the Electronic Residency Application Service (ERAS) from the NRMP.",
+            "normalizedField": "application_pathway",
+            "claimText": "Emergency Medicine residency applications are accepted only via ERAS/NRMP.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_tbh_em_apply_002",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+            "sourceHash": "e9920686bd28e264d10964b47e399d125a3f12229cc839cef08250ea685a131a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bfbaaa2b08844b60.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "We only accept applicants through the NRMP for our EM1 positions.",
+            "normalizedField": "application_pathway",
+            "claimText": "EM1 positions filled only via NRMP Match.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_tbh_em_apply_003",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+            "sourceHash": "e9920686bd28e264d10964b47e399d125a3f12229cc839cef08250ea685a131a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bfbaaa2b08844b60.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Application Requirements\nUSMLE 1 and 2 scores\nMedical school transcript\nThree (3) letters of recommendation (academic emergency medicine physicians recommended)\nDean's letter",
+            "normalizedField": "application_requirements",
+            "claimText": "EM residency application requirements: USMLE 1 & 2, transcript, 3 LORs, Dean's letter.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          },
+          {
+            "claimId": "c_tbh_em_apply_004",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply",
+            "sourceHash": "e9920686bd28e264d10964b47e399d125a3f12229cc839cef08250ea685a131a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bfbaaa2b08844b60.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residency Coordinator\nYolanda Hayes\nyhayes@tbh.org\nP: 718-250-8369\nF: 718-250-6528",
+            "normalizedField": "contact",
+            "claimText": "Residency Coordinator contact: Yolanda Hayes, yhayes@tbh.org, 718-250-8369.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Confirm whether TBHC offers any observership or visiting student rotations outside GME pages."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni",
+            "sourceHash": "a9bad7fd45699170dd7e6de6c2acae0c7ec682ade2d2898f79aaa570d196a3fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_2725182cbe039ffe.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Emergency Medicine Residency ProgramAlumni PlacementsAlumni PlacementsAlumni Placements over the past five years (including fellowships).",
+            "normalizedField": null,
+            "claimText": "Emergency Medicine Residency Program alumni placements page (GME, future-lane).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+            "sourceHash": "baac4ba4b38a27c3b1e4c5d5da927d5a69f2eb26ad4dba94c0b6861ed292a824",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bbf3ff7eed536ff8.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Upon completion of this Emergency Medicine (EM) Residency, each resident will be a physician:",
+            "claimText": "EM Residency program graduation requirements page at The Brooklyn Hospital Center.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements",
+            "sourceHash": "baac4ba4b38a27c3b1e4c5d5da927d5a69f2eb26ad4dba94c0b6861ed292a824",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_bbf3ff7eed536ff8.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "PGY IV: Advance personal leadership and teaching in-department and prepare for your career as an attending physician.",
+            "claimText": "PGY-IV graduated responsibilities described for EM residency.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_54",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_54_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities",
+            "sourceHash": "e5e5ea793dce386eeee66e0236c4ea4dcd79fcb15fc35d1f83ad96bb761cb44e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_4f9c57440544625b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The Brooklyn Hospital Center Emergency Department is actively involved in novel scholarly work, contributing new knowledge to the field.",
+            "normalizedField": "emergency_medicine_residency_scholarly_activities",
+            "claimText": "Emergency Medicine Residency scholarly activities/research page describing departmental research output.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "GME/residency-context page; not a USCE offer."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Mentions an 'academic associate program where students are involved with assisting residents and faculty with various aspects of research projects' but does not specify whether medical students (vs. undergrads) are eligible, nor application pathway, eligibility, duration, or cost — insufficient for a USCE research claim."
+        ],
+        "recommendedA2Focus": [
+          "Determine whether the academic associate program is open to medical students (USCE-relevant) or limited to undergraduate pre-meds.",
+          "Locate a dedicated visiting student / observership page on tbh.org if any exists."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+            "sourceHash": "0c0b262f0908fefc2ee1fae4926ecbb694371bff48d31c7bf81b5196a6b829b3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_57857a15dc089654.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Internal Medicine PGY-3 Chief Residents 2025–2026",
+            "claimText": "Page lists Internal Medicine residents (PGY-1/2/3) for 2025-2026 — GME residency content.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents",
+            "sourceHash": "0c0b262f0908fefc2ee1fae4926ecbb694371bff48d31c7bf81b5196a6b829b3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_57857a15dc089654.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical EducationInternal Medicine Residency ProgramOur Residents",
+            "claimText": "Internal Medicine Residency Program page under Graduate Medical Education — future-lane GME content.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_56_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+            "sourceHash": "838e6d59b5a966a682366b17952870571da2d4301d36658715cf688aa4889015",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c072b88dbab08a8f.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Applications are accepted only through the Electronic Residency Application Service (ERAS) from the NRMP. All scores and evaluations must be sent through the ERAS system.",
+            "claimText": "Internal Medicine residency applications accepted only through ERAS/NRMP.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "application_pathway",
+            "limitations": null
+          },
+          {
+            "claimId": "src_56_fl_2",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+            "sourceHash": "838e6d59b5a966a682366b17952870571da2d4301d36658715cf688aa4889015",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c072b88dbab08a8f.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "We only accept applicants through the NRMP for our 29 PGY1 open positions.",
+            "claimText": "29 PGY1 open positions accepted only through NRMP.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "positions",
+            "limitations": null
+          },
+          {
+            "claimId": "src_56_fl_3",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+            "sourceHash": "838e6d59b5a966a682366b17952870571da2d4301d36658715cf688aa4889015",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c072b88dbab08a8f.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "USMLE Step 1: Pass; USMLE Step 2: 235 and above\nMedical school transcript\nThree (3) letters of recommendation\nDean's letter",
+            "claimText": "Residency application requirements: USMLE Step 1 pass, Step 2 ≥235, transcript, 3 LORs, Dean's letter.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "eligibility",
+            "limitations": null
+          },
+          {
+            "claimId": "src_56_fl_4",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply",
+            "sourceHash": "838e6d59b5a966a682366b17952870571da2d4301d36658715cf688aa4889015",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_c072b88dbab08a8f.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residency Coordinator\nBeverly Noel\nbnoel@tbh.org\n718-250-6946",
+            "claimText": "Residency Coordinator contact: Beverly Noel, bnoel@tbh.org, 718-250-6946.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": "contact",
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_tbh_alumni_001",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+            "sourceHash": "954c4dcb2618df882d61bb0dd85f9f9547471aee001a2a34ccc64b8a1d667714",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_974a729f091745ff.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "HomeProfessional Medical EducationGraduate Medical EducationInternal Medicine Residency ProgramAlumni PlacementsAlumni Placements2025 Graduates",
+            "claimText": "Internal Medicine Residency Program alumni placements page under Graduate Medical Education at The Brooklyn Hospital Center.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "c_tbh_alumni_002",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni",
+            "sourceHash": "954c4dcb2618df882d61bb0dd85f9f9547471aee001a2a34ccc64b8a1d667714",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_974a729f091745ff.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Cardiology FellowshipGastroenterology FellowshipHematology/Oncology FellowshipPulmonary & Critical Care Medicine Fellowship",
+            "claimText": "Fellowships listed at The Brooklyn Hospital Center include Cardiology, Gastroenterology, Hematology/Oncology, and Pulmonary & Critical Care Medicine.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-1-trial-2-run-2",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements",
+            "sourceHash": "b674e28267b3011a7f86eb73f1c94fd56b85cdfcc180ebd60bb1651293d3fb5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_b5a176c40c4c4016.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "All graduating Internal Medicine residents from our program must fulfill ACGME’s six core competencies requirements and achieve milestones of 4 (ready for independent and unsupervised practice), and also meet ABIM requirements: abim.org/certification",
+            "claimText": "Internal Medicine residency program graduation requirements (ACGME six core competencies, milestone 4, ABIM).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-1-trial-2-run-2",
+        "institutionId": "inst_brooklyn_hospital_center_ny",
+        "institutionName": "The Brooklyn Hospital Center",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "fl_1",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+            "sourceHash": "877662c8957439404d4dd61a4559668d93a7e74d9347d7d91752b07c3410b408",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8ab7f45b4ea9b4a9.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Research and scholarly activity is an important part of the training of our internal medicine residents.",
+            "normalizedField": "internal_medicine_residency",
+            "claimText": "Internal Medicine residency program includes research/scholarly activity as part of training.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Residency-level content; future-lane only."
+          },
+          {
+            "claimId": "fl_2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+            "sourceHash": "877662c8957439404d4dd61a4559668d93a7e74d9347d7d91752b07c3410b408",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8ab7f45b4ea9b4a9.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Affiliation with Mount Sinai provides the residents an opportunity to present at Annual Graduate Medical Education Research Day.",
+            "normalizedField": "mount_sinai_affiliation",
+            "claimText": "GME affiliation with Mount Sinai provides residents access to Annual GME Research Day.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Residency affiliation context; future-lane only."
+          },
+          {
+            "claimId": "fl_3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+            "sourceHash": "877662c8957439404d4dd61a4559668d93a7e74d9347d7d91752b07c3410b408",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8ab7f45b4ea9b4a9.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "TBHC sponsors Master’s program in Biomedical Research for the graduates of St. George University medical school in collaboration with Internal Medicine residency program.",
+            "normalizedField": "sgu_biomedical_research_masters",
+            "claimText": "TBHC sponsors an SGU Master's in Biomedical Research with the Internal Medicine residency program; restricted to SGU graduates.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Restricted to SGU graduates and tied to residency program; not a USCE offering."
+          },
+          {
+            "claimId": "fl_4",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities",
+            "sourceHash": "877662c8957439404d4dd61a4559668d93a7e74d9347d7d91752b07c3410b408",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-2/cleaned_text/sm_8ab7f45b4ea9b4a9.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Dedicated research electives of two weeks are offered for residents.",
+            "normalizedField": "resident_research_elective_2wk",
+            "claimText": "Two-week dedicated research electives are offered for residents (not medical students).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Explicitly for residents; not medical-student USCE."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Locate a TBHC observership or visiting medical student page (likely on tbh.org Professional Medical Education) to determine USCE availability for IMGs/US students.",
+          "Check Mount Sinai / Icahn affiliation pathways for any visiting-student / international observer route through TBHC."
+        ]
+      }
+    }
+  ]
+}

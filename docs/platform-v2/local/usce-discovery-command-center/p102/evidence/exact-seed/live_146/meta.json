@@ -1,0 +1,44 @@
+{
+  "seedId": "live_146",
+  "institutionId": "inst_live_university_hospitals_cleveland",
+  "institutionName": "University Hospitals Cleveland",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://www.uhhospitals.org/medical-education/graduate-medical-education",
+  "sourceDomain": "www.uhhospitals.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pediatrics, Radiology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_af2132ff93"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_146/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_146/cleaned.txt",
+  "sourceHash": "24c3ddd2deacb38caa60c2aa5dc75170a47eba56dabe7fc606bf6ceea1e3160b",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:34:31.705Z"
+}

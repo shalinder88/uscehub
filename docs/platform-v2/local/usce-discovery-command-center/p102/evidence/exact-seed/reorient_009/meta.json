@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_009",
+  "institutionId": "inst_live_cleveland_clinic_research",
+  "institutionName": "Cleveland Clinic — Research Fellowship",
+  "parentSystem": "Cleveland Clinic",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://www.lerner.ccf.org/education/postdoctoral-program/",
+  "sourceDomain": "lerner.ccf.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cleveland Clinic Lerner Research Institute",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead my.clevelandclinic.org postdoctoral path — Lerner is the actual research institute",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Postdoctoral program for PhD or MD",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_7a02bed009"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_009/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_009/cleaned.txt",
+  "sourceHash": "694684b7b73a77f12586a829c549074930999c6ff0f2d1fc95d764e499f96fce",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T03:36:57.677Z"
+}

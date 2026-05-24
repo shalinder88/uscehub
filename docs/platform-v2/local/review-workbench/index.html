@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>P96-4A — local evidence review workbench</title>
+<style>
+  :root {
+    --bg: #000000;
+    --panel: #0f1518;
+    --panel-2: #161d22;
+    --ink: #e8e4d4;
+    --rule: #2a3138;
+    --muted: #8b8b80;
+    --teal: #6cc6c6;
+    --brass: #d6a857;
+    --coral: #e07664;
+    --green: #7cc88a;
+    --amber: #e5b948;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 12px 18px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  .header-meta { font-size: 12px; color: var(--muted); }
+  .layout { display: grid; grid-template-columns: 320px 1fr; min-height: calc(100vh - 60px); }
+  aside { border-right: 1px solid var(--rule); overflow-y: auto; max-height: calc(100vh - 60px); }
+  main { padding: 18px 22px 80px; overflow-y: auto; max-height: calc(100vh - 60px); }
+  .filters { padding: 10px 12px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 8px; }
+  .filters label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .filters input, .filters select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; }
+  .row-list { list-style: none; margin: 0; padding: 0; }
+  .row-list li { padding: 10px 12px; border-bottom: 1px solid var(--rule); cursor: pointer; }
+  .row-list li:hover { background: rgba(214,168,87,0.08); }
+  .row-list li.active { background: rgba(108,198,198,0.12); }
+  .row-title { font-size: 13px; font-weight: 600; line-height: 1.3; }
+  .row-meta { font-size: 11px; color: var(--muted); margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .b-verdict-PATH_HINTS_PROGRAM { background: rgba(124,200,138,0.18); color: var(--green); }
+  .b-verdict-DEEP_PATH_NO_HINT { background: rgba(214,168,87,0.18); color: var(--brass); }
+  .b-verdict-GENERIC_HOMEPAGE { background: rgba(224,118,100,0.18); color: var(--coral); }
+  .b-verdict-LIKELY_WRONG_PAGE { background: #c8412f; color: #fff; }
+  .b-verdict-SOURCE_DEAD { background: #444a50; color: #d8d2c4; }
+  .b-verdict-LOGIN_REQUIRED { background: #2a2f33; color: #c9c5b8; }
+  .b-fit-TARGET_USCE_MATCH { background: rgba(124,200,138,0.18); color: var(--green); }
+  .b-fit-MAYBE_TARGET_MANUAL_REVIEW { background: rgba(214,168,87,0.18); color: var(--brass); }
+  .b-fit-NON_TARGET_SPECIALIST_ONLY,
+  .b-fit-NON_TARGET_BASIC_RESEARCH,
+  .b-fit-NON_TARGET_NON_CLINICAL,
+  .b-fit-NON_TARGET_THIRD_PARTY_ONLY { background: rgba(224,118,100,0.18); color: var(--coral); }
+  .b-decision-undecided { background: #2a2f33; color: #c9c5b8; }
+  .b-decision-KEEP { background: rgba(124,200,138,0.22); color: var(--green); }
+  .b-decision-KEEP_WITH_CAVEATS { background: rgba(214,168,87,0.22); color: var(--brass); }
+  .b-decision-MODIFY { background: rgba(108,198,198,0.22); color: var(--teal); }
+  .b-decision-DISCARD { background: rgba(224,118,100,0.22); color: var(--coral); }
+  .b-decision-NEEDS_MORE_RESEARCH { background: #2a2f33; color: #c9c5b8; }
+  .b-relink-HIGH { background: rgba(124,200,138,0.22); color: var(--green); }
+  .b-relink-MEDIUM { background: rgba(214,168,87,0.22); color: var(--brass); }
+  .b-relink-LOW { background: rgba(224,118,100,0.22); color: var(--coral); }
+
+  .panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; margin-bottom: 18px; color: var(--ink); }
+  .panel h2 { margin: 0 0 6px; font-size: 18px; }
+  .panel h3 { margin: 18px 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .meta-grid { display: grid; grid-template-columns: max-content 1fr; column-gap: 14px; row-gap: 6px; font-size: 13px; }
+  .meta-grid dt { color: var(--muted); }
+  .meta-grid dd { margin: 0; }
+  .reason-list { margin: 6px 0 0; padding-left: 18px; font-size: 13px; color: var(--coral); }
+  .url { font-family: ui-monospace, monospace; font-size: 12px; word-break: break-all; color: var(--teal); }
+  a { color: var(--teal); }
+
+  .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .screenshot-grid figure { margin: 0; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; background: var(--panel-2); }
+  .screenshot-grid figcaption { padding: 6px 8px; font-size: 11px; color: var(--muted); border-bottom: 1px solid var(--rule); background: var(--panel-2); }
+  .screenshot-grid img { width: 100%; height: auto; display: block; }
+  .screenshot-missing { padding: 18px; text-align: center; font-size: 12px; color: var(--muted); background: var(--panel-2); }
+
+  .decision-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .decision-row button { padding: 8px 14px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500; }
+  .decision-row button.active.KEEP { border-color: var(--green); background: rgba(124,200,138,0.22); color: var(--green); }
+  .decision-row button.active.KEEP_WITH_CAVEATS { border-color: var(--brass); background: rgba(214,168,87,0.22); color: var(--brass); }
+  .decision-row button.active.MODIFY { border-color: var(--teal); background: rgba(108,198,198,0.22); color: var(--teal); }
+  .decision-row button.active.DISCARD { border-color: var(--coral); background: rgba(224,118,100,0.22); color: var(--coral); }
+  .decision-row button.active.NEEDS_MORE_RESEARCH { border-color: #888; background: #2a2f33; color: #d8d2c4; }
+  .decision-fields { display: none; margin-top: 12px; padding: 12px; background: var(--panel-2); border: 1px dashed var(--rule); border-radius: 4px; }
+  .decision-fields.show { display: block; }
+  .decision-fields label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 0 4px; }
+  .decision-fields input, .decision-fields textarea, .decision-fields select { width: 100%; padding: 6px 8px; font-size: 13px; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); border-radius: 4px; font-family: inherit; }
+  .decision-fields textarea { min-height: 60px; }
+  .decision-fields .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  header { color: var(--ink); }
+  aside { background: var(--panel); }
+
+  .actions-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 10px 18px; background: #050709; color: var(--ink); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px solid var(--rule); box-shadow: 0 -2px 6px rgba(0,0,0,0.4); }
+  .actions-bar .stats { font-size: 12px; opacity: 0.85; margin-right: auto; }
+  .actions-bar button { padding: 6px 14px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 500; }
+  .actions-bar button.danger { background: var(--coral); color: #1a0a07; border-color: var(--coral); }
+
+  /* Dashboard counter row + quick templates + utility buttons */
+  .dashboard { display: flex; gap: 8px; flex-wrap: wrap; padding: 10px 18px; border-bottom: 1px solid var(--rule); background: var(--panel); }
+  .dash-tile { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 4px; background: var(--panel-2); color: var(--ink); font-size: 12px; cursor: pointer; }
+  .dash-tile.active { background: var(--brass); color: #1a1408; border-color: var(--brass); }
+  .dash-tile strong { display: block; font-size: 14px; line-height: 1.1; }
+  .dash-tile span { color: var(--muted); }
+  .dash-tile.active span { color: #2a2008; }
+  .quick-templates { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--rule); }
+  .quick-templates button { padding: 6px 10px; font-size: 12px; border: 1px solid var(--rule); background: var(--panel-2); border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .quick-templates button:hover { background: var(--brass); color: #1a1408; border-color: var(--brass); }
+  .util-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  .util-row button { padding: 4px 10px; font-size: 11px; border: 1px solid var(--rule); background: var(--panel-2); border-radius: 4px; cursor: pointer; color: var(--ink); }
+  .util-row button:hover { background: var(--teal); color: #03191a; border-color: var(--teal); }
+  .toast { position: fixed; bottom: 64px; right: 18px; background: var(--brass); color: #1a1408; padding: 8px 14px; border-radius: 4px; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000; }
+  .toast.show { opacity: 1; }
+  .sort-row { padding: 8px 12px; border-bottom: 1px solid var(--rule); display: flex; gap: 6px; align-items: center; font-size: 11px; }
+  .sort-row label { color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .sort-row select { padding: 4px 8px; font-size: 11px; border: 1px solid var(--rule); background: var(--panel-2); color: var(--ink); border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>P96 — Listing review workbench</h1>
+  <span class="header-meta" id="genMeta">loading…</span>
+</header>
+
+<div class="dashboard" id="dashboard"></div>
+
+<div class="layout">
+  <aside>
+    <div class="filters">
+      <div>
+        <label>Search</label>
+        <input id="search" type="text" placeholder="title / url / notes" />
+      </div>
+      <div>
+        <label>Verdict filter</label>
+        <select id="verdictFilter">
+          <option value="">All</option>
+          <option value="LIKELY_WRONG_PAGE">Wrong page</option>
+          <option value="GENERIC_HOMEPAGE">Generic homepage</option>
+          <option value="DEEP_PATH_NO_HINT">Deep path no hint</option>
+          <option value="PATH_HINTS_PROGRAM">Path hints program</option>
+          <option value="SOURCE_DEAD">Source dead</option>
+        </select>
+      </div>
+      <div>
+        <label>Target-fit filter</label>
+        <select id="fitFilter">
+          <option value="">All</option>
+          <option value="MAYBE_TARGET_MANUAL_REVIEW">Maybe target</option>
+          <option value="NON_TARGET_SPECIALIST_ONLY">Non-target: specialist</option>
+          <option value="NON_TARGET_BASIC_RESEARCH">Non-target: basic research</option>
+        </select>
+      </div>
+      <div>
+        <label>Decision filter</label>
+        <select id="decisionFilter">
+          <option value="">All</option>
+          <option value="undecided">Undecided</option>
+          <option value="decided">Decided</option>
+          <option value="KEEP">Keep</option>
+          <option value="KEEP_WITH_CAVEATS">Keep with caveats</option>
+          <option value="MODIFY">Modify</option>
+          <option value="DISCARD">Discard</option>
+          <option value="NEEDS_MORE_RESEARCH">Needs more research</option>
+        </select>
+      </div>
+    </div>
+    <div class="sort-row">
+      <label>Sort:</label>
+      <select id="sortBy">
+        <option value="undecidedFirst">Undecided first</option>
+        <option value="severity">Recommended-action severity</option>
+        <option value="targetFitSeverity">Target-fit severity</option>
+        <option value="institution">Institution / title</option>
+        <option value="verdict">Verdict</option>
+      </select>
+    </div>
+    <ul class="row-list" id="rowList"></ul>
+  </aside>
+
+  <main>
+    <div id="reviewPanel"></div>
+  </main>
+</div>
+
+<div class="actions-bar">
+  <span class="stats" id="stats">0 of 0 decided</span>
+  <button id="exportJson">Export JSON</button>
+  <button id="exportCsv">Export CSV</button>
+  <button id="copySummaryAll">Copy summary</button>
+  <button id="clearAll" class="danger">Clear decisions</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const STORAGE_KEY = 'p96-4a-decisions-v1';
+let data = null;
+let activeId = null;
+
+function loadDecisions() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch { return {}; }
+}
+function saveDecisions(map) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
+}
+
+async function init() {
+  const res = await fetch('./review-data.json', { cache: 'no-store' });
+  data = await res.json();
+  document.getElementById('genMeta').textContent =
+    `${data.questionableRowCount} questionable / ${data.totalSampleSize} sample · generated ${data.generatedAt}`;
+  renderDashboard();
+  renderList();
+  if (data.items.length > 0) selectItem(data.items[0].itemId);
+  bindActions();
+  updateStats();
+}
+
+function renderDashboard() {
+  const decisions = loadDecisions();
+  const counters = {
+    total: data.items.length,
+    questionable: data.items.length,
+    wrong: data.items.filter(i => i.sourceVerdict === 'LIKELY_WRONG_PAGE').length,
+    generic: data.items.filter(i => i.sourceVerdict === 'GENERIC_HOMEPAGE').length,
+    deepNoHint: data.items.filter(i => i.sourceVerdict === 'DEEP_PATH_NO_HINT').length,
+    pathHints: data.items.filter(i => i.sourceVerdict === 'PATH_HINTS_PROGRAM').length,
+    sourceDead: data.items.filter(i => i.sourceVerdict === 'SOURCE_DEAD').length,
+    maybeFit: data.items.filter(i => i.targetFit === 'MAYBE_TARGET_MANUAL_REVIEW').length,
+    nonTarget: data.items.filter(i => (i.targetFit || '').startsWith('NON_TARGET')).length,
+    decided: data.items.filter(i => decisions[i.itemId]).length,
+    undecided: data.items.filter(i => !decisions[i.itemId]).length,
+    modified: Object.values(decisions).filter(d => d.userDecision === 'MODIFY').length,
+    discarded: Object.values(decisions).filter(d => d.userDecision === 'DISCARD').length,
+    needsResearch: Object.values(decisions).filter(d => d.userDecision === 'NEEDS_MORE_RESEARCH').length,
+  };
+  const tiles = [
+    { label: 'Total', key: 'total', filter: null },
+    { label: 'Wrong page', key: 'wrong', filter: { verdict: 'LIKELY_WRONG_PAGE' } },
+    { label: 'Generic home', key: 'generic', filter: { verdict: 'GENERIC_HOMEPAGE' } },
+    { label: 'Deep no hint', key: 'deepNoHint', filter: { verdict: 'DEEP_PATH_NO_HINT' } },
+    { label: 'Path hints', key: 'pathHints', filter: { verdict: 'PATH_HINTS_PROGRAM' } },
+    { label: 'Source dead', key: 'sourceDead', filter: { verdict: 'SOURCE_DEAD' } },
+    { label: 'Maybe fit', key: 'maybeFit', filter: { fit: 'MAYBE_TARGET_MANUAL_REVIEW' } },
+    { label: 'Non-target', key: 'nonTarget', filter: null },
+    { label: 'Decided', key: 'decided', filter: { decision: 'decided' } },
+    { label: 'Undecided', key: 'undecided', filter: { decision: 'undecided' } },
+    { label: 'Modified', key: 'modified', filter: { decision: 'MODIFY' } },
+    { label: 'Discarded', key: 'discarded', filter: { decision: 'DISCARD' } },
+    { label: 'Needs research', key: 'needsResearch', filter: { decision: 'NEEDS_MORE_RESEARCH' } },
+  ];
+  const dash = document.getElementById('dashboard');
+  dash.innerHTML = tiles.map(t =>
+    `<div class="dash-tile" data-filter='${JSON.stringify(t.filter || {})}'><strong>${counters[t.key]}</strong><span>${t.label}</span></div>`
+  ).join('');
+  dash.querySelectorAll('.dash-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const f = JSON.parse(tile.getAttribute('data-filter') || '{}');
+      if (f.verdict !== undefined) document.getElementById('verdictFilter').value = f.verdict;
+      else document.getElementById('verdictFilter').value = '';
+      if (f.fit !== undefined) document.getElementById('fitFilter').value = f.fit;
+      else document.getElementById('fitFilter').value = '';
+      if (f.decision !== undefined) document.getElementById('decisionFilter').value = f.decision;
+      else document.getElementById('decisionFilter').value = '';
+      renderList();
+    });
+  });
+}
+
+function activeFilters() {
+  return {
+    q: (document.getElementById('search').value || '').toLowerCase(),
+    verdict: document.getElementById('verdictFilter').value,
+    fit: document.getElementById('fitFilter').value,
+    decision: document.getElementById('decisionFilter').value,
+  };
+}
+
+function applyFilters(items) {
+  const f = activeFilters();
+  const decisions = loadDecisions();
+  return items.filter(it => {
+    const dec = decisions[it.itemId];
+    if (f.verdict && it.sourceVerdict !== f.verdict) return false;
+    if (f.fit && it.targetFit !== f.fit) return false;
+    if (f.decision === 'undecided' && dec) return false;
+    if (f.decision === 'decided' && !dec) return false;
+    if (f.decision && f.decision !== 'undecided' && f.decision !== 'decided' && (!dec || dec.userDecision !== f.decision)) return false;
+    if (f.q) {
+      const hay = [it.title, it.sourceUrl, it.notesFromAudit, it.targetFitReason, (it.whyNeedsReview||[]).join(' ')].join(' ').toLowerCase();
+      if (!hay.includes(f.q)) return false;
+    }
+    return true;
+  });
+}
+
+const ACTION_RANK = { WRONG_PAGE_REPLACE: 1, NEEDS_BETTER_SOURCE: 2, SOURCE_DEAD_REVIEW: 3, MANUAL_REVIEW: 4, KEEP_SOURCE: 5 };
+const FIT_RANK = { NON_TARGET_SPECIALIST_ONLY: 1, NON_TARGET_BASIC_RESEARCH: 1, NON_TARGET_NON_CLINICAL: 1, NON_TARGET_THIRD_PARTY_ONLY: 1, DUPLICATE_OR_REPLACED: 1, MAYBE_TARGET_MANUAL_REVIEW: 2, TARGET_USCE_MATCH: 3 };
+const VERDICT_RANK = { LIKELY_WRONG_PAGE: 1, SOURCE_DEAD: 2, GENERIC_HOMEPAGE: 3, DEEP_PATH_NO_HINT: 4, PATH_HINTS_PROGRAM: 5, UNKNOWN: 6 };
+
+function applySort(items) {
+  const sortBy = document.getElementById('sortBy')?.value || 'undecidedFirst';
+  const decisions = loadDecisions();
+  const arr = items.slice();
+  arr.sort((a, b) => {
+    if (sortBy === 'severity') return (ACTION_RANK[a.recommendedAction] || 9) - (ACTION_RANK[b.recommendedAction] || 9);
+    if (sortBy === 'targetFitSeverity') return (FIT_RANK[a.targetFit] || 9) - (FIT_RANK[b.targetFit] || 9);
+    if (sortBy === 'institution') return (a.title || '').localeCompare(b.title || '');
+    if (sortBy === 'verdict') return (VERDICT_RANK[a.sourceVerdict] || 9) - (VERDICT_RANK[b.sourceVerdict] || 9);
+    // undecidedFirst (default)
+    const aDec = decisions[a.itemId] ? 1 : 0;
+    const bDec = decisions[b.itemId] ? 1 : 0;
+    if (aDec !== bDec) return aDec - bDec;
+    return (ACTION_RANK[a.recommendedAction] || 9) - (ACTION_RANK[b.recommendedAction] || 9);
+  });
+  return arr;
+}
+
+function renderList() {
+  const ul = document.getElementById('rowList');
+  ul.innerHTML = '';
+  const decisions = loadDecisions();
+  const items = applySort(applyFilters(data.items));
+  for (const it of items) {
+    const li = document.createElement('li');
+    if (it.itemId === activeId) li.classList.add('active');
+    const dec = decisions[it.itemId];
+    const decisionBadge = dec
+      ? `<span class="badge b-decision-${dec.userDecision}">${dec.userDecision.replace(/_/g,' ')}</span>`
+      : `<span class="badge b-decision-undecided">undecided</span>`;
+    li.innerHTML = `
+      <div class="row-title">${escapeHtml(it.title)}</div>
+      <div class="row-meta">
+        <span class="badge b-verdict-${it.sourceVerdict}">${(it.sourceVerdict||'').replace(/_/g,' ')}</span>
+        <span class="badge b-fit-${it.targetFit}">${(it.targetFit||'').replace(/_/g,' ')}</span>
+        ${decisionBadge}
+      </div>
+    `;
+    li.addEventListener('click', () => selectItem(it.itemId));
+    ul.appendChild(li);
+  }
+}
+
+function selectItem(id) {
+  activeId = id;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  const decisions = loadDecisions();
+  const dec = decisions[id] || {};
+  const panel = document.getElementById('reviewPanel');
+
+  panel.innerHTML = `
+    <div class="panel">
+      <h2>${escapeHtml(it.title)}</h2>
+      <div class="row-meta">
+        <span class="badge b-verdict-${it.sourceVerdict}">${(it.sourceVerdict||'').replace(/_/g,' ')}</span>
+        <span class="badge b-fit-${it.targetFit}">${(it.targetFit||'').replace(/_/g,' ')}</span>
+        <span class="badge b-decision-${dec.userDecision || 'undecided'}">${(dec.userDecision || 'undecided').replace(/_/g,' ')}</span>
+      </div>
+      <h3>Why this needs review</h3>
+      <ul class="reason-list">${(it.whyNeedsReview||[]).map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>
+
+      <h3>Metadata</h3>
+      <dl class="meta-grid">
+        <dt>id</dt><dd class="url">${escapeHtml(it.itemId)}</dd>
+        <dt>verdict reason</dt><dd>${escapeHtml(it.verdictReason || '')}</dd>
+        <dt>recommended</dt><dd>${escapeHtml(it.recommendedAction || '')}</dd>
+        <dt>target fit reason</dt><dd>${escapeHtml(it.targetFitReason || '')}</dd>
+        <dt>match relevance</dt><dd>${escapeHtml(it.matchRelevance || '')}</dd>
+        <dt>future lane</dt><dd>${escapeHtml(it.futureLaneCandidate || '')}</dd>
+        <dt>source URL</dt><dd class="url"><a href="${escapeAttr(it.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(it.sourceUrl || '(none)')}</a></dd>
+        <dt>USCEHub URL</dt><dd class="url"><a href="http://localhost:3000/listing/${escapeAttr(it.itemId)}" target="_blank" rel="noopener">/listing/${escapeHtml(it.itemId)}</a></dd>
+        <dt>notes from audit</dt><dd>${escapeHtml(it.notesFromAudit || '')}</dd>
+        <dt>JSON sidecar</dt><dd class="url">${escapeHtml(it.jsonSidecarPath || '')}</dd>
+      </dl>
+    </div>
+
+    <div class="panel">
+      <h3>Evidence</h3>
+      <div class="screenshot-grid">
+        ${renderShot('USCEHub listing', it.uscehubScreenshotPath)}
+        ${renderShot('Official source', it.officialSourceScreenshotPath)}
+      </div>
+    </div>
+
+    ${it.relink ? `
+    <div class="panel" style="border-color: var(--brass);">
+      <h3>P96-4B relink research <span class="badge b-relink-${it.relink.confidence}" style="margin-left:8px;">${it.relink.confidence}</span>${it.relink.paidBroker ? ' <span class="badge" style="background:#5a3a1a;color:#f0c97a;margin-left:4px;">PAID BROKER</span>' : ''}</h3>
+      <dl class="meta-grid">
+        <dt>recommendation</dt><dd><strong>${escapeHtml(it.relink.replacementRecommendation || '')}</strong></dd>
+        <dt>source quality</dt><dd>${escapeHtml(it.relink.sourceQuality || '')}</dd>
+        <dt>target fit (after research)</dt><dd>${escapeHtml(it.relink.targetFitAfterResearch || '')}</dd>
+        <dt>candidate source URL</dt><dd class="url">${it.relink.candidateSourceUrl ? `<a href="${escapeAttr(it.relink.candidateSourceUrl)}" target="_blank" rel="noopener">${escapeHtml(it.relink.candidateSourceUrl)}</a>` : '(none)'}</dd>
+        <dt>candidate application URL</dt><dd class="url">${it.relink.candidateApplicationUrl ? `<a href="${escapeAttr(it.relink.candidateApplicationUrl)}" target="_blank" rel="noopener">${escapeHtml(it.relink.candidateApplicationUrl)}</a>` : '(none)'}</dd>
+        <dt>future lane</dt><dd>${escapeHtml(it.relink.futureLaneCandidate || '')}</dd>
+        <dt>search terms tried</dt><dd>${escapeHtml(it.relink.searchTermsTried || '')}</dd>
+        <dt>evidence</dt><dd>${escapeHtml(it.relink.evidenceText || '')}</dd>
+        <dt>reviewer notes</dt><dd>${escapeHtml(it.relink.reviewerNotes || '')}</dd>
+      </dl>
+      <div class="util-row" style="margin-top:14px;">
+        <button data-act="acceptRelink">Accept proposed replacement</button>
+        <button data-act="rejectRelinkKeep">Keep current source</button>
+        <button data-act="rejectRelinkDiscard">Discard from wedge</button>
+        <button data-act="rejectRelinkResearch">Needs more research</button>
+      </div>
+    </div>` : ''}
+
+    <div class="panel">
+      <h3>Quick utilities</h3>
+      <div class="util-row">
+        <button data-act="copySource">Copy source URL</button>
+        <button data-act="copyApp">Copy application URL</button>
+        <button data-act="copySummary">Copy item summary</button>
+        <button data-act="openAll">Open all evidence (4 tabs)</button>
+        <button data-act="next">Mark reviewed → next item</button>
+      </div>
+
+      <h3>Decision</h3>
+      <div class="decision-row" id="decisionRow">
+        ${['KEEP','KEEP_WITH_CAVEATS','MODIFY','DISCARD','NEEDS_MORE_RESEARCH'].map(d =>
+          `<button data-d="${d}" class="${dec.userDecision === d ? 'active ' + d : ''}">${d.replace(/_/g,' ')}</button>`
+        ).join('')}
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'MODIFY' ? 'show' : ''}" id="modifyFields">
+        <div class="two-col">
+          <div>
+            <label>New source URL</label>
+            <input type="text" id="newSourceUrl" value="${escapeAttr(dec.newSourceUrl || '')}" />
+          </div>
+          <div>
+            <label>New application URL</label>
+            <input type="text" id="newApplicationUrl" value="${escapeAttr(dec.newApplicationUrl || '')}" />
+          </div>
+        </div>
+        <label>Modify instructions</label>
+        <textarea id="modifyInstructions">${escapeHtml(dec.modifyInstructions || '')}</textarea>
+        <label>Fields to correct (comma-separated)</label>
+        <input type="text" id="fieldsToCorrect" value="${escapeAttr(dec.fieldsToCorrect || '')}" />
+        <label>Description rewrite notes</label>
+        <textarea id="descriptionRewriteNotes">${escapeHtml(dec.descriptionRewriteNotes || '')}</textarea>
+        <label>Priority</label>
+        <select id="priority">
+          ${['LOW','MEDIUM','HIGH','CRITICAL'].map(p => `<option value="${p}" ${dec.priority === p ? 'selected' : ''}>${p}</option>`).join('')}
+        </select>
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'KEEP_WITH_CAVEATS' ? 'show' : ''}" id="caveatFields">
+        <label>Caveat text</label>
+        <textarea id="caveatText">${escapeHtml(dec.caveatText || '')}</textarea>
+        <label>Public-display suggestion</label>
+        <textarea id="publicDisplaySuggestion">${escapeHtml(dec.publicDisplaySuggestion || '')}</textarea>
+        <label>Needs future recheck date (YYYY-MM-DD)</label>
+        <input type="text" id="needsFutureRecheckDate" value="${escapeAttr(dec.needsFutureRecheckDate || '')}" />
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'DISCARD' ? 'show' : ''}" id="discardFields">
+        <label>Discard reason</label>
+        <textarea id="discardReason">${escapeHtml(dec.discardReason || '')}</textarea>
+        <label>Future-lane candidate</label>
+        <input type="text" id="futureLaneCandidateField" value="${escapeAttr(dec.futureLaneCandidate || it.futureLaneCandidate || '')}" />
+        <label>Can reconsider later</label>
+        <select id="canReconsiderLater">
+          <option value="true" ${dec.canReconsiderLater !== false ? 'selected' : ''}>true</option>
+          <option value="false" ${dec.canReconsiderLater === false ? 'selected' : ''}>false</option>
+        </select>
+      </div>
+
+      <div class="decision-fields ${dec.userDecision === 'NEEDS_MORE_RESEARCH' ? 'show' : ''}" id="researchFields">
+        <label>Research question</label>
+        <textarea id="researchQuestion">${escapeHtml(dec.researchQuestion || '')}</textarea>
+        <label>Suggested search terms</label>
+        <input type="text" id="suggestedSearchTerms" value="${escapeAttr(dec.suggestedSearchTerms || '')}" />
+        <label>Suspected correct source URL</label>
+        <input type="text" id="suspectedCorrectSource" value="${escapeAttr(dec.suspectedCorrectSource || '')}" />
+      </div>
+
+      <label style="display:block; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin: 14px 0 4px;">Reviewer notes (any decision)</label>
+      <textarea id="reviewerNotes" style="width:100%; min-height:60px; padding:6px 8px; font-size:13px; border:1px solid var(--rule); background:white; border-radius:4px; font-family:inherit;">${escapeHtml(dec.reviewerNotes || '')}</textarea>
+
+      <h3>Quick decision templates</h3>
+      <div class="quick-templates" id="quickTemplates">
+        <button data-tpl="keep_ok">Keep; source acceptable</button>
+        <button data-tpl="keep_weak">Keep; source weak but acceptable</button>
+        <button data-tpl="keep_caveat_generic">Keep with caveat: source is generic</button>
+        <button data-tpl="modify_source">Modify source URL</button>
+        <button data-tpl="modify_apply">Modify application URL</button>
+        <button data-tpl="fix_description">Fix description</button>
+        <button data-tpl="fit_unclear">Target-fit unclear</button>
+        <button data-tpl="specialist_only">Likely specialist/faculty only</button>
+        <button data-tpl="basic_science">Likely basic science / postdoc</button>
+        <button data-tpl="discard_wedge">Discard from current USCE wedge</button>
+        <button data-tpl="needs_better">Needs better official source</button>
+        <button data-tpl="needs_search">Needs manual web search</button>
+      </div>
+    </div>
+  `;
+
+  bindDecisionRow();
+}
+
+function bindDecisionRow() {
+  document.querySelectorAll('#decisionRow button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const value = btn.getAttribute('data-d');
+      saveDecisionForActive(value);
+    });
+  });
+  ['modifyFields','caveatFields','discardFields','researchFields'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.querySelectorAll('input, textarea, select').forEach(input => {
+      input.addEventListener('input', () => saveDecisionForActive());
+      input.addEventListener('change', () => saveDecisionForActive());
+    });
+  });
+  const notes = document.getElementById('reviewerNotes');
+  if (notes) notes.addEventListener('input', () => saveDecisionForActive());
+
+  // Quick utility buttons
+  document.querySelectorAll('.util-row button').forEach(btn => {
+    btn.addEventListener('click', () => handleUtility(btn.getAttribute('data-act')));
+  });
+
+  // Quick decision templates
+  document.querySelectorAll('#quickTemplates button').forEach(btn => {
+    btn.addEventListener('click', () => applyTemplate(btn.getAttribute('data-tpl')));
+  });
+}
+
+function handleUtility(act) {
+  const it = data.items.find(x => x.itemId === activeId);
+  if (!it) return;
+  if (act === 'copySource') {
+    navigator.clipboard.writeText(it.sourceUrl || '');
+    toast('Source URL copied');
+  } else if (act === 'copyApp') {
+    navigator.clipboard.writeText(it.applicationUrl || '');
+    toast('Application URL copied');
+  } else if (act === 'copySummary') {
+    const lines = [
+      `Listing: ${it.title}`,
+      `id: ${it.itemId}`,
+      `Source: ${it.sourceUrl}`,
+      `Verdict: ${it.sourceVerdict} (${it.verdictReason})`,
+      `Target fit: ${it.targetFit} — ${it.targetFitReason}`,
+      `Recommended: ${it.recommendedAction}`,
+      `Why review: ${(it.whyNeedsReview||[]).join('; ')}`,
+    ];
+    navigator.clipboard.writeText(lines.join('\n'));
+    toast('Summary copied');
+  } else if (act === 'openAll') {
+    [it.sourceUrl, it.applicationUrl, `http://localhost:3000/listing/${it.itemId}`, it.uscehubScreenshotPath ? '../../../../' + it.uscehubScreenshotPath : null].forEach(u => {
+      if (u) window.open(u, '_blank');
+    });
+  } else if (act === 'next') {
+    const list = applySort(applyFilters(data.items));
+    const idx = list.findIndex(x => x.itemId === activeId);
+    if (idx >= 0 && idx < list.length - 1) selectItem(list[idx + 1].itemId);
+  } else if (act === 'acceptRelink') {
+    if (!it.relink) return;
+    const decisions = loadDecisions();
+    decisions[it.itemId] = {
+      ...(decisions[it.itemId] || {}),
+      userDecision: 'MODIFY',
+      newSourceUrl: it.relink.candidateSourceUrl || '',
+      newApplicationUrl: it.relink.candidateApplicationUrl || '',
+      modifyInstructions: `Accepted P96-4B candidate. Confidence: ${it.relink.confidence}. ${it.relink.reviewerNotes || ''}`,
+      priority: it.relink.confidence === 'HIGH' ? 'HIGH' : 'MEDIUM',
+      reviewerNotes: (decisions[it.itemId]?.reviewerNotes || '') + ` [Accepted P96-4B: ${it.relink.replacementRecommendation}]`,
+      decidedAt: new Date().toISOString(),
+      relinkAccepted: true,
+    };
+    saveDecisions(decisions);
+    toast('Relink accepted → MODIFY');
+    selectItem(it.itemId);
+    updateStats();
+  } else if (act === 'rejectRelinkKeep') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'KEEP', reviewerNotes: (decisions[it.itemId]?.reviewerNotes || '') + ' [Rejected P96-4B candidate; keep current]', decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Kept current source'); selectItem(it.itemId); updateStats();
+  } else if (act === 'rejectRelinkDiscard') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'DISCARD', discardReason: it.relink?.evidenceText || '', futureLaneCandidate: it.relink?.futureLaneCandidate || '', canReconsiderLater: true, decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Discarded from wedge'); selectItem(it.itemId); updateStats();
+  } else if (act === 'rejectRelinkResearch') {
+    const decisions = loadDecisions();
+    decisions[it.itemId] = { ...(decisions[it.itemId] || {}), userDecision: 'NEEDS_MORE_RESEARCH', researchQuestion: it.relink?.reviewerNotes || '', decidedAt: new Date().toISOString(), relinkAccepted: false };
+    saveDecisions(decisions); toast('Marked needs more research'); selectItem(it.itemId); updateStats();
+  }
+}
+
+const TEMPLATES = {
+  keep_ok:        { d: 'KEEP', notes: 'Source acceptable; keep as-is.' },
+  keep_weak:      { d: 'KEEP', notes: 'Source weak but acceptable for now.' },
+  keep_caveat_generic: { d: 'KEEP_WITH_CAVEATS', caveat: 'Source URL is a generic homepage; surface "source under review" caveat publicly until re-linked.' },
+  modify_source:  { d: 'MODIFY', mod: 'Replace source URL with a program-specific page on the institution domain.', priority: 'HIGH' },
+  modify_apply:   { d: 'MODIFY', mod: 'Replace application URL.', priority: 'MEDIUM' },
+  fix_description:{ d: 'MODIFY', mod: 'Rewrite description to match what the official source actually says.', priority: 'MEDIUM' },
+  fit_unclear:    { d: 'NEEDS_MORE_RESEARCH', research: 'Confirm whether this opportunity is for medical students/IMGs (target) or for licensed providers/specialists (non-target).' },
+  specialist_only:{ d: 'DISCARD', reason: 'Listing is for licensed providers / specialists / fellows; non-target for the current USCE & Match wedge.', lane: 'Specialist/faculty opportunities' },
+  basic_science:  { d: 'DISCARD', reason: 'Listing is basic-science / wet-lab / postdoc research; non-target for the current USCE & Match wedge.', lane: 'Basic science / postdoc research lane' },
+  discard_wedge:  { d: 'DISCARD', reason: 'Out of scope for the current USCE & Match wedge.', lane: 'Not relevant' },
+  needs_better:   { d: 'MODIFY', mod: 'Source URL is not the program page; admin must find a better official source.', priority: 'HIGH' },
+  needs_search:   { d: 'NEEDS_MORE_RESEARCH', research: 'Run a manual web search for the institution + opportunity keyword to find the correct program page.' },
+};
+
+function applyTemplate(key) {
+  const tpl = TEMPLATES[key];
+  if (!tpl) return;
+  const decisions = loadDecisions();
+  const id = activeId;
+  if (!id) return;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  // Pre-populate fields based on template
+  const prev = decisions[id] || {};
+  decisions[id] = {
+    ...prev,
+    itemId: id,
+    listingIdOrSlug: it.itemId,
+    title: it.title,
+    sourceUrl: it.sourceUrl,
+    applicationUrl: it.applicationUrl,
+    sourceVerdict: it.sourceVerdict,
+    targetFit: it.targetFit,
+    originalRecommendedAction: it.recommendedAction,
+    userDecision: tpl.d,
+    reviewerNotes: tpl.notes || prev.reviewerNotes || '',
+    caveatText: tpl.caveat || prev.caveatText || '',
+    modifyInstructions: tpl.mod || prev.modifyInstructions || '',
+    discardReason: tpl.reason || prev.discardReason || '',
+    futureLaneCandidate: tpl.lane || prev.futureLaneCandidate || it.futureLaneCandidate || '',
+    researchQuestion: tpl.research || prev.researchQuestion || '',
+    priority: tpl.priority || prev.priority || 'MEDIUM',
+    canReconsiderLater: prev.canReconsiderLater !== false,
+    decidedAt: new Date().toISOString(),
+  };
+  saveDecisions(decisions);
+  selectItem(id); // re-render
+  renderList();
+  renderDashboard();
+  updateStats();
+  toast(`Template applied: ${key.replace(/_/g, ' ')}`);
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 1800);
+}
+
+function readField(id) {
+  const el = document.getElementById(id);
+  if (!el) return '';
+  return el.value;
+}
+
+function saveDecisionForActive(forceDecision) {
+  const id = activeId;
+  if (!id) return;
+  const it = data.items.find(x => x.itemId === id);
+  if (!it) return;
+  const decisions = loadDecisions();
+  const prev = decisions[id] || {};
+  const userDecision = forceDecision || prev.userDecision;
+  if (!userDecision) return;
+  const next = {
+    ...prev,
+    itemId: id,
+    listingIdOrSlug: it.itemId,
+    title: it.title,
+    institution: it.institution,
+    sourceUrl: it.sourceUrl,
+    applicationUrl: it.applicationUrl,
+    sourceVerdict: it.sourceVerdict,
+    targetFit: it.targetFit,
+    originalRecommendedAction: it.recommendedAction,
+    userDecision,
+    newSourceUrl: readField('newSourceUrl'),
+    newApplicationUrl: readField('newApplicationUrl'),
+    modifyInstructions: readField('modifyInstructions'),
+    fieldsToCorrect: readField('fieldsToCorrect'),
+    descriptionRewriteNotes: readField('descriptionRewriteNotes'),
+    caveatText: readField('caveatText'),
+    publicDisplaySuggestion: readField('publicDisplaySuggestion'),
+    needsFutureRecheckDate: readField('needsFutureRecheckDate'),
+    discardReason: readField('discardReason'),
+    futureLaneCandidate: readField('futureLaneCandidateField') || it.futureLaneCandidate || '',
+    canReconsiderLater: readField('canReconsiderLater') !== 'false',
+    researchQuestion: readField('researchQuestion'),
+    suggestedSearchTerms: readField('suggestedSearchTerms'),
+    suspectedCorrectSource: readField('suspectedCorrectSource'),
+    priority: readField('priority') || prev.priority || 'MEDIUM',
+    reviewerNotes: readField('reviewerNotes'),
+    decidedAt: new Date().toISOString(),
+  };
+  decisions[id] = next;
+  saveDecisions(decisions);
+  if (forceDecision) {
+    selectItem(id); // re-render to flip the active button + show fields
+  }
+  renderList();
+  updateStats();
+}
+
+function updateStats() {
+  const decisions = loadDecisions();
+  const decided = data.items.filter(it => decisions[it.itemId]).length;
+  document.getElementById('stats').textContent =
+    `${decided} of ${data.items.length} decided`;
+  renderDashboard();
+}
+
+function bindActions() {
+  ['search','verdictFilter','fitFilter','decisionFilter','sortBy'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => { renderList(); renderDashboard(); });
+    if (el) el.addEventListener('change', () => { renderList(); renderDashboard(); });
+  });
+  document.getElementById('exportJson').addEventListener('click', exportJson);
+  document.getElementById('exportCsv').addEventListener('click', exportCsv);
+  document.getElementById('copySummaryAll').addEventListener('click', copyOverallSummary);
+  document.getElementById('clearAll').addEventListener('click', clearAll);
+}
+
+function exportJson() {
+  const decisions = loadDecisions();
+  const rows = data.items.map(it => decisions[it.itemId] || { itemId: it.itemId, title: it.title, userDecision: 'UNDECIDED' });
+  download('decision-export.json', JSON.stringify({ exportedAt: new Date().toISOString(), decisions: rows }, null, 2), 'application/json');
+}
+
+function exportCsv() {
+  const decisions = loadDecisions();
+  const cols = ['itemId','listingIdOrSlug','title','institution','sourceUrl','applicationUrl','sourceVerdict','targetFit','originalRecommendedAction','userDecision','newSourceUrl','newApplicationUrl','modifyInstructions','caveatText','discardReason','futureLaneCandidate','canReconsiderLater','priority','needsFutureRecheckDate','researchQuestion','suspectedCorrectSource','reviewerNotes','decidedAt'];
+  const lines = [cols.join(',')];
+  for (const it of data.items) {
+    const d = decisions[it.itemId] || { userDecision: 'UNDECIDED', listingIdOrSlug: it.itemId, title: it.title };
+    lines.push(cols.map(c => csvCell(d[c] !== undefined ? d[c] : (it[c] !== undefined ? it[c] : ''))).join(','));
+  }
+  download('decision-export.csv', lines.join('\n'), 'text/csv');
+}
+
+function copyOverallSummary() {
+  const decisions = loadDecisions();
+  const counts = {};
+  for (const it of data.items) {
+    const d = decisions[it.itemId];
+    const k = d ? d.userDecision : 'UNDECIDED';
+    counts[k] = (counts[k] || 0) + 1;
+  }
+  const summary = Object.entries(counts).map(([k,v]) => `${k}: ${v}`).join('\n');
+  navigator.clipboard.writeText(`P96 decisions (n=${data.items.length}):\n${summary}`);
+  toast('Overall summary copied');
+}
+
+function clearAll() {
+  if (!confirm('Clear ALL decisions? This cannot be undone.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  selectItem(activeId);
+  renderList();
+  updateStats();
+}
+
+function download(name, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function csvCell(v) {
+  if (v === null || v === undefined) return '';
+  const s = String(v);
+  return JSON.stringify(s);
+}
+
+function renderShot(label, path) {
+  if (!path || path === '(fail)') {
+    return `<figure><figcaption>${label}</figcaption><div class="screenshot-missing">Not captured</div></figure>`;
+  }
+  // The static workbench is served from the repo root via
+  // python3 -m http.server, so paths are repo-relative.
+  // Workbench's index.html lives at docs/platform-v2/local/review-workbench/,
+  // so we need to step up to repo root: ../../../..  + path.
+  const relative = '../../../../' + path;
+  return `<figure>
+    <figcaption>${label} — <a href="${escapeAttr(relative)}" target="_blank" rel="noopener">open</a></figcaption>
+    <img src="${escapeAttr(relative)}" alt="${escapeAttr(label)}" loading="lazy" />
+  </figure>`;
+}
+
+function escapeHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escapeAttr(s) {
+  return escapeHtml(s).replace(/'/g,'&#39;');
+}
+
+init().catch(err => {
+  document.getElementById('reviewPanel').innerHTML =
+    `<div class="panel"><h2>Failed to load review-data.json</h2><pre>${escapeHtml(err.message)}</pre></div>`;
+});
+</script>
+</body>
+</html>

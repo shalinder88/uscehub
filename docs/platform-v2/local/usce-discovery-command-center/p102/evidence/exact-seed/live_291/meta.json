@@ -1,0 +1,44 @@
+{
+  "seedId": "live_291",
+  "institutionId": "inst_live_olive_view_ucla_medical_center",
+  "institutionName": "Olive View-UCLA Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Sylmar",
+  "state": "CA",
+  "sourceUrl": "https://dhs.lacounty.gov/olive-view-ucla/",
+  "sourceDomain": "dhs.lacounty.gov",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Psychiatry, Emergency Me",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_195095d7ef"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_291/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_291/cleaned.txt",
+  "sourceHash": "3f6d0237b9178aa773c016b146ce02e255d022dff94bbe779122e60b9b3ddee4",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:39:31.892Z"
+}

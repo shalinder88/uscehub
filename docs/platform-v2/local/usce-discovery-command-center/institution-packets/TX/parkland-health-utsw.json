@@ -1,0 +1,630 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
+  "institution": {
+    "name": "Parkland Health",
+    "aliases": [
+      "Parkland Memorial Hospital",
+      "UT Southwestern Visiting Medical Students program (covering Parkland placement)"
+    ],
+    "city": "Dallas",
+    "state": "TX",
+    "officialDomain": "medschool.utsouthwestern.edu",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "Parkland Health (clinical) / UT Southwestern Medical Center (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 46; P101-2 selected_25 rank 6"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medschool.utsouthwestern.edu",
+      "utsouthwestern.edu",
+      "parklandhealth.org"
+    ],
+    "searchTermsTried": [
+      "UT Southwestern visiting medical student VSLO international Parkland Health elective site:utsouthwestern.edu",
+      "UTSW visiting students international",
+      "Parkland Memorial visiting medical student",
+      "UT Southwestern VSLO senior elective"
+    ],
+    "pagesOpened": [
+      "https://medschool.utsouthwestern.edu/admissions/visiting/",
+      "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "https://medschool.utsouthwestern.edu/admissions/visiting/us-school.html",
+      "https://studentservices.utsouthwestern.edu/VMS",
+      "https://www.utsouthwestern.edu/departments/emergency/education/medical-students/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://www.utsouthwestern.edu/departments/emergency/who-we-are/health-equity/visiting-elective-program.html",
+        "title": "EM Health Equity Visiting Elective",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "medschool.utsouthwestern.edu accessible; international hub provides verbatim audience+cost+visa+duration.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "pageTitle": "Visiting Medical Students from International Medical Schools",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Max two 4-week electives",
+      "specialtyDecision": "International lane RESTRICTED to Pathology and Pediatrics departments",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "INTERNATIONAL_LANE_LIMITED_TO_PATHOLOGY_AND_PEDIATRICS",
+        "ALSO_ACCEPTS_NON_LCME_US_CITIZENS_AT_INTERNATIONAL_MS",
+        "4_MONTH_LEAD_TIME_RECOMMENDED"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "pageTitle": "Visiting Medical Students from International Medical Schools",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Must pay $150 (U.S. Dollars, 'USD') International Visiting Student nonrefundable application fee.",
+      "quoteSupports": [
+        "cost"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Pathology, Pediatrics",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "APP_FEE_150_USD_NON_REFUNDABLE"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "pageTitle": "Visiting Medical Students from International Medical Schools",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Must enter on a B-1 visa sponsored by UT Southwestern. Within weeks of your acceptance you will be contacted by the International Office to begin visa arrangements.",
+      "quoteSupports": [
+        "visa"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "B1_B2_LANGUAGE_PRESENT",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Pathology, Pediatrics",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "B1_VISA_SPONSORED_BY_UTSW_REQUIRED",
+        "UTSW_INTERNATIONAL_OFFICE_HANDLES_VISA"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 4,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "International lane is RESTRICTED to Pathology and Pediatrics departments only — most other specialties are not open to international students. This is a critical caveat that any public-facing card must carry.",
+    "weakNegativeEvidence": "Parkland Hospital is named as a placement site only on the U.S.-school page (not the international page); placement at Parkland for international students depends on which department accepts them."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UTSW SOM hub; Parkland is the major clinical site; (b) international lane RESTRICTED to Pathology + Pediatrics ONLY — critical caveat; (c) Non-LCME US citizens at international MS are also accepted; (d) $150 app fee; (e) B-1 visa sponsored by UTSW; (f) max 8 weeks (two 4-wk); (g) 4-month lead time recommended.",
+  "plainEnglishSummary": "Parkland Hospital is part of UT Southwestern's clinical site network. UTSW accepts visiting medical students through two tracks: US LCME schools via VSLO, and international medical schools via a paper/portal application. The international lane is RESTRICTED to two departments only — Pathology and Pediatrics. $150 non-refundable app fee. B-1 visa is sponsored by UTSW. Max two 4-week electives. 4-month lead time. Parkland is named as a placement site for several rotations.",
+  "driftCheck": "This advanced national USCE discovery because Texas gained its first P101 packet with an international-eligible USCE lane, but with the critical caveat that international access is limited to Pathology + Pediatrics — important to prevent overclaim that Parkland/UTSW is broadly open to international students.",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Parkland Health",
+    "aliases": [
+      "Parkland Memorial Hospital",
+      "UT Southwestern Visiting Medical Students program"
+    ],
+    "hospitalName": "Parkland Memorial Hospital",
+    "medicalSchoolName": "UT Southwestern Medical School",
+    "healthSystemName": "Parkland Health & Hospital System",
+    "city": "Dallas",
+    "state": "TX",
+    "officialDomains": [
+      "medschool.utsouthwestern.edu",
+      "utsouthwestern.edu",
+      "parklandhealth.org"
+    ],
+    "campusOrSiteNames": [
+      "Parkland Memorial Hospital"
+    ],
+    "institutionType": "public_hospital",
+    "sourceOfIdentity": "P101-2 25-institution discovery block"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "finalUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "pageTitle": "Visiting Medical Students from International Medical Schools",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T07:30:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch per P101-0/1/2 evidence",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "e638c1ddd2bbe1b1559125381df4d901558433198a4f27ac1f4d4373eade3c16",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/parkland-health-utsw/cleaned-text/8e24eaddec444fa1.txt",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 Shield artifact captured 2026-05-11; cleaned text + SHA-256 on T7."
+    },
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/",
+      "finalUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/",
+      "pageTitle": "Visiting Medical Students | UTSW",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    },
+    {
+      "sourceUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/us-school.html",
+      "finalUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/us-school.html",
+      "pageTitle": "Visiting Medical Students from US Medical Schools",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "sourceScope": "SCHOOL_LEVEL_SOURCE",
+      "accessedAt": "2026-05-11T00:00:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Per P101 packet sources list",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "PENDING_T7_BACKFILL",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 unmounted; pending backfill."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "US LCME via separate VSLO lane",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Same as US MD",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_EXPLICIT_PATHOLOGY_PEDIATRICS_ONLY",
+      "quote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Specifies 'students from international medical schools', not graduates",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Not specifically addressed",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "MS3_OR_MS4_PER_DEPARTMENT",
+      "quote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "Per packet caveats; verbatim year not on this page",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "INSTITUTIONAL_FORM_VIA_UTSW_OFFICE",
+      "quote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "application_window",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "150_USD_NON_REFUNDABLE",
+      "quote": "Must pay $150 (U.S. Dollars, 'USD') International Visiting Student nonrefundable application fee.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "duration",
+      "value": "MAX_TWO_4_WEEK_ELECTIVES",
+      "quote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "Max 8 weeks per packet caveats",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "PATHOLOGY_AND_PEDIATRICS_ONLY",
+      "quote": "Only these UT Southwestern Departments accept students from international medical schools (Pathology and Pediatrics listed). Also accepts Non-LCME/US Citizens attending International Medical School.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "B1_VISA_SPONSORED_BY_UTSW_INTERNATIONAL_OFFICE",
+      "quote": "Must enter on a B-1 visa sponsored by UT Southwestern. Within weeks of your acceptance you will be contacted by the International Office to begin visa arrangements.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "B-1 only",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_AS_B1_SPONSORED",
+      "quote": "Must enter on a B-1 visa sponsored by UT Southwestern.",
+      "quoteUrl": "https://medschool.utsouthwestern.edu/admissions/visiting/international.html",
+      "quoteSourcePageTitle": "Visiting Medical Students from International Medical Schools",
+      "confidence": "HIGH",
+      "caveat": "B-1 specifically; UTSW sponsors",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "INTERNATIONAL_MS",
+      "MS4_ONLY",
+      "MS3_ALLOWED"
+    ],
+    "application": [
+      "DIRECT_APPLICATION",
+      "ONLINE_FORM"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE"
+    ],
+    "cost": [
+      "COST_STATED",
+      "APPLICATION_FEE"
+    ],
+    "visa": [
+      "B1_B2_MENTIONED"
+    ],
+    "source": [
+      "SCHOOL_LEVEL_SOURCE",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "CLEANED_TEXT_SAVED"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "UTSW (Parkland's academic affiliate) accepts international medical students RESTRICTED to Pathology and Pediatrics only; $150 nonrefundable app fee; B-1 visa sponsored by UTSW.",
+    "whoThisIsFor": "International medical school students applying to UTSW's Pathology or Pediatrics departments; also non-LCME US citizens at international medical schools.",
+    "whoThisIsNotFor": "International students in any specialty other than Pathology or Pediatrics; MD graduates; US LCME/COCA students (separate VSLO lane).",
+    "howToApply": "UTSW institutional application; $150 non-refundable app fee; 4-month lead time recommended; UTSW International Office contacts on acceptance for B-1 visa.",
+    "estimatedCostSummary": "$150 (USD) non-refundable application fee. Tuition not separately stated on international page.",
+    "keyCaveats": [
+      "CRITICAL: International lane RESTRICTED to Pathology and Pediatrics only — most specialties closed",
+      "B-1 visa sponsored by UTSW (not student-arranged)",
+      "Also accepts US-citizen students at international medical schools",
+      "Max two 4-week electives (8 weeks total)",
+      "4-month lead time"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED but with the strongest specialty restriction in P101 to date — only two UTSW departments accept international students.",
+    "sourceTransparencyNote": "Verified at https://medschool.utsouthwestern.edu/admissions/visiting/international.html on 2026-05-11",
+    "possibleListingTitle": "Parkland Health (UTSW) — International Visiting Students — Pathology & Pediatrics only (Dallas, TX)",
+    "possibleMetaDescription": "UTSW/Parkland: international visiting MS RESTRICTED to Pathology and Pediatrics only; $150 app fee; B-1 visa sponsored by UTSW. Max 8 weeks.",
+    "suggestedFilters": [
+      "INTERNATIONAL_MS",
+      "B1_B2_MENTIONED",
+      "APPLICATION_FEE",
+      "CLINICAL_ELECTIVE"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "e638c1ddd2bbe1b1559125381df4d901558433198a4f27ac1f4d4373eade3c16",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/TX/parkland-health-utsw/cleaned-text/8e24eaddec444fa1.txt",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "cost_application_fee",
+      "specialties_offered",
+      "application_window"
+    ],
+    "changeRisk": "MEDIUM",
+    "notes": "Source hash placeholder until T7 backfill; canonical hash computed when scripts/p101-backfill-t7-artifacts.ts runs against the source URL. Recheck date = first capture + 90 days."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_078",
+  "institutionId": "inst_live_nyu_li",
+  "institutionName": "NYU Grossman Long Island School of Medicine",
+  "parentSystem": "NYU Langone Health",
+  "campus": "",
+  "city": "Mineola",
+  "state": "NY",
+  "sourceUrl": "https://medli.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+  "sourceDomain": "medli.nyu.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "NYU Grossman Long Island SOM",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "NYU LI SOM visiting MD students info",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME-accredited only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_f014053856"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_078/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_078/cleaned.txt",
+  "sourceHash": "859fee28027db88286c1bc624f97fc74e31159eeee847c92be21db225142f2e8",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T03:39:23.626Z"
+}

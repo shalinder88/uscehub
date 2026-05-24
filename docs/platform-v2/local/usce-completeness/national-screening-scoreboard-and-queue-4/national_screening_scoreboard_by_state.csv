@@ -1,0 +1,52 @@
+state,screened_rows,source_proof_score_5_rows,ready_or_staged_rows,active_runtime_rows,partial_or_requeue_rows,major_systems_seen,major_gaps_known,confidence,notes
+NY,56,UNKNOWN_HIGH,~5,0,UNKNOWN,NewYork-Presbyterian (Columbia + Cornell) / NYU Langone / Mount Sinai / Westchester / BronxCare / NYC H+H Lincoln,Brooklyn / Queens / Long Island public hospital subsystems likely thin,HIGH,Largest representation
+CA,45,UNKNOWN_HIGH,1,1,UNKNOWN,Highland Hospital (Alameda Health System); UCSF / UCLA / Stanford coverage status UNKNOWN,UCSD / UC Davis / USC explicit visiting-student pages need re-check,HIGH,Active 5 includes Highland
+PA,31,UNKNOWN_HIGH,1,0,UNKNOWN,Penn / Pitt (UPMC system) / Temple / Drexel,Penn State Hershey / Geisinger detail unclear,HIGH,UPMC Western Psychiatric is staged
+TX,20,UNKNOWN_MEDIUM,1,0,UNKNOWN,Methodist (Bexar) / Baylor / UT Health Houston / UT Southwestern / UH SA (rejected),Texas A&M / Tech / Rio Grande coverage gap,HIGH,UH SA closed-network confirmed
+NJ,20,UNKNOWN_HIGH,4,2,UNKNOWN,Atlantic Health (Morristown + Overlook active) / Newark Beth Israel / Saint Barnabas / Englewood / Hackensack,Inspira / Virtua coverage thin,HIGH,Strongest activation density per state
+OH,19,UNKNOWN_HIGH,2,2,UNKNOWN,Cleveland Clinic (Mercy + Hillcrest active) / Cleveland Clinic Main Campus (ready) / OSU / Cincinnati,Toledo / Akron / community systems thin,HIGH,2 active cards from one system
+MA,19,UNKNOWN_HIGH,UNKNOWN,0,UNKNOWN,Mass General Brigham / Beth Israel Lahey / Tufts / Boston Children's,Need explicit ready-set confirmation,MEDIUM,No active cards yet
+FL,16,UNKNOWN_HIGH,3,0,UNKNOWN,Jackson Memorial / Mayo Jacksonville / HCA Florida Aventura / Manatee (rejected),USF / Nova Southeastern / Orlando Health gaps,HIGH,Manatee was Batch 3 reject
+CT,16,UNKNOWN_HIGH,1,0,UNKNOWN,Yale New Haven Hospital,Hartford HealthCare / Bridgeport coverage thin,HIGH,Yale is in the 25-row ready set
+MI,14,UNKNOWN_HIGH,UNKNOWN,0,UNKNOWN,Henry Ford / Beaumont / Michigan Medicine / Detroit Medical Center,DMC + Wayne State link ambiguity needs review,MEDIUM,
+MD,10,UNKNOWN_HIGH,1,0,UNKNOWN,Johns Hopkins / University of Maryland,Suburban / community systems thin,HIGH,Hopkins in 25-row ready set
+IL,10,UNKNOWN_HIGH,1,0,UNKNOWN,Northwestern Memorial / Rush / UChicago,Loyola / Cook County health system gaps,HIGH,Northwestern in 25-row ready set
+NC,9,UNKNOWN_MEDIUM,1,0,UNKNOWN,Duke University Hospital / UNC,WakeMed / Atrium / ECU coverage thin,HIGH,Duke in 25-row ready set
+VA,6,UNKNOWN_MEDIUM,1,0,UNKNOWN,Carilion Clinic / VCU / UVA,Sentara / Inova thin,MEDIUM,Carilion in 25-row ready set
+TN,6,UNKNOWN_MEDIUM,UNKNOWN,0,UNKNOWN,Vanderbilt / UTHSC / Erlanger,Memphis-area gap,MEDIUM,
+MO,5,UNKNOWN_MEDIUM,UNKNOWN,0,UNKNOWN,Wash U / SLU / Mercy / Truman,KCMC + Children's Mercy gaps,MEDIUM,
+MN,5,UNKNOWN_HIGH,1,0,UNKNOWN,Mayo Saint Marys (ready) / U-Minn / Hennepin Healthcare,Mayo Mankato + Eau Claire flagged KEEP_INTERNAL,HIGH,Mayo Saint Marys in 25-row ready set
+LA,5,UNKNOWN_MEDIUM,UNKNOWN,0,UNKNOWN,Tulane / LSU / Ochsner,New Orleans VA gap,MEDIUM,
+GA,5,UNKNOWN_MEDIUM,1,0,UNKNOWN,Grady Memorial / Emory / Piedmont,Augusta / MCG gap,MEDIUM,Grady in 25-row ready set
+AZ,5,UNKNOWN_MEDIUM,1,0,UNKNOWN,Mayo Phoenix / Banner / U-Arizona,Tucson VA gap,MEDIUM,Mayo Phoenix in 25-row ready set
+WA,4,UNKNOWN_MEDIUM,UNKNOWN,0,UNKNOWN,UW / Virginia Mason / Swedish,WSU + Spokane gap,MEDIUM,
+WV,3,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,WVU / Marshall,Mountain State coverage,MEDIUM,
+WI,3,UNKNOWN_MEDIUM,UNKNOWN,0,UNKNOWN,Mayo Eau Claire (KEEP_INTERNAL) / U-Wisconsin / Aurora,Marshfield / Froedtert gap,MEDIUM,Mayo Eau Claire was Batch 3 KEEP_INTERNAL
+SC,3,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,MUSC / Greenville / Prisma,Beaufort + Hilton Head gap,MEDIUM,
+RI,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Brown / Lifespan,,MEDIUM,
+OK,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,OUHSC / SSM / INTEGRIS,Tulsa coverage,MEDIUM,
+NV,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UNLV School of Medicine + UMC / Sunrise,Reno gap,MEDIUM,
+MS,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UMMC,Coast + Delta gap,MEDIUM,
+KY,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UK HealthCare / Norton / U-Louisville,Western Kentucky gap,MEDIUM,
+KS,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,KU Med / Stormont / Wesley,Wichita gap,MEDIUM,
+IN,2,UNKNOWN_LOW,1,0,UNKNOWN,Indiana University Health Methodist,Eskenazi Health gap,HIGH,IU Methodist in 25-row ready set
+IA,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,U-Iowa / UnityPoint / Mercy,Quad Cities gap,MEDIUM,
+HI,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Queens / John A Burns,Big Island + Maui coverage,MEDIUM,Both rows but limited
+DE,2,UNKNOWN_LOW,1,0,UNKNOWN,ChristianaCare / Bayhealth,,HIGH,Christiana in 25-row ready set
+AL,2,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UAB / Children's of Alabama,,MEDIUM,
+VT,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,University of Vermont Medical Center,Single-system state,MEDIUM,Queue-4 thin-state target
+UT,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Intermountain (or U-Utah),,MEDIUM,Queue-4 thin-state target
+SD,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Sanford / Avera,,MEDIUM,Queue-4 thin-state target
+OR,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,OHSU / Legacy / Providence,,MEDIUM,Queue-4 thin-state target
+NM,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,U-NM / Presbyterian / Lovelace,,MEDIUM,Queue-4 thin-state target
+NH,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Dartmouth-Hitchcock,,MEDIUM,Queue-4 thin-state target
+NE,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Nebraska Medicine / CHI Health,,MEDIUM,Queue-4 thin-state target
+ND,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,Sanford / Altru,,MEDIUM,Queue-4 thin-state target
+ME,1,UNKNOWN,~23 in county-level QA queue,0,UNKNOWN,MaineHealth / Northern Light / Saint Mary's / UNECOM,County-level sweep done; no active runtime card,HIGH,Maine had its own county-level sweep
+DC,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,GW / Georgetown / Howard / MedStar,Saint Elizabeths flagged residency-only,MEDIUM,Queue-4 thin-state target
+CO,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UCHealth / Denver Health / Children's,,MEDIUM,Queue-4 thin-state target
+AR,1,UNKNOWN_LOW,UNKNOWN,0,UNKNOWN,UAMS / Baptist,,MEDIUM,Queue-4 thin-state target
+AK,0,0,0,0,0,(none in high-yield set),All Anchorage/Fairbanks/Juneau systems missing,HIGH,**Queue-4 ZERO-COVERAGE state**
+ID,0,0,0,0,0,(none in high-yield set),Boise/Saint Alphonsus/UI WAMI gap,HIGH,**Queue-4 ZERO-COVERAGE state**
+MT,0,0,0,0,0,(none in high-yield set),Billings Clinic / Saint Vincent gap,HIGH,**Queue-4 ZERO-COVERAGE state**
+WY,0,0,0,0,0,(none in high-yield set),Wyoming Medical Center / Cheyenne Regional gap,HIGH,**Queue-4 ZERO-COVERAGE state**

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-2-vanderbilt-vumc",
+  "tasks": [
+    {
+      "taskId": "vumc-tier1-recovery-001",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "The captured VISITING_STUDENT_PAGE (vumc.org/gme/visiting-residents) is exclusively for residents/fellows in ACGME-accredited programs (Tier 2), not pre-residency medical students or IMG observers. No Tier 1 observership/visiting medical student/clinical elective page was captured, and no explicit negative quote was found.",
+      "suggestedNarrowAction": "Narrow search: query vumc.org for 'visiting medical student', 'clinical elective', 'observership', and 'School of Medicine visiting student' pages. If absent, capture an explicit negative quote or School-of-Medicine-level statement."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

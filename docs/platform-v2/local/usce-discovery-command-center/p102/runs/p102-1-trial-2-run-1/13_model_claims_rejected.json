@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "c4",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "lane": "RESEARCH_OPPORTUNITY",
+      "sourceUrl": "https://houstonmethodist.org/education",
+      "sourceHash": "210ef566781fc0257d511ecd6746cdc550825550432b36468781af88e56d8ad2",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-1/cleaned_text/education.txt",
+      "sourceScope": "UNKNOWN_SCOPE",
+      "quote": "The EnMed program, founded in 2019, is a collaboration between Texas A&amp;M&rsquo;s School of Engineering Medicine and the state&rsquo;s top-ranked Houston Methodist Hospital established to transform health care through the development and training of physicianeers, the creation of medical technologies, and translational research.",
+      "claimText": "EnMed MEng/MD program with Texas A&M is mentioned as a medical education program.",
+      "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "confidence": "MEDIUM",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "deepSourceFamily": "MEDICAL_EDUCATION",
+      "tierAssignmentRationale": "EnMed is a medical degree (MD) program; relates to pre-residency medical education but is admissions-level, not USCE rotation.",
+      "normalizedField": null,
+      "limitations": "No observership / visiting-student offer stated; not a USCE opportunity.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-1-trial-2-run-1",
+      "institutionId": "inst_houston_methodist_hospital_tx",
+      "sourceFamily": "OTHER",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A1"
+    }
+  ]
+}

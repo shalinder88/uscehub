@@ -1,0 +1,13 @@
+metric,before,after,delta,notes
+staged_batch_3_rows,14,14,0,Batch 3 staged data unchanged this sprint
+new_rows_with_report_mapping,0,7,+7,pilot-013…pilot-019 now mapped to listing_map
+new_rows_with_evidence_joins,0,7,+7,Each row joins to its TIER_A_PLUS evidence on disk
+new_rows_with_correction_payload_map,0,7,+7,Required hidden fields + forbidden field denylist defined per row
+active_runtime_rows,5,5,0,Active runtime preserved
+production_public_rows,0,0,0,Production main unchanged
+rows_ready_for_activation_candidate_audit,0,7,+7,All 7 satisfy data + evidence + mapping prerequisites; gating blocker is /contact UI wiring
+remaining_activation_blockers,multiple_no_mapping_or_ui,1_ui_blocker_only,REDUCED,Only blocker now is B-001/B-002/B-003 (/contact UI does not parse listing_id)
+contact_ui_query_param_parsing,DOES_NOT_PARSE,DOES_NOT_PARSE,0,Same gap as for active 5; flagged in mapping-1 and now in mapping-2
+correction_endpoint_status,EXISTS_ENV_FLAG_OFF,EXISTS_ENV_FLAG_OFF,0,Acceptable for noindex pilot activation
+gh_secret_scanning_open_alerts,0,0,0,Last verified — alert #1 resolved
+mapping_csvs_present,1_pair,2_pairs,+1,mapping-1 (active 5 + prior staged 2) + mapping-2 (new 7)

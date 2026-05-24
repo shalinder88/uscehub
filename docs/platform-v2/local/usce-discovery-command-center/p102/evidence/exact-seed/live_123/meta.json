@@ -1,0 +1,44 @@
+{
+  "seedId": "live_123",
+  "institutionId": "inst_live_suny_downstate_medical_center",
+  "institutionName": "SUNY Downstate Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Brooklyn",
+  "state": "NY",
+  "sourceUrl": "https://www.downstate.edu/education-training/graduate-medical-education/index.html",
+  "sourceDomain": "www.downstate.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Pediatrics, OB/GYN, Psychiatry",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_ad882583c1"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_123/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_123/cleaned.txt",
+  "sourceHash": "e17282e6cff593d54401643305d84ba5e388e0371d79ec453a58a8ad0bf5069d",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:44.075Z"
+}

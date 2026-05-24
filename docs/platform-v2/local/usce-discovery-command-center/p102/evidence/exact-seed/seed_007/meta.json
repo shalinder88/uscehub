@@ -1,0 +1,46 @@
+{
+  "seedId": "seed_007",
+  "institutionId": "inst_ucsf_fresno_ca",
+  "institutionName": "UCSF Fresno",
+  "parentSystem": "UCSF",
+  "campus": "Fresno Campus",
+  "city": "Fresno",
+  "state": "CA",
+  "sourceUrl": "https://fresno.ucsf.edu/education/visiting-medical-students",
+  "sourceDomain": "fresno.ucsf.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "UCSF Fresno",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; explicit visiting-medical-students path on the Fresno-specific subdomain",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_5bd4da4606"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_007/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_007/cleaned.txt",
+  "sourceHash": "8b109baf9ee36c0c7047f989afde23c1a6cf771838ecf6ce23eed937630264bc",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:32:33.476Z"
+}

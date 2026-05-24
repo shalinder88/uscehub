@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-05-16T18:57:55.091Z",
+  "totalRows": 2,
+  "routeCounts": {
+    "AUTO_PROMOTE": 2,
+    "HOLD_REVIEW": 24,
+    "REJECTED": 17
+  },
+  "rows": [
+    {
+      "rowId": "opp_23c5d379",
+      "opportunitySignature": "inst_houston_methodist_hospital_tx_deep||https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations||CLINICAL_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "state": "TX",
+      "city": "Houston",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "opportunityType": "CLINICAL_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "studentVsGraduate": "BOTH",
+      "topQuote": "Medical student rotations and observerships at Houston Methodist give residents the proper amount of time and responsibility needed to achieve and surpass their professional goals.",
+      "quoteScore": 1,
+      "usceLanes": [
+        "IMG_OBSERVERSHIP",
+        "CLINICAL_ELECTIVE"
+      ],
+      "deepFamilies": [
+        "OBSERVERSHIP"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "audienceConfidence": "HIGH",
+      "confidence": "HIGH",
+      "route": "AUTO_PROMOTE",
+      "holdReasons": [],
+      "urlPathDepth": 4,
+      "runIds": [
+        "p102-pc-6-houston-methodist-deep"
+      ],
+      "claimIds": [
+        "c1",
+        "c6",
+        "c7",
+        "c8",
+        "a2_c1",
+        "a2_c2",
+        "a2_c3",
+        "a2_c4",
+        "a2_c5"
+      ]
+    },
+    {
+      "rowId": "opp_e095ffd9",
+      "opportunitySignature": "inst_houston_methodist_hospital_tx_deep||https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations||OBSERVERSHIP||IMG_GRADUATE_OBSERVER",
+      "institutionId": "inst_houston_methodist_hospital_tx_deep",
+      "institutionName": "Houston Methodist Hospital",
+      "state": "TX",
+      "city": "Houston",
+      "sourceUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "canonicalUrl": "https://houstonmethodist.org/academic-institute/education/medical/medical-student-rotations",
+      "opportunityType": "OBSERVERSHIP",
+      "audienceClass": "IMG_GRADUATE_OBSERVER",
+      "studentVsGraduate": "BOTH",
+      "topQuote": "Medical student rotations and observerships at Houston Methodist give residents the proper amount of time and responsibility needed to achieve and surpass their professional goals.",
+      "quoteScore": 1,
+      "usceLanes": [
+        "IMG_OBSERVERSHIP",
+        "CLINICAL_ELECTIVE"
+      ],
+      "deepFamilies": [
+        "OBSERVERSHIP"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "audienceConfidence": "HIGH",
+      "confidence": "HIGH",
+      "route": "AUTO_PROMOTE",
+      "holdReasons": [],
+      "urlPathDepth": 4,
+      "runIds": [
+        "p102-pc-6-houston-methodist-deep"
+      ],
+      "claimIds": [
+        "c1",
+        "c6",
+        "c7",
+        "c8",
+        "a2_c1",
+        "a2_c2",
+        "a2_c3",
+        "a2_c4",
+        "a2_c5"
+      ]
+    }
+  ]
+}

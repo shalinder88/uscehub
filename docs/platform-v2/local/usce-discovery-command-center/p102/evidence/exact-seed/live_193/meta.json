@@ -1,0 +1,46 @@
+{
+  "seedId": "live_193",
+  "institutionId": "inst_live_university_of_washington_medical_center",
+  "institutionName": "University of Washington Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Seattle",
+  "state": "WA",
+  "sourceUrl": "https://medicine.uw.edu/education/observerships",
+  "sourceDomain": "medicine.uw.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Primary Care, Global Health",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_0b68a6c510"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_193/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_193/cleaned.txt",
+  "sourceHash": "255b63e15aa08e20a51e1cbcf25e23d45461da8fed8cd50fcd81e171162b2ece",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:36:07.331Z"
+}

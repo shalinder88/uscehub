@@ -1,0 +1,14 @@
+metric,before,after,delta,notes
+active_runtime_rows,5,5,0,Active runtime preserved verbatim
+staged_runtime_rows_total,7,14,+7,Staged batch 3 = 5 active + 2 prior staged + 7 new
+prior_staged_batch_2_rows,7,7,0,Batch 2 file unchanged on disk
+new_validated_rows_added_to_staging,0,7,+7,Jackson/Duke/Northwestern/HUP/NYU-Tisch/Methodist-SA/IU-Methodist
+validated_bridge_input_rows,9,9,0,Same 9 (UPMC + Lincoln + the 7 new); they have now moved to staged data
+production_public_rows,0,0,0,Production main unchanged
+app_imported_staged_batch_3_rows,0,0,0,Validator import-safety grep PASS
+production_main_sha,739ab1e232ecc52db1f10c8619bbdc1d409a190f,739ab1e232ecc52db1f10c8619bbdc1d409a190f,UNCHANGED,Production untouched throughout
+source_proofed_rows_t7,347,347,0,Screening corpus on T7 unchanged this sprint
+states_with_at_least_one_staged_row,5,10,+5,New states staged: FL NC IL TX IN (joining NJ OH CA PA NY)
+amc_tier1_staged_rows,0,7,+7,All 7 new are tier-1 / large-AMC / large-public-system entries
+gh_secret_scanning_open_alerts,0,0,0,Last verified — alert #1 resolved wont_fix
+products_rows_one_step_from_runtime,2,9,+7,2 prior (UPMC + Lincoln) + 7 new validated rows that are now staged

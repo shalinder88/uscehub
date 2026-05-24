@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-1-msk",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "JSON_LD"
+  ],
+  "objectsCreated": 1,
+  "claimsPromoted": 1,
+  "conflictsFound": [],
+  "unresolveds": [
+    "https://mskcc.org/medical-students: P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-pc-1-msk_1",
+      "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+      "runId": "p102-pc-1-msk",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "elective for medical student",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "Medical Student Opportunities\nBone Marrow Transplant Elective\nWe offer an elective for medical students on bone marrow transplantation and its role in treating hematologic diseases.VIDEO | 3:30\nTraining the Next Generation of Clinical Investigators\nMeet Susan De Wolf, a member of the Leukemia Service, and learn more about the hematology-oncology fellowship program at MSK.",
+      "sourceUrl": "https://mskcc.org/medical-students",
+      "sourceHash": "7a96f6d0f6b0fdb6eebf93719502025bcd19b1cc43a213192c6ab4ae7b51f33e",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-1-msk/cleaned_text/medical-students.txt",
+      "quoteVerified": true,
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "sourceFamily": "JSON_LD",
+      "confidence": "MEDIUM",
+      "visibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "usedInPublicCopy": false,
+      "notPublicReason": "P102-0C deterministic detection; needs model reader for PUBLIC_SAFE promotion",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

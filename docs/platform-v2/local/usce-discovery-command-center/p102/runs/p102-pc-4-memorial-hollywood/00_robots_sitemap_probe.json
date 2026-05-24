@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "fetched": true,
+  "statusCode": 200,
+  "sitemapsAdvertised": [
+    "https://www.mhs.net/sitemap.xml"
+  ],
+  "disallows": [
+    "/app_browsers/",
+    "/app_config/",
+    "/sitecore/",
+    "/sitecore_modules/",
+    "/sitecore modules/utilities/",
+    "/sitecore_files/",
+    "/sitecore/content/global/smart snippets/*",
+    "/global/",
+    "/style-guide/",
+    "/test-pages/",
+    "/health-library/",
+    "/*thank-you$",
+    "/tel",
+    "/*?",
+    "/mapi/",
+    "/*.json$"
+  ],
+  "allows": [],
+  "sitemap": {
+    "fetched": false,
+    "statusCode": 0,
+    "urlsFound": 0,
+    "candidatesKept": []
+  }
+}

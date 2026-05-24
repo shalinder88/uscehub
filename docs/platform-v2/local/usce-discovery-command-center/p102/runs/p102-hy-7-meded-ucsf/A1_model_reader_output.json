@@ -1,0 +1,1333 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://meded.ucsf.edu/gme",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/gme",
+            "sourceHash": "de6805a08f8daeb965277f211c70cdd600ca6e644564bb02d701db452d43853c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "With one of the nation's largest graduate medical education (GME) programs, UCSF School of Medicine GME is where excellence in patient care, innovation, and equity converge to shape the future of medicine.",
+            "claimText": "UCSF School of Medicine operates one of the nation's largest GME programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Page describes GME residency/fellowship infrastructure at UCSF — trainee tier.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/gme",
+            "sourceHash": "de6805a08f8daeb965277f211c70cdd600ca6e644564bb02d701db452d43853c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "In partnership with UCSF Health, the San Francisco Veterans Affairs Medical Center, and Zuckerberg San Francisco General Hospital and Trauma Center, as well as 50+ additional training sites, we strive daily to provide our residents and fellows with the highest quality education and training.",
+            "claimText": "UCSF GME training delivered in partnership with UCSF Health, SF VA, ZSFG, and 50+ additional training sites.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Lists training partner sites for residents and fellows — Tier 2.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/gme",
+            "sourceHash": "de6805a08f8daeb965277f211c70cdd600ca6e644564bb02d701db452d43853c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Food & HousingSalary & BenefitsQuality Improvement & Patient Safety​​​Transportation & ParkingFamily ResourcesFinancial PlanningCommunity, Opportunity, Retention & Engagement (CORE)Well-Being & Mental Health ​​​Trainee EmploymentEmergency & Crisis ResourcesEducation & Professional DevelopmentPolicies",
+            "claimText": "GME Resource Hub lists trainee resource categories including salary & benefits, food & housing, well-being.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Trainee benefits/resources listing for residents and fellows.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Look for separate Visiting Student Program page at meded.ucsf.edu to verify USCE pathway for visiting medical students."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://meded.ucsf.edu/careers",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_ucsf_meded_careers_advising_residency",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/careers",
+            "sourceHash": "cb56505a77cf49449de6ff907199e786224973742ff08b02a9943f32054c6bab",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "With general expertise in specialty selection, residency applications and matching, Dr. Brent Kobashi, Dr Neeti Parikh and Dr. Jessie Werner are available for:General advising about career exploration",
+            "claimText": "UCSF Medical Education provides career advising directors who support specialty selection, residency applications, and matching for UCSF medical students.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Page is internal UCSF medical-student career advising for residency match — Tier 2 trainee pipeline content, not Tier 1 USCE.",
+            "limitations": "Internal UCSF student advising; not an offer to external observers or visiting students."
+          },
+          {
+            "claimId": "c_ucsf_meded_careers_ucsf_only",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://meded.ucsf.edu/careers",
+            "sourceHash": "cb56505a77cf49449de6ff907199e786224973742ff08b02a9943f32054c6bab",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Please note that appointments are for current and graduated UCSF Medical Students only",
+            "claimText": "Career advising appointments are restricted to current and graduated UCSF Medical Students only.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Restriction is about UCSF student career advising, a Tier 2 internal trainee resource, not USCE admissions.",
+            "limitations": "Restriction applies to advising appointments, not to a USCE program."
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Fetch the UCSF Visiting Student Program page referenced in the navigation (Current Students > Visiting Student Program) for the actual USCE-relevant content.",
+          "Confirm whether the Visiting Student Program page provides eligibility for non-UCSF students."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a careers/advising page for current UCSF medical students; no USCE-specific eligibility, application, fee, or duration content present in this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_31",
+      "sourceUrl": "https://meded.ucsf.edu/benefits",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/benefits",
+            "sourceHash": "9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "UCSF provides residents and clinical fellows a rich package of health and welfare benefits at a good value. These plans are different than those offered to faculty and staff. Plans include health, dental, vision, disability, and life insurance.",
+            "claimText": "UCSF provides residents and clinical fellows a benefits package including health, dental, vision, disability, and life insurance.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Benefits described are explicitly for residents and clinical fellows, placing this content in Tier 2 trainee territory."
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/benefits",
+            "sourceHash": "9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Residents and clinical fellows are automatically enrolled in the Safe Harbor Defined Contribution Plan. Pre-tax contributions to 403(b) or 457(b) plans are optional.",
+            "claimText": "Residents and clinical fellows are auto-enrolled in the Safe Harbor Defined Contribution Plan with optional 403(b)/457(b) contributions.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Retirement benefits described for residents/clinical fellows — Tier 2 trainee benefit."
+          },
+          {
+            "claimId": "c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/benefits",
+            "sourceHash": "9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "FSAP provides confidential employee assistance services at no cost to UCSF faculty, staff, post-docs, residents, and clinical fellows.",
+            "claimText": "Faculty and Staff Assistance Program (FSAP) is available at no cost to residents and clinical fellows.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Employee assistance program access for residents/clinical fellows — Tier 2."
+          },
+          {
+            "claimId": "c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/benefits",
+            "sourceHash": "9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Residents and fellows who have insurance through the UC Resident and Fellow plans have access to family-building and fertility benefits through Carrot.",
+            "claimText": "Residents and fellows on UC Resident and Fellow plans have fertility/family-building benefits via Carrot.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Fertility benefits described for residents and fellows — Tier 2 trainee benefit."
+          },
+          {
+            "claimId": "c5",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/benefits",
+            "sourceHash": "9529b6130ae97d9c38f305a3f82e78322b0211262472608b5a16dc465866f6ee",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/benefits.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Sharon Mendonca; Post-Doc, Residents and Clinical Fellows Benefits AnalystEmail: [email protected]415-476-6529",
+            "claimText": "Resident/Fellow Benefits Coordinator: Sharon Mendonca, Benefits Analyst, phone 415-476-6529.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Contact for resident/fellow benefits enrollment — Tier 2 trainee administrative contact."
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Capture the UCSF Visiting Student Program page (Tier 1) referenced in the navigation.",
+          "Capture UCSF GME Training Programs landing page for Tier 2 program listing.",
+          "Look for explicit J-1/H-1B/visa sponsorship language for residents/fellows."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://meded.ucsf.edu/current-students",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c_ucsf_meded_currstudents_001",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/current-students",
+            "sourceHash": "506e635de24b8e77c9fcefe867479272e52619ee767538e9e413c47523aad898",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Prospective Residents & FellowsProspective Residents & Fellows OverviewPolicies for Residents & FellowsTraining ProgramsTraining ProgramsCurrent Residents & FellowsCurrent Residents & Fellows OverviewResident & Clinical Fellows ResourcesProgram Administration ResourcesTraining VerificationsAbout the Office of GME",
+            "claimText": "Navigation references GME, residency/fellowship training programs, and Office of GME at UCSF Medical Education.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Navigation chrome lists prospective/current residents and fellows and Office of GME — classic Tier 2 trainee content, future-lane only.",
+            "limitations": "Navigation chrome only; no program-level detail extractable from this page.",
+            "normalizedField": null
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [
+          {
+            "claimId": "c_ucsf_meded_currstudents_002",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students",
+            "sourceHash": "506e635de24b8e77c9fcefe867479272e52619ee767538e9e413c47523aad898",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Anti-Oppression Curriculum InitiativeCourse and Schedule InformationEmergency Contact InformationVisiting Student ProgramEducation ProgramsTechnology in Medical Education",
+            "claimText": "Page lists 'Visiting Student Program' as a navigation/section item under Current Students at UCSF Medical Education, indicating UCSF operates a Visiting Student Program.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Visiting Student Program targets visiting medical students — Tier 1 USCE signal. This page only references it via navigation without eligibility, cost, duration, or application detail, so caution-safe internal review pending the dedicated visiting-student page.",
+            "limitations": "Page is an overview that references the Visiting Student Program by name but contains no eligibility, application, cost, or duration details.",
+            "normalizedField": null
+          }
+        ],
+        "recommendedA2Focus": [
+          "Fetch and read the dedicated UCSF Visiting Student Program page linked from this overview to extract eligibility, application pathway, cost, duration, and IMG/international acceptance.",
+          "Confirm whether meded.ucsf.edu visiting-student content applies institution-wide to UCSF School of Medicine campuses or is medical-school-scoped only."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Visiting Student Program eligibility (US LCME/COCA only vs international) not stated on this page.",
+          "Application route (VSLO/VSAS or other), fees, and duration not stated on this page.",
+          "Whether UCSF offers observerships for IMGs not addressed on this page."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_VSLO",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "The UCSF School of Medicine uses the AAMC Visiting Student Application Service (VSLO) to receive applications from US medical and osteopathic students.",
+            "claimText": "UCSF School of Medicine uses AAMC VSLO to receive applications from US medical and osteopathic students.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Visiting student program for US medical and osteopathic students — pre-residency USCE.",
+            "normalizedField": "application_portal",
+            "limitations": null
+          },
+          {
+            "claimId": "c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Applicants must be in good academic standing and actively progressing toward a Doctor of Medicine degree at an affiliated LCME-accredited institution, or a Doctor of Osteopathic Medicine degree at an affiliated COCA-accredited, AACOM member institution.",
+            "claimText": "Eligibility: good standing, MD at affiliated LCME-accredited or DO at affiliated COCA-accredited AACOM institution.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit eligibility for visiting student program.",
+            "normalizedField": "eligibility",
+            "limitations": null
+          },
+          {
+            "claimId": "c3",
+            "claimType": "NEGATIVE_DOMESTIC_ONLY",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "UCSF DOES NOT accept students attending international schools for clinical experiences.",
+            "claimText": "UCSF does not accept international medical students for clinical experiences.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit refusal for international medical students seeking clinical experiences.",
+            "normalizedField": "international_students_accepted",
+            "limitations": null
+          },
+          {
+            "claimId": "c4",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Puerto Rico: As a U.S. Territory with LCME accredited institutions, students can apply.",
+            "claimText": "Puerto Rico LCME-accredited students can apply as a U.S. Territory exception.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Eligibility exception within visiting student program.",
+            "normalizedField": "eligibility_exception",
+            "limitations": null
+          },
+          {
+            "claimId": "c5",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Canada: Students attending Canadian schools that have LCME accreditation and are a part of AAMC VSLO can apply. ($550 admission fee).",
+            "claimText": "Canadian LCME-accredited AAMC-VSLO students can apply; $550 admission fee.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Canadian eligibility exception with explicit fee.",
+            "normalizedField": "eligibility_canadian",
+            "limitations": null
+          },
+          {
+            "claimId": "c6",
+            "claimType": "DURATION",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Clinical Elective Restrictions: The maximum amount of clinical elective time for visiting students is 3 months (12 weeks) at UCSF. Research electives may be longer.",
+            "claimText": "Maximum 3 months (12 weeks) clinical elective time; research electives may be longer.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit duration policy for visiting student electives.",
+            "normalizedField": "duration_max",
+            "limitations": null
+          },
+          {
+            "claimId": "c7",
+            "claimType": "APPLICATION_FEE",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Application Fee: Once accepted, applicants must pay $300 processing fee, using instructions provided by the department contact . The $300 processing fee is required for each elective, even if in the same department.",
+            "claimText": "$300 processing fee per elective after acceptance.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit application fee statement.",
+            "normalizedField": "application_fee_usd",
+            "limitations": null
+          },
+          {
+            "claimId": "c8",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Application Requirements - You will need to submit the following materials when you apply:CV/ResumeCurrent TranscriptVisiting Student Disclosure Consent : Applicants must sign and upload the Visiting Student Disclosure Consent form as a supplemental document in VSLO .AAMC Standardized Immunization Form",
+            "claimText": "Required application materials: CV/Resume, current transcript, Visiting Student Disclosure Consent, AAMC Standardized Immunization Form.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit application document requirements.",
+            "normalizedField": "required_documents",
+            "limitations": null
+          },
+          {
+            "claimId": "c9",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Application dates: Applications for visiting clinical electives are accepted beginning February 1 of each year.",
+            "claimText": "Applications open February 1 each year for visiting clinical electives.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit application timing window.",
+            "normalizedField": "application_open_date",
+            "limitations": null
+          },
+          {
+            "claimId": "c10",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Students will receive notification of their application status starting April 20 of each year after UCSF students have enrolled in their 4th-year clerkships.",
+            "claimText": "Application status notifications begin April 20 each year, after UCSF students enroll in 4th-year clerkships.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Application timeline detail.",
+            "normalizedField": "notification_date",
+            "limitations": null
+          },
+          {
+            "claimId": "c11",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "UCSF School of Medicine requires an approved Training Affiliation Agreement (TAA) with your home institution to allow for participation in the visiting medical student program.",
+            "claimText": "Approved Training Affiliation Agreement (TAA) with home institution required for participation.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Mandatory TAA requirement for visiting student program.",
+            "normalizedField": "taa_required",
+            "limitations": null
+          },
+          {
+            "claimId": "c12",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-product-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Visiting Student Program Manager : General questions about applying can be directed to the VSLO Program Manager Valerie Jones.",
+            "claimText": "Visiting Student Program Manager: Valerie Jones (VSLO Program Manager).",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Named coordinator contact for visiting student program.",
+            "normalizedField": "program_manager",
+            "limitations": "Email address not included in quote."
+          },
+          {
+            "claimId": "c13",
+            "claimType": "OFFERS_ELECTIVE",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "The UCSF Visiting Student Program will continue to operate normally for the 2026 - 2027 Cycle.",
+            "claimText": "UCSF Visiting Student Program will continue to operate normally for 2026-2027 cycle.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Operating status statement for the visiting student program.",
+            "normalizedField": "program_status",
+            "limitations": null
+          },
+          {
+            "claimId": "c14",
+            "claimType": "OFFERS_RESEARCH",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Research electives may be longer.",
+            "claimText": "Research electives may exceed the 12-week clinical elective cap.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Research electives mentioned but not detailed in this overview page.",
+            "normalizedField": "research_elective",
+            "limitations": "Brief mention only; eligibility/process not described."
+          }
+        ],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [
+          {
+            "claimId": "n1",
+            "claimType": "NEGATIVE_DOMESTIC_ONLY",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "International Students: UCSF does not accept students enrolled in international institutions for clinical experiences.",
+            "claimText": "Explicit refusal: UCSF does not accept students enrolled in international institutions for clinical experiences.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit institutional refusal for international medical students.",
+            "normalizedField": "international_refusal",
+            "limitations": null
+          },
+          {
+            "claimId": "n2",
+            "claimType": "NEGATIVE_AFFILIATED_ONLY",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+            "sourceHash": "19f91461537c9d2f7b0b08538b2c2c4f72c2e6e70b3ec98ffe68bf2d20cb06b2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/current-students_visiting-student-program_visiting-student-program-overview.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Only students enrolled at an affiliated LCME-accredited institution or COCA-accredited, AACOM member institutions may use the AAMC Visiting Student Learning Opportunities (VSLO) Portal to submit applications and supporting documentation.",
+            "claimText": "Only students at affiliated LCME or COCA-accredited AACOM institutions may use VSLO to apply.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Affiliated-only restriction for visiting student applications.",
+            "normalizedField": "affiliated_only",
+            "limitations": null
+          }
+        ],
+        "opportunities": [],
+        "networkUsed": false,
+        "recommendedA2Focus": [
+          "Confirm whether non-affiliated US LCME/COCA students can request a TAA review pathway",
+          "Capture Elective Information by Department subpage for specialty list",
+          "Resolve VESP scholarship subprograms (Urology, Orthopedics, General Surgery, Emergency Medicine, Radiology)"
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page lists tentative 2026-2027 dates with mixed 2025/2026 year references — calendar consistency unclear",
+          "Coordinator email for Valerie Jones not present in cleaned text"
+        ]
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://meded.ucsf.edu/md-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://meded.ucsf.edu/md-program",
+            "sourceHash": "576193e3d98591c9547a7b8274a0fc6e659be4dbe733bdc6dfd1d0d8bddddf4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Visiting Student Program",
+            "claimText": "Navigation menu references a Visiting Student Program (no details on this page).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Nav-only mention of a Visiting Student Program; signal for deeper crawl but no substantive content on this page.",
+            "limitations": "Only a navigation label; no eligibility, cost, duration, or contact information on this page."
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://meded.ucsf.edu/md-program",
+            "sourceHash": "576193e3d98591c9547a7b8274a0fc6e659be4dbe733bdc6dfd1d0d8bddddf4b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Prospective Residents & FellowsProspective Residents & Fellows OverviewPolicies for Residents & FellowsTraining ProgramsTraining Programs",
+            "claimText": "Navigation references prospective residents & fellows / training programs sections.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Navigation entries for residents and fellows training programs; Tier 2 future-lane signal.",
+            "limitations": "Navigation-only; no program-level detail on this page."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a high-level prospective-students landing page with navigation chrome; substantive USCE content (visiting student program details) is not present on this URL and would need to be captured from /current-students/visiting-student-program or equivalent."
+        ],
+        "recommendedA2Focus": [
+          "Crawl the UCSF Visiting Student Program page referenced in the navigation for eligibility, cost, duration, application pathway, and contact details.",
+          "Crawl GME / Training Programs pages for Tier 2 future-lane signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_91",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/acgme-accreditation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/acgme-accreditation",
+            "sourceHash": "61d67b0061a081774d0ebd36e99f4166a35b914127be159d3f590439a5580d03",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_70caa86a3db2fee3.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The UCSF Office of Graduate Medical Education is accredited by the Accreditation Council for Graduate Medical Education (ACGME).",
+            "claimText": "UCSF Office of GME is ACGME-accredited.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Page concerns ACGME accreditation of UCSF's GME office (residency/fellowship oversight), which is Tier 2.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_92",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes",
+      "output": {
+        "agentUsed": false,
+        "claims": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes",
+            "sourceHash": "c5769e0bfeff623856ec92ca88266f8877ac3159dcdfccd336f16db23243c6d3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_fd468a9cec855b43.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residency Match Outcomes for 2026 • 166 students matched",
+            "claimText": "UCSF School of Medicine reports 166 students matched in 2026 residency match.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Page reports residency match outcomes for UCSF medical students entering residency — Tier 2 trainee/residency content.",
+            "limitations": "Statistics page about UCSF SoM graduates entering residency; not an opportunity offering."
+          },
+          {
+            "claimId": "c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes",
+            "sourceHash": "c5769e0bfeff623856ec92ca88266f8877ac3159dcdfccd336f16db23243c6d3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_fd468a9cec855b43.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Top Specialties\nNo. of students\nPercentageInternal Medicine\n39\n23%Anesthesiology\n15\n9%Emergency Medicine\n13\n8%Pediatrics\n13\n8%Psychiatry\n11\n7%Obstetrics & Gynecology\n9\n5%",
+            "claimText": "Top specialties matched by UCSF SoM 2026 grads include Internal Medicine (23%), Anesthesiology (9%), EM (8%), Pediatrics (8%), Psychiatry (7%), OB-GYN (5%).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Specialty distribution of residency matches — Tier 2 trainee/residency outcomes data.",
+            "limitations": null
+          }
+        ],
+        "futureLaneSignals": [
+          {
+            "claimId": "f1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/program-statistics/residency-match-outcomes",
+            "sourceHash": "c5769e0bfeff623856ec92ca88266f8877ac3159dcdfccd336f16db23243c6d3",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_fd468a9cec855b43.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Location of Residency\nNo. of students\nPercentageUCSF\n47\n28%California\n109\n73%",
+            "claimText": "28% of UCSF SoM 2026 grads matched at UCSF; 73% matched in California.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Residency match location data for UCSF medical students — Tier 2 trainee outcomes.",
+            "limitations": null
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Capture UCSF Visiting Student Program page for Tier 1 USCE claims.",
+          "Capture UCSF GME training program list for Tier 2 cataloging."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_93",
+      "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_93_nav_visiting_student",
+            "claimType": "OFFERS_VISITING_STUDENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+            "sourceHash": "07b42ceca87f7648910147574a364889ecb91bcfa3d38c425bd3d10f3a4561b9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_5dc95842de0059d6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Visiting Student ProgramAdvising and Career Development",
+            "claimText": "Navigation references a UCSF Visiting Student Program but this page provides no eligibility, application, cost, or duration details.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Nav chrome references a Visiting Student Program (Tier 1 USCE candidate) but the page content itself is the policy index for UCSF's own enrolled medical students; no USCE specifics on this source.",
+            "limitations": "Only a navigation link; no substantive program content on this page. Source scope is medical-school-level."
+          },
+          {
+            "claimId": "src_93_nav_residents_fellows",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "http://meded.ucsf.edu/about-us/guidelines-policies/medical-student-policies",
+            "sourceHash": "07b42ceca87f7648910147574a364889ecb91bcfa3d38c425bd3d10f3a4561b9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_5dc95842de0059d6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Prospective Residents & FellowsProspective Residents & Fellows OverviewPolicies for Residents & FellowsTraining ProgramsTraining Programs",
+            "claimText": "Navigation references UCSF Prospective Residents & Fellows section and training programs — future-lane GME signal only.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Navigation menu lists residents/fellows training programs (GME), which is Tier 2 future-lane only.",
+            "limitations": "Navigation chrome only; no program-level GME content on this page."
+          }
+        ],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Fetch the UCSF Visiting Student Program page directly (linked from this nav) to extract eligibility, application pathway, fees, duration, and audience (LCME/COCA vs international).",
+          "Confirm whether UCSF School of Medicine accepts IMG observers via a separate observership policy page; this policy index does not address external/IMG access."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is the medical student policy index for UCSF's own enrolled MD students; it does not state any visiting student, observership, IMG, eligibility, cost, duration, or contact details. USCE applicability cannot be inferred from this source alone."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_94",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2017-2018",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty Teaching Scholars Program (TSP) cohort roster for 2017-2018 — faculty development content, not pre-residency USCE, not GME training, not careers. No medical-student observership, visiting-student, elective, or research-elective offer is present in the cleaned text."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_95",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2016-2017",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page lists Teaching Scholars Program 2016-2017 cohort (faculty educator development). Not USCE-relevant; faculty development is outside the trainee/pre-trainee pipeline."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_96",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2015-2016",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty Teaching Scholars Program (TSP) class roster for 2015-2016; lists faculty participants and co-directors. No USCE, observership, visiting-student, residency, fellowship, or career content present."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_97",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2014-2015",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Locate UCSF Visiting Student Program page (referenced in nav menu) for VSLO/visiting student claims.",
+          "Locate UCSF GME Office and training programs page for Tier 2 residency/fellowship claims.",
+          "Locate UCSF Job Opportunities and Career Opportunities pages for Tier 3 careers signals."
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty Teaching Scholars Program (TSP) class roster — faculty development for existing UCSF educators, not USCE, not GME trainee program, not careers. No actionable claims across the three USCEHub tiers; emitting empty arrays is the correct answer for this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_98",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2013-2014",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a roster of Teaching Scholars Program (TSP) Class of 2013-2014 faculty participants — a faculty development program, not a USCE/observership/visiting student/residency/fellowship offer. No tier-bearing content beyond navigation chrome."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_99",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2012-2013",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": []
+      }
+    },
+    {
+      "sourceId": "src_100",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2011-2012",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_101",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes/tsp-class-2010-2011",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is an archival roster of the Teaching Scholars Program Class of 2010-2011 (faculty development cohort); contains no USCE-relevant, residency/fellowship trainee, or attending-career content beyond a participant list."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_102",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+            "sourceHash": "d61909c92555d2dc13d2e76d57b90adb0830a0c5ace73931a3def44c7056edb4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_66c6528ccdefa71a.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "The Teaching Scholars Program develops educational leaders and scholars through an intensive seminar series, mentored projects, a network of educational colleagues, and collaborative learning.",
+            "claimText": "TSP is a faculty development program for educators at UCSF; not a USCE / trainee / job pathway.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Page describes a faculty-development program (Teaching Scholars Program) for existing UCSF educators, not USCE, residency, fellowship, or attending careers.",
+            "limitations": "Faculty development content; no medical-student, IMG, resident, fellow, or attending-job signals present."
+          }
+        ],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c2",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program-tsp",
+            "sourceHash": "d61909c92555d2dc13d2e76d57b90adb0830a0c5ace73931a3def44c7056edb4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_66c6528ccdefa71a.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Teaching Scholars Program (TSP)The Teaching Scholars Program develops educational leaders and scholars",
+            "claimText": "Pre-classified as RESEARCH_PAGE / TIER_1 USCE, but content is faculty-educator development, not medical-student research.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Source-family mismatch: hint said RESEARCH_PAGE/Tier 1 but the page is faculty development at the medical-school level.",
+            "limitations": "Scope is medical-school level (meded.ucsf.edu) not campus-specific hospital."
+          }
+        ],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_103",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty-educator-facing education consultation service page (CFE/CASE). It mentions 'faculty, trainees, and students' as consultation audiences but contains no observership, visiting student application, elective, residency, fellowship, or job content. No tier-1/2/3 actionable claim is supportable from this source.",
+          "deepSourceHint suggested MEDICAL_EDUCATION/TIER_1, but content is a Center for Faculty Educators consultation page — closer to faculty development / NOT_APPLICABLE for USCEHub lanes."
+        ],
+        "recommendedA2Focus": [
+          "Locate UCSF Visiting Student Program page (referenced in nav as 'Visiting Student Program') for actual Tier-1 USCE claims.",
+          "Locate UCSF GME / Prospective Residents & Fellows pages for Tier-2 signals.",
+          "Locate UCSF Career Opportunities / Job Opportunities pages for Tier-3 signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_104",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/advanced-educator-development/teaching-scholars-program/tsp-participants-and-outcomes",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Capture UCSF Visiting Student Program page (linked in nav chrome) for Tier 1 USCE signal",
+          "Capture UCSF Prospective Residents & Fellows / Training Programs pages for Tier 2 GME signal"
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a Teaching Scholars Program (TSP) participants/outcomes listing for faculty educators — no medical student, observership, visiting student, residency, fellowship, or careers content present beyond global nav chrome. No quote-backed USCE or future-lane claims emittable from this source."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_105",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/education-consultations/education-scholarship-conference-escape",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [
+          "Review UCSF Visiting Student Program page for true USCE signals",
+          "Review UCSF Volunteer Clinical Professors page for Tier 3 faculty signals"
+        ],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty/education-research consultation session (ESCape) targeted at faculty, staff, and learners interested in medical education research; no observership, visiting student, elective, residency, fellowship, or career content is present — no Tier 1/2/3 USCE-relevant claim can be emitted."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_106",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/research-innovation/funding-opportunities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty-facing funding-opportunities page (Innovations Funding, Education Research Seed Grants) for UCSF faculty educators; not a USCE / observership / visiting-student page. No tier-relevant claims emitted.",
+          "Navigation chrome mentions 'Visiting Student Program' and 'Training Programs' but the page body does not describe them; signal should be captured from those dedicated pages, not from this funding page."
+        ],
+        "recommendedA2Focus": [
+          "Capture the dedicated Visiting Student Program page on meded.ucsf.edu for Tier 1 visiting-student claims.",
+          "Capture the Training Programs / Prospective Residents & Fellows page for Tier 2 GME signals."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_107",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/research-innovation/scholarship-opportunities/preparing-scholarly-projects",
+      "output": {
+        "agentUsed": false,
+        "claims": [],
+        "futureLaneSignals": [],
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "negativeEvidenceClaims": [],
+        "networkUsed": false,
+        "opportunities": [],
+        "recommendedA2Focus": [],
+        "runId": "p102-hy-7-meded-ucsf",
+        "schemaVersion": "p102-cli-0e-1",
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty-educator scholarly-projects resource page; contains no USCE-relevant content (no observership, visiting-student, elective, IMG eligibility, application pathway, fee, duration, or contact details). No Tier 1, Tier 2, or Tier 3 signal extractable."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_108",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding",
+            "sourceHash": "5b9dd8a89a75b1bb69ff8345a81b506a5c0ea293bb336dbd6227a7da7b961c9e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_b40f9ecb9b657765.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "The Innovations Funding in Education program is one of the most impactful Academy programs designed to support junior faculty across UCSF to engage in curricular innovation and scholarship",
+            "claimText": "Innovations Funding program supports UCSF junior faculty in curricular innovation and scholarship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Funding program targeted at junior faculty for educational scholarship — faculty-development, not pre-residency USCE.",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [
+          "Page is a faculty-education funding page with no USCE (observership/elective/visiting student) content."
+        ],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_109",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c1",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/health-professions-education-and-research/funding-opportunities/innovations-funding/innovations-funding-funded-projects",
+            "sourceHash": "825645a09e66ce82a71e8405c2e579bb09d9e3525a0d1fd3d678ffb312a75878",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_ec91f11707479aba.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Innovations Funding Funded ProjectsExamples of innovations include:A specific component of faculty development",
+            "claimText": "Page content is a faculty-educator innovations funding project list, not a research opportunity for medical students; pre-classified family RESEARCH_PAGE does not fit content.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Page describes faculty-development innovations funding for educators, not student USCE, residency, or career content."
+          }
+        ],
+        "unresolveds": [],
+        "recommendedA2Focus": []
+      }
+    },
+    {
+      "sourceId": "src_110",
+      "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-7-meded-ucsf",
+        "institutionId": "inst_ucsf_school_of_medicine_ca",
+        "institutionName": "UCSF School of Medicine",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+            "sourceHash": "7c0d2d391a14627a3d9c414fd32b7bce3ccbf90a5ee55478095025353ae1c3dc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_cb6406563936dd40.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "International Fellowships in Medical Education funds for faculty from schools of medicine abroad to gain access to educational opportunities in the US. Fellows study aspects of medical education that have the potential to improve and expand medical education programs in their home country institutions and departments.",
+            "claimText": "FAIMER International Fellowships in Medical Education listed as external funding opportunity for foreign medical school faculty to access US educational opportunities — not a UCSF-offered USCE program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Page lists external faculty funding/fellowship opportunities for medical educators; audience is faculty, not pre-residency trainees or residents.",
+            "limitations": "Listed as a third-party external funding link, not a UCSF-offered program; not USCE."
+          }
+        ],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "c2",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "http://meded.ucsf.edu/faculty-educators/center-faculty-educators/health-professions-education-and-research/funding-opportunities/additional-funding-opportunities",
+            "sourceHash": "7c0d2d391a14627a3d9c414fd32b7bce3ccbf90a5ee55478095025353ae1c3dc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-7-meded-ucsf/cleaned_text/sm_cb6406563936dd40.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Additional Funding OpportunitiesUCSFAcademic Senate - Chancellor's FundsThe Chancellor's Funds are available for UCSF Faculty in any series (Clinical X, In Residence, Ladder Rank, Adjunct, and Health Sciences Clinical) who at least 50% time and cannot be WOS.",
+            "claimText": "Source family hint was RESEARCH_PAGE / MEDICAL_EDUCATION Tier 1, but page content is a faculty-only funding-opportunities directory. Content does not match USCE research-elective intent.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Content is faculty grant directory, not student/trainee research opportunity; mismatched against the RESEARCH_PAGE / Tier 1 hint.",
+            "limitations": "Faculty-development funding page, not USCE or trainee-facing."
+          }
+        ],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Capture UCSF Visiting Student Program page (meded.ucsf.edu Current Students → Visiting Student Program) for true Tier 1 USCE content.",
+          "Capture UCSF Prospective Residents & Fellows / Training Programs pages for Tier 2 future-lane signals."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "institutionId": "inst_adventhealth_orlando_fl",
+  "canonicalName": "AdventHealth Orlando",
+  "aliases": [
+    "AdventHealth Orlando (orlando)"
+  ],
+  "state": "FL",
+  "county": "Orange",
+  "city": "Orlando",
+  "zip": null,
+  "address": null,
+  "parentSystem": "AdventHealth",
+  "officialDomains": [
+    "adventhealth.com"
+  ],
+  "medicalSchoolAffiliations": [],
+  "campusType": "TEACHING_HOSPITAL",
+  "sourceOfIdentity": "queue_seed + identity_canonicalizer_backfill (domain adventhealth.com matches AdventHealth (adventhealth); name token match: orlando) + identity_canonicalizer_backfill (domain adventhealth.com matches AdventHealth (adventhealth); name token match: orlando) + identity_canonicalizer_backfill (domain adventhealth.com matches AdventHealth; campus token: orlando)",
+  "duplicateOf": null,
+  "doNotMergeReason": null,
+  "existingP97Packet": null,
+  "existingP101Packet": null,
+  "existingLiveListing": null,
+  "status": "ACTIVE"
+}

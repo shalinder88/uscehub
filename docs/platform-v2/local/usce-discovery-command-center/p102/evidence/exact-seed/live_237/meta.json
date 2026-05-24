@@ -1,0 +1,44 @@
+{
+  "seedId": "live_237",
+  "institutionId": "inst_live_griffin_hospital",
+  "institutionName": "Griffin Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Derby",
+  "state": "CT",
+  "sourceUrl": "https://meded.griffinhealth.org/clinical-observership/",
+  "sourceDomain": "meded.griffinhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Monthly rotations | visa: B1/B2 | cost: $900/month (non-refundable)",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_8c1541c5e8"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_237/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_237/cleaned.txt",
+  "sourceHash": "974b9ac043c2f60912269bf1e1e77e26207bad92e539677dda0e64a1959f10bd",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:37:36.772Z"
+}

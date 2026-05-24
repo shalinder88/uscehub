@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_005",
+  "institutionId": "inst_live_uf_health_intl",
+  "institutionName": "University of Florida Health / Shands Hospital — International",
+  "parentSystem": "UF Health",
+  "campus": "",
+  "city": "Gainesville",
+  "state": "FL",
+  "sourceUrl": "https://osa.med.ufl.edu/students/visiting-medical-student-clerkships/international-visiting-student-program/",
+  "sourceDomain": "osa.med.ufl.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Shands Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for UF Health",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "International visiting student program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a2382468ea"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_005/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_005/cleaned.txt",
+  "sourceHash": "677dc07d13aad1c8cdbb662893f5e7f7ab4b8b20b5d94ac1b19f0e680fdf8bf2",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, international visiting URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:36:50.024Z"
+}

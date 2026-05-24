@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+  "institutionName": "University of Miami Miller SOM UHealth",
+  "metadata": {
+    "totalClaimsReviewed": 12,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 12,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-pc-3-um-uhealth",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unfollowedSignals": [],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "All 12 merged claims are correctly classified as FUTURE_LANE_ONLY from the fellowship/residency listing page; no PUBLIC_SAFE_USCE claims were produced, no scope conflicts, no overclaims, no duplicates. Ledger is internally consistent and safe to merge.",
+  "deepRecoveryTasks": []
+}

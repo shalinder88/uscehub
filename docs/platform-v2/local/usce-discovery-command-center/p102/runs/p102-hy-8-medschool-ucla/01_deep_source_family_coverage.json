@@ -1,0 +1,386 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-hy-8-medschool-ucla",
+  "institutionId": "inst_ucla_school_of_medicine_ca",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/medical-education",
+        "https://medschool.ucla.edu/professional-education",
+        "https://medschool.ucla.edu/education"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/student-affairs",
+        "https://medschool.ucla.edu/medical-education/student-affairs",
+        "https://medschool.ucla.edu/medical-education/student-affairs/registrar",
+        "https://medschool.ucla.edu/medical-education/student-affairs/registrar/externships-services"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/visiting-student",
+        "https://medschool.ucla.edu/visiting-students",
+        "https://medschool.ucla.edu/international-students",
+        "https://medschool.ucla.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://medschool.ucla.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://medschool.ucla.edu/education/visiting-medical-students",
+        "https://medschool.ucla.edu/medical-education/visiting-students",
+        "https://medschool.ucla.edu/students/visiting-students",
+        "https://medschool.ucla.edu/current-students/visiting-student-program",
+        "https://medschool.ucla.edu/current-students/visiting-student-program/visiting-student-program-overview",
+        "https://medschool.ucla.edu/education/md-education/visiting-students",
+        "https://medschool.ucla.edu/education/md-education/visiting-students/vslo",
+        "https://medschool.ucla.edu/students/visiting-students/",
+        "https://medschool.ucla.edu/academics/md-program/visiting-students",
+        "https://medschool.ucla.edu/medicaleducation/visiting-students-program",
+        "https://medschool.ucla.edu/medicaleducation/visiting-students-program/",
+        "https://medschool.ucla.edu/md-program/visiting-student-clerkships"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/education/md-education/visiting-students",
+        "https://medschool.ucla.edu/education/md-education/visiting-students/vslo"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/observership",
+        "https://medschool.ucla.edu/observer",
+        "https://medschool.ucla.edu/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/electives",
+        "https://medschool.ucla.edu/away-rotations",
+        "https://medschool.ucla.edu/clinical-elective",
+        "https://medschool.ucla.edu/clinical-rotation",
+        "https://medschool.ucla.edu/hcp-education-training/medical-students/elective",
+        "https://medschool.ucla.edu/education/medical-student-electives",
+        "https://medschool.ucla.edu/medical-education/medical-student-electives",
+        "https://medschool.ucla.edu/medical-students/electives",
+        "https://medschool.ucla.edu/medical-students/elective-rotations",
+        "https://medschool.ucla.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/sub-internship",
+        "https://medschool.ucla.edu/subinternship",
+        "https://medschool.ucla.edu/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/research",
+        "https://medschool.ucla.edu/student-research"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/research"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/shadow",
+        "https://medschool.ucla.edu/shadowing",
+        "https://medschool.ucla.edu/volunteer",
+        "https://medschool.ucla.edu/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/graduate-medical-education",
+        "https://medschool.ucla.edu/gme",
+        "https://medschool.ucla.edu/medical-professionals/graduate-medical-education",
+        "https://medschool.ucla.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://medschool.ucla.edu/education/undergraduate-medical-education",
+        "https://medschool.ucla.edu/graduate-medical-education/clerkship-programs",
+        "https://medschool.ucla.edu/education/graduate-medical-education-gme"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/gme"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/fellowship",
+        "https://medschool.ucla.edu/news-article/ucla-space-medicine-fellowship-program-aims-to-prepare",
+        "https://medschool.ucla.edu/news-article/lgbtq-fellowship-enters-fourth-year-at-dgsom",
+        "https://medschool.ucla.edu/news-article/dgsom-professor-selected-for-2022-sloan-research",
+        "https://medschool.ucla.edu/news-article/ucla-fellowship-prepares-new-generation-of-flight",
+        "https://medschool.ucla.edu/news-article/life-changing-lgbtq-fellowship-enters-fourth-year-at"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/news-article/ucla-space-medicine-fellowship-program-aims-to-prepare",
+        "https://medschool.ucla.edu/news-article/lgbtq-fellowship-enters-fourth-year-at-dgsom",
+        "https://medschool.ucla.edu/news-article/dgsom-professor-selected-for-2022-sloan-research",
+        "https://medschool.ucla.edu/news-article/ucla-fellowship-prepares-new-generation-of-flight",
+        "https://medschool.ucla.edu/news-article/life-changing-lgbtq-fellowship-enters-fourth-year-at"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/visa",
+        "https://medschool.ucla.edu/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/careers",
+        "https://medschool.ucla.edu/news-article/collaboration-opens-doors-to-health-care-careers-for"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/news-article/collaboration-opens-doors-to-health-care-careers-for"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://medschool.ucla.edu/observerships",
+        "https://medschool.ucla.edu/medical-students",
+        "https://medschool.ucla.edu/img",
+        "https://medschool.ucla.edu/international-medical-graduates",
+        "https://medschool.ucla.edu/credentialing",
+        "https://medschool.ucla.edu/health-professionals",
+        "https://medschool.ucla.edu/hcp-education-training",
+        "https://medschool.ucla.edu/hcp-education-training/medical-students",
+        "https://medschool.ucla.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://medschool.ucla.edu/medical-professionals",
+        "https://medschool.ucla.edu/academic-institute",
+        "https://medschool.ucla.edu/academic-institute/education",
+        "https://medschool.ucla.edu/academic-institute/education/medical",
+        "https://medschool.ucla.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://medschool.ucla.edu/medicine/international",
+        "https://medschool.ucla.edu/medicine/international/international-programs",
+        "https://medschool.ucla.edu/visiting-clerkships",
+        "https://medschool.ucla.edu/visiting-clerkships/international",
+        "https://medschool.ucla.edu/education-institute",
+        "https://medschool.ucla.edu/education-institute/academic-visitor-program",
+        "https://medschool.ucla.edu/education/medical-students",
+        "https://medschool.ucla.edu/offices/faculty-affairs",
+        "https://medschool.ucla.edu/offices/faculty-affairs/services",
+        "https://medschool.ucla.edu/offices/faculty-affairs/services/observerships",
+        "https://medschool.ucla.edu/current-students",
+        "https://medschool.ucla.edu/education/md-education",
+        "https://medschool.ucla.edu/academics/md-program",
+        "https://medschool.ucla.edu/medicaleducation",
+        "https://medschool.ucla.edu/md-program",
+        "https://medschool.ucla.edu/news-article/first-gen-medical-students-share-their-experiences-and",
+        "https://medschool.ucla.edu/articles/news/ucla-medical-students-celebrate-first-in-person-match",
+        "https://medschool.ucla.edu/news-article/ucla-researchers-receive-6-million-from-nih-to-explore",
+        "https://medschool.ucla.edu/news-article/ucla-establishes-endowed-chair-in-alzheimers-research",
+        "https://medschool.ucla.edu/news-article/covid-19-has-ignited-our-judgmental-side",
+        "https://medschool.ucla.edu/news-article/84-million-grant-will-help-ucla-researchers-study",
+        "https://medschool.ucla.edu/news-article/ucla-medical-students-celebrate-first-in-person-match",
+        "https://medschool.ucla.edu/news-article/ucla-receives-64-million-to-fund-cannabis-research",
+        "https://medschool.ucla.edu/news-article/ucla-researchers-develop-base-editing-approach-for-rare",
+        "https://medschool.ucla.edu/news-article/ucla-researcher-receives-nih-grant-to-develop-a-more",
+        "https://medschool.ucla.edu/news-article/ucla-research-team-receives-1m-grant-to-study-long",
+        "https://medschool.ucla.edu/news-article/six-professors-receive-ucla-public-impact-research",
+        "https://medschool.ucla.edu/news-article/lauren-uchiyama-receives-distinguished-medical-student",
+        "https://medschool.ucla.edu/news-article/nearly-160-medical-students-graduate-from-dgsom"
+      ],
+      "acceptedSources": [
+        "https://medschool.ucla.edu/education/md-education",
+        "https://medschool.ucla.edu/news-article/first-gen-medical-students-share-their-experiences-and",
+        "https://medschool.ucla.edu/articles/news/ucla-medical-students-celebrate-first-in-person-match",
+        "https://medschool.ucla.edu/news-article/ucla-researchers-receive-6-million-from-nih-to-explore",
+        "https://medschool.ucla.edu/news-article/ucla-establishes-endowed-chair-in-alzheimers-research",
+        "https://medschool.ucla.edu/news-article/covid-19-has-ignited-our-judgmental-side",
+        "https://medschool.ucla.edu/news-article/84-million-grant-will-help-ucla-researchers-study",
+        "https://medschool.ucla.edu/news-article/ucla-medical-students-celebrate-first-in-person-match",
+        "https://medschool.ucla.edu/news-article/ucla-receives-64-million-to-fund-cannabis-research",
+        "https://medschool.ucla.edu/news-article/ucla-researchers-develop-base-editing-approach-for-rare",
+        "https://medschool.ucla.edu/news-article/ucla-researcher-receives-nih-grant-to-develop-a-more",
+        "https://medschool.ucla.edu/news-article/ucla-research-team-receives-1m-grant-to-study-long",
+        "https://medschool.ucla.edu/news-article/six-professors-receive-ucla-public-impact-research",
+        "https://medschool.ucla.edu/news-article/lauren-uchiyama-receives-distinguished-medical-student",
+        "https://medschool.ucla.edu/news-article/nearly-160-medical-students-graduate-from-dgsom"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 4,
+    "tier2AcceptedSources": 6,
+    "tier3AcceptedSources": 1
+  },
+  "generatedAt": "2026-05-16T02:51:49.200Z"
+}

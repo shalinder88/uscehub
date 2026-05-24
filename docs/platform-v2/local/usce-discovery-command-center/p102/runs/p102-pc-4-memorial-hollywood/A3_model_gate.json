@@ -1,0 +1,305 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [
+    {
+      "claimId": "c1 (mhs.net/education)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Quote is a navigation label, not a definite offer. System-scope page (mhs.net) without explicit Memorial Regional Hollywood campus carveout."
+    },
+    {
+      "claimId": "c2 (mhs.net/education)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "'six hospitals and numerous ancillary facilities' is system-wide; no campus-applicability proof for Memorial Regional Hollywood specifically."
+    },
+    {
+      "claimId": "c3 (mhs.net/education)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Specialty list is system-wide UME pedagogy without campus attribution."
+    },
+    {
+      "claimId": "a2-n1",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Generic umbrella marketing ('continuum from UME to CME'); not a definite USCE offer."
+    },
+    {
+      "claimId": "c1 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Health-system-wide VSLO program; no explicit attribution to Memorial Regional Hollywood campus."
+    },
+    {
+      "claimId": "c2 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope; needs campus carveout."
+    },
+    {
+      "claimId": "c3 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Duration applies to system-wide VSLO program; needs campus carveout."
+    },
+    {
+      "claimId": "c4 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope cost statement; needs campus carveout."
+    },
+    {
+      "claimId": "c5 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope eligibility; needs campus carveout."
+    },
+    {
+      "claimId": "c6 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope eligibility; needs campus carveout."
+    },
+    {
+      "claimId": "c7 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope eligibility (USMLE Step 1); needs campus carveout."
+    },
+    {
+      "claimId": "c8 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope elective detail; needs campus carveout."
+    },
+    {
+      "claimId": "c9 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope malpractice requirement; needs campus carveout."
+    },
+    {
+      "claimId": "c10 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope BLS requirement; needs campus carveout."
+    },
+    {
+      "claimId": "c11 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope application pathway; needs campus carveout."
+    },
+    {
+      "claimId": "c12 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope eligibility; needs campus carveout."
+    },
+    {
+      "claimId": "c13 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope background-check requirement; needs campus carveout."
+    },
+    {
+      "claimId": "c14 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "Quote explicitly says rotation may span multiple hospitals — system-wide, not Memorial Regional Hollywood-specific."
+    },
+    {
+      "claimId": "a2_c1 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope immunization requirement; needs campus carveout."
+    },
+    {
+      "claimId": "a2_c2 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope COVID requirement; needs campus carveout."
+    },
+    {
+      "claimId": "a2_c3 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope health screening; needs campus carveout."
+    },
+    {
+      "claimId": "a2_c4 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope HIPAA attestation; needs campus carveout."
+    },
+    {
+      "claimId": "a2_c5 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope background-check detail; needs campus carveout."
+    },
+    {
+      "claimId": "a2_c6 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "reason": "System-scope onboarding (Complio); needs campus carveout."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "c1 (mhs.net/volunteer NEGATIVE_NO_OBSERVERSHIP)",
+      "duplicateClaimId": "n1 (mhs.net/volunteer NEGATIVE_NO_OBSERVERSHIP)",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    }
+  ],
+  "institutionId": "inst_memorial_regional_hollywood_fl",
+  "institutionName": "Memorial Healthcare System - Memorial Regional Hollywood",
+  "metadata": {
+    "totalClaimsReviewed": 91,
+    "publicSafeUSCECount": 28,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 6,
+    "futureLaneOnlyCount": 46,
+    "humanReviewRequiredCount": 11,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [
+    {
+      "claimId": "sc1 (mhs.net/education SCOPE_CONFLICT)",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_health_system",
+      "explanation": "This claim is itself a SCOPE_CONFLICT meta-claim flagging that the source is system-wide (six hospitals, no campus attribution). Promoting a SCOPE_CONFLICT to PUBLIC_SAFE_USCE is incoherent.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "c_scope_conflict_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_health_system",
+      "explanation": "SCOPE_CONFLICT meta-claim explicitly stating source covers six-hospital system, not Memorial Regional Hollywood. Was tagged PUBLIC_SAFE_USCE — self-contradictory.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "c_family_mismatch_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "SCOPE_CONFLICT meta-claim flagging that source family is GME_PAGE while content is UME. Should not itself be PUBLIC_SAFE_USCE.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "sc1 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students SCOPE_CONFLICT)",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "scope_conflict_health_system",
+      "explanation": "SCOPE_CONFLICT meta-claim noting page covers multiple hospitals across MHS; cannot attribute to MRH campus. Tagged PUBLIC_SAFE_USCE — invalid.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "claimId": "c_vslo_offer_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "Source family is GME_PAGE per metadata; Rule 5 blocks PUBLIC_SAFE_USCE from GME_PAGE family. Quote is a genuine VSLO offer but classifier mis-tagged the family.",
+      "recommendedDisposition": "downgrade_to_CAUTION_SAFE_INTERNAL_REVIEW"
+    },
+    {
+      "claimId": "c_vslo_eligibility_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "GME_PAGE family per source metadata; Rule 5 blocks PUBLIC_SAFE_USCE.",
+      "recommendedDisposition": "downgrade_to_CAUTION_SAFE_INTERNAL_REVIEW"
+    },
+    {
+      "claimId": "c_affiliated_schools_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "GME_PAGE family per source metadata; Rule 5 blocks PUBLIC_SAFE_USCE.",
+      "recommendedDisposition": "downgrade_to_CAUTION_SAFE_INTERNAL_REVIEW"
+    },
+    {
+      "claimId": "c_offer_clinical_training_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "GME_PAGE family per metadata; quote is also system-wide ('six hospitals'). Rule 5 violation + scope conflict.",
+      "recommendedDisposition": "downgrade_to_CAUTION_SAFE_INTERNAL_REVIEW"
+    },
+    {
+      "claimId": "c_a2_app_pathway_001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "publicSafeUSCE_on_GME_source",
+      "explanation": "GME_PAGE family per source metadata; Rule 5 blocks PUBLIC_SAFE_USCE.",
+      "recommendedDisposition": "downgrade_to_CAUTION_SAFE_INTERNAL_REVIEW"
+    }
+  ],
+  "runId": "p102-pc-4-memorial-hollywood",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [
+    {
+      "claimId": "c1 (mhs.net/education)",
+      "sourceUrl": "https://mhs.net/education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "mhs.net is the Memorial Healthcare System parent domain covering six hospitals. Institution under analysis is Memorial Regional Hollywood specifically; no campus-applicability proof in cleaned text."
+    },
+    {
+      "claimId": "c_offer_clinical_training_001",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "Quote covers MHS as a whole; campus-specific attribution missing."
+    },
+    {
+      "claimId": "c14 (mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students)",
+      "sourceUrl": "https://mhs.net/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "Quote 'You may be required to travel to more than one hospital while on your rotation' explicitly confirms system-wide scope, not campus-specific."
+    },
+    {
+      "claimId": "c7_scope_systemhub",
+      "sourceUrl": "https://mhs.net/medical-professionals",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "institutionId": "inst_memorial_regional_hollywood_fl",
+      "explanation": "System hub page; correctly already at HUMAN_REVIEW_REQUIRED."
+    }
+  ],
+  "tier1CoverageVerdict": "PASS_COMPLETE",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "Explicit negative observership quote 'We do not accept students for observerships or shadowing, no exceptions' (c_neg_observership_001) is mis-classified as FUTURE_LANE_ONLY instead of being a PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY signal for the IMG_OBSERVERSHIP lane (with campus-applicability caveat). A3 cannot upgrade — flag for downstream re-classification.",
+    "Careers page contains a 'Student Opportunities and Scholarships' section (c_mhs_careers_student_opps) that was not followed to its target URL — possible additional Tier 1 surface."
+  ],
+  "unresolveds": [
+    "Whether the system-wide MHS visiting-student / VSLO program applies to Memorial Regional Hospital (Hollywood) specifically. Indirect proof exists (MRH is the named flagship in the careers block, requirements page says rotations may span multiple hospitals) but no direct campus-applicability sentence. Requires campus carveout verification before any PUBLIC_SAFE_USCE publish.",
+    "sourceFamily for mhs.net/education/undergraduate-medical-education is tagged GME_PAGE in source metadata while content is clearly Undergraduate Medical Education / visiting students. Family re-classification needed upstream.",
+    "Many claimIds collide across sources (c1, c2, c3, sc1 reused). Downstream dedupe must key on (sourceUrl, claimId) tuple."
+  ],
+  "verdict": "FAIL_PUBLIC_SAFETY",
+  "verdictSummary": "FAIL: 4 SCOPE_CONFLICT meta-claims were themselves tagged PUBLIC_SAFE_USCE (self-contradictory), 5 PUBLIC_SAFE_USCE claims sit on a source whose metadata family is GME_PAGE (Rule 5 violation), and ~23 PUBLIC_SAFE_USCE claims on the system-wide mhs.net domain lack explicit Memorial Regional Hollywood campus-applicability proof. Visiting-student program is genuine and well-evidenced at the system level — downgrade to CAUTION_SAFE_INTERNAL_REVIEW pending campus carveout. Negative observership quote was mis-classified as FUTURE_LANE_ONLY.",
+  "overpromotionDetected": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "recover_campus_proof_mrh_hollywood",
+      "reason": "VSLO/visiting-student program is system-wide; need explicit campus-applicability proof that Memorial Regional Hospital Hollywood hosts visiting students.",
+      "suggestedNarrowAction": "Narrow re-read of /education/undergraduate-medical-education and its child pages for sentences naming 'Memorial Regional Hospital' or 'Hollywood' as a rotation site; check Rotation Dates child page if present.",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    },
+    {
+      "taskId": "reclassify_negative_observership",
+      "reason": "Explicit negative quote 'We do not accept students for observerships or shadowing, no exceptions' was downgraded to FUTURE_LANE_ONLY; meets EXPLICIT_NEGATIVE_QUOTE + STRONG criteria for PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY on the IMG_OBSERVERSHIP lane once campus-applicability is confirmed.",
+      "suggestedNarrowAction": "Re-classify c_neg_observership_001 with campus-applicability check.",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    }
+  ]
+}

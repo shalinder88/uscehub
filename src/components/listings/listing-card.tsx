@@ -16,6 +16,14 @@ type LinkVerificationStatusInput =
   | "NO_OFFICIAL_SOURCE"
   | "UNKNOWN";
 
+/**
+ * P102 Shape A: SOURCE pill says where the URL came from in the
+ * link-truth audit. Coexists with the legacy <ListingVerificationBadge>
+ * (different signal: verification recency vs URL provenance) per the
+ * Shape A cutover plan.
+ */
+export type SourceBadge = "DIRECT" | "REORIENTED" | "PROTECTED" | "RESEARCH";
+
 interface ListingCardProps {
   listing: {
     id: string;
@@ -40,8 +48,29 @@ interface ListingCardProps {
     linkVerificationStatus?: LinkVerificationStatusInput | null;
     lastVerifiedAt?: Date | string | null;
     reviews?: { overallRating: number }[];
+    /**
+     * P102 Shape A enrichment. When undefined, the card renders as
+     * before — back-compat for callers that don't yet plumb the
+     * truth-layer adapter.
+     */
+    sourceBadge?: SourceBadge;
+    specialtyLimited?: string;
   };
 }
+
+const SOURCE_BADGE_CLASS: Record<SourceBadge, string> = {
+  DIRECT: "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/50 dark:text-emerald-100 border-emerald-300 dark:border-emerald-700",
+  REORIENTED: "bg-sky-100 text-sky-900 dark:bg-sky-900/50 dark:text-sky-100 border-sky-300 dark:border-sky-700",
+  PROTECTED: "bg-amber-100 text-amber-900 dark:bg-amber-900/50 dark:text-amber-100 border-amber-300 dark:border-amber-700",
+  RESEARCH: "bg-violet-100 text-violet-900 dark:bg-violet-900/50 dark:text-violet-100 border-violet-300 dark:border-violet-700",
+};
+
+const SOURCE_BADGE_TITLE: Record<SourceBadge, string> = {
+  DIRECT: "Direct official source",
+  REORIENTED: "Reoriented to official source",
+  PROTECTED: "Live in browser (bot-protected)",
+  RESEARCH: "Research / postdoctoral",
+};
 
 function getTypeVariant(type: string) {
   const map: Record<string, "observership" | "externship" | "research" | "postdoc" | "elective" | "volunteer"> = {
@@ -140,6 +169,22 @@ export function ListingCard({ listing }: ListingCardProps) {
             )}
             {showVerificationBadge && (
               <ListingVerificationBadge status={verificationStatus} />
+            )}
+            {listing.sourceBadge && (
+              <span
+                className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${SOURCE_BADGE_CLASS[listing.sourceBadge]}`}
+                title={SOURCE_BADGE_TITLE[listing.sourceBadge]}
+              >
+                {listing.sourceBadge}
+              </span>
+            )}
+            {listing.specialtyLimited && (
+              <span
+                className="inline-flex items-center rounded border border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-900/40 text-fuchsia-900 dark:text-fuchsia-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
+                title={`Specialty-limited: ${listing.specialtyLimited}`}
+              >
+                Specialty: {listing.specialtyLimited}
+              </span>
             )}
           </div>
         </div>

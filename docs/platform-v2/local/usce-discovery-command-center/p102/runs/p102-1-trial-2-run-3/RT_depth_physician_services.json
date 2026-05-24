@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-1-trial-2-run-3",
+  "depthPass": "PHYSICIAN_SERVICES",
+  "sourceFamiliesReviewed": [
+    "OTHER"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 1,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-1-trial-2-run-3_12",
+      "institutionId": "inst_adventhealth_orlando_fl",
+      "runId": "p102-1-trial-2-run-3",
+      "claimType": "FUTURE_LANE_SERVICE",
+      "claimText": "disability coverage",
+      "normalizedField": "lane.SERVICES.signal",
+      "quote": "To interact with these items, press Control-Option-Shift-Right ArrowProtecting What MattersLife insurance and disability coverage provide a safety net for your loved ones should you be faced with the unexpected.",
+      "sourceUrl": "https://adventhealth.com/benefits",
+      "sourceHash": "21db299c82f2674363eb30db1f1a2a51a9273b5559c15d815924e7c149162a10",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-1-trial-2-run-3/cleaned_text/benefits.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "OTHER",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "physician services content; future-lane only",
+      "lane": "PHYSICIAN_SERVICES",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+validator_or_check,input,status,errors,warnings,notes
+validate-no-secrets,(repo-wide),PASS,0,0,1148 files scanned
+tsc --noEmit,(repo-wide),PASS,0,0,Type check clean across new resolver + client form + page
+validate-p99-contact-ref-prefill (NEW),(no arg; runs in-process tests),PASS,0,0,15 in-process test cases — active / staged / batch-3 / unknown / oversized / injection / pilot-feedback / no-params / forbidden field / page_path injection / page_path no-leading-slash / visible-context-no-leak / KNOWN_LISTINGS sanity / forbidden-token-in-output / app-import-safety / form-has-hidden-inputs / no-file-upload
+validate-micro-pilot-runtime,src/data/usce/public-listings-pilot.generated.json,PASS,0,0,Active runtime preserved
+validate-p99-staged-runtime-batch-2,src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Batch 2 staged untouched
+validate-p99-staged-runtime-batch-3,src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,Batch 3 staged untouched
+validate-p99-staged-runtime-batch-3-report-mapping,(no arg),PASS,0,0,Mapping CSVs unchanged
+validate-p99-report-issue-mapping (mapping-1),docs/.../staged_runtime_report_issue_mapping_1_listing_map.csv,PASS,0,1,Same carry-forward warning
+validate-p99-correction-intake-payload,docs/.../correction_intake_file_queue_implementation_1_sample_payloads.json,PASS,0,0,8 sample payloads
+validate-p99-correction-queue-item,docs/.../correction-intake-file-queue-implementation-1/test-output,PASS,0,0,4 queue items
+validate-p99-correction-audit-log,docs/.../correction-intake-file-queue-implementation-1/test-output,PASS,0,0,4 audit logs
+import-safety-grep (staged-batch-3 in src/app),(grep),PASS,0,0,No app file references the staged batch-3 module name
+import-safety-grep (clerkships pilot route),src/app/clerkships,PASS,0,0,No batch-3 imports in active /clerkships/pilot route
+import-safety-grep (resolver references batch-3 IDs only),src/lib/usce-contact-context.ts,PASS,0,0,Only file in src/ that mentions pilot-013…019 IDs (intentional KNOWN_LISTINGS map; no data-file import)
+preview /contact (no params),(browser),PASS,0,0,Generic form renders; no banner; subject dropdown; status 200
+preview /contact?listing_id=pilot-013-…&ref=pilot-listing,(browser),PASS,0,0,"Banner: ""Reporting an issue for: Jackson Memorial Hospital, Miami, FL""; ""Reference: pilot-listing""; hidden listing_id+report_ref+runtime_set=staged+evidence_join_key+honeypot_field rendered; no banned phrase"
+preview /contact?listing_id=pilot-014-NC-duke,(browser),PASS,0,0,"Duke University Hospital, Durham, NC banner + hidden inputs"
+preview /contact?listing_id=pilot-019-IN-iu-methodist,(browser),PASS,0,0,"Indiana University Health Methodist Hospital, Indianapolis, IN banner + hidden inputs"
+preview /contact?listing_id=pilot-999-…fake-hospital,(browser),PASS,0,0,"Falls back to generic form; no banner; no hidden listing_id input — only the URL itself appears in Next.js framework RSC payload (JSON-encoded; not interpolated HTML)"
+preview /contact?listing_id=<script>alert(1)</script>,(browser),PASS,0,0,"Generic form fallback; no <script>alert(1)</script> rendered as executable HTML; no banner"
+preview /contact?listing_id=pilot-013-…&page_path=/foo<script>alert(1),(browser),PASS,0,0,Banner shows + injection-stripped page_path NOT rendered as hidden field (sanitized)
+preview /contact?listing_id=pilot-013-…<oversized 500-char tail>,(browser),PASS,0,0,Falls back to generic form; oversized listing_id rejected by MAX_LISTING_ID_LEN
+preview /contact?ref=pilot-feedback,(browser),PASS,0,0,Generic form mode (no listing required)
+preview submit on disabled endpoint,(POST /api/usce/corrections → 404),PASS,0,0,"Client shows polite generic ""Thanks — we could not submit this report right now. Please try again later."" message; endpoint default behavior unchanged"
+preview console errors / warnings,(browser),PASS,0,0,Zero console errors / warnings during all test cases
+gh secret-scanning open alerts,(gh logged out),NOT_VERIFIED_THIS_TURN,0,0,Last verified state — alert #1 resolved as wont_fix; open list = []

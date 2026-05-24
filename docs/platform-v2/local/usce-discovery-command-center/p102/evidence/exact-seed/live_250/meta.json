@@ -1,0 +1,44 @@
+{
+  "seedId": "live_250",
+  "institutionId": "inst_live_providence_swedish_medical_center_observer_program",
+  "institutionName": "Providence Swedish Medical Center — Observer Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Seattle",
+  "state": "WA",
+  "sourceUrl": "https://gme.providence.org/washington/puget-sound/for-observers/observers-international-invited-guests/",
+  "sourceDomain": "gme.providence.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): Must have relationship with preceptor. Apply 6+ months ahead.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: At preceptor's discretion | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_a01f317f51"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_250/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_250/cleaned.txt",
+  "sourceHash": "436d4f6e7efeb6261f63d3eb503dab7aa25d97ad91d38cc88a1f3078b82867bb",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T02:38:03.846Z"
+}

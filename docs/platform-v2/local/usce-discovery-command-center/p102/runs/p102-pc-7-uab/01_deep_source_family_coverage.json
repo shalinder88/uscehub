@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-7-uab",
+  "institutionId": "inst_uab_hospital_al",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/medical-education",
+        "https://uab.edu/professional-education",
+        "https://uab.edu/medicine/international",
+        "https://uab.edu/medicine/international/international-programs"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/medical-education",
+        "https://uab.edu/professional-education",
+        "https://uab.edu/medicine/international",
+        "https://uab.edu/medicine/international/international-programs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/student-affairs"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/student-affairs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/visiting-student",
+        "https://uab.edu/visiting-students",
+        "https://uab.edu/international-students",
+        "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://uab.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://uab.edu/education/visiting-medical-students",
+        "https://uab.edu/medical-education/visiting-students",
+        "https://uab.edu/students/visiting-students"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/visiting-student",
+        "https://uab.edu/visiting-students",
+        "https://uab.edu/international-students",
+        "https://uab.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://uab.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://uab.edu/education/visiting-medical-students",
+        "https://uab.edu/medical-education/visiting-students",
+        "https://uab.edu/students/visiting-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/observership",
+        "https://uab.edu/observer",
+        "https://uab.edu/clinical-observer"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/observership",
+        "https://uab.edu/observer",
+        "https://uab.edu/clinical-observer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/electives",
+        "https://uab.edu/away-rotations",
+        "https://uab.edu/clinical-elective",
+        "https://uab.edu/clinical-rotation",
+        "https://uab.edu/hcp-education-training/medical-students/elective",
+        "https://uab.edu/education/medical-student-electives",
+        "https://uab.edu/medical-education/medical-student-electives",
+        "https://uab.edu/medical-students/electives",
+        "https://uab.edu/medical-students/elective-rotations",
+        "https://uab.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/electives",
+        "https://uab.edu/away-rotations",
+        "https://uab.edu/clinical-elective",
+        "https://uab.edu/clinical-rotation",
+        "https://uab.edu/hcp-education-training/medical-students/elective",
+        "https://uab.edu/education/medical-student-electives",
+        "https://uab.edu/medical-education/medical-student-electives",
+        "https://uab.edu/medical-students/electives",
+        "https://uab.edu/medical-students/elective-rotations",
+        "https://uab.edu/medical-students/clinical-electives"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/sub-internship",
+        "https://uab.edu/subinternship",
+        "https://uab.edu/acting-internship"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/sub-internship",
+        "https://uab.edu/subinternship",
+        "https://uab.edu/acting-internship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/student-research"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/student-research"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/shadow",
+        "https://uab.edu/shadowing",
+        "https://uab.edu/volunteer",
+        "https://uab.edu/volunteering"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/shadow",
+        "https://uab.edu/shadowing",
+        "https://uab.edu/volunteer",
+        "https://uab.edu/volunteering"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/graduate-medical-education",
+        "https://uab.edu/gme",
+        "https://uab.edu/medical-professionals/graduate-medical-education",
+        "https://uab.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://uab.edu/education/undergraduate-medical-education",
+        "https://uab.edu/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/graduate-medical-education",
+        "https://uab.edu/gme",
+        "https://uab.edu/medical-professionals/graduate-medical-education",
+        "https://uab.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://uab.edu/education/undergraduate-medical-education",
+        "https://uab.edu/graduate-medical-education/clerkship-programs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/residency"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/residency"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/fellowship"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/fellowship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/physician-careers"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/physician-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/provider-careers"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/provider-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/benefits"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/benefits"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/visa",
+        "https://uab.edu/immigration"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/visa",
+        "https://uab.edu/immigration"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/careers"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://uab.edu/observerships",
+        "https://uab.edu/medical-students",
+        "https://uab.edu/research",
+        "https://uab.edu/img",
+        "https://uab.edu/international-medical-graduates",
+        "https://uab.edu/credentialing",
+        "https://uab.edu/health-professionals",
+        "https://uab.edu/education",
+        "https://uab.edu/hcp-education-training",
+        "https://uab.edu/hcp-education-training/medical-students",
+        "https://uab.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://uab.edu/medical-professionals",
+        "https://uab.edu/academic-institute",
+        "https://uab.edu/academic-institute/education",
+        "https://uab.edu/academic-institute/education/medical",
+        "https://uab.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://uab.edu/visiting-clerkships",
+        "https://uab.edu/visiting-clerkships/international",
+        "https://uab.edu/education-institute",
+        "https://uab.edu/education-institute/academic-visitor-program",
+        "https://uab.edu/education/medical-students"
+      ],
+      "acceptedSources": [
+        "https://uab.edu/observerships",
+        "https://uab.edu/medical-students",
+        "https://uab.edu/research",
+        "https://uab.edu/img",
+        "https://uab.edu/international-medical-graduates",
+        "https://uab.edu/credentialing",
+        "https://uab.edu/health-professionals",
+        "https://uab.edu/education",
+        "https://uab.edu/hcp-education-training",
+        "https://uab.edu/hcp-education-training/medical-students",
+        "https://uab.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://uab.edu/medical-professionals",
+        "https://uab.edu/academic-institute",
+        "https://uab.edu/academic-institute/education",
+        "https://uab.edu/academic-institute/education/medical",
+        "https://uab.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://uab.edu/visiting-clerkships",
+        "https://uab.edu/visiting-clerkships/international",
+        "https://uab.edu/education-institute",
+        "https://uab.edu/education-institute/academic-visitor-program",
+        "https://uab.edu/education/medical-students"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_COMPLETE",
+    "tier3": "TIER_COVERAGE_COMPLETE"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 34,
+    "tier2AcceptedSources": 8,
+    "tier3AcceptedSources": 6
+  },
+  "generatedAt": "2026-05-15T13:51:46.324Z"
+}

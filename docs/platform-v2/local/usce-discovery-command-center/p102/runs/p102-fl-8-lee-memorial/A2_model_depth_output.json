@@ -1,0 +1,3100 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://leehealth.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "lee-careers-drug-test-required",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://leehealth.org/careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+            "claimText": "Lee Health is a drug/tobacco-free workplace and requires pre-employment drug testing for career applicants.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Pre-employment drug test is a career-applicant requirement.",
+            "whyA1Missed": "Footer-line policy statement at the bottom of cleaned text; A1 focused on top-of-page navigation.",
+            "normalizedField": "pre_employment_drug_test_required",
+            "limitations": null
+          },
+          {
+            "claimId": "lee-careers-volunteers-link",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://leehealth.org/careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Health Professionals (link opens in a new window)Physicians (link opens in a new window)Volunteers (link opens in a new window)",
+            "claimText": "Footer of careers page references a separate Volunteers pathway alongside Health Professionals and Physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Volunteers link is a separate non-clinical pathway; not Tier 1 USCE without explicit clinical-observation language.",
+            "whyA1Missed": "Volunteer family is in concept vocabulary but only link-only navigation; A1 skipped footer nav.",
+            "normalizedField": null,
+            "limitations": "Link target not in cleaned text; no description of volunteer eligibility or clinical access."
+          },
+          {
+            "claimId": "lee-careers-application-paused",
+            "claimType": "COST_STATEMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://leehealth.org/careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "PLEASE NOTE: Lee Health is upgrading our technology in order to enhance the candidate experience. We apologize as you will not be able to apply for positions during this time period.",
+            "claimText": "Lee Health career applications are temporarily disabled during a candidate-experience technology upgrade.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Temporary application-portal closure affecting career applicants — Tier 3 operational signal.",
+            "whyA1Missed": "Operational/transient banner; A1 captured navigational content only.",
+            "normalizedField": "application_portal_paused",
+            "limitations": "Statement is temporary; not a permanent refusal of applications."
+          },
+          {
+            "claimId": "lee-careers-eoe",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://leehealth.org/careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "We are an equal opportunity employer.",
+            "claimText": "Lee Health declares itself an equal opportunity employer on its careers page.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Standard EOE statement applies to career hiring — Tier 3.",
+            "whyA1Missed": "Boilerplate footer line A1 did not extract.",
+            "normalizedField": "equal_opportunity_employer",
+            "limitations": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "lee-careers-gme-link",
+            "refinementReason": "quote_too_general",
+            "explanation": "Cleaned text exposes only navigation labels ('Physician Graduate Medical Education', 'Clinical Residencies and Training Programs') with no program list, eligibility, or detail. Confidence is overstated for substantive GME presence."
+          },
+          {
+            "a1ClaimId": "lee-careers-app-fellowship",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is bare nav-label text ('APP FellowshipsAdministrative Fellowship') with no program-specific eligibility or specialty content; cannot support trainee-pathway downstream claim."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'Physician Graduate Medical Education (link opens in a new window)' but the linked GME program list is not in cleaned text",
+          "Volunteers link is present in footer but volunteer eligibility/clinical-observation status is not stated",
+          "Application portal is paused — duration and resumption date are not stated",
+          "Page mentions 'Lee Memorial Hospital' only in the Magnet-journey paragraph; whether the careers portal covers Lee Memorial Hospital specifically vs system-wide is not stated"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this CAREERS_PORTAL source",
+          "Verify Lee Memorial Hospital campus applicability is recorded for any system-level Lee Health claim — campus is named only in the Magnet paragraph",
+          "Confirm the temporary application-pause statement is not promoted to a NEGATIVE_NO_VISITING_STUDENT or refusal-style claim — it is operational, not refusal"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "lee-careers-drug-test-required",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://leehealth.org/careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+              "claimText": "Lee Health is a drug/tobacco-free workplace and requires pre-employment drug testing.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Pre-employment drug testing applies to career hires across the system.",
+              "whyA1Missed": "Footer policy statement A1 did not extract.",
+              "normalizedField": "pre_employment_drug_test_required",
+              "limitations": null
+            },
+            {
+              "claimId": "lee-careers-application-paused",
+              "claimType": "COST_STATEMENT",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://leehealth.org/careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "PLEASE NOTE: Lee Health is upgrading our technology in order to enhance the candidate experience. We apologize as you will not be able to apply for positions during this time period.",
+              "claimText": "Career applications are temporarily disabled while Lee Health upgrades its applicant system.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Affects career applicants only.",
+              "whyA1Missed": "Transient banner not extracted by A1.",
+              "normalizedField": "application_portal_paused",
+              "limitations": "Temporary."
+            },
+            {
+              "claimId": "lee-careers-eoe",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://leehealth.org/careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "We are an equal opportunity employer.",
+              "claimText": "Lee Health is an equal opportunity employer.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Career-hire EOE language.",
+              "whyA1Missed": "Footer boilerplate not extracted.",
+              "normalizedField": "equal_opportunity_employer",
+              "limitations": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "lee-careers-physician-jobs",
+            "scopeIssue": "system_vs_campus_ambiguous",
+            "explanation": "Careers portal is system-wide (Lee Health) covering Bonita Springs, Cape Coral, Estero, Fort Myers, Naples, etc. Lee Memorial Hospital is named only in the Magnet paragraph. Claims should be system-scoped without explicit campus applicability."
+          },
+          {
+            "claimId": "lee-careers-gme-link",
+            "scopeIssue": "system_vs_campus_ambiguous",
+            "explanation": "GME nav link is system-level Lee Health content; whether the residencies are physically at Lee Memorial Hospital is not stated on this page."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "lee-careers-physician-jobs",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Gulf Coast Medical Center and Lee Memorial Hospital are actively progressing on their Magnet &reg; journey."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_41",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Source URL returns 'Page Not Found' — no substantive content about medical students, observership, visiting students, electives, or GME exists on this captured page",
+          "Cleaned text contains only site chrome / navigation (Find a Doctor, Careers, For Healthcare Professionals, For Physicians, For Nursing, For Volunteers) but no actual program details",
+          "No contact email, phone, coordinator, application pathway, or eligibility statement present in cleaned text",
+          "No explicit refusal sentence present — absence of content is due to 404, not a stated refusal"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or NEGATIVE claim is emitted from this 404 page — cleaned text contains only navigation chrome",
+          "Recommend re-capture of a working Lee Health HCP education / GME / medical student URL in a future sprint",
+          "Verify this source is downgraded to NO_PUBLIC_OPPORTUNITY_FOUND (not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY) since absence is due to broken URL, not explicit refusal"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_42",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/elective",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page with only navigation chrome; no elective, observership, or visiting student content can be extracted.",
+          "Page lists generic navigation items 'For Healthcare Professionals' and 'For Physicians' but provides no URL or detail about elective/visiting student pathways."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Verify A1's SCOPE_CONFLICT claim is appropriately downgraded or treated as NO_PUBLIC_OPPORTUNITY_FOUND given the page is a 404 with no substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_43",
+      "sourceUrl": "https://leehealth.org/hcp-education-training/medical-students/medical-student-observerships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' shell with only navigation links; no observership, elective, visiting student, GME, residency, fellowship, or careers content is resolvable from this source.",
+          "Navigation lists 'For Healthcare Professionals', 'For Physicians', 'Careers', and 'Health Professionals' links but no anchor text or URLs are captured in the cleaned text to determine whether replacement pages exist."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's MISSING_FIELD claim remains visibility=HUMAN_REVIEW_REQUIRED and is NOT promoted to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY (404 is absence, not an explicit refusal).",
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Flag for re-discovery: locate replacement Lee Health observership / visiting student / GME URL outside this run."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_45",
+      "sourceUrl": "https://leehealth.org/medical-professionals/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page contains a 'For Physicians' and 'Health Professionals' navigation link but no URL or content is resolvable from this 404 page",
+          "Page mentions 'Careers' navigation link but no careers content is present on this 404 page"
+        ],
+        "recommendedA3Focus": [
+          "Confirm src_45 SCOPE_CONFLICT claim remains in HUMAN_REVIEW_REQUIRED — no substantive content exists on this 404 page to support any PUBLIC_SAFE or FUTURE_LANE claim",
+          "Verify no new claim was emitted that cites the 404 'Page Not Found' text as evidence of an opportunity or refusal"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_46",
+      "sourceUrl": "https://leehealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' 404 page; no clerkship, observership, GME, residency, fellowship, or careers content available to extract.",
+          "No contact email, phone, coordinator, application pathway, or eligibility content present on the 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is ever emitted from this 404 page; the cleaned text contains only navigation chrome and 'Page Not Found' messaging.",
+          "Re-discover the live Lee Health GME/clerkship URL in a future capture pass — current sourceUrl resolves to a 404.",
+          "Verify any future Lee Health GME-page claims are tagged FUTURE_LANE_ONLY since sourceFamily=GME_PAGE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_48",
+      "sourceUrl": "https://leehealth.org/academic-institute/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Captured page is a 404 Page Not Found shell from leehealth.org; no substantive content about education, GME, observerships, electives, residency, fellowship, or careers is present to evaluate.",
+          "Navigation chrome references 'For Healthcare Professionals', 'For Physicians', 'Careers', and 'Health Professionals' but no underlying content is captured on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page — the cleaned text contains only navigation chrome and a 'page cannot be found' message.",
+          "Recommend re-capture of current Lee Health Academic Institute / GME / education URLs since the original /academic-institute/education path 404s."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_49",
+      "sourceUrl": "https://leehealth.org/academic-institute/education/medical",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' navigation shell — no USCE, GME, or career content extractable.",
+          "Footer mentions 'Careers' and 'For Physicians' link labels but no substantive content is present on this 404 page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page.",
+          "Flag source as dead URL (HTTP 404) so the discovery runner can retry or replace with a live URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_50",
+      "sourceUrl": "https://leehealth.org/academic-institute/education/medical/medical-student-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found shell with only site chrome (nav links, footer) — no substantive content about medical student rotations, observerships, GME, or careers to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE claim was emitted from this 404 page — content is site chrome only.",
+          "Queue a fresh source-capture pass to locate the active Lee Health medical student rotations / Academic Institute education page since this URL returns 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://leehealth.org/medicine/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 ('We're sorry, this page cannot be found.') — no USCE, GME, or careers content exists at this URL to read."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page at leehealth.org/medicine/international.",
+          "Recommend rediscovery pass to locate an active Lee Health international/observership/visiting student URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://leehealth.org/medicine/international/international-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' shell with only site navigation links (Careers, For Physicians, For Healthcare Professionals); no observership, visiting student, GME, or career content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims are emitted from this 404 source; sourceUrl resolves to a Lee Health 'Page Not Found' page and contains no substantive USCE/GME/career content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://leehealth.org/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page; cannot determine whether Lee Health offers any international visiting medical student program or where its current live URL would be."
+        ],
+        "recommendedA3Focus": [
+          "Confirm both A1 claims (c1 MISSING_FIELD and sc1 SCOPE_CONFLICT) remain non-public; no PUBLIC_SAFE_USCE should be emitted from this 404 source.",
+          "Verify the source is classified as NO_PUBLIC_OPPORTUNITY_FOUND with HUMAN_REVIEW_REQUIRED visibility since the page contains no substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_55",
+      "sourceUrl": "https://leehealth.org/visiting-clerkships/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' boilerplate from leehealth.org; no observership, visiting student, elective, GME, or careers content present to evaluate.",
+          "No explicit refusal sentence present — page is a 404, which is absence of content, not a refusal."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim (PUBLIC_SAFE_USCE or NEGATIVE) is emitted from this 404 capture; the page contains no substantive content.",
+          "Verify the source is treated as NO_PUBLIC_OPPORTUNITY_FOUND (absence) rather than PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY (which requires an explicit refusal quote)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://leehealth.org/education-institute/academic-visitor-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a Lee Health 404 page; no Academic Visitor Program content present to extract observership, visiting student, eligibility, fee, duration, or contact data."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page",
+          "Verify source is marked NO_PUBLIC_OPPORTUNITY_FOUND or excluded due to Page Not Found status"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_58",
+      "sourceUrl": "https://leehealth.org/education/undergraduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' template; no substantive USCE, GME, or careers content present to read.",
+          "Navigation references 'For Healthcare Professionals', 'For Physicians', and 'Careers' but the 404 body resolves none of these into program detail."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page; cleaned text contains only navigation chrome and the 'this page cannot be found' notice.",
+          "Flag the source URL as dead (404) so downstream discovery retries Lee Health UME/GME under a different path."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_59",
+      "sourceUrl": "https://leehealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page; no visiting-student, observership, GME, or careers content present at this URL — re-discovery needed on leehealth.org"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 source",
+          "Verify the SCOPE_CONFLICT classification on c_src59_404 is preserved as HUMAN_REVIEW_REQUIRED and not promoted"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_60",
+      "sourceUrl": "https://leehealth.org/education/medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' page with only site chrome (navigation, footer); no medical-student, observership, GME, or career content present to extract claims from."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this 404 page",
+          "Re-discovery needed: locate live Lee Health medical education / GME landing URL since /education/medical-students returns 404"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_61",
+      "sourceUrl": "https://leehealth.org/education/visiting-medical-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page; no USCE, GME, residency, fellowship, observership, or visiting student content present to analyze."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's 404/MISSING_FIELD classification is preserved and no PUBLIC_SAFE_USCE claim is emitted from this 404 source.",
+          "Queue a re-discovery for the live Lee Health visiting student / observership / GME URL since the pre-classified URL is dead."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_62",
+      "sourceUrl": "https://leehealth.org/education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' shell with only site navigation links; no elective, observership, visiting-student, residency, fellowship, careers, or visa content is present to extract.",
+          "Navigation lists 'For Healthcare Professionals', 'For Physicians', 'For Nursing', 'For Volunteers', and 'Careers' as section labels only — no substantive content on this page resolves any USCE, GME, or careers question."
+        ],
+        "recommendedA3Focus": [
+          "Confirm zero PUBLIC_SAFE_USCE claims emitted from this 404 source; the URL path /education/medical-student-electives must not be treated as evidence of an elective program.",
+          "Verify A3 marks this source as NO_PUBLIC_OPPORTUNITY_FOUND (absence, not refusal) and does not promote it to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY since there is no explicit negative refusal quote.",
+          "Queue A4/discovery to locate the canonical Lee Health medical-student elective / GME / observership URL if it exists, since the URL hint suggested electives but page is 404."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_63",
+      "sourceUrl": "https://leehealth.org/medical-education/medical-student-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page; it does not state whether Lee Health currently offers medical student electives or has discontinued the program."
+        ],
+        "recommendedA3Focus": [
+          "Confirm the A1 SCOPE_CONFLICT claim is not promoted to PUBLIC_SAFE_USCE — content is a 404 with no opportunity language.",
+          "Verify no claim asserts Lee Health offers electives based on this URL; cleaned text contains no affirmative offering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_64",
+      "sourceUrl": "https://leehealth.org/medical-education/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 Page Not Found shell; no visiting-students, observership, GME, or careers substantive content is present to evaluate.",
+          "Page mentions 'For Healthcare Professionals' and 'For Physicians' navigation labels but provides no destination content or details in cleaned text.",
+          "Page mentions 'Careers' link in navigation but no career content is rendered in cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this 404 page; sourceTitle is 'Page Not Found' and cleaned text contains no substantive USCE content.",
+          "Verify the source is classified as NO_PUBLIC_OPPORTUNITY_FOUND (absence, not explicit refusal) rather than PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY, since the page is a 404 and not an explicit refusal sentence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_65",
+      "sourceUrl": "https://leehealth.org/medical-students/electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' template; the URL path /medical-students/electives does not resolve to any USCE content. No statement on observerships, electives, visiting students, or refusal is present — this is page absence, not explicit refusal."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claim is emitted from this 404 page — absence of content is not an explicit refusal.",
+          "Verify any downstream claim from leehealth.org/medical-students/electives is suppressed since the page returns 'Page Not Found'."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_66",
+      "sourceUrl": "https://leehealth.org/medical-students/elective-rotations",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 'Page Not Found' shell with only navigation/footer chrome — no elective, observership, visiting student, residency, fellowship, or careers content can be extracted from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 capture; the cleaned text contains zero substantive USCE/GME/careers content.",
+          "Re-discover the correct Lee Health medical student elective rotations URL in a later sprint — the current /medical-students/elective-rotations path resolves to a Page Not Found template."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_67",
+      "sourceUrl": "https://leehealth.org/medical-students/clinical-electives",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 404 'Page Not Found' with only site chrome (navigation links to Careers, For Physicians, For Healthcare Professionals, etc.); no clinical elective, observership, or visiting student content exists at this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this 404 page; A1's SCOPE_CONFLICT classification is correct.",
+          "Verify A3 does not infer career/physician/nursing opportunities from header navigation links ('For Physicians', 'Careers', 'For Healthcare Professionals') that appear only as site chrome on the 404 page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_68",
+      "sourceUrl": "https://leehealth.org/students/visiting-students",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 'Page Not Found' template with only site chrome; no visiting-student, observership, elective, GME, residency, fellowship, or careers content is recoverable from this source."
+        ],
+        "recommendedA3Focus": [
+          "Verify src_68 remains classified as SCOPE_CONFLICT / HUMAN_REVIEW_REQUIRED and that no PUBLIC_SAFE_USCE claim cites this 404 URL.",
+          "Flag for re-capture: search leehealth.org for an active visiting-student, observership, GME, or medical-education page to replace the dead URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_69",
+      "sourceUrl": "https://leehealth.org/graduate-medical-education/clerkship-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text is a 404 page with only navigation chrome; no clerkship, GME, observership, residency, fellowship, or career content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this 404 page.",
+          "Verify A1's SCOPE_CONFLICT/HUMAN_REVIEW_REQUIRED disposition is preserved given the page returns no substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c_grants_healthcare_careers",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers",
+            "sourceHash": "79f1870ca4ae8dcf4855e9e1969ac295826ec802c5cbeb9053c64e159a2a1d20",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_db6f6db04a7e51fe.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Annually, the Cape Coral Hospital Auxiliary, Lee Memorial Auxiliary and Gulf Coast Medical Center Auxiliary budget over $165,000 combined to assist those needing financial assistance with careers in health care.",
+            "claimText": "Lee Memorial Auxiliary (with Cape Coral and Gulf Coast auxiliaries) budgets >$165,000/yr in educational grants/scholarships for healthcare careers; not a USCE/observership pathway.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Auxiliary scholarship/grant program for healthcare-career education; not a clinical experience and not USCE-eligible.",
+            "whyA1Missed": "A1 focused on volunteer opportunity claims and skipped the Educational Grants and Scholarships paragraph naming the Lee Memorial Auxiliary by name.",
+            "limitations": "Page does not state amount specifically allocated to medical students, IMGs, or whether grants apply to USCE applicants.",
+            "normalizedField": "educational_grants"
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Apply Now to Volunteer' and 'Contact Volunteer Resources' but does not surface an email, phone, or coordinator name in the cleaned text.",
+          "Page lists Regional Cancer Center and Sanctuary 'at Lee Memorial Hospital' as volunteer sites but does not state whether those roles include any clinical exposure relevant to medical-student/IMG applicants."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this leehealth.org system-level volunteer page (HEALTH_SYSTEM_LEVEL scope).",
+          "Verify the educational-grants claim is held in HUMAN_REVIEW_REQUIRED / FUTURE_LANE_SERVICES and not promoted to USCE.",
+          "Confirm A1's c_scope_conflict claim correctly tags VOLUNTEER_SHADOW deep-family hint as unsupported by content."
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c_locations_lee_memorial",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Volunteer Locations:\nCape Coral Hospital in Cape Coral\nGulf Coast Medical Center in South Fort Myers\nLee Memorial Hospital in Fort Myers\nHealthPark Medical Center in South Fort Myers\nGolisano Children's Hospital of Southwest Florida"
+          },
+          {
+            "claimId": "a2_c_grants_healthcare_careers",
+            "campusNameMentionedInQuote": "Lee Memorial Auxiliary",
+            "proofQuote": "Annually, the Cape Coral Hospital Auxiliary, Lee Memorial Auxiliary and Gulf Coast Medical Center Auxiliary budget over $165,000 combined to assist those needing financial assistance with careers in health care."
+          }
+        ],
+        "scopeConflictsDetectedInA2": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c_grants_healthcare_careers_t3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers",
+              "sourceHash": "79f1870ca4ae8dcf4855e9e1969ac295826ec802c5cbeb9053c64e159a2a1d20",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_db6f6db04a7e51fe.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Annually, the Cape Coral Hospital Auxiliary, Lee Memorial Auxiliary and Gulf Coast Medical Center Auxiliary budget over $165,000 combined to assist those needing financial assistance with careers in health care.",
+              "claimText": "Auxiliaries (incl. Lee Memorial Auxiliary) fund >$165k/yr in scholarships toward healthcare careers — captured as Tier 3 career-pipeline financial-assistance signal, not USCE.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Scholarship/financial-assistance toward 'careers in health care' is a downstream career-pipeline service, not a pre-residency USCE claim.",
+              "whyA1Missed": "A1 did not pass the Educational Grants and Scholarships paragraph through the Tier 3 career-services synonym family.",
+              "limitations": "Page does not specify eligibility (medical student vs nursing/allied health) or how to apply.",
+              "normalizedField": "healthcare_careers_scholarship"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://www.leehealth.org/special-pages/spanish-marketing-pilot-gme-family-medicine-lee-me",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a Spanish-language patient appointment scheduling form for LPG Family Medicine at Lee Memorial Hospital; no training, USCE, GME, residency, fellowship, or career content present despite URL slug 'gme-family-medicine'."
+        ],
+        "recommendedA3Focus": [
+          "Confirm src71_conflict_1 remains SCOPE_CONFLICT / HUMAN_REVIEW_REQUIRED and no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted from this Spanish patient marketing form.",
+          "Verify A3 does not promote any claim to PUBLIC_SAFE_USCE on this GME_PAGE-hinted URL given content is patient-appointment scheduling only."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "src71_conflict_1",
+            "scopeIssue": "url_slug_vs_content_mismatch",
+            "explanation": "URL slug contains 'gme-family-medicine' and sourceFamily hint is GME_PAGE, but cleaned text is a Spanish patient appointment-scheduling form for LPG Family Medicine clinic — no GME/training/career content. A1 already flagged this; A2 confirms."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://www.leehealth.org/special-pages/francine-gomberg-nursing-research-and-ebp-conferen",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes nurse-led research conference at Lee Health; no mention of physician research, medical student research, or USCE-relevant content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this nursing-only conference page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+            "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Alfred Gitu MD, Chief Academic Officer",
+            "claimText": "Lee Health has a Chief Academic Officer (Alfred Gitu MD) — academic/GME leadership signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME_GENERAL",
+            "tierAssignmentRationale": "Chief Academic Officer role indicates GME/academic infrastructure — Tier 2 trainee-adjacent.",
+            "whyA1Missed": "A1 focused on residency program directors and missed the named Chief Academic Officer line in the welcome remarks roster.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+            "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Elvin Mendez MD, Medical Director, Academics, Clinic Research & Precision Medicine",
+            "claimText": "Lee Health has a Medical Director of Academics, Clinical Research & Precision Medicine.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME_GENERAL",
+            "tierAssignmentRationale": "Named academic/research medical director role — Tier 2 trainee/research infrastructure signal.",
+            "whyA1Missed": "A1 captured residency PDs but not the broader academics/clinical research medical director role appearing twice in the agenda.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+            "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Jane Sewell MA, BSN, RN, Institutional Review Board (IRB) Administrator",
+            "claimText": "Lee Health has an Institutional Review Board (IRB) and named IRB Administrator — research/trainee infrastructure signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "IRB presence is relevant to trainee research projects — Tier 2 research/GME infrastructure.",
+            "whyA1Missed": "A1 did not capture the IRB administrator line which signals formal research-governance infrastructure useful for resident/fellow research.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "quote_too_general",
+            "explanation": "c1's claimText says 'Internal Medicine and Family Medicine residency programs' but the page also references FSU OB/GYN Residency (captured separately in c2). c1's framing understates program coverage; consider expanding or noting OB/GYN."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references an unnamed contact email ('[email protected]') and a 'VirtuaLee' intranet page, but the cleaned text shows the email redacted/scrubbed and no public contact resolves.",
+          "Page references 'experts from various Lee Health specialties' without enumerating which specialties have fellowships or trainee programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is produced from this RESEARCH_PAGE / HEALTH_SYSTEM_LEVEL source — page is a one-day event announcement, not a student elective program.",
+          "Verify scope conflict sc1 is upheld: 'system-wide' wording means content does not auto-attribute to Lee Memorial Hospital campus without separate campus proof.",
+          "Confirm FSU OB/GYN Residency is preserved as a distinct Tier 2 signal via c2 even though c1's claimText omits it."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+              "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Alfred Gitu MD, Chief Academic Officer",
+              "claimText": "Lee Health Chief Academic Officer named (Alfred Gitu MD).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME_GENERAL",
+              "tierAssignmentRationale": "CAO role anchors GME academic infrastructure — Tier 2.",
+              "whyA1Missed": "A1 focused on residency PDs and missed the CAO line in the same roster.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+              "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Elvin Mendez MD, Medical Director, Academics, Clinic Research & Precision Medicine",
+              "claimText": "Medical Director of Academics, Clinical Research & Precision Medicine named.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME_GENERAL",
+              "tierAssignmentRationale": "Academic/research medical director — Tier 2 trainee infrastructure.",
+              "whyA1Missed": "A1 did not surface this role even though it appears twice in the agenda.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.leehealth.org/special-pages/lee-health-research-day",
+              "sourceHash": "0b75dcd007cffe44f1cce45ab40b7a1d798f533d1dc9d474b767ddc45c940a89",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_84577a876f297445.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Jane Sewell MA, BSN, RN, Institutional Review Board (IRB) Administrator",
+              "claimText": "IRB Administrator named — Lee Health has formal IRB infrastructure.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESEARCH_EDUCATION",
+              "tierAssignmentRationale": "IRB anchors trainee research governance — Tier 2.",
+              "whyA1Missed": "A1 did not capture the IRB administrator line.",
+              "limitations": null,
+              "normalizedField": null
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "a2_c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Chief Academic Officer role is system-wide Lee Health, not specific to Lee Memorial Hospital campus. Must remain FUTURE_LANE_ONLY and not be attributed as campus-specific without further proof."
+          },
+          {
+            "claimId": "a2_c2",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Medical Director Academics/Clinical Research role is system-wide; cannot be attributed to Lee Memorial Hospital campus without additional source."
+          },
+          {
+            "claimId": "a2_c3",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "IRB is a Lee Health system-wide governance body, not Lee Memorial Hospital campus-specific."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://www.leehealth.org/careers-quick-interest-form-thank-you",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a generic 'thank you for your request' confirmation with no substantive content about observerships, electives, residency, fellowship, or physician careers.",
+          "Page references 'For Physicians' and 'Health Professionals' nav links but does not state any opportunity content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL thank-you confirmation page.",
+          "Verify this non-content thank-you page is excluded from claim emission."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/overview",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Educational Grants and Scholarships' and 'Educational Seminars' for volunteers but provides no detail on whether these touch any medical/premed/student audience.",
+          "Page references 'For Physicians' and 'Health Professionals' navigation links but contains no observership/elective/USCE content on this specific volunteer overview."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HEALTH_SYSTEM_LEVEL volunteer page — content is generic adult/teen volunteer, not medical-student USCE.",
+          "Verify A1's SCOPE_CONFLICT claim (src_75_scope_01) remains classified HUMAN_REVIEW_REQUIRED / not promoted to public.",
+          "Check whether a separate Lee Health observership / visiting student / GME page exists in the run folder; this volunteer page does not substitute for one."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "src_75_scope_01",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Lee Memorial Hospital in Fort Myers"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is leehealth.org system-level volunteer page covering Cape Coral, Golisano, Gulf Coast, HealthPark, AND Lee Memorial. sourceScope marked UNKNOWN_SCOPE but content is HEALTH_SYSTEM_LEVEL; campus-specific applicability to Lee Memorial Hospital alone is not established."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not address whether medical students, IMGs, or pre-meds are eligible — only generic adult/teen volunteer tracks listed.",
+          "No explicit refusal sentence for observers or visiting students; absence of medical-student language is not a refusal."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim attaches to this VOLUNTEER_SHADOW system-level page.",
+          "Verify the Lee Memorial campus-applicability proof is not over-inferred from a multi-campus volunteer page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Lee Health requires criminal background screenings on all of our adult volunteers.",
+              "claimText": "Background screening required for all adult volunteers; expanded screening for certain roles.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Eligibility/requirement signal on a volunteer page in the broader USCE-adjacent tier; volunteer caution applies.",
+              "whyA1Missed": "A1 captured only the high-level adult-volunteer label and did not extract the requirement subclause."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Commit to volunteering a minimum of once a week\nCommit to at least Four Consecutive months from your start date",
+              "claimText": "Volunteer commitment: minimum once weekly for at least four consecutive months.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Duration/commitment signal on volunteer onboarding; informs Tier 1 logistics screen.",
+              "whyA1Missed": "A1 surfaced only the program label, missed the onboarding-process duration commitments."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Complete the following Health Requirements before starting Flu Vaccine during Flu Season (October-May) at our expense\nTuberculosis (TB) Test",
+              "claimText": "Health requirements before starting: flu vaccine (in season) and TB test.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Immunization-requirement signal commonly tracked for USCE-adjacent pathways.",
+              "whyA1Missed": "A1 stopped at program label; did not enumerate health/immunization prerequisites."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Purchase a Uniform Shirt",
+              "claimText": "Volunteer must purchase a uniform shirt (cost not specified).",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Out-of-pocket cost signal; relevant to applicant-cost field even if amount unstated.",
+              "whyA1Missed": "A1 did not extract incidental cost items from the onboarding checklist."
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "CONTACT_PHONE",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "CAMPUS_SPECIFIC",
+              "quote": "Volunteer Resources - Lee Memorial Hospital\nFor more information, please call 239-343-2388",
+              "claimText": "Lee Memorial Hospital Volunteer Resources contact phone: 239-343-2388.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Campus-specific coordinator phone for Lee Memorial; logistics signal.",
+              "whyA1Missed": "A1 omitted the campus contact section that names Lee Memorial directly."
+            },
+            {
+              "claimId": "a2_c6",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/apply-to-volunteer",
+              "sourceHash": "135726e601e2f5023f5b418c7d63c0b966bed83c4ca26f2c48cbe7f8e58c8417",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a165b9cf6ee2cb3d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "If you wish to apply for the program, complete your application online then follow the standard procedures before volunteering.",
+              "claimText": "Application pathway: online application followed by standard procedures (orientation, interview).",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Application pathway field is part of Tier 1 logistics extraction.",
+              "whyA1Missed": "A1 did not capture the apply-online pathway statement."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "sourceScope_should_be_HEALTH_SYSTEM_LEVEL",
+            "explanation": "Page is Lee Health system-level volunteer page enumerating five campuses (Cape Coral, Golisano, Gulf Coast, HealthPark, Lee Memorial). A1 left sourceScope as UNKNOWN_SCOPE; downstream should normalize to HEALTH_SYSTEM_LEVEL with campus-specific subsection for Lee Memorial."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "a2_c5",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Volunteer Resources - Lee Memorial Hospital\nFor more information, please call 239-343-2388"
+          },
+          {
+            "claimId": "c1",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Click on the links below for more information about the Adult and Student Volunteer Programs at Lee Memorial Hospital."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://www.leehealth.org/to-volunteer-services",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Educational Grants and Scholarships' from hospital auxiliaries totaling $165,000 annually for healthcare careers, but does not specify whether medical students, IMGs, or observers are eligible.",
+          "Page lists 'For Healthcare Professionals / For Physicians' navigation links but does not state any observership, visiting student, or elective policy on this volunteer page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HEALTH_SYSTEM_LEVEL volunteer page (system-wide across 5 facilities, no campus-applicability proof for Lee Memorial Hospital).",
+          "Verify the 'Educational Grants and Scholarships' line is not misread as a USCE-relevant claim — it is a financial-aid auxiliary budget, not a clinical-experience offering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+            "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Graduate Medical Education (GME) is a vital part of this work. Through our current and future residency and fellowship programs, we undertake to train physicians in an environment that blends high-quality clinical care with a commitment to compassion, teamwork, and service to the community.",
+            "claimText": "Lee Health describes Graduate Medical Education (GME) as central to its strategy and signals current and future residency/fellowship expansion.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Explicit GME framing on a residency overview page — Tier 2 trainee content.",
+            "whyA1Missed": "A1 captured the program list and partnership quote but did not lift the dedicated GME-mission sentence further down in the Chief Academic Officer block."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+            "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Alfred Gitu, MD",
+            "claimText": "Chief Academic Officer overseeing Lee Health GME is named as Alfred Gitu, MD.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Named GME academic leadership — Tier 2 trainee-facing signal.",
+            "whyA1Missed": "A1 quoted the CAO message but did not extract the named officer attribution at the bottom of the message block."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+            "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+            "claimText": "Lee Health is a drug/tobacco-free workplace and requires pre-employment drug testing.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Hiring requirement applicable to attending physicians joining Lee Health — Tier 3 careers concern.",
+            "whyA1Missed": "A1 stopped after the physician-openings invitation and did not capture the footer-level hiring-policy sentence."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+            "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "We are an equal opportunity employer.",
+            "claimText": "Lee Health states it is an equal opportunity employer.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "EEO statement relevant to physician hiring — Tier 3.",
+            "whyA1Missed": "Footer policy line; A1 focused on program list and CAO block."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'For Volunteers' link but does not describe any clinical observership or volunteer-medical pathway for physicians or students.",
+          "Page mentions 'For Physicians' resources link but does not state whether visiting-student or observership programs exist elsewhere on the Lee Health site.",
+          "No statement on IMG eligibility, ECFMG certification, J-1 / H-1B sponsorship, or visa support for residency applicants on this overview page — must be checked on each program subpage."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this RESIDENCY_PAGE / DEPARTMENT_LEVEL source — all claims must be FUTURE_LANE_ONLY.",
+          "Confirm Tier 2 program-list claim (c2) is not split into individual PUBLIC_SAFE_USCE-style records for each specialty.",
+          "Check that the named CAO (Alfred Gitu, MD) is not promoted to a CONTACT_EMAIL/CONTACT_PHONE without a quoted email or phone in the source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+              "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Graduate Medical Education (GME) is a vital part of this work. Through our current and future residency and fellowship programs, we undertake to train physicians in an environment that blends high-quality clinical care with a commitment to compassion, teamwork, and service to the community.",
+              "claimText": "Lee Health describes GME as central to strategy and signals current and future residency/fellowship expansion.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Explicit GME framing on residency overview page.",
+              "whyA1Missed": "A1 lifted the FSU partnership sentence but skipped the CAO GME-mission sentence."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+              "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Alfred Gitu, MD",
+              "claimText": "Chief Academic Officer overseeing Lee Health GME is named as Alfred Gitu, MD.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Named GME leader — Tier 2.",
+              "whyA1Missed": "Attribution at end of CAO message block was overlooked."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c3",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+              "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+              "claimText": "Lee Health is a drug/tobacco-free workplace and requires pre-employment drug testing.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Hiring policy relevant to attending physicians — Tier 3.",
+              "whyA1Missed": "Footer-level hiring policy below the careers invitation was not captured."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/utility/for-health-professionals/residency-programs",
+              "sourceHash": "d97c0c15e3b8e399d9fec68a39fe674463ac89279eb6831db7c0651a8e804bef",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_727cd0ccbf880f21.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "We are an equal opportunity employer.",
+              "claimText": "Lee Health states it is an equal opportunity employer.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "EEO statement for physician hiring — Tier 3.",
+              "whyA1Missed": "Footer line not lifted by A1."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/locations-to-volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Apply to Volunteer (Age 18+)' and 'Summer/Year Round Teen Volunteer Program (Age 14-17)' but does not address adult medical-student or IMG observer audiences.",
+          "Lee Memorial Hospital campus is listed with a dedicated volunteer phone (239-343-2388) but page does not state whether any clinical-shadow or observership pathway exists at that campus.",
+          "Page links to 'For Healthcare Professionals / For Physicians' but does not resolve whether observership or visiting-student programs are described on those linked pages."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this VOLUNTEER_PAGE — volunteer ≠ observership and audience is not medical students/IMGs.",
+          "Verify that the Lee Memorial Hospital campus mention (address + phone) is not used to upgrade the system-level scope to CAMPUS_SPECIFIC for any USCE claim — campus is mentioned only as a volunteer location.",
+          "Ensure SCOPE_CONFLICT claim src_79_sc1 is preserved; system-level Lee Health source cannot ground campus-specific USCE attribution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "src_79_sc1",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Lee Memorial Hospital2776 Cleveland Avenue, Fort Myers, FL 33901Phone: 239-343-2388"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_age_restriction_teen",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Summer Teen Volunteer Program (Age 14-17)",
+            "normalizedField": "age_eligibility",
+            "claimText": "Volunteer program is restricted to teens age 14-17, excluding medical students by age/audience.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Eligibility limits this pathway to high-school teens; not a medical-student USCE channel.",
+            "whyA1Missed": "A1 captured the shadowing refusal but did not emit a separate eligibility claim pinning the age 14-17 restriction that excludes medical students.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Age eligibility is the gating factor explaining why this volunteer pathway is not a USCE route for medical students/IMGs."
+          },
+          {
+            "claimId": "a2_duration_8week",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Commit to volunteering for the 8-week program.",
+            "normalizedField": "duration_weeks",
+            "claimText": "Summer teen volunteer program runs for 8 weeks with one 4-hour shift per week commitment.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Applies to teen volunteer program, not USCE.",
+            "whyA1Missed": "Duration detail not surfaced by A1; teen program length is a distinct fact from the shadowing refusal.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Duration belongs in Tier 1 logistics bucket even though program itself is not USCE-relevant."
+          },
+          {
+            "claimId": "a2_duration_year_round_lee_memorial",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "CAMPUS_SPECIFIC",
+            "quote": "Gulf Coast Medical Center and Lee Memorial Hospital offer a “Year-Round Teen Program,” allowing you to register throughout the year, but does require a four consecutive month commitment.",
+            "normalizedField": "duration_months",
+            "claimText": "Lee Memorial Hospital Year-Round Teen Program requires a four consecutive month commitment with rolling registration.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Teen-audience program; not medical-student USCE.",
+            "whyA1Missed": "A1 used this sentence as the scope_conflict quote but did not emit a separate DURATION claim for the four-month commitment naming Lee Memorial Hospital.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Campus-named duration logistics for the year-round variant at Lee Memorial Hospital."
+          },
+          {
+            "claimId": "a2_cost_tshirt",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Purchase a teen volunteer t-shirt – Cost is $10 – cash or check only, please.",
+            "normalizedField": "cost_usd",
+            "claimText": "Teen volunteer program requires a $10 t-shirt purchase, payable by cash or check only.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Teen program cost; not USCE.",
+            "whyA1Missed": "Cost figure was inside the requirements bullet list; A1 ignored bullet logistics in favor of the headline refusal sentence.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Explicit dollar amount qualifies as Tier 1 cost language even though pathway is non-USCE."
+          },
+          {
+            "claimId": "a2_vaccination_requirement",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Provide proof of vaccinations (MMR, Varicella).",
+            "normalizedField": "vaccination_requirements",
+            "claimText": "Teen volunteers must provide proof of MMR and Varicella vaccinations.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Teen program requirement; not USCE.",
+            "whyA1Missed": "Immunization synonym from concept-vocabulary list; A1 did not enumerate the bullet-list documentation requirements.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Documentation/immunization requirement is a Tier 1 logistics signal."
+          },
+          {
+            "claimId": "a2_orientation_requirement",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Attend a new volunteer orientation and placement interview.",
+            "normalizedField": "application_steps",
+            "claimText": "Applicants must attend a new volunteer orientation and complete a placement interview.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Teen pathway; not USCE.",
+            "whyA1Missed": "Application-pathway logistic in bullet list; A1 only captured the negative refusal.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Onboarding step belongs in Tier 1 application logistics."
+          },
+          {
+            "claimId": "a2_program_closed_other_campuses",
+            "claimType": "NEGATIVE_NO_VISITING_STUDENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+            "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "The program for Cape Coral Hospital, Golisano Children’s Hospital and HealthPark Medical Center is now closed. Please check back in 2027.",
+            "normalizedField": "program_status",
+            "claimText": "Summer teen volunteer program at Cape Coral, Golisano Children's, and HealthPark is closed; reopen check 2027.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Closure scoped to teen program at three sibling campuses; does not directly speak to Lee Memorial Hospital.",
+            "whyA1Missed": "Closure sentence not flagged by A1; relevant as program-availability negative evidence for other Lee Health campuses.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Tier 1 because it concerns a pre-residency / pre-medical pathway, even though the audience is teens."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "neg_no_shadow_volunteer",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Refusal is verbatim and strong, but it is scoped to the Lee Health system volunteer program (UNKNOWN/HEALTH_SYSTEM scope) and to shadowing of providers within that teen pathway — not a hospital-wide refusal of medical-student observership. Visibility should remain CAUTION/internal, not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY."
+          },
+          {
+            "a1ClaimId": "scope_conflict_system_vs_campus",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote names Lee Memorial Hospital but describes a teen program; flag preserves the scope tension. Recommend A3 confirm this is NOT a USCE-applicable campus proof — it is a teen volunteer applicability proof only."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not state whether Lee Memorial Hospital has any separate medical-student or IMG observership channel outside the teen volunteer program.",
+          "No contact email, phone, or coordinator name provided on this page for the teen program or for any medical-student inquiry.",
+          "No statement about ECFMG, IMG, J-1, visa, or medical-school affiliation appears anywhere on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim from this source is promoted to PUBLIC_SAFE_USCE or PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY — content is a teen (14-17) volunteer program, not medical-student USCE.",
+          "Verify the Lee Memorial Hospital campus-applicability proof is tagged as teen-volunteer scope and does not bleed into USCE lanes.",
+          "Ensure the shadowing refusal (neg_no_shadow_volunteer) stays CAUTION_SAFE_INTERNAL_REVIEW — it refuses shadowing within the teen volunteer pathway only, not a system-wide observership ban."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_age_restriction_teen",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Summer Teen Volunteer Program (Age 14-17)",
+              "normalizedField": "age_eligibility",
+              "claimText": "Volunteer program is restricted to teens age 14-17, excluding medical students by audience.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen-only pathway; not a medical-student USCE channel.",
+              "whyA1Missed": "A1 did not emit an explicit age-eligibility claim despite the program title pinning ages 14-17.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Age eligibility is the gating factor for this Tier 1 pre-residency pathway."
+            },
+            {
+              "claimId": "a2_duration_8week",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Commit to volunteering for the 8-week program.",
+              "normalizedField": "duration_weeks",
+              "claimText": "Summer teen program is 8 weeks with one 4-hour weekly shift.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen program; not USCE.",
+              "whyA1Missed": "A1 ignored bullet-list logistics.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 logistics for a pre-medical pathway."
+            },
+            {
+              "claimId": "a2_duration_year_round_lee_memorial",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "CAMPUS_SPECIFIC",
+              "quote": "Gulf Coast Medical Center and Lee Memorial Hospital offer a “Year-Round Teen Program,” allowing you to register throughout the year, but does require a four consecutive month commitment.",
+              "normalizedField": "duration_months",
+              "claimText": "Lee Memorial Hospital year-round teen program requires four consecutive months with rolling registration.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen-only program at Lee Memorial Hospital and Gulf Coast.",
+              "whyA1Missed": "A1 cited this sentence for scope conflict but did not isolate the duration fact.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Campus-named duration logistics."
+            },
+            {
+              "claimId": "a2_cost_tshirt",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Purchase a teen volunteer t-shirt – Cost is $10 – cash or check only, please.",
+              "normalizedField": "cost_usd",
+              "claimText": "Teen volunteer t-shirt costs $10, cash or check only.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen program cost only.",
+              "whyA1Missed": "Bullet-list dollar amount missed by A1.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 explicit cost language."
+            },
+            {
+              "claimId": "a2_vaccination_requirement",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Provide proof of vaccinations (MMR, Varicella).",
+              "normalizedField": "vaccination_requirements",
+              "claimText": "Volunteers must show proof of MMR and Varicella vaccinations.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen program requirement.",
+              "whyA1Missed": "Immunization synonym overlooked by A1.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Documentation/immunization is Tier 1 logistics."
+            },
+            {
+              "claimId": "a2_orientation_requirement",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Attend a new volunteer orientation and placement interview.",
+              "normalizedField": "application_steps",
+              "claimText": "Applicants must attend orientation and a placement interview.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Teen program.",
+              "whyA1Missed": "Bullet-list application step missed.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 application logistics."
+            },
+            {
+              "claimId": "a2_program_closed_other_campuses",
+              "claimType": "NEGATIVE_NO_VISITING_STUDENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/student-volunteer-program",
+              "sourceHash": "fc147020d40ef64a60adf60acc644ab40a8f46f880916cd029715182b82a8260",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_217860fab1af8133.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "The program for Cape Coral Hospital, Golisano Children’s Hospital and HealthPark Medical Center is now closed. Please check back in 2027.",
+              "normalizedField": "program_status",
+              "claimText": "Summer teen volunteer program at Cape Coral, Golisano, and HealthPark is closed until 2027.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Closure scoped to three sibling campuses, not Lee Memorial Hospital.",
+              "whyA1Missed": "Closure notice not flagged by A1.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 program-availability negative evidence."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "a2_duration_year_round_lee_memorial",
+            "scopeIssue": "campus_named_but_program_is_teen_not_usce",
+            "explanation": "Lee Memorial Hospital is explicitly named, satisfying campus applicability for the teen program — but the program is teen (14-17) volunteer service, not USCE. A3 must ensure no USCE lane inherits this campus proof."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "a2_duration_year_round_lee_memorial",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Gulf Coast Medical Center and Lee Memorial Hospital offer a “Year-Round Teen Program,” allowing you to register throughout the year, but does require a four consecutive month commitment."
+          }
+        ],
+        "newNegativeEvidenceClaims": [
+          {
+            "claimId": "a2_program_closed_other_campuses",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "The program for Cape Coral Hospital, Golisano Children’s Hospital and HealthPark Medical Center is now closed. Please check back in 2027.",
+            "strength": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://www.leehealth.org/volunteer-education-module",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Apply to Volunteer (Age 18+)' and 'Summer Teen Volunteer Program (Age 14-17)' as sibling pages but does not describe eligibility for medical students, premeds, or observers on this page.",
+          "Page references 'Educational Grants and Scholarships' as a sibling page but provides no detail on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this volunteer-education-module page — it is a generic safety/education module, not a USCE pathway.",
+          "Verify any future scrape of Volunteer Services Overview or Apply to Volunteer is evaluated separately and not conflated with this education-module URL."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/arts-in-healthcare",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes a community arts-in-healthcare volunteer program open to general public age 18+ (and teens 14-17); no language addresses medical students, premed clinical experience, observership, or any clinical USCE pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this VOLUNTEER_PAGE — content is community arts volunteering (Art Cart, music, storytelling), not clinical observership or shadowing.",
+          "Verify volunteer-shadow deep family hint does not trigger USCE classification given absence of any medical-student or clinical-experience language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2-c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+            "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "All Volunteers 18 and older are required to have a Q-Gold Tuberculosis (TB) blood test, provide proof of Measles, Mumps, and Rubella (MMR) Immunizations and Varicella (Chickenpox) Immunization or have blood tests to determine level of immunizations and annual Flu Vaccination or approved exemption during Flu Season.",
+            "normalizedField": "health_requirements",
+            "claimText": "Volunteer health requirements: TB blood test, MMR proof, Varicella proof, annual Flu vaccination or exemption.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Applies to volunteers; not stated to apply to medical-student observers or USCE participants.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer health requirement on a Tier 1 USCE-adjacent volunteer page; not USCE-equivalent without explicit observer audience.",
+            "whyA1Missed": "A1 captured age and duration eligibility but skipped the immunization/TB block, which is a distinct ELIGIBILITY_REQUIREMENT signal."
+          },
+          {
+            "claimId": "a2-c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+            "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "After we conduct a background check, you will be invited to an orientation, which will provide further details on the volunteer program, policies and procedures.",
+            "normalizedField": "background_check_required",
+            "claimText": "Background check required prior to volunteer orientation.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Applies to volunteer onboarding only.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Background-check requirement is a Tier 1 USCE-adjacent eligibility signal on a volunteer FAQ.",
+            "whyA1Missed": "A1 did not extract the background-check eligibility prerequisite buried in the application-process answer."
+          },
+          {
+            "claimId": "a2-c3",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+            "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "These services are provided by our Employee Health department with no charge to the volunteer. The only exception is if a Chest X-Ray is required there is minimal charge of $28.00.",
+            "normalizedField": "cost_chest_xray_28usd",
+            "claimText": "Health screening provided free by Employee Health; $28 chest X-ray charge if required.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-program scope; not stated to apply to observers or visiting students.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Explicit dollar amount and free-of-charge statement are Tier 1 cost-language signals A2 deep mode targets.",
+            "whyA1Missed": "A1 missed the explicit $28 chest X-ray cost and the 'no charge' statement — both Tier 1 cost-language synonyms."
+          },
+          {
+            "claimId": "a2-c4",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+            "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Is there a cost attached with volunteering?\nYes, volunteers are required to purchase a volunteer polo shirt (some exceptions apply).",
+            "normalizedField": "cost_polo_shirt_purchase",
+            "claimText": "Volunteers must purchase a volunteer polo shirt (some exceptions apply).",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-scope cost item; no dollar amount given.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Explicit answer to a cost question on volunteer FAQ — Tier 1 cost-language signal.",
+            "whyA1Missed": "A1 did not extract the polo-shirt purchase requirement, which is the page's explicit cost statement."
+          },
+          {
+            "claimId": "a2-c5",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+            "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Complete the online application and submit it to Volunteer Resources. After we conduct a background check, you will be invited to an orientation, which will provide further details on the volunteer program, policies and procedures. Also at orientation, you will schedule an interview with the Volunteer Resources Supervisor.",
+            "normalizedField": "application_pathway_volunteer",
+            "claimText": "Volunteer application pathway: online application → background check → orientation → interview with Volunteer Resources Supervisor.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer pathway only; no observer/medical-student pathway stated.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Application pathway is a Tier 1 logistics signal even when audience is volunteer-only.",
+            "whyA1Missed": "A1 emitted contact claims but did not capture the multi-step application pathway sentence."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is a Lee Health system-wide volunteer FAQ (HEALTH_SYSTEM_LEVEL), not a Lee Memorial Hospital campus page. A1 marked sourceScope as UNKNOWN_SCOPE; the URL path /for-volunteers/volunteer-faqs and 'more than one location for Lee Health' indicate system-level scope."
+          },
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Same system-level scope concern. CAUTION_SAFE_INTERNAL_REVIEW visibility on a system-wide HR phone with no campus applicability proof may overstate; recommend HUMAN_REVIEW_REQUIRED."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Volunteer minimum-age eligibility is system-wide and applies to volunteers only, not observers/USCE — sourceScope should be HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE."
+          },
+          {
+            "a1ClaimId": "c4",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Four-month commitment is the volunteer-program requirement on a system-level FAQ; sourceScope should be HEALTH_SYSTEM_LEVEL."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'Department of Academics' but does not state whether it operates a medical-student observership, IMG observership, or visiting-student elective program.",
+          "Page does not state whether the shadow/observe routing applies to Lee Memorial Hospital campus specifically or to all Lee Health locations.",
+          "Page references 'Educational Grants and Scholarships' in the section nav but does not describe any medical-trainee or observer-targeted programs in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this volunteer FAQ — entire source is volunteer-program logistics, not USCE.",
+          "Confirm sourceScope is reclassified to HEALTH_SYSTEM_LEVEL for all Lee Health volunteer-FAQ claims; campus applicability to Lee Memorial Hospital is not established in quote.",
+          "Confirm A1 claim c2 (CAUTION_SAFE_INTERNAL_REVIEW on HR phone) is downgraded — no medical-student audience or campus applicability stated.",
+          "Confirm Department of Academics email/program is logged as an unresolved follow-up source for a future capture, not as a USCE offer on this page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2-c1",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+              "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "All Volunteers 18 and older are required to have a Q-Gold Tuberculosis (TB) blood test, provide proof of Measles, Mumps, and Rubella (MMR) Immunizations and Varicella (Chickenpox) Immunization or have blood tests to determine level of immunizations and annual Flu Vaccination or approved exemption during Flu Season.",
+              "normalizedField": "health_requirements",
+              "claimText": "Volunteer health requirements: TB blood test, MMR proof, Varicella proof, annual Flu vaccination or exemption.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program scope.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 immunization/TB eligibility signal on volunteer FAQ.",
+              "whyA1Missed": "A1 captured age/duration but missed the immunization block."
+            },
+            {
+              "claimId": "a2-c2",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+              "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "After we conduct a background check, you will be invited to an orientation, which will provide further details on the volunteer program, policies and procedures.",
+              "normalizedField": "background_check_required",
+              "claimText": "Background check required prior to volunteer orientation.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer onboarding only.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Background-check requirement is a Tier 1 USCE-adjacent eligibility signal.",
+              "whyA1Missed": "Buried in application-process answer; A1 did not extract."
+            },
+            {
+              "claimId": "a2-c3",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+              "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "These services are provided by our Employee Health department with no charge to the volunteer. The only exception is if a Chest X-Ray is required there is minimal charge of $28.00.",
+              "normalizedField": "cost_chest_xray_28usd",
+              "claimText": "Health screening free; $28 chest X-ray charge if required.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program scope.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Explicit dollar amount + no-charge language is Tier 1 cost signal.",
+              "whyA1Missed": "Tier 1 cost-language synonym ($ amount + 'no charge') not extracted by A1."
+            },
+            {
+              "claimId": "a2-c4",
+              "claimType": "COST_STATEMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+              "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Is there a cost attached with volunteering?\nYes, volunteers are required to purchase a volunteer polo shirt (some exceptions apply).",
+              "normalizedField": "cost_polo_shirt_purchase",
+              "claimText": "Volunteers must purchase a volunteer polo shirt.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program scope.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Explicit cost answer on FAQ.",
+              "whyA1Missed": "A1 did not extract the polo-shirt cost statement."
+            },
+            {
+              "claimId": "a2-c5",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/volunteer-faqs",
+              "sourceHash": "5a5669c1349d5e4b99756db24cc1023bdeb72b76a338e112bfe7dc5c06374ec4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_93a5edece0c2e15d.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Complete the online application and submit it to Volunteer Resources. After we conduct a background check, you will be invited to an orientation, which will provide further details on the volunteer program, policies and procedures. Also at orientation, you will schedule an interview with the Volunteer Resources Supervisor.",
+              "normalizedField": "application_pathway_volunteer",
+              "claimText": "Pathway: online application → background check → orientation → interview.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-only pathway.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Tier 1 logistics signal.",
+              "whyA1Missed": "A1 emitted contacts but skipped the multi-step pathway."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Lee Health volunteer FAQ is system-level (URL path /for-volunteers/; copy references 'more than one location for Lee Health'). A1 marked UNKNOWN_SCOPE — should be HEALTH_SYSTEM_LEVEL with no Lee Memorial Hospital campus applicability proof."
+          },
+          {
+            "claimId": "c2",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "HR phone is the system-wide volunteer/observe routing line; no campus-specific applicability shown to Lee Memorial Hospital."
+          },
+          {
+            "claimId": "c3",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Volunteer age eligibility is a system-wide rule, not Lee Memorial Hospital-specific."
+          },
+          {
+            "claimId": "c4",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Four-month commitment is a system-wide volunteer-program requirement."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/grants-scholarships",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is on leehealth.org (system-level domain) describing auxiliary grants administered by Lee Health HR across Cape Coral, Lee Memorial, and Gulf Coast auxiliaries. sourceScope should be HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE."
+          },
+          {
+            "a1ClaimId": "sc1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Same scope concern: page spans three auxiliaries across the Lee Health system; UNKNOWN_SCOPE understates the system-level nature of the content."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists an HR email and phone (239-343-1555) for grant applications but contains no USCE/observership/visiting-student contact — coordinator info is for financial-aid grants only.",
+          "Application window 'March 1 through April 30 annually' applies to educational grants, not to any clinical rotation or observership program."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this volunteer-grants page; content is auxiliary scholarship aid, not clinical exposure.",
+          "Verify sourceScope is corrected to HEALTH_SYSTEM_LEVEL on regate; leehealth.org is the system domain.",
+          "Ensure HR email/phone on this page is not promoted to a USCE CONTACT_EMAIL/CONTACT_PHONE claim — they pertain only to the grants program."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "sourceScope_should_be_HEALTH_SYSTEM_LEVEL",
+            "explanation": "leehealth.org page covers three auxiliaries (Cape Coral Hospital, Lee Memorial, Gulf Coast Medical Center) administered through Lee Health HR — clearly system-level scope, not UNKNOWN_SCOPE."
+          },
+          {
+            "claimId": "sc1",
+            "scopeIssue": "sourceScope_should_be_HEALTH_SYSTEM_LEVEL",
+            "explanation": "Same: A1 left scope as UNKNOWN; the system-level nature is explicit in the body listing three auxiliary entities under Lee Health."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_lee_careers_physician_jobs_category",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Pediatric Physician JobsPediatric/Neonatal Nursing JobsPharmacy JobsPhysician JobsPhysician Assistant Jobs",
+            "normalizedField": null,
+            "claimText": "Careers job categories include Physician Jobs, Pediatric Physician Jobs, and Physician Assistant Jobs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 captured the top Physicians featured tile but missed the more granular job-category list including Pediatric Physician and PA roles.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Attending/PA job categories on a careers portal — Tier 3 practice/career."
+          },
+          {
+            "claimId": "c_lee_careers_drug_testing_requirement",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+            "normalizedField": "preEmploymentRequirement",
+            "claimText": "Lee Health requires pre-employment drug testing; drug/tobacco-free workplace.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "Requirement appears in the footer/legal area which A1 typically skips; it's a hiring eligibility constraint.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Pre-employment requirement for paid careers — Tier 3."
+          },
+          {
+            "claimId": "c_lee_careers_volunteers_link",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Health Professionals (link opens in a new window)Physicians (link opens in a new window)Volunteers (link opens in a new window)",
+            "normalizedField": null,
+            "claimText": "Footer links to a separate Volunteers section for Lee Health.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Only a link label; no detail about whether volunteer program is clinical or non-clinical.",
+            "whyA1Missed": "Volunteer link sits in footer nav; volunteer family is typically not auto-USCE and was not flagged.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Volunteer link not tied to a physician training tier; flagged for human review."
+          },
+          {
+            "claimId": "c_lee_careers_app_apply_pause",
+            "claimType": "MISSING_FIELD",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+            "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Lee Health is upgrading our technology in order to enhance the candidate experience. We apologize as you will not be able to apply for positions during this time period.",
+            "normalizedField": "applicationStatus",
+            "claimText": "Application portal temporarily disabled during technology upgrade.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Temporary status — not a permanent refusal.",
+            "whyA1Missed": "A1 captured opportunity labels but not this operational application-availability gap.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Affects ability to apply for posted physician/career roles — Tier 3."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_lee_gme_link",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote captures only navigation labels without enumerating any specific residency or specialty; downstream should treat this as a navigational signal, not evidence of a specific residency program."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Clinical Residencies and Training Programs' as a category but does not name any specific residency or specialty on this URL.",
+          "Page lists 'APP Fellowships' and 'Administrative Fellowship' without specialty, duration, or eligibility detail.",
+          "Volunteers link present in footer with no detail on whether clinical observation/shadowing is offered.",
+          "No mention anywhere on the page of observership, visiting student, elective, externship, VSLO, IMG, ECFMG, J-1, or H-1B."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim from this CAREERS_PORTAL source is classified as PUBLIC_SAFE_USCE — source family is CAREERS_PAGE and must remain FUTURE_LANE_ONLY.",
+          "Verify campus applicability: this is a Lee Health system-level careers page; only 'Lee Memorial Hospital are actively progressing on their Magnet ® journey' ties content to the institution — confirm attribution does not over-claim hospital-specific programs.",
+          "Confirm the temporary 'will not be able to apply' notice is NOT promoted to NEGATIVE_NO_OBSERVERSHIP or any refusal claim — it is operational, not exclusionary."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "c_lee_careers_physician_jobs_category",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Pediatric Physician JobsPediatric/Neonatal Nursing JobsPharmacy JobsPhysician JobsPhysician Assistant Jobs",
+              "normalizedField": null,
+              "claimText": "Job categories include Physician, Pediatric Physician, and Physician Assistant roles.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 captured the featured Physicians tile but not the deeper job-category enumeration.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Physician/PA paid job categories — Tier 3."
+            },
+            {
+              "claimId": "c_lee_careers_drug_testing_requirement",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Lee Health is a drug/tobacco-free workplace. Pre-employment drug testing is required.",
+              "normalizedField": "preEmploymentRequirement",
+              "claimText": "Pre-employment drug testing required; drug/tobacco-free workplace.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "Footer/legal-area requirement typically skipped by A1.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Pre-employment requirement — Tier 3 careers."
+            },
+            {
+              "claimId": "c_lee_careers_app_apply_pause",
+              "claimType": "MISSING_FIELD",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-careers",
+              "sourceHash": "58c4b20b34981d6acf974e8964c9815df67ca195a3191bd678d46997e06fe2c6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_ac7c53ef72805367.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Lee Health is upgrading our technology in order to enhance the candidate experience. We apologize as you will not be able to apply for positions during this time period.",
+              "normalizedField": "applicationStatus",
+              "claimText": "Application portal temporarily disabled during technology upgrade.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Transient operational notice — not a refusal.",
+              "whyA1Missed": "A1 focused on opportunity labels and skipped operational status notice.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Affects all careers applications — Tier 3."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_lee_careers_physicians",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "This is a Lee Health system-wide careers portal covering multiple hospitals; exclusive attribution to Lee Memorial Hospital risks overstating campus specificity since Lee Memorial is only one of several system hospitals named."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c_lee_careers_physicians",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Gulf Coast Medical Center and Lee Memorial Hospital are actively progressing on their Magnet ® journey."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "DURATION",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+            "sourceHash": "89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Lee Health's APP Fellowship Programs offer fully-benefited, 12-month positions designed to provide post-graduate training to APPs",
+            "normalizedField": "12 months",
+            "claimText": "APP fellowships are 12-month positions.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "APP (non-physician) fellowship duration.",
+            "whyA1Missed": "A1 folded duration into the broader fellowship-overview claim (c1) but did not emit a discrete DURATION claim with normalizedField.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "APP (NP/PA/CNM) fellowship duration — not physician-pipeline."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+            "sourceHash": "89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "If requested, applicants must obtain DEA registration prior to starting the program",
+            "normalizedField": "DEA registration may be required pre-start",
+            "claimText": "Applicants may be required to obtain DEA registration before starting the APP fellowship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "APP fellowship requirement, non-physician.",
+            "whyA1Missed": "A1 focused on APRN/PA licensure and accreditation eligibility (c3, c4) and did not capture the DEA registration requirement listed further down the eligibility block.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Eligibility for APP fellowship; not physician-pipeline."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+            "sourceHash": "89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Minimum three letters of professional reference emailed directly to the program from the individual writing the letter:One must be the director of the NP/PA/CMN program attendedHighly recommend one from a clinical preceptorHighly recommend one from a clinical faculty or mentorHighly recommend that one of the letters be written by a physicianCurrent CV/ResumePersonal Statement",
+            "normalizedField": "3 LORs + CV + personal statement + transcripts",
+            "claimText": "APP fellowship application requires 3 LORs (one from program director), CV/resume, personal statement, and transcripts.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Application materials for APP fellowship (non-physician).",
+            "whyA1Missed": "A1 did not enumerate the application submission materials block (LORs, CV, personal statement, transcripts).",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Application pathway for APP fellowship; not physician-pipeline."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+            "sourceHash": "89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The current sites included in this accreditation designation are:Lee Community Healthcare Inc. - North Fort MyersGulf Coast Medical CenterHealthPark Medical Center",
+            "normalizedField": "Accredited APP sites: Lee Community Healthcare (N. Fort Myers); Gulf Coast Medical Center; HealthPark Medical Center",
+            "claimText": "Accredited APP fellowship sites: Lee Community Healthcare - North Fort Myers, Gulf Coast Medical Center, HealthPark Medical Center.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Sites apply to APP fellowship accreditation — Lee Memorial Hospital itself is not listed among the accredited sites.",
+            "whyA1Missed": "A1 captured the ANCC accreditation statement (c6) but omitted the specific clinical site list (campus applicability).",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Site list for APP fellowship — adjacent care-team scope, non-physician."
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "COST_STATEMENT",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.leehealth.org/header-utility-nav-pages/for-health-professionals/int-link-to-app-fellowships",
+            "sourceHash": "89ae5dbe8ff55e5fe56d74953a9d1aab3f77aba9c594bff6f019d1329e2a425c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_fce11453c287b173.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Estimated Stipend: Competitive fellowship salary offered. Please contact APPFellowship@leehealth.org (link opens in a new window) with further questionsBenefits commensurate with full-time Lee Health employees.",
+            "normalizedField": "Competitive stipend; FT-equivalent benefits; PTO; on-site CME",
+            "claimText": "APP fellows receive a competitive stipend with benefits commensurate with full-time Lee Health employees, PTO, and on-site CME.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Salary/benefits statement for APP (non-physician) fellowship.",
+            "whyA1Missed": "A1 did not capture the salary/benefits section of the page.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Compensation for APP fellowship — non-physician."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation references 'Physician Graduate Medical Education' and 'Clinical Residencies and Training Programs' but this page itself contains no physician-program content — separate URLs would need to be captured.",
+          "Page does not state whether Lee Memorial Hospital (the named institution) hosts APP fellows; the accredited site list names Gulf Coast Medical Center, HealthPark Medical Center, and Lee Community Healthcare — not Lee Memorial."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this APP-fellowship page — entire source is non-physician scope.",
+          "Verify A3 keeps all six A1 claims tagged NOT_APPLICABLE (APP/NP/PA/CNM scope) and not surfaced to the physician trust engine.",
+          "Check whether Lee Memorial Hospital-specific physician GME / residency / fellowship pages were captured in this run; this APP page references them in the nav but does not describe them."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "a2_c4",
+            "campusNameMentionedInQuote": "Gulf Coast Medical Center; HealthPark Medical Center; Lee Community Healthcare Inc. - North Fort Myers",
+            "proofQuote": "The current sites included in this accreditation designation are:Lee Community Healthcare Inc. - North Fort MyersGulf Coast Medical CenterHealthPark Medical Center"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1_volunteer_email",
+            "claimType": "CONTACT_EMAIL",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+            "sourceHash": "6ffc9efc4218670160a0d80cb7f497c8d30b2331df2ce21dce3ccadd61968ec7",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a4a69ca137002e84.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "You can also e-mail us at [email protected] or call one of the numbers below.",
+            "normalizedField": "volunteer_program_email",
+            "claimText": "Lee Health volunteer program offers an email contact ([email protected]) for general inquiries.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Email is for community volunteer program, not a stated USCE/observership program.",
+            "whyA1Missed": "A1 captured phone numbers but did not emit the email address as a separate CONTACT_EMAIL claim.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Email is for community volunteer services, no medical-trainee framing on page."
+          },
+          {
+            "claimId": "a2_c2_educational_grants",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+            "sourceHash": "6ffc9efc4218670160a0d80cb7f497c8d30b2331df2ce21dce3ccadd61968ec7",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a4a69ca137002e84.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "FAQs About VolunteeringEducational Grants and ScholarshipsYear Round Teen Volunteer Program (Age 14-17)",
+            "normalizedField": "educational_grants_link",
+            "claimText": "Page navigation references an 'Educational Grants and Scholarships' subpage tied to the volunteer program; details not on this page.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Only a nav reference; no audience or eligibility stated on this source.",
+            "whyA1Missed": "A1 listed teen/adult age tiers but did not flag the Educational Grants/Scholarships nav item as a separable item worth A3 follow-up.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Nav-only reference inside a community volunteer hub; not USCE-tier without further evidence."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1_volunteer_program_general",
+            "refinementReason": "lane_misclassified",
+            "explanation": "claimType OFFERS_VISITING_STUDENT is incorrect — the cleaned text contains zero visiting-student language. Should be reclassified to a generic volunteer/contact claim or COST_STATEMENT/MISSING_FIELD; currently the type contradicts the limitations field."
+          },
+          {
+            "a1ClaimId": "sc1_system_scope",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Correctly flagged as system-level scope across five Lee Health campuses; A3 should ensure no PUBLIC_SAFE_USCE claim downstream cites this URL as Lee Memorial Hospital-exclusive."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page nav references 'For Physicians', 'For Healthcare Professionals', and 'Educational Grants and Scholarships' but none of those targets are loaded in this cleaned text — trainee pathway status remains unresolved from this source.",
+          "No statement present that excludes or includes medical students, observers, or IMGs — absence is not refusal."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is published for this system-level multi-campus volunteer URL.",
+          "Verify A1 claim c1_volunteer_program_general is downgraded or retyped — current claimType OFFERS_VISITING_STUDENT does not match the quote or page content.",
+          "Queue Lee Health 'For Physicians' / 'For Healthcare Professionals' / 'Educational Grants and Scholarships' subpages for separate capture in a future A1 sweep."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c1_volunteer_email",
+              "claimType": "CONTACT_EMAIL",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.leehealth.org/for-volunteers/contact-volunteer-resources",
+              "sourceHash": "6ffc9efc4218670160a0d80cb7f497c8d30b2331df2ce21dce3ccadd61968ec7",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_a4a69ca137002e84.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "You can also e-mail us at [email protected] or call one of the numbers below.",
+              "normalizedField": "volunteer_program_email",
+              "claimText": "Lee Health volunteer program email contact: [email protected].",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program email; not a stated USCE/observership program contact.",
+              "whyA1Missed": "A1 captured phone but did not emit the email as a discrete CONTACT_EMAIL claim.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer-shadow family; tier-1 deep family per packet hint, though content itself is community-volunteer."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "sc1_system_scope",
+            "scopeIssue": "HEALTH_SYSTEM_LEVEL_multi_campus",
+            "explanation": "Page lists Cape Coral, Golisano, Gulf Coast, HealthPark, and Lee Memorial Hospital under one URL. Only the Lee Memorial Hospital block names the target campus; the rest are sibling campuses."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c2_lee_memorial_contact",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital",
+            "proofQuote": "Lee Memorial Hospital2776 Cleveland Avenue, Fort Myers, FL 33901Volunteer ResourcesPhone: 239-343-2388"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-8-lee-memorial",
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+            "sourceHash": "a21cb717370a5a95da43e1ba1c7f977fea3ff94553842afa5826cea54062d281",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_e805a8145295ba61.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Cleared by Employee Health through proof of vaccinations",
+            "claimText": "Teen volunteer applicants must be cleared by Employee Health with proof of vaccinations.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Immunization requirement applies to teen volunteer program (age 14-17), not USCE-eligible audience.",
+            "whyA1Missed": "A1 captured the shadow refusal and audience age but did not enumerate the immunization/vaccination requirement listed in the bulleted requirements block.",
+            "limitations": "Applies to teen volunteer program only; not transferable to USCE eligibility.",
+            "normalizedField": "immunization_required"
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+            "sourceHash": "a21cb717370a5a95da43e1ba1c7f977fea3ff94553842afa5826cea54062d281",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_e805a8145295ba61.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Commit to volunteering for 4 consecutive months and 40-hours",
+            "claimText": "Teen volunteer program requires 4 consecutive months and 40 hours minimum commitment.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Duration/commitment requirement for a teen volunteer program; not USCE.",
+            "whyA1Missed": "Duration is in the bulleted requirements section that A1 skipped after capturing the headline refusal sentence.",
+            "limitations": "Teen volunteer scope only.",
+            "normalizedField": "duration_4_months_40_hours"
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "COST_STATEMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+            "sourceHash": "a21cb717370a5a95da43e1ba1c7f977fea3ff94553842afa5826cea54062d281",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_e805a8145295ba61.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Purchase a Teen Volunteer Shirt",
+            "claimText": "Teen volunteer program requires participant to purchase a Teen Volunteer Shirt.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Out-of-pocket purchase requirement for a teen volunteer program; not a USCE fee.",
+            "whyA1Missed": "Cost-adjacent language ('purchase') is not in A1's typical fee-detection vocabulary and was in the requirements bullet list.",
+            "limitations": "No dollar amount stated; teen volunteer scope only.",
+            "normalizedField": "shirt_purchase_required"
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.leehealth.org/utility/for-volunteers/year-round-teen-volunteer-program",
+            "sourceHash": "a21cb717370a5a95da43e1ba1c7f977fea3ff94553842afa5826cea54062d281",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-8-lee-memorial/cleaned_text/sm_e805a8145295ba61.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Attend a new volunteer orientation and interview",
+            "claimText": "Application pathway requires attending a new volunteer orientation and interview.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Application/onboarding pathway for teen volunteer program; not USCE.",
+            "whyA1Missed": "A1 did not enumerate the application/orientation requirement listed in the bulleted requirements.",
+            "limitations": "Teen volunteer scope only.",
+            "normalizedField": "application_orientation_interview"
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "n1",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "n1 uses the identical verbatim refusal sentence as c1 and the identical claimType (NEGATIVE_NO_OBSERVERSHIP). It is a duplicate of c1 and should be deduped by the regate."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "lane_misclassified",
+            "explanation": "c3 is classified as OFFERS_VISITING_STUDENT but the quote is a capacity/closure statement about a teen volunteer program. Correct claimType is closer to NEGATIVE program-closure or capacity status, not OFFERS_VISITING_STUDENT."
+          },
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "negative_evidence_is_absence_not_refusal",
+            "explanation": "c1's refusal is scoped explicitly to the teen volunteer program, not to physician/medical-student shadowing or observership. Promoting it to a USCE-lane NEGATIVE_NO_OBSERVERSHIP overstates scope; regate should downgrade to teen-volunteer-scoped only."
+          },
+          {
+            "a1ClaimId": "sc1",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "sc1 correctly flags multi-campus scope (Lee Memorial Hospital + Gulf Coast Medical Center) on system-domain leehealth.org. Source scope should be HEALTH_SYSTEM_LEVEL, not UNKNOWN_SCOPE — regate should re-tag accordingly."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'For Healthcare Professionals', 'For Physicians', 'For Nursing', 'For Volunteers' in navigation but does not state observership/elective policy on this page.",
+          "'Apply to Volunteer (Age 18+)' is listed as a sibling page but no content from that page is in this cleaned text; adult volunteer policy and any shadow/observer language there are unresolved.",
+          "Page mentions 'School required forms' will be signed off after 4-month completion, but does not indicate whether medical-school documentation is supported."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this source — page is a teen (14-17) volunteer program on system-level domain.",
+          "Verify n1 is deduped against c1 (identical quote, identical claimType).",
+          "Verify c3 is not surfaced as OFFERS_VISITING_STUDENT — quote is a teen volunteer capacity closure, not a visiting student offer.",
+          "Verify sourceScope is normalized to HEALTH_SYSTEM_LEVEL (leehealth.org covers Lee Memorial Hospital and Gulf Coast Medical Center per sc1 quote)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "sc1",
+            "scopeIssue": "sourceScope set to UNKNOWN_SCOPE but quote explicitly names two campuses (Lee Memorial Hospital and Gulf Coast Medical Center) on system domain leehealth.org",
+            "explanation": "Should be normalized to HEALTH_SYSTEM_LEVEL. Any institution-specific public claim attribution to Lee Memorial alone is unsafe without a per-campus proof."
+          },
+          {
+            "claimId": "c1",
+            "scopeIssue": "Refusal sentence is teen-volunteer-program-scoped, not institution-wide observership refusal",
+            "explanation": "The 'does not provide the opportunity to shadow' sentence is in the teen volunteer (age 14-17) program context. Cannot be lifted as a Lee Memorial physician-observership refusal."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "sc1",
+            "campusNameMentionedInQuote": "Lee Memorial Hospital and Gulf Coast Medical Center",
+            "proofQuote": "Thank you for your interest in the Year-Round Teen Volunteer Program offered at Lee Memorial Hospital and Gulf Coast Medical Center."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://www.leehealth.org/our-services/cardiothoracic-surgery/shipley-cardiothoracic-research",
+      "output": {
+        "institutionId": "inst_lee_memorial_hospital_fl",
+        "institutionName": "Lee Memorial Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-8-lee-memorial",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "The quote lists 'PHD students, interns, and physician and nursing staff' but does not state medical students are eligible, and 'interns' is ambiguous (research interns vs PGY-1). OFFERS_RESEARCH may overstate; consider downgrading to MISSING_FIELD or keeping LOW/CAUTION."
+          }
+        ],
+        "additionalUnresolveds": [
+          "The term 'interns' in the Shipley Research support sentence is ambiguous between research interns (undergrad/postgrad non-medical) and clinical interns (PGY-1 physicians); page does not disambiguate.",
+          "Page references 'Shipley Education' and 'Pre-Operative and Post-Operative Education at Shipley' only as navigation labels, with no content on medical-student or trainee educational programs included on this page.",
+          "Page addresses 'SWFL community' but does not name Lee Memorial Hospital as the campus delivering this research, leaving campus applicability unresolved."
+        ],
+        "recommendedA3Focus": [
+          "Confirm c1 (OFFERS_RESEARCH) is NOT promoted to PUBLIC_SAFE_USCE — quote does not name medical students and source family is RESEARCH_PAGE on a system domain.",
+          "Confirm sc1 SCOPE_CONFLICT blocks any campus attribution of this page's content to Lee Memorial Hospital specifically (no campus name appears in the cleaned text).",
+          "Verify no PUBLIC_SAFE_USCE claim derives from the ambiguous 'interns' token in the Shipley support sentence."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Page is hosted on leehealth.org (multi-hospital system) and addresses 'our SWFL community' without naming Lee Memorial Hospital. Any USCE-adjacent claim from this page cannot be attributed to the Lee Memorial campus without external proof."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

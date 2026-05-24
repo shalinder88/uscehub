@@ -1,0 +1,2621 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://nicklauschildrens.org/research",
+      "output": {
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "nch-research-a2-01",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://nicklauschildrens.org/research",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Contact UsFind a Clinical Trial1-800-533-1792",
+            "normalizedField": "research_contact_phone",
+            "claimText": "Research Institute lists a 'Find a Clinical Trial' contact phone number 1-800-533-1792.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Phone is for clinical trial inquiries, not stated to be a USCE/observership contact.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Phone contact lives on the research/USCE-adjacent page; classified Tier 1 as a contact data point that A3 may downgrade.",
+            "whyA1Missed": "A1 captured navigation snippets but did not extract the dedicated 'Find a Clinical Trial' phone line."
+          },
+          {
+            "claimId": "nch-research-a2-02",
+            "claimType": "MISSING_FIELD",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://nicklauschildrens.org/research",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Our CommunityInspiring Patient StoriesMedical EducationNews & EventsPhone DirectoryKenneth C. Griffin Surgical TowerVolunteersMake Appointment",
+            "normalizedField": null,
+            "claimText": "Footer/About navigation references both a 'Medical Education' section and a 'Volunteers' section — adjacencies for USCE follow-up but no detail here.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Navigation labels only; no eligibility, audience, or pathway detail on this page.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Medical Education and Volunteers are the canonical USCE/observership adjacency surfaces; flagged Tier 1 for A3 follow-up via dedicated pages.",
+            "whyA1Missed": "A1 emitted only the side-menu Careers/Administrative Fellowship strings and missed the global-nav Medical Education and Volunteers links."
+          },
+          {
+            "claimId": "nch-research-a2-03",
+            "claimType": "MISSING_FIELD",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://nicklauschildrens.org/research",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "CareersFor Healthcare ProfessionalsDonateContact Us",
+            "normalizedField": null,
+            "claimText": "Global header includes a 'For Healthcare Professionals' link — likely surface for trainee/observer pathways; not detailed on this page.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Header link text only; target page not in this source.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Healthcare Professionals portal is a common host for observership/visiting-student details; flagged Tier 1 for follow-up.",
+            "whyA1Missed": "A1 did not record the global 'For Healthcare Professionals' nav as a USCE adjacency surface."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "nch-research-fl-02",
+            "refinementReason": "quote_too_general",
+            "explanation": "The quote is a concatenated section-menu string ('...CareersFAQ') without context proving the Careers link points to physician/post-trainee jobs. May be Research Institute coordinator/admin staff hiring, not Tier 3 physician careers."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'Medical Education' nav link but provides no content describing whether visiting medical students, observers, or IMGs are accepted.",
+          "Page mentions 'Volunteers' nav link but does not state whether medical-related volunteering or shadowing exists.",
+          "Page lists 'For Healthcare Professionals' header link but provides no detail about trainee or observer pathways.",
+          "COG (Children's Oncology Group) membership is stated but page does not address whether COG affiliation enables external trainee research access."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE source — page is institutional research operations, not a trainee program.",
+          "Confirm Administrative Fellowship claim (nch-research-fl-01) remains FUTURE_LANE_ONLY and is not promoted to USCE.",
+          "Check that the 1-800-533-1792 phone is not promoted to a USCE contact; it is a clinical-trial enrollment line.",
+          "A3 should request fetch of /medical-education, /volunteers, /healthcare-professionals, /careers sub-pages before drawing USCE conclusions for this institution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "nch-research-a2-01",
+              "claimType": "CONTACT_PHONE",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://nicklauschildrens.org/research",
+              "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Contact UsFind a Clinical Trial1-800-533-1792",
+              "normalizedField": "research_contact_phone",
+              "claimText": "Research Institute 'Find a Clinical Trial' contact phone 1-800-533-1792.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "Clinical trial enrollment line, not stated as USCE contact.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "RESEARCH_EDUCATION",
+              "tierAssignmentRationale": "Contact data point on USCE-adjacent research page.",
+              "whyA1Missed": "A1 did not extract the dedicated phone string."
+            },
+            {
+              "claimId": "nch-research-a2-02",
+              "claimType": "MISSING_FIELD",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://nicklauschildrens.org/research",
+              "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Our CommunityInspiring Patient StoriesMedical EducationNews & EventsPhone DirectoryKenneth C. Griffin Surgical TowerVolunteersMake Appointment",
+              "normalizedField": null,
+              "claimText": "About-Us nav references 'Medical Education' and 'Volunteers' sections — USCE-adjacency surfaces.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "Nav labels only.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Canonical USCE adjacency labels for follow-up.",
+              "whyA1Missed": "A1 emitted side-menu only and missed global About-Us nav."
+            },
+            {
+              "claimId": "nch-research-a2-03",
+              "claimType": "MISSING_FIELD",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://nicklauschildrens.org/research",
+              "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/research.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "CareersFor Healthcare ProfessionalsDonateContact Us",
+              "normalizedField": null,
+              "claimText": "Global header includes 'For Healthcare Professionals' link — common USCE pathway surface.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "limitations": "Header text only; target unknown.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Healthcare Professionals portals commonly host observer/visiting-student detail.",
+              "whyA1Missed": "A1 omitted the global header link."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_20",
+      "sourceUrl": "https://nicklauschildrens.org/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "nicklaus_volunteer_mandatory_orientation",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://nicklauschildrens.org/volunteer",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "All volunteers will have to attend a mandatory orientation, along with any other training required for their volunteer assignment",
+            "claimText": "All volunteers must attend a mandatory orientation plus any training required for their assignment.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer onboarding logistic; not USCE-specific since no medical-trainee audience is stated.",
+            "whyA1Missed": "A1 captured several individual volunteer requirement lines but skipped the mandatory orientation/training line.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "nicklaus_volunteer_adult_teen_apps",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://nicklauschildrens.org/volunteer",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/volunteer.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Volunteer Resources HomeAdult ApplicationTeen ApplicationVolunteer Spotlight",
+            "claimText": "Two separate volunteer application pathways exist: Adult Application and Teen Application.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "General-public volunteer routing; no medical-student or observer track referenced.",
+            "whyA1Missed": "A1 did not record the navigation pathway showing Adult vs Teen split.",
+            "limitations": "Navigation labels only; underlying forms not in cleaned text.",
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "nicklaus_volunteer_general_audience",
+            "refinementReason": "lane_misclassified",
+            "explanation": "A1 used claimType=OFFERS_OBSERVERSHIP for a general-public volunteer description; this is not an observership offering. Should be reclassified (e.g., MISSING_FIELD or a non-USCE descriptor) or downgraded to absence-of-USCE evidence rather than a positive OFFERS_OBSERVERSHIP record."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references a 'Click to Email Us' link for Volunteer Resources but the cleaned text contains no actual email address or phone number for the volunteer coordinator.",
+          "Site navigation lists 'Medical Education' under About Us, suggesting a separate page that may carry medical-trainee content, but this volunteer page does not describe it."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this volunteer page; the cleaned text contains zero medical-student, IMG, observer, externship, elective, or trainee language.",
+          "Verify A1's nicklaus_volunteer_general_audience claim is not promoted to a positive USCE signal — its claimType OFFERS_OBSERVERSHIP appears misclassified given the absence of any observership language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "nicklaus_volunteer_mandatory_orientation",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://nicklauschildrens.org/volunteer",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "All volunteers will have to attend a mandatory orientation, along with any other training required for their volunteer assignment",
+              "claimText": "All volunteers must attend a mandatory orientation plus any training required for their assignment.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer-track onboarding requirement; tagged Tier 1 only because the deepSourceHint placed this page under Tier 1 USCE match scan.",
+              "whyA1Missed": "Single-line item in a bulleted requirements list; A1 captured adjacent bullets but missed this one.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "nicklaus_volunteer_adult_teen_apps",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://nicklauschildrens.org/volunteer",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/volunteer.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Volunteer Resources HomeAdult ApplicationTeen ApplicationVolunteer Spotlight",
+              "claimText": "Two volunteer application pathways exist: Adult Application and Teen Application.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Application routing on a volunteer page; tagged Tier 1 per deepSourceHint though neither pathway is medical-trainee specific.",
+              "whyA1Missed": "Pathway label appears in the section menu, not in the body's enumerated requirements where A1 focused.",
+              "limitations": "Application form contents not in cleaned text.",
+              "normalizedField": null
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "nicklaus_volunteer_general_audience",
+            "scopeIssue": "lane_misclassified",
+            "explanation": "A1 emitted claimType=OFFERS_OBSERVERSHIP for a sentence that only describes general volunteer programs. No observership language exists on this page; the positive OFFERS_OBSERVERSHIP framing risks downstream over-promotion."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://nicklauschildrens.org/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "You will be required to get a Nicklaus Children's Hospital ID badge made your first day, which is required to be worn visibly at all times while on campus.",
+            "claimText": "Rotators must obtain a Nicklaus Children's Hospital ID badge on first day, worn visibly at all times on campus.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 captured documentary requirements (application, ECFMG, license, contract) but missed the on-site badge/identification requirement listed in the same bullet block.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Onboarding requirement for rotating residents/fellows — Tier 2 trainee logistics.",
+            "limitations": null,
+            "normalizedField": "id_badge_requirement"
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Nicklaus Children's Hospital Medical Education Office must have current rotation schedule or approval letter from your sponsoring hospital",
+            "claimText": "Rotators must provide a current rotation schedule or approval letter from their sponsoring hospital.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1's c6 condensed multiple bullets but omitted the sponsoring-hospital rotation schedule/approval letter requirement, which is a distinct document.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Document requirement for rotating residents/fellows — Tier 2.",
+            "limitations": null,
+            "normalizedField": "sponsor_approval_letter_required"
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "We will do the best to work with you to have your request fulfilled but cannot guarantee any rotation.",
+            "claimText": "Hospital cannot guarantee any rotation for residents/fellows from non-affiliated programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 captured the contact-for-elective sentence but missed the immediately following non-guarantee disclaimer, which qualifies availability.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Availability disclaimer for rotating residents/fellows — Tier 2.",
+            "limitations": "Soft non-guarantee; not an explicit refusal.",
+            "normalizedField": "rotation_not_guaranteed"
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Resident Pay & BenefitsResident Salary and BenefitsSubspecialty Resident Salary and BenefitsDental Residents Salary and Benefits",
+            "claimText": "GME page documents Resident Salary and Benefits, Subspecialty Resident Salary and Benefits, and Dental Residents Salary and Benefits.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "whyA1Missed": "A1 didn't capture the compensation/benefits resource navigation listed in the housestaff section of the page.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Resident/fellow salary & benefits — Tier 2 trainee compensation signal.",
+            "limitations": "Navigation labels only; actual figures not present on this page.",
+            "normalizedField": "resident_salary_benefits"
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "*** Please note that determination of PGY level is based on years of accredited training as defined by: Training accredited by the ACGME or the Royal College of Physicians of Canada",
+            "claimText": "PGY level determination based only on ACGME-accredited or Royal College of Physicians of Canada training.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 missed the PGY-counting policy, which implicitly excludes non-ACGME / non-Royal-College training from credit — relevant for IMGs.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "PGY-level credentialing rule for residents — Tier 2.",
+            "limitations": null,
+            "normalizedField": "pgy_credit_policy"
+          },
+          {
+            "claimId": "a2_c6",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/gme",
+            "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Board of DirectorsAdministrative FellowshipAdministrative Leadership Team",
+            "claimText": "Institution has an Administrative Fellowship (separate from clinical GME fellowships).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "whyA1Missed": "Listed only in the About Us navigation, not in the main GME body — easy for A1 to skip as boilerplate nav.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Administrative fellowship is an early-career training role — Tier 2.",
+            "limitations": "Navigation-label-only mention; no program details on this page.",
+            "normalizedField": "administrative_fellowship"
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c4",
+            "refinementReason": "quote_too_general",
+            "explanation": "The quote indicates electives are limited to residents and fellows from ACGME-accredited programs (USA/Canada). This functions as an implicit negative for medical students; downstream may wish to also flag this as evidence-of-exclusion for the visiting-student lane."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Meet Our Fellows', 'Where We Work', 'Salaries & Benefits', 'Our City' as section headings but does not disclose actual salary numbers or J-1/H-1B visa policy on this URL.",
+          "Page mentions ECFMG certificate 'if applicable' but does not state whether IMG residents/fellows are accepted, only that the document is required when relevant."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this GME_PAGE source — all claims must remain FUTURE_LANE_ONLY.",
+          "Verify whether the elective pathway (c4/c5) is interpreted as implicit-exclusion negative evidence for medical students or kept only as Tier 2 trainee scope.",
+          "Check whether a2_c6 (Administrative Fellowship) should be re-classified Tier 3 if it is a post-MHA/MBA leadership track rather than a clinical trainee role."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "You will be required to get a Nicklaus Children's Hospital ID badge made your first day, which is required to be worn visibly at all times while on campus.",
+              "claimText": "Rotators must obtain a Nicklaus Children's Hospital ID badge on first day, worn visibly at all times on campus.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 captured the documentary onboarding bullets but missed the on-site ID badge step.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Onboarding requirement for rotating trainees.",
+              "limitations": null,
+              "normalizedField": "id_badge_requirement"
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Nicklaus Children's Hospital Medical Education Office must have current rotation schedule or approval letter from your sponsoring hospital",
+              "claimText": "Rotators must supply a current rotation schedule or approval letter from sponsoring hospital.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1's c6 condensed multiple bullets but omitted this specific sponsor-hospital document requirement.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Document requirement for rotating trainees.",
+              "limitations": null,
+              "normalizedField": "sponsor_approval_letter_required"
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "We will do the best to work with you to have your request fulfilled but cannot guarantee any rotation.",
+              "claimText": "Hospital cannot guarantee any rotation for residents/fellows from non-affiliated programs.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 stopped at the contact sentence and missed the qualifier immediately after.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Availability disclaimer for rotating trainees.",
+              "limitations": "Soft non-guarantee; not explicit refusal.",
+              "normalizedField": "rotation_not_guaranteed"
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Resident Pay & BenefitsResident Salary and BenefitsSubspecialty Resident Salary and BenefitsDental Residents Salary and Benefits",
+              "claimText": "Page documents Resident, Subspecialty Resident, and Dental Resident Salary and Benefits resources.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "whyA1Missed": "A1 didn't extract the navigation list of compensation pages.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Trainee compensation/benefits signal.",
+              "limitations": "Labels only; figures not on this page.",
+              "normalizedField": "resident_salary_benefits"
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "*** Please note that determination of PGY level is based on years of accredited training as defined by: Training accredited by the ACGME or the Royal College of Physicians of Canada",
+              "claimText": "PGY level credit is restricted to ACGME-accredited or Royal College of Physicians of Canada training.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 skipped the asterisked footnote defining PGY-credit policy.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "PGY credentialing rule directly affecting IMG trainees.",
+              "limitations": null,
+              "normalizedField": "pgy_credit_policy"
+            },
+            {
+              "claimId": "a2_c6",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/gme",
+              "sourceHash": "fc46b8d96df2976f5f1a209b0c04a2b4778a92be66d07662f7663ad0289a2f6d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Board of DirectorsAdministrative FellowshipAdministrative Leadership Team",
+              "claimText": "Institution operates an Administrative Fellowship distinct from clinical GME fellowships.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "Mentioned only inside the About Us nav block, not in the GME body content.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Administrative fellowship is a structured training appointment.",
+              "limitations": "Nav label only; no program detail on this URL.",
+              "normalizedField": "administrative_fellowship"
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "c1",
+            "campusNameMentionedInQuote": "Nicklaus Children's Hospital (Miami Hospital Campus, 3100 S.W. 62nd Ave Miami, FL 33155)",
+            "proofQuote": "Miami Hospital Campus3100 S.W. 62nd Ave Miami, FL 33155Local: +1(305)666-6511Toll-free: +1(800)432-6837"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://nicklauschildrens.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2-c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Nicklaus Children’s is looking for transformational leaders with experience,passion and a fierce dedication to patients and families.",
+            "normalizedField": "leadership_recruitment",
+            "claimText": "Nicklaus Children's recruits for physician/healthcare leadership roles (transformational leaders).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Leadership/executive recruiting language for senior clinicians — Tier 3 post-trainee careers.",
+            "whyA1Missed": "A1 captured the generic physician recruiting paragraph and specific featured postings but did not extract the Leadership career-area section as a distinct claim."
+          },
+          {
+            "claimId": "a2-c2",
+            "claimType": "CONTACT_PHONE",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Address:5301 Blue Lagoon DriveMiami, FL 33126Local : 305-666-6511Toll-free: 1-800-432-6837",
+            "normalizedField": "system_contact_phone",
+            "claimText": "Nicklaus Children's Health System main address 5301 Blue Lagoon Drive, Miami FL 33126; local 305-666-6511, toll-free 1-800-432-6837.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Main system phone, not careers/recruiting specific.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Contact details appear on the careers page footer — usable for Tier 3 career outreach.",
+            "whyA1Missed": "Located in page footer; A1 focused on featured job copy and missed contact metadata."
+          },
+          {
+            "claimId": "a2-c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Location Select a Location Cooper City, Florida Davie, Florida Doral, Florida Fort Lauderdale, Florida Homestead, Florida Jupiter, Florida Miami, Florida Miami Lakes, Florida Miramar, Florida Naples, Florida Palm Beach Gardens, Florida Pinecrest, Florida Wellington, Florida Weston, Florida",
+            "normalizedField": "careers_locations",
+            "claimText": "Careers portal lists 14 Florida locations including Miami, Fort Lauderdale, Naples, Palm Beach Gardens, Weston and others.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Geographic footprint of physician/APP careers — Tier 3 career signal.",
+            "whyA1Missed": "Locations dropdown buried in talent-community signup form; A1 didn't enumerate site footprint."
+          },
+          {
+            "claimId": "a2-c4",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Category Select a Category Accounting/Finance APRN Clerical/Administrative Customer Service Dental Environmental Services Executive Food & Nutrition Services Human Resources/Talent Management Imaging & Radiology Information Technology Laboratory Maintenance/Facilities Management Nursing - Clinical Nursing - Management Nursing- Support (Clinical) Nursing- Support (Non-Clinical) Pharmacy Physician Professional Psychiatry Purchasing/Procurement Rehab/Therapy Research Respiratory Social Work Support",
+            "normalizedField": "careers_job_categories",
+            "claimText": "Careers categories include Physician, APRN, Psychiatry, Research, Pharmacy, Imaging & Radiology, Executive, and multiple nursing tracks.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Full job-category taxonomy extends beyond A1's Professionals/Nursing/Physicians/APP capture and includes Research and Executive — Tier 3 careers.",
+            "whyA1Missed": "Located inside talent-community form dropdown; A1 captured the simplified top-of-page taxonomy and missed the full enumerated list."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'award-winning training and development' without specifying whether this includes GME, residency, fellowship, or learner programs.",
+          "Page lists a 'Research' job category but does not describe any research training, research observership, or medical-student research pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this CAREERS_PORTAL source.",
+          "Verify all four A1 and four A2 new claims remain in FUTURE_LANE_ONLY visibility (Tier 3)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2-c1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Nicklaus Children’s is looking for transformational leaders with experience,passion and a fierce dedication to patients and families.",
+              "normalizedField": "leadership_recruitment",
+              "claimText": "Nicklaus Children's recruits for physician/healthcare leadership roles (transformational leaders).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Leadership/executive recruiting for senior clinicians — Tier 3.",
+              "whyA1Missed": "A1 did not extract the dedicated Leadership career-area section."
+            },
+            {
+              "claimId": "a2-c2",
+              "claimType": "CONTACT_PHONE",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Address:5301 Blue Lagoon DriveMiami, FL 33126Local : 305-666-6511Toll-free: 1-800-432-6837",
+              "normalizedField": "system_contact_phone",
+              "claimText": "System address 5301 Blue Lagoon Drive Miami FL 33126; phones 305-666-6511 and 1-800-432-6837.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Main system phone, not careers/recruiting-specific.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Page footer contact details usable for Tier 3 career outreach.",
+              "whyA1Missed": "Footer metadata; A1 focused on featured job copy."
+            },
+            {
+              "claimId": "a2-c3",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Location Select a Location Cooper City, Florida Davie, Florida Doral, Florida Fort Lauderdale, Florida Homestead, Florida Jupiter, Florida Miami, Florida Miami Lakes, Florida Miramar, Florida Naples, Florida Palm Beach Gardens, Florida Pinecrest, Florida Wellington, Florida Weston, Florida",
+              "normalizedField": "careers_locations",
+              "claimText": "Careers portal lists 14 Florida locations across South and Central Florida.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Geographic footprint of physician/APP careers — Tier 3.",
+              "whyA1Missed": "Located inside talent-community signup dropdown."
+            },
+            {
+              "claimId": "a2-c4",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Category Select a Category Accounting/Finance APRN Clerical/Administrative Customer Service Dental Environmental Services Executive Food & Nutrition Services Human Resources/Talent Management Imaging & Radiology Information Technology Laboratory Maintenance/Facilities Management Nursing - Clinical Nursing - Management Nursing- Support (Clinical) Nursing- Support (Non-Clinical) Pharmacy Physician Professional Psychiatry Purchasing/Procurement Rehab/Therapy Research Respiratory Social Work Support",
+              "normalizedField": "careers_job_categories",
+              "claimText": "Job categories include Physician, APRN, Psychiatry, Research, Pharmacy, Imaging & Radiology, Executive, and nursing tracks.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Full enumerated taxonomy beyond A1's simplified capture — Tier 3 careers.",
+              "whyA1Missed": "Buried inside talent-community form dropdown."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://nicklauschildrens.org/medical-education",
+      "output": {
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Maintenance of Certification (MOC)",
+            "normalizedField": null,
+            "claimText": "Department lists Maintenance of Certification (MOC) as a medical education area, targeting practicing physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "MOC is a board-certification maintenance program for practicing/attending physicians, Tier 3.",
+            "whyA1Missed": "A1 captured CME, GME, UME from the same nav list but omitted the sibling MOC item."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Simulation Lab",
+            "normalizedField": null,
+            "claimText": "Department of Medical Education lists a Simulation Lab among its education resources.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Educational resource link only; no details on access for visiting students.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Simulation labs typically support resident/fellow training and UME — captured under Tier 2 trainee education infrastructure.",
+            "whyA1Missed": "A1 focused on CME/GME/UME and the DIO; omitted the Simulation Lab nav item."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Scholarly Activity",
+            "normalizedField": null,
+            "claimText": "Department of Medical Education lists Scholarly Activity as a program area.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Nav-item only; no details on research opportunities for outside students.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Scholarly activity is an ACGME-required trainee competency, mapping to Tier 2 trainee research.",
+            "whyA1Missed": "A1 missed this sibling nav item next to CME/GME/UME."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Faculty development",
+            "normalizedField": null,
+            "claimText": "Department of Medical Education is responsible for faculty development.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Faculty development serves practicing physicians/faculty (Tier 3).",
+            "whyA1Missed": "A1 captured DIO leadership but missed the listed department responsibilities including faculty development."
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "3100 S.W. 62nd Ave Miami, FL 33155Local: +1(305)666-6511Toll-free: +1(800)432-6837",
+            "normalizedField": "general_phone",
+            "claimText": "Nicklaus Children's main address 3100 S.W. 62nd Ave Miami, FL 33155 with local +1(305)666-6511 and toll-free +1(800)432-6837.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "General hospital contact line — not a Medical Education department-specific contact.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "General contact info applies broadly; nearest tier is Tier 1 where prospective USCE applicants would inquire.",
+            "whyA1Missed": "A1 did not capture the hospital address or phone numbers."
+          },
+          {
+            "claimId": "a2_c6",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Partnership and collaboration with local, regional, national, and worldwide educational institutions.",
+            "normalizedField": null,
+            "claimText": "Department states it partners with local, regional, national, and worldwide educational institutions, but no specific affiliation list is provided.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Marketing-level affiliation statement; does not state whether outside students may rotate via these partnerships.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Partnership language could imply affiliation-only pathway for visiting students (Tier 1) but is not concrete.",
+            "whyA1Missed": "A1 captured the broader 'beyond Florida' marketing sentence but missed the explicit partnership-and-collaboration responsibility line."
+          },
+          {
+            "claimId": "a2_c7",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://nicklauschildrens.org/medical-education",
+            "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Download the Dept Brochure",
+            "normalizedField": null,
+            "claimText": "Page offers a downloadable Department of Medical Education brochure for further details.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Brochure content not in cleaned text; concrete details unavailable.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Brochure likely contains USCE-relevant Tier 1 specifics that may include observership/elective policies.",
+            "whyA1Missed": "A1 did not flag the downloadable brochure as a secondary source pointer."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c4",
+            "refinementReason": "quote_too_general",
+            "explanation": "The 'beyond Florida...USA and across the world' quote is marketing language and does not state any concrete elective/observership/visiting-student offer. Confidence LOW + lane CLINICAL_ELECTIVE may overstate; consider lane NO_PUBLIC_OPPORTUNITY_FOUND."
+          },
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote stitches a duplicated 'UME UME' fragment that lists three program names without describing any clinical elective offer; OFFERS_ELECTIVE classification is too strong for a nav/landing listing — better as MISSING_FIELD or program-area future-lane signal."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'Partnership and collaboration with local, regional, national, and worldwide educational institutions' but does not name affiliated medical schools or specify whether outside students may rotate.",
+          "Department brochure is referenced ('Download the Dept Brochure') but its contents are not in the cleaned text — may contain UME/observership policy.",
+          "'Global Health: International Patients' appears in patient-resources nav but is a patient-services link, not a medical-education pathway — relevance to IMG observership unresolved."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this landing page — page lists program areas only with no eligibility, application, fee, duration, or visiting-student offer.",
+          "Confirm c1 and c4 are downgraded from OFFERS_ELECTIVE / CLINICAL_ELECTIVE since neither quote describes an elective offer, only program-area naming.",
+          "Confirm Administrative Fellowship (f2) remains FUTURE_LANE_ONLY and is not promoted as a clinical fellowship."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "a2_c6",
+              "claimType": "MISSING_FIELD",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Partnership and collaboration with local, regional, national, and worldwide educational institutions.",
+              "normalizedField": null,
+              "claimText": "Department states partnerships with educational institutions worldwide but provides no affiliated-school list.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "limitations": "No concrete affiliation list.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Partnership language hints at affiliated-student pathway for Tier 1 UME visiting students.",
+              "whyA1Missed": "A1 captured a different marketing sentence and missed this responsibility line."
+            },
+            {
+              "claimId": "a2_c7",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Download the Dept Brochure",
+              "normalizedField": null,
+              "claimText": "Departmental brochure download referenced as secondary information source.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "limitations": "Brochure not in cleaned text.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Brochure likely contains Tier 1 UME details not present on landing page.",
+              "whyA1Missed": "A1 did not flag the downloadable brochure pointer."
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "CONTACT_PHONE",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "3100 S.W. 62nd Ave Miami, FL 33155Local: +1(305)666-6511Toll-free: +1(800)432-6837",
+              "normalizedField": "general_phone",
+              "claimText": "General hospital address and phone numbers listed.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "General switchboard, not Medical Education direct line.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Generic contact info; nearest tier is Tier 1 prospective applicant inquiry.",
+              "whyA1Missed": "A1 omitted hospital contact details."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Simulation Lab",
+              "normalizedField": null,
+              "claimText": "Department lists a Simulation Lab among medical education resources.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Simulation labs primarily support resident/fellow trainee education (Tier 2).",
+              "whyA1Missed": "A1 missed this sibling nav item."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Scholarly Activity",
+              "normalizedField": null,
+              "claimText": "Department lists Scholarly Activity as a program area.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": null,
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Scholarly activity is an ACGME trainee competency.",
+              "whyA1Missed": "A1 missed this sibling nav item."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Maintenance of Certification (MOC)",
+              "normalizedField": null,
+              "claimText": "Department lists Maintenance of Certification (MOC) as a program area.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "MOC supports board-certified practicing physicians (Tier 3).",
+              "whyA1Missed": "A1 captured CME/GME/UME but omitted the MOC sibling."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-education",
+              "sourceHash": "8458b015328efdca22bf691ac7a6b98aba7748fd9d5d77cbbf488dd10c3c8062",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Faculty development",
+              "normalizedField": null,
+              "claimText": "Department lists faculty development as a responsibility.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Faculty development targets practicing attending/faculty physicians (Tier 3).",
+              "whyA1Missed": "A1 missed the listed department responsibility."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_44",
+      "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_n1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Physician Outreach ServicesPhysician Outreach HomePatient Care CoordinatorMeet the TeamRequest a Meet & GreetRequest an EKG ScreeningRequest Marketing CollateralNews",
+            "normalizedField": "physician_outreach_services",
+            "claimText": "Hospital lists a Physician Outreach Services program with a Patient Care Coordinator, meet & greet requests, and marketing collateral for referring physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Physician Outreach Services is a referring/attending physician services bucket — Tier 3 post-trainee.",
+            "whyA1Missed": "A1 focused on student/observer/GME sections and skipped the For Physicians referral-services block lower in the navigation.",
+            "limitations": "Navigation-only; no eligibility, contact, or sponsorship details on this hub page."
+          },
+          {
+            "claimId": "a2_n2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Medical LibraryPhysician PortalHealth Outcomes, Policy and Economics CenterPhysician FormsWeekly Updates in Pediatrics Newsletter",
+            "normalizedField": "physician_resources_portal",
+            "claimText": "Hospital provides a Medical Library, Physician Portal, Health Outcomes/Policy/Economics Center, Physician Forms, and a Weekly Updates in Pediatrics Newsletter for practicing physicians.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Physician-facing portal, library, and forms are post-trainee practice resources — Tier 3.",
+            "whyA1Missed": "A1 did not enumerate the 'For Physicians' resource list that sits between nursing and student sections.",
+            "limitations": "Index entries only; no access policy described on this page."
+          },
+          {
+            "claimId": "a2_n3",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Continuing Medical Education (CME)CME HomeCME Mission StatementCME Relicensure CoursesPlanning Your MeetingCME Forms (Faculty and Planners)CME Committee",
+            "normalizedField": "cme_program",
+            "claimText": "Hospital offers a Continuing Medical Education (CME) program including CME relicensure courses for practicing physicians and faculty planners.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "CME and relicensure courses target attending/faculty physicians — Tier 3 practice/career.",
+            "whyA1Missed": "A1 captured GME and UME but omitted the CME sub-tree, which is a distinct Tier 3 signal.",
+            "limitations": "Navigation only; no enrollment details on this hub page."
+          },
+          {
+            "claimId": "a2_n4",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Scammers Posing as Nicklaus Children's Recruiters",
+            "normalizedField": "careers_scam_warning",
+            "claimText": "Hospital publishes a notice warning of scammers posing as Nicklaus Children's recruiters, indicating an active recruiting/careers operation.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Recruiter-scam notice signals a Tier 3 careers/hiring channel.",
+            "whyA1Missed": "Appears in the About Us section, away from GME content; A1 didn't flag it as a careers signal.",
+            "limitations": "Title-only reference; no job postings on this page."
+          },
+          {
+            "claimId": "a2_n5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Nicklaus Children's Celebrates Match Day 2025",
+            "normalizedField": "match_day_signal",
+            "claimText": "Hospital references celebrating Match Day 2025, confirming active participation in the NRMP residency match cycle.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Match Day is a Tier 2 NRMP residency-match milestone.",
+            "whyA1Missed": "Mention lives in the news/events stream, not the GME navigation A1 read.",
+            "limitations": "Single news-headline mention; no program counts."
+          },
+          {
+            "claimId": "a2_n6",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+            "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Graduate Administrative InternshipGraduate Administrative Internship HomeApplication RequirementsFrequently Asked Questions",
+            "normalizedField": "graduate_administrative_internship",
+            "claimText": "Hospital offers a Graduate Administrative Internship with application requirements and FAQ pages, separate from the Administrative Fellowship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Graduate administrative internship is a non-clinical post-graduate career track — Tier 3.",
+            "whyA1Missed": "A1 only captured the Administrative Fellowship, not the parallel Graduate Administrative Internship and Undergraduate Administrative Internship.",
+            "limitations": "Administrative, not physician-clinical pathway."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote bundles Allied Health Rotations, Nurse Scholars, Observer Programs, Summer Youth, Teen Academic Year, and Pediatric Audiology Externship into one OFFERS_OBSERVERSHIP claim. These are distinct programs with different audiences; the navigation slug alone does not support an observership offer."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Quote 'Undergraduate Medical Education (UME)' is a section header, not a research opportunity. Lane RESEARCH_OPPORTUNITY and claimType OFFERS_RESEARCH are mismatched; this is at most a UME-presence signal."
+          },
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Statement about 'medical school rotations throughout most of the departments' does not specify whether visiting/external students are accepted. Visibility CAUTION_SAFE_INTERNAL_REVIEW is appropriate; do not promote without subpage confirmation."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'Observer Programs' in navigation but does not state IMG eligibility, fees, duration, or contact on this hub.",
+          "Page mentions 'Allied Health Rotations' without specifying medical-student vs. allied-health scope.",
+          "Page mentions 'Pediatric Audiology Externship' without indicating physician-trainee applicability.",
+          "Page mentions 'Global Health: International Patients' under patient resources, not clearly tied to observership eligibility for international physicians.",
+          "Page mentions 'Pediatric Human Patient Simulation Program' and 'Simulation Lab' without stating whether external learners may access."
+        ],
+        "recommendedA3Focus": [
+          "Confirm c1 stays at CAUTION_SAFE_INTERNAL_REVIEW — no PUBLIC_SAFE_USCE without explicit external-student eligibility from Observer Programs subpage.",
+          "Verify c2 is not promoted to PUBLIC_SAFE_USCE — quote is a multi-program navigation list, not a program statement.",
+          "Verify c3 is reclassified away from OFFERS_RESEARCH/RESEARCH_OPPORTUNITY since the quote is just a UME section header.",
+          "Ensure all Tier 2/Tier 3 GME, CME, and Physician Services claims remain FUTURE_LANE_ONLY and are not surfaced in PUBLIC_SAFE_USCE.",
+          "Queue A3 to fetch Observer Programs subpage for IMG/eligibility/fee/duration/contact resolution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_n5",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Nicklaus Children's Celebrates Match Day 2025",
+              "normalizedField": "match_day_signal",
+              "claimText": "Hospital references celebrating Match Day 2025, confirming active participation in the NRMP residency match cycle.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Match Day is a Tier 2 NRMP residency-match milestone.",
+              "whyA1Missed": "Mention lives in the news/events stream, not the GME navigation block A1 read.",
+              "limitations": "Single news-headline mention."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_n1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Physician Outreach ServicesPhysician Outreach HomePatient Care CoordinatorMeet the TeamRequest a Meet & GreetRequest an EKG ScreeningRequest Marketing CollateralNews",
+              "normalizedField": "physician_outreach_services",
+              "claimText": "Hospital lists a Physician Outreach Services program with a Patient Care Coordinator and referring-physician engagement tools.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Referring/attending physician services — Tier 3 post-trainee.",
+              "whyA1Missed": "A1 focused on student/observer/GME sections and skipped For Physicians referral services.",
+              "limitations": "Navigation-only."
+            },
+            {
+              "claimId": "a2_n2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Medical LibraryPhysician PortalHealth Outcomes, Policy and Economics CenterPhysician FormsWeekly Updates in Pediatrics Newsletter",
+              "normalizedField": "physician_resources_portal",
+              "claimText": "Hospital provides Medical Library, Physician Portal, Health Outcomes/Policy/Economics Center, Physician Forms, and Weekly Updates in Pediatrics Newsletter.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Physician-facing portal/library/forms are Tier 3 practice resources.",
+              "whyA1Missed": "A1 did not enumerate the For Physicians resource list.",
+              "limitations": "Index entries only."
+            },
+            {
+              "claimId": "a2_n3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Continuing Medical Education (CME)CME HomeCME Mission StatementCME Relicensure CoursesPlanning Your MeetingCME Forms (Faculty and Planners)CME Committee",
+              "normalizedField": "cme_program",
+              "claimText": "Hospital offers a Continuing Medical Education (CME) program including CME relicensure courses for practicing physicians and faculty planners.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "CME and relicensure target attending/faculty physicians — Tier 3.",
+              "whyA1Missed": "A1 captured GME/UME but omitted CME sub-tree.",
+              "limitations": "Navigation only."
+            },
+            {
+              "claimId": "a2_n4",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Scammers Posing as Nicklaus Children's Recruiters",
+              "normalizedField": "careers_scam_warning",
+              "claimText": "Hospital publishes a notice warning of scammers posing as Nicklaus Children's recruiters, indicating an active recruiting/careers operation.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Recruiter-scam notice implies an active Tier 3 careers/hiring channel.",
+              "whyA1Missed": "Lives in the About Us news area, away from GME content.",
+              "limitations": "Title-only reference."
+            },
+            {
+              "claimId": "a2_n6",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://nicklauschildrens.org/medical-professionals",
+              "sourceHash": "eb04ab13acfb28c21678ea6759e583ab84f2dbd074cbfdf325472044c5100587",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/medical-professionals.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Graduate Administrative InternshipGraduate Administrative Internship HomeApplication RequirementsFrequently Asked Questions",
+              "normalizedField": "graduate_administrative_internship",
+              "claimText": "Hospital offers a Graduate Administrative Internship with application requirements and FAQ pages, distinct from the Administrative Fellowship.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Non-clinical post-graduate administrative career track — Tier 3.",
+              "whyA1Missed": "A1 captured Administrative Fellowship only, not the parallel Graduate/Undergraduate Administrative Internships.",
+              "limitations": "Administrative, not physician-clinical."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://www.nicklauschildrens.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "nicklaus-careers-talent-community",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Join Our Talent CommunityStay connected with us! Sign up to receive career information and alerts about brand new opportunities at Nicklaus Children's Hospital.",
+            "claimText": "Careers portal offers a Talent Community subscription for career information and job alerts.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Job-alerts/talent community subscription on careers portal; Tier 3 career-services feature.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 captured job postings but omitted the Talent Community/job-alerts subscription, a distinct careers-service feature."
+          },
+          {
+            "claimId": "nicklaus-careers-epic-it-job",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Epic Clinical Analyst IV (Beaker Certification Required)Miami, Florida",
+            "claimText": "Featured non-clinician role posted: Epic Clinical Analyst IV (Beaker certification required), Miami, FL.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Specific featured job posting on careers portal; Tier 3 nonclinical career listing.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 enumerated the two Medical Director postings and the APP role but skipped the Epic Clinical Analyst IV listing in the same Featured/Recently Viewed block."
+          },
+          {
+            "claimId": "nicklaus-careers-magnet-nursing",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "As a Magnet hospital, Nicklaus Children's gives nursesdirect communication and involvement in the decisions thataffect them and their processes.",
+            "claimText": "Nicklaus Children's is described as a Magnet hospital in its nursing careers description.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Magnet recognition on careers portal under Nursing; Tier 3 career credential signal.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 covered the Physician/Leadership/APP postings but did not capture the Magnet hospital credential cited in the Nursing career area."
+          },
+          {
+            "claimId": "nicklaus-careers-specialty-breadth",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.nicklauschildrens.org/careers",
+            "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "With over40 pediatric specialties, we are the trusted partner of children and familiesthrough all stages of life and health, both physical and emotional.",
+            "claimText": "Careers page states Nicklaus Children's has over 40 pediatric specialties.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Specialty breadth statement on careers portal contextualizing physician hiring scope; Tier 3 careers context.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 listed job categories but did not capture the 40+ pediatric specialties breadth claim relevant to physician recruiting scope."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Careers portal does not address visa sponsorship (J-1 / H-1B) for physician roles.",
+          "No mention of GME, residency, fellowship, observership, visiting student, or elective programs on this careers page.",
+          "Page references 'award-winning training and development' but does not specify whether this includes trainee/GME pathways."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL source.",
+          "Verify all Nicklaus careers-page claims remain FUTURE_LANE_ONLY (Tier 3) regardless of any USCE-adjacent vocabulary in surrounding marketing copy.",
+          "Confirm absence of observership/visiting-student content is recorded as NO_PUBLIC_OPPORTUNITY_FOUND (not a refusal)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "nicklaus-careers-talent-community",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Join Our Talent CommunityStay connected with us! Sign up to receive career information and alerts about brand new opportunities at Nicklaus Children's Hospital.",
+              "claimText": "Careers portal offers a Talent Community subscription for career information and job alerts.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Job-alerts/talent community subscription on careers portal; Tier 3 career-services feature.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 captured job postings but omitted the Talent Community/job-alerts subscription, a distinct careers-service feature."
+            },
+            {
+              "claimId": "nicklaus-careers-epic-it-job",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Epic Clinical Analyst IV (Beaker Certification Required)Miami, Florida",
+              "claimText": "Featured non-clinician role posted: Epic Clinical Analyst IV (Beaker certification required), Miami, FL.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Specific featured job posting on careers portal; Tier 3 nonclinical career listing.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 enumerated the two Medical Director postings and the APP role but skipped the Epic Clinical Analyst IV listing in the same Featured/Recently Viewed block."
+            },
+            {
+              "claimId": "nicklaus-careers-magnet-nursing",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "As a Magnet hospital, Nicklaus Children's gives nursesdirect communication and involvement in the decisions thataffect them and their processes.",
+              "claimText": "Nicklaus Children's is described as a Magnet hospital in its nursing careers description.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Magnet recognition on careers portal under Nursing; Tier 3 career credential signal.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 covered the Physician/Leadership/APP postings but did not capture the Magnet hospital credential cited in the Nursing career area."
+            },
+            {
+              "claimId": "nicklaus-careers-specialty-breadth",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.nicklauschildrens.org/careers",
+              "sourceHash": "c6c09b70aa6189b76edc92a7c3ef65496ad320756873a5222195c9d2f29e405e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_cbf168f76d8feff0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "With over40 pediatric specialties, we are the trusted partner of children and familiesthrough all stages of life and health, both physical and emotional.",
+              "claimText": "Careers page states Nicklaus Children's has over 40 pediatric specialties.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Specialty breadth statement on careers portal contextualizing physician hiring scope; Tier 3 careers context.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 listed job categories but did not capture the 40+ pediatric specialties breadth claim relevant to physician recruiting scope."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://www.nicklauschildrens.org/medical-professionals/news-research-innovation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a news/innovation article index, not a research-elective or research-training description; primary body content is clinical-care news summaries with no USCE, trainee, or career eligibility detail.",
+          "Global navigation chrome lists 'Student and Observer Programs', 'Observer Programs', 'Allied Health Rotations', 'Pediatric Audiology Externship', 'Undergraduate Medical Education (UME)', 'Pediatric Residency Program', and many fellowships as menu items, but the page provides no descriptive content (eligibility, application, fees, duration, contact) for any of these — they are link labels only.",
+          "Page mentions 'Children's Oncology Group (COG)' clinical-trial membership and a partnership with 'Florida International University (FIU)' for cancer research, but does not state any visiting-student, observer, or research-elective pathway tied to these.",
+          "Page references 'Scholarly Activity', 'Scholarship Day 2019', 'Scholarship Week 2021', and 'Simulation Lab' as menu items without resolving whether any are open to outside trainees."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A2 emitted no new claims from this news-index page and that no PUBLIC_SAFE_USCE / FUTURE_LANE claim was minted from navigation-chrome link labels (e.g., 'Observer Programs', 'Pediatric Audiology Externship', 'Pediatric Residency Program') that lack any descriptive content on this URL.",
+          "Verify the pre-classified sourceFamily=RESEARCH_PAGE is downgraded or re-tagged to NEWS_INDEX/UNKNOWN, since actual content is clinical-care press summaries — not a research-elective or research-training program description.",
+          "Ensure the A3 gate flags any downstream claim that cites this URL as evidence for an Observership / UME / GME / Fellowship offering, since the chrome-only mentions do not constitute content-bearing evidence.",
+          "Confirm the COG membership and FIU partnership mentions are not promoted to research-opportunity claims absent eligibility/application language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "nicklaus_research_medical_education_nav",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2d2484c108084440.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Our CommunityInspiring Patient StoriesMedical EducationNews & Events",
+            "claimText": "Site-wide About Us navigation references a Medical Education section; details not on this page.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Medical Education is the standard label for trainee-facing education hubs covering residency/fellowship/student rotations.",
+            "limitations": "Navigation-only mention; no eligibility, audience, or programs given on this page.",
+            "whyA1Missed": "A1 captured Administrative Fellowship and Research Careers nav items but skipped the parallel 'Medical Education' nav entry under About Us."
+          },
+          {
+            "claimId": "nicklaus_research_volunteers_nav",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2d2484c108084440.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Kenneth C. Griffin Surgical TowerVolunteers",
+            "claimText": "Site navigation references a Volunteers page; no detail or eligibility on this page.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER",
+            "tierAssignmentRationale": "Volunteer programs are not automatic USCE and not tier-tied without further context; flagging only.",
+            "limitations": "Navigation chrome only; no program details, audience, or clinical-shadowing language.",
+            "whyA1Missed": "A1 limited future-lane capture to Administrative Fellowship and Careers; missed the Volunteers nav entry."
+          },
+          {
+            "claimId": "nicklaus_research_contact_phone",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+            "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2d2484c108084440.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "Contact UsFind a Clinical Trial1-800-533-1792",
+            "claimText": "Research Institute publishes a clinical trials contact line; not a trainee-facing channel.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH",
+            "tierAssignmentRationale": "Contact line is for clinical trial enrollment, not trainee/observer entry; tier not applicable.",
+            "limitations": "Phone is for trial recruitment, not for medical-student research electives or observerships.",
+            "whyA1Missed": "A1 captured navigation but did not extract the contact phone number block under the Research Institute header."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "nicklaus_research_admin_fellowship_nav",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Administrative Fellowship' is a two-word nav label without surrounding context; consider broader quote ('Board of DirectorsAdministrative FellowshipAdministrative Leadership Team') to ground the future-lane signal."
+          },
+          {
+            "a1ClaimId": "nicklaus_research_careers_nav",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Source is a health-system Research Institute overview; the Careers nav link is system-wide, not a Research-Institute-specific career portal. Lane CAREERS_PAGE is fine but scope should be HEALTH_SYSTEM_LEVEL rather than UNKNOWN_SCOPE."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'For Healthcare Professionals' in top nav but provides no link target or trainee-specific content on this page.",
+          "Page mentions 'Global Health: International Patients' but it is a patient-care referral pathway, not an IMG trainee pathway; relationship to USCE unclear.",
+          "Page mentions research coordinators certified by ACRP/SoCRA but does not state whether medical students or external trainees can join as research coordinators or research electives."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE source family (Research Institute overview, no trainee-facing language).",
+          "Verify Medical Education nav mention is not over-promoted to a USCE claim — it is navigation only with no programs described.",
+          "Verify Volunteers nav mention stays HUMAN_REVIEW_REQUIRED and is not auto-tagged as shadowing/observership."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "nicklaus_research_medical_education_nav_t2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.nicklauschildrens.org/programs-and-clinics/clinical-trials-research-studies",
+              "sourceHash": "b33b2fd8d2585ab0bb19e38cdad9f70611d456d578f48dcf213b4f72674b6dca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_2d2484c108084440.txt",
+              "sourceScope": "HEALTH_SYSTEM_LEVEL",
+              "quote": "Our CommunityInspiring Patient StoriesMedical EducationNews & Events",
+              "claimText": "Site About Us nav lists a 'Medical Education' section indicating a trainee-facing hub elsewhere on the site.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Medical Education hubs are the standard locus for GME/residency/fellowship/student-elective content.",
+              "limitations": "Nav-only signal; no programs, eligibility, or accreditation listed on this page.",
+              "whyA1Missed": "A1 did not enumerate Medical Education as a separate future-lane navigation signal alongside Administrative Fellowship and Careers."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "nicklaus_research_careers_nav",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Research Institute overview is health-system-scope; the 'Careers' link in the section menu routes to a hospital-wide careers portal, not a research-specific careers subpage with trainee opportunities."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "nicklaus_research_admin_fellowship_nav",
+            "campusNameMentionedInQuote": "Nicklaus Children's Hospital Miami",
+            "proofQuote": "Service LocationsNicklaus Children's Hospital Miami3100 SW 62nd Avenue Miami, FL 33155"
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "nch-vol-a2-001",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "All volunteers will have to attend a mandatory orientation, along with any other training required for their volunteer assignment",
+            "normalizedField": "mandatory_orientation",
+            "claimText": "All volunteers must attend a mandatory orientation plus any assignment-specific training.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Applies to general hospital volunteers; not a USCE/clinical-trainee pathway.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Volunteer program orientation requirement; non-clinical lay audience.",
+            "whyA1Missed": "A1 captured neighboring requirement bullets (commitment, immunizations, background check, processing time) but skipped the mandatory-orientation bullet at the end of the same list."
+          },
+          {
+            "claimId": "nch-vol-a2-002",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "All health and safety checks must be in compliance, we do not offer any exemptions on the vaccine requirements",
+            "normalizedField": "no_vaccine_exemptions",
+            "claimText": "No exemptions are offered on the vaccine requirements for volunteers.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer-program scope; tightens the immunization requirement A1 captured.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Strict-compliance vaccine policy framed for lay volunteers; not a clinical-trainee policy on this page.",
+            "whyA1Missed": "A1 captured the vaccine list itself but not the explicit 'no exemptions' policy sentence introducing it."
+          },
+          {
+            "claimId": "nch-vol-a2-003",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Volunteer Resources HomeAdult ApplicationTeen ApplicationVolunteer Spotlight",
+            "normalizedField": "two_application_tracks",
+            "claimText": "Volunteer Resources exposes two distinct application tracks: Adult Application and Teen Application.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Section-menu listing; no medical-student or observership track present.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Lay-volunteer application pathways; no clinical-trainee pathway offered.",
+            "whyA1Missed": "A1 noted the teen program in body content but did not capture the section-menu split into Adult vs Teen application tracks."
+          },
+          {
+            "claimId": "nch-vol-a2-004",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+            "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Click to Email Us",
+            "normalizedField": "no_inline_email",
+            "claimText": "Volunteer Resources contact is exposed only as a 'Click to Email Us' link; no inline email address appears in the cleaned text.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "limitations": "Cleaned text strips mailto target; coordinator email cannot be extracted from this capture.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Lay-volunteer page; coordinator-email absence flagged for completeness.",
+            "whyA1Missed": "A1 did not flag that the page provides only a stripped 'Click to Email Us' anchor without a visible address in the cleaned text."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "nch-vol-001",
+            "refinementReason": "lane_misclassified",
+            "explanation": "claimType is OFFERS_VISITING_STUDENT but the quoted text is a generic lay-volunteer description with no visiting-student or medical-trainee language. Should not carry OFFERS_VISITING_STUDENT."
+          },
+          {
+            "a1ClaimId": "nch-vol-001",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "sourceScope=UNKNOWN_SCOPE on nicklauschildrens.org primary-domain page that references 'Nicklaus Children's Health System'. Resolve to INSTITUTION_SPECIFIC or HEALTH_SYSTEM_LEVEL."
+          },
+          {
+            "a1ClaimId": "nch-vol-006",
+            "refinementReason": "lane_misclassified",
+            "explanation": "claimType OFFERS_VISITING_STUDENT applied to a teen-volunteer description. Teen program is explicitly non-clinical and not a visiting-student offering."
+          },
+          {
+            "a1ClaimId": "nch-vol-002",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "sourceScope=UNKNOWN_SCOPE on institution primary-domain volunteer page; should be resolved to INSTITUTION_SPECIFIC."
+          },
+          {
+            "a1ClaimId": "nch-vol-003",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "sourceScope=UNKNOWN_SCOPE should be resolved to INSTITUTION_SPECIFIC on institution-domain content."
+          },
+          {
+            "a1ClaimId": "nch-vol-004",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Same scope-resolution issue; UNKNOWN_SCOPE should not persist on an institution-domain page."
+          },
+          {
+            "a1ClaimId": "nch-vol-005",
+            "refinementReason": "scope_conflict_health_system_level",
+            "explanation": "Same scope-resolution issue; resolve to INSTITUTION_SPECIFIC."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Volunteer Resources coordinator email is rendered only as a 'Click to Email Us' anchor; the underlying mailto address is absent from the cleaned text.",
+          "Page references 'Nicklaus Children's Health System' but does not state whether volunteer placements span all hospital campuses or only the Miami main campus at 3100 S.W. 62nd Ave.",
+          "Site navigation exposes 'Medical Education', 'For Healthcare Professionals', and 'Administrative Fellowship' sections, but no medical-student / observership pathway is described on this volunteer page itself.",
+          "Page lists volunteer program types (Bedside Buddies, Children & Family Experience, Cuddler, Pet Therapy, Administrative Support, Events, Teen) without any clinical-trainee/observership counterpart."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this VOLUNTEER_PAGE source; all claims must remain HUMAN_REVIEW_REQUIRED or non-USCE.",
+          "Verify scope is resolved away from UNKNOWN_SCOPE to INSTITUTION_SPECIFIC (or HEALTH_SYSTEM_LEVEL) before downstream classification.",
+          "Verify that A1's two OFFERS_VISITING_STUDENT entries (nch-vol-001, nch-vol-006) are reclassified — quoted text contains no visiting-student or medical-trainee language.",
+          "Re-scan nicklauschildrens.org /medical-education and /for-healthcare-professionals sections in a separate capture before drawing any IMG/observership conclusion about this institution."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "nch-vol-a2-001",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "All volunteers will have to attend a mandatory orientation, along with any other training required for their volunteer assignment",
+              "normalizedField": "mandatory_orientation",
+              "claimText": "All volunteers must attend a mandatory orientation plus any assignment-specific training.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Applies to general hospital volunteers; not a USCE pathway.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Volunteer-program orientation requirement sits in Tier 1 USCE-adjacent space because runner family is VOLUNTEER_SHADOW; not auto-USCE.",
+              "whyA1Missed": "A1 captured neighboring requirement bullets but skipped the mandatory-orientation bullet at the end of the same list."
+            },
+            {
+              "claimId": "nch-vol-a2-002",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "All health and safety checks must be in compliance, we do not offer any exemptions on the vaccine requirements",
+              "normalizedField": "no_vaccine_exemptions",
+              "claimText": "No exemptions are offered on the vaccine requirements for volunteers.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer-program scope.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Vaccine-exemption refusal lives in Tier 1 USCE-adjacent eligibility policy space.",
+              "whyA1Missed": "A1 captured the vaccine list but not the preceding 'we do not offer any exemptions' refusal sentence."
+            },
+            {
+              "claimId": "nch-vol-a2-003",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Volunteer Resources HomeAdult ApplicationTeen ApplicationVolunteer Spotlight",
+              "normalizedField": "two_application_tracks",
+              "claimText": "Two parallel volunteer application tracks exist: Adult Application and Teen Application.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "Section menu, not body content; no medical-trainee track present.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Pathway split sits in Tier 1 USCE-adjacent volunteer space; explicitly excludes a clinical-trainee track.",
+              "whyA1Missed": "A1 noticed Teen program in body but did not capture the section-menu split into Adult vs Teen applications."
+            },
+            {
+              "claimId": "nch-vol-a2-004",
+              "claimType": "MISSING_FIELD",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources",
+              "sourceHash": "00cb9ab585940f38d93ad794c6c52c8193ee4ffe4579e07c9f3a69c6b8eeb1d2",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_e440b2b435b9d268.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Click to Email Us",
+              "normalizedField": "no_inline_email",
+              "claimText": "Volunteer Resources coordinator contact is presented only as 'Click to Email Us'; no inline email address in cleaned text.",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "MEDIUM",
+              "limitations": "Cleaned-text capture stripped mailto target.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Missing coordinator-contact field is a Tier 1 completeness signal for volunteer/USCE-adjacent pages.",
+              "whyA1Missed": "A1 did not flag the missing inline email address; only contact surface is a button label."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "nch-vol-001",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "A1 left sourceScope=UNKNOWN_SCOPE on a nicklauschildrens.org primary-domain page that explicitly references 'Nicklaus Children's Health System'. Resolve to INSTITUTION_SPECIFIC."
+          },
+          {
+            "claimId": "nch-vol-002",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "Same scope-resolution gap; A2 reclassifies to INSTITUTION_SPECIFIC."
+          },
+          {
+            "claimId": "nch-vol-003",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "Same scope-resolution gap; INSTITUTION_SPECIFIC is the correct scope."
+          },
+          {
+            "claimId": "nch-vol-004",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "Same scope-resolution gap; INSTITUTION_SPECIFIC."
+          },
+          {
+            "claimId": "nch-vol-005",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "Same scope-resolution gap; INSTITUTION_SPECIFIC."
+          },
+          {
+            "claimId": "nch-vol-006",
+            "scopeIssue": "scope_unresolved_on_primary_domain",
+            "explanation": "Same scope-resolution gap; INSTITUTION_SPECIFIC."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [
+          {
+            "claimId": "nch-vol-a2-neg-001",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "refusalQuote": "we do not offer any exemptions on the vaccine requirements",
+            "strength": "MEDIUM"
+          }
+        ]
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://www.nicklauschildrens.org/medical-services/research-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation lists 'Administrative Fellowship' under About Us > Leadership but the cleaned text contains no content describing eligibility, audience, or whether it is clinical or non-clinical — cannot tier without subpage content.",
+          "Page navigation lists 'Medical Education' under About Us > Our Community but no medical-education content (observership / visiting student / elective / residency) is present in the cleaned text.",
+          "Page navigation lists 'Volunteers' under About Us > Our Community but no volunteer-program eligibility or audience is described in the cleaned text — cannot determine if medical-student-eligible.",
+          "Research Institute 'Careers' subpage is referenced in the section menu ('Section Menu ... Careers') but no career content (faculty / coordinator / physician jobs) is in the cleaned text — Tier 3 indeterminate.",
+          "Page lists 'For Healthcare Professionals' link in top navigation but no content from that destination is present — possible separate medical-education or referring-physician page not yet captured.",
+          "Research Institute lists a phone '1-800-533-1792' in the context of 'Find a Clinical Trial' — this is a patient/trial-enrollment line, not a stated medical-education or observership contact, so it cannot be emitted as a USCE coordinator contact."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE claim is generated from this Research Institute page — it describes pediatric clinical-trials operations only and contains no medical-student / observer / IMG audience statement.",
+          "Confirm that 'Administrative Fellowship', 'Medical Education', 'Volunteers', and Research Institute 'Careers' are treated as A4 capture targets, not as Tier 2/3 claims here (they are nav labels with no content in this cleaned text).",
+          "Verify the 1-800-533-1792 number is NOT promoted to a CONTACT_PHONE USCE coordinator claim — the surrounding text frames it as a clinical-trial enrollment line."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://www.nicklauschildrens.org/forms/camp-volunteer-application",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a broken/missing form ('Required form VolunteerApplication_CAMPS_1 does not exist.') — no eligibility, audience, age, or USCE-relevant content extractable from this capture."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims were emitted from this broken-form page; verify the source is marked as non-substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://www.nicklauschildrens.org/conditions/skin-pigment-disorders",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this condition-information page yields no PUBLIC_SAFE_USCE claim; content is patient-facing clinical education with no observership, elective, GME, or careers content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac)",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "nch_aac_a2_admin_fellowship_nav_1",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac)",
+            "sourceHash": "cb7d2307ab2589209071dbdef2dd0ba8dae99528bb64e07663f76b6b85927f2d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_f1adce7291fd1b95.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Board of DirectorsAdministrative FellowshipAdministrative Leadership Team",
+            "normalizedField": null,
+            "claimText": "Global navigation references an Administrative Fellowship (non-clinical leadership track, not physician GME fellowship).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation menu reference only; no program details on this page.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Administrative Fellowship is a healthcare-administration leadership track, not physician trainee/GME fellowship; no tier applies for USCEHub physician pathway.",
+            "whyA1Missed": "A1 emitted the parallel PT Residency nav reference but skipped the sibling Administrative Fellowship link in the About-Us navigation block."
+          },
+          {
+            "claimId": "nch_aac_a2_medical_education_nav_1",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac)",
+            "sourceHash": "cb7d2307ab2589209071dbdef2dd0ba8dae99528bb64e07663f76b6b85927f2d",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_f1adce7291fd1b95.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Inspiring Patient StoriesMedical EducationNews & Events",
+            "normalizedField": null,
+            "claimText": "Global navigation lists a 'Medical Education' section but no link content or program details appear on this treatment page.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; an A3 follow-up source-discovery for nicklauschildrens.org/medical-education is warranted.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "UNKNOWN_RELEVANT",
+            "tierAssignmentRationale": "Pointer to a Medical Education hub URL not crawled in this source unit; tier cannot be assigned without the destination page content.",
+            "whyA1Missed": "A1 focused on the in-content PT residency breadcrumb and the patient-facing AAC body, not the global About-Us navigation cluster where Medical Education appears."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "nch_aac_futlane_pt_residency_1",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Pediatric Physical Therapy Residency is an allied-health (PT) residency, not a physician GME residency. FUTURE_LANE_RESIDENCY / RESIDENCY_PROGRAM_INFO overstates relevance; should be tagged NOT_APPLICABLE / HIDDEN_REJECTED rather than FUTURE_LANE_ONLY."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Global nav lists 'Careers', 'For Healthcare Professionals', 'Volunteers', and 'Medical Education' but the page contains no URLs, descriptions, or eligibility info for any of these.",
+          "Page references 'Administrative Fellowship' in nav without confirming whether this is clinical-physician or healthcare-administration scope."
+        ],
+        "recommendedA3Focus": [
+          "Confirm A1's nch_aac_futlane_pt_residency_1 is not allowed to surface as a physician RESIDENCY_PROGRAM_INFO signal — it is allied-health PT.",
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this AAC treatment page (sourceScope=DEPARTMENT_LEVEL, content is patient-facing).",
+          "Trigger A3 discovery for nicklauschildrens.org Medical Education / Volunteers / Careers / Administrative Fellowship hub pages as separate sources rather than inferring from this page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "nch_aac_a2_admin_fellowship_nav_1",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://www.nicklauschildrens.org/treatments/augmentative-and-alternative-communication-(aac)",
+              "sourceHash": "cb7d2307ab2589209071dbdef2dd0ba8dae99528bb64e07663f76b6b85927f2d",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_f1adce7291fd1b95.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Board of DirectorsAdministrative FellowshipAdministrative Leadership Team",
+              "normalizedField": null,
+              "claimText": "Navigation references an Administrative Fellowship under About Us (non-clinical leadership track).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Nav-only reference; no program details on this page.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "UNKNOWN_RELEVANT",
+              "tierAssignmentRationale": "Tagged Tier 2 only because 'Fellowship' is a trainee-tier signal; content is administrative not physician GME, so it will likely fall to NOT_APPLICABLE on regate.",
+              "whyA1Missed": "A1 only captured the inline PT Residency nav item, not the sibling Administrative Fellowship nav item under About Us."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "nch_aac_scope_conflict_1",
+            "scopeIssue": "source_family_mismatch_publicSafe_on_GME",
+            "explanation": "Source was pre-classified GME_PAGE but actual content is a patient-facing AAC treatment description. A1 correctly flagged this. A3 should ensure no downstream USCE lane is derived from this URL."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://www.nicklauschildrens.org/treatments/bladder-augmentation",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation references 'Medical Education' and 'Administrative Fellowship' menu items but the body content is solely a clinical treatment description with no eligibility, application, or program details on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this bladder-augmentation treatment URL — content is purely clinical patient education with no observership, elective, or trainee eligibility language.",
+          "Verify the sourceFamily classification (currently GME_PAGE) is corrected to a treatment/patient-education family in downstream gating."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://www.nicklauschildrens.org/treatments/elective-surgery",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Navigation chrome lists 'Medical Education', 'Administrative Fellowship', 'Volunteers', and 'Careers' as separate site sections, but this page does not describe any of those programs — content is exclusively pediatric same-day surgery patient education.",
+          "Page mentions 'thirteen anesthesiologists on staff' and '11,000 pediatric procedures a year' as institutional volume stats, but does not address medical student, observer, resident, or fellow audiences."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this URL — content is patient-facing pediatric elective (same-day) surgery education, not a medical-student elective rotation.",
+          "Verify the SCOPE_CONFLICT claim src79_mismatch_1 is preserved and downstream classifier does not auto-promote based on /elective-surgery URL token.",
+          "Route any Nicklaus USCE discovery to the dedicated 'Medical Education' or 'Administrative Fellowship' nav sections in a separate source capture, not this patient-treatment page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://www.nicklauschildrens.org/treatments/clinical-trials-and-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Navigation chrome mentions 'Administrative Fellowship' and 'Medical Education' but the page body does not describe any fellowship, residency, observership, visiting student, or research-elective opportunity.",
+          "Page body is a patient-facing explainer of clinical trials in general (no enrollment process, no trainee role, no contact, no eligibility, no IMG language)."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or trainee-lane claim is emitted from this clinical-trials patient-explainer page — body has no observership, visiting student, elective, residency, fellowship, or career content.",
+          "Verify the 'Administrative Fellowship' string in nav chrome is not promoted into a FUTURE_LANE_FELLOWSHIP claim from this source — it is navigation boilerplate, not substantive content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://www.nicklauschildrens.org/conditions/selective-mutism",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a clinical condition page (selective mutism) with no USCE, GME, or careers content; navigation mentions 'Medical Education', 'Administrative Fellowship', 'Careers', and 'For Healthcare Professionals' as menu items only, without any substantive claims."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this condition page (selective mutism); content is patient-facing clinical condition information, not an opportunity page.",
+          "Verify that menu-bar tokens like 'Administrative Fellowship', 'Medical Education', and 'Careers' on this page do not generate FUTURE_LANE claims since they are navigation chrome with no opportunity content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://www.nicklauschildrens.org/conditions/pigmented-villonodular-synovitis",
+      "output": {
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a clinical condition description (pigmented villonodular synovitis) with no observership/elective/visiting student/GME content; navigation chrome mentions 'Medical Education', 'Careers', 'For Healthcare Professionals', and 'Administrative Fellowship' but page body resolves none of these"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is produced from this condition-description page — body content is patient-facing clinical information, not a training/USCE source",
+          "Verify sourceFamily=GME_PAGE assignment is correct; page appears to be a DEPARTMENT_LEVEL clinical condition page, not GME — consider reclassifying"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://www.nicklauschildrens.org/forms/camp-volunteer-application/thank-you",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a thank-you/RSVP confirmation page with no substantive content about volunteer, observership, or USCE programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claims of any kind are emitted from this RSVP thank-you page; cleaned text contains no program information."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+            "sourceHash": "d81137e0e0a7e09e7e5f5db93bcdb6b3fa689c36619daab8a70e64652be39fbd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_dae7fe2a69c461c3.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "MMR vaccines (two doses, or titers showing immunity)Varicella vaccines (two doses, disease year documented, or titers showing immunity)Tdap vaccinePPD skin test or TB QuantiferonFlu vaccine required during seasonAll vaccinations are fully required to volunteer.",
+            "claimText": "Adult volunteer applicants must provide MMR, Varicella, Tdap, PPD/TB Quantiferon, and seasonal flu vaccinations; all vaccinations required.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Specific vaccination requirements for the adult volunteer program; volunteer page, not a USCE pathway, so not USCE-promotable.",
+            "whyA1Missed": "A1 grouped time-commitment language into one eligibility claim and did not separately capture the explicit vaccine/immunization requirements list.",
+            "limitations": "Page is for general adult (non-student) volunteers; no medical-trainee audience stated.",
+            "normalizedField": "immunization_requirements"
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+            "sourceHash": "d81137e0e0a7e09e7e5f5db93bcdb6b3fa689c36619daab8a70e64652be39fbd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_dae7fe2a69c461c3.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "A social security number is required to complete an online criminal background check at the interview.",
+            "claimText": "Adult volunteer applicants must complete an online criminal background check at the interview; an SSN is required to do so.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Background-check requirement for the adult volunteer program; volunteer scope, not USCE.",
+            "whyA1Missed": "A1 captured the contact email tied to no-SSN cases but did not emit a separate background-check eligibility requirement.",
+            "limitations": null,
+            "normalizedField": "background_check_required"
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+            "sourceHash": "d81137e0e0a7e09e7e5f5db93bcdb6b3fa689c36619daab8a70e64652be39fbd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_dae7fe2a69c461c3.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "An online orientation will be required, which will provide further details on the volunteer program, policies, and rules. Additional assignment-specific training may be required.",
+            "claimText": "Adult volunteer applicants must complete an online orientation, with possible additional assignment-specific training.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Orientation/training pathway step in the adult volunteer process; volunteer scope, not USCE.",
+            "whyA1Missed": "A1 collapsed the application pathway into the portal/immunization sentence and did not capture the separate orientation/training step.",
+            "limitations": null,
+            "normalizedField": "orientation_required"
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/adult-non-student-applicant",
+            "sourceHash": "d81137e0e0a7e09e7e5f5db93bcdb6b3fa689c36619daab8a70e64652be39fbd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-7-nicklaus-childrens/cleaned_text/sm_dae7fe2a69c461c3.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Applicants will be interviewed after completing the online volunteer orientation. The purpose of the interview is to introduce the applicant to the Volunteer Resources staff, and to discuss schedules, position availability, and applicant skills, experience, and interest. Acceptance into the program is decided at that time",
+            "claimText": "Adult volunteer applicants must complete an interview after orientation; program acceptance and assignment are decided at the interview.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Interview gating step in the adult volunteer process; volunteer scope, not USCE.",
+            "whyA1Missed": "A1 did not capture the interview gating step that determines acceptance into the program.",
+            "limitations": null,
+            "normalizedField": "interview_required"
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Lane is set to NO_PUBLIC_OPPORTUNITY_FOUND but the claim text describes positive volunteer-program eligibility, not a no-opportunity finding. Consider HUMAN_REVIEW_REQUIRED-only with no lane assignment for non-USCE volunteer content."
+          },
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Same issue: positive application-pathway statement carried under NO_PUBLIC_OPPORTUNITY_FOUND lane. The pathway is real and described, just not USCE."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Real contact email for an active (non-USCE) volunteer program; NO_PUBLIC_OPPORTUNITY_FOUND lane misrepresents that the office and program exist."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references a sibling 'Teen Application' link under Volunteer Resources but does not state the teen requirements or whether either track is open to medical/premed students.",
+          "Cleaned text contains no explicit refusal of observers, medical students, or shadowing — absence only, not refusal — so NEGATIVE_NO_OBSERVERSHIP cannot be emitted from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is promoted from this VOLUNTEER_PAGE source — all A1 and A2 claims here must remain HUMAN_REVIEW_REQUIRED / non-public.",
+          "Verify that A2's lane-misclassified flags on c1/c2/c3 are evaluated rather than silently passed through; the underlying content is real but non-USCE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://www.nicklauschildrens.org/patient-and-family-resources/community-outreach-and-education-programs/arts-in-healing-(art-residency)",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is an arts/community art residency (visual/performing/literary artists 18+ in Miami-Dade/Broward), not a physician training opportunity. No USCE, GME, or career-pipeline content present despite URL token 'residency'."
+        ],
+        "recommendedA3Focus": [
+          "Confirm this source is tagged NOT_APPLICABLE / HIDDEN_REJECTED and that no PUBLIC_SAFE_USCE, FUTURE_LANE_RESIDENCY, or trainee-tier claim is emitted from this URL despite the 'residency' token.",
+          "Verify deepSourceFamily/tier hints derived from URL ('RESIDENCY'/TIER_2) are overridden by content classification (arts community program)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "scope_conflict_art_residency_not_medical",
+            "scopeIssue": "url_token_residency_misclassifies_arts_program_as_GME",
+            "explanation": "URL contains 'residency' but cleaned text describes an arts-in-healing community program for Miami-Dade/Broward artists 18+ with a $2,500/month stipend, unrelated to physician GME, USCE, or careers."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://www.nicklauschildrens.org/medical-services/research-institute/participants-human-subjects-protection-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation references 'Medical Education', 'Administrative Fellowship', 'Careers', and 'Research Institute > Careers' but this cleaned text contains no substantive content on those topics — only IRB / Human Subjects Protection Program prose."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is attached to this IRB / Human Subjects Protection Program page; content is administrative oversight only, not a USCE or trainee opportunity."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://www.nicklauschildrens.org/medical-professionals/for-students/fellowship",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'core administrative and clinical rotations throughout the organization' — the word 'clinical' appears in the context of an administrative (MPH) fellowship and could be misread as physician clinical training; resolution: this is administrative shadowing of clinical units, not a Tier 2 clinical fellowship.",
+          "Page navigation lists 'Application Requirements' as a sub-page but the cleaned text on this URL contains no actual eligibility, deadline, fee, or document requirements.",
+          "Page lists informational webinar dates (July 18 2025, July 28 2025, August 7 2025) but no application deadline is stated on this URL.",
+          "Page references current 2025-2026 fellow holding an MPH degree, implying target candidate pool is MHA/MPH graduates rather than MD/DO, but eligibility is never stated explicitly on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm classifier treats this FELLOWSHIP_PAGE as NOT_APPLICABLE / non-physician — no Tier 2 trainee signal should be emitted despite the URL containing /fellowship and the body containing the phrase 'clinical rotations'.",
+          "Verify no PUBLIC_SAFE_USCE claim is produced from this URL — the 'clinical rotations' phrase must not be promoted into a USCE / observership / elective signal.",
+          "Confirm A1 claims c1/c2/c3 remain FUTURE_LANE_ONLY (or downgraded to NOT_APPLICABLE administrative-track) and never enter the physician pipeline classifier."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://www.nicklauschildrens.org/medical-services/research-institute-(clinical-trials)/meet-the-team",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists a 'Research Development Center, Outreach, and Education' team (Manager and Supervisor of Research Education and Outreach) but does not describe any medical-student, visiting-student, observer, resident, or fellow research program eligibility, application route, or contact pathway.",
+          "Page mentions 'Medical Education' and 'Administrative Fellowship' only as navigation links, with no eligibility, application, or program description content on this page.",
+          "Page mentions 'Careers' only as a navigation link with no physician/faculty/visa-sponsorship content stated on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this Research Institute staff directory — the page contains only leadership names/titles and no opportunity content",
+          "Verify the 'Medical Education' and 'Administrative Fellowship' navigation tokens on this page are not promoted to Tier 2 future-lane claims without their own dedicated page being captured",
+          "Flag sourceScope as HEALTH_SYSTEM_LEVEL / DEPARTMENT_LEVEL with no campus applicability proof — any future claim derived from this URL must not be PUBLIC_SAFE_USCE"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://www.nicklauschildrens.org/about-us/volunteer-resources/teen-applicant",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-fl-7-nicklaus-childrens",
+        "institutionId": "inst_nicklaus_childrens_hospital_fl",
+        "institutionName": "Nicklaus Children's Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references a separate 'Adult Application' under Volunteer Resources but does not state whether it is open to medical students or premed observers — separate URL needed.",
+          "Page references 'Medical Education' link in About Us nav but provides no detail about observership / visiting student programs on this teen-volunteer page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is produced from this teen volunteer page — audience is 14+ high schoolers, not medical students.",
+          "Verify A1 lane assignment NO_PUBLIC_OPPORTUNITY_FOUND with tier NOT_APPLICABLE is preserved; this page is outside the USCE pipeline entirely."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

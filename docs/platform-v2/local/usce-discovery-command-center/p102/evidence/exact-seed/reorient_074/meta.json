@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_074",
+  "institutionId": "inst_live_houston_methodist_global",
+  "institutionName": "Houston Methodist — Global Observership",
+  "parentSystem": "Houston Methodist",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://www.houstonmethodist.org/for-health-professionals/global-health-care-services/global-health-care-education/observerships/",
+  "sourceDomain": "houstonmethodist.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Houston Methodist Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Houston Methodist Global Observership",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "2-4 weeks; physician-initiated; no patient care",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_37465568d4"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_074/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_074/cleaned.txt",
+  "sourceHash": "56dc48e3c24d72ee0e80b1cf7480e86369d43db05294d2fde79657a5d53fde9a",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T03:39:16.667Z"
+}

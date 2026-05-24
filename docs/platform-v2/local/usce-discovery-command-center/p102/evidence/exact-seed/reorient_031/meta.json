@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_031",
+  "institutionId": "inst_live_carolinas_atrium",
+  "institutionName": "Carolinas Medical Center — Atrium Health",
+  "parentSystem": "Atrium Health",
+  "campus": "",
+  "city": "Charlotte",
+  "state": "NC",
+  "sourceUrl": "https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students",
+  "sourceDomain": "atriumhealth.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Carolinas Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Atrium GME visiting medical students portal",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO; no international/non-LCME accepted",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "HOLD_REVIEW",
+  "emittedRowIds": [
+    "exact_0beade4264"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_031/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_031/cleaned.txt",
+  "sourceHash": "92b64013359935c1233d7f7511d931032cfbdd9ca665758ad201bbcf497fae90",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": -1,
+  "fetchedAt": "2026-05-17T03:37:52.742Z"
+}

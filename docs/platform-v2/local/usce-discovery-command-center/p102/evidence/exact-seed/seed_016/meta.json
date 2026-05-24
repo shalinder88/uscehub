@@ -1,0 +1,46 @@
+{
+  "seedId": "seed_016",
+  "institutionId": "inst_vanderbilt_md",
+  "institutionName": "Vanderbilt University School of Medicine",
+  "parentSystem": "Vanderbilt University Medical Center",
+  "campus": "",
+  "city": "Nashville",
+  "state": "TN",
+  "sourceUrl": "https://medschool.vanderbilt.edu/visiting-medical-students/",
+  "sourceDomain": "medschool.vanderbilt.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Vanderbilt University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Probed 200; direct visiting-medical-students path",
+  "priorEvidenceRef": "batch2-probe",
+  "notes": "",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_ea8af6430f"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_016/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_016/cleaned.txt",
+  "sourceHash": "9ca6a7ec18de8ca4d650b8d4d540f314811a1a5e4fa2998e89ae141719eda0f1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T02:32:51.107Z"
+}

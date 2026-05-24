@@ -1,0 +1,28 @@
+gap_id,listing_id,gap_type,severity,description,activation_blocker,recommended_fix,notes
+G-013-A,pilot-013-FL-jackson-memorial-hospital,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,Validator confirms presence
+G-013-B,pilot-013-FL-jackson-memorial-hospital,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,Manifest cross-check PASS
+G-013-C,pilot-013-FL-jackson-memorial-hospital,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,/contact UI does not parse listing_id query param (B-001 / B-002 / B-003),TRUE,P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1 must wire query-param → hidden form fields,Same blocker as for active 5 + prior staged 2
+G-013-D,pilot-013-FL-jackson-memorial-hospital,CORRECTION_ENDPOINT_DISABLED_BY_DEFAULT,MEDIUM,POST /api/usce/corrections is gated by env flag and intentionally OFF in production,FALSE_FOR_NOINDEX_ACTIVATION,Acceptable for noindex pilot activation; flip env flag only after rate-limit + UI wiring,Endpoint exists with file-queue + audit log
+G-014-A,pilot-014-NC-duke-university-hospital,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-014-B,pilot-014-NC-duke-university-hospital,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-014-C,pilot-014-NC-duke-university-hospital,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap as active rows,TRUE,Wire /contact (P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1),
+G-015-A,pilot-015-IL-northwestern-memorial-hospital,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-015-B,pilot-015-IL-northwestern-memorial-hospital,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-015-C,pilot-015-IL-northwestern-memorial-hospital,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap,TRUE,Same fix,
+G-016-A,pilot-016-PA-hospital-of-the-university-of-pennsylvania,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-016-B,pilot-016-PA-hospital-of-the-university-of-pennsylvania,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-016-C,pilot-016-PA-hospital-of-the-university-of-pennsylvania,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap,TRUE,Same fix,
+G-017-A,pilot-017-NY-nyu-langone-tisch-hospital,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-017-B,pilot-017-NY-nyu-langone-tisch-hospital,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-017-C,pilot-017-NY-nyu-langone-tisch-hospital,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap,TRUE,Same fix,
+G-018-A,pilot-018-TX-methodist-hospital-san-antonio,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-018-B,pilot-018-TX-methodist-hospital-san-antonio,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-018-C,pilot-018-TX-methodist-hospital-san-antonio,SOURCE_DETAIL_PARTIAL,MEDIUM,HCA GME multi-site source provides partial audience/application detail,FALSE_BUT_KEEP_INTERNAL_DEFENSIBLE,System-level caveat already in card.campus_name; no public copy expansion until per-site source landed,Per quote_manifest 'PARTIAL' rating
+G-018-D,pilot-018-TX-methodist-hospital-san-antonio,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap,TRUE,Same fix,
+G-019-A,pilot-019-IN-iu-health-methodist-hospital,LISTING_EXISTS_IN_BATCH_3,N_A_OK,Listing present in staged batch 3 JSON,FALSE,No fix needed,
+G-019-B,pilot-019-IN-iu-health-methodist-hospital,EVIDENCE_PATHS_EXIST,N_A_OK,HTML / PNG / quote / archive paths all exist on disk,FALSE,No fix needed,
+G-019-C,pilot-019-IN-iu-health-methodist-hospital,REPORT_REF_RESERVED_BUT_BLOCKED,HIGH,Same /contact UI gap,TRUE,Same fix,
+G-CROSS-A,(all 7),REPORT_REF_UNIQUENESS,N_A_OK,Each new listing_id is unique and report_ref pattern (?ref=pilot-listing&listing_id=...) is deterministic and unique per row,FALSE,No fix needed,Validator-enforceable
+G-CROSS-B,(all 7),NO_PUBLIC_NOW_OR_IMPORT_READY_TOKEN,N_A_OK,Mapping CSVs and source pack contain none of the forbidden runtime tokens,FALSE,No fix needed,Validator-enforceable
+G-CROSS-C,(all 7),APP_DOES_NOT_IMPORT_BATCH_3,N_A_OK,grep -rln 'public-listings-pilot-staged-batch-3' src app pages components → empty,FALSE,No fix needed,Validator-enforceable
+G-CROSS-D,(all 7),ACTIVE_RUNTIME_UNCHANGED,N_A_OK,No active runtime files modified by this sprint,FALSE,No fix needed,

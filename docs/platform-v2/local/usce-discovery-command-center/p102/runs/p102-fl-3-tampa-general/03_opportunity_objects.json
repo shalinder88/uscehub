@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-3-tampa-general",
+  "institutionId": "inst_tampa_general_hospital_fl",
+  "opportunities": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "opportunityId": "opp_p102-fl-3-tampa-general_1",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "runId": "p102-fl-3-tampa-general",
+      "opportunityLane": "IMG_OBSERVERSHIP",
+      "audience": "IMG_PRE_MATCH",
+      "applicantStage": "NOT_STATED_ON_SOURCE",
+      "handsOnStatus": "UNCLEAR",
+      "applicationPathway": "UNCLEAR",
+      "applicationUrl": null,
+      "cost": {
+        "amount": null,
+        "currency": null,
+        "details": null
+      },
+      "duration": null,
+      "specialties": [],
+      "visa": "UNCLEAR",
+      "requirements": [],
+      "contact": {
+        "email": null,
+        "phone": null,
+        "name": null
+      },
+      "sourceClaimIds": [
+        "claim_p102-fl-3-tampa-general_3"
+      ],
+      "visibilityLane": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "classification": "CAUTION_SAFE_INTERNAL_REVIEW",
+      "confidence": "MEDIUM",
+      "notPublicReason": "P102-0C deterministic detection; needs model A1/A2 reader before PUBLIC_SAFE promotion"
+    }
+  ],
+  "note": "P102-0C deterministic extraction. PUBLIC_SAFE_USCE not auto-promoted; CAUTION_SAFE_INTERNAL_REVIEW is the default for positive detections."
+}

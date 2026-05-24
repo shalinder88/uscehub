@@ -1,0 +1,155 @@
+# Source Map — University of Miami Miller SOM UHealth
+
+Run: p102-pc-3-um-uhealth
+schemaVersion: p102-0r-1
+
+## Accepted sources (19)
+
+- **FELLOWSHIP_PAGE** [https://med.miami.edu/residencies-and-fellowships](https://med.miami.edu/residencies-and-fellowships)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `794653a8ddb5a6a5afa7b5535c348f16a823779e971543d32d96d9a76028e581`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_21a8524308c8d379.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/pastori-lab/research](https://med.miami.edu/labs/pastori-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bcc15c33ddec42ea3b953e290a647140242e83530d4da4ef6aca7b4b8a03a443`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_5861f17e701990a3.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/paus-lab/research](https://med.miami.edu/labs/paus-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ec47bbcbd284cf19fcae8e24aa457b1276f0a5882a858674b1f253e9e3d40b02`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_61c4105b31adbaf3.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/chaudhari-lab/research](https://med.miami.edu/labs/chaudhari-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `05b4c38f0283f982671dd3ff715a62b4f40badac5f0e708f93a164d06803d970`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_a151329f6254e08d.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/ajdic-lab/research](https://med.miami.edu/labs/ajdic-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `849e7edad0d8d166da2fbd773be4377ba083f2c17b61a56dad352530d558a171`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_0392c76ec5e63176.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/eshraghi-lab/research](https://med.miami.edu/labs/eshraghi-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e1b1e92d2752bce4ccad226ea6b7763a9eebc1018305cbc958998758f6a32fef`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_01837dcce36be7b6.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/lindau-lab/research](https://med.miami.edu/labs/lindau-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9949ebd22f49c68add090fb8bc635da99ea1decaa154b77d924c7e97157f73d9`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_a4e1c475310dd8c0.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/chung-lab/research](https://med.miami.edu/labs/chung-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b3c5f9ab86de805a156d65fd1bb44c7ce1ee08b9165011e553dc6bf8187184cc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_6df60bed7aa895d6.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/daunert-lab/research](https://med.miami.edu/labs/daunert-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `910ab93f1a817ace793a3fdf7b67810dd4ef10318a3a08c90080a66a40a7abd2`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_c8abcac4d121ff7b.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/telonis-lab/research](https://med.miami.edu/labs/telonis-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `fe3855bb5dc1371a96f104938610f254cb20c162a1381e8be01fbdc09e9dd2cb`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_10e501ccb791318b.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/lassance-soares-lab/research](https://med.miami.edu/labs/lassance-soares-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `404a6d2f068d7ea16555430a5de91151d7bc3bad7084fde7fa92850b6fc8465f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_88e110cdea54afda.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/pastar-lab/research](https://med.miami.edu/labs/pastar-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ad844a2c78a566aeeb3db77801c9df2a86ba70f9ae69b17536eb1398eaf042e6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_9727237ac08343a4.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/domínguez-bendala-lab/research](https://med.miami.edu/labs/domínguez-bendala-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9d3ee2a34d022874077eb3dfcc81432b75abcfb30a7303640cac6bff82b93aa5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_6d94a483a594afb5.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/davis-lab/research](https://med.miami.edu/labs/davis-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `32c2db9f94f9adeba29ffb557a5739aa4ddf619432b3425ba8845d97a331558f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_119e44606cbc31ab.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/stone-lab/research](https://med.miami.edu/labs/stone-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `46a4ab8459dd31429b8dfc73788548902f78f80c3010617decd16fe9f09c01e5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_b556ba7096647321.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/cejas-lab/research](https://med.miami.edu/labs/cejas-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `557673cfb52f6c332d74c35c6a8205ddbddbc9db483e71b61fc2d06edd6add8c`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_2ae5976f1dc70aa7.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/jones-weiss-lab/past-research](https://med.miami.edu/labs/jones-weiss-lab/past-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8540f3316fce67333dde1805a891b41304d7137879312be32d347938130c086a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_3247df0a676cd84b.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/jones-weiss-lab/research](https://med.miami.edu/labs/jones-weiss-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8129baf805f98fd37651d06bcd0f9856515ea465276c8825f3bca3f853c0214f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_65345876760b9cd2.txt
+- **RESEARCH_PAGE** [https://med.miami.edu/labs/bianchi-lab/research](https://med.miami.edu/labs/bianchi-lab/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `cc5d309ccc6179e83113d3bdaadd89bdc014b7868891c980ac2e0b285465c300`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_1736ef5a4107a49f.txt
+
+## Rejected sources (69)
+
+- https://med.miami.edu/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/hcp-education-training — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/hcp-education-training/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/hcp-education-training/medical-students/elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-professionals/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/academic-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/academic-institute/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/academic-institute/education/medical — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/academic-institute/education/medical/medical-student-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medicine/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medicine/international/international-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medicine/international/international-programs/international-visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/visiting-clerkships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/visiting-clerkships/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education-institute/academic-visitor-program — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education/undergraduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education/visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-education/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-students/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-students/elective-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/medical-students/clinical-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/students/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://med.miami.edu/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

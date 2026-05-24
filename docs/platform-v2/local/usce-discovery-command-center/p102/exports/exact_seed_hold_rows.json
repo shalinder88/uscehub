@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-05-17T03:39:26.820Z",
+  "totalHolds": 3,
+  "rows": [
+    {
+      "rowId": "exact_0beade4264",
+      "seedId": "reorient_031",
+      "pageTitle": "Visiting Medical Students",
+      "opportunitySignature": "inst_live_carolinas_atrium||https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_carolinas_atrium",
+      "institutionName": "Carolinas Medical Center — Atrium Health",
+      "parentSystem": "Atrium Health",
+      "campus": null,
+      "city": "Charlotte",
+      "state": "NC",
+      "sourceUrl": "https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students",
+      "canonicalUrl": "https://atriumhealth.org/education/graduate-medical-education/visiting-medical-students",
+      "sourceDomain": "atriumhealth.org",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "",
+      "quoteScore": -1,
+      "sourceHash": "92b64013359935c1233d7f7511d931032cfbdd9ca665758ad201bbcf497fae90",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_031/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: visiting-student URL segment",
+      "directLinkSignals": [
+        "visiting-student URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:37:52.742Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_7c38d1645a",
+      "seedId": "reorient_032",
+      "pageTitle": "Visiting Medical Students",
+      "opportunitySignature": "inst_live_cedars_vms||https://www.cedars-sinai.edu/education/medical-students.html||CLINICAL_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_cedars_vms",
+      "institutionName": "Cedars-Sinai Medical Center",
+      "parentSystem": "Cedars-Sinai",
+      "campus": null,
+      "city": "Los Angeles",
+      "state": "CA",
+      "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students.html",
+      "canonicalUrl": "https://www.cedars-sinai.edu/education/medical-students.html",
+      "sourceDomain": "cedars-sinai.edu",
+      "opportunityType": "CLINICAL_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Visiting Medical Students | Cedars-Sinai",
+      "quoteScore": 0,
+      "sourceHash": "64fc27a57018408cfcd1a602073243acf9dd1850d5820eed50dbe2bc49dbf2c2",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_032/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:37:54.685Z",
+      "schemaVersion": "p102-exact-seed-1"
+    },
+    {
+      "rowId": "exact_6b03b96bc5",
+      "seedId": "reorient_067",
+      "pageTitle": "Student Rotations & Research",
+      "opportunitySignature": "inst_live_cedars_senior_electives||https://www.cedars-sinai.edu/education/medical-students/senior-electives.html||VISITING_MEDICAL_STUDENT_ELECTIVE||US_MD_DO_VISITING_STUDENT",
+      "institutionId": "inst_live_cedars_senior_electives",
+      "institutionName": "Cedars-Sinai — Senior Electives",
+      "parentSystem": "Cedars-Sinai",
+      "campus": null,
+      "city": "Los Angeles",
+      "state": "CA",
+      "sourceUrl": "https://www.cedars-sinai.edu/education/medical-students/senior-electives.html",
+      "canonicalUrl": "https://www.cedars-sinai.edu/education/medical-students/senior-electives.html",
+      "sourceDomain": "cedars-sinai.edu",
+      "opportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+      "audienceClass": "US_MD_DO_VISITING_STUDENT",
+      "topQuote": "Student Rotations & Research | Cedars-Sinai",
+      "quoteScore": 0,
+      "sourceHash": "3f144b303dcac800a491ee7c4d5335657554079b2c3bc75f2998a8976564d034",
+      "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_067/cleaned.txt",
+      "directLinkStatus": "VALID_DIRECT_USCE_SOURCE",
+      "directLinkReason": "direct USCE URL signal: medical-students URL segment",
+      "directLinkSignals": [
+        "medical-students URL segment"
+      ],
+      "triageDecision": "INCLUDE_USCE_OPPORTUNITY",
+      "audienceConfidence": "HIGH",
+      "route": "HOLD_REVIEW",
+      "holdReasons": [
+        "quote: weak evidence (no application/cost/eligibility/contact signals)"
+      ],
+      "rejectionReason": null,
+      "fetchedAt": "2026-05-17T03:39:03.373Z",
+      "schemaVersion": "p102-exact-seed-1"
+    }
+  ]
+}

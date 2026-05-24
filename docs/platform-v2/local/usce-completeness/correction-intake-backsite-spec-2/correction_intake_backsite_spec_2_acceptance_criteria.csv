@@ -1,0 +1,33 @@
+future_sprint,criterion_id,acceptance_criterion,validation_method,blocks_runtime_activation,blocks_production,notes
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-101,Endpoint validates payload against intake schema v2 required_fields,unit test + integration test,YES,YES,Server reject 400 on missing required field
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-102,Endpoint silently rejects payloads containing any forbidden_field name,unit test,YES,YES,Never log forbidden field value; audit_event records decision=rejected_forbidden_field
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-103,Server resolves runtime_set by joining listing_id against active and staged runtime maps,integration test,YES,YES,Never trust client-provided runtime_set
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-104,Queue item file written atomically (temp-file-then-rename),unit test,YES,YES,No partial writes
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-105,Queue item file path is under docs/platform-v2/local/usce-corrections/inbox/YYYY/MM/,filesystem assertion in test,YES,YES,Must NOT be under src/
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-106,Server-side redaction pass replaces SSN-shaped / credit-card-shaped / passport-shaped strings in user_message before write,unit test with synthetic patterns,YES,YES,Original never persisted
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-107,IP stored only as sha256-truncated hash with 24h cache lifetime,unit test,YES,YES,Never raw
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-108,Honeypot field non-empty silently rejects with 200 + no queue write,unit test,NO_BUT_DESIRED,YES,Anti-spam
+P99-P97-CORRECTION-INTAKE-FILE-QUEUE-IMPLEMENTATION-1,AC-109,Audit event intake_received always written (success or rejection),unit test,YES,YES,Both success and rejection paths
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-201,/contact reads searchParams.ref and searchParams.listing_id,server-component test or e2e click-through,YES,YES,Resolves the audited B-001 blocker
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-202,/contact visibly echoes the institution being reported when listing_id resolves,e2e snapshot test,YES,YES,User sees what they're reporting against
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-203,/contact form submission includes listing_id + ref + runtime_set + source_context in payload,unit test of payload builder,YES,YES,Resolves B-003
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-204,/contact does not include any forbidden_field input or upload widget,DOM static-check test,YES,YES,Resolves privacy doctrine
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-205,/contact does not contain banned phrases (apply through USCEHub / hospital-approved / IMG-friendly / verified by hospital),banned-phrase regex test,YES,YES,Reuse existing pattern from validate-p99-staged-runtime-batch-2
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-206,Send Message button has a real submit handler that invokes the intake endpoint server action,e2e test,YES,YES,Resolves B-002
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-207,Invalid listing_id (does not match active or staged runtime) is rejected client-side AND server-side,unit + e2e test,YES,YES,Defense in depth
+P99-P97-CONTACT-REF-PREFILL-AND-HIDDEN-CONTEXT-1,AC-208,/contact does not import staged runtime file directly; uses the lookup helper,grep + tsc check,YES,YES,Maintains the staged-runtime-not-imported invariant
+P99-P97-CORRECTION-QUEUE-VALIDATOR-1,AC-301,Queue item validator hard-fails on missing required fields,unit test,YES,YES,
+P99-P97-CORRECTION-QUEUE-VALIDATOR-1,AC-302,Queue item validator hard-fails on forbidden fields,unit test,YES,YES,
+P99-P97-CORRECTION-QUEUE-VALIDATOR-1,AC-303,Queue item validator hard-fails on invalid status transitions,unit test,YES,YES,
+P99-P97-CORRECTION-QUEUE-VALIDATOR-1,AC-304,Audit log validator hard-fails on duplicate audit_event_id,unit test,YES,YES,
+P99-P97-CORRECTION-QUEUE-VALIDATOR-1,AC-305,Audit log validator hard-fails on state regression without reopened_with_audit event,unit test,YES,YES,
+P99-P97-CORRECTION-REVIEW-CLI-1,AC-401,CLI defaults to --dry-run and requires explicit --commit to mutate,unit test,YES,YES,Defense in depth
+P99-P97-CORRECTION-REVIEW-CLI-1,AC-402,CLI refuses to mutate any active runtime file,unit test,YES,YES,
+P99-P97-CORRECTION-REVIEW-CLI-1,AC-403,CLI enforces dual-signoff rules per reviewer auth model,unit test,YES,YES,
+P99-P97-CORRECTION-REVIEW-CLI-1,AC-404,CLI appends an audit event for every state transition,unit test,YES,YES,No silent transitions
+P99-P97-CORRECTION-REVIEW-CLI-1,AC-405,CLI prevents same actor_id from approving their own decision,unit test,YES,YES,No self-approval for high-risk
+P99-P97-CORRECTION-ADMIN-BACKSITE-INTERFACE-1,AC-501,Admin route is gated behind real auth (not just env flag),integration test,YES,YES,Far-future sprint
+P99-P97-CORRECTION-ADMIN-BACKSITE-INTERFACE-1,AC-502,Admin route does not appear in sitemap.xml or any nav,sitemap diff test,YES,YES,
+P99-P97-CORRECTION-ADMIN-BACKSITE-INTERFACE-1,AC-503,Admin route renders only redacted user_message by default; full message requires elevated role,e2e test,YES,YES,
+P99-P97-ALL,AC-901,No production deploy until all sprints land + cumulative blast-radius audit + explicit user instruction,manual confirmation,YES,YES,User's standing rule
+P99-P97-ALL,AC-902,No active runtime card content modified by any sprint,git diff scope test,YES,YES,Active 5-card pilot stays untouched

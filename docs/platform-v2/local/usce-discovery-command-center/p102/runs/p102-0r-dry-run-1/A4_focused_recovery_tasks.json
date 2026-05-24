@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-0r-dry-run-1",
+  "generatedAt": "2026-05-13T12:06:22.207Z",
+  "generatedBy": "p102-a4-focused-recovery (network-free enumerator; tasks PENDING execution)",
+  "networkOnHold": true,
+  "tasks": [
+    {
+      "taskId": "a4_p102-0r-dry-run-1_1",
+      "taskType": "EXPAND_FIXED_PATHS",
+      "sourceUrl": null,
+      "proposedAction": "Sitemap.xml was reachable but contained 0 URLs. Lean on fixed-path probes; consider adding institution-specific paths if known.",
+      "blockedBy": "NETWORK_ON_HOLD",
+      "status": "PENDING_OPERATOR",
+      "rationale": "Sitemap empty: 200 OK with 0 <loc> entries"
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "byType": {
+      "EXPAND_FIXED_PATHS": 1
+    },
+    "byBlocker": {
+      "NETWORK_ON_HOLD": 1
+    }
+  }
+}

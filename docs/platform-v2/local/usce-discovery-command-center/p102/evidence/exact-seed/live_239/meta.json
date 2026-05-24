@@ -1,0 +1,46 @@
+{
+  "seedId": "live_239",
+  "institutionId": "inst_live_uc_davis_health_international_observership",
+  "institutionName": "UC Davis Health — International Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Sacramento",
+  "state": "CA",
+  "sourceUrl": "https://health.ucdavis.edu/international-affiliations/observerships/index.html",
+  "sourceDomain": "health.ucdavis.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): WARNING: NOT for students, recent graduates (within 5 years), or those seeking residency/LORs.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 1-6 months | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_de7060f96d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_239/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_239/cleaned.txt",
+  "sourceHash": "0077f5fcd11608dfafcd7cfa06ec632803b843b2ed5d980a50732f5cb75da1e1",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T02:37:41.513Z"
+}

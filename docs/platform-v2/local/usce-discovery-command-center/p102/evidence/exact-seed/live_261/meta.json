@@ -1,0 +1,44 @@
+{
+  "seedId": "live_261",
+  "institutionId": "inst_live_uw_pathology_global_observership_paid_stipend_",
+  "institutionName": "UW Pathology — Global Observership (PAID STIPEND)",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Seattle",
+  "state": "WA",
+  "sourceUrl": "https://dlmp.uw.edu/education/global-observership",
+  "sourceDomain": "dlmp.uw.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Pathology",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): FREE + up to $2,500 stipend. 1 position per cycle.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1 month | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_d8046e8c1d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_261/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_261/cleaned.txt",
+  "sourceHash": "48ad261b3c8d70df167aeab7c365a223df764a3b0ba1f1da2e5ed02300b8fa1c",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:38:26.507Z"
+}

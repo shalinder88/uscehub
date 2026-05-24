@@ -1,0 +1,2653 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://med.emory.edu/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Residencies and Fellowships' and 'Office of Postdoctoral Education' as nav items but provides no quotable description of those programs on this research landing page.",
+          "Page references 'Training' programs that 'train professionals in the art of discovery' but does not state whether visiting/external medical students can participate.",
+          "Page mentions 'Faculty Clinical Experience' as a nav item without resolving whether external/visiting clinicians can access clinical experience opportunities."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this med.emory.edu/research medical-school-level landing page — content is general research overview with no USCE, observership, visiting-student, or refusal language.",
+          "Verify A2 emitted zero new claims is correct: cleaned text contains only navigation labels and marketing copy with no Tier 1/2/3 eligibility, fee, duration, contact-for-trainees, or negative refusal sentences."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://med.emory.edu/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Professor Sachin Kedar is the 2022 recipient of the Accreditation Council for Graduate Medical Education (ACGME) Parker J. Palmer “Courage to Teach” Award for program director excellence.",
+            "claimText": "Emory ophthalmology program director Sachin Kedar received the 2022 ACGME Parker J. Palmer Courage to Teach Award.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "ACGME program director award is a Tier 2 GME-program credibility signal.",
+            "normalizedField": "accreditation_award",
+            "limitations": null,
+            "whyA1Missed": "A1 captured headline program-size and contact facts but skipped the ACGME award narrative paragraph farther down the page."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "To train physicians who will improve health care in Georgia, the U.S. and internationally by ensuring our residents develop into inquisitive, scientifically oriented, board certified physicians and leaders.",
+            "claimText": "GME mission: train board-certified physician leaders serving Georgia, the U.S., and internationally.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Mission statement defining the scope of the GME residency training enterprise — Tier 2.",
+            "normalizedField": "mission_statement",
+            "limitations": null,
+            "whyA1Missed": "A1 captured size and tracks but did not extract the explicit mission paragraph."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Sub linkProgram Contacts",
+            "claimText": "GME landing exposes a 'Program Contacts' navigation sub-link for per-program coordinator routing.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Program-contacts nav supports Tier 2 residency-applicant routing.",
+            "normalizedField": null,
+            "limitations": "Linked target not in cleaned text.",
+            "whyA1Missed": "A1 captured other nav labels but omitted Program Contacts despite its applicant relevance."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Sub linkEmory GME Wellbeing Modular Curriculum",
+            "claimText": "Emory GME publishes a formal Wellbeing Modular Curriculum for residents/fellows.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "GME wellbeing curriculum is a Tier 2 trainee-support program.",
+            "normalizedField": "wellbeing_program",
+            "limitations": "Curriculum content not on this page.",
+            "whyA1Missed": "A1 picked up Housing and Benefits but skipped the named wellbeing curriculum nav item."
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Sub linkHouse Staff Policies and Procedures Manual",
+            "claimText": "Emory GME publishes a House Staff Policies and Procedures Manual.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "House-staff policy manual is core Tier 2 GME governance content.",
+            "normalizedField": null,
+            "limitations": "Manual not included on this page.",
+            "whyA1Missed": "A1 captured nav top-level categories but skipped the policies-and-procedures sub-link."
+          },
+          {
+            "claimId": "a2_c6",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/gme",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Access GME IntranetNew ApplicantsInternational ApplicantsCurrent Residents and FellowsVisiting Residents",
+            "claimText": "GME landing surfaces a dedicated 'International Applicants' entry — Tier 2 IMG residency-applicant pathway signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "International Applicants on a GME landing maps to IMG residency/fellowship applicants — Tier 2, not Tier 1 USCE.",
+            "normalizedField": "img_residency_pathway_signal",
+            "limitations": "Linked International Applicants page not in this cleaned text.",
+            "whyA1Missed": "A1 listed nav labels in one merged claim (c2) but did not isolate the International Applicants signal as a discrete IMG-residency pathway indicator."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote merges four nav labels with no surrounding context; A3 cannot tell whether these are headings, links, or content. Consider splitting or replacing with the in-body 'New Applicants / International Applicants / Current Residents and Fellows / Visiting Residents' line for fuller context."
+          },
+          {
+            "a1ClaimId": "f1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Sub linkVisiting Residents' is a bare nav label with no body content; consider downgrading confidence or replacing with the duplicate in-body occurrence to give the regate more context."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'International Applicants' but no eligibility, ECFMG, or visa text is on this landing.",
+          "Page mentions 'Visiting Residents' but does not state whether the pathway accepts IMG visitors or only ACGME-affiliated US residents.",
+          "Page mentions 'five residency tracks' but does not enumerate them on this URL.",
+          "Page mentions 'four major teaching hospitals' but does not name them on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim from this GME landing is promoted to PUBLIC_SAFE_USCE — source family is GME_PAGE, all claims must remain FUTURE_LANE_ONLY.",
+          "Verify institutionId scoping: URL is Emory School of Medicine GME (SOM-wide), not Emory University Hospital specifically; consider whether 1,400-resident and four-hospital claims should carry HEALTH_SYSTEM_LEVEL scope rather than DEPARTMENT_LEVEL.",
+          "Capture the linked International Applicants subpage in a follow-up source to determine IMG/ECFMG/visa eligibility before any IMG-pathway claim is published."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Professor Sachin Kedar is the 2022 recipient of the Accreditation Council for Graduate Medical Education (ACGME) Parker J. Palmer “Courage to Teach” Award for program director excellence.",
+              "claimText": "Emory ophthalmology program director Sachin Kedar received the 2022 ACGME Parker J. Palmer Courage to Teach Award.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "ACGME program director award is a Tier 2 GME-program credibility signal.",
+              "normalizedField": "accreditation_award",
+              "limitations": null,
+              "whyA1Missed": "A1 captured headline program-size and contact facts but skipped the ACGME award narrative paragraph farther down the page."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "To train physicians who will improve health care in Georgia, the U.S. and internationally by ensuring our residents develop into inquisitive, scientifically oriented, board certified physicians and leaders.",
+              "claimText": "GME mission: train board-certified physician leaders serving Georgia, the U.S., and internationally.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Mission statement defining the scope of the GME residency training enterprise — Tier 2.",
+              "normalizedField": "mission_statement",
+              "limitations": null,
+              "whyA1Missed": "A1 captured size and tracks but did not extract the explicit mission paragraph."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Sub linkProgram Contacts",
+              "claimText": "GME landing exposes a 'Program Contacts' navigation sub-link for per-program coordinator routing.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Program-contacts nav supports Tier 2 residency-applicant routing.",
+              "normalizedField": null,
+              "limitations": "Linked target not in cleaned text.",
+              "whyA1Missed": "A1 captured other nav labels but omitted Program Contacts despite its applicant relevance."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Sub linkEmory GME Wellbeing Modular Curriculum",
+              "claimText": "Emory GME publishes a formal Wellbeing Modular Curriculum for residents/fellows.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "GME wellbeing curriculum is a Tier 2 trainee-support program.",
+              "normalizedField": "wellbeing_program",
+              "limitations": "Curriculum content not on this page.",
+              "whyA1Missed": "A1 picked up Housing and Benefits but skipped the named wellbeing curriculum nav item."
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Sub linkHouse Staff Policies and Procedures Manual",
+              "claimText": "Emory GME publishes a House Staff Policies and Procedures Manual.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "House-staff policy manual is core Tier 2 GME governance content.",
+              "normalizedField": null,
+              "limitations": "Manual not included on this page.",
+              "whyA1Missed": "A1 captured nav top-level categories but skipped the policies-and-procedures sub-link."
+            },
+            {
+              "claimId": "a2_c6",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/gme",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Access GME IntranetNew ApplicantsInternational ApplicantsCurrent Residents and FellowsVisiting Residents",
+              "claimText": "GME landing surfaces a dedicated 'International Applicants' entry — Tier 2 IMG residency-applicant pathway signal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "International Applicants on a GME landing maps to IMG residency/fellowship applicants — Tier 2, not Tier 1 USCE.",
+              "normalizedField": "img_residency_pathway_signal",
+              "limitations": "Linked International Applicants page not in this cleaned text.",
+              "whyA1Missed": "A1 listed nav labels in one merged claim (c2) but did not isolate the International Applicants signal as a discrete IMG-residency pathway indicator."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Quote describes 1,400 residents across 120+ programs — this is Emory School of Medicine / health-system-wide GME, not Emory University Hospital specifically. DEPARTMENT_LEVEL scope understates breadth; classifier should treat as SOM/system-wide."
+          },
+          {
+            "claimId": "c4",
+            "scopeIssue": "scope_conflict_health_system_level",
+            "explanation": "Quote names 'Emory's four major teaching hospitals' — health-system-wide content attributed to a single institutionId (Emory University Hospital). Regate should consider HEALTH_SYSTEM_LEVEL scope."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_26",
+      "sourceUrl": "https://med.emory.edu/residency",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/residency",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "To train physicians who will improve health care in Georgia, the U.S. and internationally by ensuring our residents develop into inquisitive, scientifically oriented, board certified physicians and leaders.",
+            "claimText": "Emory GME mission: train physicians to improve health care in Georgia, the U.S., and internationally.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "GME mission statement describing residency training intent — Tier 2.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 captured scale and contact but skipped the mission/vision narrative blocks."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/residency",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Professor Sachin Kedar is the 2022 recipient of the Accreditation Council for Graduate Medical Education (ACGME) Parker J. Palmer “Courage to Teach” Award for program director excellence.",
+            "claimText": "Emory program director Sachin Kedar received the 2022 ACGME Parker J. Palmer Courage to Teach Award.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "ACGME program-director recognition — Tier 2 GME signal.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 skipped the award/recognition paragraph; it appears later in the page after the tracks block."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/residency",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Housing and BenefitsGet information about living in Atlanta and working as a resident or fellow at Emory",
+            "claimText": "Emory GME advertises a Housing and Benefits resource for residents and fellows living/working in Atlanta.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Housing/benefits info for residents/fellows — Tier 2 trainee logistics.",
+            "normalizedField": null,
+            "limitations": "Link label only; specific benefits not detailed on this page.",
+            "whyA1Missed": "A1 missed the housing/benefits anchor at the page footer area."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/residency",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Emory GME Wellbeing Modular CurriculumStories of Resilience in ResidencyGME Well-being BoosterWell-being Check-ins",
+            "claimText": "Emory GME provides resident wellbeing resources including a modular wellbeing curriculum, booster, and check-ins.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Wellness curriculum for residents — Tier 2 GME trainee support.",
+            "normalizedField": null,
+            "limitations": "Menu/section labels only; no detailed content on this page.",
+            "whyA1Missed": "A1 collapsed the wellness subnav into the broader navigation and did not emit a wellbeing-specific claim."
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/residency",
+            "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Sub linkTraining LocationsSub linkProgram Contacts",
+            "claimText": "Emory GME exposes Training Locations and Program Contacts navigation for residency/fellowship programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Program-contacts and training-locations directory navigation — Tier 2 GME.",
+            "normalizedField": null,
+            "limitations": "Menu labels only.",
+            "whyA1Missed": "A1 captured the audience nav but not the Programs sub-nav with locations/contacts."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c2",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a concatenated menu fragment with no separator; menu-only claim has low evidentiary value. Regate should decide if menu-strings qualify as evidence."
+          },
+          {
+            "a1ClaimId": "f1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Sub linkVisiting Residents' is a bare menu token with no descriptive content. Visiting Residents pathway is unresolved on this page."
+          },
+          {
+            "a1ClaimId": "f2",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a 2-word menu label with no eligibility/visa content. Claim should be flagged as label-only; substantive International Applicants info lives on a subpage."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Office of Postdoctoral Education' and 'Medical Scientist Training Program (MD/PhD)' in nav but provides no detail on this page.",
+          "Housing and Benefits link is exposed but specific benefits/stipend amounts are not stated on this page.",
+          "Five residency tracks are referenced but the track names are not enumerated on this page.",
+          "Visiting Residents pathway eligibility (e.g., whether it admits IMGs or visa-restricted applicants) is not addressed in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESIDENCY_PAGE source (all claims must be FUTURE_LANE_ONLY).",
+          "Verify a1 menu-only claims c2, f1, f2 are downgraded or marked label-only by the regate.",
+          "Ensure Visiting Residents is not conflated with Visiting Medical Students in downstream classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/residency",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "To train physicians who will improve health care in Georgia, the U.S. and internationally by ensuring our residents develop into inquisitive, scientifically oriented, board certified physicians and leaders.",
+              "claimText": "Emory GME mission: train physicians to improve health care in Georgia, the U.S., and internationally.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "GME mission statement — Tier 2.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 skipped the mission/vision narrative blocks."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/residency",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Professor Sachin Kedar is the 2022 recipient of the Accreditation Council for Graduate Medical Education (ACGME) Parker J. Palmer “Courage to Teach” Award for program director excellence.",
+              "claimText": "Emory program director Sachin Kedar received the 2022 ACGME Parker J. Palmer Courage to Teach Award.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "ACGME recognition — Tier 2.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 skipped the recognition paragraph."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/residency",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Housing and BenefitsGet information about living in Atlanta and working as a resident or fellow at Emory",
+              "claimText": "Emory GME advertises a Housing and Benefits resource for residents and fellows.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Trainee benefits resource — Tier 2.",
+              "normalizedField": null,
+              "limitations": "Link label only.",
+              "whyA1Missed": "A1 missed footer-area resource links."
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/residency",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Emory GME Wellbeing Modular CurriculumStories of Resilience in ResidencyGME Well-being BoosterWell-being Check-ins",
+              "claimText": "Emory GME provides resident wellbeing resources including a modular wellbeing curriculum and check-ins.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Wellness curriculum for residents — Tier 2.",
+              "normalizedField": null,
+              "limitations": "Menu labels only.",
+              "whyA1Missed": "A1 collapsed wellness subnav into broader navigation."
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/residency",
+              "sourceHash": "6f238574ad452e72e29d33d3117f449a6303f87542c69a6593b89885a24b247c",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/residency.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Sub linkTraining LocationsSub linkProgram Contacts",
+              "claimText": "Emory GME exposes Training Locations and Program Contacts navigation.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Programs sub-nav — Tier 2.",
+              "normalizedField": null,
+              "limitations": "Menu labels only.",
+              "whyA1Missed": "A1 captured audience nav but not the Programs sub-nav."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://med.emory.edu/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "emory-careers-a2-001",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/careers",
+            "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Your FSAP\nAbout FSAP\nFaculty, Staff & Family Members\nFaculty Physicians\nMedical House Staff (Residents and Fellows)\nLeaders and Teams\nCrisis Intervention Services",
+            "claimText": "Emory FSAP (Faculty Staff Assistance Program) lists dedicated tracks for Faculty Physicians and Medical House Staff (Residents and Fellows), including crisis intervention services.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_SERVICES",
+            "tierAssignmentRationale": "FSAP for Faculty Physicians is a Tier 3 attending-support service; Medical House Staff overlap noted but page primarily a career/HR services portal.",
+            "limitations": "Overlaps Tier 2 via Medical House Staff line.",
+            "normalizedField": null,
+            "whyA1Missed": "A1 captured generic benefits categories but did not surface the FSAP physician/house-staff service tracks listed lower in the nav."
+          },
+          {
+            "claimId": "emory-careers-a2-002",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/careers",
+            "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Search and Apply for Jobs Join our Talent Network View our FAQs View our Application Roadmap View Career Resources for Emory Alumni",
+            "claimText": "Careers portal exposes a Talent Network signup, an Application Roadmap, and Career Resources for Emory Alumni.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Talent network and alumni career resources are Tier 3 employment-pipeline tools targeting prospective/returning employees including physicians.",
+            "limitations": null,
+            "normalizedField": null,
+            "whyA1Missed": "A1 surfaced only the generic welcome paragraph; the quick-links row with concrete job-pipeline tools was not captured."
+          },
+          {
+            "claimId": "emory-careers-a2-003",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/careers",
+            "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Your Career\nSearch Jobs\nWhy Work at Emory\nTemporary Employment\nTalent Network\nSummer College Internship Program\nNew Hires\nCareer Development Resources",
+            "claimText": "Emory career nav includes Temporary Employment and a Summer College Internship Program in addition to standard job search and career-development resources.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Temporary employment is Tier 3 workforce content; the Summer College Internship Program is undergraduate (not medical-student USCE) so it remains in the careers/Tier 3 framing rather than Tier 1.",
+            "limitations": "Summer College Internship is undergrad-college, not medical student — not USCE-relevant.",
+            "normalizedField": null,
+            "whyA1Missed": "A1 only quoted the welcome paragraph and did not enumerate the Career sub-nav items."
+          },
+          {
+            "claimId": "emory-careers-a2-004",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/careers",
+            "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Your Work Life\nChildren and Family\nAdult and Elder Care\nFinancial Programs\nWorkplace Flexibility\nTransitioning to Retirement",
+            "claimText": "Work Life resources include Financial Programs, Workplace Flexibility, and Transitioning to Retirement — adult-life financial setup supports for Emory employees.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_BENEFITS",
+            "tierAssignmentRationale": "Financial / retirement / flexibility resources are Tier 3 attending-life support distinct from the medical/insurance benefits categories already captured.",
+            "limitations": null,
+            "normalizedField": null,
+            "whyA1Missed": "A1 captured the Benefits group but not the separately listed Work Life group with financial / retirement / flexibility resources."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "emory-careers-002",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote captures the LCA notice link labels but the cleaned text does not state the LCAs are for physician/faculty roles specifically. H-1B signal stands but reviewer should note it covers Emory University and the Pediatric Institute generally, not necessarily med-school faculty."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page links to 'Notice of Filing of Labor Condition Applications' but the cleaned text does not include the actual job titles or sponsorship-type details in the LCAs.",
+          "Page lists 'Faculty Physicians' and 'Emory Clinic Physicians' as benefit/FSAP categories but provides no role, specialty, or hiring pathway detail.",
+          "Summer College Internship Program is mentioned without text clarifying whether medical students are eligible (likely undergrad-only but not stated)."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted on this CAREERS_PORTAL scope source.",
+          "Verify FSAP claim is tagged FUTURE_LANE_ONLY and not promoted to a USCE-adjacent service.",
+          "Confirm Summer College Internship Program is not misclassified as a medical-student opportunity."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "emory-careers-a2-t2-001",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/careers",
+              "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Medical House Staff (Residents and Fellows)",
+              "claimText": "Emory FSAP lists a dedicated 'Medical House Staff (Residents and Fellows)' support track, indicating Tier 2 trainee services exist within HR.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME_TRAINEE_SERVICES",
+              "tierAssignmentRationale": "Explicit Residents and Fellows category — Tier 2 trainee support service.",
+              "limitations": null,
+              "normalizedField": null,
+              "whyA1Missed": "A1 noted Medical House Staff under benefits structure but did not separately capture the FSAP residents/fellows service track."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "emory-careers-a2-t3-001",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://med.emory.edu/careers",
+              "sourceHash": "73c197690192bd1bebabfc8f9fcc4472ed2ebf5a19c1aa02c7b6c45a35722492",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Your FSAP\nAbout FSAP\nFaculty, Staff & Family Members\nFaculty Physicians",
+              "claimText": "Emory FSAP includes a dedicated 'Faculty Physicians' support track for attending-level physicians.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_SERVICES",
+              "tierAssignmentRationale": "Faculty Physicians FSAP track is Tier 3 attending-physician support.",
+              "limitations": null,
+              "normalizedField": null,
+              "whyA1Missed": "A1 did not enumerate FSAP sub-categories."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://med.emory.edu/education",
+      "output": {
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-10-emory",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "emory_edu_a2_intl_students_admissions",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+            "sourceUrl": "https://med.emory.edu/education",
+            "sourceHash": "553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "AdmissionsToggle MenuToggle openToggle closeSub linkVisiting Medical StudentsSub linkInternational Students",
+            "claimText": "Admissions nav lists a distinct 'International Students' sub-page separate from Visiting Medical Students.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "whyA1Missed": "A1 bundled both nav labels into a single claim; the International Students sub-page is a distinct admissions pathway worth its own claim for IMG-lane mapping.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "International Students admissions sub-page is Tier 1 pre-residency USCE-adjacent surface.",
+            "limitations": "Nav label only — no eligibility, IMG-specific text, or pathway content on this page.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "emory_edu_a2_simulation_program",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://med.emory.edu/education",
+            "sourceHash": "553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Emory School of Medicine SimulationThis interdisciplinary resource works with Emory partners to provide patient simulators and other high-tech equipment for hands-on clinical care training, and standardized patients for simulated patient encounters.",
+            "claimText": "Emory SOM Simulation provides patient simulators and standardized-patient encounters for hands-on clinical care training.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 captured CME, residencies, and postdoc but skipped the Simulation paragraph, which is a distinct educational resource line in the page body.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Simulation training serves medical students (pre-residency) and trainees — Tier 1 educational resource, not direct USCE.",
+            "limitations": "Not a clinical observership/elective; simulated patient encounters are not USCE.",
+            "normalizedField": null
+          },
+          {
+            "claimId": "emory_edu_a2_global_health_equity_office",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://med.emory.edu/education",
+            "sourceHash": "553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Sub linkWhere We WorkSub linkFaculty Clinical ExperienceSub linkCommunity LearningSub linkAdvanced Patient CareSub linkGlobal Health & Equity Office",
+            "claimText": "Clinical Experience nav references Global Health & Equity Office, Faculty Clinical Experience, Community Learning, and Where We Work sub-pages.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "whyA1Missed": "A1 did not surface the Clinical Experience nav cluster, which may include campus-applicability proofs ('Where We Work') for the hospital institution.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Navigation reference — multiple potential surfaces; tier unresolved without sub-page content.",
+            "limitations": "Nav labels only; no resolved eligibility or campus-applicability text.",
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "emory_edu_visiting_med_students_nav",
+            "refinementReason": "quote_too_general",
+            "explanation": "A1 quote concatenates two distinct admissions sub-page labels (Visiting Medical Students + International Students) into a single claim. Regate should consider splitting or tightening the quote to the Visiting Medical Students label alone."
+          },
+          {
+            "a1ClaimId": "emory_edu_visiting_med_students_nav",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Source is med.emory.edu (MEDICAL_SCHOOL_LEVEL); claim's lane is VISITING_MEDICAL_STUDENT but institutionId is Emory University Hospital. No campus-applicability proof exists on this page tying the med-school visiting program to the hospital campus."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'Where We Work' nav sub-page but does not enumerate Emory University Hospital as a teaching site here — campus-applicability proof must be fetched from that sub-page.",
+          "'How to Apply' link is referenced but no eligibility, fee, duration, deadline, or contact text is resolved on this landing page.",
+          "Simulation program references 'hands-on clinical care training' but does not specify whether visiting/external learners can access it."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this med-school-scope URL for Emory University Hospital absent campus-applicability proof.",
+          "Verify the A1 visiting-medical-students claim is held at CAUTION_SAFE_INTERNAL_REVIEW or downgraded — the quote conflates two distinct sub-pages.",
+          "Verify Simulation paragraph is not promoted to USCE — it is simulated patient encounters, not clinical observership."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "emory_edu_a2_intl_students_admissions",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+              "sourceUrl": "https://med.emory.edu/education",
+              "sourceHash": "553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "AdmissionsToggle MenuToggle openToggle closeSub linkVisiting Medical StudentsSub linkInternational Students",
+              "claimText": "Admissions nav lists distinct 'International Students' sub-page separate from Visiting Medical Students.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 bundled both labels into a single visiting-students claim; International Students is a distinct admissions pathway.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "International Students admissions sub-page is Tier 1 pre-residency USCE-adjacent.",
+              "limitations": "Nav label only — no resolved eligibility or IMG content.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "emory_edu_a2_simulation_program",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://med.emory.edu/education",
+              "sourceHash": "553a481ad0838f4872f8751653f10811754fd95c85e48247ea9a68753fd96be8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Emory School of Medicine SimulationThis interdisciplinary resource works with Emory partners to provide patient simulators and other high-tech equipment for hands-on clinical care training, and standardized patients for simulated patient encounters.",
+              "claimText": "Emory SOM Simulation provides patient simulators and standardized-patient encounters for hands-on clinical care training.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 did not capture the simulation paragraph in the body content.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Simulation is a Tier 1 educational resource for medical students/trainees.",
+              "limitations": "Not direct USCE; simulated encounters only.",
+              "normalizedField": null
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "emory_edu_visiting_med_students_nav",
+            "scopeIssue": "medical_school_scope_no_campus_proof",
+            "explanation": "A1 visiting-students claim originates from med.emory.edu (MEDICAL_SCHOOL_LEVEL) but is being mapped to the Emory University Hospital institution. No campus-applicability proof in this cleaned text ties the SOM visiting program specifically to the hospital."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_51",
+      "sourceUrl": "https://med.emory.edu/medicine/international",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "emory_dom_clerkship_programs",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Residency ProgramFellowship ProgramsClerkship ProgramsCME and Grand Rounds",
+            "claimText": "Department of Medicine lists Clerkship Programs alongside Residency/Fellowship/CME education programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Clerkship navigation label only; no statement of visiting-student or external eligibility.",
+            "normalizedField": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Clerkships are medical-student education, mapping to Tier 1, though scope here is home-school clerkship not visiting elective.",
+            "whyA1Missed": "A1 captured Fellowship Programs but did not separately surface Clerkship Programs which is a Tier-1 medical-student concept."
+          },
+          {
+            "claimId": "emory_dom_hurst_im_residency",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "J. Willis Hurst Internal Medicine Residency Program Director, Reena Hemrajani, MD , shares reasons why you should consider Emory's Internal Medicine Residency Program.",
+            "claimText": "Emory's IM Residency is the J. Willis Hurst Internal Medicine Residency Program; Director is Reena Hemrajani, MD.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "normalizedField": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Specific residency program name and director — Tier 2 trainee content.",
+            "whyA1Missed": "A1 listed generic residency tracks but missed the proper program name 'J. Willis Hurst' and the program director's name."
+          },
+          {
+            "claimId": "emory_dom_ten_divisions",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "DivisionsCardiologyDigestive DiseasesEndocrinology, Metabolism, and LipidsGeneral Internal MedicineGeriatrics and GerontologyHospital MedicineInfectious DiseasesPulmonary, Allergy, Critical Care, and Sleep MedicineRenal MedicineRheumatology",
+            "claimText": "DOM lists ten internal medicine divisions (Cardiology, GI, Endo, GIM, Geriatrics, Hospital Med, ID, Pulm/CC, Renal, Rheum) — likely fellowship-bearing subspecialties.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Division list only; specific fellowship offerings per division not enumerated on this page.",
+            "normalizedField": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Subspecialty division roster signals subspecialty fellowship pathways — Tier 2 GME.",
+            "whyA1Missed": "A1 emitted only a generic Fellowship Programs nav reference and did not enumerate the ten subspecialty divisions."
+          },
+          {
+            "claimId": "emory_dom_contact_address",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Department of Medicine Administrative Office\n1364 Clifton Road NE\nSuite H-153\nAtlanta, GA 30322",
+            "claimText": "DOM Administrative Office address: 1364 Clifton Road NE, Suite H-153, Atlanta, GA 30322.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Mailing address only; no phone or email captured for observership/visiting-student inquiries.",
+            "normalizedField": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Administrative-office mailing address for the GME-bearing department — Tier 2 logistics.",
+            "whyA1Missed": "A1 did not capture the administrative-office mailing address from the page footer."
+          },
+          {
+            "claimId": "emory_dom_postdoc_training",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Residents & FellowsPostdoctoral TrainingContinuing Medical Education",
+            "claimText": "School of Medicine offers Postdoctoral Training and Continuing Medical Education in addition to Residents & Fellows tracks.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation labels only; no detail on postdoc pathway eligibility.",
+            "normalizedField": null,
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Postdoctoral training is post-graduate trainee education — Tier 2.",
+            "whyA1Missed": "A1 focused on residency/fellowship and did not surface Postdoctoral Training or CME as distinct lanes."
+          },
+          {
+            "claimId": "emory_dom_mstp",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Sub linkMedical Scientist Training Program (MD/PhD)",
+            "claimText": "Emory School of Medicine offers a Medical Scientist Training Program (MD/PhD).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation label only; eligibility and IMG access not stated.",
+            "normalizedField": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "MD/PhD MSTP is a pre-residency medical-student degree program — Tier 1 (home-school).",
+            "whyA1Missed": "A1 did not capture the MSTP MD/PhD program navigation entry."
+          },
+          {
+            "claimId": "emory_dom_global_health_office",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Sub linkGlobal Health & Equity Office",
+            "claimText": "Emory School of Medicine references a Global Health & Equity Office in its Clinical Experience navigation.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation label only — does not confirm international visiting-student or observership pathway.",
+            "normalizedField": null,
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "INTERNATIONAL_EDUCATION",
+            "tierAssignmentRationale": "Office reference only; no trainee/USCE content directly attributable.",
+            "whyA1Missed": "A1 did not flag the Global Health & Equity Office which is the closest signal to the /medicine/international URL hint."
+          },
+          {
+            "claimId": "emory_dom_career_specialty_advising",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://med.emory.edu/medicine/international",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Sub linkCareer & Specialty AdvisingSub linkSimulation Program",
+            "claimText": "School of Medicine offers Career & Specialty Advising and a Simulation Program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation labels only; no detail or eligibility statements.",
+            "normalizedField": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Career/specialty advising at medical-student stage maps to Tier 1 pre-residency support.",
+            "whyA1Missed": "A1 did not enumerate the medical-student support services navigation entries."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "emory_dom_residency_signal",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "This A1 claim and emory_dom_im_residency cover the same residency/fellowship/CME signal. Regate should consider keeping only the more specific emory_dom_im_residency; this one's quote is generic marketing prose."
+          },
+          {
+            "a1ClaimId": "emory_dom_faculty_recruitment",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Sub linkFaculty Recruitment' is just a navigation label without any job description, position type, specialty, or sponsorship language. A stronger faculty-recruitment quote exists later on the page."
+          }
+        ],
+        "additionalUnresolveds": [
+          "URL path /medicine/international suggests an international visitors / observership page but cleaned text is the DOM landing page with no observership, VSLO, visiting-student, IMG, or international elective content — likely scrape mismatch or redirect requiring re-fetch.",
+          "Page mentions 'Clerkship Programs' but does not state whether they accept visiting medical students or are restricted to Emory home-school students.",
+          "Page references a 'Global Health & Equity Office' but provides no link target content or program description on this cleaned page.",
+          "Faculty Recruitment is referenced but no positions, specialties, or visa-sponsorship language are stated on this landing page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this MEDICAL_SCHOOL_LEVEL source — all claims must remain FUTURE_LANE_ONLY or HUMAN_REVIEW_REQUIRED.",
+          "Flag URL/content mismatch: /medicine/international returned a generic DOM landing page; queue re-fetch or alternative URL discovery for any Emory international/visiting-student page.",
+          "Verify the Clerkship Programs claim is not promoted to OFFERS_ELECTIVE without evidence of visiting-student eligibility on a downstream clerkship sub-page.",
+          "Confirm scope-conflict claim emory_dom_scope_mismatch is honored: no campus applicability proof for Emory University Hospital was found in this text."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "emory_dom_scope_mismatch",
+            "scopeIssue": "med_school_level_vs_hospital_campus",
+            "explanation": "Source is med.emory.edu Department of Medicine (School of Medicine domain), not a campus-specific Emory University Hospital page. No quote in cleaned text ties content to the hospital campus specifically."
+          },
+          {
+            "claimId": "emory_dom_faculty_recruitment",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Faculty Recruitment label is at School-of-Medicine / Department-of-Medicine scope; whether recruited positions are at Emory University Hospital specifically vs other Emory clinical sites is not stated on this page."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_52",
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "emory_dom_im_peds_residency",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Internal Medicine/Pediatrics Residency",
+            "claimText": "Emory DOM lists an Internal Medicine/Pediatrics combined residency program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Med/Peds combined residency is GME (Tier 2).",
+            "normalizedField": null,
+            "limitations": "Navigation label only; no program details on this page.",
+            "whyA1Missed": "A1 captured only the generic IM residency line and the J. Willis Hurst named IM residency; missed the Med/Peds combined program in the Education sub-nav."
+          },
+          {
+            "claimId": "emory_dom_im_psych_residency",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Internal Medicine/Psychiatry Residency",
+            "claimText": "Emory DOM lists an Internal Medicine/Psychiatry combined residency program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Med/Psych combined residency is GME (Tier 2).",
+            "normalizedField": null,
+            "limitations": "Navigation label only.",
+            "whyA1Missed": "Synonym/sibling program of IM residency in the same sub-nav; A1 stopped at the headline IM residency."
+          },
+          {
+            "claimId": "emory_dom_transitional_year",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Transitional Year and Preliminary Track",
+            "claimText": "Emory DOM lists a Transitional Year and Preliminary Track program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Transitional/preliminary years are PGY-1 GME training (Tier 2).",
+            "normalizedField": null,
+            "limitations": "Navigation label only.",
+            "whyA1Missed": "A1 missed the prelim/TY track which is a separate residency-track signal IMGs commonly seek."
+          },
+          {
+            "claimId": "emory_dom_fellowship_programs_label",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Fellowship Programs",
+            "claimText": "Emory DOM lists Fellowship Programs as a discrete navigation entry.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Subspecialty fellowships are Tier 2 GME.",
+            "normalizedField": null,
+            "limitations": "Nav label only; no fellowship list or eligibility on this page.",
+            "whyA1Missed": "A1's first claim bundled fellowships into the generic residency/fellowship/CME line; the discrete Fellowship Programs nav link is a separate signal."
+          },
+          {
+            "claimId": "emory_som_postdoc_education",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Office of Postdoctoral Education",
+            "claimText": "Emory School of Medicine references an Office of Postdoctoral Education in its top-level Education nav.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "POSTDOCTORAL",
+            "tierAssignmentRationale": "Postdoctoral education serves trainees post-PhD/post-MD (Tier 2 trainee infrastructure).",
+            "normalizedField": null,
+            "limitations": "Nav label only.",
+            "whyA1Missed": "School-level nav entry distinct from DOM residency/fellowship signals A1 captured."
+          },
+          {
+            "claimId": "emory_som_career_specialty_advising",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Career & Specialty Advising",
+            "claimText": "Emory SOM references a Career & Specialty Advising program in its Education nav.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Specialty advising serves medical students preparing for Match (Tier 1 trainee-track advising).",
+            "normalizedField": null,
+            "limitations": "Nav label only; audience not specified on this page.",
+            "whyA1Missed": "School-level advising nav A1 did not surface."
+          },
+          {
+            "claimId": "emory_dom_faculty_recruitment",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Faculty RecruitmentThe Department of Medicine is led by an extraordinary group of faculty who are experts in their fields.",
+            "claimText": "Emory DOM has a Faculty Recruitment section indicating active faculty hiring.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Faculty recruitment targets attending/post-trainee physicians (Tier 3).",
+            "normalizedField": null,
+            "limitations": "No specific jobs, salary, or visa-sponsorship language on this page.",
+            "whyA1Missed": "A1 focused on trainee programs and did not surface the faculty-recruitment / Tier 3 career signal."
+          },
+          {
+            "claimId": "emory_dom_career_development",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Career Development",
+            "claimText": "Emory DOM Office of Faculty Development includes a Career Development program.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Faculty career development is post-trainee (Tier 3).",
+            "normalizedField": null,
+            "limitations": "Nav label only.",
+            "whyA1Missed": "Sub-nav under Faculty Development not surfaced by A1."
+          },
+          {
+            "claimId": "emory_dom_admin_contact_address",
+            "claimType": "MISSING_FIELD",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Department of Medicine Administrative Office\n1364 Clifton Road NE\nSuite H-153\nAtlanta, GA 30322",
+            "claimText": "Emory DOM Administrative Office mailing address: 1364 Clifton Road NE, Suite H-153, Atlanta, GA 30322.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Administrative contact metadata, not tied to a specific program tier.",
+            "normalizedField": "contact_address",
+            "limitations": "No email or phone provided; address is for general DOM admin, not observership/visiting student coordinator.",
+            "whyA1Missed": "A1 did not extract any contact information from the page footer."
+          },
+          {
+            "claimId": "emory_dom_im_chair_named",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Department Chair Carlos Del Rio, MD",
+            "claimText": "Emory Department of Medicine Chair is Carlos Del Rio, MD.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Leadership metadata; not tier-specific.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 captured only the IM residency PD name, not the department chair."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "emory_dom_residency_fellowship_cme",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Source is med.emory.edu (Medical School / Department of Medicine), not Emory University Hospital. Claim is correctly FUTURE_LANE_ONLY but should be flagged as MEDICAL_SCHOOL_LEVEL scope for the Emory University Hospital institution record — campus applicability not established."
+          },
+          {
+            "a1ClaimId": "emory_dom_im_residency_named",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Same scope concern: source is school-level. Claim still valid as FUTURE_LANE_ONLY but campus-applicability to Emory University Hospital is not proven on this page."
+          },
+          {
+            "a1ClaimId": "emory_dom_clerkship_programs",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a bare nav label 'Clerkship Programs' with no audience/eligibility content. Visibility CAUTION_SAFE_INTERNAL_REVIEW is acceptable; flagging because a downstream classifier should not treat this as a USCE signal."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Clerkship Programs', 'Internal Medicine Residency', 'Fellowship Programs', and 'Office of Postdoctoral Education' as nav entries but provides no audience, eligibility, or visiting-student/IMG language for any of them on this page.",
+          "Page does not state whether any DOM clerkship is open to visiting or international medical students (VSLO, audition, away rotation) — silent, not refusing.",
+          "Faculty Recruitment section exists but no job listings, visa sponsorship (J-1/H-1B) language, or contact for recruitment are on this page.",
+          "URL path '/medicine/international/international-programs' implies an international programs page but the cleaned text is the generic Department of Medicine landing page — likely JS-rendered content not captured, as A1 already noted."
+        ],
+        "recommendedA3Focus": [
+          "Verify no claim from this source is published as PUBLIC_SAFE_USCE — source is MEDICAL_SCHOOL_LEVEL and content is navigation chrome.",
+          "Confirm that all residency/fellowship claims are tagged FUTURE_LANE_ONLY and not surfaced to the Emory University Hospital public USCE record without a campus-applicability proof.",
+          "Confirm the SCOPE_CONFLICT claim (emory_dom_url_content_mismatch) triggers a re-capture of the international-programs URL rather than acceptance of the current cleaned text as the international-programs content.",
+          "Confirm Faculty Recruitment Tier 3 claim is held internally only — no public-safe surface without sponsorship/job specifics."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "emory_som_career_specialty_advising_t1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Career & Specialty Advising",
+              "claimText": "Emory SOM offers Career & Specialty Advising to its medical students.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Pre-residency advising for medical students is Tier 1.",
+              "normalizedField": null,
+              "limitations": "Nav label only; audience inferred.",
+              "whyA1Missed": "A1 missed the SOM Education sub-nav entirely."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "emory_dom_im_peds_residency_t2",
+              "claimType": "FUTURE_LANE_RESIDENCY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Internal Medicine/Pediatrics Residency",
+              "claimText": "Emory DOM lists an Internal Medicine/Pediatrics combined residency program.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Combined residency is Tier 2 GME.",
+              "normalizedField": null,
+              "limitations": "Nav only.",
+              "whyA1Missed": "Sibling residency program not surfaced by A1."
+            },
+            {
+              "claimId": "emory_dom_im_psych_residency_t2",
+              "claimType": "FUTURE_LANE_RESIDENCY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Internal Medicine/Psychiatry Residency",
+              "claimText": "Emory DOM lists an Internal Medicine/Psychiatry combined residency program.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Combined residency is Tier 2 GME.",
+              "normalizedField": null,
+              "limitations": "Nav only.",
+              "whyA1Missed": "Sibling residency program not surfaced by A1."
+            },
+            {
+              "claimId": "emory_dom_transitional_year_t2",
+              "claimType": "FUTURE_LANE_RESIDENCY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Transitional Year and Preliminary Track",
+              "claimText": "Emory DOM lists a Transitional Year and Preliminary Track program.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "TY/Prelim are PGY-1 GME, Tier 2.",
+              "normalizedField": null,
+              "limitations": "Nav only.",
+              "whyA1Missed": "Separate prelim track not surfaced by A1."
+            },
+            {
+              "claimId": "emory_dom_fellowship_programs_t2",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Fellowship Programs",
+              "claimText": "Emory DOM lists Fellowship Programs as a discrete program nav.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Subspecialty fellowships are Tier 2 GME.",
+              "normalizedField": null,
+              "limitations": "Nav only; no list of fellowships on this page.",
+              "whyA1Missed": "A1 bundled fellowships into one generic line; this nav entry is a discrete signal."
+            },
+            {
+              "claimId": "emory_som_postdoc_education_t2",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Office of Postdoctoral Education",
+              "claimText": "Emory SOM has an Office of Postdoctoral Education.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "POSTDOCTORAL",
+              "tierAssignmentRationale": "Postdoctoral education infrastructure for trainees, Tier 2.",
+              "normalizedField": null,
+              "limitations": "Nav only.",
+              "whyA1Missed": "SOM-level nav entry separate from DOM education programs."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "emory_dom_faculty_recruitment_t3",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Faculty RecruitmentThe Department of Medicine is led by an extraordinary group of faculty who are experts in their fields.",
+              "claimText": "Emory DOM operates a Faculty Recruitment function.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Faculty recruitment targets attending physicians (Tier 3).",
+              "normalizedField": null,
+              "limitations": "No specific jobs / sponsorship language on this page.",
+              "whyA1Missed": "A1 focused on trainee signals and missed faculty-hiring Tier 3 signal."
+            },
+            {
+              "claimId": "emory_dom_career_development_t3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Promotions and Tenure ResourcesFaculty RecognitionsMentoringCareer Development",
+              "claimText": "Emory DOM Office of Faculty Development offers Promotions/Tenure resources, Faculty Recognitions, Mentoring, and Career Development for faculty.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Faculty development resources are post-trainee (Tier 3).",
+              "normalizedField": null,
+              "limitations": "Nav labels only.",
+              "whyA1Missed": "Faculty Development sub-nav not surfaced by A1."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "emory_dom_residency_fellowship_cme",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is med.emory.edu Department of Medicine (school-level), but institution under evaluation is Emory University Hospital. No campus-applicability proof on this page — Tier 2 signals should not be auto-mapped to the hospital record."
+          },
+          {
+            "claimId": "emory_dom_im_residency_named",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Same school-vs-hospital scope mismatch. Hurst IM Residency is hosted across multiple Emory clinical sites; this page does not specify Emory University Hospital as the residency's primary site."
+          },
+          {
+            "claimId": "emory_dom_url_content_mismatch",
+            "scopeIssue": "url_content_mismatch_re_capture",
+            "explanation": "URL path implies international programs but cleaned text is DOM landing chrome. Likely JS-rendered or wrong capture; flag for re-fetch before any claim from this source is published."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_53",
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "output": {
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-10-emory",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "emory_dom_im_residency_tracks",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Internal Medicine ResidencyInternal Medicine/Pediatrics ResidencyInternal Medicine/Psychiatry ResidencyTransitional Year and Preliminary Track",
+            "claimText": "Department lists multiple residency tracks: Internal Medicine, Medicine/Pediatrics, Medicine/Psychiatry, and Transitional Year/Preliminary Track.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Navigation labels only; no eligibility or IMG language.",
+            "whyA1Missed": "A1 emitted a generic GME mention but did not enumerate the specific residency track list (IM/Peds, IM/Psych, TY/Prelim) visible in navigation.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Residency program enumeration is Tier 2 trainee content.",
+            "normalizedField": "residency_tracks"
+          },
+          {
+            "claimId": "emory_dom_faculty_recruitment",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Faculty RecruitmentThe Department of Medicine is led by an extraordinary group of faculty who are experts in their fields.",
+            "claimText": "Department of Medicine surfaces a Faculty Recruitment section — Tier 3 attending/faculty hiring signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Section header only; no job listings, visa, or compensation details on this page.",
+            "whyA1Missed": "A1 focused on residency/fellowship mentions and missed the Faculty Recruitment signal (Tier 3 attending hiring).",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CAREERS",
+            "tierAssignmentRationale": "Faculty Recruitment is a Tier 3 post-trainee/attending career signal.",
+            "normalizedField": "faculty_recruitment_section"
+          },
+          {
+            "claimId": "emory_dom_contact_address",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Department of Medicine Administrative Office\n1364 Clifton Road NE\nSuite H-153\nAtlanta, GA 30322",
+            "claimText": "Administrative office address listed: 1364 Clifton Road NE, Suite H-153, Atlanta, GA 30322.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Mailing address only; no phone, email, or coordinator name for visiting students.",
+            "whyA1Missed": "A1 did not extract the administrative office mailing address present in the page footer.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Address contact info is metadata, not tied to a specific tier opportunity.",
+            "normalizedField": "admin_office_address"
+          },
+          {
+            "claimId": "emory_dom_postdoctoral_training",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Residents & FellowsPostdoctoral TrainingContinuing Medical Education",
+            "claimText": "School of Medicine navigation references Postdoctoral Training alongside Residents & Fellows and CME.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation only; no program-level detail on this page.",
+            "whyA1Missed": "A1 captured residency/fellowship/CME but missed the explicit Postdoctoral Training pathway listed in the SOM navigation.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Postdoctoral training is Tier 2 trainee content.",
+            "normalizedField": "postdoctoral_training"
+          },
+          {
+            "claimId": "emory_dom_divisions_fellowship_relevant",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "CardiologyDigestive DiseasesEndocrinology, Metabolism, and LipidsGeneral Internal MedicineGeriatrics and GerontologyHospital MedicineInfectious DiseasesPulmonary, Allergy, Critical Care, and Sleep MedicineRenal MedicineRheumatology",
+            "claimText": "Department of Medicine lists ten subspecialty divisions — each a potential fellowship subject area: Cardiology, GI, Endo, GIM, Geriatrics, Hospital, ID, Pulm/CCM/Sleep, Renal, Rheum.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Division list; fellowship offerings per division not enumerated on this page.",
+            "whyA1Missed": "A1's generic 'sub-specialty fellowships' claim did not enumerate the specific divisions that map to fellowship programs.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Subspecialty division enumeration is Tier 2 (fellowship-relevant).",
+            "normalizedField": "subspecialty_divisions"
+          },
+          {
+            "claimId": "emory_dom_career_specialty_advising",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+            "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Career & Specialty AdvisingSub linkSimulation ProgramSub linkMedical Scientist Training Program (MD/PhD)",
+            "claimText": "School of Medicine surfaces a Career & Specialty Advising offering alongside Simulation Program and MD/PhD MSTP.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation label only; advising-service scope (current students vs. external) not stated.",
+            "whyA1Missed": "A1 did not surface the Career & Specialty Advising program nor the MSTP MD/PhD pathway label.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Career/specialty advising for medical students supports the trainee pathway; MSTP is Tier 2-adjacent.",
+            "normalizedField": "career_advising"
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "emory_dom_clerkship_link",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a concatenated navigation string with no substantive clerkship content. The claim is borderline — A3 should consider whether nav-chrome labels meet evidentiary bar for any visibility, even CAUTION."
+          },
+          {
+            "a1ClaimId": "emory_source_family_mismatch",
+            "refinementReason": "source_family_mismatch_publicSafe_on_GME",
+            "explanation": "Correctly flagged as scope conflict; A3 should ensure the run does not later treat this URL as a verified visiting-student page and should trigger a re-fetch of the actual /international-visiting-medical-students content."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists Clerkship Programs in nav but does not state whether non-Emory or international students may apply.",
+          "Faculty Recruitment section mentioned but no link, contact, or visa-sponsorship language captured.",
+          "Career & Specialty Advising scope (Emory students only vs. open) not stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this med-school-level Department of Medicine landing page for Emory University Hospital.",
+          "Verify the URL-vs-content mismatch is logged so the runner re-fetches the actual /international-visiting-medical-students sub-page rather than treating this landing page as the visiting-student source.",
+          "Ensure new Tier 2/Tier 3 claims (residency tracks, faculty recruitment, divisions) are routed to FUTURE_LANE_ONLY and not surfaced as USCE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "emory_dom_im_residency_tracks",
+              "claimType": "FUTURE_LANE_RESIDENCY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Internal Medicine ResidencyInternal Medicine/Pediatrics ResidencyInternal Medicine/Psychiatry ResidencyTransitional Year and Preliminary Track",
+              "claimText": "Department lists multiple residency tracks: Internal Medicine, Medicine/Pediatrics, Medicine/Psychiatry, and Transitional Year/Preliminary Track.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Navigation labels only; no eligibility or IMG language.",
+              "whyA1Missed": "A1 emitted a generic GME mention but did not enumerate the specific residency track list visible in navigation.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Residency program enumeration is Tier 2 trainee content.",
+              "normalizedField": "residency_tracks"
+            },
+            {
+              "claimId": "emory_dom_postdoctoral_training",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Residents & FellowsPostdoctoral TrainingContinuing Medical Education",
+              "claimText": "School of Medicine navigation references Postdoctoral Training alongside Residents & Fellows and CME.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Navigation only; no program-level detail.",
+              "whyA1Missed": "A1 captured residency/fellowship/CME but missed Postdoctoral Training explicitly.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Postdoctoral training is Tier 2 trainee content.",
+              "normalizedField": "postdoctoral_training"
+            },
+            {
+              "claimId": "emory_dom_divisions_fellowship_relevant",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "CardiologyDigestive DiseasesEndocrinology, Metabolism, and LipidsGeneral Internal MedicineGeriatrics and GerontologyHospital MedicineInfectious DiseasesPulmonary, Allergy, Critical Care, and Sleep MedicineRenal MedicineRheumatology",
+              "claimText": "Department of Medicine lists ten subspecialty divisions, each a potential fellowship subject area.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Division list; fellowship offerings per division not enumerated here.",
+              "whyA1Missed": "A1's generic fellowship claim did not enumerate the specific divisions.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Subspecialty division enumeration is Tier 2 fellowship-relevant.",
+              "normalizedField": "subspecialty_divisions"
+            },
+            {
+              "claimId": "emory_dom_career_specialty_advising",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Career & Specialty AdvisingSub linkSimulation ProgramSub linkMedical Scientist Training Program (MD/PhD)",
+              "claimText": "School of Medicine surfaces Career & Specialty Advising, Simulation Program, and MSTP MD/PhD.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Navigation label only.",
+              "whyA1Missed": "A1 did not surface advising program or MSTP MD/PhD label.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Career advising and MSTP are trainee-pipeline content.",
+              "normalizedField": "career_advising"
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "emory_dom_faculty_recruitment",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+              "sourceHash": "ed04a45dd1f8ce233a07173307d7ac023ae1eaee6867974483fd7b2972508fcf",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Faculty RecruitmentThe Department of Medicine is led by an extraordinary group of faculty who are experts in their fields.",
+              "claimText": "Department of Medicine surfaces a Faculty Recruitment section.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "No job listings or visa-sponsorship language captured.",
+              "whyA1Missed": "A1 focused on training programs and missed Tier 3 attending-faculty hiring signal.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CAREERS",
+              "tierAssignmentRationale": "Faculty Recruitment is a Tier 3 attending career signal.",
+              "normalizedField": "faculty_recruitment_section"
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "emory_source_family_mismatch",
+            "scopeIssue": "url_content_mismatch",
+            "explanation": "URL path is /international-visiting-medical-students but cleaned text is the Department of Medicine landing page with zero visiting-student content. Re-fetch required before any Tier 1 USCE claim is attempted."
+          },
+          {
+            "claimId": "emory_scope_school_vs_hospital",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is med.emory.edu (Emory School of Medicine), not Emory University Hospital. No campusApplicabilityProof exists tying this content to the hospital under review."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "http://med.emory.edu/research/core_labs/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Residencies and Fellowships', 'Office of Postdoctoral Education', and 'Faculty Clinical Experience' only as global navigation links, with no substantive content on this page.",
+          "Page provides only a generic core-facilities support email (EmoryCores@emory.edu) for faculty research; no USCE/observership/visiting student/trainee contact is stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE (faculty core facilities overview, not a learner-facing USCE page).",
+          "Verify that nav-only mentions of 'Residencies and Fellowships' and 'Faculty Clinical Experience' on this URL are not promoted into future-lane claims without dedicated source pages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_emory_gdbbs_phd",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "http://med.emory.edu/research/training/index.html",
+            "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The Graduate Division of Biological and Biomedical Sciences at Emory University includes more than 400 students enrolled in eight interdisciplinary PhD programs.",
+            "normalizedField": null,
+            "claimText": "Emory GDBBS hosts >400 students across 8 interdisciplinary PhD programs in biological and biomedical sciences.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "PhD degree pathway, not USCE; medical-school scope.",
+            "whyA1Missed": "A1 did not enumerate the GDBBS PhD program block as a separate research-training pathway distinct from MD/PhD.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Graduate PhD training is post-undergraduate trainee tier."
+          },
+          {
+            "claimId": "c_emory_first_program",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "http://med.emory.edu/research/training/index.html",
+            "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The Office of Postdoctoral Education offers information for, including information on the FIRST program (Fellowship in Research and Science Teaching) and  NIH T32 Training Grants  for both predoctoral and postdoctoral training.",
+            "normalizedField": null,
+            "claimText": "Emory Office of Postdoctoral Education references the FIRST (Fellowship in Research and Science Teaching) program for research-teaching fellows.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 captured postdoc volume but did not surface the named FIRST fellowship pathway in the same paragraph.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Named postdoctoral fellowship program — trainee tier."
+          },
+          {
+            "claimId": "c_emory_t32_grants",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "http://med.emory.edu/research/training/index.html",
+            "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "NIH T32 Training Grants  for both predoctoral and postdoctoral training.",
+            "normalizedField": null,
+            "claimText": "Emory references NIH T32 Training Grants supporting both predoctoral and postdoctoral research training.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Generic federal grant mechanism.",
+            "whyA1Missed": "A1 quoted the surrounding sentence but did not separately tag T32 as a distinct training-funding signal.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Predoctoral/postdoctoral training grants are trainee-tier."
+          },
+          {
+            "claimId": "c_emory_office_postdoc_ed",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "http://med.emory.edu/research/training/index.html",
+            "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Emory Office of Postdoctoral EducationEach year several hundred postdoctoral fellow positions become available at Emory University School of Medicine.",
+            "normalizedField": null,
+            "claimText": "Emory operates an Office of Postdoctoral Education that centralizes postdoctoral fellow information at the School of Medicine.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 captured the volume figure but not the named office that administers postdoc programs.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Office administering postdoctoral fellowships — trainee tier."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_emory_research_discovery_phase",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Quote says 'the medical curriculum' — implies enrolled Emory MD students only, not visiting/external. Med-school scope on Emory University Hospital institution. CAUTION_SAFE_INTERNAL_REVIEW may be too lenient; consider FUTURE_LANE_ONLY."
+          },
+          {
+            "a1ClaimId": "c_emory_research_audience",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Text says 'medical and PhD students' without specifying Emory-enrolled vs. visiting/external/IMG. Eligibility for outside applicants is not stated; visibility should not imply public access."
+          },
+          {
+            "a1ClaimId": "c_emory_mdphd",
+            "refinementReason": "lane_misclassified",
+            "explanation": "MD/PhD is a degree-admissions program; tier label TIER_1_PRE_RESIDENCY_USCE_MATCH may overstate USCE relevance. Better as NOT_APPLICABLE or generic future-lane GME context."
+          },
+          {
+            "a1ClaimId": "c_emory_ctsa_tl1",
+            "refinementReason": "scope_conflict_medical_school_level",
+            "explanation": "Georgia CTSA is a multi-institutional research-training consortium, not Emory University Hospital-specific. Campus-applicability to the hospital institution is unproven."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Whether the FIRST program or NIH T32 grants admit external/IMG applicants is not stated.",
+          "Whether GDBBS PhD programs are open to international applicants is not stated.",
+          "No contact email, coordinator name, application deadline, or fee is stated anywhere on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this med.emory.edu School of Medicine scope without explicit Emory University Hospital campus-applicability proof.",
+          "Verify Discovery Phase claim is downgraded — 'the medical curriculum' implies enrolled Emory MD students only.",
+          "Check that A1 scope-conflict flag c_emory_scope_conflict propagates: institution is Emory University Hospital but every quoted program is School of Medicine / GDBBS / Georgia CTSA, never the hospital."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "c_emory_gdbbs_phd",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "http://med.emory.edu/research/training/index.html",
+              "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The Graduate Division of Biological and Biomedical Sciences at Emory University includes more than 400 students enrolled in eight interdisciplinary PhD programs.",
+              "normalizedField": null,
+              "claimText": "Emory GDBBS hosts >400 students across 8 interdisciplinary PhD programs in biological and biomedical sciences.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "PhD degree pathway, not USCE; medical-school scope.",
+              "whyA1Missed": "A1 did not enumerate the GDBBS PhD program block as a separate research-training pathway distinct from MD/PhD.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESEARCH_EDUCATION",
+              "tierAssignmentRationale": "Graduate PhD training is post-undergraduate trainee tier."
+            },
+            {
+              "claimId": "c_emory_first_program",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "http://med.emory.edu/research/training/index.html",
+              "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The Office of Postdoctoral Education offers information for, including information on the FIRST program (Fellowship in Research and Science Teaching) and  NIH T32 Training Grants  for both predoctoral and postdoctoral training.",
+              "normalizedField": null,
+              "claimText": "Emory Office of Postdoctoral Education references the FIRST (Fellowship in Research and Science Teaching) program for research-teaching fellows.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 captured postdoc volume but did not surface the named FIRST fellowship pathway in the same paragraph.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Named postdoctoral fellowship program — trainee tier."
+            },
+            {
+              "claimId": "c_emory_t32_grants",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "http://med.emory.edu/research/training/index.html",
+              "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "NIH T32 Training Grants  for both predoctoral and postdoctoral training.",
+              "normalizedField": null,
+              "claimText": "Emory references NIH T32 Training Grants supporting both predoctoral and postdoctoral research training.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Generic federal grant mechanism.",
+              "whyA1Missed": "A1 quoted the surrounding sentence but did not separately tag T32 as a distinct training-funding signal.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESEARCH_EDUCATION",
+              "tierAssignmentRationale": "Predoctoral/postdoctoral training grants are trainee-tier."
+            },
+            {
+              "claimId": "c_emory_office_postdoc_ed",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "http://med.emory.edu/research/training/index.html",
+              "sourceHash": "587fd1a46b24ded5c46577bac01184c3c76014f1aa1805a838f9833cae853fdb",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_84a462c89ee226a6.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Emory Office of Postdoctoral EducationEach year several hundred postdoctoral fellow positions become available at Emory University School of Medicine.",
+              "normalizedField": null,
+              "claimText": "Emory operates an Office of Postdoctoral Education that centralizes postdoctoral fellow information at the School of Medicine.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 captured the volume figure but not the named office that administers postdoc programs.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Office administering postdoctoral fellowships — trainee tier."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c_emory_research_discovery_phase",
+            "scopeIssue": "MEDICAL_SCHOOL_LEVEL source attributed to Emory University Hospital institution",
+            "explanation": "Page is med.emory.edu School of Medicine; institution under run is Emory University Hospital. No campus-applicability proof present. Claim should not be promoted to PUBLIC_SAFE_USCE."
+          },
+          {
+            "claimId": "c_emory_research_audience",
+            "scopeIssue": "MEDICAL_SCHOOL_LEVEL source attributed to Emory University Hospital institution",
+            "explanation": "Same scope mismatch; 'medical and PhD students' phrasing also does not name visiting/external students."
+          },
+          {
+            "claimId": "c_emory_ctsa_tl1",
+            "scopeIssue": "Multi-institutional consortium scope, not hospital-specific",
+            "explanation": "Georgia CTSA is a regional consortium (Emory + partner institutions). Attribution to Emory University Hospital is unproven on this page."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "http://med.emory.edu/research/research-centers/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists research centers but does not state whether visiting students, observers, or external trainees can participate in any of these centers",
+          "Navigation mentions 'Residencies and Fellowships' and 'Postdoctoral Training' but no eligibility, application pathway, or contact info is provided on this page"
+        ],
+        "recommendedA3Focus": [
+          "Confirm this MEDICAL_SCHOOL_LEVEL research-centers index page yields no PUBLIC_SAFE_USCE claims",
+          "Verify no observership/visiting-student claim is inferred from generic research-center descriptions"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/research-admin-units/peds/index.html",
+      "output": {
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "runId": "p102-pc-10-emory",
+        "schemaVersion": "p102-cli-0e-1",
+        "phase": "A2",
+        "networkUsed": false,
+        "agentUsed": false,
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Pre-Award III Research Administrator' job postings (job numbers 164864, 165403) but these are non-clinical sponsored-research administrator roles, not physician/trainee opportunities, so no Tier 3 physician-career claim is appropriate.",
+          "Navigation menu references 'Residencies and Fellowships' and 'Office of Postdoctoral Education' but the page body contains no GME content; navigation-only mentions are not actionable claims.",
+          "Source scope is medical-school-level (med.emory.edu / School of Medicine Pediatrics research admin) and not specifically Emory University Hospital — no campus-applicability proof present."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is emitted for this med.emory.edu School of Medicine research-administration page since scope is MEDICAL_SCHOOL_LEVEL with no campusApplicabilityProof tying it to Emory University Hospital.",
+          "Verify the listed Pre-Award Research Administrator job postings are not classified as FUTURE_LANE_JOB (they are non-physician administrative roles, outside the Tier 3 physician/faculty/hospitalist scope)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/research-admin-units/c-i/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this research administration unit page — content is grant pre/post-award support for HMO, Radiation Oncology, and Radiology, not a USCE/observership/elective offering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/research-admin-units/bsci/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists two open non-clinical staff positions (Pre-Award II Research Administrator job 162525; Post-Award I Research Administrator job 163096) — these are research administration staff roles, not physician/clinical careers, and not directly relevant to USCEHub Tier 3 physician career lanes.",
+          "Page mentions 'Residencies and Fellowships' and 'Office of Postdoctoral Education' only as global nav menu items, without program-specific content on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or FUTURE_LANE claim is attached to this MEDICAL_SCHOOL_LEVEL research-administration page — content is pre-/post-award grant administration for seven basic-science departments, not clinical experience or physician careers.",
+          "Verify research administrator job postings (job 162525, 163096) are not promoted to FUTURE_LANE_JOB physician-career claims — they are non-clinical staff roles."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/research-admin-units/aboss-hss/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists open research administrator positions (job numbers 164974, 164865) but these are non-clinical research-admin roles, not physician careers — not future-lane relevant.",
+          "Page references 'Residencies and Fellowships' and 'Office of Postdoctoral Education' only as nav menu items without any program-specific content on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no USCE or future-lane physician claim is emitted from this research-administration services page — content is sponsored research pre-award/post-award admin support only.",
+          "Verify open Pre-Award/Post-Award research administrator job postings are not misclassified as FUTURE_LANE_JOB (these are non-clinical admin roles)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/research-admin-units/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is purely sponsored-research administrative support (pre-/post-award for SOM faculty/departments); no content addresses observership, visiting students, electives, residency/fellowship eligibility, careers, visa sponsorship, or physician services."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is attached to this Research Administration Services page — content is faculty grants administration, not a USCE or trainee/career pathway."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/i3-2019.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a 2019 faculty research award announcement; no observership, visiting student, elective, residency, fellowship, careers, or USCE content is present to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this faculty-research-award page (RESEARCH_PAGE family, no student-facing content)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/grant-writing/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a grant writing resource hub for postdocs, instructors, and assistant professors — does not address USCE, residency, fellowship, or attending career content.",
+          "Medical-school-domain page (med.emory.edu) with UNKNOWN_SCOPE; no campus-level applicability proof to Emory University Hospital specifically."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this med.emory.edu grant-writing page (medical-school scope, RESEARCH_PAGE family).",
+          "Verify this source is excluded from Tier 1/2/3 publishable claims — content is faculty/postdoc grant-writing training, not physician pipeline opportunities."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Office of Postdoctoral Education' and 'Funding for Postdoctoral Fellows' in navigation but does not state any visa, J-1, or H-1B sponsorship language on this page.",
+          "Page lists 'Residencies and Fellowships' only as a nav sublink with no program details, eligibility, or contact info on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Emory School of Medicine research-funding page (MEDICAL_SCHOOL_LEVEL scope, RESEARCH_PAGE family).",
+          "Verify A1's SCOPE_CONFLICT claim remains HUMAN_REVIEW_REQUIRED and is not promoted to any USCE or career-tier lane."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/index.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is administrative research infrastructure (ORA/OSP/IRB/IACUC/funding databases) at Emory School of Medicine; no mention of visiting students, observerships, IMGs, electives, residency, fellowship, or careers.",
+          "Navigation references 'Residencies and Fellowships', 'Office of Postdoctoral Education', and 'Faculty Clinical Experience' but no substantive content about those programs appears on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Emory School of Medicine research administration page (medical-school-level/administrative scope).",
+          "Verify A1's empty claim set is preserved — page has no USCE or future-lane signal beyond navigation chrome."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/resident-information.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page uses the term 'residents' exclusively to mean biotech startup companies in the Lab2Launch incubator, not physician trainees — no GME or USCE meaning is present"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no FUTURE_LANE_RESIDENCY or USCE claim is emitted from this Lab2Launch page — 'residents' here refers to startup companies, not medical residents"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/lab2launch/l2l-launchpad.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is about Lab2Launch start-up incubator lab space at Emory School of Medicine; no observership, visiting student, elective, residency, fellowship, or physician-career content present.",
+          "Contact lab2launch@emory.edu is for scientist-entrepreneurs interested in incubator lab space, not for medical-trainee USCE inquiries."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE or future-lane claim is emitted from this Lab2Launch incubator page — it is a research-commercialization page, not a trainee or career page.",
+          "Verify sourceFamily RESEARCH_PAGE is appropriate; content is start-up incubator / entrepreneurship, not medical-student research electives."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/inside-the-innovation-center.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Emory-affiliated researchers, clinicians and entrepreneurs' but does not specify eligibility, application process, or whether external/visiting trainees may participate.",
+          "Mentions 'medical students diagnosing virtual patients' as an illustrative XR use-case but does not state any visiting-student or elective program."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE marketing article — content is about an internal innovation/entrepreneurship center with no observership, elective, or visiting-student offering.",
+          "Verify source family remains RESEARCH_PAGE and scope is MEDICAL_SCHOOL_LEVEL (Emory School of Medicine), not hospital-level."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/participate.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this single VR Myopia study recruitment page; content is general research-participant recruitment, not USCE/observership/elective."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/education-networking.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Innovation Center bioentrepreneurship page — content is faculty/clinician commercialization training, not clinical USCE."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_emory_innov_a2_01",
+            "claimType": "DURATION",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+            "sourceHash": "291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The program encompasses eight (8) 2.5-hour sessions held approximately once a month on a Wednesday evening. In-person attendance is required and sessions are held at Emory's HSRB II campus.",
+            "normalizedField": "duration",
+            "claimText": "Program structure: eight 2.5-hour in-person monthly Wednesday-evening sessions at HSRB II campus.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Faculty development program, not USCE.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Duration spec belongs to Tier 3 faculty entrepreneurship certificate program.",
+            "whyA1Missed": "A1 captured eligibility but did not extract the discrete duration/structure sentence."
+          },
+          {
+            "claimId": "c_emory_innov_a2_02",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+            "sourceHash": "291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "All interested and eligible candidates will have to complete the application by June 17th (coming soon). All applications will be reviewed by a selection committee and candidates will be notified by July 22nd.",
+            "normalizedField": "application_deadline",
+            "claimText": "Application deadline June 17th; selection committee notifies candidates by July 22nd.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Internal Emory faculty/staff selection cycle.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Application timeline for Tier 3 internal faculty certificate.",
+            "whyA1Missed": "A1 did not surface the discrete deadline/notification dates."
+          },
+          {
+            "claimId": "c_emory_innov_a2_03",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+            "sourceHash": "291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Program topics will focus on stages of the commercialization process from identifying a gap in the market and generating a concept to funding a startup and identifying an exit strategy.",
+            "normalizedField": "program_curriculum",
+            "claimText": "Curriculum covers commercialization stages: market-gap identification, concept generation, startup funding, exit strategy.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Faculty entrepreneurship content, not clinical training.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Curriculum scope reinforces Tier 3 post-trainee faculty service classification.",
+            "whyA1Missed": "A1 captured the program purpose but not the specific curriculum scope sentence."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c_emory_innov_02",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Eligibility claim is correctly Tier 3, but lane PHYSICIAN_SERVICES is borderline — this is an internal faculty-development certificate, closer to CAREERS_PAGE / faculty-development than physician-services-to-public. Regate should confirm lane choice."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists medical students as a population the School of Medicine serves in nav, but the program itself does not address whether residents/fellows/students may participate."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this MEDICAL_SCHOOL_LEVEL faculty-development certificate page.",
+          "Verify all claims remain FUTURE_LANE_ONLY given RESEARCH_PAGE source family and Tier 3 classification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "c_emory_innov_a2_t3_01",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+              "sourceHash": "291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Adam Klein, MD FACSChief, Division of LaryngologyVice Chair of Faculty Development and MentorshipWillard and Lillian Hackerman Professor in Voice",
+              "normalizedField": "course_director",
+              "claimText": "Course director: Adam Klein, MD FACS — Vice Chair of Faculty Development and Mentorship, Department of Otolaryngology HNS.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Internal program leadership; not a public USCE contact.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Director attribution belongs to Tier 3 faculty-development program record.",
+              "whyA1Missed": "A1 omitted the named program directors block."
+            },
+            {
+              "claimId": "c_emory_innov_a2_t3_02",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/innovation-certificate.html",
+              "sourceHash": "291204d938a1a8a788a9d9665e7db2977189b918f4ff117c77fcb63e13b77380",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-10-emory/cleaned_text/sm_96f645a824f14ab5.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Joel Friedlander DO, M.A.-BioethicsChief Medical and Innovation Officer & Co-Founder, EvoEndo, IncProfessor of Pediatrics, Emory University School of MedicinePediatric Gastroenterologist, Children’s Healthcare of Atlanta",
+              "normalizedField": "course_director",
+              "claimText": "Co-director: Joel Friedlander DO — Professor of Pediatrics, Emory; CMO/Co-Founder of EvoEndo.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Internal program leadership.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Second director attribution for Tier 3 faculty-development program.",
+              "whyA1Missed": "A1 did not enumerate program directors."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/micromachining.html",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-10-emory",
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is later attached to this micromachining core-facility page — content is a fee-for-service microfabrication core, not a USCE/observership/elective offering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "http://med.emory.edu/research/research-innovation/entrepreneurship/innovation-center/3d-printing.html",
+      "output": {
+        "institutionId": "inst_emory_university_hospital_ga",
+        "institutionName": "Emory University Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-10-emory",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Training and Education' as a service offered by the Innovation Center but does not specify audience (students, residents, external researchers) or describe a USCE/elective pathway.",
+          "Contact section names 'Martin Tomov, PhD, Associate director, Innovation Center' with an 'Email' link, but no actual email address or phone number is rendered in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE — content is a biofabrication core facility rate sheet, not a USCE opportunity.",
+          "Verify any future-lane signals from this URL remain HIDDEN/FUTURE_LANE_ONLY; the page describes a core facility, not residency/fellowship/career offerings."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

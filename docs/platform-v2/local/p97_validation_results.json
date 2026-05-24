@@ -1,0 +1,27 @@
+{
+  "mode": "--county ME:Cumberland",
+  "states": [],
+  "counties": [
+    {
+      "state": "ME",
+      "county": "Cumberland",
+      "status": "VALIDATED_COMPLETE",
+      "errors": [],
+      "warnings": [
+        "legacy status \"COMPLETE\" detected; should be migrated to VALIDATED_COMPLETE or downgraded based on evidence"
+      ],
+      "institutions": [
+        {
+          "name": "Maine Medical Center (MMC)",
+          "packetExists": true,
+          "packetOk": true
+        },
+        {
+          "name": "Maine Track Program (Tufts/MMC)",
+          "packetExists": true,
+          "packetOk": true
+        }
+      ]
+    }
+  ]
+}

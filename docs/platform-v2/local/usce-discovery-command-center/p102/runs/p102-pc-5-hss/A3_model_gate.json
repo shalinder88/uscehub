@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "runId": "p102-pc-5-hss",
+  "institutionId": "inst_hospital_for_special_surgery_ny",
+  "institutionName": "Hospital for Special Surgery",
+  "networkUsed": false,
+  "agentUsed": false,
+  "phase": "A3",
+  "verdict": "PASS_WITH_DOWNGRADES",
+  "verdictSummary": "HSS Academic Visitor Program is a genuine, well-documented public observership pathway: 14 PUBLIC_SAFE_USCE claims from hss.edu/education-institute/academic-visitor-program carry definite-offer quotes (audience, eligibility, duration, application, benefits). One meta-claim (hss-avp-scope-001, claimType=SCOPE_CONFLICT) was incorrectly promoted to PUBLIC_SAFE_USCE and must be downgraded. Several A1/A2 duplicates on identical-hash pages and the hss.edu vs www.hss.edu careers pair should be deduplicated downstream.",
+  "publicSafetyFailures": [
+    {
+      "claimId": "hss-avp-scope-001",
+      "currentVisibility": "PUBLIC_SAFE_USCE",
+      "failureType": "unsupported_publicSafeUSCE",
+      "explanation": "Claim type is SCOPE_CONFLICT and claimText is a meta-note about reclassifying source family/scope, not an offer of USCE. visibilityModelSuggested=HUMAN_REVIEW_REQUIRED was overridden to PUBLIC_SAFE_USCE; SCOPE_CONFLICT claims should never be PUBLIC_SAFE_USCE. The underlying observership offer is already covered by hss-avp-001.",
+      "recommendedDisposition": "downgrade_to_HUMAN_REVIEW_REQUIRED"
+    }
+  ],
+  "claimsToDowngrade": [
+    {
+      "claimId": "hss-avp-scope-001",
+      "fromVisibility": "PUBLIC_SAFE_USCE",
+      "toVisibility": "HUMAN_REVIEW_REQUIRED",
+      "reason": "SCOPE_CONFLICT meta-claim should not carry PUBLIC_SAFE_USCE visibility; revert to model-suggested HUMAN_REVIEW_REQUIRED for downstream resolution."
+    }
+  ],
+  "scopeConflicts": [],
+  "duplicates": [
+    {
+      "primaryClaimId": "hss-edu-inst-academic-visitor",
+      "duplicateClaimId": "hss-edu-academic-visitor-02",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-academic-training",
+      "duplicateClaimId": "hss-edu-academic-training-03",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-sim-center",
+      "duplicateClaimId": "a2-hss-edu-simcenter-02",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-global-partnerships",
+      "duplicateClaimId": "hss-edu-global-partnerships-05",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-continuing-ed",
+      "duplicateClaimId": "a2-hss-edu-cme-01",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-a2-phone",
+      "duplicateClaimId": "a2-hss-edu-mainphone-06",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-mission",
+      "duplicateClaimId": "hss-edu-mission-01",
+      "duplicateReason": "same_quote_different_claimId"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-family-mismatch",
+      "duplicateClaimId": "hss-edu-scope-06",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "hss-edu-inst-family-mismatch",
+      "duplicateClaimId": "hss-edu-scope-conflict-01",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "c1",
+      "duplicateClaimId": "hss_careers_general_001",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c2",
+      "duplicateClaimId": "hss_careers_depts_002",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "f1",
+      "duplicateClaimId": "hss_careers_benefits_003",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "hss_np_careers_03",
+      "duplicateClaimId": "hss_np_careers_a2_01",
+      "duplicateReason": "same_quote_different_claimId"
+    }
+  ],
+  "unresolveds": [],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "metadata": {
+    "totalClaimsReviewed": 108,
+    "publicSafeUSCECount": 14,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 6,
+    "futureLaneOnlyCount": 72,
+    "humanReviewRequiredCount": 16,
+    "hiddenRejectedCount": 0
+  },
+  "tier1CoverageVerdict": "PASS_COMPLETE",
+  "tier2CoverageVerdict": "PASS_PARTIAL",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "HSS eAcademy CME portfolio (orthopaedics, rheumatology) referenced on research-and-education page but no dedicated CME page captured",
+    "Orthopaedic surgery and rheumatology residency/fellowship programs mentioned but no dedicated GME page captured",
+    "Postdoctoral and Postbaccalaureate research training referenced on /research but no dedicated research-trainee page captured",
+    "Visiting Professional Lecture Series referenced inside AVP page but no dedicated page captured"
+  ],
+  "overpromotionDetected": [
+    {
+      "claimId": "hss-avp-scope-001",
+      "actualTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Claim is a meta scope-reclassification note tagged PUBLIC_SAFE_USCE; not an over-promotion across tiers but a structural over-promotion of a SCOPE_CONFLICT row to a publishable USCE row."
+    }
+  ],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "rec-hss-gme-pages",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "research-and-education page references orthopaedic surgery and rheumatology residency/fellowship programs but no GME landing or program-specific page was captured.",
+      "suggestedNarrowAction": "Fetch hss.edu/education-institute/academic-training and any /residency or /fellowship program URLs surfaced from that hub."
+    },
+    {
+      "taskId": "rec-hss-avp-guidelines",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "AVP main page directs applicants to an 'Academic Visitor Program Guidelines' page for fee, document, and coordinator contact details that are not stated on the captured page.",
+      "suggestedNarrowAction": "Fetch the Academic Visitor Program Guidelines child URL under hss.edu/education-institute/academic-visitor-program to recover fee, contact email, and required documents."
+    },
+    {
+      "taskId": "rec-hss-cme-eacademy",
+      "missingFamily": "CME_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "eAcademy CME portfolio referenced but no CME/eAcademy page captured for Tier 3 attending CME signal.",
+      "suggestedNarrowAction": "Fetch the eAcademy CME landing page linked from hss.edu/about/research-and-education."
+    },
+    {
+      "taskId": "rec-hss-research-postdoc",
+      "missingFamily": "RESEARCH_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Postdoctoral and Postbaccalaureate research training listed in /research navigation but no detail page captured.",
+      "suggestedNarrowAction": "Fetch the Postdoctoral/Postbaccalaureate training subpage(s) under hss.edu/research."
+    }
+  ]
+}

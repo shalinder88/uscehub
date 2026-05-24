@@ -1,0 +1,44 @@
+{
+  "seedId": "live_296",
+  "institutionId": "inst_live_brooklyn_usce_clinical_rotations",
+  "institutionName": "Brooklyn USCE — Clinical Rotations",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Brooklyn",
+  "state": "NY",
+  "sourceUrl": "https://brooklynusce.com/",
+  "sourceDomain": "brooklynusce.com",
+  "expectedAudience": "UNKNOWN_HOLD",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Internal Medicine, Surgery, Family Medicine, Pediatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-8 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_d7d285765f"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_296/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_296/cleaned.txt",
+  "sourceHash": "6bf9107f397c415491fb170fdf4fa3658d995198d6bc7eea815d0d4aae122190",
+  "triage": {
+    "decision": "REJECT_GME_ONLY",
+    "reason": "GME-only page with no medical student/visiting signal"
+  },
+  "aud": {
+    "audience": "UNKNOWN_HOLD",
+    "confidence": "LOW",
+    "rationale": "expected audience UNKNOWN_HOLD"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:39:42.107Z"
+}

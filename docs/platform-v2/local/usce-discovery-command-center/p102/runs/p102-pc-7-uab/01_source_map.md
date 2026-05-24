@@ -1,0 +1,286 @@
+# Source Map — UAB Hospital
+
+Run: p102-pc-7-uab
+schemaVersion: p102-0r-1
+
+## Accepted sources (69)
+
+- **OBSERVERSHIP_PAGE** [https://uab.edu/observership](https://uab.edu/observership)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/observership.txt
+- **OBSERVERSHIP_PAGE** [https://uab.edu/observerships](https://uab.edu/observerships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/observerships.txt
+- **OBSERVERSHIP_PAGE** [https://uab.edu/observer](https://uab.edu/observer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/observer.txt
+- **OBSERVERSHIP_PAGE** [https://uab.edu/clinical-observer](https://uab.edu/clinical-observer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/clinical-observer.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/visiting-student](https://uab.edu/visiting-student)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/visiting-student.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/visiting-students](https://uab.edu/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/visiting-students.txt
+- **OTHER** [https://uab.edu/medical-students](https://uab.edu/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/international-students](https://uab.edu/international-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/international-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/electives](https://uab.edu/electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/electives.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/away-rotations](https://uab.edu/away-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/away-rotations.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/clinical-elective](https://uab.edu/clinical-elective)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/clinical-elective.txt
+- **OTHER** [https://uab.edu/clinical-rotation](https://uab.edu/clinical-rotation)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/clinical-rotation.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/sub-internship](https://uab.edu/sub-internship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/sub-internship.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/subinternship](https://uab.edu/subinternship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/subinternship.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/acting-internship](https://uab.edu/acting-internship)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/acting-internship.txt
+- **RESEARCH_PAGE** [https://uab.edu/research](https://uab.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6577d45ea7696a1c601617b5c194eb39208e883ece5d15a8d47396c70c73fcdc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/research.txt
+- **RESEARCH_PAGE** [https://uab.edu/student-research](https://uab.edu/student-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/student-research.txt
+- **RESEARCH_PAGE** [https://uab.edu/shadow](https://uab.edu/shadow)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/shadow.txt
+- **RESEARCH_PAGE** [https://uab.edu/shadowing](https://uab.edu/shadowing)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/shadowing.txt
+- **VOLUNTEER_PAGE** [https://uab.edu/volunteer](https://uab.edu/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/volunteer.txt
+- **VOLUNTEER_PAGE** [https://uab.edu/volunteering](https://uab.edu/volunteering)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/volunteering.txt
+- **OBSERVERSHIP_PAGE** [https://uab.edu/img](https://uab.edu/img)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/img.txt
+- **OTHER** [https://uab.edu/international-medical-graduates](https://uab.edu/international-medical-graduates)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/international-medical-graduates.txt
+- **GME_PAGE** [https://uab.edu/graduate-medical-education](https://uab.edu/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/graduate-medical-education.txt
+- **GME_PAGE** [https://uab.edu/gme](https://uab.edu/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `73e3c1c9fa20961460cce726768307a0c1ba0359100a61395b81ce6cd9f0cd7f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/gme.txt
+- **RESIDENCY_PAGE** [https://uab.edu/residency](https://uab.edu/residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/residency.txt
+- **FELLOWSHIP_PAGE** [https://uab.edu/fellowship](https://uab.edu/fellowship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `4436cd6331eea82bf7f5dcdd3627117c0779085d5675a144d5fc2b8d920ec104`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/fellowship.txt
+- **CAREERS_PAGE** [https://uab.edu/careers](https://uab.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `20c870f061e7be3513d3a0c32f589b46be309d60a29487cfe6db2b130b57e6b3`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/careers.txt
+- **CAREERS_PAGE** [https://uab.edu/physician-careers](https://uab.edu/physician-careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/physician-careers.txt
+- **CAREERS_PAGE** [https://uab.edu/provider-careers](https://uab.edu/provider-careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/provider-careers.txt
+- **JSON_LD** [https://uab.edu/benefits](https://uab.edu/benefits)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f3343fe07c6823cf0c067049810660457fa4d70eccaf26cef1219da00e7a2d29`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/benefits.txt
+- **OTHER** [https://uab.edu/visa](https://uab.edu/visa)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/visa.txt
+- **OTHER** [https://uab.edu/immigration](https://uab.edu/immigration)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/immigration.txt
+- **OTHER** [https://uab.edu/credentialing](https://uab.edu/credentialing)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/credentialing.txt
+- **OTHER** [https://uab.edu/health-professionals](https://uab.edu/health-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/health-professionals.txt
+- **OTHER** [https://uab.edu/medical-education](https://uab.edu/medical-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-education.txt
+- **OTHER** [https://uab.edu/professional-education](https://uab.edu/professional-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/professional-education.txt
+- **JSON_LD** [https://uab.edu/student-affairs](https://uab.edu/student-affairs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0b6229f74095348e0d78f2e61e2034d66bed12f676707df2d4373341be5c1c6e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/student-affairs.txt
+- **JSON_LD** [https://uab.edu/education](https://uab.edu/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f6ffbf3fc565d11e4c720b8c65f3b6d383f93948f15e35543123aa92ea2d8566`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education.txt
+- **OTHER** [https://uab.edu/hcp-education-training](https://uab.edu/hcp-education-training)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/hcp-education-training.txt
+- **OTHER** [https://uab.edu/hcp-education-training/medical-students](https://uab.edu/hcp-education-training/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/hcp-education-training_medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/hcp-education-training/medical-students/elective](https://uab.edu/hcp-education-training/medical-students/elective)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/hcp-education-training_medical-students_elective.txt
+- **OBSERVERSHIP_PAGE** [https://uab.edu/hcp-education-training/medical-students/medical-student-observerships](https://uab.edu/hcp-education-training/medical-students/medical-student-observerships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/hcp-education-training_medical-students_medical-student-observerships.txt
+- **OTHER** [https://uab.edu/medical-professionals](https://uab.edu/medical-professionals)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-professionals.txt
+- **GME_PAGE** [https://uab.edu/medical-professionals/graduate-medical-education](https://uab.edu/medical-professionals/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-professionals_graduate-medical-education.txt
+- **GME_PAGE** [https://uab.edu/medical-professionals/graduate-medical-education/clerkship-programs](https://uab.edu/medical-professionals/graduate-medical-education/clerkship-programs)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-professionals_graduate-medical-education_clerkship-programs.txt
+- **OTHER** [https://uab.edu/academic-institute](https://uab.edu/academic-institute)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/academic-institute.txt
+- **OTHER** [https://uab.edu/academic-institute/education](https://uab.edu/academic-institute/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/academic-institute_education.txt
+- **OTHER** [https://uab.edu/academic-institute/education/medical](https://uab.edu/academic-institute/education/medical)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/academic-institute_education_medical.txt
+- **OTHER** [https://uab.edu/academic-institute/education/medical/medical-student-rotations](https://uab.edu/academic-institute/education/medical/medical-student-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/academic-institute_education_medical_medical-student-rotations.txt
+- **JSON_LD** [https://uab.edu/medicine/international](https://uab.edu/medicine/international)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `c615fd90077a6f954017188777ada0c05f314fe52a60f583ef72a93bdda66709`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international.txt
+- **JSON_LD** [https://uab.edu/medicine/international/international-programs](https://uab.edu/medicine/international/international-programs)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `e4a0cc9567e2e738192a3267862daa50979076c4d23cb457a4ff0cf28573608f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medicine/international/international-programs/international-visiting-medical-students](https://uab.edu/medicine/international/international-programs/international-visiting-medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7d0bc2929789ba3ac1d06cd895dd70d4ed012d7af6d1eb0173884e44a68b73cf`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medicine_international_international-programs_international-visiting-medical-students.txt
+- **OTHER** [https://uab.edu/visiting-clerkships](https://uab.edu/visiting-clerkships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/visiting-clerkships.txt
+- **OTHER** [https://uab.edu/visiting-clerkships/international](https://uab.edu/visiting-clerkships/international)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/visiting-clerkships_international.txt
+- **OTHER** [https://uab.edu/education-institute](https://uab.edu/education-institute)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education-institute.txt
+- **OTHER** [https://uab.edu/education-institute/academic-visitor-program](https://uab.edu/education-institute/academic-visitor-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education-institute_academic-visitor-program.txt
+- **GME_PAGE** [https://uab.edu/education/undergraduate-medical-education](https://uab.edu/education/undergraduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education_undergraduate-medical-education.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/education/undergraduate-medical-education/requirements-for-visiting-students](https://uab.edu/education/undergraduate-medical-education/requirements-for-visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education_undergraduate-medical-education_requirements-for-visiting-students.txt
+- **OTHER** [https://uab.edu/education/medical-students](https://uab.edu/education/medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education_medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/education/visiting-medical-students](https://uab.edu/education/visiting-medical-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education_visiting-medical-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/education/medical-student-electives](https://uab.edu/education/medical-student-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/education_medical-student-electives.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medical-education/medical-student-electives](https://uab.edu/medical-education/medical-student-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-education_medical-student-electives.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medical-education/visiting-students](https://uab.edu/medical-education/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-education_visiting-students.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medical-students/electives](https://uab.edu/medical-students/electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-students_electives.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medical-students/elective-rotations](https://uab.edu/medical-students/elective-rotations)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-students_elective-rotations.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/medical-students/clinical-electives](https://uab.edu/medical-students/clinical-electives)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/medical-students_clinical-electives.txt
+- **VISITING_STUDENT_PAGE** [https://uab.edu/students/visiting-students](https://uab.edu/students/visiting-students)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/students_visiting-students.txt
+- **GME_PAGE** [https://uab.edu/graduate-medical-education/clerkship-programs](https://uab.edu/graduate-medical-education/clerkship-programs)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `d87f94135e5aee1c47246b6391fc21a811d25bf6edd103c0ea3af73393dc2071`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-7-uab/cleaned_text/graduate-medical-education_clerkship-programs.txt
+
+## Rejected sources (0)
+

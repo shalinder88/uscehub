@@ -1,0 +1,13 @@
+validator,result,details,notes
+validate-no-secrets,PASS,scanned 1120+ files / 0 findings,Repo-wide secret scanner
+tsc --noEmit,PASS,No TypeScript errors,Type check
+validate-micro-pilot-runtime,PASS,5 pilot card(s) passed all runtime gates,Active runtime unchanged
+validate-p99-staged-runtime-batch-2,PASS,Staged batch 2 unchanged + still data-only,Batch 2 verified untouched
+validate-p99-staged-runtime-batch-3,PASS,14 cards / active 5 + prior 2 + new 7 / data-only,New batch 3 validator
+validate-p99-p97-bridge-input (evidence-hardening VALIDATED),PASS,7 row(s) passed all bridge-input gates,Source CSV stable
+validate-p99-runtime-prep-candidate,PASS,Candidate runtime is docs-only and schema-safe,Prior batch 2 candidate prep file unchanged
+validate-p99-report-issue-mapping,PASS,1 warning / 0 errors,Listing map / evidence join unchanged
+validate-p99-correction-intake-payload,PASS,8 sample(s) classified,Correction intake samples unchanged
+validate-p99-correction-queue-item,PASS,4 queue item(s) clear,Correction queue unchanged
+validate-p99-correction-audit-log,PASS,4 log(s) clear,Correction audit log unchanged
+gh secret-scanning open-alerts (gh logged out),NOT_VERIFIED_THIS_TURN,gh auth login required to re-verify,Last verified state — alert #1 resolved as wont_fix; open list = []

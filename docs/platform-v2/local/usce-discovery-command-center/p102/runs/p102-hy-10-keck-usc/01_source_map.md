@@ -1,0 +1,153 @@
+# Source Map — Keck School of Medicine at USC
+
+Run: p102-hy-10-keck-usc
+schemaVersion: p102-0r-1
+
+## Accepted sources (15)
+
+- **RESEARCH_PAGE** [https://keck.usc.edu/research](https://keck.usc.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `54f26dcd50a947c2b0ac2f905ab20355fb603c38b6e2eb06da9bd04fe8c6f69b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/research.txt
+- **GME_PAGE** [https://keck.usc.edu/graduate-medical-education](https://keck.usc.edu/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt
+- **GME_PAGE** [https://keck.usc.edu/gme](https://keck.usc.edu/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt
+- **JSON_LD** [https://keck.usc.edu/medical-education](https://keck.usc.edu/medical-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `9423034e37011c541ad84b0fbc87c66fe0009ec8488d0b57617233e4f6f0f77b`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/medical-education.txt
+- **JSON_LD** [https://keck.usc.edu/education](https://keck.usc.edu/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt
+- **JSON_LD** [https://keck.usc.edu/md-program](https://keck.usc.edu/md-program)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt
+- **VISITING_STUDENT_PAGE** [https://keck.usc.edu/md-program/visiting-student-clerkships](https://keck.usc.edu/md-program/visiting-student-clerkships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/research-programs/](https://keck.usc.edu/research-programs/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a726b89bea12b6e9b0e632f7b1f54fac70c6386a4ab6c627508e29970b54c003`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_dc265c19605eea66.txt
+- **FELLOWSHIP_PAGE** [https://keck.usc.edu/residencies-and-fellowships/](https://keck.usc.edu/residencies-and-fellowships/)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/](https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f57b3ebc6b1acafc6f1001e8372ed6342eb6cbae8e3bfcb1f4a46fc2ae90a360`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_8cb5a5ac53f645a2.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/organizer/office-of-research/](https://keck.usc.edu/organizer/office-of-research/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `83a5bc269e4aae4af9d7758d4a0ec066efc83c1c693bcc21af539ee30194b07f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_116006ef2206d896.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/](https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d176446c9453a1c332173dbaad4e4ffbce8fbf2b1245ebcebe1e6c1a65986f48`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_194513c01e26f083.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/](https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `3ccba37efe82ef77bd05c3b72148513484d7eaa0f24a05b44e297d014e9e74ee`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_8cf72a2c41adf959.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/](https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1d57afe34723a8b62d2dde26d1431ca53424ce389ad77240dd657dbf5ada1375`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_ce869775cb4fc0a0.txt
+- **RESEARCH_PAGE** [https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/](https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d7220cc8c4788d3a4f8aa6f0e962fe0d4d02589fce49ada0f4f4f7a820917cf1`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_f8e89ec32e1e30d4.txt
+
+## Rejected sources (83)
+
+- https://keck.usc.edu/observership — FETCH_404 (status_404)
+- https://keck.usc.edu/observerships — FETCH_404 (status_404)
+- https://keck.usc.edu/observer — FETCH_404 (status_404)
+- https://keck.usc.edu/clinical-observer — FETCH_404 (status_404)
+- https://keck.usc.edu/visiting-student — FETCH_404 (status_404)
+- https://keck.usc.edu/visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-students — FETCH_404 (status_404)
+- https://keck.usc.edu/international-students — FETCH_404 (status_404)
+- https://keck.usc.edu/electives — FETCH_404 (status_404)
+- https://keck.usc.edu/away-rotations — FETCH_404 (status_404)
+- https://keck.usc.edu/clinical-elective — FETCH_404 (status_404)
+- https://keck.usc.edu/clinical-rotation — FETCH_404 (status_404)
+- https://keck.usc.edu/sub-internship — FETCH_404 (status_404)
+- https://keck.usc.edu/subinternship — FETCH_404 (status_404)
+- https://keck.usc.edu/acting-internship — FETCH_404 (status_404)
+- https://keck.usc.edu/student-research — FETCH_404 (status_404)
+- https://keck.usc.edu/shadow — FETCH_404 (status_404)
+- https://keck.usc.edu/shadowing — FETCH_404 (status_404)
+- https://keck.usc.edu/volunteer — FETCH_404 (status_404)
+- https://keck.usc.edu/volunteering — FETCH_404 (status_404)
+- https://keck.usc.edu/img — FETCH_404 (status_404)
+- https://keck.usc.edu/international-medical-graduates — FETCH_404 (status_404)
+- https://keck.usc.edu/residency — FETCH_404 (status_404)
+- https://keck.usc.edu/fellowship — FETCH_404 (status_404)
+- https://keck.usc.edu/careers — FETCH_404 (status_404)
+- https://keck.usc.edu/physician-careers — FETCH_404 (status_404)
+- https://keck.usc.edu/provider-careers — FETCH_404 (status_404)
+- https://keck.usc.edu/benefits — FETCH_404 (status_404)
+- https://keck.usc.edu/visa — FETCH_404 (status_404)
+- https://keck.usc.edu/immigration — FETCH_404 (status_404)
+- https://keck.usc.edu/credentialing — FETCH_404 (status_404)
+- https://keck.usc.edu/health-professionals — FETCH_404 (status_404)
+- https://keck.usc.edu/professional-education — FETCH_404 (status_404)
+- https://keck.usc.edu/student-affairs — FETCH_404 (status_404)
+- https://keck.usc.edu/hcp-education-training — FETCH_404 (status_404)
+- https://keck.usc.edu/hcp-education-training/medical-students — FETCH_404 (status_404)
+- https://keck.usc.edu/hcp-education-training/medical-students/elective — FETCH_404 (status_404)
+- https://keck.usc.edu/hcp-education-training/medical-students/medical-student-observerships — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-professionals — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-professionals/graduate-medical-education — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://keck.usc.edu/academic-institute — FETCH_404 (status_404)
+- https://keck.usc.edu/academic-institute/education — FETCH_404 (status_404)
+- https://keck.usc.edu/academic-institute/education/medical — FETCH_404 (status_404)
+- https://keck.usc.edu/academic-institute/education/medical/medical-student-rotations — FETCH_404 (status_404)
+- https://keck.usc.edu/medicine/international — FETCH_404 (status_404)
+- https://keck.usc.edu/medicine/international/international-programs — FETCH_404 (status_404)
+- https://keck.usc.edu/medicine/international/international-programs/international-visiting-medical-students — FETCH_404 (status_404)
+- https://keck.usc.edu/visiting-clerkships — FETCH_404 (status_404)
+- https://keck.usc.edu/visiting-clerkships/international — FETCH_404 (status_404)
+- https://keck.usc.edu/education-institute — FETCH_404 (status_404)
+- https://keck.usc.edu/education-institute/academic-visitor-program — FETCH_404 (status_404)
+- https://keck.usc.edu/education/undergraduate-medical-education — FETCH_404 (status_404)
+- https://keck.usc.edu/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/education/medical-students — FETCH_404 (status_404)
+- https://keck.usc.edu/education/visiting-medical-students — FETCH_404 (status_404)
+- https://keck.usc.edu/education/medical-student-electives — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-education/medical-student-electives — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-education/visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-students/electives — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-students/elective-rotations — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-students/clinical-electives — FETCH_404 (status_404)
+- https://keck.usc.edu/students/visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/graduate-medical-education/clerkship-programs — FETCH_404 (status_404)
+- https://keck.usc.edu/offices/faculty-affairs — FETCH_404 (status_404)
+- https://keck.usc.edu/offices/faculty-affairs/services — FETCH_404 (status_404)
+- https://keck.usc.edu/offices/faculty-affairs/services/observerships — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-education/student-affairs — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-education/student-affairs/registrar — FETCH_404 (status_404)
+- https://keck.usc.edu/medical-education/student-affairs/registrar/externships-services — FETCH_404 (status_404)
+- https://keck.usc.edu/current-students — FETCH_404 (status_404)
+- https://keck.usc.edu/current-students/visiting-student-program — FETCH_404 (status_404)
+- https://keck.usc.edu/current-students/visiting-student-program/visiting-student-program-overview — FETCH_404 (status_404)
+- https://keck.usc.edu/education/md-education — FETCH_404 (status_404)
+- https://keck.usc.edu/education/md-education/visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/education/md-education/visiting-students/vslo — FETCH_404 (status_404)
+- https://keck.usc.edu/students/visiting-students/ — FETCH_404 (status_404)
+- https://keck.usc.edu/education/graduate-medical-education-gme — FETCH_404 (status_404)
+- https://keck.usc.edu/academics/md-program — FETCH_404 (status_404)
+- https://keck.usc.edu/academics/md-program/visiting-students — FETCH_404 (status_404)
+- https://keck.usc.edu/medicaleducation — FETCH_404 (status_404)
+- https://keck.usc.edu/medicaleducation/visiting-students-program — FETCH_404 (status_404)
+- https://keck.usc.edu/medicaleducation/visiting-students-program/ — FETCH_404 (status_404)

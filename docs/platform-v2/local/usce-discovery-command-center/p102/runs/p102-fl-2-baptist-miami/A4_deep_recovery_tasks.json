@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "tasks": [
+    {
+      "taskId": "t1_observer_program_page",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Volunteer pages (src_72, src_79) explicitly route shadowing inquiries to https://baptisthealth.net/academics/student-and-visitor-programs/job-shadowing-and-externships/observer-program and https://academics.baptisthealth.net/... — that observer-program page itself was not captured.",
+      "suggestedNarrowAction": "Fetch the Baptist Health Academics observer-program URL referenced by src_72 c2 and src_79 c3 only. Do not broad-crawl."
+    },
+    {
+      "taskId": "t2_campus_applicability_proof",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "International Observership program (src_76) is a real definite offer but every source is HEALTH_SYSTEM_LEVEL on baptisthealth.net; no campusApplicabilityProof links it specifically to Baptist Hospital of Miami (8900 N Kendall Drive).",
+      "suggestedNarrowAction": "Search for campus-specific observership confirmation on the Baptist Hospital of Miami facility page or contact International@BaptistHealth.net to confirm campus mapping before promoting to PUBLIC_SAFE_USCE."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

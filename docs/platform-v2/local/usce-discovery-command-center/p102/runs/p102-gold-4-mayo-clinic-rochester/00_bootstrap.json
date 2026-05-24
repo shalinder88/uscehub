@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-4-mayo-clinic-rochester",
+  "queueId": "p102_gold_deep_benchmark",
+  "institutionId": "inst_mayo_clinic_rochester_mn",
+  "canonicalName": "Mayo Clinic",
+  "officialDomain": "mayoclinic.org",
+  "state": "MN",
+  "city": "Rochester",
+  "targetLanes": [
+    "IMG_OBSERVERSHIP",
+    "VISITING_MEDICAL_STUDENT"
+  ],
+  "bootstrappedAt": "2026-05-15T01:03:55.338Z",
+  "runnerVersion": "p102-0r-1",
+  "notes": "Deterministic bootstrap before any model interpretation."
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_224",
+  "institutionId": "inst_live_amg_medical_group_clinical_rotations",
+  "institutionName": "AMG Medical Group — Clinical Rotations",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Multiple locations nationwide",
+  "state": "MULTI",
+  "sourceUrl": "https://amgmedicalgroup.com/",
+  "sourceDomain": "amgmedicalgroup.com",
+  "expectedAudience": "UNKNOWN_HOLD",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery, Pediatrics, Psy",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_dcb6308c11"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_224/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_224/cleaned.txt",
+  "sourceHash": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "page text very short (<200 chars)"
+  },
+  "aud": {
+    "audience": "UNKNOWN_HOLD",
+    "confidence": "LOW",
+    "rationale": "expected audience UNKNOWN_HOLD"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": -1,
+  "fetchedAt": "2026-05-17T02:37:13.220Z"
+}

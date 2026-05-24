@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "a2_c2",
+      "claimType": "OFFERS_VISITING_STUDENT",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "sourceUrl": "https://mayoclinic.org/education",
+      "sourceHash": "967a1bc49b8c894808458d5a91fdd0502972b1783d83ee1f5b1d0a471681c523",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-1-mayo-clinic-florida/cleaned_text/education.txt",
+      "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+      "quote": "Visiting medical student clerkships\nAdmissions",
+      "normalizedField": "visiting_student_admissions_link",
+      "claimText": "College Admissions section lists 'Visiting medical student clerkships' as a discrete admissions pathway entry.",
+      "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+      "confidence": "MEDIUM",
+      "limitations": "No URL, fee, deadline, or eligibility stated in this quote.",
+      "whyA1Missed": "A1's visiting-student quote came from the Academic programs blurb; the separate Admissions-section listing was not captured.",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "deepSourceFamily": "VISITING_STUDENT",
+      "tierAssignmentRationale": "Visiting medical student admissions pathway is Tier 1 USCE-match.",
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-fl-1-mayo-clinic-florida",
+      "institutionId": "inst_mayo_clinic_florida_fl",
+      "sourceFamily": "JSON_LD",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

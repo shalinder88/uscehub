@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_038",
+  "institutionId": "inst_live_nyp_columbia",
+  "institutionName": "NewYork-Presbyterian / Columbia",
+  "parentSystem": "NewYork-Presbyterian",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.vagelos.columbia.edu/education/academic-programs/md-program/visiting-student-program",
+  "sourceDomain": "vagelos.columbia.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "NYP / Columbia",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Columbia VP&S Visiting Student Program",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Replaces nyp.org/ homepage; INTL via /international-visiting-students",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_8e27dc678c"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_038/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_038/cleaned.txt",
+  "sourceHash": "351f5338de4ca0ffcec7e47f0ca54d8a191bcb9892e1020c81819199fa68d167",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:06.996Z"
+}

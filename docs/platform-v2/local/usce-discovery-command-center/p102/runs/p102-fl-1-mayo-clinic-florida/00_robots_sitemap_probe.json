@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "fetched": true,
+  "statusCode": 200,
+  "sitemapsAdvertised": [
+    "https://www.mayoclinic.org/arabic_condition_consolidated_concepts.xml",
+    "https://www.mayoclinic.org/arabic_organization_concepts.xml",
+    "https://www.mayoclinic.org/arabic_patient_consumer_faq.xml",
+    "https://www.mayoclinic.org/arabic_patient_consumer_recipe.xml",
+    "https://www.mayoclinic.org/arabic_patient_consumer_video.xml",
+    "https://www.mayoclinic.org/arabic_patient_consumer_web.xml",
+    "https://www.mayoclinic.org/arabic_procedure_concepts.xml",
+    "https://www.mayoclinic.org/chinese_condition_consolidated_concepts.xml",
+    "https://www.mayoclinic.org/chinese_organization_concepts.xml",
+    "https://www.mayoclinic.org/chinese_patient_consumer_faq.xml",
+    "https://www.mayoclinic.org/chinese_patient_consumer_recipe.xml",
+    "https://www.mayoclinic.org/chinese_patient_consumer_video.xml",
+    "https://www.mayoclinic.org/chinese_patient_consumer_web.xml",
+    "https://www.mayoclinic.org/chinese_procedure_concepts.xml",
+    "https://www.mayoclinic.org/condition_consolidated_concepts.xml",
+    "https://www.mayoclinic.org/london.xml",
+    "https://www.mayoclinic.org/organization_concepts.xml",
+    "https://www.mayoclinic.org/patient_consumer_biography.xml",
+    "https://www.mayoclinic.org/patient_consumer_drug.xml",
+    "https://www.mayoclinic.org/patient_consumer_faq.xml",
+    "https://www.mayoclinic.org/patient_consumer_recipe.xml",
+    "https://www.mayoclinic.org/symptoms_all.xml",
+    "https://www.mayoclinic.org/patient_consumer_video.xml",
+    "https://www.mayoclinic.org/patient_consumer_web.xml",
+    "https://www.mayoclinic.org/procedure_concepts.xml",
+    "https://www.mayoclinic.org/spanish_condition_consolidated_concepts.xml",
+    "https://www.mayoclinic.org/spanish_organization_concepts.xml",
+    "https://www.mayoclinic.org/spanish_patient_consumer_faq.xml",
+    "https://www.mayoclinic.org/spanish_patient_consumer_recipe.xml",
+    "https://www.mayoclinic.org/spanish_patient_consumer_video.xml",
+    "https://www.mayoclinic.org/spanish_patient_consumer_web.xml",
+    "https://www.mayoclinic.org/spanish_procedure_concepts.xml"
+  ],
+  "disallows": [
+    "/edu/",
+    "*.model.json",
+    "/static/chunks/*",
+    "/api/*"
+  ],
+  "allows": [
+    "/"
+  ],
+  "sitemap": {
+    "fetched": true,
+    "statusCode": 200,
+    "urlsFound": 0,
+    "candidatesKept": []
+  }
+}

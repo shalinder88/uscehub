@@ -1,0 +1,16 @@
+metric,before,after,delta,notes
+Batch_3_DRAFT_rows,7,7,0,Same 7 rows; status upgraded
+Batch_3_rows_with_Tier_A_plus_evidence,0,8,+8,7 DRAFT rows + Mount Sinai now Tier-A+
+Batch_3_VALIDATED_BRIDGE_INPUT_rows,0,7,+7,**Headline metric.** All 7 DRAFT rows transitioned from NEEDS_HUMAN_COPY_REVIEW to VALIDATED_BRIDGE_INPUT
+rows_still_needing_evidence_hardening,6,4,-2,Mount Sinai resolved (TIER_A_PLUS); HCA Aventura reclassified to KEEP_INTERNAL/Class D; 4 remain (NYP Columbia / NYP Cornell + 2 Mayo per-site mapping)
+active_runtime_rows,5,5,0,UNCHANGED
+staged_runtime_rows,7,7,0,UNCHANGED
+production_public_rows,0,0,0,UNCHANGED
+total_bridge_DRAFT_rows_in_repo,9,9,0,Two DRAFT files: prior (UPMC + Lincoln = 2) + promotion-batch-3 (= 7); both still validate
+total_VALIDATED_BRIDGE_INPUT_rows_in_repo,2,9,+7,Prior 2 (UPMC + Lincoln) + 7 new = 9
+rows_moved_closer_to_runtime,7,14,+7,7 new VALIDATED_BRIDGE_INPUT rows ready for staged-runtime-batch-3 sprint
+347_to_5_funnel_status,RESOLVING,RESOLVING_FURTHER,positive,Pipeline now: 347 verified → 9 VALIDATED_BRIDGE_INPUT → 7 staged → 5 active. Was: 347 → 2 → 7 → 5.
+mac_local_PNGs_in_repo,5,18,+13,Prior: 5 (UPMC parent + domestic + intl + Lincoln MOSAIC + Lincoln EM) Now: +7 DRAFT + Mount Sinai + 5 Class A
+mac_local_HTML_snapshots_in_repo,5,18,+13,Same delta as PNGs
+mac_local_quote_files_in_repo,5,13,+8,7 DRAFT + 5 Class A + Mount Sinai = 13 quote files (5 prior unchanged)
+class_A_broad_IMG_rows_status,5_NEEDS_EVIDENCE_HARDENING,4_REMAINING_HARDENING,-1,HCA Aventura reclassified to wrong-lane (Class D); 4 Class A rows still pending curator pass

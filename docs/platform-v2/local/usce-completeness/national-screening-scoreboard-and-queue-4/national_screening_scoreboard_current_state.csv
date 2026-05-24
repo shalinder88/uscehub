@@ -1,0 +1,35 @@
+metric,value,source_file_or_method,confidence,notes
+total_institution_rows_processed_national_queue_cycles,373,T7 p97-national-queue: queue.csv (65) + queue_2.csv (112) + queue-3/queue_3.csv (196),HIGH,Excludes Maine county sweep which used a separate file path
+queue_1_rows_processed,65,T7 p97_national_institution_queue.csv,HIGH,Q1 institutions (the original national seed)
+queue_2_rows_processed,112,T7 p97_national_institution_queue_2.csv,HIGH,Q2 includes 2a (50) + 2b (47) + 2c (15) sub-queues
+queue_3_rows_processed,196,T7 queue-3/p97_national_institution_queue_3.csv,HIGH,Q3 includes 3a (126 VSLO-remaining) + 3b (35 sibling-expansion) + 3c (35 IMG/Caribbean GME)
+maine_county_sweep_completion,16/16,T7 P97_MAINE_16_OF_16_STATE_COMPLETION_ANALYSIS.md,HIGH,All 16 Maine counties have at least one packeted institution
+maine_import_readiness_queue_rows,23,T7 maine-import-readiness-queue.csv,HIGH,Maine-specific final-QA queue
+high_yield_review_master_rows,370,T7 high_yield_review_master.csv,HIGH,3 rows differ from 373 because of de-duplication or one bad-state row
+source_proof_score_5_rows,347,grep on high_yield_review_master.csv,HIGH,Rows with sourceProofScore=5 (verified directly via institution-source page)
+source_proof_score_4_rows,21,same,HIGH,Tier-A but not score-5
+yield_class_HIGH_USCE_YIELD_rows,247,same,HIGH,Highest-confidence yield classification
+yield_class_MEDIUM_USCE_YIELD_rows,109,same,HIGH,Medium-confidence
+yield_tier_TIER_1_or_TIER_1A_or_TIER_1B_or_TIER_1C_rows,239,164+60+6+9 from yieldTier breakdown,HIGH,All Tier-1 family
+import_readiness_PENDING_PROMOTION_GATE_rows,191,T7 source_capture_priority_queue.csv,HIGH,Awaiting curator promotion
+import_readiness_NEEDS_MORE_RESEARCH_rows,130,same,HIGH,Awaiting more evidence/source capture
+import_readiness_READY_FOR_HUMAN_APPROVAL_rows,25,same,HIGH,**Highest-leverage next action set.** Tier-1 institutions including Yale New Haven/Mayo Saint Marys/Cleveland Clinic Main/NYP Columbia+Cornell/Johns Hopkins/Mount Sinai/Duke/Northwestern/Penn/NYU Langone Tisch/Mayo Phoenix+Jacksonville/Westchester/Methodist TX/Newark Beth Israel/Saint Barnabas/BronxCare/Englewood/Carilion/Grady Memorial/Indiana University Health Methodist
+first_pilot_candidate_pool_rows,25,T7 p99_p97_first_pilot_candidate_pool.csv,HIGH,Curator-selected from the workbench
+first_pilot_evidence_action_queue_rows,12,T7 p99_p97_first_pilot_evidence_action_queue_1.csv,HIGH,Original 12-row evidence-action queue (pilot-001..pilot-012)
+promotion_readiness_audit_human_review_queue_rows,25,T7 promotion_readiness_audit_1_human_review_queue.csv,HIGH,Promotion-readiness audit queue
+active_runtime_pilot_cards,5,Mac-local public-listings-pilot.generated.json,HIGH,Morristown / Overlook / CCF Mercy / CC Hillcrest / Highland — already serving on /clerkships/pilot (noindex)
+staged_runtime_pilot_cards,7,Mac-local public-listings-pilot-staged-batch-2.generated.json,HIGH,Active 5 + UPMC + Lincoln; not imported by app
+production_public_listings,0,Production main SHA 739ab1e2... unchanged; no /clerkships/pilot in production sitemap; preview was noindex,HIGH,Public-public listings count is zero by design — pilot is preview-only
+states_represented_in_high_yield,48 of 51,grep on high_yield_review_master.csv state column,MEDIUM,One state field has a garbage value ('Ear & Throat Hospital'); deduplicated states ≈ 47-48
+states_with_zero_high_yield_rows,4,Cross-check: AK ID MT WY have no rows in the high_yield_review_master,HIGH,Concrete coverage gap targets for Queue 4
+states_with_one_or_two_high_yield_rows,~14,Includes ME DC NH VT ND SD NM NE OR UT CO IA AL AK,MEDIUM,Thin-coverage states — also Queue 4 candidates
+rows_blocked_by_contact_ui_gap,5+,Active pilot cards' Report-issue links land on /contact which does not parse listing_id (B-001/B-002/B-003),HIGH,Contact UI sprint not yet authorized; intake endpoint exists but is env-flag disabled by default
+rows_blocked_by_runtime_activation,2,UPMC + Lincoln are staged but not active,HIGH,Activation requires a separate authorized sprint
+rows_blocked_by_production_policy,All,Production deploy gated by user explicit-push approval + cumulative blast-radius audit,HIGH,Branch is 47+ commits ahead of main
+correction_intake_endpoint_status,IMPLEMENTED_BUT_DISABLED,POST /api/usce/corrections returns 404 not_available unless USCE_CORRECTION_INTAKE_ENABLED=true,HIGH,No production exposure; sandbox-tested only
+correction_intake_validators_count,4,intake-payload + queue-item + audit-log + cross-join,HIGH,All passing against synthetic fixtures
+correction_intake_real_queue_items_written,0,docs/platform-v2/local/usce-corrections/ canonical root is empty,HIGH,Only sprint-sandbox test fixtures exist
+listings_with_tier_a_plus_evidence_in_repo,2,UPMC + Lincoln per manual-png-landing-1 sprint,HIGH,Active 5 evidence files canonical on T7 lane (B-005)
+listings_with_correction_report_mapping,7,All 7 staged-runtime listing IDs reserved per staged_runtime_report_issue_mapping_1_listing_map.csv,HIGH,Plus 1 generic pilot-feedback ref
+total_states_with_no_screened_rows,4,AK ID MT WY,HIGH,Direct Queue 4 targets
+total_underrepresented_lanes,multiple,IMG-friendly large city safety-nets / VSLO-only opt-ins / Caribbean-school named partners outside NJ/OH,MEDIUM,Detail in coverage_gap_analysis.csv

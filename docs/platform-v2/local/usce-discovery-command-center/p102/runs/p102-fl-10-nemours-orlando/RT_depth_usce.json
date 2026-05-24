@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-10-nemours-orlando",
+  "depthPass": "USCE",
+  "sourceFamiliesReviewed": [
+    "VOLUNTEER_PAGE",
+    "OTHER"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 3,
+  "conflictsFound": [
+    "https://nemours.org/education: Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source."
+  ],
+  "unresolveds": [
+    "https://nemours.org/volunteering: shadow/volunteer is not auto-USCE; human review",
+    "https://nemours.org/volunteering: shadow/volunteer is not auto-USCE; human review",
+    "https://nemours.org/education: source scope HEALTH_SYSTEM_LEVEL cannot prove Nemours Children's Hospital Orlando-specific availability"
+  ],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 0
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-10-nemours-orlando_1",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "runId": "p102-fl-10-nemours-orlando",
+      "claimType": "POSSIBLE_SHADOW_VOLUNTEER",
+      "claimText": "student volunteer",
+      "normalizedField": "lane.SHADOW.possible",
+      "quote": "Lastly, all student volunteers must adhere to the Nemours Standards of Behavior and be committed to the Nemours goal of helping children, everywhere, grow into healthy adults.</p>\\r\\n<h2>Requirements</h2>\\r\\n<ul>\\r\\n<li><b>Must be TB tested</b><br>\\r\\n</li>\\r\\n<li>Must be 16 by the start of the program and have completed sophomore year of high school</li>\\r\\n<li>Must be able to speak and understand English</li>\\r\\n<li>Must be willing to learn the skills necessary to be competent in their duties ",
+      "sourceUrl": "https://nemours.org/volunteering",
+      "sourceHash": "11082f5ea168bc90fb8d2dbbb40195076aa6ef1fb54c4a8d20df7a96f5472c59",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/volunteering.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "VOLUNTEER_PAGE",
+      "confidence": "LOW",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "shadow/volunteer is not auto-USCE; human review",
+      "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-10-nemours-orlando_2",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "runId": "p102-fl-10-nemours-orlando",
+      "claimType": "POSSIBLE_SHADOW_VOLUNTEER",
+      "claimText": "student volunteer",
+      "normalizedField": "lane.SHADOW.possible",
+      "quote": "Lastly, all student volunteers must adhere to the Nemours Standards of Behavior and be committed to the Nemours goal of helping children, everywhere, grow into healthy adults.RequirementsMust be TB testedMust be 16 by the start of the program and have completed sophomore year of high school\nMust be able to speak and understand English\nMust be willing to learn the skills necessary to be competent in their duties and responsibilities\nMust commit to being here for 7 of the 8 weeks during the progra",
+      "sourceUrl": "https://nemours.org/volunteering",
+      "sourceHash": "11082f5ea168bc90fb8d2dbbb40195076aa6ef1fb54c4a8d20df7a96f5472c59",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/volunteering.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "VOLUNTEER_PAGE",
+      "confidence": "LOW",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "shadow/volunteer is not auto-USCE; human review",
+      "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-10-nemours-orlando_4",
+      "institutionId": "inst_nemours_childrens_orlando_fl",
+      "runId": "p102-fl-10-nemours-orlando",
+      "claimType": "OFFERS_VSLO",
+      "claimText": "medical student rotation",
+      "normalizedField": "lane.VISITING_STUDENT.offered",
+      "quote": "We share the latest innovations in pediatric and neonatal health care, and provide resources that help you grow in your profession.Learn MoreHealth Inclusion Is Important to Us</h2>\\r\\n\"}}\" id=\"text-29cb2d52f0\" class=\"cmp-text\">\nHealth Inclusion Is Important to UsLearn more about our Inclusion initiatives at Nemours Children’s Health.</p>\\r\\n\"}}\" id=\"text-f228e9c4db\" class=\"cmp-text\">\nLearn more about our Inclusion initiatives at Nemours Children’s Health.Read MorePediatric Postgraduate Training",
+      "sourceUrl": "https://nemours.org/education",
+      "sourceHash": "5a985755bcae5fdd9fd15210110020cc700b349e1f7a7322aad8a77c8a91ac2a",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-10-nemours-orlando/cleaned_text/education.txt",
+      "quoteVerified": true,
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "sourceFamily": "OTHER",
+      "confidence": "MEDIUM",
+      "visibility": "HUMAN_REVIEW_REQUIRED",
+      "usedInPublicCopy": false,
+      "notPublicReason": "source scope HEALTH_SYSTEM_LEVEL cannot prove Nemours Children's Hospital Orlando-specific availability",
+      "lane": "VISITING_MEDICAL_STUDENT",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

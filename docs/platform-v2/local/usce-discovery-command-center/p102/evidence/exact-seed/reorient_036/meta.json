@@ -1,0 +1,47 @@
+{
+  "seedId": "reorient_036",
+  "institutionId": "inst_live_uc_cincinnati",
+  "institutionName": "University of Cincinnati Medical Center",
+  "parentSystem": "UC Health",
+  "campus": "",
+  "city": "Cincinnati",
+  "state": "OH",
+  "sourceUrl": "https://med.uc.edu/education/medical-student-education/office-of-medical-education/visiting-students",
+  "sourceDomain": "med.uc.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Cincinnati Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UC SOM visiting students canonical page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO-based; INTL only via existing exchange agreements",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_21bdfac3bb"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_036/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_036/cleaned.txt",
+  "sourceHash": "cdbd897ab18adc000e72965ab81004f00a9749bdcdc235eaef3b8e483348ef4e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, medical-students URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:03.227Z"
+}

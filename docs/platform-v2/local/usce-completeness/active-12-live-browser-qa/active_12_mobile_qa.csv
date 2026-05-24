@@ -1,0 +1,8 @@
+check_id,check,viewport,result,evidence
+MB1,Mobile preset applied,375x812,PASS,Viewport set to 375x812 (mobile)
+MB2,/clerkships/pilot SSR returns 200 under mobile UA,375x812,PASS,fetch with iPhone UA returns 200
+MB3,All 12 institutions present in DOM,375x812,PASS,document.body.innerText scan finds 12/12
+MB4,No horizontal overflow,375x812,PASS,scrollWidth=375 clientWidth=375 overflow=false
+MB5,Viewport meta tag set,375x812,PASS,<meta name=viewport> present
+MB6,Header count badge legible,375x812,PASS,"12 listings · 2 open to international students per source · 10 US MD/DO per source" wraps cleanly
+MB7,First-card visible above fold,375x812,PASS,Morristown Medical Center renders in mobile screenshot

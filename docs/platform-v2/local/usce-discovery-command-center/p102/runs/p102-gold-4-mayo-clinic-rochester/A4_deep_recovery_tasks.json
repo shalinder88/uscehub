@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-4-mayo-clinic-rochester",
+  "tasks": [
+    {
+      "taskId": "a4_mayo_vsc_admissions",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "The /education JSON-LD references 'Visiting medical student clerkships Admissions' but the actual admissions destination URL was not in the captured source set; all visiting-student slug guesses returned 404.",
+      "suggestedNarrowAction": "Fetch college.mayo.edu visiting clerkships admissions page directly (e.g., college.mayo.edu/.../visiting-medical-student-clerkships/) rather than mayoclinic.org slug guesses."
+    },
+    {
+      "taskId": "a4_mayo_crisp",
+      "missingFamily": "RESEARCH_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "CRISP (Clinical Research Internship Study Program) named in a2_c3 but no program page extracted to verify eligibility, application, or public openness.",
+      "suggestedNarrowAction": "Narrow fetch of the CRISP program page on college.mayo.edu."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

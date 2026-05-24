@@ -1,0 +1,16 @@
+validator_or_check,input,status,errors,warnings,notes
+validate-no-secrets,(repo-wide),PASS,0,0,1170 files scanned
+tsc --noEmit,(repo-wide),PASS,0,0,Type check clean
+validate-micro-pilot-runtime (UPDATED 8 → 10),src/data/usce/public-listings-pilot.generated.json,PASS,0,0,10 cards / original-5 + slice-1 + slice-2 IDs present / Jackson + Methodist SA absent
+validate-p99-staged-runtime-batch-2,src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Batch 2 still data-only
+validate-p99-staged-runtime-batch-3,src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,Batch 3 staged file unchanged (14 cards)
+validate-p99-staged-runtime-batch-3-report-mapping,(no arg),PASS,0,0,Mapping CSVs unchanged
+validate-p99-batch-3-promotion-candidate-audit (UPDATED deferred narrowed),(no arg),PASS,0,0,Deferred-IDs invariant narrowed to Jackson + Methodist San Antonio
+validate-p99-contact-ref-prefill (UPDATED activated/staged split),(no arg),PASS,0,0,5 activated → runtime_set=active; 2 staged → runtime_set=staged
+validate-p99-correction-intake-payload,(samples),PASS,0,0,8 sample payloads (no slice-2 change to endpoint contract)
+validate-p99-correction-queue-item,(test-output),PASS,0,0,
+validate-p99-correction-audit-log,(test-output),PASS,0,0,
+browser preview /clerkships/pilot,(curl + DOM),PASS,0,0,10 institution names rendered; 2 deferred absent; '10 listings' header; noindex meta; zero banned phrases; zero console errors
+browser preview /contact for HUP + Northwestern,(curl),PASS,0,0,Banner + hidden listing_id + hidden runtime_set=active for each
+browser preview /contact for Jackson + Methodist SA (deferred),(curl),PASS,0,0,Banner present + hidden runtime_set=staged for each
+gh secret-scanning open alerts,(gh api),PASS,0,0,length=0

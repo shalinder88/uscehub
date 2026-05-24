@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-4-memorial-hollywood",
+  "tasks": [
+    {
+      "taskId": "recover_campus_proof_mrh_hollywood",
+      "reason": "VSLO/visiting-student program is system-wide; need explicit campus-applicability proof that Memorial Regional Hospital Hollywood hosts visiting students.",
+      "suggestedNarrowAction": "Narrow re-read of /education/undergraduate-medical-education and its child pages for sentences naming 'Memorial Regional Hospital' or 'Hollywood' as a rotation site; check Rotation Dates child page if present.",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    },
+    {
+      "taskId": "reclassify_negative_observership",
+      "reason": "Explicit negative quote 'We do not accept students for observerships or shadowing, no exceptions' was downgraded to FUTURE_LANE_ONLY; meets EXPLICIT_NEGATIVE_QUOTE + STRONG criteria for PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY on the IMG_OBSERVERSHIP lane once campus-applicability is confirmed.",
+      "suggestedNarrowAction": "Re-classify c_neg_observership_001 with campus-applicability check.",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH"
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

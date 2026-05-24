@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_028",
+  "institutionId": "inst_live_baptist_observer",
+  "institutionName": "Baptist Health South Florida — Observer Program",
+  "parentSystem": "Baptist Health South Florida",
+  "campus": "",
+  "city": "Miami",
+  "state": "FL",
+  "sourceUrl": "https://baptisthealth.net/academics/student-and-visitor-programs/job-shadowing-and-externships/observer-program",
+  "sourceDomain": "baptisthealth.net",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "Baptist Health South Florida",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Direct Observer Program page (1 day - 4 weeks)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "General observer program; non-citizens need International Eligibility Form",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_d642c857a5"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_028/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_028/cleaned.txt",
+  "sourceHash": "60c645e5747f498d4ad1837cf69a1a4ef62614740d0882ff03a6649f142fcf98",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "MEDIUM",
+    "rationale": "expected BOTH but only IMG signal found"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:37:47.086Z"
+}

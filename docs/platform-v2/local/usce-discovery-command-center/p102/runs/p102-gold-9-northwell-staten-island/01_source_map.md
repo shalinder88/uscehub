@@ -1,0 +1,139 @@
+# Source Map — Northwell Staten Island University Hospital
+
+Run: p102-gold-9-northwell-staten-island
+schemaVersion: p102-0r-1
+
+## Accepted sources (24)
+
+- **RESEARCH_PAGE** [https://northwell.edu/research](https://northwell.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `86d863db7dfaf51fd3ce733f3fad1305f85fed7a4bbe36c16c71772cfa75cb5a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/research.txt
+- **VOLUNTEER_PAGE** [https://northwell.edu/volunteer](https://northwell.edu/volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `bd7b03a61114d1622711d2c39b0cb6f88ba32c04cda4b7ed05868959079413be`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/volunteer.txt
+- **GME_PAGE** [https://northwell.edu/graduate-medical-education](https://northwell.edu/graduate-medical-education)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `ea5cdddaa2c62e23d510c725b36343f4fb20bedcb45fe64357b8baaae948a319`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/graduate-medical-education.txt
+- **GME_PAGE** [https://northwell.edu/gme](https://northwell.edu/gme)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `ea5cdddaa2c62e23d510c725b36343f4fb20bedcb45fe64357b8baaae948a319`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/gme.txt
+- **CAREERS_PAGE** [https://northwell.edu/careers](https://northwell.edu/careers)
+  - sourceScope: CAREERS_PORTAL
+  - sha256: `a7b9f3a54de04d53fb7364002f77b5664a481044de7f815e9860768b95b7e4af`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/careers.txt
+- **JSON_LD** [https://northwell.edu/education](https://northwell.edu/education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4e0893ca390c79d09eed535a7557ffe8a72c77a56af48905115f053b29e87107`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/education.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/research](https://pediatrics.northwell.edu/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `1595c1dd9692cd735e51134cd8478ea20d0d7d7bce08d3562074f5617efcfee1`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_82c012f34f3ba8e5.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-gastroenterology/research](https://pediatrics.northwell.edu/departments-services/pediatric-gastroenterology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `da78915620b90546db6cd5f09fa25f788c2d262941fd1c65d626144956491238`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_ed9524cecbfdd98b.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research](https://pediatrics.northwell.edu/departments-services/pediatric-hematology-oncology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0962effdf411535cf9de918e608a7df9df8d43eeecab6b5b83dcd1525a044fa7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_1337ac274e8182be.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-nephrology-kidney-transplantation/research](https://pediatrics.northwell.edu/departments-services/pediatric-nephrology-kidney-transplantation/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `8dcf6e9b079f7b40bcd8ac06af59ec87438740bd61d17ee0a80d16c4f4f3be35`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_9c46ba7829d8f7bf.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-endocrinology-diabetes/research](https://pediatrics.northwell.edu/departments-services/pediatric-endocrinology-diabetes/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `613acdbbd4ccf8fb957821786a10e8def2b0d9ff8a98b0c411840934446396d5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_d0a8dc61960e840a.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/general-pediatrics/research](https://pediatrics.northwell.edu/departments-services/general-pediatrics/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `3339cb95e40952abc050fd3b41e514ec3366ad694e14a5178ebceb02709cc3b7`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_6c981767f18293dd.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-neurology/research](https://pediatrics.northwell.edu/departments-services/pediatric-neurology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `f2a7df91458515770d2e85f13b9c2d4672934d71b6a2d07eb36ebe3e92e59cab`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_d24f9145884356eb.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-orthopaedics/research](https://pediatrics.northwell.edu/departments-services/pediatric-orthopaedics/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0b45b4925c826596d0d86829ca3a3dcead6f5f14bbfff14cff93b7fa4cdde93f`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_a9b5d22bab4f00cb.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-general-surgery/research](https://pediatrics.northwell.edu/departments-services/pediatric-general-surgery/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `86d863db7dfaf51fd3ce733f3fad1305f85fed7a4bbe36c16c71772cfa75cb5a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_632922bf3a0eabdc.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-allergy-and-immunology/research](https://pediatrics.northwell.edu/departments-services/pediatric-allergy-and-immunology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a601bf280906027af09b78acb9184ae2e6b8bbd78d9ed15acb6f14a99f9d75ac`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_ded2e5fccfd2d96b.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-cardiology/research](https://pediatrics.northwell.edu/departments-services/pediatric-cardiology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `dcc6bc31983a44b9b0f4894f83590194010039af9f4f4948d1e6d59e0d0fbb1e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_44c274875df39980.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-congenital-heart-surgery/research](https://pediatrics.northwell.edu/departments-services/pediatric-congenital-heart-surgery/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6768d591250c865b6c66b3f831860244433559448a07b43b79495eb721f82fdc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_6c307ebfabf91d23.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-infectious-diseases/research](https://pediatrics.northwell.edu/departments-services/pediatric-infectious-diseases/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a534bdf04c50060a5cdd87662e4c4be929b2297038da06d2eea792206a7e33dc`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_0cb454922a1e061c.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/neonatology/research-clinical-trials](https://pediatrics.northwell.edu/departments-services/neonatology/research-clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `fb501214da88d59185bee4da0ab1fa5bbfb8d09372e973ffcef72e010ffa5af4`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_aeb6fbe0bd8b7dab.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-neurosurgery/research](https://pediatrics.northwell.edu/departments-services/pediatric-neurosurgery/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `0c02bff9807816d4400c40b82d9d32a4c50df4c1a1182b6f3d613e06c2973577`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_26da7f8f8d8d2577.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-otolaryngology/research](https://pediatrics.northwell.edu/departments-services/pediatric-otolaryngology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `6e1b5101bc9469b058301e129f18363b767b26714f0e248c4a4f90ebb85bc187`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_6af256a59bd05e36.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-pulmonology/research](https://pediatrics.northwell.edu/departments-services/pediatric-pulmonology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a87442db0b409d3aee8d957201324128c9b533524cc99663592db12a40b08fc0`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_69ada49a9e096f0a.txt
+- **RESEARCH_PAGE** [https://pediatrics.northwell.edu/departments-services/pediatric-rheumatology/research](https://pediatrics.northwell.edu/departments-services/pediatric-rheumatology/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4aa39ef22ea6c84c7d91e492a9dc97923ad03420a27f6b62b6c6e9998f2b1208`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-9-northwell-staten-island/cleaned_text/sm_6a17162fe08e9924.txt
+
+## Rejected sources (33)
+
+- https://northwell.edu/observership — FETCH_404 (status_404)
+- https://northwell.edu/observerships — FETCH_404 (status_404)
+- https://northwell.edu/observer — FETCH_404 (status_404)
+- https://northwell.edu/clinical-observer — FETCH_404 (status_404)
+- https://northwell.edu/visiting-student — FETCH_404 (status_404)
+- https://northwell.edu/visiting-students — FETCH_404 (status_404)
+- https://northwell.edu/medical-students — FETCH_404 (status_404)
+- https://northwell.edu/international-students — FETCH_404 (status_404)
+- https://northwell.edu/electives — FETCH_404 (status_404)
+- https://northwell.edu/away-rotations — FETCH_404 (status_404)
+- https://northwell.edu/clinical-elective — FETCH_404 (status_404)
+- https://northwell.edu/clinical-rotation — FETCH_404 (status_404)
+- https://northwell.edu/sub-internship — FETCH_404 (status_404)
+- https://northwell.edu/subinternship — FETCH_404 (status_404)
+- https://northwell.edu/acting-internship — FETCH_404 (status_404)
+- https://northwell.edu/student-research — FETCH_404 (status_404)
+- https://northwell.edu/shadow — FETCH_404 (status_404)
+- https://northwell.edu/shadowing — FETCH_404 (status_404)
+- https://northwell.edu/volunteering — FETCH_404 (status_404)
+- https://northwell.edu/img — FETCH_404 (status_404)
+- https://northwell.edu/international-medical-graduates — FETCH_404 (status_404)
+- https://northwell.edu/residency — FETCH_404 (status_404)
+- https://northwell.edu/fellowship — FETCH_404 (status_404)
+- https://northwell.edu/physician-careers — FETCH_404 (status_404)
+- https://northwell.edu/provider-careers — FETCH_404 (status_404)
+- https://northwell.edu/benefits — FETCH_404 (status_404)
+- https://northwell.edu/visa — FETCH_404 (status_404)
+- https://northwell.edu/immigration — FETCH_404 (status_404)
+- https://northwell.edu/credentialing — FETCH_404 (status_404)
+- https://northwell.edu/health-professionals — FETCH_404 (status_404)
+- https://northwell.edu/medical-education — FETCH_404 (status_404)
+- https://northwell.edu/professional-education — FETCH_404 (status_404)
+- https://northwell.edu/student-affairs — FETCH_404 (status_404)

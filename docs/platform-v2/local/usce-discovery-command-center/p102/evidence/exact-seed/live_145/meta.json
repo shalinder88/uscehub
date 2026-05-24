@@ -1,0 +1,44 @@
+{
+  "seedId": "live_145",
+  "institutionId": "inst_live_cleveland_clinic",
+  "institutionName": "Cleveland Clinic",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://my.clevelandclinic.org/departments/international-medical-education/international-programs/physician-observer",
+  "sourceDomain": "my.clevelandclinic.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): WARNING: NOT for IMGs seeking US residency — applications from residency-seeking IMGs will not be co",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 1 month | visa: B1/B2 | cost: $500 ($200 non-refundable + $300 balance)",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_c3aff7393e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_145/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_145/cleaned.txt",
+  "sourceHash": "f344eb4b7f80b99c712fc86bde8c72d44a30e25abbc06631466d6d765a0a32ad",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T02:34:29.654Z"
+}

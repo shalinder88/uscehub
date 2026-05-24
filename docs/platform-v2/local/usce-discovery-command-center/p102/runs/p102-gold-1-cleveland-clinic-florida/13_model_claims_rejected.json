@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "c9",
+      "claimType": "FUTURE_LANE_RESIDENCY",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "sourceUrl": "https://my.clevelandclinic.org/departments/anesthesiology/medical-professionals/residency",
+      "sourceHash": "d52cc86de06a9c1f42a924a02191f2a105b23103fa229fdc582a3a922055fa35",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-1-cleveland-clinic-florida/cleaned_text/sm_526b57ff2ffcb024.txt",
+      "sourceScope": "DEPARTMENT_LEVEL",
+      "quote": "Please refer to the table below for new salary rates, effective May 16, 2025:Grad Level\\nAnnual Rate\\nPer Pay Rate1\\n$67,322\\n$2,8052\\n$69,591\\n$2,9003\\n$71,838\\n$2,9934\\n$74,649\\n$3,110",
+      "claimText": "Resident salary scale effective May 16, 2025: PGY1 $67,322 → PGY4 $74,649.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "HIGH",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "deepSourceFamily": "BENEFITS",
+      "tierAssignmentRationale": "Resident salary/benefits — Tier 2.",
+      "limitations": null,
+      "normalizedField": null,
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-gold-1-cleveland-clinic-florida",
+      "institutionId": "inst_cleveland_clinic_florida",
+      "sourceFamily": "RESIDENCY_PAGE",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A1"
+    }
+  ]
+}

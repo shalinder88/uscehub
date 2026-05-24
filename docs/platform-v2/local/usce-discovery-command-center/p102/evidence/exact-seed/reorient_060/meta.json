@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_060",
+  "institutionId": "inst_live_ochsner_med_student",
+  "institutionName": "Ochsner Health — Medical Student Electives",
+  "parentSystem": "Ochsner Health",
+  "campus": "",
+  "city": "New Orleans",
+  "state": "LA",
+  "sourceUrl": "https://education.ochsner.org/clined/medical-student-electives/",
+  "sourceDomain": "education.ochsner.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Ochsner Health",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Direct medical student electives page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "New Orleans-based electives",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f7b917431e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_060/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_060/cleaned.txt",
+  "sourceHash": "c70a71ee318c82acfc60403e69c8d6299f67bae758ad697a737b587ce4710f66",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: medical-students URL segment",
+    "signals": [
+      "medical-students URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:48.871Z"
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_037",
+  "institutionId": "inst_live_mount_sinai_hospital",
+  "institutionName": "Mount Sinai Hospital",
+  "parentSystem": "Mount Sinai Health System",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://icahn.mssm.edu/education/students/registrar/electives/visiting-lcme-schools",
+  "sourceDomain": "icahn.mssm.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Mount Sinai Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Icahn SOM Mount Sinai visiting LCME schools page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO; INTL students currently attending international medical schools welcome via separate route",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_e7031dae76"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_037/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_037/cleaned.txt",
+  "sourceHash": "3675986b59c36351e3ef5f3faf6f80d858d7162c3ad361b1724c56d8985d7aee",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: elective URL segment",
+    "signals": [
+      "elective URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:05.229Z"
+}

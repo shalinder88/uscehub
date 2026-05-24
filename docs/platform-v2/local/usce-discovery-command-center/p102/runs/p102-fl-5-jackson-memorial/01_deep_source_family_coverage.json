@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-5-jackson-memorial",
+  "institutionId": "inst_jackson_memorial_hospital_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/medical-education",
+        "https://jacksonhealth.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/visiting-student",
+        "https://jacksonhealth.org/visiting-students",
+        "https://jacksonhealth.org/international-students",
+        "https://jacksonhealth.org/medicine/international/international-programs/international-visiting-medical-students",
+        "https://jacksonhealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://jacksonhealth.org/education/visiting-medical-students",
+        "https://jacksonhealth.org/medical-education/visiting-students",
+        "https://jacksonhealth.org/students/visiting-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/observership",
+        "https://jacksonhealth.org/observer",
+        "https://jacksonhealth.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/electives",
+        "https://jacksonhealth.org/away-rotations",
+        "https://jacksonhealth.org/clinical-elective",
+        "https://jacksonhealth.org/clinical-rotation",
+        "https://jacksonhealth.org/hcp-education-training/medical-students/elective",
+        "https://jacksonhealth.org/education/medical-student-electives",
+        "https://jacksonhealth.org/medical-education/medical-student-electives",
+        "https://jacksonhealth.org/medical-students/electives",
+        "https://jacksonhealth.org/medical-students/elective-rotations",
+        "https://jacksonhealth.org/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/sub-internship",
+        "https://jacksonhealth.org/subinternship",
+        "https://jacksonhealth.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://jacksonhealth.org/shadow",
+        "https://jacksonhealth.org/shadowing",
+        "https://jacksonhealth.org/volunteer",
+        "https://jacksonhealth.org/volunteering",
+        "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+        "https://jacksonhealth.org/community/volunteering/"
+      ],
+      "acceptedSources": [
+        "https://jacksonhealth.org/blog/baby-hugger-volunteer-program-an-alternative-healing-to-premature-babies-at-holtz-childrens-hospital/",
+        "https://jacksonhealth.org/community/volunteering/"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/graduate-medical-education",
+        "https://jacksonhealth.org/gme",
+        "https://jacksonhealth.org/medical-professionals/graduate-medical-education",
+        "https://jacksonhealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://jacksonhealth.org/education/undergraduate-medical-education",
+        "https://jacksonhealth.org/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://jacksonhealth.org/residency",
+        "https://jacksonhealth.org/careers/nurse-residency/"
+      ],
+      "acceptedSources": [
+        "https://jacksonhealth.org/careers/nurse-residency/"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://jacksonhealth.org/visa",
+        "https://jacksonhealth.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://jacksonhealth.org/careers",
+        "https://jacksonhealth.org/careers/",
+        "https://jacksonhealth.org/careers-contact-us/"
+      ],
+      "acceptedSources": [
+        "https://jacksonhealth.org/careers/",
+        "https://jacksonhealth.org/careers-contact-us/"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://jacksonhealth.org/observerships",
+        "https://jacksonhealth.org/medical-students",
+        "https://jacksonhealth.org/research",
+        "https://jacksonhealth.org/img",
+        "https://jacksonhealth.org/international-medical-graduates",
+        "https://jacksonhealth.org/credentialing",
+        "https://jacksonhealth.org/health-professionals",
+        "https://jacksonhealth.org/education",
+        "https://jacksonhealth.org/hcp-education-training",
+        "https://jacksonhealth.org/hcp-education-training/medical-students",
+        "https://jacksonhealth.org/hcp-education-training/medical-students/medical-student-observerships",
+        "https://jacksonhealth.org/medical-professionals",
+        "https://jacksonhealth.org/academic-institute",
+        "https://jacksonhealth.org/academic-institute/education",
+        "https://jacksonhealth.org/academic-institute/education/medical",
+        "https://jacksonhealth.org/academic-institute/education/medical/medical-student-rotations",
+        "https://jacksonhealth.org/medicine/international",
+        "https://jacksonhealth.org/medicine/international/international-programs",
+        "https://jacksonhealth.org/visiting-clerkships",
+        "https://jacksonhealth.org/visiting-clerkships/international",
+        "https://jacksonhealth.org/education-institute",
+        "https://jacksonhealth.org/education-institute/academic-visitor-program",
+        "https://jacksonhealth.org/education/medical-students",
+        "https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/",
+        "https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/",
+        "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+        "https://jacksonhealth.org/find-a-doctor/eli-avisar/"
+      ],
+      "acceptedSources": [
+        "https://jacksonhealth.org/blog/new-research-shows-the-brain-has-five-stages-and-doesnt-fully-mature-until-early-30s/",
+        "https://jacksonhealth.org/blog/is-soda-linked-to-liver-problems-what-new-research-shows/",
+        "https://jacksonhealth.org/administrative/medical-staff-and-credentialing/",
+        "https://jacksonhealth.org/find-a-doctor/eli-avisar/"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_WEAK",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_PARTIAL"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 2,
+    "tier2AcceptedSources": 1,
+    "tier3AcceptedSources": 2
+  },
+  "generatedAt": "2026-05-15T21:51:32.204Z"
+}

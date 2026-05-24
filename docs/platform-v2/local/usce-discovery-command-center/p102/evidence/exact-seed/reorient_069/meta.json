@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_069",
+  "institutionId": "inst_live_nych_mosaic",
+  "institutionName": "NYC Health + Hospitals — MOSAIC Visiting Scholars",
+  "parentSystem": "NYC Health + Hospitals",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.nychealthandhospitals.org/mosaic/visiting-scholars-program/",
+  "sourceDomain": "nychealthandhospitals.org",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "Diversity",
+  "expectedCampus": "NYC Health + Hospitals",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "MOSAIC 4-week electives + $2k stipend ($2k housing if non-NYC)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "US LCME/AOA only; underserved-care focused",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_7d1ad84651"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_069/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_069/cleaned.txt",
+  "sourceHash": "fecffada89e195976ee0465fa6a6f64fb13f7297b7fe2b20cd93014d87b87547",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "LOW",
+    "rationale": "seed expected VMS; no explicit signal in cleaned text"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T03:39:07.167Z"
+}

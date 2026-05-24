@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Barnes-Jewish Hospital / Washington University",
+    "aliases": [
+      "Barnes-Jewish Hospital",
+      "BJH",
+      "Washington University School of Medicine — Visiting Students program (covering BJH + St. Louis Children's)",
+      "WashU Medicine",
+      "WUSM"
+    ],
+    "city": "Saint Louis",
+    "state": "MO",
+    "officialDomain": "md.wustl.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "BJC HealthCare (clinical) / Washington University School of Medicine (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 38 (queue-4-national-screening-resume); P101-1 selected_10 rank 8"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "md.wustl.edu",
+      "wustl.edu"
+    ],
+    "searchTermsTried": [
+      "Washington University School of Medicine visiting medical student VSLO international Barnes-Jewish site:wustl.edu",
+      "WashU visiting students how to apply",
+      "WashU visiting students fees",
+      "Barnes-Jewish visiting medical student",
+      "WUSM VSLO Global",
+      "WashU bilateral affiliation agreement"
+    ],
+    "pagesOpened": [
+      "https://md.wustl.edu/curriculum/visiting-students/",
+      "https://md.wustl.edu/curriculum/visiting-students/how-to-apply/",
+      "https://md.wustl.edu/curriculum/visiting-students/fees/",
+      "https://md.wustl.edu/academics/visiting-students/general-information/",
+      "https://www.mir.wustl.edu/education/medical-students/visiting-students/",
+      "https://obgyn.wustl.edu/education/medical-students/visiting-students/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://vascularsurgery.wustl.edu/education/vascular-sub-internship/",
+        "title": "Vascular Sub-Internship",
+        "reason": "AFFILIATED_ONLY"
+      },
+      {
+        "url": "https://neurosurgery.wustl.edu/education/fourth-year-sub-internship/",
+        "title": "Fourth-year Sub-internship",
+        "reason": "AFFILIATED_ONLY"
+      },
+      {
+        "url": "https://psychiatry.wustl.edu/education/medical-students-2/",
+        "title": "Medical Student Education - Psychiatry",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "md.wustl.edu accessible; WebFetch clean across multiple sub-pages.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://md.wustl.edu/curriculum/visiting-students/",
+      "pageTitle": "Visiting Students | MD Program | Washington University in St. Louis",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Washington University only accepts applications from prospective visiting medical students through AAMC's Visiting Student Learning Opportunities (VSLO) platform.",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Limited to one four-week elective rotation",
+      "specialtyDecision": "Multispecialty including Radiology (Mallinckrodt), OBGYN, named",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS_FINAL_YEAR_ONLY",
+        "VSLO_REQUIRED_VERBATIM",
+        "BARNES_JEWISH_AND_ST_LOUIS_CHILDRENS_NAMED_AS_PLACEMENT_SITES",
+        "ONE_FOUR_WEEK_ELECTIVE_MAX"
+      ]
+    },
+    {
+      "sourceUrl": "https://md.wustl.edu/curriculum/visiting-students/",
+      "pageTitle": "Visiting Students | MD Program | Washington University in St. Louis",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Barnes-Jewish Hospital, St. Louis Children's Hospital, and other affiliated clinical sites",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "BARNES_JEWISH_HOSPITAL_NAMED_VERBATIM",
+        "ST_LOUIS_CHILDRENS_HOSPITAL_NAMED_VERBATIM",
+        "OTHER_AFFILIATED_CLINICAL_SITES_LANGUAGE_OPEN"
+      ]
+    },
+    {
+      "sourceUrl": "https://md.wustl.edu/curriculum/visiting-students/fees/",
+      "pageTitle": "Fees & Funding | MD Program | Washington University in St. Louis",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "WashU Medicine does not charge tuition to any visiting medical student. All students applying in VSLO who are offered an elective rotation at WashU Medicine must pay a $100 administration fee.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "NO_TUITION_CHARGED_VERBATIM",
+        "ADMIN_FEE_100_USD_ON_OFFER",
+        "VSLO_APPLICATION_FEE_15_USD_TO_AAMC_SEPARATELY",
+        "INCLUSIVE_EXCELLENCE_AND_ONCOLOGY_REIMBURSEMENT_UP_TO_2000_USD",
+        "SURGERY_SCHOLARSHIP_1000_USD",
+        "INTERNATIONAL_STUDENTS_NOT_ELIGIBLE_FOR_FUNDING_VERBATIM"
+      ]
+    },
+    {
+      "sourceUrl": "https://md.wustl.edu/curriculum/visiting-students/how-to-apply/",
+      "pageTitle": "Application Process | MD Program | Washington University in St. Louis",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students enrolled in international medical schools must have access to VSLO in order to apply.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "Four-week",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "POSSIBLE_USCE_NEEDS_REVIEW",
+      "caveats": [
+        "INTERNATIONAL_LANE_IS_CONDITIONAL_ON_VSLO_ACCESS",
+        "VSLO_ACCESS_REQUIRES_HOME_SCHOOL_IN_VSLO_GLOBAL_OR_BILATERAL_AFFILIATION_AGREEMENT",
+        "INTERNATIONAL_STUDENTS_NOT_ELIGIBLE_FOR_FUNDING_PER_FEES_PAGE",
+        "FOLLOW_UP_PACKET_QUEUED_FOR_VSLO_GLOBAL_AFFILIATE_LIST"
+      ]
+    },
+    {
+      "sourceUrl": "https://md.wustl.edu/curriculum/visiting-students/how-to-apply/",
+      "pageTitle": "Application Process | MD Program | Washington University in St. Louis",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Applications automatically close in VSLO 6 weeks (42 days) before each rotation start date",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Four-week",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "42_DAY_LEAD_TIME_VERBATIM",
+        "ROLLING_DECISIONS"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "International students are ineligible for WashU funding ('Students enrolled in international medical schools are not eligible for funding' — verbatim). International lane is conditional on VSLO Global / bilateral affiliation agreement, not open to all international applicants.",
+    "weakNegativeEvidence": "Specific cost figures for international students (if any beyond the $100 admin fee) not stated on hub. Visa absent. Year-of-study language is implied by 'final year' from search summary but the direct hub fetch was less explicit."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC — Barnes-Jewish + St. Louis Children's named verbatim as placement sites; (b) Final year MS, VSLO required; (c) $100 admin fee on offer + $15 AAMC VSLO fee; (d) max 1 four-week elective; (e) US LCME/AOA-only as primary lane; (f) international lane conditional on VSLO Global network or bilateral affiliation — sub-finding requires manual retry for VSLO Global affiliate list. Funding NOT available to international students.",
+  "plainEnglishSummary": "WashU Medicine (Barnes-Jewish Hospital + St. Louis Children's) accepts visiting medical students through VSLO. Both hospitals are explicitly named as placement sites. No tuition charged; $100 admin fee on offer (plus $15 AAMC VSLO fee). One 4-week elective max. US lane is straightforward. International medical students can technically apply if their school is in VSLO Global or has a bilateral affiliation agreement with WashU — but they are not eligible for funding. Visa not stated.",
+  "driftCheck": "This advanced national USCE discovery because Missouri gained its first P101 packet covering Barnes-Jewish + St. Louis Children's with verbatim site naming and cost evidence; a nuanced international-conditional finding was captured honestly rather than over-classified as either fully open or fully closed."
+}

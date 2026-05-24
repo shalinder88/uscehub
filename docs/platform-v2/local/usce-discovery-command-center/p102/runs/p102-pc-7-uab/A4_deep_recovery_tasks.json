@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-7-uab",
+  "tasks": [
+    {
+      "taskId": "t1_campus_applicability",
+      "missingFamily": null,
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "IVMS source is Heersink School of Medicine; need explicit proof the clinical rotations occur at UAB Hospital campus.",
+      "suggestedNarrowAction": "Fetch IVMS catalogue / rotation host page and extract a quote naming UAB Hospital as the clinical site."
+    },
+    {
+      "taskId": "t2_observer_program_pages",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "src_52 navigation references 'International Visiting Medical Observers' and 'International Visiting Scholar Observership' but no dedicated page was captured.",
+      "suggestedNarrowAction": "Resolve the linked observership sub-pages under uab.edu/medicine/international/international-programs/ and extract eligibility, fee, duration."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

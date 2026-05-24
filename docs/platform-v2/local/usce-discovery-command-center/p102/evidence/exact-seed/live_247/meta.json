@@ -1,0 +1,44 @@
+{
+  "seedId": "live_247",
+  "institutionId": "inst_live_mobile_infirmary_observer_program",
+  "institutionName": "Mobile Infirmary — Observer Program",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Mobile",
+  "state": "AL",
+  "sourceUrl": "https://www.infirmaryhealth.org/careers/graduate-education/mobile-infirmary-internal-medicine-residency/visiting-observer-learning-opportunity-program/",
+  "sourceDomain": "www.infirmaryhealth.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): 2 or 4 weeks. USMLE Step 1 required. TOEFL 100+.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2 or 4 weeks | visa: B1/B2 | cost: $100 non-refundable",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_912c69c127"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_247/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_247/cleaned.txt",
+  "sourceHash": "0a14db237faf8d30887e0f76fb3266bb863049cb9b0ccb91195b9a5d163e8c03",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T02:37:58.330Z"
+}

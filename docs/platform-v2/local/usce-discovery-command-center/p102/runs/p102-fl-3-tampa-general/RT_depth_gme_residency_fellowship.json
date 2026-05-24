@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-3-tampa-general",
+  "depthPass": "GME_RESIDENCY_FELLOWSHIP",
+  "sourceFamiliesReviewed": [
+    "CAREERS_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 6
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-3-tampa-general_1",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "runId": "p102-fl-3-tampa-general",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "claimText": "residency program",
+      "normalizedField": "lane.RESIDENCY.signal",
+      "quote": "That way, they will be notified as soon as a position that matches their interests becomes available.How do I apply for admission to TGH&rsquo;s nurse residency program?Our nurse residency program is designed to help recent nursing graduates smoothly transition into their first role as a registered nurse (RN).",
+      "sourceUrl": "https://tgh.org/careers",
+      "sourceHash": "b52346e4a04b1ed4277575684426914cea1744c7720c7a112d95e08e9676eb97",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-3-tampa-general/cleaned_text/careers.txt",
+      "quoteVerified": true,
+      "sourceScope": "CAREERS_PORTAL",
+      "sourceFamily": "CAREERS_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "GME/residency/fellowship content; future-lane only",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-fl-3-tampa-general_2",
+      "institutionId": "inst_tampa_general_hospital_fl",
+      "runId": "p102-fl-3-tampa-general",
+      "claimType": "FUTURE_LANE_GME_GENERAL",
+      "claimText": "residency program",
+      "normalizedField": "lane.RESIDENCY.signal",
+      "quote": "Interested candidates can explore our nurse residency program jobs at www.tgh.org/careers and apply directly for the position and unit of their choice.What information should I include in my job application?When applying for a position at TGH, you will be asked to provide the following:Personal InformationPlease provide your current contact details, including your:Full nameHome addressMobile telephone numberPersonal email addressEducational BackgroundFor each school you attended, please provide:",
+      "sourceUrl": "https://tgh.org/careers",
+      "sourceHash": "b52346e4a04b1ed4277575684426914cea1744c7720c7a112d95e08e9676eb97",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-3-tampa-general/cleaned_text/careers.txt",
+      "quoteVerified": true,
+      "sourceScope": "CAREERS_PORTAL",
+      "sourceFamily": "CAREERS_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "GME/residency/fellowship content; future-lane only",
+      "lane": "RESIDENCY_PROGRAM_INFO",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

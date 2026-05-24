@@ -1,0 +1,17 @@
+check,status,evidence,notes
+staged_batch_4_json_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-4.generated.json (12 cards),Generator wrote file
+staged_batch_4_ts_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-4.generated.ts,Generator wrote file
+active_runtime_unchanged,PASS,git status --short src/data/usce/public-listings-pilot.generated.json -> empty,Active 10 preserved verbatim
+staged_batch_3_unchanged,PASS,git status --short src/data/usce/public-listings-pilot-staged-batch-3.generated.json -> empty,Batch 3 staged untouched
+staged_batch_4_count_12,PASS,JSON cards array length = 12,5 original + 3 slice-1 + 2 slice-2 + 2 new
+staged_batch_4_not_imported_by_app,PASS,grep -rln 'public-listings-pilot-staged-batch-4' src/app src/lib -> empty,Validator-enforced
+no_homepage_or_nav_sitemap_exposure,PASS,No app source changed,
+clerkships_pilot_route_unchanged,PASS,git status --short src/app/clerkships/pilot -> empty,
+contact_route_unchanged,PASS,git status --short src/app/contact -> empty,
+contact_context_resolver_unchanged,PASS,git status --short src/lib/usce-contact-context.ts -> empty,Resolver still routes the 14 staged-batch-3-era IDs (Vanderbilt/UCSF will be added in a later mapping sprint)
+no_PUBLIC_NOW_or_IMPORT_READY_break,PASS,No bare runtime-promotion token in staged data or sprint docs,
+production_main_unchanged,PASS,origin/main = 739ab1e232ecc52db1f10c8619bbdc1d409a190f (byte-identical to start of conversation),
+new_listing_ids_unique,PASS,pilot-020 and pilot-021 not used elsewhere in active or staged batch 3,
+caveat_stack_present_per_row,PASS,Both new cards have school-level + audience + visa + cost + application restriction_tags,
+no_IMG_overclaim_for_either_new_row,PASS,audience_detail.international_student = EXCLUDED_EXPLICIT for both,
+no_visa_overclaim_for_either_new_row,PASS,visa tags = VISA_NOT_MENTIONED_US_ONLY_AUDIENCE + NO_J1_VERIFIED + NO_H1B_VERIFIED,

@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-10-emory",
+  "scopeConflicts": [
+    {
+      "claimId": "emory_edu_scope_conflict",
+      "sourceUrl": "https://med.emory.edu/education",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Source is Emory University School of Medicine; institution is Emory University Hospital (campus). Med-school scope without campusApplicabilityProof — correctly held at HUMAN_REVIEW_REQUIRED."
+    },
+    {
+      "claimId": "emory_dom_scope_mismatch",
+      "sourceUrl": "https://med.emory.edu/medicine/international",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "DOM page is med-school scope, not Emory University Hospital campus-specific."
+    },
+    {
+      "claimId": "emory_dom_url_content_mismatch",
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "URL implies international programs page but cleaned text is generic DOM landing page — URL/content mismatch plus school vs hospital scope."
+    },
+    {
+      "claimId": "emory_source_family_mismatch",
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Tagged VISITING_STUDENT_PAGE but cleaned text is the DOM homepage — family misapplied; no visiting-student content present."
+    },
+    {
+      "claimId": "emory_scope_school_vs_hospital",
+      "sourceUrl": "https://med.emory.edu/medicine/international/international-programs/international-visiting-medical-students",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Med-school source attributed to hospital institution without campus-applicability proof."
+    },
+    {
+      "claimId": "c_emory_scope_conflict",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "SOM research-training page attributed to hospital institution; correctly held at HUMAN_REVIEW_REQUIRED."
+    },
+    {
+      "claimId": "c_emory_src80_scope_01",
+      "sourceUrl": "http://med.emory.edu/research/conducting-research/funding-opportunities/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Med-school funding-opportunities page cannot speak for hospital campus."
+    },
+    {
+      "claimId": "c_emory_mdphd",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Promoted to PUBLIC_SAFE_USCE despite med-school scope and RESEARCH_PAGE family — double failure."
+    },
+    {
+      "claimId": "c_emory_ctsa_tl1",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "Med-school scope source attributed to hospital; PUBLIC_SAFE_USCE override unsafe."
+    },
+    {
+      "claimId": "c_emory_gdbbs_phd",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "GDBBS PhD content is med-school/graduate-school scope, not hospital."
+    },
+    {
+      "claimId": "c_emory_t32_grants",
+      "sourceUrl": "http://med.emory.edu/research/training/index.html",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "institutionId": "inst_emory_university_hospital_ga",
+      "explanation": "T32 grants administered at SOM level, not hospital campus."
+    }
+  ],
+  "overpromotionDetected": [
+    {
+      "claimId": "c_emory_mdphd",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "MD/PhD matriculation track is not pre-residency USCE for outside visitors."
+    },
+    {
+      "claimId": "c_emory_ctsa_tl1",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "CTSA TL1/KL2 are internal trainee/junior-faculty research awards."
+    },
+    {
+      "claimId": "c_emory_gdbbs_phd",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "PhD program enrollment is not USCE."
+    },
+    {
+      "claimId": "c_emory_t32_grants",
+      "actualTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "modelTaggedTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "T32 grants are internal trainee research funding mechanisms."
+    }
+  ],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  }
+}

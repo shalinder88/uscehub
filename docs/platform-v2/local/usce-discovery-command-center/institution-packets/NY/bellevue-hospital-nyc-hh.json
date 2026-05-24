@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Bellevue Hospital - NYC H+H",
+    "aliases": [
+      "NYC Health + Hospitals/Bellevue",
+      "Bellevue Hospital Center",
+      "NYU Grossman SOM — Visiting MD Students (covering Bellevue rotation site)"
+    ],
+    "city": "New York",
+    "state": "NY",
+    "officialDomain": "med.nyu.edu",
+    "institutionType": "public_hospital_system",
+    "healthSystem": "NYC Health + Hospitals (clinical) / NYU Grossman SOM (academic)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 43; P101-2 selected_25 rank 3"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["med.nyu.edu", "nychealthandhospitals.org"],
+    "searchTermsTried": [
+      "NYU Grossman School of Medicine visiting medical student VSLO international Bellevue NYC Health Hospitals site:nyu.edu",
+      "Bellevue visiting medical student",
+      "NYU Grossman visiting MD students",
+      "NYC H+H Bellevue elective",
+      "NYU advanced medicine sub-internship visiting"
+    ],
+    "pagesOpened": [
+      "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+      "https://med.nyu.edu/education/md-degree/registration-student-records/elective-catalog/department-medicine/advanced-medicine-sub-internship-visiting-students",
+      "https://med.nyu.edu/departments-institutes/emergency-medicine/education/training-medical-students/advanced-emergency-medicine-elective",
+      "https://med.nyu.edu/departments-institutes/ophthalmology/education/medical-student-training/elective-visiting-medical-students"
+    ],
+    "rejectedPages": [
+      {"url": "https://medli.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students", "title": "NYU Grossman Long Island SOM visiting", "reason": "DUPLICATE"}
+    ],
+    "robotsOrAccessNotes": "med.nyu.edu accessible; clean fetch.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+      "pageTitle": "Information for Visiting MD Students | NYU Langone Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Your school must be accredited by either the Liaison Committee on Medical Education or the Commission on Osteopathic College Accreditation.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "One four-week elective per AAMC guidelines",
+      "specialtyDecision": "Multispecialty per NYU elective catalog; Bellevue rotation appears in Advanced Medicine Sub-I + EM + Ophthalmology",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FINAL_YEAR_MS_AT_US_LCME_OR_COCA_ONLY",
+        "BELLEVUE_ACCESS_VIA_NYU_GROSSMAN_ROTATION_NETWORK_NOT_BELLEVUE_DIRECT"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+      "pageTitle": "Information for Visiting MD Students | NYU Langone Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Due to limited availability, we are unable to process requests for an elective at NYU Grossman School of Medicine from students enrolled in non-LCME-approved medical schools. In addition, we do not offer an observer category.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 4 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "NON_LCME_SCHOOLS_EXPLICITLY_EXCLUDED_VERBATIM",
+        "OBSERVER_CATEGORY_EXPLICITLY_NOT_OFFERED_VERBATIM",
+        "NO_IMG_GRAD_OBSERVERSHIP_LANE_AT_BELLEVUE_VIA_NYU"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/information-visiting-md-students",
+      "pageTitle": "Information for Visiting MD Students | NYU Langone Health",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "registration fee in the form of a $225 check, made payable to NYU Grossman School of Medicine",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 4 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["REGISTRATION_FEE_225_USD_CHECK"]
+    },
+    {
+      "sourceUrl": "https://med.nyu.edu/education/md-degree/registration-student-records/elective-catalog/department-medicine/advanced-medicine-sub-internship-visiting-students",
+      "pageTitle": "Advanced Medicine Sub-Internship for Visiting Students Elective",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "Bellevue Hospital, Tisch Hospital, VA New York Harbor Healthcare System-New York Campus, or the NYU Langone Hospital-Brooklyn",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Sub-I = 4 weeks",
+      "specialtyDecision": "Advanced Medicine sub-internship",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["BELLEVUE_EXPLICITLY_NAMED_AS_ROTATION_SITE_IN_ADVANCED_MEDICINE_SUB_I"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 5,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Two explicit verbatim exclusions found at NYU Grossman hub: (a) non-LCME-approved medical schools cannot apply, (b) observer category not offered. The Bellevue rotation goes through NYU's domestic visiting-students lane only. There is no separate Bellevue-direct visiting-students lane on nychealthandhospitals.org.",
+    "weakNegativeEvidence": "Bellevue is not named on NYU's main visiting-MD-students hub page; only on the per-department elective pages (Advanced Medicine Sub-I, Ophthalmology). Visa absent from hub."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — NYU Grossman SOM hub; Bellevue is reachable via NYU's domestic visiting-students lane only; (b) US LCME/COCA final-year only; (c) non-LCME EXCLUDED explicitly; (d) NO OBSERVER CATEGORY (no IMG-grad lane); (e) $225 registration fee; (f) max 1 four-week elective.",
+  "plainEnglishSummary": "Bellevue Hospital is part of NYC Health + Hospitals but its visiting-medical-student access is controlled by NYU Grossman SOM. Only final-year US LCME or COCA medical students can apply via NYU's domestic visiting-students lane. International medical schools and observer categories are explicitly excluded — no IMG observership at Bellevue through this pathway. $225 registration fee, max 1 four-week elective. Bellevue is named as a rotation site for the Advanced Medicine Sub-I.",
+  "driftCheck": "This advanced national USCE discovery because Bellevue was correctly classified as US-LCME-only via NYU rather than overclaimed as an IMG-friendly safety-net hospital; verbatim 'no observer category' protects against future IMG-friendly overclaim on Bellevue."
+}

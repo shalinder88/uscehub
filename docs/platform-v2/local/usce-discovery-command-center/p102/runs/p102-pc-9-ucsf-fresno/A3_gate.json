@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-9-ucsf-fresno",
+  "institutionId": "1",
+  "verdict": "PASS_WITH_CAVEATS",
+  "networkUsed": false,
+  "agentUsed": false,
+  "publicSafe": true,
+  "futureLaneValue": "HIGH",
+  "publicSafeUsceClaims": 3,
+  "cautionSafeClaims": 17,
+  "futureLaneClaims": 74,
+  "hallucinationRisks": [],
+  "unsupportedClaims": [],
+  "quoteVerificationFailures": [],
+  "sourceScopeConflicts": [],
+  "missingCriticalFields": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
+  "requiredA4Tasks": [],
+  "finalRecommendation": "Public-safe claims emitted; manual review before publish.",
+  "a3RegatedAt": "2026-05-15T18:56:56.092Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
+}

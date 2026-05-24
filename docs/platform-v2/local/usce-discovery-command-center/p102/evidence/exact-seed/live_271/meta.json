@@ -1,0 +1,44 @@
+{
+  "seedId": "live_271",
+  "institutionId": "inst_live_newark_beth_israel_medical_center",
+  "institutionName": "Newark Beth Israel Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Newark",
+  "state": "NJ",
+  "sourceUrl": "https://www.rwjbh.org/newark-beth-israel-medical-center/",
+  "sourceDomain": "www.rwjbh.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Cardiology, Surgery, Transplant",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_4f26f89241"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_271/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_271/cleaned.txt",
+  "sourceHash": "edfb1e706cd614e5433c806ac8b67baace5d9c5089be31d0f5043c90b0cb53e6",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:38:47.914Z"
+}

@@ -48,3 +48,9 @@ prisma/dev.db
 prisma/dev.db-journal
 scripts/lca-fy2024-q4.xlsx
 scripts/*.xlsx
+
+# P96 audit screenshots — heavy PNGs, keep local only
+docs/platform-v2/local/screenshots/
+
+# Local p101 HTML fetch cache (off-T7 staging) — never commit; may contain third-party site API keys in HTML
+tmp-html-cache/

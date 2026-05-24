@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_079",
+  "institutionId": "inst_live_uic_observer_intl",
+  "institutionName": "University of Illinois Chicago — Observership Program",
+  "parentSystem": "UIC",
+  "campus": "",
+  "city": "Chicago",
+  "state": "IL",
+  "sourceUrl": "https://medicine.uic.edu/education/international-education/observership-program/",
+  "sourceDomain": "medicine.uic.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Illinois at Chicago",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UIC College of Medicine Observership Program for IMGs",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Direct observership page",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_153d8d157e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_079/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_079/cleaned.txt",
+  "sourceHash": "89092258ac9abfefb83a320dc0a512e54bc8b9b938344e97cd749290fe1c5c31",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T03:39:25.319Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_198",
+  "institutionId": "inst_live_lsu_health_new_orleans_university_medical_center",
+  "institutionName": "LSU Health New Orleans / University Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New Orleans",
+  "state": "LA",
+  "sourceUrl": "https://www.medschool.lsuhsc.edu/",
+  "sourceDomain": "www.medschool.lsuhsc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Emergency Medicine, Psychiatry",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_2071587249"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_198/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_198/cleaned.txt",
+  "sourceHash": "4c9ce415a45bc91e23606738b8a0d7ccfd37efb9c421dd621eaf2a685e9a324b",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:36:19.226Z"
+}

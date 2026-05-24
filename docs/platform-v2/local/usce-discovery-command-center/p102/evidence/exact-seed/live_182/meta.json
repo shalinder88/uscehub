@@ -1,0 +1,44 @@
+{
+  "seedId": "live_182",
+  "institutionId": "inst_live_mercy_hospital_st_louis",
+  "institutionName": "Mercy Hospital St. Louis",
+  "parentSystem": "",
+  "campus": "",
+  "city": "St. Louis",
+  "state": "MO",
+  "sourceUrl": "https://www.mercy.net/",
+  "sourceDomain": "www.mercy.net",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-8 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_3dee29a861"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_182/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_182/cleaned.txt",
+  "sourceHash": "851d4a2da069ea2b59cc25a5e419cc460b59577e5530b95d5c82fd0b17be9755",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:35:43.828Z"
+}

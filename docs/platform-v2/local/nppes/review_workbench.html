@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P98-3: NPPES Match Review Workbench</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; background: #f0f2f5; color: #1a1a2e; }
+
+  header { background: #1a1a2e; color: #fff; padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 16px; font-weight: 600; }
+  header .badge { font-size: 11px; background: #2d3748; padding: 2px 8px; border-radius: 10px; color: #94a3b8; }
+
+  .compliance-banner { background: #fef3c7; border-bottom: 2px solid #f59e0b; padding: 10px 24px; font-size: 12px; color: #78350f; }
+  .compliance-banner strong { color: #92400e; }
+
+  .controls { padding: 12px 24px; background: #fff; border-bottom: 1px solid #e2e8f0; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .controls label { font-size: 12px; color: #64748b; font-weight: 500; }
+  .controls select, .controls input { font-size: 12px; padding: 4px 8px; border: 1px solid #d1d5db; border-radius: 4px; background: #fff; }
+  .btn { font-size: 12px; padding: 5px 12px; border: 1px solid #d1d5db; border-radius: 4px; background: #fff; cursor: pointer; font-weight: 500; }
+  .btn:hover { background: #f1f5f9; }
+  .btn.primary { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+  .btn.primary:hover { background: #2d3748; }
+  .btn.export { background: #0f766e; color: #fff; border-color: #0f766e; }
+
+  #stats { display: flex; gap: 16px; padding: 10px 24px; background: #fff; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
+  .stat { font-size: 11px; color: #64748b; }
+  .stat strong { font-size: 18px; color: #1a1a2e; display: block; }
+
+  #table-wrap { overflow: auto; max-height: calc(100vh - 280px); }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { background: #f8fafc; border-bottom: 2px solid #e2e8f0; padding: 8px 12px; text-align: left; font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.04em; position: sticky; top: 0; z-index: 1; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid #e2e8f0; }
+  tbody tr:hover { background: #f8fafc; }
+  tbody tr.confirmed { background: #f0fdf4; }
+  tbody tr.rejected { background: #fff1f2; }
+  tbody tr.corrected { background: #eff6ff; }
+  tbody td { padding: 8px 12px; vertical-align: top; }
+
+  .tier-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 10px; white-space: nowrap; }
+  .tier-EXACT_NAME_ZIP { background: #dcfce7; color: #166534; }
+  .tier-EXACT_NAME_CITY { background: #d1fae5; color: #065f46; }
+  .tier-FUZZY_NAME_ZIP { background: #fef9c3; color: #713f12; }
+  .tier-FUZZY_NAME_CITY { background: #fef3c7; color: #92400e; }
+  .tier-NAME_ONLY { background: #fce7f3; color: #831843; }
+  .tier-NO_NPPES_MATCH { background: #fee2e2; color: #991b1b; }
+
+  .inst-name { font-weight: 600; color: #1e293b; max-width: 220px; }
+  .npi-link { font-family: monospace; font-size: 12px; color: #1d4ed8; text-decoration: none; }
+  .npi-link:hover { text-decoration: underline; }
+  .org-name { max-width: 200px; font-size: 12px; color: #374151; }
+  .addr { font-size: 11px; color: #6b7280; max-width: 160px; }
+  .conf-bar { display: flex; align-items: center; gap: 6px; }
+  .conf-fill { height: 6px; border-radius: 3px; background: #3b82f6; }
+  .conf-num { font-size: 11px; color: #6b7280; min-width: 32px; }
+
+  .action-group { display: flex; gap: 4px; align-items: center; }
+  .action-btn { font-size: 11px; padding: 3px 8px; border: 1px solid; border-radius: 3px; cursor: pointer; font-weight: 500; white-space: nowrap; }
+  .action-btn.confirm { border-color: #16a34a; color: #16a34a; background: transparent; }
+  .action-btn.confirm:hover, .action-btn.confirm.active { background: #16a34a; color: #fff; }
+  .action-btn.reject { border-color: #dc2626; color: #dc2626; background: transparent; }
+  .action-btn.reject:hover, .action-btn.reject.active { background: #dc2626; color: #fff; }
+  .action-btn.correct { border-color: #2563eb; color: #2563eb; background: transparent; }
+  .action-btn.correct:hover, .action-btn.correct.active { background: #2563eb; color: #fff; }
+
+  .npi-input { font-family: monospace; font-size: 12px; width: 120px; padding: 2px 6px; border: 1px solid #93c5fd; border-radius: 3px; display: none; }
+  .npi-input.visible { display: inline-block; }
+
+  .notes-input { font-size: 11px; width: 100%; padding: 3px 6px; border: 1px solid #d1d5db; border-radius: 3px; margin-top: 4px; resize: vertical; min-height: 28px; display: none; }
+  .notes-input.visible { display: block; }
+
+  .runner-up { font-size: 10px; color: #9ca3af; margin-top: 4px; }
+
+  .tax-chip { font-size: 10px; background: #e0f2fe; color: #0369a1; padding: 1px 5px; border-radius: 8px; font-family: monospace; }
+  .hospital-chip { background: #fce7f3; color: #9d174d; }
+
+  #empty-state { text-align: center; padding: 60px; color: #9ca3af; font-size: 14px; display: none; }
+  #no-file { text-align: center; padding: 60px; color: #6b7280; }
+  #no-file h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #374151; }
+  #no-file code { background: #f3f4f6; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+  .footer { padding: 10px 24px; background: #fff; border-top: 1px solid #e2e8f0; font-size: 11px; color: #9ca3af; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>P98-3: NPPES Match Review Workbench</h1>
+  <span class="badge">USCEHub · Local · Internal Only</span>
+</header>
+
+<div class="compliance-banner">
+  <strong>COMPLIANCE:</strong> NPPES data is identity/location evidence only — not credential or license verification. All confirmed NPIs may be used in internal joins only. No NPI data surfaces directly in public product. NUCC taxonomy definitions require commercial license.
+</div>
+
+<div class="controls">
+  <label>Load CSV:</label>
+  <input type="file" id="file-input" accept=".csv" />
+  <label>Filter tier:</label>
+  <select id="tier-filter">
+    <option value="">All tiers</option>
+    <option value="EXACT_NAME_ZIP">EXACT_NAME_ZIP</option>
+    <option value="EXACT_NAME_CITY">EXACT_NAME_CITY</option>
+    <option value="FUZZY_NAME_ZIP">FUZZY_NAME_ZIP</option>
+    <option value="FUZZY_NAME_CITY">FUZZY_NAME_CITY</option>
+    <option value="NAME_ONLY">NAME_ONLY</option>
+    <option value="NO_NPPES_MATCH">NO_NPPES_MATCH</option>
+  </select>
+  <label>Review status:</label>
+  <select id="status-filter">
+    <option value="">All</option>
+    <option value="pending">Pending</option>
+    <option value="confirmed">Confirmed</option>
+    <option value="rejected">Rejected</option>
+    <option value="corrected">Corrected</option>
+  </select>
+  <button class="btn" id="export-btn" disabled>Export Review CSV</button>
+  <button class="btn" id="export-json-btn" disabled>Export JSON</button>
+  <button class="btn" id="save-progress-btn" disabled>Save Progress</button>
+</div>
+
+<div id="stats">
+  <div class="stat"><strong id="s-total">—</strong>Total</div>
+  <div class="stat"><strong id="s-pending">—</strong>Pending</div>
+  <div class="stat"><strong id="s-confirmed">—</strong>Confirmed</div>
+  <div class="stat"><strong id="s-rejected">—</strong>Rejected</div>
+  <div class="stat"><strong id="s-corrected">—</strong>Corrected</div>
+  <div class="stat"><strong id="s-exact">—</strong>EXACT_NAME_ZIP</div>
+  <div class="stat"><strong id="s-name-only">—</strong>NAME_ONLY</div>
+  <div class="stat"><strong id="s-no-match">—</strong>NO_MATCH</div>
+</div>
+
+<div id="table-wrap">
+  <div id="no-file">
+    <h2>Load match_results.csv to begin review</h2>
+    <p>Click "Choose File" above and select <code>match_results.csv</code> generated by <code>match_institutions.py</code>.</p>
+    <br>
+    <p style="font-size:12px;color:#9ca3af">All review decisions are saved locally in your browser (localStorage). Use "Export Review CSV" to export confirmed/rejected/corrected matches.</p>
+  </div>
+  <div id="empty-state">No rows match the current filter.</div>
+  <table id="main-table" style="display:none">
+    <thead>
+      <tr>
+        <th>Institution</th>
+        <th>State/County</th>
+        <th>Match Tier</th>
+        <th>Confidence</th>
+        <th>Matched NPI</th>
+        <th>NPPES Org Name</th>
+        <th>Address</th>
+        <th>Taxonomy</th>
+        <th>Candidates</th>
+        <th>Review Decision</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <span>P98-3 NPPES Match Review Workbench · Internal use only · Built 2026-05-03</span>
+  <span id="footer-status">No file loaded</span>
+</div>
+
+<script>
+// ─── State ───────────────────────────────────────────────────────────────────
+const STORAGE_KEY = 'p98_3_review_state';
+let rows = [];
+let reviewState = {};  // { institution_name: { status, corrected_npi, notes } }
+
+// ─── CSV Parser ──────────────────────────────────────────────────────────────
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  if (!lines.length) return [];
+  const headers = parseCSVLine(lines[0]);
+  return lines.slice(1).map(line => {
+    const vals = parseCSVLine(line);
+    const obj = {};
+    headers.forEach((h, i) => obj[h.trim()] = (vals[i] || '').trim());
+    return obj;
+  }).filter(r => r.institution_name);
+}
+
+function parseCSVLine(line) {
+  const result = [];
+  let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (inQ && line[i+1] === '"') { cur += '"'; i++; }
+      else inQ = !inQ;
+    } else if (c === ',' && !inQ) {
+      result.push(cur); cur = '';
+    } else {
+      cur += c;
+    }
+  }
+  result.push(cur);
+  return result;
+}
+
+// ─── Render ──────────────────────────────────────────────────────────────────
+function render() {
+  const tierFilter = document.getElementById('tier-filter').value;
+  const statusFilter = document.getElementById('status-filter').value;
+
+  const visible = rows.filter(r => {
+    if (tierFilter && r.match_tier !== tierFilter) return false;
+    const st = (reviewState[r.institution_name] || {}).status || 'pending';
+    if (statusFilter && st !== statusFilter) return false;
+    return true;
+  });
+
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = '';
+
+  document.getElementById('main-table').style.display = visible.length ? '' : 'none';
+  document.getElementById('empty-state').style.display = (!visible.length && rows.length) ? '' : 'none';
+  document.getElementById('no-file').style.display = rows.length ? 'none' : '';
+
+  visible.forEach(r => {
+    const rv = reviewState[r.institution_name] || {};
+    const status = rv.status || 'pending';
+    const tr = document.createElement('tr');
+    tr.className = status !== 'pending' ? status : '';
+    tr.dataset.key = r.institution_name;
+
+    const conf = parseFloat(r.confidence) || 0;
+    const confPct = Math.round(conf * 100);
+    const isHospital = r.is_hospital_taxonomy === 'True' || r.is_hospital_taxonomy === 'true';
+    const npiUrl = r.npi ? `https://npiregistry.cms.hhs.gov/provider-view/${r.npi}` : '';
+
+    tr.innerHTML = `
+      <td><div class="inst-name" title="${esc(r.institution_name)}">${esc(r.institution_name)}</div></td>
+      <td><div style="font-size:12px">${esc(r.state)}</div><div style="font-size:11px;color:#6b7280">${esc(r.county)}</div></td>
+      <td><span class="tier-badge tier-${r.match_tier}">${r.match_tier}</span></td>
+      <td>
+        <div class="conf-bar">
+          <div class="conf-fill" style="width:${confPct}px;max-width:60px;background:${confColor(conf)}"></div>
+          <span class="conf-num">${conf.toFixed(2)}</span>
+        </div>
+      </td>
+      <td>
+        ${r.npi ? `<a class="npi-link" href="${npiUrl}" target="_blank" rel="noopener">${esc(r.npi)}</a>` : '<span style="color:#9ca3af">—</span>'}
+      </td>
+      <td><div class="org-name" title="${esc(r.org_name)}">${esc(r.org_name) || '—'}</div>
+        ${r.runner_up_npi ? `<div class="runner-up">Runner-up: ${esc(r.runner_up_name)} (${esc(r.runner_up_tier)})</div>` : ''}
+      </td>
+      <td><div class="addr">${esc(r.pl_addr1)}<br>${esc(r.pl_city)}, ${esc(r.pl_state)} ${esc((r.pl_zip||'').slice(0,5))}</div></td>
+      <td>
+        <span class="tax-chip ${isHospital ? 'hospital-chip' : ''}">${esc(r.taxonomy_1) || '—'}</span>
+      </td>
+      <td><span style="font-size:11px;color:#6b7280">${esc(r.candidate_count)} found</span></td>
+      <td>
+        <div class="action-group">
+          <button class="action-btn confirm ${status==='confirmed'?'active':''}" onclick="setStatus('${esc(r.institution_name)}','confirmed',this)">✓ Confirm</button>
+          <button class="action-btn reject ${status==='rejected'?'active':''}" onclick="setStatus('${esc(r.institution_name)}','rejected',this)">✗ Reject</button>
+          <button class="action-btn correct ${status==='corrected'?'active':''}" onclick="toggleCorrect('${esc(r.institution_name)}',this)">✎ Correct</button>
+        </div>
+        <input class="npi-input ${rv.corrected_npi?'visible':''}" id="npi-${esc(r.institution_name)}" placeholder="Enter correct NPI"
+          value="${rv.corrected_npi||''}" onchange="setCorrectNpi('${esc(r.institution_name)}',this.value)" />
+        <textarea class="notes-input ${rv.notes?'visible':''}" id="notes-${esc(r.institution_name)}" placeholder="Notes for reviewer..."
+          onchange="setNotes('${esc(r.institution_name)}',this.value)">${rv.notes||''}</textarea>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  updateStats();
+  updateFooter();
+}
+
+function confColor(conf) {
+  if (conf >= 0.85) return '#16a34a';
+  if (conf >= 0.65) return '#ca8a04';
+  return '#dc2626';
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ─── Review actions ──────────────────────────────────────────────────────────
+function setStatus(key, status, btn) {
+  if (!reviewState[key]) reviewState[key] = {};
+  reviewState[key].status = status;
+  saveState();
+  render();
+}
+
+function toggleCorrect(key, btn) {
+  if (!reviewState[key]) reviewState[key] = {};
+  const npiInput = document.getElementById(`npi-${key}`);
+  const notesInput = document.getElementById(`notes-${key}`);
+  if (npiInput) {
+    const isVisible = npiInput.classList.contains('visible');
+    npiInput.classList.toggle('visible', !isVisible);
+    if (notesInput) notesInput.classList.toggle('visible', !isVisible);
+    if (!isVisible) {
+      reviewState[key].status = 'corrected';
+      npiInput.focus();
+    }
+  }
+  saveState();
+  render();
+}
+
+function setCorrectNpi(key, val) {
+  if (!reviewState[key]) reviewState[key] = {};
+  reviewState[key].corrected_npi = val.trim();
+  reviewState[key].status = 'corrected';
+  saveState();
+}
+
+function setNotes(key, val) {
+  if (!reviewState[key]) reviewState[key] = {};
+  reviewState[key].notes = val.trim();
+  saveState();
+}
+
+// ─── Persistence ─────────────────────────────────────────────────────────────
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(reviewState)); } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) reviewState = JSON.parse(saved);
+  } catch(e) { reviewState = {}; }
+}
+
+// ─── Stats ───────────────────────────────────────────────────────────────────
+function updateStats() {
+  const counts = { pending: 0, confirmed: 0, rejected: 0, corrected: 0 };
+  let exact = 0, nameOnly = 0, noMatch = 0;
+  rows.forEach(r => {
+    const st = (reviewState[r.institution_name] || {}).status || 'pending';
+    counts[st]++;
+    if (r.match_tier === 'EXACT_NAME_ZIP' || r.match_tier === 'EXACT_NAME_CITY') exact++;
+    if (r.match_tier === 'NAME_ONLY') nameOnly++;
+    if (r.match_tier === 'NO_NPPES_MATCH') noMatch++;
+  });
+  document.getElementById('s-total').textContent = rows.length;
+  document.getElementById('s-pending').textContent = counts.pending;
+  document.getElementById('s-confirmed').textContent = counts.confirmed;
+  document.getElementById('s-rejected').textContent = counts.rejected;
+  document.getElementById('s-corrected').textContent = counts.corrected;
+  document.getElementById('s-exact').textContent = exact;
+  document.getElementById('s-name-only').textContent = nameOnly;
+  document.getElementById('s-no-match').textContent = noMatch;
+}
+
+function updateFooter() {
+  const total = rows.length;
+  const done = rows.filter(r => {
+    const st = (reviewState[r.institution_name] || {}).status || 'pending';
+    return st !== 'pending';
+  }).length;
+  document.getElementById('footer-status').textContent =
+    total ? `${done}/${total} reviewed (${Math.round(100*done/total)}%)` : 'No file loaded';
+}
+
+// ─── File input ──────────────────────────────────────────────────────────────
+document.getElementById('file-input').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    rows = parseCSV(ev.target.result);
+    loadState();
+    document.getElementById('export-btn').disabled = false;
+    document.getElementById('export-json-btn').disabled = false;
+    document.getElementById('save-progress-btn').disabled = false;
+    render();
+  };
+  reader.readAsText(file);
+});
+
+// ─── Filter controls ─────────────────────────────────────────────────────────
+document.getElementById('tier-filter').addEventListener('change', render);
+document.getElementById('status-filter').addEventListener('change', render);
+
+// ─── Export CSV ──────────────────────────────────────────────────────────────
+document.getElementById('export-btn').addEventListener('click', function() {
+  if (!rows.length) return;
+  const fields = [
+    'state','county','institution_name',
+    'review_status','confirmed_npi','confirmed_org_name','reviewer_notes',
+    'original_match_tier','original_npi','original_org_name',
+    'pl_addr1','pl_city','pl_state','pl_zip','taxonomy_1','confidence'
+  ];
+  const csvRows = [fields.join(',')];
+  rows.forEach(r => {
+    const rv = reviewState[r.institution_name] || {};
+    const status = rv.status || 'pending';
+    const finalNpi = rv.corrected_npi || (status === 'confirmed' ? r.npi : '');
+    const finalOrg = status === 'confirmed' ? r.org_name : (status === 'corrected' ? '(corrected — verify)' : '');
+    const row = [
+      r.state, r.county, csvQ(r.institution_name),
+      status, csvQ(finalNpi), csvQ(finalOrg), csvQ(rv.notes || ''),
+      r.match_tier, csvQ(r.npi), csvQ(r.org_name),
+      csvQ(r.pl_addr1), csvQ(r.pl_city), r.pl_state, csvQ((r.pl_zip||'').slice(0,5)),
+      csvQ(r.taxonomy_1), r.confidence
+    ];
+    csvRows.push(row.join(','));
+  });
+  download('nppes_review_export.csv', csvRows.join('\n'), 'text/csv');
+});
+
+// ─── Export JSON ─────────────────────────────────────────────────────────────
+document.getElementById('export-json-btn').addEventListener('click', function() {
+  if (!rows.length) return;
+  const out = rows.map(r => {
+    const rv = reviewState[r.institution_name] || {};
+    return {
+      institution_name: r.institution_name,
+      state: r.state,
+      county: r.county,
+      review_status: rv.status || 'pending',
+      confirmed_npi: rv.corrected_npi || (rv.status === 'confirmed' ? r.npi : null),
+      reviewer_notes: rv.notes || null,
+      original: {
+        match_tier: r.match_tier,
+        npi: r.npi,
+        org_name: r.org_name,
+        confidence: parseFloat(r.confidence) || 0,
+        pl_city: r.pl_city,
+        pl_state: r.pl_state,
+        pl_zip: r.pl_zip,
+        taxonomy_1: r.taxonomy_1
+      }
+    };
+  });
+  download('nppes_review_export.json', JSON.stringify(out, null, 2), 'application/json');
+});
+
+// ─── Save progress ───────────────────────────────────────────────────────────
+document.getElementById('save-progress-btn').addEventListener('click', function() {
+  saveState();
+  const btn = this;
+  btn.textContent = 'Saved ✓';
+  setTimeout(() => btn.textContent = 'Save Progress', 1200);
+});
+
+function csvQ(s) {
+  if (!s) return '';
+  if (/[,"\n]/.test(s)) return '"' + String(s).replace(/"/g, '""') + '"';
+  return s;
+}
+
+function download(filename, content, mime) {
+  const blob = new Blob([content], { type: mime });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+loadState();
+updateStats();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "seedId": "live_254",
+  "institutionId": "inst_live_texas_tech_university_hsc_observership",
+  "institutionName": "Texas Tech University HSC — Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Lubbock",
+  "state": "TX",
+  "sourceUrl": "https://www.ttuhsc.edu/medicine/internal/observership/observership.aspx",
+  "sourceDomain": "www.ttuhsc.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Up to 8 weeks (two 4-week blocks) | visa: B1/B2 | cost: $250 + background check",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_b0ffe4e1ab"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_254/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_254/cleaned.txt",
+  "sourceHash": "8cf0bb8f222ed2c4ad71064a2104a3633fda8755a35fbb569301a1952a93a1b9",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T02:38:11.721Z"
+}

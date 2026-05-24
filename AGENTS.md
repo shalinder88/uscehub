@@ -63,3 +63,46 @@ The current public wedge is **verified USCE / observership / elective / clinical
 ## Cross-reference
 
 For preservation rules, the `/career` hard protection list, git safety, and SEO preservation, see [docs/codebase-audit/RULES.md](docs/codebase-audit/RULES.md) and [docs/codebase-audit/SEO_PRESERVATION_RULES.md](docs/codebase-audit/SEO_PRESERVATION_RULES.md). RULES.md has higher authority than the blueprint and higher authority than this file when conflicts arise.
+
+## P102 National Medical Opportunity Extractor
+
+P102 is the framework that scales source-linked national medical-opportunity discovery one institution at a time. It adapts the FDD A1/A2/A3 architecture to USCEHub. Production main remains UNCHANGED throughout all P102 work — every commit lands on a `local/p102-*` branch.
+
+**Where to start:**
+
+- [`docs/platform-v2/local/usce-discovery-command-center/p102/P102_OPERATING_RUNBOOK.md`](docs/platform-v2/local/usce-discovery-command-center/p102/P102_OPERATING_RUNBOOK.md) — operational guide. Read first.
+- [`docs/platform-v2/local/usce-discovery-command-center/p102/CHANGELOG.md`](docs/platform-v2/local/usce-discovery-command-center/p102/CHANGELOG.md) — sprint-by-sprint history.
+- [`docs/platform-v2/local/usce-discovery-command-center/p102/P102_DASHBOARD.md`](docs/platform-v2/local/usce-discovery-command-center/p102/P102_DASHBOARD.md) — auto-generated cross-run dashboard.
+- [`docs/platform-v2/local/usce-discovery-command-center/p102/P102_OPERATING_DOCTRINE.md`](docs/platform-v2/local/usce-discovery-command-center/p102/P102_OPERATING_DOCTRINE.md) — 30 binding rules.
+
+**Binding P102 rules** (in addition to USCEHub-wide rules above):
+
+1. One institution per run. No multi-institution runs.
+2. No Agent / subagent during A1–A4 of any run. The runner script is the sole writer; concept detectors are the sole reader.
+3. A3 hostile gate has no network. A3 reads only run-folder files. A3 must attest `networkUsed=false`, `agentUsed=false`.
+4. Every claim needs `quote` + `sourceUrl` + `sourceHash` + `cleanedTextPath`. Quote must be whitespace-normalized substring of cleaned text, or equal `NOT_STATED_ON_SOURCE`.
+5. PUBLIC_SAFE_USCE blocked from future-lane source families (GME_PAGE, RESIDENCY_PAGE, FELLOWSHIP_PAGE, CAREERS_PAGE) and from system/school scope without `campusApplicabilityProof`.
+6. PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY requires `EXPLICIT_NEGATIVE_QUOTE` + `STRONG` strength + `quoteVerified=true`. Absence after search is `NO_PUBLIC_OPPORTUNITY_FOUND` (lower confidence), not public-safe.
+7. All artifacts under canonical T7 root: `/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/`. Legacy root forbidden.
+8. No state run, no national run, no gold-set run, no new institutions until the operator explicitly authorizes — P102-0D (model A1/A2 reader) is the unblocking sprint.
+
+**Validators to run before any P102 commit:**
+
+```
+npx tsx scripts/validate-p102-discovery-runner.ts
+npx tsx scripts/test-p102.ts
+npx tsx scripts/p102-anti-drift-validator.ts
+npx tsx scripts/validate-no-secrets.ts
+npx tsc --noEmit
+```
+
+All must PASS. Run validator details in `P102_OPERATING_RUNBOOK.md`.
+
+**Pending sprints (do not start without explicit authorization):**
+
+- **P102-0D** — wire model A1/A2 reader to the captured prompt at `docs/platform-v2/local/usce-discovery-command-center/p102/specs/P102_A1_A2_READER_PROMPT.md`. **Blocks state/national.**
+- **P102-GOLD-RUN** — execute the gold-set queue. Verifier at `scripts/p102-gold-set-verify.ts`.
+- **P102-STATE** — single-state slice. Requires gold-set pass.
+- **P102-NATIONAL** — national run. Requires state pass + explicit operator authorization.
+
+**Trust-engine relationship.** P102 produces source-linked data destined for the public USCEHub trust engine. Each PUBLIC_SAFE_USCE claim that eventually ships to production must be quote-backed and source-cited. Future-lane signals (residency / fellowship / careers / visa / services) are captured internally but never published as USCE without explicit lane expansion.

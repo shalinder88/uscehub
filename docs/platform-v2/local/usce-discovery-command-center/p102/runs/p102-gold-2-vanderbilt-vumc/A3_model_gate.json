@@ -1,0 +1,86 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "vumc-tier1-recovery-001",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "The captured VISITING_STUDENT_PAGE (vumc.org/gme/visiting-residents) is exclusively for residents/fellows in ACGME-accredited programs (Tier 2), not pre-residency medical students or IMG observers. No Tier 1 observership/visiting medical student/clinical elective page was captured, and no explicit negative quote was found.",
+      "suggestedNarrowAction": "Narrow search: query vumc.org for 'visiting medical student', 'clinical elective', 'observership', and 'School of Medicine visiting student' pages. If absent, capture an explicit negative quote or School-of-Medicine-level statement."
+    }
+  ],
+  "duplicates": [
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-a2-001",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-a2-002",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-a2-003",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-a2-005",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-a2-012",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "vumc-gme-005",
+      "duplicateClaimId": "vumc-gme-009",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c4",
+      "duplicateClaimId": "a2_c4",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    }
+  ],
+  "institutionId": "inst_vanderbilt_vumc",
+  "institutionName": "Vanderbilt University Medical Center",
+  "metadata": {
+    "totalClaimsReviewed": 52,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 52,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-gold-2-vanderbilt-vumc",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "FAIL_WEAK",
+  "tier2CoverageVerdict": "PASS_COMPLETE",
+  "tier3CoverageVerdict": "PASS_COMPLETE",
+  "unfollowedSignals": [
+    "GME nav references 'Elective Away Rotations' (away rotations FROM VUMC) — confirm whether a reciprocal incoming visiting-medical-student elective page exists",
+    "GME nav references 'Visiting Residents' which only routes to the Tier 2 page; no Tier 1 visiting-medical-student equivalent was captured"
+  ],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims; all 52 claims correctly classified as FUTURE_LANE_ONLY across GME, Careers, and Visiting Residents (Tier 2) sources. No over-promotion, no scope conflicts, no eligibility/duration/fee/contact overclaims. Several A1/A2 nav-item duplicates flagged for downstream dedupe. Tier 1 (pre-residency USCE) is FAIL_WEAK — no observership / visiting medical student page captured and no explicit negative; A4 recovery task proposed. Outcome reflects ledger consistency, not confirmed absence of Tier 1 opportunity."
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "depthPass": "SOURCE_SCOPE_CONFLICTS",
+  "conflicts": [
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "IMG_OBSERVERSHIP",
+      "reason": "Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+      "recommendedAction": "Find campus-specific source or downgrade to system-level claim"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    },
+    {
+      "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    }
+  ],
+  "unresolveds": [
+    "https://my.clevelandclinic.org/departments/elective-program: Find campus-specific source or downgrade to system-level claim",
+    "https://my.clevelandclinic.org/departments/elective-program: Find campus-specific source or treat as system-level",
+    "https://my.clevelandclinic.org/departments/elective-program: Find campus-specific source or treat as system-level",
+    "https://my.clevelandclinic.org/departments/elective-program: Find campus-specific source or treat as system-level",
+    "https://my.clevelandclinic.org/departments/elective-program: Find campus-specific source or treat as system-level"
+  ]
+}

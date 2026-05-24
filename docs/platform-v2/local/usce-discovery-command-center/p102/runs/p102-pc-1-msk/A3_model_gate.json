@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_memorial_sloan_kettering_cancer_center_ny",
+  "institutionName": "Memorial Sloan Kettering Cancer Center",
+  "metadata": {
+    "totalClaimsReviewed": 48,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 20,
+    "futureLaneOnlyCount": 27,
+    "humanReviewRequiredCount": 1,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-pc-1-msk",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims emitted; all 48 claims are appropriately gated as CAUTION_SAFE_INTERNAL_REVIEW (20), FUTURE_LANE_ONLY (27), or HUMAN_REVIEW_REQUIRED (1). The medical-students page references electives and a CURE program but quotes lack definite-offer specificity (no public eligibility, application path, or contact for visiting/IMG students) and were correctly held at CAUTION. No scope conflicts, no overclaims, no duplicates. Ledger is internally consistent and safe to merge.",
+  "deepRecoveryTasks": [],
+  "unfollowedSignals": []
+}

@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_051",
+  "institutionId": "inst_live_wake_forest_atrium",
+  "institutionName": "Wake Forest Baptist / Atrium Health",
+  "parentSystem": "Atrium Health Wake Forest Baptist",
+  "campus": "",
+  "city": "Winston-Salem",
+  "state": "NC",
+  "sourceUrl": "https://school.wakehealth.edu/education-and-training/md-program/visiting-medical-students/",
+  "sourceDomain": "school.wakehealth.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Wake Forest Baptist Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Wake Forest SOM visiting medical students",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME/COCA only; INTL very limited",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_54527beef7"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_051/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_051/cleaned.txt",
+  "sourceHash": "96b0e3f3ea4840bb49067e4a2e2826f2275cd494c56c6647ecf69b7119d4d591",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:38:29.204Z"
+}

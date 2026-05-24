@@ -1,0 +1,44 @@
+{
+  "seedId": "live_216",
+  "institutionId": "inst_live_stanford_medicine_postdoctoral_research",
+  "institutionName": "Stanford Medicine — Postdoctoral Research",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Stanford",
+  "state": "CA",
+  "sourceUrl": "https://postdocs.stanford.edu/",
+  "sourceDomain": "postdocs.stanford.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "AI in Medicine, Biomedical Informatics, Clinical Research, O",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-3 years | visa: J1, H1B",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_0ace048366"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_216/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_216/cleaned.txt",
+  "sourceHash": "a86d844c0985feb2146e48e35e32fae706f4dfefb38c3e019f6c53d008e8e0e0",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:36:57.395Z"
+}

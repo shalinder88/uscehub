@@ -1,0 +1,33 @@
+{
+  "built_at": "2026-05-03T20:00:15Z",
+  "state_filter": "ME",
+  "internal_graph": {
+    "total_nodes": 40,
+    "node_types": {
+      "Institution": 10,
+      "NPPESOrg": 9,
+      "Opportunity": 21
+    },
+    "total_edges": 13,
+    "edge_visibility": {
+      "internal": 10,
+      "public": 3
+    }
+  },
+  "public_export": {
+    "total_nodes": 31,
+    "total_edges": 3,
+    "excluded_node_types": [
+      "NPPESOrg"
+    ],
+    "excluded_edge_rels": [
+      "HAS_NPPES_MATCH"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "errors": []
+  },
+  "compliance_note": "Internal graph contains NPPES NPIs and raw source joins \u2014 INTERNAL ONLY. Public export strips all _internal fields and NPPESOrg nodes. NPI/CCN/EIN never appear in public export.",
+  "elapsed_seconds": 0.01
+}

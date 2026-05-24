@@ -1,0 +1,44 @@
+{
+  "seedId": "live_245",
+  "institutionId": "inst_live_mercy_catholic_medical_center_observership",
+  "institutionName": "Mercy Catholic Medical Center — Observership",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Darby",
+  "state": "PA",
+  "sourceUrl": "https://www.trinityhealthma.org/healthcare-professionals/gme/mcmc/clinical-observership-program",
+  "sourceDomain": "www.trinityhealthma.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): ECFMG certification required. IM focus.",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: Contact program | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_e923bf469a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_245/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_245/cleaned.txt",
+  "sourceHash": "005380af193cffe5960a19231f2ee2f9097b0748b040832dc250ce82891dcd2e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 2,
+  "fetchedAt": "2026-05-17T02:37:54.188Z"
+}

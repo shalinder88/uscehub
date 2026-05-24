@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "tasks": [
+    {
+      "taskId": "rec_t1_michmed_electives",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "All 18 captured sources are health-lab news, research, or JSON-LD pages. No medschool.umich.edu visiting-student / electives / observership page was reached, and no explicit negative statement was captured. Tier 1 was not actually searched.",
+      "suggestedNarrowAction": "Targeted fetch of medschool.umich.edu/medstudents/visiting-students and umich.edu international observer policy pages — single-page captures only, no broad crawl."
+    },
+    {
+      "taskId": "rec_t2_michmed_gme",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Only one residency-adjacent mention (Dermatology global health) on a health-lab article. No canonical GME / residency program index page captured.",
+      "suggestedNarrowAction": "Narrow fetch of medicine.umich.edu/medschool/education/residency-programs or equivalent GME index."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

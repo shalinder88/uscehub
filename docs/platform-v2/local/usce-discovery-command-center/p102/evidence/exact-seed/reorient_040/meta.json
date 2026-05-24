@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_040",
+  "institutionId": "inst_live_weill_cornell_vms",
+  "institutionName": "NewYork-Presbyterian / Weill Cornell",
+  "parentSystem": "NewYork-Presbyterian",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://medicaleducation.weill.cornell.edu/student-resources/visiting-students",
+  "sourceDomain": "medicaleducation.weill.cornell.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Weill Cornell",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Weill Cornell Visiting Student Electives",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "US MD/DO via VSLO",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_b4ee1499bf"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_040/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_040/cleaned.txt",
+  "sourceHash": "02cefa13993fb675054b8705b726964d10650db513c0a58e1b92d4c4df1d94a8",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 8,
+  "fetchedAt": "2026-05-17T03:38:10.305Z"
+}

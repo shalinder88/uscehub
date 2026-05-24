@@ -1,0 +1,26 @@
+p101_2_rank,original_queue_rank,state,city,institution_name,official_domain_if_known,duplicate_status,why_selected,source_of_selection,lane_type,search_status
+1,41,PA,Pittsburgh,UPMC Presbyterian,upmc.com,NEW_NO_PRIOR_PACKET,P0_SIBLING_EXPANSION; UPMC system core; PA first P101 packet,queue_4 rank 41,QUEUE_4_NATIONAL,QUEUED
+2,42,MA,Boston,Boston Medical Center,bmc.org,NEW_NO_PRIOR_PACKET,P0_AMC_GAP; IMG-relevant safety-net AMC; BU SOM affiliate; MA first P101 packet,queue_4 rank 42,QUEUE_4_NATIONAL,QUEUED
+3,43,NY,New York,Bellevue Hospital - NYC H+H,nychealthandhospitals.org,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; IMG-relevant; NYU SOM rotation site,queue_4 rank 43,QUEUE_4_NATIONAL,QUEUED
+4,44,CA,Los Angeles,LAC+USC Medical Center,dhs.lacounty.gov,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; major LA county safety-net; USC affiliate,queue_4 rank 44,QUEUE_4_NATIONAL,QUEUED
+5,45,IL,Chicago,Cook County Health (Stroger Hospital),cookcountyhealth.org,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; major Chicago safety-net,queue_4 rank 45,QUEUE_4_NATIONAL,QUEUED
+6,46,TX,Dallas,Parkland Health,parklandhealth.org,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; major Dallas safety-net; UTSW affiliate,queue_4 rank 46,QUEUE_4_NATIONAL,QUEUED
+7,47,WA,Seattle,Harborview Medical Center,uwmedicine.org/locations/harborview,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; major PNW safety-net AMC; UW affiliate; WA first P101 packet,queue_4 rank 47,QUEUE_4_NATIONAL,QUEUED
+8,48,CA,San Francisco,Zuckerberg San Francisco General Hospital,zuckerbergsanfranciscogeneral.org,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; major SF safety-net; UCSF rotation site,queue_4 rank 48,QUEUE_4_NATIONAL,QUEUED
+9,49,MA,Boston,Brigham and Womens Hospital,brighamandwomens.org,NEW_NO_PRIOR_PACKET,P0_AMC_GAP; MGB system sibling; HMS affiliate,queue_4 rank 49,QUEUE_4_NATIONAL,QUEUED
+10,50,MA,Boston,Massachusetts General Hospital,massgeneral.org,NEW_NO_PRIOR_PACKET,P0_AMC_GAP; MGB system core; HMS affiliate,queue_4 rank 50,QUEUE_4_NATIONAL,QUEUED
+11,51,MA,Boston,Tufts Medical Center,tuftsmedicalcenter.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Tufts SOM affiliate,queue_4 rank 51,QUEUE_4_NATIONAL,QUEUED
+12,52,MA,Boston,Beth Israel Deaconess Medical Center,bidmc.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; HMS affiliate; Beth Israel Lahey,queue_4 rank 52,QUEUE_4_NATIONAL,QUEUED
+13,53,IL,Chicago,University of Chicago Medicine,uchicagomedicine.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Pritzker SOM affiliate,queue_4 rank 53,QUEUE_4_NATIONAL,QUEUED
+14,54,IL,Chicago,Rush University Medical Center,rush.edu,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Rush SOM affiliate,queue_4 rank 54,QUEUE_4_NATIONAL,QUEUED
+15,55,PA,Pittsburgh,UPMC Children's Hospital of Pittsburgh,upmc.com,NEW_NO_PRIOR_PACKET,P1_SIBLING_EXPANSION; UPMC sibling; pediatric AMC,queue_4 rank 55,QUEUE_4_NATIONAL,QUEUED
+16,56,PA,Danville,Geisinger Medical Center,geisinger.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Geisinger Commonwealth SOM affiliate,queue_4 rank 56,QUEUE_4_NATIONAL,QUEUED
+17,57,PA,Hershey,Penn State Health Hershey Medical Center,pennstatehealth.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Penn State COM affiliate,queue_4 rank 57,QUEUE_4_NATIONAL,QUEUED
+18,58,MI,Detroit,Henry Ford Hospital,henryford.com,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; HFH multispecialty,queue_4 rank 58,QUEUE_4_NATIONAL,QUEUED
+19,59,MI,Detroit,Detroit Medical Center / Wayne State,dmc.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; WSU SOM affiliate,queue_4 rank 59,QUEUE_4_NATIONAL,QUEUED
+20,60,MI,Royal Oak,Beaumont Hospital - Royal Oak,beaumont.org,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; OUWB SOM affiliate,queue_4 rank 60,QUEUE_4_NATIONAL,QUEUED
+21,61,IN,Indianapolis,Indiana University Health University Hospital,iuhealth.org,NEW_NO_PRIOR_PACKET,P1_SIBLING_EXPANSION; IU Methodist is in active runtime; IU University Hospital is sibling,queue_4 rank 61,QUEUE_4_NATIONAL,QUEUED
+22,62,IN,Indianapolis,Indiana University Health Riley Hospital for Children,rileychildrens.org,NEW_NO_PRIOR_PACKET,P2_SIBLING_EXPANSION; IU pediatric AMC,queue_4 rank 62,QUEUE_4_NATIONAL,QUEUED
+23,66,NY,Manhasset,Northwell Health - North Shore University Hospital,northwell.edu,NEW_NO_PRIOR_PACKET,P1_SIBLING_EXPANSION; Hofstra Northwell SOM; Long Island depth,queue_4 rank 66 (skipped 63-65 which are LOW priority duplicates),QUEUE_4_NATIONAL,QUEUED
+24,68,NY,Brooklyn,Maimonides Medical Center,maimonidesmed.org,NEW_NO_PRIOR_PACKET,P0_PUBLIC_SAFETY_NET; Brooklyn safety-net AMC; IMG-relevant,queue_4 rank 68,QUEUE_4_NATIONAL,QUEUED
+25,69,NY,Brooklyn,SUNY Downstate / University Hospital of Brooklyn,downstate.edu,NEW_NO_PRIOR_PACKET,P1_AMC_GAP; Brooklyn AMC; SUNY Downstate SOM affiliate,queue_4 rank 69,QUEUE_4_NATIONAL,QUEUED

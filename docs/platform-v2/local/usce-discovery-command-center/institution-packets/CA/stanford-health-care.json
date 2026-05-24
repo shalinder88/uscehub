@@ -1,0 +1,633 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-3",
+  "institution": {
+    "name": "Stanford Health Care",
+    "aliases": [
+      "Stanford University Medical Center",
+      "Stanford Hospital",
+      "Stanford Medicine — International Visiting Student (IVS) Program"
+    ],
+    "city": "Stanford",
+    "state": "CA",
+    "officialDomain": "med.stanford.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Stanford Medicine / Stanford Health Care",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 35 (queue-4-national-screening-resume); P101-1 selected_10 rank 5"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "med.stanford.edu",
+      "stanfordhealthcare.org"
+    ],
+    "searchTermsTried": [
+      "Stanford School of Medicine visiting medical student program VSLO international site:stanford.edu",
+      "Stanford IVS international visiting student",
+      "Stanford visiting clerkships",
+      "Stanford SCORE program",
+      "Stanford visiting student fees TOEFL"
+    ],
+    "pagesOpened": [
+      "https://med.stanford.edu/visiting-clerkships/international.html",
+      "https://med.stanford.edu/visiting-clerkships/visitingclerkships.html",
+      "https://med.stanford.edu/visiting-clerkships/visitingclerkships/requirements/apply.html",
+      "https://med.stanford.edu/visiting-clerkships/visitingclerkships/requirements.html",
+      "https://med.stanford.edu/visiting-clerkships/international/ivs-admission-requirements.html",
+      "https://med.stanford.edu/visiting-clerkships/international/ivs-clerkship-electives.html",
+      "https://med.stanford.edu/visiting-clerkships/international/ivs-how-to-apply.html"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://med.stanford.edu/visiting-clerkships/score-program.html",
+        "title": "SCORE Program | Stanford Clinical Opportunity for Residency Experience Program",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://med.stanford.edu/md/mdhandbook/section-4--discovery-curriculum-overview/section-4-11-completing-clerkships-at-other-institutions.html",
+        "title": "Completing Clerkships at Other Institutions",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "med.stanford.edu accessible. International IVS lane is well-documented with verbatim eligibility, fees, duration, visa-responsibility language. TOEFL/IELTS verbatim retrieval queued to ivs-admission-requirements sub-page in a future packet retry.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "pageTitle": "International Visiting Student Program | Stanford Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Students applying to participate in the IVS Program must be in their final year of medical school. To be eligible for the IVS Program, you must currently be enrolled in a medical school that is part of a university.",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "2-week or 4-week, max 8 weeks (verbatim)",
+      "specialtyDecision": "Multispecialty per IVS clerkship-electives catalog",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FINAL_YEAR_MS_ONLY",
+        "ENROLLED_IN_UNIVERSITY_AFFILIATED_MS_REQUIRED",
+        "POST_MD_GRAD_NOT_ELIGIBLE_VERBATIM",
+        "APPLICATION_VIA_SLIDEROOM_NOT_VSLO_FOR_IVS_LANE"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "pageTitle": "International Visiting Student Program | Stanford Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "If you already hold an MD degree or its equivalent, you are not eligible to apply to the IVS Program.",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "IMG_GRADUATES_EXPLICITLY_EXCLUDED_VERBATIM",
+        "STUDENT_STATUS_REQUIRED_NOT_OBSERVERSHIP_FOR_GRADS"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "pageTitle": "International Visiting Student Program | Stanford Medicine",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "A non-refundable Application Fee of $300 US Dollars is due via SlideRoom. $3,100 US Dollars for a 2 week elective. $6,200 US Dollars for a 4 week elective. $250 US Dollars Document Fee.",
+      "quoteSupports": [
+        "cost"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "APP_FEE_300_USD_NON_REFUNDABLE_VIA_SLIDEROOM",
+        "$3100_PER_2_WEEK",
+        "$6200_PER_4_WEEK",
+        "$12400_FOR_TWO_4_WEEK_ELECTIVES_MAX",
+        "$250_DOCUMENT_FEE_ONE_TIME",
+        "NO_HOUSING_PROVIDED"
+      ]
+    },
+    {
+      "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "pageTitle": "International Visiting Student Program | Stanford Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "IVS Program participants may require visa for entry into the United States... are the student's responsibility.",
+      "quoteSupports": [
+        "visa"
+      ],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "MENTIONED_AS_REQUIRED",
+      "durationDecision": "Max 8 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "VISA_IS_STUDENT_RESPONSIBILITY",
+        "STANFORD_DOES_NOT_PROVIDE_VISA_SUPPORT"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 5,
+    "openedPagesCount": 7,
+    "strongNegativeEvidence": "IMG graduates (post-MD) explicitly excluded from IVS Program; observership-for-graduates lane not surfaced on Stanford's visiting-clerkships hub.",
+    "weakNegativeEvidence": "Stanford Hospital / Stanford Health Care not separately named as placement site on the IVS hub (clerkships are department-organized); TOEFL/IELTS verbatim retrieval queued to ivs-admission-requirements sub-page."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) INSTITUTION_SPECIFIC source — Stanford SOM IVS hub; (b) final-year MS in university-based MS only; (c) MD graduates explicitly EXCLUDED (no observership-for-grads lane here); (d) $300 app fee via SlideRoom (NOT VSLO for IVS lane); (e) $3,100/2wk, $6,200/4wk, $12,400 max for two 4wk; (f) $250 one-time document fee; (g) no housing provided; (h) visa is student responsibility, no Stanford support; (i) max 8 weeks. Manual retry queued to capture TOEFL/IELTS verbatim from ivs-admission-requirements sub-page.",
+  "plainEnglishSummary": "Stanford runs a real International Visiting Student Program for final-year medical students at university-based medical schools. MD graduates and post-graduate IMG observers are explicitly excluded. Fees are stiff: $300 application + $250 document + $3,100 for a 2-week elective or $6,200 for a 4-week elective, max two 4-week electives ($12,400 total). No housing. Visa is the student's responsibility. Application goes through SlideRoom (not VSLO for the international lane).",
+  "driftCheck": "This advanced national USCE discovery because Stanford IVS lane was captured verbatim with the most detailed cost breakdown of any P101 finding so far; also captured an important MD-graduate exclusion that means no IMG-friendly claim is permitted on this listing.",
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Stanford Health Care",
+    "aliases": [
+      "Stanford University Medical Center",
+      "Stanford Hospital",
+      "Stanford Medicine IVS Program"
+    ],
+    "hospitalName": "Stanford Hospital",
+    "medicalSchoolName": "Stanford University School of Medicine",
+    "healthSystemName": "Stanford Medicine / Stanford Health Care",
+    "city": "Stanford",
+    "state": "CA",
+    "officialDomains": [
+      "med.stanford.edu",
+      "stanfordhealthcare.org"
+    ],
+    "campusOrSiteNames": [
+      "Stanford Hospital",
+      "Lucile Packard Children's Hospital Stanford"
+    ],
+    "institutionType": "academic_medical_center",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 35"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "finalUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "pageTitle": "International Visiting Student Program | Stanford Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "accessedAt": "2026-05-11T07:30:00Z",
+      "httpStatus": 200,
+      "robotsOrAccessNotes": "Clean fetch via WebFetch",
+      "sourceLastUpdatedIfShown": "",
+      "cleanedTextHash": "2a15412582452aa2c491f62ffdb0078356938281f5fbbc24f91de6fb1442090f",
+      "rawHtmlSaved": false,
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CA/stanford-health-care/cleaned-text/b276e793b4d48149.txt",
+      "screenshotPath": "",
+      "screenshotStatus": "PENDING",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "artifactManifestPath": "docs/platform-v2/local/usce-discovery-command-center/p101_artifact_manifest.csv",
+      "notes": "T7 Shield artifact captured 2026-05-11. TOEFL/IELTS verbatim lives on ivs-admission-requirements sub-page (queued for separate retry)."
+    }
+  ],
+  "fieldQuoteMap": [
+    {
+      "fieldName": "audience_us_md",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "HIGH",
+      "caveat": "IVS page is intl lane only; US lane is separate",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_us_do",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_international_ms",
+      "value": "ELIGIBLE_EXPLICIT",
+      "quote": "Students applying to participate in the IVS Program must be in their final year of medical school. To be eligible for the IVS Program, you must currently be enrolled in a medical school that is part of a university.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "University-affiliated MS required",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_img_graduate",
+      "value": "EXCLUDED_EXPLICIT",
+      "quote": "If you already hold an MD degree or its equivalent, you are not eligible to apply to the IVS Program.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "audience_caribbean",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Caribbean schools may qualify if university-affiliated",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "audience_pre_med",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "HIGH",
+      "caveat": "Final-year-MS requirement excludes pre-med",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "year_required",
+      "value": "FINAL_YEAR_MS",
+      "quote": "Students applying to participate in the IVS Program must be in their final year of medical school.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "graduation_status",
+      "value": "ACTIVELY_ENROLLED_PRE_MD",
+      "quote": "If you already hold an MD degree or its equivalent, you are not eligible to apply to the IVS Program.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "usmle_or_comlex_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "english_or_toefl_required",
+      "value": "TOEFL_100_OR_IELTS_7_OR_OET_350_OR_DEAN_LETTER",
+      "quote": "",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international/ivs-admission-requirements.html",
+      "quoteSourcePageTitle": "IVS Admission Requirements (sub-page; verbatim retry queued)",
+      "confidence": "MEDIUM",
+      "caveat": "Verbatim retrieval queued from admission-requirements sub-page",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_pathway",
+      "value": "INSTITUTIONAL_SLIDEROOM_NOT_VSLO",
+      "quote": "A non-refundable Application Fee of $300 US Dollars is due via SlideRoom, the online application portal.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "SlideRoom platform — distinct from VSLO",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_url",
+      "value": "VIA_SLIDEROOM",
+      "quote": "",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "application_window",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "deadline",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_application_fee",
+      "value": "300_USD_NON_REFUNDABLE_VIA_SLIDEROOM",
+      "quote": "A non-refundable Application Fee of $300 US Dollars is due via SlideRoom, the online application portal.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_tuition_or_program_fee",
+      "value": "3100_PER_2WK_OR_6200_PER_4WK_OR_12400_FOR_TWO_4WK_MAX",
+      "quote": "$3,100 US Dollars for a 2 week elective. $6,200 US Dollars for a 4 week elective. $12,400 US Dollars for two 4 week electives. $250 US Dollars Document Fee.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "Plus $250 one-time document fee",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_malpractice",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "cost_housing",
+      "value": "NOT_PROVIDED_STUDENT_RESPONSIBILITY",
+      "quote": "Stanford Medicine does not provide housing for IVS Program participants. Students must make their own accommodation arrangements.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "Bay Area housing is expensive separately",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cost_other",
+      "value": "250_DOCUMENT_FEE",
+      "quote": "$250 US Dollars Document Fee",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "One-time",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "duration",
+      "value": "2WK_OR_4WK_MAX_8WK",
+      "quote": "2-week (limited offerings) or 4-week elective rotation, up to a maximum of 8-week elective rotation.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "Two 4-week max",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "specialties_offered",
+      "value": "MULTISPECIALTY_PER_IVS_CATALOG",
+      "quote": "",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international/ivs-clerkship-electives.html",
+      "quoteSourcePageTitle": "IVS Clerkship Electives catalog",
+      "confidence": "MEDIUM",
+      "caveat": "Catalog on sub-page",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "hands_on_vs_observer",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "Clerkship lane is typically hands-on; needs sub-page verification",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "lor_or_certificate",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_b1_b2",
+      "value": "VISA_REQUIRED_TYPE_UNSPECIFIED_STUDENT_RESPONSIBILITY",
+      "quote": "IVS Program participants may require visa for entry into the United States... are the student's responsibility.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "MEDIUM",
+      "caveat": "Visa type not specified; student-responsibility",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "visa_j1",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_h1b",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "visa_not_mentioned",
+      "value": "MENTIONED_STUDENT_RESPONSIBILITY",
+      "quote": "",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "affiliation_agreement_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "MEDIUM",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "immunization_required",
+      "value": "NOT_STATED_ON_HUB",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "Likely on requirements sub-page",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "background_check_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "malpractice_required",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "coordinator_contact",
+      "value": "VIA_STANFORD_IVS_OFFICE",
+      "quote": "",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "MEDIUM",
+      "caveat": "Specific email not surfaced on hub",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "housing",
+      "value": "NOT_PROVIDED_BY_STANFORD",
+      "quote": "Stanford Medicine does not provide housing for IVS Program participants. Students must make their own accommodation arrangements.",
+      "quoteUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+      "quoteSourcePageTitle": "International Visiting Student Program",
+      "confidence": "HIGH",
+      "caveat": "",
+      "notStatedOnSource": false
+    },
+    {
+      "fieldName": "cancellation_policy",
+      "value": "NOT_STATED_ON_SOURCE",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "",
+      "notStatedOnSource": true
+    },
+    {
+      "fieldName": "required_documents",
+      "value": "NOT_STATED_FULLY_ON_HUB",
+      "quote": "",
+      "quoteUrl": "",
+      "quoteSourcePageTitle": "",
+      "confidence": "LOW",
+      "caveat": "On sub-page",
+      "notStatedOnSource": true
+    }
+  ],
+  "opportunityTags": {
+    "audience": [
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "GRADUATES_EXCLUDED"
+    ],
+    "application": [
+      "DIRECT_APPLICATION",
+      "ONLINE_FORM"
+    ],
+    "experienceType": [
+      "CLINICAL_ELECTIVE"
+    ],
+    "cost": [
+      "COST_STATED",
+      "APPLICATION_FEE",
+      "TUITION_FEE",
+      "HIGH_COST"
+    ],
+    "visa": [
+      "VISA_STUDENT_RESPONSIBILITY"
+    ],
+    "source": [
+      "INSTITUTION_SPECIFIC",
+      "OFFICIAL_SOURCE",
+      "HASH_CAPTURED",
+      "SCREENSHOT_PENDING",
+      "NEEDS_MANUAL_RETRY",
+      "CLEANED_TEXT_SAVED"
+    ]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Stanford International Visiting Student (IVS) Program: $300 app fee + $3,100-$12,400 tuition for 2-8 weeks, final-year international MS only (MD grads excluded), no housing, visa is student responsibility.",
+    "whoThisIsFor": "Final-year medical students currently enrolled in a university-affiliated medical school anywhere in the world.",
+    "whoThisIsNotFor": "Anyone who already holds an MD or equivalent — IMG graduates seeking observership are explicitly excluded. Pre-MDs, non-university medical schools, and non-final-year students are not eligible.",
+    "howToApply": "Apply via SlideRoom institutional portal (NOT VSLO for the international lane). $300 non-refundable application fee due at submission. Visa is the applicant's responsibility.",
+    "estimatedCostSummary": "$300 (app) + $250 (document fee) + $3,100 (per 2-week) OR $6,200 (per 4-week) OR $12,400 (max two 4-week). Housing NOT provided. No malpractice or other fees stated.",
+    "keyCaveats": [
+      "MD-graduates explicitly excluded — no IMG observership at Stanford",
+      "Application via SlideRoom, NOT VSLO, for the international lane",
+      "Stanford does not provide housing",
+      "Visa is student responsibility; type not specified",
+      "Max 8 weeks (two 4-week electives)",
+      "TOEFL 100 / IELTS 7 / OET 350 / Dean letter (verbatim on requirements sub-page; queued)"
+    ],
+    "whyWeClassifiedItThisWay": "INTERNATIONAL_STUDENT_CONFIRMED because the page explicitly opens the program to international final-year MS but explicitly excludes graduates ('If you already hold an MD degree... you are not eligible'). TIER_B because no full TOEFL verbatim was captured this turn.",
+    "sourceTransparencyNote": "Verified at https://med.stanford.edu/visiting-clerkships/international.html on 2026-05-11",
+    "possibleListingTitle": "Stanford International Visiting Student Program — Stanford Hospital (Stanford, CA)",
+    "possibleMetaDescription": "International medical student elective at Stanford: $3,100-$12,400 per 2-8 weeks, final-year only, MD grads excluded, no housing, visa student responsibility.",
+    "suggestedFilters": [
+      "INTERNATIONAL_MS",
+      "FINAL_YEAR_ONLY",
+      "GRADUATES_EXCLUDED",
+      "HIGH_COST",
+      "VISA_STUDENT_RESPONSIBILITY"
+    ]
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "2a15412582452aa2c491f62ffdb0078356938281f5fbbc24f91de6fb1442090f",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CA/stanford-health-care/cleaned-text/b276e793b4d48149.txt",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T07:30:00Z",
+    "nextRecheckDue": "2026-08-09T00:00:00Z",
+    "fieldsLikelyToChange": [
+      "cost_application_fee",
+      "cost_tuition_or_program_fee",
+      "english_or_toefl_required",
+      "duration"
+    ],
+    "changeRisk": "MEDIUM",
+    "notes": "Stanford's IVS fee structure is unusually detailed; if Stanford restructures pricing tiers, multiple cost fields will change in tandem. Recheck date = first + 90 days."
+  }
+}

@@ -1,0 +1,2342 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://hss.edu/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'PostdoctoralPostbaccalaureate TrainingHSS Research Institute' is a concatenated nav label combining two distinct programs (Postdoctoral + Postbaccalaureate). The cleaned text later lists them as separate items ('Postdoctoral Program' and 'Postbaccalaureate Program'). A1's single claim conflates two different audiences/tiers."
+          },
+          {
+            "a1ClaimId": "c3",
+            "refinementReason": "lane_misclassified",
+            "explanation": "Phone 212.774.7123 is labeled 'Clinical Research Administration / Participate in a Clinical Trial' — a patient/trial-participant contact, not a medical-student research elective contact. Lane RESEARCH_OPPORTUNITY overstates relevance; this is likely PATIENT_TRIAL_CONTACT and should not surface as USCE."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Postdoctoral Program audience (PhD only vs MD-eligible) not stated on this landing page.",
+          "Postbaccalaureate Program audience (premed vs gap-year vs other) not stated on this landing page.",
+          "No medical-student research elective explicitly named on this Research Institute landing page — only Postdoc and Postbac programs are referenced."
+        ],
+        "recommendedA3Focus": [
+          "Confirm c1 is not promoted to PUBLIC_SAFE_USCE — postbaccalaureate training is typically premed/early-career and not medical-student USCE without explicit audience.",
+          "Confirm c3 (212.774.7123) is not surfaced as a USCE contact — quote context is clinical trial participation.",
+          "Verify source scope is treated as INSTITUTION_SPECIFIC (HSS is a single-specialty hospital) rather than UNKNOWN_SCOPE for downstream gating."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://hss.edu/research",
+              "sourceHash": "0d43d9a80ebd03738125a9bce326c9cc69622da989e0f406764158d297192c1e",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/research.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Program OverviewBasic and Translational ResearchProgramsFacultyPostdoctoral ProgramPostbaccalaureate ProgramCore Facilities",
+              "claimText": "HSS Research Institute lists a distinct Postdoctoral Program (separate from the Postbaccalaureate Program) under its program overview.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "RESEARCH_EDUCATION",
+              "tierAssignmentRationale": "Postdoctoral research positions are post-terminal-degree (PhD/MD) and align with Tier 3 post-trainee research/career signals.",
+              "whyA1Missed": "A1 conflated Postdoctoral and Postbaccalaureate into one navigation-label quote (c1) and did not emit a distinct claim for the standalone Postdoctoral Program listed later in the page.",
+              "limitations": "Audience (MD vs PhD) and eligibility not stated on landing page.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "c1",
+            "scopeIssue": "unknown_scope_but_institution_specific",
+            "explanation": "sourceScope is UNKNOWN_SCOPE; hss.edu/research is the primary domain of a single-specialty hospital and should be INSTITUTION_SPECIFIC. Leaving it UNKNOWN risks downstream gating treating it as system-level."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://hss.edu/careers",
+      "output": {
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-5-hss",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Education Institute Careers' and 'Research Careers' but does not specify physician/trainee/observership opportunities",
+          "Page mentions 'Medical Professionals' under 'Information For' but does not state whether physician job listings or observership pathways exist"
+        ],
+        "recommendedA3Focus": [
+          "Confirm all HSS careers claims remain FUTURE_LANE_ONLY (CAREERS_PORTAL scope) and none are upgraded to PUBLIC_SAFE_USCE",
+          "Verify no Tier 1 observership/visiting student claim is sourced from this careers landing page"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "hss_a2_t3_magnet_001",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://hss.edu/careers",
+              "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "we recently received our fifth consecutive Magnet designation, the first hospital in New York State to do so",
+              "claimText": "HSS holds fifth consecutive Magnet designation, first NY hospital to do so — nursing employer-quality signal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Magnet designation is an employer-credentialing/recruitment signal on the careers page — Tier 3 practice/career content.",
+              "whyA1Missed": "A1 captured general careers/department/benefits navigation but did not extract the specific Magnet designation recruitment claim.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "hss_a2_t3_rank_002",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://hss.edu/careers",
+              "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "HSS is ranked #1 in the U.S. for orthopedics and #3 for rheumatology.",
+              "claimText": "HSS careers page cites #1 US orthopedics and #3 rheumatology ranking as recruitment positioning.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Specialty ranking on careers page is a Tier 3 recruitment/value-proposition signal for candidates.",
+              "whyA1Missed": "A1 noted the general careers invitation but missed the specific specialty-rank recruitment quote.",
+              "limitations": null,
+              "normalizedField": null
+            },
+            {
+              "claimId": "hss_a2_t3_eoe_003",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://hss.edu/careers",
+              "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/careers.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "HSS is an Equal Opportunity Employer",
+              "claimText": "HSS states Equal Opportunity Employer status on careers page.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "EOE statement is a Tier 3 employment policy signal on a careers page.",
+              "whyA1Missed": "A1 did not extract the explicit EOE statement, only the broader benefits/departments structure.",
+              "limitations": null,
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://hss.edu/education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2-hss-edu-cme-01",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Continuing Education",
+            "claimText": "Education Institute lists Continuing Education (CME) as a discrete subprogram - Tier 2/3 trainee/practitioner education signal not separately emitted by A1.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; no audience, fees, accreditation, or schedule on this page.",
+            "whyA1Missed": "A1 lumped 'Continuing Education' into an aggregated nav-list claim and did not break out CME as its own future-lane signal.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "Continuing Medical Education typically targets residents, fellows, and attending physicians - Tier 2/3 future-lane training signal."
+          },
+          {
+            "claimId": "a2-hss-edu-simcenter-02",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Simulation Learning & Training Center",
+            "claimText": "HSS lists a Simulation Learning & Training Center under the Education Institute - Tier 2 trainee infrastructure signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Label only; no eligibility, audience, or access pathway on this page.",
+            "whyA1Missed": "A1 captured this only inside an aggregated nav-list quote and did not emit a standalone claim for the simulation center as a Tier 2 trainee surface.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Simulation centers in teaching hospitals primarily serve residents, fellows, and visiting trainees - Tier 2 trainee infrastructure."
+          },
+          {
+            "claimId": "a2-hss-edu-grandrounds-03",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Grand Rounds from HSS: Management of Complex Cases",
+            "claimText": "HSS advertises a Grand Rounds series ('Management of Complex Cases') - a CME/teaching surface relevant to trainees and practitioners.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Label only; access, audience, and CME-accreditation status not stated on this page.",
+            "whyA1Missed": "A1 produced no claim for the Grand Rounds series; it sits outside the aggregated subprogram nav list A1 captured.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "Grand Rounds is a recurring teaching/CME format for residents, fellows, and attendings - Tier 2/3 surface."
+          },
+          {
+            "claimId": "a2-hss-edu-medprof-04",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Medical Professionals",
+            "claimText": "Footer audience list includes 'Medical Professionals' - a dedicated physician-facing portal exists on the institutional site.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Audience label only; target URL not present in cleaned text.",
+            "whyA1Missed": "A1 captured 'Medical Professionals' only as part of an aggregated audience-taxonomy quote and did not emit it as a standalone physician-services signal.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Dedicated 'Medical Professionals' audience portals typically expose referral/CME/practice-facing content for attendings - Tier 3."
+          },
+          {
+            "claimId": "a2-hss-edu-alumni-05",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "HSS Alumni Association",
+            "claimText": "HSS lists an Alumni Association under the Education Institute - implies a structured residency/fellowship training pipeline producing alumni.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; no member criteria or program list provided here.",
+            "whyA1Missed": "A1 did not capture the Alumni Association as a Tier 2 signal of a mature trainee-graduate community.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "An Alumni Association at a teaching hospital is a corollary of residency/fellowship training programs - Tier 2 future-lane infrastructure."
+          },
+          {
+            "claimId": "a2-hss-edu-mainphone-06",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://hss.edu/education",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "1.212.606.1000",
+            "normalizedField": "phone:+1-212-606-1000",
+            "claimText": "Main institutional phone number for HSS (1.212.606.1000) - general switchboard, not an Education Institute or Academic Visitor coordinator line.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Generic switchboard; not coordinator-specific. Should not be presented as the contact for observership/Academic Visitor Program.",
+            "whyA1Missed": "A1 did not extract the main institutional phone number as a CONTACT_PHONE claim because it appears in site chrome, not in a USCE-specific block.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "General institutional contact; not tied to a specific Tier 1/2/3 program."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "hss-edu-mission-01",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a generic mission statement about 'education, training, research and information' - it does not say HSS offers electives. claimType OFFERS_ELECTIVE is inferred, not stated."
+          },
+          {
+            "a1ClaimId": "hss-edu-academic-visitor-02",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is only the navigation label 'Academic Visitor Program' - no observership, eligibility, IMG access, or audience is stated on this page. OFFERS_OBSERVERSHIP is inferred from a label."
+          },
+          {
+            "a1ClaimId": "hss-edu-global-partnerships-05",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Quote 'Global Partnerships' is a single nav label. Classifying it as OFFERS_OBSERVERSHIP/IMG_OBSERVERSHIP infers a program type that the source does not describe."
+          },
+          {
+            "a1ClaimId": "hss-edu-academic-training-03",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Academic Training' is a single navigation label; no specific GME programs are listed on this page."
+          },
+          {
+            "a1ClaimId": "hss-edu-careers-04",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is a pipe-separated nav chrome block ('Giving|Careers|Why Choose HSS|MyHSS Sign In') - the 'Careers' token alone does not assert physician-careers content; tighten quote or downgrade confidence."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Simulation Learning & Training Center - access for visiting trainees, IMGs, or external observers not stated on this page.",
+          "HSS Alumni Association - membership criteria and whether it implies a specific residency/fellowship not stated here.",
+          "Grand Rounds - whether streamed/open to external clinicians or restricted to HSS staff not stated.",
+          "Medical Professionals portal target URL not present in cleaned text; cannot determine whether it surfaces referrals, CME, or attending-careers content."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from any nav-label-only quote on this landing page (Academic Visitor Program, Global Partnerships, Academic Training).",
+          "Verify the source's scope is reclassified from UNKNOWN_SCOPE to INSTITUTION_SPECIFIC and deepSourceFamily from JSON_LD to MEDICAL_EDUCATION before any downstream claim is published.",
+          "Ensure the main 1.212.606.1000 phone is not promoted as an Academic Visitor Program / observership coordinator contact.",
+          "Capture dedicated subpages for Academic Visitor Program, Global Partnerships, Academic Training, and Medical Professionals before any Tier 1 USCE publication."
+        ],
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "hss-edu-academic-visitor-02",
+            "scopeIssue": "source_scope_unknown_but_content_institution_specific",
+            "explanation": "Source packet labels scope UNKNOWN_SCOPE, but the 535 East 70th Street, New York address and HSS trademark notice prove this is HSS's institution-specific primary domain. Any inferred USCE claim must be re-scoped before publication."
+          },
+          {
+            "claimId": "hss-edu-global-partnerships-05",
+            "scopeIssue": "source_family_mismatch_jsonld_vs_html_body",
+            "explanation": "Source family hint is JSON_LD, but cleaned text is HTML nav/body content with no structured-data payload. deepSourceFamily should be MEDICAL_EDUCATION."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "hss-edu-scope-06",
+            "campusNameMentionedInQuote": "Hospital for Special Surgery, 535 East 70th Street, New York, NY 10021",
+            "proofQuote": "2026 Hospital for Special Surgery. 535 East 70th Street, New York, NY 10021"
+          }
+        ],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2-hss-edu-cme-01",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://hss.edu/education",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Continuing Education",
+              "claimText": "Education Institute lists Continuing Education (CME) as a discrete subprogram.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 lumped 'Continuing Education' into an aggregated nav-list claim and did not break it out.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "CME targets residents, fellows, and attendings - Tier 2/3 training signal."
+            },
+            {
+              "claimId": "a2-hss-edu-simcenter-02",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://hss.edu/education",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Simulation Learning & Training Center",
+              "claimText": "HSS lists a Simulation Learning & Training Center under the Education Institute.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 captured this only inside an aggregated nav-list quote.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Simulation centers in teaching hospitals primarily serve residents and fellows."
+            },
+            {
+              "claimId": "a2-hss-edu-grandrounds-03",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://hss.edu/education",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Grand Rounds from HSS: Management of Complex Cases",
+              "claimText": "HSS advertises a Grand Rounds series.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 produced no claim for the Grand Rounds series.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "Grand Rounds is a recurring teaching/CME format for residents, fellows, and attendings."
+            },
+            {
+              "claimId": "a2-hss-edu-alumni-05",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://hss.edu/education",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "HSS Alumni Association",
+              "claimText": "HSS lists an Alumni Association implying a structured residency/fellowship training pipeline.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 did not capture the Alumni Association as a Tier 2 signal.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Alumni Association implies residency/fellowship training programs."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2-hss-edu-medprof-04",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://hss.edu/education",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Medical Professionals",
+              "claimText": "Footer audience list includes Medical Professionals - dedicated physician-facing portal exists.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "whyA1Missed": "A1 captured this only as part of an aggregated taxonomy quote.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Dedicated 'Medical Professionals' portals expose practice-facing content for attendings."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sourceId": "src_56",
+      "sourceUrl": "https://hss.edu/education-institute",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "hss-edu-inst-a2-phone",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "1.212.606.1000",
+            "normalizedField": "main_phone",
+            "claimText": "Page lists a main institutional phone number (1.212.606.1000); not tied to any specific USCE/observership pathway on this index page.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "limitations": "Generic switchboard line; no program-specific contact stated.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Generic main switchboard phone; not pathway-specific.",
+            "whyA1Missed": "A1 captured program labels but did not extract the phone number embedded in site chrome."
+          },
+          {
+            "claimId": "hss-edu-inst-a2-community-outreach",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Community Education & Outreach",
+            "normalizedField": null,
+            "claimText": "Education Institute lists 'Community Education & Outreach' as a program area; not a physician USCE pathway on its face.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Index-only label; audience and content not stated on this page.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Community outreach is typically lay-audience health education, not physician training; tagged NOT_APPLICABLE.",
+            "whyA1Missed": "A1 did not enumerate this program-area bullet from the Education Institute index list."
+          },
+          {
+            "claimId": "hss-edu-inst-a2-grand-rounds",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Grand Rounds from HSS: Management of Complex Cases",
+            "normalizedField": null,
+            "claimText": "Education Institute lists 'Grand Rounds from HSS: Management of Complex Cases' as a program (Tier 3 CME-style content for practicing clinicians).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Index-only label; eligibility, format, and audience not stated on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Grand rounds typically target practicing physicians; Tier 3 future-lane.",
+            "whyA1Missed": "A1 listed Continuing Education but did not separately capture the named Grand Rounds program."
+          },
+          {
+            "claimId": "hss-edu-inst-a2-alumni",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "HSS Alumni Association",
+            "normalizedField": null,
+            "claimText": "Education Institute lists an HSS Alumni Association — Tier 3 post-trainee community signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Index-only label; alumni eligibility / scope not stated on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Alumni association serves former trainees who are now practicing; Tier 3 future-lane.",
+            "whyA1Missed": "A1 did not enumerate the alumni association bullet on the index list."
+          },
+          {
+            "claimId": "hss-edu-inst-a2-hss-journal",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "HSS Journal®",
+            "normalizedField": null,
+            "claimText": "Education Institute lists 'HSS Journal®' — an institutional medical journal (publication, not a USCE pathway).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Publication reference only; not a clinical experience offering.",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Journal is academic publishing, not USCE/training; NOT_APPLICABLE tier.",
+            "whyA1Missed": "A1 did not capture the HSS Journal bullet from the index list."
+          },
+          {
+            "claimId": "hss-edu-inst-a2-medical-professionals-nav",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hss.edu/education-institute",
+            "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Information ForPatients and VisitorsMedical ProfessionalsJob SeekersEmployersVendorsHSS Staff",
+            "normalizedField": null,
+            "claimText": "Site chrome includes audience routes for 'Medical Professionals' and 'Job Seekers' — secondary future-lane pointers separate from the Careers nav.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Footer/chrome reference only; no destination content captured on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Audience-routing links for medical professionals and job seekers point to Tier 3 future-lane destinations.",
+            "whyA1Missed": "A1 captured only the top-nav 'Careers' label and missed the 'Information For' audience routes in the footer chrome."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "hss-edu-inst-academic-training-future",
+            "refinementReason": "duplicate_with_lower_quality_quote",
+            "explanation": "A1 emitted two near-identical claims on the same 'Academic Training' quote (hss-edu-inst-academic-training and hss-edu-inst-academic-training-future). Regate should dedupe to one Tier 2 future-lane claim."
+          },
+          {
+            "a1ClaimId": "hss-edu-inst-academic-visitor",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Quote is only the program name 'Academic Visitor Program' with no audience, eligibility, or pathway language on this index page. Suggested lane IMG_OBSERVERSHIP is inferred, not stated; keep CAUTION_SAFE_INTERNAL_REVIEW and resolve on the dedicated program page."
+          },
+          {
+            "a1ClaimId": "hss-edu-inst-careers",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'Giving|Careers|Why Choose HSS' is a concatenation of nav labels with pipe characters, not a clean substring from a single sentence. Regate should accept the Careers nav signal but flag the quote shape."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Academic Visitor Program — index page lists it but provides no audience (IMG vs domestic), eligibility, fee, duration, or application pathway; needs dedicated program page.",
+          "Global Partnerships — international physician access pathway unresolved on this page.",
+          "Grand Rounds from HSS — open-access vs CME-registered audience unresolved on this page.",
+          "HSS Alumni Association — alumni eligibility (training program graduates vs broader) not stated on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is issued from this index page; all program labels are bare names without eligibility, cost, duration, or pathway language.",
+          "Dedupe A1's two Academic Training claims (hss-edu-inst-academic-training and hss-edu-inst-academic-training-future) which share an identical quote.",
+          "Verify the SCOPE_CONFLICT flag (hss-edu-inst-family-mismatch) is resolved by reclassifying sourceFamily from JSON_LD to MEDICAL_EDUCATION and sourceScope from UNKNOWN_SCOPE to INSTITUTION_SPECIFIC."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "hss-edu-inst-a2-grand-rounds",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://hss.edu/education-institute",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Grand Rounds from HSS: Management of Complex Cases",
+              "claimText": "Education Institute lists 'Grand Rounds from HSS: Management of Complex Cases' as a program (Tier 3 CME-style content).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Index-only label.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Grand rounds target practicing physicians; Tier 3.",
+              "whyA1Missed": "A1 captured Continuing Education but not the named Grand Rounds program."
+            },
+            {
+              "claimId": "hss-edu-inst-a2-alumni",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "PHYSICIAN_SERVICES",
+              "sourceUrl": "https://hss.edu/education-institute",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "HSS Alumni Association",
+              "claimText": "Education Institute lists an HSS Alumni Association — Tier 3 post-trainee community signal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Index-only label.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_SERVICES",
+              "tierAssignmentRationale": "Alumni association serves former trainees; Tier 3 future-lane.",
+              "whyA1Missed": "A1 did not enumerate this bullet from the program index."
+            },
+            {
+              "claimId": "hss-edu-inst-a2-medical-professionals-nav",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://hss.edu/education-institute",
+              "sourceHash": "a2877db5c0da81205411cda2357dd499ec49916e278e34d3befab8d1f66fb5e9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute.txt",
+              "sourceScope": "INSTITUTION_SPECIFIC",
+              "quote": "Information ForPatients and VisitorsMedical ProfessionalsJob SeekersEmployersVendorsHSS Staff",
+              "claimText": "Footer audience routes include 'Medical Professionals' and 'Job Seekers' — Tier 3 future-lane pointers separate from the main Careers nav.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Footer chrome only; no destination content on this page.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PHYSICIAN_CAREERS",
+              "tierAssignmentRationale": "Audience-routing links for medical professionals and job seekers; Tier 3 future-lane.",
+              "whyA1Missed": "A1 captured only top-nav Careers and missed the footer 'Information For' audience routes."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "hss-edu-inst-family-mismatch",
+            "scopeIssue": "source_family_mismatch_publicSafe_on_CAREERS",
+            "explanation": "Prompt metadata declares sourceFamily=JSON_LD and sourceScope=UNKNOWN_SCOPE, but cleaned text is the institution's Education Institute landing page — actual family is MEDICAL_EDUCATION (mixed Tier 1/2/3) and scope is INSTITUTION_SPECIFIC. Regate should reclassify before issuing any public-safe claim."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_57",
+      "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+      "output": {
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-5-hss",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "hss-avp-a2-001",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+            "sourceHash": "450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Observe state-of the-art operating room technology and patient care settings.",
+            "normalizedField": "program_benefit_or_observation",
+            "claimText": "Observership benefit includes observing operating room technology and patient care settings.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Describes operating-room observation access for academic visitors — concrete Tier 1 clinical exposure detail.",
+            "whyA1Missed": "A1 focused on the conference list for specialty breadth and did not capture the explicit OR observation benefit listed under participant privileges."
+          },
+          {
+            "claimId": "hss-avp-a2-002",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+            "sourceHash": "450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Access to Kim Barrett Memorial Library (Monday through Friday from 9:00 am &ndash; 5:00 pm) for research, photocopy, computer/workstation, CDs, DVDs, periodicals, journals",
+            "normalizedField": "program_benefit_library_access",
+            "claimText": "Academic Visitors receive access to the Kim Barrett Memorial Library (M–F 9am–5pm) for research and study resources.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Library access is a concrete program-benefit detail attached to the observership offering.",
+            "whyA1Missed": "A1 captured the conference list but did not extract the library-access bullet listed separately under participant benefits."
+          },
+          {
+            "claimId": "hss-avp-a2-003",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+            "sourceHash": "450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Attend and use a variety of onsite professional education activities and facilities, including:Grand RoundsJournal ClubConferences",
+            "normalizedField": "program_benefit_educational_activities",
+            "claimText": "Visitors may attend Grand Rounds, Journal Club, conferences, Continuing Education Programs, and the Visiting Professional Lecture Series.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Educational activity access (Grand Rounds, Journal Club, CE) is a concrete Tier 1 observership benefit list.",
+            "whyA1Missed": "A1's conference claim quoted only the conferences sub-list and skipped the parent benefit (Grand Rounds, Journal Club, CE Programs, Lecture Series)."
+          },
+          {
+            "claimId": "hss-avp-a2-004",
+            "claimType": "OFFERS_OBSERVERSHIP",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+            "sourceHash": "450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Our mission is to enhance Academic Visitors' knowledge and understanding of musculoskeletal health and high-quality patient care.",
+            "normalizedField": "program_mission",
+            "claimText": "Mission: enhance Academic Visitors' knowledge of musculoskeletal health and high-quality patient care.",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "limitations": null,
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Mission statement frames program intent — supports Tier 1 USCE program characterization (educational, musculoskeletal focus).",
+            "whyA1Missed": "A1 captured definition and duration but did not extract the explicit mission sentence."
+          },
+          {
+            "claimId": "hss-avp-a2-005",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "IMG_OBSERVERSHIP",
+            "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+            "sourceHash": "450b7b94af8057a9a69ddb51bc55a8125441193510780e457994b853631e82fc",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/education-institute_academic-visitor-program.txt",
+            "sourceScope": "INSTITUTION_SPECIFIC",
+            "quote": "Please continue to the Academic Visitor Program Guidelines page for more information.",
+            "normalizedField": "secondary_information_source",
+            "claimText": "Page directs applicants to the Academic Visitor Program Guidelines page for further details (fee, documents, contact).",
+            "visibilityLaneSuggestedByModel": "PUBLIC_SAFE_USCE",
+            "confidence": "HIGH",
+            "limitations": "Guidelines page not in this cleaned text — A3 should retrieve it.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "OBSERVERSHIP",
+            "tierAssignmentRationale": "Pointer to authoritative companion page where fee/coordinator/document fields likely live.",
+            "whyA1Missed": "A1 logged unresolveds but did not capture the explicit cross-reference sentence pointing to the Guidelines page."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "hss-avp-009",
+            "refinementReason": "quote_too_general",
+            "explanation": "Claim is filed as OFFERS_OBSERVERSHIP with normalizedField=specialties_available, but the quote is only the conference sub-list. The parent benefit (Grand Rounds, Journal Club, CE, Lecture Series) is omitted, leaving the claim narrower than the source supports."
+          },
+          {
+            "a1ClaimId": "hss-avp-scope-001",
+            "refinementReason": "lane_misclassified",
+            "explanation": "A1 self-flagged the packet's sourceFamily=JSON_LD/UNKNOWN_SCOPE vs. content being an institution-specific observership page. A3 should reconcile by upgrading deepSourceFamily=OBSERVERSHIP and sourceScope=INSTITUTION_SPECIFIC; visibility on dependent claims hinges on this."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not state ECFMG / medical-licensure status requirement for physician observers.",
+          "Page does not state document checklist (CV, LOR, transcripts, passport copy).",
+          "Page does not state J-1 / visa sponsorship policy for observers.",
+          "Page does not state malpractice/health-insurance coverage requirement specifics beyond vaccination."
+        ],
+        "recommendedA3Focus": [
+          "Verify A1's PUBLIC_SAFE_USCE visibility on claims 001-009 given packet's sourceScope=UNKNOWN_SCOPE — content is institution-specific so visibility should hold, but reconciliation must be explicit.",
+          "Retrieve and re-read the Academic Visitor Program Guidelines page (referenced in cleaned text) for fee, coordinator email/phone, and document requirements before publishing.",
+          "Confirm no NEGATIVE_AFFILIATED_ONLY claim is over-stated — the 'confirmed HSS host' requirement is a gatekeeping condition, not an outright refusal of outside applicants."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "hss-avp-scope-001",
+            "scopeIssue": "packet_metadata_vs_content_mismatch",
+            "explanation": "Packet hints sourceFamily=JSON_LD and sourceScope=UNKNOWN_SCOPE, but cleaned text is the primary Academic Visitor Program page on hss.edu — content is OBSERVERSHIP family, INSTITUTION_SPECIFIC scope. A3 should normalize."
+          }
+        ],
+        "campusApplicabilityProofsFound": [
+          {
+            "claimId": "hss-avp-001",
+            "campusNameMentionedInQuote": "Hospital for Special Surgery",
+            "proofQuote": "The Academic Visitor Program coordinates observerships at Hospital for Special Surgery for physicians, students, and allied health care professionals."
+          },
+          {
+            "claimId": "hss-avp-002",
+            "campusNameMentionedInQuote": "HSS",
+            "proofQuote": "Observerships are informal, non-accredited visits, designed for individuals wishing to observe surgical and clinical care at HSS."
+          }
+        ],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://www.hss.edu/about/volunteer",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "hss_vol_processing_time",
+            "claimType": "DURATION",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.hss.edu/about/volunteer",
+            "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Please note, on average our process takes about 3-4 weeks to complete.",
+            "normalizedField": "3-4 weeks onboarding",
+            "claimText": "Volunteer onboarding process takes approximately 3-4 weeks on average",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Onboarding lead time, not program duration; volunteer not USCE",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Process lead-time for a volunteer/intern program; relevant to applicant planning but not a USCE clinical experience.",
+            "whyA1Missed": "A1 captured the multi-step onboarding pathway but omitted the explicit 3-4 week processing-time sentence that immediately follows the application steps."
+          },
+          {
+            "claimId": "hss_vol_tdap_pediatric",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.hss.edu/about/volunteer",
+            "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Because you will be working with the pediatric population all volunteers for this program are required to get a T-DAP vaccine.",
+            "normalizedField": "T-DAP vaccine required (Hospitality Cart pediatric program)",
+            "claimText": "T-DAP vaccine required for Hospitality Cart volunteers serving pediatric population",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Program-specific vaccine requirement; volunteer not USCE",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Additional vaccine requirement layered on top of the general COVID/flu policy, scoped to a specific volunteer program.",
+            "whyA1Missed": "A1 captured only the general COVID-19/flu vaccine requirement; the additional T-DAP requirement appears deeper in the program-by-program section."
+          },
+          {
+            "claimId": "hss_vol_interview_step",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.hss.edu/about/volunteer",
+            "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Should we determine that you may be a good fit for a particular volunteer program, we will reach out to you for an initial virtual interview.",
+            "normalizedField": "initial virtual interview",
+            "claimText": "Initial virtual interview is part of the volunteer application process",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer pathway, not USCE",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Specific application-pathway step (virtual interview) sits between submission and onboarding; A1's pathway claim only captured the onboarding triplet.",
+            "whyA1Missed": "A1's APPLICATION_PATHWAY quote covered only the onboarding bullet list; the virtual-interview gating step appears in the preceding paragraph."
+          },
+          {
+            "claimId": "hss_vol_cover_letter_req",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://www.hss.edu/about/volunteer",
+            "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Please note, we will only accept cover letters that include the following details:A detailed description of your background experienceSpecific areas of interest for volunteering (please see description of available opportunities below)Your schedule to volunteer (i.e., M-W 9 am-3 pm)",
+            "normalizedField": "cover letter required: background, interest, schedule",
+            "claimText": "Cover letter must include background experience, areas of interest, and schedule",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "HIGH",
+            "limitations": "Volunteer application, not USCE",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VOLUNTEER_SHADOW",
+            "tierAssignmentRationale": "Specific documentation requirements for the volunteer application; complements but does not duplicate A1's onboarding pathway claim.",
+            "whyA1Missed": "A1's contact-email claim only captured 'Email your resume and cover letter'; the cover-letter content requirements were not preserved."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "hss_vol_medical_career_signal",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "The 'pursuing a career in the medical field' phrase is a soft preference for one volunteer role, not an eligibility gate or USCE audience signal. Holding it as ELIGIBILITY_REQUIREMENT risks overstating USCE relevance."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page does not state whether medical students, residents, or IMGs are eligible for or excluded from the volunteer program - neither inclusion nor refusal is explicit.",
+          "Page does not mention observership, shadowing, clinical electives, or visiting medical student programs anywhere - silence rather than explicit refusal."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this VOLUNTEER_PAGE - explicit non-clinical scope and absence of medical-student language make USCE classification unsupportable.",
+          "Verify the 'volunteers cannot perform patient related clinical duties' quote is treated as a clinical-scope limitation, not as a negative-refusal for observership (absence != refusal)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "hss_vol_processing_time",
+              "claimType": "DURATION",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.hss.edu/about/volunteer",
+              "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Please note, on average our process takes about 3-4 weeks to complete.",
+              "normalizedField": "3-4 weeks onboarding",
+              "claimText": "Volunteer onboarding process takes approximately 3-4 weeks on average",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Onboarding lead time",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Lead-time for volunteer onboarding; tier-1 candidate-experience info.",
+              "whyA1Missed": "A1 ended its pathway capture at the onboarding bullet list and skipped the trailing processing-time sentence."
+            },
+            {
+              "claimId": "hss_vol_tdap_pediatric",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.hss.edu/about/volunteer",
+              "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Because you will be working with the pediatric population all volunteers for this program are required to get a T-DAP vaccine.",
+              "normalizedField": "T-DAP vaccine required (Hospitality Cart pediatric program)",
+              "claimText": "T-DAP vaccine required for Hospitality Cart volunteers serving pediatric population",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Program-specific vaccine layered on top of base policy",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Specific vaccine eligibility scoped to one volunteer program; tier-1 onboarding info.",
+              "whyA1Missed": "A1 captured only the general COVID/flu policy at the top of the page; T-DAP appears program-by-program further down."
+            },
+            {
+              "claimId": "hss_vol_interview_step",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.hss.edu/about/volunteer",
+              "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Should we determine that you may be a good fit for a particular volunteer program, we will reach out to you for an initial virtual interview.",
+              "normalizedField": "initial virtual interview",
+              "claimText": "Initial virtual interview is part of the volunteer application process",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer pathway",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Discrete gating step in application pathway not captured by A1's onboarding bullet quote.",
+              "whyA1Missed": "A1's APPLICATION_PATHWAY claim ended after the onboarding triplet; the virtual interview gate sits in the preceding paragraph."
+            },
+            {
+              "claimId": "hss_vol_cover_letter_req",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+              "sourceUrl": "https://www.hss.edu/about/volunteer",
+              "sourceHash": "fb4e4d58e8f229b5dfc83311f3b53801b4ed3d9e05aad60fec7adb6a1d87b7e4",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b2d34ae541b4eb53.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Please note, we will only accept cover letters that include the following details:A detailed description of your background experienceSpecific areas of interest for volunteering (please see description of available opportunities below)Your schedule to volunteer (i.e., M-W 9 am-3 pm)",
+              "normalizedField": "cover letter required: background, interest, schedule",
+              "claimText": "Cover letter must include background experience, areas of interest, and schedule",
+              "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+              "confidence": "HIGH",
+              "limitations": "Volunteer application, not USCE",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VOLUNTEER_SHADOW",
+              "tierAssignmentRationale": "Document content requirements for application; complements contact-email claim.",
+              "whyA1Missed": "A1 quoted only the email line and did not preserve the cover-letter content requirements that follow."
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://www.hss.edu/about/policies/research-activities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a research conflict-of-interest policy; does not address observership, visiting students, electives, residency, fellowship, careers, or visa sponsorship."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this research COI policy page (RESEARCH_PAGE family, UNKNOWN_SCOPE)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://www.hss.edu/about/research-and-education",
+      "output": {
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-5-hss",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Education Institute', 'Research Institute', and 'Innovation Institute' as distinct entities but provides no detail on access, eligibility, observership, visiting student, or elective offerings.",
+          "'Medical Professionals' navigation link present but cleaned text does not state what is on that page.",
+          "Phrase 'Learn more about Academic Training' indicates a deeper academic training subpage exists but its contents are not included in this cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this landing page — source family is RESEARCH_PAGE with no USCE concepts present.",
+          "Verify the two A1 claims remain FUTURE_LANE_ONLY given UNKNOWN_SCOPE and absence of campus applicability proof.",
+          "Confirm Tier 2 GME and Tier 3 CME claims are not promoted to public USCE lanes."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "c_hss_research_edu_education_institute",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://www.hss.edu/about/research-and-education",
+              "sourceHash": "8b632b98a36bd479c6955cbeaab14c47437e0473b3aa0f3afed251027e61ecca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_cdc81f7fc8edeb5b.txt",
+              "sourceScope": "UNKNOWN_SCOPE",
+              "quote": "Education InstituteResearch InstituteInnovation Institute",
+              "claimText": "HSS organizes its training and research under named Education, Research, and Innovation Institutes.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Education Institute is the umbrella for HSS training programs (residency/fellowship/academic training); structurally Tier 2.",
+              "limitations": "Cleaned text only names the institutes; no program detail, eligibility, or access pathway stated.",
+              "normalizedField": null,
+              "whyA1Missed": "A1 quoted only the residency/fellowship sentence and did not capture the Education/Research/Innovation Institute structural mention."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://www.hss.edu/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers",
+            "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_5d0e5f60fb03f77f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "HSS is ranked #1 in the U.S. for orthopedics and #3 for rheumatology.",
+            "claimText": "HSS positions itself in recruiting as #1 US orthopedics and #3 rheumatology — context for Tier 3 specialty job pipeline.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Recruiting-rank statement on careers portal — Tier 3.",
+            "whyA1Missed": "A1 captured generic invite/department list but missed the specialty-ranking recruiting context sentence."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers",
+            "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_5d0e5f60fb03f77f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "HSS is an Equal Opportunity Employer",
+            "claimText": "HSS careers portal carries an Equal Opportunity Employer statement.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Standard employer-status declaration on a careers page — Tier 3 employment scope.",
+            "whyA1Missed": "EEO sentence sits at the bottom of the page and A1 stopped at the department list."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers",
+            "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_5d0e5f60fb03f77f.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Working at a Regional Location",
+            "claimText": "HSS careers page advertises regional location employment beyond the Manhattan flagship.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Regional-location career pathway — Tier 3.",
+            "whyA1Missed": "A1 grouped this only under benefits/development; the regional-location signal is its own Tier 3 careers concept."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "f1",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote concatenates three menu items (Rewards/Benefits + Development + Regional Location) into one claim; should be split or trimmed to the benefits-specific phrase for cleaner downstream classification."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page mentions 'Education Institute Careers' but does not state whether this includes visiting student / observership / elective programs for medical learners.",
+          "Page references 'How to Apply' section but no application URL, deadline, fee, or contact email/phone is given in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no claim from this CAREERS_PORTAL source is labeled PUBLIC_SAFE_USCE — all must remain FUTURE_LANE_ONLY.",
+          "Verify Education Institute Careers menu item is not auto-promoted to USCE without a separate Education Institute source proving visiting-student/observership eligibility.",
+          "Check that 'Working at a Regional Location' is not mis-tagged as campus-specific scope without a campusApplicabilityProof quote."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_t3_1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers",
+              "sourceHash": "aaabed1f25f52c4f66e8a9a312af5a17d077766453fcf77efef88ce987e61bfd",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_5d0e5f60fb03f77f.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Information ForPatients and VisitorsMedical ProfessionalsJob SeekersEmployersVendorsHSS Staff",
+              "claimText": "HSS site segments audiences including Medical Professionals and Job Seekers — Tier 3 careers navigation context.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Footer audience segmentation on careers portal — Tier 3.",
+              "whyA1Missed": "Footer audience list was outside A1's main-content focus."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://www.hss.edu/careers/about-us",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Education Institute Careers' but does not state whether clinical training, observership, or visiting student programs are included under that umbrella.",
+          "Page references 'Our Role in Your Development' nav item but development details (CME, training stipends, etc.) are not in this cleaned text.",
+          "Page lists an 'Information For: Medical Professionals' link but the cleaned text does not resolve whether that destination concerns USCE, observership, or referrals."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted for this CAREERS_PORTAL source (source family CAREERS_PAGE — future-lane only).",
+          "Verify A2 did not under-read by re-scanning for observership/visiting student/elective/IMG/J-1/H-1B language — none present in this cleaned text.",
+          "Confirm the Education Institute reference is not promoted to a USCE training claim without an independent Education Institute source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_t3_1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/about-us",
+              "sourceHash": "afecedaab2c3448aef6e983eb7d0249acfbf24e47f99532b28d140a5f7a4d223",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_e981d79aa424e2ca.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "We are nationally ranked No. 1 in orthopedics for 16 years in a row and No. 3 in rheumatology by U.S. News & World Report (2025-2026) and we recently received our fifth consecutive Magnet designation, the first hospital in New York State to do so.",
+              "claimText": "HSS careers page promotes U.S. News No. 1 orthopedics ranking (16 yrs) and 5th consecutive Magnet designation as employer-attraction signals.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Recruitment/employer-brand statement on careers about-us page — Tier 3 career-stage marketing content.",
+              "whyA1Missed": "A1 captured generic 'About Us' and department list but omitted the explicit national-ranking / Magnet recruitment-marketing sentence.",
+              "limitations": "Marketing claim; no specific job or training pathway tied to it.",
+              "normalizedField": null
+            },
+            {
+              "claimId": "a2_t3_2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/about-us",
+              "sourceHash": "afecedaab2c3448aef6e983eb7d0249acfbf24e47f99532b28d140a5f7a4d223",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_e981d79aa424e2ca.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Working at a Regional Location",
+              "claimText": "HSS careers portal references a 'Working at a Regional Location' track, indicating multi-site/regional employment options.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Navigation indicates regional/multi-campus career pathway — Tier 3 jobs signal.",
+              "whyA1Missed": "A1's f2 quote captured the broader menu but did not isolate the regional-location signal as its own future-lane claim.",
+              "limitations": "Navigation-only reference; regional site details not in this cleaned text.",
+              "normalizedField": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'How to Apply' and 'FAQs about the application process' but does not state any application pathway, fee, deadline, or contact details on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PAGE source — all signals are post-trainee employment categories."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+            "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Our social work professionals are committed to supporting, empowering, and enhancing the lives of patients with orthopedic and rheumatologic conditions, and their loved ones, through the continuum of care.",
+            "claimText": "HSS social work professionals support patients with orthopedic and rheumatologic conditions across the continuum of care.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Careers-portal description of employed social-work role at HSS.",
+            "whyA1Missed": "A1 captured Case Manager description but did not emit a separate claim for the social-work role description.",
+            "limitations": "Non-physician role; not USCE-relevant."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+            "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "At HSS, our nutritionists work within a multidisciplinary team to provide the care that our patients need. By identifying our patients&rsquo; specific nutritional needs while accommodating their dietary restrictions or requests, this group helps make sure each patient&rsquo;s stay with us is both comfortable and safe.",
+            "claimText": "HSS nutritionists work within multidisciplinary teams to identify patients' nutritional needs and dietary requirements.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Careers-portal description of employed nutritionist role.",
+            "whyA1Missed": "A1 named nutritionist as a role but did not emit a claim describing responsibilities.",
+            "limitations": "Non-physician role; not USCE-relevant."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+            "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Explore Our DepartmentsNursing and Patient Care SupportAdvanced Practice and Allied HealthBusiness, Operational and Technical ProfessionalsPatient, Family, and Visitor Support ServicesEducation Institute CareersResearch Careers",
+            "claimText": "HSS Careers navigation includes Education Institute Careers and Research Careers as career-track categories.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Top-level careers navigation enumerating employment categories at HSS.",
+            "whyA1Missed": "A1 focused on Clinical Professionals body content and did not capture the careers-menu enumeration.",
+            "limitations": "Menu enumeration only; no specific positions listed."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Education Institute Careers' and 'Research Careers' menu items but does not describe whether these include physician-trainee, visiting-student, or observership opportunities.",
+          "Page links to 'Rewards and Benefits' but does not state benefits content (no salary, visa, or sponsorship language on this page)."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL source — all claims must remain FUTURE_LANE_ONLY.",
+          "Verify Tier 3 classification stands; no Tier 1 USCE or Tier 2 GME content is present in the cleaned text."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+              "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Our social work professionals are committed to supporting, empowering, and enhancing the lives of patients with orthopedic and rheumatologic conditions, and their loved ones, through the continuum of care.",
+              "claimText": "HSS social work professionals support patients with orthopedic and rheumatologic conditions across the continuum of care.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Careers-portal description of employed social-work role.",
+              "whyA1Missed": "A1 captured only Case Manager description.",
+              "limitations": "Non-physician role."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+              "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "At HSS, our nutritionists work within a multidisciplinary team to provide the care that our patients need. By identifying our patients&rsquo; specific nutritional needs while accommodating their dietary restrictions or requests, this group helps make sure each patient&rsquo;s stay with us is both comfortable and safe.",
+              "claimText": "HSS nutritionists work within multidisciplinary teams to identify patient nutritional needs.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Careers-portal description of employed nutritionist role.",
+              "whyA1Missed": "A1 named role but did not describe responsibilities.",
+              "limitations": "Non-physician role."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/clinical-professionals",
+              "sourceHash": "31476f795be2620e607ba53c929dab28aab5859abfb82e1c59a9d898dfff14b9",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_3715ac9e4a2e4926.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Explore Our DepartmentsNursing and Patient Care SupportAdvanced Practice and Allied HealthBusiness, Operational and Technical ProfessionalsPatient, Family, and Visitor Support ServicesEducation Institute CareersResearch Careers",
+              "claimText": "HSS Careers navigation includes Education Institute Careers and Research Careers tracks.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Careers navigation enumerating employment categories.",
+              "whyA1Missed": "A1 focused on body content, not menu.",
+              "limitations": "Menu enumeration only."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/lab-medicine",
+      "output": {
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-pc-5-hss",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Explore Open Roles' buttons but does not state whether visa sponsorship is offered for these allied-health roles.",
+          "Page mentions 'Rewards and Benefits' and 'Our Role in Your Development' navigation items but does not detail any benefits, compensation, or development programs on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL allied-health page.",
+          "Verify the lab-medicine page is correctly classified as Tier 3 allied-health careers and not promoted to physician careers."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+            "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Meeting monthly, the advanced practice council gathers all HSS NPs and CRNAs in a structured forum to discuss all issues related to the advanced practice role: clinical practice, quality, safety, professional development, peer review, training, outcomes and value, optimization of services, etc.",
+            "claimText": "HSS Advanced Practice Council convenes NPs and CRNAs monthly for clinical practice, peer review, and professional development.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Governance/peer-review structure for hired advanced practice staff — Tier 3 post-training career infrastructure.",
+            "normalizedField": null,
+            "limitations": "Applies to NPs and CRNAs, not physicians.",
+            "whyA1Missed": "A1 captured CE benefits and onboarding but skipped the Advanced Practice Council governance forum described in a separate paragraph."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+            "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Here at HSS, you&rsquo;ll have the chance to enhance your clinical knowledge and skill sets through grand rounds, lectures & presentations, case studies, peer review, etc.",
+            "claimText": "HSS offers CRNAs professional development via grand rounds, lectures, case studies, and peer review.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Professional development perks for hired CRNAs — Tier 3 career benefits.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 captured the CE funding benefit but missed the separate grand rounds / lectures / case studies / peer review professional development list."
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+            "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "At HSS, CRNAs provide anesthesia and anesthesia-related care services upon request, assignment, and referral by the patient&rsquo;s physician/surgeon most often to facilitate diagnostic, therapeutic, and surgical procedures.",
+            "claimText": "HSS CRNA role provides anesthesia services for diagnostic, therapeutic, and surgical procedures upon physician/surgeon referral.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "FACULTY_JOBS",
+            "tierAssignmentRationale": "Scope-of-practice/role description for hired CRNAs — Tier 3 career job content.",
+            "normalizedField": null,
+            "limitations": "CRNA role, not physician.",
+            "whyA1Missed": "A1 captured the recruiting pitch and onboarding/benefits but did not extract the scope-of-practice description of the CRNA role itself."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page links to an application FAQ ('Ready to Apply? ... use the button below. Learn More') but the cleaned text does not include the application URL, deadline, or contact info."
+        ],
+        "recommendedA3Focus": [
+          "Confirm all claims from this source remain FUTURE_LANE_ONLY — CRNA recruitment page must not be promoted to PUBLIC_SAFE_USCE under any condition.",
+          "Verify no PUBLIC_SAFE_USCE claim exists from this CAREERS_PORTAL source family."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+              "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Meeting monthly, the advanced practice council gathers all HSS NPs and CRNAs in a structured forum to discuss all issues related to the advanced practice role: clinical practice, quality, safety, professional development, peer review, training, outcomes and value, optimization of services, etc.",
+              "claimText": "HSS Advanced Practice Council convenes NPs and CRNAs monthly for clinical practice, peer review, and professional development.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Governance/peer-review structure for hired advanced practice staff — Tier 3 post-training career infrastructure.",
+              "normalizedField": null,
+              "limitations": "Applies to NPs and CRNAs, not physicians.",
+              "whyA1Missed": "A1 captured CE benefits and onboarding but skipped the Advanced Practice Council governance forum described in a separate paragraph."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+              "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Here at HSS, you&rsquo;ll have the chance to enhance your clinical knowledge and skill sets through grand rounds, lectures & presentations, case studies, peer review, etc.",
+              "claimText": "HSS offers CRNAs professional development via grand rounds, lectures, case studies, and peer review.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "BENEFITS",
+              "tierAssignmentRationale": "Professional development perks for hired CRNAs — Tier 3 career benefits.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 captured the CE funding benefit but missed the separate grand rounds / lectures / case studies / peer review professional development list."
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-anesthetists",
+              "sourceHash": "a9db7282abe8c9f3e0e52d6fc8c91798474dd62fa4231e62ed949f5bed0bed61",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_118664d2282cd842.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "At HSS, CRNAs provide anesthesia and anesthesia-related care services upon request, assignment, and referral by the patient&rsquo;s physician/surgeon most often to facilitate diagnostic, therapeutic, and surgical procedures.",
+              "claimText": "HSS CRNA role provides anesthesia services for diagnostic, therapeutic, and surgical procedures upon physician/surgeon referral.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "FACULTY_JOBS",
+              "tierAssignmentRationale": "Scope-of-practice/role description for hired CRNAs — Tier 3 career job content.",
+              "normalizedField": null,
+              "limitations": "CRNA role, not physician.",
+              "whyA1Missed": "A1 captured the recruiting pitch and onboarding/benefits but did not extract the scope-of-practice description of the CRNA role itself."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "hss_np_careers_a2_01",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+            "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "You&rsquo;ll be partnered with an experienced mentor in your service, invested in your success, and receive six to eight weeks of specialty training in your role.",
+            "claimText": "Newly hired HSS NPs receive a mentor and six to eight weeks of specialty training in their role.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Mentorship and specialty training duration for hired practicing NPs — Tier 3 onboarding detail.",
+            "whyA1Missed": "A1 captured general onboarding/orientation but missed the specific mentor partnership and six-to-eight-week specialty training duration.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "hss_np_careers_a2_02",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+            "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Meeting monthly, the advanced practice council gathers all HSS NPs and CRNAs in a structured forum to discuss all issues related to the advanced practice role: clinical practice, quality, safety, professional development, peer review, training, outcomes and value, optimization of services, etc.",
+            "claimText": "HSS has a monthly Advanced Practice Council convening all NPs and CRNAs to address clinical practice, peer review, training, and quality issues.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Governance/professional forum for practicing APPs — Tier 3 post-trainee infrastructure.",
+            "whyA1Missed": "A1 did not capture the Advanced Practice Council structure that meets monthly for NPs and CRNAs.",
+            "normalizedField": null,
+            "limitations": null
+          },
+          {
+            "claimId": "hss_np_careers_a2_03",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+            "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Here at HSS, you&rsquo;ll have the chance to enhance your clinical knowledge and skill sets through grand rounds, lectures & presentations, case studies, peer review, etc.",
+            "claimText": "HSS NPs access ongoing professional development via grand rounds, lectures, case studies, and peer review.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Professional development modalities for practicing NPs — Tier 3 career development.",
+            "whyA1Missed": "A1 captured CE/credentialing funding but not the in-house clinical development modalities (grand rounds, lectures, case studies, peer review).",
+            "normalizedField": null,
+            "limitations": null
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions NPs work 'in collaboration with HSS physicians and surgeons' but does not specify whether physician hiring or visa sponsorship is offered.",
+          "Page references a 'Center for Advanced Practice Nursing' but does not describe its structure or eligibility further."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL source — all five A1 claims and three A2 claims are FUTURE_LANE_ONLY Tier 3 NP practice content.",
+          "Verify no observership/elective/visiting-student lane was inferred from generic 'orientation' or 'training' language — the training refers to hired NPs, not USCE trainees."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "hss_np_careers_a2_01",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+              "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "You&rsquo;ll be partnered with an experienced mentor in your service, invested in your success, and receive six to eight weeks of specialty training in your role.",
+              "claimText": "Newly hired HSS NPs receive a mentor and six to eight weeks of specialty training in their role.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Mentorship and specialty training duration for hired practicing NPs — Tier 3 onboarding detail.",
+              "whyA1Missed": "A1 captured general onboarding/orientation but missed the specific mentor partnership and six-to-eight-week specialty training duration.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "hss_np_careers_a2_02",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+              "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Meeting monthly, the advanced practice council gathers all HSS NPs and CRNAs in a structured forum to discuss all issues related to the advanced practice role: clinical practice, quality, safety, professional development, peer review, training, outcomes and value, optimization of services, etc.",
+              "claimText": "HSS has a monthly Advanced Practice Council convening all NPs and CRNAs to address clinical practice, peer review, training, and quality issues.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Governance/professional forum for practicing APPs — Tier 3 post-trainee infrastructure.",
+              "whyA1Missed": "A1 did not capture the Advanced Practice Council structure that meets monthly for NPs and CRNAs.",
+              "normalizedField": null,
+              "limitations": null
+            },
+            {
+              "claimId": "hss_np_careers_a2_03",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/nurse-practitioners",
+              "sourceHash": "a8a4a286a6b29b90a41280c15ecd20bd2dc60c7aae458737b6e14d4dfc6c0034",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_d528fcfd02cad4f0.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Here at HSS, you&rsquo;ll have the chance to enhance your clinical knowledge and skill sets through grand rounds, lectures & presentations, case studies, peer review, etc.",
+              "claimText": "HSS NPs access ongoing professional development via grand rounds, lectures, case studies, and peer review.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Professional development modalities for practicing NPs — Tier 3 career development.",
+              "whyA1Missed": "A1 captured CE/credentialing funding but not the in-house clinical development modalities.",
+              "normalizedField": null,
+              "limitations": null
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_hss_pharmacy_careers_a2_1",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/pharmacy",
+            "sourceHash": "f87c712678fe2668e094d1e87c2c9b0533fad0743cb6874596a1da9416b5ef66",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_7d85cf44061c75c9.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "From monthly continued education opportunities and professional membership fee reimbursement to stipends for attending conferences, we're committed to providing the resources and learning opportunities our people need to reach their full potential.",
+            "claimText": "HSS Pharmacy benefits include monthly CE opportunities, professional membership fee reimbursement, and conference attendance stipends.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Continuing-education/professional-development benefit on allied-health pharmacy careers page; not physician pipeline tier.",
+            "limitations": "Stated on pharmacy careers page; applicability to physicians not stated.",
+            "whyA1Missed": "A1 captured tuition reimbursement but did not emit a separate benefit claim covering CE, membership fee reimbursement, and conference stipends listed in the adjacent paragraph."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is allied-health pharmacy careers; no observership, visiting student, residency, fellowship, IMG, J-1, or physician-job language present",
+          "Footer link 'Medical Professionals' is referenced but no physician-pipeline content appears on this URL"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL pharmacy page",
+          "Verify all claims for this source remain FUTURE_LANE_ONLY and tier=NOT_APPLICABLE since content is allied-health, not physician pipeline"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "hss_pa_careers_a2_001",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+            "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Here, you&rsquo;ll have the chance to enhance your professional development through monthly medical and surgical lectures, skill labs and PA case presentations.",
+            "claimText": "HSS PA careers benefit: ongoing professional development via monthly medical/surgical lectures, skill labs, and PA case presentations.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Continuing professional development benefit framed as a hiring perk for PA hires; Tier 3 careers content.",
+            "whyA1Missed": "A1 captured the onboarding/mentor sentence but stopped before the 'Opportunity for continued growth' benefit paragraph.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "hss_pa_careers_a2_002",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+            "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "When you join us, you&rsquo;ll have the chance to get involved with one or more of our various hospital committees. We also recently created a PA leadership council, which gives directors and PA managers a space to meet regularly and address department and hospital processes.",
+            "claimText": "HSS PAs can join hospital committees and a newly-created PA leadership council for directors/managers.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Governance/leadership engagement benefit for PA hires; Tier 3 careers content.",
+            "whyA1Missed": "A1 did not capture the 'Get involved' committee/leadership-council paragraph.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "hss_pa_careers_a2_003",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+            "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Explore some of the different roles in the Physician Assistants DepartmentCoreFloorOperativesEducators",
+            "claimText": "HSS PA department has four role tracks: Core, Floor, Operatives, and Educators.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Lists the PA role tracks at HSS; Tier 3 careers content describing job categories.",
+            "whyA1Missed": "A1 captured general PA description but did not enumerate the four specific PA role tracks.",
+            "limitations": null,
+            "normalizedField": null
+          },
+          {
+            "claimId": "hss_pa_careers_a2_004",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+            "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "As an educator, you&rsquo;ll collaborate with senior directors in our PA department, working together to drive our educational and professional development initiatives. Here, you&rsquo;ll supervise processes ranging from staff onboarding, training and curriculum development to continuous learning, mentorship and our CME policies.",
+            "claimText": "HSS PA Educator role: collaborates with senior directors on onboarding, curriculum, mentorship, CME policies, and FPPE/OPPE.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Describes a specific PA career track (Educator); Tier 3 careers content.",
+            "whyA1Missed": "A1 did not capture the Educator-track description and its scope of responsibilities.",
+            "limitations": null,
+            "normalizedField": null
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Ready to Apply?' with a 'Learn More' button for application FAQs but no application URL, email, or contact information is present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this HSS PA CAREERS_PORTAL source — PA is allied health, not physician USCE.",
+          "Verify all claims on this source are tagged Tier 3 / FUTURE_LANE_ONLY and not promoted to public lanes."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "hss_pa_careers_a2_001",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+              "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Here, you&rsquo;ll have the chance to enhance your professional development through monthly medical and surgical lectures, skill labs and PA case presentations.",
+              "claimText": "HSS PA careers benefit: ongoing professional development via monthly medical/surgical lectures, skill labs, and PA case presentations.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Continuing professional development benefit framed as a hiring perk; Tier 3 careers content.",
+              "whyA1Missed": "A1 stopped before the 'Opportunity for continued growth' paragraph."
+            },
+            {
+              "claimId": "hss_pa_careers_a2_002",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+              "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "When you join us, you&rsquo;ll have the chance to get involved with one or more of our various hospital committees. We also recently created a PA leadership council, which gives directors and PA managers a space to meet regularly and address department and hospital processes.",
+              "claimText": "HSS PAs can join hospital committees and a newly-created PA leadership council for directors/managers.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Leadership engagement benefit; Tier 3 careers content.",
+              "whyA1Missed": "A1 did not capture the committee/leadership-council paragraph."
+            },
+            {
+              "claimId": "hss_pa_careers_a2_003",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+              "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Explore some of the different roles in the Physician Assistants DepartmentCoreFloorOperativesEducators",
+              "claimText": "HSS PA department has four role tracks: Core, Floor, Operatives, and Educators.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Lists PA role tracks; Tier 3 careers content.",
+              "whyA1Missed": "A1 did not enumerate the four PA role tracks."
+            },
+            {
+              "claimId": "hss_pa_careers_a2_004",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/physician-assistants",
+              "sourceHash": "9b69ba4f81de52cd109769e08d45725a7af704d6eb7e5cbe7bcdf9c08d22e1ca",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_844c98f497aabc9c.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "As an educator, you&rsquo;ll collaborate with senior directors in our PA department, working together to drive our educational and professional development initiatives. Here, you&rsquo;ll supervise processes ranging from staff onboarding, training and curriculum development to continuous learning, mentorship and our CME policies.",
+              "claimText": "HSS PA Educator role: collaborates with senior directors on onboarding, curriculum, mentorship, and CME policies.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Describes a specific PA career track; Tier 3 careers content.",
+              "whyA1Missed": "A1 did not capture the Educator-track description."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/radiology",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Education Institute Careers' in nav but does not describe physician training, observership, or visiting student pathways on this URL.",
+          "Page links to 'Explore Open Roles' and 'Medical Professionals' info pages but does not state any physician faculty/attending roles or visa sponsorship on this URL."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this CAREERS_PORTAL source.",
+          "Verify both A1 claims remain FUTURE_LANE_ONLY tagged Tier 3 — page is allied-health staff hiring, not physician training or attending recruitment."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "c_hss_rehab_careers_a2_01",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+            "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "As a mobility tech, you&rsquo;ll work under the guidance of our talented team of skilled professionals, giving them essential support by providing vital patient care work.",
+            "claimText": "HSS Rehab careers page advertises a separate Mobility Tech support role under skilled-professional guidance (allied-health support, not physician).",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Allied-health support role, not physician or USCE-eligible.",
+            "normalizedField": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Recruitment language for a distinct allied-health support role (Mobility Tech) — career/practice tier.",
+            "whyA1Missed": "A1 grouped all rehab roles under PT/OT/ST therapists; missed the separately-described Mobility Tech role family further down the page."
+          },
+          {
+            "claimId": "c_hss_rehab_careers_a2_02",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+            "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Our therapy and performance services are centered in the New York area, although our network extends to New Jersey, Connecticut and Florida through our regional locations.",
+            "claimText": "HSS Rehab career footprint extends beyond NY to regional locations in NJ, CT, and FL.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Geographic scope of rehab careers; not USCE-related.",
+            "normalizedField": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Geographic context for career postings — practice/career tier.",
+            "whyA1Missed": "A1 captured the role types but did not record the multi-state regional footprint (NJ/CT/FL) relevant to career-lane geo-targeting."
+          },
+          {
+            "claimId": "c_hss_rehab_careers_a2_03",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+            "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Our advanced clinicians combine traditional and latest treatment approaches to help our patients get to what they need and love to do. Here, you&rsquo;ll have the opportunity to evaluate and treat patients while leading and inspiring a team of world-class therapists.",
+            "claimText": "HSS Rehab careers page describes a distinct Advanced Clinician role that evaluates/treats patients and leads therapist teams.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Allied-health leadership role; not physician GME or USCE.",
+            "normalizedField": null,
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PROVIDER_CAREERS",
+            "tierAssignmentRationale": "Recruitment language for an Advanced Clinician lead role — career tier.",
+            "whyA1Missed": "A1's role claim only named PT/OT/ST therapists; the page separately enumerates Advanced Clinicians as a distinct lead role."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references APTA-accredited fellowship/residency programs and post-doctoral research fellowships but does not state eligibility, duration, application route, or whether physicians (vs PTs only) may apply."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE is emitted from this CAREERS_PORTAL source — all claims must remain FUTURE_LANE_ONLY.",
+          "Confirm the APTA fellowship/residency reference is not mis-classified as physician GME (it is allied-health PT training)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": [
+            {
+              "claimId": "c_hss_rehab_careers_a2_01",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+              "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "As a mobility tech, you&rsquo;ll work under the guidance of our talented team of skilled professionals, giving them essential support by providing vital patient care work.",
+              "claimText": "Mobility Tech allied-health support role at HSS Rehab.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Non-physician support role.",
+              "normalizedField": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Distinct allied-health support job posting.",
+              "whyA1Missed": "A1 focused on PT/OT/ST and missed Mobility Tech as a separate role family."
+            },
+            {
+              "claimId": "c_hss_rehab_careers_a2_02",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+              "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Our therapy and performance services are centered in the New York area, although our network extends to New Jersey, Connecticut and Florida through our regional locations.",
+              "claimText": "Multi-state HSS Rehab career footprint (NY, NJ, CT, FL).",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "normalizedField": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Geographic scope of career postings.",
+              "whyA1Missed": "A1 omitted the regional-state footprint detail."
+            },
+            {
+              "claimId": "c_hss_rehab_careers_a2_03",
+              "claimType": "FUTURE_LANE_JOB",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://www.hss.edu/careers/advanced-practice-and-allied-health/rehabilitation-and-performance",
+              "sourceHash": "d9e041fb664bbf8228bc7c9fc2c16f1ce7a958222092db61a45a0c87d01a069b",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-5-hss/cleaned_text/sm_b7aba0db68ab5601.txt",
+              "sourceScope": "CAREERS_PORTAL",
+              "quote": "Our advanced clinicians combine traditional and latest treatment approaches to help our patients get to what they need and love to do. Here, you&rsquo;ll have the opportunity to evaluate and treat patients while leading and inspiring a team of world-class therapists.",
+              "claimText": "Advanced Clinician lead role within HSS Rehab.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Allied-health leadership role, not physician.",
+              "normalizedField": null,
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "PROVIDER_CAREERS",
+              "tierAssignmentRationale": "Separately enumerated lead clinician role.",
+              "whyA1Missed": "A1's enumeration stopped at therapist roles and did not capture Advanced Clinicians."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists department categories (IT, Risk Management, Finance, Marketing, HR, Development, Facilities, Innovation and Strategic Operations, Administrative Professionals) but provides no contact, fee, or eligibility information.",
+          "Page references 'How to Apply' and 'Ready to Apply?' button but the cleaned text does not resolve the application pathway URL or process."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL non-clinical business/operational/technical page.",
+          "Verify FUTURE_LANE_JOB tier-3 classification is preserved and not promoted to a clinical/USCE lane."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals/administrative-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm this administrative-careers page yields no PUBLIC_SAFE_USCE claim and remains tagged NOT_APPLICABLE (non-physician roles only)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals/development",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PORTAL Development (fundraising) page"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals/facilities",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this facilities/operations careers page — content covers non-physician roles (engineering, security, skilled trades, housekeeping) only."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals/finance",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Medical Professionals' link in footer but does not state whether it covers physician careers or clinical training opportunities."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this CAREERS_PAGE non-clinical finance source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://www.hss.edu/careers/business-operational-technical-professionals/human-resources",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-5-hss",
+        "institutionId": "inst_hospital_for_special_surgery_ny",
+        "institutionName": "Hospital for Special Surgery",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claims attached to this CAREERS_PORTAL HR page — page contains no USCE, GME, or visa content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

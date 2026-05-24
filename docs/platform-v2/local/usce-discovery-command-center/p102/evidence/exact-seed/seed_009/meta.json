@@ -1,0 +1,47 @@
+{
+  "seedId": "seed_009",
+  "institutionId": "inst_cleveland_clinic_oh",
+  "institutionName": "Cleveland Clinic",
+  "parentSystem": "Cleveland Clinic",
+  "campus": "",
+  "city": "Cleveland",
+  "state": "OH",
+  "sourceUrl": "https://my.clevelandclinic.org/departments/elective-program",
+  "sourceDomain": "clevelandclinic.org",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Cleveland Clinic",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Intelligent gate validated as VALID_DIRECT_USCE_SOURCE (elective URL segment); BOTH audience classification confirmed",
+  "priorEvidenceRef": "direct_link_validation.json",
+  "notes": "Splits into 2 rows by runner",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f63e0b9f4d",
+    "exact_d30ff7709f"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_009/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_009/cleaned.txt",
+  "sourceHash": "42d6a74212e7efd1bd960dbe0d710dfe2e2e6c5df17812ec0bbe32c9291ef012",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+    "confidence": "HIGH",
+    "rationale": "both VMS and IMG signals in page text"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: elective URL segment",
+    "signals": [
+      "elective URL segment"
+    ]
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T02:32:37.354Z"
+}

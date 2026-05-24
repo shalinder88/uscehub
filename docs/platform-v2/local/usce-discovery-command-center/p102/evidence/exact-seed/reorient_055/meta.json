@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_055",
+  "institutionId": "inst_live_penn_intl",
+  "institutionName": "Penn Medicine — International Trainees & Scholars",
+  "parentSystem": "Penn Medicine",
+  "campus": "",
+  "city": "Philadelphia",
+  "state": "PA",
+  "sourceUrl": "https://www.med.upenn.edu/globalhealth/international-trainees-scholars.html",
+  "sourceDomain": "med.upenn.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Penn Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Penn Center for Global Health INTL trainees",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Affiliation agreement required",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_64599a53f7"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_055/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_055/cleaned.txt",
+  "sourceHash": "e7849441729719cdcd33d016e1c4577c86f3e7f4e129c374d054694e0f2aab5e",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T03:38:36.415Z"
+}

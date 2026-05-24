@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Northwell Health - North Shore University Hospital",
+    "aliases": ["NSUH", "Zucker School of Medicine — Visiting Students (covering NSUH)"],
+    "city": "Manhasset",
+    "state": "NY",
+    "officialDomain": "medicine.hofstra.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Northwell Health / Donald and Barbara Zucker SOM at Hofstra-Northwell",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 66; P101-2 selected_25 rank 23"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["medicine.hofstra.edu", "northwell.edu"],
+    "searchTermsTried": ["Hofstra Northwell School of Medicine visiting medical student VSLO international North Shore University Hospital"],
+    "pagesOpened": [
+      "https://medicine.hofstra.edu/student-records/visiting",
+      "https://medicine.hofstra.edu/student-records/visiting-faqs.html",
+      "https://medicine.hofstra.edu/education/visiting",
+      "https://medicine.hofstra.edu/education/visiting/index.html"
+    ],
+    "rejectedPages": [
+      {"url": "https://physicians.northwell.edu/education/graduate-medical-education/residency-internal-medicine-nsuh-lij", "title": "IM Residency NSUH/LIJ", "reason": "RESIDENCY_ONLY"},
+      {"url": "https://www.bayshoreem.com/medical-student-rotation", "title": "BayShore EM private residency", "reason": "RESIDENCY_ONLY"}
+    ],
+    "robotsOrAccessNotes": "medicine.hofstra.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.hofstra.edu/education/visiting",
+      "pageTitle": "Visiting Students - Zucker School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "All students attending US LCME accredited medical schools or COCA accredited AACOM member colleges are required to use the AAMC Visiting Student Learning Opportunities service (VSLO).",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NO_FEE_STATED_EXPLICIT",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks elective",
+      "specialtyDecision": "Multispecialty across 23+ Northwell hospital sites including NSUH",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "US_LCME_OR_COCA_AACOM",
+        "VSLO_REQUIRED",
+        "NO_ZUCKER_FEES_AAMC_VSLO_FEE_ONLY",
+        "MAX_12_WEEKS_ELECTIVE_TIME",
+        "23_PLUS_HOSPITAL_SITES_INCLUDING_NSUH"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.hofstra.edu/education/visiting",
+      "pageTitle": "Visiting Students - Zucker School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Due to the volume of applications, we do not accept applicants from foreign medical schools that do not already have an affiliation agreement with the Zucker School of Medicine.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NO_FEE_STATED_EXPLICIT",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["FOREIGN_MS_LANE_RESTRICTED_TO_PRE_AFFILIATION_AGREEMENTS_ONLY"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Verbatim exclusion: foreign medical schools without pre-existing Zucker affiliation are NOT accepted. International lane is affiliation-only, not open public pathway.",
+    "weakNegativeEvidence": "NSUH not separately named verbatim as one of the 23+ sites; placement is by department in VSLO."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) US LCME/COCA via VSLO; (b) no Zucker fees (only AAMC VSLO standard fee); (c) max 12 weeks; (d) foreign MS = pre-affiliation-only — not open international.",
+  "plainEnglishSummary": "Northwell North Shore University Hospital is one of 23+ Northwell sites accessible through Zucker School of Medicine at Hofstra-Northwell's visiting students program. US LCME or COCA-accredited schools only via VSLO. No Zucker-specific fees (only AAMC's standard VSLO fee). Max 12 weeks. International medical schools can apply only if they already have an affiliation agreement with Zucker — not an open international pathway.",
+  "driftCheck": "This advanced national USCE discovery because NY gained a second P101 packet (after Bellevue); affiliation-only international caveat captured verbatim."
+}

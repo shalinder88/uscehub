@@ -1,0 +1,686 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_70",
+      "sourceUrl": "https://med.miami.edu/residencies-and-fellowships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.miami.edu/residencies-and-fellowships",
+            "sourceHash": "794653a8ddb5a6a5afa7b5535c348f16a823779e971543d32d96d9a76028e581",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_21a8524308c8d379.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The headache program includes clinical as well as didactic training in the diagnosis and comprehensive management of primary and secondary headache disorders, both in adults and children.",
+            "normalizedField": "fellowship_headache_content",
+            "claimText": "Headache fellowship covers clinical and didactic training in primary/secondary headache disorders for adults and children.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 captured the UCNS accreditation sentence (c2) but stopped before the adjacent sentence describing curriculum scope (adults+children, primary+secondary).",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Subspecialty fellowship curriculum detail — trainee tier."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "MISSING_FIELD",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://med.miami.edu/residencies-and-fellowships",
+            "sourceHash": "794653a8ddb5a6a5afa7b5535c348f16a823779e971543d32d96d9a76028e581",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_21a8524308c8d379.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "FFellow Class of 2026",
+            "normalizedField": "fellowship_class_year",
+            "claimText": "Page references a Fellow Class of 2026 cohort indicator.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "LOW",
+            "limitations": "Header fragment; no roster or recruitment specifics included.",
+            "whyA1Missed": "A1 skipped this short fragment because it reads like a heading rather than a substantive claim.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellow cohort/class reference — trainee tier."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c7",
+            "refinementReason": "quote_too_general",
+            "explanation": "The quote concatenates a navigation list of residency titles with broken letter prefixes ('CCardiovascular', 'NNeurologic'); not a clean substantive claim. Recommend regate consider splitting into discrete program-name claims or downgrading."
+          },
+          {
+            "a1ClaimId": "c9",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'IIBD Fellowship ProgramMMovement Disorders Fellowship' is concatenated navigation text with duplicated letter prefixes; functions as a list-fragment, not a descriptive claim."
+          },
+          {
+            "a1ClaimId": "c10",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote 'NNephrology Fellowship Training ProgramNeuromuscular Fellowship TrainingRRheumatology' is a concatenated navigation list with letter-prefix duplication, not a substantive program description."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Top navigation menu lists 'Externships' under Education but no page content describes externship eligibility, scope, or whether visiting/IMG students are accepted — Tier 1 signal unresolved on this source.",
+          "Footer states 'LCME fully accredited institution | Contact: Lcme@aamc.org' but this is accreditation metadata, not a USCE or trainee program claim.",
+          "Page mentions 'Postdoctoral Programs' and 'Graduate Medical Education' in nav but provides no detail on this source.",
+          "No eligibility, application pathway, ECFMG, J-1, or visa sponsorship language for any listed residency/fellowship is present on this index page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim was emitted from this FELLOWSHIP_PAGE source — all claims must remain FUTURE_LANE_ONLY.",
+          "Verify A1 c7/c9/c10 are flagged as concatenated-navigation quotes; regate should decide whether to keep, split, or downgrade.",
+          "Check whether the run-folder includes a dedicated /education/externships or visiting-students page from med.miami.edu — menu mention is unresolved here.",
+          "Confirm no Tier 1 USCE signal is derived from a page whose only Tier 1 hook is a navigation label ('Externships')."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://med.miami.edu/residencies-and-fellowships",
+              "sourceHash": "794653a8ddb5a6a5afa7b5535c348f16a823779e971543d32d96d9a76028e581",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_21a8524308c8d379.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The headache program includes clinical as well as didactic training in the diagnosis and comprehensive management of primary and secondary headache disorders, both in adults and children.",
+              "normalizedField": "fellowship_headache_content",
+              "claimText": "Headache fellowship covers clinical and didactic training in primary/secondary headache disorders for adults and children.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 captured UCNS accreditation but stopped before adjacent curriculum sentence.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Subspecialty fellowship curriculum detail — trainee tier."
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "MISSING_FIELD",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://med.miami.edu/residencies-and-fellowships",
+              "sourceHash": "794653a8ddb5a6a5afa7b5535c348f16a823779e971543d32d96d9a76028e581",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-pc-3-um-uhealth/cleaned_text/sm_21a8524308c8d379.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "FFellow Class of 2026",
+              "normalizedField": "fellowship_class_year",
+              "claimText": "Page references a Fellow Class of 2026 cohort indicator.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "LOW",
+              "limitations": "Header fragment; no roster or recruitment specifics included.",
+              "whyA1Missed": "Short header fragment skipped as non-substantive.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Fellow cohort reference — trainee tier."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_71",
+      "sourceUrl": "https://med.miami.edu/labs/pastori-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions 'Externships' and 'Graduate Medical Education' only as global navigation menu items, not as content on this lab page; no eligibility, application, or audience information is provided on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this faculty research-lab page (Pastori Lab) — content is purely scientific description with no USCE/training/career signal."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_72",
+      "sourceUrl": "https://med.miami.edu/labs/paus-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a faculty research-lab project listing (Paus Lab, Dermatology) with no information about whether external trainees, medical students, or observers can join any of the listed projects."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this faculty research-lab page; it lists ongoing projects only and contains no eligibility/application/USCE language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_73",
+      "sourceUrl": "https://med.miami.edu/labs/chaudhari-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page navigation menu lists 'Externships' and 'Graduate Medical Education' as site-wide links but this lab page itself does not state any externship, observership, visiting-student, residency, or fellowship details.",
+          "Page mentions 'LCME fully accredited institution' but does not relate this to any USCE eligibility statement."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this basic-science lab page (Chaudhari Lab) — content is research description only, no opportunity statement.",
+          "Verify scope is treated as DEPARTMENT_LEVEL / basic-science lab, not institution-wide."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_74",
+      "sourceUrl": "https://med.miami.edu/labs/ajdic-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Externships' in the global Education menu but cleaned text provides no description, eligibility, or link target for that program.",
+          "Page lists 'Graduate Medical Education' in the global Education menu without specifying programs, eligibility, or contact details on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this faculty lab research page — content is lab research only, not a student-facing USCE pathway.",
+          "Verify the 'Externships' menu reference is not promoted into a USCE claim without a dedicated externship source page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_75",
+      "sourceUrl": "https://med.miami.edu/labs/eshraghi-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes a research lab (Eshraghi Lab) but does not state whether visiting medical students, observers, or external research electives are accepted",
+          "Page mentions clinical trials and translational research but does not specify any application pathway, eligibility, duration, fee, or contact for external trainees"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this individual lab research page — it is a faculty/lab profile with no stated visiting student or observership opportunity",
+          "Verify scope is treated as DEPARTMENT_LEVEL / lab-profile and not promoted to institution-wide USCE access"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_76",
+      "sourceUrl": "https://med.miami.edu/labs/lindau-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page contains the phrase 'The person joining this project will proceed to a more complex step...' which gestures at a research role but does not state whether it is open to visiting students, observers, postdocs, or only home-institution trainees; no application pathway, eligibility, or contact-for-opportunity is given.",
+          "Page lists a generic lab contact (Phone: 305-243-4119 and an Email link) but does not tie that contact to any specific USCE, observership, research elective, or visiting-student program."
+        ],
+        "recommendedA3Focus": [
+          "Confirm that no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE source — the page is a basic-science lab description (Lindau Lab, Physiology and Biophysics) with no stated observership, elective, visiting-student, or external-applicant pathway.",
+          "Verify that the vague 'person joining this project' language is NOT treated as an OFFERS_RESEARCH opportunity claim — it lacks eligibility, application pathway, and audience specification."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_77",
+      "sourceUrl": "https://med.miami.edu/labs/chung-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'physician trainees, and students' as team members but does not state whether external medical students may apply to join the lab.",
+          "Lab contact (Jennifer Maizel) is provided but no application pathway, eligibility criteria, or acceptance of visiting/observer students stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Chung Lab research page — content is internal lab description with no external applicant pathway.",
+          "Verify any future research-elective claim citing this URL is downgraded to NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_78",
+      "sourceUrl": "https://med.miami.edu/labs/daunert-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a research-lab project description page (Daunert Lab) listing biotechnology/nanotechnology research projects; contains no statements about medical-student access, observerships, visiting students, electives, residency/fellowship training, careers, or visa sponsorship to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no USCE or future-lane claim is generated from this Daunert Lab research-projects page — content is purely research project descriptions and does not address trainee, applicant, or career access."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_79",
+      "sourceUrl": "https://med.miami.edu/labs/telonis-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists a lab contact (PI Aristeidis G. Telonis, Ph.D., Lab: 305-243-5412) but does not state whether the lab accepts visiting students, observers, or research electives.",
+          "Page mentions 'Externships' in the top navigation menu but does not describe any externship eligibility or process on this lab page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE - content is a lab research description with no student/observer/USCE language.",
+          "Verify the lab contact phone is not promoted to a CONTACT_PHONE USCE claim since no opportunity is offered on the page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_80",
+      "sourceUrl": "https://med.miami.edu/labs/lassance-soares-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Externships' in top-nav but does not state on this page whether externships are open to outside or visiting medical students.",
+          "Page describes research projects in the Lassance-Soares Lab but does not state whether external/visiting medical students may participate in lab research.",
+          "Page mentions 'Postdoctoral Programs' in navigation without details on this page about eligibility or application."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this RESEARCH_PAGE — page contains only lab project descriptions with no stated visiting-student, observership, or research-elective offering.",
+          "Verify that the navigation tokens 'Externships' and 'Postdoctoral Programs' alone are not treated as offerings without a substantive on-page statement."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_81",
+      "sourceUrl": "https://med.miami.edu/labs/pastar-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Externships' in the global navigation menu but does not describe the externship program here; the linked content is not present in the cleaned text.",
+          "Page lists 'Postdoctoral Programs' in the navigation but does not describe eligibility or application details here."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this Pastar Lab research page — content is a faculty research-project description, not a student opportunity.",
+          "Verify that navigation breadcrumbs (Externships, Postdoctoral Programs) are not used as a basis for any opportunity claim on this source."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_82",
+      "sourceUrl": "https://med.miami.edu/labs/domínguez-bendala-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is an individual lab page (Domínguez-Bendala Lab) describing pancreatic progenitor cell research; no language about student access, research electives, observership, visiting students, or applications appears in the cleaned text.",
+          "Top-level navigation mentions 'Externships' and 'Graduate Medical Education' but those are nav labels only with no descriptive content on this page; cannot be resolved from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this lab page — content is purely research description with no student access language.",
+          "Verify that the navigation labels 'Externships' and 'Graduate Medical Education' on this page are not converted into USCE or GME claims without dedicated source pages."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_83",
+      "sourceUrl": "https://med.miami.edu/labs/davis-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Externships' in the global Education navigation menu but provides no link target text or details about externship eligibility, application, or scope on this page.",
+          "Page lists 'Graduate Medical Education' and 'Postdoctoral Programs' in global navigation but contains no substantive description of either on this lab profile."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this faculty research lab profile URL — it is a PI biography page with no student/visitor access language.",
+          "Verify the 'Externships' nav item is captured via its dedicated landing page rather than inferred from this lab profile."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_84",
+      "sourceUrl": "https://med.miami.edu/labs/stone-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Cleaned text lists 'Externships' in the Education nav menu but provides no descriptive content about externship eligibility, application, or whether visiting/observer access is available."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is attached to this Stone Lab research page — it is a PI lab overview with no medical-student/observer access language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_85",
+      "sourceUrl": "https://med.miami.edu/labs/cejas-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Externships' in the top navigation menu but provides no description, eligibility, or link content on this page to characterize that program.",
+          "Page mentions 'Graduate Medical Education' and 'Postdoctoral Programs' in navigation only — no substantive Tier 2 content on this source.",
+          "Page mentions 'Careers' in navigation only — no Tier 3 content extractable from this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this research-lab page (Cejas Lab) — content is purely lab description with no USCE eligibility statements.",
+          "Verify sourceScope remains UNKNOWN_SCOPE or is downgraded to DEPARTMENT_LEVEL given this is a single-lab page, not a general medical-school offering."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_86",
+      "sourceUrl": "https://med.miami.edu/labs/jones-weiss-lab/past-research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes completed research studies (Spear & Shield, LFLS, COPA2, MRSI/DKI) but does not state any visiting student, observership, or research elective opportunity for outside trainees."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this past-research lab page — content is closed/completed research projects with no trainee opportunity language."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_87",
+      "sourceUrl": "https://med.miami.edu/labs/jones-weiss-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page mentions a CREW summer research institute (eight-week) but explicitly targets USVI college students, not medical students or trainees — no USCE/medical-trainee opportunity is stated.",
+          "Page lists 'Externships' and 'Graduate Medical Education' in the top navigation but provides no content about them on this page."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this research lab page (Jones Weiss Lab) — content is HIV/AIDS research and a USVI undergraduate summer program, not medical-trainee USCE.",
+          "Verify CREW program is not misclassified as a medical student research elective — eligibility is 'USVI college students' for cardiovascular research, not medical students."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_88",
+      "sourceUrl": "https://med.miami.edu/labs/bianchi-lab/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-pc-3-um-uhealth",
+        "institutionId": "inst_univ_miami_uhealth_miller_som_fl",
+        "institutionName": "University of Miami Miller SOM UHealth",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page describes a single PI lab's (Bianchi Lab) research interests but does not state whether visiting medical students, observers, or research electives are accepted",
+          "Page lists 'Externships' in the global navigation menu but provides no detail on eligibility, scope, or whether outside trainees can apply",
+          "Contact info present (Laura Bianchi, PhD, lab/office phone, generic Email label) but no application pathway for external trainees is stated"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this lab research page since it contains no observership/elective/visiting-student offer language",
+          "Verify the global-nav mention of 'Externships' is not promoted to an OFFERS_* claim without a dedicated externship-page source"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

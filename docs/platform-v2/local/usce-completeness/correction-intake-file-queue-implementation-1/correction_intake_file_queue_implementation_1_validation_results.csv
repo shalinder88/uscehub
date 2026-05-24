@@ -1,0 +1,17 @@
+validator,input,status,errors,warnings,notes
+tsc --noEmit,whole repo (with .next cleared),PASS,0,0,All new TypeScript files compile cleanly
+validate-micro-pilot-runtime.ts,active runtime,PASS,0,0,5 cards UNCHANGED; noindex+nofollow gate intact
+validate-public-runtime-data.ts,Maine 12-card runtime,PASS,0,0,Pre-existing baseline
+validate-usce-public-cards.ts,Maine cards,PASS,0,0,Pre-existing baseline
+validate-usce-save-compare.ts,Maine save/compare,PASS,0,0,Pre-existing baseline
+validate-usce-report-intake.ts,Maine local-report-intake,PASS,0,0,Pre-existing baseline (separate from new correction intake)
+validate-usce-pilot-release.ts,pilot release hardening,PASS,0,0,Pre-existing baseline
+validate-p99-p97-bridge-input.ts,first_pilot_mini_curator_reaudit_6_bridge_input_DRAFT.csv,PASS,0,0,DRAFT unchanged
+validate-p99-runtime-prep-candidate.ts,bridge_to_runtime_prep_batch_2_candidate_runtime.json,PASS,0,0,Candidate JSON unchanged
+validate-p99-staged-runtime-batch-2.ts,public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Staged 7-card JSON unchanged
+validate-p99-report-issue-mapping.ts,staged_runtime_report_issue_mapping_1_listing_map.csv,PASS,0,1,1 advisory warning re /contact page not parsing listing_id (B-001 still deferred)
+validate-p99-correction-intake-payload.ts (NEW),correction_intake_file_queue_implementation_1_sample_payloads.json,PASS,0,0,8 samples classified; 4 ACCEPT + 4 REJECT (1 forbidden + 1 honeypot + 2 schema)
+validate-p99-correction-queue-item.ts (NEW),test-output/inbox/2026/05/,PASS,0,0,4 queue items written by smoke commit mode; all conform
+validate-p99-correction-audit-log.ts (NEW),test-output/audit/2026/05/,PASS,0,0,4 audit JSONL files; all conform; unique event IDs; valid action+decision+status enums
+correction-intake-smoke.ts (NEW driver),sample_payloads.json (DRY-RUN),PASS,0,0,8/8 expected outcomes match; zero filesystem writes in dry-run
+correction-intake-smoke.ts (NEW driver),sample_payloads.json (COMMIT to test-output),PASS,0,0,4 queue items + 4 audit logs landed under test-output sandbox; reject samples produced zero writes

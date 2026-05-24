@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-pc-6-houston-methodist-deep",
+  "tasks": [
+    {
+      "taskId": "rec-global-edu-office",
+      "missingFamily": "INTERNATIONAL_OBSERVERSHIP_OFFICE_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "/medical-student-rotations directs international physicians, residents, and medical students to the Global Education Office, but that office's page (with eligibility, duration, fee, ECFMG/USMLE/visa requirements, contact) was not captured.",
+      "suggestedNarrowAction": "Narrow fetch: houstonmethodist.org Global Education Office and HMObserver landing/contact pages. Do not broaden crawl."
+    },
+    {
+      "taskId": "rec-medstudent-rotations-detail",
+      "missingFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Rotations page confirms offering but omits duration, fees, ECFMG/USMLE requirements, application deadlines, and accepting specialties (claims c6, c7, c8, a2_c3, a2_c4, a2_c5 all NOT_STATED).",
+      "suggestedNarrowAction": "Narrow fetch: any sub-pages under /academic-institute/education/medical/ enumerating rotation specialties, fees, durations, and eligibility forms."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

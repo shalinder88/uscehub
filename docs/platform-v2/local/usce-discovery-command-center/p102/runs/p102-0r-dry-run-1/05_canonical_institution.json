@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "institutionId": "inst_hartford_hospital_ct",
+  "canonicalName": "Hartford Hospital",
+  "aliases": [
+    "Hartford Hospital (Hartford HealthCare Hartford Hospital)"
+  ],
+  "state": "CT",
+  "county": "Hartford",
+  "city": "Hartford",
+  "zip": null,
+  "address": null,
+  "parentSystem": "Hartford HealthCare",
+  "officialDomains": [
+    "hartfordhospital.org",
+    "hartfordhealthcare.org"
+  ],
+  "medicalSchoolAffiliations": [],
+  "campusType": "TEACHING_HOSPITAL",
+  "sourceOfIdentity": "queue_seed + identity_canonicalizer_backfill (Hartford Hospital is part of Hartford HealthCare system; its own domain hartfordhospital.org is hospital-level) + identity_canonicalizer_backfill (Hartford Hospital is part of Hartford HealthCare system; its own domain hartfordhospital.org is hospital-level) + identity_canonicalizer_backfill (Hartford Hospital is part of Hartford HealthCare system; its own domain hartfordhospital.org is hospital-level)",
+  "duplicateOf": null,
+  "doNotMergeReason": null,
+  "existingP97Packet": null,
+  "existingP101Packet": null,
+  "existingLiveListing": null,
+  "status": "ACTIVE"
+}

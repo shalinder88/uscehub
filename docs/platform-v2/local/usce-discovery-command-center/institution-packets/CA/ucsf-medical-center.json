@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "UCSF Medical Center",
+    "aliases": [
+      "University of California San Francisco Medical Center",
+      "UCSF Health",
+      "UCSF School of Medicine — Visiting Student Program (covering UCSF Medical Center placement)"
+    ],
+    "city": "San Francisco",
+    "state": "CA",
+    "officialDomain": "meded.ucsf.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UCSF Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 31 (queue-4-national-screening-resume); P101-1 selected_10 rank 1; prior Session-1 + overnight P99 noindex packets exist but no P101 packet on disk"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "meded.ucsf.edu",
+      "ucsf.edu",
+      "fresno.ucsf.edu"
+    ],
+    "searchTermsTried": [
+      "UCSF visiting medical student program international site:ucsf.edu OR site:medschool.ucsf.edu",
+      "UCSF visiting student program",
+      "UCSF away rotation",
+      "UCSF VSLO",
+      "UCSF international student elective",
+      "UCSF Fresno international visiting student",
+      "UCSF Department visiting medical students"
+    ],
+    "pagesOpened": [
+      "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "https://meded.ucsf.edu/visiting-student-program",
+      "https://meded.ucsf.edu/away-rotation-instructions",
+      "https://meded.ucsf.edu/md-program/current-students/visiting-student-program/elective-information-department",
+      "https://fresno.ucsf.edu/medical-student-programs/international-non-lcme-visiting-students",
+      "https://dermatology.ucsf.edu/medical-students/information-visiting-medical-students"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://isso.ucsf.edu/prospective-students",
+        "title": "Prospective Students | UCSF International Students and Scholars Office",
+        "reason": "NOT_USCE"
+      },
+      {
+        "url": "https://medicine.ucsf.edu/education/medical-students-program",
+        "title": "Medical Students Program | UCSF Department of Medicine",
+        "reason": "AFFILIATED_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "meded.ucsf.edu accessible; WebFetch clean. UCSF Fresno lane is a sibling campus subdomain with a different eligibility policy; documented separately.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "pageTitle": "Visiting Student Program Overview | UCSF Medical Education",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "actively progressing toward a Doctor of Medicine degree at an affiliated LCME-accredited institution, or a Doctor of Osteopathic Medicine degree at an affiliated COCA-accredited, AACOM member institution",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks (3 months) verbatim",
+      "specialtyDecision": "Multispecialty via per-department elective information page",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "US_LCME_OR_COCA_AACOM_ONLY",
+        "INTERNATIONAL_INSTITUTIONS_EXPLICITLY_EXCLUDED_AT_MAIN_UCSF",
+        "GOOD_ACADEMIC_STANDING_REQUIRED",
+        "VSLO_REQUIRED",
+        "SCHOOL_LEVEL_SOURCE — UCSF School of Medicine hub; UCSF Medical Center hospital not separately named as placement"
+      ]
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "pageTitle": "Visiting Student Program Overview | UCSF Medical Education",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "UCSF does not accept students enrolled in international institutions for clinical experiences.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "INTERNATIONAL_STUDENTS_EXPLICITLY_EXCLUDED_VERBATIM"
+      ]
+    },
+    {
+      "sourceUrl": "https://meded.ucsf.edu/current-students/visiting-student-program/visiting-student-program-overview",
+      "pageTitle": "Visiting Student Program Overview | UCSF Medical Education",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "Once accepted, applicants must pay $300 processing fee. Students attending Canadian institutions will pay a $550 fee.",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Max 12 weeks",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "PROCESSING_FEE_300_USD",
+        "CANADIAN_FEE_550_USD"
+      ]
+    },
+    {
+      "sourceUrl": "https://fresno.ucsf.edu/medical-student-programs/international-non-lcme-visiting-students",
+      "pageTitle": "International & Non-LCME Visiting Students | UCSF Fresno",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "the fee for international applications is $1040 per 4 week elective plus housing costs",
+      "quoteSupports": ["cost", "audience"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_AMBIGUOUS",
+      "durationDecision": "Per 4-week elective",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE — partial verification; needs follow-up packet",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_C_NEEDS_REVIEW",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "UCSF_FRESNO_SIBLING_CAMPUS_DIFFERENT_FROM_MAIN_UCSF",
+        "MAIN_UCSF_EXCLUDES_INTERNATIONAL_BUT_FRESNO_DOES_NOT",
+        "$1040_PER_4_WEEK_PLUS_HOUSING",
+        "VISITING_LANE_IS_FRESNO_NOT_PARNASSUS_OR_MISSION_BAY",
+        "FOLLOW_UP_PACKET_QUEUED_FOR_FRESNO_SPECIFIC_FIELDS"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 7,
+    "openedPagesCount": 6,
+    "strongNegativeEvidence": "Main UCSF SOM hub explicitly excludes international (non-LCME) students from clinical experiences. The international lane lives at UCSF Fresno (a sibling campus), not at the main UCSF Medical Center.",
+    "weakNegativeEvidence": "Main UCSF SOM hub does not name UCSF Medical Center (hospital) explicitly as a placement site; placement is implicit through SOM department electives. Visa language absent from both lanes."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UCSF SOM hub, US LCME/COCA AACOM only, international explicitly excluded at MAIN UCSF; (b) $300 fee verbatim ($550 Canadian); (c) max 12 weeks; (d) VSLO required. UCSF Fresno is a separate sibling campus with its own international lane ($1,040/4wk) — that gets its own packet in a future sprint; the active runtime UCSF entry must NOT claim to cover the Fresno international lane.",
+  "plainEnglishSummary": "UCSF's main visiting student program accepts only US LCME and COCA-accredited students; international medical students are explicitly excluded. Applications go through VSLO with a $300 processing fee ($550 for Canadian schools). Max 12 weeks. The UCSF Medical Center hospital is the implicit placement site. UCSF Fresno is a SEPARATE sibling campus that has its own international visiting students lane at $1,040 per 4 weeks plus housing — this is not the same as the main UCSF Medical Center listing currently in active runtime.",
+  "driftCheck": "This advanced national USCE discovery because UCSF main hub policy was captured verbatim with the explicit international-exclusion language; an important new finding (Fresno = separate international-eligible sibling campus) was recorded as a follow-up packet candidate rather than merged into the main entry."
+}

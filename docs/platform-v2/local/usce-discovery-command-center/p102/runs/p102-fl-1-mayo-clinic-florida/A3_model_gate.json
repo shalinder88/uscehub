@@ -1,0 +1,92 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [
+    {
+      "primaryClaimId": "c1",
+      "duplicateClaimId": "sc1",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "mayo-fl-subinternship-404",
+      "duplicateClaimId": "mayo-fl-subinternship-family-mismatch",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "mayo-fl-provider-careers-404",
+      "duplicateClaimId": "mayo-fl-provider-careers-family-mismatch",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "c1",
+      "duplicateClaimId": "sc1",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "mayo_fl_src67_pagenotfound_01",
+      "duplicateClaimId": "mayo_fl_src67_scope_conflict_01",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    },
+    {
+      "primaryClaimId": "c2",
+      "duplicateClaimId": "a2_c5",
+      "duplicateReason": "same_claimType_same_field_same_source"
+    },
+    {
+      "primaryClaimId": "c_futurelane_gme_school",
+      "duplicateClaimId": "a2_school_list",
+      "duplicateReason": "same_normalizedField_higher_quality_quote_in_primary"
+    }
+  ],
+  "institutionId": "inst_mayo_clinic_florida_fl",
+  "institutionName": "Mayo Clinic Florida",
+  "metadata": {
+    "totalClaimsReviewed": 61,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 6,
+    "humanReviewRequiredCount": 55,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-1-mayo-clinic-florida",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "tier1CoverageVerdict": "PASS_PARTIAL",
+  "tier2CoverageVerdict": "PASS_PARTIAL",
+  "tier3CoverageVerdict": "PASS_PARTIAL",
+  "unresolveds": [],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims emitted. The vast majority of candidate Mayo Clinic Florida USCE URLs resolved to system-level 404 pages and were correctly routed to HUMAN_REVIEW_REQUIRED; remaining substantive claims are from mayoclinic.org/education and /medical-professionals (system/college scope) and were correctly held at HUMAN_REVIEW_REQUIRED or FUTURE_LANE_ONLY rather than promoted to the Florida campus. Ledger is internally consistent; several A1/A2 duplicates noted for downstream dedupe.",
+  "unfollowedSignals": [
+    "Visiting medical student clerkships / Elective clinical rotations for visiting medical students (mayoclinic.org/education) — system/college-level USCE signal exists but no campus-applicability proof for Mayo Clinic Florida"
+  ],
+  "deepRecoveryTasks": [
+    {
+      "taskId": "rec_mcf_visiting_campus_proof",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "College-level visiting medical student clerkships are advertised at mayoclinic.org/education but no Mayo Clinic Florida campus-applicability proof or campus-specific page was captured.",
+      "suggestedNarrowAction": "Targeted fetch of Mayo Clinic Alix School of Medicine visiting student pages and any Jacksonville/Florida campus-applicability roster to confirm whether Florida campus accepts visiting medical students."
+    },
+    {
+      "taskId": "rec_mcf_observership_negative",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Every observership-keyword URL returned a 404; no explicit Mayo Clinic Florida observership refusal quote was captured (absence rather than refusal).",
+      "suggestedNarrowAction": "Narrow search for an explicit Mayo Clinic / Mayo Clinic Florida observership policy statement (accept or do-not-accept), e.g. via Alix School of Medicine FAQ or international programs page."
+    }
+  ]
+}

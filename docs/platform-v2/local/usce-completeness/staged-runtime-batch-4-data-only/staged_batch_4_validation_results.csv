@@ -1,0 +1,16 @@
+validator_or_check,input,status,errors,warnings,notes
+validate-no-secrets,(repo-wide),PASS,0,0,1260 files / 0 findings
+tsc --noEmit,(repo-wide),PASS,0,0,Type check clean
+validate-p99-staged-runtime-batch-4 (NEW),src/data/usce/public-listings-pilot-staged-batch-4.generated.json,PASS,0,0,12 cards / active 10 verbatim / new pilot-020 + pilot-021 / US-only invariant / system-level caveat / no app import
+validate-micro-pilot-runtime,src/data/usce/public-listings-pilot.generated.json,PASS,0,0,Active 10 preserved
+validate-p99-contact-ref-prefill,(no arg),PASS,0,0,Resolver unchanged
+validate-p99-staged-runtime-batch-2,src/data/usce/public-listings-pilot-staged-batch-2.generated.json,PASS,0,0,Batch 2 untouched
+validate-p99-staged-runtime-batch-3,src/data/usce/public-listings-pilot-staged-batch-3.generated.json,PASS,0,0,Batch 3 untouched
+validate-p99-staged-runtime-batch-3-report-mapping,(no arg),PASS,0,0,
+validate-p99-batch-3-promotion-candidate-audit,(no arg),PASS,0,0,
+validate-p97-queue-4-plan,(no arg),PASS,0,0,
+validate-p97-queue-4-session-1-screening,(no arg),PASS,0,0,
+validate-p97-queue-4-session-1-evidence-hardening,(no arg),PASS,0,0,
+validate-p97-queue-4-session-1-curator-pass,(no arg),PASS,0,0,
+validate-p97-queue-4-session-1-bridge-validation,(no arg),PASS,0,0,
+gh secret-scanning open alerts,(gh api),PASS,0,0,length=0

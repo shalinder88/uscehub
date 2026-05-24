@@ -1,0 +1,159 @@
+# Source Map — Baptist Hospital of Miami
+
+Run: p102-fl-2-baptist-miami
+schemaVersion: p102-0r-1
+
+## Accepted sources (20)
+
+- **RESEARCH_PAGE** [https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education](https://baptisthealth.net/about-baptist-health/innovations/applied-research-and-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a149c21c3bc53d80e8fe89c5e25d63dd7faaacf96fd608cdb98977c2dbde1821`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_108e0a313c6ead8d.txt
+- **FELLOWSHIP_PAGE** [https://baptisthealth.net/about-baptist-health/innovations/fellowship](https://baptisthealth.net/about-baptist-health/innovations/fellowship)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `aa3245e52c1cddf1b88b0754383f288698745aaee49c07f13c17ad59d89a6d44`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_01e585a8be4c98f5.txt
+- **VOLUNTEER_PAGE** [https://baptisthealth.net/about-baptist-health/become-a-volunteer](https://baptisthealth.net/about-baptist-health/become-a-volunteer)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b6afc08c04ef07960dc385d8be51ad4f408bed4569438b1e6de819084b3d6c67`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_159a5c4ce31713a8.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/about-baptist-health/research](https://baptisthealth.net/about-baptist-health/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `569a8e4d6bc5d5376be38ee96d3e97e5390eb124c15f06d5943209e1b54e28f8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_2ec79eb1e02b77c0.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/about-baptist-health/research/clinical-trials](https://baptisthealth.net/about-baptist-health/research/clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `767b022996d774d3cc32d17df2cf25f83747ed1b14069ebe51c4827629fd3f41`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_9dfaaae1ab1213bb.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/baptist-health-foundation/our-focus/research](https://baptisthealth.net/baptist-health-foundation/our-focus/research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `b37d5d77c29486098f9ff7cc51fecac615b203d7369b1b2f2ba401ecc887117e`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cbedab6c895cc9cb.txt
+- **OBSERVERSHIP_PAGE** [https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships](https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `ae2ca46f15ce107a287f309e88b7f330305834616c923744875b00b4cea6716a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_e78fdde9970aad5a.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research](https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `49e1aca779fdb673c041acfa5c9196d079e26517b138ed644d020fdd3008aaee`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_089caa320b47b25f.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research/clinical-trials](https://baptisthealth.net/services/cancer-care/lynn-cancer-institute/cancer-research/clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `5fa7fd5729af725cc76575d45a3dcc0646a7f855b2a7765d525f288386c0ad58`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_2ae26e5a7f1cd91d.txt
+- **VOLUNTEER_PAGE** [https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities](https://baptisthealth.net/services/cancer-care/miami-cancer-institute/about-us/volunteer-opportunities)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a504735ca83324ba0279fe74d17419deead3ce6932e64029cd24661459da9d5a`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_ff2a6aacc6c69fe1.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials](https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `2f6b9c0d4dadae9199689c16032d4735eb97b37ffbe68b51607218880385b2e5`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_023be98628718468.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials/cardiovascular-clinical-trials](https://baptisthealth.net/services/heart-and-vascular-care/research-and-clinical-trials/cardiovascular-clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `89ec703e0322b8ecc7ee139fc74ddc037b8054e05039a4a55c6cfbd4bc3350ea`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_2761d5d606e4ba9f.txt
+- **FELLOWSHIP_PAGE** [https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships](https://baptisthealth.net/services/orthopedic-care/for-healthcare-professionals/fellowships)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `bbf517bc870dd3edec0e267b4c5f688cec294028c57d1f736980a321869a5da8`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_4ede32eb7d210d02.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/orthopedic-care/research-and-education](https://baptisthealth.net/services/orthopedic-care/research-and-education)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/services/orthopedic-care/research-and-education/clinical-trials](https://baptisthealth.net/services/orthopedic-care/research-and-education/clinical-trials)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `d87123652d5e06e39ecc18026449a6485eb3c975c2e0abf3c63ae7d75f54b409`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_026cbb16a896ad45.txt
+- **JSON_LD** [https://baptisthealth.net/doctors/jiovani-miranda-visaya/2056460](https://baptisthealth.net/doctors/jiovani-miranda-visaya/2056460)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `4f7c662c03edc3e296ade9b220490ff2693552672e6f0a84d5bcdb88fe2112ea`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_78f94b9079cc7443.txt
+- **RESEARCH_PAGE** [https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park](https://baptisthealth.net/locations/surgery-centers/baptist-health-surgery-center---boca-raton-research-park)
+  - sourceScope: UNKNOWN_SCOPE
+  - sha256: `7fccabf0b529fea1f0b303ae85837683593ffd238b6dc3e6bfab44337b81a031`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_c0b52bd101213ff4.txt
+- **RESIDENCY_PAGE** [https://baptisthealth.net/academics/residencies-and-fellowships](https://baptisthealth.net/academics/residencies-and-fellowships)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `df0aaad0debb5acf5e34d3e12f44b0d87c4881896abee5ebfdd89ea48669c868`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cff1f920069e20a2.txt
+- **FELLOWSHIP_PAGE** [https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/allied-health-program-application](https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/allied-health-program-application)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `a1f83be155463eb3a75260e4ffe558b5a512af1229d9ac37d357268430ee614d`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_94002714e85a9f46.txt
+- **RESIDENCY_PAGE** [https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency](https://baptisthealth.net/academics/residencies-and-fellowships/allied-health/athletic-trainer-residency)
+  - sourceScope: DEPARTMENT_LEVEL
+  - sha256: `b8d8de7ba809a28662295104cb465cfe52472357d25bd657357f34da74fd1776`
+  - cleanedText: /Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_7b5c3b89bbe29599.txt
+
+## Rejected sources (69)
+
+- https://baptisthealth.net/observership — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/clinical-observer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/visiting-student — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/international-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/away-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/clinical-elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/clinical-rotation — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/sub-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/subinternship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/acting-internship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/student-research — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/shadow — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/shadowing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/volunteer — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/volunteering — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/img — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/international-medical-graduates — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/gme — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/residency — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/fellowship — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/physician-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/provider-careers — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/benefits — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/visa — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/immigration — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/credentialing — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/health-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/professional-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/student-affairs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/hcp-education-training — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/hcp-education-training/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/hcp-education-training/medical-students/elective — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/hcp-education-training/medical-students/medical-student-observerships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-professionals — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-professionals/graduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-professionals/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/academic-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/academic-institute/education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/academic-institute/education/medical — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/academic-institute/education/medical/medical-student-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medicine/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medicine/international/international-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medicine/international/international-programs/international-visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/visiting-clerkships — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/visiting-clerkships/international — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education-institute — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education-institute/academic-visitor-program — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education/undergraduate-medical-education — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education/undergraduate-medical-education/requirements-for-visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education/medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education/visiting-medical-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-education/medical-student-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-education/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-students/electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-students/elective-rotations — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/medical-students/clinical-electives — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/students/visiting-students — FETCH_OTHER_ERROR (disallowed_by_robots_txt)
+- https://baptisthealth.net/graduate-medical-education/clerkship-programs — FETCH_OTHER_ERROR (disallowed_by_robots_txt)

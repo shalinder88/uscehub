@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Indiana University Health University Hospital",
+    "aliases": ["IU Health University Hospital", "IU School of Medicine — Guest Students (covering IU Health placement)"],
+    "city": "Indianapolis",
+    "state": "IN",
+    "officialDomain": "medicine.iu.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "IU Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 61; P101-2 selected_25 rank 21"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["medicine.iu.edu", "iuhealth.org"],
+    "searchTermsTried": ["Indiana University School of Medicine visiting medical student VSLO international IU Health elective"],
+    "pagesOpened": [
+      "https://medicine.iu.edu/md/admissions/guest-students",
+      "https://medicine.iu.edu/mse/support/guest-students",
+      "https://md.mednet.iu.edu/support-services/guest-students/",
+      "https://medicine.iu.edu/gme/residency-programs/visiting-elective"
+    ],
+    "rejectedPages": [
+      {"url": "https://medicine.iu.edu/inclusion/programs/recruitment-retention/visiting-elective", "title": "Inclusive Excellence Visiting Elective", "reason": "AFFILIATED_ONLY"}
+    ],
+    "robotsOrAccessNotes": "medicine.iu.edu accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.iu.edu/md/admissions/guest-students",
+      "pageTitle": "Guest Medical Students - Indiana University School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Medical students enrolled at qualifying schools in the United States and Puerto Rico are eligible to apply for guest student elective study at Indiana University School of Medicine.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["US_AND_PR_QUALIFYING_SCHOOLS_ONLY", "VSLO_REQUIRED"]
+    },
+    {
+      "sourceUrl": "https://medicine.iu.edu/md/admissions/guest-students",
+      "pageTitle": "Guest Medical Students - Indiana University School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "IU School of Medicine currently does not accept international students for elective training.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["INTERNATIONAL_STUDENTS_EXPLICITLY_EXCLUDED_VERBATIM"]
+    },
+    {
+      "sourceUrl": "https://medicine.iu.edu/gme/residency-programs/visiting-elective",
+      "pageTitle": "Pathway to Indiana Visiting Elective Program | IU School of Medicine",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "The program will pay a $2,000 stipend only to out-of-state visiting elective students",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "Pathway program duration",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["STIPEND_2000_FOR_OUT_OF_STATE_PATHWAY_PROGRAM_PARTICIPANTS"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Explicit verbatim: 'IU School of Medicine currently does not accept international students for elective training.'",
+    "weakNegativeEvidence": "IU Health University Hospital not separately named verbatim on the IU SOM hub; placement is via IU SOM's network of IU Health hospitals."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — IU SOM hub; (b) US + PR LCME/COCA only; (c) international students EXPLICITLY EXCLUDED verbatim; (d) $2,000 stipend for out-of-state Pathway participants; (e) VSLO required.",
+  "plainEnglishSummary": "IU Health University Hospital accepts visiting medical students through IU School of Medicine's Guest Students program. Eligibility limited to medical students from qualifying schools in the US and Puerto Rico via VSLO. International medical students are explicitly excluded. A Pathway to Indiana Visiting Elective Program offers a $2,000 stipend to out-of-state participants on successful completion.",
+  "driftCheck": "This advanced national USCE discovery because IN gained its first P101 packet; explicit international-exclusion captured verbatim."
+}

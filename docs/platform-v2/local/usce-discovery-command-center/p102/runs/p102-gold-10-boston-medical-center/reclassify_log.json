@@ -1,0 +1,30 @@
+{
+  "runId": "p102-gold-10-boston-medical-center",
+  "ranAt": "2026-05-15T13:37:51.755Z",
+  "total": 176,
+  "changes": 2,
+  "entries": [
+    {
+      "claimId": "bmc_careers_006",
+      "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+      "sourceFamily": "CAREERS_PAGE",
+      "deepSourceFamily": "PHYSICIAN_CAREERS",
+      "sourceScope": "CAREERS_PORTAL",
+      "confidence": "HIGH",
+      "beforeVisibility": "FUTURE_LANE_ONLY",
+      "afterVisibility": "HUMAN_REVIEW_REQUIRED",
+      "afterRationale": "NOT_STATED_ON_SOURCE absence marker; missing field requires human follow-up"
+    },
+    {
+      "claimId": "bmc_ent_subi_duration_missing",
+      "lane": "SUB_INTERNSHIP",
+      "sourceFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "deepSourceFamily": "SUB_INTERNSHIP",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "confidence": "HIGH",
+      "beforeVisibility": "PUBLIC_SAFE_USCE",
+      "afterVisibility": "HUMAN_REVIEW_REQUIRED",
+      "afterRationale": "NOT_STATED_ON_SOURCE absence marker; missing field requires human follow-up"
+    }
+  ]
+}

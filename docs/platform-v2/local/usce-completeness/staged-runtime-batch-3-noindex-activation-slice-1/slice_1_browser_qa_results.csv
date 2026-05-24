@@ -1,0 +1,16 @@
+check,url,expected,actual,status,screenshot_path,notes
+clerkships_pilot_loads,/clerkships/pilot,HTTP 200 + page renders,HTTP 200 + 75128 bytes,PASS,(in-conversation only),Curl + browser DOM both PASS
+clerkships_pilot_count_header,/clerkships/pilot,8 listings · 2 open to international students per source · 6 US MD/DO per source,EXACTLY MATCHES,PASS,screenshot in conversation,Header copy auto-derived from PILOT_*_COUNT exports
+clerkships_pilot_active_5_visible,/clerkships/pilot,Morristown + Overlook + Cleveland Clinic Mercy + Cleveland Clinic Hillcrest + Highland present,All 5 present,PASS,(see DOM eval),Original active 5 preserved
+clerkships_pilot_new_3_visible,/clerkships/pilot,Duke University Hospital + NYU Langone + Indiana University Health Methodist present,All 3 present,PASS,(see DOM eval),3 batch-3 cards rendered in noindex pilot
+clerkships_pilot_deferred_4_absent,/clerkships/pilot,Jackson + Northwestern + HUP + Methodist San Antonio NOT rendered,None rendered,PASS,(see DOM eval),Deferred IDs blocked from active runtime by validator and absent from page
+clerkships_pilot_noindex_meta,/clerkships/pilot,robots meta contains 'noindex',Present,PASS,(curl HTML),Route metadata preserved
+clerkships_pilot_no_banned_phrase,/clerkships/pilot,no guaranteed / IMG-friendly / hospital-approved / apply through USCEHub / officially approved by / nationwide,None present,PASS,(curl + DOM),Validator deep-walk PASS
+clerkships_pilot_console_errors,/clerkships/pilot,zero,zero errors zero warnings,PASS,(preview_console_logs),
+contact_banner_pilot_014_duke,/contact?ref=pilot-listing&listing_id=pilot-014-NC-duke-university-hospital,banner: Duke University Hospital, Durham, NC + reference: pilot-listing + hidden runtime_set=active,EXACTLY MATCHES,PASS,(curl HTML),
+contact_banner_pilot_017_nyu_tisch,/contact?ref=pilot-listing&listing_id=pilot-017-NY-nyu-langone-tisch-hospital,banner: NYU Langone Health - Tisch Hospital, New York, NY + hidden runtime_set=active,EXACTLY MATCHES,PASS,(curl HTML),
+contact_banner_pilot_019_iu_methodist,/contact?ref=pilot-listing&listing_id=pilot-019-IN-iu-health-methodist-hospital,banner: Indiana University Health Methodist Hospital, Indianapolis, IN + hidden runtime_set=active,EXACTLY MATCHES,PASS,(curl HTML),
+contact_generic_feedback,/contact?ref=pilot-feedback,no banner; generic Subject dropdown,EXACTLY MATCHES,PASS,(curl HTML),Footer-feedback mode preserved
+contact_disabled_endpoint_polite_message,/api/usce/corrections POST,404 returned + client shows polite generic,Verified in prior sprint with same endpoint behavior,PASS,(prior sprint),Endpoint env-flag unchanged
+mobile_layout_375x812,/clerkships/pilot,clean wrap; no overflow,Header + intro copy stack cleanly; cards stack below,PASS,screenshot in conversation,Captured at default mobile preset
+prisma_homepage_pool_exhaustion,/,(out of scope; pre-existing local DB pool limit; not affected by this slice),Pre-existing DB connection limit; unrelated to /clerkships/pilot or /contact,DOC_OUT_OF_SCOPE,(server logs),Notable but pre-existing — does not affect the slice's routes

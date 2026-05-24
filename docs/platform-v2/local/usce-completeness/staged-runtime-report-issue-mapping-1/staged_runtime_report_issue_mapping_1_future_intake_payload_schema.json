@@ -1,0 +1,163 @@
+{
+  "schema_name": "usce_listing_correction_intake_v1",
+  "schema_status": "DOCS_ONLY_SPEC_NOT_IMPLEMENTED",
+  "not_active_runtime": true,
+  "not_db_migration": true,
+  "not_production": true,
+  "version": "v1",
+  "owner": "USCEHub backsite trust",
+  "purpose": "Capture user-reported corrections for active and staged USCE listings, mapped 1:1 to listing_id, without collecting sensitive personal documents.",
+  "required_fields": [
+    "listing_id",
+    "ref",
+    "issue_type",
+    "user_message",
+    "page_url",
+    "submitted_at"
+  ],
+  "optional_fields": [
+    "source_url",
+    "user_email",
+    "suggested_correction",
+    "screenshot_url",
+    "evidence_url",
+    "specialty_context",
+    "audience_context",
+    "visa_context",
+    "fee_context",
+    "site_specificity_context"
+  ],
+  "field_specs": {
+    "listing_id": {
+      "type": "string",
+      "format": "kebab-case-ascii",
+      "pattern": "^pilot-\\d{3}-[A-Z]{2}-[a-z0-9-]+$",
+      "required": true,
+      "max_length": 120,
+      "notes": "Must match a listing_id in the active runtime OR the staged runtime. Empty / unknown / 'generic' is allowed only when ref='pilot-feedback' (footer feedback path)."
+    },
+    "ref": {
+      "type": "string",
+      "enum": ["pilot-listing", "pilot-feedback", "pilot-source-link-broken", "pilot-eligibility", "pilot-visa", "pilot-cost", "pilot-application", "pilot-program-closed", "pilot-duplicate", "pilot-other"],
+      "required": true,
+      "notes": "Class label of the report. Maps to issue_type defaults but does not replace user-selected issue_type."
+    },
+    "issue_type": {
+      "type": "string",
+      "enum": ["source_link_broken", "eligibility_incorrect", "visa_information_incorrect", "cost_or_fee_incorrect", "application_process_incorrect", "program_closed", "duplicate_listing", "other"],
+      "required": true
+    },
+    "user_message": {
+      "type": "string",
+      "max_length": 2000,
+      "required": true,
+      "notes": "Free-text correction details from the user."
+    },
+    "page_url": {
+      "type": "string",
+      "format": "uri",
+      "required": true,
+      "notes": "The URL the user was on when filing the report (e.g. /clerkships/pilot)."
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": true,
+      "notes": "Browser-side timestamp at submission."
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "required": false,
+      "notes": "User-provided source URL supporting the suggested correction."
+    },
+    "user_email": {
+      "type": "string",
+      "format": "email",
+      "required": false,
+      "notes": "Optional. Used only for follow-up; never displayed publicly; never sold."
+    },
+    "suggested_correction": {
+      "type": "string",
+      "max_length": 2000,
+      "required": false
+    },
+    "screenshot_url": {
+      "type": "string",
+      "format": "uri",
+      "required": false,
+      "notes": "Optional URL to user-uploaded screenshot. Out-of-scope for v1 implementation."
+    },
+    "evidence_url": {
+      "type": "string",
+      "format": "uri",
+      "required": false
+    }
+  },
+  "allowed_issue_types": [
+    "source_link_broken",
+    "eligibility_incorrect",
+    "visa_information_incorrect",
+    "cost_or_fee_incorrect",
+    "application_process_incorrect",
+    "program_closed",
+    "duplicate_listing",
+    "other"
+  ],
+  "privacy_notes": [
+    "Do NOT request sensitive documents",
+    "Do NOT collect passport documents",
+    "Do NOT collect visa documents",
+    "Do NOT collect immigration documents",
+    "Do NOT collect medical records",
+    "Do NOT collect Social Security Number / SSN",
+    "Do NOT collect bank account numbers",
+    "Do NOT collect ECFMG ID / USMLE ID / NRMP AAMC ID / ACGME credentials",
+    "Do NOT collect patient identifiers / PHI",
+    "Do NOT pre-fill user_email from any browser autofill or session token"
+  ],
+  "forbidden_in_payload": [
+    "passport_number",
+    "visa_number",
+    "ssn",
+    "social_security_number",
+    "bank_account_number",
+    "ecfmg_id",
+    "usmle_id",
+    "nrmp_id",
+    "aamc_id",
+    "acgme_id",
+    "patient_identifier",
+    "mrn",
+    "date_of_birth",
+    "dob"
+  ],
+  "rate_limit_spec": {
+    "per_ip_per_hour": 10,
+    "per_listing_per_ip_per_day": 5,
+    "captcha_required_after": 3,
+    "notes": "Implementation deferred — spec only."
+  },
+  "transport_security_spec": {
+    "tls_required": true,
+    "store_at_rest_encryption_required": true,
+    "retention_days_default": 365,
+    "retention_days_after_resolution": 180,
+    "deletion_on_user_request": "honored within 30 days, subject to legal hold",
+    "notes": "Implementation deferred — spec only."
+  },
+  "review_destination_spec": {
+    "primary": "internal_correction_queue (file-based for v1)",
+    "secondary": "support@uscehub.com email digest (manual review)",
+    "no_third_party_share": true,
+    "no_advertising_use": true
+  },
+  "what_this_schema_does_not_do": [
+    "Implement a database",
+    "Implement a server endpoint",
+    "Modify the contact page UI",
+    "Modify the pilot route UI",
+    "Activate staged runtime data",
+    "Promote any row to PUBLIC_NOW or IMPORT_READY"
+  ]
+}

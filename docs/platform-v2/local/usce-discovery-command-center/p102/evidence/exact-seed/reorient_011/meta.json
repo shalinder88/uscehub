@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_011",
+  "institutionId": "inst_live_emory_postdoc",
+  "institutionName": "Emory University — Postdoctoral Research",
+  "parentSystem": "Emory University",
+  "campus": "",
+  "city": "Atlanta",
+  "state": "GA",
+  "sourceUrl": "https://med.emory.edu/education/postdoctoral-training/index.html",
+  "sourceDomain": "med.emory.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Emory University School of Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead postdocs.emory.edu (subdomain retired) — moved under med.emory.edu",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Emory SOM Postdoctoral Training",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_a011d777f0"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_011/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_011/cleaned.txt",
+  "sourceHash": "2fc4a9eba9ca5210ec09bccbfb0653a679ac1954420930f20e7dc8c6b3ae9bc5",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T03:37:01.588Z"
+}

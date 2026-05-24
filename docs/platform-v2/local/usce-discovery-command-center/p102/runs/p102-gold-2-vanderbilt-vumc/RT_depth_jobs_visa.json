@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-2-vanderbilt-vumc",
+  "depthPass": "JOBS_VISA",
+  "sourceFamiliesReviewed": [
+    "CAREERS_PAGE"
+  ],
+  "objectsCreated": 0,
+  "claimsPromoted": 2,
+  "conflictsFound": [],
+  "unresolveds": [],
+  "recoveryTasks": [],
+  "scoreDeltas": {
+    "publicReadinessScore": 0,
+    "futureLaneValueScore": 6
+  },
+  "claims": [
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-gold-2-vanderbilt-vumc_13",
+      "institutionId": "inst_vanderbilt_vumc",
+      "runId": "p102-gold-2-vanderbilt-vumc",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "Physician Careers",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "Work for Vanderbilt Health | Work for Vanderbilt HealthSkip to main contentGivingCareersPatient CareReferring ProvidersPrice TransparencyEmployee ResourcesMyWorkdaysearch SearchWhat are you looking for?SearchSearch\nsearchMenuopen menuCloseclose menuSearchCareers Home\nSearch Jobs\nNursing Careers\nAllied Health Careers\nAdvanced Practice Careers\nNurse Residency Program\nPhysician Careers\nHow to Apply\nContact Us\nReturn to VUMC HRVanderbilt University Medical Center Monroe Carell Jr.",
+      "sourceUrl": "https://vumc.org/careers",
+      "sourceHash": "b3beac4a7b44ba2120e6e0e2a92c90243493fbfda740abc4e70c81b337e03bfd",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-2-vanderbilt-vumc/cleaned_text/careers.txt",
+      "quoteVerified": true,
+      "sourceScope": "CAREERS_PORTAL",
+      "sourceFamily": "CAREERS_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    },
+    {
+      "schemaVersion": "p102-0r-1",
+      "claimId": "claim_p102-gold-2-vanderbilt-vumc_14",
+      "institutionId": "inst_vanderbilt_vumc",
+      "runId": "p102-gold-2-vanderbilt-vumc",
+      "claimType": "FUTURE_LANE_JOB",
+      "claimText": "Physician Careers",
+      "normalizedField": "lane.JOBS.signal",
+      "quote": "Children's Hospital at Vanderbilt\nVanderbilt University\nResearch\nFor Patients and Visitors\nResources for Employees and ResearchersGivingCareersPatient CareReferring ProvidersPrice TransparencyEmployee ResourcesMyWorkdayWork for Vanderbilt Health\nCareers Home\nSearch Jobs\nNursing Careers\nAllied Health Careers\nAdvanced Practice Careers\nNurse Residency Program\nPhysician Careers\nHow to Apply\nContact Us\nReturn to VUMC HRWork for Vanderbilt HealthGreat health care starts with great people.We’re hiring ",
+      "sourceUrl": "https://vumc.org/careers",
+      "sourceHash": "b3beac4a7b44ba2120e6e0e2a92c90243493fbfda740abc4e70c81b337e03bfd",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-gold-2-vanderbilt-vumc/cleaned_text/careers.txt",
+      "quoteVerified": true,
+      "sourceScope": "CAREERS_PORTAL",
+      "sourceFamily": "CAREERS_PAGE",
+      "confidence": "MEDIUM",
+      "visibility": "FUTURE_LANE_ONLY",
+      "usedInPublicCopy": false,
+      "notPublicReason": "jobs/visa content; future-lane only",
+      "lane": "CAREERS_PAGE",
+      "campusApplicabilityProof": null
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "source_file": "/Volumes/T7Shield_Code/01_PROJECTS/Health_USMLE_Platform/03_DATA_OFFLOAD/Residency_Public_Data_2026-05-03/13_NPPES/NPPES_organizations_only.csv",
+  "db_path": "/Users/shelly/usmle-platform/docs/platform-v2/local/nppes/nppes_orgs.duckdb",
+  "total_orgs": 1917366,
+  "built_at": "2026-05-03T19:46:55Z",
+  "schema_version": "1.0",
+  "compliance_note": "Organization (Type-2) records only. No individual provider data. Identity/location evidence only. NUCC taxonomy codes stored internally \u2014 definitions NOT for public display without NUCC commercial license.",
+  "top_20_states_by_pl": [
+    {
+      "state": "CA",
+      "count": 192209
+    },
+    {
+      "state": "FL",
+      "count": 168790
+    },
+    {
+      "state": "TX",
+      "count": 161985
+    },
+    {
+      "state": "NY",
+      "count": 102347
+    },
+    {
+      "state": "IL",
+      "count": 72393
+    },
+    {
+      "state": "NC",
+      "count": 71368
+    },
+    {
+      "state": "PA",
+      "count": 69200
+    },
+    {
+      "state": "NJ",
+      "count": 64558
+    },
+    {
+      "state": "OH",
+      "count": 64249
+    },
+    {
+      "state": "MI",
+      "count": 63999
+    },
+    {
+      "state": "GA",
+      "count": 57677
+    },
+    {
+      "state": "MD",
+      "count": 51855
+    },
+    {
+      "state": "VA",
+      "count": 47363
+    },
+    {
+      "state": "AZ",
+      "count": 45584
+    },
+    {
+      "state": "CO",
+      "count": 44032
+    },
+    {
+      "state": "MA",
+      "count": 35532
+    },
+    {
+      "state": "WA",
+      "count": 35486
+    },
+    {
+      "state": "MO",
+      "count": 33626
+    },
+    {
+      "state": "IN",
+      "count": 32308
+    },
+    {
+      "state": "TN",
+      "count": 31843
+    }
+  ],
+  "active_orgs": 1914967,
+  "deactivated_orgs": 2399,
+  "top_20_taxonomy_codes": [
+    {
+      "taxonomy_code": "332B00000X",
+      "count": 85998
+    },
+    {
+      "taxonomy_code": "251E00000X",
+      "count": 79855
+    },
+    {
+      "taxonomy_code": "251S00000X",
+      "count": 59645
+    },
+    {
+      "taxonomy_code": "111N00000X",
+      "count": 56386
+    },
+    {
+      "taxonomy_code": "1223G0001X",
+      "count": 52013
+    },
+    {
+      "taxonomy_code": "207Q00000X",
+      "count": 50173
+    },
+    {
+      "taxonomy_code": "207R00000X",
+      "count": 39910
+    },
+    {
+      "taxonomy_code": "101YM0800X",
+      "count": 34577
+    },
+    {
+      "taxonomy_code": "253Z00000X",
+      "count": 34542
+    },
+    {
+      "taxonomy_code": "1041C0700X",
+      "count": 34350
+    },
+    {
+      "taxonomy_code": "152W00000X",
+      "count": 34074
+    },
+    {
+      "taxonomy_code": "3336C0003X",
+      "count": 33881
+    },
+    {
+      "taxonomy_code": "314000000X",
+      "count": 30979
+    },
+    {
+      "taxonomy_code": "122300000X",
+      "count": 30130
+    },
+    {
+      "taxonomy_code": "174400000X",
+      "count": 28611
+    },
+    {
+      "taxonomy_code": "261Q00000X",
+      "count": 27889
+    },
+    {
+      "taxonomy_code": "225100000X",
+      "count": 27869
+    },
+    {
+      "taxonomy_code": "261QM0801X",
+      "count": 26325
+    },
+    {
+      "taxonomy_code": "261QD0000X",
+      "count": 25687
+    },
+    {
+      "taxonomy_code": "343900000X",
+      "count": 25428
+    }
+  ],
+  "acute_care_hospital_count_taxonomy_282N": 16953,
+  "fqhc_count_taxonomy_261QF": 14120,
+  "is_subpart_y_count": 155549,
+  "null_rate_pct_key_fields": {
+    "org_name": 0.0,
+    "pl_city": 0.0,
+    "pl_state": 0.0,
+    "pl_zip": 0.0,
+    "taxonomy_1": 0.0
+  },
+  "ingest_elapsed_seconds": 88.7
+}

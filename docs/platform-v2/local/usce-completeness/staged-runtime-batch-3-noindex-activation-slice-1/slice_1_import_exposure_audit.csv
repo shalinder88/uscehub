@@ -1,0 +1,17 @@
+check,status,evidence,notes
+active_pilot_data_count_8,PASS,validate-micro-pilot-runtime PASS — 8 cards,Original 5 preserved + 3 new (Duke / NYU Tisch / IU Methodist)
+staged_batch_3_data_unchanged,PASS,git status --short on staged batch 3 json/ts → empty; staged-batch-2 + batch-3 validators PASS,Staged inventory still 14 cards
+staged_batch_2_data_unchanged,PASS,git status --short on staged batch 2 json/ts → empty,Batch 2 unchanged
+no_homepage_import,PASS,grep for staged batch 3 module + new IDs in app pages → no homepage references,
+no_nav_import,PASS,No layout/nav file modified,
+no_sitemap_exposure,PASS,No sitemap config touched; route remains noindex+nofollow,
+no_production_or_public_marker,PASS,No PUBLIC_NOW / IMPORT_READY token in active runtime data or slice docs,
+clerkships_pilot_only_active_route,PASS,/clerkships/pilot is the only route consuming PILOT_USCE_CARDS via src/lib/usce-pilot-data.ts; the active 5 → 8 transition is automatic via the JSON import,
+no_app_import_of_staged_batch_3_module,PASS,grep for public-listings-pilot-staged-batch-3 in src/app src/lib → no app references; only the staged generated TS/JSON itself,
+no_deferred_id_in_active_runtime,PASS,Validator-enforced; pilot-013/015/016/018 absent from active json,
+deferred_ids_present_only_as_staged_metadata,EXPECTED,KNOWN_LISTINGS in src/lib/usce-contact-context.ts contains the 4 deferred IDs marked runtimeSet=staged,Required so /contact?listing_id=<deferred-id> still resolves a banner; runtime_set=staged disambiguates from active
+production_main_unchanged,PASS,origin/main = 739ab1e232ecc52db1f10c8619bbdc1d409a190f (byte-identical to start of conversation),
+gh_secret_scanning_open_alerts,NOT_VERIFIED_THIS_TURN,gh logged out,Last verified state — 0 open / alert #1 resolved as wont_fix
+no_clerkships_pilot_route_change,PASS,git status --short src/app/clerkships/pilot → empty,
+no_contact_route_change_apart_from_runtime_set_metadata,PASS,git status --short src/app/contact → empty,
+contact_resolver_runtime_set_updated,PASS,KNOWN_LISTINGS for 3 activated rows now runtimeSet=active; 4 deferred rows remain runtimeSet=staged,Validator updated to reflect post-slice expected runtime sets

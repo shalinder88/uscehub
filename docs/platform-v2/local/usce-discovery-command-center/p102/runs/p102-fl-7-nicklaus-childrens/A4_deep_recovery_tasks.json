@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-7-nicklaus-childrens",
+  "tasks": [
+    {
+      "taskId": "rec-observer-programs",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "The /medical-professionals navigation explicitly lists 'Observer Programs', 'Allied Health Rotations', and 'Pediatric Audiology Externship' under For Students, but no dedicated observer/visiting-student page was fetched. Tier 1 search is incomplete without these.",
+      "suggestedNarrowAction": "Fetch nicklauschildrens.org/medical-professionals/for-students/observer-programs (and sibling for-students/* pages: allied-health-rotations, summer-youth-internship, pediatric-audiology-externship, nurse-scholars). Narrow crawl — no broad spider."
+    },
+    {
+      "taskId": "rec-medical-education-ume",
+      "missingFamily": "MEDICAL_EDUCATION_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Medical Education page references UME (Undergraduate Medical Education) and 'medical school rotations throughout most of the departments' but no UME-specific subpage was fetched for visiting-student eligibility, application, or affiliation list.",
+      "suggestedNarrowAction": "Fetch nicklauschildrens.org/medical-education/ume and any linked visiting-student / affiliation pages. Also retrieve the Department brochure referenced on the page if it is HTML-accessible."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

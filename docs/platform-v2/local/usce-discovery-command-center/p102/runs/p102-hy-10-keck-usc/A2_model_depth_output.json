@@ -1,0 +1,1669 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A2",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://keck.usc.edu/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page references 'Residencies and Clinical Fellowships' and 'Post-Doctoral Researchers' in navigation but provides no eligibility, application, or audience details on this research landing page.",
+          "Page mentions 'Graduate Research Education' and 'Post-Doctoral Training' as training categories without stating whether visiting medical students or external trainees are eligible.",
+          "'Research Training and Education' section addresses 'next generation of clinicians and scientists' generically without naming visiting students, observers, or IMGs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this generic medical-school research landing page (sourceScope is medical-school level).",
+          "Verify A2 emitted zero new claims is correct because no observership/visiting student/elective/IMG/eligibility/contact/fee/duration/refusal language is present in the cleaned text.",
+          "Ensure navigation labels (Residencies, Fellowships, Post-Doctoral) are not promoted to FUTURE_LANE claims from this page — they are menu items, not substantive program statements."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_24",
+      "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "keck-usc-gme-a2-001",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+            "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900Hours:Monday–Friday7:30am–5:00pm PST",
+            "normalizedField": "phone:+1-323-442-1900",
+            "claimText": "Keck SOM main contact phone (323) 442-1900; address 1975 Zonal Ave., Los Angeles, CA 90033; hours Mon–Fri 7:30am–5:00pm PST.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Phone is the Keck SOM main line shown in the page footer, not necessarily a GME-office-specific line.",
+            "whyA1Missed": "A1 captured only program-level GME content and skipped the footer contact block.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Contact information on a GME residency/fellowship hub page — Tier 2 trainee context."
+          },
+          {
+            "claimId": "keck-usc-gme-a2-002",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+            "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The University of Southern California and the Keck School of Medicine offer a myriad of health and wellness resources for residents and clinical fellows. Some of our most popular resources include:KSOM Office of Leadership & WellnessCare for the CaregiverWork Life",
+            "normalizedField": "wellness_resources",
+            "claimText": "USC/Keck SOM offers wellness resources for residents and fellows including KSOM Office of Leadership & Wellness, Care for the Caregiver, and Work Life.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 skipped the Health and Wellness section enumerating trainee wellness resources.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Trainee wellness service description on GME page — Tier 2 trainee support content."
+          },
+          {
+            "claimId": "keck-usc-gme-a2-003",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+            "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "In This SectionGME HomeProgram Directory",
+            "normalizedField": "program_directory_link",
+            "claimText": "GME hub exposes a Program Directory section listing residency/fellowship programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Quote is a navigation label; the underlying Program Directory page was not captured in this source unit.",
+            "whyA1Missed": "A1 did not capture the in-section navigation pointing to a discrete Program Directory page useful for follow-up.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Navigation signal to per-program GME pages — Tier 2 follow-up surface."
+          },
+          {
+            "claimId": "keck-usc-gme-a2-004",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+            "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Message to Prospective Trainees From the Dean of the Keck School of MedicineHear from Dean Carolyn C. Meltzer, MD, about how our purpose-driven mission and serving a large, diverse population make our residency and fellowship programs special",
+            "normalizedField": "dean_message_keck_som",
+            "claimText": "Dean Carolyn C. Meltzer, MD records a featured video message to prospective residency and fellowship trainees.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": null,
+            "whyA1Missed": "A1 skipped the Featured Video block which names the current Dean of the Keck School of Medicine.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Identifies Dean for GME trainee context — Tier 2 trainee-facing leadership info."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "keck-usc-gme-002",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote '105Residency and Fellowship Programs' is a numerical fragment from a 'By the Numbers' block whose surrounding metrics are XX placeholders. A1 already notes the limitation; flag for regate to confirm the 105 figure is real (corroborated by 'more than 100' in claim 001)."
+          },
+          {
+            "a1ClaimId": "keck-usc-gme-004",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is only the FAQ question; the answer body is Lorem ipsum. This is not a substantive visa-sponsorship signal — it only shows the topic is on the institution's roadmap. Regate should consider downgrading confidence/strength."
+          }
+        ],
+        "additionalUnresolveds": [
+          "ACGME-accredited program count is referenced ('XXACGME-accredited Programs') but the number is a placeholder.",
+          "Salary, benefits, and compensation for residents/fellows is referenced as an FAQ topic but the answer body is Lorem ipsum.",
+          "Call schedule, research requirement, fellowship match rate, patient population diversity, and Los Angeles housing are referenced as FAQ topics with Lorem ipsum answers.",
+          "Board pass rate and match rate among graduates are referenced but values are XX% placeholders.",
+          "Trainees Enrolled Annually count is referenced but value is XXX placeholder."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted on this GME_PAGE/DEPARTMENT_LEVEL source — all claims must be FUTURE_LANE_ONLY.",
+          "Verify the Program Directory link is captured as a follow-up surface in the link graph rather than treated as a standalone opportunity claim.",
+          "Confirm the visa-sponsorship FAQ claim (keck-usc-gme-004) is not promoted to a substantive J-1/H-1B signal — the answer body is Lorem ipsum."
+        ],
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": [],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "keck-usc-gme-a2-001",
+              "claimType": "CONTACT_PHONE",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+              "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900Hours:Monday–Friday7:30am–5:00pm PST",
+              "normalizedField": "phone:+1-323-442-1900",
+              "claimText": "Keck SOM main contact phone (323) 442-1900; address 1975 Zonal Ave., Los Angeles, CA 90033; hours Mon–Fri 7:30am–5:00pm PST.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Phone is the Keck SOM main line shown in the page footer, not necessarily a GME-office-specific line.",
+              "whyA1Missed": "A1 captured only program-level GME content and skipped the footer contact block.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Contact information on a GME residency/fellowship hub page — Tier 2."
+            },
+            {
+              "claimId": "keck-usc-gme-a2-002",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+              "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The University of Southern California and the Keck School of Medicine offer a myriad of health and wellness resources for residents and clinical fellows. Some of our most popular resources include:KSOM Office of Leadership & WellnessCare for the CaregiverWork Life",
+              "normalizedField": "wellness_resources",
+              "claimText": "USC/Keck SOM offers wellness resources for residents and fellows including KSOM Office of Leadership & Wellness, Care for the Caregiver, and Work Life.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 skipped the Health and Wellness section.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Trainee wellness service description on GME page — Tier 2 trainee support."
+            },
+            {
+              "claimId": "keck-usc-gme-a2-003",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+              "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "In This SectionGME HomeProgram Directory",
+              "normalizedField": "program_directory_link",
+              "claimText": "GME hub exposes a Program Directory section listing residency/fellowship programs.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Quote is a navigation label; directory page not captured in this source unit.",
+              "whyA1Missed": "A1 did not capture the in-section navigation pointer to a Program Directory page.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Navigation signal to per-program pages — Tier 2 follow-up surface."
+            },
+            {
+              "claimId": "keck-usc-gme-a2-004",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/graduate-medical-education",
+              "sourceHash": "284123ca622cbd0f38ca1b0da2e2b93c8c92ab6ed3fd35f8031b23ac52a61ac8",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/graduate-medical-education.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Message to Prospective Trainees From the Dean of the Keck School of MedicineHear from Dean Carolyn C. Meltzer, MD, about how our purpose-driven mission and serving a large, diverse population make our residency and fellowship programs special",
+              "normalizedField": "dean_message_keck_som",
+              "claimText": "Dean Carolyn C. Meltzer, MD records a featured video message to prospective residency and fellowship trainees.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": null,
+              "whyA1Missed": "A1 skipped the Featured Video block naming the current Dean.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Names current Dean in trainee-facing context — Tier 2 leadership info."
+            }
+          ],
+          "tier3": []
+        }
+      }
+    },
+    {
+      "sourceId": "src_25",
+      "sourceUrl": "https://keck.usc.edu/gme",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "keck_usc_gme_a2_001",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/gme",
+            "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "With access to a range of facilities, from Los Angeles General Medical Center safety net setting to Keck Medicine’s state-of-the-art private hospitals and Children’s Hospital Los Angeles, our residents and fellows receive comprehensive training that prepares them to work in diverse environments.",
+            "claimText": "Residency/fellowship training facilities include Children's Hospital Los Angeles in addition to LA General and Keck Medicine private hospitals.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Names training sites for residents/fellows — Tier 2 GME content.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 emitted a similar training-network claim (004) but did not capture Children's Hospital Los Angeles, which appears only in this second mention of facilities."
+          },
+          {
+            "claimId": "keck_usc_gme_a2_002",
+            "claimType": "APPLICATION_PATHWAY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/gme",
+            "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The Keck School of Medicine offers more than 100 residencies and clinical fellowships. Explore them here.Visit the Directory of Residencies and Clinical Fellowships",
+            "claimText": "Keck directs prospective trainees to a Directory of Residencies and Clinical Fellowships to explore programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Application pathway entry point for residency/fellowship — Tier 2.",
+            "normalizedField": null,
+            "limitations": null,
+            "whyA1Missed": "A1 captured the program count but not the discovery/application pathway (Directory) called out as the entry point."
+          },
+          {
+            "claimId": "keck_usc_gme_a2_003",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/gme",
+            "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Residency and fellowship programs at the Keck School of Medicine of USC offer rigorous clinical training, access to groundbreaking research, and mentorship from nationally recognized faculty—all in one of the most diverse and dynamic cities in the world.",
+            "claimText": "Residency/fellowship value-prop: rigorous clinical training, research access, and faculty mentorship at Keck School of Medicine of USC.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Describes residency/fellowship training characteristics — Tier 2.",
+            "normalizedField": null,
+            "limitations": "Marketing-style description; no measurable specifics.",
+            "whyA1Missed": "A1 captured the sponsorship and counts but did not capture the program-overview value-proposition sentence describing training/research/mentorship structure."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "keck_usc_gme_006",
+            "refinementReason": "quote_too_general",
+            "explanation": "Claim is typed CONTACT_PHONE with normalizedField=(323) 442-1900 but the quote bundles full mailing address with the phone. Consider splitting into address vs phone claims, or narrowing the quote to just the phone line."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'application process, as well as the policies and procedures' at LA General but does not state IMG/visa/ECFMG eligibility on this page.",
+          "Dean Carolyn C. Meltzer, MD named in a video message context but no contact/coordinator-level info provided."
+        ],
+        "recommendedA3Focus": [
+          "Verify no PUBLIC_SAFE_USCE claim is emitted from this GME_PAGE source family.",
+          "Confirm all six A1 claims plus three A2 additions remain FUTURE_LANE_ONLY since sourceFamily=GME_PAGE.",
+          "Consider whether keck_usc_gme_006 should be split into a CONTACT_PHONE (narrow phone quote) and an address claim, or kept as combined contact."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "keck_usc_gme_a2_001",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/gme",
+              "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "With access to a range of facilities, from Los Angeles General Medical Center safety net setting to Keck Medicine’s state-of-the-art private hospitals and Children’s Hospital Los Angeles, our residents and fellows receive comprehensive training that prepares them to work in diverse environments.",
+              "claimText": "Residency/fellowship training facilities include Children's Hospital Los Angeles in addition to LA General and Keck Medicine private hospitals.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Names training sites for residents/fellows — Tier 2 GME content.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 emitted a similar training-network claim (004) but did not capture Children's Hospital Los Angeles, which appears only in this second mention of facilities."
+            },
+            {
+              "claimId": "keck_usc_gme_a2_002",
+              "claimType": "APPLICATION_PATHWAY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/gme",
+              "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The Keck School of Medicine offers more than 100 residencies and clinical fellowships. Explore them here.Visit the Directory of Residencies and Clinical Fellowships",
+              "claimText": "Keck directs prospective trainees to a Directory of Residencies and Clinical Fellowships to explore programs.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Application pathway entry point for residency/fellowship — Tier 2.",
+              "normalizedField": null,
+              "limitations": null,
+              "whyA1Missed": "A1 captured the program count but not the discovery/application pathway (Directory) called out as the entry point."
+            },
+            {
+              "claimId": "keck_usc_gme_a2_003",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/gme",
+              "sourceHash": "e60d2aebc1782b709eabb519d8782964fe17c4baa85db32ab32935cbc676d6ce",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/gme.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Residency and fellowship programs at the Keck School of Medicine of USC offer rigorous clinical training, access to groundbreaking research, and mentorship from nationally recognized faculty—all in one of the most diverse and dynamic cities in the world.",
+              "claimText": "Residency/fellowship value-prop: rigorous clinical training, research access, and faculty mentorship at Keck School of Medicine of USC.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Describes residency/fellowship training characteristics — Tier 2.",
+              "normalizedField": null,
+              "limitations": "Marketing-style description; no measurable specifics.",
+              "whyA1Missed": "A1 captured the sponsorship and counts but did not capture the program-overview value-proposition sentence describing training/research/mentorship structure."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_36",
+      "sourceUrl": "https://keck.usc.edu/medical-education",
+      "output": {
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-hy-10-keck-usc",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page lists 'Residencies and Clinical Fellowships' only as a navigation key-search link; no program-level details, eligibility, or IMG policy stated on this source.",
+          "Department contact info present (KAM 218, 1975 Zonal Avenue, phone 323-442-1875) but pertains to the Department of Medical Education administrative office, not to any USCE/observership/elective pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is asserted from this MEDICAL_SCHOOL_LEVEL overview page (keck.usc.edu/medical-education) — content is administrative department overview with no USCE pathway.",
+          "Verify any future-lane signal for Keck residencies/fellowships originates from the dedicated Residencies and Clinical Fellowships page, not from this nav-link mention."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_39",
+      "sourceUrl": "https://keck.usc.edu/education",
+      "output": {
+        "agentUsed": false,
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "phase": "A2",
+        "runId": "p102-hy-10-keck-usc",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "keck-edu-a2-001",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://keck.usc.edu/education",
+            "sourceHash": "4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Continuing Medical Education",
+            "claimText": "Keck School lists a Continuing Medical Education program among its education offerings.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "CME",
+            "tierAssignmentRationale": "CME targets practicing physicians (post-training), placing it in Tier 3 practice/career.",
+            "whyA1Missed": "A1 captured residency/fellowship index labels but omitted the CME index entry which signals a post-trainee education resource.",
+            "normalizedField": null,
+            "limitations": "Index-only label; no CME course list, fees, or eligibility on this page."
+          },
+          {
+            "claimId": "keck-edu-a2-002",
+            "claimType": "CONTACT_PHONE",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://keck.usc.edu/education",
+            "sourceHash": "4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900",
+            "claimText": "Keck School general contact: 1975 Zonal Ave., Los Angeles, CA 90033; Phone (323) 442-1900.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "General school contact, not tier-specific; useful as institutional contact reference only.",
+            "whyA1Missed": "A1 focused on program labels and stats and skipped the footer contact block.",
+            "normalizedField": "phone",
+            "limitations": "General school switchboard, not a USCE/observership coordinator."
+          },
+          {
+            "claimId": "keck-edu-a2-003",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/education",
+            "sourceHash": "4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "209PhD students igniting discovery in research with publications in FY25.",
+            "claimText": "Keck reports 209 PhD students with FY25 publications — research-trainee pipeline signal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GRADUATE_EDUCATION",
+            "tierAssignmentRationale": "PhD trainee count is a graduate-trainee pipeline metric (Tier 2 trainee bucket).",
+            "whyA1Missed": "A1 captured the 1,000 resident/fellow stat and 97.4% match stat but skipped the 209 PhD student stat in the same stats block.",
+            "normalizedField": null,
+            "limitations": "PhD program metric, not MD/USCE relevant."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "keck-edu-scope-001",
+            "refinementReason": "lane_misclassified",
+            "explanation": "SCOPE_CONFLICT claim is informational and lane='NO_PUBLIC_OPPORTUNITY_FOUND' is appropriate, but visibilityLaneSuggestedByModel='HUMAN_REVIEW_REQUIRED' may be over-flagged — page is clearly a medical school education hub with no USCE offer; PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY is not warranted because no negative refusal is stated."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page references 'MD Program' and 'Match Day' but does not describe whether visiting medical students or away rotations are accepted into MD-program clerkships.",
+          "Page lists 'Advanced Training' and 'Continuing Medical Education' as sub-sections without indicating IMG eligibility, observer access, or fees.",
+          "'Inquiry' form is referenced but only graduate-program inquiries are mentioned; no USCE/observership inquiry pathway is named."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this MEDICAL_SCHOOL_LEVEL landing page.",
+          "Verify the CME claim stays FUTURE_LANE_ONLY and is not promoted to a USCE offer.",
+          "Confirm scope conflict claim's visibility downgrade from HUMAN_REVIEW_REQUIRED toward CAUTION_SAFE_INTERNAL_REVIEW or NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "keck-edu-a2-003",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/education",
+              "sourceHash": "4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "209PhD students igniting discovery in research with publications in FY25.",
+              "claimText": "Keck reports 209 PhD students with FY25 publications — research-trainee pipeline signal.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GRADUATE_EDUCATION",
+              "tierAssignmentRationale": "PhD trainee count is a graduate-trainee pipeline metric.",
+              "whyA1Missed": "A1 missed the PhD stat next to the resident/fellow stat.",
+              "normalizedField": null,
+              "limitations": "PhD program metric only."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "keck-edu-a2-001",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "CAREERS_PAGE",
+              "sourceUrl": "https://keck.usc.edu/education",
+              "sourceHash": "4d79d40d7cee183f15a4e3b7e7a4afc04c8c2effb7f5261c04fdd2b2ff54161f",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/education.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Continuing Medical Education",
+              "claimText": "Keck School lists a Continuing Medical Education program among its education offerings.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "CME",
+              "tierAssignmentRationale": "CME is post-trainee practice content.",
+              "whyA1Missed": "A1 omitted CME index label.",
+              "normalizedField": null,
+              "limitations": "Index-only mention."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "keck-edu-scope-001",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "A1's scope-conflict claim correctly identifies MEDICAL_SCHOOL_LEVEL scope, but visibility 'HUMAN_REVIEW_REQUIRED' should likely be 'CAUTION_SAFE_INTERNAL_REVIEW' since the page contains no observership/USCE-offer ambiguity to review."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_89",
+      "sourceUrl": "https://keck.usc.edu/md-program",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "keck-md-lcme-accred",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The Keck School of Medicine of USC medical education program is accredited by the Liaison Committee for Medical Education (LCME).",
+            "claimText": "Keck MD program is LCME-accredited — relevant context for visiting-student eligibility decisions (many host schools require LCME/COCA home institution).",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Statement is about Keck's own accreditation, not about visiting-student eligibility rules.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Accreditation status is foundational eligibility context for Tier 1 USCE/visiting-student determinations.",
+            "whyA1Missed": "A1 captured nav labels and research/match content but did not extract the explicit LCME accreditation sentence at the end of the page."
+          },
+          {
+            "claimId": "keck-md-contact-phone",
+            "claimType": "CONTACT_PHONE",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900",
+            "claimText": "General Keck School of Medicine contact phone (323) 442-1900 — school-level, not visiting-student-specific.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "School-level main phone; not a dedicated VSLO/observership coordinator number.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Contact info is Tier 1 logistics field used to enrich USCE records, even if not VSLO-specific.",
+            "whyA1Missed": "A1 emitted a scope-conflict claim using the address line but did not extract the phone as a CONTACT_PHONE field."
+          },
+          {
+            "claimId": "keck-md-immunization-nav",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Health and Immunization Requirements",
+            "claimText": "MD Program navigation references a Health and Immunization Requirements section — Tier 1 eligibility/logistics signal pointing to a dedicated subpage.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "LOW",
+            "limitations": "Navigation label only; no requirement text on this page; audience may be Keck-own MD students only.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Immunization/health requirements are core Tier 1 USCE eligibility logistics; nav reference flags a candidate subpage to capture.",
+            "whyA1Missed": "A1 listed several nav labels but did not flag the Health and Immunization Requirements item, which is a synonym-family hit for eligibility."
+          },
+          {
+            "claimId": "keck-md-match-rate-2026",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The hard work and dedication of our students, along with the unwavering support of our faculty and staff, has resulted in an impressive 96% residency match rate for the Class of 2026.",
+            "claimText": "Keck reports a 96% residency match rate for the Class of 2026 — Tier 2 match-outcome statistic distinct from the 201/17-states/73%-CA figures A1 captured.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Outcome statistic, not an opportunity; UME-side context for GME placement.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Match rate is a Tier 2 GME-placement outcome metric, complementary to the Match Day numbers A1 already emitted.",
+            "whyA1Missed": "A1 emitted only the 201-seniors/17-states quote and missed the separate 96% match-rate sentence in the preceding paragraph."
+          },
+          {
+            "claimId": "keck-md-top-specialties-2026",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The top specialties of matching MD Program graduates were Internal Medicine (28%), Psychiatry (10%), Family Medicine (7%), and Surgery (7%).",
+            "claimText": "2026 Keck MD top match specialties: IM 28%, Psych 10%, FM 7%, Surgery 7% — Tier 2 GME-placement breakdown.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "limitations": "Outcome statistic, not an opportunity.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Specialty breakdown enriches the Tier 2 placement context A1 partially captured.",
+            "whyA1Missed": "A1 captured the count/states quote but skipped the adjacent specialty-distribution sentence."
+          },
+          {
+            "claimId": "keck-md-clinical-training-sites",
+            "claimType": "MISSING_FIELD",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program",
+            "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "From Los Angeles General Medical Center’s safety net setting to Keck Medicine’s state-of-the-art private hospitals and Children’s Hospital Los Angeles, our students receive comprehensive training that prepares them to work in diverse environments.",
+            "claimText": "Keck MD clinical training sites named: LA General Medical Center, Keck Hospital of USC, Children's Hospital Los Angeles — site inventory relevant to where visiting-student clerkships likely rotate.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "limitations": "Quote describes training sites for Keck's own MD students; does not state visiting-student access to these sites.",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "MEDICAL_EDUCATION",
+            "tierAssignmentRationale": "Clinical-training site list informs Tier 1 USCE setting/scope analysis when paired with a dedicated VS clerkships page.",
+            "whyA1Missed": "A1 did not capture the training-site inventory; it focused on nav labels and the research/match paragraphs."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "keck-md-visiting-clerk-nav",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote is the bare navigation label 'Visiting Student Clerkships' with no offer/eligibility text. Useful as a candidate-subpage pointer but should be downgraded — it is not an offer statement and risks being read as PUBLIC_SAFE_USCE."
+          },
+          {
+            "a1ClaimId": "keck-md-scope-conflict",
+            "refinementReason": "quote_too_general",
+            "explanation": "Scope-conflict claim uses the address line as its quote; the scope determination is sound but the quote does not itself evidence the scope. Consider re-anchoring to a clearer institutional-identity sentence."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page lists 'Dual Degrees' and 'Contact the Program' in nav but provides no MD-program contact email or coordinator name on this page.",
+          "Page mentions 'Find MD student research opportunities' as a link but does not state whether external/visiting students may participate.",
+          "Primary Care Program described as four-year and for 'medical students interested in working with vulnerable communities' — unclear whether any visiting-student or external participation exists."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this MEDICAL_SCHOOL_LEVEL page (nav-label-only Visiting Student Clerkships reference must remain CAUTION/HUMAN_REVIEW).",
+          "Verify Tier 2 match-statistics claims are tagged FUTURE_LANE_ONLY and not surfaced as USCE offers.",
+          "Ensure LCME-accreditation claim is not misread as a visiting-student eligibility rule for IMGs."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "keck-md-lcme-accred",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The Keck School of Medicine of USC medical education program is accredited by the Liaison Committee for Medical Education (LCME).",
+              "claimText": "Keck MD program is LCME-accredited.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "About Keck's own accreditation, not visiting-student rules.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "LCME status is foundational eligibility context for Tier 1 USCE.",
+              "whyA1Missed": "A1 missed the end-of-page accreditation sentence."
+            },
+            {
+              "claimId": "keck-md-contact-phone",
+              "claimType": "CONTACT_PHONE",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900",
+              "claimText": "General Keck SoM phone (323) 442-1900.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "School-level main phone, not VSLO-specific.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Tier 1 logistics enrichment.",
+              "whyA1Missed": "A1 used the address line for scope but did not extract the phone."
+            },
+            {
+              "claimId": "keck-md-immunization-nav",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Health and Immunization Requirements",
+              "claimText": "Nav references Health and Immunization Requirements section.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "LOW",
+              "limitations": "Nav label only.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Immunization requirements are core Tier 1 USCE eligibility logistics.",
+              "whyA1Missed": "A1 did not flag this nav label as an eligibility signal."
+            },
+            {
+              "claimId": "keck-md-clinical-training-sites",
+              "claimType": "MISSING_FIELD",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "From Los Angeles General Medical Center’s safety net setting to Keck Medicine’s state-of-the-art private hospitals and Children’s Hospital Los Angeles, our students receive comprehensive training that prepares them to work in diverse environments.",
+              "claimText": "Keck MD clinical training sites: LA General, Keck Hospital of USC, CHLA.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "limitations": "Describes Keck-own student training, not visiting-student access.",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Training-site inventory informs Tier 1 USCE setting analysis.",
+              "whyA1Missed": "A1 did not capture training-site inventory."
+            }
+          ],
+          "tier2": [
+            {
+              "claimId": "keck-md-match-rate-2026",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The hard work and dedication of our students, along with the unwavering support of our faculty and staff, has resulted in an impressive 96% residency match rate for the Class of 2026.",
+              "claimText": "Class of 2026 96% residency match rate.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Outcome metric, not an opportunity.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "GME-placement outcome distinct from the 201/17/73 figures A1 captured.",
+              "whyA1Missed": "A1 captured only the adjacent paragraph and missed this sentence."
+            },
+            {
+              "claimId": "keck-md-top-specialties-2026",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/md-program",
+              "sourceHash": "239e6b2c21d52ea10558f74c3cd7d6ce4160375c980527fea8f1f78da10d1249",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The top specialties of matching MD Program graduates were Internal Medicine (28%), Psychiatry (10%), Family Medicine (7%), and Surgery (7%).",
+              "claimText": "2026 top match specialties: IM 28, Psych 10, FM 7, Surg 7.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "limitations": "Outcome statistic.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "UNDERGRADUATE_MEDICAL_EDUCATION",
+              "tierAssignmentRationale": "Specialty distribution enriches Tier 2 placement context.",
+              "whyA1Missed": "A1 missed adjacent specialty-breakdown sentence."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "keck-md-visiting-clerk-nav",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is a medical-school MD program page with only a navigation label naming Visiting Student Clerkships. No offer text, eligibility, or pathway is stated; must not be promoted to PUBLIC_SAFE_USCE on the basis of nav alone."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_90",
+      "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "keck-vsc-a2-01",
+            "claimType": "OFFERS_SUB_INTERNSHIP",
+            "lane": "SUB_INTERNSHIP",
+            "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+            "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Sub-Internship Scholarship Award in General SurgeryThe Department of Surgery at the University of Southern California has recognized the growing need for its residency program to be a direct representation of the patient population it serves.",
+            "claimText": "Department of Surgery at USC offers a Sub-Internship Scholarship Award in General Surgery for visiting medical students.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Sub-internship is a Tier 1 USCE rotation category for 4th-year medical students.",
+            "whyA1Missed": "A1 noted the Sub-Internship Scholarship Award in unresolveds but did not emit it as an OFFERS_SUB_INTERNSHIP claim.",
+            "limitations": "Eligibility / pathway / award amount not stated on this source page."
+          },
+          {
+            "claimId": "keck-vsc-a2-02",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+            "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "This award will be targeted at medical students from a variety of backgrounds with goals of producing an outstanding sub-internship experience, facilitating community volunteering, providing strong mentorship opportunities, and increasing exposure to our faculty and residents.",
+            "claimText": "Sub-Internship Scholarship Award targets diverse-background medical students with mentorship and faculty exposure.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Describes a Tier 1 sub-internship scholarship program targeting visiting students.",
+            "whyA1Missed": "A1 omitted the descriptive scope/intent of the Sub-Internship Scholarship Award.",
+            "limitations": null
+          },
+          {
+            "claimId": "keck-vsc-a2-03",
+            "claimType": "ELIGIBILITY_REQUIREMENT",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+            "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The applicant’s file must be complete.",
+            "claimText": "Applicant's file must be complete to be placed in a rotation.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Standalone Tier 1 eligibility criterion in the Rotation Criteria list.",
+            "whyA1Missed": "A1 grouped other rotation criteria but skipped this discrete bullet about file completeness.",
+            "limitations": "Page does not enumerate which documents constitute a complete file."
+          },
+          {
+            "claimId": "keck-vsc-a2-04",
+            "claimType": "CONTACT_PHONE",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+            "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900Hours:Monday–Friday7:30am–5:00pm PST",
+            "claimText": "Keck School of Medicine general phone (323) 442-1900 and address 1975 Zonal Ave, Los Angeles, CA 90033.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "MEDIUM",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Coordinator/institution contact info on a Tier 1 visiting-student page.",
+            "whyA1Missed": "A1 captured the email but not the institutional phone/address footer.",
+            "limitations": "Phone is the general school number, not necessarily the visiting-student coordinator line."
+          },
+          {
+            "claimId": "keck-vsc-a2-05",
+            "claimType": "OFFERS_VSLO",
+            "lane": "VISITING_MEDICAL_STUDENT",
+            "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+            "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "The Keck School of Medicine accepts visiting student applications through the Visiting Student Learning Opportunities Program",
+            "claimText": "Keck SOM participates in VSLO (Visiting Student Learning Opportunities Program) as its application pathway.",
+            "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+            "confidence": "HIGH",
+            "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+            "deepSourceFamily": "VISITING_STUDENT",
+            "tierAssignmentRationale": "Explicit VSLO participation is a distinct Tier 1 OFFERS_VSLO concept separate from APPLICATION_PATHWAY.",
+            "whyA1Missed": "A1 emitted only APPLICATION_PATHWAY but not the OFFERS_VSLO claim type for VSLO participation.",
+            "limitations": null
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "keck-vsc-07",
+            "refinementReason": "quote_too_general",
+            "explanation": "Quote bundles two distinct criteria (Keck/department requirements and rotation availability) and skips the intervening 'applicant's file must be complete' bullet. Splitting yields cleaner atomic eligibility claims."
+          },
+          {
+            "a1ClaimId": "keck-vsc-neg-01",
+            "refinementReason": "negative_evidence_is_absence_not_refusal",
+            "explanation": "The quote describes inclusive eligibility (LCME/COCA US schools) but does not contain an explicit refusal of IMG applicants. Should not be promoted as NEGATIVE_DOMESTIC_ONLY without an explicit refusal sentence."
+          },
+          {
+            "a1ClaimId": "keck-vsc-09",
+            "refinementReason": "quote_too_general",
+            "explanation": "Email literal is redacted as [email protected] in cleaned text — the claim cannot serve as an actionable coordinator contact and may warrant downgrade or MISSING_FIELD treatment."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Sub-Internship Scholarship Award eligibility criteria, application instructions, and award value are linked but not present in cleaned text",
+          "Whether the (323) 442-1900 phone is the visiting-student coordinator line or only the general school switchboard is not stated",
+          "Documents constituting a 'complete file' (CV, LOR count, immunizations, transcript, BCLS/ACLS) are not enumerated on this page",
+          "Specialty list of available clerkships at Keck SOM is not present in cleaned text"
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE promotion from this MEDICAL_SCHOOL_LEVEL page without explicit campus-applicability proof",
+          "Verify the NEGATIVE_DOMESTIC_ONLY claim keck-vsc-neg-01 is not promoted to PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY — quote is inclusive scope, not an explicit refusal",
+          "Verify the redacted email in keck-vsc-09 is flagged as MISSING_FIELD rather than published as a usable contact"
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [
+            {
+              "claimId": "keck-vsc-a2-01",
+              "claimType": "OFFERS_SUB_INTERNSHIP",
+              "lane": "SUB_INTERNSHIP",
+              "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+              "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Sub-Internship Scholarship Award in General SurgeryThe Department of Surgery at the University of Southern California has recognized the growing need for its residency program to be a direct representation of the patient population it serves.",
+              "claimText": "Department of Surgery at USC offers a Sub-Internship Scholarship Award in General Surgery for visiting medical students.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Sub-internship is a Tier 1 USCE rotation category for 4th-year medical students.",
+              "whyA1Missed": "A1 noted the Sub-Internship Scholarship Award in unresolveds but did not emit it as an OFFERS_SUB_INTERNSHIP claim.",
+              "limitations": null
+            },
+            {
+              "claimId": "keck-vsc-a2-03",
+              "claimType": "ELIGIBILITY_REQUIREMENT",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+              "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The applicant’s file must be complete.",
+              "claimText": "Applicant's file must be complete to be placed in a rotation.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Standalone Tier 1 eligibility criterion in the Rotation Criteria list.",
+              "whyA1Missed": "A1 skipped this discrete bullet in the Rotation Criteria.",
+              "limitations": null
+            },
+            {
+              "claimId": "keck-vsc-a2-04",
+              "claimType": "CONTACT_PHONE",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+              "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900Hours:Monday–Friday7:30am–5:00pm PST",
+              "claimText": "Keck School of Medicine general phone (323) 442-1900 and address 1975 Zonal Ave, Los Angeles, CA 90033.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Institutional contact info on a Tier 1 visiting-student page.",
+              "whyA1Missed": "A1 captured the email but not the institutional phone/address footer.",
+              "limitations": "General school phone, not necessarily VSLO coordinator line."
+            },
+            {
+              "claimId": "keck-vsc-a2-05",
+              "claimType": "OFFERS_VSLO",
+              "lane": "VISITING_MEDICAL_STUDENT",
+              "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+              "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "The Keck School of Medicine accepts visiting student applications through the Visiting Student Learning Opportunities Program",
+              "claimText": "Keck SOM participates in VSLO as its application pathway.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "HIGH",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "OFFERS_VSLO is distinct from APPLICATION_PATHWAY.",
+              "whyA1Missed": "A1 emitted only APPLICATION_PATHWAY for VSLO, not the OFFERS_VSLO concept.",
+              "limitations": null
+            },
+            {
+              "claimId": "keck-vsc-a2-02",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://keck.usc.edu/md-program/visiting-student-clerkships",
+              "sourceHash": "a2147562ff5c0e37f1bae4d585bfa7817ca41b02bc68c6fc941032c401c504e6",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/md-program_visiting-student-clerkships.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "This award will be targeted at medical students from a variety of backgrounds with goals of producing an outstanding sub-internship experience, facilitating community volunteering, providing strong mentorship opportunities, and increasing exposure to our faculty and residents.",
+              "claimText": "Sub-Internship Scholarship Award targets diverse-background medical students with mentorship and faculty exposure.",
+              "visibilityLaneSuggestedByModel": "CAUTION_SAFE_INTERNAL_REVIEW",
+              "confidence": "MEDIUM",
+              "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+              "deepSourceFamily": "VISITING_STUDENT",
+              "tierAssignmentRationale": "Descriptive intent of a Tier 1 sub-internship scholarship.",
+              "whyA1Missed": "A1 omitted the descriptive scope/intent of the scholarship.",
+              "limitations": null
+            }
+          ],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [
+          {
+            "claimId": "keck-vsc-01",
+            "scopeIssue": "scope_conflict_medical_school_level",
+            "explanation": "Source is keck.usc.edu (medical school domain). No campus-applicability proof distinguishes Keck Hospital vs LAC+USC vs CHLA — claim must remain CAUTION until applicability is established."
+          }
+        ],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_91",
+      "sourceUrl": "https://keck.usc.edu/research-programs/",
+      "output": {
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "runId": "p102-hy-10-keck-usc",
+        "schemaVersion": "p102-cli-0e-1",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/research-programs/",
+            "sourceHash": "a726b89bea12b6e9b0e632f7b1f54fac70c6386a4ab6c627508e29970b54c003",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_dc265c19605eea66.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "Key SearchesMD ProgramResidencies and Clinical FellowshipsPhysician Assistant ProgramMaster of Public HealthKeck School Research",
+            "normalizedField": null,
+            "claimText": "Keck School site navigation surfaces 'Residencies and Clinical Fellowships' as a top-level offering.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Navigation-level mention only; no program names, eligibility, or sponsorship details on this page.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME_NAVIGATION",
+            "tierAssignmentRationale": "Residencies and Clinical Fellowships are post-MD trainee opportunities, Tier 2.",
+            "whyA1Missed": "A1 focused on lab descriptions and missed the top-nav 'Key Searches' block that lists GME offerings."
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://keck.usc.edu/research-programs/",
+            "sourceHash": "a726b89bea12b6e9b0e632f7b1f54fac70c6386a4ab6c627508e29970b54c003",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_dc265c19605eea66.txt",
+            "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+            "quote": "MD ProgramResidencies and Clinical FellowshipsPhD ProgramsMaster's ProgramsProfessional DegreesPost-Doctoral ResearchersCME, Certificate & Undergraduate Programs",
+            "normalizedField": null,
+            "claimText": "Keck School Education menu lists Post-Doctoral Researchers as a category alongside MD, residencies, PhD, and master's programs.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "limitations": "Listing-only; no eligibility, application, or sponsorship details on this page.",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "POSTDOC_TRAINING",
+            "tierAssignmentRationale": "Post-Doctoral Researchers sit after terminal degree completion and align with Tier 3 post-trainee research.",
+            "whyA1Missed": "A1 captured a single lab's postdoc mention but missed the institution-level Education-menu Post-Doctoral Researchers category."
+          }
+        ],
+        "a1ClaimsToRefine": [
+          {
+            "a1ClaimId": "c1",
+            "refinementReason": "eligibility_inferred_not_stated",
+            "explanation": "Sinha Lab quote names 'high school and medical students' without specifying whether visiting medical students or only USC's own MD students are mentored; eligibility for outside/IMG access is not stated on this page."
+          }
+        ],
+        "additionalUnresolveds": [
+          "Page is a medical-school-level lab directory; does not state which (if any) labs accept visiting medical students, IMGs, or observers.",
+          "Navigation mentions a 'Training and Education' section but the cleaned text does not include its contents, so eligibility and audience for medical-student research access remain unresolved."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this MEDICAL_SCHOOL_LEVEL directory page without a campusApplicabilityProof.",
+          "Verify Sinha Lab claim c1 stays at CAUTION_SAFE_INTERNAL_REVIEW (audience ambiguous: own MD vs visiting)."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/research-programs/",
+              "sourceHash": "a726b89bea12b6e9b0e632f7b1f54fac70c6386a4ab6c627508e29970b54c003",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_dc265c19605eea66.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "Key SearchesMD ProgramResidencies and Clinical FellowshipsPhysician Assistant ProgramMaster of Public HealthKeck School Research",
+              "normalizedField": null,
+              "claimText": "Keck School site navigation surfaces 'Residencies and Clinical Fellowships' as a top-level offering.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Navigation-level mention only.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME_NAVIGATION",
+              "tierAssignmentRationale": "Residency and clinical fellowship offerings are Tier 2 trainee-level pathways.",
+              "whyA1Missed": "A1 focused on lab descriptions and skipped the navigation block listing GME offerings."
+            }
+          ],
+          "tier3": [
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_SERVICES",
+              "lane": "RESEARCH_OPPORTUNITY",
+              "sourceUrl": "https://keck.usc.edu/research-programs/",
+              "sourceHash": "a726b89bea12b6e9b0e632f7b1f54fac70c6386a4ab6c627508e29970b54c003",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_dc265c19605eea66.txt",
+              "sourceScope": "MEDICAL_SCHOOL_LEVEL",
+              "quote": "MD ProgramResidencies and Clinical FellowshipsPhD ProgramsMaster's ProgramsProfessional DegreesPost-Doctoral ResearchersCME, Certificate & Undergraduate Programs",
+              "normalizedField": null,
+              "claimText": "Keck School Education menu lists Post-Doctoral Researchers among its training categories.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "limitations": "Category mention only; no eligibility or pathway details on this page.",
+              "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+              "deepSourceFamily": "POSTDOC_TRAINING",
+              "tierAssignmentRationale": "Post-doctoral researcher categorization is post-terminal-degree, Tier 3-adjacent.",
+              "whyA1Missed": "A1 captured a single lab's postdoc opportunity but missed the institution-level Education-menu category."
+            }
+          ]
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_92",
+      "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+      "output": {
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "runId": "p102-hy-10-keck-usc",
+        "schemaVersion": "p102-cli-0e-1",
+        "newClaims": [
+          {
+            "claimId": "a2_c1",
+            "claimType": "CONTACT_PHONE",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900",
+            "claimText": "Keck School of Medicine main contact phone: (323) 442-1900, 1975 Zonal Ave., Los Angeles, CA 90033.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 focused on program-level GME claims and skipped the page-footer contact/address block.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Contact is for the GME directory page (Tier 2 trainee context).",
+            "normalizedField": "contact_phone",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c2",
+            "claimType": "FUTURE_LANE_RESIDENCY",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The Department of Medicine's ACGME-accredited Transitional Year Residency prepares PGY-1 physicians for advanced specialty training through a customizable clinical curriculum at Keck Hospital of USC and USC Arcadia Hospital.",
+            "claimText": "ACGME-accredited Transitional Year Residency (PGY-1) at Keck Hospital of USC and USC Arcadia Hospital.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 emitted only Emergency Medicine residency as a specific Tier 2 program; missed the Transitional Year Residency which is a key IMG pathway.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "RESIDENCY",
+            "tierAssignmentRationale": "Specific residency program detail.",
+            "normalizedField": "transitional_year_residency",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c3",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Intraoperative Neurologic Monitoring Fellowship... Applicants need to be graduates of an ACGME Accredited Neurology residency, eligible for California medical licensure.",
+            "claimText": "Intraoperative Neurologic Monitoring Fellowship requires graduates of an ACGME-accredited Neurology residency and California medical licensure eligibility.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 did not capture fellowship eligibility/licensure requirements for this program.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellowship eligibility/licensure requirement.",
+            "normalizedField": "fellowship_eligibility_intraop_neuro",
+            "limitations": "Quote uses ellipsis to bridge program name and eligibility sentence."
+          },
+          {
+            "claimId": "a2_c4",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The Department of Surgery has some of the best and largest residency programs in the country with five accredited ACGME training programs and nine outstanding fellowships.",
+            "claimText": "USC Department of Surgery has 5 ACGME-accredited residency programs and 9 fellowships.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 captured the overall 60+ programs figure but did not extract the department-specific program counts for Surgery.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Department-level GME program counts.",
+            "normalizedField": "surgery_dept_program_counts",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c5",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "The fellowship is available to orthopaedic, plastic, or general surgeons eligible for board certification, requiring a valid California medical license.",
+            "claimText": "Joseph H. Boyes Hand Fellowship open to orthopaedic, plastic, or general surgeons eligible for board certification; requires valid California medical license.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 did not extract eligibility/licensure requirements for the Hand Fellowship.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellowship eligibility requirement.",
+            "normalizedField": "fellowship_eligibility_hand",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c6",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "This non-ACGME accredited fellowship is open to physicians who have completed an anesthesiology residency.",
+            "claimText": "Neuroanesthesiology Fellowship is non-ACGME accredited and open to physicians who have completed an anesthesiology residency.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "whyA1Missed": "A1 missed accreditation-status and eligibility note for the Neuroanesthesiology Fellowship.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellowship accreditation/eligibility detail.",
+            "normalizedField": "fellowship_neuroanesthesia_nonacgme",
+            "limitations": null
+          },
+          {
+            "claimId": "a2_c7",
+            "claimType": "FUTURE_LANE_FELLOWSHIP",
+            "lane": "FELLOWSHIP_PROGRAM_INFO",
+            "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+            "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+            "sourceScope": "DEPARTMENT_LEVEL",
+            "quote": "Successful applicants must meet specific postgraduate training requirements to obtain a California Medical License.",
+            "claimText": "Society of Urologic Oncology Fellowship: applicants must meet postgraduate training requirements to obtain a California Medical License.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "whyA1Missed": "A1 did not capture the licensure prerequisite for this fellowship.",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "FELLOWSHIP",
+            "tierAssignmentRationale": "Fellowship licensure eligibility.",
+            "normalizedField": "fellowship_eligibility_suo",
+            "limitations": "Quote does not name the program directly; context required."
+          }
+        ],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a fellowship/residency directory and contains no USCE / observership / visiting-student / elective signal at all — no Tier 1 content present.",
+          "Multiple fellowships mention 'California medical license' or board-eligibility prerequisites but the page does not state ECFMG/J-1/H-1B sponsorship policy beyond the single Neurocritical Care J-1 mention."
+        ],
+        "recommendedA3Focus": [
+          "Confirm all claims from this source carry FUTURE_LANE_ONLY visibility — source is FELLOWSHIP_PAGE / DEPARTMENT_LEVEL and must not produce any PUBLIC_SAFE_USCE.",
+          "Verify a2_c3 quote treatment given the ellipsis bridge in the cleaned text."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [
+            {
+              "claimId": "a2_c1",
+              "claimType": "CONTACT_PHONE",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Keck School of Medicine of USC1975 Zonal Ave.Los Angeles, CA 90033Google MapPhone: (323) 442-1900",
+              "claimText": "Keck School of Medicine main contact phone: (323) 442-1900.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "Footer block not scanned.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Contact for GME directory.",
+              "normalizedField": "contact_phone",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c2",
+              "claimType": "FUTURE_LANE_RESIDENCY",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The Department of Medicine's ACGME-accredited Transitional Year Residency prepares PGY-1 physicians for advanced specialty training through a customizable clinical curriculum at Keck Hospital of USC and USC Arcadia Hospital.",
+              "claimText": "ACGME-accredited Transitional Year Residency (PGY-1) at Keck Hospital of USC and USC Arcadia Hospital.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "A1 named only Emergency Medicine residency specifically.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "RESIDENCY",
+              "tierAssignmentRationale": "Specific residency program.",
+              "normalizedField": "transitional_year_residency",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c3",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Applicants need to be graduates of an ACGME Accredited Neurology residency, eligible for California medical licensure.",
+              "claimText": "Intraoperative Neurologic Monitoring Fellowship requires ACGME-accredited Neurology residency + CA licensure eligibility.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "Eligibility sentence in a deeper fellowship paragraph.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Fellowship eligibility.",
+              "normalizedField": "fellowship_eligibility_intraop_neuro",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c4",
+              "claimType": "FUTURE_LANE_GME_GENERAL",
+              "lane": "RESIDENCY_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The Department of Surgery has some of the best and largest residency programs in the country with five accredited ACGME training programs and nine outstanding fellowships.",
+              "claimText": "USC Department of Surgery: 5 ACGME residency programs + 9 fellowships.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "Department-specific number missed by A1.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "GME",
+              "tierAssignmentRationale": "Department GME counts.",
+              "normalizedField": "surgery_dept_program_counts",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c5",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "The fellowship is available to orthopaedic, plastic, or general surgeons eligible for board certification, requiring a valid California medical license.",
+              "claimText": "Joseph H. Boyes Hand Fellowship: orthopaedic/plastic/general surgeons; CA medical license required.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "Eligibility detail not extracted by A1.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Fellowship eligibility.",
+              "normalizedField": "fellowship_eligibility_hand",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c6",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "This non-ACGME accredited fellowship is open to physicians who have completed an anesthesiology residency.",
+              "claimText": "Neuroanesthesiology Fellowship is non-ACGME accredited, open to anesthesiology-residency-trained physicians.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "HIGH",
+              "whyA1Missed": "Accreditation/eligibility status missed.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Fellowship accreditation/eligibility.",
+              "normalizedField": "fellowship_neuroanesthesia_nonacgme",
+              "limitations": null
+            },
+            {
+              "claimId": "a2_c7",
+              "claimType": "FUTURE_LANE_FELLOWSHIP",
+              "lane": "FELLOWSHIP_PROGRAM_INFO",
+              "sourceUrl": "https://keck.usc.edu/residencies-and-fellowships/",
+              "sourceHash": "a9fc5ec536c223f02c4157d0390db1c8b360c6363e0cf5e43b82829bd05e4f71",
+              "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-hy-10-keck-usc/cleaned_text/sm_d7a9ab052e8d0d8b.txt",
+              "sourceScope": "DEPARTMENT_LEVEL",
+              "quote": "Successful applicants must meet specific postgraduate training requirements to obtain a California Medical License.",
+              "claimText": "Society of Urologic Oncology Fellowship: applicants must meet CA Medical License postgraduate requirements.",
+              "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+              "confidence": "MEDIUM",
+              "whyA1Missed": "Licensure prereq sentence missed.",
+              "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+              "deepSourceFamily": "FELLOWSHIP",
+              "tierAssignmentRationale": "Fellowship licensure eligibility.",
+              "normalizedField": "fellowship_eligibility_suo",
+              "limitations": "Quote does not name program directly."
+            }
+          ],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_93",
+      "sourceUrl": "https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a venue listing (Hastings Auditorium) with site-wide navigation only; no USCE, observership, visiting student, residency, fellowship, or careers content is stated.",
+          "Navigation mentions 'Residencies and Clinical Fellowships' as a link label but this page provides no substantive content about those programs."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this venue page (sourceFamily=RESEARCH_PAGE, scope=UNKNOWN_SCOPE, content is navigation chrome only).",
+          "Verify the navigation token 'Residencies and Clinical Fellowships' is not promoted to a FUTURE_LANE claim from this URL — it is a global menu element, not page content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_94",
+      "sourceUrl": "https://keck.usc.edu/organizer/office-of-research/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a navigation/landing index for the Office of Research; mentions 'Research Programs & Labs', 'Training and Education', and 'Post-Doctoral Researchers' but does not state any visiting student, observership, or external research opportunity details.",
+          "Page lists 'Residencies and Clinical Fellowships' in navigation but provides no programmatic detail on this source."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this MEDICAL_SCHOOL_LEVEL navigation page — content is only menu/footer links with no opportunity detail.",
+          "Verify A1 emptiness is correct: cleaned text contains no observership/visiting-student/elective/research-application substance, only site chrome."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_95",
+      "sourceUrl": "https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a single event listing for a webinar on October 11, 2024 with no observership, visiting student, elective, research opportunity, residency, fellowship, careers, or visa content stated."
+        ],
+        "recommendedA3Focus": [
+          "Confirm this event-listing page yields no PUBLIC_SAFE_USCE, FUTURE_LANE, or negative-refusal claims; it should remain empty / NO_PUBLIC_OPPORTUNITY_FOUND."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_96",
+      "sourceUrl": "https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Page is a one-off event listing (research funding seminar) with no USCE, observership, visiting student, residency, fellowship, or career content to extract."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this event-listing page; it is a faculty research seminar with no clinical experience content."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_97",
+      "sourceUrl": "https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Past-event listing for a one-time roundtable; contains no observership, elective, research program, residency, fellowship, careers, or visa content.",
+          "Organizer contact email taniague@usc.edu is listed but tied only to this past event, not to any USCE/training pathway."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is emitted from this past-event roundtable page.",
+          "Verify source family/scope reclassification: this is an event calendar entry, not a substantive research-program page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    },
+    {
+      "sourceId": "src_98",
+      "sourceUrl": "https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-hy-10-keck-usc",
+        "institutionId": "inst_keck_school_of_medicine_usc_ca",
+        "institutionName": "Keck School of Medicine at USC",
+        "networkUsed": false,
+        "agentUsed": false,
+        "phase": "A2",
+        "newClaims": [],
+        "a1ClaimsToRefine": [],
+        "additionalUnresolveds": [
+          "Past one-day research symposium event listing — no USCE, observership, visiting student, residency, fellowship, or career signal present in the cleaned text."
+        ],
+        "recommendedA3Focus": [
+          "Confirm no PUBLIC_SAFE_USCE claim is generated from this past-event symposium page."
+        ],
+        "deepNewClaimsByTier": {
+          "tier1": [],
+          "tier2": [],
+          "tier3": []
+        },
+        "scopeConflictsDetectedInA2": [],
+        "campusApplicabilityProofsFound": [],
+        "newNegativeEvidenceClaims": []
+      }
+    }
+  ]
+}

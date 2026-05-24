@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-quote-verify-1",
+  "runId": "p102-gold-11-michigan-medicine",
+  "total": 2,
+  "countByStatus": {
+    "OK": 2
+  },
+  "failureCount": 0,
+  "checks": [
+    {
+      "claimId": "c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    },
+    {
+      "claimId": "a2_c1",
+      "status": "OK",
+      "details": "quote verified + visibility consistent"
+    }
+  ]
+}

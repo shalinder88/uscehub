@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "MedStar Washington Hospital Center",
+    "aliases": [
+      "Washington Hospital Center",
+      "MedStar WHC",
+      "MedStar Georgetown/Washington Hospital Center (VS lane)"
+    ],
+    "city": "Washington",
+    "state": "DC",
+    "officialDomain": "medstarwashington.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "MedStar Health (Georgetown academic affiliate)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 28 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medstarwashington.org",
+      "medstarhealth.org",
+      "meded.georgetown.edu"
+    ],
+    "searchTermsTried": [
+      "MedStar Washington Hospital Center visiting medical student elective observership clerkship site:medstarwashington.org OR site:medstargme.org",
+      "Georgetown University School of Medicine visiting medical student elective MedStar VSLO",
+      "MedStar Washington visiting student",
+      "MedStar Health medical student programs",
+      "Georgetown VSLO",
+      "MedStar WHC clinical elective",
+      "MedStar WHC fourth year"
+    ],
+    "pagesOpened": [
+      "https://medstarwashington.org/for-physicians",
+      "https://medstarwashington.org/for-healthcare-professionals/medical-imaging-school/application-and-admissions-requirements",
+      "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
+      "https://www.medstarhealth.org/education/medical-student-programs",
+      "https://som.georgetown.edu/diversityequityandinclusion/studentorganizations/medstar-health-academic-affairs-diversity-visiting-student-rotation-scholarship/"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://www.georgetownemergencymedicine.org/medical-students/",
+        "title": "Medical Students - MedStar Georgetown & MedStar WHC Emergency Medicine Residency",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://www.medstarhealth.org/education/residency-programs/ophthalmology/application-information",
+        "title": "Application Information | Ophthalmology Residency Program",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://medstarwashington.org/for-patients/patients-and-visitors",
+        "title": "Patient & Visitor Information",
+        "reason": "PATIENT_SERVICE_PAGE"
+      },
+      {
+        "url": "https://medstarwashington.org/for-healthcare-professionals/medical-imaging-school/application-and-admissions-requirements",
+        "title": "Medical Imaging School of Radiography",
+        "reason": "NOT_USCE"
+      }
+    ],
+    "robotsOrAccessNotes": "medstarwashington.org accessible but does not surface a visiting-students lane directly. The lane is documented on Georgetown SOM's meded.georgetown.edu hub which covers MedStar WHC as a placement site. WebFetch returned clean content.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
+      "pageTitle": "Visiting Students Program 2026-2027 Academic Year | Medical Education | Georgetown University",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Visiting electives are offered to 4th-year medical students enrolled in U.S. LCME-accredited and osteopathic institutions.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE (block-schedule reference only)",
+      "specialtyDecision": "Multispecialty across Georgetown/MedStar Health system; per-department availability via VSLO",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "SCHOOL_LEVEL_SOURCE — Georgetown SOM hub covers multiple MedStar sites; MedStar Washington Hospital Center is named but placement is by department via VSLO not guaranteed",
+        "MS4_ONLY",
+        "VSLO_REQUIRED",
+        "MALPRACTICE_INSURANCE_REQUIRED_1M_3M_MIN"
+      ]
+    },
+    {
+      "sourceUrl": "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
+      "pageTitle": "Visiting Students Program 2026-2027 Academic Year | Medical Education | Georgetown University",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "rotations at other Georgetown/MedStar Health sites, including MedStar Washington Hospital Center and our Baltimore locations",
+      "quoteSupports": ["sourceScope"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MEDSTAR_WHC_EXPLICITLY_NAMED_AS_PLACEMENT_SITE",
+        "BUT_SCHOOL_LEVEL_SOURCE_NO_HOSPITAL_SPECIFIC_GUARANTEE"
+      ]
+    },
+    {
+      "sourceUrl": "https://meded.georgetown.edu/medicaleducation/visiting-students-program/",
+      "pageTitle": "Visiting Students Program 2026-2027 Academic Year | Medical Education | Georgetown University",
+      "sourcePageType": "FEE_SCHEDULE",
+      "shortQuote": "$150 Administrative Fee (submitted electronically via credit card; non-refundable) ... $6 credit card processing fee for a total required payment of $156",
+      "quoteSupports": ["cost"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "ADMIN_FEE_150_PLUS_6_PROCESSING_TOTAL_156",
+        "MALPRACTICE_INSURANCE_REQUIRED_SEPARATELY"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 7,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "Eligibility explicitly restricted to US LCME and osteopathic institutions, which excludes international (non-US) medical students and IMG graduates from this lane. International student contact reference exists (Dr. Irma Frank) but no published eligibility for international students on this hub.",
+    "weakNegativeEvidence": "medstarwashington.org itself does not surface a visiting-students lane; users without prior knowledge of the Georgetown academic affiliation may not find this lane."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Eligible for public-safe activation in a future sprint with caveats: (a) SCHOOL_LEVEL_SOURCE — Georgetown SOM, not MedStar WHC hospital-specific; (b) MS4 only; (c) US LCME/AOA only; (d) VSLO required; (e) $156 total admin fee + malpractice $1M/$3M required separately; (f) MedStar WHC is named as a placement site but specific availability is by department in VSLO. Separate retry queued for the international-students-contact lane (Dr. Frank) to determine if there is a documented international pathway not on the public hub.",
+  "plainEnglishSummary": "MedStar Washington Hospital Center accepts visiting medical students via the Georgetown SOM visiting-students program. Only 4th-year students from US LCME-accredited or osteopathic schools are eligible; international students are not eligible on the public hub. Applications go through VSLO. The admin fee is $156 total; malpractice insurance of $1M per incident / $3M aggregate is required. The source is the Georgetown SOM hub, not the hospital page — placement at MedStar WHC specifically is by department availability through VSLO.",
+  "driftCheck": "This advanced national USCE discovery because DC moved from a thin-coverage state toward documented audience + application + cost evidence for a major DC academic medical center; no noindex/backend/schema work touched."
+}

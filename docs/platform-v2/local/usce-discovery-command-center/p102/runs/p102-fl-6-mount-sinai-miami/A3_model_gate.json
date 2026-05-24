@@ -1,0 +1,35 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+  "institutionName": "Mount Sinai Medical Center Miami Beach",
+  "metadata": {
+    "totalClaimsReviewed": 0,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "hiddenRejectedCount": 0
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-6-mount-sinai-miami",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unresolveds": [
+    "Merged claim ledger is empty despite 69 candidate sources captured (multiple OBSERVERSHIP_PAGE, VISITING_STUDENT_PAGE, GME_PAGE, RESEARCH_PAGE, VOLUNTEER_PAGE, CAREERS_PAGE, FELLOWSHIP_PAGE, RESIDENCY_PAGE families). No quote-backed positive or negative claims emitted — likely under-extraction by A1/A2 reader rather than genuine absence."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Empty merged claim ledger — zero claims of any visibility, so no public-safety risk to adjudicate. Ledger is internally consistent and safe to merge (nothing publishes). However, 69 candidate sources across all relevant families yielded zero claims, which is suspicious of under-extraction; flagged in unresolveds for operator review but does not block A3 PASS."
+}

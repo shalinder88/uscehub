@@ -1,0 +1,41 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_tampa_general_hospital_fl",
+  "institutionName": "Tampa General Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 42,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 1,
+    "futureLaneOnlyCount": 35,
+    "humanReviewRequiredCount": 6,
+    "hiddenRejectedCount": 0,
+    "claimIdCollision": "claimId 'c1' is used by two distinct claims (volunteer ELIGIBILITY_REQUIREMENT and health-professionals OFFERS_OBSERVERSHIP). Downstream dedupe must disambiguate."
+  },
+  "networkUsed": false,
+  "overpromotionDetected": [],
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-3-tampa-general",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unfollowedSignals": [
+    "Physician-to-Physician Observer Application Request at TGH Main — navigation hint of an observer pathway on health-professionals page; A1/A2 did not retrieve the linked application page to confirm whether the program is open to external/IMG physicians or restricted to credentialed/affiliated staff."
+  ],
+  "unresolveds": [
+    "claimId collision: two distinct claims share claimId 'c1' (one from https://tgh.org/volunteer ELIGIBILITY_REQUIREMENT, one from https://tgh.org/health-professionals OFFERS_OBSERVERSHIP). Not a public-safety issue but a structural ID violation; downstream merge must rename one before persistence.",
+    "Observer pathway signal ('Physician-to-Physician Observer Application Request at TGH Main') is correctly held at CAUTION_SAFE_INTERNAL_REVIEW; eligibility (IMG vs affiliated physicians only), duration, fees, and contact remain unknown and require A4 narrow follow-up on the application request page."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Ledger contains zero PUBLIC_SAFE_USCE claims, which is the correct outcome given evidence: TGH's public surfaces show a non-medical volunteer program, careers/GME content, and a navigation-only observer pathway hint correctly held at CAUTION_SAFE_INTERNAL_REVIEW. No scope conflicts, no overclaims, no family/lane mismatches. Two non-safety issues noted: claimId 'c1' collision and an unfollowed observer-application signal warranting A4 narrow recovery, not a publish blocker."
+}

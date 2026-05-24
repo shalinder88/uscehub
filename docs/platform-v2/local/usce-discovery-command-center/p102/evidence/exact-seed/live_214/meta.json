@@ -1,0 +1,44 @@
+{
+  "seedId": "live_214",
+  "institutionId": "inst_live_harvard_medical_school_research_fellowship",
+  "institutionName": "Harvard Medical School — Research Fellowship",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://postdoc.hms.harvard.edu/",
+  "sourceDomain": "postdoc.hms.harvard.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OTHER_USCE",
+  "expectedSpecialty": "Clinical Research, Outcomes Research, Health Services Resear",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 1-3 years | visa: J1, H1B (limited)",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_38ccc8a08d"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_214/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_214/cleaned.txt",
+  "sourceHash": "4ce72c8229d71878482479374042b18c563868272563ed3321a3d7a7f1d4fdbd",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:36:53.283Z"
+}

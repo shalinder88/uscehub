@@ -1,0 +1,46 @@
+{
+  "seedId": "live_147",
+  "institutionId": "inst_live_ohio_state_university_wexner_medical_center",
+  "institutionName": "Ohio State University Wexner Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Columbus",
+  "state": "OH",
+  "sourceUrl": "https://medicine.osu.edu/departments/office-of-global-health/international-visiting-scholars",
+  "sourceDomain": "medicine.osu.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Oncology, Cardiology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_63ea57db62"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_147/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_147/cleaned.txt",
+  "sourceHash": "dcd50e485b226db2213cc36b2bd6a1ce717e2535a68133a90caafa19e63c8716",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: international visiting URL segment",
+    "signals": [
+      "international visiting URL segment"
+    ]
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:34:33.478Z"
+}

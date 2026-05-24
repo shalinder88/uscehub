@@ -1,0 +1,44 @@
+{
+  "seedId": "live_191",
+  "institutionId": "inst_live_medical_college_of_wisconsin_froedtert_hospital",
+  "institutionName": "Medical College of Wisconsin / Froedtert Hospital",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Milwaukee",
+  "state": "WI",
+  "sourceUrl": "https://www.mcw.edu/education/graduate-medical-education",
+  "sourceDomain": "www.mcw.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Transplant, Trauma",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_cc4ed80b59"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_191/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_191/cleaned.txt",
+  "sourceHash": "2d01146664b67fb914a6c410b026189d5da0bd264ca7cd8d6206c4f86965fb36",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG; no explicit signal"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:36:03.919Z"
+}

@@ -1,0 +1,315 @@
+/**
+ * P99-3 USCE Data Promotion Script
+ *
+ * Reads: docs/platform-v2/local/usce-completeness/public_listing_cards_preview_v2.json
+ * Writes:
+ *   src/data/usce/public-listings.generated.json
+ *   src/data/usce/public-listings.generated.ts
+ *
+ * Hard gates:
+ *   - Only READY_PUBLIC_IMG_RELEVANT and READY_PUBLIC_US_STUDENT_ONLY buckets
+ *   - NEEDS_REVIEW / SUPPORTING_SOURCE_ONLY / POLICY_HUB opportunity cards always withheld
+ *   - Forbidden field scan (NPI/CCN/CMS/NPPES/AAMC/NRMP/ACGME/NUCC/internal scores)
+ *   - IMG bucket must have explicit international/IMG eligibility
+ *   - US-only bucket must have excluded non-US audiences
+ *   - Expected output: exactly 12 cards (7 IMG + 5 US-only)
+ *
+ * Run: npx tsx scripts/usce-data/promote-reviewed-usce-data.ts
+ */
+
+import * as fs from "fs";
+import * as path from "path";
+
+const SOURCE = path.join(
+  __dirname,
+  "../../docs/platform-v2/local/usce-completeness/public_listing_cards_preview_v2.json"
+);
+const OUT_JSON = path.join(__dirname, "../../src/data/usce/public-listings.generated.json");
+const OUT_TS = path.join(__dirname, "../../src/data/usce/public-listings.generated.ts");
+
+// Fields allowed in the public runtime
+const ALLOWED_FIELDS = new Set([
+  "listing_id",
+  "institution_name",
+  "campus_name",
+  "state",
+  "county",
+  "specialty",
+  "opportunity_type",
+  "source_page_type",
+  "listing_role",
+  "display_bucket",
+  "eligible_audiences",
+  "excluded_audiences",
+  "unknown_audiences",
+  "restriction_tags",
+  "fit_warnings",
+  "audience_detail",
+  "application_url",
+  "official_source_url",
+  "source_status",
+  "last_reviewed_at",
+]);
+
+// Fields explicitly forbidden (belt + suspenders — these are also stripped by allowlist)
+const FORBIDDEN_FIELD_SUBSTRINGS = [
+  "npi", "ccn", "cms", "nppes", "aamc", "nrmp", "acgme", "nucc",
+  "completeness_score", "max_possible_score", "identity_status", "unknown_fields",
+];
+
+const PUBLIC_BUCKETS = new Set([
+  "READY_PUBLIC_IMG_RELEVANT",
+  "READY_PUBLIC_US_STUDENT_ONLY",
+]);
+
+interface SourceCard {
+  listing_id: string;
+  institution_name: string;
+  campus_name?: string;
+  state: string;
+  county?: string;
+  city?: string;
+  specialty: string;
+  opportunity_type: string;
+  source_page_type: string;
+  listing_role: string;
+  display_bucket: string;
+  eligible_audiences: string[];
+  excluded_audiences: string[];
+  unknown_audiences: string[];
+  restriction_tags: string[];
+  fit_warnings: string[];
+  audience_detail: {
+    us_md_do: string;
+    international_student: string;
+    img_graduate: string;
+    caribbean_student: string;
+  };
+  application_url: string;
+  official_source_url: string;
+  source_status: string;
+  last_reviewed_at: string;
+  [key: string]: unknown;
+}
+
+interface PromotedCard {
+  listing_id: string;
+  institution_name: string;
+  campus_name: string;
+  state: string;
+  county: string;
+  specialty: string;
+  opportunity_type: string;
+  source_page_type: string;
+  listing_role: string;
+  display_bucket: "READY_PUBLIC_IMG_RELEVANT" | "READY_PUBLIC_US_STUDENT_ONLY";
+  eligible_audiences: string[];
+  excluded_audiences: string[];
+  unknown_audiences: string[];
+  restriction_tags: string[];
+  fit_warnings: string[];
+  audience_detail: {
+    us_md_do: string;
+    international_student: string;
+    img_graduate: string;
+    caribbean_student: string;
+  };
+  application_url: string;
+  official_source_url: string;
+  source_status: string;
+  last_reviewed_at: string;
+}
+
+interface Failure { gate: string; detail: string }
+
+function checkForbiddenFieldKeys(card: Record<string, unknown>): string[] {
+  const found: string[] = [];
+  for (const key of Object.keys(card)) {
+    const lk = key.toLowerCase();
+    if (!ALLOWED_FIELDS.has(key)) {
+      found.push(`unexpected key: ${key}`);
+    }
+    for (const sub of FORBIDDEN_FIELD_SUBSTRINGS) {
+      if (lk.includes(sub)) {
+        found.push(`forbidden substring '${sub}' in key '${key}'`);
+        break;
+      }
+    }
+  }
+  return found;
+}
+
+function stripToAllowed(card: SourceCard): PromotedCard {
+  return {
+    listing_id: card.listing_id,
+    institution_name: card.institution_name,
+    campus_name: card.campus_name ?? "",
+    state: card.state,
+    county: card.county ?? "",
+    specialty: card.specialty,
+    opportunity_type: card.opportunity_type,
+    source_page_type: card.source_page_type,
+    listing_role: card.listing_role,
+    display_bucket: card.display_bucket as PromotedCard["display_bucket"],
+    eligible_audiences: card.eligible_audiences,
+    excluded_audiences: card.excluded_audiences,
+    unknown_audiences: card.unknown_audiences,
+    restriction_tags: card.restriction_tags,
+    fit_warnings: card.fit_warnings,
+    audience_detail: card.audience_detail,
+    application_url: card.application_url,
+    official_source_url: card.official_source_url,
+    source_status: card.source_status,
+    last_reviewed_at: card.last_reviewed_at,
+  };
+}
+
+function renderTs(cards: PromotedCard[], promotedAt: string): string {
+  const lines: string[] = [
+    `// AUTO-GENERATED by scripts/usce-data/promote-reviewed-usce-data.ts`,
+    `// Promoted: ${promotedAt}`,
+    `// DO NOT EDIT — regenerate with: npx tsx scripts/usce-data/promote-reviewed-usce-data.ts`,
+    ``,
+    `import type { UsceCard } from "@/lib/usce-maine-data";`,
+    ``,
+    `export const PROMOTED_USCE_CARDS: UsceCard[] = ${JSON.stringify(cards, null, 2)};`,
+    ``,
+    `export const PROMOTED_NEEDS_REVIEW_COUNT = 5;`,
+    `export const PROMOTED_IMG_RELEVANT_COUNT = ${cards.filter(c => c.display_bucket === "READY_PUBLIC_IMG_RELEVANT").length};`,
+    `export const PROMOTED_US_ONLY_COUNT = ${cards.filter(c => c.display_bucket === "READY_PUBLIC_US_STUDENT_ONLY").length};`,
+  ];
+  return lines.join("\n");
+}
+
+function main() {
+  console.log("=".repeat(60));
+  console.log("P99-3 USCE Data Promotion Script");
+  console.log("=".repeat(60));
+
+  const failures: Failure[] = [];
+
+  if (!fs.existsSync(SOURCE)) {
+    console.error(`Source file not found: ${SOURCE}`);
+    process.exit(1);
+  }
+
+  const raw = JSON.parse(fs.readFileSync(SOURCE, "utf8"));
+  const allCards: SourceCard[] = raw.cards ?? [];
+
+  console.log(`\nSource: ${allCards.length} total cards`);
+
+  // ── Gate 1: bucket classification ──────────────────────────────────────────
+  const needsReview = allCards.filter(c => c.display_bucket === "NEEDS_REVIEW");
+  const supportingSource = allCards.filter(c => c.display_bucket === "SUPPORTING_SOURCE_ONLY");
+  const policyHubOpportunity = allCards.filter(
+    c => c.source_page_type === "POLICY_HUB" && c.listing_role === "PUBLIC_OPPORTUNITY"
+  );
+
+  console.log(`  NEEDS_REVIEW (withheld): ${needsReview.length}`);
+  console.log(`  SUPPORTING_SOURCE (withheld): ${supportingSource.length}`);
+  console.log(`  POLICY_HUB as opportunity (should be 0): ${policyHubOpportunity.length}`);
+
+  if (policyHubOpportunity.length > 0) {
+    failures.push({ gate: "POLICY_HUB_AS_OPPORTUNITY", detail: policyHubOpportunity.map(c => c.listing_id).join(", ") });
+  }
+
+  const publicCards = allCards.filter(c => PUBLIC_BUCKETS.has(c.display_bucket));
+  const imgCards = publicCards.filter(c => c.display_bucket === "READY_PUBLIC_IMG_RELEVANT");
+  const usCards = publicCards.filter(c => c.display_bucket === "READY_PUBLIC_US_STUDENT_ONLY");
+
+  console.log(`  Public (to promote): ${publicCards.length} (${imgCards.length} IMG + ${usCards.length} US-only)`);
+
+  if (publicCards.length !== 12) {
+    failures.push({ gate: "PUBLIC_COUNT", detail: `Expected 12, got ${publicCards.length}` });
+  }
+  if (imgCards.length !== 7) {
+    failures.push({ gate: "IMG_COUNT", detail: `Expected 7, got ${imgCards.length}` });
+  }
+  if (usCards.length !== 5) {
+    failures.push({ gate: "US_COUNT", detail: `Expected 5, got ${usCards.length}` });
+  }
+
+  // ── Gate 2: IMG bucket eligibility check ───────────────────────────────────
+  console.log("\n[Gate 2] IMG bucket eligibility check...");
+  for (const c of imgCards) {
+    const hasIntlOrImg = c.eligible_audiences.some(a =>
+      ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"].includes(a)
+    );
+    const adIntl = c.audience_detail?.international_student;
+    const adImg = c.audience_detail?.img_graduate;
+    if (!hasIntlOrImg && adIntl === "EXCLUDED_EXPLICIT" && adImg === "EXCLUDED_EXPLICIT") {
+      failures.push({
+        gate: "IMG_BUCKET_NO_INTL_ELIGIBILITY",
+        detail: `${c.listing_id}: in IMG bucket but has no intl/IMG in eligible_audiences`,
+      });
+    }
+  }
+
+  // ── Gate 3: US-only bucket exclusion check ─────────────────────────────────
+  console.log("[Gate 3] US-only bucket exclusion check...");
+  for (const c of usCards) {
+    const hasExclusion = c.excluded_audiences.some(a =>
+      ["INTERNATIONAL_STUDENT", "IMG_GRADUATE", "CARIBBEAN_STUDENT"].includes(a)
+    ) || c.restriction_tags.some(t => t.includes("IMG_EXCLUDED") || t.includes("VSLO"));
+    if (!hasExclusion) {
+      failures.push({
+        gate: "US_ONLY_BUCKET_NO_EXCLUSION",
+        detail: `${c.listing_id}: in US-only bucket but no exclusion signals found`,
+      });
+    }
+  }
+
+  // ── Gate 4: forbidden field scan ───────────────────────────────────────────
+  console.log("[Gate 4] Forbidden field scan...");
+  const promoted: PromotedCard[] = [];
+  for (const c of publicCards) {
+    const stripped = stripToAllowed(c);
+    const keyErrors = checkForbiddenFieldKeys(stripped as unknown as Record<string, unknown>);
+    if (keyErrors.length > 0) {
+      for (const e of keyErrors) {
+        failures.push({ gate: "FORBIDDEN_FIELD", detail: `${c.listing_id}: ${e}` });
+      }
+    } else {
+      promoted.push(stripped);
+    }
+  }
+
+  // ── Gate 5: string scan on output JSON ─────────────────────────────────────
+  console.log("[Gate 5] String scan on promoted output...");
+  const outputJson = JSON.stringify(promoted);
+  const stringForbidden = ["nppes_npi", "cms_facility_id", "\"npi\"", "\"ccn\"", "\"ein\"",
+    "\"aamc_id\"", "\"nrmp_id\"", "\"acgme_id\"", "completeness_score", "max_possible_score"];
+  for (const s of stringForbidden) {
+    if (outputJson.includes(s)) {
+      failures.push({ gate: "FORBIDDEN_STRING_IN_OUTPUT", detail: `String '${s}' found in promoted output` });
+    }
+  }
+
+  // ── Summary / fail fast ────────────────────────────────────────────────────
+  if (failures.length > 0) {
+    console.error(`\nFAILED — ${failures.length} gate(s):`);
+    failures.forEach(f => console.error(`  [${f.gate}] ${f.detail}`));
+    process.exit(1);
+  }
+
+  console.log("\nAll gates passed. Writing output files...");
+
+  const promotedAt = new Date().toISOString();
+
+  // Write JSON
+  const jsonOut = JSON.stringify({ promoted_at: promotedAt, source: "public_listing_cards_preview_v2.json", cards: promoted }, null, 2);
+  fs.writeFileSync(OUT_JSON, jsonOut, "utf8");
+  console.log(`  Written: ${OUT_JSON}`);
+
+  // Write TS
+  const tsOut = renderTs(promoted, promotedAt);
+  fs.writeFileSync(OUT_TS, tsOut, "utf8");
+  console.log(`  Written: ${OUT_TS}`);
+
+  console.log(`\nPromotion complete.`);
+  console.log(`  Cards promoted: ${promoted.length} (${imgCards.length} IMG + ${usCards.length} US-only)`);
+  console.log(`  NEEDS_REVIEW withheld: ${needsReview.length}`);
+  process.exit(0);
+}
+
+main();

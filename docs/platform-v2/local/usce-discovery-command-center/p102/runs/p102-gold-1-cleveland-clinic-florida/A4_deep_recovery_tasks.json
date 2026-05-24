@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-1-cleveland-clinic-florida",
+  "tasks": [
+    {
+      "taskId": "recovery_ccf_florida_campus_specific",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "All captured sources are on the enterprise my.clevelandclinic.org domain anchored to the Cleveland, Ohio main campus. Cleveland Clinic Florida (Weston) campus-specific elective/observership eligibility, application, fee, and coordinator details are not directly captured. The system-level elective page only references 'Train in Florida' at Weston without Florida-specific eligibility/duration/contact.",
+      "suggestedNarrowAction": "Targeted fetch of any clevelandcliniccfl.org / Florida-campus subpath for visiting student / elective / observership eligibility (do not broad-crawl)."
+    },
+    {
+      "taskId": "recovery_ccf_observership_specifics",
+      "missingFamily": "VISITING_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "Source src_42 references an observership pathway ('If you're a practicing physician or medical student from outside the U.S., consider applying for an observership') but no observership detail page (eligibility, fee, duration, contact, hands-on vs hands-off) was captured.",
+      "suggestedNarrowAction": "Targeted fetch of the linked observership detail page from the elective program landing for IMG observership eligibility and Florida applicability."
+    }
+  ],
+  "note": "A4 deep tasks are captured for future authorized invocation; not executed in P102-0F."
+}

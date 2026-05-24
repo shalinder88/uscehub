@@ -1,0 +1,2 @@
+pilot_selection_id,institution_name,blocker_type,blocker_detail,severity,resolution_path,notes
+,,NONE,No remaining validation blockers for DRAFT-stage gate,N/A,N/A,Both rows passed all 16 hard-fail rules. PNG capture remains a runtime-gate requirement (not a validation-gate requirement) and is enforced via `not_allowed_actions=NO_PNG_BYPASS_AT_RUNTIME` and `evidence_triple_complete=false`.

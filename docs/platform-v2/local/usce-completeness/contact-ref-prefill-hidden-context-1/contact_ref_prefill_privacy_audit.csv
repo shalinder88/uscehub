@@ -1,0 +1,22 @@
+risk,status,evidence,notes
+no_SSN_input_field,PASS,Form has no SSN input; endpoint denies via FORBIDDEN_PAYLOAD_KEYS_LOWER,Defense in depth
+no_passport_input_field,PASS,Form has no passport input; endpoint denies passport_* via denylist,
+no_visa_document_input,PASS,Form has no visa document or visa number input,
+no_medical_record_input,PASS,Form has no MRN or PHI input,
+no_payment_card_input,PASS,Form has no card_number / payment_token input,
+no_file_upload_at_all,PASS,grep for type="file" in client form returns empty (validator-enforced),
+endpoint_response_is_opaque,PASS,Endpoint never echoes which validator rule tripped — generic 400 / 404 / 200,
+client_error_message_is_opaque,PASS,On any non-2xx response client shows polite generic message; never echoes endpoint detail,
+no_internal_evidence_path_in_visible_context,PASS,Validator deep-scans displayInstitutionName / displayCityState for evidence path strings,
+no_token_or_secret_in_resolver_output,PASS,Validator deep-scans for PUBLIC_NOW / IMPORT_READY / BRIDGE_READY_TO_RUNTIME,
+no_ip_capture_added_at_endpoint,PASS,No new IP capture in this sprint; endpoint behavior unchanged,
+raw_user_message_handled_by_endpoint_sanitizer,PASS,Client passes user_message verbatim; endpoint redacts via correction-intake-redact,
+no_email_workflow_added,PASS,Sprint did not add any email send / SMTP wiring,
+endpoint_default_remains_disabled,PASS,USCE_CORRECTION_INTAKE_ENABLED env flag unchanged; endpoint returns 404 in default,
+url_params_contain_no_sensitive_fields,PASS,Resolver only reads listing_id / ref / runtime_source / evidence_join_key / page_path; everything else is silently dropped,
+malicious_html_in_query_params_rejected,PASS,SAFE_TOKEN_REGEX + page_path injection-character filter,
+oversized_query_param_rejected,PASS,MAX_*_LEN cap on every param,
+hidden_evidence_join_key_kept_internal,PASS,Field present as DOM hidden input but NOT in current intake payload (not in ALLOWED_PAYLOAD_KEYS),Future enabling would require adding to ALLOWED_PAYLOAD_KEYS at endpoint
+no_token_printing_in_terminal,PASS,No gh auth status -t in this sprint,
+no_T7_mutation,PASS,No file under /Volumes/T7Shield_Code/ touched,
+no_active_runtime_change,PASS,git status --short for src/data/usce/public-listings-pilot.generated.* is empty,

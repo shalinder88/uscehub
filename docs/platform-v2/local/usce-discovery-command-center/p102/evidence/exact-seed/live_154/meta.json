@@ -1,0 +1,44 @@
+{
+  "seedId": "live_154",
+  "institutionId": "inst_live_university_of_minnesota_medical_center",
+  "institutionName": "University of Minnesota Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Minneapolis",
+  "state": "MN",
+  "sourceUrl": "https://med.umn.edu/gme",
+  "sourceDomain": "med.umn.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Transplant, Pediatrics",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_4e5fe69558"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_154/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_154/cleaned.txt",
+  "sourceHash": "b9afe318516ba997b82045416e634cdf33fe35e32ceaf16b3d4eb0cd034e58cb",
+  "triage": {
+    "decision": "REJECT_GME_ONLY",
+    "reason": "GME-only page with no medical student/visiting signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T02:34:47.227Z"
+}

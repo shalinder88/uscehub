@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-6-mount-sinai-miami",
+  "institutionId": "inst_mount_sinai_medical_center_miami_beach_fl",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/medical-education",
+        "https://msmc.com/professional-education"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/medical-education",
+        "https://msmc.com/professional-education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/student-affairs"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/student-affairs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/visiting-student",
+        "https://msmc.com/visiting-students",
+        "https://msmc.com/international-students",
+        "https://msmc.com/medicine/international/international-programs/international-visiting-medical-students",
+        "https://msmc.com/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://msmc.com/education/visiting-medical-students",
+        "https://msmc.com/medical-education/visiting-students",
+        "https://msmc.com/students/visiting-students"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/visiting-student",
+        "https://msmc.com/visiting-students",
+        "https://msmc.com/international-students",
+        "https://msmc.com/medicine/international/international-programs/international-visiting-medical-students",
+        "https://msmc.com/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://msmc.com/education/visiting-medical-students",
+        "https://msmc.com/medical-education/visiting-students",
+        "https://msmc.com/students/visiting-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/observership",
+        "https://msmc.com/observer",
+        "https://msmc.com/clinical-observer"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/observership",
+        "https://msmc.com/observer",
+        "https://msmc.com/clinical-observer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/electives",
+        "https://msmc.com/away-rotations",
+        "https://msmc.com/clinical-elective",
+        "https://msmc.com/clinical-rotation",
+        "https://msmc.com/hcp-education-training/medical-students/elective",
+        "https://msmc.com/education/medical-student-electives",
+        "https://msmc.com/medical-education/medical-student-electives",
+        "https://msmc.com/medical-students/electives",
+        "https://msmc.com/medical-students/elective-rotations",
+        "https://msmc.com/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/electives",
+        "https://msmc.com/away-rotations",
+        "https://msmc.com/clinical-elective",
+        "https://msmc.com/clinical-rotation",
+        "https://msmc.com/hcp-education-training/medical-students/elective",
+        "https://msmc.com/education/medical-student-electives",
+        "https://msmc.com/medical-education/medical-student-electives",
+        "https://msmc.com/medical-students/electives",
+        "https://msmc.com/medical-students/elective-rotations",
+        "https://msmc.com/medical-students/clinical-electives"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/sub-internship",
+        "https://msmc.com/subinternship",
+        "https://msmc.com/acting-internship"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/sub-internship",
+        "https://msmc.com/subinternship",
+        "https://msmc.com/acting-internship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/student-research"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/student-research"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/shadow",
+        "https://msmc.com/shadowing",
+        "https://msmc.com/volunteer",
+        "https://msmc.com/volunteering"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/shadow",
+        "https://msmc.com/shadowing",
+        "https://msmc.com/volunteer",
+        "https://msmc.com/volunteering"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/graduate-medical-education",
+        "https://msmc.com/gme",
+        "https://msmc.com/medical-professionals/graduate-medical-education",
+        "https://msmc.com/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://msmc.com/education/undergraduate-medical-education",
+        "https://msmc.com/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/graduate-medical-education",
+        "https://msmc.com/gme",
+        "https://msmc.com/medical-professionals/graduate-medical-education",
+        "https://msmc.com/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://msmc.com/education/undergraduate-medical-education",
+        "https://msmc.com/graduate-medical-education/clerkship-programs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/residency"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/residency"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/fellowship"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/fellowship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/physician-careers"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/physician-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/provider-careers"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/provider-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/benefits"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/benefits"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/visa",
+        "https://msmc.com/immigration"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/visa",
+        "https://msmc.com/immigration"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/careers"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://msmc.com/observerships",
+        "https://msmc.com/medical-students",
+        "https://msmc.com/research",
+        "https://msmc.com/img",
+        "https://msmc.com/international-medical-graduates",
+        "https://msmc.com/credentialing",
+        "https://msmc.com/health-professionals",
+        "https://msmc.com/education",
+        "https://msmc.com/hcp-education-training",
+        "https://msmc.com/hcp-education-training/medical-students",
+        "https://msmc.com/hcp-education-training/medical-students/medical-student-observerships",
+        "https://msmc.com/medical-professionals",
+        "https://msmc.com/academic-institute",
+        "https://msmc.com/academic-institute/education",
+        "https://msmc.com/academic-institute/education/medical",
+        "https://msmc.com/academic-institute/education/medical/medical-student-rotations",
+        "https://msmc.com/medicine/international",
+        "https://msmc.com/medicine/international/international-programs",
+        "https://msmc.com/visiting-clerkships",
+        "https://msmc.com/visiting-clerkships/international",
+        "https://msmc.com/education-institute",
+        "https://msmc.com/education-institute/academic-visitor-program",
+        "https://msmc.com/education/medical-students"
+      ],
+      "acceptedSources": [
+        "https://msmc.com/observerships",
+        "https://msmc.com/medical-students",
+        "https://msmc.com/research",
+        "https://msmc.com/img",
+        "https://msmc.com/international-medical-graduates",
+        "https://msmc.com/credentialing",
+        "https://msmc.com/health-professionals",
+        "https://msmc.com/education",
+        "https://msmc.com/hcp-education-training",
+        "https://msmc.com/hcp-education-training/medical-students",
+        "https://msmc.com/hcp-education-training/medical-students/medical-student-observerships",
+        "https://msmc.com/medical-professionals",
+        "https://msmc.com/academic-institute",
+        "https://msmc.com/academic-institute/education",
+        "https://msmc.com/academic-institute/education/medical",
+        "https://msmc.com/academic-institute/education/medical/medical-student-rotations",
+        "https://msmc.com/medicine/international",
+        "https://msmc.com/medicine/international/international-programs",
+        "https://msmc.com/visiting-clerkships",
+        "https://msmc.com/visiting-clerkships/international",
+        "https://msmc.com/education-institute",
+        "https://msmc.com/education-institute/academic-visitor-program",
+        "https://msmc.com/education/medical-students"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_COMPLETE",
+    "tier3": "TIER_COVERAGE_COMPLETE"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 32,
+    "tier2AcceptedSources": 8,
+    "tier3AcceptedSources": 6
+  },
+  "generatedAt": "2026-05-15T22:09:51.094Z"
+}

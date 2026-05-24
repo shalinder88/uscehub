@@ -1,0 +1,46 @@
+{
+  "seedId": "live_125",
+  "institutionId": "inst_live_stanford_health_care",
+  "institutionName": "Stanford Health Care",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Stanford",
+  "state": "CA",
+  "sourceUrl": "https://med.stanford.edu/shctv/education/observership.html",
+  "sourceDomain": "med.stanford.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): Visiting Observer Program. Max 30 days in 12 months. Requires faculty host. Processing ~8 weeks. No ",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2 | cost: $1,500 for practicing physicians (some departments); varies by department",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_0ff7d7cd6e"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_125/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_125/cleaned.txt",
+  "sourceHash": "82db1f7a11deee53804d8015109f68af8b94105d9c145fcbd205fc95f1456d49",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:33:48.327Z"
+}

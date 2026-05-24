@@ -1,0 +1,146 @@
+# Run Report — The Brooklyn Hospital Center
+
+**Run ID:** `p102-1-trial-2-run-2`
+**Institution ID:** `inst_brooklyn_hospital_center_ny`
+**Location:** Brooklyn, NY
+**Parent system:** standalone
+**Official domains:** tbh.org
+**Queue:** `p102_trial_2`
+**Run window:** 2026-05-12T03:25:30.304Z → 2026-05-12T03:25:30.304Z
+
+## A0 deterministic probe
+
+- robots.txt: fetched (200) · advertised sitemaps: 0
+- sitemap.xml: fetched (200) · URLs found: 1006 · candidates kept: 96
+- Fixed-path probes: 59 attempted, **23 accepted** (HTTP 200 with HTML body)
+- JSON-LD records: 0
+
+## A1 source map — 23 accepted sources
+
+| Source family | Scope | URL |
+|---|---|---|
+| VOLUNTEER_PAGE | UNKNOWN_SCOPE | https://tbh.org/volunteer |
+| VOLUNTEER_PAGE | UNKNOWN_SCOPE | https://tbh.org/volunteering |
+| CAREERS_PAGE | CAREERS_PORTAL | https://tbh.org/careers |
+| VOLUNTEER_PAGE | UNKNOWN_SCOPE | https://www.tbh.org/how-to-help/how-volunteer/student-requirements |
+| VOLUNTEER_PAGE | UNKNOWN_SCOPE | https://www.tbh.org/how-to-help/how-volunteer/requirements |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/student-visitation |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/podiatry/externship |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/residents |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/certificate-insurance-coi-request |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/residents |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/program-requirements |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/scholarly-activities |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/schedules-vacation |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/pharmacy/overview-curriculum |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/apply |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/alumni |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/program-requirements |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/emergency-medicine/scholarly-activities |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/residents |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/apply |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/alumni |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/program-requirements |
+| GME_PAGE | DEPARTMENT_LEVEL | https://www.tbh.org/professional-medical-education/graduate-medical-education/internal-medicine/scholarly-activities |
+
+## A1.5 source completeness
+
+- searchCompletenessScore: **59%**
+- robotsChecked: true · sitemapChecked: true · jsonLdChecked: true
+- source families seen: VOLUNTEER_PAGE, CAREERS_PAGE, GME_PAGE
+- missing USCE source families: OBSERVERSHIP_PAGE, VISITING_STUDENT_PAGE, RESEARCH_PAGE
+- canProceedToA2: true
+
+## Claims (P102-0C deterministic extractor)
+
+- Total claims: **47**, all quote-verified: true
+  - HUMAN_REVIEW_REQUIRED: 1
+  - FUTURE_LANE_ONLY: 46
+
+| Visibility | Lane | Source | Quote (first 100 chars) |
+|---|---|---|---|
+| HUMAN_REVIEW_REQUIRED | NO_PUBLIC_OPPORTUNITY_FOUND | VOLUNTEER_PAGE | Requirements \| The Brooklyn Hospital CenterSkip to main contentSearchMain How to HelpABOUT TBHFFOUND… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | View all LocationsPATIENT / VISITOR SUPPORTAdmitting InformationBillingContact UsFood for Patients &… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | It is the program’s policy to offer an Observership experience to medical/surgical students in their… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | Podiatry Observership and Externship is also encouraged and permissible for students who may be inte… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | General Information
+Podiatry Observership may range from one to 10 days. |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | Student will be informed if date(s) are approved via email
+Students will not be remunerated for Obse… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | Request must be emailed to Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org
+Student… |
+| FUTURE_LANE_ONLY | IMG_OBSERVERSHIP | GME_PAGE | If not received, we cannot guarantee approval of dates
+Student assignments/schedule for Observership… |
+| FUTURE_LANE_ONLY | VISITING_MEDICAL_STUDENT | GME_PAGE | Request must be emailed to Maritza Garcia, Podiatry Residency Coordinator at mgarcia@tbh.org
+Student… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | View all LocationsPATIENT / VISITOR SUPPORTAdmitting InformationBillingContact UsFood for Patients &… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | View all LocationsPATIENT / VISITOR SUPPORTAdmitting InformationBillingContact UsFood for Patients &… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | View all LocationsPATIENT / VISITOR SUPPORTAdmitting InformationBillingContact UsFood for Patients &… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | John's University College of Pharmacy, Queens, NYImageMeagan Freel, PharmD
+PGY-1 Pharmacy Resident
+T… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | Prescriber Attitudes Toward Implementation of Pharmacogenomic Testing in a Family Medicine Residency… |
+| FUTURE_LANE_ONLY | RESIDENCY_PROGRAM_INFO | GME_PAGE | Prescriber Attitudes Toward Implementation of Pharmacogenomic Testing in a Family Medicine Residency… |
+| ... | ... | ... | (and 32 more) |
+
+## JSON-LD claims (P102-0K)
+
+- Total JSON-LD claims: 0
+
+## Negative evidence
+
+- Total negative claims: 0 (publicSafeNegative: 0)
+_(no explicit negative quotes found; absence-only outcomes are NO_PUBLIC_OPPORTUNITY_FOUND, not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY)_
+
+## Scope conflicts
+
+- Total: 0
+
+## A2.5 semantic-miss flags
+
+- **TRIGGERED** student_rotation_present: student + rotation keywords detected; visiting-student object extraction deferred to P102-1.
+- **TRIGGERED** elective_m4_present: elective + M4 keywords detected; elective object extraction deferred to P102-1.
+- **TRIGGERED** observer_shadow_present: observer/shadow keywords detected; observership object extraction deferred.
+- **TRIGGERED** volunteer_page_classification_pending: Volunteer page captured; positive/negative USCE classification deferred.
+- **clean** visa_signals_present: visa signals detected; visa object extraction deferred.
+- **TRIGGERED** faculty_apply_present: faculty + apply keywords detected; future-lane job object extraction deferred.
+- **clean** pdf_pending: PDF detected but text extraction pending; add pdf-parse in P102-0B if needed.
+- **clean** jsonld_not_reflected_in_source_map: JSON-LD captured in source_map sidecar; reflected in source records.
+
+## A3 hostile gate
+
+- **Verdict:** PASS_WITH_CAVEATS
+- publicSafe: false · futureLaneValue: HIGH
+- networkUsed: false · agentUsed: false
+- claims: PUBLIC_SAFE_USCE=0, CAUTION_SAFE=0, FUTURE_LANE_ONLY=46
+- hallucinationRisks: 0
+- quoteVerificationFailures: 0
+- missingCriticalFields: 0
+- requiredA4Tasks: 0
+- **Recommendation:** Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).
+
+## A4 focused-recovery tasks
+
+- Total tasks: 0
+
+## A5 continue-if-stuck decision
+
+- overallStatus: **RUN_COMPLETE**
+- recommendedAction: NONE_RUN_IS_COMPLETE
+
+## Cleaned-text v2 diagnostic (P102-0F)
+
+- v1 → v2 bytes: 169465 → 98862 (58% of v1)
+- reclassifications (URL-family → content-family): 13
+
+## Scores
+
+- searchCompletenessScore: 59
+- sourceConfidenceScore: 100
+- artifactCompletenessScore: 100
+- publicReadinessScore: 0
+- futureLaneValueScore: 50
+- hallucinationRiskScore: 0
+
+---
+_Report generated 2026-05-13T12:28:21.470Z by `scripts/p102-generate-run-report.ts`. Pure data transform; no network, no Agent._

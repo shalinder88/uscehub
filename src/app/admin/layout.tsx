@@ -29,6 +29,7 @@ const sidebarLinks = [
   { href: "/admin/reviews", label: "Reviews", icon: Star },
   { href: "/admin/flags", label: "Flags", icon: Flag },
   { href: "/admin/verification-queue", label: "Verification Queue", icon: ListChecks },
+  { href: "/admin/freshness", label: "Freshness", icon: ListChecks },
   { href: "/admin/activity", label: "Activity Log", icon: ScrollText },
 ];
 

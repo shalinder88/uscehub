@@ -2,13 +2,17 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import type { Prisma } from "@prisma/client";
 import { ListingFilters } from "@/components/listings/listing-filters";
-import { ListingCard } from "@/components/listings/listing-card";
+import { ListingCard, type SourceBadge } from "@/components/listings/listing-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import {
+  getActiveDisplayProgramNames,
+  findDisplayEligibleByName,
+} from "@/lib/p102-display-eligible-listings";
 
 export const metadata: Metadata = {
   title: "Browse Clinical Rotations, Research & Volunteer Opportunities",
@@ -30,6 +34,7 @@ interface BrowsePageProps {
     free?: string;
     visa?: string;
     verified?: string;
+    specialty?: string;
   }>;
 }
 
@@ -45,8 +50,19 @@ const CATEGORY_TYPES: Record<string, string[]> = {
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   const params = await searchParams;
 
+  // ── P102 Shape A cutover ────────────────────────────────────────────
+  // Constrain /browse to the operator-approved display-eligibility set.
+  // The seed already excludes hide-listed rows, but the truth layer is
+  // the canonical source of "what should appear" — this AND clause is
+  // defense in depth so any DB drift can't leak a row that shouldn't
+  // render.
+  const activeNames = [...getActiveDisplayProgramNames()];
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const conditions: any[] = [{ status: "APPROVED" }];
+  const conditions: any[] = [
+    { status: "APPROVED" },
+    { title: { in: activeNames } },
+  ];
 
   if (params.search) {
     conditions.push({
@@ -118,7 +134,7 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   else if (params.sort === "most-reviewed")
     orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { views: "desc" }];
 
-  const listings = await prisma.listing.findMany({
+  const rawListings = await prisma.listing.findMany({
     where: { AND: conditions },
     orderBy,
     include: {
@@ -128,6 +144,33 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
       },
     },
   });
+
+  // ── P102 Shape A: enrich each Prisma row with the truth-layer's
+  //    sourceBadge + specialtyLimited so <ListingCard> can render
+  //    the SOURCE pill and the SPECIALTY pill. Lookup is O(1) on
+  //    the adapter's cached index.
+  const enrichedListings = rawListings.map((listing) => {
+    const lookup = findDisplayEligibleByName(listing.title);
+    const sourceBadge: SourceBadge | undefined =
+      lookup?.row.badge === "DIRECT" ||
+      lookup?.row.badge === "REORIENTED" ||
+      lookup?.row.badge === "PROTECTED" ||
+      lookup?.row.badge === "RESEARCH"
+        ? (lookup.row.badge as SourceBadge)
+        : undefined;
+    return {
+      ...listing,
+      sourceBadge,
+      specialtyLimited: lookup?.row.specialtyLimited,
+    };
+  });
+
+  // ?specialty=only — show only rows the truth layer flagged as
+  // specialty-limited (BronxCare = Psychiatry, Carolinas = IM, etc.).
+  const listings =
+    params.specialty === "only"
+      ? enrichedListings.filter((l) => !!l.specialtyLimited)
+      : enrichedListings;
 
   return (
     <div className="bg-white dark:bg-slate-950">

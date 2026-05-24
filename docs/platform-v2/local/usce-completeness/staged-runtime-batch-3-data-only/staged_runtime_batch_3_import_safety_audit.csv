@@ -1,0 +1,16 @@
+check,result,evidence,notes
+batch_3_json_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-3.generated.json (14 cards),Generator wrote file
+batch_3_ts_exists,PASS,src/data/usce/public-listings-pilot-staged-batch-3.generated.ts,Generator wrote file
+no_app_imports_batch_3,PASS,grep -rln 'public-listings-pilot-staged-batch-3' src app pages components → 0 results outside generated TS/JSON itself,Validator import-safety grep also passes
+active_pilot_data_unchanged,PASS,git status --short src/data/usce/public-listings-pilot.generated.json → empty,Active runtime data not touched
+batch_2_staged_unchanged,PASS,git status --short src/data/usce/public-listings-pilot-staged-batch-2.generated.json → empty,Batch 2 staged data not touched
+clerkships_pilot_route_unchanged,PASS,git status --short src/app/clerkships/pilot → empty,Route untouched
+usce_pilot_data_lib_unchanged,PASS,git status --short src/lib/usce-pilot-data.ts → empty,Library untouched
+no_sitemap_or_nav_exposure,PASS,No app file imports the staged module,Sitemap/nav not touched
+production_main_unchanged,PASS,origin/main = 739ab1e232ecc52db1f10c8619bbdc1d409a190f (byte-identical to start of conversation),Production untouched throughout
+no_active_runtime_count_change,PASS,active_runtime_card_count = 5 in batch 3 metadata,Active runtime count preserved at 5
+batch_3_validator_passes,PASS,Overall: PASSED (validate-p99-staged-runtime-batch-3.ts),All 14 cards + safety flags + audience invariants
+no_banned_phrase,PASS,Validator deepStringWalk over all string fields,No guaranteed/hospital-approved/IMG-friendly/apply-through-USCEHub/nationwide
+no_forbidden_token,PASS,Validator scan for PUBLIC_NOW/IMPORT_READY/etc,Tokens absent except in safety-flag context
+us_only_invariant_for_new_7,PASS,All 7 new cards: us_md_do=ELIGIBLE_EXPLICIT + 3 non-US=EXCLUDED_EXPLICIT + LCME_AOA_ONLY tag,Per-row check in validator
+system_caveat_for_system_pages,PASS,Jackson/Northwestern/HUP/Methodist-SA campus_name contains system-level caveat,Validator cross-check

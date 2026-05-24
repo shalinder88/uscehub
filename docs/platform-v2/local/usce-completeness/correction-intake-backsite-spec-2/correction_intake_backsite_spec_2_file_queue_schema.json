@@ -1,0 +1,188 @@
+{
+  "schema_name": "usce_correction_file_queue_item_v1",
+  "schema_status": "DOCS_ONLY_SPEC_NOT_IMPLEMENTED",
+  "not_db_migration": true,
+  "not_active_runtime": true,
+  "purpose": "Defines the on-disk JSON shape used by a future file-based correction queue. The queue is a simple directory tree under an internal docs path; no database is implied. Read by reviewers via a CLI; never imported by app routes.",
+  "queue_root_path": "docs/platform-v2/local/usce-corrections/",
+  "queue_subpath_pattern": "inbox/YYYY/MM/<correction_id>.json",
+  "subdirectories": {
+    "inbox": "Newly received items pending triage. Status RECEIVED.",
+    "in_review": "Items under reviewer triage / source recheck.",
+    "needs_evidence": "Items awaiting additional evidence capture.",
+    "decided": "Items where a correction decision has been recorded.",
+    "staged_corrections": "Items whose decision has produced a staged runtime update (still NOT live).",
+    "closed": "Items resolved (NO_CHANGE, applied, withdrawn, rejected as spam).",
+    "archive": "Items past retention window (cold storage)."
+  },
+  "filename_convention": "<correction_id>.json — UUIDv4 hex without dashes; lowercase. e.g. 8f2a3b71b9c84e2da5e09a4d2f3a4c1d.json",
+  "required_queue_item_fields": [
+    "correction_id",
+    "schema_version",
+    "status",
+    "priority",
+    "listing_id",
+    "report_ref",
+    "runtime_set",
+    "issue_type",
+    "submitted_at",
+    "received_at",
+    "received_channel",
+    "user_message_redacted",
+    "source_context",
+    "evidence_join_key",
+    "assigned_reviewer",
+    "review_due_date",
+    "audit_log_path"
+  ],
+  "field_specs": {
+    "correction_id": {
+      "type": "string",
+      "format": "uuid-v4-hex-no-dashes",
+      "pattern": "^[0-9a-f]{32}$",
+      "required": true
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "v1",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "RECEIVED",
+        "TRIAGED",
+        "SOURCE_RECHECK_PENDING",
+        "SOURCE_RECHECK_COMPLETE",
+        "NEEDS_COPY_UPDATE",
+        "NEEDS_SOURCE_URL_UPDATE",
+        "NEEDS_DELIST",
+        "NO_CHANGE",
+        "NEEDS_INSTITUTION_CONFIRMATION_LATER",
+        "STAGED_CORRECTION",
+        "VALIDATED_CORRECTION",
+        "CLOSED"
+      ],
+      "required": true,
+      "notes": "Mirror status values in correction_intake_backsite_spec_2_queue_statuses.csv. Forbidden_status_tokens (PUBLIC_NOW / IMPORT_READY) are never valid."
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "P0_SAFETY_OR_LEGAL",
+        "P1_MATERIAL_ELIGIBILITY_OR_APPLICATION",
+        "P2_SOURCE_LINK_OR_FEE",
+        "P3_COPY_OR_MINOR",
+        "P4_SPAM_OR_UNACTIONABLE"
+      ],
+      "required": true
+    },
+    "listing_id": {
+      "type": "string",
+      "max_length": 120,
+      "required": true,
+      "notes": "Empty allowed only for pilot-feedback ref. Server-resolved against runtime maps before write."
+    },
+    "report_ref": {
+      "type": "string",
+      "required": true,
+      "notes": "Mirror enum from intake payload schema."
+    },
+    "runtime_set": {
+      "type": "string",
+      "enum": ["active", "staged", "bridge_draft", "maine", "unknown"],
+      "required": true
+    },
+    "issue_type": {
+      "type": "string",
+      "required": true,
+      "notes": "Mirror enum from intake payload schema."
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": true
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time-iso-z",
+      "required": true,
+      "notes": "Server-side timestamp."
+    },
+    "received_channel": {
+      "type": "string",
+      "enum": ["web_form", "email_relay", "manual_curator_entry"],
+      "required": true
+    },
+    "user_message_redacted": {
+      "type": "string",
+      "max_length": 4000,
+      "required": true,
+      "notes": "Server applies redaction pass before write: SSN-shaped strings, credit-card-shaped strings, passport-shaped strings, full email addresses other than user_email field replaced with [redacted]. Original is never persisted."
+    },
+    "source_context": {
+      "type": "object",
+      "required": true,
+      "notes": "Snapshot of the source_context provided by the user, intersected with the server-resolved runtime card source data."
+    },
+    "evidence_join_key": {
+      "type": "string",
+      "required": true,
+      "notes": "Equal to listing_id by convention. Used to look up evidence rows in the staged-runtime evidence join map."
+    },
+    "assigned_reviewer": {
+      "type": "string",
+      "required": false,
+      "notes": "Reviewer placeholder. Empty until triage."
+    },
+    "review_due_date": {
+      "type": "string",
+      "format": "date-iso",
+      "required": false,
+      "notes": "Set on TRIAGED status based on priority."
+    },
+    "audit_log_path": {
+      "type": "string",
+      "required": true,
+      "notes": "Relative path under queue_root_path/audit/<correction_id>.jsonl"
+    }
+  },
+  "forbidden_fields_in_queue_item": "Mirror the intake payload schema's forbidden_fields list. Any present field of these names causes the write to be rejected and the inbound payload to be discarded.",
+  "transition_rules": {
+    "allowed_state_transitions": [
+      "RECEIVED -> TRIAGED",
+      "TRIAGED -> SOURCE_RECHECK_PENDING",
+      "SOURCE_RECHECK_PENDING -> SOURCE_RECHECK_COMPLETE",
+      "SOURCE_RECHECK_COMPLETE -> NEEDS_COPY_UPDATE",
+      "SOURCE_RECHECK_COMPLETE -> NEEDS_SOURCE_URL_UPDATE",
+      "SOURCE_RECHECK_COMPLETE -> NEEDS_DELIST",
+      "SOURCE_RECHECK_COMPLETE -> NO_CHANGE",
+      "SOURCE_RECHECK_COMPLETE -> NEEDS_INSTITUTION_CONFIRMATION_LATER",
+      "NEEDS_COPY_UPDATE -> STAGED_CORRECTION",
+      "NEEDS_SOURCE_URL_UPDATE -> STAGED_CORRECTION",
+      "NEEDS_DELIST -> STAGED_CORRECTION",
+      "STAGED_CORRECTION -> VALIDATED_CORRECTION",
+      "VALIDATED_CORRECTION -> CLOSED",
+      "NO_CHANGE -> CLOSED",
+      "NEEDS_INSTITUTION_CONFIRMATION_LATER -> CLOSED",
+      "TRIAGED -> CLOSED (spam / unactionable)",
+      "RECEIVED -> CLOSED (forbidden field present at intake; written-out only as a counter, never as content)"
+    ],
+    "forbidden_transitions": [
+      "* -> RECEIVED (cannot regress)",
+      "CLOSED -> *",
+      "Any transition that skips SOURCE_RECHECK_PENDING when the priority is P0 or P1"
+    ]
+  },
+  "concurrency_spec": {
+    "write_lock": "Per-file lock at write time using `<file>.lock` sentinel. CLI tools must acquire-then-release.",
+    "read_safety": "Reads always full-file; partial reads forbidden.",
+    "no_partial_writes": "Use temp-file-then-rename pattern."
+  },
+  "what_this_spec_does_not_do": [
+    "Implement the file queue",
+    "Implement an HTTP endpoint",
+    "Modify any UI",
+    "Promote any listing"
+  ]
+}

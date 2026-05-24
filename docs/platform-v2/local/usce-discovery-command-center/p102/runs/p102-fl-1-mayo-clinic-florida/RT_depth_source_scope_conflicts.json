@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-1-mayo-clinic-florida",
+  "depthPass": "SOURCE_SCOPE_CONFLICTS",
+  "conflicts": [
+    {
+      "sourceUrl": "https://mayoclinic.org/education",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "detectedLane": "VISITING_MEDICAL_STUDENT",
+      "reason": "Visiting-student keyword detected on HEALTH_SYSTEM_LEVEL source.",
+      "recommendedAction": "Find campus-specific source or treat as system-level"
+    }
+  ],
+  "unresolveds": [
+    "https://mayoclinic.org/education: Find campus-specific source or treat as system-level"
+  ]
+}

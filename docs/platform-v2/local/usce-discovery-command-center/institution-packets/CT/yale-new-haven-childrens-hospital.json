@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-4",
+  "sprint": "P101-4",
+  "institution": {
+    "name": "Yale New Haven Children's Hospital",
+    "aliases": ["Yale-New Haven Children's Hospital", "YNHCH", "YNHH Children's"],
+    "city": "New Haven",
+    "state": "CT",
+    "officialDomain": "ynhh.org",
+    "institutionType": "academic_medical_center_specialty_pediatric",
+    "healthSystem": "Yale New Haven Health",
+    "academicAffiliation": "Yale School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 74 (queue-4-national-screening-resume); CT first P101 packet"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Yale New Haven Children's Hospital",
+    "name": "Yale New Haven Children's Hospital",
+    "aliases": ["YNHCH", "YNHH Children's"],
+    "officialDomains": ["ynhh.org", "medicine.yale.edu"],
+    "city": "New Haven",
+    "state": "CT",
+    "institutionType": "academic_medical_center_specialty_pediatric",
+    "academicAffiliation": "Yale School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 74 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["ynhh.org", "medicine.yale.edu"],
+    "searchTermsTried": [
+      "yale new haven children's visiting medical student",
+      "yale visiting student",
+      "yale international visiting student",
+      "yale VSLO",
+      "yale pediatric elective"
+    ],
+    "pagesOpened": [
+      "https://medicine.yale.edu",
+      "https://medicine.yale.edu/md-program/visiting-students/",
+      "https://medicine.yale.edu/md-program/visiting-students/international/"
+    ],
+    "rejectedPages": [
+      {"url": "https://medicine.yale.edu/registrar/visiting/", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://medicine.yale.edu/education/visiting", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Yale SOM medicine.yale.edu accessible; visiting-student pages return clean content. Yale-New Haven Children's Hospital pediatric rotations exist under Yale SOM's elective catalog but the SOM-level page is the canonical visiting-student gate.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/",
+      "pageTitle": "Visiting Student Programs | Yale School of Medicine",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "204e437518d93f7a0ee508498ffb75688933717a86b5f0240c20b9df6da86299",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/cleaned-text/7d0fc5ac2916f8d1.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/source-pages/7d0fc5ac2916f8d1.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/metadata/7d0fc5ac2916f8d1.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Yale SOM Visiting Student Programs hub; LCME/COCA-accredited US MD/DO. Four-week rotations only, max three. No observerships. Direct email to faculty not permitted."
+    },
+    {
+      "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/international/",
+      "pageTitle": "International Visiting Students | Yale School of Medicine",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "f8f212776a518f4e2f64a19d4059e50eacc9550397c9631f3f29d416ab5a793f",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/cleaned-text/6eb11781c54547c7.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/source-pages/6eb11781c54547c7.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/metadata/6eb11781c54547c7.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "INTERNATIONAL_VISITING_STUDENT_HUB",
+      "captureNotes": "Yale SOM International Visiting Students page; tuition $4,775/4-week, $9,550/8-week, $14,325/12-week; TOEFL/IELTS/OET/CAE required for non-native English speakers; 120-day documentation deadline; final-year only with completed core clerkships; receives 450-500 applications annually, accepts ~100."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/international/",
+      "pageTitle": "International Visiting Students | Yale School of Medicine",
+      "sourcePageType": "INTERNATIONAL_VISITING_STUDENT_HUB",
+      "shortQuote": "Students must be in their final year of medical studies or completed their core clerkships. Students must be proficient in the English language.",
+      "quoteSupports": ["audience", "english_requirement"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT",
+      "applicationDecision": "VSLO_AAMC",
+      "costDecision": "STATED_VERBATIM_NUMBER",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "FOUR_WEEK_BLOCKS_ONLY_MAX_THREE_DIFFERENT_SPECIALTIES",
+      "specialtyDecision": "Anesthesiology, Dermatology, Emergency Medicine, Family Medicine, Neurology, Pediatrics, Psychiatry, Surgery (per elective catalog)",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_PARENT_SOM",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FINAL_YEAR_OR_POST_CORE_CLERKSHIP_ONLY",
+        "ENGLISH_PROFICIENCY_REQUIRED_TOEFL_IELTS_OET_CAE",
+        "120_DAY_DOCUMENTATION_DEADLINE_BEFORE_START",
+        "TUITION_STATED_VERBATIM_4775_PER_4_WEEK",
+        "MIN_LIVING_EXPENSES_2240_PER_MONTH_EXCLUDING_HOUSING",
+        "NO_OBSERVERSHIPS_OFFERED",
+        "FIRST_ROTATION_BLOCKS_NOT_AVAILABLE_MID_JUNE_AND_JANUARY",
+        "ONLY_THREE_4_WEEK_ELECTIVES_MAX_DIFFERENT_SPECIALTIES",
+        "VISA_NOT_DISCUSSED_ON_PAGE",
+        "DEANS_LETTER_AND_CLINICAL_FACULTY_LOR_REQUIRED",
+        "AAMC_STANDARDIZED_IMMUNIZATION_FORM_REQUIRED_CHEST_XRAY_IF_PPD_POSITIVE",
+        "QUANTITATIVE_HEPATITIS_B_SURFACE_ANTIBODY_TITER_REQUIRED",
+        "PROOF_OF_HEALTH_INSURANCE_REQUIRED_UPON_ACCEPTANCE",
+        "YNHCH_PEDIATRIC_ROTATIONS_NOT_EXPLICITLY_NAMED_BUT_PEDIATRICS_IN_CATALOG"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_LCME_FINAL_YEAR", "quote": "students in their final year of medical studies, who are in good standing in medical school at either a U.S. LCME accredited medical school", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_COCA_AACOM_VIA_VSLO", "quote": "participating COCA accredited AACOM member college listed in the AAMC Visiting Student Learning Opportunities (VSLO) program", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "ELIGIBLE_EXPLICIT_INTERNATIONAL_PAGE", "quote": "Students must be in their final year of medical studies or completed their core clerkships", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE_FINAL_YEAR_ENROLLED_IMPLIED", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FINAL_YEAR_OR_POST_CORE_CLERKSHIP", "quote": "Students must be in their final year of medical studies or completed their core clerkships", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_AND_IN_GOOD_STANDING", "quote": "Students must be in good standing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "ENGLISH_PROFICIENCY_REQUIRED_TOEFL_IELTS_OET_CAE", "quote": "A record of student TOEFL scores is REQUIRED if student is a non-native English speaker", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "application_pathway", "value": "VSLO_AAMC_NO_DIRECT_FACULTY_OUTREACH", "quote": "you must follow the application process described—and not, for example, reach out directly to faculty", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "https://students-residents.aamc.org/visiting-student-learning-opportunities/visiting-student-learning-opportunities-vslo", "quote": "AAMC Visiting Student Learning Opportunities (VSLO) website", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "FEBRUARY_FIRST_SEMESTER_SEPTEMBER_SECOND_SEMESTER", "quote": "Applications open in February (for first semester) and September (for second semester)", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "RECOMMEND_6_MONTHS_BEFORE_START_LATEST_4_MONTHS_PRIOR_120_DAY_DOCUMENTS", "quote": "We recommend that you submit your application six months before the start of your chosen elective start date. The latest you can apply is four months prior to the start of the desired elective.", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "4775_PER_4_WEEK_9550_PER_8_WEEK_14325_PER_12_WEEK_USD_2026_2027", "quote": "Four weeks = $4,775 USD; eight weeks = $9,550 USD; twelve weeks = $14,325 USD", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE_OFF_CAMPUS_RESOURCE_LINKED", "quote": "See this website for information on off-campus housing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "cost_other", "value": "MIN_LIVING_EXPENSES_2240_USD_PER_MONTH_EXCLUDING_HOUSING", "quote": "We estimate that minimum living expenses for a month in New Haven will amount to at least $2,240, excluding the cost of housing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "duration", "value": "FOUR_WEEK_BLOCKS_ONLY_MAX_THREE_DIFFERENT_SPECIALTIES", "quote": "Four (4) week periods only for visiting medical students; up to three (3) four (4) week electives but these electives must be in different specialties", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "ANESTHESIOLOGY_DERMATOLOGY_EMERGENCY_FAMILY_NEUROLOGY_PEDIATRICS_PSYCHIATRY_SURGERY_AND_OTHERS_PER_CATALOG", "quote": "Anesthesiology, Dermatology, Emergency Medicine, Family Medicine, Neurology, Pediatrics, Psychiatry, Surgery", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "HANDS_ON_NO_OBSERVERSHIPS", "quote": "we do not offer observerships to visiting students", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "CLINICAL_FACULTY_LOR_REQUIRED", "quote": "Clinical faculty letter of recommendation (original signature, official stationery, English)", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_PAGE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "REQUIRED_CLINICAL_TRAINING_AGREEMENT_VIA_VSLO", "quote": "the accepted students' home institution will need to complete a required Clinical Training Agreement", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "AAMC_STANDARDIZED_FORM_CHEST_XRAY_PPD_POSITIVE_HEPB_TITER", "quote": "AAMC Standardized Immunization Form (English; chest X-ray if PPD positive; quantitative hepatitis B surface antibody titer required)", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "global.health@yale.edu", "quote": "General Questions (US students—elective options): global.health@yale.edu", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "OFF_CAMPUS_RESOURCE_LINKED_NO_ON_CAMPUS_DETAILS", "quote": "See this website for information on off-campus housing", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/", "notStatedOnSource": false},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "VSLO_APP_DEANS_LETTER_TRANSCRIPT_CV_CLINICAL_LOR_AAMC_IMMUNIZATION_HEALTH_INSURANCE_PERSONAL_STATEMENT_TOEFL_IELTS_OET_CAE", "quote": "VSLO application; Dean's letter; transcript; CV; clinical faculty LOR; AAMC Immunization Form; health insurance proof; personal statement; TOEFL/IELTS/OET/CAE", "quoteUrl": "https://medicine.yale.edu/md-program/visiting-students/international/", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "INTERNATIONAL_MS", "FINAL_YEAR_ONLY", "MS4_ONLY"],
+    "application": ["VSLO", "SCHOOL_APPROVAL_REQUIRED", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "SUB_INTERNSHIP", "HANDS_ON", "NO_OBSERVERSHIP"],
+    "cost": ["COST_STATED", "TUITION_FEE", "HIGH_COST"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Yale-New Haven Children's Hospital pediatric electives are governed by Yale SOM's Visiting Student Programs, accepting US MD/DO and international final-year students via VSLO at $4,775 per 4-week block.",
+    "whoThisIsFor": "Final-year medical students at LCME-accredited US MD schools, COCA-accredited US DO schools, or international medical schools (with English proficiency), who have completed core clerkships and apply via VSLO at least 4-6 months in advance.",
+    "whoThisIsNotFor": "IMG graduates seeking observerships (Yale does not offer observerships); pre-clinical students; students without English proficiency / TOEFL/IELTS/OET/CAE.",
+    "howToApply": "Apply through VSLO (applications open February for first semester, September for second). Submit dean's letter, transcript, CV, clinical faculty LOR, AAMC immunization form, health insurance proof, personal statement, and (for non-native English speakers) TOEFL/IELTS/OET/CAE scores. All documents required 120 days before start; home institution must complete VSLO Clinical Training Agreement upon acceptance.",
+    "estimatedCostSummary": "Tuition: $4,775 USD per 4 weeks ($9,550 per 8 weeks; $14,325 per 12 weeks) for the 2026-2027 academic year. Minimum living expenses approximately $2,240/month excluding housing.",
+    "keyCaveats": [
+      "Final-year only with completed core clerkships",
+      "English proficiency required for non-native speakers (TOEFL/IELTS/OET/CAE)",
+      "Four-week blocks only; max three blocks in different specialties",
+      "No observerships offered to visiting students",
+      "First rotation blocks (mid-June and January) not available to visiting students",
+      "Yale receives 450-500 international applications annually, accepts ~100",
+      "Yale-New Haven Children's Hospital not explicitly named as rotation site on visiting page; Pediatrics is a listed specialty in the elective catalog and YNHCH is the Yale SOM pediatric teaching hospital",
+      "Visa specifics not stated on source; international applicants likely require B-1 or J-1; institutional inquiry advised"
+    ],
+    "whyWeClassifiedItThisWay": "Yale SOM explicitly publishes an international visiting student program with verbatim tuition figures, English proficiency requirements, 120-day documentation deadline, dean's letter requirement, and AAMC immunization form. Page covers students from foreign medical schools who are final-year and in good standing.",
+    "sourceTransparencyNote": "Both Yale SOM visiting-student pages (main + international) captured to T7 canonical capsule with real SHA-256 hashes.",
+    "possibleListingTitle": "Yale-New Haven Children's Hospital (via Yale SOM Visiting Student Programs) — International MS4 Eligible, $4,775/4-week",
+    "possibleMetaDescription": "Pediatric and other electives at Yale-New Haven Children's Hospital are available via Yale SOM Visiting Student Programs — VSLO-only, international students eligible, $4,775 per 4-week tuition, English proficiency required.",
+    "suggestedFilters": ["international_eligible", "vslo_only", "specialty_pediatric", "tuition_high"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "yale new haven children's visiting medical student",
+      "yale visiting student",
+      "yale international visiting student",
+      "yale VSLO"
+    ],
+    "pagesOpened": [
+      "https://medicine.yale.edu",
+      "https://medicine.yale.edu/md-program/visiting-students/",
+      "https://medicine.yale.edu/md-program/visiting-students/international/"
+    ],
+    "rejectedPages": [
+      {"url": "https://medicine.yale.edu/registrar/visiting/", "reason": "DEAD_LINK_404"},
+      {"url": "https://medicine.yale.edu/education/visiting", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicLaneReason": "Not applicable — international visiting student lane found with verbatim cost and eligibility detail.",
+    "whetherNegativeEvidenceStrong": "STRONG positive evidence; YNHCH-specific rotation listings not retrieved this sprint (Pediatrics is a catalog specialty, YNHCH is Yale SOM pediatric teaching hospital, but per-elective listing wasn't captured).",
+    "futureRetrySuggestion": "Fetch Yale's Elective/Subinternship Listing at /md-program/curriculum/advancedtraining/clinicalelectives/electivecataloglisting to confirm specific YNHCH pediatric electives. Fetch Yale's Elective Policy for Visiting Medical Students for visa and background-check specifics."
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "f8f212776a518f4e2f64a19d4059e50eacc9550397c9631f3f29d416ab5a793f",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/cleaned-text/6eb11781c54547c7.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/CT/yale-new-haven-childrens-hospital/source-pages/6eb11781c54547c7.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["cost_tuition_or_program_fee", "application_window", "min_living_expenses"],
+    "changeRisk": "HIGH",
+    "notes": "Tuition explicitly noted as subject to increase with every new academic year; recheck before each new application cycle."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Connecticut gained its first P101 packet via Yale-New Haven Children's Hospital, with verbatim international student tuition ($4,775/4-week), English proficiency requirements, and dual SHA-256 hashes on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

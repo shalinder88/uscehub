@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-5",
+  "sprint": "P101-5",
+  "intendedP1014PacketNumber": 10,
+  "institution": {
+    "name": "Tampa General Hospital",
+    "aliases": ["TGH"],
+    "city": "Tampa",
+    "state": "FL",
+    "officialDomain": "tgh.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Tampa General Hospital",
+    "academicAffiliation": "USF Health Morsani College of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 79 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Tampa General Hospital",
+    "name": "Tampa General Hospital",
+    "aliases": ["TGH"],
+    "officialDomains": ["tgh.org", "health.usf.edu"],
+    "city": "Tampa",
+    "state": "FL",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "USF Morsani COM",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 79"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["tgh.org", "health.usf.edu"],
+    "searchTermsTried": [
+      "tampa general visiting medical student elective",
+      "USF Morsani visiting student",
+      "USF VSLO",
+      "tampa general elective",
+      "USF Morsani away rotation",
+      "USF visiting medical student"
+    ],
+    "pagesOpened": [
+      "https://health.usf.edu/medicine",
+      "https://health.usf.edu/medicine/mdprogram/eduprograms"
+    ],
+    "rejectedPages": [
+      {"url": "https://health.usf.edu/medicine/visiting-students", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://health.usf.edu/medicine/mdprogram/visiting-students", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "USF Health Morsani COM domain accessible; MD Program navigation lists Overview, Core, SELECT, 7-Year — no visiting-student / elective / observership / VSLO entry. USF Health phone 813-396-9459 is public contact.",
+    "stopCondition": "NO_PUBLIC_USCE_LANE_FOUND_ON_PUBLIC_NAVIGATION"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms",
+      "pageTitle": "MD Program Educational Programs | USF Morsani COM",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "02d7967b41fe7fc4f9b1216583f40b8cf9a3fad0353ceb840bfdca805ff6d947",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/tampa-general-hospital/cleaned-text/12051ce3821950a0.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/tampa-general-hospital/source-pages/12051ce3821950a0.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/tampa-general-hospital/metadata/12051ce3821950a0.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "MEDICAL_STUDENT_PROGRAMS_HUB",
+      "captureNotes": "USF Morsani MD Program educational programs page lists MD, SELECT MD, 7-Year BS/MD — no visiting-student or elective entry surfaced. Public contact: 813-396-9459."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms",
+      "pageTitle": "MD Program Educational Programs | USF Morsani COM",
+      "sourcePageType": "MEDICAL_STUDENT_PROGRAMS_HUB",
+      "shortQuote": "MD Program; SELECT MD Program; 7-Year BS/MD Program",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "NO_VISITING_STUDENT_LANE_PUBLICLY_PRESENT",
+      "applicationDecision": "NO_PATHWAY_DISCLOSED",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "NO_TIER_NO_CANDIDATE",
+      "classification": "NO_PUBLIC_USCE_LANE_FOUND",
+      "caveats": [
+        "VISITING_STUDENT_LANE_NOT_PUBLICLY_SURFACED_ON_USF_MORSANI_PUBLIC_NAVIGATION",
+        "EXPECTED_URL_PATTERNS_404",
+        "QUEUED_FOR_FUTURE_RETRY_ON_VSLO_CATALOG_AND_DIRECT_INQUIRY_813_396_9459"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "application_url", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_PUBLIC_PAGES", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "USF_HEALTH_MORSANI_COM_813_396_9459", "quote": "813-396-9459", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://health.usf.edu/medicine/mdprogram/eduprograms", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["DETAILS_BY_COORDINATOR"],
+    "experienceType": ["UNCLEAR_HANDS_ON_STATUS"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["SCHOOL_LEVEL_SOURCE", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED", "NEEDS_MANUAL_RETRY"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "USF Morsani COM public navigation does not surface a visiting medical student program; Tampa General is the teaching hospital but no public visiting lane was discoverable.",
+    "whoThisIsFor": "No public visiting-student pathway is disclosed on USF Morsani's public pages. Prospective students should contact USF Health Morsani COM at 813-396-9459.",
+    "whoThisIsNotFor": "Visiting medical students seeking a Tampa General-direct public application path — none disclosed.",
+    "howToApply": "Not disclosed publicly. Contact USF Health Morsani COM directly at 813-396-9459. VSLO catalog should also be searched for Tampa General rotations.",
+    "estimatedCostSummary": "No visiting-student cost figures published.",
+    "keyCaveats": [
+      "No public visiting-student lane on USF Morsani public pages",
+      "MD Program educational programs page lists MD/SELECT/7-Year only — no visiting-student entry",
+      "USF Morsani public contact 813-396-9459",
+      "VSLO catalog and direct inquiry queued for future retry"
+    ],
+    "whyWeClassifiedItThisWay": "Two expected USF Morsani visiting-student URL patterns 404'd. Public navigation lists only enrolled-student MD program tracks. Classification reflects honest absence of a publicly-discoverable visiting-student lane.",
+    "sourceTransparencyNote": "Cleaned text of USF Morsani MD Program educational programs page captured to T7 canonical capsule with real SHA-256 hash.",
+    "possibleListingTitle": "Tampa General Hospital — No Public Visiting-Student Lane on USF Morsani Public Pages",
+    "possibleMetaDescription": "Tampa General Hospital visiting-student lane is not publicly disclosed on USF Morsani COM public pages; contact USF Health at 813-396-9459.",
+    "suggestedFilters": ["no_public_lane", "manual_retry_queued"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "tampa general visiting medical student elective",
+      "USF Morsani visiting student",
+      "USF VSLO",
+      "tampa general elective",
+      "USF Morsani away rotation",
+      "USF visiting medical student"
+    ],
+    "pagesOpened": [
+      "https://health.usf.edu/medicine",
+      "https://health.usf.edu/medicine/mdprogram/eduprograms"
+    ],
+    "rejectedPages": [
+      {"url": "https://health.usf.edu/medicine/visiting-students", "reason": "DEAD_LINK_404"},
+      {"url": "https://health.usf.edu/medicine/mdprogram/visiting-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "USF Morsani public navigation does not surface a visiting student program; two expected URL patterns 404'd.",
+    "noPublicLaneReason": "USF Morsani public navigation does not surface a visiting student program; two expected URL patterns 404'd.",
+    "whetherNegativeEvidenceStrong": "MODERATE — public navigation thoroughly checked but VSLO catalog and institutional inquiry not yet performed.",
+    "futureRetrySuggestion": "Check VSLO catalog at AAMC for Tampa General / USF Morsani rotations. Direct inquiry to USF Health at 813-396-9459.",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 2
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "02d7967b41fe7fc4f9b1216583f40b8cf9a3fad0353ceb840bfdca805ff6d947",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/tampa-general-hospital/cleaned-text/12051ce3821950a0.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/tampa-general-hospital/source-pages/12051ce3821950a0.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["md_program_index", "newly_added_visiting_student_program_if_introduced"],
+    "changeRisk": "LOW",
+    "notes": "Hash anchors the USF Morsani MD Program educational programs page."
+  },
+  "finalClassification": "NO_PUBLIC_USCE_LANE_FOUND",
+  "finalTier": "NO_TIER_NO_CANDIDATE",
+  "driftCheck": "This advanced national USCE discovery because Tampa General's absence of a publicly-discoverable visiting-student lane on USF Morsani COM public navigation was documented honestly with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

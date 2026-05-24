@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_002",
+  "institutionId": "inst_live_loyola_university_medical_center",
+  "institutionName": "Loyola University Medical Center",
+  "parentSystem": "Loyola Medicine",
+  "campus": "",
+  "city": "Maywood",
+  "state": "IL",
+  "sourceUrl": "https://www.luc.edu/stritch/regrec/students/visitingstudents/",
+  "sourceDomain": "luc.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Loyola University Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for dead ssom.luc.edu/gme/ — VSLO visiting students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "LCME/COCA students via VSLO",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_5697b5a0a6"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_002/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_002/cleaned.txt",
+  "sourceHash": "9a23ca6a8dd17ea65969c8b5956c2bccb28f2593b547e7aaca3d0ab23c9cf4d4",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:36:45.180Z"
+}

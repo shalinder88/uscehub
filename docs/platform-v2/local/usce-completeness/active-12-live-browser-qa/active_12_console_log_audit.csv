@@ -1,0 +1,7 @@
+source,route,level,message_or_count,blocking_for_active_12,notes
+preview_console_logs,(any),error,0,NO,No client-side console errors observed during session
+preview_console_logs,(any),warn,0,NO,No client-side warnings observed
+preview_logs,/clerkships/pilot,info,4x 200 responses,NO,All in 66-700ms range
+preview_logs,/contact?ref=pilot-listing&listing_id=pilot-020...,info,3x 200,NO,All 200
+preview_logs,/contact?ref=pilot-listing&listing_id=pilot-021...,info,2x 200,NO,All 200
+preview_logs,/,error,Prisma EMAXCONNSESSION (max pool 15) on src/app/page.tsx and src/components/seo/program-stats.tsx,NO_PRE_EXISTING_NOT_RELATED_TO_ACTIVE_12,Postgres connection-pool exhaustion on homepage stack; the pilot route never touches Prisma. Pre-existing; not introduced by overnight work. Flagged for separate sprint.

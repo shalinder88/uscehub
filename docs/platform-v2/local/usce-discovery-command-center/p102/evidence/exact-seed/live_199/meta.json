@@ -1,0 +1,44 @@
+{
+  "seedId": "live_199",
+  "institutionId": "inst_live_vanderbilt_university_medical_center",
+  "institutionName": "Vanderbilt University Medical Center",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Nashville",
+  "state": "TN",
+  "sourceUrl": "https://www.vumc.org/observational-services/welcome-vanderbilt-observational-experience-voe-program",
+  "sourceDomain": "www.vumc.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Surgery, Cardiology, Oncology",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_309d5bffe1"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_199/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_199/cleaned.txt",
+  "sourceHash": "ea9faea05f2f98b5734bd75f4d1aa6ac4433f91b5302afccd3d227cdf0780634",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T02:36:20.939Z"
+}

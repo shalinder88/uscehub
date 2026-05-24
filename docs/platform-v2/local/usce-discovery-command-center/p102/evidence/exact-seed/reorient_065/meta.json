@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_065",
+  "institutionId": "inst_live_msk_intl_obs",
+  "institutionName": "Memorial Sloan Kettering — International Observership",
+  "parentSystem": "MSK",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://www.mskcc.org/hcp-education-training/international/observership",
+  "sourceDomain": "mskcc.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Oncology",
+  "expectedCampus": "Memorial Sloan Kettering Cancer Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "MSK International Observership (NOT for IMGs in US; for foreign-employed physicians only)",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "30 days max; faculty host required",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_fd243cc7f6"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_065/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_065/cleaned.txt",
+  "sourceHash": "b3c5bf98dd69575606d3b940e2e24e9a1ea002d23cfadec67bf5af79a3a88fa2",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 6,
+  "fetchedAt": "2026-05-17T03:38:59.658Z"
+}

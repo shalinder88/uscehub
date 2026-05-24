@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Howard University Hospital",
+    "aliases": [
+      "HUH",
+      "Howard University College of Medicine — visiting students lane (covering HUH placement)"
+    ],
+    "city": "Washington",
+    "state": "DC",
+    "officialDomain": "huhealthcare.com",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Howard University Health Sciences (HBCU academic affiliate)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 30 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medicine.howard.edu",
+      "huhealthcare.com"
+    ],
+    "searchTermsTried": [
+      "Howard University College of Medicine visiting medical student elective international observership site:howard.edu",
+      "Howard University College of Medicine visiting fourth year VSLO elective application LCME",
+      "Howard COM VSLO",
+      "Howard visiting student rotation",
+      "Howard medicine fourth year elective",
+      "Howard schedules booklet",
+      "Howard policies procedures manual"
+    ],
+    "pagesOpened": [
+      "http://medicine.howard.edu/about-us/student-affairs/pipeline-programs/visiting-students",
+      "https://medicine.howard.edu/education/graduate-medical-education-gme/residency/dermatology/visiting-student-rotation",
+      "https://medicine.howard.edu/sites/medicine.howard.edu/files/2026-02/HU%20College%20of%20Medicine%20Schedules%20Booklet%202025-2026%20.pdf",
+      "https://medicine.howard.edu/academics/medical-doctor-md-program",
+      "https://medicine.howard.edu/admission-aid/requirements-procedures"
+    ],
+    "rejectedPages": [
+      {
+        "url": "http://medicine.howard.edu/about-us/student-affairs/pipeline-programs/visiting-students",
+        "title": "Pipeline Programs | Howard University College of Medicine",
+        "reason": "NOT_USCE"
+      },
+      {
+        "url": "https://medicine.howard.edu/education/graduate-medical-education-gme/residency/family-medicine/how-apply",
+        "title": "How to Apply | Howard FM Residency",
+        "reason": "RESIDENCY_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "medicine.howard.edu accessible. Dermatology Visiting Student Rotation page returned clean content with VSLO verbatim. The annual Schedules Booklet PDF (650 KB) was fetched but binary extraction did not yield the verbatim audience-eligibility paragraph; queued for retry via direct PDF text-extract tool in a future sprint.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medicine.howard.edu/education/graduate-medical-education-gme/residency/dermatology/visiting-student-rotation",
+      "pageTitle": "Visiting Student Rotation | Howard University College of Medicine",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "All applications must be submitted through the Visiting Student Learning Opportunities (VSLO) program website",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Dermatology page confirmed; multispecialty implied via Schedules Booklet (verbatim retry queued)",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "VSLO_REQUIRED_VERBATIM_FROM_DEPT_PAGE",
+        "AUDIENCE_INFERRED_FROM_VSLO_PLATFORM_POLICY — VSLO eligibility = AAMC-member LCME + AOA-member COCA schools, per AAMC VSLO operating policy; direct verbatim audience quote from Howard's Schedules Booklet queued for retry",
+        "FIRST_COME_FIRST_SERVE — rolling acceptance",
+        "DEPARTMENT_LEVEL_SOURCE — Howard dermatology; Howard COM hub-level visiting-students page not surfaced",
+        "HOWARD_UNIVERSITY_HOSPITAL_NOT_VERBATIM_NAMED_AS_PLACEMENT — implicit because Howard COM's clinical teaching site is HUH, but verbatim name confirmation queued"
+      ]
+    },
+    {
+      "sourceUrl": "https://medicine.howard.edu/education/graduate-medical-education-gme/residency/dermatology/visiting-student-rotation",
+      "pageTitle": "Visiting Student Rotation | Howard University College of Medicine",
+      "sourcePageType": "DEPARTMENT_PAGE",
+      "shortQuote": "All applications are processed based on the month applied and are approved on a first-come, first serve basis",
+      "quoteSupports": ["application"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Dermatology confirmed",
+      "sourceScopeDecision": "DEPARTMENT_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "FIRST_COME_FIRST_SERVE_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 7,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "VSLO platform itself restricts applicants to AAMC-member LCME-accredited and AOA/COCA-accredited osteopathic schools, so the VSLO requirement excludes IMG / international (non-US) medical students from this lane. No international-student-specific lane found on medicine.howard.edu.",
+    "weakNegativeEvidence": "huhealthcare.com (hospital clinical site) does not surface a visiting-students lane directly; the lane lives on the medical-school subdomain. Schedules Booklet PDF holds the verbatim audience paragraph but PDF text extraction failed this turn."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "Eligible for future public-safe activation with caveats: (a) DEPARTMENT_LEVEL_SOURCE — Howard COM Dermatology visiting-students rotation; hub-level visiting-students page not located on medicine.howard.edu in this sprint; (b) VSLO required (verbatim); (c) audience inferred from VSLO platform policy (LCME/AOA); (d) HUH placement implicit but not verbatim-named; (e) cost and visa NOT_STATED. Manual retry queued in `p101_manual_retry_log.csv` to capture: (i) verbatim audience paragraph from Schedules Booklet PDF, (ii) verbatim HUH placement-site naming, (iii) cost and visa language if any.",
+  "plainEnglishSummary": "Howard University College of Medicine accepts visiting medical students for clinical rotations including Dermatology; applications go through VSLO. Because VSLO is AAMC's platform for AAMC-member US LCME and AOA-accredited schools, this lane is effectively for US MD/DO students only. Howard University Hospital is Howard COM's teaching hospital so it is the implicit placement site, but the verbatim naming and the verbatim audience paragraph live in the Schedules Booklet PDF that did not extract cleanly this turn. Queued for manual retry. Cost and visa not stated on the public source.",
+  "driftCheck": "This advanced national USCE discovery because DC gained a third classified institution (closing the DC thin-coverage gap from 1 to 4 institutions in P101-0 alone); negative evidence about Howard's PDF-only audience documentation is captured rather than fabricated, preserving the core quality law."
+}

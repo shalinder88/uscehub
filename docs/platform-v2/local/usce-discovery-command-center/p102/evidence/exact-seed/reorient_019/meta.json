@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_019",
+  "institutionId": "inst_live_yale_vms",
+  "institutionName": "Yale-New Haven Hospital",
+  "parentSystem": "Yale-New Haven Health",
+  "campus": "",
+  "city": "New Haven",
+  "state": "CT",
+  "sourceUrl": "https://medicine.yale.edu/md-program/visiting-students/",
+  "sourceDomain": "medicine.yale.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Yale-New Haven Hospital",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Yale SOM visiting students page — VSLO",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Four-week rotations only",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_71807914af"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_019/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_019/cleaned.txt",
+  "sourceHash": "0a0bbd74532642e81a9f92024788a61563f32900ce3b4e1be2aea37e2308802d",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:37:16.425Z"
+}

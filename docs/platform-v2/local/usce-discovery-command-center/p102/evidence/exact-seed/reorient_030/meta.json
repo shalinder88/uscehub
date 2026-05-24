@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_030",
+  "institutionId": "inst_live_bmc_svep",
+  "institutionName": "Boston Medical Center — Visiting Medical Students",
+  "parentSystem": "Boston Medical Center",
+  "campus": "",
+  "city": "Boston",
+  "state": "MA",
+  "sourceUrl": "https://www.bmc.org/visiting-medical-students-1",
+  "sourceDomain": "bmc.org",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "CLINICAL_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Boston Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Direct BMC visiting medical students page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "SVEP $2500 subsidy + ISEP for INTL through BU",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_c62049d7e7"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_030/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_030/cleaned.txt",
+  "sourceHash": "84c6ad1760e6d2ac5986f0795ddde69cbf3bad6bb1e449ec008c2d8d7b9c004a",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "MEDIUM",
+    "rationale": "expected BOTH but only VMS signal found"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 3,
+  "fetchedAt": "2026-05-17T03:37:50.758Z"
+}

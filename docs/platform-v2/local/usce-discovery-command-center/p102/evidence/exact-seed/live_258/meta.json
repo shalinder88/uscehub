@@ -1,0 +1,44 @@
+{
+  "seedId": "live_258",
+  "institutionId": "inst_live_commonspirit_health_international_clinical_observation",
+  "institutionName": "CommonSpirit Health International — Clinical Observation",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Multiple States (159 hospitals)",
+  "state": "MULTI",
+  "sourceUrl": "https://commonspiritinternational.org/education-programs/",
+  "sourceDomain": "commonspiritinternational.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Multiple departments",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "verified-links.ts (verified=false)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_a1942e1b5a"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_258/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_258/cleaned.txt",
+  "sourceHash": "34c3bddd35c7bc343706ecf96502cec12c14c0bd778925bd4f37572cd065af1e",
+  "triage": {
+    "decision": "HOLD_NEEDS_MORE_EVIDENCE",
+    "reason": "no clear USCE signal in URL or cleaned text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 1,
+  "fetchedAt": "2026-05-17T02:38:20.722Z"
+}

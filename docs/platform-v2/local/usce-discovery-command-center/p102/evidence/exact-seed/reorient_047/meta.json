@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_047",
+  "institutionId": "inst_live_minnesota_vms",
+  "institutionName": "University of Minnesota Medical Center",
+  "parentSystem": "M Health Fairview",
+  "campus": "",
+  "city": "Minneapolis",
+  "state": "MN",
+  "sourceUrl": "https://med.umn.edu/md-students/academics/clinical-experiences/visiting-students",
+  "sourceDomain": "med.umn.edu",
+  "expectedAudience": "US_MD_DO_VISITING_STUDENT",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "University of Minnesota Medical Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "UMN Medical School visiting students canonical page",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Max 2 electives; INTL only via formal agreement",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_dac76469e4"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_047/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_047/cleaned.txt",
+  "sourceHash": "e9c72e7c5493f142e5e22d547e85a2dcf08f246241662e3a446df4ec02ac12d2",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "US_MD_DO_VISITING_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "VMS signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment",
+    "signals": [
+      "visiting-student URL segment"
+    ]
+  },
+  "quoteScore": 7,
+  "fetchedAt": "2026-05-17T03:38:22.084Z"
+}

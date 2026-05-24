@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-4",
+  "sprint": "P101-4",
+  "institution": {
+    "name": "The Brooklyn Hospital Center",
+    "aliases": [
+      "TBHC",
+      "Brooklyn Hospital Center"
+    ],
+    "city": "Brooklyn",
+    "state": "NY",
+    "officialDomain": "tbh.org",
+    "institutionType": "public_safety_net_hospital",
+    "healthSystem": "The Brooklyn Hospital Center (independent)",
+    "academicAffiliation": "Clinical Affiliate of The Mount Sinai Hospital, Academic Affiliate of The Icahn School of Medicine at Mount Sinai",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 70 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "The Brooklyn Hospital Center",
+    "name": "The Brooklyn Hospital Center",
+    "aliases": ["TBHC", "Brooklyn Hospital Center"],
+    "officialDomains": ["tbh.org"],
+    "city": "Brooklyn",
+    "state": "NY",
+    "institutionType": "public_safety_net_hospital",
+    "academicAffiliation": "Clinical Affiliate of The Mount Sinai Hospital, Academic Affiliate of Icahn SOM at Mount Sinai",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 70 (queue-4-national-screening-resume)"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "tbh.org"
+    ],
+    "searchTermsTried": [
+      "brooklyn hospital center visiting medical student",
+      "TBHC visiting student",
+      "TBHC professional medical education",
+      "TBHC graduate medical education",
+      "TBHC elective"
+    ],
+    "pagesOpened": [
+      "https://www.tbh.org",
+      "https://www.tbh.org/professional-medical-education",
+      "https://www.tbh.org/professional-medical-education/graduate-medical-education"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://www.tbh.org/medical-professionals/professional-medical-education",
+        "title": "(404 not found — link structure changed)",
+        "reason": "DEAD_LINK"
+      },
+      {
+        "url": "https://www.tbh.org/medical-professionals",
+        "title": "(404 not found)",
+        "reason": "DEAD_LINK"
+      }
+    ],
+    "robotsOrAccessNotes": "Site accessible; no bot block. Public navigation listed; no visiting-student or medical-student-elective entries surfaced from homepage, Professional Medical Education hub, or GME page.",
+    "stopCondition": "NO_PUBLIC_USCE_LANE_FOUND"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.tbh.org/professional-medical-education",
+      "pageTitle": "Professional Medical Education",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "88a04250ab66552e6e50617b9531e3aab70c2491d9376d319a0287f3b432774f",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/brooklyn-hospital-center/cleaned-text/3c54fd427ddb678f.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/brooklyn-hospital-center/source-pages/3c54fd427ddb678f.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/brooklyn-hospital-center/metadata/3c54fd427ddb678f.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "PROFESSIONAL_EDUCATION_HUB",
+      "captureNotes": "Hub page enumerates GME, CME, Nursing Education, Grand Rounds — no visiting-student / elective / observership / VSLO entry."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.tbh.org/professional-medical-education",
+      "pageTitle": "Professional Medical Education",
+      "sourcePageType": "PROFESSIONAL_EDUCATION_HUB",
+      "shortQuote": "Graduate Medical Education (GME) Continuing Medical Education Nursing Education Grand Rounds",
+      "quoteSupports": [
+        "audience"
+      ],
+      "audienceDecision": "NO_VISITING_STUDENT_LANE_PUBLICLY_PRESENT",
+      "applicationDecision": "NO_PATHWAY_DISCLOSED",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "NOT_STATED_ON_SOURCE",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "NO_TIER_NO_CANDIDATE",
+      "classification": "NO_PUBLIC_USCE_LANE_FOUND",
+      "caveats": [
+        "VISITING_STUDENT_LANE_NOT_PUBLICLY_SURFACED",
+        "ROTATIONS_MAY_EXIST_VIA_ICAHN_AFFILIATION_BUT_NOT_DISCLOSED_TBHC_DIRECTLY"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "audience_us_do", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "audience_international_ms", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "graduation_status", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "usmle_or_comlex_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "application_url", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "application_window", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "specialties_offered", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_MENTIONED_ON_HUB", "quote": "Graduate Medical Education (GME) Continuing Medical Education Nursing Education Grand Rounds", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.tbh.org/professional-medical-education", "notStatedOnSource": true}
+  ],
+  "opportunityTags": {
+    "audience": ["NOT_INTERNATIONAL", "NOT_IMG_GRAD"],
+    "application": ["CLOSED_OR_PAUSED"],
+    "experienceType": ["UNCLEAR_HANDS_ON_STATUS"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "The Brooklyn Hospital Center's public website does not surface a visiting medical student program, elective, or observership lane.",
+    "whoThisIsFor": "Currently no public visiting-student pathway is disclosed; the only learner-facing programs surfaced are GME (residency/fellowship), CME, Nursing Education, and Grand Rounds.",
+    "whoThisIsNotFor": "Visiting medical students (US MD/DO, international, IMG graduates) — TBHC does not publish a lane on its own website. Affiliation-based rotations via Icahn SOM at Mount Sinai may exist but are not advertised by TBHC directly.",
+    "howToApply": "No application pathway is published on tbh.org for visiting students. Prospective students should contact their home school registrar to confirm whether an Icahn-mediated rotation at TBHC is possible.",
+    "estimatedCostSummary": "No visiting-student cost figures published.",
+    "keyCaveats": [
+      "No public visiting-student or elective pathway on tbh.org",
+      "Clinical affiliate of Mount Sinai Hospital — Icahn SOM-mediated rotations may exist but are not disclosed publicly on TBHC site",
+      "GME / CME / Nursing Education / Grand Rounds are the only learner programs surfaced"
+    ],
+    "whyWeClassifiedItThisWay": "Three official TBHC pages (homepage navigation, Professional Medical Education hub, Graduate Medical Education sub-page) were searched. None mention visiting medical students, electives, sub-internships, observerships, externships, away rotations, VSLO, or international students. Classification reflects absence of a public lane, not a categorical denial of access.",
+    "sourceTransparencyNote": "Cleaned text of the Professional Medical Education hub captured to T7 canonical capsule with real SHA-256 hash for change detection.",
+    "possibleListingTitle": "The Brooklyn Hospital Center — No Public Visiting-Student Lane",
+    "possibleMetaDescription": "TBHC does not advertise a visiting medical student / elective / observership program on its public website. Rotations may exist via the Icahn SOM at Mount Sinai affiliation.",
+    "suggestedFilters": ["no_public_lane", "affiliation_mediated_only_possible"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "visiting medical student",
+      "medical student elective",
+      "sub-internship",
+      "away rotation",
+      "observership",
+      "externship",
+      "international visiting student",
+      "visiting learner",
+      "undergraduate medical education",
+      "UME",
+      "VSLO"
+    ],
+    "pagesOpened": [
+      "https://www.tbh.org",
+      "https://www.tbh.org/professional-medical-education",
+      "https://www.tbh.org/professional-medical-education/graduate-medical-education"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://www.tbh.org/medical-professionals/professional-medical-education",
+        "reason": "DEAD_LINK_404"
+      },
+      {
+        "url": "https://www.tbh.org/medical-professionals",
+        "reason": "DEAD_LINK_404"
+      }
+    ],
+    "rejectedReasons": ["DEAD_LINK_404", "PAGE_TYPE_NOT_VISITING_STUDENT"],
+    "noPublicLaneReason": "No visiting-student / elective / observership lane surfaced from homepage navigation, Professional Medical Education hub, or GME sub-page. Site search would require a separate retry sprint.",
+    "whetherNegativeEvidenceStrong": "MODERATE — three official pages cover the most likely surface area; a fourth (institution site search) was not performed and could surface a sub-page if one exists.",
+    "futureRetrySuggestion": "If Icahn SOM at Mount Sinai's visiting-student page lists TBHC as a rotation site, the lane may be discoverable through the SOM affiliation rather than tbh.org directly. Consider a coupled retry with Icahn SOM's affiliated-sites enumeration.",
+    "noPublicUsceLaneReason": "TBHC homepage, Professional Medical Education hub, and GME sub-page checked; no visiting-student / elective / observership / VSLO mention surfaced; Icahn SOM affiliation may carry rotations not advertised by TBHC directly.",
+    "searchedTermsCount": 11,
+    "openedPagesCount": 3
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "88a04250ab66552e6e50617b9531e3aab70c2491d9376d319a0287f3b432774f",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/brooklyn-hospital-center/cleaned-text/3c54fd427ddb678f.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/NY/brooklyn-hospital-center/source-pages/3c54fd427ddb678f.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["professional_medical_education_index", "newly_added_visiting_student_program_if_introduced"],
+    "changeRisk": "LOW",
+    "notes": "Hash captured against the Professional Medical Education hub page. If TBHC ever publishes a visiting-student page, this hash will diverge and trigger re-classification."
+  },
+  "finalClassification": "NO_PUBLIC_USCE_LANE_FOUND",
+  "finalTier": "NO_TIER_NO_CANDIDATE",
+  "driftCheck": "This advanced national USCE discovery because TBHC's absence of a public visiting-student lane was documented honestly with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

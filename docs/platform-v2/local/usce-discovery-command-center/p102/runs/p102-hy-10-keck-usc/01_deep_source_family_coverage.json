@@ -1,0 +1,361 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-hy-10-keck-usc",
+  "institutionId": "inst_keck_school_of_medicine_usc_ca",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://keck.usc.edu/medical-education",
+        "https://keck.usc.edu/professional-education"
+      ],
+      "acceptedSources": [
+        "https://keck.usc.edu/medical-education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/student-affairs",
+        "https://keck.usc.edu/medical-education/student-affairs",
+        "https://keck.usc.edu/medical-education/student-affairs/registrar",
+        "https://keck.usc.edu/medical-education/student-affairs/registrar/externships-services"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://keck.usc.edu/visiting-student",
+        "https://keck.usc.edu/visiting-students",
+        "https://keck.usc.edu/international-students",
+        "https://keck.usc.edu/medicine/international/international-programs/international-visiting-medical-students",
+        "https://keck.usc.edu/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://keck.usc.edu/education/visiting-medical-students",
+        "https://keck.usc.edu/medical-education/visiting-students",
+        "https://keck.usc.edu/students/visiting-students",
+        "https://keck.usc.edu/current-students/visiting-student-program",
+        "https://keck.usc.edu/current-students/visiting-student-program/visiting-student-program-overview",
+        "https://keck.usc.edu/education/md-education/visiting-students",
+        "https://keck.usc.edu/education/md-education/visiting-students/vslo",
+        "https://keck.usc.edu/students/visiting-students/",
+        "https://keck.usc.edu/academics/md-program/visiting-students",
+        "https://keck.usc.edu/medicaleducation/visiting-students-program",
+        "https://keck.usc.edu/medicaleducation/visiting-students-program/",
+        "https://keck.usc.edu/md-program/visiting-student-clerkships"
+      ],
+      "acceptedSources": [
+        "https://keck.usc.edu/md-program/visiting-student-clerkships"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/observership",
+        "https://keck.usc.edu/observer",
+        "https://keck.usc.edu/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/electives",
+        "https://keck.usc.edu/away-rotations",
+        "https://keck.usc.edu/clinical-elective",
+        "https://keck.usc.edu/clinical-rotation",
+        "https://keck.usc.edu/hcp-education-training/medical-students/elective",
+        "https://keck.usc.edu/education/medical-student-electives",
+        "https://keck.usc.edu/medical-education/medical-student-electives",
+        "https://keck.usc.edu/medical-students/electives",
+        "https://keck.usc.edu/medical-students/elective-rotations",
+        "https://keck.usc.edu/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/sub-internship",
+        "https://keck.usc.edu/subinternship",
+        "https://keck.usc.edu/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://keck.usc.edu/student-research",
+        "https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/"
+      ],
+      "acceptedSources": [
+        "https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/shadow",
+        "https://keck.usc.edu/shadowing",
+        "https://keck.usc.edu/volunteer",
+        "https://keck.usc.edu/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://keck.usc.edu/graduate-medical-education",
+        "https://keck.usc.edu/gme",
+        "https://keck.usc.edu/medical-professionals/graduate-medical-education",
+        "https://keck.usc.edu/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://keck.usc.edu/education/undergraduate-medical-education",
+        "https://keck.usc.edu/graduate-medical-education/clerkship-programs",
+        "https://keck.usc.edu/education/graduate-medical-education-gme"
+      ],
+      "acceptedSources": [
+        "https://keck.usc.edu/graduate-medical-education",
+        "https://keck.usc.edu/gme"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/visa",
+        "https://keck.usc.edu/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://keck.usc.edu/careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://keck.usc.edu/observerships",
+        "https://keck.usc.edu/medical-students",
+        "https://keck.usc.edu/research",
+        "https://keck.usc.edu/img",
+        "https://keck.usc.edu/international-medical-graduates",
+        "https://keck.usc.edu/credentialing",
+        "https://keck.usc.edu/health-professionals",
+        "https://keck.usc.edu/education",
+        "https://keck.usc.edu/hcp-education-training",
+        "https://keck.usc.edu/hcp-education-training/medical-students",
+        "https://keck.usc.edu/hcp-education-training/medical-students/medical-student-observerships",
+        "https://keck.usc.edu/medical-professionals",
+        "https://keck.usc.edu/academic-institute",
+        "https://keck.usc.edu/academic-institute/education",
+        "https://keck.usc.edu/academic-institute/education/medical",
+        "https://keck.usc.edu/academic-institute/education/medical/medical-student-rotations",
+        "https://keck.usc.edu/medicine/international",
+        "https://keck.usc.edu/medicine/international/international-programs",
+        "https://keck.usc.edu/visiting-clerkships",
+        "https://keck.usc.edu/visiting-clerkships/international",
+        "https://keck.usc.edu/education-institute",
+        "https://keck.usc.edu/education-institute/academic-visitor-program",
+        "https://keck.usc.edu/education/medical-students",
+        "https://keck.usc.edu/offices/faculty-affairs",
+        "https://keck.usc.edu/offices/faculty-affairs/services",
+        "https://keck.usc.edu/offices/faculty-affairs/services/observerships",
+        "https://keck.usc.edu/current-students",
+        "https://keck.usc.edu/education/md-education",
+        "https://keck.usc.edu/academics/md-program",
+        "https://keck.usc.edu/medicaleducation",
+        "https://keck.usc.edu/md-program",
+        "https://keck.usc.edu/research-programs/",
+        "https://keck.usc.edu/residencies-and-fellowships/",
+        "https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/",
+        "https://keck.usc.edu/organizer/office-of-research/",
+        "https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/",
+        "https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/",
+        "https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/"
+      ],
+      "acceptedSources": [
+        "https://keck.usc.edu/research",
+        "https://keck.usc.edu/education",
+        "https://keck.usc.edu/md-program",
+        "https://keck.usc.edu/research-programs/",
+        "https://keck.usc.edu/residencies-and-fellowships/",
+        "https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/",
+        "https://keck.usc.edu/organizer/office-of-research/",
+        "https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/",
+        "https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/",
+        "https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_PARTIAL",
+    "tier3": "TIER_COVERAGE_WEAK"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 3,
+    "tier2AcceptedSources": 2,
+    "tier3AcceptedSources": 0
+  },
+  "generatedAt": "2026-05-16T02:50:55.369Z"
+}

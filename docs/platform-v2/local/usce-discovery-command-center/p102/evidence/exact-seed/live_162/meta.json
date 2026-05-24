@@ -1,0 +1,46 @@
+{
+  "seedId": "live_162",
+  "institutionId": "inst_live_cleveland_clinic_florida",
+  "institutionName": "Cleveland Clinic Florida",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Weston",
+  "state": "FL",
+  "sourceUrl": "https://my.clevelandclinic.org/florida/medical-professionals/education/observerships",
+  "sourceDomain": "my.clevelandclinic.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Cardiology, Urology, Neurology, Surgery",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true)",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: free | duration: 2-4 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_e3a9a00860"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_162/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_162/cleaned.txt",
+  "sourceHash": "db749dda587c90176bcc07caff2dc053e58bf3b8f0a097e96214541ceb154772",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 9,
+  "fetchedAt": "2026-05-17T02:35:04.215Z"
+}

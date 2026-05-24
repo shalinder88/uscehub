@@ -1,0 +1,36 @@
+{
+  "agentUsed": false,
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "claimsToDowngrade": [],
+  "duplicates": [],
+  "institutionId": "inst_jackson_memorial_hospital_fl",
+  "institutionName": "Jackson Memorial Hospital",
+  "metadata": {
+    "totalClaimsReviewed": 30,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "futureLaneOnlyCount": 8,
+    "humanReviewRequiredCount": 22,
+    "hiddenRejectedCount": 0,
+    "note": "ClaimId reuse across different sources (c1, c2 appear multiple times bound to different sourceUrls); not strict (claimType, field, sourceUrl) duplicates but flagged for downstream dedupe normalization."
+  },
+  "networkUsed": false,
+  "phase": "A3",
+  "publicSafetyFailures": [],
+  "runId": "p102-fl-5-jackson-memorial",
+  "schemaVersion": "p102-cli-0e-1",
+  "scopeConflicts": [],
+  "unresolveds": [
+    "claimId reuse: 'c1', 'c2', 'a2_c1' are reused across multiple sources/claims; downstream dedupe should namespace by sourceUrl to prevent collision."
+  ],
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "Zero PUBLIC_SAFE_USCE claims and zero PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY claims. All 30 ledger entries are appropriately classified as FUTURE_LANE_ONLY (careers, nurse residency, GME footer signals) or HUMAN_REVIEW_REQUIRED (community volunteer program, credentialing services, ambiguous footers). No scope conflicts, no overclaims, no public-safety risk. Outcome reflects genuine absence of a public physician USCE offering on captured pages — safe to publish as null-USCE."
+}

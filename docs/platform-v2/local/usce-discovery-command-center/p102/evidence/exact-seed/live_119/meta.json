@@ -1,0 +1,44 @@
+{
+  "seedId": "live_119",
+  "institutionId": "inst_live_bronxcare_health_system",
+  "institutionName": "BronxCare Health System",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Bronx",
+  "state": "NY",
+  "sourceUrl": "https://www.bronxcare.org/our-services/psychiatry/residency-program/volunteer-and-observership-opportunities",
+  "sourceDomain": "www.bronxcare.org",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Family Medicine, Surgery, Psychiatry, Ped",
+  "expectedCampus": "",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "verified-links.ts (verified=true): Psychiatry-focused observership. 8-12 weeks, min 3 days/week. Application fee required. Covers Adult",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_9b79223d82"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_119/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_119/cleaned.txt",
+  "sourceHash": "5438033269eacb228ffb86a6380e619f86e9514d072397c19e772c9129f5d6a3",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 5,
+  "fetchedAt": "2026-05-17T02:33:37.155Z"
+}

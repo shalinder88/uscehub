@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-4-mayo-clinic-rochester",
+  "institutionId": "inst_mayo_clinic_rochester_mn",
+  "perFamily": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/medical-education",
+        "https://mayoclinic.org/professional-education"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/medical-education",
+        "https://mayoclinic.org/professional-education"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/student-affairs"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/student-affairs"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/visiting-student",
+        "https://mayoclinic.org/visiting-students",
+        "https://mayoclinic.org/international-students"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/visiting-student",
+        "https://mayoclinic.org/visiting-students",
+        "https://mayoclinic.org/international-students"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/observership",
+        "https://mayoclinic.org/observer",
+        "https://mayoclinic.org/clinical-observer"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/observership",
+        "https://mayoclinic.org/observer",
+        "https://mayoclinic.org/clinical-observer"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/electives",
+        "https://mayoclinic.org/away-rotations",
+        "https://mayoclinic.org/clinical-elective",
+        "https://mayoclinic.org/clinical-rotation"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/electives",
+        "https://mayoclinic.org/away-rotations",
+        "https://mayoclinic.org/clinical-elective",
+        "https://mayoclinic.org/clinical-rotation"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/sub-internship",
+        "https://mayoclinic.org/subinternship",
+        "https://mayoclinic.org/acting-internship"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/sub-internship",
+        "https://mayoclinic.org/subinternship",
+        "https://mayoclinic.org/acting-internship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/student-research"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/student-research"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/shadow",
+        "https://mayoclinic.org/shadowing",
+        "https://mayoclinic.org/volunteer",
+        "https://mayoclinic.org/volunteering"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/shadow",
+        "https://mayoclinic.org/shadowing",
+        "https://mayoclinic.org/volunteer",
+        "https://mayoclinic.org/volunteering"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/graduate-medical-education",
+        "https://mayoclinic.org/gme"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/graduate-medical-education",
+        "https://mayoclinic.org/gme"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/residency"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/residency"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/fellowship"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/fellowship"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/physician-careers"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/physician-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/provider-careers"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/provider-careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/benefits"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/benefits"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/visa",
+        "https://mayoclinic.org/immigration"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/visa",
+        "https://mayoclinic.org/immigration"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/careers"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://mayoclinic.org/observerships",
+        "https://mayoclinic.org/medical-students",
+        "https://mayoclinic.org/research",
+        "https://mayoclinic.org/img",
+        "https://mayoclinic.org/international-medical-graduates",
+        "https://mayoclinic.org/credentialing",
+        "https://mayoclinic.org/health-professionals",
+        "https://mayoclinic.org/education"
+      ],
+      "acceptedSources": [
+        "https://mayoclinic.org/observerships",
+        "https://mayoclinic.org/medical-students",
+        "https://mayoclinic.org/research",
+        "https://mayoclinic.org/img",
+        "https://mayoclinic.org/international-medical-graduates",
+        "https://mayoclinic.org/credentialing",
+        "https://mayoclinic.org/health-professionals",
+        "https://mayoclinic.org/education"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "tierStatuses": {
+    "tier1": "TIER_COVERAGE_PARTIAL",
+    "tier2": "TIER_COVERAGE_COMPLETE",
+    "tier3": "TIER_COVERAGE_COMPLETE"
+  },
+  "tierCounts": {
+    "tier1AcceptedSources": 21,
+    "tier2AcceptedSources": 4,
+    "tier3AcceptedSources": 6
+  },
+  "generatedAt": "2026-05-15T01:09:23.687Z"
+}

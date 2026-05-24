@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-5",
+  "sprint": "P101-5",
+  "intendedP1014PacketNumber": 9,
+  "institution": {
+    "name": "University of Miami Miller School of Medicine / UHealth",
+    "aliases": ["UMiami Miller SOM", "UM Miller", "UHealth Tower"],
+    "city": "Miami",
+    "state": "FL",
+    "officialDomain": "umiamihealth.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UHealth",
+    "academicAffiliation": "University of Miami Miller School of Medicine",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 78 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "University of Miami Miller School of Medicine / UHealth",
+    "name": "University of Miami Miller School of Medicine / UHealth",
+    "aliases": ["UMiami Miller SOM", "UM Miller", "UHealth Tower"],
+    "officialDomains": ["umiamihealth.org", "med.miami.edu"],
+    "city": "Miami",
+    "state": "FL",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "Miller SOM",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 78"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["umiamihealth.org", "med.miami.edu"],
+    "searchTermsTried": [
+      "UM miller visiting medical student elective international",
+      "UMiami Miller externship",
+      "UMiami Miller observership",
+      "UMiami Miller VSLO",
+      "UMiami visiting student"
+    ],
+    "pagesOpened": [
+      "https://med.miami.edu",
+      "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services",
+      "https://med.miami.edu/offices/faculty-affairs/services/observerships"
+    ],
+    "rejectedPages": [
+      {"url": "https://med.miami.edu/programs/visiting-students-program", "title": "(404)", "reason": "DEAD_LINK"},
+      {"url": "https://med.miami.edu/education/md-program/visiting-students", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Both Externships and Observerships pages retrieved cleanly; multiple coordinators identified.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships",
+      "pageTitle": "Observerships | UMiami Miller SOM Faculty Affairs",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "457353a2e7835ed03fb74e56df8b8822a634eb709ae983a2bf4f3d1600166ae0",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/cleaned-text/d2229ffc0d8413dc.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/source-pages/d2229ffc0d8413dc.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/metadata/d2229ffc0d8413dc.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "captureNotes": "UMiami Observership Program — foreign nationals eligible for 3-month observership; sponsor required; multiple coordinator contacts."
+    },
+    {
+      "sourceUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services",
+      "pageTitle": "Externships Services | UMiami Miller SOM Registrar",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "9d81691b0d5136d9764f221184092746fb3702fc1ae1ef33843c832685c163f5",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/cleaned-text/19802e39808e4de7.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/source-pages/19802e39808e4de7.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/metadata/19802e39808e4de7.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "UMiami Externships Services — VSLO-based; requires good standing, active enrollment, Phase 2 + USMLE Step 1 & 2 completion. Outside-VSLO externships subject to additional requirements."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships",
+      "pageTitle": "Observerships | UMiami Miller SOM Faculty Affairs",
+      "sourcePageType": "OBSERVERSHIP_PROGRAM_HUB",
+      "shortQuote": "Foreign nationals may be eligible for this 3-month Observership Program. All observers must be at least 18 years of age. Applications without a sponsor will not be accepted.",
+      "quoteSupports": ["audience", "duration", "sponsorship"],
+      "audienceDecision": "INTERNATIONAL_OBSERVER_ELIGIBLE_FOREIGN_NATIONALS_EXPLICIT",
+      "applicationDecision": "INSTITUTIONAL_FORM_VIA_FACULTY_AFFAIRS_PLUS_SPONSOR",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "3_MONTHS_INTERNATIONAL_OBSERVERSHIP",
+      "specialtyDecision": "Within departments; specific specialties not enumerated on source",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "SPONSOR_REQUIRED_NO_SPONSOR_NO_APPLICATION",
+        "INTERNATIONAL_OBSERVERSHIP_3_MONTH_DURATION_VIA_OLIVIA_CATA_OCATA_AT_MED_MIAMI_EDU",
+        "RESEARCH_OBSERVERSHIPS_LYDIA_SANCHEZ_CLINICAL_OBSERVERSHIPS_MARIE_PASQUIER",
+        "US_CITIZEN_PERMANENT_RESIDENT_OBSERVERS_NEED_SENIOR_ASSOCIATE_DEAN_APPROVAL",
+        "MEDICAL_DEGREE_LEVEL_AND_USMLE_TOEFL_NOT_STATED_ON_SOURCE",
+        "EXTERNSHIPS_ARE_VSLO_BASED_SEPARATE_TRACK_REQUIRING_PHASE_2_AND_USMLE_STEPS_1_AND_2"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_VIA_EXTERNSHIPS_VSLO_PHASE_2_REQUIRED", "quote": "Successfully complete their Phase 2 requirements, including clerkships and USMLE Step 1 and 2 requirements", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "PRESUMED_ELIGIBLE_VIA_VSLO_NOT_EXPLICITLY_DISTINGUISHED", "quote": "the AAMC's Visiting Student Learning Opportunities (VSLO) software", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "ELIGIBLE_VIA_3_MONTH_OBSERVERSHIP", "quote": "Foreign nationals may be eligible for this 3-month Observership Program", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE_OBSERVERSHIP_18_PLUS", "quote": "All observers must be at least 18 years of age", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "year_required", "value": "EXTERNSHIPS_POST_PHASE_2_OBSERVERSHIP_18_PLUS", "quote": "Successfully complete their Phase 2 requirements", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_IN_GOOD_STANDING_EXTERNSHIPS", "quote": "Be in good professional standing; Have an active student status and show enrollment", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "USMLE_STEP_1_AND_2_REQUIRED_FOR_EXTERNSHIPS", "quote": "USMLE Step 1 and 2 requirements", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "VSLO_FOR_EXTERNSHIPS_SPONSOR_PLUS_FACULTY_AFFAIRS_FOR_OBSERVERSHIPS", "quote": "the AAMC's Visiting Student Learning Opportunities (VSLO) software", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "VSLO_FOR_EXTERNSHIPS_PLUS_INSTITUTIONAL_INQUIRY_FOR_OBSERVERSHIPS", "quote": "AAMC's Visiting Student Learning Opportunities (VSLO) software", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "OBSERVERSHIPS_NOW_ACCEPTING_APPLICATIONS_EXTERNSHIPS_VSLO_TIMING", "quote": "Now accepting applications", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cost_application_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cost_housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cost_other", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "duration", "value": "OBSERVERSHIP_3_MONTHS_EXTERNSHIPS_NOT_STATED", "quote": "this 3-month Observership Program", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "WITHIN_DEPARTMENTS_PER_SPONSOR_AVAILABILITY", "quote": "Observership opportunities are within departments", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "EXTERNSHIPS_HANDS_ON_OBSERVERSHIPS_OBSERVER", "quote": "Observership opportunities", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_SOURCE_INSTITUTIONAL_INQUIRY_REQUIRED", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "OUTSIDE_VSLO_EXTERNSHIPS_SUBJECT_TO_ADDITIONAL_REQUIREMENTS", "quote": "externships outside VSLO are subject to additional requirements", "quoteUrl": "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "coordinator_contact", "value": "OBSERVERSHIPS_LXS1238_AT_MED_MIAMI_EDU_RESEARCH_MPASQUIER_AT_MED_MIAMI_EDU_CLINICAL_OCATA_AT_MED_MIAMI_EDU_INTERNATIONAL", "quote": "Research Observerships: Lydia Sanchez at lxs1238@med.miami.edu; Clinical Observerships: Marie Pasquier at mpasquier@med.miami.edu; International processing: Olivia Cata at ocata@med.miami.edu", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "SPONSOR_LETTER_REQUIRED_OBSERVERSHIPS_SHAREPOINT_PORTAL_EXTERNSHIPS", "quote": "Applications without a sponsor will not be accepted", "quoteUrl": "https://med.miami.edu/offices/faculty-affairs/services/observerships", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "INTERNATIONAL_MS", "IMG_GRAD", "MS4_ONLY"],
+    "application": ["VSLO", "DIRECT_APPLICATION", "EMAIL_COORDINATOR", "DETAILS_BY_COORDINATOR"],
+    "experienceType": ["CLINICAL_ELECTIVE", "OBSERVERSHIP", "HANDS_ON", "OBSERVER_ONLY"],
+    "cost": ["COST_NOT_STATED"],
+    "visa": ["VISA_STUDENT_RESPONSIBILITY", "VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "UMiami Miller SOM offers a VSLO-based externship for US MD/DO students post-Phase 2 + USMLE Step 1 and 2, plus a 3-month Observership program for foreign nationals requiring a sponsor.",
+    "whoThisIsFor": "US MD/DO students who have completed Phase 2 and USMLE Step 1 and 2 (externship via VSLO); foreign nationals seeking 3-month observership with a confirmed sponsor at Miller SOM (research, clinical, or international tracks).",
+    "whoThisIsNotFor": "Pre-Phase-2 medical students (externship); applicants without a sponsor (observership); IMG graduates seeking hands-on rotations (not explicitly disclosed).",
+    "howToApply": "Externships: apply via AAMC VSLO and follow the SharePoint portal guidance from UMiami registrar. Observerships: identify a Miller SOM sponsor first; then contact Lydia Sanchez (research), Marie Pasquier (clinical), or Olivia Cata (international processing) at the listed emails.",
+    "estimatedCostSummary": "No cost figures published on source.",
+    "keyCaveats": [
+      "Externship requires USMLE Step 1 AND Step 2 pass (unusual; more demanding than typical VSLO programs)",
+      "Observership is 3 months for international observers — long enough to be a real USCE signal but observer-only",
+      "Sponsor mandatory for observership; applications without sponsor not accepted",
+      "Visa specifics not stated on source; international observers likely need B-1; Miller SOM does not confirm sponsorship on source",
+      "Externships outside VSLO are 'subject to additional requirements' (not enumerated)"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly admits foreign nationals to the 3-month Observership Program; externship lane via VSLO requires Phase 2 + USMLE Step 1 and 2. International eligibility on observership track is the controlling signal for INTERNATIONAL_STUDENT_CONFIRMED.",
+    "sourceTransparencyNote": "Both Externships and Observerships pages captured to T7 canonical capsule with real SHA-256 hashes.",
+    "possibleListingTitle": "UMiami Miller SOM / UHealth — VSLO Externships (Step 1+2 required) + 3-Month International Observership",
+    "possibleMetaDescription": "UMiami Miller SOM offers a VSLO externship for US MD/DO post-Phase-2 students and a 3-month observership for foreign nationals requiring a sponsor.",
+    "suggestedFilters": ["international_eligible", "observership_available", "vslo_externship", "step_1_and_2_required", "sponsor_required"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "UM miller visiting medical student elective international",
+      "UMiami Miller externship",
+      "UMiami Miller observership",
+      "UMiami Miller VSLO",
+      "UMiami visiting student"
+    ],
+    "pagesOpened": [
+      "https://med.miami.edu",
+      "https://med.miami.edu/medical-education/student-affairs/registrar/externships-services",
+      "https://med.miami.edu/offices/faculty-affairs/services/observerships"
+    ],
+    "rejectedPages": [
+      {"url": "https://med.miami.edu/programs/visiting-students-program", "reason": "DEAD_LINK_404"},
+      {"url": "https://med.miami.edu/education/md-program/visiting-students", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "MODERATE — positive signal on both tracks; full cost/visa details would require institutional inquiry.",
+    "futureRetrySuggestion": "Direct inquiry to ocata@med.miami.edu for international visa/cost details. Check UMiami SharePoint portal for externship applying procedure if accessible.",
+    "searchedTermsCount": 5,
+    "openedPagesCount": 3
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "457353a2e7835ed03fb74e56df8b8822a634eb709ae983a2bf4f3d1600166ae0",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/cleaned-text/d2229ffc0d8413dc.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/university-of-miami-miller-som-uhealth/source-pages/d2229ffc0d8413dc.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_window", "coordinator_contacts"],
+    "changeRisk": "MEDIUM",
+    "notes": "Primary hash anchors the Observership page (international lane); externship page hash captured separately."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because UMiami Miller SOM's 3-month international observership and VSLO externship lanes were documented with verbatim eligibility text and SHA-256 hashes on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

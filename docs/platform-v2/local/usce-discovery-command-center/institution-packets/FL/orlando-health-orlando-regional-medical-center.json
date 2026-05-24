@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "p101-0",
+  "enhancedEvidenceVersion": "p101-6",
+  "sprint": "P101-6",
+  "intendedP1014PacketNumber": 13,
+  "institution": {
+    "name": "Orlando Health Orlando Regional Medical Center",
+    "aliases": ["Orlando Regional Medical Center", "ORMC", "OHORMC"],
+    "city": "Orlando",
+    "state": "FL",
+    "officialDomain": "orlandohealth.com",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Orlando Health",
+    "academicAffiliation": "Florida State University COM, University of Florida COM, University of South Florida COM (institutional affiliates)",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 82 (queue-4-national-screening-resume)"
+  },
+  "institutionIdentity": {
+    "canonicalInstitutionName": "Orlando Health Orlando Regional Medical Center",
+    "name": "Orlando Health Orlando Regional Medical Center",
+    "aliases": ["Orlando Regional Medical Center", "ORMC", "OHORMC"],
+    "officialDomains": ["orlandohealth.com"],
+    "city": "Orlando",
+    "state": "FL",
+    "institutionType": "academic_medical_center",
+    "academicAffiliation": "FSU + UF + USF COMs",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 82"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["orlandohealth.com"],
+    "searchTermsTried": [
+      "orlando health visiting medical student elective",
+      "orlando health clerkship",
+      "orlando health VSLO",
+      "orlando health foreign medical student",
+      "orlando regional medical center visiting student",
+      "orlando health CIE form"
+    ],
+    "pagesOpened": [
+      "https://www.orlandohealth.com/medical-professionals",
+      "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs/visiting-student-program", "title": "(404)", "reason": "DEAD_LINK"}
+    ],
+    "robotsOrAccessNotes": "Orlando Health Clerkship Programs page retrieved successfully via curl helper; full program detail visible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "sourceEvidence": [
+    {
+      "sourceUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "pageTitle": "Clerkship Programs | Orlando Health Graduate Medical Education",
+      "screenshotStatus": "PENDING",
+      "screenshotPath": "",
+      "cleanedTextHash": "b49edec918ac866861c8b94b93d9ccae073cb7cf4fd890b1a11c8c3165abc7ad",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/orlando-health-orlando-regional-medical-center/cleaned-text/9807130c3b59b5e5.txt",
+      "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/orlando-health-orlando-regional-medical-center/source-pages/9807130c3b59b5e5.html",
+      "metadataPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/orlando-health-orlando-regional-medical-center/metadata/9807130c3b59b5e5.meta.json",
+      "pdfPath": "",
+      "pdfExtractionStatus": "NOT_APPLICABLE",
+      "capturedAt": "2026-05-11T00:00:00Z",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "captureNotes": "Orlando Health Clerkship Programs page; explicit international medical school path via CIE 701/702 form; VSLO for US LCME+AOA; max 2 rotations; 4 weeks each; $50 application fee per rotation; FSU+UF+USF affiliates."
+    }
+  ],
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs",
+      "pageTitle": "Clerkship Programs | Orlando Health Graduate Medical Education",
+      "sourcePageType": "VISITING_STUDENT_PROGRAM_HUB",
+      "shortQuote": "Foreign medical students must complete the same requirements as the US medical students. In addition, they must also include the CIE 701/702 form with their application.",
+      "quoteSupports": ["audience", "application"],
+      "audienceDecision": "INTERNATIONAL_STUDENT_ELIGIBLE_EXPLICIT_VIA_CIE_FORM",
+      "applicationDecision": "VSLO_FOR_US_LCME_AOA_PAPER_FOR_OTHERS",
+      "costDecision": "STATED_VERBATIM_50_USD_PER_ROTATION",
+      "visaDecision": "NOT_STATED_ON_SOURCE",
+      "durationDecision": "4_WEEKS_PER_ROTATION_MAX_2_ROTATIONS",
+      "specialtyDecision": "Emergency Medicine, General Surgery, Internal Medicine, Neurology, OB/GYN, Orthopedic Surgery, Pathology, Pediatrics",
+      "sourceScopeDecision": "INSTITUTION_SPECIFIC_SYSTEM_LEVEL",
+      "confidenceTier": "TIER_A_PUBLIC_SAFE",
+      "classification": "INTERNATIONAL_STUDENT_CONFIRMED",
+      "caveats": [
+        "FOREIGN_MEDICAL_STUDENTS_MUST_INCLUDE_CIE_701_OR_702_FORM",
+        "CIE_702_FORM_REQUIRES_STEP_1_AND_STEP_2_COMPLETED_BEFORE_ROTATION_START",
+        "FINAL_APPROVAL_CONTINGENT_ON_STATE_REVIEW",
+        "MAX_2_ROTATIONS_PER_STUDENT",
+        "4_WEEK_ROTATION_DURATION",
+        "50_USD_PROCESSING_FEE_PER_APPROVED_ROTATION",
+        "MALPRACTICE_1M_OCCURRENCE_3M_AGGREGATE_VIA_HOME_SCHOOL",
+        "PERSONAL_HEALTH_INSURANCE_REQUIRED",
+        "NO_HOUSING_PROVIDED",
+        "REVIEW_TIMEFRAME_4_TO_6_WEEKS_MIN",
+        "LCME_CANADIAN_AND_INTERNATIONAL_SCHOOLS_APPLY_VIA_PAPER_NOT_VSLO"
+      ]
+    }
+  ],
+  "fieldQuoteMap": [
+    {"fieldName": "audience_us_md", "value": "ELIGIBLE_VIA_VSLO_LCME", "quote": "only students enrolled at U.S. LCME accredited institutions and accredited American Osteopathic Association institutions are able to apply via VSLO", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "audience_us_do", "value": "ELIGIBLE_VIA_VSLO_AOA_ACCREDITED", "quote": "only students enrolled at U.S. LCME accredited institutions and accredited American Osteopathic Association institutions are able to apply via VSLO", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "audience_international_ms", "value": "ELIGIBLE_VIA_PAPER_APPLICATION_PLUS_CIE_FORM", "quote": "Foreign medical students must complete the same requirements as the US medical students. In addition, they must also include the CIE 701/702 form with their application", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "audience_img_graduate", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "audience_caribbean", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "audience_pre_med", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "year_required", "value": "FOURTH_YEAR_FOR_PAPER_APPLICATION", "quote": "Fourth-year medical students wishing to apply for a clerkship position", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "graduation_status", "value": "ENROLLED_REQUIRED", "quote": "only students enrolled at U.S. LCME accredited institutions", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "usmle_or_comlex_required", "value": "STEP_1_AND_STEP_2_REQUIRED_FOR_CIE_702_FORM_HOLDERS", "quote": "If your school holds the CIE 702 Form you are required to have Step 1 and Step 2 completed before the start of the rotation", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "english_or_toefl_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "application_pathway", "value": "VSLO_FOR_US_LCME_AOA_PAPER_FOR_LCME_CANADIAN_AND_FOREIGN", "quote": "US medical students who have access to VSLO must complete the medical student application on VSLO; US medical students who do not have access to VSLO may submit a paper application", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "application_url", "value": "VSLO_PLUS_GME_EMAIL_FOR_PAPER", "quote": "VSLO (Visiting Student Learning Opportunities)", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "application_window", "value": "2026_2027_ACADEMIC_YEAR_OPEN", "quote": "Applications for the 2026-2027 Academic Year are currently being accepted", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "deadline", "value": "REVIEW_TIMEFRAME_4_TO_6_WEEKS_MIN", "quote": "students should allow a minimum of 4-6 weeks for processing", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "cost_application_fee", "value": "50_USD_PER_APPROVED_ROTATION", "quote": "Orlando Health will charge an application/processing fee of $50.00 per approved rotation", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "cost_tuition_or_program_fee", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "cost_malpractice", "value": "1M_OCCURRENCE_3M_AGGREGATE_VIA_HOME_SCHOOL", "quote": "school's medical malpractice insurance ($1,000,000 occurrence / $3,000,000 annual aggregate)", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "cost_housing", "value": "NOT_PROVIDED", "quote": "GME does not offer housing", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "cost_other", "value": "PERSONAL_HEALTH_INSURANCE_REQUIRED", "quote": "copy of current personal health insurance", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "duration", "value": "4_WEEKS_PER_ROTATION_MAX_2_ROTATIONS", "quote": "Elective rotations are scheduled for a duration of four weeks; you can complete a total of two rotations within the Orlando Health system", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "specialties_offered", "value": "EM_GENERAL_SURGERY_IM_NEUROLOGY_OBGYN_ORTHO_PATHOLOGY_PEDIATRICS", "quote": "Emergency Medicine; General Surgery; Internal Medicine; Neurology; Obstetrics and Gynecology; Orthopedic Surgery; Pathology; Pediatrics", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "hands_on_vs_observer", "value": "NOT_STATED_ON_SOURCE_CLERKSHIP_LANGUAGE_IMPLIES_HANDS_ON", "quote": "Clerkships are four weeks in length with clinical learning experiences that are structured to allow for institutional academic elective credit to be assigned if desired", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "lor_or_certificate", "value": "INSTITUTIONAL_ACADEMIC_ELECTIVE_CREDIT_ASSIGNED_IF_DESIRED", "quote": "institutional academic elective credit to be assigned if desired", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "visa_b1_b2", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "visa_j1", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "visa_h1b", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "visa_not_mentioned", "value": "VISA_NOT_DISCUSSED_ON_SOURCE_INTERNATIONAL_LANE_VIA_CIE_FORM", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "affiliation_agreement_required", "value": "INSTITUTIONAL_AFFILIATIONS_FSU_UF_USF_PLUS_CIE_STATE_REVIEW_FOR_FOREIGN", "quote": "Orlando Health is institutionally affiliated with Florida State University College of Medicine, University of Florida College of Medicine, University of South Florida College of Medicine", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "immunization_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "background_check_required", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "malpractice_required", "value": "REQUIRED_1M_OCCURRENCE_3M_AGGREGATE_VIA_HOME_SCHOOL", "quote": "school's medical malpractice insurance ($1,000,000 occurrence / $3,000,000 annual aggregate)", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "coordinator_contact", "value": "SANDRA_INGRAM_DIR_GME_ACADEMIC_AFFAIRS_321_841_5243_PLUS_ALBA_CALEF_GME_INST_COORDINATOR_PLUS_GELIN_JONES_GME_ADMIN_COORD", "quote": "Director, Graduate Medical Education Academic Affairs Sandra Ingram (321) 841-5243; GME Institutional Coordinator, Sr Alba Calef (321) 841-5243; GME Administrative Coordinator Gelin (Jill) Jones (321) 841-5243", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "housing", "value": "NOT_PROVIDED", "quote": "GME does not offer housing", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false},
+    {"fieldName": "cancellation_policy", "value": "NOT_STATED_ON_SOURCE", "quote": "", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": true},
+    {"fieldName": "required_documents", "value": "CV_TRANSCRIPTS_SCHOOL_MALPRACTICE_PERSONAL_HEALTH_INSURANCE_PLUS_CIE_701_OR_702_FOR_FOREIGN", "quote": "CV, transcripts, school's medical malpractice insurance ($1,000,000 occurrence / $3,000,000 annual aggregate) and a copy of current personal health insurance", "quoteUrl": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs", "notStatedOnSource": false}
+  ],
+  "opportunityTags": {
+    "audience": ["US_MD", "US_DO", "LCME_ONLY", "COCA_ALLOWED", "INTERNATIONAL_MS", "FINAL_YEAR_ONLY", "MS4_ONLY"],
+    "application": ["VSLO", "DIRECT_APPLICATION", "PDF_APPLICATION", "EMAIL_COORDINATOR", "AFFILIATION_AGREEMENT_REQUIRED"],
+    "experienceType": ["CLINICAL_ELECTIVE", "HANDS_ON"],
+    "cost": ["APPLICATION_FEE", "COST_STATED", "MALPRACTICE_COST_STATED"],
+    "visa": ["VISA_NOT_MENTIONED"],
+    "source": ["INSTITUTION_SPECIFIC", "OFFICIAL_SOURCE", "CLEANED_TEXT_SAVED", "HASH_CAPTURED"]
+  },
+  "userFacingSummaryDraft": {
+    "oneSentenceSummary": "Orlando Health offers 4-week clerkships to US MD/DO and international medical students; foreign students apply via paper with the Florida CIE 701/702 form, max 2 rotations at $50/rotation.",
+    "whoThisIsFor": "Fourth-year medical students at US LCME-accredited institutions (via VSLO), AOA-accredited US DO institutions (via VSLO), LCME-accredited Canadian institutions (paper), or international medical schools (paper + CIE form). If your school holds CIE 702 Form, USMLE Step 1 AND Step 2 completion is required.",
+    "whoThisIsNotFor": "IMG graduates (not explicitly stated); non-fourth-year students; foreign students whose school cannot obtain the CIE 701 or 702 form.",
+    "howToApply": "US LCME/AOA students apply via VSLO. Non-VSLO students email the Orlando Health GME office for paper application. Foreign students additionally submit the CIE 701 or 702 form from their school via Florida Department of Education. Application package: CV, transcripts, $1M/$3M school malpractice proof, personal health insurance proof, $50/rotation fee. Min 4-6 weeks review.",
+    "estimatedCostSummary": "$50 application/processing fee per approved rotation. School-provided malpractice $1M occurrence / $3M aggregate. No housing provided. Personal health insurance required.",
+    "keyCaveats": [
+      "Foreign students require CIE 701 or 702 form (state of Florida regulatory)",
+      "CIE 702 Form holders need USMLE Step 1 + Step 2 completion before rotation start",
+      "Maximum 2 rotations per student",
+      "4 weeks per rotation; 12 rotation dates published for 2026/2027 cycle",
+      "Specialty list: EM, General Surgery, IM, Neurology, OB/GYN, Ortho, Pathology, Pediatrics",
+      "Final approval contingent on state review of CIE form for foreign students",
+      "FSU, UF, USF are institutional affiliates",
+      "Visa specifics not discussed on source"
+    ],
+    "whyWeClassifiedItThisWay": "Source explicitly admits 'foreign medical students' on the same path as US students plus the CIE 701/702 form (Florida state regulatory requirement). Verbatim cost data ($50/rotation; $1M/$3M malpractice via home school) and explicit duration (4 weeks, max 2 rotations) anchor the classification.",
+    "sourceTransparencyNote": "Cleaned text of Orlando Health Clerkship Programs page captured to T7 canonical capsule with real SHA-256 hash. CIE form requirement is unusual and specific to Florida.",
+    "possibleListingTitle": "Orlando Health ORMC — Clerkships (International Eligible via CIE Form, $50/rotation, Max 2 Rotations)",
+    "possibleMetaDescription": "Orlando Health 4-week clerkships for US MD/DO via VSLO and international students via paper application with Florida CIE 701/702 form; $50/rotation, max 2 rotations.",
+    "suggestedFilters": ["international_eligible", "vslo_us_md_do", "cie_form_required_for_foreign", "step_1_and_2_for_cie_702", "no_housing"]
+  },
+  "negativeEvidence": {
+    "searchedTerms": [
+      "orlando health visiting medical student elective",
+      "orlando health clerkship",
+      "orlando health VSLO",
+      "orlando health foreign medical student",
+      "orlando regional medical center visiting student",
+      "orlando health CIE form"
+    ],
+    "pagesOpened": [
+      "https://www.orlandohealth.com/medical-professionals",
+      "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.orlandohealth.com/medical-professionals/graduate-medical-education/clerkship-programs/visiting-student-program", "reason": "DEAD_LINK_404"}
+    ],
+    "rejectedReasons": ["DEAD_LINK_404"],
+    "noPublicUsceLaneReason": "",
+    "noPublicLaneReason": "",
+    "whetherNegativeEvidenceStrong": "STRONG positive evidence for international lane via CIE form.",
+    "futureRetrySuggestion": "Search Florida Department of Education for current CIE 701/702 form template. Verify which AOA accreditation Orlando Health recognizes (AOA accreditation is now COCA under ACGME single-accreditation system).",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 2
+  },
+  "changeDetectionPrep": {
+    "sourceHash": "b49edec918ac866861c8b94b93d9ccae073cb7cf4fd890b1a11c8c3165abc7ad",
+    "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/orlando-health-orlando-regional-medical-center/cleaned-text/9807130c3b59b5e5.txt",
+    "rawHtmlPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p101/FL/orlando-health-orlando-regional-medical-center/source-pages/9807130c3b59b5e5.html",
+    "screenshotPath": "",
+    "firstCapturedAt": "2026-05-11T00:00:00Z",
+    "nextRecheckDue": "2026-08-11",
+    "fieldsLikelyToChange": ["application_window", "rotation_dates", "cie_form_template_version"],
+    "changeRisk": "MEDIUM",
+    "notes": "Rotation dates rotate annually; CIE form requirements are Florida state regulation and may change."
+  },
+  "finalClassification": "INTERNATIONAL_STUDENT_CONFIRMED",
+  "finalTier": "TIER_A_PUBLIC_SAFE",
+  "driftCheck": "This advanced national USCE discovery because Orlando Health's explicit foreign-medical-student lane via Florida CIE 701/702 form (a state regulatory pathway) plus verbatim $50/rotation cost and 4-week-max-2 duration were documented with cleaned text and SHA-256 hash on the canonical T7 capsule; no DB/schema/noindex/homepage touched."
+}

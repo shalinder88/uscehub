@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "UC San Diego Health",
+    "aliases": [
+      "UCSD Medical Center",
+      "UC San Diego School of Medicine — Visiting Fourth-Year Students program (covering UCSD Health placement)"
+    ],
+    "city": "La Jolla",
+    "state": "CA",
+    "officialDomain": "medschool.ucsd.edu",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "UC San Diego Health",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 33 (queue-4-national-screening-resume); P101-1 selected_10 rank 3"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": [
+      "medschool.ucsd.edu",
+      "health.ucsd.edu"
+    ],
+    "searchTermsTried": [
+      "UC San Diego School of Medicine visiting medical student VSLO elective international site:ucsd.edu",
+      "UCSD visiting fourth year students",
+      "UCSD visiting senior students",
+      "UCSD VSLO",
+      "UCSD elective curriculum",
+      "UCSD international medical student"
+    ],
+    "pagesOpened": [
+      "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/index.html",
+      "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/preparing-for-your-elective.html",
+      "https://medschool.ucsd.edu/education/undergrad/visiting_senior_students/Pages/default.aspx",
+      "https://medschool.ucsd.edu/education/md-combined/curriculum/electives/index.html",
+      "https://emergencymed.ucsd.edu/education/medical-student-clerkship/index.html"
+    ],
+    "rejectedPages": [
+      {
+        "url": "https://imresidency.ucsd.edu/program/visiting-elective-scholarship-program.html",
+        "title": "Visiting Elective Scholarship Program for Department of Medicine Clerkships",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://imresidency.ucsd.edu/apply/visiting-clerkships.html",
+        "title": "Visiting Clerkships | IM Residency",
+        "reason": "RESIDENCY_ONLY"
+      },
+      {
+        "url": "https://radonc.ucsd.edu/education/vesp.html",
+        "title": "Visiting Elective Scholarship Program (VESP)",
+        "reason": "RESIDENCY_ONLY"
+      }
+    ],
+    "robotsOrAccessNotes": "medschool.ucsd.edu accessible; WebFetch clean.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/index.html",
+      "pageTitle": "Visiting Fourth-Year Students",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "We accept applications from students from North American (US, Canada, Puerto Rico) LCME-accredited medical schools and COCA-accredited osteopathic schools.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty via VSLO catalog; Rady Children's Hospital named as a rotation site",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_ONLY",
+        "NORTH_AMERICAN_LCME_COCA_ONLY_INCLUDES_CANADA_AND_PR",
+        "VSLO_REQUIRED"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/index.html",
+      "pageTitle": "Visiting Fourth-Year Students",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "We do not accept applications from students who attend international or off-shore medical schools for this program.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "EXCLUDED_EXPLICIT_FOR_AUDIENCE_X",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "INTERNATIONAL_AND_OFFSHORE_EXPLICITLY_EXCLUDED_VERBATIM",
+        "NOT_OPEN_TO_IMG_OR_CARIBBEAN_OR_NON_LCME"
+      ]
+    },
+    {
+      "sourceUrl": "https://medschool.ucsd.edu/education/md-combined/curriculum/visiting-4th-year-students/index.html",
+      "pageTitle": "Visiting Fourth-Year Students",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "Only fourth-year (senior) medical students may apply for clinical electives at UC San Diego School of Medicine.",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Multispecialty",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": [
+        "MS4_SENIOR_YEAR_ONLY_VERBATIM"
+      ]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 6,
+    "openedPagesCount": 5,
+    "strongNegativeEvidence": "UCSD has the most direct international-exclusion language found so far in P101: 'We do not accept applications from students who attend international or off-shore medical schools for this program.' Eligibility limited to North American LCME and COCA schools.",
+    "weakNegativeEvidence": "Cost, visa, and duration absent from source; UCSD Health hospital not separately named as placement (only Rady Children's mentioned)."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) SCHOOL_LEVEL_SOURCE — UCSD SOM hub; UCSD Health hospital not separately named (only Rady Children's mentioned); (b) NA LCME + COCA only, fourth-year only; (c) international + off-shore EXPLICITLY EXCLUDED — no IMG-friendly claim permitted; (d) cost/visa/duration NOT_STATED on source; (e) VSLO required, applications March 1 / offers April 1.",
+  "plainEnglishSummary": "UCSD School of Medicine's visiting students program accepts only fourth-year students from North American LCME or COCA-accredited schools. International and off-shore medical schools are explicitly excluded — the most direct exclusion language found in P101 so far. Applications via VSLO with March 1 open / April 1 offers. Fee, duration, and visa not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because California gained a third classified institution with the clearest international-exclusion language captured to date; this verbatim quote will protect future cards (no IMG-friendly claim permitted on UCSD)."
+}

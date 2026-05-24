@@ -1,0 +1,44 @@
+{
+  "seedId": "reorient_022",
+  "institutionId": "inst_live_stanford_intl",
+  "institutionName": "Stanford Health Care — International",
+  "parentSystem": "Stanford Medicine",
+  "campus": "",
+  "city": "Stanford",
+  "state": "CA",
+  "sourceUrl": "https://med.stanford.edu/visiting-clerkships/international.html",
+  "sourceDomain": "med.stanford.edu",
+  "expectedAudience": "INTERNATIONAL_MEDICAL_STUDENT",
+  "expectedOpportunityType": "INTERNATIONAL_VISITING_STUDENT",
+  "expectedSpecialty": "",
+  "expectedCampus": "Stanford Health Care",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "New INTL row for Stanford IVS program",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "2-week or 4-week up to 8-week",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_db56c791bf"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_022/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_022/cleaned.txt",
+  "sourceHash": "da83ae83f1ad6f185dbe119c34278ba16ed319e4d546d0a27c754ec8ab87e7a9",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "INTERNATIONAL_MEDICAL_STUDENT",
+    "confidence": "HIGH",
+    "rationale": "international student signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "strong quote evidence",
+    "signals": []
+  },
+  "quoteScore": 10,
+  "fetchedAt": "2026-05-17T03:37:21.305Z"
+}

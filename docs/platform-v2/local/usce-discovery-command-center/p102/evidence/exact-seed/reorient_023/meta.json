@@ -1,0 +1,48 @@
+{
+  "seedId": "reorient_023",
+  "institutionId": "inst_live_baylor_vms",
+  "institutionName": "Baylor College of Medicine",
+  "parentSystem": "Baylor College of Medicine",
+  "campus": "",
+  "city": "Houston",
+  "state": "TX",
+  "sourceUrl": "https://www.bcm.edu/education/school-of-medicine/m-d-program/curriculum/elective-program/visiting-medical-student",
+  "sourceDomain": "bcm.edu",
+  "expectedAudience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+  "expectedOpportunityType": "VISITING_MEDICAL_STUDENT_ELECTIVE",
+  "expectedSpecialty": "",
+  "expectedCampus": "Baylor College of Medicine",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Replacement for bcm.edu homepage — explicit visiting-medical-student path; accepts both US and international",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "VSLO; both US and INTL routes",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_18202c79b5",
+    "exact_59feb6c169"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_023/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_023/cleaned.txt",
+  "sourceHash": "fc0383ec62c61c61575d10c239fa06676f169759a852d2b7c2cfd97818ef5c58",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "BOTH_STUDENT_AND_IMG_GRADUATE",
+    "confidence": "HIGH",
+    "rationale": "both VMS and IMG signals in page text"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: visiting-student URL segment, elective URL segment",
+    "signals": [
+      "visiting-student URL segment",
+      "elective URL segment"
+    ]
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T03:37:23.263Z"
+}

@@ -1,0 +1,44 @@
+{
+  "seedId": "live_101",
+  "institutionId": "inst_live_montefiore_albert_einstein",
+  "institutionName": "Montefiore / Albert Einstein",
+  "parentSystem": "",
+  "campus": "",
+  "city": "Bronx",
+  "state": "NY",
+  "sourceUrl": "https://montefioreeinstein.org/education/gme",
+  "sourceDomain": "montefioreeinstein.org",
+  "expectedAudience": "IMG_GRADUATE_EXTERNSHIP",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine, Pediatrics, Surgery, Family Medicine",
+  "expectedCampus": "",
+  "expectedDirectLink": "false",
+  "knownGoodReason": "data.js raw link",
+  "priorEvidenceRef": "usmle-observerships/data.js + prisma/verified-links.ts",
+  "notes": "fee: paid | duration: 4-12 weeks | visa: B1/B2, J1",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "REJECTED",
+  "emittedRowIds": [
+    "exact_f29166215c"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_101/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/live_101/cleaned.txt",
+  "sourceHash": "385da04f830062e815fe388662eaa5029ad58215ca0222025ac9d7ef943cd44b",
+  "triage": {
+    "decision": "REJECT_PATIENT_FACING",
+    "reason": "patient-facing page with no opportunity signal"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_EXTERNSHIP",
+    "confidence": "LOW",
+    "rationale": "seed expected IMG externship; weak evidence"
+  },
+  "dl": {
+    "status": "INVALID_NOT_USCE_SOURCE",
+    "reason": "no direct-opportunity URL or quote signals",
+    "signals": []
+  },
+  "quoteScore": 0,
+  "fetchedAt": "2026-05-17T02:33:02.918Z"
+}

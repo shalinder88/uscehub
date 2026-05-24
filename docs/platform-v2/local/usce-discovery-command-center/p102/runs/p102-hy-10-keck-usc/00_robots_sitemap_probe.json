@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "fetched": true,
+  "statusCode": 200,
+  "sitemapsAdvertised": [],
+  "disallows": [
+    "/wp-includes/",
+    "/wp-login.php",
+    "/wp-admin/*",
+    "/wp-register.php",
+    "/*/page/",
+    "*.pdf$"
+  ],
+  "allows": [],
+  "sitemap": {
+    "fetched": true,
+    "statusCode": 200,
+    "urlsFound": 2070,
+    "candidatesKept": [
+      "https://keck.usc.edu/research-programs/",
+      "https://keck.usc.edu/residencies-and-fellowships/",
+      "https://keck.usc.edu/faculty-search/shengmei-zhou/",
+      "https://keck.usc.edu/venue/hastings-auditorium-hoffman-medical-cancer-research-building/",
+      "https://keck.usc.edu/organizer/office-of-research/",
+      "https://keck.usc.edu/event/usc-division-of-health-behavior-research-presents-inside-out-webinar-series/",
+      "https://keck.usc.edu/event/hot-tips-on-getting-your-research-funded-from-top-researchers-at-usc-2/",
+      "https://keck.usc.edu/calendar/event/ai-in-biomedical-research-roundtable/",
+      "https://keck.usc.edu/calendar/event/usc-center-for-personalized-brain-health-cpbh-research-symposium-advances-in-personalized-brain-health/"
+    ]
+  }
+}

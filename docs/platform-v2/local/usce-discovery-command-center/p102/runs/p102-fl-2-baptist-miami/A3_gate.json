@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-fl-2-baptist-miami",
+  "institutionId": "1",
+  "verdict": "PASS_WITH_CAVEATS",
+  "networkUsed": false,
+  "agentUsed": false,
+  "publicSafe": false,
+  "futureLaneValue": "HIGH",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 0,
+  "futureLaneClaims": 55,
+  "hallucinationRisks": [],
+  "unsupportedClaims": [],
+  "quoteVerificationFailures": [],
+  "sourceScopeConflicts": [
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus.",
+    "https://baptisthealth.net/international-services/international-healthcare-professionals/international-observerships: Observership keyword detected on HEALTH_SYSTEM_LEVEL source; cannot apply to specific campus."
+  ],
+  "missingCriticalFields": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
+  "requiredA4Tasks": [],
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-15T21:24:31.908Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
+}

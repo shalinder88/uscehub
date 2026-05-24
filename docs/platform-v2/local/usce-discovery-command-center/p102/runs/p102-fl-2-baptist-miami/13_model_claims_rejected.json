@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "count": 1,
+  "claims": [
+    {
+      "claimId": "a2_c4",
+      "claimType": "FUTURE_LANE_SERVICES",
+      "lane": "RESEARCH_OPPORTUNITY",
+      "sourceUrl": "https://baptisthealth.net/services/orthopedic-care/research-and-education",
+      "sourceHash": "a19719748b282b8fbb9102c8eb7fbeb5af7d34041e442727870ac8a9728ebc52",
+      "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-fl-2-baptist-miami/cleaned_text/sm_cfd5abcd0ab508b8.txt",
+      "sourceScope": "HEALTH_SYSTEM_LEVEL",
+      "quote": "The Institute’s physicians serve as principal investigators for numerous studies now in progress. Our physicians are regularly published and present at conferences.",
+      "claimText": "Institute physicians serve as principal investigators on active studies and present at conferences — research infrastructure signal.",
+      "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+      "confidence": "MEDIUM",
+      "whyA1Missed": "A1 captured fellowships and FIU affiliation but did not record the explicit research-activity paragraph that opens the page.",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "deepSourceFamily": "RESEARCH",
+      "tierAssignmentRationale": "Research infrastructure that supports trainee/fellow research engagement; Tier 2.",
+      "limitations": "No mention of student/observer/visitor research access or application route.",
+      "normalizedField": null,
+      "schemaVersion": "p102-cli-0e-1",
+      "runId": "p102-fl-2-baptist-miami",
+      "institutionId": "inst_baptist_hospital_miami_fl",
+      "sourceFamily": "RESEARCH_PAGE",
+      "quoteVerified": false,
+      "rejectionReason": "quote_not_in_cleaned_text",
+      "phaseProducedBy": "A2"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "runId": "p102-pc-7-uab",
+  "ranAt": "2026-05-15T14:37:05.416Z",
+  "total": 68,
+  "changes": 2,
+  "entries": [
+    {
+      "claimId": "c_uab_scope_conflict",
+      "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+      "sourceFamily": "JSON_LD",
+      "deepSourceFamily": "MEDICAL_EDUCATION",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "confidence": "HIGH",
+      "beforeVisibility": "HUMAN_REVIEW_REQUIRED",
+      "afterVisibility": "PUBLIC_SAFE_USCE",
+      "afterRationale": null
+    },
+    {
+      "claimId": "sc01_scope",
+      "lane": "INTERNATIONAL_MEDICAL_STUDENT",
+      "sourceFamily": "VISITING_STUDENT_PAGE",
+      "deepSourceFamily": "VISITING_STUDENT",
+      "sourceScope": "INSTITUTION_SPECIFIC",
+      "confidence": "HIGH",
+      "beforeVisibility": "HUMAN_REVIEW_REQUIRED",
+      "afterVisibility": "PUBLIC_SAFE_USCE",
+      "afterRationale": null
+    }
+  ]
+}

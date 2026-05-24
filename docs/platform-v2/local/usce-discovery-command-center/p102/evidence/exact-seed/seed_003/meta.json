@@ -1,0 +1,46 @@
+{
+  "seedId": "seed_003",
+  "institutionId": "inst_hospital_for_special_surgery_ny",
+  "institutionName": "Hospital for Special Surgery",
+  "parentSystem": "",
+  "campus": "",
+  "city": "New York",
+  "state": "NY",
+  "sourceUrl": "https://hss.edu/education-institute/academic-visitor-program",
+  "sourceDomain": "hss.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Orthopedics",
+  "expectedCampus": "Hospital for Special Surgery",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "Existing reviewer-approved row; URL is the program landing page",
+  "priorEvidenceRef": "public_safe_opportunity_rows_approved.json",
+  "notes": "Visiting clinician/observer program",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_0cbbf7c087"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_003/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/seed_003/cleaned.txt",
+  "sourceHash": "04df8c7e808b90a68e09dc54c03c48663db8ea070359918e381d059ffe3a1dd6",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: academic visitor URL segment",
+    "signals": [
+      "academic visitor URL segment"
+    ]
+  },
+  "quoteScore": 4,
+  "fetchedAt": "2026-05-17T02:32:18.713Z"
+}

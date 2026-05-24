@@ -1,0 +1,46 @@
+{
+  "seedId": "reorient_057",
+  "institutionId": "inst_live_ttuhsc_observership",
+  "institutionName": "Texas Tech HSC — Observership Program",
+  "parentSystem": "TTUHSC",
+  "campus": "",
+  "city": "Lubbock",
+  "state": "TX",
+  "sourceUrl": "https://www.ttuhsc.edu/medicine/internal/observership/observership.aspx",
+  "sourceDomain": "ttuhsc.edu",
+  "expectedAudience": "IMG_GRADUATE_OBSERVER",
+  "expectedOpportunityType": "OBSERVERSHIP",
+  "expectedSpecialty": "Internal Medicine",
+  "expectedCampus": "Texas Tech Health Sciences Center",
+  "expectedDirectLink": "true",
+  "knownGoodReason": "TTUHSC Internal Medicine observership program",
+  "priorEvidenceRef": "2026-05-16 WebSearch",
+  "notes": "Background check + fee + onboarding",
+  "runStatus": "EXTRACTED",
+  "finalStatus": "AUTO_PROMOTE",
+  "emittedRowIds": [
+    "exact_f54b326af6"
+  ],
+  "fetchHttpStatus": 200,
+  "rawHtmlPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_057/raw.html",
+  "cleanedTextPath": "docs/platform-v2/local/usce-discovery-command-center/p102/evidence/exact-seed/reorient_057/cleaned.txt",
+  "sourceHash": "8cf0bb8f222ed2c4ad71064a2104a3633fda8755a35fbb569301a1952a93a1b9",
+  "triage": {
+    "decision": "INCLUDE_USCE_OPPORTUNITY",
+    "reason": "USCE signal: URL+text"
+  },
+  "aud": {
+    "audience": "IMG_GRADUATE_OBSERVER",
+    "confidence": "HIGH",
+    "rationale": "IMG/observer signal present"
+  },
+  "dl": {
+    "status": "VALID_DIRECT_USCE_SOURCE",
+    "reason": "direct USCE URL signal: observership URL segment",
+    "signals": [
+      "observership URL segment"
+    ]
+  },
+  "quoteScore": 11,
+  "fetchedAt": "2026-05-17T03:38:43.241Z"
+}

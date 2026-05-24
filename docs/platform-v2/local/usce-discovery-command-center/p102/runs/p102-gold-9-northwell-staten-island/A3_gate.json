@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-gold-9-northwell-staten-island",
+  "institutionId": "1",
+  "verdict": "PASS_WITH_CAVEATS",
+  "networkUsed": false,
+  "agentUsed": false,
+  "publicSafe": false,
+  "futureLaneValue": "HIGH",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 7,
+  "futureLaneClaims": 76,
+  "hallucinationRisks": [],
+  "unsupportedClaims": [],
+  "quoteVerificationFailures": [],
+  "sourceScopeConflicts": [],
+  "missingCriticalFields": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
+  "requiredA4Tasks": [],
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-15T13:37:54.444Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
+}

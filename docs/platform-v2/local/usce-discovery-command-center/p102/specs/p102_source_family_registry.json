@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "description": "Extensible URL-based source-family classifier registry. The runner's classifySourceFamily() reads this file to map URL keywords + title keywords → sourceFamily. Lower priority number wins on overlap. Future additions go here, not in code.",
+  "generatedAt": "2026-05-13",
+  "registry": [
+    {
+      "family": "OBSERVERSHIP_PAGE",
+      "priority": 1,
+      "urlKeywords": ["observer", "observership", "/img/", "international-medical-graduate", "img-observer"],
+      "titleKeywords": ["observership", "clinical observer", "physician observer"]
+    },
+    {
+      "family": "VISITING_STUDENT_PAGE",
+      "priority": 2,
+      "urlKeywords": ["visiting-student", "visiting student", "visiting-medical", "visiting-medical-student", "international-students", "international medical", "vslo", "vsas", "audition-rotation"],
+      "titleKeywords": ["visiting medical student", "visiting student", "international medical student", "VSLO", "audition rotation"]
+    },
+    {
+      "family": "VISITING_STUDENT_PAGE",
+      "priority": 3,
+      "urlKeywords": ["elective", "away-rotation", "away rotation", "sub-intern", "subintern", "acting-intern", "fourth-year-elective", "senior-elective"],
+      "titleKeywords": ["clinical elective", "away rotation", "sub-internship", "acting internship", "fourth-year elective", "senior elective"]
+    },
+    {
+      "family": "GME_PAGE",
+      "priority": 4,
+      "urlKeywords": ["/gme", "graduate-medical", "graduate medical", "/medical-education/"],
+      "titleKeywords": ["graduate medical education", "ACGME-accredited"]
+    },
+    {
+      "family": "RESIDENCY_PAGE",
+      "priority": 5,
+      "urlKeywords": ["residency"],
+      "titleKeywords": ["residency program"]
+    },
+    {
+      "family": "FELLOWSHIP_PAGE",
+      "priority": 6,
+      "urlKeywords": ["fellowship"],
+      "titleKeywords": ["fellowship program"]
+    },
+    {
+      "family": "CAREERS_PAGE",
+      "priority": 7,
+      "urlKeywords": ["careers", "career", "jobs", "employment", "/physician-careers", "/provider-careers"],
+      "titleKeywords": ["careers", "physician careers", "job opportunities"]
+    },
+    {
+      "family": "VOLUNTEER_PAGE",
+      "priority": 8,
+      "urlKeywords": ["volunteer", "volunteering"],
+      "titleKeywords": ["volunteer program", "student volunteer"]
+    },
+    {
+      "family": "RESEARCH_PAGE",
+      "priority": 9,
+      "urlKeywords": ["research", "shadow", "shadowing", "student-research"],
+      "titleKeywords": ["research opportunity", "student research", "shadowing program"]
+    },
+    {
+      "family": "OTHER",
+      "priority": 99,
+      "urlKeywords": [],
+      "titleKeywords": []
+    }
+  ],
+  "notes": [
+    "Priority is used to disambiguate when a URL/title matches multiple families. Lower priority wins.",
+    "URL keywords match against the lowercased URL. Title keywords match against the lowercased page title.",
+    "OTHER is the default fallback when nothing else matches; it has highest priority number.",
+    "Adding a new family: append an entry with a unique priority. The classifier is order-independent (uses priority field), so insertion location doesn't matter."
+  ]
+}

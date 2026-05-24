@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-0r-dry-run-1",
+  "institutionId": "inst_hartford_hospital_ct",
+  "institutionName": "Hartford Hospital",
+  "officialDomains": [
+    "hartfordhospital.org",
+    "hartfordhealthcare.org"
+  ],
+  "sourceScopeSummary": {
+    "primaryDomainsObserved": [
+      "hartfordhospital.org",
+      "hartfordhealthcare.org"
+    ],
+    "campusApplicabilityProofsCaptured": [],
+    "scopeConflicts": []
+  },
+  "tier1PreResidency": {
+    "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+    "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+    "claims": [],
+    "claimCount": 0,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [],
+    "sourceClaimIds": [],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "NOT_APPLICABLE"
+  },
+  "tier2Trainee": {
+    "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+    "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+    "claims": [],
+    "claimCount": 0,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [],
+    "sourceClaimIds": [],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "NOT_APPLICABLE"
+  },
+  "tier3PracticeCareer": {
+    "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+    "tierCoverageStatus": "TIER_COVERAGE_PARTIAL",
+    "claims": [
+      {
+        "claimId": "inst_hartford_hospital_ct-src_28-fl-1",
+        "claimType": "FUTURE_LANE_JOB",
+        "lane": "CAREERS_PAGE",
+        "sourceUrl": "https://hartfordhospital.org/careers",
+        "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+        "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+        "sourceScope": "CAREERS_PORTAL",
+        "quote": "Careers at Hartford Healthcare | Hartford Healthcare jobsSearch resultsBe part of something bigger and better.",
+        "claimText": "Hartford Healthcare careers portal page; future-lane job content, not USCE.",
+        "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+        "confidence": "HIGH",
+        "normalizedField": null,
+        "limitations": "Careers portal scope; system-level (Hartford HealthCare), not Hartford Hospital-specific USCE.",
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "sourceFamily": "CAREERS_PAGE",
+        "visibility": "FUTURE_LANE_ONLY",
+        "visibilityRationale": "source family CAREERS_PAGE is future-lane only",
+        "quoteVerified": true,
+        "phaseProducedBy": "A1"
+      },
+      {
+        "claimId": "inst_hartford_hospital_ct-src_28-a2-1",
+        "claimType": "CONTACT_PHONE",
+        "lane": "CAREERS_PAGE",
+        "sourceUrl": "https://hartfordhospital.org/careers",
+        "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+        "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+        "sourceScope": "CAREERS_PORTAL",
+        "quote": "TEL:888-985-7755",
+        "claimText": "Careers portal phone number for Hartford HealthCare; future-lane contact only.",
+        "normalizedField": "careers_phone",
+        "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+        "confidence": "HIGH",
+        "limitations": "System-level careers portal; not a USCE coordinator contact.",
+        "whyA1Missed": "Phone number appears in footer-level text near copyright; A1 captured only the top-of-page title quote.",
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "sourceFamily": "CAREERS_PAGE",
+        "visibility": "FUTURE_LANE_ONLY",
+        "visibilityRationale": "source family CAREERS_PAGE is future-lane only",
+        "quoteVerified": true,
+        "phaseProducedBy": "A2"
+      },
+      {
+        "claimId": "inst_hartford_hospital_ct-src_28-a2-2",
+        "claimType": "FUTURE_LANE_SERVICES",
+        "lane": "CAREERS_PAGE",
+        "sourceUrl": "https://hartfordhospital.org/careers",
+        "sourceHash": "9b246bc7067c8417787fe38cc87fee7668eede66a4e8944e19571fa0bdff6fcf",
+        "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/p102-0r-dry-run-1/cleaned_text/careers.txt",
+        "sourceScope": "CAREERS_PORTAL",
+        "quote": "Growth & DevelopmentTuition assistance, education and training, and career progression opportunities.",
+        "claimText": "Employee tuition assistance and training benefit; future-lane employment benefit, not USCE.",
+        "normalizedField": "employee_benefit_tuition_assistance",
+        "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+        "confidence": "HIGH",
+        "limitations": "Benefit applies to employees, not visiting students/observers.",
+        "whyA1Missed": "A1 emitted a single broad careers-page claim and did not break out the specific tuition/education benefit signal.",
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "p102-0r-dry-run-1",
+        "institutionId": "inst_hartford_hospital_ct",
+        "sourceFamily": "CAREERS_PAGE",
+        "visibility": "FUTURE_LANE_ONLY",
+        "visibilityRationale": "source family CAREERS_PAGE is future-lane only",
+        "quoteVerified": true,
+        "phaseProducedBy": "A2"
+      }
+    ],
+    "claimCount": 3,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 3,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [
+      "https://hartfordhospital.org/careers"
+    ],
+    "sourceClaimIds": [
+      "inst_hartford_hospital_ct-src_28-fl-1",
+      "inst_hartford_hospital_ct-src_28-a2-1",
+      "inst_hartford_hospital_ct-src_28-a2-2"
+    ],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "FUTURE_LANE_ONLY"
+  },
+  "sourceFamilyCoverage": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/visiting-student",
+        "https://hartfordhospital.org/visiting-students",
+        "https://hartfordhospital.org/international-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/observership",
+        "https://hartfordhospital.org/observer",
+        "https://hartfordhospital.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/electives",
+        "https://hartfordhospital.org/away-rotations",
+        "https://hartfordhospital.org/clinical-elective",
+        "https://hartfordhospital.org/clinical-rotation"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/sub-internship",
+        "https://hartfordhospital.org/subinternship",
+        "https://hartfordhospital.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/shadow",
+        "https://hartfordhospital.org/shadowing",
+        "https://hartfordhospital.org/volunteer",
+        "https://hartfordhospital.org/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/graduate-medical-education",
+        "https://hartfordhospital.org/gme"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://hartfordhospital.org/visa",
+        "https://hartfordhospital.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hartfordhospital.org/careers"
+      ],
+      "acceptedSources": [
+        "https://hartfordhospital.org/careers"
+      ],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://hartfordhospital.org/observerships",
+        "https://hartfordhospital.org/medical-students",
+        "https://hartfordhospital.org/research",
+        "https://hartfordhospital.org/img",
+        "https://hartfordhospital.org/international-medical-graduates",
+        "https://hartfordhospital.org/credentialing"
+      ],
+      "acceptedSources": [
+        "https://hartfordhospital.org/research"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "rejectedSourceFamilies": [],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  },
+  "unresolveds": [],
+  "A4TargetedRecoveryTasks": [],
+  "publicPromotionCandidates": [],
+  "futureLaneArchive": [
+    "inst_hartford_hospital_ct-src_28-fl-1",
+    "inst_hartford_hospital_ct-src_28-a2-1",
+    "inst_hartford_hospital_ct-src_28-a2-2"
+  ],
+  "humanReviewQueue": [],
+  "confidenceScores": {
+    "tier1Completeness": 0.1,
+    "tier2Completeness": 0.1,
+    "tier3Completeness": 0.5,
+    "scopeDiscipline": 1,
+    "quoteVerificationRate": 1
+  },
+  "artifactManifestRefs": [
+    "13_model_claims_verified.json",
+    "13_model_claims_rejected.json",
+    "A1_model_reader_output.json",
+    "A2_model_depth_output.json",
+    "A3_model_gate.json",
+    "A3_model_gate_input_summary.json",
+    "00_deep_source_discovery.json",
+    "01_deep_source_family_coverage.json"
+  ],
+  "quoteVerificationSummary": {
+    "totalClaims": 3,
+    "quoteVerifiedClaims": 3,
+    "rejectedClaims": 0,
+    "notStatedFieldClaims": 0
+  },
+  "deepRunCompletion": "INCOMPLETE",
+  "publicReadiness": "NOT_PUBLIC_READY",
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  }
+}

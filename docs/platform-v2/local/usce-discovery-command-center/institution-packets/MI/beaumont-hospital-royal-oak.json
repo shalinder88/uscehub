@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "p101-0",
+  "institution": {
+    "name": "Beaumont Hospital - Royal Oak",
+    "aliases": ["Corewell Health William Beaumont University Hospital Royal Oak", "OUWB Beaumont"],
+    "city": "Royal Oak",
+    "state": "MI",
+    "officialDomain": "corewellhealth.org",
+    "institutionType": "academic_medical_center",
+    "healthSystem": "Corewell Health (formerly Beaumont Health) / OUWB SOM",
+    "sourceOfIdentity": "queue_4_candidate_rows.csv rank 60; P101-2 selected_25 rank 20"
+  },
+  "searchProcess": {
+    "searchedAt": "2026-05-11T00:00:00Z",
+    "searchMode": "ONE_INSTITUTION_ONE_WEBSITE",
+    "officialDomainsChecked": ["corewellhealth.org", "beaumont.edu", "oakland.edu"],
+    "searchTermsTried": ["Beaumont Hospital Royal Oak OUWB Corewell visiting medical student VSLO international elective"],
+    "pagesOpened": [
+      "https://corewellhealth.org/medical-education/southeast/medical-student-rotations/royal-oak",
+      "https://www.beaumont.edu/medical-student-education",
+      "https://oakland.edu/medicine/curriculum/student-away-electives/",
+      "https://oakland.edu/medicine/forms-and-critical-documents/critical-documents/international-electives"
+    ],
+    "rejectedPages": [
+      {"url": "https://www.beaumont.org/docs/librariesprovider2/medical-students---dearborn/graduate-observ-application.pdf?sfvrsn=2", "title": "Beaumont Dearborn Graduate Observ Application", "reason": "WRONG_CAMPUS"}
+    ],
+    "robotsOrAccessNotes": "corewellhealth.org accessible.",
+    "stopCondition": "SOURCE_FOUND_AND_CLASSIFIED"
+  },
+  "candidateFindings": [
+    {
+      "sourceUrl": "https://corewellhealth.org/medical-education/southeast/medical-student-rotations/royal-oak",
+      "pageTitle": "Medical Student Rotations, Royal Oak | Corewell Health",
+      "sourcePageType": "INSTITUTION_HUB",
+      "shortQuote": "U.S. LCME accredited institution, or AOA Commission on Osteopathic College Accreditation (COCA) institution",
+      "quoteSupports": ["audience"],
+      "audienceDecision": "US_LCME_AOA_ONLY_EXPLICIT",
+      "applicationDecision": "VSLO_REQUIRED_EXPLICIT",
+      "costDecision": "NOT_STATED_ON_SOURCE",
+      "visaDecision": "NOT_MENTIONED_US_ONLY_AUDIENCE",
+      "durationDecision": "NOT_STATED_ON_SOURCE",
+      "specialtyDecision": "Family Medicine, Internal Medicine, Surgery, Pediatrics sub-internships",
+      "sourceScopeDecision": "SCHOOL_LEVEL_SOURCE",
+      "confidenceTier": "TIER_B_CAUTION_SAFE",
+      "classification": "VSLO_US_MD_DO_ONLY",
+      "caveats": ["US_LCME_OR_COCA_VERBATIM", "VSAS_VSLO_REQUIRED", "PRIMARY_OUWB_TEACHING_HOSPITAL"]
+    }
+  ],
+  "negativeEvidence": {
+    "noPublicUsceLaneReason": "",
+    "searchedTermsCount": 1,
+    "openedPagesCount": 4,
+    "strongNegativeEvidence": "Restricted to US LCME or COCA via VSLO. International medical schools not addressed in the Royal Oak hub.",
+    "weakNegativeEvidence": "Beaumont Royal Oak not separately named verbatim (the hub references 'Royal Oak' location). Cost, visa, duration absent."
+  },
+  "finalClassification": "VSLO_US_MD_DO_ONLY",
+  "finalTier": "TIER_B_CAUTION_SAFE",
+  "nextAction": "For public-safe activation: (a) US LCME/COCA via VSLO; (b) Beaumont Royal Oak is the primary OUWB teaching hospital; (c) cost + visa + duration NOT_STATED.",
+  "plainEnglishSummary": "Beaumont Royal Oak is part of Corewell Health and the primary teaching hospital for OUWB SOM. Visiting fourth-year medical students from US LCME or COCA-accredited schools can apply via VSLO. Sub-internships in Family Medicine, IM, Surgery, Pediatrics. Cost, visa, and duration not stated on the hub.",
+  "driftCheck": "This advanced national USCE discovery because MI gained a third P101 packet (after Henry Ford + DMC/WSU); Beaumont Royal Oak documented as OUWB teaching hub."
+}

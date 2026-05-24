@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "p102-pc-5-hss",
+  "flags": [
+    {
+      "check": "student_rotation_present",
+      "triggered": false,
+      "detail": "student + rotation keywords detected; visiting-student object extraction deferred to P102-1."
+    },
+    {
+      "check": "elective_m4_present",
+      "triggered": false,
+      "detail": "elective + M4 keywords detected; elective object extraction deferred to P102-1."
+    },
+    {
+      "check": "observer_shadow_present",
+      "triggered": true,
+      "detail": "observer/shadow keywords detected; observership object extraction deferred."
+    },
+    {
+      "check": "volunteer_page_classification_pending",
+      "triggered": true,
+      "detail": "Volunteer page captured; positive/negative USCE classification deferred."
+    },
+    {
+      "check": "visa_signals_present",
+      "triggered": false,
+      "detail": "visa signals detected; visa object extraction deferred."
+    },
+    {
+      "check": "faculty_apply_present",
+      "triggered": true,
+      "detail": "faculty + apply keywords detected; future-lane job object extraction deferred."
+    },
+    {
+      "check": "pdf_pending",
+      "triggered": false,
+      "detail": "PDF detected but text extraction pending; add pdf-parse in P102-0B if needed."
+    },
+    {
+      "check": "jsonld_not_reflected_in_source_map",
+      "triggered": false,
+      "detail": "JSON-LD captured in source_map sidecar; reflected in source records."
+    }
+  ],
+  "note": "P102-0R defers concept-pack synonym lexicon; flags represent forward work for P102-1."
+}

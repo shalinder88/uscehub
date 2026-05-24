@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-gold-10-boston-medical-center",
+  "institutionId": "inst_boston_medical_center_ma",
+  "institutionName": "Boston Medical Center",
+  "officialDomains": [
+    "bmc.org"
+  ],
+  "budgets": {
+    "maxCandidates": 20,
+    "maxAccepted": 10,
+    "maxPdfs": 5
+  },
+  "tasks": [
+    {
+      "taskId": "a4_bmc_visiting_medical_students",
+      "missingFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": [
+        "https://bmc.org/otolaryngology-head-neck-surgery/residency-program/visiting-medical-students"
+      ]
+    },
+    {
+      "taskId": "a4_bmc_em_clerkships_subi_ultrasound",
+      "missingFamily": "VISITING_MEDICAL_STUDENT_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "candidates": []
+    },
+    {
+      "taskId": "a4_bmc_gme_application_and_futurehousestaff",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "candidates": [
+        "https://bmc.org/gme/application",
+        "https://bmc.org/gme/futurehousestaff"
+      ]
+    },
+    {
+      "taskId": "a4_bmc_pedneuro_rotations_electives",
+      "missingFamily": "RESIDENCY_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "candidates": []
+    },
+    {
+      "taskId": "a4_bmc_pediatric_infectious_disease_fellowship",
+      "missingFamily": "FELLOWSHIP_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "candidates": []
+    }
+  ],
+  "mode": "execute",
+  "attestations": {
+    "networkUsed": true,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "sameInstitutionOnly": true
+  },
+  "generatedAt": "2026-05-15T03:27:25.394Z"
+}

@@ -1,0 +1,476 @@
+{
+  "schemaVersion": "p102-deep-0f-1",
+  "runId": "p102-fl-4-uf-health-shands",
+  "institutionId": "inst_uf_health_shands_fl",
+  "institutionName": "UF Health Shands Hospital",
+  "officialDomains": [
+    "ufhealth.org"
+  ],
+  "sourceScopeSummary": {
+    "primaryDomainsObserved": [
+      "ufhealth.org"
+    ],
+    "campusApplicabilityProofsCaptured": [],
+    "scopeConflicts": []
+  },
+  "tier1PreResidency": {
+    "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+    "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+    "claims": [],
+    "claimCount": 0,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [],
+    "sourceClaimIds": [],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "NOT_APPLICABLE"
+  },
+  "tier2Trainee": {
+    "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+    "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+    "claims": [],
+    "claimCount": 0,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [],
+    "sourceClaimIds": [],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "NOT_APPLICABLE"
+  },
+  "tier3PracticeCareer": {
+    "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+    "tierCoverageStatus": "TIER_COVERAGE_WEAK",
+    "claims": [],
+    "claimCount": 0,
+    "publicSafeUsceCount": 0,
+    "futureLaneOnlyCount": 0,
+    "humanReviewRequiredCount": 0,
+    "cautionSafeInternalReviewCount": 0,
+    "sourceUrls": [],
+    "sourceClaimIds": [],
+    "notStatedFields": [],
+    "unresolveds": [],
+    "visibilityLane": "NOT_APPLICABLE"
+  },
+  "sourceFamilyCoverage": [
+    {
+      "family": "HOSPITAL_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "HEALTH_SYSTEM_HOME",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/medical-education",
+        "https://ufhealth.org/professional-education"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "UNDERGRADUATE_MEDICAL_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/student-affairs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISITING_STUDENT",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/visiting-student",
+        "https://ufhealth.org/visiting-students",
+        "https://ufhealth.org/international-students",
+        "https://ufhealth.org/medicine/international/international-programs/international-visiting-medical-students",
+        "https://ufhealth.org/education/undergraduate-medical-education/requirements-for-visiting-students",
+        "https://ufhealth.org/education/visiting-medical-students",
+        "https://ufhealth.org/medical-education/visiting-students",
+        "https://ufhealth.org/students/visiting-students"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "OBSERVERSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/observership",
+        "https://ufhealth.org/observer",
+        "https://ufhealth.org/clinical-observer"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "EXTERNSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "ELECTIVE",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/electives",
+        "https://ufhealth.org/away-rotations",
+        "https://ufhealth.org/clinical-elective",
+        "https://ufhealth.org/clinical-rotation",
+        "https://ufhealth.org/hcp-education-training/medical-students/elective",
+        "https://ufhealth.org/education/medical-student-electives",
+        "https://ufhealth.org/medical-education/medical-student-electives",
+        "https://ufhealth.org/medical-students/electives",
+        "https://ufhealth.org/medical-students/elective-rotations",
+        "https://ufhealth.org/medical-students/clinical-electives"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "SUB_INTERNSHIP",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/sub-internship",
+        "https://ufhealth.org/subinternship",
+        "https://ufhealth.org/acting-internship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESEARCH_EDUCATION",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/student-research"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VOLUNTEER_SHADOW",
+      "tier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/shadow",
+        "https://ufhealth.org/shadowing",
+        "https://ufhealth.org/volunteer",
+        "https://ufhealth.org/volunteering"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "GME",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/graduate-medical-education",
+        "https://ufhealth.org/gme",
+        "https://ufhealth.org/medical-professionals/graduate-medical-education",
+        "https://ufhealth.org/medical-professionals/graduate-medical-education/clerkship-programs",
+        "https://ufhealth.org/education/undergraduate-medical-education",
+        "https://ufhealth.org/graduate-medical-education/clerkship-programs"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "RESIDENCY",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/residency"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FELLOWSHIP",
+      "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/fellowship"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "ADVANCED_FELLOWSHIP",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PHYSICIAN_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/physician-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PROVIDER_CAREERS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/provider-careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "BENEFITS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/benefits"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "VISA_IMMIGRATION",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/visa",
+        "https://ufhealth.org/immigration"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "FACULTY_JOBS",
+      "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "status": "COVERED_REJECTED",
+      "searchAttempts": [
+        "https://ufhealth.org/careers"
+      ],
+      "acceptedSources": [],
+      "rejectedReason": "source candidate found in map but no cleaned text accepted (404 / off-topic / off-domain)"
+    },
+    {
+      "family": "PHYSICIAN_SERVICES",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "PDF_POLICY",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "APPLICATION_PORTAL",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "CONTACT_PAGE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "REJECTION_EVIDENCE",
+      "tier": "NOT_APPLICABLE",
+      "status": "ABSENT_AFTER_SEARCH",
+      "searchAttempts": [],
+      "acceptedSources": [],
+      "rejectedReason": null
+    },
+    {
+      "family": "UNKNOWN_RELEVANT",
+      "tier": "NOT_APPLICABLE",
+      "status": "COVERED_AND_READ",
+      "searchAttempts": [
+        "https://ufhealth.org/observerships",
+        "https://ufhealth.org/medical-students",
+        "https://ufhealth.org/research",
+        "https://ufhealth.org/img",
+        "https://ufhealth.org/international-medical-graduates",
+        "https://ufhealth.org/credentialing",
+        "https://ufhealth.org/health-professionals",
+        "https://ufhealth.org/education",
+        "https://ufhealth.org/hcp-education-training",
+        "https://ufhealth.org/hcp-education-training/medical-students",
+        "https://ufhealth.org/hcp-education-training/medical-students/medical-student-observerships",
+        "https://ufhealth.org/medical-professionals",
+        "https://ufhealth.org/academic-institute",
+        "https://ufhealth.org/academic-institute/education",
+        "https://ufhealth.org/academic-institute/education/medical",
+        "https://ufhealth.org/academic-institute/education/medical/medical-student-rotations",
+        "https://ufhealth.org/medicine/international",
+        "https://ufhealth.org/medicine/international/international-programs",
+        "https://ufhealth.org/visiting-clerkships",
+        "https://ufhealth.org/visiting-clerkships/international",
+        "https://ufhealth.org/education-institute",
+        "https://ufhealth.org/education-institute/academic-visitor-program",
+        "https://ufhealth.org/education/medical-students",
+        "https://ufhealth.org/care-sheets/how-to-research-cancer",
+        "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented",
+        "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors",
+        "https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations",
+        "https://ufhealth.org/conditions-and-treatments/chin-augmentation",
+        "https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research",
+        "https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis",
+        "https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti",
+        "https://ufhealth.org/conditions-and-treatments/liver-transplant/research",
+        "https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories"
+      ],
+      "acceptedSources": [
+        "https://ufhealth.org/care-sheets/how-to-research-cancer",
+        "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented",
+        "https://ufhealth.org/conditions-and-treatments/birthmarks-pigmented/doctors",
+        "https://ufhealth.org/conditions-and-treatments/brain-tumor-primary-adults/research-studies",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/doctors",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/locations",
+        "https://ufhealth.org/conditions-and-treatments/breast-augmentation-surgery/stories",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/doctors",
+        "https://ufhealth.org/conditions-and-treatments/buttock-augmentation/locations",
+        "https://ufhealth.org/conditions-and-treatments/chin-augmentation",
+        "https://ufhealth.org/conditions-and-treatments/coronavirus-disease-2019-covid-19/uf-research",
+        "https://ufhealth.org/conditions-and-treatments/focal-segmental-glomerulosclerosis",
+        "https://ufhealth.org/conditions-and-treatments/incontinentia-pigmenti",
+        "https://ufhealth.org/conditions-and-treatments/liver-transplant/research",
+        "https://ufhealth.org/conditions-and-treatments/magnetoencephalography-meg/research",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/doctors",
+        "https://ufhealth.org/conditions-and-treatments/retinitis-pigmentosa/stories"
+      ],
+      "rejectedReason": null
+    }
+  ],
+  "rejectedSourceFamilies": [],
+  "negativeEvidence": {
+    "tier1Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier2Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    },
+    "tier3Refusal": {
+      "captured": false,
+      "claimIds": [],
+      "strength": null
+    }
+  },
+  "unresolveds": [
+    "No Tier 1, Tier 2, or Tier 3 source family was meaningfully captured. Sources are clinical condition/treatment pages mistagged as GME/RESEARCH. The search was effectively unsearched for USCE intent."
+  ],
+  "A4TargetedRecoveryTasks": [
+    {
+      "taskId": "rec_uf_shands_t1_observership",
+      "missingFamily": "OBSERVERSHIP_PAGE",
+      "missingTier": "TIER_1_PRE_RESIDENCY_USCE_MATCH",
+      "reason": "No Tier 1 USCE source family (observership / visiting student / clinical elective) was captured. The 20 sources are clinical condition / treatment / research pages with no relevance to USCE.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org and med.ufl.edu observership/visiting-student/international-medical-graduate pages (e.g. com.ufl.edu international electives, med.ufl.edu/education/visiting-students)."
+    },
+    {
+      "taskId": "rec_uf_shands_t2_gme",
+      "missingFamily": "GME_PAGE",
+      "missingTier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+      "reason": "Sources mis-tagged as GME_PAGE are actually condition / treatment pages. No real GME / residency / fellowship page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of UF College of Medicine GME index (med.ufl.edu/gme, ufhealth.org careers/gme) and program directories."
+    },
+    {
+      "taskId": "rec_uf_shands_t3_careers",
+      "missingFamily": "CAREERS_PAGE",
+      "missingTier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+      "reason": "No careers / physician-jobs / faculty-recruitment page was captured.",
+      "suggestedNarrowAction": "Narrow fetch of ufhealth.org/careers and UF physician/faculty recruitment pages."
+    }
+  ],
+  "publicPromotionCandidates": [],
+  "futureLaneArchive": [],
+  "humanReviewQueue": [],
+  "confidenceScores": {
+    "tier1Completeness": 0.1,
+    "tier2Completeness": 0.1,
+    "tier3Completeness": 0.1,
+    "scopeDiscipline": 1,
+    "quoteVerificationRate": 1
+  },
+  "artifactManifestRefs": [
+    "13_model_claims_verified.json",
+    "13_model_claims_rejected.json",
+    "A1_model_reader_output.json",
+    "A2_model_depth_output.json",
+    "A3_model_gate.json",
+    "A3_model_gate_input_summary.json",
+    "00_deep_source_discovery.json",
+    "01_deep_source_family_coverage.json"
+  ],
+  "quoteVerificationSummary": {
+    "totalClaims": 0,
+    "quoteVerifiedClaims": 0,
+    "rejectedClaims": 0,
+    "notStatedFieldClaims": 0
+  },
+  "deepRunCompletion": "INCOMPLETE",
+  "publicReadiness": "NOT_PUBLIC_READY",
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "broadCrawlPerformed": false,
+    "oneInstitutionOnly": true
+  }
+}
