@@ -44,6 +44,8 @@ export const SPECIALTIES = [
 
 export const LISTING_TYPE_LABELS: Record<string, string> = {
   OBSERVERSHIP: "Observership",
+  CLERKSHIP: "Clerkship",
+  MD_DO_VISITING_STUDENTS: "Visiting Student (MD/DO)",
   EXTERNSHIP: "Externship",
   RESEARCH: "Research Fellowship",
   POSTDOC: "Research Fellowship",
@@ -53,6 +55,8 @@ export const LISTING_TYPE_LABELS: Record<string, string> = {
 
 export const LISTING_TYPE_COLORS: Record<string, string> = {
   OBSERVERSHIP: "bg-blue-50 text-blue-700",
+  CLERKSHIP: "bg-amber-50 text-amber-700",
+  MD_DO_VISITING_STUDENTS: "bg-indigo-50 text-indigo-700",
   EXTERNSHIP: "bg-emerald-50 text-emerald-700",
   RESEARCH: "bg-violet-50 text-violet-700",
   POSTDOC: "bg-violet-50 text-violet-700",
