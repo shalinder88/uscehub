@@ -21,6 +21,13 @@ enum ListingType {
   POSTDOC
   ELECTIVE
   VOLUNTEER
+  // Added 2026-05-26 to match values present in the production DB after
+  // the mega-audit reclassification. Without these, every Prisma read of
+  // a row with one of these values throws PrismaClientUnknownRequestError
+  // and crashes /, /observerships/[state], and every other page that
+  // deserializes full Listing rows.
+  CLERKSHIP
+  MD_DO_VISITING_STUDENTS
 }
 
 enum ListingStatus {
