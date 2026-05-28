@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },

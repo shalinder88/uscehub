@@ -698,7 +698,7 @@ const TAB_LIST = [
 
 export function FreidaContent() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       {/* Hero */}
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

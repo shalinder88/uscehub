@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function PilotClerkshipsPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <div className="bg-slate-900 text-white">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mb-3 flex flex-wrap gap-2">
