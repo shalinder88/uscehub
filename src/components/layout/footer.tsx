@@ -95,9 +95,31 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Mini subscribe line — visible-but-disabled placeholder. Honest
+            until real digest pipeline ships. */}
         <div
-          className="mt-6 pt-4 border-t text-[10px]"
-          style={{ borderColor: "var(--line)", color: "var(--text-muted)" }}
+          className="mt-6 pt-4 border-t flex flex-col items-start gap-2 text-xs sm:flex-row sm:items-center sm:justify-between"
+          style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}
+        >
+          <span style={{ color: "var(--ink-soft)" }}>
+            Monthly digest of verified listings &mdash;{" "}
+            <em style={{ color: "var(--text-muted)" }}>coming soon</em>.
+          </span>
+          <span
+            className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-medium"
+            style={{
+              background: "var(--paper-soft)",
+              color: "var(--text-muted)",
+              border: "1px solid var(--line)",
+            }}
+          >
+            Intake not yet open
+          </span>
+        </div>
+
+        <div
+          className="mt-4 text-[10px]"
+          style={{ color: "var(--text-muted)" }}
         >
           © 2026 USCEHub · Not affiliated with NRMP, ECFMG, ERAS, or AAMC ·
           Listings are submitted by third-party institutions.

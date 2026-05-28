@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { NewsletterBand } from "@/components/marketing/newsletter-band";
 import { findDisplayEligibleByName } from "@/lib/p102-display-eligible-listings";
 
 export const metadata: Metadata = {
@@ -214,75 +215,12 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           <p className="mt-1 text-sm" style={{ color: "var(--ink-soft)" }}>
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
-
-          {/* 4 prominent category chips — direct click, no dropdown */}
-          <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
-            {browseChips.map((c) => {
-              const isActive = activeCategory === c.filter;
-              const href = isActive ? "/browse" : `/browse?category=${c.filter}`;
-              return (
-                <a
-                  key={c.filter}
-                  href={href}
-                  style={{
-                    background: isActive ? "var(--teal)" : "var(--paper)",
-                    color: isActive ? "#fff" : "var(--ink)",
-                    border: `1px solid ${isActive ? "var(--teal)" : "var(--line)"}`,
-                    borderRadius: 999,
-                    padding: "10px 16px",
-                    textDecoration: "none",
-                    textAlign: "center",
-                    fontSize: 13,
-                    fontWeight: 500,
-                    transition: "all .15s",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 8,
-                  }}
-                >
-                  <span>{c.label}</span>
-                  <span
-                    style={{
-                      fontSize: 11,
-                      opacity: 0.8,
-                      background: isActive ? "rgba(255,255,255,0.18)" : "var(--bg-alt)",
-                      padding: "2px 8px",
-                      borderRadius: 999,
-                    }}
-                  >
-                    {c.count}
-                  </span>
-                </a>
-              );
-            })}
-          </div>
-
-          <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
-            <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
-              What&apos;s the difference between an observership, clerkship, MD/DO visiting, and research?
-            </summary>
-            <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
-              <p>
-                USCEHub uses four canonical categories. Pick by where you are in training — most applicants belong to exactly one.
-              </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Observership</strong> — Shadow-only. No hands on patients. The standard route for IMG graduates preparing for the US Match.</li>
-                <li><strong>Clerkship</strong> — Formal hands-on clinical rotation at a US institution, typically with supervision. Smaller pool than observerships; eligibility usually requires final-year status and Step 2 in some specialties.</li>
-                <li><strong>MD/DO Visiting Students (VSLO)</strong> — For current 4th-year students at US LCME MD or AOA-COCA DO schools, for-credit electives through the AAMC <em>VSLO</em> platform. Most programs are US-only; a few accept international M4s via reciprocal exchange agreements.</li>
-                <li><strong>Research</strong> — Research fellowships and postdoc roles, with optional clinical shadowing.</li>
-              </ul>
-              <p className="text-xs text-slate-500 dark:text-slate-400 pt-1">
-                Use the <strong>Audience</strong> filter to narrow further (IMG graduate, US M4, INTL M4, etc.).
-              </p>
-            </div>
-          </details>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-slate-800" />}>
-          <ListingFilters />
+          <ListingFilters browseChips={browseChips} activeCategory={activeCategory} />
         </Suspense>
 
         <div className="mt-6">
@@ -305,6 +243,33 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           )}
         </div>
       </div>
+
+      <NewsletterBand />
+
+      <section
+        id="category-difference"
+        className="mx-auto max-w-3xl px-4 pt-2 pb-10 sm:px-6 lg:px-8 scroll-mt-24"
+      >
+        <details
+          className="card-lift group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-sm"
+          open
+        >
+          <summary className="cursor-pointer font-semibold text-slate-900 dark:text-slate-100">
+            What&apos;s the difference between an observership, clerkship, MD/DO visiting, and research?
+          </summary>
+          <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
+            <p>
+              USCEHub uses four canonical categories. Pick by where you are in training — most applicants belong to exactly one.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Observership</strong> — Shadow-only. No hands on patients. The standard route for IMG graduates preparing for the US Match.</li>
+              <li><strong>Clerkship</strong> — Formal hands-on clinical rotation at a US institution, typically with supervision. Smaller pool than observerships; eligibility usually requires final-year status and Step 2 in some specialties.</li>
+              <li><strong>MD/DO Visiting Students (VSLO)</strong> — For current 4th-year students at US LCME MD or AOA-COCA DO schools, for-credit electives through the AAMC <em>VSLO</em> platform. Most programs are US-only; a few accept international M4s via reciprocal exchange agreements.</li>
+              <li><strong>Research</strong> — Research fellowships and postdoc roles, with optional clinical shadowing.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
 
       <VerifiedNotice />
       <PeopleAlsoAsk />
