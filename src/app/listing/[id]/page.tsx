@@ -38,9 +38,233 @@ import {
   formatDate,
 } from "@/lib/utils";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 interface ListingPageProps {
   params: Promise<{ id: string }>;
+}
+
+/**
+ * Three-tier "About this program" formatter. No regex (global rule).
+ *
+ * Tier 1 (existing): split on `\n\n` for explicit paragraphs; promote a
+ *   paragraph to a bullet list if 3+ lines look list-like.
+ * Tier 2 (new): for any paragraph that didn't become a list, scan its
+ *   sentences for a known field label like "Cost:", "Visa:", "Apply:",
+ *   etc. If 3+ sentences match → render those as a "Key details"
+ *   definition list, then any remaining prose underneath.
+ * Tier 3: plain paragraph fallback.
+ *
+ * The mega-audit 2026-05-28 H1 finding showed ~80% of descriptions are
+ * stored as a single paragraph with field-value structure baked in
+ * ("Cost: $4,500 per elective. Visa: J-1 sponsored. Duration: 4 weeks.")
+ * — Tier 2 surfaces that without any data migration.
+ */
+const ABOUT_LABELS = [
+  "Cost",
+  "Duration",
+  "Visa",
+  "Apply",
+  "Application",
+  "Eligibility",
+  "Path to USCE",
+  "Stipend",
+  "Schedule",
+  "Note",
+  "Contact",
+  "Format",
+  "Funding",
+  "Slot allocation priority",
+];
+
+interface LabelMatch {
+  label: string;
+  value: string;
+}
+
+function tryMatchLabel(sentence: string): LabelMatch | null {
+  for (const label of ABOUT_LABELS) {
+    const prefix = label + ":";
+    if (sentence.startsWith(prefix + " ")) {
+      return { label, value: sentence.slice(prefix.length + 1).trim() };
+    }
+    if (sentence.startsWith(prefix)) {
+      const tail = sentence.slice(prefix.length).trim();
+      if (tail.length > 0) return { label, value: tail };
+    }
+  }
+  return null;
+}
+
+function splitSentences(text: string): string[] {
+  // Sentence-ish split on ". " — close enough for typical English prose.
+  // Re-stitches segments that look like a continuation (very short
+  // trailing fragment, common abbreviation) so we don't shred mid-sentence.
+  const raw = text.split(". ");
+  const out: string[] = [];
+  for (let i = 0; i < raw.length; i++) {
+    const piece = raw[i].trim();
+    if (!piece) continue;
+    const isLast = i === raw.length - 1;
+    const text = isLast ? piece : piece + ".";
+    out.push(text);
+  }
+  return out;
+}
+
+function KeyDetailsList({ items }: { items: LabelMatch[] }): ReactNode {
+  return (
+    <dl
+      style={{
+        display: "grid",
+        gridTemplateColumns: "max-content 1fr",
+        gap: "6px 14px",
+        margin: "4px 0 14px",
+        padding: "12px 14px",
+        background: "var(--paper-soft)",
+        borderRadius: 10,
+        border: "1px solid var(--line)",
+      }}
+    >
+      {items.map((m, j) => (
+        <div key={j} style={{ display: "contents" }}>
+          <dt
+            style={{
+              fontWeight: 600,
+              color: "var(--ink)",
+              fontSize: 13.5,
+              whiteSpace: "nowrap",
+              paddingTop: 2,
+            }}
+          >
+            {m.label}
+          </dt>
+          <dd
+            style={{
+              margin: 0,
+              color: "var(--ink-soft)",
+              fontSize: 14,
+              lineHeight: 1.55,
+            }}
+          >
+            {m.value.endsWith(".") ? m.value.slice(0, -1) : m.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function renderAboutBlocks(input: string | null | undefined): ReactNode {
+  const description = (input ?? "").trim();
+  if (!description) return null;
+
+  // Be flexible about paragraph separation. Some listings store double
+  // newlines, some store single newlines per sentence, some are one big
+  // block. We try `\n\n` first; if that yields exactly one paragraph but
+  // the source contains `\n`, fall back to single-newline splits.
+  let paragraphs = description
+    .split("\n\n")
+    .map((p) => p.trim())
+    .filter(Boolean);
+  if (paragraphs.length <= 1 && description.includes("\n")) {
+    const singleSplit = description
+      .split("\n")
+      .map((p) => p.trim())
+      .filter(Boolean);
+    if (singleSplit.length >= 3) paragraphs = singleSplit;
+  }
+
+  // Pass A — cross-paragraph aggregation: detect short "Label:"-prefixed
+  // paragraphs (typical of the Pittsburgh-style listing where each
+  // labeled fact got its own \n-separated paragraph). If 3+ such
+  // labeled-paragraphs exist, consolidate them into a single
+  // KeyDetailsList block placed at the position of the first one and
+  // strip the originals from the render stream.
+  type Block = { kind: "prose"; text: string } | { kind: "list"; lines: string[] } | { kind: "details"; items: LabelMatch[] };
+  const fullParaLabels: (LabelMatch | null)[] = paragraphs.map((p) => {
+    if (p.length > 280) return null; // too long to be a single labeled fact
+    return tryMatchLabel(p);
+  });
+  const labeledCount = fullParaLabels.filter((m) => m !== null).length;
+
+  const blocks: Block[] = [];
+  if (labeledCount >= 3) {
+    let consolidatedItems: LabelMatch[] | null = null;
+    paragraphs.forEach((para, i) => {
+      const label = fullParaLabels[i];
+      if (label) {
+        if (consolidatedItems === null) {
+          consolidatedItems = [];
+          blocks.push({ kind: "details", items: consolidatedItems });
+        }
+        consolidatedItems.push(label);
+      } else {
+        blocks.push({ kind: "prose", text: para });
+      }
+    });
+  } else {
+    // Pass B — per-paragraph tier 1 + tier 2 + tier 3.
+    paragraphs.forEach((para) => {
+      // Tier 1: line-level bullet detection.
+      const lines = para
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean);
+      const looksLikeList =
+        lines.length >= 3 &&
+        lines.filter((l) => {
+          const noTrailingDot = !l.endsWith(".");
+          const isShort = l.length <= 120;
+          const commaCount = l.split(",").length - 1;
+          return noTrailingDot && isShort && commaCount <= 2;
+        }).length /
+          lines.length >=
+          0.7;
+      if (looksLikeList) {
+        blocks.push({ kind: "list", lines });
+        return;
+      }
+
+      // Tier 2: sentence-level "Label:" inside a dense paragraph.
+      const sentences = splitSentences(para);
+      const labeled: LabelMatch[] = [];
+      const proseSentences: string[] = [];
+      sentences.forEach((s) => {
+        const m = tryMatchLabel(s);
+        if (m) labeled.push(m);
+        else proseSentences.push(s);
+      });
+      if (labeled.length >= 3) {
+        const prose = proseSentences.join(" ").trim();
+        if (prose) blocks.push({ kind: "prose", text: prose });
+        blocks.push({ kind: "details", items: labeled });
+        return;
+      }
+
+      // Tier 3: plain paragraph.
+      blocks.push({ kind: "prose", text: para });
+    });
+  }
+
+  return blocks.map((b, i) => {
+    if (b.kind === "prose") return <p key={i}>{b.text}</p>;
+    if (b.kind === "list") {
+      return (
+        <ul
+          key={i}
+          style={{ paddingLeft: 22, margin: "8px 0 14px", listStyle: "disc" }}
+        >
+          {b.lines.map((line, j) => (
+            <li key={j} style={{ marginBottom: 4, lineHeight: 1.55 }}>
+              {line}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <KeyDetailsList key={i} items={b.items} />;
+  });
 }
 
 export async function generateMetadata({ params }: ListingPageProps): Promise<Metadata> {
@@ -899,41 +1123,24 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <div className="lv2-main-left">
             {/* ════════════ V2 LEFT COL — mockup 98 ════════════ */}
 
-            {/* About this program — auto-bulletize list-like paragraphs.
-                A paragraph is treated as a bullet list when it has 3+
-                non-empty lines and most lines look like specialty/section
-                names (short, no trailing period, no comma list). */}
+            {/* About this program — three-tier auto-format.
+                Tier 1: explicit \n\n splits → paragraphs, with line-by-line
+                bullet detection for short list-like lines.
+                Tier 2 (NEW): single-paragraph descriptions whose sentences
+                start with known field labels ("Cost:", "Visa:", "Apply:",
+                "Duration:", "Eligibility:", "Path to USCE:", "Stipend:",
+                "Schedule:", "Note:", "Contact:", "Format:", "Application:")
+                → extract those into a "Key details" definition list; render
+                remaining sentences as prose underneath. Catches the dense-
+                prose listings that have field structure baked in but no
+                newline breaks (mega-audit 2026-05-28 H1).
+                Tier 3: fall back to plain paragraph. */}
             <div className="lv2-card lv2-about">
               <div className="lv2-section-h">
                 <span className="lv2-ic-circle"><Info /></span>
                 <h2>About this program</h2>
               </div>
-              {(listing.fullDescription || listing.shortDescription)
-                .split("\n\n")
-                .filter((p) => p.trim())
-                .map((para, i) => {
-                  const lines = para.split("\n").map((l) => l.trim()).filter(Boolean);
-                  const looksLikeList =
-                    lines.length >= 3 &&
-                    lines.filter((l) => {
-                      // A "list item" line: short-ish, no end-period, no comma chain
-                      const lc = l;
-                      const noTrailingDot = !lc.endsWith(".");
-                      const isShort = lc.length <= 120;
-                      const commaCount = lc.split(",").length - 1;
-                      return noTrailingDot && isShort && commaCount <= 2;
-                    }).length / lines.length >= 0.7;
-                  if (looksLikeList) {
-                    return (
-                      <ul key={i} style={{ paddingLeft: 22, margin: "8px 0 14px", listStyle: "disc" }}>
-                        {lines.map((line, j) => (
-                          <li key={j} style={{ marginBottom: 4, lineHeight: 1.55 }}>{line}</li>
-                        ))}
-                      </ul>
-                    );
-                  }
-                  return <p key={i}>{para}</p>;
-                })}
+              {renderAboutBlocks(listing.fullDescription || listing.shortDescription)}
 
               {realOrgName && listing.organization && (
                 <div className="lv2-contact-card">
