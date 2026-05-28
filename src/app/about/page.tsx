@@ -46,18 +46,24 @@ export default function AboutPage() {
           { name: "About Us", url: "https://uscehub.com/about" },
         ]}
       />
-      {/* Hero — cream/serif per mockup 127 */}
-      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl px-4 pt-16 pb-14 sm:px-6 lg:px-8">
+        {/* Free forever + Built by intensivist — single combined block */}
+        <section className="mb-14">
+          <div
+            className="rounded-2xl p-8 text-center sm:p-10"
+            style={{
+              background: "var(--paper)",
+              border: "1px solid var(--line)",
+            }}
+          >
             <div
-              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl"
+              className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
               style={{ background: "var(--teal-soft)" }}
             >
-              <Stethoscope className="h-8 w-8" style={{ color: "var(--teal)" }} />
+              <Stethoscope className="h-6 w-6" style={{ color: "var(--teal)" }} />
             </div>
             <h1
-              className="text-4xl sm:text-5xl"
+              className="text-3xl sm:text-4xl"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontWeight: 500,
@@ -65,32 +71,31 @@ export default function AboutPage() {
                 letterSpacing: "-0.01em",
               }}
             >
-              Built by an Intensivist Who&apos;s Been There
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed" style={{ color: "var(--ink-soft)" }}>
-              From medical school abroad to the ICU. This platform was made by
-              someone who went through every step of the IMG process.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        {/* Free forever — FIRST */}
-        <section className="mb-10">
-          <div className="rounded-xl border-2 border-emerald-200 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/30 p-6 text-center sm:p-8">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
               This platform is and will remain free.
-            </h2>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            </h1>
+            <p
+              className="mx-auto mt-4 max-w-xl"
+              style={{ color: "var(--ink-soft)", fontSize: 15, lineHeight: 1.6 }}
+            >
               No paywalls. No premium tiers. No hidden fees. Just honest,
-              structured information for every IMG who needs it.
+              structured information for every medical student and graduate
+              looking for U.S. clinical experience.
+            </p>
+            <p
+              className="mt-5"
+              style={{
+                fontSize: 13,
+                color: "var(--text-muted)",
+                fontStyle: "italic",
+              }}
+            >
+              Built by an Intensivist.
             </p>
           </div>
         </section>
 
-        {/* Built by an Intensivist — single subtle line */}
-        <section className="mb-14">
+        {/* Hidden line (kept for layout grid spacing if needed) */}
+        <section className="mb-14 hidden">
           <p
             className="text-center"
             style={{

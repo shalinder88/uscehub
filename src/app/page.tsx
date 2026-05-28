@@ -14,7 +14,7 @@ import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 
 export const metadata: Metadata = {
-  title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+  title: "USCEHub — Verified U.S. Clinical Experience Programs",
   description:
     "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
   alternates: {
@@ -105,7 +105,7 @@ export default async function HomePage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "U.S. Clinical Experience Programs for IMGs and Medical Students",
+    name: "U.S. Clinical Experience Programs for Medical Students and Graduates",
     description:
       "Browse observerships, clerkships, MD/DO visiting student rotations, and research positions across the United States.",
     numberOfItems: totalListings,

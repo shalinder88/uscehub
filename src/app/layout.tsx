@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    default: "USCEHub — Verified U.S. Clinical Experience Programs",
     template: "%s — USCEHub",
   },
   description:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "USCEHub",
-    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs",
     description:
       "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     url: SITE_URL,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs",
     description:
       "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],

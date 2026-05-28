@@ -34,6 +34,7 @@ export function Navbar() {
     { href: "/for-institutions", label: "For Institutions" },
     { href: "/community", label: "Community" },
     { href: "/img-resources", label: "Residency Intel" },
+    { href: "/img-corner", label: "IMG Corner" },
   ];
 
   return (
