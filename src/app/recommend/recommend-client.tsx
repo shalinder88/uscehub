@@ -179,7 +179,7 @@ export default function RecommendClient() {
 
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center bg-white dark:bg-slate-900">
+      <div className="flex min-h-[60vh] items-center justify-center bg-[var(--bg)] dark:bg-slate-900">
         <div className="text-center">
           <Loader2 className="mx-auto h-8 w-8 animate-spin text-slate-400" />
           <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
@@ -192,7 +192,7 @@ export default function RecommendClient() {
 
   if (showResults) {
     return (
-      <div className="bg-white dark:bg-slate-900">
+      <div className="bg-[var(--bg)] dark:bg-slate-900">
         <div className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
             <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
@@ -273,7 +273,7 @@ export default function RecommendClient() {
   const Icon = currentStep.icon;
 
   return (
-    <div className="bg-white dark:bg-slate-900">
+    <div className="bg-[var(--bg)] dark:bg-slate-900">
       <div className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">

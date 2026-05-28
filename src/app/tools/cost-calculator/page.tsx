@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function CostCalculatorPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-[var(--bg)]">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
