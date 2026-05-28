@@ -122,7 +122,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
             Frequently Asked Questions
@@ -138,7 +138,7 @@ export default function FAQPage() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="rounded-xl border border-slate-200 dark:border-slate-700 p-6"
+              className="card-lift rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6"
             >
               <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                 {faq.question}

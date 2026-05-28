@@ -22,13 +22,23 @@ export const metadata: Metadata = {
 
 export default function SuggestProgramPage() {
   return (
-    <div className="bg-white">
-      <div className="bg-slate-900 text-white">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl">Suggest a Program</h1>
-            <p className="mt-3 text-base text-slate-400">
-              Help fellow IMGs by submitting programs you know about.
+            <h1
+              className="text-3xl sm:text-4xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Suggest a Program
+            </h1>
+            <p className="mt-3 text-base" style={{ color: "var(--ink-soft)" }}>
+              Help fellow medical students and graduates by submitting programs you know about.
             </p>
           </div>
         </div>

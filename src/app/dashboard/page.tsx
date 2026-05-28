@@ -68,7 +68,7 @@ export default async function DashboardOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
           Welcome back, {session.user.name?.split(" ")[0]}
         </h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -85,7 +85,7 @@ export default async function DashboardOverview() {
                   <stat.icon className="h-6 w-6 text-slate-600" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-slate-900">
+                  <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                     {stat.value}
                   </p>
                   <p className="text-sm text-slate-500">{stat.label}</p>
@@ -101,7 +101,7 @@ export default async function DashboardOverview() {
           <CardTitle>Recent Applications</CardTitle>
           <Link
             href="/dashboard/applications"
-            className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900"
+            className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-100"
           >
             View all <ArrowRight className="h-4 w-4" />
           </Link>
@@ -112,7 +112,7 @@ export default async function DashboardOverview() {
               <p>No applications yet.</p>
               <Link
                 href="/browse"
-                className="mt-2 inline-block font-medium text-slate-900 hover:underline"
+                className="mt-2 inline-block font-medium text-slate-900 dark:text-slate-100 hover:underline"
               >
                 Browse opportunities
               </Link>
@@ -127,7 +127,7 @@ export default async function DashboardOverview() {
                   <div className="min-w-0 flex-1">
                     <Link
                       href={`/listing/${app.listing.id}`}
-                      className="text-sm font-medium text-slate-900 hover:underline"
+                      className="text-sm font-medium text-slate-900 dark:text-slate-100 hover:underline"
                     >
                       {app.listing.title}
                     </Link>
@@ -170,7 +170,7 @@ export default async function DashboardOverview() {
         <Link href="/browse">
           <CardRoot className="transition-shadow hover:shadow-md">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-slate-900">
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                 Browse Opportunities
               </h3>
               <p className="mt-1 text-sm text-slate-500">
@@ -182,7 +182,7 @@ export default async function DashboardOverview() {
         <Link href="/dashboard/profile">
           <CardRoot className="transition-shadow hover:shadow-md">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-slate-900">
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                 Complete Your Profile
               </h3>
               <p className="mt-1 text-sm text-slate-500">

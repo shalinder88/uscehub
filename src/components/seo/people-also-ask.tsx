@@ -90,7 +90,7 @@ export function PeopleAlsoAsk() {
           </p>
         </div>
 
-        <div className="divide-y divide-slate-200 dark:divide-slate-700 rounded-xl border border-slate-200 dark:border-slate-700">
+        <div className="card-lift divide-y divide-slate-200 dark:divide-slate-700 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
           {paaQuestions.map((item, index) => {
             const isOpen = openIndex === index;
             return (

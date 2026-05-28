@@ -118,7 +118,7 @@ export default async function ObservershipsByStatePage() {
               <Link
                 key={abbr}
                 href={`/observerships/${slug}`}
-                className="group flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-700 p-4 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="card-lift group flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-bold text-slate-600 dark:text-slate-300">

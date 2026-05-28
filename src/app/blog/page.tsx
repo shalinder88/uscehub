@@ -71,7 +71,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="block rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-6 sm:p-8 transition-all hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-sm"
+                className="card-lift block rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-6 sm:p-8"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span

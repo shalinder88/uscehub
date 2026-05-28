@@ -2,12 +2,23 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useState } from "react";
-import { Search, Sparkles } from "lucide-react";
+import { Search, Sparkles, Info } from "lucide-react";
 import { Select } from "@/components/ui/select";
 import { US_STATES } from "@/lib/utils";
 import { parseSmartSearch } from "@/lib/smart-search";
 
-export function ListingFilters() {
+interface BrowseChip {
+  label: string;
+  filter: string;
+  count: number;
+}
+
+interface ListingFiltersProps {
+  browseChips?: BrowseChip[];
+  activeCategory?: string;
+}
+
+export function ListingFilters({ browseChips, activeCategory }: ListingFiltersProps = {}) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -48,8 +59,8 @@ export function ListingFilters() {
   );
 
   return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="card-lift rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto]">
         <div className="relative sm:col-span-2 lg:col-span-1">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
@@ -139,6 +150,15 @@ export function ListingFilters() {
           <option value="cost-high">Cost: High to Low</option>
           <option value="most-reviewed">Most Viewed</option>
         </Select>
+
+        <a
+          href="#category-difference"
+          title="What's the difference between an observership, clerkship, MD/DO visiting, and research?"
+          aria-label="What's the difference between categories?"
+          className="hidden lg:inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-600 text-slate-500 hover:border-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+        >
+          <Info className="h-4 w-4" />
+        </a>
       </div>
 
       <div className="mt-3 flex flex-wrap gap-3">
@@ -162,11 +182,60 @@ export function ListingFilters() {
           <span className="font-medium text-slate-700 dark:text-slate-200">Visa Support</span>
         </label>
 
-        {/* Verified Links filter removed 2026-05-28: every APPROVED row
-            already has linkVerified=true, making the checkbox a no-op.
-            The verification message is now communicated via the navbar
-            badge + the "We only keep verified URLs" notice on home + browse. */}
+        <a
+          href="#category-difference"
+          title="What's the difference between an observership, clerkship, MD/DO visiting, and research?"
+          aria-label="What's the difference between categories?"
+          className="inline-flex lg:hidden h-9 items-center justify-center gap-1.5 rounded-lg border border-slate-200 dark:border-slate-600 px-3 text-sm text-slate-500 hover:border-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+        >
+          <Info className="h-3.5 w-3.5" />
+          What&apos;s the difference?
+        </a>
       </div>
+
+      {browseChips && browseChips.length > 0 && (
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+          {browseChips.map((c) => {
+            const isActive = activeCategory === c.filter;
+            const href = isActive ? "/browse" : `/browse?category=${c.filter}`;
+            return (
+              <a
+                key={c.filter}
+                href={href}
+                style={{
+                  background: isActive ? "var(--teal)" : "var(--paper-soft)",
+                  color: isActive ? "#fff" : "var(--ink)",
+                  border: `1px solid ${isActive ? "var(--teal)" : "var(--line)"}`,
+                  borderRadius: 999,
+                  padding: "10px 16px",
+                  textDecoration: "none",
+                  textAlign: "center",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  transition: "all .15s",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 8,
+                }}
+              >
+                <span>{c.label}</span>
+                <span
+                  style={{
+                    fontSize: 11,
+                    opacity: 0.8,
+                    background: isActive ? "rgba(255,255,255,0.18)" : "var(--bg-alt)",
+                    padding: "2px 8px",
+                    borderRadius: 999,
+                  }}
+                >
+                  {c.count}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

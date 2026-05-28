@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <div className="bg-white">
-      <div className="border-b border-slate-200 bg-slate-50">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-slate-900">Disclaimer</h1>
-          <p className="mt-2 text-sm text-slate-500">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Disclaimer</h1>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Last updated: March 2026
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="space-y-8 text-sm leading-relaxed text-slate-600">
+        <div className="space-y-8 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               General Disclaimer
             </h2>
             <p>
@@ -42,7 +42,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Listing Accuracy
             </h2>
             <p>
@@ -58,7 +58,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               No Professional Advice
             </h2>
             <p>
@@ -71,7 +71,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Financial Transactions
             </h2>
             <p>
@@ -86,7 +86,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               User-Generated Content
             </h2>
             <p>
@@ -99,7 +99,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Limitation of Liability
             </h2>
             <p>
@@ -113,7 +113,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               External Links
             </h2>
             <p>
@@ -126,7 +126,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Observership Swap Board
             </h2>
             <p>
@@ -140,7 +140,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Physician & Clinic Listings
             </h2>
             <p>
@@ -154,7 +154,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Insurance & Visa
             </h2>
             <p>
@@ -169,7 +169,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               User-Submitted Program Information
             </h2>
             <p>
@@ -181,7 +181,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Changes to This Disclaimer
             </h2>
             <p>

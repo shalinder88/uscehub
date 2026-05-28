@@ -810,6 +810,13 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 .lv2-apply-hero { min-width: 0; width: 100%; }
                 .lv2-hero h1 { font-size: 26px; }
                 .lv2-subtitle { font-size: 15px; }
+                .lv2-body-wrap { padding: 0 16px; }
+                .lv2-main { grid-template-columns: 1fr; gap: 16px; }
+                .lv2-main-aside { position: static; }
+                .lv2-card { padding: 20px 18px; border-radius: 14px; }
+                .lv2-cta-card { padding: 18px 18px; border-radius: 14px; }
+                .lv2-contact-card { flex-wrap: wrap; }
+                .lv2-platform-card { flex-wrap: wrap; }
               }
             `,
           }}

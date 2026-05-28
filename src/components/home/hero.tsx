@@ -255,6 +255,24 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           text-decoration: none;
         }
         .hero-127 .h-map-link:hover { color: var(--teal-deep); text-decoration: underline; }
+
+        @media (max-width: 640px) {
+          .hero-127 { padding: 40px 12px 48px; }
+          .hero-127 h1.h-title { font-size: clamp(32px, 9vw, 44px); line-height: 1.08; margin-bottom: 24px; }
+          .hero-127 .h-search { padding: 4px 4px 4px 14px; }
+          .hero-127 .h-search input { font-size: 14px; padding: 10px 0; }
+          .hero-127 .h-search button { padding: 9px 14px; font-size: 13px; }
+          .hero-127 .h-ctas { flex-direction: column; gap: 10px; }
+          .hero-127 .h-cta { width: 100%; justify-content: center; }
+          .hero-127 .h-cats { gap: 8px; margin-bottom: 36px; }
+          .hero-127 .h-cat { padding: 14px 10px; }
+          .hero-127 .h-cat-count { font-size: 26px; }
+          .hero-127 .h-cat-label { font-size: 11.5px; }
+          .hero-127 .h-stats { gap: 8px; margin-bottom: 28px; }
+          .hero-127 .h-stat-val { font-size: 28px; }
+          .hero-127 .h-stat-label { font-size: 10.5px; letter-spacing: .1em; }
+          .hero-127 .h-map-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+        }
       `}</style>
 
       <div className="h-inner">

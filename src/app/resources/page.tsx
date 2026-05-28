@@ -173,7 +173,7 @@ function ResourceCard({
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border border-slate-200 dark:border-slate-700 p-5 transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700"
+      className="card-lift group block rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -265,7 +265,7 @@ export default function ResourcesPage() {
       </div>
 
       {/* Disclaimer */}
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 lg:px-8">
           <p className="text-center text-[10px] text-slate-500 dark:text-slate-400">
             Some links may be affiliate links. If you purchase through them, we may earn a small commission at no extra cost to you. This helps keep USCEHub free.

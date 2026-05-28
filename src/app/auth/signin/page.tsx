@@ -111,7 +111,7 @@ export default function SignInPage() {
               Don&apos;t have an account?{" "}
               <Link
                 href="/auth/signup"
-                className="font-medium text-slate-900 hover:underline"
+                className="font-medium text-slate-900 dark:text-slate-100 hover:underline"
               >
                 Create one
               </Link>

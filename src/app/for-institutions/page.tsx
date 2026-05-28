@@ -217,7 +217,7 @@ export default function ForInstitutionsPage() {
               {institutionBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+                  <div key={benefit.title} className="card-lift rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100">
                         <Icon className="h-4 w-4 text-slate-700" />
@@ -267,7 +267,7 @@ export default function ForInstitutionsPage() {
               {physicianBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+                  <div key={benefit.title} className="card-lift rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50">
                         <Icon className="h-4 w-4 text-emerald-700" />
@@ -306,7 +306,7 @@ export default function ForInstitutionsPage() {
       {/* ============================================================ */}
       {/* Listing Types                                                 */}
       {/* ============================================================ */}
-      <div className="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-y border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -341,7 +341,7 @@ export default function ForInstitutionsPage() {
       {/* Coordinator correction / removal path                         */}
       {/* ============================================================ */}
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8">
+        <div className="card-lift rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white">
             Are you a program coordinator or institution staff member?
           </h2>

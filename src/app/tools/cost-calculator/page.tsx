@@ -39,10 +39,10 @@ export default function CostCalculatorPage() {
           { name: "Cost Calculator", url: "https://uscehub.com/tools/cost-calculator" },
         ]}
       />
-      <div className="border-b border-slate-200 bg-slate-50">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900">Cost Calculator</h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Cost Calculator</h1>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             Estimate the total cost of your clinical experience in the United
             States
           </p>
@@ -52,11 +52,11 @@ export default function CostCalculatorPage() {
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
         <CostCalculator compact />
 
-        <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
-          <h2 className="text-base font-semibold text-slate-900">
+        <div className="card-lift mt-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
             Tips to Reduce Costs
           </h2>
-          <ul className="mt-3 space-y-2 text-sm text-slate-600">
+          <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
             <li className="flex gap-2">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
               Look for programs that offer housing assistance or stipends

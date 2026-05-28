@@ -322,10 +322,10 @@ export default function RecommendClient() {
             <button
               key={option.value}
               onClick={() => selectOption(option.value)}
-              className={`w-full rounded-xl border p-4 text-left transition-all hover:-translate-y-0.5 hover:shadow-md ${
+              className={`card-lift w-full rounded-xl border p-4 text-left ${
                 answers[currentStep.key] === option.value
-                  ? "border-slate-900 bg-slate-50 dark:bg-slate-800 shadow-sm"
-                  : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-300"
+                  ? "border-slate-900 bg-slate-50 dark:bg-slate-800"
+                  : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900"
               }`}
             >
               <div className="flex items-center justify-between">

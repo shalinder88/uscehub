@@ -77,7 +77,7 @@ export default function ApplicationsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">My Applications</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">My Applications</h1>
         <p className="mt-1 text-sm text-slate-500">
           Track the status of your applications
         </p>
@@ -87,7 +87,7 @@ export default function ApplicationsPage() {
         <CardRoot>
           <CardContent className="flex flex-col items-center py-12">
             <FileText className="h-12 w-12 text-slate-300" />
-            <p className="mt-4 text-sm font-medium text-slate-900">
+            <p className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
               No applications yet
             </p>
             <p className="mt-1 text-sm text-slate-500">
@@ -95,7 +95,7 @@ export default function ApplicationsPage() {
             </p>
             <Link
               href="/browse"
-              className="mt-4 text-sm font-medium text-slate-900 hover:underline"
+              className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100 hover:underline"
             >
               Browse Listings
             </Link>
@@ -110,7 +110,7 @@ export default function ApplicationsPage() {
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/listing/${app.listing.id}`}
-                      className="text-sm font-semibold text-slate-900 hover:underline"
+                      className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:underline"
                     >
                       {app.listing.title}
                     </Link>

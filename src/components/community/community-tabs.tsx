@@ -93,7 +93,7 @@ export function CommunityTabs() {
     <div className="space-y-12">
       {/* Coming-soon tile — matches the /residency/community pattern */}
       <section
-        className="rounded-2xl p-10 text-center"
+        className="card-lift rounded-2xl p-10 text-center"
         style={{
           background: "var(--paper)",
           border: "1px solid var(--line)",
@@ -216,7 +216,7 @@ export function CommunityTabs() {
 
       {/* CTA */}
       <section
-        className="rounded-2xl p-8 text-center"
+        className="card-lift rounded-2xl p-8 text-center"
         style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
       >
         <h2
