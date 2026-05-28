@@ -9,14 +9,14 @@ import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: `Observerships by State — ${SITE_METRICS.statesCovered} States & DC`,
-  description: `Find clinical observerships, externships, and research opportunities for IMGs across ${SITE_METRICS.statesCovered} US states and DC. Browse programs by state to find opportunities near you.`,
+  description: `Find observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions across ${SITE_METRICS.statesCovered} US states and DC. Browse programs by state to find opportunities near you.`,
   alternates: {
     canonical: siteUrl("/observerships"),
   },
   openGraph: {
     title: "Observerships by State — USCEHub",
     description:
-      "Browse IMG clinical experience opportunities in all 50 US states. Find observerships, externships, and research programs near you.",
+      "Browse US clinical experience programs in every state. Find observerships, clerkships, MD/DO visiting rotations (VSLO), and research positions near you.",
     url: siteUrl("/observerships"),
   },
 };
@@ -90,8 +90,8 @@ export default async function ObservershipsByStatePage() {
             </h1>
             <p className="mt-4 text-base text-slate-400">
               {listings.length} programs across {totalStates} states. Find
-              clinical observerships, externships, and research opportunities
-              near you.
+              observerships, clerkships, MD/DO visiting rotations (VSLO), and
+              research positions near you.
             </p>
           </div>
         </div>

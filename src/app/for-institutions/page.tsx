@@ -158,8 +158,9 @@ export default function ForInstitutionsPage() {
             <p className="mt-4 text-base leading-relaxed text-slate-300">
               Whether you run a hospital program or a private practice, list your
               clinical opportunities on USCEHub. Reach thousands of qualified
-              international medical graduates looking for observerships,
-              externships, and research positions.
+              international medical graduates and US/INTL medical students
+              looking for observerships, clerkships, MD/DO visiting rotations
+              (VSLO), and research positions.
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
               <Link href="/auth/signup">

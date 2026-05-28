@@ -29,7 +29,7 @@ const jsonLd = {
       name: "USCEHub Team",
     },
     description:
-      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
+      "An independent, source-linked directory of U.S. clinical experience programs — observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions.",
   },
 };
 

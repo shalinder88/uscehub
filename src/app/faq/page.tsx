@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about clinical observerships, externships, USCE requirements, and how to use USCEHub to find IMG opportunities in the United States.",
+    "Answers to common questions about observerships, clerkships, MD/DO visiting student rotations (VSLO), research positions, USCE requirements, and how to use USCEHub.",
   alternates: {
     canonical: "https://uscehub.com/faq",
   },

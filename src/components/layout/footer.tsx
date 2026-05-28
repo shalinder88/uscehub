@@ -15,8 +15,8 @@ export function Footer() {
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               An independent, source-linked directory of U.S. clinical experience
-              opportunities, including observerships, externships, research,
-              volunteer, and related programs.
+              programs — observerships, clerkships, MD/DO visiting student
+              rotations (VSLO), and research positions.
             </p>
           </div>
 

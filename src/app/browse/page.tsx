@@ -12,7 +12,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 import { findDisplayEligibleByName } from "@/lib/p102-display-eligible-listings";
 
 export const metadata: Metadata = {
-  title: "Browse Clinical Rotations, Research & Volunteer Opportunities",
+  title: "Browse Observerships, Clerkships, MD/DO Visiting & Research",
   description:
     "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions for IMGs and medical students across all US states. Free, verified, and audience-tagged.",
   alternates: {
