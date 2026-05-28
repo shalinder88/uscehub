@@ -35,13 +35,16 @@ interface BrowsePageProps {
   }>;
 }
 
-// Map the 3 merged categories (used in hero + filters) to the underlying
-// enum values. Clinical = observership + externship + elective, all of which
-// overlap in practice. Users pick by audience, not by type.
+// G0 cutover 2026-05-27: the 4 canonical categories. EXTERNSHIP /
+// ELECTIVE / POSTDOC / VOLUNTEER had 0 APPROVED rows after the G0 walk
+// so they're dropped from filter routing. CLERKSHIP and
+// MD_DO_VISITING_STUDENTS were added to the enum 2026-05-26 (commit
+// 36f765b) but never wired into the filter map until now.
 const CATEGORY_TYPES: Record<string, string[]> = {
-  clinical: ["OBSERVERSHIP", "EXTERNSHIP", "ELECTIVE"],
-  research: ["RESEARCH", "POSTDOC"],
-  volunteer: ["VOLUNTEER"],
+  observership: ["OBSERVERSHIP"],
+  clerkship: ["CLERKSHIP"],
+  visiting: ["MD_DO_VISITING_STUDENTS"],
+  research: ["RESEARCH"],
 };
 
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
@@ -76,11 +79,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     conditions.push({ listingType: { in: CATEGORY_TYPES[params.category] } });
   } else if (params.type) {
     // Legacy ?type= param still supported for bookmarks / back-compat.
-    if (params.type === "RESEARCH") {
-      conditions.push({ listingType: { in: ["RESEARCH", "POSTDOC"] } });
-    } else {
-      conditions.push({ listingType: params.type });
-    }
+    // POSTDOC merging removed — that type has 0 APPROVED rows post-G0.
+    conditions.push({ listingType: params.type });
   }
 
   if (params.audience) {
