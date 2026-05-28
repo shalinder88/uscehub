@@ -9,10 +9,7 @@ import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import {
-  getActiveDisplayProgramNames,
-  findDisplayEligibleByName,
-} from "@/lib/p102-display-eligible-listings";
+import { findDisplayEligibleByName } from "@/lib/p102-display-eligible-listings";
 
 export const metadata: Metadata = {
   title: "Browse Clinical Rotations, Research & Volunteer Opportunities",
@@ -50,18 +47,17 @@ const CATEGORY_TYPES: Record<string, string[]> = {
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   const params = await searchParams;
 
-  // ── P102 Shape A cutover ────────────────────────────────────────────
-  // Constrain /browse to the operator-approved display-eligibility set.
-  // The seed already excludes hide-listed rows, but the truth layer is
-  // the canonical source of "what should appear" — this AND clause is
-  // defense in depth so any DB drift can't leak a row that shouldn't
-  // render.
-  const activeNames = [...getActiveDisplayProgramNames()];
+  // G0 cutover 2026-05-27: the P102 display-eligibility allowlist
+  // (`getActiveDisplayProgramNames`) was frozen pre-walk and only
+  // contained 101 names — it hid the 102 rows added/repaired during
+  // the G0 walk + final-sweep inserts. status=APPROVED is now the
+  // single source of truth for /browse. Hide-list rows are already
+  // marked status=HIDDEN in the DB, so this AND-clause was redundant
+  // defense-in-depth that turned into stale gatekeeping.
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const conditions: any[] = [
     { status: "APPROVED" },
-    { title: { in: activeNames } },
   ];
 
   if (params.search) {
