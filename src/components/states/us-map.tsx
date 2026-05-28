@@ -8,13 +8,16 @@ interface USMapProps {
   stateCounts: Record<string, number>;
 }
 
+// Cream → teal density scale matching mockup-127. Empty states get
+// warm cream-tan; 1-2 programs a pale mint; scaling up to deep teal
+// for the busiest states (CA/NY/TX/PA).
 function getFillColor(count: number): string {
-  if (count <= 0) return "#e2e8f0";
-  if (count <= 2) return "#93c5fd";
-  if (count <= 5) return "#60a5fa";
-  if (count <= 10) return "#3b82f6";
-  if (count <= 20) return "#2563eb";
-  return "#1d4ed8";
+  if (count <= 0) return "#e9e3d3"; // warm cream-tan (no programs)
+  if (count <= 2) return "#c5dcd9"; // pale mint
+  if (count <= 5) return "#7eb8b1"; // sage teal
+  if (count <= 10) return "#3a8a82"; // mid teal
+  if (count <= 20) return "#0f5757"; // primary teal
+  return "#084040"; // deep teal (busiest)
 }
 
 const STATE_PATHS: Record<string, string> = {
@@ -103,7 +106,7 @@ export function USMap({ stateCounts }: USMapProps) {
             <path
               key={code}
               d={path}
-              fill={isHovered ? "#1e40af" : getFillColor(count)}
+              fill={isHovered ? "#0a3a3a" : getFillColor(count)}
               stroke="#ffffff"
               strokeWidth="1"
               className="cursor-pointer transition-colors duration-150"
