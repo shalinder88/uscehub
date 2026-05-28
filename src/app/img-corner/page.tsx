@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
+import { ExternalNews } from "@/components/img-corner/external-news";
 import { Globe, Sparkles, BarChart3, ArrowRight } from "lucide-react";
+
+// /img-corner uses a fetch-driven external news strip — re-render at
+// request time so RSS-cached feeds refresh on their 30 min schedule
+// instead of baking into a static page at build time.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "IMG Corner — Coming Soon",
@@ -133,6 +139,11 @@ export default function ImgCornerPage() {
             </div>
           </div>
         </Link>
+      </div>
+
+      {/* IMG-relevant external news (RSS-backed, official sources only) */}
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+        <ExternalNews />
       </div>
 
       {/* Blurred preview of what's coming */}
