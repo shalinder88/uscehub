@@ -1,3 +1,16 @@
+/**
+ * @deprecated 2026-05-28 — generates fabricated activity strings
+ * ("Someone from India just browsed Cleveland Clinic") that contradict
+ * the verified-directory positioning. Same class of honesty problem as
+ * the /community fake-users cleanup in PR 0e-fix.
+ *
+ * Replaced on / by `<WhatsNew />` (src/components/home/whats-new.tsx),
+ * which pulls real NEW / VERIFIED / UPDATED events from the listings
+ * table.
+ *
+ * Kept in-tree only because other admin/poster surfaces may still
+ * reference it. Verify nothing imports it before deleting.
+ */
 "use client";
 
 import { useState, useEffect } from "react";
