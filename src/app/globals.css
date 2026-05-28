@@ -4,16 +4,36 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
+  --font-serif: "New York", "Times New Roman", Georgia, serif;
 }
 
+/* ============================================
+   USCEHub Sonolex theme — cream + teal (mockup 127)
+   The ONE source of truth for site-wide colors.
+   Cream #faf7f0 is the universal background everywhere.
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --bg: #ffffff;
-  --bg-alt: #f8fafc;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
+  /* Backgrounds */
+  --background: #faf7f0;       /* canonical cream (was #ffffff) */
+  --bg: #faf7f0;
+  --bg-alt: #f3ede0;           /* slightly warmer cream for alt surfaces */
+  --paper: #ffffff;            /* white cards on cream */
+  --paper-soft: #f3ede0;       /* card hover / inset */
+
+  /* Accents */
+  --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
+  --teal-deep: #084040;        /* hover / pressed teal */
+  --teal-soft: #c5dcd9;        /* teal tint for badge backgrounds */
+  --terracotta: #b3503e;       /* accent / warnings */
+
+  /* Text */
+  --foreground: #1a1f1f;       /* near-black ink */
+  --ink: #1a1f1f;
+  --ink-soft: #3a4444;
+  --text: #1a1f1f;
+  --text-muted: #7a8a87;       /* warm-gray muted text */
+  --border: #e5e0d2;           /* warm cream-tone borders */
+  --line: #e5e0d2;
   --card-bg: #ffffff;
 }
 
@@ -22,9 +42,18 @@
   --foreground: #f1f5f9;
   --bg: #0f172a;
   --bg-alt: #1e293b;
+  --paper: #1e293b;
+  --paper-soft: #2a2d35;
+  --teal: #0fa595;
+  --teal-deep: #0e7068;
+  --teal-soft: rgba(15, 165, 149, 0.2);
+  --terracotta: #d97755;
+  --ink: #f1f5f9;
+  --ink-soft: #cbd5e1;
   --text: #f1f5f9;
   --text-muted: #94a3b8;
   --border: #334155;
+  --line: #334155;
   --card-bg: #1e293b;
 }
 
