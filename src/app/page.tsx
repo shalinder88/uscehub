@@ -9,7 +9,6 @@ import { TrustSection } from "@/components/home/trust-section";
 import { ProgramStats } from "@/components/seo/program-stats";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { ErasCountdown } from "@/components/home/eras-countdown";
-import { WhatsNew } from "@/components/home/whats-new";
 import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 
@@ -165,7 +164,6 @@ export default async function HomePage() {
         stateCounts={stateCounts}
       />
       <ErasCountdown />
-      <WhatsNew />
       <TrustSection />
       <FeaturedListings />
       <ProgramSpotlight />
