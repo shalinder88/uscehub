@@ -119,8 +119,8 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           ))}
         </div>
 
-        {/* Type Breakdown */}
-        <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
+        {/* Type Breakdown — 4 canonical categories */}
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
           {types.map((t) => (
             <Link
               key={t.label}

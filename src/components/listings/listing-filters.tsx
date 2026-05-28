@@ -111,9 +111,10 @@ export function ListingFilters() {
           title="What kind of program are you looking for?"
         >
           <option value="">All categories</option>
-          <option value="clinical">Clinical Rotation (observership / externship / elective)</option>
-          <option value="research">Research Position</option>
-          <option value="volunteer">Volunteer / Pre-Med</option>
+          <option value="observership">Observership</option>
+          <option value="clerkship">Clerkship</option>
+          <option value="visiting">MD/DO Visiting Students (VSLO)</option>
+          <option value="research">Research</option>
         </Select>
 
         <Select
