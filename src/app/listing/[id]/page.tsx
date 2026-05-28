@@ -892,7 +892,10 @@ export default async function ListingPage({ params }: ListingPageProps) {
             <div className="lv2-main-left">
             {/* ════════════ V2 LEFT COL — mockup 98 ════════════ */}
 
-            {/* About this program */}
+            {/* About this program — auto-bulletize list-like paragraphs.
+                A paragraph is treated as a bullet list when it has 3+
+                non-empty lines and most lines look like specialty/section
+                names (short, no trailing period, no comma list). */}
             <div className="lv2-card lv2-about">
               <div className="lv2-section-h">
                 <span className="lv2-ic-circle"><Info /></span>
@@ -901,9 +904,29 @@ export default async function ListingPage({ params }: ListingPageProps) {
               {(listing.fullDescription || listing.shortDescription)
                 .split("\n\n")
                 .filter((p) => p.trim())
-                .map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
+                .map((para, i) => {
+                  const lines = para.split("\n").map((l) => l.trim()).filter(Boolean);
+                  const looksLikeList =
+                    lines.length >= 3 &&
+                    lines.filter((l) => {
+                      // A "list item" line: short-ish, no end-period, no comma chain
+                      const lc = l;
+                      const noTrailingDot = !lc.endsWith(".");
+                      const isShort = lc.length <= 120;
+                      const commaCount = lc.split(",").length - 1;
+                      return noTrailingDot && isShort && commaCount <= 2;
+                    }).length / lines.length >= 0.7;
+                  if (looksLikeList) {
+                    return (
+                      <ul key={i} style={{ paddingLeft: 22, margin: "8px 0 14px", listStyle: "disc" }}>
+                        {lines.map((line, j) => (
+                          <li key={j} style={{ marginBottom: 4, lineHeight: 1.55 }}>{line}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
+                  return <p key={i}>{para}</p>;
+                })}
 
               {realOrgName && listing.organization && (
                 <div className="lv2-contact-card">
