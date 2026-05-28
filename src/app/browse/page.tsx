@@ -195,8 +195,6 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
 
-          <VerifiedNotice />
-
           <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
             <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
               What&apos;s the difference between an observership, clerkship, MD/DO visiting, and research?
@@ -245,6 +243,7 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         </div>
       </div>
 
+      <VerifiedNotice />
       <PeopleAlsoAsk />
     </div>
   );

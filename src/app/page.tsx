@@ -164,7 +164,6 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
-      <VerifiedNotice />
       <ErasCountdown />
       <ActivityFeed />
       <TrustSection />
@@ -173,6 +172,7 @@ export default async function HomePage() {
       <HowItWorks />
       <ProgramStats />
       <MatchCounter />
+      <VerifiedNotice />
     </>
   );
 }
