@@ -13,23 +13,21 @@
    Cream #faf7f0 is the universal background everywhere.
    ============================================ */
 :root {
-  /* Backgrounds — Tailwind zinc-50 (2026-05-28).
-     User picked option I from the bg-picker: truly neutral near-white,
-     no warm or cool undertone. Hero retains its paper-bg multiply
-     overlay so the texture+vignettes still feel "papery" — but the
-     surrounding flat sections sit on neutral zinc, no perceptible
-     yellow/pink/green cast.
-       --bg          zinc-50         (most surfaces)
-       --bg-band     between zinc-100 and zinc-200
-                     (alternating-section band)
+  /* Backgrounds — Tailwind zinc-100 base (2026-05-28).
+     Bumped one shade darker than zinc-50 so #ffffff cards / search
+     pill / pills inside cards visibly POP. Still truly neutral, no
+     warm/cool undertone — just enough contrast for cards to read as
+     "brighter than the page".
+       --bg          zinc-100        (most surfaces)
+       --bg-band     zinc-200        (alternating-section band)
        --bg-alt      alias for back-compat
      */
-  --background: #fafafa;
-  --bg: #fafafa;
-  --bg-band: #efefef;
-  --bg-alt: #efefef;
-  --paper: #ffffff;            /* white cards on near-white bg */
-  --paper-soft: #efefef;       /* card hover / inset */
+  --background: #f4f4f5;
+  --bg: #f4f4f5;
+  --bg-band: #e7e7e9;
+  --bg-alt: #e7e7e9;
+  --paper: #ffffff;            /* white cards stand out on zinc-100 */
+  --paper-soft: #e7e7e9;       /* card hover / inset */
 
   /* Accents */
   --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
