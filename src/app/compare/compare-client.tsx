@@ -194,6 +194,7 @@ export default function CompareClient({
                   <select
                     value={id}
                     onChange={(e) => handleSelect(i, e.target.value)}
+                    aria-label={`Program ${i + 1} to compare`}
                     className="flex h-10 w-full appearance-none rounded-lg border border-slate-300 bg-white dark:bg-slate-900 px-3 py-2 pr-8 text-sm text-slate-900 dark:text-slate-100 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
                   >
                     <option value="">Select a program...</option>

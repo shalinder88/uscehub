@@ -65,6 +65,7 @@ export function ListingFilters({ browseChips, activeCategory }: ListingFiltersPr
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
+            aria-label={smartMode ? "Smart search (natural language)" : "Search hospitals or cities"}
             placeholder={smartMode ? 'Try "free observerships in New York"...' : "Search hospitals, cities..."}
             defaultValue={currentSearch}
             onKeyDown={(e) => {
@@ -119,6 +120,7 @@ export function ListingFilters({ browseChips, activeCategory }: ListingFiltersPr
             router.push(`/browse?${params.toString()}`);
           }}
           title="What kind of program are you looking for?"
+          aria-label="Filter by category"
         >
           <option value="">All categories</option>
           <option value="observership">Observership</option>
@@ -132,6 +134,7 @@ export function ListingFilters({ browseChips, activeCategory }: ListingFiltersPr
         <Select
           value={currentState}
           onChange={(e) => updateParam("state", e.target.value)}
+          aria-label="Filter by state"
         >
           <option value="">All States</option>
           {Object.entries(US_STATES).map(([code, name]) => (
@@ -144,6 +147,7 @@ export function ListingFilters({ browseChips, activeCategory }: ListingFiltersPr
         <Select
           value={currentSort}
           onChange={(e) => updateParam("sort", e.target.value)}
+          aria-label="Sort order"
         >
           <option value="newest">Newest First</option>
           <option value="cost-low">Cost: Low to High</option>
