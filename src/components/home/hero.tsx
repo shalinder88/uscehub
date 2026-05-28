@@ -12,7 +12,12 @@ interface HeroProps {
   listingCount: number;
   stateCount: number;
   specialtyCount: number;
-  typeCounts: { clinicalRotations: number; researchPositions: number; volunteer: number };
+  typeCounts: {
+    observerships: number;
+    clerkships: number;
+    visitingStudents: number;
+    research: number;
+  };
   stateCounts: Record<string, number>;
 }
 
@@ -36,13 +41,14 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
     { value: specialtyCount, label: "Specialties", icon: Stethoscope },
   ];
 
-  // Merged 3-category view. Clinical Rotations bundles observership +
-  // externship + elective — all three overlap heavily in practice and users
-  // filter by audience (IMG graduate vs M4 vs specialty) instead of by type.
+  // 4 canonical categories matching the active enum values. Each chip
+  // links to `/browse?category=<slug>` — the slug matches CATEGORY_TYPES
+  // in src/app/browse/page.tsx.
   const types = [
-    { label: "Clinical Rotations", count: typeCounts.clinicalRotations, color: "bg-blue-500", filter: "clinical" },
-    { label: "Research Positions", count: typeCounts.researchPositions, color: "bg-violet-500", filter: "research" },
-    { label: "Volunteer / Pre-Med", count: typeCounts.volunteer, color: "bg-emerald-500", filter: "volunteer" },
+    { label: "Observerships", count: typeCounts.observerships, color: "bg-blue-500", filter: "observership" },
+    { label: "Clerkships", count: typeCounts.clerkships, color: "bg-amber-500", filter: "clerkship" },
+    { label: "MD/DO Visiting (VSLO)", count: typeCounts.visitingStudents, color: "bg-emerald-500", filter: "visiting" },
+    { label: "Research", count: typeCounts.research, color: "bg-violet-500", filter: "research" },
   ];
 
   return (

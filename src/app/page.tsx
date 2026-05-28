@@ -27,11 +27,9 @@ export default async function HomePage() {
     stateData,
     specialtyRaw,
     observerships,
-    externships,
-    electives,
+    clerkships,
+    visitingStudents,
     research,
-    postdoc,
-    volunteer,
     allListings,
   ] = await Promise.all([
     prisma.listing.count({ where: { status: "APPROVED" } }),
@@ -45,22 +43,18 @@ export default async function HomePage() {
       select: { specialty: true },
     }),
     prisma.listing.count({ where: { status: "APPROVED", listingType: "OBSERVERSHIP" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "EXTERNSHIP" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "ELECTIVE" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "CLERKSHIP" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "MD_DO_VISITING_STUDENTS" } }),
     prisma.listing.count({ where: { status: "APPROVED", listingType: "RESEARCH" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "POSTDOC" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "VOLUNTEER" } }),
     prisma.listing.findMany({
       where: { status: "APPROVED" },
       select: { state: true },
     }),
   ]);
 
-  // Merged clinical bucket = observership + externship + elective.
-  // These all overlap in practice (same sites use different names); users
-  // pick with audience filter, not with type filter.
-  const clinicalRotations = observerships + externships + electives;
-  const researchPositions = research + postdoc;
+  // G0 cutover 2026-05-27: 4 canonical categories — no more merging
+  // observership+externship+elective into a "clinical" bucket. EXTERNSHIP,
+  // ELECTIVE, POSTDOC, VOLUNTEER all have 0 APPROVED rows.
 
   // Normalize specialties: split on commas / em-dash / paren, take primary
   // token, dedupe case-insensitively. Prevents "Dermatology" vs
@@ -110,28 +104,34 @@ export default async function HomePage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Clinical Opportunities for IMGs and Medical Students",
+    name: "U.S. Clinical Experience Programs for IMGs and Medical Students",
     description:
-      "Browse clinical rotations, research positions, and volunteer programs across the United States.",
+      "Browse observerships, clerkships, MD/DO visiting student rotations, and research positions across the United States.",
     numberOfItems: totalListings,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: `${clinicalRotations} Clinical Rotations (observerships, externships, electives)`,
-        url: "https://uscehub.com/browse?category=clinical",
+        name: `${observerships} Observerships`,
+        url: "https://uscehub.com/browse?category=observership",
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: `${researchPositions} Research Positions`,
-        url: "https://uscehub.com/browse?category=research",
+        name: `${clerkships} Clerkships`,
+        url: "https://uscehub.com/browse?category=clerkship",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: `${volunteer} Volunteer / Pre-Med Programs`,
-        url: "https://uscehub.com/browse?category=volunteer",
+        name: `${visitingStudents} MD/DO Visiting Students (VSLO)`,
+        url: "https://uscehub.com/browse?category=visiting",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: `${research} Research Positions`,
+        url: "https://uscehub.com/browse?category=research",
       },
     ],
   };
@@ -156,9 +156,10 @@ export default async function HomePage() {
         stateCount={stateData.length}
         specialtyCount={specialtyCount}
         typeCounts={{
-          clinicalRotations,
-          researchPositions,
-          volunteer,
+          observerships,
+          clerkships,
+          visitingStudents,
+          research,
         }}
         stateCounts={stateCounts}
       />
