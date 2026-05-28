@@ -4,6 +4,7 @@ import type { Prisma } from "@prisma/client";
 import { ListingFilters } from "@/components/listings/listing-filters";
 import { ListingCard, type SourceBadge } from "@/components/listings/listing-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
+import { VerifiedNotice } from "@/components/listings/verified-notice";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
@@ -183,6 +184,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
+
+          <VerifiedNotice />
 
           <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
             <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">

@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { Hero } from "@/components/home/hero";
+import { VerifiedNotice } from "@/components/listings/verified-notice";
 import { FeaturedListings } from "@/components/home/featured-listings";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { TrustSection } from "@/components/home/trust-section";
@@ -163,6 +164,7 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
+      <VerifiedNotice />
       <ErasCountdown />
       <ActivityFeed />
       <TrustSection />
