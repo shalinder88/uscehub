@@ -64,7 +64,7 @@ export function MatchCounter() {
 
   return (
     <>
-      <div className="border-t border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-4">
+      <div className="border-t border-[var(--line)] dark:border-slate-700 bg-[var(--bg-band)] dark:bg-slate-800 py-4">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-400">
           <PartyPopper className="h-4 w-4 text-amber-500" />
           <span>

@@ -307,8 +307,9 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           ))}
         </div>
 
-        {/* Opportunities by State map */}
-        <div className="h-map-card paper-bg">
+        {/* Opportunities by State map — sits on the hero's paper-bg overlay,
+            no separate texture so it blends instead of showing a rect edge. */}
+        <div className="h-map-card">
           <div className="h-map-head">
             <h3 className="h-map-title">Opportunities by State</h3>
             <Link href="/browse" className="h-map-link">

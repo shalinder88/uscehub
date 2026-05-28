@@ -25,7 +25,7 @@ const signals = [
 
 export function TrustSection() {
   return (
-    <section className="bg-[var(--bg)] dark:bg-slate-900 py-12">
+    <section className="bg-[var(--bg-band)] dark:bg-slate-900 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {signals.map((signal) => {

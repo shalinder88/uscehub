@@ -13,15 +13,20 @@
    Cream #faf7f0 is the universal background everywhere.
    ============================================ */
 :root {
-  /* Backgrounds — tuned 2026-05-28 toward off-white (less yellow tint).
-     The multiply-blend noise overlay also darkens this base slightly when
-     applied (.paper-bg). #faf7f0 read as pinkish-yellow under the noise;
-     #f8f5ec is a hair cooler and reads as paper. */
-  --background: #f8f5ec;
-  --bg: #f8f5ec;
-  --bg-alt: #f1ece0;
+  /* Backgrounds — tuned 2026-05-28 toward neutral off-white paper.
+     Three-band system for visual rhythm without the pinkish-yellow
+     undertone that #faf7f0 had:
+       --bg          base cream (most surfaces)
+       --bg-band     slightly cooler/darker for alternating sections
+                     (Trust / How-It-Works / footer)
+       --bg-alt      same as --bg-band, kept as alias for back-compat
+     */
+  --background: #f5f1e6;
+  --bg: #f5f1e6;
+  --bg-band: #ede8da;          /* darker shade for alternating sections */
+  --bg-alt: #ede8da;
   --paper: #ffffff;            /* white cards on cream */
-  --paper-soft: #f1ece0;       /* card hover / inset */
+  --paper-soft: #ede8da;       /* card hover / inset */
 
   /* Accents */
   --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
@@ -82,7 +87,7 @@ body {
   pointer-events: none;
   z-index: 0;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.20  0 0 0 0 0.20  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  opacity: 0.45;
+  opacity: 0.28;
   mix-blend-mode: multiply;
 }
 .paper-bg::after {
