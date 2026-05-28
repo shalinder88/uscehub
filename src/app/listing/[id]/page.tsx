@@ -164,8 +164,19 @@ export default async function ListingPage({ params }: ListingPageProps) {
     const open = listing.title.lastIndexOf("(");
     const close = listing.title.lastIndexOf(")");
     if (open > 0 && close === listing.title.length - 1 && close > open) {
-      titleMain = listing.title.slice(0, open).trimEnd();
-      titleSuffix = listing.title.slice(open); // includes both parens
+      const inner = listing.title.slice(open + 1, close); // contents of parens
+      // Only treat parens as institution acronym when it's plausibly one:
+      //   - short (≤ 8 chars), OR
+      //   - ALL UPPERCASE (e.g. "TTUHSC", "UAMS", "NYU Langone Health"
+      //     wouldn't match since lowercase chars present)
+      // This rules out specialty hints like "(Pathology)" or "(MD/DO)"
+      // that aren't institution names.
+      const isAcronymLike =
+        inner.length <= 8 || inner === inner.toUpperCase();
+      if (isAcronymLike) {
+        titleMain = listing.title.slice(0, open).trimEnd();
+        titleSuffix = listing.title.slice(open); // includes both parens
+      }
     }
   }
 
@@ -219,14 +230,83 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
   // Apply button label: "Apply at <SHORT>" — order of preference:
   //   1. parens-suffix on title  (e.g. "(UAMS)" → "UAMS")
-  //   2. first word of a *real* org name (skip placeholder "USCEHub Directory")
-  //   3. first word of title  (e.g. "Vanderbilt" from "Vanderbilt University...")
+  //   2. shortened *real* org name (skip placeholder "USCEHub Directory")
+  //   3. shortened title  (e.g. "Texas Tech HSC" from "Texas Tech HSC IM IMG ...")
   //   4. generic "Program"
+  //
+  // shortenInstitutionName: take up to 4 leading words, stopping at common
+  // generic type-words ("Medical", "College", "School", "Center", "Hospital",
+  // "for", "of", "and"). NO REGEX per project binding.
+  const TYPE_STOP_WORDS = new Set([
+    "medical",
+    "college",
+    "school",
+    "center",
+    "hospital",
+    "for",
+    "of",
+    "and",
+    "department",
+    "office",
+    "program",
+    // Specialties that often follow the institution name in titles like
+    // "Texas Tech HSC Internal Medicine IMG Observership"
+    "internal",
+    "general",
+    "surgery",
+    "pediatrics",
+    "psychiatry",
+    "neurology",
+    "radiology",
+    "emergency",
+    "obstetrics",
+    "family",
+    "anesthesia",
+    "anesthesiology",
+    "dermatology",
+    "pathology",
+    "ophthalmology",
+    "neurosurgery",
+    "orthopedic",
+    "orthopedics",
+    "international",
+    "visiting",
+    "img",
+    "observership",
+    "clerkship",
+    "elective",
+  ]);
+  function stripPunct(s: string): string {
+    return s
+      .split("(")
+      .join("")
+      .split(")")
+      .join("")
+      .split(",")
+      .join("")
+      .split(":")
+      .join("")
+      .trim();
+  }
+  function shortenInstitutionName(name: string | null | undefined): string | null {
+    if (!name) return null;
+    const words = name.split(" ");
+    const out: string[] = [];
+    for (const raw of words) {
+      const clean = stripPunct(raw);
+      if (!clean) continue;
+      const lc = clean.toLowerCase();
+      if (TYPE_STOP_WORDS.has(lc) && out.length > 0) break;
+      out.push(clean);
+      if (out.length >= 3) break;
+    }
+    return out.join(" ") || null;
+  }
   const orgShort = titleSuffix
     ? titleSuffix.slice(1, -1)
-    : realOrgName?.split(" ")[0]
-      || listing.title.split(" ")[0]
-      || "Program";
+    : shortenInstitutionName(realOrgName) ||
+      shortenInstitutionName(listing.title) ||
+      "Program";
 
   // Hero meta items — show what we have, skip blanks.
   const heroMetaItems: { icon: "pin" | "clock" | "cal" | "users"; text: string; bold?: boolean }[] = [];
