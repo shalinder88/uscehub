@@ -259,6 +259,16 @@ model Listing {
   featured                  Boolean                @default(false)
   audienceTag               String?
   usmleTier                 String?
+  // 14k-finding research layer (P49b). Imported directly to DB outside
+  // Prisma — this declaration adopts the existing column. Shape:
+  //   { url_audited, url_status, signals_detected, audience_evidence,
+  //     page_excerpts: [{ text, section_heading }], audited_at, ... }
+  auditData                 Json?
+  // Mockup-98 per-row signal override. When null, page falls back to
+  // the heuristic in src/lib/listing-v2-signals.ts; when populated,
+  // these hand-curated highlights replace the defaults. Same JSON
+  // shape as the ListingV2Signals interface.
+  extractedSignals          Json?
   createdAt                 DateTime               @default(now())
   updatedAt                 DateTime               @updatedAt
 

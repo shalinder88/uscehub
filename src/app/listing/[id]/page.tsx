@@ -336,10 +336,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
 
   // ════════════════════════════════════════════════════════════════════
   //   STEP 3: Quick-highlights / money tiles / What's-included / Apply-steps
-  //   Derived from structured fields + curated prose (no DB changes).
-  //   See src/lib/listing-v2-signals.ts for extraction logic.
+  //   Plan B (Step 4): per-row override via `extractedSignals` Json column.
+  //   When populated by hand for top programs, replaces the heuristic.
+  //   When null, falls back to computeListingV2Signals heuristic.
+  //   See src/lib/listing-v2-signals.ts for both shape + heuristic.
   // ════════════════════════════════════════════════════════════════════
-  const v2signals = computeListingV2Signals({
+  const heuristicSignals = computeListingV2Signals({
     cost: listing.cost,
     duration: listing.duration,
     specialty: listing.specialty,
@@ -358,6 +360,29 @@ export default async function ListingPage({ params }: ListingPageProps) {
     applicationDeadline: listing.applicationDeadline,
     housingSupport: listing.housingSupport,
   });
+
+  // Plan B override: if the row has hand-curated `extractedSignals`,
+  // use that for the 5 mockup-98 sections; otherwise use the heuristic
+  // result. Hand-curated rows can opt out individual sections by
+  // omitting that field — the heuristic fills the gap for that one.
+  type V2SignalKey = keyof typeof heuristicSignals;
+  type ExtractedRow = Partial<Record<V2SignalKey, unknown>>;
+  const override = (listing.extractedSignals ?? null) as ExtractedRow | null;
+  const pick = <K extends V2SignalKey>(k: K) => {
+    const fromOverride = override?.[k];
+    if (Array.isArray(fromOverride) && fromOverride.length > 0) {
+      return fromOverride as (typeof heuristicSignals)[K];
+    }
+    return heuristicSignals[k];
+  };
+  const v2signals = {
+    strong: pick("strong"),
+    watch: pick("watch"),
+    money: pick("money"),
+    included: pick("included"),
+    clerkships: pick("clerkships"),
+    applySteps: pick("applySteps"),
+  };
 
   const jsonLd = {
     "@context": "https://schema.org",
