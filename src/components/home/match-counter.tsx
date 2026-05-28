@@ -68,7 +68,7 @@ export function MatchCounter() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-400">
           <PartyPopper className="h-4 w-4 text-amber-500" />
           <span>
-            <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{totalCount}</span> IMGs who used USCEHub opportunities matched into residency
+            <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{totalCount}</span> med grads who used USCEHub opportunities matched into residency
           </span>
           <span className="text-slate-300">|</span>
           <button

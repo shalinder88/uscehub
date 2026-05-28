@@ -7,8 +7,14 @@ export async function FeaturedListings() {
   // Prefer listings explicitly flagged `featured: true` (admin-curated for
   // USMLE-IMG credibility — LOR offered, academic sponsor, published Step
   // requirements). Fall back to most-viewed if fewer than 6 featured exist.
+  // Featured may ONLY be Observerships or Clerkships — VSLO and Research
+  // are application-restricted to specific audiences (US/COCA M4 or PhD/MD
+  // researcher), so featuring them on the homepage misleads the broad
+  // audience. Rule added 2026-05-28.
+  const FEATURED_TYPES = ["OBSERVERSHIP", "CLERKSHIP"];
+
   const featured = await prisma.listing.findMany({
-    where: { status: "APPROVED", featured: true },
+    where: { status: "APPROVED", featured: true, listingType: { in: FEATURED_TYPES } },
     orderBy: [{ createdAt: "desc" }],
     take: 6,
     include: {
@@ -25,6 +31,7 @@ export async function FeaturedListings() {
       where: {
         status: "APPROVED",
         featured: false,
+        listingType: { in: FEATURED_TYPES },
       },
       // Phase 3.7: prioritize freshly cron/admin-verified rows
       // (real lastVerifiedAt timestamp), then legacy verified-on-file,

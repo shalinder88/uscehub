@@ -215,17 +215,29 @@ export function CommunityTabs() {
       </section>
 
       {/* CTA */}
-      <section className="rounded-xl bg-slate-50 dark:bg-slate-800 p-8 text-center">
-        <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-          Have questions about your IMG journey?
+      <section
+        className="rounded-2xl p-8 text-center"
+        style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 500,
+            fontSize: 22,
+            color: "var(--ink)",
+          }}
+        >
+          Have questions about your training path?
         </h2>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          Check our Residency Intelligence guide for match stats, IMG-friendly programs,
-          and application strategies, or send a question to admin.
+        <p className="mt-2 text-sm" style={{ color: "var(--ink-soft)" }}>
+          Browse the FAQ, send a note to admin, or visit IMG Corner for the
+          IMG-specific journey (ECFMG, visas, match strategy).
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
-          <Link href="/img-resources">
-            <Button size="lg">Residency Intelligence &amp; Match Data</Button>
+          <Link href="/img-corner">
+            <Button size="lg" style={{ background: "var(--teal)", color: "#fff" }}>
+              IMG Corner
+            </Button>
           </Link>
           <Link href="/faq">
             <Button variant="outline" size="lg">Read FAQ</Button>

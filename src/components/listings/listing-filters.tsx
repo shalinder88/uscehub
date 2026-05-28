@@ -14,7 +14,7 @@ export function ListingFilters() {
   const currentSearch = searchParams.get("search") || "";
   const currentType = searchParams.get("type") || "";
   const currentCategory = searchParams.get("category") || "";
-  const currentAudience = searchParams.get("audience") || "";
+  // audience filter removed; param ignored.
   const currentState = searchParams.get("state") || "";
   const currentSort = searchParams.get("sort") || "newest";
   const currentFree = searchParams.get("free") === "true";
@@ -116,18 +116,7 @@ export function ListingFilters() {
           <option value="research">Research</option>
         </Select>
 
-        <Select
-          value={currentAudience}
-          onChange={(e) => updateParam("audience", e.target.value)}
-          title="Narrow further — who are you?"
-        >
-          <option value="">Narrow by audience…</option>
-          <option value="USMLE-IMG">IMG Graduate (USMLE Match prep)</option>
-          <option value="Med Student">Current Medical Student</option>
-          <option value="Specialty Visiting">Trained Specialist visitor</option>
-          <option value="Pre-Med/Volunteer">Pre-Med / Volunteer</option>
-          <option value="Both">Open to Both IMG + Students</option>
-        </Select>
+        {/* Audience dropdown removed 2026-05-28 — category + state cover it. */}
 
         <Select
           value={currentState}

@@ -131,16 +131,36 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   else if (params.sort === "most-reviewed")
     orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { views: "desc" }];
 
-  const rawListings = await prisma.listing.findMany({
-    where: { AND: conditions },
-    orderBy,
-    include: {
-      reviews: {
-        where: { moderationStatus: "APPROVED" },
-        select: { overallRating: true },
+  const [rawListings, categoryCounts] = await Promise.all([
+    prisma.listing.findMany({
+      where: { AND: conditions },
+      orderBy,
+      include: {
+        reviews: {
+          where: { moderationStatus: "APPROVED" },
+          select: { overallRating: true },
+        },
       },
-    },
-  });
+    }),
+    prisma.listing.groupBy({
+      by: ["listingType"],
+      where: { status: "APPROVED" },
+      _count: { id: true },
+    }),
+  ]);
+
+  // Index the counts so the chip row can render in sub-millisecond.
+  const countByType: Record<string, number> = {};
+  for (const r of categoryCounts) countByType[r.listingType] = r._count.id;
+
+  const browseChips = [
+    { label: "Observership", filter: "observership", count: countByType.OBSERVERSHIP ?? 0 },
+    { label: "Clerkship", filter: "clerkship", count: countByType.CLERKSHIP ?? 0 },
+    { label: "MD/DO Visiting (VSLO)", filter: "visiting", count: countByType.MD_DO_VISITING_STUDENTS ?? 0 },
+    { label: "Research", filter: "research", count: countByType.RESEARCH ?? 0 },
+  ];
+
+  const activeCategory = params.category ?? "";
 
   // ── P102 Shape A: enrich each Prisma row with the truth-layer's
   //    sourceBadge + specialtyLimited so <ListingCard> can render
@@ -194,6 +214,49 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
           <p className="mt-1 text-sm" style={{ color: "var(--ink-soft)" }}>
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
+
+          {/* 4 prominent category chips — direct click, no dropdown */}
+          <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+            {browseChips.map((c) => {
+              const isActive = activeCategory === c.filter;
+              const href = isActive ? "/browse" : `/browse?category=${c.filter}`;
+              return (
+                <a
+                  key={c.filter}
+                  href={href}
+                  style={{
+                    background: isActive ? "var(--teal)" : "var(--paper)",
+                    color: isActive ? "#fff" : "var(--ink)",
+                    border: `1px solid ${isActive ? "var(--teal)" : "var(--line)"}`,
+                    borderRadius: 999,
+                    padding: "10px 16px",
+                    textDecoration: "none",
+                    textAlign: "center",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    transition: "all .15s",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 8,
+                  }}
+                >
+                  <span>{c.label}</span>
+                  <span
+                    style={{
+                      fontSize: 11,
+                      opacity: 0.8,
+                      background: isActive ? "rgba(255,255,255,0.18)" : "var(--bg-alt)",
+                      padding: "2px 8px",
+                      borderRadius: 999,
+                    }}
+                  >
+                    {c.count}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
 
           <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
             <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
