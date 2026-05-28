@@ -14,14 +14,14 @@ import {
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
-  title: "Recommended Tools & Resources for IMGs",
+  title: "Recommended Tools & Resources",
   description:
     "Curated list of essential tools, study resources, and services for International Medical Graduates preparing for USMLE, ECFMG certification, and residency applications.",
   alternates: {
     canonical: "https://uscehub.com/resources",
   },
   openGraph: {
-    title: "Recommended Tools & Resources for IMGs — USCEHub",
+    title: "Recommended Tools & Resources — USCEHub",
     description:
       "Essential study tools, exam prep, insurance, and services for IMGs applying to US residency programs.",
     url: "https://uscehub.com/resources",
@@ -220,7 +220,7 @@ function SectionHeader({ title, subtitle }: { title: string; subtitle: string })
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Recommended Tools & Resources for IMGs",
+  name: "Recommended Tools & Resources",
   description:
     "Curated list of essential tools, study resources, and services for International Medical Graduates.",
   url: "https://uscehub.com/resources",
@@ -240,15 +240,23 @@ export default function ResourcesPage() {
         ]}
       />
 
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — cream/serif */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <BookOpen className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            <BookOpen className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Tools &amp; Resources We Recommend
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base" style={{ color: "var(--ink-soft)" }}>
               Everything you need for USMLE prep, ECFMG certification, and
               residency applications — curated by someone who used them all.
             </p>
