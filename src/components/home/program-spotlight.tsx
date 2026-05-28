@@ -1,11 +1,20 @@
 import { prisma } from "@/lib/prisma";
+import type { ListingType } from "@prisma/client";
 import { Star, MapPin, DollarSign, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { LISTING_TYPE_LABELS } from "@/lib/utils";
 
 export async function ProgramSpotlight() {
+  // Same rule as FeaturedListings: spotlight on the homepage may only be
+  // an Observership or Clerkship — VSLO/Research have audience-restricted
+  // applications that mislead the broader visitor.
+  const SPOTLIGHT_TYPES: ListingType[] = ["OBSERVERSHIP", "CLERKSHIP"];
   const verifiedListings = await prisma.listing.findMany({
-    where: { status: "APPROVED", linkVerified: true },
+    where: {
+      status: "APPROVED",
+      linkVerified: true,
+      listingType: { in: SPOTLIGHT_TYPES },
+    },
     select: {
       id: true,
       title: true,

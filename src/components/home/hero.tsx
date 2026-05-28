@@ -50,7 +50,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
   ];
 
   return (
-    <section className="hero-127">
+    <section className="hero-127 paper-bg">
       <style>{`
         .hero-127 {
           background: var(--bg);
@@ -308,7 +308,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
         </div>
 
         {/* Opportunities by State map */}
-        <div className="h-map-card">
+        <div className="h-map-card paper-bg">
           <div className="h-map-head">
             <h3 className="h-map-title">Opportunities by State</h3>
             <Link href="/browse" className="h-map-link">
