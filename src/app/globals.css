@@ -13,20 +13,23 @@
    Cream #faf7f0 is the universal background everywhere.
    ============================================ */
 :root {
-  /* Backgrounds — tuned 2026-05-28 toward neutral off-white paper.
-     Three-band system for visual rhythm without the pinkish-yellow
-     undertone that #faf7f0 had:
-       --bg          base cream (most surfaces)
-       --bg-band     slightly cooler/darker for alternating sections
-                     (Trust / How-It-Works / footer)
-       --bg-alt      same as --bg-band, kept as alias for back-compat
+  /* Backgrounds — mild green-cool off-white (2026-05-28).
+     User feedback: warm-yellow cream read as pink against the hero's
+     paper-bg multiply overlay (which adds a teal-green undertone via
+     the noise color-matrix). The fix is to bake that same mild green
+     tint into the BASE so flat sections match the hero's apparent
+     tone. R < G > B → reads as off-white with a subtle green-mint hue.
+       --bg          base off-white (most surfaces)
+       --bg-band     slightly darker, same hue family
+                     (alternating-section band)
+       --bg-alt      alias for back-compat
      */
-  --background: #f5f1e6;
-  --bg: #f5f1e6;
-  --bg-band: #ede8da;          /* darker shade for alternating sections */
-  --bg-alt: #ede8da;
-  --paper: #ffffff;            /* white cards on cream */
-  --paper-soft: #ede8da;       /* card hover / inset */
+  --background: #eff2e8;
+  --bg: #eff2e8;
+  --bg-band: #e6eadc;
+  --bg-alt: #e6eadc;
+  --paper: #ffffff;            /* white cards on bg */
+  --paper-soft: #e6eadc;       /* card hover / inset */
 
   /* Accents */
   --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
