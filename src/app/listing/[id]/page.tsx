@@ -244,7 +244,8 @@ export default async function ListingPage({ params }: ListingPageProps) {
     "center",
     "hospital",
     "for",
-    "of",
+    // "of" intentionally NOT a stop word — "University of Florida"
+    // pattern would otherwise break (would stop at "University").
     "and",
     "department",
     "office",
@@ -285,6 +286,12 @@ export default async function ListingPage({ params }: ListingPageProps) {
       .split(",")
       .join("")
       .split(":")
+      .join("")
+      .split("—") // em-dash
+      .join("")
+      .split("–") // en-dash
+      .join("")
+      .split("/")
       .join("")
       .trim();
   }
