@@ -40,7 +40,7 @@ export const PHASE_CONFIGS: Record<JourneyPhase, PhaseConfig> = {
           { label: "Resources & Guides", href: "/resources", description: "Recommended tools for IMGs" },
         ],
       },
-      { label: "IMG Resources", href: "/img-resources" },
+      { label: "Residency Intelligence", href: "/img-resources" },
       { label: "Community", href: "/community" },
       { label: "About", href: "/about" },
     ],

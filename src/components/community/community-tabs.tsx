@@ -197,12 +197,12 @@ export function CommunityTabs() {
           Have questions about your IMG journey?
         </h2>
         <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          Check our IMG Resources guide for match stats, IMG-friendly programs,
+          Check our Residency Intelligence guide for match stats, IMG-friendly programs,
           and application strategies, or send a question to admin.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
           <Link href="/img-resources">
-            <Button size="lg">IMG Resources &amp; Match Data</Button>
+            <Button size="lg">Residency Intelligence &amp; Match Data</Button>
           </Link>
           <Link href="/faq">
             <Button variant="outline" size="lg">Read FAQ</Button>

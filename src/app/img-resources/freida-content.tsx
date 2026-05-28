@@ -707,7 +707,7 @@ export function FreidaContent() {
               2026 Data — NRMP, ECFMG, FREIDA
             </Badge>
             <h1 className="text-3xl font-bold sm:text-4xl">
-              IMG Resources &amp; Residency Intelligence
+              Residency Intelligence
             </h1>
             <p className="mt-4 text-base text-slate-400">
               Everything International Medical Graduates need to know — match

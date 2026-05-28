@@ -3,14 +3,14 @@ import { FreidaContent } from "./freida-content";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
-  title: "IMG Resources — 2026 Match Data, ECFMG, Specialty Guide",
+  title: "Residency Intelligence — 2026 Match Data, ECFMG, Specialty Guide",
   description:
     "2026 NRMP Match data, ECFMG certification pathways, IMG-friendly specialties, Step 2 CK targets, program rankings, and visa guide. Updated with the latest match results for International Medical Graduates.",
   alternates: {
     canonical: "https://uscehub.com/img-resources",
   },
   openGraph: {
-    title: "IMG Resources — 2026 Match Data, ECFMG, Specialty Guide",
+    title: "Residency Intelligence — 2026 Match Data, ECFMG, Specialty Guide",
     description:
       "Complete IMG residency intelligence: 2026 NRMP Match statistics, ECFMG pathways, specialty competitiveness, and program rankings.",
     url: "https://uscehub.com/img-resources",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "IMG Resources — 2026 Match Data, ECFMG, Specialty Guide",
+  name: "Residency Intelligence — 2026 Match Data, ECFMG, Specialty Guide",
   description:
     "2026 NRMP Match data, ECFMG certification pathways, IMG-friendly specialties, Step 2 CK targets, and visa guide for International Medical Graduates.",
   url: "https://uscehub.com/img-resources",
@@ -52,7 +52,7 @@ export default function IMGResourcesPage() {
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
-          { name: "IMG Resources", url: "https://uscehub.com/img-resources" },
+          { name: "Residency Intelligence", url: "https://uscehub.com/img-resources" },
         ]}
       />
       <FreidaContent />

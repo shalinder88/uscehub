@@ -175,7 +175,7 @@ export default function AboutPage() {
             <Button size="lg">Browse Opportunities</Button>
           </Link>
           <Link href="/img-resources">
-            <Button variant="outline" size="lg">IMG Resources</Button>
+            <Button variant="outline" size="lg">Residency Intelligence</Button>
           </Link>
         </div>
       </div>
