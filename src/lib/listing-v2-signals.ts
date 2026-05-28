@@ -279,11 +279,20 @@ export function computeWatchPoints(i: SignalInputs): HighlightPoint[] {
   }
 
   // 10. High program fee (>= $1000)
-  // No regex — scan for dollar tokens.
+  // Skip if the cost field actually describes a stipend / payment to
+  // the observer (UW DLMP pattern: "No fee; program provides stipend
+  // up to $2,500" — that's money TO the observer, not from them).
   if (i.cost) {
     const costLc = i.cost.toLowerCase();
+    const isReceivingMoney =
+      costLc.includes("stipend") ||
+      costLc.includes("paid position") ||
+      costLc.includes("no fee") ||
+      costLc.includes("free tuition") ||
+      costLc.includes("no tuition");
     if (
-      costLc.includes("$1,") ||
+      !isReceivingMoney &&
+      (costLc.includes("$1,") ||
       costLc.includes("$2,") ||
       costLc.includes("$3,") ||
       costLc.includes("$4,") ||
@@ -292,7 +301,7 @@ export function computeWatchPoints(i: SignalInputs): HighlightPoint[] {
       costLc.includes("$7,") ||
       costLc.includes("$8,") ||
       costLc.includes("$9,") ||
-      costLc.includes("$10,")
+      costLc.includes("$10,"))
     ) {
       out.push({
         title: "Substantial program fee",
