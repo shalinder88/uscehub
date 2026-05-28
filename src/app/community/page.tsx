@@ -11,7 +11,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 // audit H2). External community links (Reddit, SDN, etc.) remain — they
 // are real third-party destinations, not USCEHub forum content.
 export const metadata: Metadata = {
-  title: "IMG Community — Coming Soon",
+  title: "Community — Coming Soon",
   description:
     "USCEHub's community features are being planned. For now, browse verified listings, use official IMG resources, and follow links to established external communities.",
   alternates: {
@@ -45,7 +45,7 @@ export default function CommunityPage() {
                 letterSpacing: "-0.01em",
               }}
             >
-              IMG Community
+              Community
             </h1>
             <p className="mt-3 text-base" style={{ color: "var(--ink-soft)" }}>
               Community features are being planned. Discussion boards, swap
