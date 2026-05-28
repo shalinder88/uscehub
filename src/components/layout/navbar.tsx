@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { SITE_METRICS } from "@/lib/site-metrics";
 import {
   HeartPulse,
   Menu,
@@ -120,6 +121,15 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
+          {/* Verified-directory badge (mockup 127). Uses cream/teal tokens. */}
+          <Link
+            href="/methodology"
+            className="hidden xl:inline-flex items-center gap-2 rounded-full border border-[var(--teal)]/25 bg-[var(--teal-soft)] px-3 py-1.5 text-xs font-medium text-[var(--teal-deep)] hover:bg-[var(--teal)]/15 transition-colors"
+            title="How we verify listings"
+          >
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--teal)]" />
+            {SITE_METRICS.listingsWithOfficialSource} programs verified
+          </Link>
           <ThemeToggle />
           {session?.user ? (
             <div className="relative">
