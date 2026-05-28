@@ -700,16 +700,28 @@ export function FreidaContent() {
   return (
     <div className="bg-[var(--bg)] dark:bg-slate-950">
       {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="default" className="mb-4 bg-blue-600 text-white">
+            <span
+              className="mb-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"
+              style={{ background: "var(--teal-soft)", color: "var(--teal-deep)" }}
+            >
+              <span className="inline-block h-1 w-1 rounded-full" style={{ background: "var(--teal)" }} />
               2026 Data — NRMP, ECFMG, FREIDA
-            </Badge>
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            </span>
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Residency Intelligence
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               Everything International Medical Graduates need to know — match
               statistics, specialty data, ECFMG requirements, and program
               insights. Updated with 2026 NRMP Match results (released March 20, 2026).

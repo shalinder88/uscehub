@@ -50,7 +50,7 @@ export default function AboutPage() {
         {/* Free forever + Built by intensivist — single combined block */}
         <section className="mb-14">
           <div
-            className="rounded-2xl p-8 text-center sm:p-10"
+            className="card-lift rounded-2xl p-8 text-center sm:p-10"
             style={{
               background: "var(--paper)",
               border: "1px solid var(--line)",
@@ -128,12 +128,9 @@ export default function AboutPage() {
         </p>
 
         {/* CTA */}
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <div className="flex justify-center">
           <Link href="/browse">
             <Button size="lg" style={{ background: "var(--teal)", color: "#fff" }}>Browse Opportunities</Button>
-          </Link>
-          <Link href="/img-corner">
-            <Button variant="outline" size="lg">IMG Corner</Button>
           </Link>
         </div>
       </div>
