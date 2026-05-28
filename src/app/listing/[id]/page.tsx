@@ -1254,18 +1254,6 @@ export default async function ListingPage({ params }: ListingPageProps) {
                           ))}
                         </div>
                       </div>
-                      {review.title && (
-                        <p
-                          style={{
-                            fontSize: "13.5px",
-                            fontWeight: 600,
-                            color: "var(--ink)",
-                            margin: "0 0 4px",
-                          }}
-                        >
-                          {review.title}
-                        </p>
-                      )}
                       {review.comment && (
                         <p
                           style={{
