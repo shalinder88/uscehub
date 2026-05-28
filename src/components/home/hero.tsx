@@ -82,14 +82,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           color: var(--teal);
           font-weight: 500;
         }
-        .hero-127 .h-sub {
-          text-align: center;
-          max-width: 640px;
-          margin: 0 auto 36px;
-          font-size: 15.5px;
-          line-height: 1.65;
-          color: var(--ink-soft);
-        }
+        .hero-127 h1.h-title { margin-bottom: 40px; }
         .hero-127 .h-search {
           max-width: 640px;
           margin: 0 auto 24px;
@@ -272,11 +265,6 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
         <h1 className="h-title">
           Find <em>verified</em> U.S. Clinical Experience.
         </h1>
-        <p className="h-sub">
-          Source link on every listing. New programs added every week. Built for
-          IMG graduates, US/INTL medical students, and residents looking for
-          observerships, clerkships, MD/DO visiting rotations (VSLO), and research.
-        </p>
 
         <form onSubmit={handleSearch} className="h-search">
           <Search className="h-search-icon" size={18} />

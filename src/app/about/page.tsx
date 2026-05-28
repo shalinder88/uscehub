@@ -89,35 +89,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Personal Story */}
+        {/* Built by an Intensivist — single subtle line */}
         <section className="mb-14">
-          <div className="rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 p-6 sm:p-8">
-            <div className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              <p>
-                I built this platform because I remember. The confusion of
-                figuring out which exams to take and when. The expenses that
-                kept piling up — exam fees, application fees, travel, housing.
-                Cold-emailing dozens of hospitals hoping someone would give me
-                a chance to observe. I went through the entire process — USMLE
-                exams, ECFMG certification, observerships, research, residency,
-                fellowship, and finally attending life in the ICU. At every
-                stage, I wished there was one honest, organized place with the
-                information I needed. There wasn&apos;t. So I built it.
-              </p>
-            </div>
-
-            {/* Prominent quote */}
-            <div className="mt-6 rounded-xl bg-slate-900 p-6 text-center">
-              <p className="text-xl font-semibold text-white sm:text-2xl">
-                &ldquo;Don&apos;t worry — it gets easier.&rdquo;
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                The process is hard, the uncertainty is real, but thousands of
-                IMGs have walked this path before you and matched. You can too.
-              </p>
-            </div>
-            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— Intensivist</p>
-          </div>
+          <p
+            className="text-center"
+            style={{
+              fontSize: 14,
+              color: "var(--ink-soft)",
+              fontStyle: "italic",
+            }}
+          >
+            Built by an Intensivist who went through the IMG path.
+          </p>
         </section>
 
         {/* What we understand */}
