@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import type { ListingType } from "@prisma/client";
 import { ListingCard } from "@/components/listings/listing-card";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -11,7 +12,7 @@ export async function FeaturedListings() {
   // are application-restricted to specific audiences (US/COCA M4 or PhD/MD
   // researcher), so featuring them on the homepage misleads the broad
   // audience. Rule added 2026-05-28.
-  const FEATURED_TYPES = ["OBSERVERSHIP", "CLERKSHIP"];
+  const FEATURED_TYPES: ListingType[] = ["OBSERVERSHIP", "CLERKSHIP"];
 
   const featured = await prisma.listing.findMany({
     where: { status: "APPROVED", featured: true, listingType: { in: FEATURED_TYPES } },

@@ -48,8 +48,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/img-resources" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
-                  Residency Intelligence
+                <Link href="/img-corner" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                  IMG Corner
                 </Link>
               </li>
               <li>
