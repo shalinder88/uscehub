@@ -8,7 +8,7 @@
  * Run: npx tsx scripts/seed-tier-a-extracted-signals.ts
  */
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -180,7 +180,7 @@ const ROWS: RowOverride[] = [
     await prisma.listing.update({
       where: { id: row.id },
       data: {
-        extractedSignals: payload,
+        extractedSignals: payload as Prisma.InputJsonValue,
       },
     });
     await prisma.$executeRaw`
