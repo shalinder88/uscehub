@@ -2000,8 +2000,44 @@ Tackled items #1 + #2 + #5 + #6 from the post-walk list — the ones resolvable 
 **Still deferred (need user decision or Chrome walk):**
 - #3 NYU subspecialty URL bleed → done in final-sweep #2; nothing left.
 - #4 HIDDEN hard-delete (45 rows) — user decision: irreversible, leave for explicit instruction.
-- #7 Gap-program additions (13 candidates) — needs Chrome research per row; substantial.
+- #7 Gap-program additions (13 candidates) — see final-sweep #4 below; walked.
 - #8 Wake Forest `class@wfu.edu` confirmation — phone/email verification needed.
 - #9 Panamerican Trauma typo — phone/email verification needed.
 - #10 Orlando Health Children's Neuroscience contact — page walk needed.
+
+---
+
+# G0 FINAL-SWEEP #4 — Gap-program walk (2026-05-27)
+
+Walked the 13 gap candidates from the post-walk list. Inserted only the rows that
+could be verified via a working source URL with sufficient detail. Refused to
+insert thin/unverified rows (CLAUDE.md doctrine: no row without source evidence).
+
+**Inserted (3 new APPROVED rows):**
+
+| # | Title | ID | URL host | Audience |
+|---|---|---|---|---|
+| 1 | UC Davis School of Medicine Visiting Student Program | `cmpovqtuv0001og418xzrqe8b` | health.ucdavis.edu | US-MD-DO-VISITING (LCME M4 only; INTL explicitly excluded) |
+| 3 | DGSOM UCLA Visiting Student Program | `cmpovts8h0001ogbiwdgxg8dx` | medschool.ucla.edu | US-MD-DO-VISITING (LCME M4 + COCA DO M4; INTL restricted to pre-selected exchanges) |
+| 11 | University of Pittsburgh SOM International Visiting Student Program | `cmpovxscp0001ogl8840saig7` | medstudentaffairs.pitt.edu | INTL-FINAL-YEAR-VISITING (separate from existing UPSOM domestic VSLO row #cmo34f3q) |
+
+**Not inserted — reasons:**
+
+| # | Candidate | Outcome |
+|---|---|---|
+| 2 | UC San Diego ACE Program | Already in DB as `cmn2114h800asb1171avairi` (HIDDEN). Program confirmed DISCONTINUED (URL 301→`vchs.ucsd.edu`). No-op. |
+| 4 | Cincinnati Children's Hospital INTL Visitor | Already in DB as APPROVED `cmn2114m`. False gap. |
+| 5 | UMass + Jefferson Internal Medicine | Already noted discontinued in original gap list. Skip. |
+| 6 | WCM US/Canadian M4 visiting students | Already in DB as APPROVED `cmn21114` + `cmo34f3i`. False gap. |
+| 7 | UW Radiology IMG observership | UW Radiology dept pages do not publish an observership program at standard URL patterns (`rad.uw.edu/about/diversity/observerships/`, `/education/`, etc.). Sister to UW Pathology #226 was inferred from #226's page; not verifiable as a standalone published program. SKIPPED — no verifiable source. |
+| 8 | UMiami Jackson Memorial / IMI Global | Already in DB as APPROVED `cmo3385f` (Harrington Global Observership). False gap. |
+| 9 | UW INTL visiting medical students | `uwmedicine.org/school-of-medicine/visiting-students-program/visiting-international` returns 403 Forbidden (Cloudflare). Existing US-Canada row `cmo34f4e` implies a sibling INTL page but it's unreachable. SKIPPED — no verifiable source. |
+| 10 | R Adams Cowley Shock Trauma observer | `umms.org/ummc/health-services/shock-trauma/about/observer-program` returns 403 Forbidden. SKIPPED — no verifiable source. |
+| 12 | UTHealth Houston other trainee tracks | Walked `med.uth.edu/gme/trainee-resources/visiting-trainees/`. Only Observer Program (#cmn2114r already in DB), Visiting Residents (ACGME-only, NOT USCE-relevant), and Visiting Scientists (research, NOT clinical USCE). No additional USCE-scope tracks. Skip. |
+| 13 | Trinity Health Mid-Atlantic GME contact | `trinityhealthma.org/healthcare-professionals/gme` exists but does not publish a central GME contact email. Per-hospital contact only (Mercy Catholic, Nazareth, St Mary, Saint Francis). Rows #156/#157 stay with `contactEmail=null` — honest. No-op. |
+| 14 | UNM Department Sponsored Visitors Program | `hsc.unm.edu` SSL cert verification fails via WebFetch. Cannot verify alternate-pathway URL. SKIPPED — no verifiable source. |
+
+**Final-sweep #4 row touches:** 3 INSERTs. Walk + sweeps total: **254 distinct row touches** (251 + 3).
+
+**Doctrine note:** Refused to insert 5 candidates (#7, #9, #10, #14, and a possible #5) because their source URLs returned 403 / 404 / SSL failure. Per CLAUDE.md "no row without source evidence" rule — these stay deferred until a working URL can be verified manually (e.g., via browser session not subject to bot blocking).
 
