@@ -86,13 +86,14 @@ export default async function OpengraphImage() {
           >
             <span
               style={{
+                display: "flex",
                 width: 8,
                 height: 8,
                 borderRadius: 999,
                 background: "#0f5757",
               }}
             />
-            Verified Directory
+            <span style={{ display: "flex" }}>Verified Directory</span>
           </div>
         </div>
 
@@ -107,6 +108,8 @@ export default async function OpengraphImage() {
         >
           <div
             style={{
+              display: "flex",
+              flexWrap: "wrap",
               fontSize: 84,
               lineHeight: 1.05,
               color: "#1a1f1f",
@@ -114,7 +117,9 @@ export default async function OpengraphImage() {
               fontWeight: 500,
             }}
           >
-            Find <span style={{ color: "#0f5757" }}>verified</span> U.S. Clinical Experience.
+            <span>Find&nbsp;</span>
+            <span style={{ color: "#0f5757" }}>verified&nbsp;</span>
+            <span>U.S. Clinical Experience.</span>
           </div>
           <div
             style={{

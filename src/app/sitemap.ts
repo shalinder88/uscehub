@@ -70,6 +70,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
+      // /img-corner went live 2026-05-28 with the Residency Intelligence
+      // promo card + RSS-backed external news strip pulling from
+      // USCIS / AAMC / ECFMG / NRMP. Indexable; refreshed daily because
+      // the news strip changes.
+      url: `${baseUrl}/img-corner`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/how-it-works`,
       lastModified: new Date(),
       changeFrequency: "monthly",
