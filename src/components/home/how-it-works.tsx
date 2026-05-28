@@ -5,7 +5,7 @@ const applicantSteps = [
     icon: Search,
     title: "Search & Filter",
     description:
-      "Browse hundreds of verified observership, externship, and research listings across the United States. Filter by specialty, state, cost, and more.",
+      "Browse hundreds of verified observership, clerkship, MD/DO visiting (VSLO), and research listings across the United States. Filter by specialty, state, cost, and more.",
   },
   {
     icon: FileText,

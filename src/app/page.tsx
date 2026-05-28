@@ -15,7 +15,7 @@ import { MatchCounter } from "@/components/home/match-counter";
 export const metadata: Metadata = {
   title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
   description:
-    "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
+    "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
   alternates: {
     canonical: "https://uscehub.com",
   },
@@ -85,7 +85,7 @@ export default async function HomePage() {
     url: "https://uscehub.com",
     logo: "https://uscehub.com/og-default.png",
     description:
-      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
+      "An independent, source-linked directory of U.S. clinical experience programs — observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions.",
     sameAs: [],
   };
 

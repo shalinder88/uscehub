@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "USCEHub",
     title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
+      "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     url: SITE_URL,
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
     description:
-      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
+      "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],
   },
   // Google Search Console verification (audit P1-8):
