@@ -389,7 +389,7 @@ function EcfmgTab() {
           {ECFMG_PATHWAYS.map((p) => (
             <div key={p.number} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-xs font-bold text-white">{p.number}</span>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--teal)] text-xs font-bold text-white">{p.number}</span>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{p.name}</h4>
@@ -446,7 +446,7 @@ function ApplicationTab() {
                 <div className="absolute left-5 top-12 h-[calc(100%-2rem)] w-0.5 bg-slate-200 dark:bg-slate-700" />
               )}
               {/* Step circle */}
-              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-sm font-bold text-white">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                 {s.step}
               </div>
               <div className="flex-1 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
@@ -528,7 +528,7 @@ function ApplicationTab() {
         <div className="space-y-3">
           {APPLICATION_TIMELINE.map((phase, i) => (
             <div key={phase.phase} className="flex gap-4 rounded-xl border border-slate-200 dark:border-slate-700 p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-sm font-bold text-white">{i + 1}</div>
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">{i + 1}</div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{phase.phase}</h4>
