@@ -63,7 +63,7 @@ export function HowItWorks() {
                 const Icon = step.icon;
                 return (
                   <div key={step.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                       {index + 1}
                     </div>
                     <div>
@@ -92,7 +92,7 @@ export function HowItWorks() {
                 const Icon = step.icon;
                 return (
                   <div key={step.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                       {index + 1}
                     </div>
                     <div>

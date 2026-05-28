@@ -146,7 +146,7 @@ export function MatchCounter() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
+                  className="w-full rounded-lg bg-[var(--teal)] px-4 py-2.5 text-sm font-medium text-white hover:bg-[var(--teal-deep)]"
                 >
                   Submit
                 </button>
