@@ -287,7 +287,7 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
         {/* 4 PROMINENT category chips — primary nav row */}
         <div className="h-cats">
           {categories.map((c) => (
-            <Link key={c.filter} href={`/browse?category=${c.filter}`} className="h-cat">
+            <Link key={c.filter} href={`/browse?category=${c.filter}`} className="h-cat card-lift">
               <span className="h-cat-count">{c.count}</span>
               <span className="h-cat-label">{c.label}</span>
             </Link>

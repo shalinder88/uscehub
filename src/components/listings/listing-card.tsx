@@ -106,7 +106,7 @@ export function ListingCard({ listing }: ListingCardProps) {
 
   return (
     <Link href={`/listing/${listing.id}`}>
-      <CardRoot className="group h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
+      <CardRoot className="card-lift group h-full transition-all duration-200">
         <div className="p-5">
           <div className="mb-3 flex items-start justify-between gap-2">
             <Badge variant={getTypeVariant(listing.listingType)}>

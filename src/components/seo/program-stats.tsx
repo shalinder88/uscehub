@@ -125,7 +125,7 @@ export async function ProgramStats() {
             return (
               <div
                 key={stat.label}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center"
+                className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center card-lift"
               >
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
                   <Icon className="h-5 w-5 text-slate-700" />
@@ -144,7 +144,7 @@ export async function ProgramStats() {
         {/* Type Breakdown and Top States */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Program Types */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <div className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 card-lift">
             <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
               Programs by Type
             </h3>
@@ -192,7 +192,7 @@ export async function ProgramStats() {
           </div>
 
           {/* Top States */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <div className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 card-lift">
             <div className="mb-4 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-slate-500" />
               <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">

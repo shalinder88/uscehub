@@ -10,7 +10,7 @@ export function Footer() {
     <footer
       className="border-t"
       style={{
-        background: "var(--bg-alt)",
+        background: "var(--bg)",
         borderColor: "var(--line)",
         color: "var(--ink-soft)",
       }}
