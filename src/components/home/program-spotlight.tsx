@@ -31,7 +31,7 @@ export async function ProgramSpotlight() {
   const listing = verifiedListings[dayIndex % verifiedListings.length];
 
   return (
-    <section className="bg-white dark:bg-slate-900 py-12">
+    <section className="bg-[var(--bg)] dark:bg-slate-900 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <div className="mb-3 flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-amber-600">

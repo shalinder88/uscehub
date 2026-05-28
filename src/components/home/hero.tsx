@@ -231,14 +231,11 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           color: var(--text-muted);
         }
 
-        /* Map card */
+        /* Map sits directly on cream — no card border */
         .hero-127 .h-map-card {
           max-width: 900px;
           margin: 0 auto;
-          background: var(--paper);
-          border: 1px solid var(--line);
-          border-radius: 18px;
-          padding: 24px;
+          padding: 0;
         }
         .hero-127 .h-map-head {
           display: flex;

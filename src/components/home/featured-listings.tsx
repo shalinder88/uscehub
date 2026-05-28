@@ -48,7 +48,7 @@ export async function FeaturedListings() {
   if (listings.length === 0) return null;
 
   return (
-    <section className="bg-white dark:bg-slate-950 py-16">
+    <section className="bg-[var(--bg)] dark:bg-slate-950 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between">
           <div>
