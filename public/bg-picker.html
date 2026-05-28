@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>USCEHub · Background color picker</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Inter", system-ui, sans-serif;
+    color: #1a1f1f;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 14px 24px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .topbar h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  .topbar p { margin: 0; font-size: 12px; color: #666; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .swatch {
+    padding: 48px 24px;
+    border-bottom: 1px solid rgba(0,0,0,.04);
+    position: relative;
+  }
+  .label {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    font-size: 11px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: .04em;
+    color: #1a1f1f;
+    background: rgba(255,255,255,.85);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .name {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a1f1f;
+    background: rgba(255,255,255,.85);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,.06);
+  }
+  .inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    align-items: start;
+  }
+  .lipsum h2 {
+    font-family: "New York", "Times New Roman", Georgia, serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.1;
+    margin: 0 0 12px;
+  }
+  .lipsum h2 em { font-style: italic; color: #0f5757; }
+  .lipsum p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #3a4444;
+    margin: 0 0 14px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e5e0d2;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  .card h3 {
+    font-family: "New York", "Times New Roman", Georgia, serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 8px;
+  }
+  .card p { font-size: 13px; color: #3a4444; margin: 0 0 8px; line-height: 1.5; }
+  .card .pill {
+    display: inline-block;
+    background: #c5dcd9;
+    color: #084040;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .btn {
+    display: inline-block;
+    background: #0f5757;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .band-strip {
+    height: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .band-label {
+    font-size: 10px;
+    font-family: ui-monospace, monospace;
+    color: #1a1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,.6);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>USCEHub background picker</h1>
+  <p>Each section = a candidate base color + the matching darker band below. Pick the one that reads as "minimal hue off-white" to your eye. Reply with the letter (A-L).</p>
+</div>
+
+<div class="grid">
+
+<!-- A: pure neutral off-white -->
+<section class="swatch" style="background:#f4f4f3">
+  <span class="label">#f4f4f3</span>
+  <span class="name">A · Pure neutral off-white</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f4f4f3" class="band-label">base #f4f4f3</div>
+  <div style="background:#eaeae9" class="band-label">band #eaeae9</div>
+</div>
+
+<!-- B: very subtle cool gray -->
+<section class="swatch" style="background:#f1f2f1">
+  <span class="label">#f1f2f1</span>
+  <span class="name">B · Very subtle cool-gray</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f1f2f1" class="band-label">base #f1f2f1</div>
+  <div style="background:#e7e8e7" class="band-label">band #e7e8e7</div>
+</div>
+
+<!-- C: minimal warm (very subtle, no yellow) -->
+<section class="swatch" style="background:#f3f2f0">
+  <span class="label">#f3f2f0</span>
+  <span class="name">C · Minimal warm (R≈G, B-1)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f3f2f0" class="band-label">base #f3f2f0</div>
+  <div style="background:#e9e8e6" class="band-label">band #e9e8e6</div>
+</div>
+
+<!-- D: minimal cool (subtle blue undertone) -->
+<section class="swatch" style="background:#f0f1f3">
+  <span class="label">#f0f1f3</span>
+  <span class="name">D · Minimal cool (R<G<B)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f0f1f3" class="band-label">base #f0f1f3</div>
+  <div style="background:#e6e7e9" class="band-label">band #e6e7e9</div>
+</div>
+
+<!-- E: tailwind stone-50 -->
+<section class="swatch" style="background:#fafaf9">
+  <span class="label">#fafaf9</span>
+  <span class="name">E · Tailwind stone-50 (very near white)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#fafaf9" class="band-label">base #fafaf9</div>
+  <div style="background:#f1f1ef" class="band-label">band #f1f1ef</div>
+</div>
+
+<!-- F: minimal greenish (less green than current) -->
+<section class="swatch" style="background:#f1f3ee">
+  <span class="label">#f1f3ee</span>
+  <span class="name">F · Minimal green (lighter, less yellow)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f1f3ee" class="band-label">base #f1f3ee</div>
+  <div style="background:#e8eae5" class="band-label">band #e8eae5</div>
+</div>
+
+<!-- G: current (mild green-yellow) -->
+<section class="swatch" style="background:#eff2e8">
+  <span class="label">#eff2e8</span>
+  <span class="name">G · CURRENT (mild green-yellow undertone)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#eff2e8" class="band-label">base #eff2e8</div>
+  <div style="background:#e6eadc" class="band-label">band #e6eadc</div>
+</div>
+
+<!-- H: minimal teal-tint (very pale) -->
+<section class="swatch" style="background:#f0f3f1">
+  <span class="label">#f0f3f1</span>
+  <span class="name">H · Minimal teal-tint (R<G≈B, low chroma)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f0f3f1" class="band-label">base #f0f3f1</div>
+  <div style="background:#e6e9e7" class="band-label">band #e6e9e7</div>
+</div>
+
+<!-- I: zinc-50 (almost pure white) -->
+<section class="swatch" style="background:#fafafa">
+  <span class="label">#fafafa</span>
+  <span class="name">I · Tailwind zinc-50 (truly neutral, nearly white)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#fafafa" class="band-label">base #fafafa</div>
+  <div style="background:#efefef" class="band-label">band #efefef</div>
+</div>
+
+<!-- J: paper-white with extremely subtle warmth -->
+<section class="swatch" style="background:#f5f4f1">
+  <span class="label">#f5f4f1</span>
+  <span class="name">J · Paper-white (very subtle warm)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f5f4f1" class="band-label">base #f5f4f1</div>
+  <div style="background:#ebeae7" class="band-label">band #ebeae7</div>
+</div>
+
+<!-- K: gray-50 (Tailwind, slightly cool) -->
+<section class="swatch" style="background:#f9fafb">
+  <span class="label">#f9fafb</span>
+  <span class="name">K · Tailwind gray-50 (very slight cool)</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#f9fafb" class="band-label">base #f9fafb</div>
+  <div style="background:#f0f1f3" class="band-label">band #f0f1f3</div>
+</div>
+
+<!-- L: original mockup 127 (warm cream) for comparison -->
+<section class="swatch" style="background:#faf7f0">
+  <span class="label">#faf7f0</span>
+  <span class="name">L · Mockup 127 original (warm cream) — for reference</span>
+  <div class="inner">
+    <div class="lipsum">
+      <h2>Find <em>verified</em> U.S. Clinical Experience.</h2>
+      <p>Source link on every listing. Built for medical students and graduates.</p>
+      <a class="btn">Browse all programs →</a>
+    </div>
+    <div class="card">
+      <h3>Yale International Visiting</h3>
+      <p>New Haven, CT · 4 weeks · $4,775</p>
+      <span class="pill">Clerkship</span>
+    </div>
+  </div>
+</section>
+<div class="band-strip">
+  <div style="background:#faf7f0" class="band-label">base #faf7f0</div>
+  <div style="background:#f1ece0" class="band-label">band #f1ece0</div>
+</div>
+
+</div>
+
+</body>
+</html>

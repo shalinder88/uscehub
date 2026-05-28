@@ -13,23 +13,23 @@
    Cream #faf7f0 is the universal background everywhere.
    ============================================ */
 :root {
-  /* Backgrounds — mild green-cool off-white (2026-05-28).
-     User feedback: warm-yellow cream read as pink against the hero's
-     paper-bg multiply overlay (which adds a teal-green undertone via
-     the noise color-matrix). The fix is to bake that same mild green
-     tint into the BASE so flat sections match the hero's apparent
-     tone. R < G > B → reads as off-white with a subtle green-mint hue.
-       --bg          base off-white (most surfaces)
-       --bg-band     slightly darker, same hue family
+  /* Backgrounds — Tailwind zinc-50 (2026-05-28).
+     User picked option I from the bg-picker: truly neutral near-white,
+     no warm or cool undertone. Hero retains its paper-bg multiply
+     overlay so the texture+vignettes still feel "papery" — but the
+     surrounding flat sections sit on neutral zinc, no perceptible
+     yellow/pink/green cast.
+       --bg          zinc-50         (most surfaces)
+       --bg-band     between zinc-100 and zinc-200
                      (alternating-section band)
        --bg-alt      alias for back-compat
      */
-  --background: #eff2e8;
-  --bg: #eff2e8;
-  --bg-band: #e6eadc;
-  --bg-alt: #e6eadc;
-  --paper: #ffffff;            /* white cards on bg */
-  --paper-soft: #e6eadc;       /* card hover / inset */
+  --background: #fafafa;
+  --bg: #fafafa;
+  --bg-band: #efefef;
+  --bg-alt: #efefef;
+  --paper: #ffffff;            /* white cards on near-white bg */
+  --paper-soft: #efefef;       /* card hover / inset */
 
   /* Accents */
   --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
@@ -43,8 +43,8 @@
   --ink-soft: #3a4444;
   --text: #1a1f1f;
   --text-muted: #7a8a87;       /* warm-gray muted text */
-  --border: #e5e0d2;           /* warm cream-tone borders */
-  --line: #e5e0d2;
+  --border: #e4e4e7;           /* zinc-200, neutral borders */
+  --line: #e4e4e7;
   --card-bg: #ffffff;
 }
 
