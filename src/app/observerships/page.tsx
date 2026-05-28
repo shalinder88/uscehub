@@ -80,15 +80,23 @@ export default async function ObservershipsByStatePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — cream/serif per mockup 127 */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <MapPin className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            <MapPin className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Observerships by State
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base" style={{ color: "var(--ink-soft)" }}>
               {listings.length} programs across {totalStates} states. Find
               observerships, clerkships, MD/DO visiting rotations (VSLO), and
               research positions near you.

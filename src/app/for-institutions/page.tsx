@@ -148,14 +148,22 @@ export default function ForInstitutionsPage() {
           { name: "For Institutions & Physicians", url: "https://uscehub.com/for-institutions" },
         ]}
       />
-      {/* Hero */}
-      <div className="bg-gradient-to-b from-slate-900 to-slate-800">
+      {/* Hero — cream/serif per mockup 127 */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl">
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               For Institutions &amp; Physicians
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-slate-300">
+            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               Whether you run a hospital program or a private practice, list your
               clinical opportunities on USCEHub. Reach thousands of qualified
               international medical graduates and US/INTL medical students
@@ -166,7 +174,8 @@ export default function ForInstitutionsPage() {
               <Link href="/auth/signup">
                 <Button
                   size="lg"
-                  className="bg-white text-slate-900 hover:bg-slate-100"
+                  style={{ background: "var(--teal)", color: "#fff" }}
+                  className="hover:opacity-90"
                 >
                   Get Started Free
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -176,7 +185,7 @@ export default function ForInstitutionsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-slate-600 bg-transparent text-white hover:bg-slate-700 hover:text-white"
+                  style={{ borderColor: "var(--line)", background: "var(--paper)", color: "var(--ink)" }}
                 >
                   Learn More
                 </Button>

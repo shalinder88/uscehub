@@ -32,12 +32,22 @@ export default function CommunityPage() {
           { name: "Community", url: "https://uscehub.com/community" },
         ]}
       />
-      <div className="bg-slate-900 text-white">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <Users className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">IMG Community</h1>
-            <p className="mt-3 text-base text-slate-400">
+            <Users className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              IMG Community
+            </h1>
+            <p className="mt-3 text-base" style={{ color: "var(--ink-soft)" }}>
               Community features are being planned. Discussion boards, swap
               boards, and program suggestion intake are not live yet — they
               will launch only after moderation and safety controls are

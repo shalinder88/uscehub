@@ -170,7 +170,7 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
       : enrichedListings;
 
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
@@ -178,10 +178,20 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         ]}
       />
       <FloatingFinder />
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Browse Opportunities</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          <h1
+            className="text-3xl sm:text-4xl"
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 500,
+              color: "var(--ink)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Browse Opportunities
+          </h1>
+          <p className="mt-1 text-sm" style={{ color: "var(--ink-soft)" }}>
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
 

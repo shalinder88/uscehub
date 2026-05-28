@@ -46,17 +46,28 @@ export default function AboutPage() {
           { name: "About Us", url: "https://uscehub.com/about" },
         ]}
       />
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — cream/serif per mockup 127 */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-800">
-              <Stethoscope className="h-8 w-8 text-blue-400" />
+            <div
+              className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl"
+              style={{ background: "var(--teal-soft)" }}
+            >
+              <Stethoscope className="h-8 w-8" style={{ color: "var(--teal)" }} />
             </div>
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Built by an Intensivist Who&apos;s Been There
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-slate-400">
+            <p className="mt-4 text-lg leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               From medical school abroad to the ICU. This platform was made by
               someone who went through every step of the IMG process.
             </p>
