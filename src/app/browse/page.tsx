@@ -4,20 +4,19 @@ import type { Prisma } from "@prisma/client";
 import { ListingFilters } from "@/components/listings/listing-filters";
 import { ListingCard, type SourceBadge } from "@/components/listings/listing-card";
 import { ListingDisclaimer } from "@/components/listings/listing-disclaimer";
+import { VerifiedNotice } from "@/components/listings/verified-notice";
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { PeopleAlsoAsk } from "@/components/seo/people-also-ask";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
-import {
-  getActiveDisplayProgramNames,
-  findDisplayEligibleByName,
-} from "@/lib/p102-display-eligible-listings";
+import { NewsletterBand } from "@/components/marketing/newsletter-band";
+import { findDisplayEligibleByName } from "@/lib/p102-display-eligible-listings";
 
 export const metadata: Metadata = {
-  title: "Browse Clinical Rotations, Research & Volunteer Opportunities",
+  title: "Browse Observerships, Clerkships, MD/DO Visiting & Research",
   description:
-    "Search and filter clinical rotations (observerships, externships, electives), research fellowships, and volunteer programs for IMGs and medical students across all US states. Free, verified, and audience-tagged.",
+    "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions for IMGs and medical students across all US states. Free, verified, and audience-tagged.",
   alternates: {
     canonical: "https://uscehub.com/browse",
   },
@@ -38,30 +37,32 @@ interface BrowsePageProps {
   }>;
 }
 
-// Map the 3 merged categories (used in hero + filters) to the underlying
-// enum values. Clinical = observership + externship + elective, all of which
-// overlap in practice. Users pick by audience, not by type.
+// G0 cutover 2026-05-27: the 4 canonical categories. EXTERNSHIP /
+// ELECTIVE / POSTDOC / VOLUNTEER had 0 APPROVED rows after the G0 walk
+// so they're dropped from filter routing. CLERKSHIP and
+// MD_DO_VISITING_STUDENTS were added to the enum 2026-05-26 (commit
+// 36f765b) but never wired into the filter map until now.
 const CATEGORY_TYPES: Record<string, string[]> = {
-  clinical: ["OBSERVERSHIP", "EXTERNSHIP", "ELECTIVE"],
-  research: ["RESEARCH", "POSTDOC"],
-  volunteer: ["VOLUNTEER"],
+  observership: ["OBSERVERSHIP"],
+  clerkship: ["CLERKSHIP"],
+  visiting: ["MD_DO_VISITING_STUDENTS"],
+  research: ["RESEARCH"],
 };
 
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   const params = await searchParams;
 
-  // ── P102 Shape A cutover ────────────────────────────────────────────
-  // Constrain /browse to the operator-approved display-eligibility set.
-  // The seed already excludes hide-listed rows, but the truth layer is
-  // the canonical source of "what should appear" — this AND clause is
-  // defense in depth so any DB drift can't leak a row that shouldn't
-  // render.
-  const activeNames = [...getActiveDisplayProgramNames()];
+  // G0 cutover 2026-05-27: the P102 display-eligibility allowlist
+  // (`getActiveDisplayProgramNames`) was frozen pre-walk and only
+  // contained 101 names — it hid the 102 rows added/repaired during
+  // the G0 walk + final-sweep inserts. status=APPROVED is now the
+  // single source of truth for /browse. Hide-list rows are already
+  // marked status=HIDDEN in the DB, so this AND-clause was redundant
+  // defense-in-depth that turned into stale gatekeeping.
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const conditions: any[] = [
     { status: "APPROVED" },
-    { title: { in: activeNames } },
   ];
 
   if (params.search) {
@@ -80,11 +81,8 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     conditions.push({ listingType: { in: CATEGORY_TYPES[params.category] } });
   } else if (params.type) {
     // Legacy ?type= param still supported for bookmarks / back-compat.
-    if (params.type === "RESEARCH") {
-      conditions.push({ listingType: { in: ["RESEARCH", "POSTDOC"] } });
-    } else {
-      conditions.push({ listingType: params.type });
-    }
+    // POSTDOC merging removed — that type has 0 APPROVED rows post-G0.
+    conditions.push({ listingType: params.type });
   }
 
   if (params.audience) {
@@ -134,16 +132,36 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   else if (params.sort === "most-reviewed")
     orderBy = [FRESH_FIRST, { linkVerified: "desc" }, { views: "desc" }];
 
-  const rawListings = await prisma.listing.findMany({
-    where: { AND: conditions },
-    orderBy,
-    include: {
-      reviews: {
-        where: { moderationStatus: "APPROVED" },
-        select: { overallRating: true },
+  const [rawListings, categoryCounts] = await Promise.all([
+    prisma.listing.findMany({
+      where: { AND: conditions },
+      orderBy,
+      include: {
+        reviews: {
+          where: { moderationStatus: "APPROVED" },
+          select: { overallRating: true },
+        },
       },
-    },
-  });
+    }),
+    prisma.listing.groupBy({
+      by: ["listingType"],
+      where: { status: "APPROVED" },
+      _count: { id: true },
+    }),
+  ]);
+
+  // Index the counts so the chip row can render in sub-millisecond.
+  const countByType: Record<string, number> = {};
+  for (const r of categoryCounts) countByType[r.listingType] = r._count.id;
+
+  const browseChips = [
+    { label: "Observership", filter: "observership", count: countByType.OBSERVERSHIP ?? 0 },
+    { label: "Clerkship", filter: "clerkship", count: countByType.CLERKSHIP ?? 0 },
+    { label: "MD/DO Visiting (VSLO)", filter: "visiting", count: countByType.MD_DO_VISITING_STUDENTS ?? 0 },
+    { label: "Research", filter: "research", count: countByType.RESEARCH ?? 0 },
+  ];
+
+  const activeCategory = params.category ?? "";
 
   // ── P102 Shape A: enrich each Prisma row with the truth-layer's
   //    sourceBadge + specialtyLimited so <ListingCard> can render
@@ -173,7 +191,7 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
       : enrichedListings;
 
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
@@ -181,39 +199,28 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         ]}
       />
       <FloatingFinder />
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Browse Opportunities</h1>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          <h1
+            className="text-3xl sm:text-4xl"
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 500,
+              color: "var(--ink)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Browse Opportunities
+          </h1>
+          <p className="mt-1 text-sm" style={{ color: "var(--ink-soft)" }}>
             {listings.length} {listings.length === 1 ? "listing" : "listings"} found
           </p>
-
-          <details className="group mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 text-sm">
-            <summary className="cursor-pointer font-medium text-slate-900 dark:text-slate-100">
-              What&apos;s the difference between an observership, externship, elective, and clerkship?
-            </summary>
-            <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
-              <p>
-                <strong className="text-slate-900 dark:text-slate-50">Clinical rotation</strong> is the umbrella term. In practice the labels below overlap — the same program might call itself an observership at one hospital and an externship at another. Pick by your stage, not by the label.
-              </p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Observership</strong> — Shadow-only. No hands on patients. Most common path for IMG graduates preparing for the US Match.</li>
-                <li><strong>Externship</strong> — Often used interchangeably with observership, but sometimes means hands-on activity (taking histories, presenting) under supervision. Rules vary per program.</li>
-                <li><strong>Elective / Clerkship</strong> — Formal for-credit clinical rotation, almost always 4 weeks, usually through AAMC <em>VSLO</em>. For current 4th-year US medical students (some accept international M4s via affiliation agreement).</li>
-                <li><strong>Research fellowship / postdoc</strong> — Research focus with optional clinical shadowing.</li>
-                <li><strong>Volunteer / pre-med</strong> — Structured shadow programs for undergraduates.</li>
-              </ul>
-              <p className="text-xs text-slate-500 dark:text-slate-400 pt-1">
-                Use the <strong>Audience</strong> filter to narrow to programs that actually accept you (USMLE-IMG graduate, Med Student, Pre-Med/Volunteer, or Specialty Visiting).
-              </p>
-            </div>
-          </details>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <Suspense fallback={<div className="h-16 animate-pulse rounded-xl bg-slate-100 dark:bg-slate-800" />}>
-          <ListingFilters />
+          <ListingFilters browseChips={browseChips} activeCategory={activeCategory} />
         </Suspense>
 
         <div className="mt-6">
@@ -237,6 +244,34 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
         </div>
       </div>
 
+      <NewsletterBand />
+
+      <section
+        id="category-difference"
+        className="mx-auto max-w-3xl px-4 pt-2 pb-10 sm:px-6 lg:px-8 scroll-mt-24"
+      >
+        <details
+          className="card-lift group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-sm"
+          open
+        >
+          <summary className="cursor-pointer font-semibold text-slate-900 dark:text-slate-100">
+            What&apos;s the difference between an observership, clerkship, MD/DO visiting, and research?
+          </summary>
+          <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300">
+            <p>
+              USCEHub uses four canonical categories. Pick by where you are in training — most applicants belong to exactly one.
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li><strong>Observership</strong> — Shadow-only. No hands on patients. The standard route for IMG graduates preparing for the US Match.</li>
+              <li><strong>Clerkship</strong> — Formal hands-on clinical rotation at a US institution, typically with supervision. Smaller pool than observerships; eligibility usually requires final-year status and Step 2 in some specialties.</li>
+              <li><strong>MD/DO Visiting Students (VSLO)</strong> — For current 4th-year students at US LCME MD or AOA-COCA DO schools, for-credit electives through the AAMC <em>VSLO</em> platform. Most programs are US-only; a few accept international M4s via reciprocal exchange agreements.</li>
+              <li><strong>Research</strong> — Research fellowships and postdoc roles, with optional clinical shadowing.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <VerifiedNotice />
       <PeopleAlsoAsk />
     </div>
   );

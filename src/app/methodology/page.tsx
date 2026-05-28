@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function MethodologyPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
@@ -37,10 +37,10 @@ export default function MethodologyPage() {
               A listing on USCEHub represents one of four program types offered by a U.S. medical institution:
             </p>
             <ul className="mt-3 ml-4 list-disc space-y-1.5">
-              <li><strong className="text-slate-800 dark:text-slate-200">Observership</strong> — A program where an IMG observes clinical practice without direct patient contact. No medical license required.</li>
-              <li><strong className="text-slate-800 dark:text-slate-200">Externship / Clinical Rotation</strong> — A program where an IMG participates in clinical activities with some degree of hands-on involvement. May require a medical license or training agreement.</li>
-              <li><strong className="text-slate-800 dark:text-slate-200">Research Position</strong> — A paid or unpaid research role at a U.S. institution, typically requiring a medical degree.</li>
-              <li><strong className="text-slate-800 dark:text-slate-200">Postdoctoral Fellowship</strong> — A postdoctoral research or clinical research fellowship at an academic medical center.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Observership</strong> — Shadow-only program. No direct patient contact, no medical license required. The standard route for IMG graduates preparing for the US Match.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Clerkship</strong> — Formal hands-on clinical rotation at a U.S. institution, typically with supervision. Smaller pool than observerships; eligibility usually requires final-year status and Step 2 in some specialties.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">MD/DO Visiting Students (VSLO)</strong> — For current 4th-year students at US LCME MD or AOA-COCA DO schools, for-credit electives through the AAMC VSLO platform. A few programs accept international M4s via reciprocal exchange agreements.</li>
+              <li><strong className="text-slate-800 dark:text-slate-200">Research</strong> — Research fellowships and postdoc roles at U.S. institutions, with optional clinical shadowing.</li>
             </ul>
             <p className="mt-3">
               We do not list programs that lack verifiable institutional backing, programs that are exclusively marketed as paid &ldquo;packages&rdquo; with no institutional affiliation, or programs from individuals without verifiable credentials.

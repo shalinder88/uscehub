@@ -18,11 +18,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    default: "USCEHub — Verified U.S. Clinical Experience Programs",
     template: "%s — USCEHub",
   },
   description:
-    "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
+    "An independent, source-linked directory of U.S. clinical experience programs — observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions.",
   keywords:
     "observership, externship, IMG, international medical graduate, USCE, clinical experience, US hospitals, medical observership, residency preparation",
   authors: [{ name: "USCEHub" }],
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "USCEHub",
-    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs",
     description:
-      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
+      "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     url: SITE_URL,
     images: [
       {
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+    title: "USCEHub — Verified U.S. Clinical Experience Programs",
     description:
-      "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status.",
+      "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status.",
     images: ["/og-default.png"],
   },
   // Google Search Console verification (audit P1-8):
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased dark`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D8JH9PXCZ3"
@@ -94,7 +94,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})()`,
           }}
         />
         <script

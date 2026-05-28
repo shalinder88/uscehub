@@ -9,14 +9,14 @@ import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: `Observerships by State — ${SITE_METRICS.statesCovered} States & DC`,
-  description: `Find clinical observerships, externships, and research opportunities for IMGs across ${SITE_METRICS.statesCovered} US states and DC. Browse programs by state to find opportunities near you.`,
+  description: `Find observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions across ${SITE_METRICS.statesCovered} US states and DC. Browse programs by state to find opportunities near you.`,
   alternates: {
     canonical: siteUrl("/observerships"),
   },
   openGraph: {
     title: "Observerships by State — USCEHub",
     description:
-      "Browse IMG clinical experience opportunities in all 50 US states. Find observerships, externships, and research programs near you.",
+      "Browse US clinical experience programs in every state. Find observerships, clerkships, MD/DO visiting rotations (VSLO), and research positions near you.",
     url: siteUrl("/observerships"),
   },
 };
@@ -74,24 +74,32 @@ export default async function ObservershipsByStatePage() {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — cream/serif per mockup 127 */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <MapPin className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            <MapPin className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Observerships by State
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base" style={{ color: "var(--ink-soft)" }}>
               {listings.length} programs across {totalStates} states. Find
-              clinical observerships, externships, and research opportunities
-              near you.
+              observerships, clerkships, MD/DO visiting rotations (VSLO), and
+              research positions near you.
             </p>
           </div>
         </div>
@@ -110,7 +118,7 @@ export default async function ObservershipsByStatePage() {
               <Link
                 key={abbr}
                 href={`/observerships/${slug}`}
-                className="group flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-700 p-4 transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="card-lift group flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-bold text-slate-600 dark:text-slate-300">

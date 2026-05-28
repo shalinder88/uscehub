@@ -2,8 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Search, Building2, FlaskConical, Stethoscope, GraduationCap, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import { USMap } from "@/components/states/us-map";
 import Link from "next/link";
 import { parseSmartSearch, buildSearchUrl } from "@/lib/smart-search";
@@ -12,7 +11,12 @@ interface HeroProps {
   listingCount: number;
   stateCount: number;
   specialtyCount: number;
-  typeCounts: { clinicalRotations: number; researchPositions: number; volunteer: number };
+  typeCounts: {
+    observerships: number;
+    clerkships: number;
+    visitingStudents: number;
+    research: number;
+  };
   stateCounts: Record<string, number>;
 }
 
@@ -30,116 +34,304 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
     }
   };
 
-  const stats = [
-    { value: listingCount, label: "Active Listings", icon: Building2 },
-    { value: stateCount, label: "States Covered", icon: null },
-    { value: specialtyCount, label: "Specialties", icon: Stethoscope },
+  // Mockup 127: 4 canonical category chips as the primary nav row below
+  // the CTAs. Each links to /browse?category=<slug>.
+  const categories = [
+    { label: "Observerships", count: typeCounts.observerships, filter: "observership" },
+    { label: "Clerkships", count: typeCounts.clerkships, filter: "clerkship" },
+    { label: "MD/DO Visiting (VSLO)", count: typeCounts.visitingStudents, filter: "visiting" },
+    { label: "Research", count: typeCounts.research, filter: "research" },
   ];
 
-  // Merged 3-category view. Clinical Rotations bundles observership +
-  // externship + elective — all three overlap heavily in practice and users
-  // filter by audience (IMG graduate vs M4 vs specialty) instead of by type.
-  const types = [
-    { label: "Clinical Rotations", count: typeCounts.clinicalRotations, color: "bg-blue-500", filter: "clinical" },
-    { label: "Research Positions", count: typeCounts.researchPositions, color: "bg-violet-500", filter: "research" },
-    { label: "Volunteer / Pre-Med", count: typeCounts.volunteer, color: "bg-emerald-500", filter: "volunteer" },
+  const stats = [
+    { value: listingCount, label: "Active Listings" },
+    { value: stateCount, label: "States Covered" },
+    { value: specialtyCount, label: "Specialties" },
   ];
 
   return (
-    <section className="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800">
-      {/* Top Hero */}
-      <div className="mx-auto max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-medium uppercase tracking-widest text-slate-400">
-            Verified Directory — Updated April 2026
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Verified U.S. Clinical Experience{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Programs for IMGs
-            </span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            Search {listingCount}+ clinical rotations, research positions, and visiting programs across {stateCount} states — with direct source links, visa notes, fee ranges, and verification status.
-          </p>
+    <section className="hero-127 paper-bg">
+      <style>{`
+        .hero-127 {
+          background: var(--bg);
+          color: var(--ink);
+          font-family: var(--font-sans, system-ui, sans-serif);
+          padding: 56px 16px 72px;
+        }
+        .hero-127 .h-inner { max-width: 1120px; margin: 0 auto; }
+        .hero-127 .h-eyebrow {
+          text-align: center;
+          font-size: 11px;
+          letter-spacing: .22em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+          margin-bottom: 24px;
+        }
+        .hero-127 h1.h-title {
+          font-family: var(--font-serif);
+          text-align: center;
+          font-weight: 500;
+          font-size: clamp(40px, 6vw, 78px);
+          line-height: 1.05;
+          letter-spacing: -.02em;
+          color: var(--ink);
+          margin: 0 0 28px;
+        }
+        .hero-127 h1.h-title em {
+          font-style: italic;
+          color: var(--teal);
+          font-weight: 500;
+        }
+        .hero-127 h1.h-title { margin-bottom: 40px; }
+        .hero-127 .h-search {
+          max-width: 640px;
+          margin: 0 auto 24px;
+          display: flex;
+          background: var(--paper);
+          border: 1px solid var(--line);
+          border-radius: 999px;
+          padding: 6px 6px 6px 20px;
+          box-shadow: 0 1px 3px rgba(0,0,0,.04);
+        }
+        .hero-127 .h-search:focus-within {
+          border-color: var(--teal);
+          box-shadow: 0 0 0 3px rgba(15,87,87,.10);
+        }
+        .hero-127 .h-search-icon { color: var(--text-muted); align-self: center; margin-right: 10px; }
+        .hero-127 .h-search input {
+          flex: 1;
+          border: 0;
+          outline: 0;
+          background: transparent;
+          font-size: 15px;
+          color: var(--ink);
+          padding: 12px 0;
+        }
+        .hero-127 .h-search input::placeholder { color: var(--text-muted); font-style: italic; }
+        .hero-127 .h-search button {
+          background: var(--teal);
+          color: #fff;
+          border: 0;
+          border-radius: 999px;
+          padding: 10px 22px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          transition: background .15s;
+        }
+        .hero-127 .h-search button:hover { background: var(--teal-deep); }
+        .hero-127 .h-ctas {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          margin-bottom: 40px;
+        }
+        .hero-127 .h-cta {
+          padding: 12px 22px;
+          border-radius: 999px;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: all .15s;
+        }
+        .hero-127 .h-cta-primary {
+          background: var(--teal);
+          color: #fff;
+        }
+        .hero-127 .h-cta-primary:hover { background: var(--teal-deep); }
+        .hero-127 .h-cta-ghost {
+          background: var(--paper);
+          color: var(--ink);
+          border: 1px solid var(--line);
+        }
+        .hero-127 .h-cta-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
-          <form onSubmit={handleSearch} className="mx-auto mt-8 max-w-xl">
-            <div className="flex gap-2">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
-                <input
-                  type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Try &quot;free observerships in New York&quot; or &quot;pediatrics research&quot;..."
-                  aria-label="Search observership and clinical experience programs"
-                  className="h-12 w-full rounded-lg border-0 bg-white pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-              <Button type="submit" size="lg" className="shrink-0">
-                Search
-              </Button>
-            </div>
-          </form>
+        /* 4 prominent category chips below CTAs */
+        .hero-127 .h-cats {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          max-width: 720px;
+          margin: 0 auto 56px;
+        }
+        @media (min-width: 640px) {
+          .hero-127 .h-cats { grid-template-columns: repeat(4, 1fr); }
+        }
+        .hero-127 .h-cat {
+          background: var(--paper);
+          border: 1px solid var(--line);
+          border-radius: 14px;
+          padding: 18px 14px;
+          text-align: center;
+          text-decoration: none;
+          color: var(--ink);
+          transition: all .15s;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .hero-127 .h-cat:hover {
+          border-color: var(--teal);
+          background: var(--paper-soft);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px -8px rgba(15,87,87,.20);
+        }
+        .hero-127 .h-cat-count {
+          font-family: var(--font-serif);
+          font-size: 32px;
+          line-height: 1;
+          font-weight: 500;
+          color: var(--teal);
+          margin-bottom: 4px;
+        }
+        .hero-127 .h-cat-label {
+          font-size: 12.5px;
+          font-weight: 500;
+          color: var(--ink-soft);
+          letter-spacing: .01em;
+        }
 
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <Link href="/browse">
-              <Button variant="outline" size="lg" className="border-slate-600 bg-transparent text-white hover:bg-slate-700 hover:text-white">
-                Browse All
-              </Button>
-            </Link>
-            <Link href="/for-institutions">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
-                Post a Listing
-              </Button>
-            </Link>
-          </div>
+        /* Stats row (kept for credibility, sits under categories) */
+        .hero-127 .h-stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+          max-width: 720px;
+          margin: 0 auto 40px;
+        }
+        .hero-127 .h-stat {
+          text-align: center;
+          padding: 18px 12px;
+          border-top: 1px solid var(--line);
+        }
+        .hero-127 .h-stat-val {
+          font-family: var(--font-serif);
+          font-size: 36px;
+          line-height: 1;
+          font-weight: 500;
+          color: var(--ink);
+        }
+        .hero-127 .h-stat-val sup {
+          color: var(--teal);
+          font-size: .55em;
+          vertical-align: super;
+          margin-left: 2px;
+        }
+        .hero-127 .h-stat-label {
+          margin-top: 6px;
+          font-size: 11.5px;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+          color: var(--text-muted);
+        }
+
+        /* Map sits directly on cream — no card border */
+        .hero-127 .h-map-card {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 0;
+        }
+        .hero-127 .h-map-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          margin-bottom: 12px;
+        }
+        .hero-127 .h-map-title {
+          font-family: var(--font-serif);
+          font-size: 18px;
+          color: var(--ink);
+          margin: 0;
+        }
+        .hero-127 .h-map-link {
+          font-size: 12.5px;
+          color: var(--teal);
+          text-decoration: none;
+        }
+        .hero-127 .h-map-link:hover { color: var(--teal-deep); text-decoration: underline; }
+
+        @media (max-width: 640px) {
+          .hero-127 { padding: 40px 12px 48px; }
+          .hero-127 h1.h-title { font-size: clamp(32px, 9vw, 44px); line-height: 1.08; margin-bottom: 24px; }
+          .hero-127 .h-search { padding: 4px 4px 4px 14px; }
+          .hero-127 .h-search input { font-size: 14px; padding: 10px 0; }
+          .hero-127 .h-search button { padding: 9px 14px; font-size: 13px; }
+          .hero-127 .h-ctas { flex-direction: column; gap: 10px; }
+          .hero-127 .h-cta { width: 100%; justify-content: center; }
+          .hero-127 .h-cats { gap: 8px; margin-bottom: 36px; }
+          .hero-127 .h-cat { padding: 14px 10px; }
+          .hero-127 .h-cat-count { font-size: 26px; }
+          .hero-127 .h-cat-label { font-size: 11.5px; }
+          .hero-127 .h-stats { gap: 8px; margin-bottom: 28px; }
+          .hero-127 .h-stat-val { font-size: 28px; }
+          .hero-127 .h-stat-label { font-size: 10.5px; letter-spacing: .1em; }
+          .hero-127 .h-map-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+        }
+      `}</style>
+
+      <div className="h-inner">
+        <p className="h-eyebrow">Verified Directory · USCEHub</p>
+        <h1 className="h-title">
+          Find <em>verified</em> U.S. Clinical Experience.
+        </h1>
+
+        <form onSubmit={handleSearch} className="h-search">
+          <Search className="h-search-icon" size={18} />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder='Try "free observerships in New York"...'
+            aria-label="Search clinical experience programs"
+          />
+          <button type="submit">Search →</button>
+        </form>
+
+        <div className="h-ctas">
+          <Link href="/browse" className="h-cta h-cta-primary">
+            Browse all programs →
+          </Link>
+          <Link href="/compare" className="h-cta h-cta-ghost">
+            Compare programs →
+          </Link>
         </div>
-      </div>
 
-      {/* Stats Row */}
-      <div className="mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-3 gap-4 sm:gap-6">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl bg-slate-800/60 px-4 py-5 text-center backdrop-blur-sm">
-              <div className="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
-                {stat.value}
-                <span className="text-blue-400">+</span>
+        {/* 4 PROMINENT category chips — primary nav row */}
+        <div className="h-cats">
+          {categories.map((c) => (
+            <Link key={c.filter} href={`/browse?category=${c.filter}`} className="h-cat card-lift">
+              <span className="h-cat-count">{c.count}</span>
+              <span className="h-cat-label">{c.label}</span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Credibility stats */}
+        <div className="h-stats">
+          {stats.map((s) => (
+            <div key={s.label} className="h-stat">
+              <div className="h-stat-val">
+                {s.value}
+                <sup>+</sup>
               </div>
-              <div className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
-                {stat.label}
-              </div>
+              <div className="h-stat-label">{s.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Type Breakdown */}
-        <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
-          {types.map((t) => (
-            <Link
-              key={t.label}
-              href={`/browse?category=${t.filter}`}
-              className="group flex items-center gap-2 rounded-lg bg-slate-800/40 px-3 py-3 transition-colors hover:bg-slate-700/60"
-            >
-              <span className={`h-2.5 w-2.5 rounded-full ${t.color}`} />
-              <div className="min-w-0">
-                <div className="text-sm font-semibold text-white sm:text-base">{t.count}</div>
-                <div className="truncate text-[10px] text-slate-400 sm:text-xs">{t.label}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* US Map */}
-      <div className="mx-auto mt-8 max-w-4xl px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="rounded-xl bg-slate-800/30 p-4 backdrop-blur-sm sm:p-6">
-          <div className="mb-3 flex items-center justify-between">
-            <h3 className="text-sm font-medium text-slate-300">
-              Opportunities by State
-            </h3>
-            <Link href="/browse" className="text-xs text-blue-400 hover:text-blue-300">
-              Browse all &rarr;
+        {/* Opportunities by State map — sits on the hero's paper-bg overlay,
+            no separate texture so it blends instead of showing a rect edge. */}
+        <div className="h-map-card">
+          <div className="h-map-head">
+            <h3 className="h-map-title">Opportunities by State</h3>
+            <Link href="/browse" className="h-map-link">
+              Browse all →
             </Link>
           </div>
           <USMap stateCounts={stateCounts} />

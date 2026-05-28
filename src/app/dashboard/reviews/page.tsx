@@ -69,7 +69,7 @@ export default function ReviewsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">My Reviews</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">My Reviews</h1>
         <p className="mt-1 text-sm text-slate-500">
           Reviews you&apos;ve written for programs
         </p>
@@ -79,7 +79,7 @@ export default function ReviewsPage() {
         <CardRoot>
           <CardContent className="flex flex-col items-center py-12">
             <Star className="h-12 w-12 text-slate-300" />
-            <p className="mt-4 text-sm font-medium text-slate-900">
+            <p className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
               No reviews yet
             </p>
             <p className="mt-1 text-sm text-slate-500">
@@ -96,7 +96,7 @@ export default function ReviewsPage() {
                   <div className="min-w-0 flex-1">
                     <Link
                       href={`/listing/${review.listing.id}`}
-                      className="text-sm font-semibold text-slate-900 hover:underline"
+                      className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:underline"
                     >
                       {review.listing.title}
                     </Link>

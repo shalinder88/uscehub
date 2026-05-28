@@ -80,7 +80,7 @@ export default function SavedPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Saved Listings</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Saved Listings</h1>
         <p className="mt-1 text-sm text-slate-500">
           Listings you&apos;ve bookmarked for later
         </p>
@@ -90,7 +90,7 @@ export default function SavedPage() {
         <CardRoot>
           <CardContent className="flex flex-col items-center py-12">
             <Bookmark className="h-12 w-12 text-slate-300" />
-            <p className="mt-4 text-sm font-medium text-slate-900">
+            <p className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
               No saved listings
             </p>
             <p className="mt-1 text-sm text-slate-500">
@@ -112,7 +112,7 @@ export default function SavedPage() {
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/listing/${item.listing.id}`}
-                      className="text-sm font-semibold text-slate-900 hover:underline"
+                      className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:underline"
                     >
                       {item.listing.title}
                     </Link>

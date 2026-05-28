@@ -11,7 +11,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 // audit H2). External community links (Reddit, SDN, etc.) remain — they
 // are real third-party destinations, not USCEHub forum content.
 export const metadata: Metadata = {
-  title: "IMG Community — Coming Soon",
+  title: "Community — Coming Soon",
   description:
     "USCEHub's community features are being planned. For now, browse verified listings, use official IMG resources, and follow links to established external communities.",
   alternates: {
@@ -25,19 +25,29 @@ export const metadata: Metadata = {
 
 export default function CommunityPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://uscehub.com" },
           { name: "Community", url: "https://uscehub.com/community" },
         ]}
       />
-      <div className="bg-slate-900 text-white">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <Users className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">IMG Community</h1>
-            <p className="mt-3 text-base text-slate-400">
+            <Users className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Community
+            </h1>
+            <p className="mt-3 text-base" style={{ color: "var(--ink-soft)" }}>
               Community features are being planned. Discussion boards, swap
               boards, and program suggestion intake are not live yet — they
               will launch only after moderation and safety controls are

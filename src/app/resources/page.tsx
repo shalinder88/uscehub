@@ -14,14 +14,14 @@ import {
 import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 
 export const metadata: Metadata = {
-  title: "Recommended Tools & Resources for IMGs",
+  title: "Recommended Tools & Resources",
   description:
     "Curated list of essential tools, study resources, and services for International Medical Graduates preparing for USMLE, ECFMG certification, and residency applications.",
   alternates: {
     canonical: "https://uscehub.com/resources",
   },
   openGraph: {
-    title: "Recommended Tools & Resources for IMGs — USCEHub",
+    title: "Recommended Tools & Resources — USCEHub",
     description:
       "Essential study tools, exam prep, insurance, and services for IMGs applying to US residency programs.",
     url: "https://uscehub.com/resources",
@@ -173,7 +173,7 @@ function ResourceCard({
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block rounded-xl border border-slate-200 dark:border-slate-700 p-5 transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700"
+      className="card-lift group block rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -220,7 +220,7 @@ function SectionHeader({ title, subtitle }: { title: string; subtitle: string })
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Recommended Tools & Resources for IMGs",
+  name: "Recommended Tools & Resources",
   description:
     "Curated list of essential tools, study resources, and services for International Medical Graduates.",
   url: "https://uscehub.com/resources",
@@ -228,7 +228,7 @@ const jsonLd = {
 
 export default function ResourcesPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -240,15 +240,23 @@ export default function ResourcesPage() {
         ]}
       />
 
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      {/* Hero — cream/serif */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <BookOpen className="mx-auto mb-4 h-10 w-10 text-blue-400" />
-            <h1 className="text-3xl font-bold sm:text-4xl">
+            <BookOpen className="mx-auto mb-4 h-10 w-10" style={{ color: "var(--teal)" }} />
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               Tools &amp; Resources We Recommend
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base" style={{ color: "var(--ink-soft)" }}>
               Everything you need for USMLE prep, ECFMG certification, and
               residency applications — curated by someone who used them all.
             </p>
@@ -257,7 +265,7 @@ export default function ResourcesPage() {
       </div>
 
       {/* Disclaimer */}
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 lg:px-8">
           <p className="text-center text-[10px] text-slate-500 dark:text-slate-400">
             Some links may be affiliate links. If you purchase through them, we may earn a small commission at no extra cost to you. This helps keep USCEHub free.
@@ -383,7 +391,7 @@ export default function ResourcesPage() {
           </Link>
           <Link href="/img-resources">
             <button className="inline-flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 px-6 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800">
-              IMG Resources
+              Residency Intelligence
             </button>
           </Link>
         </div>

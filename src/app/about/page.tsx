@@ -29,13 +29,13 @@ const jsonLd = {
       name: "USCEHub Team",
     },
     description:
-      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
+      "An independent, source-linked directory of U.S. clinical experience programs — observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions.",
   },
 };
 
 export default function AboutPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -46,142 +46,91 @@ export default function AboutPage() {
           { name: "About Us", url: "https://uscehub.com/about" },
         ]}
       />
-      {/* Hero */}
-      <div className="bg-slate-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-800">
-              <Stethoscope className="h-8 w-8 text-blue-400" />
+      <div className="mx-auto max-w-3xl px-4 pt-16 pb-14 sm:px-6 lg:px-8">
+        {/* Free forever + Built by intensivist — single combined block */}
+        <section className="mb-14">
+          <div
+            className="card-lift rounded-2xl p-8 text-center sm:p-10"
+            style={{
+              background: "var(--paper)",
+              border: "1px solid var(--line)",
+            }}
+          >
+            <div
+              className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
+              style={{ background: "var(--teal-soft)" }}
+            >
+              <Stethoscope className="h-6 w-6" style={{ color: "var(--teal)" }} />
             </div>
-            <h1 className="text-3xl font-bold sm:text-4xl">
-              Built by an Intensivist Who&apos;s Been There
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-slate-400">
-              From medical school abroad to the ICU. This platform was made by
-              someone who went through every step of the IMG process.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        {/* Free forever — FIRST */}
-        <section className="mb-10">
-          <div className="rounded-xl border-2 border-emerald-200 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/30 p-6 text-center sm:p-8">
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+            <h1
+              className="text-3xl sm:text-4xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               This platform is and will remain free.
-            </h2>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            </h1>
+            <p
+              className="mx-auto mt-4 max-w-xl"
+              style={{ color: "var(--ink-soft)", fontSize: 15, lineHeight: 1.6 }}
+            >
               No paywalls. No premium tiers. No hidden fees. Just honest,
-              structured information for every IMG who needs it.
+              structured information for every medical student and graduate
+              looking for U.S. clinical experience.
+            </p>
+            <p
+              className="mt-5"
+              style={{
+                fontSize: 13,
+                color: "var(--text-muted)",
+                fontStyle: "italic",
+              }}
+            >
+              Built by an Intensivist.
             </p>
           </div>
         </section>
 
-        {/* Personal Story */}
-        <section className="mb-14">
-          <div className="rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50/30 dark:bg-blue-950/20 p-6 sm:p-8">
-            <div className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              <p>
-                I built this platform because I remember. The confusion of
-                figuring out which exams to take and when. The expenses that
-                kept piling up — exam fees, application fees, travel, housing.
-                Cold-emailing dozens of hospitals hoping someone would give me
-                a chance to observe. I went through the entire process — USMLE
-                exams, ECFMG certification, observerships, research, residency,
-                fellowship, and finally attending life in the ICU. At every
-                stage, I wished there was one honest, organized place with the
-                information I needed. There wasn&apos;t. So I built it.
-              </p>
-            </div>
-
-            {/* Prominent quote */}
-            <div className="mt-6 rounded-xl bg-slate-900 p-6 text-center">
-              <p className="text-xl font-semibold text-white sm:text-2xl">
-                &ldquo;Don&apos;t worry — it gets easier.&rdquo;
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                The process is hard, the uncertainty is real, but thousands of
-                IMGs have walked this path before you and matched. You can too.
-              </p>
-            </div>
-            <p className="mt-4 text-right text-sm font-medium text-slate-500 dark:text-slate-400">— Intensivist</p>
-          </div>
+        {/* Hidden line (kept for layout grid spacing if needed) */}
+        <section className="mb-14 hidden">
+          <p
+            className="text-center"
+            style={{
+              fontSize: 14,
+              color: "var(--ink-soft)",
+              fontStyle: "italic",
+            }}
+          >
+            Built by an Intensivist who went through the IMG path.
+          </p>
         </section>
 
-        {/* What we understand */}
-        <section className="mb-14">
-          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
-            We understand what you&apos;re going through
-          </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {[
-              { title: "ECFMG Certification", desc: "Navigating pathways, scheduling exams across countries, waiting for results. The process is long but it's doable." },
-              { title: "Exam Pressure", desc: "USMLE Step 1 (pass/fail), Step 2 CK (score matters more than ever), OET — each one feels like a mountain." },
-              { title: "Financial Strain", desc: "Exam fees, application fees, observership costs, travel, housing — it adds up fast. That's why this platform is free." },
-              { title: "Finding Opportunities", desc: "Cold-emailing hospitals, scrolling forums, asking friends — finding legitimate programs shouldn't be this hard." },
-              { title: "The Waiting", desc: "Waiting for exam results, waiting for visa appointments, waiting for Match Day. The uncertainty is the hardest part." },
-            ].map((item) => (
-              <div key={item.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
-                <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Mission / Vision / Trust */}
-        <section className="mb-14">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
-                <Target className="h-5 w-5 text-slate-700" />
-              </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Mission</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                Build an independent, source-linked, trustworthy directory of
-                clinical and research opportunities for IMGs in the United
-                States.
-              </p>
-            </div>
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
-                <Eye className="h-5 w-5 text-slate-700" />
-              </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Vision</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                Every qualified IMG has transparent, equal access to
-                information about US clinical opportunities — no gatekeeping,
-                no scams, no confusion.
-              </p>
-            </div>
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800">
-                <Shield className="h-5 w-5 text-slate-700" />
-              </div>
-              <h3 className="mt-3 text-sm font-semibold text-slate-900 dark:text-slate-100">Trust</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                Every listing is reviewed. Posters are verified. Reviews are
-                moderated. We clearly label what is verified and what is not.
-              </p>
-            </div>
-          </div>
+        {/* Trust line — single sentence */}
+        <section className="mb-10">
+          <p
+            className="text-center text-sm"
+            style={{ color: "var(--ink-soft)", maxWidth: 560, margin: "0 auto", lineHeight: 1.65 }}
+          >
+            Every listing is reviewed. Posters are verified. Reviews are
+            moderated. We clearly label what is verified and what is not — and
+            we always link to the institution&apos;s own page so you can confirm.
+          </p>
         </section>
 
         {/* Disclaimer */}
-        <p className="mb-10 text-center text-xs text-slate-400">
+        <p className="mb-8 text-center text-xs" style={{ color: "var(--text-muted)" }}>
           USCEHub is not affiliated with NRMP, ECFMG, ERAS, AAMC, or
-          any hospital or residency program. This is an independent informational
-          resource and does not guarantee placement or match results.
+          any hospital or residency program. Independent informational resource —
+          no guarantee of placement or match results.
         </p>
 
         {/* CTA */}
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <div className="flex justify-center">
           <Link href="/browse">
-            <Button size="lg">Browse Opportunities</Button>
-          </Link>
-          <Link href="/img-resources">
-            <Button variant="outline" size="lg">IMG Resources</Button>
+            <Button size="lg" style={{ background: "var(--teal)", color: "#fff" }}>Browse Opportunities</Button>
           </Link>
         </div>
       </div>

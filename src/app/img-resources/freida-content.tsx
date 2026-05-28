@@ -389,7 +389,7 @@ function EcfmgTab() {
           {ECFMG_PATHWAYS.map((p) => (
             <div key={p.number} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
               <div className="flex items-center gap-3">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-xs font-bold text-white">{p.number}</span>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--teal)] text-xs font-bold text-white">{p.number}</span>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <h4 className="text-sm font-semibold text-slate-900 dark:text-white">{p.name}</h4>
@@ -446,7 +446,7 @@ function ApplicationTab() {
                 <div className="absolute left-5 top-12 h-[calc(100%-2rem)] w-0.5 bg-slate-200 dark:bg-slate-700" />
               )}
               {/* Step circle */}
-              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-sm font-bold text-white">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                 {s.step}
               </div>
               <div className="flex-1 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
@@ -528,7 +528,7 @@ function ApplicationTab() {
         <div className="space-y-3">
           {APPLICATION_TIMELINE.map((phase, i) => (
             <div key={phase.phase} className="flex gap-4 rounded-xl border border-slate-200 dark:border-slate-700 p-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-700 text-sm font-bold text-white">{i + 1}</div>
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">{i + 1}</div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{phase.phase}</h4>
@@ -698,18 +698,30 @@ const TAB_LIST = [
 
 export function FreidaContent() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       {/* Hero */}
-      <div className="bg-slate-900 text-white">
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="default" className="mb-4 bg-blue-600 text-white">
+            <span
+              className="mb-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium"
+              style={{ background: "var(--teal-soft)", color: "var(--teal-deep)" }}
+            >
+              <span className="inline-block h-1 w-1 rounded-full" style={{ background: "var(--teal)" }} />
               2026 Data — NRMP, ECFMG, FREIDA
-            </Badge>
-            <h1 className="text-3xl font-bold sm:text-4xl">
-              IMG Resources &amp; Residency Intelligence
+            </span>
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Residency Intelligence
             </h1>
-            <p className="mt-4 text-base text-slate-400">
+            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               Everything International Medical Graduates need to know — match
               statistics, specialty data, ECFMG requirements, and program
               insights. Updated with 2026 NRMP Match results (released March 20, 2026).

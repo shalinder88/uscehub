@@ -16,7 +16,8 @@ export async function ProgramStats() {
     listingsWithOfficialSource,
     stateData,
     observerships,
-    externships,
+    clerkships,
+    visitingStudents,
     research,
     allListings,
     freeListings,
@@ -38,13 +39,16 @@ export async function ProgramStats() {
       where: { status: "APPROVED", listingType: "OBSERVERSHIP" },
     }),
     prisma.listing.count({
-      where: { status: "APPROVED", listingType: "EXTERNSHIP" },
+      where: { status: "APPROVED", listingType: "CLERKSHIP" },
     }),
     prisma.listing.count({
       where: {
         status: "APPROVED",
-        listingType: { in: ["RESEARCH", "POSTDOC"] },
+        listingType: "MD_DO_VISITING_STUDENTS",
       },
+    }),
+    prisma.listing.count({
+      where: { status: "APPROVED", listingType: "RESEARCH" },
     }),
     prisma.listing.findMany({
       where: { status: "APPROVED" },
@@ -96,25 +100,14 @@ export async function ProgramStats() {
   ];
 
   const typeBreakdown = [
-    {
-      icon: Stethoscope,
-      label: "Observerships",
-      value: observerships,
-    },
-    {
-      icon: GraduationCap,
-      label: "Externships",
-      value: externships,
-    },
-    {
-      icon: FlaskConical,
-      label: "Research & Postdoc",
-      value: research,
-    },
+    { icon: Stethoscope, label: "Observerships", value: observerships },
+    { icon: GraduationCap, label: "Clerkships", value: clerkships },
+    { icon: GraduationCap, label: "MD/DO Visiting (VSLO)", value: visitingStudents },
+    { icon: FlaskConical, label: "Research", value: research },
   ];
 
   return (
-    <section className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 py-16">
+    <section className="bg-[var(--bg)] dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-white">
@@ -132,7 +125,7 @@ export async function ProgramStats() {
             return (
               <div
                 key={stat.label}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center"
+                className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-5 text-center card-lift"
               >
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
                   <Icon className="h-5 w-5 text-slate-700" />
@@ -151,7 +144,7 @@ export async function ProgramStats() {
         {/* Type Breakdown and Top States */}
         <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Program Types */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <div className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 card-lift">
             <h3 className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
               Programs by Type
             </h3>
@@ -176,7 +169,7 @@ export async function ProgramStats() {
                       </div>
                       <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
                         <div
-                          className="h-1.5 rounded-full bg-slate-700"
+                          className="h-1.5 rounded-full bg-[var(--teal)]"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>
@@ -199,7 +192,7 @@ export async function ProgramStats() {
           </div>
 
           {/* Top States */}
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6">
+          <div className="rounded-xl border border-[var(--line)] dark:border-slate-700 bg-white dark:bg-slate-800 p-6 card-lift">
             <div className="mb-4 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-slate-500" />
               <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
@@ -225,7 +218,7 @@ export async function ProgramStats() {
                       </div>
                       <div className="mt-1 h-1.5 w-full rounded-full bg-slate-100 dark:bg-slate-600">
                         <div
-                          className="h-1.5 rounded-full bg-blue-500"
+                          className="h-1.5 rounded-full bg-[var(--teal)]"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>

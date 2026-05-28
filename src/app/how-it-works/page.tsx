@@ -95,7 +95,7 @@ const jsonLd = {
 
 export default function HowItWorksPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -106,10 +106,10 @@ export default function HowItWorksPage() {
           { name: "How It Works", url: "https://uscehub.com/how-it-works" },
         ]}
       />
-      <div className="border-b border-slate-200 bg-slate-50">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-slate-900">How It Works</h1>
-          <p className="mt-2 text-base text-slate-500">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">How It Works</h1>
+          <p className="mt-2 text-base text-slate-500 dark:text-slate-400">
             A detailed guide for applicants and institutions
           </p>
         </div>
@@ -118,10 +118,10 @@ export default function HowItWorksPage() {
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <section>
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               For Applicants
             </h2>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
               Your path to clinical experience in the United States
             </p>
           </div>
@@ -132,19 +132,19 @@ export default function HowItWorksPage() {
               return (
                 <div
                   key={step.title}
-                  className="flex gap-5 rounded-xl border border-slate-200 p-6"
+                  className="card-lift flex gap-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-900 text-lg font-bold text-white">
                     {index + 1}
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <Icon className="h-5 w-5 text-slate-600" />
-                      <h3 className="text-base font-semibold text-slate-900">
+                      <Icon className="h-5 w-5 text-slate-600 dark:text-slate-300" />
+                      <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                       {step.description}
                     </p>
                   </div>
@@ -163,14 +163,14 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        <div className="my-16 border-t border-slate-200" />
+        <div className="my-16 border-t border-slate-200 dark:border-slate-700" />
 
         <section>
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               For Institutions
             </h2>
-            <p className="mt-2 text-sm text-slate-500">
+            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
               Reach qualified international medical graduates
             </p>
           </div>
@@ -181,19 +181,19 @@ export default function HowItWorksPage() {
               return (
                 <div
                   key={step.title}
-                  className="flex gap-5 rounded-xl border border-slate-200 p-6"
+                  className="card-lift flex gap-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-900 text-lg font-bold text-white">
                     {index + 1}
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <Icon className="h-5 w-5 text-slate-600" />
-                      <h3 className="text-base font-semibold text-slate-900">
+                      <Icon className="h-5 w-5 text-slate-600 dark:text-slate-300" />
+                      <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                         {step.title}
                       </h3>
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                       {step.description}
                     </p>
                   </div>

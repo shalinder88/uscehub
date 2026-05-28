@@ -81,7 +81,7 @@ export default function ComparePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Compare Listings</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Compare Listings</h1>
         <p className="mt-1 text-sm text-slate-500">
           Side-by-side comparison of your selected listings (max 3)
         </p>
@@ -91,7 +91,7 @@ export default function ComparePage() {
         <CardRoot>
           <CardContent className="flex flex-col items-center py-12">
             <GitCompareArrows className="h-12 w-12 text-slate-300" />
-            <p className="mt-4 text-sm font-medium text-slate-900">
+            <p className="mt-4 text-sm font-medium text-slate-900 dark:text-slate-100">
               No listings to compare
             </p>
             <p className="mt-1 text-sm text-slate-500">
@@ -109,18 +109,18 @@ export default function ComparePage() {
           <table className="w-full border-collapse">
             <thead>
               <tr>
-                <th className="w-40 border-b border-slate-200 bg-slate-50 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">
+                <th className="w-40 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500">
                   Field
                 </th>
                 {compared.map((item) => (
                   <th
                     key={item.id}
-                    className="min-w-[200px] border-b border-slate-200 bg-slate-50 px-4 py-3 text-left"
+                    className="min-w-[200px] border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3 text-left"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <Link
                         href={`/listing/${item.listing.id}`}
-                        className="text-sm font-semibold text-slate-900 hover:underline"
+                        className="text-sm font-semibold text-slate-900 dark:text-slate-100 hover:underline"
                       >
                         {item.listing.title}
                       </Link>
@@ -138,13 +138,13 @@ export default function ComparePage() {
             <tbody>
               {comparisonFields.map((field) => (
                 <tr key={field.key}>
-                  <td className="border-b border-slate-100 px-4 py-3 text-sm font-medium text-slate-600">
+                  <td className="border-b border-slate-100 dark:border-slate-800 px-4 py-3 text-sm font-medium text-slate-600">
                     {field.label}
                   </td>
                   {compared.map((item) => (
                     <td
                       key={item.id}
-                      className="border-b border-slate-100 px-4 py-3 text-sm text-slate-900"
+                      className="border-b border-slate-100 dark:border-slate-800 px-4 py-3 text-sm text-slate-900 dark:text-slate-100"
                     >
                       {field.boolean ? (
                         (item.listing as Record<string, unknown>)[field.key] ? (

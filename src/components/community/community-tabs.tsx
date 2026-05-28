@@ -92,26 +92,45 @@ export function CommunityTabs() {
   return (
     <div className="space-y-12">
       {/* Coming-soon tile — matches the /residency/community pattern */}
-      <section className="rounded-xl border border-border bg-surface p-10 text-center">
-        <div className="inline-flex items-center justify-center rounded-full bg-accent/10 p-4 mb-5">
-          <MessageSquare className="h-7 w-7 text-accent" />
+      <section
+        className="card-lift rounded-2xl p-10 text-center"
+        style={{
+          background: "var(--paper)",
+          border: "1px solid var(--line)",
+        }}
+      >
+        <div
+          className="inline-flex items-center justify-center rounded-full p-4 mb-5"
+          style={{ background: "var(--teal-soft)" }}
+        >
+          <MessageSquare className="h-7 w-7" style={{ color: "var(--teal)" }} />
         </div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+        <h2 style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: 22, color: "var(--ink)" }}>
           USCEHub Community Features
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-          We are planning a moderated community for IMGs — discussion boards,
-          observership swap board, and program suggestions. Community content
-          will launch only after moderation, anonymity, and safety controls are
-          ready. There is nothing to read or post here yet.
+        <p className="mt-3 text-sm leading-relaxed max-w-2xl mx-auto" style={{ color: "var(--ink-soft)" }}>
+          We are planning a moderated community for medical students and graduates —
+          discussion boards, observership swap board, and program suggestions.
+          Community content will launch only after moderation, anonymity, and safety
+          controls are ready. There is nothing to read or post here yet.
         </p>
-        <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
+        <div
+          className="mt-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+          style={{ background: "var(--teal-soft)", color: "var(--teal-deep)" }}
+        >
           <Sparkles className="h-4 w-4" />
           Coming Soon
         </div>
-        <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">
+        <p className="mt-6 text-xs" style={{ color: "var(--text-muted)" }}>
           Want to suggest a program or report an issue today?{" "}
-          <Link href="/contact-admin" className="font-medium text-blue-600 hover:underline">
+          <Link
+            href="/contact-admin"
+            style={{
+              fontWeight: 500,
+              color: "var(--teal-deep)",
+              textDecoration: "underline",
+            }}
+          >
             Contact admin directly
           </Link>
           .
@@ -120,13 +139,17 @@ export function CommunityTabs() {
 
       {/* External communities — real third-party destinations, kept */}
       <section>
-        <h2 className="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
-          <MessageSquare className="h-5 w-5 text-blue-600" />
-          External IMG Communities
+        <h2
+          className="flex items-center gap-2"
+          style={{ fontFamily: "var(--font-serif)", fontWeight: 500, fontSize: 22, color: "var(--ink)" }}
+        >
+          <MessageSquare className="h-5 w-5" style={{ color: "var(--teal)" }} />
+          External Communities
         </h2>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-          Established communities outside USCEHub where IMGs share advice and
-          experiences. We do not moderate or endorse third-party content.
+        <p className="mt-1 text-sm" style={{ color: "var(--ink-soft)" }}>
+          Established communities outside USCEHub where medical students and
+          graduates share advice and experiences. We do not moderate or endorse
+          third-party content.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {externalCommunities.map((c) => (
@@ -192,17 +215,29 @@ export function CommunityTabs() {
       </section>
 
       {/* CTA */}
-      <section className="rounded-xl bg-slate-50 dark:bg-slate-800 p-8 text-center">
-        <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-          Have questions about your IMG journey?
+      <section
+        className="card-lift rounded-2xl p-8 text-center"
+        style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
+      >
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontWeight: 500,
+            fontSize: 22,
+            color: "var(--ink)",
+          }}
+        >
+          Have questions about your training path?
         </h2>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          Check our IMG Resources guide for match stats, IMG-friendly programs,
-          and application strategies, or send a question to admin.
+        <p className="mt-2 text-sm" style={{ color: "var(--ink-soft)" }}>
+          Browse the FAQ, send a note to admin, or visit IMG Corner for the
+          IMG-specific journey (ECFMG, visas, match strategy).
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-3">
-          <Link href="/img-resources">
-            <Button size="lg">IMG Resources &amp; Match Data</Button>
+          <Link href="/img-corner">
+            <Button size="lg" style={{ background: "var(--teal)", color: "#fff" }}>
+              IMG Corner
+            </Button>
           </Link>
           <Link href="/faq">
             <Button variant="outline" size="lg">Read FAQ</Button>

@@ -1,3 +1,16 @@
+/**
+ * @deprecated 2026-05-28 — generates fabricated activity strings
+ * ("Someone from India just browsed Cleveland Clinic") that contradict
+ * the verified-directory positioning. Same class of honesty problem as
+ * the /community fake-users cleanup in PR 0e-fix.
+ *
+ * Replaced on / by `<WhatsNew />` (src/components/home/whats-new.tsx),
+ * which pulls real NEW / VERIFIED / UPDATED events from the listings
+ * table.
+ *
+ * Kept in-tree only because other admin/poster surfaces may still
+ * reference it. Verify nothing imports it before deleting.
+ */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -63,17 +76,18 @@ export function ActivityFeed() {
   if (activities.length === 0) return null;
 
   return (
-    <div className="bg-slate-900 pb-6">
+    <div style={{ background: "var(--bg-alt)", paddingTop: 10, paddingBottom: 18, borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
       <div className="mx-auto max-w-3xl px-4">
         <div className="space-y-1">
           {activities.map((activity, i) => (
             <div
               key={`${i}-${activity}`}
-              className={`text-center text-xs text-slate-500 transition-opacity duration-400 ${
+              className={`text-center text-xs transition-opacity duration-400 ${
                 fadeIndex === i ? "opacity-0" : "opacity-100"
               }`}
+              style={{ color: "var(--ink-soft)" }}
             >
-              <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/60" />
+              <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full" style={{ background: "var(--teal)" }} />
               {activity}
             </div>
           ))}

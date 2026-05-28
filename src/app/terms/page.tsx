@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
             Terms of Service

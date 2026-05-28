@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Check, X, ArrowRight, GitCompareArrows } from "lucide-react";
 import Link from "next/link";
 import { ListingVerificationBadge } from "@/components/listings/listing-verification-badge";
@@ -51,8 +51,10 @@ interface ComparedListing {
 
 const TYPE_LABELS: Record<string, string> = {
   OBSERVERSHIP: "Observership",
-  EXTERNSHIP: "Externship",
+  CLERKSHIP: "Clerkship",
+  MD_DO_VISITING_STUDENTS: "MD/DO Visiting (VSLO)",
   RESEARCH: "Research",
+  EXTERNSHIP: "Externship",
   POSTDOC: "Postdoc",
   ELECTIVE: "Elective",
   VOLUNTEER: "Volunteer",
@@ -96,30 +98,15 @@ function VerificationCell({ listing }: { listing: ComparedListing }) {
   );
 }
 
-export default function CompareClient() {
-  const [allListings, setAllListings] = useState<ListingOption[]>([]);
+export default function CompareClient({
+  initialListings = [],
+}: {
+  initialListings?: ListingOption[];
+}) {
+  const [allListings] = useState<ListingOption[]>(initialListings);
   const [selectedIds, setSelectedIds] = useState<string[]>(["", ""]);
   const [compared, setCompared] = useState<ComparedListing[]>([]);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    fetch("/api/listings?limit=500")
-      .then((r) => r.json())
-      .then((data) => {
-        const listings = data.listings || data;
-        if (Array.isArray(listings)) {
-          setAllListings(
-            listings.map((l: ListingOption) => ({
-              id: l.id,
-              title: l.title,
-              city: l.city,
-              state: l.state,
-            }))
-          );
-        }
-      })
-      .catch(() => {});
-  }, []);
 
   const handleSelect = (index: number, id: string) => {
     const next = [...selectedIds];
@@ -147,7 +134,13 @@ export default function CompareClient() {
       const res = await fetch(`/api/compare?ids=${ids.join(",")}`);
       const data = await res.json();
       if (Array.isArray(data)) {
-        setCompared(data);
+        // /api/compare returns rows in DB-natural order. Re-sort to match
+        // the slot order the user picked so Program 1 stays in column 1.
+        const orderIndex = new Map(ids.map((id, i) => [id, i]));
+        const ordered = [...(data as ComparedListing[])].sort(
+          (a, b) => (orderIndex.get(a.id) ?? 0) - (orderIndex.get(b.id) ?? 0)
+        );
+        setCompared(ordered);
       }
     } catch {
       // silent
@@ -177,7 +170,7 @@ export default function CompareClient() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-800">
+    <div className="min-h-screen bg-[var(--bg)] dark:bg-slate-800">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex items-center gap-2">
@@ -190,7 +183,7 @@ export default function CompareClient() {
         </div>
 
         {/* Selection */}
-        <div className="mb-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
+        <div className="card-lift mb-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5">
           <div className="flex flex-wrap items-end gap-3">
             {selectedIds.map((id, i) => (
               <div key={i} className="min-w-[200px] flex-1">
@@ -201,6 +194,7 @@ export default function CompareClient() {
                   <select
                     value={id}
                     onChange={(e) => handleSelect(i, e.target.value)}
+                    aria-label={`Program ${i + 1} to compare`}
                     className="flex h-10 w-full appearance-none rounded-lg border border-slate-300 bg-white dark:bg-slate-900 px-3 py-2 pr-8 text-sm text-slate-900 dark:text-slate-100 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200"
                   >
                     <option value="">Select a program...</option>
@@ -241,7 +235,7 @@ export default function CompareClient() {
 
         {/* Comparison Table */}
         {compared.length >= 2 && (
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
+          <div className="card-lift overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
@@ -301,7 +295,7 @@ export default function CompareClient() {
         {compared.length >= 2 && (
           <div className="mt-6 space-y-4 sm:hidden">
             {compared.map((l) => (
-              <div key={l.id} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm">
+              <div key={l.id} className="card-lift rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4">
                 <Link href={`/listing/${l.id}`} className="font-semibold text-blue-600 hover:text-blue-700">
                   {l.title}
                 </Link>

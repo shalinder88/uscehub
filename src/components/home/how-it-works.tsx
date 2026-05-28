@@ -5,7 +5,7 @@ const applicantSteps = [
     icon: Search,
     title: "Search & Filter",
     description:
-      "Browse hundreds of verified observership, externship, and research listings across the United States. Filter by specialty, state, cost, and more.",
+      "Browse hundreds of verified observership, clerkship, MD/DO visiting (VSLO), and research listings across the United States. Filter by specialty, state, cost, and more.",
   },
   {
     icon: FileText,
@@ -44,7 +44,7 @@ const institutionSteps = [
 
 export function HowItWorks() {
   return (
-    <section className="bg-slate-50 dark:bg-slate-900 py-16">
+    <section className="bg-[var(--bg)] dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">How It Works</h2>
@@ -63,7 +63,7 @@ export function HowItWorks() {
                 const Icon = step.icon;
                 return (
                   <div key={step.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                       {index + 1}
                     </div>
                     <div>
@@ -92,7 +92,7 @@ export function HowItWorks() {
                 const Icon = step.icon;
                 return (
                   <div key={step.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--teal)] text-sm font-bold text-white">
                       {index + 1}
                     </div>
                     <div>

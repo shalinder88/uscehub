@@ -2,20 +2,20 @@ export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { Hero } from "@/components/home/hero";
+import { VerifiedNotice } from "@/components/listings/verified-notice";
 import { FeaturedListings } from "@/components/home/featured-listings";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { TrustSection } from "@/components/home/trust-section";
 import { ProgramStats } from "@/components/seo/program-stats";
 import { FloatingFinder } from "@/components/tools/floating-finder";
 import { ErasCountdown } from "@/components/home/eras-countdown";
-import { ActivityFeed } from "@/components/home/activity-feed";
 import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 
 export const metadata: Metadata = {
-  title: "USCEHub — Verified U.S. Clinical Experience Programs for IMGs",
+  title: "USCEHub — Verified U.S. Clinical Experience Programs",
   description:
-    "Search observerships, externships, research roles, and postdoc opportunities with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
+    "Search observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions with direct source links, visa notes, fee ranges, and verification status. Free and community-reviewed.",
   alternates: {
     canonical: "https://uscehub.com",
   },
@@ -27,11 +27,9 @@ export default async function HomePage() {
     stateData,
     specialtyRaw,
     observerships,
-    externships,
-    electives,
+    clerkships,
+    visitingStudents,
     research,
-    postdoc,
-    volunteer,
     allListings,
   ] = await Promise.all([
     prisma.listing.count({ where: { status: "APPROVED" } }),
@@ -45,22 +43,18 @@ export default async function HomePage() {
       select: { specialty: true },
     }),
     prisma.listing.count({ where: { status: "APPROVED", listingType: "OBSERVERSHIP" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "EXTERNSHIP" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "ELECTIVE" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "CLERKSHIP" } }),
+    prisma.listing.count({ where: { status: "APPROVED", listingType: "MD_DO_VISITING_STUDENTS" } }),
     prisma.listing.count({ where: { status: "APPROVED", listingType: "RESEARCH" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "POSTDOC" } }),
-    prisma.listing.count({ where: { status: "APPROVED", listingType: "VOLUNTEER" } }),
     prisma.listing.findMany({
       where: { status: "APPROVED" },
       select: { state: true },
     }),
   ]);
 
-  // Merged clinical bucket = observership + externship + elective.
-  // These all overlap in practice (same sites use different names); users
-  // pick with audience filter, not with type filter.
-  const clinicalRotations = observerships + externships + electives;
-  const researchPositions = research + postdoc;
+  // G0 cutover 2026-05-27: 4 canonical categories — no more merging
+  // observership+externship+elective into a "clinical" bucket. EXTERNSHIP,
+  // ELECTIVE, POSTDOC, VOLUNTEER all have 0 APPROVED rows.
 
   // Normalize specialties: split on commas / em-dash / paren, take primary
   // token, dedupe case-insensitively. Prevents "Dermatology" vs
@@ -91,7 +85,7 @@ export default async function HomePage() {
     url: "https://uscehub.com",
     logo: "https://uscehub.com/og-default.png",
     description:
-      "An independent, source-linked directory of U.S. clinical experience opportunities, including observerships, externships, research, volunteer, and related programs.",
+      "An independent, source-linked directory of U.S. clinical experience programs — observerships, clerkships, MD/DO visiting student rotations (VSLO), and research positions.",
     sameAs: [],
   };
 
@@ -110,28 +104,34 @@ export default async function HomePage() {
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Clinical Opportunities for IMGs and Medical Students",
+    name: "U.S. Clinical Experience Programs for Medical Students and Graduates",
     description:
-      "Browse clinical rotations, research positions, and volunteer programs across the United States.",
+      "Browse observerships, clerkships, MD/DO visiting student rotations, and research positions across the United States.",
     numberOfItems: totalListings,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: `${clinicalRotations} Clinical Rotations (observerships, externships, electives)`,
-        url: "https://uscehub.com/browse?category=clinical",
+        name: `${observerships} Observerships`,
+        url: "https://uscehub.com/browse?category=observership",
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: `${researchPositions} Research Positions`,
-        url: "https://uscehub.com/browse?category=research",
+        name: `${clerkships} Clerkships`,
+        url: "https://uscehub.com/browse?category=clerkship",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: `${volunteer} Volunteer / Pre-Med Programs`,
-        url: "https://uscehub.com/browse?category=volunteer",
+        name: `${visitingStudents} MD/DO Visiting Students (VSLO)`,
+        url: "https://uscehub.com/browse?category=visiting",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: `${research} Research Positions`,
+        url: "https://uscehub.com/browse?category=research",
       },
     ],
   };
@@ -156,20 +156,21 @@ export default async function HomePage() {
         stateCount={stateData.length}
         specialtyCount={specialtyCount}
         typeCounts={{
-          clinicalRotations,
-          researchPositions,
-          volunteer,
+          observerships,
+          clerkships,
+          visitingStudents,
+          research,
         }}
         stateCounts={stateCounts}
       />
       <ErasCountdown />
-      <ActivityFeed />
       <TrustSection />
       <FeaturedListings />
       <ProgramSpotlight />
       <HowItWorks />
       <ProgramStats />
       <MatchCounter />
+      <VerifiedNotice />
     </>
   );
 }

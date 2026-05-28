@@ -79,8 +79,18 @@ export default function SignUpPage() {
     <div className="flex min-h-[calc(100vh-160px)] items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <h1 className="text-2xl font-bold text-slate-900">Create your account</h1>
-          <p className="mt-2 text-sm text-slate-500">
+          <h1
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontWeight: 500,
+              fontSize: 36,
+              color: "var(--ink)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Create your account
+          </h1>
+          <p className="mt-2 text-sm" style={{ color: "var(--ink-soft)" }}>
             Join USCEHub and access opportunities across the US
           </p>
         </div>
@@ -151,7 +161,7 @@ export default function SignUpPage() {
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
               >
-                <option value="APPLICANT">Medical Graduate / Applicant</option>
+                <option value="APPLICANT">Medical Student / Graduate</option>
                 <option value="POSTER">Institution / Program Poster</option>
               </Select>
 
@@ -159,6 +169,7 @@ export default function SignUpPage() {
                 type="submit"
                 disabled={loading}
                 className="w-full"
+                style={{ background: "var(--teal)", color: "#fff" }}
               >
                 {loading ? "Creating account..." : "Create Account"}
               </Button>
@@ -168,7 +179,7 @@ export default function SignUpPage() {
               Already have an account?{" "}
               <Link
                 href="/auth/signin"
-                className="font-medium text-slate-900 hover:underline"
+                className="font-medium text-slate-900 dark:text-slate-100 hover:underline"
               >
                 Sign in
               </Link>

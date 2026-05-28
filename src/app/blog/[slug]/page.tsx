@@ -261,7 +261,7 @@ export default async function BlogPostPage({
         <div className="prose-custom">{renderContent(post.content)}</div>
 
         {/* Footer CTA */}
-        <div className="mt-16 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-6 sm:p-8 text-center">
+        <div className="card-lift mt-16 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50 p-6 sm:p-8 text-center">
           <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
             Find Your Clinical Experience
           </h3>

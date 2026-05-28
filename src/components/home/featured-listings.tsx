@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import type { ListingType } from "@prisma/client";
 import { ListingCard } from "@/components/listings/listing-card";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -7,8 +8,14 @@ export async function FeaturedListings() {
   // Prefer listings explicitly flagged `featured: true` (admin-curated for
   // USMLE-IMG credibility — LOR offered, academic sponsor, published Step
   // requirements). Fall back to most-viewed if fewer than 6 featured exist.
+  // Featured may ONLY be Observerships or Clerkships — VSLO and Research
+  // are application-restricted to specific audiences (US/COCA M4 or PhD/MD
+  // researcher), so featuring them on the homepage misleads the broad
+  // audience. Rule added 2026-05-28.
+  const FEATURED_TYPES: ListingType[] = ["OBSERVERSHIP", "CLERKSHIP"];
+
   const featured = await prisma.listing.findMany({
-    where: { status: "APPROVED", featured: true },
+    where: { status: "APPROVED", featured: true, listingType: { in: FEATURED_TYPES } },
     orderBy: [{ createdAt: "desc" }],
     take: 6,
     include: {
@@ -25,6 +32,7 @@ export async function FeaturedListings() {
       where: {
         status: "APPROVED",
         featured: false,
+        listingType: { in: FEATURED_TYPES },
       },
       // Phase 3.7: prioritize freshly cron/admin-verified rows
       // (real lastVerifiedAt timestamp), then legacy verified-on-file,
@@ -48,7 +56,7 @@ export async function FeaturedListings() {
   if (listings.length === 0) return null;
 
   return (
-    <section className="bg-white dark:bg-slate-950 py-16">
+    <section className="bg-[var(--bg)] dark:bg-slate-950 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between">
           <div>

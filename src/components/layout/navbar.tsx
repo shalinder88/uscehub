@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { SITE_METRICS } from "@/lib/site-metrics";
 import {
   HeartPulse,
   Menu,
@@ -29,14 +30,14 @@ export function Navbar() {
   const [toolsMenuOpen, setToolsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/browse", label: "Browse Opportunities" },
-    { href: "/for-institutions", label: "For Institutions & Physicians" },
+    { href: "/browse", label: "Browse" },
+    { href: "/for-institutions", label: "For Institutions" },
     { href: "/community", label: "Community" },
-    { href: "/img-resources", label: "IMG Resources" },
+    { href: "/img-corner", label: "IMG Corner" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-slate-700/60 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--line)] dark:border-slate-700/60 bg-[var(--bg)]/85 dark:bg-slate-900/80 backdrop-blur-lg">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <HeartPulse className="h-6 w-6 text-slate-800 dark:text-slate-200" />
@@ -45,12 +46,12 @@ export function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
+              className="whitespace-nowrap text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-900 dark:hover:text-white"
             >
               {link.label}
             </Link>
@@ -119,7 +120,17 @@ export function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          {/* Verified-directory badge (mockup 127). Hidden below 2xl so
+              nav has room to breathe and labels don't wrap. */}
+          <Link
+            href="/methodology"
+            className="hidden 2xl:inline-flex whitespace-nowrap items-center gap-1.5 rounded-full border border-[var(--teal)]/25 bg-[var(--teal-soft)] px-2.5 py-1 text-[11px] font-medium text-[var(--teal-deep)] hover:bg-[var(--teal)]/15 transition-colors"
+            title="How we verify listings"
+          >
+            <span className="inline-block h-1 w-1 rounded-full bg-[var(--teal)]" />
+            {SITE_METRICS.listingsWithOfficialSource} verified
+          </Link>
           <ThemeToggle />
           {session?.user ? (
             <div className="relative">

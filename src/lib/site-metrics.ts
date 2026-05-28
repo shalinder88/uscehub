@@ -42,16 +42,17 @@ export const SITE_METRICS = {
    * `linkVerified = true` count, equivalent to current
    * `linkVerificationStatus = VERIFIED` count regardless of
    * whether `lastVerifiedAt` is set). NOT the same as "freshly
-   * verified by the cron" — see header docstring. Updated to 156
-   * to match current DB state as of 2026-04-29.
+   * verified by the cron" — see header docstring. Updated to 203
+   * to match current DB state as of 2026-05-27 (post G0 walk + gap
+   * inserts).
    */
-  listingsWithOfficialSource: 156,
+  listingsWithOfficialSource: 203,
 
   /** US states with at least one indexed program. */
-  statesCovered: 37,
+  statesCovered: 36,
 
   /** Last public-data refresh label, free-form, e.g. "April 2026". */
-  lastUpdatedLabel: "April 2026",
+  lastUpdatedLabel: "May 2026",
 } as const;
 
 /**

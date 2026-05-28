@@ -18,13 +18,16 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  // Default theme = LIGHT (daytime). First-time visitors land on the
+  // cream + teal locked theme. Existing users keep whatever they had
+  // saved in localStorage (handled in the effect below).
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme | null;
-    const initial = stored || "dark";
-    // SSR-safe localStorage hydration: initial state is "dark" on both
+    const initial = stored || "light";
+    // SSR-safe localStorage hydration: initial state is "light" on both
     // server and client first render (matching layout.tsx's inline script);
     // we then read the actual stored value AFTER hydration to keep the
     // toggle in sync. React 19 flags setState-in-effect as a cascading-
@@ -47,7 +50,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   // Prevent flash: render children immediately but theme toggle won't work until mounted
   return (
-    <ThemeContext.Provider value={{ theme: mounted ? theme : "dark", toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: mounted ? theme : "light", toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-white">
-      <div className="border-b border-slate-200 bg-slate-50">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
+      <div className="border-b border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-slate-900">Privacy Policy</h1>
-          <p className="mt-2 text-sm text-slate-500">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">Privacy Policy</h1>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             Last updated: March 2026
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="space-y-8 text-sm leading-relaxed text-slate-600">
+        <div className="space-y-8 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Introduction
             </h2>
             <p>
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Information We Collect
             </h2>
             <p className="mb-2">
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               How We Use Your Information
             </h2>
             <ul className="ml-4 list-disc space-y-1">
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Information Sharing
             </h2>
             <p>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Data Security
             </h2>
             <p>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Cookies
             </h2>
             <p>
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Your Rights
             </h2>
             <p>
@@ -134,7 +134,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Changes to This Policy
             </h2>
             <p>
@@ -146,7 +146,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            <h2 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
               Contact Us
             </h2>
             <p>

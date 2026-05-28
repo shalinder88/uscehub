@@ -75,7 +75,7 @@ export function ContactReportForm({
     <form className="mt-6 space-y-5" onSubmit={handleSubmit} noValidate>
       {isReportContext && (
         <div
-          className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm"
+          className="rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
           data-testid="contact-report-context-banner"
         >
           <div className="font-medium text-slate-900">

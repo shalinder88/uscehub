@@ -38,13 +38,13 @@ section("site-metrics");
 assert(SITE_METRICS.opportunitiesIndexed === 304, "opportunitiesIndexed = 304");
 // Phase 3.9: renamed from `activeVerifiedListings`. The count is
 // listings whose official source URL is on file (broad legacy count),
-// NOT the strict "freshly verified by cron" cohort. Updated to 156
-// to match current DB state. See src/lib/site-metrics.ts header.
+// NOT the strict "freshly verified by cron" cohort. Bumped to 203
+// 2026-05-28 post G0 walk + gap inserts. See src/lib/site-metrics.ts.
 assert(
-  SITE_METRICS.listingsWithOfficialSource === 156,
-  "listingsWithOfficialSource = 156",
+  SITE_METRICS.listingsWithOfficialSource === 203,
+  "listingsWithOfficialSource = 203",
 );
-assert(SITE_METRICS.statesCovered === 37, "statesCovered = 37");
+assert(SITE_METRICS.statesCovered === 36, "statesCovered = 36");
 assert(typeof SITE_METRICS.lastUpdatedLabel === "string", "lastUpdatedLabel is a string");
 assert(
   SITE_METRICS_DISPLAY.opportunitiesIndexed.includes("304"),

@@ -1,224 +1,128 @@
 import Link from "next/link";
 import { HeartPulse } from "lucide-react";
 
+/**
+ * Compact cream footer. 3 columns instead of 4, ~half the height of the
+ * previous version. No duplicate links across columns.
+ */
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer
+      className="border-t"
+      style={{
+        background: "var(--bg)",
+        borderColor: "var(--line)",
+        color: "var(--ink-soft)",
+      }}
+    >
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-10">
+          {/* Brand + 1-line tagline */}
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <HeartPulse className="h-5 w-5 text-slate-800 dark:text-slate-200" />
-              <span className="text-base font-bold text-slate-900 dark:text-white">
+              <HeartPulse className="h-4 w-4" style={{ color: "var(--teal)" }} />
+              <span className="text-sm font-semibold" style={{ color: "var(--ink)" }}>
                 USCEHub
               </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              An independent, source-linked directory of U.S. clinical experience
-              opportunities, including observerships, externships, research,
-              volunteer, and related programs.
+            <p className="mt-2 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+              Verified directory of U.S. clinical experience programs —
+              observerships, clerkships, MD/DO visiting (VSLO), research.
             </p>
           </div>
 
+          {/* Platform — 4 essentials only */}
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Platform</h3>
-            <ul className="mt-3 space-y-2">
+            <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--ink)" }}>
+              Platform
+            </h3>
+            <ul className="mt-2 space-y-1.5 text-xs">
               <li>
-                <Link
-                  href="/browse"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
+                <Link href="/browse" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
                   Browse Opportunities
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/observerships"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
+                <Link href="/observerships" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
                   Browse by State
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/recommend"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Program Finder
+                <Link href="/img-corner" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                  IMG Corner
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources
+                <Link href="/for-institutions" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                  For Institutions
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* About + Legal merged */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--ink)" }}>
+              About
+            </h3>
+            <ul className="mt-2 space-y-1.5 text-xs">
               <li>
-                <Link
-                  href="/for-institutions"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  For Institutions & Physicians
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
+                <Link href="/about" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/methodology"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
+                <Link href="/methodology" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
                   Methodology
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/faq"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
+                <Link href="/faq" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Recommended Resources
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Resources</h3>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <a
-                  href="https://www.ecfmg.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ECFMG
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.usmle.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  USMLE
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.nrmp.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  NRMP
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://students-residents.aamc.org/applying-residencies-eras/applying-residencies-eras"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  ERAS
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/img-resources"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  IMG Resources & Data
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">Legal</h3>
-            <ul className="mt-3 space-y-2">
-              <li>
-                <Link
-                  href="/disclaimer"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Disclaimer
+                <Link href="/contact" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                  Contact
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
-                >
-                  Contact Us
+                <Link href="/privacy" className="hover:underline" style={{ color: "var(--text-muted)" }}>
+                  Privacy · Terms · Disclaimer
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-slate-200 dark:border-slate-800 pt-6">
-          <p className="text-xs leading-relaxed text-slate-400">
-            USCEHub is an educational and informational platform. We are
-            not affiliated with NRMP, ECFMG, ERAS, or AAMC. All trademarks belong
-            to their respective owners. Listings are submitted by third-party
-            institutions and individuals. We do not guarantee the accuracy,
-            completeness, or validity of any listing. Users are advised to verify
-            all information independently before applying or making payments.
-          </p>
-          <p className="mt-3 text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} USCEHub. All rights reserved.
-          </p>
+        {/* Mini subscribe line — visible-but-disabled placeholder. Honest
+            until real digest pipeline ships. */}
+        <div
+          className="mt-6 pt-4 border-t flex flex-col items-start gap-2 text-xs sm:flex-row sm:items-center sm:justify-between"
+          style={{ borderColor: "var(--line)", color: "var(--ink-soft)" }}
+        >
+          <span style={{ color: "var(--ink-soft)" }}>
+            Monthly digest of verified listings &mdash;{" "}
+            <em style={{ color: "var(--text-muted)" }}>coming soon</em>.
+          </span>
+          <span
+            className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-medium"
+            style={{
+              background: "var(--paper-soft)",
+              color: "var(--text-muted)",
+              border: "1px solid var(--line)",
+            }}
+          >
+            Intake not yet open
+          </span>
+        </div>
+
+        <div
+          className="mt-4 text-[10px]"
+          style={{ color: "var(--text-muted)" }}
+        >
+          © 2026 USCEHub · Not affiliated with NRMP, ECFMG, ERAS, or AAMC ·
+          Listings are submitted by third-party institutions.
         </div>
       </div>
     </footer>

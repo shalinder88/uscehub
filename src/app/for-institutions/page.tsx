@@ -137,7 +137,7 @@ const jsonLd = {
 
 export default function ForInstitutionsPage() {
   return (
-    <div className="bg-white dark:bg-slate-950">
+    <div className="bg-[var(--bg)] dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -148,24 +148,34 @@ export default function ForInstitutionsPage() {
           { name: "For Institutions & Physicians", url: "https://uscehub.com/for-institutions" },
         ]}
       />
-      {/* Hero */}
-      <div className="bg-gradient-to-b from-slate-900 to-slate-800">
+      {/* Hero — cream/serif per mockup 127 */}
+      <div style={{ background: "var(--bg-alt)", borderBottom: "1px solid var(--line)" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl">
+            <h1
+              className="text-4xl sm:text-5xl"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                letterSpacing: "-0.01em",
+              }}
+            >
               For Institutions &amp; Physicians
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-slate-300">
+            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
               Whether you run a hospital program or a private practice, list your
               clinical opportunities on USCEHub. Reach thousands of qualified
-              international medical graduates looking for observerships,
-              externships, and research positions.
+              international medical graduates and US/INTL medical students
+              looking for observerships, clerkships, MD/DO visiting rotations
+              (VSLO), and research positions.
             </p>
             <div className="mt-8 flex items-center justify-center gap-3">
               <Link href="/auth/signup">
                 <Button
                   size="lg"
-                  className="bg-white text-slate-900 hover:bg-slate-100"
+                  style={{ background: "var(--teal)", color: "#fff" }}
+                  className="hover:opacity-90"
                 >
                   Get Started Free
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -175,7 +185,7 @@ export default function ForInstitutionsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-slate-600 bg-transparent text-white hover:bg-slate-700 hover:text-white"
+                  style={{ borderColor: "var(--line)", background: "var(--paper)", color: "var(--ink)" }}
                 >
                   Learn More
                 </Button>
@@ -207,7 +217,7 @@ export default function ForInstitutionsPage() {
               {institutionBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+                  <div key={benefit.title} className="card-lift rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100">
                         <Icon className="h-4 w-4 text-slate-700" />
@@ -257,7 +267,7 @@ export default function ForInstitutionsPage() {
               {physicianBenefits.map((benefit) => {
                 const Icon = benefit.icon;
                 return (
-                  <div key={benefit.title} className="rounded-lg border border-slate-200 dark:border-slate-700 p-4">
+                  <div key={benefit.title} className="card-lift rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-50">
                         <Icon className="h-4 w-4 text-emerald-700" />
@@ -296,7 +306,7 @@ export default function ForInstitutionsPage() {
       {/* ============================================================ */}
       {/* Listing Types                                                 */}
       {/* ============================================================ */}
-      <div className="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+      <div className="border-y border-[var(--line)]" style={{ background: "var(--bg-alt)" }}>
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -331,7 +341,7 @@ export default function ForInstitutionsPage() {
       {/* Coordinator correction / removal path                         */}
       {/* ============================================================ */}
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8">
+        <div className="card-lift rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 sm:p-8">
           <h2 className="text-lg font-bold text-slate-900 dark:text-white">
             Are you a program coordinator or institution staff member?
           </h2>

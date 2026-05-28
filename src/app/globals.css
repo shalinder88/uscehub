@@ -4,16 +4,45 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
+  --font-serif: "New York", "Times New Roman", Georgia, serif;
 }
 
+/* ============================================
+   USCEHub Sonolex theme — cream + teal (mockup 127)
+   The ONE source of truth for site-wide colors.
+   Cream #faf7f0 is the universal background everywhere.
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --bg: #ffffff;
-  --bg-alt: #f8fafc;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
+  /* Backgrounds — Tailwind zinc-100 base (2026-05-28).
+     Bumped one shade darker than zinc-50 so #ffffff cards / search
+     pill / pills inside cards visibly POP. Still truly neutral, no
+     warm/cool undertone — just enough contrast for cards to read as
+     "brighter than the page".
+       --bg          zinc-100        (most surfaces)
+       --bg-band     zinc-200        (alternating-section band)
+       --bg-alt      alias for back-compat
+     */
+  --background: #f4f4f5;
+  --bg: #f4f4f5;
+  --bg-band: #e7e7e9;
+  --bg-alt: #e7e7e9;
+  --paper: #ffffff;            /* white cards stand out on zinc-100 */
+  --paper-soft: #e7e7e9;       /* card hover / inset */
+
+  /* Accents */
+  --teal: #0f5757;             /* primary teal (CTAs, links, badges) */
+  --teal-deep: #084040;        /* hover / pressed teal */
+  --teal-soft: #c5dcd9;        /* teal tint for badge backgrounds */
+  --terracotta: #b3503e;       /* accent / warnings */
+
+  /* Text */
+  --foreground: #1a1f1f;       /* near-black ink */
+  --ink: #1a1f1f;
+  --ink-soft: #3a4444;
+  --text: #1a1f1f;
+  --text-muted: #7a8a87;       /* warm-gray muted text */
+  --border: #e4e4e7;           /* zinc-200, neutral borders */
+  --line: #e4e4e7;
   --card-bg: #ffffff;
 }
 
@@ -22,15 +51,81 @@
   --foreground: #f1f5f9;
   --bg: #0f172a;
   --bg-alt: #1e293b;
+  --paper: #1e293b;
+  --paper-soft: #2a2d35;
+  --teal: #0fa595;
+  --teal-deep: #0e7068;
+  --teal-soft: rgba(15, 165, 149, 0.2);
+  --terracotta: #d97755;
+  --ink: #f1f5f9;
+  --ink-soft: #cbd5e1;
   --text: #f1f5f9;
   --text-muted: #94a3b8;
   --border: #334155;
+  --line: #334155;
   --card-bg: #1e293b;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Mockup-127 paper texture — scoped utility, not universal. Apply via
+   `className="paper-bg"` to a section that wants the aged-paper feel
+   (home Hero + Map). Other sections sit on flat cream. Universal
+   application was reading as pinkish-yellow on flat-content sections
+   like Featured/HowItWorks/etc. */
+.paper-bg {
+  position: relative;
+}
+.paper-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.20  0 0 0 0 0.20  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+}
+.paper-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(15, 87, 87, 0.05), transparent 70%),
+    radial-gradient(80% 60% at 50% 100%, rgba(15, 87, 87, 0.04), transparent 70%);
+}
+.paper-bg > * { position: relative; z-index: 1; }
+
+.dark .paper-bg::before,
+.dark .paper-bg::after { display: none; }
+
+/* Card lift — subtle elevation so white cards pop off near-white bg.
+   Two-stop shadow: tight ambient + slightly softer drop. Hover deepens
+   the drop and lifts 1px. Keeps borders subtle so the shape doesn't
+   compete with the shadow. */
+.card-lift {
+  box-shadow:
+    0 1px 1px rgba(15, 23, 42, 0.04),
+    0 2px 6px rgba(15, 23, 42, 0.05);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.card-lift:hover {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 6px 18px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+.dark .card-lift {
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* ============================================

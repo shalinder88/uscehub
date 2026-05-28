@@ -64,11 +64,11 @@ export function MatchCounter() {
 
   return (
     <>
-      <div className="border-t border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 py-4">
+      <div className="border-t border-[var(--line)] dark:border-slate-700 bg-[var(--bg-band)] dark:bg-slate-800 py-4">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 text-sm text-slate-600 dark:text-slate-400 dark:text-slate-400">
           <PartyPopper className="h-4 w-4 text-amber-500" />
           <span>
-            <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{totalCount}</span> IMGs who used USCEHub opportunities matched into residency
+            <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{totalCount}</span> med grads who used USCEHub opportunities matched into residency
           </span>
           <span className="text-slate-300">|</span>
           <button
@@ -146,7 +146,7 @@ export function MatchCounter() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-slate-800"
+                  className="w-full rounded-lg bg-[var(--teal)] px-4 py-2.5 text-sm font-medium text-white hover:bg-[var(--teal-deep)]"
                 >
                   Submit
                 </button>

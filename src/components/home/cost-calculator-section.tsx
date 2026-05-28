@@ -3,7 +3,7 @@ import { CostCalculator } from "@/components/tools/cost-calculator";
 
 export function CostCalculatorSection() {
   return (
-    <section className="bg-slate-50 dark:bg-slate-900 py-16">
+    <section className="bg-[var(--bg)] dark:bg-slate-900 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-end justify-between">
           <div>
