@@ -119,9 +119,9 @@ export function ListingFilters() {
         <Select
           value={currentAudience}
           onChange={(e) => updateParam("audience", e.target.value)}
-          title="Who's the program for?"
+          title="Narrow further — who are you?"
         >
-          <option value="">All audiences</option>
+          <option value="">Narrow by audience…</option>
           <option value="USMLE-IMG">IMG Graduate (USMLE Match prep)</option>
           <option value="Med Student">Current Medical Student</option>
           <option value="Specialty Visiting">Trained Specialist visitor</option>
