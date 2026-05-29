@@ -408,7 +408,7 @@ export function generateMetadata({ params }: { params: { specialty: string } }):
   const data = SPECIALTY_JOBS[params.specialty];
   if (!data) return { title: "Specialty Not Found" };
   return {
-    title: `J-1 Waiver ${data.name} Jobs — Salary, Employers, Search — USCEHub`,
+    title: { absolute: `J-1 Waiver ${data.name} Jobs — Salary, Employers, Search — USCEHub` },
     description: `Find J-1 waiver ${data.name} physician positions. Salary range: ${data.salaryRange}. Active employers, verified job sources, and tips for waiver applicants.`,
     alternates: { canonical: `https://uscehub.com/career/jobs/${data.slug}` },
   };

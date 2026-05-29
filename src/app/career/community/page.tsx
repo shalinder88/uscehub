@@ -22,6 +22,10 @@ export const metadata: Metadata = {
       "Connect with fellow IMG attendings. Discussions, employer reviews, and contract help.",
     url: "https://uscehub.com/career/community",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const sections = [
