@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { SITE_METRICS } from "@/lib/site-metrics";
 import {
   HeartPulse,
+  Globe,
   Menu,
   X,
   User,
@@ -29,6 +31,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [toolsMenuOpen, setToolsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/browse", label: "Browse" },
@@ -36,6 +39,73 @@ export function Navbar() {
     { href: "/community", label: "Community" },
     { href: "/img-corner", label: "IMG Corner" },
   ];
+
+  if (pathname?.startsWith("/career")) {
+    return (
+      <header className="sticky top-0 z-50 w-full border-b border-[var(--line)] dark:border-slate-700/60 bg-[var(--bg)]/85 dark:bg-slate-900/80 backdrop-blur-lg">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2.5">
+            <Link href="/career" className="flex items-center gap-2">
+              <Globe className="h-5 w-5 text-slate-700 dark:text-slate-200" />
+              <span className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
+                Visa &amp; Jobs
+              </span>
+            </Link>
+            <span className="hidden sm:inline-flex items-center gap-1 text-xs text-slate-400 dark:text-slate-500">
+              &middot;{" "}
+              <Link
+                href="/"
+                className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+              >
+                USCEHub
+              </Link>
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            {session?.user ? (
+              <div className="relative">
+                <button
+                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  className="flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
+                >
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300">
+                    {session.user.name?.charAt(0).toUpperCase() ?? "U"}
+                  </div>
+                </button>
+                {userMenuOpen && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setUserMenuOpen(false)} />
+                    <div className="absolute right-0 z-50 mt-1 w-44 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-1 shadow-lg">
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setUserMenuOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                      >
+                        <LayoutDashboard className="h-3.5 w-3.5" />
+                        Dashboard
+                      </Link>
+                      <button
+                        onClick={() => { setUserMenuOpen(false); signOut(); }}
+                        className="flex w-full items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                      >
+                        <LogOut className="h-3.5 w-3.5" />
+                        Log out
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <Link href="/auth/signin">
+                <Button variant="ghost" size="sm">Log In</Button>
+              </Link>
+            )}
+          </div>
+        </nav>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--line)] dark:border-slate-700/60 bg-[var(--bg)]/85 dark:bg-slate-900/80 backdrop-blur-lg">

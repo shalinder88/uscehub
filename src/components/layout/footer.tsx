@@ -1,11 +1,79 @@
+"use client";
+
 import Link from "next/link";
-import { HeartPulse } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { HeartPulse, Globe } from "lucide-react";
 
 /**
  * Compact cream footer. 3 columns instead of 4, ~half the height of the
  * previous version. No duplicate links across columns.
  */
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/career")) {
+    return (
+      <footer
+        className="border-t"
+        style={{ background: "var(--bg)", borderColor: "var(--line)", color: "var(--ink-soft)" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-10">
+            <div>
+              <Link href="/career" className="flex items-center gap-2">
+                <Globe className="h-4 w-4" style={{ color: "var(--teal)" }} />
+                <span className="text-sm font-semibold" style={{ color: "var(--ink)" }}>
+                  Visa &amp; Jobs
+                </span>
+              </Link>
+              <p className="mt-2 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                J-1 waiver intelligence, H-1B sponsor data, and career tools for international medical graduate physicians.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--ink)" }}>
+                Resources
+              </h3>
+              <ul className="mt-2 space-y-1.5 text-xs">
+                <li><Link href="/career/waiver" className="hover:underline" style={{ color: "var(--ink-soft)" }}>J-1 Waiver</Link></li>
+                <li><Link href="/career/visa" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Visa &amp; Immigration</Link></li>
+                <li><Link href="/career/jobs" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Jobs</Link></li>
+                <li><Link href="/career/sponsors" className="hover:underline" style={{ color: "var(--ink-soft)" }}>H-1B Sponsor Database</Link></li>
+                <li><Link href="/career/practice" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Offers &amp; Practice</Link></li>
+                <li><Link href="/career/attorneys" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Immigration Attorneys</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--ink)" }}>
+                Legal
+              </h3>
+              <ul className="mt-2 space-y-1.5 text-xs">
+                <li><Link href="/privacy" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Terms of Use</Link></li>
+                <li><Link href="/privacy#disclaimer" className="hover:underline" style={{ color: "var(--ink-soft)" }}>Disclaimer</Link></li>
+              </ul>
+              <p className="mt-3 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                Educational information only. Not legal, immigration, or financial advice.
+              </p>
+            </div>
+          </div>
+          <div
+            className="mt-6 pt-4 border-t text-[10px] flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between"
+            style={{ borderColor: "var(--line)", color: "var(--text-muted)" }}
+          >
+            <span>
+              Visa &amp; Jobs &middot; Part of{" "}
+              <Link href="/" className="hover:underline">USCEHub</Link>
+              {" "}&middot;{" "}
+              <Link href="/browse" className="hover:underline">USCE Search →</Link>
+            </span>
+            <span>© 2026 USCEHub &middot; Not affiliated with USCIS, DOL, or any government agency</span>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer
       className="border-t"

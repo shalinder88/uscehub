@@ -11,6 +11,8 @@ import { FloatingFinder } from "@/components/tools/floating-finder";
 import { ErasCountdown } from "@/components/home/eras-countdown";
 import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
+import { LaneCards } from "@/components/home/lane-cards";
+import { LaneBanner } from "@/components/home/lane-banner";
 
 export const metadata: Metadata = {
   title: "USCEHub — Verified U.S. Clinical Experience Programs",
@@ -163,6 +165,8 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
+      <LaneBanner />
+      <LaneCards />
       <ErasCountdown />
       <TrustSection />
       <FeaturedListings />
