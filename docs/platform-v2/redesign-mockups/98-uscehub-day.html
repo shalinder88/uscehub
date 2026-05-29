@@ -1,0 +1,864 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>98 · USCEHub · day mode (production)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* SONOLEX PRODUCTION TOKENS — matches src/app/globals.css --v2-* */
+    --bg:#faf7f0;
+    --paper:#ffffff;
+    --paper-soft:#fcfaf2;
+    --ink:#1a1f1f;
+    --ink-soft:#2d3434;
+    --ink-mid:#4a5252;
+    --ink-quiet:#6a7070;
+    --line:#e9e3d3;
+    --line-strong:#c5b899;
+    --line-soft:#f0ead8;
+    --teal:#0f5757;
+    --teal-soft:#c5dcd9;
+    --teal-deep:#084040;
+    --green:#0f5757;
+    --green-soft:#c5dcd9;
+    --red:#b3503e;
+    --red-soft:#f0d9d2;
+    --amber:#b3503e;
+    --amber-soft:#f0d9d2;
+    --gold:#a87b2e;
+    --gold-soft:#ede2c8;
+    --glass:rgba(255,255,255,.55);
+    --glass-strong:rgba(255,255,255,.78);
+    --glass-border:rgba(10,10,10,.08);
+    --glass-teal:rgba(255,255,255,.55);
+    --glass-teal-border:rgba(15,87,87,.22);
+    --surface-mute:rgba(255,255,255,.4);
+    --surface-hover:rgba(255,255,255,.3);
+    --inset-hi:rgba(255,255,255,.7);
+    --shadow-rest:0 1px 3px rgba(13,20,24,.04);
+    --shadow-hover:0 18px 40px -18px rgba(13,20,24,.14),0 4px 10px -6px rgba(13,20,24,.08);
+    --cta-bg:#0f5757;
+    --cta-fg:#ffffff;
+    --cta-bg-hover:#084040;
+    --hl-pros-end:#dceee5;
+    --hl-pros-border:#a8c8c0;
+    --hl-cons-end:#fbe8db;
+    --hl-cons-border:#e0a888;
+    --contact-end:#e8efed;
+    --contact-border:#a8c8c0;
+  }
+  *{box-sizing:border-box;font-family:Inter,system-ui,sans-serif}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink-soft);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  body{padding-bottom:24px}
+
+  svg.ic{width:18px;height:18px;flex-shrink:0;display:inline-block;vertical-align:middle}
+  svg.ic-sm{width:14px;height:14px;flex-shrink:0;display:inline-block;vertical-align:middle}
+  svg.ic-lg{width:22px;height:22px;flex-shrink:0;display:inline-block;vertical-align:middle}
+
+  /* TOP NAV */
+  nav.topnav{max-width:1380px;margin:0 auto;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:17px;color:var(--ink)}
+  .brand .accent{color:var(--teal);font-weight:800}
+  .crumbs{color:var(--ink-quiet);font-size:13px;display:flex;align-items:center;gap:6px}
+  .crumbs a{color:var(--ink-mid)}
+  .crumbs a:hover{color:var(--ink)}
+  .crumbs .sep{color:var(--ink-quiet);font-size:10px}
+
+  /* MATTE BLACK HERO */
+  .hero-wrap{max-width:1380px;margin:8px auto 0;padding:0 32px}
+  .hero{
+    background:linear-gradient(135deg,#0a0a0a 0%,#161616 100%);
+    color:#fff;border-radius:22px;padding:64px 44px 56px;position:relative;overflow:hidden;
+    box-shadow:0 30px 80px -30px rgba(10,10,10,.30),0 2px 0 rgba(255,255,255,.02) inset;
+  }
+  .hero::before{content:"";position:absolute;top:-140px;right:-100px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(26,84,84,.40),transparent 70%);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-160px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(26,84,84,.18),transparent 70%);pointer-events:none}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:flex-end}
+  .hero-left{min-width:0}
+
+  .pill-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:6px 12px;border-radius:980px;line-height:1.3;text-transform:uppercase}
+  .pill.verified{background:rgba(22,121,77,.18);color:#a3e3c1;border:1px solid rgba(163,227,193,.25)}
+  .pill.verified::before{content:"";width:6px;height:6px;border-radius:50%;background:#5fd49a;box-shadow:0 0 0 4px rgba(95,212,154,.2)}
+  .pill.type{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.15)}
+  .pill.audience{background:rgba(255,255,255,.06);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.12)}
+  .pill.fit{background:rgba(255,255,255,.10);color:#a3e3c1;border:1px solid rgba(163,227,193,.20)}
+  .pill.fit::before{content:"★";color:#fbe072;margin-right:2px}
+
+  .hero h1{font-size:clamp(34px,3.4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:0 0 12px;color:#fff;white-space:nowrap}
+  .hero .subtitle{font-size:17px;font-weight:500;color:rgba(255,255,255,.72);margin:0 0 22px;line-height:1.4}
+  .hero .subtitle b{color:#fff;font-weight:600}
+
+  .hero-meta{display:flex;align-items:center;gap:26px;flex-wrap:wrap;font-size:13.5px;color:rgba(255,255,255,.78)}
+  .hero-meta .item{display:inline-flex;align-items:center;gap:8px}
+  .hero-meta .item b{color:#fff;font-weight:600}
+  .hero-meta svg.ic{color:rgba(255,255,255,.6)}
+
+  .hero-right{display:flex;flex-direction:column;gap:12px;min-width:280px;align-items:flex-end}
+  .action-row{display:flex;gap:8px}
+  .action{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:10px;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .2s}
+  .action:hover{background:rgba(255,255,255,.13);transform:translateY(-1px)}
+  .action svg{color:rgba(255,255,255,.75)}
+  .apply-btn-hero{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#0a0a0a;padding:13px 22px;border-radius:12px;font-size:14px;font-weight:700;letter-spacing:.01em;min-width:240px;transition:all .2s}
+  .apply-btn-hero:hover{background:#f0efe9;transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(0,0,0,.4)}
+  .apply-btn-hero svg{transition:transform .2s}
+  .apply-btn-hero:hover svg{transform:translate(3px,0)}
+  .hero-src{font-size:11px;color:rgba(255,255,255,.45);font-family:ui-monospace,Menlo,monospace;word-break:break-all;text-align:right;line-height:1.5;max-width:280px}
+
+  /* SPEC strip — now with glass + hover */
+  .specs{max-width:1380px;margin:18px auto 0;padding:0 32px}
+  .specs-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .spec-card{
+    background:var(--glass-strong);
+    backdrop-filter:blur(20px) saturate(150%);
+    -webkit-backdrop-filter:blur(20px) saturate(150%);
+    border:1px solid var(--glass-border);
+    border-radius:14px;padding:18px 20px;
+    display:flex;align-items:center;gap:14px;
+    box-shadow:var(--shadow-rest),0 1px 0 var(--inset-hi) inset;
+    transition:all .25s ease;
+  }
+  .spec-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover),0 1px 0 var(--inset-hi) inset;border-color:var(--teal-soft)}
+  .spec-card .icon{flex-shrink:0;width:42px;height:42px;border-radius:11px;background:var(--teal-soft);color:var(--teal);display:flex;align-items:center;justify-content:center}
+  .spec-card .icon svg{width:20px;height:20px}
+  .spec-card .meta{min-width:0}
+  .spec-card .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-quiet);margin-bottom:2px}
+  .spec-card .value{font-size:16px;font-weight:700;color:var(--ink);line-height:1.25;letter-spacing:-.01em}
+  .spec-card .value small{display:block;font-size:12px;color:var(--ink-quiet);font-weight:500;margin-top:1px}
+
+  /* MAIN */
+  main{max-width:1380px;margin:28px auto 0;padding:0 32px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start}
+
+  /* CARDS — universal hover-lift */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:26px 30px;
+    margin-bottom:14px;
+    box-shadow:var(--shadow-rest);
+    transition:transform .25s ease,box-shadow .25s ease,border-color .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
+
+  .section-h{display:flex;align-items:center;gap:10px;margin:0 0 16px}
+  .section-h h2{font-size:20px;font-weight:700;letter-spacing:-.015em;color:var(--ink);margin:0;line-height:1.2}
+  .section-h .ic-circle{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:var(--cta-bg);color:var(--cta-fg);display:inline-flex;align-items:center;justify-content:center}
+  .section-h .ic-circle.teal{background:var(--teal)}
+  .section-h .ic-circle.green{background:var(--green)}
+  .section-h .ic-circle.amber{background:var(--amber)}
+  .section-h .ic-circle.red{background:var(--red)}
+  .section-h .ic-circle svg{width:15px;height:15px}
+
+  /* About */
+  .about p{font-size:15.5px;line-height:1.65;color:var(--ink-soft);margin:0 0 10px}
+  .about p:last-child{margin-bottom:0}
+  .about p b{color:var(--ink);font-weight:600}
+
+  /* Highlights pros/cons split */
+  .highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0}
+  .hl-card{padding:18px 20px;border-radius:14px;border:1px solid;transition:all .25s}
+  .hl-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+  .hl-card.pros{background:linear-gradient(135deg,var(--green-soft),var(--hl-pros-end));border-color:var(--hl-pros-border)}
+  .hl-card.cons{background:linear-gradient(135deg,var(--amber-soft),var(--hl-cons-end));border-color:var(--hl-cons-border)}
+  .hl-card h3{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .hl-card.pros h3{color:var(--green)}
+  .hl-card.cons h3{color:var(--amber)}
+  .hl-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .hl-card li{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.45;color:var(--ink-soft)}
+  .hl-card li > span{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+  .hl-card li b{display:block;color:var(--ink);font-weight:600;font-size:13px}
+  .hl-card li .tail{display:block;color:var(--ink-soft);font-size:12.5px}
+  .hl-card.pros li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;font-size:14px;line-height:1.4}
+  .hl-card.cons li::before{content:"!";color:var(--amber);font-weight:700;flex-shrink:0;font-size:14px;line-height:1.4;width:14px;text-align:center}
+
+  /* Money strip — important upfront */
+  .money-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+  .money-tile{padding:18px 16px;border-right:1px solid var(--line-soft);text-align:left;transition:background .2s}
+  .money-tile:last-child{border-right:0}
+  .money-tile:hover{background:var(--paper-soft)}
+  .money-tile .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-quiet);font-weight:700;display:flex;align-items:center;gap:6px;margin-bottom:6px}
+  .money-tile .l svg{color:var(--teal)}
+  .money-tile .v{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.015em;line-height:1.2}
+  .money-tile .v small{display:block;font-size:11.5px;color:var(--ink-quiet);font-weight:500;margin-top:2px}
+
+  /* Bullets */
+  ul.bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
+  ul.bullets li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+  ul.bullets li b{color:var(--ink);font-weight:600}
+  ul.bullets li .check{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--green-soft);display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  ul.bullets li .check svg{width:13px;height:13px;color:var(--green)}
+  ul.bullets.warn li .check{background:var(--amber-soft)}
+  ul.bullets.warn li .check svg{color:var(--amber)}
+  ul.bullets.no li .check{background:var(--red-soft)}
+  ul.bullets.no li .check svg{color:var(--red)}
+
+  /* Numbered steps */
+  ol.steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;counter-reset:step}
+  ol.steps li{display:flex;align-items:flex-start;gap:14px;counter-increment:step;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+  ol.steps li::before{content:counter(step,decimal-leading-zero);flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--cta-bg);color:var(--cta-fg);font-weight:700;font-size:13px;display:inline-flex;align-items:center;justify-content:center;letter-spacing:.04em}
+  ol.steps li b{color:var(--ink);font-weight:600}
+  ol.steps li small{display:block;color:var(--ink-quiet);font-size:13px;font-weight:400;margin-top:3px;line-height:1.45}
+
+  /* Tags */
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;padding:8px 14px;border-radius:10px;background:var(--paper-soft);border:1px solid var(--line);color:var(--ink-soft);transition:all .2s;cursor:default}
+  .tag:hover{border-color:var(--teal);background:var(--paper);transform:translateY(-1px);box-shadow:0 4px 10px -4px rgba(0,0,0,.06)}
+  .tag svg.ic-sm{color:var(--teal)}
+  .tag b{color:var(--ink);font-weight:600}
+
+  /* Documents grid */
+  ul.docs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  ul.docs li{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--paper-soft);border:1px solid var(--line-soft);border-radius:10px;font-size:14px;color:var(--ink-soft);font-weight:500;transition:all .2s}
+  ul.docs li:hover{border-color:var(--teal);background:var(--paper);transform:translateY(-1px)}
+  ul.docs li svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+
+  /* ============ COLLAPSIBLE SECTIONS ============ */
+  details.collapse{
+    background:var(--glass);
+    backdrop-filter:blur(20px) saturate(140%);
+    -webkit-backdrop-filter:blur(20px) saturate(140%);
+    border:1px solid var(--glass-border);
+    border-radius:14px;
+    margin-bottom:10px;
+    overflow:hidden;
+    transition:transform .25s ease,box-shadow .25s ease,border-color .2s;
+    box-shadow:var(--shadow-rest),0 1px 0 var(--inset-hi) inset;
+  }
+  details.collapse:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover),0 1px 0 rgba(255,255,255,.7) inset;border-color:var(--teal-soft)}
+  details.collapse[open]{background:var(--glass-strong);border-color:var(--teal-soft)}
+  details.collapse summary{
+    cursor:pointer;padding:18px 22px;
+    display:flex;justify-content:space-between;align-items:center;
+    list-style:none;outline:0;
+    transition:background .15s;
+  }
+  details.collapse summary::-webkit-details-marker{display:none}
+  details.collapse summary:hover{background:var(--surface-hover)}
+  details.collapse summary .left{display:flex;align-items:center;gap:12px}
+  details.collapse summary .icon{flex-shrink:0;width:32px;height:32px;border-radius:9px;background:var(--cta-bg);color:var(--cta-fg);display:flex;align-items:center;justify-content:center}
+  details.collapse summary .icon.teal{background:var(--teal)}
+  details.collapse summary .icon svg{width:15px;height:15px}
+  details.collapse summary .title{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+  details.collapse summary .title small{display:block;font-size:12px;color:var(--ink-mid);font-weight:500;margin-top:2px;letter-spacing:0}
+  details.collapse summary .chev{font-size:18px;color:var(--teal);font-weight:300;line-height:1;transition:transform .2s}
+  details.collapse[open] summary .chev{transform:rotate(45deg)}
+  details.collapse .body{padding:0 22px 22px;border-top:1px solid var(--line-soft);padding-top:18px}
+
+  /* Schedule blocks visualization */
+  .schedule{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;margin-top:8px}
+  .month{height:48px;border-radius:6px;background:var(--paper-soft);border:1px solid var(--line-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;color:var(--ink-quiet);position:relative;transition:transform .15s;cursor:default}
+  .month:hover{transform:scale(1.05)}
+  .month.open{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+  .month.closed{background:var(--paper-soft);color:var(--ink-quiet);opacity:.6}
+  .month .m{font-size:11px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.04em}
+  .month .yr{font-size:9px;color:var(--ink-quiet);font-weight:500;margin-top:1px}
+  .schedule-legend{display:flex;gap:14px;margin-top:12px;font-size:12px;color:var(--ink-mid)}
+  .schedule-legend span{display:inline-flex;align-items:center;gap:6px}
+  .schedule-legend .sw{display:inline-block;width:12px;height:12px;border-radius:3px}
+
+  /* Apply-by calculator inside details */
+  .calc-row{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+  .calc-row label{font-size:13px;color:var(--ink-mid);font-weight:500;min-width:90px}
+  .calc-row input{flex:1;padding:9px 12px;border:1px solid var(--line);background:var(--paper);border-radius:8px;font-size:14px;color:var(--ink);outline:0}
+  .calc-row input:focus{border-color:var(--teal)}
+  .calc-out{padding:14px 16px;background:var(--paper);border:1px solid var(--teal-soft);border-radius:10px;font-size:14px;color:var(--ink-soft);line-height:1.55}
+  .calc-out b{color:var(--ink);font-weight:700}
+
+  /* COL grid */
+  .col-card{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .col-tile{padding:16px 18px;background:var(--paper);border:1px solid var(--line);border-radius:12px;transition:all .2s}
+  .col-tile:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+  .col-tile .l{font-size:11px;color:var(--ink-quiet);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .col-tile .l svg{color:var(--teal)}
+  .col-tile .v{font-size:18px;font-weight:700;color:var(--ink);line-height:1.2}
+  .col-tile .v small{display:block;font-size:12px;color:var(--ink-quiet);font-weight:500;margin-top:2px}
+
+  /* VSLO platform card */
+  .platform-card{background:linear-gradient(135deg,var(--paper) 0%,var(--paper-soft) 100%);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;align-items:center;gap:14px;margin-top:14px;transition:all .25s}
+  .platform-card:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+  .platform-card .logo-tile{flex-shrink:0;width:54px;height:54px;border-radius:12px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;letter-spacing:.06em}
+  .platform-card .text{flex:1;min-width:0}
+  .platform-card .name{font-size:15.5px;font-weight:700;color:var(--ink);margin:0;line-height:1.3}
+  .platform-card .sub{font-size:13px;color:var(--ink-mid);margin:2px 0 0;line-height:1.4}
+  .platform-card a{flex-shrink:0;font-size:12.5px;font-weight:600;color:var(--teal);display:inline-flex;align-items:center;gap:5px}
+
+  /* Hospital contact card */
+  .contact-card{background:linear-gradient(135deg,var(--teal-soft) 0%,var(--contact-end) 100%);border:1px solid var(--contact-border);border-radius:14px;padding:20px;display:flex;align-items:center;gap:16px;margin-top:14px;transition:all .25s}
+  .contact-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+  .contact-card .ic-circle-teal{flex-shrink:0;width:48px;height:48px;border-radius:12px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center}
+  .contact-card .ic-circle-teal svg{width:22px;height:22px}
+  .contact-card .meta{min-width:0;flex:1}
+  .contact-card .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);margin-bottom:4px}
+  .contact-card .value{font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.3}
+  .contact-card .value small{display:block;font-size:13px;color:var(--ink-mid);font-weight:400;margin-top:2px}
+  .contact-card a.go{flex-shrink:0;background:var(--cta-bg);color:var(--cta-fg);padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+  .contact-card a.go:hover{background:var(--cta-bg-hover);transform:translateY(-1px)}
+
+  /* Notify card (glass, more visible) */
+  .notify-card{
+    background:var(--glass-strong);
+    backdrop-filter:blur(22px) saturate(150%);
+    -webkit-backdrop-filter:blur(22px) saturate(150%);
+    border:1px solid var(--glass-border);
+    border-radius:16px;padding:22px 24px;
+    display:flex;align-items:center;gap:18px;margin-bottom:14px;
+    box-shadow:var(--shadow-rest),0 1px 0 var(--inset-hi) inset;
+    transition:all .25s;
+  }
+  .notify-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover),0 1px 0 rgba(255,255,255,.8) inset}
+  .notify-card .icon-tile{flex-shrink:0;width:52px;height:52px;border-radius:13px;background:var(--cta-bg);color:var(--cta-fg);display:flex;align-items:center;justify-content:center}
+  .notify-card .icon-tile svg{width:24px;height:24px}
+  .notify-card .text{flex:1;min-width:0}
+  .notify-card .text h3{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 3px;letter-spacing:-.01em}
+  .notify-card .text p{font-size:13px;color:var(--ink-mid);margin:0;line-height:1.4}
+  .notify-card a.btn{flex-shrink:0;background:var(--cta-bg);color:var(--cta-fg);padding:11px 18px;border-radius:10px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+  .notify-card a.btn:hover{background:var(--cta-bg-hover);transform:translateY(-1px)}
+
+  /* Quick actions glass grid */
+  .quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .qa{display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px 10px;background:rgba(255,255,255,.55);border:1px solid var(--glass-border);border-radius:12px;cursor:pointer;transition:all .2s}
+  .qa:hover{background:var(--paper);border-color:var(--teal);transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(0,0,0,.10)}
+  .qa svg{width:18px;height:18px;color:var(--teal)}
+  .qa .label{font-size:12px;font-weight:600;color:var(--ink);text-align:center;line-height:1.3}
+
+  /* SIDEBAR */
+  aside{position:sticky;top:24px;align-self:start;display:flex;flex-direction:column;gap:14px}
+
+  /* Glass apply CTA — sticky sidebar */
+  .cta-card{background:var(--glass-strong);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border:1px solid var(--glass-border);border-radius:18px;padding:24px;box-shadow:var(--shadow-rest),0 1px 0 var(--inset-hi) inset;transition:all .25s}
+  .cta-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover),0 1px 0 rgba(255,255,255,.8) inset}
+  .cta-card .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .cta-card .label svg{color:var(--green)}
+  .cta-card h3{font-size:16px;font-weight:600;letter-spacing:-.005em;margin:0 0 14px;line-height:1.45;color:var(--ink-soft)}
+  .cta-card a.apply{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--cta-bg);color:var(--cta-fg);padding:14px 18px;border-radius:11px;font-size:14px;font-weight:600;letter-spacing:.02em;width:100%;transition:all .2s}
+  .cta-card a.apply:hover{background:var(--cta-bg-hover);transform:translateY(-1px);box-shadow:0 12px 24px -10px rgba(0,0,0,.30)}
+  .cta-card a.apply svg{transition:transform .2s}
+  .cta-card a.apply:hover svg{transform:translate(3px,0)}
+  .cta-card .src-url{display:block;margin-top:10px;font-size:11px;color:var(--ink-quiet);word-break:break-all;font-family:ui-monospace,Menlo,monospace;line-height:1.45;text-align:center}
+  .cta-card .secondary-actions{display:flex;gap:6px;margin-top:10px}
+  .cta-card .sec-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px;background:rgba(255,255,255,.45);border:1px solid var(--glass-border);border-radius:8px;font-size:11.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;transition:all .2s}
+  .cta-card .sec-btn:hover{background:var(--paper);border-color:var(--teal);transform:translateY(-1px)}
+  .cta-card .sec-btn svg{color:var(--ink-mid)}
+
+  /* At-a-glance glass */
+  .glance{
+    background:var(--glass-strong);
+    backdrop-filter:blur(22px) saturate(140%);
+    -webkit-backdrop-filter:blur(22px) saturate(140%);
+    border:1px solid var(--glass-border);
+    border-radius:14px;padding:0;overflow:hidden;
+    box-shadow:var(--shadow-rest),0 1px 0 var(--inset-hi) inset;
+    transition:all .25s;
+  }
+  .glance:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover),0 1px 0 rgba(255,255,255,.7) inset}
+  .glance .gh{padding:14px 18px;border-bottom:1px solid var(--line);background:var(--surface-mute)}
+  .glance .gh h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink);margin:0;font-weight:700;display:flex;align-items:center;gap:8px}
+  .glance .gh svg{color:var(--ink-mid)}
+  .glance .row{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border-bottom:1px solid rgba(229,225,208,.5);font-size:13.5px;transition:background .15s}
+  .glance .row:hover{background:var(--surface-mute)}
+  .glance .row:last-child{border-bottom:0}
+  .glance .row .l{color:var(--ink-quiet);font-weight:500}
+  .glance .row .v{color:var(--ink);font-weight:600;text-align:right;display:inline-flex;align-items:center;gap:5px}
+  .glance .row .v.green{color:var(--green)}
+  .glance .row .v.red{color:var(--red)}
+  .glance .row .v.teal{color:var(--teal)}
+
+  .side-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:all .25s;box-shadow:var(--shadow-rest)}
+  .side-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--teal-soft)}
+  .side-card h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-quiet);margin:0 0 10px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .side-card h4 svg{color:var(--ink-mid)}
+  .side-card .name{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.3}
+  .side-card .sub{font-size:12.5px;color:var(--ink-quiet);margin-bottom:12px}
+  .side-card a.go{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--cta-bg);color:var(--cta-fg);padding:10px 14px;border-radius:9px;font-size:13px;font-weight:600;width:100%;transition:all .2s}
+  .side-card a.go:hover{background:var(--cta-bg-hover);transform:translateY(-1px)}
+
+  /* RELATED */
+  .related{max-width:1380px;margin:48px auto 0;padding:0 32px}
+  .related-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
+  .related-h h2{font-size:22px;font-weight:700;letter-spacing:-.015em;margin:0;color:var(--ink)}
+  .related-h a.more{font-size:12.5px;font-weight:600;color:var(--teal);display:inline-flex;align-items:center;gap:4px}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .related-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;transition:all .25s;cursor:pointer;box-shadow:var(--shadow-rest)}
+  .related-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+  .related-card .pill-mini{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--teal);background:var(--teal-soft);padding:3px 8px;border-radius:5px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .related-card h3{font-size:16px;font-weight:700;letter-spacing:-.01em;margin:0 0 4px;line-height:1.3;color:var(--ink)}
+  .related-card .where{font-size:13px;color:var(--ink-quiet);margin:0 0 12px}
+  .related-card .quick{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-mid);padding-top:10px;border-top:1px solid var(--line-soft)}
+  .related-card .quick span{display:inline-flex;align-items:center;gap:5px}
+  .related-card .quick svg{color:var(--ink-quiet)}
+
+  /* STICKY BOTTOM BAR */
+  .bottom-bar{position:fixed;left:0;right:0;bottom:14px;z-index:50;pointer-events:none}
+  .bottom-bar-inner{max-width:1380px;margin:0 auto;padding:0 32px;display:flex;justify-content:flex-end}
+  .bottom-bar-card{
+    pointer-events:auto;
+    background:var(--glass-strong);
+    backdrop-filter:blur(24px) saturate(150%);
+    -webkit-backdrop-filter:blur(24px) saturate(150%);
+    border:1px solid var(--glass-border);
+    border-radius:14px;
+    padding:10px 12px;
+    display:flex;align-items:center;gap:8px;
+    box-shadow:0 18px 40px -16px rgba(20,25,30,.20),0 1px 0 rgba(255,255,255,.7) inset;
+  }
+  .bottom-bar-card .name{display:flex;flex-direction:column;padding:4px 12px 4px 8px;border-right:1px solid var(--line)}
+  .bottom-bar-card .name .n{font-size:13px;font-weight:700;color:var(--ink);line-height:1.2}
+  .bottom-bar-card .name .s{font-size:11px;color:var(--ink-quiet)}
+  .bottom-bar-card .b{display:inline-flex;align-items:center;gap:6px;padding:9px 12px;background:rgba(255,255,255,.5);border:1px solid var(--glass-border);border-radius:9px;font-size:12.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:all .15s}
+  .bottom-bar-card .b:hover{background:var(--paper);transform:translateY(-1px)}
+  .bottom-bar-card .b svg{color:var(--ink-mid)}
+  .bottom-bar-card .b.primary{background:var(--cta-bg);color:var(--cta-fg);border-color:var(--cta-bg)}
+  .bottom-bar-card .b.primary:hover{background:var(--cta-bg-hover)}
+  .bottom-bar-card .b.primary svg{color:#fff;transition:transform .2s}
+  .bottom-bar-card .b.primary:hover svg{transform:translate(3px,0)}
+  .bottom-bar-card.compact{padding:5px;gap:3px}
+  .bottom-bar-card.compact .b{padding:8px 12px;font-size:12.5px;border-radius:8px}
+  .bottom-bar-card.compact .b.icon-only{width:36px;height:36px;padding:0;justify-content:center}
+
+  /* Section divider — visual rest between primary and secondary */
+  .divider{
+    max-width:1380px;margin:32px auto 18px;padding:0 32px;
+    display:flex;align-items:center;gap:16px;
+  }
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+  .divider .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-quiet);font-weight:700;padding:0 4px}
+
+  /* FAQ */
+  .faq details{background:var(--paper-soft);border:1px solid var(--line-soft);border-radius:10px;padding:14px 16px;margin-bottom:8px;transition:all .2s}
+  .faq details:hover{border-color:var(--teal-soft);background:var(--paper)}
+  .faq details[open]{background:var(--paper);border-color:var(--teal-soft)}
+  .faq summary{cursor:pointer;font-size:14.5px;font-weight:600;color:var(--ink);outline:0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:18px;color:var(--teal);font-weight:400;line-height:1;transition:transform .2s}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{font-size:13.5px;color:var(--ink-mid);line-height:1.55;margin:10px 0 0}
+
+  footer{max-width:1380px;margin:80px auto 0;padding:28px 32px;color:var(--ink-quiet);font-size:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  footer .updated{font-size:11.5px;color:var(--ink-quiet);display:inline-flex;align-items:center;gap:6px}
+
+  /* RESPONSIVE */
+  @media(max-width:1024px){
+    main{grid-template-columns:1fr;gap:14px}
+    aside{position:static;flex-direction:row;flex-wrap:wrap;gap:14px}
+    aside > *{flex:1 1 280px}
+    .related-grid{grid-template-columns:1fr 1fr}
+    .col-card{grid-template-columns:1fr 1fr 1fr}
+    .bottom-bar-inner{justify-content:center}
+    .highlight-grid{grid-template-columns:1fr}
+    .money-strip{grid-template-columns:1fr 1fr}
+    .money-tile{border-right:0;border-bottom:1px solid var(--line-soft)}
+    .money-tile:nth-child(odd){border-right:1px solid var(--line-soft)}
+  }
+  @media(max-width:820px){
+    nav.topnav{padding:14px 20px}
+    .hero-wrap,.specs,main,.related,.divider{padding-left:16px;padding-right:16px}
+    .hero{padding:24px 20px;border-radius:16px}
+    .hero-inner{grid-template-columns:1fr;gap:20px;align-items:stretch}
+    .hero-right{align-items:stretch}
+    .apply-btn-hero{min-width:0;width:100%}
+    .hero-src{text-align:left;max-width:none}
+    .hero h1{font-size:32px}
+    .hero .subtitle{font-size:15px}
+    .specs-inner{grid-template-columns:1fr 1fr;gap:10px}
+    .card{padding:20px 18px;border-radius:14px}
+    ul.docs{grid-template-columns:1fr}
+    .related-grid{grid-template-columns:1fr}
+    aside{flex-direction:column}
+    aside > *{flex:1 1 100%}
+    .action-row{flex-wrap:wrap}
+    .action{flex:1;justify-content:center}
+    .col-card{grid-template-columns:1fr}
+    .schedule{grid-template-columns:repeat(6,1fr)}
+    .notify-card{flex-direction:column;text-align:center}
+    .quick-actions{grid-template-columns:1fr 1fr}
+    .bottom-bar-card{flex-wrap:wrap;justify-content:center}
+    .bottom-bar-card .name{display:none}
+    body{padding-bottom:24px}
+    .money-strip{grid-template-columns:1fr}
+    .money-tile{border-right:0}
+  }
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 12 10 17 19 8"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 9v4"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/><path d="M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.41 0z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></symbol>
+  <symbol id="i-extern" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><line x1="20" y1="4" x2="10" y2="14"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-hospital" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></symbol>
+  <symbol id="i-stethoscope" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.3.3 0 1 0 .2.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-compare" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M7 18l-4-3 4-3"/><path d="M17 6l4 3-4 3"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/><line x1="8" y1="14" x2="8.01" y2="14"/><line x1="12" y1="14" x2="12.01" y2="14"/><line x1="16" y1="14" x2="16.01" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+</svg>
+
+<nav class="topnav">
+  <div class="brand">USCE<span class="accent">Hub</span></div>
+  <div class="crumbs">
+    <a href="#">Directory</a><span class="sep">→</span>
+    <a href="#">Arkansas</a><span class="sep">→</span>
+    <span>UAMS</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-wrap">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="pill-row">
+          <span class="pill verified">Verified</span>
+          <span class="pill type">Visiting Student Elective</span>
+          <span class="pill audience">U.S. M4</span>
+          <span class="pill fit">Recommended</span>
+        </div>
+        <h1>University of Arkansas for Medical Sciences <span style="color:rgba(255,255,255,.55);font-weight:600">(UAMS)</span></h1>
+        <p class="subtitle">College of Medicine · <b>Visiting Students Program</b></p>
+        <div class="hero-meta">
+          <span class="item"><svg class="ic"><use href="#i-pin"/></svg> <b>Little Rock, AR</b></span>
+          <span class="item"><svg class="ic"><use href="#i-clock"/></svg> <b>4–8 weeks</b></span>
+          <span class="item"><svg class="ic"><use href="#i-cal"/></svg> Rolling via VSLO</span>
+          <span class="item"><svg class="ic"><use href="#i-users"/></svg> M4 only</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <a class="apply-btn-hero" href="https://medicine.uams.edu/students/visiting-students/" target="_blank" rel="noopener">
+          Apply at UAMS <svg class="ic"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+  <div>
+
+    <!-- ===== PRIMARY · ESSENTIAL INFO ===== -->
+
+    <!-- About -->
+    <div class="card about">
+      <div class="section-h">
+        <span class="ic-circle"><svg><use href="#i-info"/></svg></span>
+        <h2>About this program</h2>
+      </div>
+      <p>UAMS College of Medicine runs a <b>Visiting Students Program</b> at its Little Rock campus, open to M4 students at U.S. accredited medical schools. The program runs through the AAMC's national VSLO platform. Applications go through your home Dean's office, not directly to UAMS.</p>
+      <p>This is a clinical elective rotation, typically <b>4 weeks</b>, with a maximum of <b>8 weeks</b>. Required documents: completed core clerkships, a Dean's letter, and active health and malpractice coverage before arrival.</p>
+
+      <div class="contact-card">
+        <div class="ic-circle-teal"><svg><use href="#i-hospital"/></svg></div>
+        <div class="meta">
+          <div class="label">Teaching hospital</div>
+          <div class="value">UAMS Medical Center<small>Arkansas' only academic health center · ~500 beds · Level 1 trauma center</small></div>
+        </div>
+        <a class="go" href="https://uamshealth.com/" target="_blank" rel="noopener">View hospital <svg class="ic-sm"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="platform-card">
+        <div class="logo-tile">VSLO</div>
+        <div class="text">
+          <p class="name">AAMC VSLO platform</p>
+          <p class="sub">Applications submitted through your home medical school's Dean's office.</p>
+        </div>
+        <a href="https://students-residents.aamc.org/visiting-student-learning-opportunities" target="_blank" rel="noopener">Learn about VSLO <svg class="ic-sm"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Highlights — pros & watch points -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle teal"><svg><use href="#i-zap"/></svg></span>
+        <h2>Quick highlights</h2>
+      </div>
+      <div class="highlight-grid">
+        <div class="hl-card pros">
+          <h3><svg class="ic-sm"><use href="#i-check"/></svg> Strong points</h3>
+          <ul>
+            <li><span><b>Verified direct source</b><span class="tail">No platform middleman or scraped data</span></span></li>
+            <li><span><b>Multi-specialty</b><span class="tail">Placement across 10+ departments</span></span></li>
+            <li><span><b>Rolling cycle</b><span class="tail">Apply year-round via VSLO</span></span></li>
+            <li><span><b>Major academic center</b><span class="tail">The only one in Arkansas</span></span></li>
+          </ul>
+        </div>
+        <div class="hl-card cons">
+          <h3><svg class="ic-sm"><use href="#i-warn"/></svg> Watch for</h3>
+          <ul>
+            <li><span><b>M4 only</b><span class="tail">IMG graduates and M3 students not eligible</span></span></li>
+            <li><span><b>VSLO platform required</b><span class="tail">Your Dean's office must participate</span></span></li>
+            <li><span><b>8 weeks maximum</b><span class="tail">No extending or stacking</span></span></li>
+            <li><span><b>Specialty caps per block</b><span class="tail">Apply early for popular tracks</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Money / fees / duration strip -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle"><svg><use href="#i-dollar"/></svg></span>
+        <h2>Fees, duration &amp; what it costs</h2>
+      </div>
+      <div class="money-strip">
+        <div class="money-tile">
+          <div class="l"><svg class="ic-sm"><use href="#i-dollar"/></svg> Program fee</div>
+          <div class="v">Via VSLO<small>fees per VSLO policy</small></div>
+        </div>
+        <div class="money-tile">
+          <div class="l"><svg class="ic-sm"><use href="#i-clock"/></svg> Duration</div>
+          <div class="v">4–8 weeks<small>most pick 4 wks</small></div>
+        </div>
+        <div class="money-tile">
+          <div class="l"><svg class="ic-sm"><use href="#i-cal"/></svg> Lead time</div>
+          <div class="v">~12 weeks<small>VSLO + credentialing</small></div>
+        </div>
+        <div class="money-tile">
+          <div class="l"><svg class="ic-sm"><use href="#i-shield"/></svg> Malpractice</div>
+          <div class="v">Required<small>active coverage</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle green"><svg><use href="#i-check"/></svg></span>
+        <h2>What's included</h2>
+      </div>
+      <ul class="bullets">
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>4–8 weeks</b> of structured clinical elective (typical: 4 weeks)</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Placement</b> in your chosen specialty department at UAMS Little Rock</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Direct supervision</b> by UAMS attending faculty</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Rounds, case discussions, and bedside teaching</b> participation</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>UAMS library, EMR, and educational resources</b> access</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Letter of recommendation</b> eligibility (attending discretion)</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Certificate of completion</b> upon finishing the rotation</span></li>
+      </ul>
+    </div>
+
+    <!-- Who can apply / NOT eligible -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle"><svg><use href="#i-users"/></svg></span>
+        <h2>Who can apply</h2>
+      </div>
+      <ul class="bullets">
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>M4 students</b> at U.S. accredited medical schools</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Home institution</b> participating in AAMC VSLO</span></li>
+        <li><span class="check"><svg><use href="#i-check"/></svg></span><span><b>Dean's written permission</b> from your home institution</span></li>
+      </ul>
+      <div class="section-h" style="margin-top:24px">
+        <span class="ic-circle red"><svg><use href="#i-x"/></svg></span>
+        <h2 style="font-size:17px">Who's <span style="color:var(--red)">not</span> eligible</h2>
+      </div>
+      <ul class="bullets no">
+        <li><span class="check"><svg><use href="#i-x"/></svg></span><span><b>International medical graduates</b> (IMGs) and international medical students</span></li>
+        <li><span class="check"><svg><use href="#i-x"/></svg></span><span><b>Longitudinal-integrated curriculum (LIC)</b> students</span></li>
+        <li><span class="check"><svg><use href="#i-x"/></svg></span><span><b>Pre-clerkship students.</b> Core clerkships must be complete first.</span></li>
+      </ul>
+    </div>
+
+    <!-- Required clerkships -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle"><svg><use href="#i-list"/></svg></span>
+        <h2>Required clerkships</h2>
+      </div>
+      <div class="tags">
+        <span class="tag"><svg class="ic-sm"><use href="#i-check"/></svg> Internal Medicine</span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-check"/></svg> Surgery</span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-check"/></svg> OB-GYN</span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-check"/></svg> Pediatrics</span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-check"/></svg> Psychiatry</span>
+      </div>
+    </div>
+
+    <!-- Documents -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle"><svg><use href="#i-doc"/></svg></span>
+        <h2>Documents you'll need</h2>
+      </div>
+      <ul class="docs">
+        <li><svg><use href="#i-check"/></svg> Medical school transcript</li>
+        <li><svg><use href="#i-check"/></svg> Dean's letter of permission</li>
+        <li><svg><use href="#i-check"/></svg> USMLE Step 1 score report</li>
+        <li><svg><use href="#i-check"/></svg> Immunization records</li>
+        <li><svg><use href="#i-check"/></svg> Active malpractice coverage</li>
+        <li><svg><use href="#i-check"/></svg> Photo ID</li>
+        <li><svg><use href="#i-check"/></svg> Background check (via VSLO)</li>
+        <li><svg><use href="#i-check"/></svg> Drug screen documentation</li>
+      </ul>
+    </div>
+
+    <!-- How to apply -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle teal"><svg><use href="#i-arrow"/></svg></span>
+        <h2>How to apply</h2>
+      </div>
+      <ol class="steps">
+        <li><div><b>Confirm eligibility with your home Dean's office.</b><small>Verify your school participates in VSLO and that you have completed the five required core clerkships.</small></div></li>
+        <li><div><b>Open the UAMS Visiting Students page.</b><small>Review the current schedule, available specialties, and any UAMS-specific forms.</small></div></li>
+        <li><div><b>Submit your application through the AAMC VSLO platform.</b><small>Your home Dean's office handles the submission. Include the Dean's letter of permission.</small></div></li>
+        <li><div><b>Wait for UAMS to assign your rotation.</b><small>UAMS reviews applications and assigns placement in your requested specialty. Lead time varies by demand.</small></div></li>
+        <li><div><b>Complete pre-arrival onboarding.</b><small>Health clearance, malpractice attestation, and orientation are coordinated through VSLO and the UAMS office.</small></div></li>
+      </ol>
+    </div>
+
+    <!-- Available specialties -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle teal"><svg><use href="#i-stethoscope"/></svg></span>
+        <h2>Available specialties</h2>
+      </div>
+      <p style="font-size:14px;color:var(--ink-mid);margin:0 0 14px;line-height:1.5">Rotations available across the specialties below. Availability varies by cycle.</p>
+      <div class="tags">
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Internal Medicine</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Surgery</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Pediatrics</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>OB-GYN</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Psychiatry</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Emergency Medicine</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Radiology</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Anesthesia</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Neurology</b></span>
+        <span class="tag"><svg class="ic-sm"><use href="#i-stethoscope"/></svg> <b>Pathology</b></span>
+      </div>
+    </div>
+
+    <!-- Things to know (warnings) -->
+    <div class="card">
+      <div class="section-h">
+        <span class="ic-circle amber"><svg><use href="#i-warn"/></svg></span>
+        <h2>Things to know before applying</h2>
+      </div>
+      <ul class="bullets warn">
+        <li><span class="check"><svg><use href="#i-warn"/></svg></span><span><b>M4 students only.</b> M3 and earlier applications are not processed.</span></li>
+        <li><span class="check"><svg><use href="#i-warn"/></svg></span><span><b>Application is via VSLO only.</b> Direct submissions to UAMS will be redirected.</span></li>
+        <li><span class="check"><svg><use href="#i-warn"/></svg></span><span><b>Maximum 8 weeks total.</b> Cannot combine multiple rotations to exceed 8 weeks.</span></li>
+        <li><span class="check"><svg><use href="#i-warn"/></svg></span><span><b>Specialty availability changes by cycle.</b> Check current openings on the source page.</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <!-- Apply CTA -->
+    <div class="cta-card">
+      <div class="label"><svg class="ic"><use href="#i-shield"/></svg> Verified source</div>
+      <h3>This is the page UAMS uses to accept visiting students. Confirm with your Dean first, then apply through VSLO.</h3>
+      <a class="apply" href="https://medicine.uams.edu/students/visiting-students/" target="_blank" rel="noopener">
+        Open UAMS Visiting Students <svg class="ic"><use href="#i-extern"/></svg>
+      </a>
+    </div>
+
+    <!-- At-a-glance (glass) -->
+    <div class="glance">
+      <div class="gh"><h4><svg class="ic-sm"><use href="#i-list"/></svg> At a glance</h4></div>
+      <div class="row"><span class="l">Program type</span><span class="v">Visiting elective</span></div>
+      <div class="row"><span class="l">Specialty</span><span class="v">Multi-specialty</span></div>
+      <div class="row"><span class="l">Location</span><span class="v">Little Rock, AR</span></div>
+      <div class="row"><span class="l">Duration</span><span class="v">4–8 wks</span></div>
+      <div class="row"><span class="l">Audience</span><span class="v teal">U.S. M4</span></div>
+      <div class="row"><span class="l">Application</span><span class="v">AAMC VSLO</span></div>
+      <div class="row"><span class="l">Visa</span><span class="v">Not required</span></div>
+      <div class="row"><span class="l">Hands-on</span><span class="v green"><svg class="ic-sm"><use href="#i-check"/></svg> Yes</span></div>
+      <div class="row"><span class="l">LOR possible</span><span class="v green"><svg class="ic-sm"><use href="#i-check"/></svg> Yes</span></div>
+      <div class="row"><span class="l">Certificate</span><span class="v green"><svg class="ic-sm"><use href="#i-check"/></svg> Yes</span></div>
+      <div class="row"><span class="l">IMG eligible</span><span class="v red"><svg class="ic-sm"><use href="#i-x"/></svg> No</span></div>
+    </div>
+
+    <div class="side-card">
+      <h4><svg class="ic-sm"><use href="#i-mail"/></svg> Contact</h4>
+      <div class="name">UAMS Visiting Students Office</div>
+      <div class="sub">College of Medicine · Little Rock, AR</div>
+      <a class="go" href="https://medicine.uams.edu/students/visiting-students/" target="_blank" rel="noopener">
+        Contact via source page <svg class="ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+
+    <div class="side-card">
+      <h4><svg class="ic-sm"><use href="#i-shield"/></svg> Direct source</h4>
+      <a href="https://medicine.uams.edu/students/visiting-students/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--paper-soft);border:1px solid var(--line-soft);border-radius:10px;font-size:12.5px;color:var(--ink);word-break:break-all;font-family:ui-monospace,Menlo,monospace;line-height:1.45;font-weight:500;transition:all .2s">
+        medicine.uams.edu/students/<br>visiting-students/
+        <svg class="ic-sm" style="color:var(--teal)"><use href="#i-extern"/></svg>
+      </a>
+    </div>
+  </aside>
+</main>
+
+<!-- DIVIDER between primary and FAQ -->
+<div class="divider"><span class="label">Frequently asked questions</span></div>
+
+<!-- ===== SECONDARY · FAQ ONLY ===== -->
+<section style="max-width:1380px;margin:0 auto;padding:0 32px">
+
+  <details class="collapse" open>
+    <summary>
+      <div class="left">
+        <div class="icon"><svg><use href="#i-help"/></svg></div>
+        <div class="title">Common questions</div>
+      </div>
+      <span class="chev">+</span>
+    </summary>
+    <div class="body faq">
+      <details><summary>Can I apply if I'm an IMG graduate?</summary><p>No. UAMS Visiting Students Program accepts only senior medical students currently enrolled at U.S. accredited medical schools.</p></details>
+      <details><summary>Do I need a visa?</summary><p>No. This program is for U.S. domestic medical students.</p></details>
+      <details><summary>Can I do more than 8 weeks at UAMS?</summary><p>No, the maximum is 8 weeks total across all visiting student rotations at UAMS.</p></details>
+      <details><summary>Does UAMS provide housing?</summary><p>UAMS does not provide on-campus housing. Most rotators arrange furnished short-term housing nearby.</p></details>
+      <details><summary>Will I get a letter of recommendation?</summary><p>LOR is at the discretion of your attending. UAMS does not guarantee an LOR.</p></details>
+    </div>
+  </details>
+</section>
+
+<!-- RELATED -->
+<section class="related">
+  <div class="related-h">
+    <h2>Related programs in Arkansas &amp; nearby</h2>
+  </div>
+  <div class="related-grid">
+    <div class="related-card">
+      <span class="pill-mini">Visiting student</span>
+      <h3>UAMS · Internal Medicine</h3>
+      <p class="where">Little Rock, AR · Same parent program</p>
+      <div class="quick"><span><svg class="ic-sm"><use href="#i-clock"/></svg> 4 wks</span><span><svg class="ic-sm"><use href="#i-users"/></svg> M4</span><span><svg class="ic-sm"><use href="#i-shield"/></svg> VSLO</span></div>
+    </div>
+    <div class="related-card">
+      <span class="pill-mini">Visiting student</span>
+      <h3>UT Southwestern · Visiting Students</h3>
+      <p class="where">Dallas, TX · M4 elective</p>
+      <div class="quick"><span><svg class="ic-sm"><use href="#i-clock"/></svg> 2–4 wks</span><span><svg class="ic-sm"><use href="#i-users"/></svg> M4</span><span><svg class="ic-sm"><use href="#i-shield"/></svg> VSLO</span></div>
+    </div>
+    <div class="related-card">
+      <span class="pill-mini">Observership</span>
+      <h3>Saint Louis University · Observership</h3>
+      <p class="where">St. Louis, MO · IMG-friendly</p>
+      <div class="quick"><span><svg class="ic-sm"><use href="#i-clock"/></svg> 4–8 wks</span><span><svg class="ic-sm"><use href="#i-users"/></svg> IMG</span><span><svg class="ic-sm"><use href="#i-globe"/></svg> B1/B2</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>USCEHub · UAMS Visiting Students Program</span>
+  <span class="updated"><svg class="ic-sm"><use href="#i-check"/></svg> Updated May 2026</span>
+</footer>
+
+</body></html>

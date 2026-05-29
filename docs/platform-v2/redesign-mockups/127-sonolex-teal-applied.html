@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>127 · USCEHub in Sonolex teal theme · for comparison</title>
+<style>
+  /* ===== EXACT SONOLEX TEAL TOKENS (from https://sonolex.com/preview/teal/) ===== */
+  :root {
+    --bg:          #faf7f0;
+    --bg-tint:     #f3ede0;
+    --ink:         #1a1f1f;
+    --ink-soft:    #3a4444;
+    --muted:       #7a8a87;
+    --accent:      #0f5757;
+    --accent-soft: #c5dcd9;
+    --accent-deep: #084040;
+    --card:        #ffffff;
+    --border:      #e9e3d3;
+    --danger:      #b3503e;
+
+    --serif: "New York", "Times New Roman", Georgia, serif;
+    --sans:  -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+    --mono:  ui-monospace, "SF Mono", Menlo, monospace;
+
+    --shadow-rest:  0 1px 3px rgba(15,87,87,0.05), 0 16px 40px rgba(15,87,87,0.06);
+    --shadow-lift:  0 4px 14px rgba(15,87,87,0.08), 0 32px 64px rgba(15,87,87,0.10);
+    --shadow-press: 0 1px 2px rgba(15,87,87,0.08), 0 4px 12px rgba(15,87,87,0.06);
+
+    --ease: cubic-bezier(.2,.7,.2,1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Sonolex: grainy paper texture, fixed, multiply blend, opacity 0.45 */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.20  0 0 0 0 0.20  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
+    mix-blend-mode: multiply;
+  }
+  /* Sonolex: soft teal vignettes top + bottom */
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(60% 50% at 50% 0%, rgba(15,87,87,0.05), transparent 70%),
+      radial-gradient(80% 60% at 50% 100%, rgba(15,87,87,0.04), transparent 70%);
+  }
+  main, nav, footer { position: relative; z-index: 2; }
+
+  /* TOPBAR — Sonolex sticky + backdrop blur */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    background: rgba(250,247,240,0.75);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand small {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: 10px;
+    font-weight: 600;
+  }
+  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .2s var(--ease);
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .nav-pill .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(15,87,87,0.18);
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 120px 28px 80px;
+    text-align: center;
+  }
+  .hero-kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin: 0 0 28px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin: 0 0 26px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-lede {
+    max-width: 620px;
+    margin: 0 auto 48px;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .hero-ctas {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* CTA buttons */
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition:
+      transform .25s var(--ease),
+      box-shadow .25s var(--ease),
+      background .2s var(--ease);
+  }
+  .cta .arrow { transition: transform .25s var(--ease); }
+  .cta:hover .arrow { transform: translateX(4px); }
+  .cta:active { transform: translateY(0); box-shadow: var(--shadow-press); }
+  .cta-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(15,87,87,0.10), 0 12px 30px rgba(15,87,87,0.18);
+  }
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(15,87,87,0.14), 0 24px 52px rgba(15,87,87,0.28);
+    background: var(--accent-deep);
+  }
+  .cta-secondary {
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-rest);
+  }
+  .cta-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--accent-soft);
+  }
+
+  /* Search bar (USCEHub addition — using Sonolex card styling) */
+  .search-bar {
+    max-width: 580px;
+    margin: 0 auto 32px;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-rest);
+  }
+  .search-bar input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    padding: 12px 16px;
+    background: transparent;
+    color: var(--ink);
+    font-size: 15px;
+    font-family: var(--sans);
+  }
+  .search-bar input::placeholder { color: var(--muted); font-style: italic; }
+
+  /* SECTIONS */
+  .section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 96px 28px;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin: 0 0 20px;
+    max-width: 720px;
+  }
+  .section h2 em { font-style: italic; color: var(--accent); }
+  .section-sub {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 0 56px;
+  }
+
+  /* CARD GRID (USCEHub listings in Sonolex paper-card style) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 980px) { .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: var(--shadow-rest);
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .type-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+  }
+  .badge .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(15,87,87,0.18);
+  }
+  .card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .card .place {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0 0 22px;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .fact-label {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 3px;
+  }
+  .fact-value {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .icon-btn {
+    background: transparent;
+    border: 0;
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color .2s var(--ease), background .2s var(--ease);
+  }
+  .icon-btn:hover { color: var(--accent); background: var(--bg-tint); }
+  .source-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .source-link:hover { color: var(--accent-deep); }
+
+  /* FOOTER */
+  footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 64px 28px 48px;
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .footer-tagline {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    max-width: 280px;
+  }
+  .footer-col h5 {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 5px 0;
+    text-decoration: none;
+    transition: color .2s var(--ease);
+  }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-meta {
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">USCEHub <small>Verified directory</small></a>
+    <div class="nav-links">
+      <a href="/browse">Browse</a>
+      <a href="/states">States</a>
+      <a href="/specialties">Specialties</a>
+      <a href="/compare">Compare</a>
+      <a href="/tools">Tools</a>
+      <a href="/about">About</a>
+    </div>
+    <span class="nav-pill"><span class="dot"></span>306 programs verified</span>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <p class="hero-kicker">— Verified directory · May 2026 —</p>
+    <h1>Find <em>verified</em> U.S. Clinical Experience.</h1>
+    <p class="hero-lede">
+      Source on every listing. New programs added every week. Built for medical students, residents, fellows, and attendings looking for observerships, electives, and research.
+    </p>
+    <div class="search-bar">
+      <input placeholder='Try "free observerships in New York"…'>
+      <a href="#" class="cta cta-primary" style="padding:12px 22px; font-size:14px;">Search <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-ctas">
+      <a href="/browse" class="cta cta-primary">Browse all programs <span class="arrow">→</span></a>
+      <a href="/compare" class="cta cta-secondary">Compare programs <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">Featured programs</p>
+    <h2>Recently <em>verified</em>.</h2>
+    <p class="section-sub">
+      A handful of curated listings — each linked to the institution's own page. Click any program to open the full listing with reviews, source, and application path.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="type-label">Observership</span>
+          <span class="badge"><span class="dot"></span>Verified</span>
+        </div>
+        <h3>Mount Sinai Beth Israel</h3>
+        <p class="place">New York · NY</p>
+        <div class="facts">
+          <div>
+            <p class="fact-label">Duration</p>
+            <p class="fact-value">4–12 wks</p>
+          </div>
+          <div>
+            <p class="fact-label">Cost</p>
+            <p class="fact-value">Contact</p>
+          </div>
+          <div>
+            <p class="fact-label">Specialty</p>
+            <p class="fact-value">Multi</p>
+          </div>
+          <div>
+            <p class="fact-label">Visa</p>
+            <p class="fact-value">Supported</p>
+          </div>
+        </div>
+        <div class="card-actions">
+          <div>
+            <button class="icon-btn" title="Save">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </button>
+            <button class="icon-btn" title="Compare">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </button>
+            <button class="icon-btn" title="Report broken link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </button>
+          </div>
+          <a href="#" target="_blank" class="source-link">Source
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="type-label">Elective</span>
+          <span class="badge"><span class="dot"></span>Verified</span>
+        </div>
+        <h3>UCSF Visiting Students</h3>
+        <p class="place">San Francisco · CA</p>
+        <div class="facts">
+          <div><p class="fact-label">Duration</p><p class="fact-value">2–4 wks</p></div>
+          <div><p class="fact-label">Cost</p><p class="fact-value">$300</p></div>
+          <div><p class="fact-label">Specialty</p><p class="fact-value">VSLO</p></div>
+          <div><p class="fact-label">Visa</p><p class="fact-value">US LCME</p></div>
+        </div>
+        <div class="card-actions">
+          <div>
+            <button class="icon-btn" title="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+            <button class="icon-btn" title="Compare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="icon-btn" title="Report broken link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+          </div>
+          <a href="#" class="source-link">Source <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="type-label">Research</span>
+          <span class="badge"><span class="dot"></span>Verified</span>
+        </div>
+        <h3>Memorial Sloan Kettering</h3>
+        <p class="place">New York · NY</p>
+        <div class="facts">
+          <div><p class="fact-label">Duration</p><p class="fact-value">6 mo–1 yr</p></div>
+          <div><p class="fact-label">Cost</p><p class="fact-value">Free</p></div>
+          <div><p class="fact-label">Specialty</p><p class="fact-value">Oncology</p></div>
+          <div><p class="fact-label">Visa</p><p class="fact-value">J-1</p></div>
+        </div>
+        <div class="card-actions">
+          <div>
+            <button class="icon-btn" title="Save"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></button>
+            <button class="icon-btn" title="Compare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button>
+            <button class="icon-btn" title="Report broken link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
+          </div>
+          <a href="#" class="source-link">Source <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">How we verify</p>
+    <h2>Source on every <em>listing</em>.</h2>
+    <p class="section-sub">
+      Each program links to the institution's own page — the URL the program controls. No aggregators, no scraped data. Admin reviews every entry before publishing.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <p class="type-label" style="margin-bottom: 14px;">01 · Source</p>
+        <h3 style="font-size: 20px;">Official link tracked</h3>
+        <p class="place" style="font-style: normal; color: var(--ink-soft); margin-top: 10px;">
+          220 of 306 listings link to the institution's own page.
+        </p>
+      </article>
+      <article class="card">
+        <p class="type-label" style="margin-bottom: 14px;">02 · Review</p>
+        <h3 style="font-size: 20px;">Human admin review</h3>
+        <p class="place" style="font-style: normal; color: var(--ink-soft); margin-top: 10px;">
+          Type, fees, visa notes, and source URL all hand-confirmed.
+        </p>
+      </article>
+      <article class="card">
+        <p class="type-label" style="margin-bottom: 14px;">03 · Reports</p>
+        <h3 style="font-size: 20px;">Broken-link reporting</h3>
+        <p class="place" style="font-style: normal; color: var(--ink-soft); margin-top: 10px;">
+          One-click flag, 3-day admin triage turnaround.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">USCEHub</div>
+      <p class="footer-tagline">Verified U.S. clinical experience directory. Source-linked. Free.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Browse</h5>
+      <a href="/browse">All listings</a>
+      <a href="/states">By state</a>
+      <a href="/specialties">By specialty</a>
+      <a href="/browse?free=1">Free programs</a>
+    </div>
+    <div class="footer-col">
+      <h5>Tools</h5>
+      <a href="/compare">Compare</a>
+      <a href="/tools/checklist">Checklist</a>
+      <a href="/tools/visa">Visa helper</a>
+      <a href="/tools/alerts">Alerts</a>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-institutions">For institutions</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>USCEHub · 306 verified programs</span>
+    <span>Last reviewed · 2026-05-23</span>
+  </div>
+</footer>
+
+</body>
+</html>

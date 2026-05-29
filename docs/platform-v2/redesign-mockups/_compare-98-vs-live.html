@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8">
+<title>Compare · Mockup 98 vs Live /listing/[id]</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:0;background:#0a0a0a;color:#fff;font-family:-apple-system,system-ui,sans-serif}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#161616;border-bottom:1px solid #2a2a2a;font-size:13px}
+  .topbar .brand{font-weight:700;letter-spacing:-.01em}
+  .topbar .meta{color:#9a9a9a;font-size:11.5px}
+  .panes{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 42px);gap:1px;background:#2a2a2a}
+  .pane{background:#fff;display:flex;flex-direction:column;min-width:0;min-height:0}
+  .pane-head{padding:8px 12px;background:#161616;color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2a2a2a}
+  .pane-head .label{display:inline-flex;align-items:center;gap:8px}
+  .pane-head .dot{width:8px;height:8px;border-radius:50%}
+  .pane-head .dot.target{background:#5fd49a}
+  .pane-head .dot.live{background:#ef6b3a}
+  .pane-head .url{color:#9a9a9a;font-weight:400;font-size:10.5px;font-family:ui-monospace,monospace}
+  iframe{flex:1;border:0;width:100%;background:#faf7f0}
+</style></head><body>
+<div class="topbar">
+  <div class="brand">USCEHub · Mockup 98 vs Live /listing/[id]</div>
+  <div class="meta">Side-by-side · same data row (Vanderbilt VOE)</div>
+</div>
+<div class="panes">
+  <div class="pane">
+    <div class="pane-head">
+      <span class="label"><span class="dot target"></span>TARGET · Mockup 98 — uscehub-day</span>
+      <span class="url">/redesign-mockups/98-uscehub-day.html</span>
+    </div>
+    <iframe src="/98-uscehub-day.html"></iframe>
+  </div>
+  <div class="pane">
+    <div class="pane-head">
+      <span class="label"><span class="dot live"></span>LIVE · Production /listing/[id]</span>
+      <span class="url">uscehub.com/listing/cmn2113dh005osb11qdk4antb</span>
+    </div>
+    <iframe src="https://uscehub.com/listing/cmn2113dh005osb11qdk4antb"></iframe>
+  </div>
+</div>
+</body></html>
