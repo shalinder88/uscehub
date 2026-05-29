@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://uscehub.com/career/attorneys",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 interface Attorney {

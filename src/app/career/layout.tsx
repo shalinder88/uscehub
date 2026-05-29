@@ -25,10 +25,6 @@ export const metadata: Metadata = {
       "J-1 waiver intelligence, job search, immigration guidance, and contract tools for IMG physicians.",
     url: "https://uscehub.com/career",
   },
-  robots: {
-    index: false,
-    follow: false,
-  },
 };
 
 const sections = [

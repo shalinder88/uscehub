@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://uscehub.com/career/employers/post",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function PostJobPage() {

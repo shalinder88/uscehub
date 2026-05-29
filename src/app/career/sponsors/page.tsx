@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     description: "1,087 verified employers. Real salaries. Public DOL data. Free.",
     url: "https://uscehub.com/career/sponsors",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function SponsorsPage() {

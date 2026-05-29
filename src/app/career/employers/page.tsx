@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://uscehub.com/career/employers",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const STATS = [
