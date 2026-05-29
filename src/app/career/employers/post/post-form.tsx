@@ -164,9 +164,11 @@ ${form.description}
         <Info className="h-5 w-5 text-accent shrink-0 mt-0.5" />
         <div className="text-xs text-muted">
           <strong className="text-foreground">How it works:</strong> Fill out the form below.
-          It generates an email to our team. We verify the position (HPSA status, employer,
-          visa eligibility) and publish within 24 hours. Your listing includes a direct link
-          to your career page. Every listing is reviewed — we don&apos;t publish unverified data.
+          Clicking Submit opens your email client with all details pre-filled — you send the
+          email yourself to complete the submission. We are not receiving a web form; your
+          email client must open and you must hit Send. We verify the position (HPSA status,
+          employer, visa eligibility) and publish within 24 hours. Every listing is reviewed
+          before it goes live.
         </div>
       </div>
 
@@ -381,8 +383,8 @@ ${form.description}
             Submit for Review
           </button>
           <p className="text-[10px] text-muted text-center mt-3">
-            Opens your email client with the job details. We review and publish within 24 hours.
-            Questions? Email employers@uscehub.com
+            Opens your email client — you must send the email to complete submission.
+            We review and publish within 24 hours. Questions? employers@uscehub.com
           </p>
         </div>
       </div>

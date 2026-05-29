@@ -45,6 +45,8 @@ export function JobsSearch() {
   const [selectedState, setSelectedState] = useState("all");
   const [selectedVisa, setSelectedVisa] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
+  const [hpsaOnly, setHpsaOnly] = useState(false);
+  const [capExemptOnly, setCapExemptOnly] = useState(false);
 
   const specialties = getUniqueSpecialties();
   const states = getUniqueStates();
@@ -81,9 +83,12 @@ export function JobsSearch() {
         if (selectedVisa === "greencard" && !job.visaTypes.includes("greencard")) return false;
       }
 
+      if (hpsaOnly && !job.hpsa) return false;
+      if (capExemptOnly && !job.capExempt) return false;
+
       return true;
     });
-  }, [searchQuery, selectedSpecialty, selectedState, selectedVisa]);
+  }, [searchQuery, selectedSpecialty, selectedState, selectedVisa, hpsaOnly, capExemptOnly]);
 
   const featuredJobs = filteredJobs.filter((j) => j.featured);
   const regularJobs = filteredJobs.filter((j) => !j.featured);
@@ -124,31 +129,52 @@ export function JobsSearch() {
         </button>
 
         {/* Quick filter chips */}
-        {[
-          { label: "All", value: "all" },
-          { label: "HPSA Only", value: "hpsa" },
-          { label: "Cap-Exempt", value: "capexempt" },
-        ].map((chip) => (
-          <button
-            key={chip.value}
-            onClick={() => {
-              if (chip.value === "hpsa") {
-                setSearchQuery(searchQuery === "HPSA" ? "" : "");
-              }
-            }}
-            className="rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted hover:text-foreground hover:border-accent/50 transition-colors"
-          >
-            {chip.label}
-          </button>
-        ))}
+        {(
+          [
+            { label: "All", value: "all" },
+            { label: "HPSA Only", value: "hpsa" },
+            { label: "Cap-Exempt", value: "capexempt" },
+          ] as const
+        ).map((chip) => {
+          const isActive =
+            chip.value === "all"
+              ? !hpsaOnly && !capExemptOnly
+              : chip.value === "hpsa"
+              ? hpsaOnly
+              : capExemptOnly;
+          return (
+            <button
+              key={chip.value}
+              onClick={() => {
+                if (chip.value === "all") {
+                  setHpsaOnly(false);
+                  setCapExemptOnly(false);
+                } else if (chip.value === "hpsa") {
+                  setHpsaOnly(!hpsaOnly);
+                } else {
+                  setCapExemptOnly(!capExemptOnly);
+                }
+              }}
+              className={`rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                isActive
+                  ? "border-accent bg-accent/10 text-accent"
+                  : "border-border bg-surface text-muted hover:text-foreground hover:border-accent/50"
+              }`}
+            >
+              {chip.label}
+            </button>
+          );
+        })}
 
-        {/* Active filter count */}
-        {(selectedSpecialty !== "all" || selectedState !== "all" || selectedVisa !== "all") && (
+        {/* Clear filters */}
+        {(selectedSpecialty !== "all" || selectedState !== "all" || selectedVisa !== "all" || hpsaOnly || capExemptOnly) && (
           <button
             onClick={() => {
               setSelectedSpecialty("all");
               setSelectedState("all");
               setSelectedVisa("all");
+              setHpsaOnly(false);
+              setCapExemptOnly(false);
             }}
             className="rounded-lg border border-danger/30 bg-danger/5 px-3 py-2 text-xs text-danger hover:bg-danger/10 transition-colors"
           >
@@ -207,6 +233,8 @@ export function JobsSearch() {
           <strong className="text-foreground">{filteredJobs.length}</strong> verified positions
           {selectedSpecialty !== "all" && <span> in <strong className="text-foreground">{selectedSpecialty}</strong></span>}
           {selectedState !== "all" && <span> in <strong className="text-foreground">{US_STATE_NAMES[selectedState]}</strong></span>}
+          {hpsaOnly && <span> · <strong className="text-success">HPSA only</strong></span>}
+          {capExemptOnly && <span> · <strong className="text-success">cap-exempt only</strong></span>}
         </p>
         <div className="flex items-center gap-1.5 text-[10px] text-success">
           <CheckCircle2 className="h-3 w-3" />

@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import {
   Search,
@@ -12,8 +9,6 @@ import {
 } from "lucide-react";
 
 export default function HPSALookupPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}

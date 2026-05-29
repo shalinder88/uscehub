@@ -30,7 +30,7 @@ const NHSC_PROGRAMS = [
     commitment: "2 years full-time",
     extras: "Spanish Enhancement: +$5K. Continuation: $20K/yr after initial term.",
     eligible: "Primary care, mental health, dental",
-    deadline: "March 31, 2026",
+    deadline: "Check nhsc.hrsa.gov for current cycle",
   },
   {
     name: "NHSC Students to Service (S2S)",
@@ -46,7 +46,7 @@ const NHSC_PROGRAMS = [
     commitment: "3 years",
     extras: "Spanish Enhancement: +$5K. For substance use disorder treatment providers.",
     eligible: "Physicians, NPs, PAs, psychologists at SUD treatment facilities",
-    deadline: "March 31, 2026",
+    deadline: "Check nhsc.hrsa.gov for current cycle",
   },
 ];
 
