@@ -331,17 +331,22 @@ async function applyClassification(args: ApplyArgs): Promise<void> {
   const now = new Date();
   const status = args.classification.status;
 
-  // Legacy `linkVerified` Boolean rules (intentional split from the new
-  // enum so a transient REVERIFYING does not flap the existing "Verified"
-  // badge on/off across days):
-  //   VERIFIED              → true  (and advance lastVerifiedAt)
-  //   NEEDS_MANUAL_REVIEW   → false (definitive failure observed)
-  //   REVERIFYING           → unchanged (transient holding state)
-  let legacyPatch: { linkVerified?: boolean; lastVerifiedAt?: Date } = {};
+  // Legacy `linkVerified` Boolean + `lastVerifiedAt` rules (intentional
+  // split from the new enum so a transient REVERIFYING does not flap the
+  // existing "Verified" badge on/off across days):
+  //   VERIFIED              → true;  advance lastVerifiedAt to now
+  //   NEEDS_MANUAL_REVIEW   → false; clear lastVerifiedAt (a retained
+  //                           "verified N days ago" date on a now-failing
+  //                           link is a fake-freshness signal that skews
+  //                           /recommend ordering + /admin/freshness)
+  //   REVERIFYING           → unchanged (transient holding state; keeps
+  //                           its prior date so a one-off timeout/5xx
+  //                           doesn't wipe a genuine verification)
+  let legacyPatch: { linkVerified?: boolean; lastVerifiedAt?: Date | null } = {};
   if (status === "VERIFIED") {
     legacyPatch = { linkVerified: true, lastVerifiedAt: now };
   } else if (status === "NEEDS_MANUAL_REVIEW") {
-    legacyPatch = { linkVerified: false };
+    legacyPatch = { linkVerified: false, lastVerifiedAt: null };
   }
 
   await prisma.$transaction([

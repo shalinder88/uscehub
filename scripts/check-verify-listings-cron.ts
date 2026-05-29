@@ -210,21 +210,27 @@ async function main(): Promise<number> {
   }
 
   // ── 7. lastVerifiedAt discipline ─────────────────────────────────
+  // A non-null lastVerifiedAt must imply the listing is currently VERIFIED
+  // or in the transient REVERIFYING hold (which deliberately keeps its prior
+  // date so a one-off timeout/5xx doesn't wipe a genuine verification). Any
+  // other status carrying a date is a stale "verified N days ago" lie — both
+  // the cron and the admin queue now clear lastVerifiedAt on a definitive
+  // demotion.
   console.log("");
   console.log("7. lastVerifiedAt discipline:");
   const fakeVerifiedAt = await prisma.listing.count({
     where: {
       AND: [
         { lastVerifiedAt: { not: null } },
-        { linkVerificationStatus: { not: "VERIFIED" } },
+        { linkVerificationStatus: { notIn: ["VERIFIED", "REVERIFYING"] } },
       ],
     },
   });
-  console.log(`   Listings with lastVerifiedAt set but linkVerificationStatus != VERIFIED: ${fakeVerifiedAt}`);
+  console.log(`   Listings with lastVerifiedAt set but status not in {VERIFIED, REVERIFYING}: ${fakeVerifiedAt}`);
   if (fakeVerifiedAt > 0) {
     outcomes.push({
       level: "FAIL",
-      message: `${fakeVerifiedAt} listing(s) have a non-null lastVerifiedAt but their current linkVerificationStatus is not VERIFIED. The "no fake dates" rule (RULES.md / PHASE3 plan §4) is violated. lastVerifiedAt must only advance on VERIFIED.`,
+      message: `${fakeVerifiedAt} listing(s) carry a non-null lastVerifiedAt while in a definitive non-verified status. The "no fake dates" rule (RULES.md / PHASE3 plan §4) is violated. Clear lastVerifiedAt on demotion (cron + admin queue do this going forward; existing rows need a one-time backfill).`,
     });
   }
 

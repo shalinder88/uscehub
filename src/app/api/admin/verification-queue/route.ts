@@ -460,19 +460,20 @@ async function handleListingAction(args: {
 function buildListingPatch(newStatus: LinkVerificationStatus): {
   linkVerificationStatus: LinkVerificationStatus;
   linkVerified?: boolean;
-  lastVerifiedAt?: Date;
+  lastVerifiedAt?: Date | null;
   verificationFailureReason: string | null;
 } {
-  // `linkVerified` legacy Boolean rules:
-  //   VERIFIED              → true (and advance lastVerifiedAt)
-  //   NEEDS_MANUAL_REVIEW   → false (definitive failure observed)
-  //   SOURCE_DEAD           → false (admin marked dead)
-  //   PROGRAM_CLOSED        → false (admin marked closed)
-  //   NO_OFFICIAL_SOURCE    → false (admin marked unsourced)
+  // `linkVerified` Boolean + `lastVerifiedAt` rules:
+  //   VERIFIED              → true;  advance lastVerifiedAt to now
+  //   NEEDS_MANUAL_REVIEW   → false; clear lastVerifiedAt
+  //   SOURCE_DEAD           → false; clear lastVerifiedAt
+  //   PROGRAM_CLOSED        → false; clear lastVerifiedAt
+  //   NO_OFFICIAL_SOURCE    → false; clear lastVerifiedAt
   //   REVERIFYING           → unchanged (transient holding state)
   //
-  // `lastVerifiedAt` only advances on VERIFIED — never on a failure or
-  // admin demotion.
+  // lastVerifiedAt advances only on VERIFIED and is cleared on any definitive
+  // demotion, so a stale "verified N days ago" date never outlives the
+  // verification it described (full history stays in DataVerification).
   if (newStatus === "VERIFIED") {
     return {
       linkVerificationStatus: newStatus,
@@ -490,10 +491,11 @@ function buildListingPatch(newStatus: LinkVerificationStatus): {
     return {
       linkVerificationStatus: newStatus,
       linkVerified: false,
+      lastVerifiedAt: null,
       verificationFailureReason: null,
     };
   }
-  // REVERIFYING fallthrough — admin can set this; legacy boolean unchanged.
+  // REVERIFYING fallthrough — admin can set this; legacy boolean + date left unchanged.
   return {
     linkVerificationStatus: newStatus,
     verificationFailureReason: null,
