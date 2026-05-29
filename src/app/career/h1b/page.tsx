@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "H-1B Visa Guide for Physicians — Cap-Exempt, Transfer, Fees — USCEHub",
+  title: "H-1B Visa Guide for Physicians — Cap-Exempt, Transfer, Fees",
   description:
     "Complete H-1B guide for physicians: cap-exempt employers, transfer rules, filing fees, premium processing, and what happens after your J-1 waiver. Updated for 2026.",
   alternates: {

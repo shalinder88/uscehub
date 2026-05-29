@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Post J-1 Waiver Physician Jobs — Reach IMG Physicians — USCEHub",
+  title: "Post J-1 Waiver Physician Jobs — Reach IMG Physicians",
   description:
     "Reach thousands of J-1 waiver and H-1B physicians actively searching for positions. Post your HPSA-designated positions where waiver physicians actually look.",
   alternates: {

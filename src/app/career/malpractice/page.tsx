@@ -603,6 +603,12 @@ export default function MalpracticePage() {
         </p>
       </section>
 
+      <p className="text-xs text-muted max-w-3xl">
+        Educational information only — not insurance, legal, or financial advice. Coverage terms,
+        premiums, and tail cost obligations vary by insurer, specialty, and state. Review your
+        specific policy and consult a licensed insurance professional before making coverage decisions.
+      </p>
+
       {/* Related Tools */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Link href="/career/contract" className="rounded-xl border border-border bg-surface p-5 hover:border-accent/50 transition-colors group">

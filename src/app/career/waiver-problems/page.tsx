@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "When Things Go Wrong During Your J-1 Waiver — USCEHub",
+  title: "When Things Go Wrong During Your J-1 Waiver",
   description:
     "What to do when your J-1 waiver employer breaches the contract, goes bankrupt, or creates a hostile work environment. Extenuating circumstances transfers, non-compete violations, and how to protect yourself.",
   alternates: {

@@ -201,7 +201,10 @@ export default function AttorneysPage() {
           This is not an exhaustive list. Inclusion does not constitute
           endorsement. We do not receive referral fees from any attorney
           listed. Firms marked &quot;Sponsored&quot; pay for enhanced visibility
-          but are held to the same listing standards.
+          but are held to the same listing standards. This directory is for
+          informational purposes only — no listing creates a lawyer-client
+          relationship. Verify credentials and fee agreements in writing before
+          engaging any attorney.
         </p>
       </section>
 

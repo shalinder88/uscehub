@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "State Medical Licensing Guide for Physicians — USCEHub",
+  title: "State Medical Licensing Guide for Physicians",
   description:
     "Complete guide to state medical licensing — processing times, fees, IMG requirements, IMLC Compact, FCVS, DEA registration, and the most common mistakes that delay your license.",
   alternates: {

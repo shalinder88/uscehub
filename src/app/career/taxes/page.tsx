@@ -20,8 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title:
-    "Tax Planning for Physicians — W-2, 1099, Deductions & Retirement Strategies — USCEHub",
+  title: { absolute: "Tax Planning for Physicians — W-2, 1099, Deductions & Retirement Strategies — USCEHub" },
   description:
     "Real tax strategies for physicians: W-2 vs 1099 structures, key deductions physicians miss, retirement account strategies (backdoor Roth, mega backdoor, SEP IRA), state tax comparison, and IMG-specific tax considerations.",
   alternates: {

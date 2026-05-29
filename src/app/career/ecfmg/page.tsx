@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ECFMG Certification Guide 2026 — Pathways, Fees, Timeline — USCEHub",
+  title: "ECFMG Certification Guide 2026 — Pathways, Fees, Timeline",
   description:
     "Complete ECFMG certification guide for IMGs. Six pathways, USMLE requirements, OET scores, fees ($4,000+ total), timeline to certification, and the 7-year rule explained.",
   alternates: {

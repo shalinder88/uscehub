@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Immigration Policy Alerts for Physicians — USCEHub",
+  title: "Immigration Policy Alerts for Physicians",
   description: "Real-time policy alerts on H-1B fees, Conrad 30 reauthorization, USCIS processing changes, and visa bulletin updates for physicians.",
 };
 

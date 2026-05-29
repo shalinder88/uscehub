@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Compare States for Physician Relocation — Side by Side — USCEHub",
+  title: "Compare States for Physician Relocation — Side by Side",
   description: "Compare 2-3 states side by side for physician relocation. Salary, tax, cost of living, malpractice, Conrad 30 availability, and licensing requirements.",
 };
 

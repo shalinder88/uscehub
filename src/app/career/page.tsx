@@ -174,7 +174,7 @@ export default function CareerPage() {
                   ))}
                 </div>
                 <div className="mt-3 pt-3 border-t border-border text-[10px] text-muted">
-                  16 specialties · From real job postings · Sources: Medscape, MGMA, PracticeLink
+                  26 specialties · Sources: Medscape, MGMA, Doximity
                 </div>
               </div>
             </Link>
@@ -193,7 +193,7 @@ export default function CareerPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">J-1 Waiver Jobs</h3>
-                    <p className="text-[10px] text-accent font-medium">29 jobs + 1,087 H-1B sponsors · 13 specialties</p>
+                    <p className="text-[10px] text-accent font-medium">J-1 waiver + H-1B physician positions · 1,087 verified employers</p>
                   </div>
                 </div>
                 <p className="text-xs text-muted mb-3">
@@ -357,7 +357,7 @@ export default function CareerPage() {
               { label: "Salary Benchmarks", href: "/career/salary" },
               { label: "Malpractice Guide", href: "/career/malpractice" },
               { label: "State Licensing", href: "/career/licensing" },
-              { label: "State Compare", href: "/career/state-compare" },
+              { label: "State Compare", href: "/career/compare-states" },
               { label: "Jobs by Specialty", href: "/career/jobs" },
               { label: "H-1B Sponsor Database", href: "/career/sponsors" },
               { label: "Interview Prep", href: "/career/interview" },
@@ -366,6 +366,8 @@ export default function CareerPage() {
               { label: "H-4 Spouse Guide", href: "/career/h4-spouse" },
               { label: "When Things Go Wrong", href: "/career/waiver-problems" },
               { label: "Find an Attorney", href: "/career/attorneys" },
+              { label: "Visa & Immigration", href: "/career/visa" },
+              { label: "Offers & Practice", href: "/career/practice" },
             ].map((t) => (
               <Link key={t.href} href={t.href} className="rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted hover:text-accent hover:border-accent/30 transition-colors">
                 {t.label}

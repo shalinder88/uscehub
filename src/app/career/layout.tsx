@@ -36,7 +36,6 @@ const sections = [
   { label: "Visa & Immigration", href: "/career/visa", icon: Globe },
   { label: "Jobs", href: "/career/jobs", icon: Briefcase },
   { label: "Offers & Practice", href: "/career/practice", icon: FileText },
-  { label: "Attorneys", href: "/career/attorneys", icon: Scale },
 ];
 
 export default function CareerLayout({
@@ -72,6 +71,13 @@ export default function CareerLayout({
               className="shrink-0 mx-1 h-5 w-px bg-border"
               aria-hidden="true"
             />
+            <Link
+              href="/career/attorneys"
+              className="shrink-0 flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-muted/70 transition-colors hover:text-accent hover:bg-accent/5"
+            >
+              <Scale className="h-3.5 w-3.5" />
+              Immigration Attorneys
+            </Link>
             <Link
               href="/career/employers"
               className="shrink-0 flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-muted/70 transition-colors hover:text-accent hover:bg-accent/5"

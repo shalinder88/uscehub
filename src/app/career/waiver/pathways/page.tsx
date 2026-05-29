@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "J-1 Waiver Pathways Beyond Conrad 30 — HHS, ARC, DRA, SCRC, VA — USCEHub",
+    "J-1 Waiver Pathways Beyond Conrad 30 — HHS, ARC, DRA, SCRC, VA",
   description:
     "Complete guide to all 6 J-1 waiver pathways for physicians: Conrad 30, HHS Clinical Care, ARC, DRA, SCRC, and VA. Requirements, processing times, fees, and which pathway is right for you.",
   alternates: {

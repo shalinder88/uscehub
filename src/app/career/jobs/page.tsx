@@ -6,7 +6,7 @@ import { JobsSearch } from "./jobs-search";
 import { getJobCount, getUniqueSpecialties } from "@/lib/waiver-jobs-data";
 
 export const metadata: Metadata = {
-  title: "J-1 Waiver Physician Jobs — Verified Positions — USCEHub",
+  title: "J-1 Waiver Physician Jobs — Verified Positions",
   description:
     "Search verified J-1 waiver and H-1B physician jobs from real hospitals. Salary data, HPSA status, waiver pathway eligibility — all on one page. No stale data, no recruiter spam.",
   alternates: {

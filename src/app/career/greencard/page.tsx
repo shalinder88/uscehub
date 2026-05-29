@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Green Card Pathway for Physicians — EB-2 NIW, EB-1, PERM — USCEHub",
+  title: "Green Card Pathway for Physicians — EB-2 NIW, EB-1, PERM",
   description:
     "Complete guide to green card pathways for J-1 waiver physicians after completing their 3-year service commitment. EB-2 NIW, EB-1, PERM employer sponsorship, timelines, and costs.",
   alternates: {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "State Financial Comparison for Physicians — USCEHub",
+  title: "State Financial Comparison for Physicians",
   description: "Compare all 50 states by physician salary, state income tax, cost of living, malpractice environment, and estimated take-home pay.",
 };
 

@@ -23,7 +23,7 @@ import {
 
 export const metadata: Metadata = {
   title:
-    "Locum Tenens Guide for New Attendings — Pay Rates, Agencies & Tax Tips — USCEHub",
+    "Locum Tenens Guide for New Attendings — Pay Rates, Agencies & Tax Tips",
   description:
     "Complete locum tenens guide for physicians: pay rates by specialty (2025-2026), top agencies, how it works, visa restrictions, 1099 tax strategies, common mistakes, and whether locums is right for you.",
   alternates: {

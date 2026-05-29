@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Physician Loan Repayment Programs — NHSC, PSLF, State Programs — USCEHub",
+  title: "Physician Loan Repayment Programs — NHSC, PSLF, State Programs",
   description:
     "Complete guide to physician loan repayment: NHSC ($75K-$160K tax-free), PSLF (full forgiveness after 120 payments), state programs (up to $300K), and how to stack them strategically.",
   alternates: {

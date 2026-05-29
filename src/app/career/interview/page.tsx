@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Interview Prep for Attending Jobs — USCEHub",
+  title: "Interview Prep for Attending Jobs",
   description:
     "Comprehensive interview preparation guide for physicians seeking attending positions. Questions to ask employers, red flags to watch for, contract review checklist, and immigration-specific interview tips.",
   alternates: {
