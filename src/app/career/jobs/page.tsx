@@ -8,14 +8,14 @@ import { getJobCount, getUniqueSpecialties } from "@/lib/waiver-jobs-data";
 export const metadata: Metadata = {
   title: "J-1 Waiver Physician Jobs — Verified Positions",
   description:
-    "Search verified J-1 waiver and H-1B physician jobs from real hospitals. Salary data, HPSA status, waiver pathway eligibility — all on one page. No stale data, no recruiter spam.",
+    "Search verified J-1 waiver and H-1B physician jobs from real hospitals. Salary data, HPSA status, waiver pathway eligibility. Data snapshot last verified March 2026.",
   alternates: {
     canonical: "https://uscehub.com/career/jobs",
   },
   openGraph: {
     title: "J-1 Waiver Physician Jobs — USCEHub",
     description:
-      "Verified physician positions with J-1 waiver and H-1B sponsorship. Real employers, real salaries, updated 3x daily.",
+      "Verified physician positions with J-1 waiver and H-1B sponsorship. Real employers, real salaries. Snapshot last verified March 2026.",
     url: "https://uscehub.com/career/jobs",
   },
 };
@@ -37,7 +37,7 @@ export default function WaiverJobsPage() {
               J-1 Waiver Physician Jobs
             </h1>
             <p className="text-xs text-muted mt-0.5">
-              {jobCount} verified positions · {specialtyCount} specialties · Updated 3x daily
+              {jobCount} verified positions · {specialtyCount} specialties · Snapshot: March 2026
             </p>
           </div>
         </div>

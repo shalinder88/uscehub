@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import {
   Search,
@@ -38,12 +38,19 @@ const ALL_SPECIALTIES = [
   "Psychiatry","Radiology",
 ];
 
+const PAGE_SIZE = 50;
+
 export function SponsorSearch() {
   const [query, setQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("all");
   const [specFilter, setSpecFilter] = useState("all");
   const [sortBy, setSortBy] = useState<"salary" | "positions" | "name">("salary");
   const [showFilters, setShowFilters] = useState(false);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    setPage(0);
+  }, [query, stateFilter, specFilter, sortBy]);
 
   const states = useMemo(() => {
     const s = new Set(SPONSOR_DATA.map((d) => d.s));
@@ -234,7 +241,7 @@ export function SponsorSearch() {
 
       {/* Results */}
       <div className="space-y-2">
-        {filtered.slice(0, 50).map((r, i) => (
+        {filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE).map((r, i) => (
           <div
             key={`${r.e}-${r.s}-${i}`}
             className="rounded-lg border border-border bg-surface p-4 hover:border-accent/30 transition-colors"
@@ -276,9 +283,37 @@ export function SponsorSearch() {
         ))}
       </div>
 
-      {filtered.length > 50 && (
-        <div className="mt-4 text-center text-xs text-muted">
-          Showing 50 of {filtered.length.toLocaleString()} results. Refine your search to see more.
+      {/* Pagination */}
+      {filtered.length > PAGE_SIZE && (
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-muted">
+            Showing{" "}
+            <strong className="text-foreground">
+              {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, filtered.length)}
+            </strong>{" "}
+            of{" "}
+            <strong className="text-foreground">{filtered.length.toLocaleString()}</strong>{" "}
+            employers
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setPage(page - 1)}
+              disabled={page === 0}
+              className="rounded-lg border border-border bg-surface px-3 py-1.5 text-xs text-muted hover:text-foreground hover:border-accent/50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Previous
+            </button>
+            <span className="text-xs text-muted tabular-nums">
+              {page + 1} / {Math.ceil(filtered.length / PAGE_SIZE)}
+            </span>
+            <button
+              onClick={() => setPage(page + 1)}
+              disabled={(page + 1) * PAGE_SIZE >= filtered.length}
+              className="rounded-lg border border-border bg-surface px-3 py-1.5 text-xs text-muted hover:text-foreground hover:border-accent/50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Next
+            </button>
+          </div>
         </div>
       )}
 
