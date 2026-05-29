@@ -20,6 +20,7 @@ import {
   MapPin,
   Shield,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 const IMPACT_STYLES = {
   critical: {
@@ -113,6 +114,9 @@ export default function PolicyAlertsPage() {
           specifically relevant to physician immigration. Every alert
           links to the official source.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "AILA"]} />
+        </div>
       </div>
 
       {/* Filters */}

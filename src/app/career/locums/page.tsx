@@ -20,6 +20,7 @@ import {
   Lightbulb,
   TrendingUp,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title:
@@ -336,6 +337,9 @@ export default function LocumsPage() {
               credentialing, exploring practice settings, or bridging
               between jobs. Here is everything you need to know.
             </p>
+            <div className="mt-4">
+              <VerifiedBadge date="March 2026" sources={["MGMA", "AMGA", "DOL"]} />
+            </div>
           </div>
         </div>
       </section>

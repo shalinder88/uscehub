@@ -18,6 +18,7 @@ import {
   Home,
   Info,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 interface JourneyStage {
   id: string;
@@ -182,6 +183,9 @@ export default function VisaJourneyPage() {
           card — every visa status, every step, every decision point. Click
           each stage for details.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "ECFMG"]} />
+        </div>
       </div>
 
       {/* Visual Journey Flow */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TaxCalculator } from "./taxes-calculator";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import {
   Calculator,
   DollarSign,
@@ -333,6 +334,9 @@ export default function TaxesPage() {
               strategies and deductions you should know about — whether you
               are W-2 employed, doing 1099 locum work, or both.
             </p>
+            <div className="mt-4">
+              <VerifiedBadge date="March 2026" sources={["IRS", "IRS Publication 535", "IRS Publication 560"]} />
+            </div>
           </div>
         </div>
       </section>

@@ -14,6 +14,7 @@ import {
   Info,
   Calendar,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Credentialing & Privileging Guide — Start 6 Months Early",
@@ -168,6 +169,9 @@ export default function CredentialingPage() {
           means zero revenue for your employer and a terrible first impression.
           Start in PGY-3 if you can.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="March 2026" sources={["URAC", "NCQA", "TJC"]} />
+        </div>
       </div>
 
       {/* ═══ SECTION 1: What Is What ═══ */}

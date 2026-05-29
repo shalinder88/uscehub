@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, ArrowRight } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Visa & Immigration for Physicians — J-1, H-1B, Green Card",
@@ -100,6 +101,9 @@ export default function VisaHubPage() {
                 green card, and citizenship. Every guide is built from official
                 USCIS, Department of State, and ECFMG data.
               </p>
+              <div className="mt-4">
+                <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "ECFMG"]} />
+              </div>
             </div>
           </div>
         </div>

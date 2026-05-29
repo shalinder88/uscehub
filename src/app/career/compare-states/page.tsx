@@ -16,6 +16,7 @@ import {
   Plus,
   X,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 import { WAIVER_STATES } from "@/lib/waiver-data";
 import {
   STATE_COMPARISON_DATA,
@@ -266,6 +267,9 @@ export default function CompareStatesPage() {
           cost of living, malpractice climate, and quality-of-life factors.
           Select 2 or 3 states to compare.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="March 2026" sources={["DOS Conrad 30", "MGMA", "AAMC"]} />
+        </div>
       </div>
 
       {/* ═══ State Selectors ═══ */}

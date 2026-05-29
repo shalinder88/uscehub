@@ -9,6 +9,7 @@ import {
   Lightbulb,
   Star,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Citizenship Pathways — Immigration Timeline for Physicians",
@@ -221,6 +222,9 @@ export default function CitizenshipPage() {
             medical graduates. From J-1 waiver to green card, with timeline
             estimates and key considerations.
           </p>
+          <div className="mt-3 flex justify-center">
+            <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "ECFMG"]} />
+          </div>
         </div>
 
         {/* Disclaimer */}
