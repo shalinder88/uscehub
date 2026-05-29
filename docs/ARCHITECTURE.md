@@ -3,6 +3,8 @@
 **Last updated:** May 2026  
 **Status:** Active — this is the living single source of truth for product direction.
 
+> **May 2026 addition:** Three new product layers are planned but not yet built — Trainee Workspace (My Pathway), Structured Community Intelligence, and Resident Rights & Workplace Resources. See their planning docs in `docs/platform-v2/local/`. These are additive; they do not change the current build or indexing work.
+
 ---
 
 ## Platform positioning
@@ -12,7 +14,10 @@
 
 Not: IMG-only observership directory.  
 Not: generic med-student portal.  
-Not: physician career/insurance lead-gen site.
+Not: physician career/insurance lead-gen site.  
+Not: a union organizing platform.  
+Not: a legal advice service.  
+Not: a workplace allegations board.
 
 The "source-linked" qualifier is a hard design principle, not marketing. Every claim on the platform must trace to a verifiable, named source. This is what separates USCEHub from AI content farms and scraping aggregators.
 
@@ -126,6 +131,66 @@ Exist at `/residency/*` but are NOT in main nav yet.
 Content (boards, salary, finances, moonlighting, survival, fellowship guide) is accessible via direct link and from IMG Corner.  
 Do NOT promote to main nav until program-level data is credible.
 
+### Trainee Workspace — My Pathway (Phase 5–6)
+Web app / PWA account layer. Not a native mobile app yet.  
+Public name: **My Pathway**. Internal name: Trainee Workspace.
+
+The account value that gives users a reason to return daily:
+
+```
+Saved USCE programs
+Saved Visa & Jobs pages
+Application tracker
+Interview tracker
+Program comparison
+Visa/job watchlist
+State waiver watchlist
+Deadline reminders
+Contract checklist
+Source-link alerts
+Salary/offer comparison
+Report-issue status
+```
+
+Accounts must be low-friction (email only). No paywall.  
+Reading works without login. Saving requires login with `returnTo`.  
+See: `docs/platform-v2/local/app/MY_PATHWAY_TRAINEE_WORKSPACE_PLAN.md`
+
+### Structured Community Intelligence (Phase 6)
+Forms-based structured reports. Not an open forum.  
+Moderation-first. Minimum display thresholds before public exposure.
+
+```
+I rotated here (USCE experience report)
+I interviewed here
+I matched here
+I applied here
+I worked here as a resident/fellow
+I received an offer here (salary/contract datapoint)
+```
+
+Each form: structured fields + optional free text + moderation gate.  
+No unreviewed allegations. No employer-specific campaign coordination.  
+See: `docs/platform-v2/local/community/STRUCTURED_COMMUNITY_INTELLIGENCE_PLAN.md`
+
+### Resident Rights & Workplace Resources (Phase 7+, neutral only)
+Educational resource lane. Not an organizing product.
+
+```
+Duty hours and ACGME rules
+Moonlighting rules
+Contract basics
+Leave policies
+Harassment and reporting resources
+Resident unions — what they are, what they can and cannot do
+Public vs private hospital labor law differences
+Official links (NLRB, CIR, state labor boards)
+```
+
+Frame: **Resident Rights & Workplace Resources**  
+Not: "Unionize Now." Not: legal advice. Not: employer-specific campaigns.  
+See: `docs/platform-v2/local/resident-rights/RESIDENT_RIGHTS_RESOURCE_POLICY.md`
+
 ---
 
 ## What stays permanently noindex
@@ -182,20 +247,56 @@ Do NOT promote to main nav until program-level data is credible.
 - [ ] Step timeline for IMGs
 - [ ] Match strategy + competitiveness guide
 
-### Phase 6 — Data moat (Months 3–6)
+### Phase 5.5 — My Pathway / Trainee Workspace foundation (Months 2–4)
+- [ ] Account creation + save infrastructure
+- [ ] Saved USCE programs
+- [ ] Saved Visa & Jobs pages
+- [ ] Application tracker (basic)
+- [ ] Visa/job watchlist + email reminders
+- [ ] No native app yet — web/PWA only
+
+### Phase 6 — Data moat + community intelligence (Months 3–6)
 - [ ] Scale USCE directory: 304 → 2,000+ (cron-extractor)
 - [ ] Program-level intelligence fields (IMG %, visa history, matched profile)
-- [ ] Application tracker (account feature)
 - [ ] Competitiveness tool ("Am I competitive for X specialty?")
-- [ ] Structured community review system (interview intel, program experience, visa signal)
+- [ ] Structured community forms: USCE experience, interview, match, offer datapoints
+- [ ] Moderation system before any community data is surfaced publicly
+- [ ] Interview tracker + program comparison (My Pathway v2)
 
-### Phase 7 — Monetization (After traffic)
+### Phase 7 — Resident Rights resources (Months 6–12, neutral only)
+- [ ] Duty hours, moonlighting, contract basics, leave policies
+- [ ] Workplace resources and reporting links
+- [ ] Resident unions explained — neutral, educational, not organizing
+- [ ] Public vs private hospital labor law overview
+- [ ] Official links only (NLRB, CIR, state labor boards)
+- [ ] No legal advice, no employer-specific coordination, no allegation publishing
+
+### Phase 8 — Monetization (After traffic)
 - [ ] Flat attorney sponsorship (with disclosure system + verified-above-paid rule)
 - [ ] Employer job posts
 - [ ] Insurance affiliate
 - [ ] Recruiter lead-gen
 
 **Rule:** No monetization before traffic exists, FTC disclosures are built, and click tracking is instrumented.
+
+---
+
+## Analytics events (required before Wave 1 sitemap)
+
+These events must be instrumented before career pages go into the sitemap and before any meaningful traffic analysis is possible:
+
+```
+pathway_card_clicked
+visa_jobs_nav_clicked
+saved_program
+source_link_clicked
+report_issue_clicked
+email_signup
+account_created
+application_tracker_started
+offer_compare_started
+resident_rights_clicked   (future — when that section exists)
+```
 
 ---
 
@@ -213,5 +314,12 @@ The 50+ career and residency content pages already built are structurally correc
 4. No global noindex flip — staged waves with per-page decisions
 5. No monetization before traffic + disclosure system
 6. No premature Residency directory competing with FREIDA at low scale
-7. Analytics must be instrumented before Wave 1 indexing
+7. Analytics must be instrumented before Wave 1 sitemap submission
 8. "Source-linked" is a hard design principle on every page that gets indexed
+9. USCEHub is not a union platform — labor organizing is not a product identity or feature
+10. No open community forum before moderation system exists
+11. No unreviewed allegations published — moderation gate required for all community data
+12. No legal advice anywhere on the platform
+13. No employer-specific organizing coordination
+14. No native mobile app until web/PWA has demonstrated daily active use
+15. Anonymous display by default for community/workplace reports — never expose email or name
