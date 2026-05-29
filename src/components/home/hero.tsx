@@ -217,12 +217,6 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
           font-weight: 500;
           color: var(--ink);
         }
-        .hero-127 .h-stat-val sup {
-          color: var(--teal);
-          font-size: .55em;
-          vertical-align: super;
-          margin-left: 2px;
-        }
         .hero-127 .h-stat-label {
           margin-top: 6px;
           font-size: 11.5px;
@@ -318,7 +312,6 @@ export function Hero({ listingCount, stateCount, specialtyCount, typeCounts, sta
             <div key={s.label} className="h-stat">
               <div className="h-stat-val">
                 {s.value}
-                <sup>+</sup>
               </div>
               <div className="h-stat-label">{s.label}</div>
             </div>

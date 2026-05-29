@@ -171,7 +171,6 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
     const lookup = findDisplayEligibleByName(listing.title);
     const sourceBadge: SourceBadge | undefined =
       lookup?.row.badge === "DIRECT" ||
-      lookup?.row.badge === "REORIENTED" ||
       lookup?.row.badge === "PROTECTED" ||
       lookup?.row.badge === "RESEARCH"
         ? (lookup.row.badge as SourceBadge)

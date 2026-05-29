@@ -27,63 +27,52 @@ interface FeedSource {
   label: string;
   url: string;
   /** Optional topical filter — only include items whose title contains
-   *  one of these keywords. Used to keep, e.g., USCIS-wide news pinned
-   *  to immigration-relevant updates rather than every press release. */
+   *  one of these keywords. Used to keep each feed scoped to
+   *  USMLE-applicant-facing items rather than every press release. */
   keywords?: string[];
 }
 
 /**
- * Initial feed set. URLs are documented from the authority's public
- * RSS index. If any feed starts 404'ing it should be dropped here —
- * the runtime degrades silently but the dead URL accumulates noise
- * in server logs.
+ * Feed set — scoped to U.S. residency *applicants* (IMGs sitting the
+ * USMLE and entering the Match).
+ *
+ * 2026-05-28: dropped USCIS (`all-news.xml`) and AAMC (`news.xml`) —
+ * both now 404. USCIS publishes no applicant-scoped RSS and AAMC's
+ * surviving feed is a stale single 2023 item, so neither is replaced.
+ * The two live, on-topic authorities are ECFMG (certification, USMLE,
+ * Pathways, ERAS) and NRMP (the Match). Both are keyword-filtered to
+ * applicant-facing items so program/institution newsletters and portal
+ * uptime notices don't crowd the strip.
  */
+const APPLICANT_KEYWORDS = [
+  "usmle",
+  "step",
+  "eras",
+  "pathways",
+  "match",
+  "rank",
+  "soap",
+  "img",
+  "ecfmg",
+  "certification",
+  "visa",
+  "j-1",
+  "waiver",
+  "fee",
+];
+
 const SOURCES: FeedSource[] = [
-  {
-    id: "uscis",
-    label: "USCIS",
-    url: "https://www.uscis.gov/news/all-news.xml",
-    keywords: [
-      "visa",
-      "h-1b",
-      "h1b",
-      "j-1",
-      "j1",
-      "green card",
-      "physician",
-      "medical",
-      "waiver",
-      "conrad",
-      "ead",
-      "i-485",
-      "premium processing",
-    ],
-  },
-  {
-    id: "aamc",
-    label: "AAMC",
-    url: "https://www.aamc.org/news.xml",
-    keywords: [
-      "img",
-      "international",
-      "residency",
-      "match",
-      "eras",
-      "graduate",
-      "step",
-      "visa",
-      "ecfmg",
-    ],
-  },
   {
     id: "ecfmg",
     label: "ECFMG",
-    url: "https://www.ecfmg.org/news/feed.xml",
+    url: "https://www.ecfmg.org/news/feed/",
+    keywords: APPLICANT_KEYWORDS,
   },
   {
     id: "nrmp",
     label: "NRMP",
     url: "https://www.nrmp.org/feed/",
+    keywords: APPLICANT_KEYWORDS,
   },
 ];
 
@@ -149,6 +138,7 @@ function stripTags(html: string): string {
   return tagsOut
     .join("")
     .split("&amp;").join("&")
+    .split("&#38;").join("&")
     .split("&lt;").join("<")
     .split("&gt;").join(">")
     .split("&quot;").join('"')

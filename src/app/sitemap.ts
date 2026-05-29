@@ -72,8 +72,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       // /img-corner went live 2026-05-28 with the Residency Intelligence
       // promo card + RSS-backed external news strip pulling from
-      // USCIS / AAMC / ECFMG / NRMP. Indexable; refreshed daily because
-      // the news strip changes.
+      // ECFMG / NRMP. Indexable; refreshed daily because the news strip
+      // changes.
       url: `${baseUrl}/img-corner`,
       lastModified: new Date(),
       changeFrequency: "daily",

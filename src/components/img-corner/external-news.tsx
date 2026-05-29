@@ -33,10 +33,10 @@ function relativeDays(d: Date): string {
 /**
  * IMG-relevant external news — RSS-backed, scoped to /img-corner only.
  *
- * Pulls from authoritative orgs only (USCIS, AAMC, ECFMG, NRMP) via
- * the cached fetcher in lib/img-news.ts. If all feeds fail, the
- * component renders a small "we'll be back" panel rather than nothing,
- * so the surface is honestly explained.
+ * Pulls from ECFMG and NRMP — the two authorities that publish
+ * applicant-facing RSS — via the cached fetcher in lib/img-news.ts.
+ * If all feeds fail, the component renders a small "we'll be back"
+ * panel rather than nothing, so the surface is honestly explained.
  *
  * Per the user's news-shape decision (2026-05-28), this lives on
  * /img-corner only — NOT on the home page. The home stays focused on
@@ -74,7 +74,7 @@ export async function ExternalNews() {
           className="mx-auto mt-2 max-w-md text-sm"
           style={{ color: "var(--ink-soft)", lineHeight: 1.55 }}
         >
-          We pull live updates from USCIS, AAMC, ECFMG, and NRMP. One or
+          We pull live updates from ECFMG and NRMP. One or
           more of those feeds is offline right now &mdash; check back
           shortly. In the meantime, the official pages remain reachable
           directly.
@@ -121,11 +121,11 @@ export async function ExternalNews() {
               letterSpacing: "-0.01em",
             }}
           >
-            IMG &amp; visa updates
+            USMLE &amp; Match updates
           </h2>
         </div>
         <p className="hidden sm:block text-xs" style={{ color: "var(--text-muted)" }}>
-          USCIS &middot; AAMC &middot; ECFMG &middot; NRMP
+          ECFMG &middot; NRMP
         </p>
       </div>
 

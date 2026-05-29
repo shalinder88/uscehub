@@ -16,8 +16,8 @@ import { Info } from "lucide-react";
  *   - /career and any /career/* route (protected unfinished asset)
  *   - global layouts
  *
- * Tone: informational, not alarming. Implies active stewardship of
- * link/deadline accuracy without suggesting the site is broken. Render
+ * Tone: informational, not alarming. A standard verify-before-applying
+ * disclaimer that must not suggest links are broken or unverified. Render
  * only when at least one listing is shown — not on empty-state pages.
  */
 export function ListingDisclaimer({ className = "" }: { className?: string }) {
@@ -28,8 +28,8 @@ export function ListingDisclaimer({ className = "" }: { className?: string }) {
     >
       <Info className="mt-0.5 h-4 w-4 shrink-0 text-slate-500 dark:text-slate-400" aria-hidden="true" />
       <p>
-        We are re-verifying application links and deadlines. Always confirm
-        details on the official institution page before applying.
+        Always confirm details on the official institution page before
+        applying. Requirements, fees, and deadlines can change.
       </p>
     </div>
   );
