@@ -13,17 +13,17 @@ import { ArrowLeft, MapPin, ExternalLink } from "lucide-react";
 // Based on ColorBrewer 2.0 recommendations
 function getStateColor(stateCode: string): string {
   const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
-  if (!state) return "#334155";
-  if (state.fillPattern === "fills_early") return "#b91c1c"; // dark red — critical
-  if (state.fillPattern === "fills_all") return "#d97706"; // amber — warning
-  if (state.remainingSlots > 10) return "#2563eb"; // blue — available (good)
-  if (state.remainingSlots > 0) return "#7c3aed"; // purple — few remaining
-  return "#b91c1c";
+  if (!state) return "#d4d4d8";
+  if (state.fillPattern === "fills_early") return "#c0392b";
+  if (state.fillPattern === "fills_all") return "#e08c00";
+  if (state.remainingSlots > 10) return "#2563eb";
+  if (state.remainingSlots > 0) return "#7c3aed";
+  return "#c0392b";
 }
 
 function getHoverColor(stateCode: string): string {
   const state = FY2025_SLOTS.find((s) => s.stateCode === stateCode);
-  if (!state) return "#475569";
+  if (!state) return "#a1a1aa";
   if (state.fillPattern === "fills_early") return "#991b1b";
   if (state.fillPattern === "fills_all") return "#b45309";
   if (state.remainingSlots > 10) return "#1d4ed8";
@@ -115,13 +115,13 @@ export default function WaiverMapPage() {
                     d={path}
                     fill={
                       isSelected
-                        ? "#818cf8"
+                        ? "#0f5757"
                         : isHovered
                         ? getHoverColor(code)
                         : getStateColor(code)
                     }
-                    stroke={isSelected ? "#c7d2fe" : "#1e293b"}
-                    strokeWidth={isSelected ? 2 : 0.75}
+                    stroke={isSelected ? "#c5dcd9" : "#9ca3af"}
+                    strokeWidth={isSelected ? 2 : 0.5}
                     className="cursor-pointer transition-colors duration-150"
                     onMouseEnter={() => setHoveredState(code)}
                     onMouseLeave={() => setHoveredState(null)}
@@ -146,8 +146,8 @@ export default function WaiverMapPage() {
                   <span
                     className={
                       hoveredData.remainingSlots > 0
-                        ? "text-green-400 font-bold"
-                        : "text-red-400 font-bold"
+                        ? "text-green-700 font-bold"
+                        : "text-red-700 font-bold"
                     }
                   >
                     {hoveredData.remainingSlots} remaining
@@ -209,8 +209,8 @@ export default function WaiverMapPage() {
                   <span
                     className={`font-bold ${
                       selectedData.remainingSlots > 0
-                        ? "text-green-400"
-                        : "text-red-400"
+                        ? "text-green-700"
+                        : "text-red-700"
                     }`}
                   >
                     {selectedData.remainingSlots} slots
@@ -287,7 +287,7 @@ export default function WaiverMapPage() {
                 <div className="text-[10px] text-muted">Filled</div>
               </div>
               <div className="rounded-lg bg-surface-alt p-2">
-                <div className="text-lg font-bold text-green-400">
+                <div className="text-lg font-bold text-green-700">
                   {summary.totalRemaining}
                 </div>
                 <div className="text-[10px] text-muted">Remaining</div>

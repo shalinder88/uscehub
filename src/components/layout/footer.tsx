@@ -1,17 +1,16 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HeartPulse, Globe } from "lucide-react";
 
-/**
- * Compact cream footer. 3 columns instead of 4, ~half the height of the
- * previous version. No duplicate links across columns.
- */
 export function Footer() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
-  if (pathname?.startsWith("/career")) {
+  if (mounted && pathname?.startsWith("/career")) {
     return (
       <footer
         className="border-t"

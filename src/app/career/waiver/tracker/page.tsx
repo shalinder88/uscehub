@@ -49,7 +49,7 @@ function SlotBar({ filled, total }: { filled: number; total: number }) {
 function StatusBadge({ pattern }: { pattern: ConradSlotStatus["fillPattern"] }) {
   if (pattern === "fills_early") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-red-500/10 text-red-400">
+      <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-red-500/10 text-red-700">
         <XCircle className="h-2.5 w-2.5" />
         Fills Early
       </span>
@@ -65,7 +65,7 @@ function StatusBadge({ pattern }: { pattern: ConradSlotStatus["fillPattern"] }) 
   }
   if (pattern === "has_remaining") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-green-500/10 text-green-400">
+      <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium bg-green-500/10 text-green-700">
         <CheckCircle2 className="h-2.5 w-2.5" />
         Slots Available
       </span>
@@ -142,7 +142,7 @@ export default function ConradTrackerPage() {
           Each state gets 30 slots per federal fiscal year (October 1 -
           September 30).
         </p>
-        <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-400">
+        <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-700">
           <CheckCircle2 className="h-3.5 w-3.5" />
           <span>
             Last updated: <strong>{summary.lastUpdated}</strong>
@@ -167,21 +167,21 @@ export default function ConradTrackerPage() {
           </div>
         </div>
         <div className="rounded-xl border border-border bg-surface p-5 text-center">
-          <div className="text-3xl font-bold text-green-400">
+          <div className="text-3xl font-bold text-green-700">
             {summary.totalRemaining}
           </div>
           <div className="text-xs text-muted mt-1">Slots Remaining</div>
           <div className="text-xs text-muted mt-0.5">across all states</div>
         </div>
         <div className="rounded-xl border border-border bg-surface p-5 text-center">
-          <div className="text-3xl font-bold text-red-400">
+          <div className="text-3xl font-bold text-red-700">
             {summary.statesFull}
           </div>
           <div className="text-xs text-muted mt-1">States Full</div>
           <div className="text-xs text-muted mt-0.5">all slots used</div>
         </div>
         <div className="rounded-xl border border-border bg-surface p-5 text-center">
-          <div className="text-3xl font-bold text-green-400">
+          <div className="text-3xl font-bold text-green-700">
             {summary.statesWithSlots}
           </div>
           <div className="text-xs text-muted mt-1">States Available</div>
@@ -304,8 +304,8 @@ export default function ConradTrackerPage() {
                     <span
                       className={`font-mono text-sm font-bold ${
                         state.remainingSlots > 0
-                          ? "text-green-400"
-                          : "text-red-400"
+                          ? "text-green-700"
+                          : "text-red-700"
                       }`}
                     >
                       {state.remainingSlots}

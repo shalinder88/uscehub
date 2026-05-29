@@ -129,25 +129,26 @@ body {
 }
 
 /* ============================================
-   Phase 2/3 Design Tokens (Sasanova style)
-   These are used ONLY by /residency/* and /career/* pages.
-   Phase 1 pages continue using slate-* / dark:* classes.
+   Career / Visa-and-Jobs pages — Tailwind theme tokens.
+   References Sonolex CSS vars so dark-mode works automatically.
+   bg-surface, text-muted, text-accent, border-border, etc.
+   all resolve to the same cream+teal palette as the main site.
    ============================================ */
 @theme inline {
-  --color-background: #0c0c0f;
-  --color-foreground: #e4e4e7;
-  --color-surface: #16161a;
-  --color-surface-alt: #1e1e24;
-  --color-border: #2a2a32;
-  --color-border-strong: #3a3a44;
-  --color-muted: #9ca3af;
-  --color-accent: #818cf8;
-  --color-accent-light: rgba(129, 140, 248, 0.1);
-  --color-accent-dark: #a5b4fc;
-  --color-success: #4ade80;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
-  --color-cyan: #22d3ee;
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-surface: var(--paper);
+  --color-surface-alt: var(--paper-soft);
+  --color-border: var(--line);
+  --color-border-strong: var(--line);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--teal);
+  --color-accent-light: var(--teal-soft);
+  --color-accent-dark: var(--teal-deep);
+  --color-success: #28a745;
+  --color-warning: #e08c00;
+  --color-danger: #c0392b;
+  --color-cyan: var(--teal);
 }
 
 /* Hover utilities for Phase 2/3 */

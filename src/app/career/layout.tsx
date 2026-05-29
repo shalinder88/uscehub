@@ -45,7 +45,10 @@ export default function CareerLayout({
 }) {
   return (
     <section>
-      <nav className="sticky top-16 z-30 border-b border-border bg-background/80 backdrop-blur-md">
+      <nav
+        className="sticky top-16 z-30 border-b backdrop-blur-md"
+        style={{ background: "var(--bg)", borderColor: "var(--line)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-3 -mb-px">
             <Link

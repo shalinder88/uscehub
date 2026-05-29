@@ -536,7 +536,7 @@ export default function LocumsPage() {
                     {visa.canDoLocums ? (
                       <CheckCircle className="h-5 w-5 text-success" />
                     ) : visa.severity === "critical" ? (
-                      <XCircle className="h-5 w-5 text-red-400" />
+                      <XCircle className="h-5 w-5 text-red-700" />
                     ) : (
                       <Ban className="h-5 w-5 text-amber-400" />
                     )}
@@ -551,7 +551,7 @@ export default function LocumsPage() {
                           visa.canDoLocums
                             ? "bg-success/10 text-success"
                             : visa.severity === "critical"
-                              ? "bg-red-400/10 text-red-400"
+                              ? "bg-red-400/10 text-red-700"
                               : "bg-amber-400/10 text-amber-400"
                         }`}
                       >

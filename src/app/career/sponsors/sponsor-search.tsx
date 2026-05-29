@@ -107,7 +107,7 @@ export function SponsorSearch() {
             </p>
           </div>
         </div>
-        <div className="mt-2 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-400">
+        <div className="mt-2 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-700">
           <Shield className="h-3.5 w-3.5" />
           <span>Source: <strong>U.S. Department of Labor</strong> LCA Public Data (FY2025 Q3)</span>
           <span className="text-slate-500">· Public domain · No paywall</span>

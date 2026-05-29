@@ -25,7 +25,7 @@ const IMPACT_STYLES = {
   critical: {
     border: "border-red-500/30",
     bg: "bg-red-500/5",
-    badge: "bg-red-500/10 text-red-400",
+    badge: "bg-red-500/10 text-red-700",
     label: "CRITICAL",
   },
   high: {
@@ -37,7 +37,7 @@ const IMPACT_STYLES = {
   medium: {
     border: "border-yellow-500/30",
     bg: "bg-yellow-500/5",
-    badge: "bg-yellow-500/10 text-yellow-400",
+    badge: "bg-yellow-500/10 text-amber-700",
     label: "MEDIUM",
   },
   low: {

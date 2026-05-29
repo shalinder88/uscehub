@@ -113,10 +113,10 @@ export default async function WaiverStatePage({
               {/* Dynamic confidence label */}
               <div className={`mt-4 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
                 stateData.confidence === "official"
-                  ? "bg-green-500/10 text-green-400"
+                  ? "bg-green-500/10 text-green-700"
                   : stateData.confidence === "community"
-                  ? "bg-blue-500/10 text-blue-400"
-                  : "bg-yellow-500/10 text-yellow-400"
+                  ? "bg-blue-500/10 text-blue-700"
+                  : "bg-yellow-500/10 text-amber-700"
               }`}>
                 <CheckCircle2 className="h-3 w-3" />
                 {stateData.confidence === "official"

@@ -117,8 +117,8 @@ export default function HPSALookupPage() {
         <div className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="rounded-lg bg-red-500/5 border border-red-500/20 p-4 text-center">
-              <div className="text-2xl font-bold text-red-400">18-25</div>
-              <div className="text-xs font-semibold text-red-400 mt-1">
+              <div className="text-2xl font-bold text-red-700">18-25</div>
+              <div className="text-xs font-semibold text-red-700 mt-1">
                 Critical Shortage
               </div>
               <p className="text-[10px] text-muted mt-2">
@@ -137,8 +137,8 @@ export default function HPSALookupPage() {
               </p>
             </div>
             <div className="rounded-lg bg-yellow-500/5 border border-yellow-500/20 p-4 text-center">
-              <div className="text-2xl font-bold text-yellow-400">1-9</div>
-              <div className="text-xs font-semibold text-yellow-400 mt-1">
+              <div className="text-2xl font-bold text-amber-700">1-9</div>
+              <div className="text-xs font-semibold text-amber-700 mt-1">
                 Moderate Shortage
               </div>
               <p className="text-[10px] text-muted mt-2">
