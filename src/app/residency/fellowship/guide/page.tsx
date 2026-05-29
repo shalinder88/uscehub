@@ -180,7 +180,7 @@ const pgy3Tasks = [
 // 9,950 total positions offered; 8,526 filled (85.7%). Applicant match rate: 78.7%.
 // Non-US IMG match rate: ~70%. US MD match rate: ~91%. DO match rate: ~82%.
 // Sources: NRMP 2026 SMS Results, NRMP 2025 Medicine & Pediatric Specialties Match.
-// Last verified: March 2026.
+// Last verified: May 2026.
 const fellowshipSpecialties = [
   {
     name: "Cardiology (Cardiovascular Disease)",
@@ -454,7 +454,7 @@ export default function FellowshipGuidePage() {
               have been through the process.
             </p>
             <div className="mt-4">
-              <VerifiedBadge date="March 2026" sources={["NRMP SMS Reports", "ERAS"]} />
+              <VerifiedBadge date="May 2026" sources={["NRMP SMS Reports", "ERAS"]} />
             </div>
           </div>
         </div>

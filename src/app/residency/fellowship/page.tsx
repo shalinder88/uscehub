@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FellowshipBrowser } from "./fellowship-client";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Fellowship Database",
@@ -29,6 +30,9 @@ export default function FellowshipPage() {
             Browse fellowship programs with visa sponsorship and match
             participation data. Filter by specialty, state, or search by name.
           </p>
+          <div className="mt-3">
+            <VerifiedBadge date="May 2026" sources={["NRMP", "ACGME", "AMA FREIDA"]} />
+          </div>
         </div>
 
         <FellowshipBrowser />

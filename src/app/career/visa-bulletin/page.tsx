@@ -80,7 +80,7 @@ export default function VisaBulletinPage() {
         </p>
         <div className="mt-3 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-700">
           <ShieldCheck className="h-3.5 w-3.5" />
-          <span>Last verified: <strong>March 2026</strong></span>
+          <span>Last verified: <strong>May 2026</strong></span>
           <span className="text-slate-500">· Source: U.S. Department of State Visa Bulletin</span>
         </div>
       </div>

@@ -43,7 +43,7 @@ export default function H4SpousePage() {
           what to expect during the waiver years — written honestly.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "DHS", "PMC Research"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "DHS", "PMC Research"]} />
         </div>
       </div>
 

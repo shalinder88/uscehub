@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Clock, ArrowUpDown, ArrowRight } from "lucide-react";
 import { WAIVER_STATES, type WaiverState } from "@/lib/waiver-data";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "J-1 Waiver State Guide — Conrad 30 Intelligence",
@@ -130,6 +131,9 @@ export default function WaiverPage() {
                 a state below to view detailed Conrad 30 data, processing times,
                 specialty needs, and application tips.
               </p>
+              <div className="mt-3">
+                <VerifiedBadge date="May 2026" sources={["HRSA", "3RNET", "USCIS"]} />
+              </div>
             </div>
           </div>
         </div>

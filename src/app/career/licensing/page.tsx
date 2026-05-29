@@ -88,7 +88,7 @@ export default function LicensingPage() {
           requirements, and the mistakes that cost physicians months of delay.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["FSMB", "IMLCC", "State Medical Boards"]} />
+          <VerifiedBadge date="May 2026" sources={["FSMB", "IMLCC", "State Medical Boards"]} />
         </div>
       </div>
 

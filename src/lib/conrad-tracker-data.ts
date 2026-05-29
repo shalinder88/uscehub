@@ -11,7 +11,7 @@
 // States marked as "fills_all" exhaust all slots by end of fiscal year.
 // States marked as "has_remaining" typically do not fill all slots.
 //
-// Last verified: March 2026
+// Last verified: May 2026
 // ---------------------------------------------------------------------------
 
 export interface ConradSlotStatus {

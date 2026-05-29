@@ -184,7 +184,7 @@ export default function VisaJourneyPage() {
           each stage for details.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "ECFMG"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "DOS", "ECFMG"]} />
         </div>
       </div>
 

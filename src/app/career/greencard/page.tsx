@@ -144,7 +144,7 @@ export default function GreenCardPage() {
           honest timelines and what to actually expect.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "DOS Visa Bulletin", "AILA"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "DOS Visa Bulletin", "AILA"]} />
         </div>
       </div>
 

@@ -115,7 +115,7 @@ export default function PolicyAlertsPage() {
           links to the official source.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "AILA"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "DOS", "AILA"]} />
         </div>
       </div>
 

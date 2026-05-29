@@ -21,6 +21,7 @@ import {
   Scale,
   Banknote,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title:
@@ -338,6 +339,9 @@ export default function MoonlightingPage() {
               your career, typical pay rates, how to find shifts, and
               whether the extra income is actually worth the tradeoff.
             </p>
+            <div className="mt-3">
+              <VerifiedBadge date="May 2026" sources={["ACGME", "USCIS", "DOL"]} />
+            </div>
           </div>
         </div>
       </section>

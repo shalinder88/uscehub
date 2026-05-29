@@ -102,7 +102,7 @@ export default function VisaHubPage() {
                 USCIS, Department of State, and ECFMG data.
               </p>
               <div className="mt-4">
-                <VerifiedBadge date="March 2026" sources={["USCIS", "DOS", "ECFMG"]} />
+                <VerifiedBadge date="May 2026" sources={["USCIS", "DOS", "ECFMG"]} />
               </div>
             </div>
           </div>

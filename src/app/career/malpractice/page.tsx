@@ -93,7 +93,7 @@ export default function MalpracticePage() {
           word.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["Medical Liability Monitor", "AMA"]} />
+          <VerifiedBadge date="May 2026" sources={["Medical Liability Monitor", "AMA"]} />
         </div>
       </div>
 

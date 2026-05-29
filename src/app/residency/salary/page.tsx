@@ -18,6 +18,7 @@ import {
   Banknote,
   BadgeCheck,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Physician Salary & Contract Guide for Graduating Residents — USCEHub",
@@ -357,6 +358,9 @@ export default function SalaryPage() {
               are, red flags that cost physicians thousands, and what&apos;s
               actually negotiable.
             </p>
+            <div className="mt-3">
+              <VerifiedBadge date="May 2026" sources={["MGMA", "AAMC", "AMN Healthcare"]} />
+            </div>
           </div>
         </div>
       </section>

@@ -140,7 +140,7 @@ export default function H1BPage() {
           </div>
         </div>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "DOL", "AILA"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "DOL", "AILA"]} />
         </div>
       </div>
 

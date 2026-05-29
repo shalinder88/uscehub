@@ -11,6 +11,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 interface JobOffer {
   id: number;
@@ -143,6 +144,9 @@ export default function OffersPage() {
             see total compensation, effective hourly rate, and potential red
             flags.
           </p>
+          <div className="mt-3">
+            <VerifiedBadge date="May 2026" sources={["MGMA", "AMGA", "AAMC"]} />
+          </div>
         </div>
 
         {/* Disclaimer */}

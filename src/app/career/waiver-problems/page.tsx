@@ -61,7 +61,7 @@ export default function WaiverProblemsPage() {
         </p>
         <div className="mt-3">
           <VerifiedBadge
-            date="March 2026"
+            date="May 2026"
             sources={["USCIS Policy Manual", "INA 214(l)", "AILA", "Immigration law firms"]}
           />
         </div>

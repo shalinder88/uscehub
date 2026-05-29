@@ -17,6 +17,7 @@ import {
   Users,
   Stethoscope,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title: "Post-Match Checklist for New Residents — Everything Before Day 1",
@@ -209,6 +210,9 @@ export default function PostMatchPage() {
         <p className="text-xs text-muted mt-2">
           IMG-specific notes included where applicable.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="May 2026" sources={["ECFMG", "USCIS", "NRMP"]} />
+        </div>
       </div>
 
       {/* Checklist Sections */}

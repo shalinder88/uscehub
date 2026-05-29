@@ -202,7 +202,7 @@ const SPECIALTY_JOBS: Record<string, SpecialtyJobData> = {
       "Mental Health HPSA scores often higher than primary care = stronger waiver applications",
       "Child/adolescent psychiatry commands $30-50K premium over general",
       "Telepsychiatry is increasingly accepted for waiver positions — ask about hybrid models",
-      "32+ J-1 psychiatry positions on Indeed as of March 2026",
+      "32+ J-1 psychiatry positions on Indeed as of May 2026",
     ],
   },
   "family-medicine": {
@@ -446,7 +446,7 @@ export default function SpecialtyJobPage({ params }: { params: { specialty: stri
         </div>
         <p className="text-sm text-muted">{data.salaryNote}</p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["DOL LCA Public Data", "Hospital career pages", "Employer sites"]} />
+          <VerifiedBadge date="May 2026" sources={["DOL LCA Public Data", "Hospital career pages", "Employer sites"]} />
         </div>
       </div>
 

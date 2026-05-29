@@ -32,7 +32,7 @@ export default function BoardsPage() {
             recommended preparation resources.
           </p>
           <div className="mt-3">
-            <VerifiedBadge date="March 2026" sources={["ABIM", "ABFM", "ABP", "ABS", "ABPN", "ABPath"]} />
+            <VerifiedBadge date="May 2026" sources={["ABIM", "ABFM", "ABP", "ABS", "ABPN", "ABPath"]} />
           </div>
         </div>
 

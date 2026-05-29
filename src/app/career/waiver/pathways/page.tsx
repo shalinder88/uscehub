@@ -267,7 +267,7 @@ export default function WaiverPathwaysPage() {
         </p>
         <div className="mt-4">
           <VerifiedBadge
-            date="March 2026"
+            date="May 2026"
             sources={["USCIS", "HHS OGA", "ARC", "DRA", "SCRC", "Congress.gov"]}
           />
         </div>

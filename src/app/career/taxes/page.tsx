@@ -335,7 +335,7 @@ export default function TaxesPage() {
               are W-2 employed, doing 1099 locum work, or both.
             </p>
             <div className="mt-4">
-              <VerifiedBadge date="March 2026" sources={["IRS", "IRS Publication 535", "IRS Publication 560"]} />
+              <VerifiedBadge date="May 2026" sources={["IRS", "IRS Publication 535", "IRS Publication 560"]} />
             </div>
           </div>
         </div>

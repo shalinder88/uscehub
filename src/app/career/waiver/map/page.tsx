@@ -8,6 +8,7 @@ import {
   getTrackerSummary,
 } from "@/lib/conrad-tracker-data";
 import { ArrowLeft, MapPin, ExternalLink } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 // Colorblind-safe palette (blue sequential + orange for contrast)
 // Based on ColorBrewer 2.0 recommendations
@@ -74,6 +75,9 @@ export default function WaiverMapPage() {
         <p className="text-muted max-w-2xl text-sm">
           Conrad 30 slot availability by state. Hover to see details, click for full state guide.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="May 2026" sources={["3RNET", "HRSA", "State DOH"]} />
+        </div>
       </div>
 
       {/* Legend */}

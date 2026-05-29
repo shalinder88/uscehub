@@ -338,7 +338,7 @@ export default function LocumsPage() {
               between jobs. Here is everything you need to know.
             </p>
             <div className="mt-4">
-              <VerifiedBadge date="March 2026" sources={["MGMA", "AMGA", "DOL"]} />
+              <VerifiedBadge date="May 2026" sources={["MGMA", "AMGA", "DOL"]} />
             </div>
           </div>
         </div>

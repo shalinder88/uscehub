@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Info,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 interface TimelineStep {
   label: string;
@@ -181,6 +182,9 @@ export default function WaiverTimelinePage() {
           timeline showing exactly when each step of the waiver process needs
           to happen. Critical deadlines are highlighted.
         </p>
+        <div className="mt-3">
+          <VerifiedBadge date="May 2026" sources={["USCIS", "HRSA", "DOS"]} />
+        </div>
       </div>
 
       {/* Input */}

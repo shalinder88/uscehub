@@ -170,7 +170,7 @@ export default function CredentialingPage() {
           Start in PGY-3 if you can.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["URAC", "NCQA", "TJC"]} />
+          <VerifiedBadge date="May 2026" sources={["URAC", "NCQA", "TJC"]} />
         </div>
       </div>
 

@@ -130,7 +130,7 @@ export default function ContractChecklistPage() {
           attorney review it.
         </p>
         <div className="mt-3">
-          <VerifiedBadge date="March 2026" sources={["USCIS", "ABA", "AILA"]} />
+          <VerifiedBadge date="May 2026" sources={["USCIS", "ABA", "AILA"]} />
         </div>
       </div>
 

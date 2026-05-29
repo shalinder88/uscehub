@@ -343,7 +343,7 @@ We maintain verified Conrad 30 guides for all 50 states with slot data, processi
 
 [Browse all 50 state guides →](/career/waiver)
 
-*Data sourced from state DOH websites, 3RNET, USCIS, HRSA, and congressional records. Last verified March 2026.*`,
+*Data sourced from state DOH websites, 3RNET, USCIS, HRSA, and congressional records. Last verified May 2026.*`,
   },
   {
     slug: "img-friendly-residency-programs-2026",
@@ -551,7 +551,7 @@ This is real money. Budget carefully and apply strategically.
 
 We maintain a live ERAS countdown timer on our homepage. [Check it now →](/)
 
-*Timeline based on AAMC published ERAS schedules. Specific 2027 dates will be confirmed by AAMC in spring 2026. Data verified March 2026.*`,
+*Timeline based on AAMC published ERAS schedules. Specific 2027 dates will be confirmed by AAMC in spring 2026. Data verified May 2026.*`,
   },
   {
     slug: "j1-waiver-alternatives-beyond-conrad-30",
@@ -643,7 +643,7 @@ The physicians who get stuck are the ones who apply to one state through one pat
 [View our complete pathway comparison →](/career/waiver/pathways)
 [Check the Conrad 30 Slot Tracker →](/career/waiver/tracker)
 
-*Data sourced from USCIS, HHS OGA, ARC, DRA, SCRC, 3RNET. Verified March 2026.*`,
+*Data sourced from USCIS, HHS OGA, ARC, DRA, SCRC, 3RNET. Verified May 2026.*`,
   },
   {
     slug: "fellowship-match-data-2026",
@@ -733,7 +733,7 @@ If you're an IMG planning a fellowship application, here's the practical takeawa
 
 [Read our full Fellowship Strategy Guide →](/residency/fellowship/guide)
 
-*Data from NRMP Specialties Matching Service (SMS) 2025 Match / 2026 Appointment Year. Verified March 2026.*`,
+*Data from NRMP Specialties Matching Service (SMS) 2025 Match / 2026 Appointment Year. Verified May 2026.*`,
   },
   {
     slug: "best-states-j1-waiver-physicians-2026",
@@ -798,7 +798,7 @@ Don't bet on one state. Apply to your top choice on October 1, have 2-3 backups 
 
 [Check the Conrad 30 Slot Tracker](/career/waiver/tracker) | [Compare pathways](/career/waiver/pathways) | [Browse all 50 states](/career/waiver)
 
-*Data: 3RNET FY 2024, state DOH offices, ARC, DRA, SCRC, USCIS. Verified March 2026.*`,
+*Data: 3RNET FY 2024, state DOH offices, ARC, DRA, SCRC, USCIS. Verified May 2026.*`,
   },
   {
     slug: "physician-green-card-after-j1-waiver",
@@ -891,7 +891,7 @@ Don't wait. File early. Consider multiple pathways simultaneously if you're from
 
 [Read our detailed Green Card Pathways guide](/career/greencard)
 
-*Data: USCIS, DOS Visa Bulletin, AILA. Verified March 2026.*`,
+*Data: USCIS, DOS Visa Bulletin, AILA. Verified May 2026.*`,
   },
   {
     slug: "usmle-step-2-ck-score-strategy-imgs",

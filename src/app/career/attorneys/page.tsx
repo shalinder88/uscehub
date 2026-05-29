@@ -126,7 +126,7 @@ export default function AttorneysPage() {
         </p>
         <div className="mt-3">
           <VerifiedBadge
-            date="March 2026"
+            date="May 2026"
             sources={["Firm websites", "AILA directory", "Physician forum reviews"]}
           />
         </div>

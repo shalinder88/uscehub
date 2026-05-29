@@ -24,7 +24,7 @@ export default function MethodologyPage() {
           How We Build and Verify This Directory
         </h1>
         <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-          Last updated: March 2026
+          Last updated: May 2026
         </p>
 
         <div className="mt-10 space-y-10 text-sm leading-relaxed text-slate-600 dark:text-slate-300">

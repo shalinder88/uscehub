@@ -634,7 +634,7 @@ export const WAIVER_JOBS: WaiverJob[] = [
     jobType: "full-time",
     benefits: ["Partnership track", "Group ownership"],
   },
-  // ═══ H-1B VERIFIED EMPLOYER POSITIONS (March 2026) ═══
+  // ═══ H-1B VERIFIED EMPLOYER POSITIONS (May 2026) ═══
   {
     id: "h1b-cc-cards-001",
     employer: "Cleveland Clinic",

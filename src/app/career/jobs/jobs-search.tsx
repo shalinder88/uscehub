@@ -238,7 +238,7 @@ export function JobsSearch() {
         </p>
         <div className="flex items-center gap-1.5 text-[10px] text-success">
           <CheckCircle2 className="h-3 w-3" />
-          All verified March 2026
+          All verified May 2026
         </div>
       </div>
 

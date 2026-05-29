@@ -18,6 +18,7 @@ import {
   Clock,
   Ban,
 } from "lucide-react";
+import { VerifiedBadge } from "@/components/ui/verified-badge";
 
 export const metadata: Metadata = {
   title:
@@ -276,6 +277,9 @@ export default function FinancesPage() {
               save or cost you over $100,000. This is not about
               budgeting tips. This is about the big decisions that matter.
             </p>
+            <div className="mt-3">
+              <VerifiedBadge date="May 2026" sources={["AAMC", "FIRST", "DOE"]} />
+            </div>
           </div>
         </div>
       </section>

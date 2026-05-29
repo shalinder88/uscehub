@@ -1,7 +1,7 @@
 /**
  * IMG Resources Data — 2026
  * Sources: NRMP 2026 Main Residency Match (released March 20, 2026), ECFMG, AMA FREIDA
- * Last updated: March 2026
+ * Last updated: May 2026
  */
 
 // ─── NRMP 2026 MATCH OVERVIEW ────────────────────────────────────────────────

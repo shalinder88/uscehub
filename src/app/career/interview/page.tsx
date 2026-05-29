@@ -120,7 +120,7 @@ export default function InterviewPage() {
             learned what matters — and what to walk away from.
           </p>
           <div className="mt-3">
-            <VerifiedBadge date="March 2026" sources={["AMA", "AAFP", "Physician contracts"]} />
+            <VerifiedBadge date="May 2026" sources={["AMA", "AAFP", "Physician contracts"]} />
           </div>
         </div>
 
