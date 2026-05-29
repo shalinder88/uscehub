@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "phase": "A1",
+  "perSource": [
+    {
+      "sourceId": "src_16",
+      "sourceUrl": "https://hartfordhospital.org/research",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "sc_01",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://hartfordhospital.org/research",
+            "sourceHash": "ea9459642c227baa639f828c9cce144b97eb45275d00be8d1fe5f233d04a2e5a",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/research.txt",
+            "sourceScope": "HEALTH_SYSTEM_LEVEL",
+            "quote": "The Research Administration program of Hartford HealthCare is organized to provide optimal services and oversight for the conduct of medical research at our institutions.",
+            "claimText": "Research administration described at Hartford HealthCare system level, not specific to Hartford Hospital campus.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Generic research administration page at health-system level with no mention of medical student access, observership, or training pathways; not USCE-relevant.",
+            "limitations": "URL is hartfordhospital.org/research but page title and content reference Hartford HealthCare system; no campus-specific medical student or trainee access language."
+          }
+        ],
+        "unresolveds": [
+          "No mention of medical student research access, observership, visiting students, or any USCE-relevant pathway on this page.",
+          "Page is structured as a Hartford HealthCare system research-administration landing, not a campus-specific research-elective page."
+        ],
+        "recommendedA2Focus": [
+          "Locate a Hartford Hospital campus-specific research elective or medical-student research page if one exists.",
+          "Check Hartford Hospital GME / visiting student pages for any research elective offerings."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_28",
+      "sourceUrl": "https://hartfordhospital.org/careers",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "cron-20260529T020411-inst_hartford_hospital_ct-src_28-fl-001",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/careers",
+            "sourceHash": "7b69145213c67b8c01cda6cc25da70568b8cafd63a183c104c0a70370f645221",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "Careers at Hartford Healthcare | Hartford Healthcare jobsSearch resultsBe part of something bigger and better.",
+            "claimText": "Hartford HealthCare careers/jobs portal landing page.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "HIGH",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Page is the Hartford HealthCare careers/jobs portal — Tier 3 post-trainee practice/career content.",
+            "normalizedField": null,
+            "limitations": "System-level careers portal; no campus- or USCE-specific content present."
+          },
+          {
+            "claimId": "cron-20260529T020411-inst_hartford_hospital_ct-src_28-fl-002",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/careers",
+            "sourceHash": "7b69145213c67b8c01cda6cc25da70568b8cafd63a183c104c0a70370f645221",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/careers.txt",
+            "sourceScope": "CAREERS_PORTAL",
+            "quote": "BenefitsOur benefits help you to find balance between work and life.buttonHealth & WellnessMedical and dental coverage, paid time off, flexible scheduling, and more.View BenefitsFinancial Well-beingCompetitive compensation, retirement savings, flexible spending, and more.View BenefitsGrowth & DevelopmentTuition assistance, education and training, and career progression opportunities.",
+            "claimText": "Generic benefits overview (health, financial, growth & development) on the careers portal.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Generic employer benefits page content on the careers portal — Tier 3.",
+            "normalizedField": null,
+            "limitations": "Not physician-specific; generic employer benefits marketing copy."
+          }
+        ],
+        "sourceScopeConflicts": [],
+        "unresolveds": [],
+        "recommendedA2Focus": [
+          "Locate Hartford Hospital / Hartford HealthCare GME, residency, fellowship, visiting medical student, observership, and externship pages distinct from this generic careers portal."
+        ]
+      }
+    },
+    {
+      "sourceId": "src_35",
+      "sourceUrl": "https://hartfordhospital.org/health-professionals",
+      "output": {
+        "schemaVersion": "p102-cli-0e-1",
+        "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+        "institutionId": "inst_hartford_hospital_ct",
+        "institutionName": "Hartford Hospital",
+        "networkUsed": false,
+        "agentUsed": false,
+        "claims": [],
+        "opportunities": [],
+        "negativeEvidenceClaims": [],
+        "futureLaneSignals": [
+          {
+            "claimId": "src_35_future_residency_fellowship",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESIDENCY_PROGRAM_INFO",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Residencies and FellowshipsHartford HealthCare offers many residencies and fellowships.",
+            "claimText": "Hub link indicating Hartford HealthCare offers residencies and fellowships; system-level statement, not Hartford Hospital-specific.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_2_TRAINEE_RESIDENCY_FELLOWSHIP",
+            "deepSourceFamily": "GME",
+            "tierAssignmentRationale": "Mentions residencies and fellowships at the parent system; trainee-tier GME signal.",
+            "normalizedField": null,
+            "limitations": "Hub page only; named entity is Hartford HealthCare (system), not Hartford Hospital specifically."
+          },
+          {
+            "claimId": "src_35_future_careers",
+            "claimType": "FUTURE_LANE_JOB",
+            "lane": "CAREERS_PAGE",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Career OpportunitiesWe offer competitive salaries and benefits, as well as a stimulating work environment that inspires excellence.",
+            "claimText": "Generic career opportunities mention; Tier 3 future-lane.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_CAREERS",
+            "tierAssignmentRationale": "Generic careers blurb; post-trainee jobs lane.",
+            "normalizedField": null,
+            "limitations": "Hub blurb, no specific job titles or physician-specific positions named."
+          },
+          {
+            "claimId": "src_35_future_benefits",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "PHYSICIAN_SERVICES",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "BenefitsHartford HealthCare offers a comprehensive benefits program to full-time and part-time employees.",
+            "claimText": "Benefits program statement for full-time and part-time employees.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "BENEFITS",
+            "tierAssignmentRationale": "Generic employee benefits; post-trainee employment-related lane.",
+            "normalizedField": null,
+            "limitations": "Generic employee benefits; not physician-specific."
+          },
+          {
+            "claimId": "src_35_future_malpractice",
+            "claimType": "FUTURE_LANE_SERVICES",
+            "lane": "MALPRACTICE_INSURANCE_RESOURCE",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Professional Liability InsuranceOur site is designed for you, the physician, seeking information on malpractice insurance.",
+            "claimText": "Physician-facing professional liability / malpractice insurance information link.",
+            "visibilityLaneSuggestedByModel": "FUTURE_LANE_ONLY",
+            "confidence": "MEDIUM",
+            "tier": "TIER_3_POST_TRAINEE_PRACTICE_CAREER",
+            "deepSourceFamily": "PHYSICIAN_SERVICES",
+            "tierAssignmentRationale": "Explicit malpractice insurance resource directed at physicians; physician-services lane.",
+            "normalizedField": null,
+            "limitations": "Hub blurb only; details are behind 'More Info' link not included in this source."
+          },
+          {
+            "claimId": "src_35_future_research",
+            "claimType": "FUTURE_LANE_GME_GENERAL",
+            "lane": "RESEARCH_OPPORTUNITY",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "ResearchThe Research Administration program of Hartford Healthcare is organized to provide optimal services and oversight for the conduct of medical research at our institutions.",
+            "claimText": "Mentions Research Administration program providing oversight for medical research at the system's institutions; no medical-student access stated.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "LOW",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "RESEARCH_EDUCATION",
+            "tierAssignmentRationale": "Research Administration mentioned generically; no audience (med student / resident / IMG) stated, so cannot place in a tier with confidence.",
+            "normalizedField": null,
+            "limitations": "No audience eligibility, no medical-student access language."
+          }
+        ],
+        "sourceScopeConflicts": [
+          {
+            "claimId": "src_35_scope_unknown",
+            "claimType": "SCOPE_CONFLICT",
+            "lane": "NO_PUBLIC_OPPORTUNITY_FOUND",
+            "sourceUrl": "https://hartfordhospital.org/health-professionals",
+            "sourceHash": "4a0db495673853de61a50d6cb84800fcafa20a0092a3d0861225e2ce347820fb",
+            "cleanedTextPath": "/Volumes/T7Shield_Code/01_PROJECTS/USCEHub/11_LOCAL_EVIDENCE/p102-national-runner/artifacts/cron-20260529T020411-inst_hartford_hospital_ct/cleaned_text/health-professionals.txt",
+            "sourceScope": "UNKNOWN_SCOPE",
+            "quote": "Our SystemHartford HealthCareBackus HospitalCharlotte Hungerford HospitalHartford HospitalHospital of Central ConnecticutManchester Memorial HospitalMidState Medical CenterSt. Vincent&apos;s Medical CenterWindham HospitalBehavioral Health Network",
+            "claimText": "Page sits on hartfordhospital.org but content frequently attributes programs to Hartford HealthCare (system) covering multiple hospitals; scope is ambiguous between institution and system.",
+            "visibilityLaneSuggestedByModel": "HUMAN_REVIEW_REQUIRED",
+            "confidence": "MEDIUM",
+            "tier": "NOT_APPLICABLE",
+            "deepSourceFamily": "HEALTH_SYSTEM_HOME",
+            "tierAssignmentRationale": "Scope-conflict record; not an opportunity claim itself.",
+            "normalizedField": null,
+            "limitations": "Source scope flagged UNKNOWN_SCOPE upstream; many program blurbs are attributed to Hartford HealthCare (system), not Hartford Hospital."
+          }
+        ],
+        "unresolveds": [
+          "Page is a hub index with brief blurbs and 'More Info >>' links; actual USCE-relevant content (observership, visiting student, electives, IMG eligibility) is not present in this cleaned text — must follow Education / Residencies & Fellowships / Research subpages separately.",
+          "Source scope flagged UNKNOWN_SCOPE; domain is hartfordhospital.org but several blurbs name Hartford HealthCare (parent system) — campus applicability for any future claim needs to be re-verified."
+        ],
+        "recommendedA2Focus": [
+          "Fetch and read Hartford Hospital 'Education at Hartford Hospital' subpage to confirm whether visiting medical student, observership, elective, or sub-internship programs exist.",
+          "Fetch Hartford HealthCare 'Residencies and Fellowships' subpage and map each program to ACGME accreditation, IMG-friendliness signals, and any visiting/audition rotation language.",
+          "Check for a dedicated observership / international observer page on hartfordhospital.org or hartfordhealthcare.org; current hub does not surface one.",
+          "Check Health Science Libraries and Research Administration pages for medical-student research elective access.",
+          "Verify campus-specific scope for Hartford Hospital vs Hartford HealthCare system on any future claim."
+        ]
+      }
+    }
+  ]
+}

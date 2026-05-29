@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+  "queueId": "p102_dry_run_1",
+  "institutionId": "inst_hartford_hospital_ct",
+  "canonicalName": "Hartford Hospital",
+  "officialDomain": "hartfordhospital.org",
+  "state": "CT",
+  "city": "Hartford",
+  "targetLanes": [
+    "IMG_OBSERVERSHIP",
+    "VISITING_MEDICAL_STUDENT",
+    "CLINICAL_ELECTIVE",
+    "RESIDENCY_PROGRAM_INFO",
+    "FELLOWSHIP_PROGRAM_INFO"
+  ],
+  "bootstrappedAt": "2026-05-29T02:04:12.199Z",
+  "runnerVersion": "p102-0r-1",
+  "notes": "Deterministic bootstrap before any model interpretation."
+}

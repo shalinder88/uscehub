@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "p102-cli-0e-1",
+  "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+  "institutionId": "inst_hartford_hospital_ct",
+  "institutionName": "Hartford Hospital",
+  "networkUsed": false,
+  "agentUsed": false,
+  "phase": "A3",
+  "verdict": "PASS_PUBLISH_READY",
+  "verdictSummary": "No PUBLIC_SAFE_USCE claims emitted. All 19 claims are FUTURE_LANE_ONLY, CAUTION_SAFE_INTERNAL_REVIEW, or HUMAN_REVIEW_REQUIRED, consistent with sources captured (research, careers, health-professionals hub). No public-safety failures, no scope conflicts requiring downgrade, no duplicates. Ledger is internally consistent and safe to merge.",
+  "publicSafetyFailures": [],
+  "claimsToDowngrade": [],
+  "scopeConflicts": [],
+  "duplicates": [],
+  "unresolveds": [],
+  "attestations": {
+    "networkUsed": false,
+    "agentUsed": false,
+    "readOnlyRunFolder": true,
+    "everyPublicSafeClaimQuoteVerified": true,
+    "everyPublicSafeClaimSourceFamilyChecked": true,
+    "everyPublicSafeClaimSourceScopeChecked": true
+  },
+  "metadata": {
+    "totalClaimsReviewed": 19,
+    "publicSafeUSCECount": 0,
+    "publicSafeNoOpportunityCount": 0,
+    "cautionSafeInternalReviewCount": 2,
+    "futureLaneOnlyCount": 14,
+    "humanReviewRequiredCount": 3,
+    "hiddenRejectedCount": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "p102-0r-1",
+  "runId": "cron-20260529T020411-inst_hartford_hospital_ct",
+  "institutionId": null,
+  "verdict": "PASS_WITH_CAVEATS",
+  "networkUsed": false,
+  "agentUsed": false,
+  "publicSafe": false,
+  "futureLaneValue": "MEDIUM",
+  "publicSafeUsceClaims": 0,
+  "cautionSafeClaims": 2,
+  "futureLaneClaims": 14,
+  "hallucinationRisks": [],
+  "unsupportedClaims": [],
+  "quoteVerificationFailures": [],
+  "sourceScopeConflicts": [],
+  "missingCriticalFields": [],
+  "negativeEvidenceFindings": [
+    "No explicit negative quotes captured; absence-only is not PUBLIC_SAFE_NO_PUBLIC_OPPORTUNITY"
+  ],
+  "requiredA4Tasks": [],
+  "finalRecommendation": "Framework verdict; no public-safe claims (correct under P102-0C deterministic extraction; awaits P102-0D model reader).",
+  "a3RegatedAt": "2026-05-29T02:12:21.320Z",
+  "a3RegatedBy": "p102-regate-run (network-free, agent-free, run-folder-only)"
+}
