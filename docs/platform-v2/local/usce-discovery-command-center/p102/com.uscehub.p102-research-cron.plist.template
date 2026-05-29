@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  P102 Research Cron — launchd agent TEMPLATE (NOT installed).
+
+  This file is inert where it sits. To activate (do this deliberately, after a
+  supervised first run — see P102_RESEARCH_CRON_DESIGN.md §Activation):
+
+    cp docs/platform-v2/local/usce-discovery-command-center/p102/com.uscehub.p102-research-cron.plist.template \
+       ~/Library/LaunchAgents/com.uscehub.p102-research-cron.plist
+    launchctl load   ~/Library/LaunchAgents/com.uscehub.p102-research-cron.plist
+
+  To stop / uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.uscehub.p102-research-cron.plist
+    rm               ~/Library/LaunchAgents/com.uscehub.p102-research-cron.plist
+
+  Schedule: once daily at 03:30 local. One institution per fire (doctrine
+  rule 1). `-l` makes zsh source the login profile so ~/homebrew/bin and
+  ~/.local/bin (where node, npx and the claude CLI live) are on PATH. If T7 is
+  unmounted or the claude session has lapsed at fire time, the wrapper
+  journals the skip and exits 0 — launchd does not retry-storm.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.uscehub.p102-research-cron</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd /Users/shelly/usmle-platform &amp;&amp; exec npx tsx scripts/p102-research-cron.ts</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shelly/usmle-platform</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>3</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shelly/Library/Logs/uscehub-p102-cron.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shelly/Library/Logs/uscehub-p102-cron.err.log</string>
+</dict>
+</plist>

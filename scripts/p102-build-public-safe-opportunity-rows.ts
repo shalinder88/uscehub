@@ -24,6 +24,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import * as path from 'node:path';
 import { createHash } from 'node:crypto';
+import { hasAcceptablePath, laneToCategory, type UsceCategory } from './p102-cron-lib';
 
 const REPO_ROOT = path.resolve(__dirname, '..');
 const RUNS_DIR = path.join(REPO_ROOT, 'docs/platform-v2/local/usce-discovery-command-center/p102/runs');
@@ -112,6 +113,7 @@ interface OpportunityRow {
   confidence: 'HIGH' | 'MEDIUM' | 'LOW';
   visibilityLane: 'PUBLIC_SAFE_USCE';
   humanReviewStatus: 'PENDING';
+  usceCategory: UsceCategory | null;
   extractedFromRunId: string;
   claimIds: string[];
   notStatedFields: string[];
@@ -257,6 +259,7 @@ function buildGroups(verifiedByRun: Map<string, RawClaim[]>, canonicalByRun: Map
       if (!isPublicSafe(claim.visibility ?? 'HIDDEN_REJECTED')) continue;
       if (claim.quoteVerified !== true) continue;
       if (!claim.sourceUrl || !claim.sourceHash || !claim.cleanedTextPath) continue;
+      if (!hasAcceptablePath(claim.sourceUrl)) continue;
       if (isNotStated(claim.quote)) continue;
 
       const oppType = mapLaneToOpportunityType(claim.lane, claim.deepSourceFamily ?? null);
@@ -416,6 +419,7 @@ function buildRowFromGroup(g: Group): OpportunityRow {
     confidence: minConfidence,
     visibilityLane: 'PUBLIC_SAFE_USCE',
     humanReviewStatus: 'PENDING',
+    usceCategory: laneToCategory(strongest.lane ?? null),
     extractedFromRunId: runId,
     claimIds: allClaims.map(c => c.claimId).sort(),
     notStatedFields,
@@ -474,9 +478,15 @@ interface BuildSummary {
   publicSafeSourceClaims: number;
   publicSafeOpportunityRows: number;
   reviewQueueEntries: number;
+  lowQualityFilteredEntries: number;
   futureLaneEntries: number;
   hiddenEntries: number;
   institutionsWithPublicSafeRows: number;
+}
+
+interface RunRatingCache {
+  rating: string;
+  categoriesFound: string[];
 }
 
 function resolveRunIds(args: CliArgs): string[] {
@@ -519,12 +529,14 @@ function main(): void {
 
   const verifiedByRun = new Map<string, RawClaim[]>();
   const canonicalByRun = new Map<string, CanonicalInstitution>();
+  const ratingByRun = new Map<string, RunRatingCache>();
 
   let totalClaims = 0;
 
   for (const runId of runIds) {
     const ledgerPath = path.join(RUNS_DIR, runId, '13_model_claims_verified.json');
     const canonicalPath = path.join(RUNS_DIR, runId, '05_canonical_institution.json');
+    const ratingPath = path.join(RUNS_DIR, runId, 'run_rating.json');
     const ledger = readJson<{ claims: RawClaim[] }>(ledgerPath);
     const canonical = readJson<CanonicalInstitution>(canonicalPath);
     if (!ledger || !canonical) continue;
@@ -532,6 +544,8 @@ function main(): void {
     verifiedByRun.set(runId, claims);
     canonicalByRun.set(runId, canonical);
     totalClaims += claims.length;
+    const rating = readJson<RunRatingCache>(ratingPath);
+    if (rating) ratingByRun.set(runId, rating);
   }
 
   // Build public-safe opportunity rows.
@@ -547,6 +561,7 @@ function main(): void {
 
   // Build review / future / hidden routing for everything else.
   const reviewEntries: ReviewQueueEntry[] = [];
+  const lowQualityEntries: ArchiveEntry[] = [];
   const futureLaneEntries: ArchiveEntry[] = [];
   const hiddenEntries: ArchiveEntry[] = [];
 
@@ -556,8 +571,13 @@ function main(): void {
       const v: Visibility = c.visibility ?? 'HIDDEN_REJECTED';
       if (isPublicSafe(v) && publicSafeClaimIds.has(c.claimId)) continue; // already in opportunity rows
       if (isPublicSafe(v) && !publicSafeClaimIds.has(c.claimId)) {
-        // PUBLIC_SAFE but failed inclusion (likely missing source url/hash, NOT_STATED, or quoteVerified=false). Route to review.
-        reviewEntries.push(buildReviewEntry(c, runId, canonical));
+        // PUBLIC_SAFE but failed grouping — either bare-domain URL (filtered by hasAcceptablePath)
+        // or missing required fields. Bare-domain claims go to low-quality archive; others to review.
+        if (!hasAcceptablePath(c.sourceUrl ?? '')) {
+          lowQualityEntries.push(buildArchiveEntry(c, runId, canonical));
+        } else {
+          reviewEntries.push(buildReviewEntry(c, runId, canonical));
+        }
         continue;
       }
       if (isReviewQueue(v)) {
@@ -583,10 +603,31 @@ function main(): void {
     publicSafeSourceClaims: publicSafeClaimIds.size,
     publicSafeOpportunityRows: publicSafeRows.length,
     reviewQueueEntries: reviewEntries.length,
+    lowQualityFilteredEntries: lowQualityEntries.length,
     futureLaneEntries: futureLaneEntries.length,
     hiddenEntries: hiddenEntries.length,
     institutionsWithPublicSafeRows,
   };
+
+  // Build the walker-compatible rows for the review queue — maps public-safe rows
+  // with rating info so the walker can show rating + categories per institution.
+  const reviewQueueRows = publicSafeRows.map(row => {
+    const runRating = ratingByRun.get(row.extractedFromRunId);
+    return {
+      rowId: row.rowId,
+      institutionId: row.institutionId,
+      institutionName: row.institutionName,
+      state: row.state,
+      opportunityType: row.opportunityType,
+      usceCategory: row.usceCategory,
+      sourceUrl: row.sourceUrl,
+      runRating: runRating?.rating ?? null,
+      detectedCategories: runRating?.categoriesFound ?? [],
+      quote: row.sourceQuote,
+      confidence: row.confidence,
+      humanReviewStatus: row.humanReviewStatus,
+    };
+  });
 
   // Write exports.
   writeJson(path.join(EXPORTS_DIR, 'public_safe_opportunity_rows.json'), {
@@ -600,6 +641,14 @@ function main(): void {
     generatedAt: new Date().toISOString(),
     count: reviewEntries.length,
     entries: reviewEntries,
+    rows: reviewQueueRows,
+  });
+  writeJson(path.join(EXPORTS_DIR, 'low_quality_review_archive.json'), {
+    schemaVersion: SCHEMA_VERSION,
+    generatedAt: new Date().toISOString(),
+    count: lowQualityEntries.length,
+    note: 'PUBLIC_SAFE claims whose sourceUrl had no path (bare domain). Not surfaced in main review queue.',
+    entries: lowQualityEntries,
   });
   writeJson(path.join(EXPORTS_DIR, 'future_lane_archive.json'), {
     schemaVersion: SCHEMA_VERSION,
@@ -621,6 +670,7 @@ function main(): void {
   console.log(`  public-safe opportunity rows:  ${summary.publicSafeOpportunityRows}`);
   console.log(`  institutions with rows:        ${summary.institutionsWithPublicSafeRows}`);
   console.log(`  review queue entries:          ${summary.reviewQueueEntries}`);
+  console.log(`  low-quality filtered:          ${summary.lowQualityFilteredEntries}`);
   console.log(`  future-lane entries:           ${summary.futureLaneEntries}`);
   console.log(`  hidden-rejected entries:       ${summary.hiddenEntries}`);
   console.log(`\nExports written to: ${EXPORTS_DIR}`);
