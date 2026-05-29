@@ -23,14 +23,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Career & Immigration — USCEHub",
+  title: {
+    absolute: "Visa & Jobs — Physician Immigration Intelligence — USCEHub",
+  },
   description:
     "Navigate your attending career with J-1 waiver intelligence, job search tools, immigration lawyer directory, contract comparison, and citizenship pathway guidance for IMG physicians.",
   alternates: {
     canonical: "https://uscehub.com/career",
   },
   openGraph: {
-    title: "Career & Immigration — USCEHub",
+    title: "Visa & Jobs — Physician Immigration Intelligence — USCEHub",
     description:
       "J-1 waiver intelligence, job search, immigration guidance, and contract tools for IMG attending physicians.",
     url: "https://uscehub.com/career",
@@ -41,7 +43,7 @@ export default function CareerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Career & Immigration — USCEHub",
+    name: "Visa & Jobs — Physician Immigration Intelligence",
     description:
       "Navigate your attending career with J-1 waiver intelligence, job search tools, immigration guidance, and contract comparison for IMG physicians.",
     url: "https://uscehub.com/career",

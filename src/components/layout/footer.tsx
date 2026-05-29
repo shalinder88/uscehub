@@ -57,6 +57,11 @@ export function Footer() {
                   For Institutions
                 </Link>
               </li>
+              <li>
+                <Link href="/career" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                  Visa &amp; Jobs
+                </Link>
+              </li>
             </ul>
           </div>
 

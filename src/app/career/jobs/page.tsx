@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { VerifiedBadge } from "@/components/ui/verified-badge";
-import { Briefcase, AlertTriangle } from "lucide-react";
+import { Briefcase, AlertTriangle, Building2, Clock, ArrowRight } from "lucide-react";
 import { JobsSearch } from "./jobs-search";
 import { getJobCount, getUniqueSpecialties } from "@/lib/waiver-jobs-data";
 
@@ -46,6 +47,48 @@ export default function WaiverJobsPage() {
             sources={["Hospital career pages", "DOL LCA Public Data", "Employer career sites"]}
           />
         </div>
+      </div>
+
+      {/* Section rail — the rest of the Jobs lane */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+        <Link
+          href="/career/sponsors"
+          className="rounded-xl border border-border bg-surface p-4 hover:border-accent/50 transition-colors group"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex items-start gap-3">
+              <Building2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+              <div>
+                <h2 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                  H-1B Sponsor Database
+                </h2>
+                <p className="text-xs text-muted mt-0.5">
+                  Which hospitals actually sponsor H-1B physicians — verified employers.
+                </p>
+              </div>
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted group-hover:text-accent transition-colors shrink-0" />
+          </div>
+        </Link>
+        <Link
+          href="/career/locums"
+          className="rounded-xl border border-border bg-surface p-4 hover:border-accent/50 transition-colors group"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex items-start gap-3">
+              <Clock className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+              <div>
+                <h2 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">
+                  Locum Tenens
+                </h2>
+                <p className="text-xs text-muted mt-0.5">
+                  Pay rates, agencies, visa limits, and 1099 tax strategy.
+                </p>
+              </div>
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted group-hover:text-accent transition-colors shrink-0" />
+          </div>
+        </Link>
       </div>
 
       {/* $100K H-1B Fee Alert */}

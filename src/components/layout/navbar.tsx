@@ -21,6 +21,7 @@ import {
   Calculator,
   GitCompareArrows,
   BookOpen,
+  Plane,
 } from "lucide-react";
 
 export function Navbar() {
@@ -106,6 +107,15 @@ export function Navbar() {
                   >
                     <BookOpen className="h-4 w-4" />
                     Resources &amp; Guides
+                  </Link>
+                  <div className="my-1 border-t border-slate-100 dark:border-slate-700" />
+                  <Link
+                    href="/career"
+                    onClick={() => setToolsMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  >
+                    <Plane className="h-4 w-4" />
+                    Visa &amp; Jobs
                   </Link>
                 </div>
               </>
@@ -293,6 +303,14 @@ export function Navbar() {
             >
               <BookOpen className="h-4 w-4" />
               Resources &amp; Guides
+            </Link>
+            <Link
+              href="/career"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            >
+              <Plane className="h-4 w-4" />
+              Visa &amp; Jobs
             </Link>
             <Link
               href="/about"
