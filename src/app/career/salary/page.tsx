@@ -31,7 +31,7 @@ interface SpecialtyData {
 // Ranges reflect 25th-75th percentile. All values in $K.
 // Medicare conversion factor CY 2026: $33.40/RVU (standard), $33.57/RVU (APM).
 // Avg physician sign-on bonus: $38,215 (up 23% YoY, AMN 2025).
-// Last verified: March 2026.
+// Last verified: May 2026.
 const SPECIALTIES: SpecialtyData[] = [
   { specialty: "Internal Medicine (General)", employedLow: 255, employedHigh: 330, privateLow: 280, privateHigh: 400, median: 287, category: "primary" },
   { specialty: "Hospital Medicine", employedLow: 280, employedHigh: 380, privateLow: null, privateHigh: null, median: 310, category: "primary" },
