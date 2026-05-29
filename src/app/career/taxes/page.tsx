@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TaxCalculator } from "./taxes-calculator";
 import {
   Calculator,
   DollarSign,
@@ -333,6 +334,13 @@ export default function TaxesPage() {
               are W-2 employed, doing 1099 locum work, or both.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Take-Home Calculator */}
+      <section className="py-8 border-b border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TaxCalculator />
         </div>
       </section>
 

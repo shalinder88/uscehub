@@ -116,6 +116,10 @@ export default function SalaryPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [expandedComp, setExpandedComp] = useState(false);
   const [expandedState, setExpandedState] = useState(false);
+  const [calcSpecialty, setCalcSpecialty] = useState<string>("");
+  const [calcType, setCalcType] = useState<"employed" | "private">("employed");
+
+  const calcResult = calcSpecialty ? SPECIALTIES.find((s) => s.specialty === calcSpecialty) : null;
 
   const filtered = useMemo(() => {
     let list = [...SPECIALTIES];
@@ -172,6 +176,82 @@ export default function SalaryPage() {
           <span>Last verified: <strong>March 2026</strong></span>
           <span className="text-slate-500">· Sources: Medscape, MGMA, Doximity</span>
         </div>
+      </div>
+
+      {/* ─── Quick Estimate Widget ─── */}
+      <div className="rounded-xl border border-border bg-surface p-5 mb-10">
+        <h2 className="text-sm font-bold text-foreground mb-4 flex items-center gap-2">
+          <TrendingUp className="h-4 w-4 text-success" />
+          Quick Salary Lookup
+        </h2>
+        <div className="flex flex-wrap gap-3 mb-4">
+          <select
+            value={calcSpecialty}
+            onChange={(e) => setCalcSpecialty(e.target.value)}
+            className="flex-1 min-w-[180px] rounded-lg border border-border bg-surface-alt px-3 py-2 text-sm text-foreground focus:outline-none focus:border-accent"
+          >
+            <option value="">Select a specialty...</option>
+            {SPECIALTIES.map((s) => (
+              <option key={s.specialty} value={s.specialty}>{s.specialty}</option>
+            ))}
+          </select>
+          <div className="flex gap-2">
+            {(["employed", "private"] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setCalcType(t)}
+                className={`rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                  calcType === t
+                    ? "border-accent bg-accent/10 text-accent"
+                    : "border-border bg-surface-alt text-muted hover:border-accent/50"
+                }`}
+              >
+                {t === "employed" ? "Employed" : "Private Practice"}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {calcResult ? (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              {
+                label: calcType === "employed" ? "Employed Range" : "Private Range",
+                value: calcType === "employed"
+                  ? `$${calcResult.employedLow}K – $${calcResult.employedHigh}K`
+                  : calcResult.privateLow && calcResult.privateHigh
+                  ? `$${calcResult.privateLow}K – $${calcResult.privateHigh}K`
+                  : "N/A",
+                color: "text-success",
+              },
+              {
+                label: "National Median",
+                value: `$${calcResult.median}K`,
+                color: "text-foreground",
+              },
+              {
+                label: "Category",
+                value: calcResult.category === "primary" ? "Primary Care"
+                  : calcResult.category === "surgical" ? "Surgical"
+                  : calcResult.category === "medical-subspecialty" ? "Medical Subspecialty"
+                  : "Other",
+                color: "text-accent",
+              },
+            ].map((item) => (
+              <div key={item.label} className="rounded-lg bg-surface-alt p-3">
+                <div className={`text-lg font-bold font-mono ${item.color}`}>{item.value}</div>
+                <div className="text-[10px] text-muted mt-0.5">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-muted">
+            Select a specialty above to see its salary range instantly.
+          </p>
+        )}
+        <p className="text-[10px] text-muted mt-3">
+          Ranges reflect 25th–75th percentile. Sources: Medscape 2025, MGMA DataDive 2025, Doximity 2025.
+        </p>
       </div>
 
       {/* ═══ SECTION 1: Salary by Specialty ═══ */}

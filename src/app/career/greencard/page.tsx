@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { VerifiedBadge } from "@/components/ui/verified-badge";
+import { GreencardCalculator } from "./greencard-calculator";
 import {
   Flag,
   Clock,
@@ -157,6 +158,11 @@ export default function GreenCardPage() {
           countries with backlogs (India, China), every month matters. You
           don&apos;t need to wait until your 3 years are done to file I-140.
         </div>
+      </div>
+
+      {/* Priority Date Calculator */}
+      <div className="mb-8">
+        <GreencardCalculator />
       </div>
 
       {/* Pathway Cards */}
