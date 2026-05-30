@@ -236,13 +236,39 @@ function jobsByStatus(jobs: RadarJob[], status: string): RadarJob[] {
   return jobs.filter((j) => j.classification.status === status);
 }
 
-function renderReportMd(report: RunReport, gold: { passed: number; failed: string[] }, connectorProblems: string[]): string {
+interface ReportExtras {
+  bySource: Array<[string, number]>;
+  phraseHitTotal: number;
+  affirmative: number;
+  denied: number;
+  boilerplate: number;
+  promoted: boolean;
+  nonFixturePublish: number;
+}
+
+function renderReportMd(
+  report: RunReport,
+  gold: { passed: number; failed: string[] },
+  connectorProblems: string[],
+  extras: ReportExtras,
+): string {
   const lines: string[] = [];
   lines.push("# Visa Job Radar — run " + report.runId);
   lines.push("");
   lines.push("- Mode: " + (report.live ? "LIVE" : "offline (fixtures only)"));
   lines.push("- Started: " + report.startedAt);
   lines.push("- Finished: " + report.finishedAt);
+  lines.push("");
+  lines.push("## Sources attempted");
+  for (const [src, count] of extras.bySource) {
+    lines.push("- " + src + ": " + count + " candidates");
+  }
+  lines.push("");
+  lines.push("## Phrase & polarity");
+  lines.push("- Phrase hits total: " + extras.phraseHitTotal);
+  lines.push("- Affirmative: " + extras.affirmative);
+  lines.push("- Denied: " + extras.denied);
+  lines.push("- Boilerplate: " + extras.boilerplate);
   lines.push("");
   lines.push("## Buckets");
   lines.push("- Candidates: " + report.candidateCount);
@@ -253,6 +279,11 @@ function renderReportMd(report: RunReport, gold: { passed: number; failed: strin
   lines.push("- Duplicates dropped: " + report.duplicatesDropped);
   lines.push("- Quote-validation failures: " + report.quoteValidationFailures);
   lines.push("- Manual review: " + report.manualReviewPct + "%");
+  lines.push(
+    "- Non-fixture PUBLISH: " +
+      extras.nonFixturePublish +
+      (extras.promoted ? " (promoted to app file)" : " (run dir only; not promoted)"),
+  );
   lines.push("");
   lines.push("## Reject reasons");
   for (const [reason, count] of Object.entries(report.rejectByReason)) {
@@ -334,6 +365,7 @@ function renderGeneratedTs(jobs: PublicJob[], lastRun: string): string {
 
 async function main(): Promise<void> {
   const live = process.argv.includes("--live");
+  const promote = process.argv.includes("--promote");
   const startedAt = new Date().toISOString();
   const runId = runIdFrom(startedAt);
 
@@ -402,17 +434,50 @@ async function main(): Promise<void> {
   writeJson(runDir, "hold_review.json", jobsByStatus(jobs, "HOLD_REVIEW"));
   writeJson(runDir, "visa_signal_only.json", jobsByStatus(jobs, "VISA_SIGNAL_ONLY"));
   writeJson(runDir, "rejected.json", jobsByStatus(jobs, "REJECT"));
-  writeFileSync(
-    join(runDir, "run_report.md"),
-    renderReportMd(report, gold, connectorProblems),
-    "utf8",
-  );
-
   const publicJobs = jobs
     .filter((j) => j.classification.status === "PUBLISH" && !j.raw.isFixture)
     .map(toPublicJob);
-  mkdirSync(join(REPO_ROOT, "src/data/career"), { recursive: true });
-  writeFileSync(GENERATED_FILE, renderGeneratedTs(publicJobs, finishedAt), "utf8");
+
+  const bySourceMap = new Map<string, number>();
+  for (const c of candidates) {
+    const key = c.isFixture ? "fixtures" : c.sourceId;
+    bySourceMap.set(key, (bySourceMap.get(key) ?? 0) + 1);
+  }
+  let phraseHitTotal = 0;
+  let affirmative = 0;
+  let denied = 0;
+  let boilerplate = 0;
+  for (const j of jobs) {
+    phraseHitTotal += j.phraseHits.length;
+    for (const h of j.phraseHits) {
+      if (h.polarity === "AFFIRMATIVE") affirmative++;
+      else if (h.polarity === "DENIED") denied++;
+      else boilerplate++;
+    }
+  }
+  const extras: ReportExtras = {
+    bySource: Array.from(bySourceMap.entries()),
+    phraseHitTotal,
+    affirmative,
+    denied,
+    boilerplate,
+    promoted: promote,
+    nonFixturePublish: publicJobs.length,
+  };
+
+  writeFileSync(
+    join(runDir, "run_report.md"),
+    renderReportMd(report, gold, connectorProblems, extras),
+    "utf8",
+  );
+
+  // The app surface is only written when explicitly promoted. A live run leaves
+  // the committed empty generated file untouched so real jobs get human review
+  // (in the run dir) before they can reach the app.
+  if (promote) {
+    mkdirSync(join(REPO_ROOT, "src/data/career"), { recursive: true });
+    writeFileSync(GENERATED_FILE, renderGeneratedTs(publicJobs, finishedAt), "utf8");
+  }
 
   // console summary
   const ok = gold.failed.length === 0 && connectorProblems.length === 0;
