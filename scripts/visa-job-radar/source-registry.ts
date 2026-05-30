@@ -10,7 +10,7 @@
 
 import type { SourceTier } from "./types";
 
-export type Connector = "usajobs" | "greenhouse" | "none";
+export type Connector = "usajobs" | "greenhouse" | "workday" | "none";
 
 export interface SourceDef {
   id: string;
@@ -68,6 +68,50 @@ export const SOURCES: SourceDef[] = [
     enabled: true,
     needsVerification: false,
     note: "Employer-direct ATS. Verified 2026-05-29: HTTP 200, physician + psychiatrist postings.",
+  },
+  {
+    id: "workday-sanford",
+    tier: 1,
+    connector: "workday",
+    label: "Sanford Health — physicians (Workday)",
+    handle: "sanford/wd5/SanfordHealth",
+    employer: "Sanford Health",
+    enabled: true,
+    needsVerification: true,
+    note: "Employer-direct Workday tenant (unofficial CXS endpoint). Verified 2026-05-29: HTTP 200, ~1712 'physician' search hits. Rural mission system.",
+  },
+  {
+    id: "workday-wvu-uha",
+    tier: 1,
+    connector: "workday",
+    label: "WVU Medicine (UHA) — physicians (Workday)",
+    handle: "wvumedicine/wd1/UHA",
+    employer: "WVU Medicine",
+    enabled: false,
+    needsVerification: true,
+    note: "DISABLED 2026-05-30: tenant is behind bot-protection. Serves curl but returns HTTP 500 to a plain Node client; only a request forging a browser User-Agent + Origin + Referer + Accept-Language succeeds. Reaching it would mean spoofing a browser to defeat bot detection — refused (same posture as HRSA). H-1B cap-exempt academic system, underserved WV; revisit only via a sanctioned feed.",
+  },
+  {
+    id: "workday-wvu-wvuh",
+    tier: 1,
+    connector: "workday",
+    label: "WVU Medicine (WVUH) — physicians (Workday)",
+    handle: "wvumedicine/wd1/WVUH",
+    employer: "WVU Medicine",
+    enabled: false,
+    needsVerification: true,
+    note: "DISABLED 2026-05-30: same bot-protection as the UHA site (HTTP 500 to a plain Node client). Not bypassed.",
+  },
+  {
+    id: "workday-altamed",
+    tier: 1,
+    connector: "workday",
+    label: "AltaMed Health Services — physicians (Workday)",
+    handle: "altamed/wd1/Careers",
+    employer: "AltaMed Health Services",
+    enabled: true,
+    needsVerification: true,
+    note: "Employer-direct Workday tenant (unofficial CXS endpoint). Verified 2026-05-29: HTTP 200, ~58 hits. Large multi-site FQHC (CA), high J-1 density.",
   },
   {
     id: "tier3-practicelink",

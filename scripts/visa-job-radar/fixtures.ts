@@ -11,7 +11,11 @@ import type {
   RawCandidate,
   RejectReason,
 } from "./types";
-import type { GreenhouseResponse, UsajobsResponse } from "./connectors";
+import type {
+  GreenhouseResponse,
+  UsajobsResponse,
+  WorkdayDetailResponse,
+} from "./connectors";
 
 const FETCHED_AT = "2026-05-29T12:00:00.000Z";
 
@@ -276,4 +280,19 @@ export const SAMPLE_GREENHOUSE: GreenhouseResponse = {
       updated_at: "2026-05-20T00:00:00Z",
     },
   ],
+};
+
+// Workday detail payloads carry RAW (not entity-encoded) HTML and state-first
+// location strings, so this sample pins both behaviours of parseWorkdayDetail.
+export const SAMPLE_WORKDAY_DETAIL: WorkdayDetailResponse = {
+  jobPostingInfo: {
+    title: "Family Medicine Physician",
+    jobDescription:
+      "<p>Family Medicine Physician sought for a rural clinic. We offer <strong>J-1 visa waiver</strong> support for international medical graduates.</p>",
+    location: "ND, Dickinson",
+    startDate: "2026-05-29",
+    externalUrl:
+      "https://example.wd5.myworkdayjobs.com/Careers/job/ND-Dickinson/Family-Medicine-Physician_R-0247970",
+    jobReqId: "R-0247970",
+  },
 };

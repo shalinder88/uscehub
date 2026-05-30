@@ -18,13 +18,21 @@ import {
   extractPhraseHits,
   validateQuote,
 } from "./engine";
-import { fetchGreenhouse, fetchUsajobs, parseGreenhouse, parseUsajobs } from "./connectors";
+import {
+  fetchGreenhouse,
+  fetchUsajobs,
+  fetchWorkday,
+  parseGreenhouse,
+  parseUsajobs,
+  parseWorkdayDetail,
+} from "./connectors";
 import { enabledSources, SOURCES } from "./source-registry";
 import {
   EXPECTED,
   FIXTURES,
   SAMPLE_GREENHOUSE,
   SAMPLE_USAJOBS,
+  SAMPLE_WORKDAY_DETAIL,
 } from "./fixtures";
 import type {
   CleanedJob,
@@ -66,6 +74,10 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
       candidates.push(...(await fetchUsajobs(src.handle)));
     } else if (src.connector === "greenhouse") {
       candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
+    } else if (src.connector === "workday") {
+      candidates.push(
+        ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id)),
+      );
     }
   }
   return candidates;
@@ -225,6 +237,16 @@ function connectorCheck(): string[] {
       problems.push("Greenhouse parse: HTML strip/decoding lost the visa phrase");
     if (g[0].state !== "OR") problems.push("Greenhouse parse: state mapping wrong");
   }
+  const w = parseWorkdayDetail(SAMPLE_WORKDAY_DETAIL, "workday-test", "Example Health", fetchedAt);
+  if (!w) problems.push("Workday parse: expected a candidate, got null");
+  else {
+    if (w.sourceId !== "workday-test-R-0247970")
+      problems.push("Workday parse: sourceId/reqId mapping wrong (" + w.sourceId + ")");
+    if (!w.rawText.includes("J-1 visa waiver"))
+      problems.push("Workday parse: HTML strip lost the visa phrase");
+    if (w.state !== "ND") problems.push("Workday parse: state-first location split wrong");
+    if (w.isFixture) problems.push("Workday parse: isFixture must be false");
+  }
   return problems;
 }
 
@@ -234,6 +256,22 @@ function writeJson(dir: string, name: string, data: unknown): void {
 
 function jobsByStatus(jobs: RadarJob[], status: string): RadarJob[] {
   return jobs.filter((j) => j.classification.status === status);
+}
+
+// Workday gives every posting a unique sourceId ("workday-sanford-R-0236697"),
+// so the report is grouped back to the owning registry source (longest-prefix
+// match) instead of listing one line per job.
+function sourceGroup(sourceId: string): string {
+  let best = "";
+  for (const s of SOURCES) {
+    if (
+      (sourceId === s.id || sourceId.startsWith(s.id + "-")) &&
+      s.id.length > best.length
+    ) {
+      best = s.id;
+    }
+  }
+  return best || sourceId;
 }
 
 interface ReportExtras {
@@ -440,7 +478,7 @@ async function main(): Promise<void> {
 
   const bySourceMap = new Map<string, number>();
   for (const c of candidates) {
-    const key = c.isFixture ? "fixtures" : c.sourceId;
+    const key = c.isFixture ? "fixtures" : sourceGroup(c.sourceId);
     bySourceMap.set(key, (bySourceMap.get(key) ?? 0) + 1);
   }
   let phraseHitTotal = 0;
