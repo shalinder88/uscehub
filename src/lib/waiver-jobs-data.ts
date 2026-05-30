@@ -26,8 +26,10 @@
 // - Anonymous/anonymized listings
 // - Copied job descriptions from any source
 //
-// Jobs are refreshed by automated agents 3x daily.
-// Last full verification: March 27, 2026
+// Static starter dataset — NOT automatically refreshed.
+// The automated Visa Job Radar engine is in development and will supersede this
+// file (spec: docs/platform-v2/local/career/VJ_VISA_JOB_RADAR_ENGINE_SPEC.md).
+// Last manual update: March 27, 2026
 // ════════════════════════════════════════════════════════════════
 
 export type VisaType = "j1" | "h1b" | "both" | "greencard";
