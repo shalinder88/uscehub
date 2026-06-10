@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
+import { SPECIALTIES } from "@/lib/utils";
 import { Hero } from "@/components/home/hero";
 import { VerifiedNotice } from "@/components/listings/verified-notice";
 import { FeaturedListings } from "@/components/home/featured-listings";
@@ -58,19 +59,23 @@ export default async function HomePage() {
   // observership+externship+elective into a "clinical" bucket. EXTERNSHIP,
   // ELECTIVE, POSTDOC, VOLUNTEER all have 0 APPROVED rows.
 
-  // Normalize specialties: split on commas / em-dash / paren, take primary
-  // token, dedupe case-insensitively. Prevents "Dermatology" vs
-  // "Dermatology — Surgery" vs "Dermatology (Mohs/Cosmetic)" triple-counting.
-  const specialtyBucket = new Set<string>();
+  // Count distinct canonical specialties (the SPECIALTIES taxonomy that the
+  // browse pages, search, and posting form already share) that are the primary
+  // focus of at least one approved listing. The raw `specialty` field is free
+  // text, so counting distinct raw values overcounts badly — program titles
+  // like "Multi-department M4 electives at X" each read as a unique specialty,
+  // which is what inflated this stat to a fake 93. Matching the primary token
+  // against the canonical list keeps the count honest.
+  const specialtyLower = SPECIALTIES.map((s) => s.toLowerCase());
+  const coveredSpecialties = new Set<string>();
   for (const row of specialtyRaw) {
     if (!row.specialty) continue;
-    const primary = row.specialty
-      .split(/[,—–(]/)[0]
-      .trim()
-      .toLowerCase();
-    if (primary && primary.length > 2) specialtyBucket.add(primary);
+    const primary = row.specialty.split(/[,—–(]/)[0].trim().toLowerCase();
+    for (let i = 0; i < SPECIALTIES.length; i++) {
+      if (primary.includes(specialtyLower[i])) coveredSpecialties.add(SPECIALTIES[i]);
+    }
   }
-  const specialtyCount = specialtyBucket.size;
+  const specialtyCount = coveredSpecialties.size;
 
   // Calculate state counts
   const stateCounts: Record<string, number> = {};

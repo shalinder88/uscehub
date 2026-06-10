@@ -51,6 +51,17 @@ export const SITE_METRICS = {
   /** US states with at least one indexed program. */
   statesCovered: 36,
 
+  /**
+   * Distinct canonical specialties (the `SPECIALTIES` taxonomy in
+   * `@/lib/utils`) that are the primary focus of at least one APPROVED
+   * listing. Derived 2026-06-09 from the live homepage computation in
+   * `src/app/page.tsx`. Conservative: the raw `specialty` free-text field
+   * naively yields ~93 distinct values, but most are program-description
+   * strings ("Multi-department M4 electives at X"), not specialties. The OG
+   * card renders this with a trailing "+", so it reads as an honest floor.
+   */
+  specialtiesCovered: 18,
+
   /** Last public-data refresh label, free-form, e.g. "April 2026". */
   lastUpdatedLabel: "May 2026",
 } as const;

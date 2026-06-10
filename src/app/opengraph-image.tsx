@@ -141,8 +141,8 @@ export default async function OpengraphImage() {
         <div style={{ display: "flex", gap: 24 }}>
           {[
             { value: SITE_METRICS.listingsWithOfficialSource, label: "Verified programs" },
-            { value: 36, label: "States covered" },
-            { value: 93, label: "Specialties" },
+            { value: SITE_METRICS.statesCovered, label: "States covered" },
+            { value: SITE_METRICS.specialtiesCovered, label: "Specialties" },
           ].map((s) => (
             <div
               key={s.label}
