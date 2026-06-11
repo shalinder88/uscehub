@@ -16,9 +16,15 @@ import {
   ExternalLink,
   Shield,
   Users,
-  TrendingUp,
+  Zap,
 } from "lucide-react";
 import { SPONSOR_DATA, type SponsorRecord } from "@/lib/sponsor-data";
+import {
+  LIVE_NOTICE_EMPLOYERS,
+  CAP_EXEMPT_KEYS,
+  normEmployerKey,
+  type LiveNoticeEmployer,
+} from "@/lib/sponsor-truth-overlay";
 
 const US_STATES: Record<string, string> = {
   AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",
@@ -40,25 +46,45 @@ const ALL_SPECIALTIES = [
 
 const PAGE_SIZE = 50;
 
+// Live notice keys for fast sort (2 entries — iterating is negligible)
+const LIVE_KEYS = [...LIVE_NOTICE_EMPLOYERS.keys()];
+
+function getLiveData(employerName: string): LiveNoticeEmployer | null {
+  const k = normEmployerKey(employerName);
+  if (LIVE_NOTICE_EMPLOYERS.has(k)) return LIVE_NOTICE_EMPLOYERS.get(k)!;
+  // Prefix match: "university of pittsburgh physicians" → "university of pittsburgh"
+  for (const lk of LIVE_KEYS) {
+    if (k.startsWith(lk) && lk.length >= 18) return LIVE_NOTICE_EMPLOYERS.get(lk)!;
+  }
+  return null;
+}
+
+function isCapExempt(employerName: string): boolean {
+  return CAP_EXEMPT_KEYS.has(normEmployerKey(employerName));
+}
+
+function isLive(employerName: string): boolean {
+  return getLiveData(employerName) !== null;
+}
+
 export function SponsorSearch() {
   const [query, setQuery] = useState("");
   const [stateFilter, setStateFilter] = useState("all");
   const [specFilter, setSpecFilter] = useState("all");
-  const [sortBy, setSortBy] = useState<"salary" | "positions" | "name">("salary");
+  const [capExemptOnly, setCapExemptOnly] = useState(false);
+  const [sortBy, setSortBy] = useState<"active" | "salary" | "positions" | "name">("active");
   const [showFilters, setShowFilters] = useState(false);
   const [page, setPage] = useState(0);
-
-  useEffect(() => {
-    setPage(0);
-  }, [query, stateFilter, specFilter, sortBy]);
 
   const states = useMemo(() => {
     const s = new Set(SPONSOR_DATA.map((d) => d.s));
     return [...s].sort();
   }, []);
 
+  useEffect(() => { setPage(0); }, [query, stateFilter, specFilter, capExemptOnly, sortBy]);
+
   const filtered = useMemo(() => {
-    let results = SPONSOR_DATA;
+    let results: SponsorRecord[] = SPONSOR_DATA;
 
     if (query) {
       const q = query.toLowerCase();
@@ -79,8 +105,17 @@ export function SponsorSearch() {
       results = results.filter((r) => r.sp.some((sp) => sp.toLowerCase().includes(specFilter.toLowerCase())));
     }
 
-    // Sort
-    if (sortBy === "salary") {
+    if (capExemptOnly) {
+      results = results.filter((r) => isCapExempt(r.e));
+    }
+
+    if (sortBy === "active") {
+      results = [...results].sort((a, b) => {
+        const aL = isLive(a.e) ? 1 : 0;
+        const bL = isLive(b.e) ? 1 : 0;
+        return bL - aL || b.a - a.a;
+      });
+    } else if (sortBy === "salary") {
       results = [...results].sort((a, b) => b.a - a.a);
     } else if (sortBy === "positions") {
       results = [...results].sort((a, b) => b.p - a.p);
@@ -89,13 +124,20 @@ export function SponsorSearch() {
     }
 
     return results;
-  }, [query, stateFilter, specFilter, sortBy]);
+  }, [query, stateFilter, specFilter, capExemptOnly, sortBy]);
 
-  // Stats
   const totalPositions = filtered.reduce((sum, r) => sum + r.p, 0);
-  const avgSalary = filtered.length > 0
-    ? Math.round(filtered.filter((r) => r.a > 0).reduce((sum, r) => sum + r.a, 0) / filtered.filter((r) => r.a > 0).length)
-    : 0;
+  const avgSalary =
+    filtered.length > 0
+      ? Math.round(
+          filtered.filter((r) => r.a > 0).reduce((sum, r) => sum + r.a, 0) /
+            filtered.filter((r) => r.a > 0).length
+        )
+      : 0;
+
+  const liveCount = useMemo(() => SPONSOR_DATA.filter((r) => isLive(r.e)).length, []);
+
+  const page0 = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -114,10 +156,18 @@ export function SponsorSearch() {
             </p>
           </div>
         </div>
-        <div className="mt-2 inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-700">
-          <Shield className="h-3.5 w-3.5" />
-          <span>Source: <strong>U.S. Department of Labor</strong> LCA Public Data (FY2025 Q3)</span>
-          <span className="text-slate-500">· Public domain · No paywall</span>
+        <div className="flex flex-wrap gap-2 mt-2">
+          <div className="inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/5 px-3 py-1.5 text-xs text-green-700">
+            <Shield className="h-3.5 w-3.5" />
+            <span>Source: <strong>U.S. Department of Labor</strong> LCA Public Data (FY2025 Q3)</span>
+            <span className="text-slate-500">· Public domain · No paywall</span>
+          </div>
+          {liveCount > 0 && (
+            <div className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs text-amber-700 font-medium">
+              <Zap className="h-3.5 w-3.5" />
+              {liveCount} employer{liveCount !== 1 ? "s" : ""} actively filing H-1B now
+            </div>
+          )}
         </div>
       </div>
 
@@ -131,7 +181,9 @@ export function SponsorSearch() {
           We filtered 683,535 total records to extract 5,311 physician-specific
           filings (SOC codes 29-1211 through 29-1229), then identified{" "}
           {SPONSOR_DATA.length.toLocaleString()} unique attending-level employers.
-          This is the same data other sites charge for. We provide it free.
+          Employers marked <strong className="text-amber-700">ACTIVELY FILING</strong> have
+          a current public LCA-notice posted on their own site — the freshest legal
+          signal (20 CFR 655.734), months ahead of DOL disclosure files.
         </div>
       </div>
 
@@ -162,23 +214,28 @@ export function SponsorSearch() {
         >
           <Filter className="h-3.5 w-3.5" />
           Filters
+          {(stateFilter !== "all" || specFilter !== "all" || capExemptOnly) && (
+            <span className="rounded-full bg-accent text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center">
+              {[stateFilter !== "all", specFilter !== "all", capExemptOnly].filter(Boolean).length}
+            </span>
+          )}
           <ChevronDown className={`h-3 w-3 transition-transform ${showFilters ? "rotate-180" : ""}`} />
         </button>
 
-        {/* Sort */}
         <select
           value={sortBy}
-          onChange={(e) => setSortBy(e.target.value as "salary" | "positions" | "name")}
+          onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
           className="rounded-lg border border-border bg-surface px-3 py-2 text-xs text-foreground focus:outline-none focus:border-accent"
         >
+          <option value="active">Sort: Active Notices First</option>
           <option value="salary">Sort: Highest Salary</option>
           <option value="positions">Sort: Most Positions</option>
           <option value="name">Sort: A-Z</option>
         </select>
 
-        {(stateFilter !== "all" || specFilter !== "all") && (
+        {(stateFilter !== "all" || specFilter !== "all" || capExemptOnly) && (
           <button
-            onClick={() => { setStateFilter("all"); setSpecFilter("all"); }}
+            onClick={() => { setStateFilter("all"); setSpecFilter("all"); setCapExemptOnly(false); }}
             className="rounded-lg border border-danger/30 bg-danger/5 px-3 py-2 text-xs text-danger hover:bg-danger/10 transition-colors"
           >
             Clear filters
@@ -187,7 +244,7 @@ export function SponsorSearch() {
       </div>
 
       {showFilters && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 p-4 rounded-xl border border-border bg-surface-alt">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 p-4 rounded-xl border border-border bg-surface-alt">
           <div>
             <label className="block text-[10px] font-semibold text-muted uppercase tracking-wider mb-1.5">State</label>
             <select
@@ -213,6 +270,20 @@ export function SponsorSearch() {
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>
+          </div>
+          <div>
+            <label className="block text-[10px] font-semibold text-muted uppercase tracking-wider mb-1.5">Sponsorship Type</label>
+            <button
+              onClick={() => setCapExemptOnly(!capExemptOnly)}
+              className={`w-full rounded-lg border px-3 py-2 text-xs font-medium text-left transition-colors ${
+                capExemptOnly
+                  ? "border-accent bg-accent/10 text-accent"
+                  : "border-border bg-surface text-muted hover:text-foreground"
+              }`}
+            >
+              {capExemptOnly ? "✓ " : ""}Cap-Exempt Only
+              <span className="ml-1 text-[10px] opacity-60">(148 employers · no lottery)</span>
+            </button>
           </div>
         </div>
       )}
@@ -241,46 +312,105 @@ export function SponsorSearch() {
 
       {/* Results */}
       <div className="space-y-2">
-        {filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE).map((r, i) => (
-          <div
-            key={`${r.e}-${r.s}-${i}`}
-            className="rounded-lg border border-border bg-surface p-4 hover:border-accent/30 transition-colors"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-foreground truncate">{r.e}</h3>
-                <div className="flex items-center gap-3 text-xs text-muted mt-0.5">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="h-3 w-3" />
-                    {r.c}, {r.s}
+        {page0.map((r, i) => {
+          const live = getLiveData(r.e);
+          const capEx = isCapExempt(r.e);
+          return (
+            <div
+              key={`${r.e}-${r.s}-${i}`}
+              className={`rounded-lg border bg-surface p-4 transition-colors ${
+                live
+                  ? "border-amber-400/40 hover:border-amber-400/70"
+                  : "border-border hover:border-accent/30"
+              }`}
+            >
+              {/* Live notice banner */}
+              {live && (
+                <div className="flex items-center gap-2 mb-3 -mt-0.5">
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 text-[11px] font-bold text-amber-700 tracking-wide">
+                    <Zap className="h-3 w-3" />
+                    ACTIVELY FILING H-1B
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Briefcase className="h-3 w-3" />
-                    {r.p} position{r.p !== 1 ? "s" : ""}
-                    {r.n > 0 && <span className="text-success">({r.n} new)</span>}
+                  <span className="text-[10px] text-muted">
+                    Public LCA notice on employer site · 20 CFR 655.734
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-1 mt-2">
-                  {r.sp.map((sp) => (
-                    <span key={sp} className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-medium text-accent">
-                      {sp}
+              )}
+
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-bold text-foreground truncate">{r.e}</h3>
+                  <div className="flex items-center gap-3 text-xs text-muted mt-0.5">
+                    <span className="flex items-center gap-1">
+                      <MapPin className="h-3 w-3" />
+                      {r.c}, {r.s}
                     </span>
-                  ))}
+                    <span className="flex items-center gap-1">
+                      <Briefcase className="h-3 w-3" />
+                      {r.p} position{r.p !== 1 ? "s" : ""}
+                      {r.n > 0 && <span className="text-success ml-1">({r.n} new)</span>}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {r.sp.map((sp) => (
+                      <span key={sp} className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-medium text-accent">
+                        {sp}
+                      </span>
+                    ))}
+                    {capEx && (
+                      <span className="rounded-full bg-green-500/10 border border-green-500/20 px-2 py-0.5 text-[10px] font-medium text-green-700">
+                        Cap-Exempt
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="sm:text-right shrink-0">
+                  {r.a > 0 ? (
+                    <div className="text-lg font-bold text-success font-mono">
+                      ${r.a.toLocaleString()}
+                    </div>
+                  ) : (
+                    <div className="text-xs text-muted">Salary not in filing</div>
+                  )}
+                  <div className="text-[10px] text-muted">avg from LCA filings</div>
                 </div>
               </div>
-              <div className="sm:text-right shrink-0">
-                {r.a > 0 ? (
-                  <div className="text-lg font-bold text-success font-mono">
-                    ${r.a.toLocaleString()}
+
+              {/* Live notice detail */}
+              {live && live.notices.map((n, ni) => (
+                <div
+                  key={ni}
+                  className="mt-3 rounded-lg bg-amber-500/5 border border-amber-500/20 p-3"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <p className="text-xs font-semibold text-foreground">{n.role}</p>
+                      <p className="text-[11px] text-muted mt-0.5">
+                        <span className="text-success font-mono font-bold">{n.salaryText}</span>
+                        {n.periodText && (
+                          <span className="ml-2 text-muted">{n.periodText}</span>
+                        )}
+                      </p>
+                    </div>
+                    <a
+                      href={n.noticeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-2.5 py-1 text-[11px] font-medium text-amber-700 transition-colors whitespace-nowrap shrink-0"
+                    >
+                      View LCA Notice
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
                   </div>
-                ) : (
-                  <div className="text-xs text-muted">Salary not in filing</div>
-                )}
-                <div className="text-[10px] text-muted">avg from LCA filings</div>
-              </div>
+                  <p className="mt-2 text-[10px] text-muted italic">
+                    Employer history does not guarantee sponsorship for any specific role — always verify directly.
+                  </p>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Pagination */}
@@ -330,27 +460,29 @@ export function SponsorSearch() {
         <h3 className="text-sm font-bold text-foreground mb-2">About This Data</h3>
         <div className="space-y-2 text-xs text-muted">
           <p>
-            <strong className="text-foreground">Source:</strong> U.S. Department of Labor,
-            Labor Condition Application (LCA) Disclosure Data, FY2025 Q3.
-            This is public domain government data — no copyright restrictions.
+            <strong className="text-foreground">DOL history (all employers):</strong>{" "}
+            U.S. Department of Labor, LCA Disclosure Data, FY2025 Q3. Public domain.
+            Every employer that filed an LCA for a physician H-1B (SOC 29-1211–29-1229).
           </p>
           <p>
-            <strong className="text-foreground">What it shows:</strong> Every employer that
-            filed an LCA for a physician H-1B position (SOC codes 29-1211 through 29-1229).
-            Salary data comes directly from the employer&apos;s LCA filing — it is the wage
-            they offered to the Department of Labor.
+            <strong className="text-foreground">Active LCA notices:</strong>{" "}
+            Employers marked ACTIVELY FILING have a current public LCA notice on their
+            own website — required by 20 CFR 655.734 for approximately 10 business days
+            per filing. This is months ahead of DOL quarterly disclosure files and is
+            the most direct evidence an employer is sponsoring H-1B right now.
           </p>
           <p>
-            <strong className="text-foreground">Limitations:</strong> LCA filing ≠ guaranteed
-            H-1B approval (~80% of certified LCAs result in approved H-1B petitions).
-            Some entries include fellowship/training positions at lower salaries. Salary
-            represents the base offered — actual compensation may be higher with bonuses
-            and incentives.
+            <strong className="text-foreground">Cap-exempt:</strong>{" "}
+            These employers (typically hospitals and universities) are exempt from the
+            annual H-1B lottery cap, meaning they can sponsor year-round without lottery
+            risk. Highly favorable for J-1 waiver physicians converting to H-1B.
           </p>
           <p>
-            <strong className="text-foreground">Why this is free:</strong> Other sites charge
-            $50-200+ for access to this same government data. We believe physicians navigating
-            immigration should not pay for information that is already publicly available.
+            <strong className="text-foreground">Limitations:</strong>{" "}
+            LCA filing ≠ guaranteed H-1B approval. Employer-level history does not
+            guarantee any specific role sponsors. Some entries include fellowship/training
+            positions. Always verify visa terms directly with the employer&apos;s HR or
+            immigration counsel.
           </p>
         </div>
       </div>

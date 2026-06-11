@@ -1,9 +1,9 @@
 # Sponsor truth — fused per-employer evidence
 
-Generated 2026-06-11T02:03:44.727Z · 1465 employers
+Generated 2026-06-11T02:56:58.099Z · 1465 employers
 
-- With LIVE physician LCA-notice activity: 1
-- With current employer-direct openings (latest run 2026-06-10-1938): 3
+- With LIVE physician LCA-notice activity: 2
+- With current employer-direct openings (latest run 2026-06-11-0242): 0
 
 ## Top 25 (live activity → openings → history score)
 
@@ -12,24 +12,10 @@ Generated 2026-06-11T02:03:44.727Z · 1465 employers
 DOL history: 18 certified physician position(s) across 4 specialties; cap-exempt. ACTIVELY sponsoring: 1 physician LCA notice(s) on the employer's own site (latest 2026-06-11). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Pulmonary and Critical Care Nocturnist Physician/Faculty — $435,000 — from 13 Jul 2026 to 12 Jul 2029 — [notice](https://www.kumc.edu/documents/international/lca/NOTICE%20OF%20LCA%20FILING%20KBGOVI07995-2%20%282%29.pdf)
 
-### AltaMed Health Services Corporation (CA) — score 34
+### University of Pittsburgh (PA) — score 20
 
-DOL history: 4 certified physician position(s) across 2 specialties; J-1-relevant. 25 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 25 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [SPONSOR_LEAD]: Staff Physician, Family Practice
-- Opening [SPONSOR_LEAD]: Staff Physician, Internal Medicine
-- Opening [SPONSOR_LEAD]: Staff Physician, Family Practice
-
-### Memorial Sloan Kettering Cancer Center (NY) — score 75
-
-DOL history: 52 certified physician position(s) across 3 specialties; cap-exempt. 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [SPONSOR_LEAD]: Service Chief of Clinical Microbiology  Department of Pathology and Laboratory Medicine  Memorial Sloan Kettering Cancer Center (NY)
-- Opening [SPONSOR_LEAD]: CLINICAL CHEMIST/CLINICAL PATHOLOGIST/LABORATORY DIRECTOR (NY)
-- Opening [SPONSOR_LEAD]: Chief, Clinical Genetics Service Division of Solid Tumor Oncology Department of Medicine (NY)
-
-### Vanderbilt University Medical Center (TN) — score 41
-
-DOL history: 9 certified physician position(s) across 3 specialties; cap-exempt. 1 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 1 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [SPONSOR_LEAD]: Senior Coding Specialist (Facility Coding with experience in Observation and Emergency Medicine) - REMOTE (TN)
+DOL history: 0 certified physician position(s) across 4 specialties; cap-exempt. ACTIVELY sponsoring: 1 physician LCA notice(s) on the employer's own site (latest 2026-06-11). Caveat: employer-level history does not guarantee any specific role sponsors.
+- LIVE filing: Assistant Professor - Adult Cardiology — $156.25 per hour — from 9/1/2026 to 8/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf)
 
 ### Mayo Clinic  (WI) — score 83
 
@@ -66,6 +52,10 @@ DOL history: 40 certified physician position(s) across 6 specialties; cap-exempt
 ### West Virginia University Medical Corporation (WV) — score 77
 
 DOL history: 37 certified physician position(s) across 8 specialties; cap-exempt. Caveat: employer-level history does not guarantee any specific role sponsors.
+
+### Memorial Sloan Kettering Cancer Center (NY) — score 75
+
+DOL history: 52 certified physician position(s) across 3 specialties; cap-exempt. Caveat: employer-level history does not guarantee any specific role sponsors.
 
 ### Banner University Medical Group (AZ) — score 75
 
@@ -114,3 +104,7 @@ DOL history: 24 certified physician position(s) across 6 specialties; cap-exempt
 ### TRUSTEES OF THE UNIVERSITY OF PENNSYLVANIA (PA) — score 64
 
 DOL history: 26 certified physician position(s) across 5 specialties; cap-exempt. Caveat: employer-level history does not guarantee any specific role sponsors.
+
+### Franciscan Missionaries of Our Lady Health System, Inc. (LA) — score 64
+
+DOL history: 25 certified physician position(s) across 4 specialties; J-1-relevant. Caveat: employer-level history does not guarantee any specific role sponsors.
