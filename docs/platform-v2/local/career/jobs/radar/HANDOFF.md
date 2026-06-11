@@ -145,25 +145,23 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
 
 ## 7. What's NEXT (roadmap, highest-leverage first)
 
-1. **Wire `ats-resolver.ts` into `run.ts:gather()`** — the JSON-LD reader is built but never live-fetched;
-   this unlocks the iCIMS/Oracle majority (the #1 coverage gap).
-2. **Scale the LCA-notice registry** — DONE this session (KUMC + Pitt enabled, parser generalized to two
-   templates, per-source link strategy). Adding a PDF-based source is now ~10 lines + a live verify. Next
-   wins here: (a) add an `html-row` link strategy to unlock inline-HTML notice pages (Maryland iTerp is the
-   reference — `iterp.umd.edu/.../lcaPostings.cfm`); (b) keep discovering public PDF pages, but expect a low
-   hit rate (physician-bearing public PDF pages are rare — see §5). Always verify reachability with the
-   honest UA first; if a page 403s, disable it with a note (never bypass).
-2b. **Scheduled polling for the LCA radar** (was item 3, now the highest-leverage LCA step) — notices vanish
-   in ~10 business days, so the accumulating `firstSeenAt`/`lastSeenAt` time-series only has value if polled
-   on a cron. A single manual poll is a snapshot. NOT yet enabled (recurring external fetch — get an explicit
-   OK before scheduling).
-3. **Scheduled polling** for the LCA radar (makes the time-series valuable; notices vanish in ~10 days).
-4. **Freshness/closed-on-absence loop** for engine job leads (the LCA index has first/last-seen; jobs don't).
-5. **Wire `sponsor_truth.json` → the existing `/career/sponsors` page** (the page already exists and is
-   filterable over 1,087 sponsors) — render the evidence panels (DOL history + live notices + openings + caveat).
+1. **Wire `ats-resolver.ts` into `run.ts:gather()`** — the JSON-LD reader is built but never live-fetched.
+   NOTE: evidence review showed this is low-yield for attending physicians (big academic ATSs post zero
+   attendings publicly). Deprioritized. Worth revisiting only for community/rural/FQHC systems.
+2. **LCA-notice registry** — DONE (sessions 2026-06-11): KUMC + Pitt enabled, parser generalized to two
+   templates, per-source link strategy, content-gate. Daily cron polling at 8am.
+3. **LCA cron** — DONE (session 2026-06-11): `lca-notice-radar-poll` scheduled task running daily.
+4. **Wire `sponsor_truth.json` → `/career/sponsors` page** — DONE (session 2026-06-11): live notice
+   badges, cap-exempt filter, "Sort: Active Notices First", per-card notice PDF links and caveat.
+   Codegen: `build-sponsor-truth-overlay.ts` → `src/lib/sponsor-truth-overlay.ts` (auto-regenerated
+   by cron each day).
+5. **Add `html-row` link strategy** — unlock inline-HTML LCA notice pages. University of Maryland iTerp
+   (`iterp.umd.edu/.../lcaPostings.cfm`) is the reference. Currently has 0 physician notices but
+   worth monitoring. Would need a new `LcaNoticeSource.linkStrategy: "html-row"` branch in lca-notice-radar.ts.
 6. **Per-job `[id]` pages + JobPosting JSON-LD** → Google for Jobs (currently invisible).
-7. Unblock **repeat-rate** — needs multi-year DOL LCA files (operator manual download; DOL 403s bots).
-8. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
+7. **Freshness/closed-on-absence loop** for engine job leads (LCA index has first/last-seen; jobs don't).
+8. Unblock **repeat-rate** — needs multi-year DOL LCA files (operator manual download; DOL 403s bots).
+9. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
 
 Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `VJ_USAJOBS_COVERAGE.md`,
 `VJ_90PCT_COVERAGE_STRATEGY.md`, `VJ_GRADE_GAP_REVIEW.md`, `VJ_PROMISE_AUDIT_VERDICT.md`, plus the R2 spec
@@ -188,6 +186,15 @@ Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `
 
 ## 9. Git state at sign-out
 
-All session work is committed to `main` (local, NOT pushed). See `git log --oneline`. The pre-existing
-`src/app/career/*` and p102 modifications remain uncommitted and untouched, as required. To resume: read
-this file, run the green check (§6), then pick up §7 item 1.
+All session work is committed to `main` (local, NOT pushed). Commits in order:
+- `25abcb5` — LCA-notice radar: two-template parser + Pitt source + per-source link strategy
+- `7dc1391` — Sponsors page: live LCA notice badges + cap-exempt filter + truth fusion
+
+The pre-existing `src/app/career/*` (except `sponsors/sponsor-search.tsx`) and p102 modifications
+remain uncommitted and untouched, as required.
+
+**Daily cron running:** `lca-notice-radar-poll` scheduled task (8am daily) polls LCA sources →
+re-fuses sponsor_truth.json → regenerates sponsor-truth-overlay.ts → commits. Notices vanish in
+~10 business days; the cron is what makes the time-series valuable.
+
+To resume: read this file, run the green check (§6), then pick up §7.
