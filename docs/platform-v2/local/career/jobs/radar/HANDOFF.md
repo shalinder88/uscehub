@@ -101,8 +101,22 @@ Full detail in `VJ_PROMISE_AUDIT_VERDICT.md`. Summary:
 - `scale-sponsors.ts` — batch-resolves the sponsor head to ATS + counts reachable physician openings.
 - `lca-notice-radar.ts` — **the new product half.** Polls public LCA-notice pages → notice PDFs →
   `pdftotext` → parse role/wage/period/worksite/case# → physician gate → accumulating index
-  (`firstSeenAt`/`lastSeenAt`). Registry `LCA_NOTICE_SOURCES` (KUMC enabled; Penn/UMich 403-disabled;
-  Vanderbilt policy-only). Output: `docs/.../radar/lca-notices/`.
+  (`firstSeenAt`/`lastSeenAt`). Output: `docs/.../radar/lca-notices/`. **Scaled 2026-06-11:**
+  - Two per-source link strategies (`LcaNoticeSource.linkStrategy`): `filename-token` (KUMC — PDF hrefs
+    contain "lca"/"notice", role inside the numbered DOL body) and `all-pdf-titled` (Pitt — every PDF is a
+    notice, the FILENAME is the job title, physician-gated BEFORE fetch). Pitt's filename carries the dept
+    in a trailing paren ("(Ophthalmology)") which is stripped before the gate, else clinical-dept postdocs
+    false-positive.
+  - `parseNoticeText` now tolerates two templates: numbered DOL ("being sought as a"/"salary of"/"period
+    of employment…") and Pitt OIS prose ("for the position of"/"salary … is $X per hour"/"validity dates
+    from"). Salary keeps its unit ("$156.25 per hour" — an hourly-filed physician LCA is NOT a low wage).
+  - Content-gate: a fetched PDF only enters the index if its text contains "labor condition application"
+    (lets `all-pdf-titled` harvest broadly without indexing instruction/policy PDFs).
+  - Registry `LCA_NOTICE_SOURCES`: **KUMC + Pitt enabled**; Penn/UMich 403-disabled; Vanderbilt + Temple +
+    Berkeley policy-only; Maryland disabled (inline-HTML rows, no PDFs — would need an `html-row` strategy).
+  - Live state 2026-06-11: index = 3 notices, **2 physician** (KUMC Pulm/CC $435k; Pitt Adult Cardiology
+    $156.25/hr). Honest finding: public PDF-based, physician-bearing LCA pages are RARE — most employers
+    post physically (Ohio State), bot-block, use inline HTML, or are policy-only.
 - `sponsor-truth.ts` — **the fusion.** Joins layers 1+2+3 per employer (by `normEmployer`), ranks live-
   activity → openings → history, writes `sponsor_truth.json` + report. Every record has a `truthSummary`
   with the honest caveat baked in.
@@ -133,8 +147,16 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
 
 1. **Wire `ats-resolver.ts` into `run.ts:gather()`** — the JSON-LD reader is built but never live-fetched;
    this unlocks the iCIMS/Oracle majority (the #1 coverage gap).
-2. **Scale the LCA-notice registry** — KUMC is 1 page; discover more public LCA-notice pages at top
-   physician sponsors (search "<employer> LCA notices"). Each added source compounds the accumulating index.
+2. **Scale the LCA-notice registry** — DONE this session (KUMC + Pitt enabled, parser generalized to two
+   templates, per-source link strategy). Adding a PDF-based source is now ~10 lines + a live verify. Next
+   wins here: (a) add an `html-row` link strategy to unlock inline-HTML notice pages (Maryland iTerp is the
+   reference — `iterp.umd.edu/.../lcaPostings.cfm`); (b) keep discovering public PDF pages, but expect a low
+   hit rate (physician-bearing public PDF pages are rare — see §5). Always verify reachability with the
+   honest UA first; if a page 403s, disable it with a note (never bypass).
+2b. **Scheduled polling for the LCA radar** (was item 3, now the highest-leverage LCA step) — notices vanish
+   in ~10 business days, so the accumulating `firstSeenAt`/`lastSeenAt` time-series only has value if polled
+   on a cron. A single manual poll is a snapshot. NOT yet enabled (recurring external fetch — get an explicit
+   OK before scheduling).
 3. **Scheduled polling** for the LCA radar (makes the time-series valuable; notices vanish in ~10 days).
 4. **Freshness/closed-on-absence loop** for engine job leads (the LCA index has first/last-seen; jobs don't).
 5. **Wire `sponsor_truth.json` → the existing `/career/sponsors` page** (the page already exists and is

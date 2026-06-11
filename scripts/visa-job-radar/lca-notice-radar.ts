@@ -23,12 +23,22 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 import { isPhysician } from "./engine";
 
+// How a source's notice documents are reached on its page:
+//   "filename-token"  — KUMC style: PDF hrefs that themselves contain "lca"/"notice";
+//                       the role lives INSIDE the numbered DOL notice body.
+//   "all-pdf-titled"  — Pitt style: every PDF on the page is a notice and the
+//                       FILENAME is the job title ("Assistant Professor - Adult
+//                       Cardiology (UPP).pdf"). The title is physician-gated before
+//                       any fetch, so we only pull likely-physician notices.
+export type NoticeLinkStrategy = "filename-token" | "all-pdf-titled";
+
 export interface LcaNoticeSource {
   id: string;
   employer: string;
   pageUrl: string;
   enabled: boolean;
   note: string;
+  linkStrategy?: NoticeLinkStrategy; // default "filename-token"
 }
 
 export const LCA_NOTICE_SOURCES: LcaNoticeSource[] = [
@@ -39,6 +49,14 @@ export const LCA_NOTICE_SOURCES: LcaNoticeSource[] = [
       "https://www.kumc.edu/academic-and-student-affairs/departments/office-of-international-programs/inbound-programs/information-for-faculty-researchers-and-physicians/h-1b-employees/lca-postings.html",
     enabled: true,
     note: "Verified 2026-06-10: public LCA Postings page, notice PDFs with numbered role/salary/period/worksite items. First parsed notice: Pulm/CC Nocturnist Physician, $435,000.",
+  },
+  {
+    id: "lca-pitt",
+    employer: "University of Pittsburgh",
+    pageUrl: "https://www.ois.pitt.edu/lca-postings",
+    enabled: true,
+    linkStrategy: "all-pdf-titled",
+    note: "Verified 2026-06-11: public LCA Postings page (Office of International Services), one notice PDF per filing under /sites/default/files/docs/ with the JOB TITLE as the filename (no 'lca'/'notice' token in the URL → needs all-pdf-titled). Top physician sponsor via UPMC / Univ. of Pittsburgh Physicians (UPP). Notice template differs from KUMC ('for the position of', 'salary ... is $X per hour', 'validity dates from'); the parser handles both. Title carries the dept in a trailing paren ('(Ophthalmology)') so the dept is stripped before the physician gate to avoid postdoc/research false positives. First physician notice: Assistant Professor - Adult Cardiology, $156.25/hr.",
   },
   {
     id: "lca-upenn",
@@ -60,6 +78,13 @@ export const LCA_NOTICE_SOURCES: LcaNoticeSource[] = [
     pageUrl: "https://hr.vanderbilt.edu/employee-immigration-services/lca-h1b/",
     enabled: false,
     note: "DISABLED 2026-06-10: page is LCA policy/process only; no notice documents posted there.",
+  },
+  {
+    id: "lca-umd",
+    employer: "University of Maryland",
+    pageUrl: "https://iterp.umd.edu/istart/xservices/employment/lcaPostings.cfm?index=01",
+    enabled: false,
+    note: "DISABLED 2026-06-11: serves a plain client, but notices are INLINE HTML table rows (no notice PDFs) — needs an 'html-row' strategy this radar doesn't yet have. Current postings are research scientists, no physicians. Revisit if an html-row parser is added.",
   },
 ];
 
@@ -147,6 +172,60 @@ function valueAfter(text: string, anchor: string, maxLen: number): string | unde
   return v.length > 0 ? v : undefined;
 }
 
+// Drop leading separators left behind when an anchor stops just before a colon
+// or dash (e.g. "for the position of" → ": Assistant Professor ...").
+function stripLeadingPunct(s: string): string {
+  let i = 0;
+  while (i < s.length && (s[i] === ":" || s[i] === "-" || s[i] === " " || s[i] === "." || s[i] === "\t" || s[i] === "\n")) i++;
+  return s.slice(i);
+}
+
+function stripTrailingPunct(s: string): string {
+  let out = s.trim();
+  while (out.length > 0 && (out.endsWith(".") || out.endsWith(",") || out.endsWith(";"))) {
+    out = out.slice(0, -1).trim();
+  }
+  return out;
+}
+
+// A Drupal re-post suffix ("..._3") on an otherwise-identical filename.
+function stripTrailingNumericSuffix(s: string): string {
+  let i = s.length - 1;
+  let sawDigit = false;
+  while (i >= 0 && s[i] >= "0" && s[i] <= "9") { i--; sawDigit = true; }
+  if (sawDigit && i >= 0 && s[i] === "_") return s.slice(0, i);
+  return s;
+}
+
+// A trailing parenthetical — Pitt's filename convention carries the DEPARTMENT
+// there ("Assistant Professor - Adult Cardiology (UPP)", "Postdoctoral Associate
+// (Ophthalmology)"). The dept must be stripped before the physician gate, or a
+// clinical-department postdoc trips a specialty token and false-positives.
+function stripTrailingParenthetical(s: string): string {
+  const t = s.trimEnd();
+  if (!t.endsWith(")")) return s.trim();
+  const open = t.lastIndexOf("(");
+  if (open <= 0) return s.trim();
+  return t.slice(0, open).trim();
+}
+
+// For "all-pdf-titled" sources, the job title IS the PDF filename. Decode it,
+// drop the extension + re-post suffix + trailing department paren.
+export function deriveTitleFromHref(href: string): string {
+  const path = href.split("?")[0];
+  let name = path.split("/").pop() ?? "";
+  try { name = decodeURIComponent(name); } catch { /* keep raw on malformed escapes */ }
+  const dot = name.toLowerCase().lastIndexOf(".pdf");
+  if (dot >= 0) name = name.slice(0, dot);
+  name = stripTrailingNumericSuffix(name);
+  name = stripTrailingParenthetical(name);
+  return name.trim();
+}
+
+// Pulls the labeled fields out of an LCA notice's text. Tolerant of two real
+// templates: the numbered DOL form (KUMC — "being sought as a", "salary of",
+// "period of employment ... is") and the Pitt OIS prose form ("for the position
+// of", "salary for this position is $X per hour", "validity dates from").
 export function parseNoticeText(text: string): {
   caseNumber?: string;
   role?: string;
@@ -171,14 +250,36 @@ export function parseNoticeText(text: string): {
     }
     return out.trim();
   };
+
+  let role = cutAt(
+    valueAfter(text, "being sought as a", 160) ??
+      valueAfter(text, "being sought as", 160) ??
+      valueAfter(text, "for the position of", 160),
+    [" through the filing", " with validity", " with the following"],
+  );
+  if (role) role = stripLeadingPunct(role);
+
+  let salaryText = cutAt(
+    valueAfter(text, "salary of", 80) ??
+      valueAfter(text, "wage of", 80) ??
+      valueAfter(text, "wage rate of", 80) ??
+      valueAfter(text, "salary for this position is", 80),
+    [" is being", " will be", " the employment", " the labor"],
+  );
+  if (salaryText) salaryText = stripTrailingPunct(salaryText);
+
+  const periodText = cutAt(
+    valueAfter(text, "period of employment for which this worker is sought is", 90) ??
+      valueAfter(text, "period of employment", 90) ??
+      valueAfter(text, "validity dates", 90),
+    [" the employment", " the salary"],
+  );
+
   return {
     caseNumber,
-    role: cutAt(valueAfter(text, "being sought as a", 160) ?? valueAfter(text, "being sought as", 160), [" through the filing"]),
-    salaryText: cutAt(
-      valueAfter(text, "salary of", 60) ?? valueAfter(text, "wage of", 60) ?? valueAfter(text, "wage rate of", 60),
-      [" is being", " will be", " per "],
-    ),
-    periodText: cutAt(valueAfter(text, "period of employment for which this worker is sought is", 90) ?? valueAfter(text, "period of employment", 90), [" the employment"]),
+    role,
+    salaryText,
+    periodText,
     worksiteText: valueAfter(text, "employment will occur at", 280),
   };
 }
@@ -226,14 +327,31 @@ async function main(): Promise<void> {
     }
     if (!page) continue;
 
-    const links = extractHrefs(page).filter(isNoticeLink).slice(0, MAX_PDFS_PER_SOURCE);
-    pollLog.push(src.id + ": " + links.length + " notice link(s) on page");
+    // "filename-token" pulls notice-tokened PDFs (role lives in the body).
+    // "all-pdf-titled" pulls every PDF whose filename-title is a physician role,
+    // physician-gating BEFORE any fetch so non-clinical postings are never pulled.
+    const strategy = src.linkStrategy ?? "filename-token";
+    let links: Array<{ href: string; titleHint?: string }>;
+    if (strategy === "all-pdf-titled") {
+      links = extractHrefs(page)
+        .filter((h) => h.toLowerCase().includes(".pdf"))
+        .map((h) => ({ href: h, titleHint: deriveTitleFromHref(h) }))
+        .filter((l) => l.titleHint!.length > 0 && isPhysician(l.titleHint!))
+        .slice(0, MAX_PDFS_PER_SOURCE);
+      pollLog.push(src.id + ": " + links.length + " physician notice link(s) on page");
+    } else {
+      links = extractHrefs(page)
+        .filter(isNoticeLink)
+        .map((h) => ({ href: h }))
+        .slice(0, MAX_PDFS_PER_SOURCE);
+      pollLog.push(src.id + ": " + links.length + " notice link(s) on page");
+    }
 
     for (const link of links) {
       await delay(FETCH_DELAY_MS);
-      const got = await fetchPdf(absolutizeCandidates(link, src.pageUrl));
+      const got = await fetchPdf(absolutizeCandidates(link.href, src.pageUrl));
       if (!got) {
-        pollLog.push(src.id + ": could not fetch a valid PDF for " + link.slice(0, 80));
+        pollLog.push(src.id + ": could not fetch a valid PDF for " + link.href.slice(0, 80));
         continue;
       }
       const url = got.url;
@@ -247,8 +365,23 @@ async function main(): Promise<void> {
       } catch {
         continue;
       }
+      // Content gate: only an actual LCA notice reaches the index. Protects the
+      // widened all-pdf harvest from instruction/policy PDFs.
+      if (!text.toLowerCase().includes("labor condition application")) {
+        pollLog.push(src.id + ": not an LCA notice (no header) — " + safeName.slice(0, 60));
+        continue;
+      }
       const parsed = parseNoticeText(text);
-      const caseNumber = parsed.caseNumber ?? "uncased-" + decodeURIComponent(safeName);
+      // all-pdf-titled: the title is the filename (already physician-gated).
+      // filename-token: the role is parsed from the body and gated here.
+      const role = link.titleHint ?? parsed.role;
+      const isPhysicianRole = link.titleHint
+        ? true
+        : parsed.role
+          ? isPhysician(parsed.role)
+          : false;
+      const caseNumber =
+        parsed.caseNumber ?? "uncased-" + (link.titleHint ?? decodeURIComponent(safeName));
       const existing = index.get(caseNumber);
       if (existing) {
         existing.lastSeenAt = now;
@@ -259,8 +392,8 @@ async function main(): Promise<void> {
           sourceId: src.id,
           employer: src.employer,
           noticeUrl: url,
-          role: parsed.role,
-          isPhysicianRole: parsed.role ? isPhysician(parsed.role) : false,
+          role,
+          isPhysicianRole,
           salaryText: parsed.salaryText,
           periodText: parsed.periodText,
           worksiteText: parsed.worksiteText,
