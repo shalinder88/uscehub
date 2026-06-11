@@ -160,6 +160,17 @@ const LEXICON: LexEntry[] = [
     variants: ["cap-exempt", "cap exempt", "h-1b cap-exempt", "cap-exempt employer"],
     labels: ["EXPLICIT_CAP_EXEMPT"],
   },
+  // Federal statutory non-citizen-appointment eligibility (38 U.S.C. 7407, the
+  // VA physician authority). The single anchor spans every observed phrasing —
+  // "may be appointed" / "may only be appointed", "VA Policy" / "VA Handbook
+  // 5005" — because it begins at "appointed"; the full sentence varies and would
+  // miss most. This is "MAY appoint a non-citizen", strictly weaker than the
+  // EXPLICIT_* sponsorship labels, so classify() caps it at VISA_SIGNAL_ONLY.
+  {
+    canonical: "federal non-citizen appointment eligibility",
+    variants: ["appointed when it is not possible to recruit qualified citizens"],
+    labels: ["FEDERAL_NONCITIZEN_ELIGIBLE"],
+  },
 ];
 
 // Explicit standalone denials. Every entry carries a visa / work-authorization
@@ -245,6 +256,25 @@ const NONPHYS_TOKENS: string[] = [
   "recruiter",
   "receptionist",
   "biller",
+  // Hardened 2026-06-10 after a "Pharmacy Reimbursement Specialist - Pediatric
+  // Outpatient" false-positived on the "pediatric" stem. These are clearly
+  // non-physician roles that recur in a Workday "physician" keyword search; none
+  // appears in a real physician title (note: NOT bare "assistant"/"director" —
+  // those collide with "Assistant Professor"/"Medical Director" physicians).
+  "nurse",
+  "advance practice",
+  "advanced practice",
+  "pharmacy",
+  "reimbursement",
+  "billing",
+  "analyst",
+  "manager",
+  "supervisor",
+  "navigator",
+  "liaison",
+  "clerk",
+  "educator",
+  "representative",
 ];
 
 const PHYS_TOKENS: string[] = [
@@ -396,9 +426,32 @@ function inBoilerplateFrame(text: string, hitStart: number): boolean {
   return false;
 }
 
-function polarityFor(text: string, hitStart: number): Polarity {
+// Structured fields put the negator AFTER the phrase: "Sponsorship Available: No",
+// "Visa Sponsorship: None", "Visas Accepted: N/A". precededByNegation looks only
+// before the hit and misses these, so a denial field reads as affirmative. Scan a
+// short window after the hit for "[sep] No/None/N/A/Not". A separator (: - =) is
+// REQUIRED so free text ("sponsorship available for IMGs") is never falsely denied.
+function followedByDenialValue(text: string, hitEnd: number): boolean {
+  let i = hitEnd;
+  while (i < text.length && text[i] === " ") i++;
+  if (i >= text.length || (text[i] !== ":" && text[i] !== "-" && text[i] !== "=")) return false;
+  i++;
+  while (i < text.length && text[i] === " ") i++;
+  const tail = text.slice(i, i + 5).toLowerCase();
+  return (
+    tail.startsWith("no ") ||
+    tail === "no" ||
+    tail.startsWith("no.") ||
+    tail.startsWith("none") ||
+    tail.startsWith("n/a") ||
+    tail.startsWith("not")
+  );
+}
+
+function polarityFor(text: string, hitStart: number, hitEnd: number): Polarity {
   if (inBoilerplateFrame(text, hitStart)) return "BOILERPLATE";
   if (precededByNegation(text, hitStart)) return "DENIED";
+  if (followedByDenialValue(text, hitEnd)) return "DENIED";
   return "AFFIRMATIVE";
 }
 
@@ -412,7 +465,7 @@ export function extractPhraseHits(cleanedText: string): PhraseHit[] {
           matchedText: cleanedText.slice(span.start, span.end),
           start: span.start,
           end: span.end,
-          polarity: polarityFor(cleanedText, span.start),
+          polarity: polarityFor(cleanedText, span.start, span.end),
           labels: entry.labels,
         });
       }
@@ -457,6 +510,11 @@ function held(
   return { ...base, status, confidence };
 }
 
+// "Employer MAY appoint a non-citizen" signals (statutory eligibility). On their
+// own they are real but strictly weaker than the EXPLICIT_* "will sponsor"
+// labels, so they cap at VISA_SIGNAL_ONLY and never PUBLISH — even Tier-1.
+const ELIGIBILITY_ONLY_LABELS = new Set<VisaLabel>(["FEDERAL_NONCITIZEN_ELIGIBLE"]);
+
 export function classify(cleaned: CleanedJob, phraseHits: PhraseHit[]): Classification {
   const raw = cleaned.raw;
   const text = cleaned.cleanedText;
@@ -472,6 +530,8 @@ export function classify(cleaned: CleanedJob, phraseHits: PhraseHit[]): Classifi
   const hasDenied = deniedHits.length > 0 || standaloneDenials.length > 0;
 
   const visaLabels = uniqueLabels(affirmativeHits);
+  const sponsorshipLabels = visaLabels.filter((l) => !ELIGIBILITY_ONLY_LABELS.has(l));
+  const eligibilityOnly = hasAffirmative && sponsorshipLabels.length === 0;
   const quotes: Quote[] = affirmativeHits.map((h) => ({
     text: h.matchedText,
     start: h.start,
@@ -497,6 +557,12 @@ export function classify(cleaned: CleanedJob, phraseHits: PhraseHit[]): Classifi
 
   if (hasAffirmative && !hasDenied) {
     if (isStale(raw)) return rejected("STALE", base);
+    if (eligibilityOnly) {
+      notes.push(
+        "Federal non-citizen eligibility (statutory 'may appoint a non-citizen') — not an affirmative sponsorship offer; surfaced as signal, not published.",
+      );
+      return held("VISA_SIGNAL_ONLY", base, "MEDIUM");
+    }
     const tierOne = raw.sourceTier === 1;
     const employerResolved = isEmployerResolved(raw);
     if (tierOne && employerResolved) {

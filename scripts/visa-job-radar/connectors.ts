@@ -204,6 +204,34 @@ export interface WorkdayListResponse {
     postedOn?: string;
     bulletFields?: string[];
   }>;
+  facets?: Array<{
+    facetParameter?: string;
+    descriptor?: string;
+    values?: Array<{ id?: string; descriptor?: string; count?: number }>;
+  }>;
+}
+
+// Find the jobFamilyGroup facet value ids that isolate physician/faculty reqs.
+// Critical: a keyword search for "physician" returns ~99% non-physician roles
+// (Cleveland Clinic: 1,004 keyword hits vs 10 actual physician-family, all
+// postdocs). The facet returns the real reqs. Empty result => tenant exposes no
+// such facet (caller falls back to a keyword search).
+export function physicianFacetIds(facets?: WorkdayListResponse["facets"]): string[] {
+  const fg = (facets ?? []).find((f) => f.facetParameter === "jobFamilyGroup");
+  if (!fg) return [];
+  const ids: string[] = [];
+  for (const v of fg.values ?? []) {
+    const d = (v.descriptor ?? "").toLowerCase();
+    if (
+      d.includes("physician") ||
+      d.includes("faculty") ||
+      d.includes("provider") ||
+      d.includes("medical staff")
+    ) {
+      if (v.id) ids.push(v.id);
+    }
+  }
+  return ids;
 }
 
 export interface WorkdayDetailResponse {
@@ -286,15 +314,35 @@ export async function fetchWorkday(
   const detailPaths: string[] = [];
   const seen = new Set<string>();
   try {
+    // Discover the physician/faculty job-family facet and filter by it. A keyword
+    // search for "physician" is ~99% non-physician noise; the facet returns the
+    // real reqs. Fall back to keyword only if the tenant exposes no such facet.
+    let appliedFacets: Record<string, string[]> = {};
+    let searchText = "physician";
+    const probe = await fetch(base + "/jobs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ appliedFacets: {}, limit: 1, offset: 0, searchText: "" }),
+    });
+    if (probe.ok) {
+      const pdata = (await probe.json()) as WorkdayListResponse;
+      const ids = physicianFacetIds(pdata.facets);
+      if (ids.length > 0) {
+        appliedFacets = { jobFamilyGroup: ids };
+        searchText = "";
+      }
+    }
+    await delay(WORKDAY_DELAY_MS);
+
     for (let page = 0; page < WORKDAY_MAX_PAGES; page++) {
       const res = await fetch(base + "/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          appliedFacets: {},
+          appliedFacets,
           limit: WORKDAY_PAGE_SIZE,
           offset: page * WORKDAY_PAGE_SIZE,
-          searchText: "physician",
+          searchText,
         }),
       });
       if (!res.ok) break;
@@ -331,4 +379,169 @@ export async function fetchWorkday(
     }
   }
   return out;
+}
+
+// ── USAJobs HistoricJoa (NO API KEY; series 0602 = Medical Officer) ──
+//
+// Two public, no-key endpoints on data.usajobs.gov: the metadata list (title,
+// agency, state, control number, open date) and the announcement-text list (the
+// full job body), joined on usajobsControlNumber. A short rolling open-date
+// window keeps the result under the API's ~500-row cap (no pagination token is
+// exposed) and keeps postings fresh enough to clear the staleness gate. An
+// honest User-Agent is required (Akamai 403s a UA-less client); we never spoof a
+// browser. This is distinct from the keyed Search API (fetchUsajobs) which is
+// gated on USAJOBS_API_KEY; this one yields with no key at all.
+
+export interface UsajobsHistoricMeta {
+  usajobsControlNumber?: number | string;
+  positionTitle?: string;
+  hiringAgencyName?: string;
+  positionOpenDate?: string;
+  positionlocations?: Array<{
+    positionLocationCity?: string;
+    positionLocationState?: string;
+  }>;
+}
+
+export interface UsajobsHistoricMetaResponse {
+  data?: UsajobsHistoricMeta[];
+}
+
+export interface UsajobsHistoricText {
+  usajobsControlNumber?: number | string;
+  summary?: string;
+  duties?: string;
+  requirements?: string;
+  requirementsConditionsOfEmployment?: string;
+  requirementsQualifications?: string;
+  otherInformation?: string;
+}
+
+export interface UsajobsHistoricTextResponse {
+  data?: UsajobsHistoricText[];
+}
+
+// The 7407 eligibility clause lives in requirements / requirementsQualifications;
+// we fold every body field (HTML-stripped) so the anchor is found wherever it sits.
+export function joinUsajobsHistoricBody(t: UsajobsHistoricText): string {
+  const fields = [
+    t.summary,
+    t.duties,
+    t.requirements,
+    t.requirementsConditionsOfEmployment,
+    t.requirementsQualifications,
+    t.otherInformation,
+  ];
+  return fields
+    .filter((f): f is string => typeof f === "string" && f.length > 0)
+    .map(stripHtml)
+    .join(" ");
+}
+
+export function parseUsajobsHistoric(
+  meta: UsajobsHistoricMeta,
+  body: string,
+  sourceIdBase: string,
+  fetchedAt: string,
+): RawCandidate | null {
+  if (!meta.positionTitle || meta.usajobsControlNumber == null) return null;
+  const cn = String(meta.usajobsControlNumber);
+  const loc = (meta.positionlocations ?? [])[0];
+  const title = meta.positionTitle;
+  return {
+    sourceId: sourceIdBase + "-" + cn,
+    sourceTier: 1,
+    sourceUrl: "https://www.usajobs.gov/job/" + cn,
+    fetchedAt,
+    title,
+    employer: meta.hiringAgencyName ?? "",
+    city: loc?.positionLocationCity,
+    // USAJobs returns full state names ("Oklahoma"); kept as-is — this source is
+    // internally consistent so canonicalKey dedupe still holds.
+    state: loc?.positionLocationState,
+    postedDate: meta.positionOpenDate,
+    rawText: [title, body].filter((s) => s.length > 0).join(". "),
+    isFixture: false,
+  };
+}
+
+const USAJOBS_HJ_WINDOW_DAYS = 10;
+const USAJOBS_HJ_MAX = 80; // candidate ceiling per run
+const USAJOBS_HJ_DELAY_MS = 200;
+const USAJOBS_HJ_MS_PER_DAY = 24 * 60 * 60 * 1000;
+const USAJOBS_HJ_BASE = "https://data.usajobs.gov/api/historicjoa";
+
+function usajobsHistoricUa(): string {
+  return (
+    process.env.USAJOBS_USER_AGENT ||
+    "USCEHub-visa-job-radar (+contact via repo owner)"
+  );
+}
+
+function isoDay(d: Date): string {
+  return d.toISOString().slice(0, 10);
+}
+
+// handle encodes "series/hiringAgencyCode" (e.g. "0602/VATA" = physicians at VHA).
+export async function fetchUsajobsHistoricJoa(
+  handle: string,
+  employer: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const parts = handle.split("/");
+  if (parts.length !== 2) return [];
+  const [series, agency] = parts;
+  const now = new Date();
+  const fetchedAt = now.toISOString();
+  const end = isoDay(now);
+  const start = isoDay(
+    new Date(now.getTime() - USAJOBS_HJ_WINDOW_DAYS * USAJOBS_HJ_MS_PER_DAY),
+  );
+  const qs =
+    "PositionSeries=" + encodeURIComponent(series) +
+    "&HiringAgencyCodes=" + encodeURIComponent(agency) +
+    "&StartPositionOpenDate=" + start +
+    "&EndPositionOpenDate=" + end;
+  const headers = { "User-Agent": usajobsHistoricUa(), Accept: "application/json" };
+
+  try {
+    const metaRes = await fetch(USAJOBS_HJ_BASE + "?" + qs, { headers });
+    if (!metaRes.ok) return [];
+    const meta = (await metaRes.json()) as UsajobsHistoricMetaResponse;
+    const metaItems = meta.data ?? [];
+
+    // Title-gate the list first to bound work; classify() re-applies the gate.
+    const kept: UsajobsHistoricMeta[] = [];
+    const seen = new Set<string>();
+    for (const m of metaItems) {
+      if (!m.positionTitle || m.usajobsControlNumber == null) continue;
+      if (!isPhysician(m.positionTitle)) continue;
+      const cn = String(m.usajobsControlNumber);
+      if (seen.has(cn)) continue;
+      seen.add(cn);
+      kept.push(m);
+      if (kept.length >= USAJOBS_HJ_MAX) break;
+    }
+    if (kept.length === 0) return [];
+
+    await delay(USAJOBS_HJ_DELAY_MS);
+    const textRes = await fetch(USAJOBS_HJ_BASE + "/announcementtext?" + qs, { headers });
+    if (!textRes.ok) return [];
+    const text = (await textRes.json()) as UsajobsHistoricTextResponse;
+    const bodyByCn = new Map<string, string>();
+    for (const t of text.data ?? []) {
+      if (t.usajobsControlNumber == null) continue;
+      bodyByCn.set(String(t.usajobsControlNumber), joinUsajobsHistoricBody(t));
+    }
+
+    const out: RawCandidate[] = [];
+    for (const m of kept) {
+      const cn = String(m.usajobsControlNumber);
+      const cand = parseUsajobsHistoric(m, bodyByCn.get(cn) ?? "", sourceIdBase, fetchedAt);
+      if (cand) out.push(cand);
+    }
+    return out;
+  } catch {
+    return [];
+  }
 }

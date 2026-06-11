@@ -13,6 +13,8 @@ import type {
 } from "./types";
 import type {
   GreenhouseResponse,
+  UsajobsHistoricMeta,
+  UsajobsHistoricText,
   UsajobsResponse,
   WorkdayDetailResponse,
 } from "./connectors";
@@ -194,6 +196,48 @@ export const FIXTURES: RawCandidate[] = [
       "Family Medicine Physician. Our clinic welcomes J-1 physicians through the Conrad 30 waiver program.",
     isFixture: true,
   },
+  {
+    sourceId: "fx-13",
+    sourceTier: 1,
+    sourceUrl: "https://www.usajobs.gov/job/000000013",
+    fetchedAt: FETCHED_AT,
+    title: "Physician (Internal Medicine)",
+    employer: "Veterans Health Administration",
+    city: "Martinsburg",
+    state: "West Virginia",
+    postedDate: "2026-05-26",
+    rawText:
+      "Physician (Internal Medicine). United States Citizenship: Non-citizens may only be appointed when it is not possible to recruit qualified citizens in accordance with VA Policy.",
+    isFixture: true,
+  },
+  {
+    sourceId: "fx-14",
+    sourceTier: 1,
+    sourceUrl: "https://lakeshoreuh.example.org/careers/acad-hosp-elig",
+    fetchedAt: FETCHED_AT,
+    title: "Academic Hospitalist",
+    employer: "Lakeshore University Hospital",
+    city: "Madison",
+    state: "WI",
+    postedDate: "2026-05-24",
+    rawText:
+      "Academic Hospitalist. Non-citizens may be appointed when it is not possible to recruit qualified citizens. As a cap-exempt employer we also offer H-1B sponsorship for international physicians.",
+    isFixture: true,
+  },
+  {
+    sourceId: "fx-15",
+    sourceTier: 1,
+    sourceUrl: "https://uni.example.org/careers/faculty-cards",
+    fetchedAt: FETCHED_AT,
+    title: "Assistant Professor - Cardiology",
+    employer: "Example University Medical Center",
+    city: "Little Rock",
+    state: "AR",
+    postedDate: "2026-05-20",
+    rawText:
+      "Assistant Professor - Cardiology. Type of Position: Faculty. Work Shift: Day. Sponsorship Available: No. Institution Name: Example University Medical Center.",
+    isFixture: true,
+  },
 ];
 
 export const EXPECTED: Record<string, GoldLabel> = {
@@ -241,6 +285,19 @@ export const EXPECTED: Record<string, GoldLabel> = {
   "fx-12": {
     status: "VISA_SIGNAL_ONLY",
     note: "Real Conrad 30 signal from a Tier-2 source → signal, not published",
+  },
+  "fx-13": {
+    status: "VISA_SIGNAL_ONLY",
+    note: "VA 7407 eligibility ONLY (Tier-1, fresh) → capped at signal, never PUBLISH ('may appoint' ≠ 'will sponsor')",
+  },
+  "fx-14": {
+    status: "PUBLISH",
+    note: "7407 eligibility + real H-1B/cap-exempt sponsorship → sponsorship label lifts it past the eligibility cap to PUBLISH",
+  },
+  "fx-15": {
+    status: "REJECT",
+    rejectReason: "SPONSORSHIP_DENIED",
+    note: "Structured field 'Sponsorship Available: No' — negator FOLLOWS the phrase; must read as denied, not a fake PUBLISH",
   },
 };
 
@@ -295,4 +352,25 @@ export const SAMPLE_WORKDAY_DETAIL: WorkdayDetailResponse = {
       "https://example.wd5.myworkdayjobs.com/Careers/job/ND-Dickinson/Family-Medicine-Physician_R-0247970",
     jobReqId: "R-0247970",
   },
+};
+
+// USAJobs HistoricJoa: metadata (title/agency/state/control number) and a text
+// record (HTML body) keyed by the same control number. The clause sits inside an
+// HTML field to pin both the body join AND the HTML strip, and state arrives as a
+// full name ("West Virginia"), as the live endpoint returns it.
+export const SAMPLE_USAJOBS_HISTORIC_META: UsajobsHistoricMeta = {
+  usajobsControlNumber: 854912000,
+  positionTitle: "Physician (Internal Medicine)",
+  hiringAgencyName: "Veterans Health Administration",
+  positionOpenDate: "2026-06-01",
+  positionlocations: [
+    { positionLocationCity: "Martinsburg", positionLocationState: "West Virginia" },
+  ],
+};
+
+export const SAMPLE_USAJOBS_HISTORIC_TEXT: UsajobsHistoricText = {
+  usajobsControlNumber: 854912000,
+  summary: "<p>The VA Medical Center is recruiting a board-certified internal medicine physician.</p>",
+  requirementsQualifications:
+    "<ul><li>United States Citizenship: Non-citizens may only be appointed when it is not possible to recruit qualified citizens in accordance with VA Handbook 5005.</li></ul>",
 };

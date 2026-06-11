@@ -21,17 +21,23 @@ import {
 import {
   fetchGreenhouse,
   fetchUsajobs,
+  fetchUsajobsHistoricJoa,
   fetchWorkday,
+  joinUsajobsHistoricBody,
   parseGreenhouse,
   parseUsajobs,
+  parseUsajobsHistoric,
   parseWorkdayDetail,
 } from "./connectors";
 import { enabledSources, SOURCES } from "./source-registry";
+import { normEmployer, sponsorHistoryIndex, type SponsorUniverseEntry } from "./sponsor-universe";
 import {
   EXPECTED,
   FIXTURES,
   SAMPLE_GREENHOUSE,
   SAMPLE_USAJOBS,
+  SAMPLE_USAJOBS_HISTORIC_META,
+  SAMPLE_USAJOBS_HISTORIC_TEXT,
   SAMPLE_WORKDAY_DETAIL,
 } from "./fixtures";
 import type {
@@ -72,6 +78,10 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
   for (const src of enabledSources()) {
     if (src.connector === "usajobs") {
       candidates.push(...(await fetchUsajobs(src.handle)));
+    } else if (src.connector === "usajobs-historic") {
+      candidates.push(
+        ...(await fetchUsajobsHistoricJoa(src.handle, src.employer ?? src.label, src.id)),
+      );
     } else if (src.connector === "greenhouse") {
       candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
     } else if (src.connector === "workday") {
@@ -142,6 +152,37 @@ function quoteGate(jobs: RadarJob[]): number {
   return failures;
 }
 
+// Sponsor-history fusion: a physician posting from a KNOWN DOL H-1B sponsor whose
+// text states no visa intent is promoted from NO_VISA_MENTION reject to a
+// SPONSOR_LEAD. Two cited facts — the employer-direct posting + the government
+// sponsor history (carried in notes) — never a fabricated visa claim. This is the
+// payoff for the negative-yield finding: reachable openings at known sponsors stop
+// being dropped and become reviewable leads.
+function sponsorEnrich(jobs: RadarJob[], index: Map<string, SponsorUniverseEntry>): number {
+  let promoted = 0;
+  for (const job of jobs) {
+    if (job.raw.isFixture) continue; // fixtures are synthetic — never match real DOL sponsors
+    const c = job.classification;
+    if (c.status !== "REJECT" || c.rejectReason !== "NO_VISA_MENTION") continue;
+    if (!c.isPhysician) continue;
+    const hit = index.get(normEmployer(job.raw.employer));
+    if (!hit) continue;
+    c.status = "SPONSOR_LEAD";
+    c.rejectReason = undefined;
+    c.confidence = "LOW";
+    c.notes.push(
+      "Employer is a known DOL LCA H-1B physician sponsor (" +
+        hit.totalPositions +
+        " certified positions; " +
+        hit.specialties.slice(0, 4).join(", ") +
+        (hit.visaTypes.includes("j1") ? "; J-1 eligible" : "") +
+        "). Posting states no visa intent — surfaced as a lead, not confirmed sponsorship.",
+    );
+    promoted++;
+  }
+  return promoted;
+}
+
 function tally(
   jobs: RadarJob[],
   runId: string,
@@ -155,12 +196,14 @@ function tally(
   let publishCount = 0;
   let holdCount = 0;
   let signalCount = 0;
+  let sponsorLeadCount = 0;
   let rejectCount = 0;
   for (const j of jobs) {
     const s = j.classification.status;
     if (s === "PUBLISH") publishCount++;
     else if (s === "HOLD_REVIEW") holdCount++;
     else if (s === "VISA_SIGNAL_ONLY") signalCount++;
+    else if (s === "SPONSOR_LEAD") sponsorLeadCount++;
     else {
       rejectCount++;
       const r = j.classification.rejectReason ?? "NO_VISA_MENTION";
@@ -171,7 +214,7 @@ function tally(
   const manualReviewPct =
     candidateCount === 0
       ? 0
-      : Math.round(((holdCount + signalCount) / candidateCount) * 1000) / 10;
+      : Math.round(((holdCount + signalCount + sponsorLeadCount) / candidateCount) * 1000) / 10;
   return {
     runId,
     startedAt,
@@ -181,6 +224,7 @@ function tally(
     publishCount,
     holdCount,
     signalCount,
+    sponsorLeadCount,
     rejectCount,
     rejectByReason,
     quoteValidationFailures,
@@ -246,6 +290,23 @@ function connectorCheck(): string[] {
       problems.push("Workday parse: HTML strip lost the visa phrase");
     if (w.state !== "ND") problems.push("Workday parse: state-first location split wrong");
     if (w.isFixture) problems.push("Workday parse: isFixture must be false");
+  }
+  const hjBody = joinUsajobsHistoricBody(SAMPLE_USAJOBS_HISTORIC_TEXT);
+  const h = parseUsajobsHistoric(
+    SAMPLE_USAJOBS_HISTORIC_META,
+    hjBody,
+    "usajobs-historic-test",
+    fetchedAt,
+  );
+  if (!h) problems.push("USAJobs HistoricJoa parse: expected a candidate, got null");
+  else {
+    if (h.sourceId !== "usajobs-historic-test-854912000")
+      problems.push("USAJobs HistoricJoa parse: sourceId/controlNumber mapping wrong (" + h.sourceId + ")");
+    if (!h.rawText.includes("appointed when it is not possible to recruit qualified citizens"))
+      problems.push("USAJobs HistoricJoa parse: body join/HTML-strip lost the 7407 clause");
+    if (h.state !== "West Virginia")
+      problems.push("USAJobs HistoricJoa parse: state mapping wrong (" + h.state + ")");
+    if (h.isFixture) problems.push("USAJobs HistoricJoa parse: isFixture must be false");
   }
   return problems;
 }
@@ -313,6 +374,7 @@ function renderReportMd(
   lines.push("- PUBLISH: " + report.publishCount);
   lines.push("- HOLD_REVIEW: " + report.holdCount);
   lines.push("- VISA_SIGNAL_ONLY: " + report.signalCount);
+  lines.push("- SPONSOR_LEAD (known DOL sponsor, visa-silent posting): " + report.sponsorLeadCount);
   lines.push("- REJECT: " + report.rejectCount);
   lines.push("- Duplicates dropped: " + report.duplicatesDropped);
   lines.push("- Quote-validation failures: " + report.quoteValidationFailures);
@@ -411,6 +473,7 @@ async function main(): Promise<void> {
   const jobs = buildRadarJobs(candidates);
   const duplicatesDropped = dedupe(jobs);
   const quoteValidationFailures = quoteGate(jobs);
+  const sponsorLeadsPromoted = sponsorEnrich(jobs, sponsorHistoryIndex());
 
   const gold = goldCheck(jobs);
   const connectorProblems = connectorCheck();
@@ -471,6 +534,7 @@ async function main(): Promise<void> {
   writeJson(runDir, "publish_high_confidence.json", jobsByStatus(jobs, "PUBLISH"));
   writeJson(runDir, "hold_review.json", jobsByStatus(jobs, "HOLD_REVIEW"));
   writeJson(runDir, "visa_signal_only.json", jobsByStatus(jobs, "VISA_SIGNAL_ONLY"));
+  writeJson(runDir, "sponsor_lead.json", jobsByStatus(jobs, "SPONSOR_LEAD"));
   writeJson(runDir, "rejected.json", jobsByStatus(jobs, "REJECT"));
   const publicJobs = jobs
     .filter((j) => j.classification.status === "PUBLISH" && !j.raw.isFixture)
@@ -527,11 +591,14 @@ async function main(): Promise<void> {
       report.holdCount +
       " SIGNAL=" +
       report.signalCount +
+      " SPONSOR_LEAD=" +
+      report.sponsorLeadCount +
       " REJECT=" +
       report.rejectCount +
       " of " +
       report.candidateCount,
   );
+  console.log("  sponsor-history fusion promoted " + sponsorLeadsPromoted + " visa-silent postings from known sponsors");
   console.log(
     "  rejects: " +
       Object.entries(report.rejectByReason)

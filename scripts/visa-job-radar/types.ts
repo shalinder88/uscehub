@@ -12,6 +12,11 @@ export type JobStatus =
   | "PUBLISH"
   | "HOLD_REVIEW"
   | "VISA_SIGNAL_ONLY"
+  // A physician opening at an employer that is a KNOWN H-1B physician sponsor in
+  // public DOL LCA data, where the posting itself states no visa intent. Two cited
+  // facts (employer-direct posting + government sponsor history), neither a
+  // fabricated visa claim — surfaced as a lead, never as confirmed sponsorship.
+  | "SPONSOR_LEAD"
   | "REJECT";
 
 export type RejectReason =
@@ -29,7 +34,11 @@ export type VisaLabel =
   | "EXPLICIT_CONRAD"
   | "EXPLICIT_HHS_WAIVER"
   | "EXPLICIT_VISA_SPONSORSHIP"
-  | "EXPLICIT_CAP_EXEMPT";
+  | "EXPLICIT_CAP_EXEMPT"
+  // Statutory federal eligibility to APPOINT a non-citizen (e.g. 38 U.S.C. 7407
+  // at the VA) — "employer may sponsor", a strictly weaker signal than the
+  // EXPLICIT_* labels above ("employer will sponsor"). Caps at VISA_SIGNAL_ONLY.
+  | "FEDERAL_NONCITIZEN_ELIGIBLE";
 
 export type SourceTier = 1 | 2 | 3;
 
@@ -102,6 +111,7 @@ export interface RunReport {
   publishCount: number;
   holdCount: number;
   signalCount: number;
+  sponsorLeadCount: number;
   rejectCount: number;
   rejectByReason: Record<RejectReason, number>;
   quoteValidationFailures: number;
