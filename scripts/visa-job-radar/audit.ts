@@ -336,6 +336,7 @@ async function main(): Promise<void> {
   lines.push(`| Johns Hopkins | HTTP 403 | No bypass |`);
   lines.push(`| UAB Medicine | uabmedicine.icims.com SSO-gated (redirects to login) | No bypass |`);
   lines.push(`| Froedtert Health | Infor CloudSuite 403 | No bypass |`);
+  lines.push(`| Mercy Health | careers.mercy.com has no MD/DO attending jobs (only support staff) | Disabled — revisit if physician portal added |`);
   lines.push(``);
 
   lines.push(`## What to fix next (priority order)`);
@@ -348,6 +349,7 @@ async function main(): Promise<void> {
   lines.push(`6. **Jefferson Health** — FIXED run 1759: "thomas jefferson university hospitals" (ATS, plural) → "thomas jefferson university hospital" (DOL, singular, 4yr/28pos) alias added. Prior analysis incorrectly concluded 0 DOL positions; entity exists under singular form. 40 physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.`);
   lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.`);
   lines.push(`8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.`);
+  lines.push(`9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.`);
   lines.push(``);
 
   const output = lines.join("\n");

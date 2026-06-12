@@ -259,9 +259,9 @@ export const SOURCES: SourceDef[] = [
     label: "Mercy Health — physicians (Phenom)",
     handle: "https://careers.mercy.com/us/en/search-results?keywords=physician",
     employer: "Mercy Health",
-    enabled: true,
-    needsVerification: true,
-    note: "DOL iron-core sponsor (7/7 years, 138 FY2025 positions). ATS = Phenom; search page is a React SPA so fetchJsonLd uses the sitemap fallback (sitemap_index.xml → 3 sub-sitemaps → ~1107 /job/ URLs, ~26 physician-slug matches). Verified 2026-06-12: sitemap confirmed, posting pages return JobPosting JSON-LD. OH Catholic system.",
+    enabled: false,
+    needsVerification: false,
+    note: "DISABLED 2026-06-12: Mercy Health does not post attending physician (MD/DO) jobs on careers.mercy.com. Full sitemap scan: 1,163 URLs across 3 sub-sitemaps — zero actual physician attending titles. Every 'physician' URL match is support staff (RN, CMA, LPN, Patient Services Rep at a physician's office) or a department name (Orthopedics, Cardiology). NONPHYS_SLUG_RE correctly excludes all URL-slug matches. DOL iron-core (7yr/138pos) — sponsorship is real but ATS surface carries only clinical support staff. Revisit only if Mercy adds a physician-specific careers portal.",
   },
   {
     id: "jsonld-tufts",
