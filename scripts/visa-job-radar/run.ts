@@ -31,6 +31,7 @@ import {
 } from "./connectors";
 import { enabledSources, SOURCES } from "./source-registry";
 import { normEmployer, sponsorHistoryIndex, type SponsorUniverseEntry } from "./sponsor-universe";
+import { updateJobLeadsHistory } from "./job-leads-history";
 import {
   EXPECTED,
   FIXTURES,
@@ -581,6 +582,22 @@ async function main(): Promise<void> {
     writeFileSync(GENERATED_FILE, renderGeneratedTs(publicJobs, finishedAt), "utf8");
   }
 
+  // Job-leads freshness history: only on live runs (fixtures have no real employer
+  // or posting life-cycle). Track non-rejected, non-fixture jobs across runs so
+  // sponsor-truth can identify employers with RECENT actual job activity.
+  let leadsHistorySize = 0;
+  let leadsPresumedClosed = 0;
+  if (live) {
+    const activeKeys = new Set(
+      jobs
+        .filter((j) => !j.raw.isFixture && j.classification.status !== "REJECT")
+        .map((j) => j.canonicalKey),
+    );
+    const history = updateJobLeadsHistory(activeKeys, jobs, finishedAt);
+    leadsHistorySize = history.size;
+    leadsPresumedClosed = [...history.values()].filter((r) => r.presumedClosed).length;
+  }
+
   // console summary
   const ok = gold.failed.length === 0 && connectorProblems.length === 0;
   console.log("Visa Job Radar run " + runId + " (" + (live ? "live" : "offline") + ")");
@@ -620,6 +637,7 @@ async function main(): Promise<void> {
   console.log("  connector check: " + (connectorProblems.length === 0 ? "passed" : "FAILED"));
   for (const p of connectorProblems) console.log("    FAIL " + p);
   console.log("  generated jobs (non-fixture PUBLISH): " + publicJobs.length);
+  if (live) console.log("  job-leads history: " + leadsHistorySize + " tracked, " + leadsPresumedClosed + " presumed closed");
   console.log("  run dir: " + runDir);
   console.log(ok ? "OK" : "PROBLEMS DETECTED");
 

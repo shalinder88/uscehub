@@ -19,6 +19,7 @@ import { join } from "node:path";
 import { buildSponsorUniverse, normEmployer, type SponsorUniverseEntry } from "./sponsor-universe";
 import type { LcaNoticeRecord } from "./lca-notice-radar";
 import type { RadarJob } from "./types";
+import { loadJobLeadsHistory, recentlyActiveJobEmployers } from "./job-leads-history";
 
 const RADAR_DIR = join(process.cwd(), "docs/platform-v2/local/career/jobs/radar");
 const NOTICE_INDEX = join(RADAR_DIR, "lca-notices/notices_index.json");
@@ -59,6 +60,9 @@ export interface SponsorTruth {
     signal: number;
     sponsorLead: number;
     samples: OpeningSummary[];
+    // Freshness from job-leads-history: ISO date of the most recent live-run
+    // sighting of a non-closed job lead at this employer, if any.
+    recentJobLeadAt?: string;
   };
   truthSummary: string;
 }
@@ -89,6 +93,8 @@ function summarize(t: SponsorTruth): string {
       open + " current physician opening(s) employer-direct (" +
       t.openings.publish + " affirmative-visa, " + t.openings.signal + " signal, " + t.openings.sponsorLead + " sponsor-lead).",
     );
+  } else if (t.openings.recentJobLeadAt) {
+    bits.push("Recent job-lead activity: last seen in a live run on " + t.openings.recentJobLeadAt.slice(0, 10) + ".");
   }
   bits.push("Caveat: employer-level history does not guarantee any specific role sponsors.");
   return bits.join(" ");
@@ -96,6 +102,18 @@ function summarize(t: SponsorTruth): string {
 
 async function main(): Promise<void> {
   const universe: SponsorUniverseEntry[] = buildSponsorUniverse();
+  const now = new Date().toISOString();
+
+  // Job-leads freshness history (cross-run tracking from run.ts)
+  const leadsHistory = loadJobLeadsHistory();
+  const recentLeadKeys = recentlyActiveJobEmployers(leadsHistory, 30, now);
+  // Build a map from normKey → most-recent lastSeenAt for non-closed leads.
+  const recentLeadDateByKey = new Map<string, string>();
+  for (const rec of leadsHistory.values()) {
+    if (rec.presumedClosed) continue;
+    const prev = recentLeadDateByKey.get(rec.normKey);
+    if (!prev || rec.lastSeenAt > prev) recentLeadDateByKey.set(rec.normKey, rec.lastSeenAt);
+  }
 
   // Layer 2 — LCA notices by employer key
   const noticesByKey = new Map<string, LcaNoticeRecord[]>();
@@ -168,6 +186,9 @@ async function main(): Promise<void> {
           state: l.raw.state,
           sourceUrl: l.raw.sourceUrl,
         })),
+        recentJobLeadAt: recentLeadKeys.has(e.normKey)
+          ? recentLeadDateByKey.get(e.normKey)
+          : undefined,
       },
       truthSummary: "",
     };
@@ -175,7 +196,7 @@ async function main(): Promise<void> {
     out.push(t);
   }
 
-  // Rank: live activity first, then current openings, then history score.
+  // Rank: live activity first, then current/recent openings, then history score.
   out.sort((a, b) => {
     if (b.liveActivity.physicianNotices !== a.liveActivity.physicianNotices) {
       return b.liveActivity.physicianNotices - a.liveActivity.physicianNotices;
@@ -183,6 +204,10 @@ async function main(): Promise<void> {
     const ob = b.openings.publish + b.openings.signal + b.openings.sponsorLead;
     const oa = a.openings.publish + a.openings.signal + a.openings.sponsorLead;
     if (ob !== oa) return ob - oa;
+    // Recent job lead is the next tiebreaker (freshness signal)
+    const bRecent = b.openings.recentJobLeadAt ?? "";
+    const aRecent = a.openings.recentJobLeadAt ?? "";
+    if (bRecent !== aRecent) return bRecent > aRecent ? 1 : -1;
     return b.history.score - a.history.score;
   });
 
