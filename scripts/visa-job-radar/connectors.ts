@@ -18,6 +18,16 @@ const ENTITIES: Array<[string, string]> = [
   ["&#39;", "'"],
   ["&apos;", "'"],
   ["&nbsp;", " "],
+  // Workday Greenhouse and other ATSs embed hex/decimal newline entities in
+  // JSON description fields; without these the entities land as literal chars
+  // ("&#xa;") in cleanedText, making phrase matching unreliable.
+  ["&#xa;", " "],
+  ["&#x0a;", " "],
+  ["&#xd;", " "],
+  ["&#x0d;", " "],
+  ["&#10;", " "],
+  ["&#13;", " "],
+  ["&#x20;", " "],
 ];
 
 // Decode entities first, then strip tags: Greenhouse returns entity-encoded

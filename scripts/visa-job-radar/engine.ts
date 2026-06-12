@@ -111,6 +111,25 @@ const LEXICON: LexEntry[] = [
       "j1 waiver",
       "j 1 waiver",
       "j-1 physician waiver",
+      "will consider j-1",
+      "will consider j1",
+      "j-1 candidates welcome",
+      "j1 candidates welcome",
+      "j-1 exchange visitor",
+      "j1 exchange visitor",
+    ],
+    labels: ["EXPLICIT_J1_WAIVER"],
+  },
+  // Workday structured field: "Visas Accepted J-1" / "Visas Accepted J1"
+  {
+    canonical: "visas accepted j-1",
+    variants: [
+      "visas accepted j-1",
+      "visas accepted j1",
+      "visa accepted j-1",
+      "visa accepted j1",
+      "visa type j-1",
+      "visa type j1",
     ],
     labels: ["EXPLICIT_J1_WAIVER"],
   },
@@ -139,6 +158,30 @@ const LEXICON: LexEntry[] = [
       "h1b visa sponsorship",
       "sponsor h-1b",
       "sponsor h1b",
+      "will consider h-1b",
+      "will consider h1b",
+      "h-1b candidates welcome",
+      "h1b candidates welcome",
+      "accepts h-1b",
+      "accept h-1b",
+      "h-1b transfer",
+      "h1b transfer",
+    ],
+    labels: ["EXPLICIT_H1B"],
+  },
+  // Workday structured field used by Sanford Health and other systems that
+  // expose a "Visas Accepted: H1B" or bare "Visas Accepted H1B" line in the
+  // job description JSON. After &#xa; entity decoding in stripHtml these
+  // appear as the plain phrase "Visas Accepted H1B".
+  {
+    canonical: "visas accepted h-1b",
+    variants: [
+      "visas accepted h1b",
+      "visas accepted h-1b",
+      "visa accepted h1b",
+      "visa accepted h-1b",
+      "visa type h1b",
+      "visa type h-1b",
     ],
     labels: ["EXPLICIT_H1B"],
   },
@@ -202,6 +245,11 @@ const DENIAL_PHRASES: string[] = [
   "must be a u.s. citizen",
   "must be a us citizen",
   "must be authorized to work in the united states without",
+  // Workday structured field explicit non-acceptance values
+  "visas accepted n/a",
+  "visas accepted none",
+  "visas accepted: none",
+  "visas accepted: no",
 ];
 
 const BOILERPLATE_FRAMES: string[] = [
