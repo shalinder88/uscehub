@@ -337,6 +337,7 @@ async function main(): Promise<void> {
   lines.push(`| UAB Medicine | uabmedicine.icims.com SSO-gated (redirects to login) | No bypass |`);
   lines.push(`| Froedtert Health | Infor CloudSuite 403 | No bypass |`);
   lines.push(`| Mercy Health | careers.mercy.com has no MD/DO attending jobs (only support staff) | Disabled — revisit if physician portal added |`);
+  lines.push(`| Vanderbilt University Medical Center | vumccareers Workday portal has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff only) | Disabled — VUMC physician faculty likely recruited via Vanderbilt University academic HR |`);
   lines.push(``);
 
   lines.push(`## What to fix next (priority order)`);
@@ -350,6 +351,7 @@ async function main(): Promise<void> {
   lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.`);
   lines.push(`8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.`);
   lines.push(`9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.`);
+  lines.push(`10. **VUMC false SPONSOR_LEAD + disable** — FIXED run 1829: "Pediatric Cardiac Sonographer II" was classified as physician (false positive on "pediatric" PHYS token). Root cause: "sonographer" missing from NONPHYS_TOKENS. Fixed in engine.ts. Separately: full scan shows vumccareers Workday has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff); connector disabled. DOL iron-core (7yr) — VUMC physician faculty likely recruited via Vanderbilt University academic HR portal.`);
   lines.push(``);
 
   const output = lines.join("\n");

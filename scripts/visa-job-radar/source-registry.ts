@@ -188,9 +188,9 @@ export const SOURCES: SourceDef[] = [
     label: "Vanderbilt University Medical Center — physicians (Workday)",
     handle: "vumc/wd1/vumccareers",
     employer: "Vanderbilt University Medical Center",
-    enabled: true,
-    needsVerification: true,
-    note: "DOL sponsor universe → batch ATS-resolved. Verified 2026-06-10: CXS HTTP 200, ~262 'physician' hits.",
+    enabled: false,
+    needsVerification: false,
+    note: "DISABLED 2026-06-12: vumccareers Workday portal does not expose attending/faculty physician postings. Full scan: 244 'physician' keyword hits, 0 actual MD/DO attending titles — every result is NP/PA, nursing, imaging tech, or support staff. The only isPhysician() pass was 'Pediatric Cardiac Sonographer II' (false positive on 'pediatric' PHYS token — fixed by adding 'sonographer' to NONPHYS_TOKENS). VUMC physician faculty are likely recruited via Vanderbilt University academic HR, not the clinical ATS. DOL iron-core sponsor (7yr). Revisit only if VUMC adds a physician-specific portal.",
   },
   {
     id: "workday-stanfordhealth",

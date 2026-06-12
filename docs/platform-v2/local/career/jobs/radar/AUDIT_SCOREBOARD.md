@@ -1,12 +1,12 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1814  |  Audited: 2026-06-12
+Run: 2026-06-12-1840  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 259 |
-| Total surfaced (PUBLISH + SL) | 273 |
+| SPONSOR_LEAD | 258 |
+| Total surfaced (PUBLISH + SL) | 272 |
 | REJECT | 85 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -32,7 +32,6 @@ Run: 2026-06-12-1814  |  Audited: 2026-06-12
 | workday-ochsner | 2 | 15 | 17 |
 | workday-presbyterianhealthcare | 4 | 27 | 31 |
 | workday-sanford | 7 | 1 | 8 |
-| workday-vumc | 0 | 1 | 1 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -81,6 +80,8 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Johns Hopkins | HTTP 403 | No bypass |
 | UAB Medicine | uabmedicine.icims.com SSO-gated (redirects to login) | No bypass |
 | Froedtert Health | Infor CloudSuite 403 | No bypass |
+| Mercy Health | careers.mercy.com has no MD/DO attending jobs (only support staff) | Disabled — revisit if physician portal added |
+| Vanderbilt University Medical Center | vumccareers Workday portal has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff only) | Disabled — VUMC physician faculty likely recruited via Vanderbilt University academic HR |
 
 ## What to fix next (priority order)
 
@@ -92,3 +93,5 @@ These are DOL 7-year iron-core sponsors with no active connector:
 6. **Jefferson Health** — FIXED run 1759: "thomas jefferson university hospitals" (ATS, plural) → "thomas jefferson university hospital" (DOL, singular, 4yr/28pos) alias added. Prior analysis incorrectly concluded 0 DOL positions; entity exists under singular form. 40 physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.
 7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.
 8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.
+9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.
+10. **VUMC false SPONSOR_LEAD + disable** — FIXED run 1829: "Pediatric Cardiac Sonographer II" was classified as physician (false positive on "pediatric" PHYS token). Root cause: "sonographer" missing from NONPHYS_TOKENS. Fixed in engine.ts. Separately: full scan shows vumccareers Workday has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff); connector disabled. DOL iron-core (7yr) — VUMC physician faculty likely recruited via Vanderbilt University academic HR portal.

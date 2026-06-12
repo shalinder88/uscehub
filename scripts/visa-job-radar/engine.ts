@@ -361,6 +361,13 @@ const NONPHYS_TOKENS: string[] = [
   "(rn,",
   "quality consultant",
   "nursing professional",
+  // "Pediatric Cardiac Sonographer II" false-positived on "pediatric" PHYS match
+  // 2026-06-12 (VUMC). Sonographers are allied health imaging techs, not physicians.
+  "sonographer",
+  // "Radiologist Assistant, Interventional" false-positived on "radiolog" PHYS match
+  // 2026-06-12 (MSK). Radiologist Assistants are advanced-practice imaging providers,
+  // not physicians; they work under radiologist supervision (like a PA to a radiologist).
+  "radiologist assistant",
 ];
 
 const PHYS_TOKENS: string[] = [
