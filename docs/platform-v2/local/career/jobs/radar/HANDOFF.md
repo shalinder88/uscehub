@@ -155,16 +155,28 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
    badges, cap-exempt filter, "Sort: Active Notices First", per-card notice PDF links and caveat.
    Codegen: `build-sponsor-truth-overlay.ts` → `src/lib/sponsor-truth-overlay.ts` (auto-regenerated
    by cron each day).
-5. **Add `html-row` link strategy** — unlock inline-HTML LCA notice pages. University of Maryland iTerp
-   (`iterp.umd.edu/.../lcaPostings.cfm`) is the reference. Currently has 0 physician notices but
-   worth monitoring. Would need a new `LcaNoticeSource.linkStrategy: "html-row"` branch in lca-notice-radar.ts.
+5. **Add `html-row` link strategy** — DONE (session 2026-06-12): `lca-notice-radar.ts` now has
+   `"html-row"` as a third strategy, plus `isPhysicianSoc()` (SOC prefix 29-12), `stripTags()`,
+   `HtmlNoticeRow` interface, and `extractHtmlTableNotices()`. UMD iTerp source enabled (follows
+   302 redirect, plain HTML inline tables). Currently 3 notices, 0 physician (SOC 19-xxxx research
+   scientists) — monitoring active. Case number keyed on posting-start-date + title slug for
+   stability across polls.
 6. **Per-employer `[slug]` pages + JobPosting JSON-LD** — DONE (session 2026-06-11): `/career/sponsors/[slug]`
    server component with `generateStaticParams()` (pre-builds ~1,087 pages), DOL history panel, live-notice
    panel (amber, role/salary/period/PDF link), cap-exempt explainer, JobPosting JSON-LD on active-filing
    employers. Prefix-match resolves org variants. `robots: noindex` until content is dense enough. Employer
    names in search list now link to their detail pages.
-7. **Freshness/closed-on-absence loop** for engine job leads (LCA index has first/last-seen; jobs don't).
-8. Unblock **repeat-rate** — needs multi-year DOL LCA files (operator manual download; DOL 403s bots).
+7. **Freshness/closed-on-absence loop** — DONE (session 2026-06-12): `job-leads-history.ts` tracks
+   firstSeenAt/lastSeenAt per canonicalKey across live runs; N_MISS_TO_CLOSE=3 marks presumedClosed.
+   `run.ts` calls `updateJobLeadsHistory()` at end of every `--live` run. `sponsor-truth.ts` reads
+   history, adds `recentJobLeadAt` to the openings layer, surfaces in truthSummary, used as a ranking
+   tiebreaker (fresh > stale > absent).
+8. Unblock **repeat-rate** — DONE (session 2026-06-12): `process-dol-annual-csv.ts` converts the raw
+   DOL OFLC annual Excel-exported CSV to the by-year JSON format `repeat-rate.ts` expects. Filters
+   CASE_STATUS=Certified + SOC prefix 29-12. Handles column name variations across years. Updated
+   `_REPEAT_RATE_README.md` with exact URL, step-by-step workflow, SOC code table. **STILL NEEDS
+   THE OPERATOR TO MANUALLY DOWNLOAD FY2022/FY2023/FY2024 EXCEL FILES FROM DOL OFLC** (site 403s
+   bots); then run the script 3× and `repeat-rate.ts`.
 9. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
 
 Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `VJ_USAJOBS_COVERAGE.md`,
@@ -194,6 +206,9 @@ All session work is committed to `main` (local, NOT pushed). Commits in order:
 - `25abcb5` — LCA-notice radar: two-template parser + Pitt source + per-source link strategy
 - `7dc1391` — Sponsors page: live LCA notice badges + cap-exempt filter + truth fusion
 - `7894ae4` — Per-employer sponsor pages with JobPosting JSON-LD
+- `1f0faae` — LCA radar: html-row strategy + UMD iTerp source enabled
+- `b8de5dd` — Job-leads freshness history: firstSeenAt/lastSeenAt + sponsor-truth integration
+- `cbd400b` — Unblock repeat-rate: DOL CSV converter + precise download instructions
 
 The pre-existing `src/app/career/*` (except `sponsors/sponsor-search.tsx`) and p102 modifications
 remain uncommitted and untouched, as required.
