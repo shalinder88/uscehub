@@ -368,6 +368,25 @@ const NONPHYS_TOKENS: string[] = [
   // 2026-06-12 (MSK). Radiologist Assistants are advanced-practice imaging providers,
   // not physicians; they work under radiologist supervision (like a PA to a radiologist).
   "radiologist assistant",
+  // "DOCTOR OF DENTAL SURGERY" false-positived on "surgery" PHYS match 2026-06-12
+  // (Montefiore). DDS/DMD are dental professionals, not MD/DO physicians.
+  "dental surgery",
+  // "PMHNP - Outpatient, Pediatrics" false-positived on "pediatric" PHYS match 2026-06-12
+  // (Geisinger). PMHNP = Psychiatric Mental Health Nurse Practitioner — NP role, not physician.
+  // "np/pa" above catches "NP/PA" but not the PMHNP abbreviation (no spaces around "np").
+  "pmhnp",
+  // "Pediatric Integrated Clinical Psychologist" false-positived on "pediatric" 2026-06-12
+  // (Ochsner). Psychologists hold PhD/PsyD, not MD/DO. Distinct from "psychiatr" (PHYS token).
+  "psychologist",
+  // Admin management titles with radiology/pathology keywords in org names:
+  // "Radiology Operations Director", "Corporate Director / Radiology & Imaging Operations",
+  // "Systems Software Engineer- School of Medicine, Pathology" — all false-positived on
+  // specialty-keyword PHYS matches. "operations director" and "corporate director" are
+  // management roles; "software engineer" is engineering. None requires MD/DO.
+  "operations director",
+  "ops director",
+  "corporate director",
+  "software engineer",
 ];
 
 const PHYS_TOKENS: string[] = [
