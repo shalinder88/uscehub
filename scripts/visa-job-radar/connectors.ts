@@ -222,14 +222,19 @@ export interface WorkdayListResponse {
 }
 
 // Find the jobFamilyGroup facet value ids that isolate physician/faculty reqs.
-// Critical: a keyword search for "physician" returns ~99% non-physician roles
-// (Cleveland Clinic: 1,004 keyword hits vs 10 actual physician-family, all
-// postdocs). The facet returns the real reqs. Empty result => tenant exposes no
-// such facet (caller falls back to a keyword search).
-export function physicianFacetIds(facets?: WorkdayListResponse["facets"]): string[] {
+// Critical: a keyword search for "physician" returns ~99% non-physician roles.
+// The facet returns the real reqs. Empty result => tenant exposes no such facet
+// (caller falls back to a keyword search). Note: some tenants (e.g. Cleveland
+// Clinic) classify all physician roles outside the "Physician" family facet, so
+// the facet count is 1 and the keyword fallback is used — but that tenant's
+// Workday site is for non-physician staff; it was disabled after investigation.
+export function physicianFacetIds(
+  facets?: WorkdayListResponse["facets"],
+): { ids: string[]; totalCount: number } {
   const fg = (facets ?? []).find((f) => f.facetParameter === "jobFamilyGroup");
-  if (!fg) return [];
+  if (!fg) return { ids: [], totalCount: 0 };
   const ids: string[] = [];
+  let totalCount = 0;
   for (const v of fg.values ?? []) {
     const d = (v.descriptor ?? "").toLowerCase();
     if (
@@ -238,10 +243,13 @@ export function physicianFacetIds(facets?: WorkdayListResponse["facets"]): strin
       d.includes("provider") ||
       d.includes("medical staff")
     ) {
-      if (v.id) ids.push(v.id);
+      if (v.id) {
+        ids.push(v.id);
+        totalCount += v.count ?? 0;
+      }
     }
   }
-  return ids;
+  return { ids, totalCount };
 }
 
 export interface WorkdayDetailResponse {
@@ -336,8 +344,12 @@ export async function fetchWorkday(
     });
     if (probe.ok) {
       const pdata = (await probe.json()) as WorkdayListResponse;
-      const ids = physicianFacetIds(pdata.facets);
-      if (ids.length > 0) {
+      const { ids, totalCount } = physicianFacetIds(pdata.facets);
+      // Only use the facet if it returns a meaningful number of jobs. Some tenants
+      // (e.g. Cleveland Clinic) classify most physician jobs outside the standard
+      // "Physician" job-family facet — when the facet count is very low, keyword
+      // search finds far more relevant postings.
+      if (ids.length > 0 && totalCount >= 5) {
         appliedFacets = { jobFamilyGroup: ids };
         searchText = "";
       }

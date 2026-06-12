@@ -77,9 +77,21 @@ const PHYSICIAN_KEYWORDS = [
   "medical doctor", " md ", " do ", "hospitalist",
 ];
 
+// The engine correctly rejects these non-physician titles; the audit scan
+// is only looking for genuine false negatives, so exclude known patterns
+// that contain "physician" as part of a non-physician role.
+const NOT_PHYSICIAN_OVERRIDES = [
+  "physician assistant", "nurse practitioner", "physician practice",
+  "physician office", "physicians of ", "physician program",
+  // Clinical staff who work IN physician offices/clinics (not physicians themselves):
+  "licensed practical nurse", "lpn ", "lpn-", " lpn",
+  "medical assistant", "nursing", "patient care", "float nurse",
+];
 function looksLikePhysician(title: string): boolean {
-  const t = " " + title.toLowerCase() + " ";
-  return PHYSICIAN_KEYWORDS.some((k) => t.includes(k));
+  const t = title.toLowerCase();
+  if (NOT_PHYSICIAN_OVERRIDES.some((p) => t.includes(p))) return false;
+  const padded = " " + t + " ";
+  return PHYSICIAN_KEYWORDS.some((k) => padded.includes(k));
 }
 
 // ── quote quality tiers ──────────────────────────────────────────────
@@ -101,9 +113,9 @@ async function main(): Promise<void> {
   const runDir = process.argv[2] ? join(RUNS_DIR, process.argv[2]) : latestRunDir();
   console.log("Auditing run:", runDir.split("/").pop());
 
-  const publish: CleanedJob[] = loadJson(join(runDir, "publish_high_confidence.json"));
-  const sponsorLead: CleanedJob[] = loadJson(join(runDir, "sponsor_lead.json"));
-  const rejected: CleanedJob[] = loadJson(join(runDir, "rejected.json"));
+  const publish: RadarJob[] = loadJson(join(runDir, "publish_high_confidence.json"));
+  const sponsorLead: RadarJob[] = loadJson(join(runDir, "sponsor_lead.json"));
+  const rejected: RadarJob[] = loadJson(join(runDir, "rejected.json"));
   const report = readFileSync(join(runDir, "run_report.md"), "utf8");
 
   const realPublish = publish.filter((j) => !j.raw?.isFixture);
@@ -138,12 +150,7 @@ async function main(): Promise<void> {
     if (d) slDenialLeaks.push(`[${j.raw.employer}] ${j.raw.title} — "${d}"`);
   }
 
-  // ── 4. SPONSOR_LEAD source distribution ───────────────────────────
-  const slBySource: Record<string, number> = {};
-  for (const j of sponsorLead) {
-    const src = j.raw.sourceId.split("-").slice(0, 3).join("-");
-    slBySource[src] = (slBySource[src] ?? 0) + 1;
-  }
+  // slBySource is computed later via covBySource after sourceGroup() is available
 
   // ── 5. NOT_PHYSICIAN false-filter scan ────────────────────────────
   const notPhys = rejected.filter((j) => j.classification?.rejectReason === "NOT_PHYSICIAN");
@@ -153,14 +160,26 @@ async function main(): Promise<void> {
     .map((j) => `[${j.raw.employer}] ${j.raw.title}`);
 
   // ── 6. Coverage per source (PUBLISH + SPONSOR_LEAD) ───────────────
+  // Load source registry to resolve job IDs to connector names
+  const srcSnapshot: Array<{ id: string }> = (() => {
+    try { return loadJson(join(runDir, "source_registry_snapshot.json")); }
+    catch { return []; }
+  })();
+  const knownSourceIds = srcSnapshot.map((s) => s.id).sort((a, b) => b.length - a.length);
+  function sourceGroup(jobSourceId: string): string {
+    for (const sid of knownSourceIds) {
+      if (jobSourceId.startsWith(sid + "-") || jobSourceId === sid) return sid;
+    }
+    return jobSourceId.split("-").slice(0, 2).join("-");
+  }
   const covBySource: Record<string, { pub: number; sl: number }> = {};
   for (const j of realPublish) {
-    const s = j.raw.sourceId.split("-").slice(0, 3).join("-");
+    const s = sourceGroup(j.raw.sourceId);
     if (!covBySource[s]) covBySource[s] = { pub: 0, sl: 0 };
     covBySource[s].pub++;
   }
   for (const j of sponsorLead) {
-    const s = j.raw.sourceId.split("-").slice(0, 3).join("-");
+    const s = sourceGroup(j.raw.sourceId);
     if (!covBySource[s]) covBySource[s] = { pub: 0, sl: 0 };
     covBySource[s].sl++;
   }
@@ -252,7 +271,7 @@ async function main(): Promise<void> {
   lines.push(`## Dimension 4 — Coverage per connector`);
   lines.push(`| Source | PUBLISH | SPONSOR_LEAD | Total |`);
   lines.push(`|--------|---------|--------------|-------|`);
-  const allSources = new Set([...Object.keys(covBySource), ...Object.keys(slBySource)]);
+  const allSources = new Set(Object.keys(covBySource));
   for (const s of [...allSources].sort()) {
     const pub = covBySource[s]?.pub ?? 0;
     const sl = covBySource[s]?.sl ?? 0;
@@ -322,10 +341,12 @@ async function main(): Promise<void> {
   lines.push(`## What to fix next (priority order)`);
   lines.push(``);
   lines.push(`1. **Bare quotes** — ${bareQuotes} PUBLISH jobs have weak evidence (no visa type in quote); engine needs richer phrase capture`);
-  lines.push(`2. **Iron-core coverage** — 389 of 456 iron-core employers still unprobed; Northwell/MSMount Sinai/Hopkins/Mayo all blocked`);
+  lines.push(`2. **Iron-core coverage** — 389 of 456 iron-core employers still unprobed; Northwell/Mount Sinai/Hopkins/Mayo all blocked`);
   lines.push(`3. **iCIMS direct portals** — probe \`{employer}.icims.com/jobs/search?ss=1&searchKeyword=physician\` for remaining blocked employers`);
   lines.push(`4. **State distribution** — verify geographic spread; current PUBLISH is WI/NM/MD/LA — TX/CA/FL/IL/NY under-represented`);
-  lines.push(`5. **Cleveland Clinic Workday** — \`ccf/wd1/clevelandcliniccareers\` always returns 0 candidates; investigate CXS endpoint facets`);
+  lines.push(`5. **Cleveland Clinic physician portal** — jobs.clevelandclinic.org is a WordPress physician careers portal (separate from disabled Workday tenant); probe for physician attending postings`);
+  lines.push(`6. **Jefferson Health alias** — 40 physician postings per run (NO_VISA_MENTION), DOL entity is "Thomas Jefferson University Hospital" (4yr, 0 pos) — fails quality gate; needs position count verification or separate DOL entity match`);
+  lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos) but their Workday uses structured field "Sponsorship Available: No" — 12 physician jobs all denied per run; verify if real policy or positional`);
   lines.push(``);
 
   const output = lines.join("\n");

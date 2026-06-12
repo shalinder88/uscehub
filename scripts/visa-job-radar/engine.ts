@@ -117,6 +117,9 @@ const LEXICON: LexEntry[] = [
       "j1 candidates welcome",
       "j-1 exchange visitor",
       "j1 exchange visitor",
+      // Ochsner and similar: "Open to J-1 visa applications"
+      "open to j-1 visa",
+      "open to j1 visa",
     ],
     labels: ["EXPLICIT_J1_WAIVER"],
   },
@@ -185,6 +188,19 @@ const LEXICON: LexEntry[] = [
     ],
     labels: ["EXPLICIT_H1B"],
   },
+  // J-1 + H-1B mentioned together (slash or "or") — upgrades bare "visa sponsorship" phrases
+  // that also carry the visa type in parentheses, e.g. "Visa sponsorship (J1/H1B) available"
+  {
+    canonical: "j1/h1b",
+    variants: [
+      "j1/h1b", "j-1/h-1b",
+      "h1b/j1", "h-1b/j-1",
+      "j1 or h1b", "j-1 or h-1b",
+      "h1b or j1", "h-1b or j-1",
+      "j1 and h1b", "j-1 and h-1b",
+    ],
+    labels: ["EXPLICIT_H1B", "EXPLICIT_J1_WAIVER"],
+  },
   {
     canonical: "visa sponsorship",
     variants: [
@@ -250,6 +266,11 @@ const DENIAL_PHRASES: string[] = [
   "visas accepted none",
   "visas accepted: none",
   "visas accepted: no",
+  // Ochsner and similar: explicit J-1 refusal buried in posting boilerplate
+  "unable to accept j1 visa",
+  "unable to accept j-1 visa",
+  "no j1 visa opportunities",
+  "no j-1 visa opportunities",
 ];
 
 const BOILERPLATE_FRAMES: string[] = [
@@ -323,6 +344,12 @@ const NONPHYS_TOKENS: string[] = [
   "clerk",
   "educator",
   "representative",
+  // Observed false positives 2026-06-12: "Surgical Tech" contains "surgery"
+  // but is a surgical technologist role; "Genetic Counselor, Oncology" contains
+  // "oncolog" but is a counselor, not a physician.
+  "surgical tech",
+  "genetic counselor",
+  "counselor",
 ];
 
 const PHYS_TOKENS: string[] = [
