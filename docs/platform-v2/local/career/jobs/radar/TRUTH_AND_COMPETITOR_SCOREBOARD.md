@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1759  |  Produced: 2026-06-12
+Run: 2026-06-12-1814  |  Produced: 2026-06-12
 
 ---
 
@@ -38,7 +38,7 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (219 jobs)
+### 1B. SPONSOR_LEAD tier (259 jobs)
 
 All 219 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
@@ -48,6 +48,7 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 | Employer | Jobs | DOL yearsActive | DOL recentYearPositions | Verdict |
 |----------|------|-----------------|---------------------|---------|
 | Emory University | 40 | 7yr | 40 pos | IRON-CORE (jibe connector) |
+| Geisinger Clinic | 40 | 7yr | 78 pos | IRON-CORE (new: workday-geisinger run 1814) |
 | Thomas Jefferson University Hospitals | 40 | 4yr (via alias → "thomas jefferson university hospital") | 28 pos | PASSES GATE (run 1759 alias fix) |
 | University of Maryland Medical System | 39 | 5yr (via alias → "university of maryland baltimore") | 5 pos | PASSES GATE (run 1747 gate fix) |
 | Presbyterian Healthcare Services | 27 | 7yr | 6 pos | IRON-CORE |
@@ -71,7 +72,7 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 
 **Jefferson expansion (run 1759, +40):** 40 Thomas Jefferson University Hospitals physician jobs promoted from NO_VISA_MENTION to SPONSOR_LEAD. Root cause: ATS normKey `"thomas jefferson university hospitals"` (plural) did not match DOL entry `"thomas jefferson university hospital"` (singular, 4yr/28pos). Prior scoreboard incorrectly noted "0 DOL positions" — the entity exists under the singular form. Alias added: `"thomas jefferson university hospitals"` → `"thomas jefferson university hospital"`.
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD.
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA).
 
 ---
 
@@ -109,7 +110,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (219): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (259): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -239,9 +240,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1759 final state:**
-- 14 PUBLISH + 219 SPONSOR_LEAD = 233 total surfaced
-- Fetch volume: 403 candidates (11 active connectors)
+**Run 2026-06-12-1814 final state:**
+- 14 PUBLISH + 259 SPONSOR_LEAD = 273 total surfaced
+- Fetch volume: 443 candidates (12 active connectors)
 - NOT_PHYSICIAN rejects: 2
 - Audit D1-D7: **ALL PASS / CLEAN**
-- New this run: Jefferson Health alias fix (plural→singular normKey) — 40 physician jobs promoted to SPONSOR_LEAD
+- New this run: Geisinger Workday connector added — 40 physician jobs (7yr/78pos iron-core PA system)

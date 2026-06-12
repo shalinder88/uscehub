@@ -308,6 +308,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 18 certified positions). Workday site confirmed 2026-06-12: kumc.wd5.myworkdayjobs.com/kumc-jobs, CXS HTTP 200, ~23 'physician' hits. jobFamilyGroup has no 'Physician' descriptor so keyword fallback is used (acceptable at this volume). Academic medical center, KS.",
   },
   {
+    id: "workday-geisinger",
+    tier: 1,
+    connector: "workday",
+    label: "Geisinger Clinic — physicians (Workday)",
+    handle: "geisinger/wd5/GeisingerExternal",
+    employer: "Geisinger Clinic",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 78 certified positions FY2025). Workday site confirmed 2026-06-12: geisinger.wd5.myworkdayjobs.com/GeisingerExternal, CXS HTTP 200. No jobFamilyGroup facets exposed (0 values) → keyword 'physician' fallback (~888 results, scanned up to 500). 6-10 physician-titled jobs confirmed in sample. PA academic health system; specialties span all major physician SOCs.",
+  },
+  {
     id: "jibe-emory",
     tier: 1,
     connector: "jibe",

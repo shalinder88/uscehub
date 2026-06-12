@@ -1,12 +1,12 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1759  |  Audited: 2026-06-12
+Run: 2026-06-12-1814  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 219 |
-| Total surfaced (PUBLISH + SL) | 233 |
+| SPONSOR_LEAD | 259 |
+| Total surfaced (PUBLISH + SL) | 273 |
 | REJECT | 85 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -24,6 +24,7 @@ Run: 2026-06-12-1759  |  Audited: 2026-06-12
 | jibe-emory | 0 | 40 | 40 |
 | jsonld-umms | 1 | 39 | 40 |
 | workday-altamed | 0 | 24 | 24 |
+| workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
 | workday-montefiore | 0 | 15 | 15 |
