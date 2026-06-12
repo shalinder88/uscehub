@@ -10,7 +10,13 @@
 // Deterministic, no network. Scope is PHYSICIAN-ONLY (the source data is
 // physician LCA records). LCA = sponsorship intent/history, NOT a live opening —
 // this list is a TARGETING spine, never published as jobs.
+//
+// Persistence data (FY2019-FY2025) loaded from by-year/persistence_index.json —
+// 7 years of DOL LCA disclosure, case-deduplicated, SOC-filtered. Gives each
+// employer a yearsActive count (1-7) that becomes the primary ranking signal.
 
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { DOL_SPONSOR_JOBS } from "../../src/lib/dol-jobs-data";
 import { SPONSOR_DATA } from "../../src/lib/sponsor-data";
 import { WAIVER_JOBS } from "../../src/lib/waiver-jobs-data";
@@ -21,8 +27,14 @@ export interface SponsorUniverseEntry {
   city?: string;
   state?: string;
   specialties: string[];
-  totalPositions: number; // certified LCA positions (volume signal)
+  totalPositions: number; // certified LCA positions (volume signal, combined snapshot)
   newPositions: number;
+  // Persistence fields — populated from 7-year by-year DOL analysis
+  yearsActive?: number;       // 1-7 full years (FY2019-FY2025) with >=1 certified physician H-1B LCA
+  firstYearSeen?: string;     // e.g. "FY2019"
+  lastYearSeen?: string;      // e.g. "FY2025"
+  recentYearPositions?: number; // certified positions in the most recent full year (FY2025 or FY2024)
+  recentYear?: string;        // which year recentYearPositions comes from
   visaTypes: string[]; // union across sources: "h1b", "j1"
   capExempt: boolean;
   avgSalary?: number;
@@ -69,15 +81,42 @@ function sponsorScore(e: {
   specialties: string[];
   visaTypes: string[];
   capExempt: boolean;
+  yearsActive?: number;
+  recentYearPositions?: number;
 }): number {
-  // Volume dominates but with diminishing returns (an employer that sponsored 64
-  // positions is a far stronger lead than 1, but not 64x). sqrt keeps the head
-  // from dwarfing the score entirely.
-  const volume = Math.min(60, Math.round(Math.sqrt(e.totalPositions) * 8));
-  const breadth = Math.min(20, e.specialties.length * 3);
-  const j1 = e.visaTypes.includes("j1") ? 12 : 0; // J-1 waiver eligible — our target
-  const cap = e.capExempt ? 8 : 0; // cap-exempt = sponsors year-round, no lottery
-  return Math.min(100, volume + breadth + j1 + cap);
+  // Persistence is now the primary signal: an employer that filed every year for
+  // 7 years is far more reliable than one that filed once with 50 positions.
+  // persistence(35) + volume(45) + j1(12) + cap(8) = max 100.
+  const persistence = (e.yearsActive ?? 1) * 5; // 1yr=5, 7yr=35
+  const positions = e.recentYearPositions ?? e.totalPositions; // prefer most-recent full year
+  const volume = Math.min(45, Math.round(Math.sqrt(positions) * 6));
+  const j1 = e.visaTypes.includes("j1") ? 12 : 0;
+  const cap = e.capExempt ? 8 : 0;
+  return Math.min(100, persistence + volume + j1 + cap);
+}
+
+interface PersistenceEntry {
+  normKey: string;
+  display: string;
+  state?: string;
+  yearsActive: number;
+  firstYearSeen: string;
+  lastYearSeen: string;
+  recentYearPositions: number;
+  recentYear: string;
+  specialties: string[];
+}
+
+function loadPersistenceIndex(): Map<string, PersistenceEntry> {
+  const path = join(
+    process.cwd(),
+    "docs/platform-v2/local/career/jobs/radar/sponsor-universe/by-year/persistence_index.json",
+  );
+  if (!existsSync(path)) return new Map();
+  const rows = JSON.parse(readFileSync(path, "utf8")) as PersistenceEntry[];
+  const m = new Map<string, PersistenceEntry>();
+  for (const r of rows) m.set(r.normKey, r);
+  return m;
 }
 
 interface Acc {
@@ -87,6 +126,11 @@ interface Acc {
   specialties: Set<string>;
   totalPositions: number;
   newPositions: number;
+  yearsActive?: number;
+  firstYearSeen?: string;
+  lastYearSeen?: string;
+  recentYearPositions?: number;
+  recentYear?: string;
   visaTypes: Set<string>;
   capExempt: boolean;
   avgSalaries: number[];
@@ -95,6 +139,7 @@ interface Acc {
 }
 
 export function buildSponsorUniverse(): SponsorUniverseEntry[] {
+  const persistence = loadPersistenceIndex();
   const acc = new Map<string, Acc>();
 
   const get = (rawEmployer: string): Acc => {
@@ -157,6 +202,37 @@ export function buildSponsorUniverse(): SponsorUniverseEntry[] {
     a.sources.add("waiver-manual");
   }
 
+  // Merge persistence data into existing entries; add new entries from the
+  // 7-year DOL union that are not in any of the three static sources above.
+  for (const [pKey, p] of persistence) {
+    let a = acc.get(pKey);
+    if (!a) {
+      // Employer appears in 7-year DOL data but not in legacy static sources —
+      // add it as a new entry so the universe reflects the full known-sponsor set.
+      a = {
+        display: p.display,
+        state: p.state,
+        specialties: new Set(p.specialties),
+        totalPositions: p.recentYearPositions,
+        newPositions: 0,
+        visaTypes: new Set(["h1b"]),
+        capExempt: false,
+        avgSalaries: [],
+        sources: new Set(["by-year-dol"]),
+      };
+      acc.set(pKey, a);
+    }
+    // Merge persistence signals regardless of whether entry is new or existing.
+    a.yearsActive = p.yearsActive;
+    a.firstYearSeen = p.firstYearSeen;
+    a.lastYearSeen = p.lastYearSeen;
+    a.recentYearPositions = p.recentYearPositions;
+    a.recentYear = p.recentYear;
+    if (p.state && !a.state) a.state = p.state;
+    for (const s of p.specialties) a.specialties.add(s);
+    a.sources.add("by-year-dol");
+  }
+
   const out: SponsorUniverseEntry[] = [];
   for (const [normKey, a] of acc) {
     const specialties = [...a.specialties].sort();
@@ -173,16 +249,31 @@ export function buildSponsorUniverse(): SponsorUniverseEntry[] {
       specialties,
       totalPositions: a.totalPositions,
       newPositions: a.newPositions,
+      yearsActive: a.yearsActive,
+      firstYearSeen: a.firstYearSeen,
+      lastYearSeen: a.lastYearSeen,
+      recentYearPositions: a.recentYearPositions,
+      recentYear: a.recentYear,
       visaTypes,
       capExempt: a.capExempt,
       avgSalary,
       verifiedCareersUrl: a.verifiedCareersUrl,
       sources: [...a.sources].sort(),
     };
-    out.push({ ...entry, score: sponsorScore({ totalPositions: entry.totalPositions, specialties, visaTypes, capExempt: entry.capExempt }) });
+    out.push({
+      ...entry,
+      score: sponsorScore({
+        totalPositions: entry.totalPositions,
+        specialties,
+        visaTypes,
+        capExempt: entry.capExempt,
+        yearsActive: entry.yearsActive,
+        recentYearPositions: entry.recentYearPositions,
+      }),
+    });
   }
 
-  out.sort((x, y) => y.score - x.score || y.totalPositions - x.totalPositions || x.employer.localeCompare(y.employer));
+  out.sort((x, y) => y.score - x.score || (y.recentYearPositions ?? y.totalPositions) - (x.recentYearPositions ?? x.totalPositions) || x.employer.localeCompare(y.employer));
   return out;
 }
 

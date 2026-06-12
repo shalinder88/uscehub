@@ -48,20 +48,41 @@ function summarize(u: SponsorUniverseEntry[]): string {
   lines.push("- Top 100 employers = " + pct(cum(100), totalPositions) + " of all positions");
   lines.push("- Top 250 employers = " + pct(cum(250), totalPositions) + " of all positions");
   lines.push("");
+  // Persistence tier breakdown
+  const tiers = [7, 6, 5, 4, 3, 2, 1, 0].map((n) => ({ n, count: u.filter((e) => (e.yearsActive ?? 0) === n).length }));
+  lines.push("## Persistence tiers (FY2019-FY2025, 7 full years)");
+  lines.push("");
+  lines.push("| Yrs active | Employers | Interpretation |");
+  lines.push("|-----------|-----------|----------------|");
+  const tierLabels: Record<number, string> = {
+    7: "Iron core — sponsored every year (highest reliability)",
+    6: "Consistent — missed one year (weather or gap year)",
+    5: "Regular — strong multi-year track record",
+    4: "Moderate — filed most years",
+    3: "Occasional — active in about half the years",
+    2: "Rare — filed in 2 of 7 years",
+    1: "Single-year — one-time filer, lowest reliability",
+    0: "Legacy only — in hand-verified data, no DOL LCA record found",
+  };
+  for (const { n, count } of tiers) {
+    if (count > 0) lines.push(`| ${n}/7 | ${count} | ${tierLabels[n] ?? ""} |`);
+  }
+  lines.push("");
+
   lines.push("## Top 40 sponsors by Sponsor-History Score");
   lines.push("");
-  lines.push("| # | Score | Employer | State | Positions | J1 | CapEx | Specialties |");
+  lines.push("| # | Score | Yrs | FY2025 pos | Employer | State | J1 | CapEx |");
   lines.push("|---|---|---|---|---|---|---|---|");
   u.slice(0, 40).forEach((e, i) => {
     lines.push(
       "| " + (i + 1) +
       " | " + e.score +
+      " | " + (e.yearsActive ?? "?") + "/7" +
+      " | " + (e.recentYearPositions ?? "-") +
       " | " + e.employer +
       " | " + (e.state ?? "?") +
-      " | " + e.totalPositions +
       " | " + (e.visaTypes.includes("j1") ? "yes" : "-") +
       " | " + (e.capExempt ? "yes" : "-") +
-      " | " + e.specialties.slice(0, 4).join(", ") +
       " |",
     );
   });

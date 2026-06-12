@@ -5,59 +5,72 @@ history/intent, NOT a live opening. This is the employer TARGETING spine for the
 employer-direct resolver — it is never published as jobs.
 
 ## Universe
-- Distinct sponsoring employers: **1465**
-- J-1-waiver-eligible (visaTypes includes j1): 1230 (84%)
-- Cap-exempt (academic/non-profit, sponsors year-round): 148 (10.1%)
-- With a resolvable state: 1425 (97.3%)
-- Total certified LCA positions (volume): 3961
+- Distinct sponsoring employers: **5870**
+- J-1-waiver-eligible (visaTypes includes j1): 1230 (21%)
+- Cap-exempt (academic/non-profit, sponsors year-round): 148 (2.5%)
+- With a resolvable state: 5839 (99.5%)
+- Total certified LCA positions (volume): 8427
 
 ## Concentration (why monitoring the head captures most of the flow)
-- Top 10 employers = 11.9% of all positions
-- Top 50 employers = 35.2% of all positions
-- Top 100 employers = 49.5% of all positions
-- Top 250 employers = 70.1% of all positions
+- Top 10 employers = 10.5% of all positions
+- Top 50 employers = 27.5% of all positions
+- Top 100 employers = 38.8% of all positions
+- Top 250 employers = 55% of all positions
+
+## Persistence tiers (FY2019-FY2025, 7 full years)
+
+| Yrs active | Employers | Interpretation |
+|-----------|-----------|----------------|
+| 7/7 | 456 | Iron core — sponsored every year (highest reliability) |
+| 6/7 | 285 | Consistent — missed one year (weather or gap year) |
+| 5/7 | 289 | Regular — strong multi-year track record |
+| 4/7 | 337 | Moderate — filed most years |
+| 3/7 | 548 | Occasional — active in about half the years |
+| 2/7 | 1216 | Rare — filed in 2 of 7 years |
+| 1/7 | 2703 | Single-year — one-time filer, lowest reliability |
+| 0/7 | 36 | Legacy only — in hand-verified data, no DOL LCA record found |
 
 ## Top 40 sponsors by Sponsor-History Score
 
-| # | Score | Employer | State | Positions | J1 | CapEx | Specialties |
+| # | Score | Yrs | FY2025 pos | Employer | State | J1 | CapEx |
 |---|---|---|---|---|---|---|---|
-| 1 | 83 | Mayo Clinic  | WI | 78 | - | yes | Anesthesiology, Cardiology, Family Medicine, Internal Medicine |
-| 2 | 82 | Massachusetts General Physicians Organization, Inc. | MA | 39 | yes | - | Cardiology, Emergency Medicine, Neurology, Other Physician |
-| 3 | 81 | University of Arkansas for Medical Sciences | AR | 52 | - | yes | Anesthesiology, Family Medicine, Internal Medicine, Other Physician |
-| 4 | 80 | Montefiore Medical Center | NY | 51 | - | yes | Anesthesiology, Cardiology, Internal Medicine, Other Physician |
-| 5 | 79 | University of Iowa | IA | 41 | - | yes | Anesthesiology, Dermatology, Family Medicine, Internal Medicine |
-| 6 | 79 | The Cleveland Clinic Foundation | OH | 40 | - | yes | Anesthesiology, Cardiology, Family Medicine, General Practice |
-| 7 | 78 | Icahn School of Medicine at Mount Sinai | NY | 39 | - | yes | Anesthesiology, Cardiology, Dermatology, Emergency Medicine |
-| 8 | 77 | Emory University | GA | 40 | - | yes | Cardiology, Emergency Medicine, Internal Medicine, Neurology |
-| 9 | 77 | West Virginia University Medical Corporation | WV | 37 | - | yes | Cardiology, Internal Medicine, Neurology, Other Physician |
-| 10 | 75 | Memorial Sloan Kettering Cancer Center | NY | 52 | - | yes | Other Physician, Pathology, Radiology |
-| 11 | 75 | Banner University Medical Group | AZ | 38 | - | yes | Anesthesiology, Cardiology, Internal Medicine, Neurology |
-| 12 | 75 | OSF Multi-Specialty Group  | IL | 29 | yes | - | Cardiology, Family Medicine, General Practice, Internal Medicine |
-| 13 | 74 | Sanford Clinic | MN | 28 | yes | - | Cardiology, Internal Medicine, Neurology, Other Physician |
-| 14 | 73 | University of Pittsburgh Physicians | PA | 32 | - | yes | Anesthesiology, Emergency Medicine, General Practice, Neurology |
-| 15 | 72 | Maimonides Medical Center | NY | 36 | yes | - | Cardiology, Emergency Medicine, Internal Medicine, OB/GYN |
-| 16 | 72 | Cleveland Clinic  | OH | 16 | yes | yes | Anesthesiology, Cardiology, General Practice, Internal Medicine |
-| 17 | 71 | Rochester General Hospital | NY | 35 | yes | - | Anesthesiology, Internal Medicine, Other Physician, Pediatrics |
-| 18 | 70 | MedStar Medical Group II , LLC | DC | 23 | yes | - | Cardiology, Family Medicine, General Practice, Internal Medicine |
-| 19 | 69 | Henry Ford Health System | MI | 27 | yes | - | Anesthesiology, Family Medicine, Neurology, Other Physician |
-| 20 | 66 | PHYSICIAN AFFILIATE GROUP OF NY, PC | NY | 18 | yes | - | Anesthesiology, Emergency Medicine, Internal Medicine, Other Physician |
-| 21 | 65 | University of Alabama Health Services Foundation, PC | AL | 24 | - | yes | Anesthesiology, Family Medicine, Neurology, Other Physician |
-| 22 | 64 | TRUSTEES OF THE UNIVERSITY OF PENNSYLVANIA | PA | 26 | - | yes | Anesthesiology, Cardiology, Other Physician, Pathology |
-| 23 | 64 | Franciscan Missionaries of Our Lady Health System, Inc. | LA | 25 | yes | - | Cardiology, Neurology, Other Physician, Pediatrics |
-| 24 | 64 | Marshfield Clinic | WI | 25 | yes | - | Anesthesiology, Cardiology, Neurology, Other Physician |
-| 25 | 63 | University of Kentucky | KY | 25 | - | yes | Anesthesiology, Neurology, Other Physician, Pediatrics |
-| 26 | 63 | University of Colorado Denver | CO | 21 | - | yes | Cardiology, Internal Medicine, Neurology, OB/GYN |
-| 27 | 62 | Banner Medical Group | AZ | 26 | yes | - | Cardiology, Neurology, Other Physician |
-| 28 | 62 | Medical University of South Carolina and Affiliates | SC | 24 | - | yes | Cardiology, Internal Medicine, Neurology, Other Physician |
-| 29 | 62 | Brigham and Women's Physicians Organization Inc. | RI | 23 | yes | - | Anesthesiology, Cardiology, Other Physician, Psychiatry |
-| 30 | 62 | Allegheny Clinic | PA | 19 | yes | - | Cardiology, Internal Medicine, Neurology, Other Physician |
-| 31 | 61 | UNIVERSITY OF FLORIDA | FL | 34 | - | yes | Other Physician, Pediatrics |
-| 32 | 60 | Indiana University Indianapolis | IN | 36 | - | - | Family Medicine, Internal Medicine, Neurology, Other Physician |
-| 33 | 60 | The Brookdale Hospital Medical Center  | NY | 24 | yes | - | General Practice, Other Physician, Psychiatry |
-| 34 | 60 | USACS Medical Group Ltd. | OH | 24 | yes | - | Emergency Medicine, General Practice, Other Physician |
-| 35 | 59 | Hartford Healthcare Medical Group, Inc. | CT | 22 | yes | - | Internal Medicine, Neurology, Other Physician |
-| 36 | 58 | INTEGRIS HEALTH, INC. | OK | 21 | yes | - | Internal Medicine, Other Physician, Psychiatry |
-| 37 | 58 | University of Rochester | NY | 14 | - | yes | Anesthesiology, Cardiology, Dermatology, Internal Medicine |
-| 38 | 58 | Guthrie Medical Group, P.C. | PA | 12 | yes | - | Anesthesiology, Cardiology, Dermatology, Family Medicine |
-| 39 | 57 | BronxCare Health System | NY | 17 | yes | - | Internal Medicine, Other Physician, Pediatrics, Psychiatry |
-| 40 | 57 | OU Health Partners, Inc. | OK | 17 | yes | - | Cardiology, Neurology, Other Physician, Pathology |
+| 1 | 100 | 7/7 | 141 | Cleveland Clinic  | OH | yes | yes |
+| 2 | 92 | 7/7 | 191 | Maimonides Medical Center | NY | yes | - |
+| 3 | 92 | 7/7 | 162 | The Brookdale Hospital Medical Center  | NY | yes | - |
+| 4 | 92 | 7/7 | 121 | NORTHWELL HEALTH | NY | yes | - |
+| 5 | 92 | 7/7 | 118 | BronxCare Health System | NY | yes | - |
+| 6 | 92 | 7/7 | 110 | Rochester General Hospital | NY | yes | - |
+| 7 | 92 | 7/7 | 99 | Massachusetts General Physicians Organization, Inc. | MA | yes | - |
+| 8 | 92 | 7/7 | 91 | USACS Medical Group Ltd. | OH | yes | - |
+| 9 | 92 | 7/7 | 78 | Geisinger Clinic | TX | yes | - |
+| 10 | 92 | 7/7 | 71 | Henry Ford Health System | MI | yes | - |
+| 11 | 92 | 7/7 | 69 | OSF Multi-Specialty Group  | IL | yes | - |
+| 12 | 92 | 7/7 | 62 | Hartford Healthcare Medical Group, Inc. | CT | yes | - |
+| 13 | 92 | 7/7 | 60 | MedStar Medical Group II , LLC | DC | yes | - |
+| 14 | 91 | 7/7 | 54 | Brigham and Women's Physicians Organization Inc. | RI | yes | - |
+| 15 | 91 | 7/7 | 54 | Marshfield Clinic | WI | yes | - |
+| 16 | 90 | 7/7 | 52 | Sanford Clinic | MN | yes | - |
+| 17 | 90 | 7/7 | 51 | Brigham and Women's Hospital | MA | yes | - |
+| 18 | 89 | 7/7 | 49 | Baystate Medical Practices, Inc. | MA | yes | - |
+| 19 | 89 | 7/7 | 48 | Eastern Maine Medical Center | ME | yes | - |
+| 20 | 89 | 7/7 | 48 | LIFESPAN PHYSICIAN GROUP INC. | RI | yes | - |
+| 21 | 88 | 7/7 | 255 | The Cleveland Clinic Foundation | OH | - | yes |
+| 22 | 88 | 7/7 | 249 | Mayo Clinic  | WI | - | yes |
+| 23 | 88 | 7/7 | 169 | Montefiore Medical Center | NY | - | yes |
+| 24 | 88 | 7/7 | 112 | Emory University | GA | - | yes |
+| 25 | 88 | 7/7 | 99 | University of Arkansas for Medical Sciences | AR | - | yes |
+| 26 | 88 | 7/7 | 93 | University of Alabama Health Services Foundation, PC | AL | - | yes |
+| 27 | 88 | 7/7 | 89 | University of Pittsburgh Physicians | PA | - | yes |
+| 28 | 88 | 7/7 | 61 | Icahn School of Medicine at Mount Sinai | NY | - | yes |
+| 29 | 88 | 7/7 | 61 | Memorial Sloan Kettering Cancer Center | NY | - | yes |
+| 30 | 88 | 7/7 | 60 | Banner University Medical Group | AZ | - | yes |
+| 31 | 88 | 7/7 | 46 | Presbyterian Healthcare Services | NM | yes | - |
+| 32 | 87 | 6/7 | 107 | Adventist Health System/Sunbelt, Inc. | FL | yes | - |
+| 33 | 87 | 6/7 | 66 | PHYSICIAN AFFILIATE GROUP OF NY, PC | NY | yes | - |
+| 34 | 87 | 7/7 | 45 | Roswell Park Cancer Institute | NY | yes | - |
+| 35 | 87 | 7/7 | 44 | Banner Medical Group | AZ | yes | - |
+| 36 | 85 | 7/7 | 49 | Medical University of South Carolina and Affiliates | SC | - | yes |
+| 37 | 85 | 7/7 | 48 | University of Kentucky | KY | - | yes |
+| 38 | 84 | 7/7 | 46 | University of Colorado Denver | CO | - | yes |
+| 39 | 84 | 7/7 | 38 | Northeast Medical Group, Inc. | CT | yes | - |
+| 40 | 83 | 6/7 | 90 | UNIVERSITY OF FLORIDA | FL | - | yes |
