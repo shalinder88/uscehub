@@ -189,11 +189,11 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 
 | # | Issue | Action |
 |---|-------|--------|
-| M1 | Coverage expansion (ongoing) | Emory (run 1625, +40 SL) + KUMC (run 1648, +11 SL) added. Next: Hartford HealthCare (7yr/22pos), OSF Multi-Specialty (7yr/29pos), Henry Ford (7yr/27pos), Baystate (7yr/9pos) — all iron-core, ATS unknown; HTTP 000 from current probe environment |
+| M1 | Coverage expansion | Emory (run 1625, +40 SL) + KUMC (run 1648, +11 SL) added. Remaining 4 iron-core employers probed: OSF (iCIMS SPA-blocked), Baystate (Workday connected, 0 physician titles), Henry Ford (ATS unknown), Hartford HealthCare (ATS unknown). All 4 moved to Known Gaps. No further wirable iron-core employers identified. |
 | M2 | State coverage skewed (WI/NM/MD/LA/GA/KS) | NY/TX/CA employers dominate DOL data — Northwell/Mount Sinai/Mayo/Hopkins all blocked; next best: Hartford CT, OSF IL, Henry Ford MI |
 | M3 | Cleveland Clinic physician portal | CLOSED — jobs.clevelandclinic.org confirmed as blog/employer-brand WordPress site, NOT a physician job database. No wirable physician ATS found; remove from probe list. |
 | M4 | Jefferson Health alias gap | CONFIRMED CORRECT — "Jefferson Health" ATS ≠ any DOL entity with ≥3 pos (Thomas Jefferson University Hospitals = 4yr, 0 pos); engine correctly holds all 40 physician jobs/run as REJECT. No alias can fix. |
-| M5 | UAMS denial watch | Iron-core (7yr, 52 pos) but Workday structured field "Sponsorship Available: No" triggers SPONSORSHIP_DENIED for all 12 physician jobs/run; verify if real policy change vs default Workday template |
+| M5 | UAMS denial watch | Iron-core (7yr, 52 pos). Workday structured field `Sponsorship Available:         No` (key-value metadata, extra whitespace = HTML-stripped table row) triggers SPONSORSHIP_DENIED. The field is NOT free-text body copy — it's a sidebar template field Workday defaults to "No" when not explicitly set. Human verification required: is UAMS HR explicitly setting this, or is it an unfilled template default? Until confirmed, correctly held as SPONSORSHIP_DENIED. |
 | M6 | KUMC Workday site ID | FIXED run 1648 — kumc/wd5/kumc → 404 resolved to kumc/wd5/kumc-jobs (hyphenated); ATS resolver regex updated; 11 SL now surfaced. |
 
 ### Known gaps (blocked, no bypass)
@@ -207,9 +207,14 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | UT Southwestern | Taleo SSO-gated | 82 |
 | Mayo Clinic | TalentBrew SPA | 90 |
 | OHSU | iCIMS 403 | 82 |
+| OSF Multi-Specialty | iCIMS SPA-blocked (`osfhealthcare.icims.com` → redirects to root, no JSON API) | 7yr, 29 pos |
+| UAB Medicine | iCIMS SSO-gated (login redirect) | 7yr, ~20 pos |
 | MedStar Health | Connection refused | 72 |
+| Henry Ford Health | ATS unknown; wd1 tenant under maintenance; iCIMS 404; no API accessible | 7yr, 27 pos |
+| Hartford HealthCare | ATS unknown; no careers page responding; Workday 422 | 7yr, 22 pos |
+| Baystate Health | Workday `baystatehealth/wd12/External_Careers` — 390 jobs, zero physician titles | 7yr, 9 pos (low volume — likely recruits physicians via referral) |
 
-These 8 alone represent a massive untapped pool. Mount Sinai + Mayo Clinic + Johns Hopkins together likely have 50+ open physician positions at any time.
+These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + Johns Hopkins together likely have 50+ open physician positions at any time. OSF (29 pos) and Henry Ford (27 pos) are now confirmed inaccessible via API.
 
 ---
 
