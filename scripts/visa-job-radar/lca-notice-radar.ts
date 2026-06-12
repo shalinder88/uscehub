@@ -30,7 +30,12 @@ import { isPhysician } from "./engine";
 //                       FILENAME is the job title ("Assistant Professor - Adult
 //                       Cardiology (UPP).pdf"). The title is physician-gated before
 //                       any fetch, so we only pull likely-physician notices.
-export type NoticeLinkStrategy = "filename-token" | "all-pdf-titled";
+//   "html-row"        — UMD iTerp style: notices are INLINE HTML table rows on the
+//                       page itself (no PDFs). Each notice block = a heading text +
+//                       a <table> with <tr><td>field</td><td>value</td></tr> rows.
+//                       Physician gate uses DOL SOC code prefix "29-12" (physician/
+//                       surgeon family) OR title-based isPhysician(). No PDF fetch.
+export type NoticeLinkStrategy = "filename-token" | "all-pdf-titled" | "html-row";
 
 export interface LcaNoticeSource {
   id: string;
@@ -83,8 +88,9 @@ export const LCA_NOTICE_SOURCES: LcaNoticeSource[] = [
     id: "lca-umd",
     employer: "University of Maryland",
     pageUrl: "https://iterp.umd.edu/istart/xservices/employment/lcaPostings.cfm?index=01",
-    enabled: false,
-    note: "DISABLED 2026-06-11: serves a plain client, but notices are INLINE HTML table rows (no notice PDFs) — needs an 'html-row' strategy this radar doesn't yet have. Current postings are research scientists, no physicians. Revisit if an html-row parser is added.",
+    enabled: true,
+    linkStrategy: "html-row",
+    note: "ENABLED 2026-06-12 with html-row strategy. Page follows a 302 redirect and serves plain HTML with inline notice tables (no PDFs). Each notice block: heading 'Notice of Intent to Hire H-1B / E-3 Employee - N' + <table class=\"display dataTable\"> with <tr><td>field</td><td>value</td></tr> rows. Fields include: Posting Dates, Posted Position Title, DOL Occupational Classification (SOC code), Salary Offered, LCA Validity Period, Geographic Location. Physician gate: SOC prefix '29-12' (physicians/surgeons family) OR title-based. Current postings are research scientists (SOC 19-xxxx), no physicians — monitoring is still worthwhile as UMD has a large medical school.",
   },
 ];
 
@@ -139,6 +145,103 @@ export function isNoticeLink(href: string): boolean {
   const h = href.toLowerCase();
   if (!h.includes(".pdf")) return false;
   return h.includes("lca") || h.includes("notice");
+}
+
+// DOL SOC code 29-12xx is the physician and surgeon family.
+export function isPhysicianSoc(soc: string): boolean {
+  return soc.trimStart().startsWith("29-12");
+}
+
+// Strip HTML tags from a cell value using char-level scanning (consistent with
+// the no-regex style of this file; also handles tag attributes cleanly).
+function stripTags(s: string): string {
+  const out: string[] = [];
+  let inTag = false;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "<") { inTag = true; continue; }
+    if (s[i] === ">") { inTag = false; continue; }
+    if (!inTag) out.push(s[i]);
+  }
+  let result = out.join("");
+  // Collapse runs of whitespace including newlines.
+  let prev = "";
+  while (result !== prev) { prev = result; result = result.split("  ").join(" ").split("\t").join(" ").split("\n").join(" "); }
+  return result.trim();
+}
+
+export interface HtmlNoticeRow {
+  seqNum: number;
+  title?: string;
+  postingDates?: string;
+  socCode?: string;
+  salaryText?: string;
+  periodText?: string;
+  location?: string;
+}
+
+// For "html-row" sources: parse LCA notices directly from inline HTML tables.
+// The UMD iTerp format has a heading ("Notice of Intent to Hire H-1B / E-3
+// Employee - N") followed immediately by a <table> of key/value row pairs.
+// Returns one entry per notice block found in the page HTML.
+export function extractHtmlTableNotices(html: string): HtmlNoticeRow[] {
+  const out: HtmlNoticeRow[] = [];
+  const lower = html.toLowerCase();
+  let searchFrom = 0;
+  let seqNum = 0;
+
+  for (;;) {
+    const headerAt = lower.indexOf("notice of intent to hire", searchFrom);
+    if (headerAt < 0) break;
+    seqNum++;
+
+    const tableOpen = lower.indexOf("<table", headerAt);
+    if (tableOpen < 0) break;
+    const tableClose = lower.indexOf("</table>", tableOpen);
+    if (tableClose < 0) break;
+
+    const tableHtml = html.slice(tableOpen, tableClose + 8);
+    const tLower = tableHtml.toLowerCase();
+    const notice: HtmlNoticeRow = { seqNum };
+
+    let rowPos = 0;
+    for (;;) {
+      const trStart = tLower.indexOf("<tr>", rowPos);
+      if (trStart < 0) break;
+
+      const td1Open = tLower.indexOf("<td>", trStart);
+      if (td1Open < 0) { rowPos = trStart + 4; continue; }
+      const td1Close = tLower.indexOf("</td>", td1Open);
+      if (td1Close < 0) { rowPos = trStart + 4; continue; }
+
+      const td2Open = tLower.indexOf("<td>", td1Close);
+      if (td2Open < 0) { rowPos = trStart + 4; continue; }
+      const td2Close = tLower.indexOf("</td>", td2Open);
+      if (td2Close < 0) { rowPos = trStart + 4; continue; }
+
+      const key = stripTags(tableHtml.slice(td1Open + 4, td1Close)).toLowerCase();
+      const val = stripTags(tableHtml.slice(td2Open + 4, td2Close));
+
+      if (key.includes("position title") || key.includes("posted position")) {
+        notice.title = val;
+      } else if (key.includes("posting date")) {
+        notice.postingDates = val;
+      } else if (key.includes("occupational class")) {
+        notice.socCode = val;
+      } else if (key.includes("salary offered")) {
+        notice.salaryText = val;
+      } else if (key.includes("validity period")) {
+        notice.periodText = val;
+      } else if (key.includes("geographic location")) {
+        notice.location = val;
+      }
+
+      rowPos = td2Close + 5;
+    }
+
+    out.push(notice);
+    searchFrom = tableClose + 8;
+  }
+  return out;
 }
 
 // A bare relative href can resolve against the page path OR the site root (when
@@ -330,7 +433,50 @@ async function main(): Promise<void> {
     // "filename-token" pulls notice-tokened PDFs (role lives in the body).
     // "all-pdf-titled" pulls every PDF whose filename-title is a physician role,
     // physician-gating BEFORE any fetch so non-clinical postings are never pulled.
+    // "html-row" parses inline HTML tables directly — no PDFs, no extra fetches.
     const strategy = src.linkStrategy ?? "filename-token";
+
+    if (strategy === "html-row") {
+      const allNotices = extractHtmlTableNotices(page);
+      const physNotices = allNotices.filter((n) => {
+        if (!n.title) return false;
+        const isSocPhys = n.socCode ? isPhysicianSoc(n.socCode) : false;
+        return isSocPhys || isPhysician(n.title);
+      });
+      pollLog.push(
+        src.id + ": " + allNotices.length + " notice(s) on page (html-row), " +
+        physNotices.length + " physician",
+      );
+      for (const n of physNotices) {
+        // Stable key: posting start date (compact MMDDYYYY) + title slug.
+        const postingStart = n.postingDates?.split("-")[0]?.trim().replace(/\//g, "") ?? String(n.seqNum);
+        const titleSlug = (n.title ?? "untitled").toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40);
+        const caseNumber = "html-" + src.id + "-" + postingStart + "-" + titleSlug;
+        const existing = index.get(caseNumber);
+        if (existing) {
+          existing.lastSeenAt = now;
+          refreshedCount++;
+        } else {
+          index.set(caseNumber, {
+            caseNumber,
+            sourceId: src.id,
+            employer: src.employer,
+            noticeUrl: src.pageUrl,
+            role: n.title,
+            isPhysicianRole: true,
+            salaryText: n.salaryText,
+            periodText: n.periodText,
+            worksiteText: n.location,
+            firstSeenAt: now,
+            lastSeenAt: now,
+            rawText: "",
+          });
+          newCount++;
+        }
+      }
+      continue; // skip PDF-based link processing below
+    }
+
     let links: Array<{ href: string; titleHint?: string }>;
     if (strategy === "all-pdf-titled") {
       links = extractHrefs(page)
