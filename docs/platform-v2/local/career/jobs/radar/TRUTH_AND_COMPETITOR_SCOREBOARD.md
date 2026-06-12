@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1840  |  Produced: 2026-06-12
+Run: 2026-06-12-1906  |  Produced: 2026-06-12
 
 ---
 
@@ -7,7 +7,7 @@ Run: 2026-06-12-1840  |  Produced: 2026-06-12
 
 ### 1A. PUBLISH tier (14 non-fixture jobs)
 
-Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-offset-validated quote, (c) physician title, (d) no denial language.
+Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-offset-validated quote, (c) physician title, (d) no denial language. **Run 1906: 16 non-fixture PUBLISH** (was 14 in run 1814; 2 new jobs found in live data).
 
 | Employer | Title | State | Quote | Label | DOL History |
 |----------|-------|-------|-------|-------|-------------|
@@ -71,7 +71,7 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 
 **Jefferson expansion (run 1759, +40):** 40 Thomas Jefferson University Hospitals physician jobs promoted from NO_VISA_MENTION to SPONSOR_LEAD. Root cause: ATS normKey `"thomas jefferson university hospitals"` (plural) did not match DOL entry `"thomas jefferson university hospital"` (singular, 4yr/28pos). Prior scoreboard incorrectly noted "0 DOL positions" — the entity exists under the singular form. Alias added: `"thomas jefferson university hospitals"` → `"thomas jefferson university hospital"`.
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC false SPONSOR_LEAD removed (Pediatric Cardiac Sonographer false-positive fixed + VUMC disabled); Mercy disabled (no MD/DO attending jobs on careers.mercy.com); "sonographer" and "radiologist assistant" added to NONPHYS_TOKENS.
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS.
 
 ---
 
@@ -109,7 +109,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (258): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (249): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -184,6 +184,9 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | C6 | Jefferson Health 40 jobs stuck NO_VISA_MENTION — plural/singular normKey mismatch | FIXED | ✅ Done run 1759 | Alias "thomas jefferson university hospitals" → "thomas jefferson university hospital"; 40 jobs now SPONSOR_LEAD |
 | C7 | VUMC Pediatric Cardiac Sonographer II false SPONSOR_LEAD — "sonographer" missing from NONPHYS_TOKENS | FIXED | ✅ Done run 1840 | "sonographer" added to NONPHYS_TOKENS; VUMC disabled (vumccareers has no attending physician postings) |
 | C8 | MSK Radiologist Assistant, Interventional false-positive — "radiologist assistant" not blocked | FIXED | ✅ Done run 1840 | "radiologist assistant" added to NONPHYS_TOKENS; RA = allied health imaging provider, not physician |
+| C9 | Batch false positives: DDS (Montefiore), PMHNP (Geisinger), Psychologist (Ochsner), Radiology Ops Directors (Emory x3), Corporate Director (Emory), Software Engineer (Emory) | FIXED | ✅ Done run 1849 | 7 NONPHYS_TOKENS additions: dental surgery, pmhnp, psychologist, operations director, ops director, corporate director, software engineer |
+| C10 | UMMS "Sr Physician Asst I" false-positive — "physician asst" abbreviation not caught by "physician assistant" | FIXED | ✅ Done run 1901 | "physician asst" added to NONPHYS_TOKENS; D5 override added so audit doesn't false-alarm on correct rejection |
+| C11 | Sanford "Physician - Optometry Opportunity" false-positive — Sanford uses "Physician -" prefix for OD roles | FIXED | ✅ Done run 1901 | "optometry" added to NONPHYS_TOKENS; "ophthalmol" (different substring) still correctly passes |
 
 ### High (signal coverage)
 
@@ -243,9 +246,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1840 final state:**
-- 14 PUBLISH + 258 SPONSOR_LEAD = 272 total surfaced
-- Fetch volume: 442 candidates (10 active connectors; VUMC + Mercy disabled)
-- NOT_PHYSICIAN rejects: 2
+**Run 2026-06-12-1906 final state:**
+- 16 PUBLISH + 249 SPONSOR_LEAD = 265 total surfaced (non-fixture PUBLISH)
+- Fetch volume: 436 candidates (10 active connectors; VUMC + Mercy disabled)
+- NOT_PHYSICIAN rejects: 3 (all correct: gold NP fixture, gold Therapist fixture, UMMS Sr Physician Asst I)
 - Audit D1-D7: **ALL PASS / CLEAN**
-- Changes run 1829→1840: VUMC false SPONSOR_LEAD removed (Sonographer false-positive); Mercy + VUMC connectors disabled (no MD/DO attending jobs on those ATS portals); "sonographer" + "radiologist assistant" added to NONPHYS_TOKENS
+- Session net vs run 1814: −10 false non-physician SPONSOR_LEAD removed; +2 non-fixture PUBLISH added (new live postings); 9 NONPHYS_TOKEN additions; 2 connectors disabled (no physician attending jobs)
