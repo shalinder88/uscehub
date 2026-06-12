@@ -184,3 +184,199 @@ function out_hash(s: string): number {
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
   return Math.abs(h);
 }
+
+// ── JSON-LD career-page reader ───────────────────────────────────────────────
+//
+// Fetches a physician-keyword search results page from a json-ld ATS (iCIMS,
+// Phenom, Oracle HCM, Taleo, SuccessFactors), extracts individual posting URLs,
+// fetches each detail page, extracts schema.org JobPosting JSON-LD, and maps
+// to RawCandidate. The employer + sourceIdBase come from the source-registry
+// entry. This is the correct place for this code (not connectors.ts) because
+// connectors.ts imports stripHtml from here — the reverse would be circular.
+//
+// SPA fallback: modern Phenom / iCIMS / Oracle sites render their search pages
+// as full React SPAs that return no job hrefs in the initial HTML. When the
+// search page yields 0 hrefs, fetchJsonLd falls back to sitemap enumeration:
+// it fetches {origin}/sitemap.xml (handling sitemap index → sub-sitemaps),
+// extracts /job/ URLs, and filters by physician keywords in the URL slug.
+// This is proven to work for Tufts Medical Center, Mercy Health, and UMMS
+// which all use Phenom with sitemap indexes containing individual posting URLs.
+
+const JSONLD_UA = "Mozilla/5.0 (compatible; USCEHub-visa-job-radar/1.0; +contact via repo)";
+const JSONLD_MAX_POSTINGS = 40;     // detail-page ceiling per source
+const JSONLD_PAGE_TIMEOUT_MS = 15000;
+const JSONLD_DELAY_MS = 300;        // polite inter-request pause
+
+// URL-slug keywords that suggest a physician (MD/DO) role, not APP/admin.
+// Used only for sitemap enumeration pre-filter; engine.isPhysician does the
+// real classification on fetched body text.
+// "radiolog" without the suffix matches "radiological-technologist", so use
+// the full specialty name. Same for other -olog truncations.
+const PHYSICIAN_SLUG_RE = /physician|hospitalist|internist|attending|neurologist|cardiologist|oncologist|intensivist|nephrologist|pulmonologist|gastroenterologist|endocrinologist|urologist|radiologist|psychiatrist|obstetrician|gynecologist|pediatrician|surgeon|dermatologist/i;
+
+function jsonldDelay(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function jsonldGet(url: string): Promise<{ html: string; finalUrl: string } | null> {
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), JSONLD_PAGE_TIMEOUT_MS);
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": JSONLD_UA,
+        Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+      },
+      redirect: "follow",
+      signal: ctrl.signal,
+    });
+    clearTimeout(t);
+    if (!res.ok) return null;
+    return { html: await res.text(), finalUrl: res.url || url };
+  } catch {
+    return null;
+  }
+}
+
+// Returns true when a URL path looks like an individual job posting detail page
+// (not a search/list/apply page). Covers iCIMS, Phenom, Oracle HCM, Taleo, SF.
+function isJobDetailPath(path: string): boolean {
+  const p = path.toLowerCase();
+  // iCIMS: /jobs/{id}/{slug}/job
+  if (/\/jobs\/\d+\/[^/]+\/job$/.test(p)) return true;
+  // Phenom / generic: /jobs/{id} or /jobs/{id}-{slug} (not /jobs/search or bare /jobs)
+  if (/\/jobs\/[a-z0-9][a-z0-9_-]*$/.test(p) && !/\/jobs\/search/.test(p) && p !== "/jobs") return true;
+  // Oracle HCM: /requisitions/{id} anywhere in path
+  if (/\/requisitions\/\d+/.test(p)) return true;
+  // Taleo: .ftl job detail
+  if (/jobdetail\.ftl/.test(p)) return true;
+  // SuccessFactors / Avature / Phenom alternate: /career-detail, /job-invite/{id}, /job/{id}
+  if (/career-detail/.test(p) || /\/job-invite\/\d+/.test(p) || /\/job\/\d+$/.test(p)) return true;
+  return false;
+}
+
+// Extracts job detail hrefs from a search-results page. Stays same-origin;
+// strips query+hash for dedup so /jobs/123?apply and /jobs/123 count once.
+function extractJobHrefs(html: string, baseUrl: string): string[] {
+  let origin: string;
+  try {
+    origin = new URL(baseUrl).origin;
+  } catch {
+    return [];
+  }
+  const seen = new Set<string>();
+  const out: string[] = [];
+  // href="..." or href='...'
+  const re = /href=["']([^"']+)["']/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) {
+    const raw = m[1];
+    let resolved: string;
+    try {
+      const u = new URL(raw, baseUrl);
+      if (u.origin !== origin) continue;
+      resolved = u.origin + u.pathname; // canonical dedupe key
+    } catch {
+      continue;
+    }
+    const path = new URL(resolved).pathname;
+    if (!isJobDetailPath(path)) continue;
+    if (seen.has(resolved)) continue;
+    seen.add(resolved);
+    out.push(resolved);
+    if (out.length >= JSONLD_MAX_POSTINGS) break;
+  }
+  return out;
+}
+
+// Enumerate physician job posting URLs from a site's XML sitemap.
+// Handles both flat sitemaps and sitemap indexes (one level of nesting only).
+// Returns URLs whose slugs match PHYSICIAN_SLUG_RE, capped at JSONLD_MAX_POSTINGS.
+async function fetchSitemapJobUrls(origin: string): Promise<string[]> {
+  const sitemapUrl = origin + "/sitemap.xml";
+  const resp = await jsonldGet(sitemapUrl);
+  if (!resp) return [];
+
+  const isIndex = /<sitemapindex/i.test(resp.html);
+  let allJobUrls: string[] = [];
+
+  if (isIndex) {
+    // Extract sub-sitemap URLs (lines like <loc>https://...sitemap1.xml</loc>)
+    const subRe = /<loc>([^<]+\.xml)<\/loc>/gi;
+    let m: RegExpExecArray | null;
+    const subUrls: string[] = [];
+    while ((m = subRe.exec(resp.html)) !== null) subUrls.push(m[1]);
+    for (const subUrl of subUrls) {
+      await jsonldDelay(JSONLD_DELAY_MS);
+      const sub = await jsonldGet(subUrl);
+      if (!sub) continue;
+      const locRe = /<loc>([^<]*\/job\/[^<]+)<\/loc>/gi;
+      while ((m = locRe.exec(sub.html)) !== null) allJobUrls.push(m[1]);
+    }
+  } else {
+    // Flat sitemap
+    const locRe = /<loc>([^<]*\/job\/[^<]+)<\/loc>/gi;
+    let m: RegExpExecArray | null;
+    while ((m = locRe.exec(resp.html)) !== null) allJobUrls.push(m[1]);
+  }
+
+  return allJobUrls
+    .filter((u) => PHYSICIAN_SLUG_RE.test(u))
+    .slice(0, JSONLD_MAX_POSTINGS);
+}
+
+// Fetch a physician-filtered career search page, walk individual posting URLs,
+// extract JSON-LD JobPosting from each, and map to RawCandidate.
+// handle = the full physician search URL (stored in source-registry.ts).
+// SPA fallback: if the search page returns 0 job hrefs (Phenom/iCIMS React SPA),
+// attempts sitemap enumeration before giving up.
+export async function fetchJsonLd(
+  searchUrl: string,
+  employerName: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const fetchedAt = new Date().toISOString();
+  const out: RawCandidate[] = [];
+
+  // Step 1: fetch search results page
+  const search = await jsonldGet(searchUrl);
+  if (!search) return out;
+  await jsonldDelay(JSONLD_DELAY_MS);
+
+  // Step 2: extract individual posting URLs (works for iCIMS direct portals
+  // that server-render job links; returns 0 for full SPA sites).
+  let postingUrls = extractJobHrefs(search.html, search.finalUrl);
+
+  // Step 2b: SPA fallback — try sitemap enumeration when search page is a SPA.
+  if (postingUrls.length === 0) {
+    let origin: string;
+    try {
+      origin = new URL(search.finalUrl).origin;
+    } catch {
+      return out;
+    }
+    await jsonldDelay(JSONLD_DELAY_MS);
+    postingUrls = await fetchSitemapJobUrls(origin);
+  }
+
+  if (postingUrls.length === 0) return out;
+
+  // Step 3: fetch each posting and extract JSON-LD
+  for (const postingUrl of postingUrls) {
+    await jsonldDelay(JSONLD_DELAY_MS);
+    const page = await jsonldGet(postingUrl);
+    if (!page) continue;
+    const postings = extractJobPostingJsonLd(page.html);
+    for (const posting of postings) {
+      const cand = jobPostingToRawCandidate(
+        posting,
+        sourceIdBase,
+        employerName,
+        fetchedAt,
+        postingUrl,
+      );
+      if (cand) out.push(cand);
+    }
+  }
+  return out;
+}

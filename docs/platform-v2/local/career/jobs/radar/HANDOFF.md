@@ -138,8 +138,9 @@ npx tsx scripts/visa-job-radar/lca-notice-radar.ts     # poll + accumulate LCA n
 npx tsx scripts/visa-job-radar/sponsor-truth.ts        # fuse the three layers
 ```
 
-Latest verified state: gold **15/15**, tsc clean, live run = 0 false PUBLISH · 32 SPONSOR_LEAD · 81 VA
-eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ranked #1 (live LCA activity).
+Latest verified state: gold **15/15**, tsc clean, live run = PUBLISH 11 (6 non-fixture) · 187 SPONSOR_LEAD ·
+79 SIGNAL · 618 REJECT of 896 total. json-ld reader LIVE: UMMS Nephrologist (J-1 waiver explicit) → PUBLISH;
+Tufts Neurologist → SPONSOR_LEAD via sponsor-history fusion. Denials correctly caught.
 
 ---
 
@@ -187,11 +188,22 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
    Live run after Step 2: SPONSOR_LEAD 33→186 (+153), real PUBLISH 1→5. Connectors now: 10 Workday +
    3 Greenhouse + 1 USAJobs = 14 total. 67 of 456 iron-core employers probed; ~389 remain unprobed.
 9. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
-10. **Remaining iron-core ATS probing** — 389 of 456 iron-core employers not yet probed. Most of the
-    unresolved ones (Northwell, Montefiore, NYC H+H, Maimonides, BronxCare) are large NY systems using
-    iCIMS/Taleo (json-ld only, need json-ld reader). MedStar, Hartford HealthCare, Banner resolved as
-    "unknown" from landing page JS shells. Wire the json-ld reader for the 16 json-ld-reachable sponsors
-    found in Step 2 to add another significant tier of employer-direct openings.
+10. **json-ld reader — DONE (session 7, 2026-06-12):** `fetchJsonLd()` in `ats-resolver.ts` now has a
+    SPA fallback: when the search page returns 0 hrefs (Phenom/React SPA), tries `{origin}/sitemap.xml`,
+    handles sitemap index → sub-sitemaps, extracts `/job/` URLs, filters by `PHYSICIAN_SLUG_RE`. Proven
+    on Phenom ATS with sitemap indexes at all three live sources.
+    - **Enabled:** Tufts Medical Center (`careers.tuftsmedicine.org`), Mercy Health (`careers.mercy.com`),
+      UMMS (`careers.umms.org`) — all DOL iron-core (7/7 years).
+    - **Disabled (correct reason):** Froedtert — actual ATS is Infor CloudSuite HCM (403 to plain client,
+      same posture as WVU). UAB Medicine — iCIMS portal URL unknown; `careers-uabmedicine.icims.com` is a
+      hospital website CDN proxy, not the job portal.
+    - **Live result:** +1 PUBLISH (UMMS Nephrologist, J-1 explicit) + 1 SPONSOR_LEAD (Tufts Neurologist).
+    - **Remaining:** ~389 of 456 iron-core employers still unprobed. Northwell/Montefiore/NYC H+H/
+      Maimonides/BronxCare use iCIMS with direct portals (not Phenom SPAs). Oracle HCM employers
+      (Atlantic Health, MUSC, etc.) may have accessible `/requisitions/` URL patterns.
+      To find iCIMS direct portals: probe `{employer}.icims.com/jobs/search?ss=1&searchKeyword=physician`;
+      server-rendered hrefs → `isJobDetailPath` matches `/jobs/{id}/{slug}/job` → `fetchJsonLd` works directly.
+      For Oracle HCM: research the correct public careers URL pattern per employer.
 
 Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `VJ_USAJOBS_COVERAGE.md`,
 `VJ_90PCT_COVERAGE_STRATEGY.md`, `VJ_GRADE_GAP_REVIEW.md`, `VJ_PROMISE_AUDIT_VERDICT.md`, plus the R2 spec
@@ -216,13 +228,15 @@ Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `
 
 ## 9. Git state at sign-out
 
-All session work is committed to `main` (local, NOT pushed). Commits in order:
+All session work is committed to `main` (local, NOT pushed). Latest commits:
 - `25abcb5` — LCA-notice radar: two-template parser + Pitt source + per-source link strategy
 - `7dc1391` — Sponsors page: live LCA notice badges + cap-exempt filter + truth fusion
 - `7894ae4` — Per-employer sponsor pages with JobPosting JSON-LD
 - `1f0faae` — LCA radar: html-row strategy + UMD iTerp source enabled
 - `b8de5dd` — Job-leads freshness history: firstSeenAt/lastSeenAt + sponsor-truth integration
 - `cbd400b` — Unblock repeat-rate: DOL CSV converter + precise download instructions
+- `TBD` — (session 6) Step 1 + Step 2 + json-ld reader (will be committed at sign-out)
+- **Session 7 commit (pending):** json-ld sitemap fallback + Tufts/Mercy/UMMS enabled + Froedtert/UAB disabled with root-cause notes
 
 The pre-existing `src/app/career/*` (except `sponsors/sponsor-search.tsx`) and p102 modifications
 remain uncommitted and untouched, as required.

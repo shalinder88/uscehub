@@ -15,6 +15,7 @@ export type Connector =
   | "usajobs-historic"
   | "greenhouse"
   | "workday"
+  | "jsonld"
   | "none";
 
 export interface SourceDef {
@@ -222,6 +223,66 @@ export const SOURCES: SourceDef[] = [
     enabled: true,
     needsVerification: true,
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025) → batch ATS-resolved 2026-06-12. Verified: CXS HTTP 200, ~307 'physician' hits. NM safety-net system, high J-1-waiver density.",
+  },
+  // ── JSON-LD sources — community/regional iron-core sponsors ────────────────
+  // ATS confirmed by scale-sponsors.ts probe (2026-06-12). handle = full
+  // physician-filtered search URL. Employer-direct: no board is involved.
+  // These are all DOL iron-core (7/7 years), so every opening is a sponsor-backed lead.
+  // All start disabled; enable after verifying the URL returns physician postings.
+  {
+    id: "jsonld-froedtert",
+    tier: 1,
+    connector: "jsonld",
+    label: "Froedtert Health — physicians (Infor CloudSuite)",
+    handle: "https://css-froedterthealth-prd.inforcloudsuite.com",
+    employer: "Froedtert Health",
+    enabled: false,
+    needsVerification: true,
+    note: "DISABLED 2026-06-12: Step 2 probe mis-detected Phenom from careers.froedtert.com landing page — actual ATS is Infor CloudSuite HCM (css-froedterthealth-prd.inforcloudsuite.com). That domain returns HTTP 403 to a plain Node client (bot protection). Disabled — same posture as WVU. DOL iron-core (7/7 years). Revisit only via sanctioned feed.",
+  },
+  {
+    id: "jsonld-mercy",
+    tier: 1,
+    connector: "jsonld",
+    label: "Mercy Health — physicians (Phenom)",
+    handle: "https://careers.mercy.com/us/en/search-results?keywords=physician",
+    employer: "Mercy Health",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years, 138 FY2025 positions). ATS = Phenom; search page is a React SPA so fetchJsonLd uses the sitemap fallback (sitemap_index.xml → 3 sub-sitemaps → ~1107 /job/ URLs, ~26 physician-slug matches). Verified 2026-06-12: sitemap confirmed, posting pages return JobPosting JSON-LD. OH Catholic system.",
+  },
+  {
+    id: "jsonld-tufts",
+    tier: 1,
+    connector: "jsonld",
+    label: "Tufts Medical Center — physicians (Phenom)",
+    handle: "https://careers.tuftsmedicine.org/us/en/search-results?keywords=physician",
+    employer: "Tufts Medical Center",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years). ATS = Phenom; search page is a React SPA so fetchJsonLd uses the sitemap fallback (flat sitemap.xml, 438 /job/ URLs, ~68 physician-slug matches). Verified 2026-06-12: /job/R21325/Internal-Medicine-Physician returns @type:JobPosting with 15KB description. Boston community-teaching hospital.",
+  },
+  {
+    id: "jsonld-umms",
+    tier: 1,
+    connector: "jsonld",
+    label: "University of Maryland Medical System — physicians (Phenom)",
+    handle: "https://careers.umms.org/us/en/search-results?keywords=physician",
+    employer: "University of Maryland Medical System",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years). ATS = Phenom; search page is a React SPA so fetchJsonLd uses the sitemap fallback (sitemap_index.xml → 3 sub-sitemaps → 1496 /job/ URLs, ~104 physician-slug matches). Verified 2026-06-12: Neurohospitalist posting returns @type:JobPosting, org=UMMS, 6KB description. MD state system.",
+  },
+  {
+    id: "jsonld-uabmedicine",
+    tier: 1,
+    connector: "jsonld",
+    label: "UAB Medicine — physicians (iCIMS)",
+    handle: "https://uabmedicine.icims.com/jobs/search?ss=1&searchKeyword=physician",
+    employer: "University of Alabama Birmingham Medicine",
+    enabled: false,
+    needsVerification: true,
+    note: "DISABLED 2026-06-12: The Step 2 probe subdomain 'careers-uabmedicine.icims.com' is a CDN proxy for the UAB Medicine hospital website (WordPress), not the iCIMS job portal. Alternative portal 'uabmedicine.icims.com' timed out (connection refused). DOL iron-core (7/7 years, 93 FY2025 positions). Revisit if correct iCIMS portal URL found.",
   },
   {
     id: "tier3-practicelink",

@@ -29,6 +29,7 @@ import {
   parseUsajobsHistoric,
   parseWorkdayDetail,
 } from "./connectors";
+import { fetchJsonLd } from "./ats-resolver";
 import { enabledSources, SOURCES } from "./source-registry";
 import { normEmployer, sponsorHistoryIndex, type SponsorUniverseEntry } from "./sponsor-universe";
 import { updateJobLeadsHistory } from "./job-leads-history";
@@ -88,6 +89,10 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
     } else if (src.connector === "workday") {
       candidates.push(
         ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id)),
+      );
+    } else if (src.connector === "jsonld") {
+      candidates.push(
+        ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id)),
       );
     }
   }
