@@ -25,6 +25,7 @@ import {
   normEmployerKey,
   type LiveNoticeEmployer,
 } from "@/lib/sponsor-truth-overlay";
+import { employerSlug } from "@/lib/sponsor-page-utils";
 
 const US_STATES: Record<string, string> = {
   AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",
@@ -339,7 +340,14 @@ export function SponsorSearch() {
 
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-bold text-foreground truncate">{r.e}</h3>
+                  <h3 className="text-sm font-bold text-foreground truncate">
+                    <Link
+                      href={`/career/sponsors/${employerSlug(r.e)}`}
+                      className="hover:text-accent transition-colors"
+                    >
+                      {r.e}
+                    </Link>
+                  </h3>
                   <div className="flex items-center gap-3 text-xs text-muted mt-0.5">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3 w-3" />
