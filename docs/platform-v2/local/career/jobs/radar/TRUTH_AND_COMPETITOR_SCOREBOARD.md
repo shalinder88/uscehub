@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1814  |  Produced: 2026-06-12
+Run: 2026-06-12-1840  |  Produced: 2026-06-12
 
 ---
 
@@ -57,7 +57,6 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 | Montefiore Medical Center | 15 | 7yr | 51 pos | IRON-CORE |
 | University of Kansas Medical Center | 11 | 7yr | 18 pos | IRON-CORE (new: workday kumc-jobs) |
 | Memorial Sloan Kettering Cancer Center | 6 | 7yr | 52 pos | IRON-CORE |
-| Vanderbilt University Medical Center | 1 | 7yr | 9 pos | IRON-CORE |
 | Sanford Health | 1 | 7yr (via alias) | 28 pos | IRON-CORE |
 
 **Note:** These jobs have NO explicit visa language in their postings — that's why they're SPONSOR_LEAD, not PUBLISH. The DOL history is the only evidence cited, and the note in every job says exactly that: "Posting states no visa intent — surfaced as a lead, not confirmed sponsorship." This is truthful.
@@ -72,7 +71,7 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 
 **Jefferson expansion (run 1759, +40):** 40 Thomas Jefferson University Hospitals physician jobs promoted from NO_VISA_MENTION to SPONSOR_LEAD. Root cause: ATS normKey `"thomas jefferson university hospitals"` (plural) did not match DOL entry `"thomas jefferson university hospital"` (singular, 4yr/28pos). Prior scoreboard incorrectly noted "0 DOL positions" — the entity exists under the singular form. Alias added: `"thomas jefferson university hospitals"` → `"thomas jefferson university hospital"`.
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA).
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC false SPONSOR_LEAD removed (Pediatric Cardiac Sonographer false-positive fixed + VUMC disabled); Mercy disabled (no MD/DO attending jobs on careers.mercy.com); "sonographer" and "radiologist assistant" added to NONPHYS_TOKENS.
 
 ---
 
@@ -110,7 +109,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (259): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (258): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -183,6 +182,8 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | C4 | One Medical/Oscar 536 wasted fetches/run with 0 useful signal | FIXED | ✅ Done run 1532 | Both connectors disabled |
 | C5 | UMMS alias working but 39 jobs not promoting — gate used stale SPONSOR_DATA p=2 | FIXED | ✅ Done run 1747 | Gate now uses recentYearPositions ?? totalPositions; 39 UMMS jobs now SPONSOR_LEAD |
 | C6 | Jefferson Health 40 jobs stuck NO_VISA_MENTION — plural/singular normKey mismatch | FIXED | ✅ Done run 1759 | Alias "thomas jefferson university hospitals" → "thomas jefferson university hospital"; 40 jobs now SPONSOR_LEAD |
+| C7 | VUMC Pediatric Cardiac Sonographer II false SPONSOR_LEAD — "sonographer" missing from NONPHYS_TOKENS | FIXED | ✅ Done run 1840 | "sonographer" added to NONPHYS_TOKENS; VUMC disabled (vumccareers has no attending physician postings) |
+| C8 | MSK Radiologist Assistant, Interventional false-positive — "radiologist assistant" not blocked | FIXED | ✅ Done run 1840 | "radiologist assistant" added to NONPHYS_TOKENS; RA = allied health imaging provider, not physician |
 
 ### High (signal coverage)
 
@@ -223,6 +224,8 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | Henry Ford Health | ATS unknown; wd1 tenant under maintenance; iCIMS 404; no API accessible | 7yr, 27 pos |
 | Hartford HealthCare | ATS unknown; no careers page responding; Workday 422 | 7yr, 22 pos |
 | Baystate Health | Workday `baystatehealth/wd12/External_Careers` — 390 jobs, zero physician titles | 7yr, 9 pos (low volume — likely recruits physicians via referral) |
+| Vanderbilt University Medical Center | vumccareers Workday — 244 "physician" keyword hits, all NP/PA/support staff; no attending/faculty MD postings; faculty likely in Vanderbilt University academic HR | 7yr, 9 pos |
+| Mercy Health | careers.mercy.com Phenom — 1,163 sitemap URLs, zero MD/DO attending titles; "physician" slug matches are all support staff or department name context | 7yr, 138 pos |
 
 These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + Johns Hopkins together likely have 50+ open physician positions at any time. OSF (29 pos) and Henry Ford (27 pos) are now confirmed inaccessible via API.
 
@@ -240,9 +243,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1814 final state:**
-- 14 PUBLISH + 259 SPONSOR_LEAD = 273 total surfaced
-- Fetch volume: 443 candidates (12 active connectors)
+**Run 2026-06-12-1840 final state:**
+- 14 PUBLISH + 258 SPONSOR_LEAD = 272 total surfaced
+- Fetch volume: 442 candidates (10 active connectors; VUMC + Mercy disabled)
 - NOT_PHYSICIAN rejects: 2
 - Audit D1-D7: **ALL PASS / CLEAN**
-- New this run: Geisinger Workday connector added — 40 physician jobs (7yr/78pos iron-core PA system)
+- Changes run 1829→1840: VUMC false SPONSOR_LEAD removed (Sonographer false-positive); Mercy + VUMC connectors disabled (no MD/DO attending jobs on those ATS portals); "sonographer" + "radiologist assistant" added to NONPHYS_TOKENS
