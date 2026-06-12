@@ -171,13 +171,27 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
    `run.ts` calls `updateJobLeadsHistory()` at end of every `--live` run. `sponsor-truth.ts` reads
    history, adds `recentJobLeadAt` to the openings layer, surfaces in truthSummary, used as a ranking
    tiebreaker (fresh > stale > absent).
-8. Unblock **repeat-rate** — DONE (session 2026-06-12): `process-dol-annual-csv.ts` converts the raw
-   DOL OFLC annual Excel-exported CSV to the by-year JSON format `repeat-rate.ts` expects. Filters
-   CASE_STATUS=Certified + SOC prefix 29-12. Handles column name variations across years. Updated
-   `_REPEAT_RATE_README.md` with exact URL, step-by-step workflow, SOC code table. **STILL NEEDS
-   THE OPERATOR TO MANUALLY DOWNLOAD FY2022/FY2023/FY2024 EXCEL FILES FROM DOL OFLC** (site 403s
-   bots); then run the script 3× and `repeat-rate.ts`.
+8. **Repeat-rate + DOL 7-year persistence** — FULLY DONE (session 2026-06-12 / HEAD `1875dda`):
+   Operator manually downloaded all FY2019–FY2026 Q2 xlsx files from DOL OFLC. `process-dol-xlsx.py`
+   (openpyxl streaming, handles SOC 2010/2018/apostrophe format, CASE_NUMBER dedup) produced
+   `by-year/FY2019.json` through `FY2026.json`. `repeat-rate.ts` upgraded for 7-year analysis.
+   **Finding:** position-weighted YoY repeat rate 83.6% avg (77.6%→88.4%), 456 employers present
+   all 7 full years (iron core). `persistence_index.json` built (5,834 distinct employers).
+   **Step 1 DONE (session 2026-06-12):** Sponsor universe rebuilt from persistence_index — 1,465 → 5,870
+   employers; new `yearsActive`/`recentYearPositions` fields; persistence-primary scoring formula
+   (persistence 35pts + volume 45pts + j1 12pts + cap 8pts = 100 max).
+   **Step 2 DONE (session 2026-06-12):** Iron-core ATS discovery expanded to 67 sponsors. Found 2
+   new confirmed Workday json-api handles:
+   - Thomas Jefferson University Hospitals: `jeffersonhealth/wd5/thomasjeffersonexternal` (402 hits)
+   - Presbyterian Healthcare Services NM: `phsorg/wd1/careers` (307 hits, NM safety-net, high J-1)
+   Live run after Step 2: SPONSOR_LEAD 33→186 (+153), real PUBLISH 1→5. Connectors now: 10 Workday +
+   3 Greenhouse + 1 USAJobs = 14 total. 67 of 456 iron-core employers probed; ~389 remain unprobed.
 9. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
+10. **Remaining iron-core ATS probing** — 389 of 456 iron-core employers not yet probed. Most of the
+    unresolved ones (Northwell, Montefiore, NYC H+H, Maimonides, BronxCare) are large NY systems using
+    iCIMS/Taleo (json-ld only, need json-ld reader). MedStar, Hartford HealthCare, Banner resolved as
+    "unknown" from landing page JS shells. Wire the json-ld reader for the 16 json-ld-reachable sponsors
+    found in Step 2 to add another significant tier of employer-direct openings.
 
 Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `VJ_USAJOBS_COVERAGE.md`,
 `VJ_90PCT_COVERAGE_STRATEGY.md`, `VJ_GRADE_GAP_REVIEW.md`, `VJ_PROMISE_AUDIT_VERDICT.md`, plus the R2 spec
