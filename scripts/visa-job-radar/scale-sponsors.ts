@@ -15,7 +15,10 @@ import { join } from "node:path";
 import { detectAts, type AtsType, type Reach } from "./ats-resolver";
 
 // Curated careers pages for top DOL physician sponsors (their OWN domains).
+// Batch 1 (original 35) + Batch 2 (iron-core expansion, June 2026).
+// All employers are confirmed in the 7-year DOL persistence index (FY2019-FY2025).
 const SEED: Array<{ employer: string; url: string }> = [
+  // ── Batch 1: original top-sponsor probes ────────────────────────────────────
   { employer: "Cleveland Clinic", url: "https://jobs.clevelandclinic.org" },
   { employer: "University of Arkansas for Medical Sciences", url: "https://jobs.uams.edu" },
   { employer: "Memorial Sloan Kettering", url: "https://careers.mskcc.org" },
@@ -52,6 +55,46 @@ const SEED: Array<{ employer: string; url: string }> = [
   { employer: "SUNY Upstate Medical University", url: "https://www.upstate.edu/hr/jobs" },
   { employer: "University of Kentucky", url: "https://ukjobs.uky.edu" },
   { employer: "Tufts Medical Center", url: "https://careers.tuftsmedicine.org" },
+  // ── Batch 2: iron-core expansion (all 7/7 years, top by FY2025 positions) ───
+  // NY cluster (highest iron-core density)
+  { employer: "Northwell Health", url: "https://careers.northwell.edu" },
+  { employer: "BronxCare Health System", url: "https://bronxcare.org/careers" },
+  { employer: "NYC Health and Hospitals", url: "https://www.nychealthandhospitals.org/careers" },
+  { employer: "Rochester General Hospital", url: "https://www.rochesterregional.org/careers" },
+  // OH / Midwest cluster
+  { employer: "Mercy Health - St. Vincent", url: "https://careers.mercy.com" },
+  { employer: "OSF Multi-Specialty Group", url: "https://jobs.osfhealthcare.org" },
+  { employer: "USACS Medical Group", url: "https://careers.usacs.com" },
+  { employer: "IU Health Care Associates", url: "https://careers.iuhealth.org" },
+  { employer: "Froedtert Health", url: "https://jobs.froedtert.com" },
+  { employer: "Corewell Health", url: "https://jobs.corewellhealth.org" },
+  // Mid-Atlantic / MedStar
+  { employer: "MedStar Health", url: "https://jobs.medstar.net" },
+  { employer: "Thomas Jefferson University Hospitals", url: "https://careers.jefferson.edu" },
+  { employer: "Atlantic Health System", url: "https://jobs.atlantichealth.org" },
+  { employer: "WellSpan Health", url: "https://jobs.wellspan.org" },
+  // New England cluster
+  { employer: "Hartford HealthCare", url: "https://jobs.hartfordhealthcare.org" },
+  { employer: "Lifespan Health System", url: "https://careers.lifespan.org" },
+  { employer: "Baystate Health", url: "https://careers.baystatehealth.org" },
+  { employer: "Boston Children's Hospital", url: "https://jobs.childrenshospital.org" },
+  // South / Southeast
+  { employer: "University of Alabama Birmingham Medicine", url: "https://www.uabmedicine.org/careers" },
+  { employer: "Medical University of South Carolina", url: "https://jobs.musc.edu" },
+  // Pacific / Mountain West
+  { employer: "Oregon Health and Science University", url: "https://jobs.ohsu.edu" },
+  { employer: "UC Health Colorado", url: "https://jobs.uchealth.org" },
+  { employer: "Presbyterian Healthcare Services NM", url: "https://www.phs.org/careers" },
+  // Upper Midwest
+  { employer: "Marshfield Clinic", url: "https://www.marshfieldclinic.org/careers" },
+  { employer: "Essentia Health", url: "https://jobs.essentiahealth.org" },
+  { employer: "Guthrie Clinic", url: "https://careers.guthrie.org" },
+  // Academic / specialty
+  { employer: "Hospital for Special Surgery", url: "https://careers.hss.edu" },
+  { employer: "Roswell Park Comprehensive Cancer Center", url: "https://careers.roswellpark.org" },
+  { employer: "UT Southwestern Medical Center", url: "https://jobs.utsouthwestern.edu" },
+  { employer: "University of Kansas Medical Center", url: "https://jobs.kumc.edu" },
+  { employer: "University of Wisconsin Health", url: "https://jobs.uhs.wisc.edu" },
 ];
 
 const UA = "Mozilla/5.0 (compatible; USCEHub-visa-job-radar/1.0; sponsor-resolve)";
