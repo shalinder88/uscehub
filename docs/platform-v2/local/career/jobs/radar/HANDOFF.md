@@ -158,7 +158,11 @@ eligibility · denials correctly caught. Sponsor-truth: 1,465 employers, KUMC ra
 5. **Add `html-row` link strategy** — unlock inline-HTML LCA notice pages. University of Maryland iTerp
    (`iterp.umd.edu/.../lcaPostings.cfm`) is the reference. Currently has 0 physician notices but
    worth monitoring. Would need a new `LcaNoticeSource.linkStrategy: "html-row"` branch in lca-notice-radar.ts.
-6. **Per-job `[id]` pages + JobPosting JSON-LD** → Google for Jobs (currently invisible).
+6. **Per-employer `[slug]` pages + JobPosting JSON-LD** — DONE (session 2026-06-11): `/career/sponsors/[slug]`
+   server component with `generateStaticParams()` (pre-builds ~1,087 pages), DOL history panel, live-notice
+   panel (amber, role/salary/period/PDF link), cap-exempt explainer, JobPosting JSON-LD on active-filing
+   employers. Prefix-match resolves org variants. `robots: noindex` until content is dense enough. Employer
+   names in search list now link to their detail pages.
 7. **Freshness/closed-on-absence loop** for engine job leads (LCA index has first/last-seen; jobs don't).
 8. Unblock **repeat-rate** — needs multi-year DOL LCA files (operator manual download; DOL 403s bots).
 9. Explore a **3RNET partnership** rather than rebuilding rural J-1 inventory.
@@ -189,6 +193,7 @@ Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `
 All session work is committed to `main` (local, NOT pushed). Commits in order:
 - `25abcb5` — LCA-notice radar: two-template parser + Pitt source + per-source link strategy
 - `7dc1391` — Sponsors page: live LCA notice badges + cap-exempt filter + truth fusion
+- `7894ae4` — Per-employer sponsor pages with JobPosting JSON-LD
 
 The pre-existing `src/app/career/*` (except `sponsors/sponsor-search.tsx`) and p102 modifications
 remain uncommitted and untouched, as required.
