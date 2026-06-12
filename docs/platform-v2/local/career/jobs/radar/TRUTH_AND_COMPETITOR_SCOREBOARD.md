@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1625  |  Produced: 2026-06-12
+Run: 2026-06-12-1648  |  Produced: 2026-06-12
 
 ---
 
@@ -38,20 +38,21 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (129 jobs)
+### 1B. SPONSOR_LEAD tier (140 jobs)
 
-All 129 SPONSOR_LEAD jobs come from employers that:
+All 140 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
 - Have ≥3 years active in FY2019–FY2025 DOL data
 - Have ≥3 total certified physician LCA positions
 
 | Employer | Jobs | DOL yearsActive | DOL totalPositions | Verdict |
 |----------|------|-----------------|---------------------|---------|
-| Emory University | 40 | 7yr | 40 pos | IRON-CORE (new: jibe connector) |
+| Emory University | 40 | 7yr | 40 pos | IRON-CORE (jibe connector) |
 | Presbyterian Healthcare Services | 27 | 7yr | 6 pos | IRON-CORE |
 | AltaMed Health Services | 24 | 7yr | 4 pos | IRON-CORE |
 | Ochsner Health | 15 | 7yr (via alias) | 12 pos | IRON-CORE |
 | Montefiore Medical Center | 15 | 7yr | 51 pos | IRON-CORE |
+| University of Kansas Medical Center | 11 | 7yr | 18 pos | IRON-CORE (new: workday kumc-jobs) |
 | Memorial Sloan Kettering Cancer Center | 6 | 7yr | 52 pos | IRON-CORE |
 | Vanderbilt University Medical Center | 1 | 7yr | 9 pos | IRON-CORE |
 | Sanford Health | 1 | 7yr (via alias) | 28 pos | IRON-CORE |
@@ -60,9 +61,11 @@ All 129 SPONSOR_LEAD jobs come from employers that:
 
 **Emory expansion (run 1625):** 40 Emory University physician faculty jobs surfaced via new Jibe/iCIMS connector (`careers.emory.edu/api/jobs`). All are visa-silent → SPONSOR_LEAD. Emory is a 7yr/40pos iron-core sponsor; the lead is DOL-backed.
 
+**KUMC expansion (run 1648):** 11 University of Kansas Medical Center physician jobs added via Workday connector (`kumc/wd5/kumc-jobs`). Correct site name required hyphen (`kumc-jobs`); initial probe used `kumc` → 404. KUMC is 7yr/18pos iron-core. No physician jobFamilyGroup facets in Workday; keyword fallback returns 23 results, 11 pass isPhysician().
+
 **Ochsner reduction (20→15):** 4 Ochsner jobs moved to SPONSORSHIP_DENIED (denial phrases added). 1 moved to PUBLISH ("Open to J-1 visa" added to LEXICON).
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +39 SPONSOR_LEAD.
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD.
 
 ---
 
@@ -98,8 +101,8 @@ Our `normEmployer()` strips punctuation and lowercases. Some PUBLISH employers' 
 The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7407 VA appointments. They are correctly labeled and held at VISA_SIGNAL_ONLY. They do NOT reach the app surface (PUBLISH only). So no: the app does not surface non-J1/H1B jobs.
 
 Summary check:
-- PUBLISH (13): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (75): all iron-core DOL H1B sponsors (7yr, ≥4 pos) — LEAD, not confirmed ✅
+- PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
+- SPONSOR_LEAD (140): all iron-core DOL H1B sponsors (7yr, ≥3 pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -186,12 +189,12 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 
 | # | Issue | Action |
 |---|-------|--------|
-| M1 | Coverage expansion (in progress) | Emory Jibe connector wired (run 1625, +40 SL). KUMC Workday handle wrong (kumc/wd5/kumc → 404, need correct site ID). Next: Hartford HealthCare, OSF, Henry Ford, Baystate (all 7yr iron-core, ATS unknown) |
-| M2 | State coverage skewed (WI/NM/MD/LA/GA) | NY/TX/CA employers dominate DOL data — Northwell/Mount Sinai/Mayo/Hopkins all blocked; next best: Hartford CT, OSF IL, Henry Ford MI |
-| M3 | Cleveland Clinic physician portal | jobs.clevelandclinic.org is a blog/employer-brand WordPress site, NOT a physician job database. Actual physician attending hiring appears to be separate; unknown portal. |
-| M4 | Jefferson Health alias gap | "Jefferson Health" ATS ≠ "Thomas Jefferson University Hospital" DOL (4yr, 0 pos — fails quality gate); 40 physician jobs/run at NO_VISA_MENTION instead of SPONSOR_LEAD |
-| M5 | UAMS denial watch | Iron-core (7yr, 52 pos) but Workday structured field "Sponsorship Available: No" triggers SPONSORSHIP_DENIED for all 12 physician jobs/run; verify if real policy change |
-| M6 | KUMC Workday site ID | kumc/wd5/kumc → 404 ("Job_Posting_Site_ID=kumc not found"). Tenant + datacenter are correct; only site name is wrong. Research correct site name from careers page. 7yr/18pos iron-core. |
+| M1 | Coverage expansion (ongoing) | Emory (run 1625, +40 SL) + KUMC (run 1648, +11 SL) added. Next: Hartford HealthCare (7yr/22pos), OSF Multi-Specialty (7yr/29pos), Henry Ford (7yr/27pos), Baystate (7yr/9pos) — all iron-core, ATS unknown; HTTP 000 from current probe environment |
+| M2 | State coverage skewed (WI/NM/MD/LA/GA/KS) | NY/TX/CA employers dominate DOL data — Northwell/Mount Sinai/Mayo/Hopkins all blocked; next best: Hartford CT, OSF IL, Henry Ford MI |
+| M3 | Cleveland Clinic physician portal | CLOSED — jobs.clevelandclinic.org confirmed as blog/employer-brand WordPress site, NOT a physician job database. No wirable physician ATS found; remove from probe list. |
+| M4 | Jefferson Health alias gap | CONFIRMED CORRECT — "Jefferson Health" ATS ≠ any DOL entity with ≥3 pos (Thomas Jefferson University Hospitals = 4yr, 0 pos); engine correctly holds all 40 physician jobs/run as REJECT. No alias can fix. |
+| M5 | UAMS denial watch | Iron-core (7yr, 52 pos) but Workday structured field "Sponsorship Available: No" triggers SPONSORSHIP_DENIED for all 12 physician jobs/run; verify if real policy change vs default Workday template |
+| M6 | KUMC Workday site ID | FIXED run 1648 — kumc/wd5/kumc → 404 resolved to kumc/wd5/kumc-jobs (hyphenated); ATS resolver regex updated; 11 SL now surfaced. |
 
 ### Known gaps (blocked, no bypass)
 
@@ -222,9 +225,9 @@ These 8 alone represent a massive untapped pool. Mount Sinai + Mayo Clinic + Joh
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1625 final state:**
-- 14 PUBLISH + 129 SPONSOR_LEAD = 143 total surfaced
-- Fetch volume: 398 candidates (17 active sources)
+**Run 2026-06-12-1648 final state:**
+- 14 PUBLISH + 140 SPONSOR_LEAD = 154 total surfaced
+- Fetch volume: 423 candidates (18 active sources)
 - NOT_PHYSICIAN rejects: 47
 - Audit D1-D7: **ALL PASS / CLEAN**
-- New this run: Emory University Jibe connector (40 SPONSOR_LEAD from GA academic iron-core)
+- New this run: KUMC Workday connector (11 SPONSOR_LEAD from KS academic iron-core); KUMC site ID corrected kumc → kumc-jobs

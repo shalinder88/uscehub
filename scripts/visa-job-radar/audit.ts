@@ -328,25 +328,25 @@ async function main(): Promise<void> {
   lines.push(`| BronxCare Health System | Connection refused | No bypass |`);
   lines.push(`| MedStar Health | Connection refused | No bypass |`);
   lines.push(`| Hartford HealthCare | Connection refused | No bypass |`);
-  lines.push(`| Maimonides Medical Center | 404 — portal URL unknown | Research correct URL |`);
+  lines.push(`| Maimonides Medical Center | ATS unknown (maimonidesmed.icims.com 404, no Workday/Greenhouse detected) | Research correct portal |`);
   lines.push(`| OHSU | iCIMS sitemap 403 | No bypass |`);
   lines.push(`| Mount Sinai | Taleo SSO-gated | No bypass |`);
   lines.push(`| UT Southwestern | Taleo SSO-gated | No bypass |`);
   lines.push(`| Mayo Clinic | TalentBrew SPA — no sitemap API | No bypass |`);
   lines.push(`| Johns Hopkins | HTTP 403 | No bypass |`);
-  lines.push(`| UAB Medicine | iCIMS portal URL unknown | Research correct URL |`);
+  lines.push(`| UAB Medicine | uabmedicine.icims.com SSO-gated (redirects to login) | No bypass |`);
   lines.push(`| Froedtert Health | Infor CloudSuite 403 | No bypass |`);
   lines.push(``);
 
   lines.push(`## What to fix next (priority order)`);
   lines.push(``);
-  lines.push(`1. **Bare quotes** — ${bareQuotes} PUBLISH jobs have weak evidence (no visa type in quote); engine needs richer phrase capture`);
-  lines.push(`2. **Iron-core coverage** — 389 of 456 iron-core employers still unprobed; Northwell/Mount Sinai/Hopkins/Mayo all blocked`);
-  lines.push(`3. **iCIMS direct portals** — probe \`{employer}.icims.com/jobs/search?ss=1&searchKeyword=physician\` for remaining blocked employers`);
-  lines.push(`4. **State distribution** — verify geographic spread; current PUBLISH is WI/NM/MD/LA — TX/CA/FL/IL/NY under-represented`);
-  lines.push(`5. **Cleveland Clinic physician portal** — jobs.clevelandclinic.org is a WordPress physician careers portal (separate from disabled Workday tenant); probe for physician attending postings`);
-  lines.push(`6. **Jefferson Health alias** — 40 physician postings per run (NO_VISA_MENTION), DOL entity is "Thomas Jefferson University Hospital" (4yr, 0 pos) — fails quality gate; needs position count verification or separate DOL entity match`);
-  lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos) but their Workday uses structured field "Sponsorship Available: No" — 12 physician jobs all denied per run; verify if real policy or positional`);
+  lines.push(`1. **Bare quotes** — ${bareQuotes > 0 ? bareQuotes + " PUBLISH jobs have weak evidence (no visa type in quote); engine needs richer phrase capture" : "CLEAN — all " + (richQuotes) + " PUBLISH quotes are RICH (H1B/J1/waiver/cap-exempt)"}`);
+  lines.push(`2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; Northwell/Mount Sinai/Hopkins/Mayo all blocked`);
+  lines.push(`3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any`);
+  lines.push(`4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers`);
+  lines.push(`5. **Stanford Health Care low yield** — 3 candidates/run; DOL entry "Leland Stanford Jr University" (6yr/2pos) fails quality gate; connector correct but no sponsor-history backing`);
+  lines.push(`6. **Jefferson Health** — 40 physician postings/run all NO_VISA_MENTION; DOL entity has 0 certified positions; no alias will fix this — correctly held as REJECT`);
+  lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos) but Workday structured field "Sponsorship Available: No" triggers denial for all 12 physician jobs/run; verify if real policy change vs template default`);
   lines.push(``);
 
   const output = lines.join("\n");
