@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1532  |  Audited: 2026-06-12
+Run: 2026-06-12-1625  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 90 |
-| Total surfaced (PUBLISH + SL) | 104 |
-| REJECT | 187 |
+| SPONSOR_LEAD | 129 |
+| Total surfaced (PUBLISH + SL) | 143 |
+| REJECT | 185 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 20 quotes verified, 0 mismatches
@@ -21,8 +21,9 @@ Run: 2026-06-12-1532  |  Audited: 2026-06-12
 ## Dimension 4 — Coverage per connector
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
+| jibe-emory | 0 | 40 | 40 |
 | jsonld-umms | 1 | 0 | 1 |
-| workday-altamed | 0 | 25 | 25 |
+| workday-altamed | 0 | 24 | 24 |
 | workday-montefiore | 0 | 15 | 15 |
 | workday-msk | 0 | 6 | 6 |
 | workday-ochsner | 2 | 15 | 17 |
@@ -39,7 +40,7 @@ Run: 2026-06-12-1532  |  Audited: 2026-06-12
 Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 
 ## Dimension 7 — PUBLISH posting age
-Avg age: **25.1 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
+Avg age: **25.2 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 
 ## PUBLISH job inventory (non-fixture)
 | Employer | Title | State | Age | Labels | Quote |

@@ -16,6 +16,7 @@ export type Connector =
   | "greenhouse"
   | "workday"
   | "jsonld"
+  | "jibe"
   | "none";
 
 export interface SourceDef {
@@ -294,6 +295,39 @@ export const SOURCES: SourceDef[] = [
     enabled: false,
     needsVerification: true,
     note: "DISABLED 2026-06-12: The Step 2 probe subdomain 'careers-uabmedicine.icims.com' is a CDN proxy for the UAB Medicine hospital website (WordPress), not the iCIMS job portal. Alternative portal 'uabmedicine.icims.com' timed out (connection refused). DOL iron-core (7/7 years, 93 FY2025 positions). Revisit if correct iCIMS portal URL found.",
+  },
+  {
+    id: "workday-kumc",
+    tier: 1,
+    connector: "workday",
+    label: "University of Kansas Medical Center — physicians (Workday)",
+    handle: "kumc/wd5/kumc",
+    employer: "University of Kansas Medical Center",
+    enabled: false,
+    needsVerification: true,
+    note: "DISABLED 2026-06-12: Workday site ID 'kumc' is wrong (returns HTTP 404 with 'not found: Job_Posting_Site_ID=kumc'). Tenant=kumc, dc=wd5 confirmed, but the correct site name is unknown — common guesses (KUMC, KUMCExternal, External, kumc_careers) all 404. DOL iron-core (7/7 years, 18 pos). Re-enable with correct site name once found from the actual careers page.",
+  },
+  {
+    id: "jibe-emory",
+    tier: 1,
+    connector: "jibe",
+    label: "Emory University — physician faculty (Jibe/iCIMS)",
+    handle: "https://careers.emory.edu",
+    employer: "Emory University",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 40 certified positions). ATS = Jibe (iCIMS wrapper). Physician faculty jobs at faculty-emory.icims.com — individual job pages are SPA-rendered (no JSON-LD), but careers.emory.edu/api/jobs returns full JSON with title, HTML description, city/state, apply_url. Verified 2026-06-12: API returns 200, totalCount ~1860 for keyword=physician. Jibe connector fetches pages, filters by isPhysician(), collects up to 40 physician-titled jobs. GA academic system, high J-1/H-1B density.",
+  },
+  {
+    id: "jsonld-guthrie",
+    tier: 1,
+    connector: "jsonld",
+    label: "Guthrie Clinic — physicians (Oracle HCM)",
+    handle: "https://careers.guthrie.org/search-results?keyword=physician",
+    employer: "Guthrie Medical Group",
+    enabled: false,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 12 certified positions) under 'Guthrie Medical Group, P.C.'. ATS = Oracle HCM (detected via scale-sponsors.ts probe 2026-06-12). fetchJsonLd SPA fallback will attempt sitemap enumeration for /job/ URLs. DISABLED pending manual verification that sitemap at careers.guthrie.org includes physician job URLs with JSON-LD. PA/NY regional health system.",
   },
   {
     id: "tier3-practicelink",

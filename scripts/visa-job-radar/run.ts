@@ -20,6 +20,7 @@ import {
 } from "./engine";
 import {
   fetchGreenhouse,
+  fetchJibe,
   fetchUsajobs,
   fetchUsajobsHistoricJoa,
   fetchWorkday,
@@ -96,6 +97,10 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
       } else if (src.connector === "jsonld") {
         candidates.push(
           ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "jibe") {
+        candidates.push(
+          ...(await fetchJibe(src.handle, src.employer ?? src.label, src.id)),
         );
       }
     } catch (err) {

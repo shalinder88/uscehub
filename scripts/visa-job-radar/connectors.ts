@@ -567,3 +567,106 @@ export async function fetchUsajobsHistoricJoa(
     return [];
   }
 }
+
+// ── Jibe / iCIMS Apply (careers.{employer}.edu/api/jobs JSON endpoint) ─────
+//
+// Jibe is an iCIMS-owned SPA wrapper used by large academic employers (Emory,
+// etc.). Individual posting pages at {employer}.icims.com are SPA-rendered with
+// no JSON-LD in the initial HTML, so fetchJsonLd() cannot read them. However,
+// the Jibe platform exposes a public /api/jobs endpoint that returns full job
+// data (title, HTML description, city, state, posted_date, apply_url) as JSON.
+//
+// handle = base URL of the Jibe careers page (e.g. "https://careers.emory.edu")
+
+const JIBE_PAGE_SIZE = 100;
+const JIBE_MAX_PHYSICIAN = 40;
+const JIBE_TIMEOUT_MS = 15000;
+const JIBE_DELAY_MS = 300;
+
+export interface JibeJobData {
+  title?: string;
+  description?: string; // HTML
+  city?: string;
+  state?: string;
+  posted_date?: string;
+  apply_url?: string;
+}
+
+export interface JibeJobEntry {
+  data?: JibeJobData;
+}
+
+export interface JibeResponse {
+  totalCount?: number;
+  jobs?: JibeJobEntry[];
+}
+
+// Extract the iCIMS job ID from an apply_url like
+// "https://faculty-emory.icims.com/jobs/12345/physician-title/job"
+function jibeJobId(applyUrl: string, fallback: number): string {
+  const m = applyUrl.match(/\/jobs\/(\d+)\//);
+  return m ? m[1] : String(fallback);
+}
+
+export async function fetchJibe(
+  baseUrl: string,
+  employer: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const fetchedAt = new Date().toISOString();
+  const out: RawCandidate[] = [];
+  let offset = 0;
+
+  while (out.length < JIBE_MAX_PHYSICIAN) {
+    let data: JibeResponse;
+    try {
+      const url =
+        baseUrl +
+        "/api/jobs?keyword=physician&limit=" +
+        JIBE_PAGE_SIZE +
+        "&offset=" +
+        offset;
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), JIBE_TIMEOUT_MS);
+      const res = await fetch(url, { signal: ctrl.signal });
+      clearTimeout(t);
+      if (!res.ok) break;
+      data = (await res.json()) as JibeResponse;
+    } catch {
+      break;
+    }
+
+    const jobs = data.jobs ?? [];
+    if (jobs.length === 0) break;
+
+    for (const j of jobs) {
+      const d = j.data;
+      if (!d?.title) continue;
+      if (!isPhysician(d.title)) continue;
+      const body = d.description ? stripHtml(d.description) : "";
+      const applyUrl = d.apply_url ?? "";
+      const idTail = jibeJobId(applyUrl, out.length);
+      out.push({
+        sourceId: sourceIdBase + "-" + idTail,
+        sourceTier: 1,
+        sourceUrl: applyUrl,
+        fetchedAt,
+        title: d.title,
+        employer,
+        city: d.city,
+        state: d.state,
+        postedDate: d.posted_date,
+        rawText: [d.title, body].filter((s) => s.length > 0).join(". "),
+        isFixture: false,
+      });
+      if (out.length >= JIBE_MAX_PHYSICIAN) break;
+    }
+
+    const total = data.totalCount ?? 0;
+    offset += JIBE_PAGE_SIZE;
+    if (offset >= total) break;
+    await delay(JIBE_DELAY_MS);
+  }
+
+  return out;
+}
