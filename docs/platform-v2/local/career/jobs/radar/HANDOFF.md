@@ -138,9 +138,9 @@ npx tsx scripts/visa-job-radar/lca-notice-radar.ts     # poll + accumulate LCA n
 npx tsx scripts/visa-job-radar/sponsor-truth.ts        # fuse the three layers
 ```
 
-Latest verified state: gold **15/15**, tsc clean, live run = PUBLISH 11 (6 non-fixture) · 187 SPONSOR_LEAD ·
-79 SIGNAL · 618 REJECT of 896 total. json-ld reader LIVE: UMMS Nephrologist (J-1 waiver explicit) → PUBLISH;
-Tufts Neurologist → SPONSOR_LEAD via sponsor-history fusion. Denials correctly caught.
+Latest verified state: gold **15/15**, tsc clean, live run = PUBLISH 11 (6 non-fixture) · 202 SPONSOR_LEAD ·
+79 SIGNAL · 618 REJECT of 911 total. 18 connectors (11 WD + 3 GH + 1 USAJobs + 3 json-ld). UMMS Nephrologist
+(J-1 explicit) → PUBLISH; Montefiore 15 attending physicians → SPONSOR_LEAD. Denials correctly caught.
 
 ---
 
@@ -198,12 +198,24 @@ Tufts Neurologist → SPONSOR_LEAD via sponsor-history fusion. Denials correctly
       same posture as WVU). UAB Medicine — iCIMS portal URL unknown; `careers-uabmedicine.icims.com` is a
       hospital website CDN proxy, not the job portal.
     - **Live result:** +1 PUBLISH (UMMS Nephrologist, J-1 explicit) + 1 SPONSOR_LEAD (Tufts Neurologist).
-    - **Remaining:** ~389 of 456 iron-core employers still unprobed. Northwell/Montefiore/NYC H+H/
-      Maimonides/BronxCare use iCIMS with direct portals (not Phenom SPAs). Oracle HCM employers
-      (Atlantic Health, MUSC, etc.) may have accessible `/requisitions/` URL patterns.
-      To find iCIMS direct portals: probe `{employer}.icims.com/jobs/search?ss=1&searchKeyword=physician`;
-      server-rendered hrefs → `isJobDetailPath` matches `/jobs/{id}/{slug}/job` → `fetchJsonLd` works directly.
-      For Oracle HCM: research the correct public careers URL pattern per employer.
+    - **Session 8 (2026-06-12) — Montefiore added as Workday:** Montefiore Medical Center confirmed on
+      Workday (`montefiore/wd12/MMC`), 126 physician facet jobs, 15 attending physician SPONSOR_LEAD
+      postings (Medical Oncologist, Hospitalist, Emergency Medicine, Anesthesiology, etc.). Live run:
+      SPONSOR_LEAD 187→202 (+15), total 896→911. 18 connectors total (11 WD + 3 GH + 1 USAJobs + 3 jsonld).
+    - **Definitive blocked list (do NOT re-investigate — same no-bypass posture as WVU):**
+      - Northwell Health: WordPress custom portal (`jobs.northwell.edu`), no standard ATS API accessible.
+      - NYC H+H: bot-blocked at TCP level (perfdrive.com redirect).
+      - BronxCare: connection refused on all URL attempts.
+      - MedStar: connection refused.
+      - Hartford HealthCare: 404 on careers URL; connection refused elsewhere.
+      - Maimonides: 404 on all URL patterns (likely rebranded/reorganized site).
+      - OHSU iCIMS (`careersat-ohsu.icims.com`): sitemap 403, SPA with 0 hrefs on search page.
+      - Mount Sinai / UT Southwestern Taleo: SSO-required (IAM login redirect).
+      - Mayo Clinic: TalentBrew frontend wrapper over Oracle CX; both are SPAs without accessible search API.
+      - Johns Hopkins: 403 on jobs.jhu.edu.
+    - **Remaining exploration worth trying:** Atlantic Health (Oracle HCM — careers page connection-fails;
+      try again), Emory (iCIMS handle `www` — actual subdomain not found yet), UCSF (no ATS signal found
+      on careers page — may use custom portal). These failed on connection but aren't confirmed bot-blocked.
 
 Earlier strategy docs (all in this dir): `VJ_STRATEGY_PRACTICEMATCH_LEVEL.md`, `VJ_USAJOBS_COVERAGE.md`,
 `VJ_90PCT_COVERAGE_STRATEGY.md`, `VJ_GRADE_GAP_REVIEW.md`, `VJ_PROMISE_AUDIT_VERDICT.md`, plus the R2 spec

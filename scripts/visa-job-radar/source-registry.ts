@@ -224,6 +224,17 @@ export const SOURCES: SourceDef[] = [
     needsVerification: true,
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025) → batch ATS-resolved 2026-06-12. Verified: CXS HTTP 200, ~307 'physician' hits. NM safety-net system, high J-1-waiver density.",
   },
+  {
+    id: "workday-montefiore",
+    tier: 1,
+    connector: "workday",
+    label: "Montefiore Medical Center — physicians (Workday)",
+    handle: "montefiore/wd12/MMC",
+    employer: "Montefiore Medical Center",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years). Workday discovered 2026-06-12 via careers page redirect (vizi.vizirecruiter.com → wd12). Verified: CXS HTTP 200, total=397, Physician facet=126 jobs (id=54e1565c3bfa10053f2dc8a0674b0000). Major Bronx academic system, high J-1-waiver density (Bronx HPSA).",
+  },
   // ── JSON-LD sources — community/regional iron-core sponsors ────────────────
   // ATS confirmed by scale-sponsors.ts probe (2026-06-12). handle = full
   // physician-filtered search URL. Employer-direct: no board is involved.
