@@ -74,26 +74,34 @@ function runIdFrom(iso: string): string {
   return iso.slice(0, 10) + "-" + iso.slice(11, 13) + iso.slice(14, 16);
 }
 
+const connectorErrors: Array<{ sourceId: string; error: string }> = [];
+
 async function gather(live: boolean): Promise<RawCandidate[]> {
   const candidates: RawCandidate[] = [...FIXTURES];
   if (!live) return candidates;
   for (const src of enabledSources()) {
-    if (src.connector === "usajobs") {
-      candidates.push(...(await fetchUsajobs(src.handle)));
-    } else if (src.connector === "usajobs-historic") {
-      candidates.push(
-        ...(await fetchUsajobsHistoricJoa(src.handle, src.employer ?? src.label, src.id)),
-      );
-    } else if (src.connector === "greenhouse") {
-      candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
-    } else if (src.connector === "workday") {
-      candidates.push(
-        ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id)),
-      );
-    } else if (src.connector === "jsonld") {
-      candidates.push(
-        ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id)),
-      );
+    try {
+      if (src.connector === "usajobs") {
+        candidates.push(...(await fetchUsajobs(src.handle)));
+      } else if (src.connector === "usajobs-historic") {
+        candidates.push(
+          ...(await fetchUsajobsHistoricJoa(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "greenhouse") {
+        candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
+      } else if (src.connector === "workday") {
+        candidates.push(
+          ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "jsonld") {
+        candidates.push(
+          ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id)),
+        );
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      connectorErrors.push({ sourceId: src.id, error: msg });
+      process.stderr.write(`[connector-error] ${src.id}: ${msg}\n`);
     }
   }
   return candidates;
@@ -173,6 +181,10 @@ function sponsorEnrich(jobs: RadarJob[], index: Map<string, SponsorUniverseEntry
     if (!c.isPhysician) continue;
     const hit = index.get(normEmployer(job.raw.employer));
     if (!hit) continue;
+    // Minimum quality gate: at least 3 certified positions AND 3 active years.
+    // One Medical (5yr, 1 pos) and Lowell General (1yr, 0 pos) fail this and stay REJECT.
+    // Iron-core employers (7yr, ≥4 pos) all pass.
+    if ((hit.yearsActive ?? 0) < 3 || hit.totalPositions < 3) continue;
     c.status = "SPONSOR_LEAD";
     c.rejectReason = undefined;
     c.confidence = "LOW";
@@ -356,6 +368,7 @@ function renderReportMd(
   gold: { passed: number; failed: string[] },
   connectorProblems: string[],
   extras: ReportExtras,
+  fetchErrors?: Array<{ sourceId: string; error: string }>,
 ): string {
   const lines: string[] = [];
   lines.push("# Visa Job Radar — run " + report.runId);
@@ -404,6 +417,11 @@ function renderReportMd(
   if (connectorProblems.length === 0) lines.push("- All parser assertions passed.");
   for (const p of connectorProblems) lines.push("- FAIL " + p);
   lines.push("");
+  if (fetchErrors && fetchErrors.length > 0) {
+    lines.push("## Connector fetch errors");
+    for (const e of fetchErrors) lines.push("- " + e.sourceId + ": " + e.error);
+    lines.push("");
+  }
   return lines.join("\n");
 }
 
@@ -575,7 +593,7 @@ async function main(): Promise<void> {
 
   writeFileSync(
     join(runDir, "run_report.md"),
-    renderReportMd(report, gold, connectorProblems, extras),
+    renderReportMd(report, gold, connectorProblems, extras, connectorErrors),
     "utf8",
   );
 
@@ -604,7 +622,7 @@ async function main(): Promise<void> {
   }
 
   // console summary
-  const ok = gold.failed.length === 0 && connectorProblems.length === 0;
+  const ok = gold.failed.length === 0 && connectorProblems.length === 0 && connectorErrors.length === 0;
   console.log("Visa Job Radar run " + runId + " (" + (live ? "live" : "offline") + ")");
   console.log(
     "  buckets: PUBLISH=" +
@@ -641,6 +659,10 @@ async function main(): Promise<void> {
   for (const f of gold.failed) console.log("    FAIL " + f);
   console.log("  connector check: " + (connectorProblems.length === 0 ? "passed" : "FAILED"));
   for (const p of connectorProblems) console.log("    FAIL " + p);
+  if (connectorErrors.length > 0) {
+    console.log("  connector fetch errors: " + connectorErrors.length);
+    for (const e of connectorErrors) console.log("    ERROR " + e.sourceId + ": " + e.error);
+  }
   console.log("  generated jobs (non-fixture PUBLISH): " + publicJobs.length);
   if (live) console.log("  job-leads history: " + leadsHistorySize + " tracked, " + leadsPresumedClosed + " presumed closed");
   console.log("  run dir: " + runDir);

@@ -277,9 +277,30 @@ export function buildSponsorUniverse(): SponsorUniverseEntry[] {
   return out;
 }
 
+// ATS employer name → canonical DOL norm key.
+// Needed when the employer name a healthcare system uses in its ATS differs
+// from the legal entity name filed in DOL LCA data (common for large systems
+// that have rebranded or operate under a parent umbrella).
+const EMPLOYER_ALIASES: Record<string, string> = {
+  // Sanford Health (ATS name) is the same system as Sanford Clinic (DOL filer)
+  "sanford health": "sanford clinic",
+  // Ochsner Health (ATS) = Ochsner Clinic Foundation (DOL filer, 7yr/12pos)
+  "ochsner health": "ochsner clinic foundation",
+  // UMMS fragmented in DOL; best single entry is the Baltimore entity
+  "university of maryland medical system": "university of maryland baltimore",
+};
+
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
+// Alias keys are inserted so ATS employer names resolve even when DOL uses a
+// different legal entity name.
 export function sponsorHistoryIndex(): Map<string, SponsorUniverseEntry> {
   const m = new Map<string, SponsorUniverseEntry>();
   for (const e of buildSponsorUniverse()) m.set(e.normKey, e);
+  for (const [atsKey, dolKey] of Object.entries(EMPLOYER_ALIASES)) {
+    if (!m.has(atsKey)) {
+      const target = m.get(dolKey);
+      if (target) m.set(atsKey, target);
+    }
+  }
   return m;
 }
