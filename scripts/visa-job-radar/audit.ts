@@ -83,6 +83,8 @@ const PHYSICIAN_KEYWORDS = [
 const NOT_PHYSICIAN_OVERRIDES = [
   "physician assistant", "nurse practitioner", "physician practice",
   "physician office", "physicians of ", "physician program",
+  // "physician asst" = ATS abbreviation for Physician Assistant ("asst" ≠ "assistant" substring)
+  "physician asst",
   // Clinical staff who work IN physician offices/clinics (not physicians themselves):
   "licensed practical nurse", "lpn ", "lpn-", " lpn",
   "medical assistant", "nursing", "patient care", "float nurse",

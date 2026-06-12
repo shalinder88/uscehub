@@ -1,16 +1,16 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1840  |  Audited: 2026-06-12
+Run: 2026-06-12-1906  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
-| PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 258 |
-| Total surfaced (PUBLISH + SL) | 272 |
-| REJECT | 85 |
+| PUBLISH (non-fixture) | 16 |
+| SPONSOR_LEAD | 249 |
+| Total surfaced (PUBLISH + SL) | 265 |
+| REJECT | 86 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
-**✅ PASS** — 20 quotes verified, 0 mismatches
+**✅ PASS** — 22 quotes verified, 0 mismatches
 
 ## Dimension 2 — PUBLISH denial-language leakage
 **✅ PASS** — no PUBLISH job should contain an explicit denial phrase
@@ -21,28 +21,28 @@ Run: 2026-06-12-1840  |  Audited: 2026-06-12
 ## Dimension 4 — Coverage per connector
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
-| jibe-emory | 0 | 40 | 40 |
-| jsonld-umms | 1 | 39 | 40 |
+| jibe-emory | 0 | 38 | 38 |
+| jsonld-umms | 3 | 36 | 39 |
 | workday-altamed | 0 | 24 | 24 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
-| workday-montefiore | 0 | 15 | 15 |
+| workday-montefiore | 0 | 14 | 14 |
 | workday-msk | 0 | 6 | 6 |
-| workday-ochsner | 2 | 15 | 17 |
+| workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 27 | 31 |
-| workday-sanford | 7 | 1 | 8 |
+| workday-sanford | 7 | 0 | 7 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
 
 ## Dimension 6 — Quote specificity
-**✅ ALL RICH** — 20 rich, 0 bare
+**✅ ALL RICH** — 22 rich, 0 bare
 
 Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 
 ## Dimension 7 — PUBLISH posting age
-Avg age: **25.3 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
+Avg age: **25.1 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 
 ## PUBLISH job inventory (non-fixture)
 | Employer | Title | State | Age | Labels | Quote |
@@ -61,6 +61,8 @@ Avg age: **25.3 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 | Presbyterian Healthcare Services | Pediatric Oncologist MD/DO - Hematology and Oncolo | ? | 74d | EXPLICIT_H1B | "H1b sponsorship" |
 | Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | ? | 80d | EXPLICIT_H1B | "H1b sponsorship" |
 | University of Maryland Medical System | Nephrologist - Physician | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
+| University of Maryland Medical System | Gastroenterologist | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
+| University of Maryland Medical System | Pediatrician - Outpatient - Chestertown, MD | MD | 24d | EXPLICIT_VISA_SPONSORSHIP | "sponsorship available" |
 
 ## Known coverage gaps (iron-core employers not yet wired)
 These are DOL 7-year iron-core sponsors with no active connector:
@@ -85,7 +87,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 
 ## What to fix next (priority order)
 
-1. **Bare quotes** — CLEAN — all 20 PUBLISH quotes are RICH (H1B/J1/waiver/cap-exempt)
+1. **Bare quotes** — CLEAN — all 22 PUBLISH quotes are RICH (H1B/J1/waiver/cap-exempt)
 2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; Northwell/Mount Sinai/Hopkins/Mayo all blocked
 3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any
 4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers
