@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1747  |  Audited: 2026-06-12
+Run: 2026-06-12-1759  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 179 |
-| Total surfaced (PUBLISH + SL) | 193 |
-| REJECT | 125 |
+| SPONSOR_LEAD | 219 |
+| Total surfaced (PUBLISH + SL) | 233 |
+| REJECT | 85 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 20 quotes verified, 0 mismatches
@@ -24,6 +24,7 @@ Run: 2026-06-12-1747  |  Audited: 2026-06-12
 | jibe-emory | 0 | 40 | 40 |
 | jsonld-umms | 1 | 39 | 40 |
 | workday-altamed | 0 | 24 | 24 |
+| workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
 | workday-montefiore | 0 | 15 | 15 |
 | workday-msk | 0 | 6 | 6 |
@@ -41,7 +42,7 @@ Run: 2026-06-12-1747  |  Audited: 2026-06-12
 Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 
 ## Dimension 7 — PUBLISH posting age
-Avg age: **25.2 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
+Avg age: **25.3 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 
 ## PUBLISH job inventory (non-fixture)
 | Employer | Title | State | Age | Labels | Quote |
@@ -87,6 +88,6 @@ These are DOL 7-year iron-core sponsors with no active connector:
 3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any
 4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers
 5. **Stanford Health Care** — FIXED: alias "stanford health care" → "leland stanford jr university" (6yr/44pos DOL) added; 3 prior Stanford keyword-match results were isPhysician false positives (NP/PA, Nursing Professional, Quality Consultant) — also fixed via new NONPHYS_TOKENS. Real physician postings will promote to SPONSOR_LEAD when they appear.
-6. **Jefferson Health** — 40 physician postings/run all NO_VISA_MENTION; DOL entity has 0 certified positions; no alias will fix this — correctly held as REJECT
+6. **Jefferson Health** — FIXED run 1759: "thomas jefferson university hospitals" (ATS, plural) → "thomas jefferson university hospital" (DOL, singular, 4yr/28pos) alias added. Prior analysis incorrectly concluded 0 DOL positions; entity exists under singular form. 40 physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.
 7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.
 8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.

@@ -292,6 +292,10 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // University — the university entity files physician LCAs for the academic
   // medical center (6yr active, 44 certified positions FY2020-FY2025)
   "stanford health care": "leland stanford jr university",
+  // Thomas Jefferson University Hospitals (ATS, plural) vs thomas jefferson
+  // university hospital (DOL, singular) — same institution, 4yr/28pos FY2025.
+  // Prior analysis incorrectly noted 0 positions; DOL entry exists under singular form.
+  "thomas jefferson university hospitals": "thomas jefferson university hospital",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
