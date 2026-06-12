@@ -187,9 +187,12 @@ function sponsorEnrich(jobs: RadarJob[], index: Map<string, SponsorUniverseEntry
     const hit = index.get(normEmployer(job.raw.employer));
     if (!hit) continue;
     // Minimum quality gate: at least 3 certified positions AND 3 active years.
-    // One Medical (5yr, 1 pos) and Lowell General (1yr, 0 pos) fail this and stay REJECT.
+    // Use recentYearPositions when available — SPONSOR_DATA's totalPositions is a
+    // legacy snapshot that can be stale-low (e.g. UMMS = p:2 static vs 5 recent).
+    // One Medical (5yr, recentPos=1) and Lowell General (1yr, recentPos=0) still fail.
     // Iron-core employers (7yr, ≥4 pos) all pass.
-    if ((hit.yearsActive ?? 0) < 3 || hit.totalPositions < 3) continue;
+    const positions = hit.recentYearPositions ?? hit.totalPositions;
+    if ((hit.yearsActive ?? 0) < 3 || positions < 3) continue;
     c.status = "SPONSOR_LEAD";
     c.rejectReason = undefined;
     c.confidence = "LOW";

@@ -214,6 +214,14 @@ const JSONLD_DELAY_MS = 300;        // polite inter-request pause
 // the full specialty name. Same for other -olog truncations.
 const PHYSICIAN_SLUG_RE = /physician|hospitalist|internist|attending|neurologist|cardiologist|oncologist|intensivist|nephrologist|pulmonologist|gastroenterologist|endocrinologist|urologist|radiologist|psychiatrist|obstetrician|gynecologist|pediatrician|surgeon|dermatologist/i;
 
+// URL-slug patterns that clearly indicate a support or mid-level role — excluded
+// BEFORE the JSONLD_MAX_POSTINGS cap so physician slots aren't wasted.
+// Observed false-positive sources (2026-06-13):
+//   UMMS Oracle HCM: "...-Physician-Assistant-PA-..." — NP/PA combined titles
+//   Mercy Phenom: "...-LPN-...", "...Family-Physicians-of-...", "...-Physician-Office"
+// engine.isPhysician() catches everything that slips through; this is a quota guard.
+const NONPHYS_SLUG_RE = /physician-assistant|physician-office|physician-practice|physician-extender|-lpn-|family-physicians/i;
+
 function jsonldDelay(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -321,7 +329,7 @@ async function fetchSitemapJobUrls(origin: string): Promise<string[]> {
   }
 
   return allJobUrls
-    .filter((u) => PHYSICIAN_SLUG_RE.test(u))
+    .filter((u) => PHYSICIAN_SLUG_RE.test(u) && !NONPHYS_SLUG_RE.test(u))
     .slice(0, JSONLD_MAX_POSTINGS);
 }
 
@@ -345,7 +353,8 @@ export async function fetchJsonLd(
 
   // Step 2: extract individual posting URLs (works for iCIMS direct portals
   // that server-render job links; returns 0 for full SPA sites).
-  let postingUrls = extractJobHrefs(search.html, search.finalUrl);
+  let postingUrls = extractJobHrefs(search.html, search.finalUrl)
+    .filter((u) => !NONPHYS_SLUG_RE.test(u));
 
   // Step 2b: SPA fallback — try sitemap enumeration when search page is a SPA.
   if (postingUrls.length === 0) {

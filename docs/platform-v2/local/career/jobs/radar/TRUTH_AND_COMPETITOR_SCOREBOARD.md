@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1719  |  Produced: 2026-06-12
+Run: 2026-06-12-1747  |  Produced: 2026-06-12
 
 ---
 
@@ -38,16 +38,17 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (140 jobs)
+### 1B. SPONSOR_LEAD tier (179 jobs)
 
-All 140 SPONSOR_LEAD jobs come from employers that:
+All 179 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
 - Have ≥3 years active in FY2019–FY2025 DOL data
-- Have ≥3 total certified physician LCA positions
+- Have ≥3 recent certified physician LCA positions (gate uses recentYearPositions ?? totalPositions)
 
 | Employer | Jobs | DOL yearsActive | DOL totalPositions | Verdict |
 |----------|------|-----------------|---------------------|---------|
 | Emory University | 40 | 7yr | 40 pos | IRON-CORE (jibe connector) |
+| University of Maryland Medical System | 39 | 5yr (via alias → "university of maryland baltimore") | recentYearPos=5 | PASSES GATE (run 1747 gate fix) |
 | Presbyterian Healthcare Services | 27 | 7yr | 6 pos | IRON-CORE |
 | AltaMed Health Services | 24 | 7yr | 4 pos | IRON-CORE |
 | Ochsner Health | 15 | 7yr (via alias) | 12 pos | IRON-CORE |
@@ -65,7 +66,9 @@ All 140 SPONSOR_LEAD jobs come from employers that:
 
 **Ochsner reduction (20→15):** 4 Ochsner jobs moved to SPONSORSHIP_DENIED (denial phrases added). 1 moved to PUBLISH ("Open to J-1 visa" added to LEXICON).
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD.
+**UMMS expansion (run 1747, +39):** 39 University of Maryland Medical System physician jobs promoted from NO_VISA_MENTION to SPONSOR_LEAD. Root cause: `sponsorEnrich` quality gate used `totalPositions` from SPONSOR_DATA static snapshot (p=2) which failed the ≥3 threshold; `recentYearPositions=5` (from 7-year DOL persistence) was being ignored. Fix: gate now uses `recentYearPositions ?? totalPositions`, matching `sponsorScore()` logic. UMMS uses alias `"university of maryland medical system"` → `"university of maryland baltimore"` (5yr active, recentYearPos=5).
+
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD.
 
 ---
 
@@ -88,11 +91,11 @@ Our `normEmployer()` strips punctuation and lowercases. Some PUBLISH employers' 
 |-------------------|-------------|------------|-------------|
 | Sanford Health | "sanford health" | "sanford clinic" | 7yr, 28 pos — IRON-CORE |
 | Ochsner Health | "ochsner health" | "ochsner clinic foundation" | 7yr, 12 pos — IRON-CORE |
-| University of Maryland Medical System | "university of maryland medical system" | "university of maryland baltimore" (5yr, 2 pos); multiple entities | Split across entities |
+| University of Maryland Medical System | "university of maryland medical system" | "university of maryland baltimore" (5yr, recentYearPos=5); SPONSOR_DATA static snapshot had p=2 (stale-low) — gate fixed run 1747 | Split across entities; alias now working |
 
-**Impact:** Sanford and Ochsner's visa-SILENT physician postings are NOT being promoted to SPONSOR_LEAD, because the ATS employer name doesn't match the DOL key. Their visa-STATING postings correctly reach PUBLISH regardless (no DOL match needed for PUBLISH).
+**Impact:** Sanford and Ochsner aliases were added in run 1419. UMMS alias added in run 1648 but gate failed until run 1747 (SPONSOR_DATA p=2 stale; persistence recentYearPositions=5 now used).
 
-**Action needed:** Add employer aliases to `normEmployer()` or a separate alias map. Ochsner alone likely has dozens of additional physician postings that should be SPONSOR_LEAD.
+**Status:** All three aliases are working correctly as of run 1747. UMMS 39 SPONSOR_LEAD now surfaced.
 
 ---
 
@@ -102,7 +105,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (140): all iron-core DOL H1B sponsors (7yr, ≥3 pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (179): all iron-core DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -173,6 +176,7 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | C2 | Silent connector failures not logged | FIXED | ✅ Done run 1407 | Per-connector try/catch + stderr log + run_report section |
 | C3 | Ochsner denial jobs reaching SPONSOR_LEAD | FIXED | ✅ Done run 1532 | 4 denial patterns added to DENIAL_PHRASES |
 | C4 | One Medical/Oscar 536 wasted fetches/run with 0 useful signal | FIXED | ✅ Done run 1532 | Both connectors disabled |
+| C5 | UMMS alias working but 39 jobs not promoting — gate used stale SPONSOR_DATA p=2 | FIXED | ✅ Done run 1747 | Gate now uses recentYearPositions ?? totalPositions; 39 UMMS jobs now SPONSOR_LEAD |
 
 ### High (signal coverage)
 
@@ -230,9 +234,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1719 final state:**
-- 14 PUBLISH + 140 SPONSOR_LEAD = 154 total surfaced
-- Fetch volume: 421 candidates (18 active sources)
-- NOT_PHYSICIAN rejects: 47
+**Run 2026-06-12-1747 final state:**
+- 14 PUBLISH + 179 SPONSOR_LEAD = 193 total surfaced
+- Fetch volume: 403 candidates (10 active connectors)
+- NOT_PHYSICIAN rejects: 2
 - Audit D1-D7: **ALL PASS / CLEAN**
-- New this run: Stanford alias added (leland stanford jr university, 6yr/44pos); 3 isPhysician false positives fixed (np/pa, nursing professional, quality consultant, rn parenthetical)
+- New this run: UMMS gate fix (recentYearPositions replaces stale totalPositions in quality gate) — 39 UMMS physician jobs promoted to SPONSOR_LEAD; NONPHYS_SLUG_RE quota guard for ats-resolver reduces support-staff URL quota waste

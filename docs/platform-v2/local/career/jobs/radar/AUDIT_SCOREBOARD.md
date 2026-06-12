@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1719  |  Audited: 2026-06-12
+Run: 2026-06-12-1747  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 14 |
-| SPONSOR_LEAD | 140 |
-| Total surfaced (PUBLISH + SL) | 154 |
-| REJECT | 182 |
+| SPONSOR_LEAD | 179 |
+| Total surfaced (PUBLISH + SL) | 193 |
+| REJECT | 125 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 20 quotes verified, 0 mismatches
@@ -22,7 +22,7 @@ Run: 2026-06-12-1719  |  Audited: 2026-06-12
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
 | jibe-emory | 0 | 40 | 40 |
-| jsonld-umms | 1 | 0 | 1 |
+| jsonld-umms | 1 | 39 | 40 |
 | workday-altamed | 0 | 24 | 24 |
 | workday-kumc | 0 | 11 | 11 |
 | workday-montefiore | 0 | 15 | 15 |
@@ -89,3 +89,4 @@ These are DOL 7-year iron-core sponsors with no active connector:
 5. **Stanford Health Care** — FIXED: alias "stanford health care" → "leland stanford jr university" (6yr/44pos DOL) added; 3 prior Stanford keyword-match results were isPhysician false positives (NP/PA, Nursing Professional, Quality Consultant) — also fixed via new NONPHYS_TOKENS. Real physician postings will promote to SPONSOR_LEAD when they appear.
 6. **Jefferson Health** — 40 physician postings/run all NO_VISA_MENTION; DOL entity has 0 certified positions; no alias will fix this — correctly held as REJECT
 7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.
+8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.
