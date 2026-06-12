@@ -387,6 +387,14 @@ const NONPHYS_TOKENS: string[] = [
   "ops director",
   "corporate director",
   "software engineer",
+  // "Sr Physician Asst I" (UMMS) false-positived on "physician" PHYS match 2026-06-12.
+  // "physician asst" is an ATS abbreviation for Physician Assistant — same role as
+  // "physician assistant" above but "asst" ≠ "assistant" as substrings.
+  "physician asst",
+  // "Physician - Optometry Opportunity" (Sanford) false-positived because "physician"
+  // is a prefix Sanford uses for optometrist, dentist, and other non-MD provider roles.
+  // "optometry" safely distinguishes OD roles from ophthalmology ("ophthalmol" ≠ "optometry").
+  "optometry",
 ];
 
 const PHYS_TOKENS: string[] = [
