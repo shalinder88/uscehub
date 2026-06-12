@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1906  |  Produced: 2026-06-12
+Run: 2026-06-12-1943  |  Produced: 2026-06-12
 
 ---
 
@@ -38,9 +38,9 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (259 jobs)
+### 1B. SPONSOR_LEAD tier (255 jobs)
 
-All 219 SPONSOR_LEAD jobs come from employers that:
+All 255 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
 - Have ≥3 years active in FY2019–FY2025 DOL data
 - Have ≥3 recent certified physician LCA positions (gate uses recentYearPositions ?? totalPositions)
@@ -56,6 +56,7 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 | Ochsner Health | 15 | 7yr (via alias) | 12 pos | IRON-CORE |
 | Montefiore Medical Center | 15 | 7yr | 51 pos | IRON-CORE |
 | University of Kansas Medical Center | 11 | 7yr | 18 pos | IRON-CORE (new: workday kumc-jobs) |
+| AdventHealth | 6 | 6yr (via alias → "adventist health system sunbelt") | 107 pos | IRON-CORE (new: workday-adventhealth run 1943) |
 | Memorial Sloan Kettering Cancer Center | 6 | 7yr | 52 pos | IRON-CORE |
 | Sanford Health | 1 | 7yr (via alias) | 28 pos | IRON-CORE |
 
@@ -71,7 +72,9 @@ All 219 SPONSOR_LEAD jobs come from employers that:
 
 **Jefferson expansion (run 1759, +40):** 40 Thomas Jefferson University Hospitals physician jobs promoted from NO_VISA_MENTION to SPONSOR_LEAD. Root cause: ATS normKey `"thomas jefferson university hospitals"` (plural) did not match DOL entry `"thomas jefferson university hospital"` (singular, 4yr/28pos). Prior scoreboard incorrectly noted "0 DOL positions" — the entity exists under the singular form. Alias added: `"thomas jefferson university hospitals"` → `"thomas jefferson university hospital"`.
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS.
+**AdventHealth expansion (run 1943, +6 SL):** 6 AdventHealth physician jobs via new Workday connector (`adventhealth/wd12/AH_External_Career_Site`). EMPLOYER_ALIAS added: "adventhealth" → "adventist health system sunbelt" (rebranded from Adventist Health System 2019). 6yr/107pos iron-core. Connector hardened: "Cardiology ARNP" false positive removed by adding "arnp" to NONPHYS_TOKENS; "APP Hospitalist"/"APP Psychiatry"/"APP Family Medicine" blocked by "app " (prefix); "Sr Physician Relations Specialist" blocked by "physician relations"; "Physician Enterprise Coder - Cardiology" blocked by "coder"; "Physician Informatics Advocate" blocked by "physician informatics". Final 6 are all real MD positions (OBGYN, OB Hospitalist, Lead Hospitalist, Hematology Oncology, Primary Care, Physician Advisor).
+
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS. Run 1943: AdventHealth Workday connector added +6 SL; arnp + app + coder + physician relations + physician informatics added to NONPHYS_TOKENS.
 
 ---
 
@@ -96,10 +99,11 @@ Our `normEmployer()` strips punctuation and lowercases. Some PUBLISH employers' 
 | Ochsner Health | "ochsner health" | "ochsner clinic foundation" | 7yr, 12 pos — IRON-CORE |
 | University of Maryland Medical System | "university of maryland medical system" | "university of maryland baltimore" (5yr, recentYearPos=5); SPONSOR_DATA static snapshot had p=2 (stale-low) — gate fixed run 1747 | Split across entities; alias now working |
 | Thomas Jefferson University Hospitals | "thomas jefferson university hospitals" | "thomas jefferson university hospital" (4yr, recentYearPos=28); singular/plural mismatch — alias added run 1759 | 40 SPONSOR_LEAD now surfaced |
+| AdventHealth | "adventhealth" | "adventist health system sunbelt" (6yr, recentYearPos=107); rebranded from Adventist Health System 2019 — alias added run 1943 | 6 SPONSOR_LEAD now surfaced |
 
 **Impact:** Sanford and Ochsner aliases were added in run 1419. UMMS alias added in run 1648 but gate failed until run 1747 (SPONSOR_DATA p=2 stale; persistence recentYearPositions=5 now used).
 
-**Status:** All four aliases are working correctly as of run 1759. UMMS 39 + Jefferson 40 SPONSOR_LEAD now surfaced.
+**Status:** All five aliases working correctly as of run 1943.
 
 ---
 
@@ -109,7 +113,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (249): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (255): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -187,6 +191,7 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | C9 | Batch false positives: DDS (Montefiore), PMHNP (Geisinger), Psychologist (Ochsner), Radiology Ops Directors (Emory x3), Corporate Director (Emory), Software Engineer (Emory) | FIXED | ✅ Done run 1849 | 7 NONPHYS_TOKENS additions: dental surgery, pmhnp, psychologist, operations director, ops director, corporate director, software engineer |
 | C10 | UMMS "Sr Physician Asst I" false-positive — "physician asst" abbreviation not caught by "physician assistant" | FIXED | ✅ Done run 1901 | "physician asst" added to NONPHYS_TOKENS; D5 override added so audit doesn't false-alarm on correct rejection |
 | C11 | Sanford "Physician - Optometry Opportunity" false-positive — Sanford uses "Physician -" prefix for OD roles | FIXED | ✅ Done run 1901 | "optometry" added to NONPHYS_TOKENS; "ophthalmol" (different substring) still correctly passes |
+| C12 | AdventHealth batch: "Cardiology ARNP" (arnp variant of aprn), APP-prefix roles ("APP Hospitalist", "APP Psychiatry"), "Sr Physician Relations Specialist", "Physician Enterprise Coder - Cardiology", "Senior Physician Informatics Advocate" | FIXED | ✅ Done run 1943 | 5 NONPHYS_TOKEN additions: arnp, "app " (prefix), "physician relations", coder, "physician informatics". D5 overrides updated for app + physician informatics + physician relations + coder patterns. |
 
 ### High (signal coverage)
 
@@ -246,9 +251,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1906 final state:**
-- 16 PUBLISH + 249 SPONSOR_LEAD = 265 total surfaced (non-fixture PUBLISH)
-- Fetch volume: 436 candidates (10 active connectors; VUMC + Mercy disabled)
+**Run 2026-06-12-1943 final state:**
+- 16 PUBLISH + 255 SPONSOR_LEAD = 271 total surfaced (non-fixture PUBLISH)
+- Fetch volume: 442 candidates (11 active connectors; VUMC + Mercy disabled)
 - NOT_PHYSICIAN rejects: 3 (all correct: gold NP fixture, gold Therapist fixture, UMMS Sr Physician Asst I)
 - Audit D1-D7: **ALL PASS / CLEAN**
-- Session net vs run 1814: −10 false non-physician SPONSOR_LEAD removed; +2 non-fixture PUBLISH added (new live postings); 9 NONPHYS_TOKEN additions; 2 connectors disabled (no physician attending jobs)
+- Session net vs run 1906: +6 SPONSOR_LEAD (AdventHealth Workday connector, 6yr/107pos iron-core, CO/FL/multi-state); +5 NONPHYS_TOKEN hardening (arnp, app , physician relations, coder, physician informatics)

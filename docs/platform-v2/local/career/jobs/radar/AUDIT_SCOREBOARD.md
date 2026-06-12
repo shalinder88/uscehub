@@ -1,12 +1,12 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1906  |  Audited: 2026-06-12
+Run: 2026-06-12-1943  |  Audited: 2026-06-12
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 16 |
-| SPONSOR_LEAD | 249 |
-| Total surfaced (PUBLISH + SL) | 265 |
+| SPONSOR_LEAD | 255 |
+| Total surfaced (PUBLISH + SL) | 271 |
 | REJECT | 86 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -23,6 +23,7 @@ Run: 2026-06-12-1906  |  Audited: 2026-06-12
 |--------|---------|--------------|-------|
 | jibe-emory | 0 | 38 | 38 |
 | jsonld-umms | 3 | 36 | 39 |
+| workday-adventhealth | 0 | 6 | 6 |
 | workday-altamed | 0 | 24 | 24 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
@@ -97,3 +98,4 @@ These are DOL 7-year iron-core sponsors with no active connector:
 8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.
 9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.
 10. **VUMC false SPONSOR_LEAD + disable** — FIXED run 1829: "Pediatric Cardiac Sonographer II" was classified as physician (false positive on "pediatric" PHYS token). Root cause: "sonographer" missing from NONPHYS_TOKENS. Fixed in engine.ts. Separately: full scan shows vumccareers Workday has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff); connector disabled. DOL iron-core (7yr) — VUMC physician faculty likely recruited via Vanderbilt University academic HR portal.
+11. **AdventHealth Workday connector + batch NONPHYS hardening** — FIXED run 1943: workday-adventhealth connector added (adventhealth/wd12/AH_External_Career_Site). EMPLOYER_ALIAS "adventhealth"→"adventist health system sunbelt" (6yr/107pos). Five NONPHYS_TOKENS additions from scan: "arnp" (Cardiology ARNP = ARNP variant of APRN not caught by "aprn" substring), "app " (APP prefix = Advanced Practice Provider roles like "APP Hospitalist"), "physician relations" (Sr Physician Relations Specialist), "coder" (Physician Enterprise Coder — "physician coder" substring misses when "enterprise" intervenes), "physician informatics" (Physician Informatics Advocate — non-MD informaticist). D5 overrides updated. 6 clean SPONSOR_LEAD: OBGYN Physician, OB Hospitalist, Lead Hospitalist, Hematology Oncology Physician, Primary Care Physician, Physician Advisor.

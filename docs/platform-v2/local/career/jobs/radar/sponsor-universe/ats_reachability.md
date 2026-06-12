@@ -7,16 +7,16 @@ openings were fetched. 'json-api' = no-auth JSON (Workday/Greenhouse/Lever/Ashby
 
 ## Reachability
 - json-api (clean API): 6 (27.3%)
-- json-ld (universal reader): 4 (18.2%)
-- none/unknown from landing: 12 (54.5%)
-- **employer-direct reachable (api+json-ld): 10 (45.5%)**
+- json-ld (universal reader): 5 (22.7%)
+- none/unknown from landing: 11 (50%)
+- **employer-direct reachable (api+json-ld): 11 (50%)**
 
 ## ATS breakdown
-- unknown: 12
+- unknown: 11
 - workday: 6
+- icims: 2
 - successfactors: 2
 - oracle_hcm: 1
-- icims: 1
 
 ## Per-sponsor
 | Employer | ATS | Reach | Handle |
@@ -27,7 +27,7 @@ openings were fetched. 'json-api' = no-auth JSON (Workday/Greenhouse/Lever/Ashby
 | Montefiore Medical Center | unknown | none |  |
 | University of Iowa | unknown | none |  |
 | Emory University | icims | json-ld | www |
-| Icahn School of Medicine at Mount Sinai | unknown | none |  |
+| Icahn School of Medicine at Mount Sinai | icims | json-ld | www |
 | Cleveland Clinic | workday | json-api | ccf/wd1/clevelandcliniccareers |
 | Banner Health | unknown | none |  |
 | Memorial Sloan Kettering | workday | json-api | msk/wd108/mskcc_careers_primary |

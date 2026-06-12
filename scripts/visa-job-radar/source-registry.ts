@@ -319,6 +319,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 78 certified positions FY2025). Workday site confirmed 2026-06-12: geisinger.wd5.myworkdayjobs.com/GeisingerExternal, CXS HTTP 200. No jobFamilyGroup facets exposed (0 values) → keyword 'physician' fallback (~888 results, scanned up to 500). 6-10 physician-titled jobs confirmed in sample. PA academic health system; specialties span all major physician SOCs.",
   },
   {
+    id: "workday-adventhealth",
+    tier: 1,
+    connector: "workday",
+    label: "AdventHealth — physicians (Workday)",
+    handle: "adventhealth/wd12/AH_External_Career_Site",
+    employer: "AdventHealth",
+    enabled: true,
+    needsVerification: true,
+    note: "Rebranded from Adventist Health System in 2019. DOL iron-core: adventist health system sunbelt (6yr active, 107 recentYearPositions FY2025). EMPLOYER_ALIAS adventhealth→adventist health system sunbelt. CXS endpoint confirmed 2026-06-12: adventhealth.wd12.myworkdayjobs.com, site=AH_External_Career_Site, HTTP 200, 2000 'physician' keyword hits. Physician density ~13% in top-results sample: OBGYN Physician, AHMG Hematology Oncology Physician, OB Hospitalist Physician, Lead Hospitalist, Primary Care Physician confirmed in first 40 results. Multi-state system headquartered FL (also CO, TX, GA, KS, KY, etc.). NONPHYS_TOKENS hardened 2026-06-12 for APP-prefix APP, physician-relations, physician-coder, physician-informatics patterns observed in AdventHealth ATS.",
+  },
+  {
     id: "jibe-emory",
     tier: 1,
     connector: "jibe",

@@ -309,6 +309,7 @@ const NONPHYS_TOKENS: string[] = [
   " pa ",
   "pa-c",
   "aprn",
+  "arnp", // Advanced Registered Nurse Practitioner — regional variant of APRN
   "crna",
   "pharmacist",
   "technician",
@@ -395,6 +396,27 @@ const NONPHYS_TOKENS: string[] = [
   // is a prefix Sanford uses for optometrist, dentist, and other non-MD provider roles.
   // "optometry" safely distinguishes OD roles from ophthalmology ("ophthalmol" ≠ "optometry").
   "optometry",
+  // AdventHealth Workday 2026-06-12: "APP Hospitalist", "APP Psychiatry", "APP Family
+  // Medicine" false-positived on PHYS tokens. AdventHealth (and many systems) prefix
+  // Advanced Practice Provider roles with "APP ". "app " (lowercase, trailing space)
+  // safely catches the prefix form; does not match "applied"/"appointment" (those have
+  // additional chars after "app" before a space, or have "appl" not "app-space").
+  "app ",
+  // "Sr Physician Relations Specialist" false-positived on "physician" PHYS match 2026-06-12
+  // (AdventHealth). Non-MD admin/recruitment role — no attending-physician title contains
+  // "physician relations" as a substring.
+  "physician relations",
+  // "Physician Enterprise Coder - Cardiology" false-positived on "physician"+"cardiolog"
+  // PHYS match 2026-06-12 (AdventHealth). Medical coding role — not an MD/DO position.
+  // Using bare "coder" since "physician enterprise coder" has intervening words.
+  // No legitimate attending-physician title contains "coder"; "coding" ≠ "coder" substring.
+  "coder",
+  // "Senior Physician Informatics Advocate" / "Physician Informatics Advocate Intermediate"
+  // false-positived on "physician" PHYS match 2026-06-12 (AdventHealth). AdventHealth hires
+  // RNs and non-physicians for this informatics-liaison role; the "RN" prefix variants are
+  // already blocked by "rn " and "nurse" but the bare "Physician Informatics Advocate" title
+  // does not carry an RN marker. No attending-physician job title uses "physician informatics".
+  "physician informatics",
 ];
 
 const PHYS_TOKENS: string[] = [

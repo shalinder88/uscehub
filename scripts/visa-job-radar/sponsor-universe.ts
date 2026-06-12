@@ -296,6 +296,9 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // university hospital (DOL, singular) — same institution, 4yr/28pos FY2025.
   // Prior analysis incorrectly noted 0 positions; DOL entry exists under singular form.
   "thomas jefferson university hospitals": "thomas jefferson university hospital",
+  // AdventHealth (ATS, rebranded 2019) = Adventist Health System/Sunbelt, Inc. (DOL filer).
+  // normEmployer("AdventHealth") → "adventhealth"; DOL normKey → "adventist health system sunbelt".
+  "adventhealth": "adventist health system sunbelt",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.

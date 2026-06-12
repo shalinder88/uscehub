@@ -85,6 +85,13 @@ const NOT_PHYSICIAN_OVERRIDES = [
   "physician office", "physicians of ", "physician program",
   // "physician asst" = ATS abbreviation for Physician Assistant ("asst" ≠ "assistant" substring)
   "physician asst",
+  // APP (Advanced Practice Provider) prefix — e.g. "APP Hospitalist", "APP Psychiatry"
+  // "app " substring at any position catches prefix form and mid-title form
+  "app ",
+  // Non-MD roles that carry physician-keyword stems in their titles (AdventHealth-observed 2026-06-12):
+  "physician informatics",  // Physician Informatics Advocate — non-MD IT/informatics role
+  "physician relations",    // Physician Relations Specialist — non-MD admin/recruitment
+  "coder",                  // Physician Enterprise Coder / Medical Coder — not an MD position
   // Clinical staff who work IN physician offices/clinics (not physicians themselves):
   "licensed practical nurse", "lpn ", "lpn-", " lpn",
   "medical assistant", "nursing", "patient care", "float nurse",
@@ -354,6 +361,7 @@ async function main(): Promise<void> {
   lines.push(`8. **UMMS quality gate** — FIXED run 1747: sponsorEnrich gate now uses recentYearPositions ?? totalPositions (mirrors sponsorScore). SPONSOR_DATA had UMMS at p=2 (stale static snapshot); persistence shows recentYearPositions=5, yearsActive=5 — gate now passes. 39 UMMS physician jobs promoted from NO_VISA_MENTION → SPONSOR_LEAD.`);
   lines.push(`9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.`);
   lines.push(`10. **VUMC false SPONSOR_LEAD + disable** — FIXED run 1829: "Pediatric Cardiac Sonographer II" was classified as physician (false positive on "pediatric" PHYS token). Root cause: "sonographer" missing from NONPHYS_TOKENS. Fixed in engine.ts. Separately: full scan shows vumccareers Workday has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff); connector disabled. DOL iron-core (7yr) — VUMC physician faculty likely recruited via Vanderbilt University academic HR portal.`);
+  lines.push(`11. **AdventHealth Workday connector + batch NONPHYS hardening** — FIXED run 1943: workday-adventhealth connector added (adventhealth/wd12/AH_External_Career_Site). EMPLOYER_ALIAS "adventhealth"→"adventist health system sunbelt" (6yr/107pos). Five NONPHYS_TOKENS additions from scan: "arnp" (Cardiology ARNP = ARNP variant of APRN not caught by "aprn" substring), "app " (APP prefix = Advanced Practice Provider roles like "APP Hospitalist"), "physician relations" (Sr Physician Relations Specialist), "coder" (Physician Enterprise Coder — "physician coder" substring misses when "enterprise" intervenes), "physician informatics" (Physician Informatics Advocate — non-MD informaticist). D5 overrides updated. 6 clean SPONSOR_LEAD: OBGYN Physician, OB Hospitalist, Lead Hospitalist, Hematology Oncology Physician, Primary Care Physician, Physician Advisor.`);
   lines.push(``);
 
   const output = lines.join("\n");
