@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-12-1648  |  Produced: 2026-06-12
+Run: 2026-06-12-1719  |  Produced: 2026-06-12
 
 ---
 
@@ -230,9 +230,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-12-1648 final state:**
+**Run 2026-06-12-1719 final state:**
 - 14 PUBLISH + 140 SPONSOR_LEAD = 154 total surfaced
-- Fetch volume: 423 candidates (18 active sources)
+- Fetch volume: 421 candidates (18 active sources)
 - NOT_PHYSICIAN rejects: 47
 - Audit D1-D7: **ALL PASS / CLEAN**
-- New this run: KUMC Workday connector (11 SPONSOR_LEAD from KS academic iron-core); KUMC site ID corrected kumc → kumc-jobs
+- New this run: Stanford alias added (leland stanford jr university, 6yr/44pos); 3 isPhysician false positives fixed (np/pa, nursing professional, quality consultant, rn parenthetical)

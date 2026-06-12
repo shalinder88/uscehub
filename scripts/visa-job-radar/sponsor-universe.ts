@@ -288,6 +288,10 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   "ochsner health": "ochsner clinic foundation",
   // UMMS fragmented in DOL; best single entry is the Baltimore entity
   "university of maryland medical system": "university of maryland baltimore",
+  // Stanford Health Care (ATS) is the clinical enterprise of Leland Stanford Jr
+  // University — the university entity files physician LCAs for the academic
+  // medical center (6yr active, 44 certified positions FY2020-FY2025)
+  "stanford health care": "leland stanford jr university",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.

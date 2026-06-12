@@ -344,7 +344,7 @@ async function main(): Promise<void> {
   lines.push(`2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; Northwell/Mount Sinai/Hopkins/Mayo all blocked`);
   lines.push(`3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any`);
   lines.push(`4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers`);
-  lines.push(`5. **Stanford Health Care low yield** — 3 candidates/run; DOL entry "Leland Stanford Jr University" (6yr/2pos) fails quality gate; connector correct but no sponsor-history backing`);
+  lines.push(`5. **Stanford Health Care** — FIXED: alias "stanford health care" → "leland stanford jr university" (6yr/44pos DOL) added; 3 prior Stanford keyword-match results were isPhysician false positives (NP/PA, Nursing Professional, Quality Consultant) — also fixed via new NONPHYS_TOKENS. Real physician postings will promote to SPONSOR_LEAD when they appear.`);
   lines.push(`6. **Jefferson Health** — 40 physician postings/run all NO_VISA_MENTION; DOL entity has 0 certified positions; no alias will fix this — correctly held as REJECT`);
   lines.push(`7. **UAMS denial watch** — UAMS is iron-core (7yr, 52 pos). Raw text shows sidebar key-value: "Sponsorship Available:         No   Institution Name:" (extra whitespace = HTML-stripped Workday table row, NOT free-text body copy). Workday defaults this field to "No" when HR hasn't explicitly set it. Human verification required; correctly held SPONSORSHIP_DENIED until confirmed.`);
   lines.push(``);

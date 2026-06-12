@@ -350,6 +350,17 @@ const NONPHYS_TOKENS: string[] = [
   "surgical tech",
   "genetic counselor",
   "counselor",
+  // Observed false positives 2026-06-13 from Stanford Health Care keyword search:
+  // "np/pa" combined title not caught by " np " (slash breaks space boundary);
+  // "(rn)" suffix e.g. "Oncology Research Nursing Professional (RN)" caught here
+  // since "nursing" ≠ "nurse" substring and " rn " misses parenthesized form;
+  // "quality consultant" role contains "neurosurgery" → "surgery" PHYS match;
+  // "nursing professional" is a nursing role label that recurs in research titles.
+  "np/pa",
+  "(rn)",
+  "(rn,",
+  "quality consultant",
+  "nursing professional",
 ];
 
 const PHYS_TOKENS: string[] = [
