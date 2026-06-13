@@ -330,6 +330,17 @@ export const SOURCES: SourceDef[] = [
     note: "Rebranded from Adventist Health System in 2019. DOL iron-core: adventist health system sunbelt (6yr active, 107 recentYearPositions FY2025). EMPLOYER_ALIAS adventhealth→adventist health system sunbelt. CXS endpoint confirmed 2026-06-12: adventhealth.wd12.myworkdayjobs.com, site=AH_External_Career_Site, HTTP 200, 2000 'physician' keyword hits. Physician density ~13% in top-results sample: OBGYN Physician, AHMG Hematology Oncology Physician, OB Hospitalist Physician, Lead Hospitalist, Primary Care Physician confirmed in first 40 results. Multi-state system headquartered FL (also CO, TX, GA, KS, KY, etc.). NONPHYS_TOKENS hardened 2026-06-12 for APP-prefix APP, physician-relations, physician-coder, physician-informatics patterns observed in AdventHealth ATS.",
   },
   {
+    id: "workday-mgb",
+    tier: 1,
+    connector: "workday",
+    label: "Mass General Brigham — physicians (Workday)",
+    handle: "massgeneralbrigham/wd1/MGBExternal",
+    employer: "Mass General Brigham",
+    enabled: true,
+    needsVerification: true,
+    note: "Mass General Brigham (formerly Partners Healthcare; includes MGH, Brigham & Women's, etc.). DOL iron-core: mass general brigham (6yr active, 73 recentYearPositions FY2025). normEmployer('Mass General Brigham') → 'mass general brigham' — direct DOL match, no alias needed. CXS endpoint confirmed 2026-06-13: massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal, HTTP 200, 1036 'physician' keyword hits. Physician density ~55% in first 20 (11 physician attending + 9 PA/other). PHYS_TOKENS: 'physican' (MGB ATS typo of 'physician') added to engine.ts to catch 'Physican Urology', 'Physican-Pediatrics' etc. No employer-specific false positives identified in sample scan.",
+  },
+  {
     id: "jibe-emory",
     tier: 1,
     connector: "jibe",

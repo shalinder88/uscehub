@@ -450,6 +450,9 @@ const PHYS_TOKENS: string[] = [
   "emergency medicine",
   "medical officer",
   "primary care physician",
+  // "Physican" (missing 'i') — consistent ATS typo in Mass General Brigham job titles
+  // e.g. "Physican" and "Physican-Pediatrics". Not a substring of "physician" (9 chars ≠ 8).
+  "physican",
 ];
 
 // Non-physician tokens are checked FIRST so "Physician Assistant" (which

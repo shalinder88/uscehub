@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-12-1943  |  Audited: 2026-06-12
+Run: 2026-06-13-0217  |  Audited: 2026-06-13
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 16 |
-| SPONSOR_LEAD | 255 |
-| Total surfaced (PUBLISH + SL) | 271 |
-| REJECT | 86 |
+| SPONSOR_LEAD | 275 |
+| Total surfaced (PUBLISH + SL) | 291 |
+| REJECT | 90 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 22 quotes verified, 0 mismatches
@@ -22,17 +22,18 @@ Run: 2026-06-12-1943  |  Audited: 2026-06-12
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
 | jibe-emory | 0 | 38 | 38 |
-| jsonld-umms | 3 | 36 | 39 |
+| jsonld-umms | 2 | 35 | 37 |
 | workday-adventhealth | 0 | 6 | 6 |
 | workday-altamed | 0 | 24 | 24 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
+| workday-mgb | 0 | 21 | 21 |
 | workday-montefiore | 0 | 14 | 14 |
 | workday-msk | 0 | 6 | 6 |
 | workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 27 | 31 |
-| workday-sanford | 7 | 0 | 7 |
+| workday-sanford | 8 | 0 | 8 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -43,11 +44,12 @@ Run: 2026-06-12-1943  |  Audited: 2026-06-12
 Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 
 ## Dimension 7 — PUBLISH posting age
-Avg age: **25.1 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
+Avg age: **24.0 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 
 ## PUBLISH job inventory (non-fixture)
 | Employer | Title | State | Age | Labels | Quote |
 |----------|-------|-------|-----|--------|-------|
+| Sanford Health | Physician - Orthopedic Spine Surgery | WI | 1d | EXPLICIT_H1B | "Visas Accepted H1B" |
 | Sanford Health | Physician - Psychiatry | WI | 1d | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
 | Sanford Health | Physician - Anesthesiology | WI | 2d | EXPLICIT_H1B | "Visas Accepted H1B" |
 | Sanford Health | Physician - Orthopedic Surgery | WI | 5d | EXPLICIT_H1B | "Visas Accepted H1B" |
@@ -63,7 +65,6 @@ Avg age: **25.1 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 | Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | ? | 80d | EXPLICIT_H1B | "H1b sponsorship" |
 | University of Maryland Medical System | Nephrologist - Physician | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
 | University of Maryland Medical System | Gastroenterologist | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
-| University of Maryland Medical System | Pediatrician - Outpatient - Chestertown, MD | MD | 24d | EXPLICIT_VISA_SPONSORSHIP | "sponsorship available" |
 
 ## Known coverage gaps (iron-core employers not yet wired)
 These are DOL 7-year iron-core sponsors with no active connector:
