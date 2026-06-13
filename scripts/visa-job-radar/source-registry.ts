@@ -17,6 +17,8 @@ export type Connector =
   | "workday"
   | "jsonld"
   | "jibe"
+  | "findly"
+  | "atom"
   | "none";
 
 export interface SourceDef {
@@ -383,6 +385,28 @@ export const SOURCES: SourceDef[] = [
     enabled: true,
     needsVerification: true,
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 191 recentYearPositions FY2025). normKey 'maimonides medical center' matches persistence_index directly — no alias needed. ATS = Jibe (cid:'maimo'). careers.maimo.org is the dedicated Jibe instance (jasession cookie, JSON content-type confirmed 2026-06-13); careers.maimo.org/api/jobs?keyword=physician returns HTTP 200, totalCount=200. Physician density ~6% after isPhysician() filtering. Brooklyn NY; specialties cover internal medicine, hospitalist, psychiatry, pediatric subspecialties.",
+  },
+  {
+    id: "findly-upmc",
+    tier: 1,
+    connector: "findly",
+    label: "UPMC — physicians (Findly/Google CTS)",
+    handle: "companies/4c0b87d3-a9b3-4243-b9c7-2ad12c533ab3",
+    employer: "University of Pittsburgh Physicians",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 89 recentYearPositions FY2025). ATS = Findly CWS backed by Google Cloud Talent Solution; public JSONP endpoint at jobsapi-google.m-cloud.io/api/job/search (no auth). Company ID confirmed 2026-06-13 from upmc.site.findly.com cws_opts.org_id. Filter: customAttributeFilter='primary_category=\"Physicians\"' narrows server-side to Physicians category (~7 jobs). Underlying ATS is Taleo (upmcjobs.taleo.net) — Findly surfaces only jobs explicitly categorized as Physicians; may underrepresent actual UPMC physician openings. normKey 'university of pittsburgh physicians' matches persistence_index directly — no alias needed.",
+  },
+  {
+    id: "atom-uky",
+    tier: 1,
+    connector: "atom",
+    label: "University of Kentucky Healthcare — physicians (PeopleAdmin Atom)",
+    handle: "https://ukjobs.uky.edu/postings/all_jobs.atom",
+    employer: "University of Kentucky",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 48 recentYearPositions FY2025). normKey 'university of kentucky' matches persistence_index directly — no alias needed. ATS = PeopleAdmin at ukjobs.uky.edu; all_jobs.atom feed confirmed 2026-06-13 (805 total entries, ~146 physician-titled). Feed includes full HTML job descriptions in <content> element. Two explicit J-1 physician jobs confirmed in feed (Pediatric Radiologist, Vascular & Interventional Radiologist). Remaining physician postings will be promoted via sponsorEnrich(). ukjobs.uky.edu handles all UK positions including UK Healthcare (hospital and academic).",
   },
   {
     id: "jsonld-guthrie",

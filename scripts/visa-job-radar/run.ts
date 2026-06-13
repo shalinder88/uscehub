@@ -19,6 +19,8 @@ import {
   validateQuote,
 } from "./engine";
 import {
+  fetchAtom,
+  fetchFindly,
   fetchGreenhouse,
   fetchJibe,
   fetchUsajobs,
@@ -101,6 +103,14 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
       } else if (src.connector === "jibe") {
         candidates.push(
           ...(await fetchJibe(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "findly") {
+        candidates.push(
+          ...(await fetchFindly(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "atom") {
+        candidates.push(
+          ...(await fetchAtom(src.handle, src.employer ?? src.label, src.id)),
         );
       }
     } catch (err) {

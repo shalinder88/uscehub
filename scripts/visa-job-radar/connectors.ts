@@ -7,6 +7,7 @@
 
 import type { RawCandidate, SourceTier } from "./types";
 import { isPhysician } from "./engine";
+import { XMLParser } from "fast-xml-parser";
 
 // ── shared: no-regex HTML stripping ─────────────────────────────────
 
@@ -610,6 +611,221 @@ export interface JibeResponse {
 function jibeJobId(applyUrl: string, fallback: number): string {
   const m = applyUrl.match(/\/jobs\/(\d+)\//);
   return m ? m[1] : String(fallback);
+}
+
+// ── PeopleAdmin Atom feed ────────────────────────────────────────────────────
+//
+// PeopleAdmin (common in university HR systems) exposes an Atom feed at
+//   /postings/all_jobs.atom
+// that includes all open postings with full HTML job descriptions in <content>.
+// The employer field is set from the source-registry `employer` property since
+// PeopleAdmin doesn't surface a structured employer name field.
+// handle = the full Atom feed URL.
+
+const ATOM_TIMEOUT_MS = 20_000;
+
+interface AtomEntry {
+  id?: string;
+  title?: string;
+  content?: string | { "#text"?: string };
+  link?: { "@_href"?: string } | string;
+  published?: string;
+  updated?: string;
+}
+
+interface AtomFeed {
+  feed?: {
+    entry?: AtomEntry | AtomEntry[];
+  };
+}
+
+export async function fetchAtom(
+  feedUrl: string,
+  employer: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const fetchedAt = new Date().toISOString();
+  const out: RawCandidate[] = [];
+
+  let raw: string;
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ATOM_TIMEOUT_MS);
+    const res = await fetch(feedUrl, { signal: ctrl.signal });
+    clearTimeout(t);
+    if (!res.ok) return out;
+    raw = await res.text();
+  } catch {
+    return out;
+  }
+
+  let feed: AtomFeed;
+  try {
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_",
+      textNodeName: "#text",
+    });
+    feed = parser.parse(raw) as AtomFeed;
+  } catch {
+    return out;
+  }
+
+  const entries = feed.feed?.entry;
+  if (!entries) return out;
+  const list: AtomEntry[] = Array.isArray(entries) ? entries : [entries];
+
+  for (const e of list) {
+    const title = typeof e.title === "string" ? e.title.trim() : "";
+    if (!title) continue;
+    if (!isPhysician(title)) continue;
+
+    const id =
+      typeof e.id === "string"
+        ? e.id.replace(/^.*\//, "") // strip URL prefix, keep posting ID
+        : String(out.length);
+
+    let href = "";
+    if (typeof e.link === "string") {
+      href = e.link;
+    } else if (typeof e.link === "object" && e.link !== null) {
+      href = (e.link as { "@_href"?: string })["@_href"] ?? "";
+    }
+    if (!href && typeof e.id === "string") href = e.id;
+
+    const rawContent =
+      typeof e.content === "string"
+        ? e.content
+        : typeof e.content === "object" && e.content !== null
+          ? (e.content as { "#text"?: string })["#text"] ?? ""
+          : "";
+    const body = rawContent ? stripHtml(rawContent) : "";
+
+    const posted =
+      typeof e.published === "string"
+        ? e.published.slice(0, 10)
+        : typeof e.updated === "string"
+          ? e.updated.slice(0, 10)
+          : undefined;
+
+    out.push({
+      sourceId: sourceIdBase + "-" + id,
+      sourceTier: 1,
+      sourceUrl: href,
+      fetchedAt,
+      title,
+      employer,
+      postedDate: posted,
+      rawText: [title, body].filter((s) => s.length > 0).join(". "),
+      isFixture: false,
+    });
+  }
+
+  return out;
+}
+
+// ── Findly / Ceridian Career Website Solution (Google Cloud Talent proxy) ───
+//
+// API: GET https://jobsapi-google.m-cloud.io/api/job/search
+// Auth: none — public JSONP endpoint
+// Company: handle = "companies/<uuid>" (from cws_opts.org_id in page source)
+// Filter: customAttributeFilter=primary_category="Physicians" narrows to
+//   physician-category jobs server-side (Findly's own taxonomy, not keyword search)
+//   so false-positive rate is low; isPhysician() still runs as final gate.
+// Response: JSONP wrapper cb({...}) — stripped by slicing content between
+//   first '{' and last '}' before JSON.parse.
+// Pagination: offset-indexed; totalHits in response; one page is usually enough
+//   for small physician categories.
+
+const FINDLY_BASE = "https://jobsapi-google.m-cloud.io/api/job/search";
+const FINDLY_PAGE_SIZE = 100;
+const FINDLY_TIMEOUT_MS = 15_000;
+const FINDLY_DELAY_MS = 400;
+
+interface FindlyJob {
+  id?: number;
+  title?: string;
+  primary_state?: string;
+  primary_city?: string;
+  url?: string;
+  description?: string;
+  open_date?: string;
+}
+
+interface FindlyResult {
+  job?: FindlyJob;
+}
+
+interface FindlyResponse {
+  totalHits?: number;
+  searchResults?: FindlyResult[];
+}
+
+export async function fetchFindly(
+  companyId: string,
+  employer: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const fetchedAt = new Date().toISOString();
+  const out: RawCandidate[] = [];
+  let offset = 0;
+
+  while (true) {
+    let data: FindlyResponse;
+    try {
+      const params = new URLSearchParams({
+        companyName: companyId,
+        customAttributeFilter: 'primary_category="Physicians"',
+        pageSize: String(FINDLY_PAGE_SIZE),
+        offset: String(offset),
+        callback: "cb",
+      });
+      const url = FINDLY_BASE + "?" + params.toString();
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), FINDLY_TIMEOUT_MS);
+      const res = await fetch(url, { signal: ctrl.signal });
+      clearTimeout(t);
+      if (!res.ok) break;
+      const raw = await res.text();
+      // Strip JSONP wrapper: cb({...}) → find first { and last }
+      const start = raw.indexOf("{");
+      const end = raw.lastIndexOf("}");
+      if (start === -1 || end === -1) break;
+      data = JSON.parse(raw.slice(start, end + 1)) as FindlyResponse;
+    } catch {
+      break;
+    }
+
+    const results = data.searchResults ?? [];
+    if (results.length === 0) break;
+
+    for (const r of results) {
+      const j = r.job;
+      if (!j?.title) continue;
+      if (!isPhysician(j.title)) continue;
+      const body = j.description ? stripHtml(j.description) : "";
+      out.push({
+        sourceId: sourceIdBase + "-" + String(j.id ?? out.length),
+        sourceTier: 1,
+        sourceUrl: j.url ?? "",
+        fetchedAt,
+        title: j.title,
+        employer,
+        city: j.primary_city,
+        state: j.primary_state,
+        postedDate: j.open_date,
+        rawText: [j.title, body].filter((s) => s.length > 0).join(". "),
+        isFixture: false,
+      });
+    }
+
+    const total = data.totalHits ?? 0;
+    offset += FINDLY_PAGE_SIZE;
+    if (offset >= total) break;
+    await delay(FINDLY_DELAY_MS);
+  }
+
+  return out;
 }
 
 export async function fetchJibe(

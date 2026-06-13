@@ -8,19 +8,19 @@ a sponsor-backed J-1/H-1B lead. iCIMS/Oracle (json-ld) are reachable via the JSO
 - Sponsors probed: 67
 - Resolved to a no-auth JSON API (Workday/Greenhouse): 13
 - Live-counted: 9
-- **Physician openings reachable RIGHT NOW (json-api only): 3212**
+- **Physician openings reachable RIGHT NOW (json-api only): 3216**
 - Additional sponsors reachable via JSON-LD (iCIMS/Oracle, fetch path = next build): 16
 
 ## Per sponsor
 | Employer | ATS | Reach | Physician openings | Handle |
 |---|---|---|---|---|
-| Cleveland Clinic | workday | json-api | 1008 | ccf/wd1/clevelandcliniccareers |
-| Ochsner Health | workday | json-api | 780 | ochsner/wd1/ochsner |
-| Thomas Jefferson University Hospitals | workday | json-api | 402 | jeffersonhealth/wd5/thomasjeffersonexternal |
-| Presbyterian Healthcare Services NM | workday | json-api | 307 | phsorg/wd1/careers |
-| Vanderbilt University Medical Center | workday | json-api | 255 | vumc/wd1/vumccareers |
-| UPMC | workday | json-api | 194 | gohealthuc/wd12/external |
-| Stanford Health Care | workday | json-api | 146 | stanfordmedicine/wd115/shc_external_career_site |
+| Cleveland Clinic | workday | json-api | 1022 | ccf/wd1/clevelandcliniccareers |
+| Ochsner Health | workday | json-api | 775 | ochsner/wd1/ochsner |
+| Thomas Jefferson University Hospitals | workday | json-api | 400 | jeffersonhealth/wd5/thomasjeffersonexternal |
+| Presbyterian Healthcare Services NM | workday | json-api | 298 | phsorg/wd1/careers |
+| Vanderbilt University Medical Center | workday | json-api | 247 | vumc/wd1/vumccareers |
+| UPMC | workday | json-api | 205 | gohealthuc/wd12/external |
+| Stanford Health Care | workday | json-api | 149 | stanfordmedicine/wd115/shc_external_career_site |
 | University of Arkansas for Medical Sciences | workday | json-api | 100 | uasys/wd5/uams_all_careers |
 | Memorial Sloan Kettering | workday | json-api | 20 | msk/wd108/mskcc_careers_primary |
 | Mayo Clinic | oracle_hcm | json-ld |  |  |
