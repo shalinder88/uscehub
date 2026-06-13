@@ -374,6 +374,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 40 certified positions). ATS = Jibe (iCIMS wrapper). Physician faculty jobs at faculty-emory.icims.com — individual job pages are SPA-rendered (no JSON-LD), but careers.emory.edu/api/jobs returns full JSON with title, HTML description, city/state, apply_url. Verified 2026-06-12: API returns 200, totalCount ~1860 for keyword=physician. Jibe connector fetches pages, filters by isPhysician(), collects up to 40 physician-titled jobs. GA academic system, high J-1/H-1B density.",
   },
   {
+    id: "jibe-maimonides",
+    tier: 1,
+    connector: "jibe",
+    label: "Maimonides Medical Center — physicians (Jibe)",
+    handle: "https://careers.maimo.org",
+    employer: "Maimonides Medical Center",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 191 recentYearPositions FY2025). normKey 'maimonides medical center' matches persistence_index directly — no alias needed. ATS = Jibe (cid:'maimo'). careers.maimo.org is the dedicated Jibe instance (jasession cookie, JSON content-type confirmed 2026-06-13); careers.maimo.org/api/jobs?keyword=physician returns HTTP 200, totalCount=200. Physician density ~6% after isPhysician() filtering. Brooklyn NY; specialties cover internal medicine, hospitalist, psychiatry, pediatric subspecialties.",
+  },
+  {
     id: "jsonld-guthrie",
     tier: 1,
     connector: "jsonld",

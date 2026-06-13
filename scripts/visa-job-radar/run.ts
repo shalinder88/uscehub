@@ -501,7 +501,18 @@ async function main(): Promise<void> {
   const startedAt = new Date().toISOString();
   const runId = runIdFrom(startedAt);
 
-  const candidates = await gather(live);
+  const rawCandidates = await gather(live);
+  // Pre-dedup by sourceId: Jibe (and potentially other connectors) can return the
+  // same job on multiple pages (e.g. totalCount=200, same 7 physician-titled jobs at
+  // offset=0 and offset=100). The canonical dedupe() pass only runs after classification
+  // and skips REJECT-bucket candidates, so NO_VISA_MENTION duplicates both survive and
+  // then get promoted by sponsorEnrich(). Fix: first-wins by sourceId at the raw level.
+  const seenRawIds = new Set<string>();
+  const candidates = rawCandidates.filter((c) => {
+    if (seenRawIds.has(c.sourceId)) return false;
+    seenRawIds.add(c.sourceId);
+    return true;
+  });
   const jobs = buildRadarJobs(candidates);
   const duplicatesDropped = dedupe(jobs);
   const quoteValidationFailures = quoteGate(jobs);

@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0324  |  Audited: 2026-06-13
+Run: 2026-06-13-0421  |  Audited: 2026-06-13
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 24 |
-| SPONSOR_LEAD | 337 |
-| Total surfaced (PUBLISH + SL) | 361 |
-| REJECT | 95 |
+| SPONSOR_LEAD | 307 |
+| Total surfaced (PUBLISH + SL) | 331 |
+| REJECT | 92 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 38 quotes verified, 0 mismatches
@@ -21,7 +21,8 @@ Run: 2026-06-13-0324  |  Audited: 2026-06-13
 ## Dimension 4 — Coverage per connector
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
-| jibe-emory | 0 | 38 | 38 |
+| jibe-emory | 0 | 2 | 2 |
+| jibe-maimonides | 0 | 6 | 6 |
 | jsonld-umms | 2 | 35 | 37 |
 | workday-adventhealth | 0 | 6 | 6 |
 | workday-altamed | 0 | 24 | 24 |
@@ -86,7 +87,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | BronxCare Health System | Connection refused | No bypass |
 | MedStar Health | Connection refused | No bypass |
 | Hartford HealthCare | Connection refused | No bypass |
-| Maimonides Medical Center | ATS unknown (maimonidesmed.icims.com 404, no Workday/Greenhouse detected) | Research correct portal |
+| Cleveland Clinic Foundation | Workday confirmed (ccf.wd1/ClevelandClinicCareers) BUT keyword "physician" returns 0 physician titles (matches descriptions only); actual titles use specialty names (radiologist 75, surgeon 110, attending 15, cardiologist 9); no physician job-family facets exposed; multi-keyword search needed — architectural blocker | Need multi-keyword connector variant |
 | OHSU | iCIMS sitemap 403 | No bypass |
 | Mount Sinai | Taleo SSO-gated | No bypass |
 | UT Southwestern | Taleo SSO-gated | No bypass |
@@ -112,5 +113,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 11. **AdventHealth Workday connector + batch NONPHYS hardening** — FIXED run 1943: workday-adventhealth connector added (adventhealth/wd12/AH_External_Career_Site). EMPLOYER_ALIAS "adventhealth"→"adventist health system sunbelt" (6yr/107pos). Five NONPHYS_TOKENS additions from scan: "arnp" (Cardiology ARNP = ARNP variant of APRN not caught by "aprn" substring), "app " (APP prefix = Advanced Practice Provider roles like "APP Hospitalist"), "physician relations" (Sr Physician Relations Specialist), "coder" (Physician Enterprise Coder — "physician coder" substring misses when "enterprise" intervenes), "physician informatics" (Physician Informatics Advocate — non-MD informaticist). D5 overrides updated. 6 clean SPONSOR_LEAD: OBGYN Physician, OB Hospitalist, Lead Hospitalist, Hematology Oncology Physician, Primary Care Physician, Physician Advisor.
 
 12. **Mass General Brigham Workday connector + "physican" PHYS_TOKEN** — FIXED run 0217: workday-mgb connector added (massgeneralbrigham/wd1/MGBExternal). 6yr/73pos iron-core; direct DOL normKey match ("mass general brigham"), no alias needed. "physican" (missing 'i') added to PHYS_TOKENS — MGB consistently uses this typo in ATS job titles (e.g. "Physican Urology", "Physican-Pediatrics"); 8-char substring ≠ 9-char "physician", so these were being silently dropped. 21 clean SPONSOR_LEAD surfaced (Physician Scientist, Physician Internal Medicine, Physician Urology, Infectious Disease Physician, Physican-Pediatrics, and 16 more attending-level roles). No new false-positives found in MGB sample.
+
+14. **Maimonides Jibe connector + raw sourceId dedup fix + "nursing" NONPHYS_TOKEN** — FIXED run 0421: Three issues. (A) jibe-maimonides connector added (careers.maimo.org/api/jobs). Maimonides Medical Center 7yr/191pos iron-core; normKey "maimonides medical center" matches persistence_index directly — no alias. Jibe confirmed (cid:"maimo", jasession cookie, JSON content-type). 6 clean SPONSOR_LEAD: Director of Radiation Oncology, Psychiatrist, Attending Physician-Pediatric Endocrinology, Physician, Unit Director Psychiatry, Assistant Vice President of Psychiatry. (B) Raw sourceId dedup added to run.ts (line ~504): Jibe (and similar connectors) can return the same physician-titled job at offset=0 AND offset=100 due to API pinning. The canonical dedupe() pass skips REJECT-bucket jobs; since NO_VISA_MENTION jobs start as REJECT before sponsorEnrich() promotes them, both occurrences survived dedup and were double-promoted. Fix: first-wins by sourceId on raw candidates before buildRadarJobs(). (C) "nursing" NONPHYS_TOKEN added — "Asst Director Nursing" false-positived on "pediatric" PHYS match; "nurse" substring ≠ "nursing" (pos-4 char differs), so "nurse" token didn't catch it. ALSO: Emory (jibe-emory) dropped from 38→2 this run — NOT a regression; 36 Emory physician positions from run 0324 naturally closed (verified live: careers.emory.edu/api/jobs still 200/1852 results, but physician-titled jobs reduced to Spine Physician + General Urologist).
 
 13. **Brown Health Workday connector + "physician liaison" NONPHYS_TOKEN + Workday "provider" facet fix** — FIXED run 0324: Three separate issues resolved. (A) workday-brownhealth connector added (brownhealth/wd12/External_Careers). Brown Health = formerly Lifespan Health System, rebranded ~2023. EMPLOYER_ALIAS "brown health" → "lifespan physician" (7yr/48pos iron-core; no normKey collision). (B) "physician liaison" added to NONPHYS_TOKENS — Brown Health uses "Sr. Physician Liaison" title for non-MD outreach/recruitment staff; this was a false positive. (C) Workday `physicianFacetIds()` had "provider" in its match terms — Brown Health exposes an "Advanced Practice Provider" job family with `d.includes("provider")` match. The facet probe selected it (54 NP/PA/APP jobs), used it as the filter, and returned 0 real physicians — keyword fallback never activated. Fix: removed "provider" from `physicianFacetIds` matching (audited all 14 active Workday connectors; none uses a "provider" job family for physician jobs — they all fall through to keyword+isPhysician filtering or use "faculty"/"physician" facets). 27 clean SPONSOR_LEAD surfaced: physician, Physician, MG Physician, Physician PD, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine, etc.

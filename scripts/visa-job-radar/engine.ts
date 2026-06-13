@@ -332,6 +332,10 @@ const NONPHYS_TOKENS: string[] = [
   // appears in a real physician title (note: NOT bare "assistant"/"director" —
   // those collide with "Assistant Professor"/"Medical Director" physicians).
   "nurse",
+  // "nursing" ≠ "nurse" substring (position 4 is 'i' not 'e'). "Asst Director Nursing"
+  // and "Director of Nursing" false-positive on pediatric/specialty PHYS tokens.
+  // No attending-physician title uses "nursing" as a substring.
+  "nursing",
   "advance practice",
   "advanced practice",
   "pharmacy",
