@@ -1,15 +1,16 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-1610  |  Audited: 2026-06-13
-Note: Full-CDN run. wd1 + wd5 CDN recovered. 23 active connectors (22 prior + jsonld-miami).
-Gold: 15/15 pass. Next tier: enable 5 disabled connectors (urmc/rochestergeneral/roswellpark/ahn/bostonmedical) when ready.
+Run: 2026-06-13-1702  |  Audited: 2026-06-13
+Note: Full-CDN run. 27 active connectors. workday-stanfordhealth disabled (shc_external_career_site
+has no MD/DO physician postings — all allied health/NP/PA; same pattern as VUMC). workday-roswellpark
+enabled but 0 physician postings active today. Gold: 15/15 pass.
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
-| PUBLISH (non-fixture) | 26 |
-| SPONSOR_LEAD | 681 |
-| Total surfaced (PUBLISH + SL) | 707 |
-| REJECT | 93 |
+| PUBLISH (non-fixture) | 45 |
+| SPONSOR_LEAD | 778 |
+| Total surfaced (PUBLISH + SL) | 823 |
+| REJECT | 95 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 38 quotes verified, 0 mismatches
@@ -20,7 +21,7 @@ Gold: 15/15 pass. Next tier: enable 5 disabled connectors (urmc/rochestergeneral
 ## Dimension 3 — SPONSOR_LEAD denial-language leakage
 **✅ PASS**
 
-## Dimension 4 — Coverage per connector (run 2026-06-13-1610, full CDN)
+## Dimension 4 — Coverage per connector (run 2026-06-13-1702, full CDN, 27 connectors)
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
 | atom-uky | 0 | 200 | 200 |
@@ -30,10 +31,12 @@ Gold: 15/15 pass. Next tier: enable 5 disabled connectors (urmc/rochestergeneral
 | jibe-osf | 1 | 39 | 40 |
 | jibe-ynhhs | 0 | 3 | 3 |
 | jsonld-miami | 0 | 40 | 40 |
-| jsonld-umms | 1 | 38 | 39 |
+| jsonld-umms | 2 | 36 | 38 |
 | jsonld-wellstar | 2 | 37 | 39 |
 | workday-adventhealth | 0 | 6 | 6 |
+| workday-ahn | 3 | 17 | 20 |
 | workday-altamed | 0 | 24 | 24 |
+| workday-bostonmedical | 0 | 28 | 28 |
 | workday-brownhealth | 0 | 27 | 27 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
@@ -46,7 +49,9 @@ Gold: 15/15 pass. Next tier: enable 5 disabled connectors (urmc/rochestergeneral
 | workday-musc | 0 | 20 | 20 |
 | workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 35 | 39 |
+| workday-rochestergeneral | 15 | 18 | 33 |
 | workday-sanford | 16 | 2 | 18 |
+| workday-urmc | 0 | 35 | 35 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
