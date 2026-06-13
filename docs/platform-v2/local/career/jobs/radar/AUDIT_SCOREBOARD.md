@@ -1,12 +1,15 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0532  |  Audited: 2026-06-13
+Run: 2026-06-13-0631  |  Audited: 2026-06-13
+Note: Workday CDN degraded since ~0605 — wd1/wd5 returning HTML instead of JSON.
+Counts below reflect last clean full run (0556/0532) + new connectors (jibe-ynhhs, jibe-osf).
+Expected SPONSOR_LEAD when Workday recovers: 576 (534 baseline + 3 YNHHS + 39 OSF).
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 24 |
-| SPONSOR_LEAD | 534 |
-| Total surfaced (PUBLISH + SL) | 558 |
+| SPONSOR_LEAD (full-run expected) | 576 |
+| Total surfaced (PUBLISH + SL) | 600 |
 | REJECT | 92 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -40,6 +43,8 @@ Run: 2026-06-13-0532  |  Audited: 2026-06-13
 | findly-upmc | 0 | 5 | 5 |
 | atom-uky | 0 | 204 | 204 |
 | workday-lvhn | 0 | 18 | 18 |
+| jibe-ynhhs | 0 | 3 | 3 |
+| jibe-osf | 0 | 39 | 39 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -106,11 +111,12 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Henry Ford Health | ATS unknown; Workday wd1 tenant maintenance; iCIMS probes 404; no API accessible | 7yr, 27 pos |
 | WellSpan Health | Oracle HCM (joinwellspan.org marketing site; "Log into Oracle" link confirms backend) — inaccessible without SSO | 7yr, 22 pos |
 | Dartmouth Health | Prolucent/LiquidCompass SPA (`careers.dartmouth-health.org`; backend `partner-tenants.ats.liquidcompass.com/dartmouth-health/`) — all API endpoints return 404 HTML | 7yr, 18 pos |
+| University of Florida / UF Health | Jibe portal `jobs.ufhealth.org` confirmed — default keyword=physician pins non-physician results at every offset; zero MD/DO attending jobs in first 100 unique results. UF faculty likely on separate UF academic HR portal. | 6yr, 90 pos |
 
 ## What to fix next (priority order)
 
 1. **Bare quotes** — CLEAN — all 22 PUBLISH quotes are RICH (H1B/J1/waiver/cap-exempt)
-2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; UPMC (findly) + UK Healthcare (atom) added runs 0500/0507; LVHN (workday) added run 0532; BCH/Corewell/MetroHealth/Henry Ford/WellSpan/Dartmouth all blocked
+2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; UPMC (findly) + UK Healthcare (atom) added runs 0500/0507; LVHN (workday) added run 0532; YNHHS (jibe-ynhhs) +3 SL added; OSF HealthCare (jibe-osf, tags=Physicians filter) +39 SL added run 0631; BCH/Corewell/MetroHealth/Henry Ford/WellSpan/Dartmouth all blocked; OSF now FIXED via Jibe public API
 3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any
 4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers
 5. **Stanford Health Care** — FIXED: alias "stanford health care" → "leland stanford jr university" (6yr/44pos DOL) added; 3 prior Stanford keyword-match results were isPhysician false positives (NP/PA, Nursing Professional, Quality Consultant) — also fixed via new NONPHYS_TOKENS. Real physician postings will promote to SPONSOR_LEAD when they appear.
@@ -130,5 +136,9 @@ These are DOL 7-year iron-core sponsors with no active connector:
 16. **University of Kentucky PeopleAdmin Atom connector** — FIXED run 0507: `atom-uky` connector added using new `fetchAtom()` function. ATS is PeopleAdmin at `ukjobs.uky.edu`; `/postings/all_jobs.atom` returns all 805 open positions (no auth, no pagination cap). XML parsed with `fast-xml-parser`; full HTML job descriptions in `<content>` element stripped via `stripHtml()` before isPhysician() filtering. DOL iron-core 7yr/48pos; normKey "university of kentucky" = direct match. 204 physician candidates → all SPONSOR_LEAD (no explicit visa language in ATS postings). Two J-1 explicit jobs confirmed in feed (Pediatric Radiologist, Vascular & Interventional Radiologist).
 
 17. **Lehigh Valley Health Network Workday connector** — FIXED run 0532: `workday-lvhn` connector added (`lvhn.wd1.myworkdayjobs.com/LVHN`). Workday CXS API (`wday/cxs/lvhn/wd1/LVHN/jobs`), confirmed via curl 200 (715 total physician-keyword results). No jobFamilyGroup facets exposed (8 facets, all empty value strings) → keyword+isPhysician fallback. DOL iron-core 7yr/33pos FY2025; source.employer="Lehigh Valley Hospital" → normKey "lehigh valley hospital" = direct persistence_index match (DOL legal name "Lehigh Valley Hospital INC."; "inc" stripped by normEmployer). All 18 candidates are clean attending physician titles (Endocrinologist, Gastroenterologist, Family Medicine Physician x10, Hospice Medicine Physician, Sports Medicine Physician, Occupational Medicine Physician, Physiatry, Pediatric Sleep Medicine). PA-based (Allentown, Stroudsburg, Hazleton service area). Zero false positives confirmed.
+
+18. **Yale New Haven Health System Jibe connector + 6 NONPHYS_TOKEN fixes** — FIXED runs post-0532: `jibe-ynhhs` connector added (`jobs.ynhhs.org/api/jobs`). YNHHS is 7yr/62pos iron-core DOL sponsor. ATS = Jibe (iCIMS wrapper; ng-app="jibeapply" confirmed). careers.ynhh.org has expired SSL; jobs.ynhhs.org is the accessible public API. Default keyword=physician returns pinned top results; only 3 genuine physician titles across all offsets (OBGYN Physician, OB/GYN Per Diem Greenwich, Hospice Physician). source.employer="Yale-New Haven Hospital" → normKey "yale new haven hospital" = direct persistence_index match. 6 NONPHYS_TOKENS added to fix false positives from YNHHS Jibe scan: " lpc " (Licensed Professional Counselor), " lmsw " (Licensed Master Social Worker), " mgr " (Manager abbreviation), "radiology tech" (Radiology Tech abbreviated), "polysomnograph" (Polysomnographic Tech), " huc " (Health Unit Coordinator). All 6 also added to audit.ts NOT_PHYSICIAN_OVERRIDES. Gold self-check still 15/15 after additions. Net: 3 clean SPONSOR_LEAD per run (CT-based; Yale YSM academic faculty recruited separately).
+
+19. **OSF HealthCare Jibe connector (tags=Physicians filter)** — FIXED run 0631: `jibe-osf` connector added (`osfcareers.org/api/jobs?keyword=&tags=Physicians`). OSF Multi-Specialty Group 7yr/69pos iron-core (also OSF Healthcare System 6yr/29pos). ATS = Jibe (iCIMS wrapper; ng-app="jibeapply"; client_code="osfhealthcare"). Discovery: default keyword=physician search returns all-staff pinned results (same RN/CNA results at every offset — Jibe pin behavior). Key insight: Jibe API accepts `tags=Physicians` filter parameter that routes to the Physicians category directly. Added optional `query` parameter to `fetchJibe()` (default "keyword=physician") and `jibeQuery` field to `SourceDef` to support per-connector query overrides. totalCount=194 physician-tagged; pagination pins at offset=100 → 40 accessible per run (JIBE_MAX_PHYSICIAN cap). source.employer="OSF Multi-Specialty Group" → normKey "osf multi-specialty group" = direct persistence_index match (no alias). All 40 titles verified clean: Neurohospitalist, Psychiatry Physician, Otolaryngology Physician, Headache Neurologist, PRN Interventional/Telehealth Cardiologist, PRN Radiation Oncologist, Vascular/Breast/General/Colorectal Surgeon, Allergy/Asthma/Immunology Physician, Occupational Medicine, Neurocritical Care, Family Medicine/Primary Care (IL), Internal Medicine (IL), Hematology/Oncology, Emergency Medicine Nocturnist, Pulmonary Critical Care, UICOMP-Peoria academic faculty (Pediatrics, Ophthalmology, Pulmonology, Nephrology), and more. IL-based system (Peoria, Rockford, Bloomington, Galesburg, Ottawa). "Physician Informatics Specialist" correctly rejected by "physician informatics" NONPHYS token. "Attending Hospital Dentist" does not trigger isPhysician() — "attending" is not a PHYS_TOKEN. Zero false positives. Net: 39 SPONSOR_LEAD per run (1 raw dedup dropped). Previously listed in Known Gaps as "iCIMS SPA-blocked" — the osfhealthcare.icims.com portal requires SSO, but the Jibe public API at osfcareers.org is accessible without auth.
 
 13. **Brown Health Workday connector + "physician liaison" NONPHYS_TOKEN + Workday "provider" facet fix** — FIXED run 0324: Three separate issues resolved. (A) workday-brownhealth connector added (brownhealth/wd12/External_Careers). Brown Health = formerly Lifespan Health System, rebranded ~2023. EMPLOYER_ALIAS "brown health" → "lifespan physician" (7yr/48pos iron-core; no normKey collision). (B) "physician liaison" added to NONPHYS_TOKENS — Brown Health uses "Sr. Physician Liaison" title for non-MD outreach/recruitment staff; this was a false positive. (C) Workday `physicianFacetIds()` had "provider" in its match terms — Brown Health exposes an "Advanced Practice Provider" job family with `d.includes("provider")` match. The facet probe selected it (54 NP/PA/APP jobs), used it as the filter, and returned 0 real physicians — keyword fallback never activated. Fix: removed "provider" from `physicianFacetIds` matching (audited all 14 active Workday connectors; none uses a "provider" job family for physician jobs — they all fall through to keyword+isPhysician filtering or use "faculty"/"physician" facets). 27 clean SPONSOR_LEAD surfaced: physician, Physician, MG Physician, Physician PD, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine, etc.
