@@ -303,6 +303,10 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Brown Health") → "brown health"; DOL normKey → "lifespan physician".
   // "brown health" is not a standalone key in persistence_index so no collision guard fires.
   "brown health": "lifespan physician",
+  // Allegheny Health Network (ATS, public-facing name) = Allegheny Clinic (DOL filer, 7yr/31pos).
+  // normEmployer("Allegheny Health Network") → "allegheny health network"; DOL normKey → "allegheny clinic".
+  // "allegheny health network medical education consortium" is a separate 1yr/1pos PI entry and not a collision risk.
+  "allegheny health network": "allegheny clinic",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.

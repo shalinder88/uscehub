@@ -1,15 +1,16 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0631  |  Audited: 2026-06-13
+Run: 2026-06-13-0725  |  Audited: 2026-06-13
 Note: Workday CDN degraded since ~0605 — wd1/wd5 returning HTML instead of JSON.
-Counts below reflect last clean full run (0556/0532) + new connectors (jibe-ynhhs, jibe-osf).
-Expected SPONSOR_LEAD when Workday recovers: 576 (534 baseline + 3 YNHHS + 39 OSF).
+Run 0725 = degraded run + new connectors (jibe-ynhhs, jibe-osf, workday-mcw).
+Expected SPONSOR_LEAD when Workday recovers: 607 (534 baseline + 3 YNHHS + 39 OSF + 31 MCW).
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 24 |
-| SPONSOR_LEAD (full-run expected) | 576 |
-| Total surfaced (PUBLISH + SL) | 600 |
+| SPONSOR_LEAD (full-run expected) | 607 |
+| SPONSOR_LEAD (degraded run 0725) | 378 |
+| Total surfaced (PUBLISH + SL) | 631 |
 | REJECT | 92 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -45,6 +46,7 @@ Expected SPONSOR_LEAD when Workday recovers: 576 (534 baseline + 3 YNHHS + 39 OS
 | workday-lvhn | 0 | 18 | 18 |
 | jibe-ynhhs | 0 | 3 | 3 |
 | jibe-osf | 0 | 39 | 39 |
+| workday-mcw | 0 | 31 | 31 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -137,6 +139,8 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Boston Medical Center | **In registry** as `workday-bostonmedical` (handle `bmc/wd1/BMC`), DISABLED pending wd1 CDN recovery. Handle confirmed 2026-06-13 from careers.bmc.org page source (bmc.wd1.myworkdayjobs.com/en-US/BMC). Safety-net academic medical center, Boston MA. | 7yr, 24 pos |
 | Roswell Park Cancer Institute | **In registry** as `workday-roswellpark` (handle `roswellpark/wd5/ExternalCareers`), DISABLED pending wd5 CDN recovery. Handle confirmed 2026-06-13 from roswellpark.org/careers page source. NY state cancer center, Buffalo NY. | 7yr, 45 pos |
 | Penn Medicine / UPHS | Workday wd1 tenant `uphs` confirmed (browse URL returns 500 WD error page, NOT 404 — tenant exists). Site path unverified: `uphs/wd1/External` and `uphs/wd1/UPHS` both return 500. CDN degraded — re-probe when wd1 recovers. DOL entity: University of Pennsylvania Health System. | 6yr, 45+ pos est |
+| Allegheny Health Network (AHN) | **In registry** as `workday-ahn` (handle `highmarkhealth/wd1/highmark`), DISABLED pending wd1 CDN recovery. Handle confirmed 2026-06-13 from ahn.org/careers redirect to careers.highmarkhealth.org (Highmark Health parent). EMPLOYER_ALIAS added: "allegheny health network" → "allegheny clinic". | 7yr, 31 pos |
+| Medical College of Wisconsin / Froedtert | **ACTIVE** as `workday-mcw` (wd503, LIVE). 31 SPONSOR_LEAD confirmed run 0725. wd503 is a new functional Workday DC. Also covers MCW Affiliated Hospitals (7yr/21pos) via same portal. | 6yr, 39 pos |
 
 ## What to fix next (priority order)
 
@@ -165,6 +169,8 @@ These are DOL 7-year iron-core sponsors with no active connector:
 18. **Yale New Haven Health System Jibe connector + 6 NONPHYS_TOKEN fixes** — FIXED runs post-0532: `jibe-ynhhs` connector added (`jobs.ynhhs.org/api/jobs`). YNHHS is 7yr/62pos iron-core DOL sponsor. ATS = Jibe (iCIMS wrapper; ng-app="jibeapply" confirmed). careers.ynhh.org has expired SSL; jobs.ynhhs.org is the accessible public API. Default keyword=physician returns pinned top results; only 3 genuine physician titles across all offsets (OBGYN Physician, OB/GYN Per Diem Greenwich, Hospice Physician). source.employer="Yale-New Haven Hospital" → normKey "yale new haven hospital" = direct persistence_index match. 6 NONPHYS_TOKENS added to fix false positives from YNHHS Jibe scan: " lpc " (Licensed Professional Counselor), " lmsw " (Licensed Master Social Worker), " mgr " (Manager abbreviation), "radiology tech" (Radiology Tech abbreviated), "polysomnograph" (Polysomnographic Tech), " huc " (Health Unit Coordinator). All 6 also added to audit.ts NOT_PHYSICIAN_OVERRIDES. Gold self-check still 15/15 after additions. Net: 3 clean SPONSOR_LEAD per run (CT-based; Yale YSM academic faculty recruited separately).
 
 20. **New disabled connectors + probe sweep (2026-06-13)**: Six new disabled entries added to registry: `workday-urmc` (rochester/wd5/UR_Staff, 35pos + Unity Hospital 24pos), `workday-rochestergeneral` (rrhs/wd5/RRH, 110pos), `workday-roswellpark` (roswellpark/wd5/ExternalCareers, 45pos), `workday-bostonmedical` (bmc/wd1/BMC, 24pos), `jibe-ufhealth` (pinned, 90pos), `jibe-medstar` (pinned, 115pos combined). All four Workday entries disabled pending CDN recovery; Jibe entries disabled (pinned, no physician category). Penn Medicine (`uphs/wd1`) tenant confirmed — site path unverified pending wd1 recovery. Broad iron-core ATS sweep (25+ employers): Mayo/Henry Ford/IU Health/SUNY Upstate/Northwell/UAB all blocked (Infor/Phenom/iCIMS); OHSU/MedStar Jibe portals pinned; Oracle HCM blocks Guthrie/WellSpan/Mount Sinai; no new enabled connectors added this sweep.
+
+21. **Medical College of Wisconsin Workday connector (wd503)** — FIXED run 0725: `workday-mcw` connector added (`mcw/wd503/ExternalCareers`). MCW = academic AMC in Milwaukee, WI; part of Froedtert & the Medical College of Wisconsin Health Network (Froedtert itself is blocked via Infor CloudSuite). New Workday DC `wd503` discovered and confirmed functional (HTTP 200 JSON). DOL iron-core: 'medical college of wisconsin' 6yr/39pos FY2025 = direct normKey match; also covers 'medical college of wisconsin affiliated hospitals' 7yr/21pos under same portal. jobFamilyGroup facets: Faculty (165 jobs) selected by physicianFacetIds() via d.includes('faculty'). Run results: 31 SPONSOR_LEAD, 0 false positives, 0 rejected — all physician faculty titles (Glaucoma Specialist, Cardiothoracic Surgeon, Cardiologist, Gastroenterologist, Endocrinologist, Orthopedic Surgeon, Pediatric Pathologist, Oncologist, etc.). WI-based; many positions at Froedtert-MCW hospital network sites (Froedtert campus + community sites). Expected SPONSOR_LEAD: 30-35 per run.
 
 19. **OSF HealthCare Jibe connector (tags=Physicians filter)** — FIXED run 0631: `jibe-osf` connector added (`osfcareers.org/api/jobs?keyword=&tags=Physicians`). OSF Multi-Specialty Group 7yr/69pos iron-core (also OSF Healthcare System 6yr/29pos). ATS = Jibe (iCIMS wrapper; ng-app="jibeapply"; client_code="osfhealthcare"). Discovery: default keyword=physician search returns all-staff pinned results (same RN/CNA results at every offset — Jibe pin behavior). Key insight: Jibe API accepts `tags=Physicians` filter parameter that routes to the Physicians category directly. Added optional `query` parameter to `fetchJibe()` (default "keyword=physician") and `jibeQuery` field to `SourceDef` to support per-connector query overrides. totalCount=194 physician-tagged; pagination pins at offset=100 → 40 accessible per run (JIBE_MAX_PHYSICIAN cap). source.employer="OSF Multi-Specialty Group" → normKey "osf multi-specialty group" = direct persistence_index match (no alias). All 40 titles verified clean: Neurohospitalist, Psychiatry Physician, Otolaryngology Physician, Headache Neurologist, PRN Interventional/Telehealth Cardiologist, PRN Radiation Oncologist, Vascular/Breast/General/Colorectal Surgeon, Allergy/Asthma/Immunology Physician, Occupational Medicine, Neurocritical Care, Family Medicine/Primary Care (IL), Internal Medicine (IL), Hematology/Oncology, Emergency Medicine Nocturnist, Pulmonary Critical Care, UICOMP-Peoria academic faculty (Pediatrics, Ophthalmology, Pulmonology, Nephrology), and more. IL-based system (Peoria, Rockford, Bloomington, Galesburg, Ottawa). "Physician Informatics Specialist" correctly rejected by "physician informatics" NONPHYS token. "Attending Hospital Dentist" does not trigger isPhysician() — "attending" is not a PHYS_TOKEN. Zero false positives. Net: 39 SPONSOR_LEAD per run (1 raw dedup dropped). Previously listed in Known Gaps as "iCIMS SPA-blocked" — the osfhealthcare.icims.com portal requires SSO, but the Jibe public API at osfcareers.org is accessible without auth.
 
