@@ -292,6 +292,18 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | Stanford Health Care | Workday `stanfordmedicine/wd115/shc_external_career_site` — 149 keyword hits, all NP/PA/APP/support staff; zero MD attending roles (physicians are Stanford University academic faculty, separate ATS) | Stanford alias exists (→ leland stanford jr university), no physician content on this surface |
 | Roswell Park Cancer Institute | Workday `roswellpark/wd5/ExternalCareers` — 42 keyword hits, all APP/nursing/pharmacy/support staff; zero MD attending roles (oncologists are SUNY academic faculty) | 7yr, 45 pos |
 | University of Florida / UF Health | Jibe portal `jobs.ufhealth.org` (ng-app="jibeapply" confirmed) — totalCount=1429 but all keyword results pin same non-physician titles at every offset; zero MD/DO attending jobs in first 100 unique results; UF physician faculty likely recruited via UF's main university HR portal, not this clinical support ATS | 6yr, 90 pos |
+| Guthrie Medical Group | Oracle Fusion HCM (`fa-ext.us.oracle.com` in page source at careers.guthrie.org) — inaccessible without SSO | 7yr, 34 pos |
+| Bassett Healthcare Network | Custom KontactIntelligence HTML portal (`careers.bassett.org`) — no JSON API; physician jobs as HTML anchor links only | 7yr, 34 pos |
+| URMC / University of Rochester | Workday confirmed (careers.urmc.edu page source); CDN degraded 2026-06-13 — retry when Workday recovers | 6yr, 35 pos |
+| Baystate Health | Workday confirmed (`baystatehealthjobs.com`); CDN degraded 2026-06-13 | 7yr, 49 pos |
+| UW Medicine | Workday confirmed (uwmedicine.org/jobs page source); CDN degraded 2026-06-13 | 7yr, 33 pos |
+| Advocate Aurora Health | Workday confirmed (`careers.aah.org`); CDN degraded 2026-06-13. Aurora Medical Group WI 7yr/33pos. | 7yr, 33 pos |
+| Eastern Maine Medical Center / MaineHealth | Infor CloudSuite (mainehealth.org redirect) — no accessible API | 7yr, 48 pos |
+| UVM Health Network Medical Group | Infor CloudSuite (`uvmhealthcareers.org`) — no accessible API | 7yr, 34 pos |
+| University of Utah Health | Infor CloudSuite (`employment.utah.edu`) — no accessible API | 5yr, 41 pos |
+| NYU Langone / NYU Grossman School of Medicine | Infor CloudSuite (nyulangone.org/careers redirect) — no accessible API | 6yr, 37 pos |
+| VCU Health System Authority | Phenom People SPA (`careers.vcuhealth.org/us/en`) — no public JSON API | 6yr, 36 pos |
+| USA Healthcare Management / USA Health (Univ South Alabama) | Jibe portal `careers.usahealthsystem.com` confirmed — severely pinned (same 10 results at all offsets); no Physicians tag category; physician keyword returns non-physician support staff via dept names in context | 7yr, 37 pos |
 | BronxCare Health System | ECONNREFUSED on all URLs (bronxcare.org, www.bronxcare.org) — website unreachable | 7yr, 118 pos (historical) |
 | Marshfield Clinic | Merged into Sanford Health; careers via sanfordcareers.com/marshfield-clinic using Sanford Workday (`sanford/wd5/SanfordHealth`) — already captured by existing workday-sanford connector (employer = "Sanford Health") | 7yr, 54 pos (now under Sanford umbrella) |
 | USACS Medical Group | Greenhouse board `boards.greenhouse.io/usacs` → 404 (board inactive); website careers page shows loading filters (JavaScript SPA); no accessible ATS API found | 7yr, 91 pos |

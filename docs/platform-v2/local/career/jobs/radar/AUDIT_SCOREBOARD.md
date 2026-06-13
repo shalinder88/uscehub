@@ -112,6 +112,18 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | WellSpan Health | Oracle HCM (joinwellspan.org marketing site; "Log into Oracle" link confirms backend) — inaccessible without SSO | 7yr, 22 pos |
 | Dartmouth Health | Prolucent/LiquidCompass SPA (`careers.dartmouth-health.org`; backend `partner-tenants.ats.liquidcompass.com/dartmouth-health/`) — all API endpoints return 404 HTML | 7yr, 18 pos |
 | University of Florida / UF Health | Jibe portal `jobs.ufhealth.org` confirmed — default keyword=physician pins non-physician results at every offset; zero MD/DO attending jobs in first 100 unique results. UF faculty likely on separate UF academic HR portal. | 6yr, 90 pos |
+| Guthrie Medical Group | Oracle Fusion HCM (`fa-ext.us.oracle.com` in page source at careers.guthrie.org) — inaccessible without SSO; same architecture as WellSpan | 7yr, 34 pos |
+| Bassett Healthcare Network | Custom KontactIntelligence HTML portal (`careers.bassett.org`; no JSON API; all API-like endpoints return same HTML; physician jobs listed as anchor links on home page) | 7yr, 34 pos |
+| URMC / University of Rochester | Workday confirmed (page source at careers.urmc.edu); Workday CDN degraded 2026-06-13 — retry when Workday recovers. Tenant likely `universityofrochester.wd1` | 6yr, 35 pos |
+| Baystate Health | Workday confirmed (`baystatehealthjobs.com`); Workday CDN degraded 2026-06-13 — retry when Workday recovers | 7yr, 49 pos |
+| UW Medicine | Workday confirmed (uwmedicine.org/jobs page source); Workday CDN degraded 2026-06-13 — retry when Workday recovers | 7yr, 33 pos |
+| Advocate Aurora Health | Workday confirmed (`careers.aah.org`); Workday CDN degraded 2026-06-13 — retry. Aurora Medical Group (WI) 7yr/33pos DOL entity. | 7yr, 33 pos |
+| Eastern Maine Medical Center / MaineHealth | Infor CloudSuite (mainehealth.org/careers-job-opportunities) — same architecture as MetroHealth | 7yr, 48 pos |
+| UVM Health Network Medical Group | Infor CloudSuite (`uvmhealthcareers.org`) — same architecture as MetroHealth | 7yr, 34 pos |
+| University of Utah Health | Infor CloudSuite (`employment.utah.edu/organization/university-of-utah-health`) — same architecture as MetroHealth | 5yr, 41 pos |
+| NYU Langone / NYU Grossman School of Medicine | Infor CloudSuite (nyulangone.org/careers redirect) — same architecture as MetroHealth | 6yr, 37 pos |
+| VCU Health System Authority | Phenom People SPA (`careers.vcuhealth.org/us/en`) — same architecture as BCH/Corewell | 6yr, 36 pos |
+| USA Healthcare Management (Univ South Alabama Health) | Jibe portal `careers.usahealthsystem.com` confirmed — severely pinned (same 10 results at all offsets); no Physicians tag (tags=Physicians returns 0); physician keyword returns non-physician support staff with specialty names in dept context | 7yr, 37 pos |
 
 ## What to fix next (priority order)
 
