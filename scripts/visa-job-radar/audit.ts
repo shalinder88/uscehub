@@ -95,6 +95,13 @@ const NOT_PHYSICIAN_OVERRIDES = [
   // Clinical staff who work IN physician offices/clinics (not physicians themselves):
   "licensed practical nurse", "lpn ", "lpn-", " lpn",
   "medical assistant", "nursing", "patient care", "float nurse",
+  // YNHHS Jibe false positives 2026-06-13:
+  " lpc ",       // Licensed Professional Counselor (LPC or LMSW OK) — psychiatr match
+  " lmsw ",      // Licensed Master Social Worker — psychiatr match
+  " mgr ",       // Manager abbreviation — Mgr Anatomic Pathology — patholog match
+  "radiology tech",    // Radiology Tech (abbreviated) — radiolog match
+  "polysomnograph",   // Polysomnographic Tech, Pediatrics — pediatric match
+  " huc ",       // Health Unit Coordinator (HUC) — oncolog match
 ];
 function looksLikePhysician(title: string): boolean {
   const t = title.toLowerCase();

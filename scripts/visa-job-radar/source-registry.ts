@@ -387,6 +387,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 191 recentYearPositions FY2025). normKey 'maimonides medical center' matches persistence_index directly — no alias needed. ATS = Jibe (cid:'maimo'). careers.maimo.org is the dedicated Jibe instance (jasession cookie, JSON content-type confirmed 2026-06-13); careers.maimo.org/api/jobs?keyword=physician returns HTTP 200, totalCount=200. Physician density ~6% after isPhysician() filtering. Brooklyn NY; specialties cover internal medicine, hospitalist, psychiatry, pediatric subspecialties.",
   },
   {
+    id: "jibe-ynhhs",
+    tier: 1,
+    connector: "jibe",
+    label: "Yale New Haven Health System — physicians (Jibe/iCIMS)",
+    handle: "https://jobs.ynhhs.org",
+    employer: "Yale-New Haven Hospital",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 62 recentYearPositions FY2025). source.employer='Yale-New Haven Hospital' → normKey 'yale new haven hospital' = direct persistence_index match. ATS = Jibe (iCIMS wrapper) at jobs.ynhhs.org (HTTP 200 confirmed 2026-06-13; careers.ynhh.org has self-signed SSL — use jobs.ynhhs.org instead). external-ynhhs.icims.com/jobs has loginOnly=1 but jobs.ynhhs.org/api/jobs is public JSON API. Low physician density (~3/1516 keyword results = OBGYN Physician, OB/GYN Per Diem, Hospice Physician); Jibe pagination returns same 3 jobs at all offsets (pinned top results). Expect 3 SPONSOR_LEAD per run — Yale YSM academic faculty recruited separately. CT-based (New Haven, Bridgeport, Greenwich hospitals).",
+  },
+  {
     id: "findly-upmc",
     tier: 1,
     connector: "findly",

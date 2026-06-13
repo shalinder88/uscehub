@@ -426,6 +426,27 @@ const NONPHYS_TOKENS: string[] = [
   // relationships between a health system and community physicians. No attending-physician
   // title uses "physician liaison" as a substring.
   "physician liaison",
+  // YNHHS Jibe false positives 2026-06-13:
+  // "Older Adult Psychiatric Inpatient Clinician (LPC or LMSW OK)" — "psychiatr" PHYS match.
+  // LPC (Licensed Professional Counselor) and LMSW (Licensed Master Social Worker) are
+  // non-physician mental health roles. " lpc " and " lmsw " with spaces = safe narrow tokens.
+  " lpc ",
+  " lmsw ",
+  // "Mgr Anatomic Pathology" — "patholog" PHYS match. "Mgr" = Manager abbreviation.
+  // "manager" is already in NONPHYS but "mgr" abbreviation (with trailing space) is not.
+  // No attending-physician title starts with "Mgr "; management titles abridge to "Mgr".
+  " mgr ",
+  // "Interventional Radiology Tech" — "radiolog" PHYS match. "Tech" abbreviated (≠ "technician").
+  // "radiologist assistant" is already blocked but "radiology tech" (abbreviated) was not.
+  "radiology tech",
+  // "Registered Polysomnographic Tech, Pediatrics" — "pediatric" PHYS match. Polysomnographic
+  // techs are sleep study technologists; "polysomnograph" is a sleep study instrument and never
+  // appears in any physician title.
+  "polysomnograph",
+  // "HUC - 6.2 Med/Surg Oncology" — "oncolog" PHYS match. HUC = Health Unit Coordinator
+  // (floor secretary/unit clerk role). " huc " with spaces is safe; no physician title uses
+  // the HUC abbreviation as a standalone word.
+  " huc ",
 ];
 
 const PHYS_TOKENS: string[] = [
