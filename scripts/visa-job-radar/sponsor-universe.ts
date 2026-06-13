@@ -299,6 +299,10 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // AdventHealth (ATS, rebranded 2019) = Adventist Health System/Sunbelt, Inc. (DOL filer).
   // normEmployer("AdventHealth") → "adventhealth"; DOL normKey → "adventist health system sunbelt".
   "adventhealth": "adventist health system sunbelt",
+  // Brown Health (ATS, rebranded from Lifespan ~2023) = Lifespan Physician Group (DOL filer).
+  // normEmployer("Brown Health") → "brown health"; DOL normKey → "lifespan physician".
+  // "brown health" is not a standalone key in persistence_index so no collision guard fires.
+  "brown health": "lifespan physician",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.

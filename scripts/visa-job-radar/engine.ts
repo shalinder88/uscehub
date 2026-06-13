@@ -417,6 +417,11 @@ const NONPHYS_TOKENS: string[] = [
   // already blocked by "rn " and "nurse" but the bare "Physician Informatics Advocate" title
   // does not carry an RN marker. No attending-physician job title uses "physician informatics".
   "physician informatics",
+  // "Sr. Physician Liaison" false-positived on "physician" PHYS match 2026-06-13 (Brown Health).
+  // Physician Liaison is a non-MD outreach/recruitment role — coordinates referrals and
+  // relationships between a health system and community physicians. No attending-physician
+  // title uses "physician liaison" as a substring.
+  "physician liaison",
 ];
 
 const PHYS_TOKENS: string[] = [

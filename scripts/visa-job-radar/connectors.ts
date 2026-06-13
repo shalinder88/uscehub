@@ -240,8 +240,12 @@ export function physicianFacetIds(
     if (
       d.includes("physician") ||
       d.includes("faculty") ||
-      d.includes("provider") ||
       d.includes("medical staff")
+      // NOTE: "provider" removed 2026-06-13 — Brown Health (and likely others) have an
+      // "Advanced Practice Provider" job family containing only NP/PA/APP roles. Matching
+      // "provider" selects that family instead of falling back to keyword "physician" search,
+      // producing 0 physician candidates. No current enabled connector uses a "provider"
+      // facet for physician jobs — they all fall through to keyword+isPhysician filtering.
     ) {
       if (v.id) {
         ids.push(v.id);

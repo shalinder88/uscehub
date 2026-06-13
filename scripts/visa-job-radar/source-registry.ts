@@ -352,6 +352,17 @@ export const SOURCES: SourceDef[] = [
     note: "MUSC (Medical University of South Carolina and Affiliates). DOL iron-core: 7yr active, 49 recentYearPositions FY2025. Exact DOL legal name used as employer → normEmployer('Medical University of South Carolina and Affiliates') = 'medical university of south carolina and affiliates' = direct DOL normKey (no alias needed). A separate 1yr/0pos entry with normKey 'medical university of south carolina' (SPONSOR_DATA) would have blocked an alias. CXS endpoint confirmed 2026-06-13: musc.wd1.myworkdayjobs.com/MUSC, HTTP 200, 932 'physician' keyword hits. Physician density ~25% (5/20 in first page: Neurosurgery Physician, Urology Physician, Anesthesia Physician, ENT Physician, UNIV Open Rank Physician). Remaining 75% are NP/PA ('Nurse Practitioner or Physician Assistant') blocked by existing NONPHYS_TOKENS. No sponsorship denial fields in CXS or job detail HTML. Job detail HTML: employer org 'C018 MUSC Community Physicians (MCP)' in structured data — use source.employer from registry for normEmployer lookup.",
   },
   {
+    id: "workday-brownhealth",
+    tier: 1,
+    connector: "workday",
+    label: "Brown Health (Lifespan) — physicians (Workday)",
+    handle: "brownhealth/wd12/External_Careers",
+    employer: "Brown Health",
+    enabled: true,
+    needsVerification: true,
+    note: "Brown Health (formerly Lifespan Health System, rebranded ~2023). DOL iron-core: 'lifespan physician' (7yr active, 48 recentYearPositions FY2025). EMPLOYER_ALIAS in sponsor-universe.ts: 'brown health' → 'lifespan physician'. 'brown health' is not in persistence_index as a standalone key, so no normKey collision. CXS endpoint confirmed 2026-06-13: brownhealth.wd12.myworkdayjobs.com/External_Careers, HTTP 200, 770 'physician' keyword hits. Physician density ~79% in 100-sample (real: Physician, MG Physician, Physician PD, Hospitalist, Pediatrician, Staff Physician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine; blocked by NONPHYS_TOKENS: NP/PA, 'Sr. Physician Liaison' → new 'physician liaison' token added engine.ts run 0303).",
+  },
+  {
     id: "jibe-emory",
     tier: 1,
     connector: "jibe",

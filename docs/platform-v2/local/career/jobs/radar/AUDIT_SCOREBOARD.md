@@ -1,16 +1,16 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0257  |  Audited: 2026-06-13
+Run: 2026-06-13-0324  |  Audited: 2026-06-13
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
-| PUBLISH (non-fixture) | 16 |
-| SPONSOR_LEAD | 295 |
-| Total surfaced (PUBLISH + SL) | 311 |
-| REJECT | 91 |
+| PUBLISH (non-fixture) | 24 |
+| SPONSOR_LEAD | 337 |
+| Total surfaced (PUBLISH + SL) | 361 |
+| REJECT | 95 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
-**✅ PASS** — 22 quotes verified, 0 mismatches
+**✅ PASS** — 38 quotes verified, 0 mismatches
 
 ## Dimension 2 — PUBLISH denial-language leakage
 **✅ PASS** — no PUBLISH job should contain an explicit denial phrase
@@ -25,22 +25,23 @@ Run: 2026-06-13-0257  |  Audited: 2026-06-13
 | jsonld-umms | 2 | 35 | 37 |
 | workday-adventhealth | 0 | 6 | 6 |
 | workday-altamed | 0 | 24 | 24 |
+| workday-brownhealth | 0 | 27 | 27 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
 | workday-mgb | 0 | 21 | 21 |
-| workday-montefiore | 0 | 14 | 14 |
+| workday-montefiore | 0 | 19 | 19 |
 | workday-msk | 0 | 6 | 6 |
 | workday-musc | 0 | 20 | 20 |
 | workday-ochsner | 2 | 13 | 15 |
-| workday-presbyterianhealthcare | 4 | 27 | 31 |
-| workday-sanford | 8 | 0 | 8 |
+| workday-presbyterianhealthcare | 4 | 35 | 39 |
+| workday-sanford | 16 | 2 | 18 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
 
 ## Dimension 6 — Quote specificity
-**✅ ALL RICH** — 22 rich, 0 bare
+**✅ ALL RICH** — 38 rich, 0 bare
 
 Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 
@@ -48,24 +49,32 @@ Bare = quote contains no H-1B/J-1/waiver/cap-exempt — weaker evidence.
 Avg age: **24.0 days**  |  Max age: **80 days**  |  Stale threshold: 120 days
 
 ## PUBLISH job inventory (non-fixture)
-| Employer | Title | State | Age | Labels | Quote |
-|----------|-------|-------|-----|--------|-------|
-| Sanford Health | Physician - Orthopedic Spine Surgery | WI | 1d | EXPLICIT_H1B | "Visas Accepted H1B" |
-| Sanford Health | Physician - Psychiatry | WI | 1d | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
-| Sanford Health | Physician - Anesthesiology | WI | 2d | EXPLICIT_H1B | "Visas Accepted H1B" |
-| Sanford Health | Physician - Orthopedic Surgery | WI | 5d | EXPLICIT_H1B | "Visas Accepted H1B" |
-| Sanford Health | Physician - General Surgery | WI | 5d | EXPLICIT_H1B | "Visas Accepted H1B" |
-| Sanford Health | Physician - Pulmonology & Critical Care | WI | 12d | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
-| Sanford Health | Physician - Radiology, Interventional | WI | 16d | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
-| Sanford Health | Physician - Family Medicine | WI | 17d | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
-| Ochsner Health | Physician - Anesthesiologist - Academic | ? | 2d | EXPLICIT_VISA_SPONSORSHIP, EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visa sponsorship"; "J1/H1B" |
-| Ochsner Health | Physician - PRN Interventional Cardiology | ? | 9d | EXPLICIT_J1_WAIVER | "Open to J-1 visa" |
-| Presbyterian Healthcare Services | MD - Internal Medicine - Santa Fe - St. Michaels | ? | 38d | EXPLICIT_J1_WAIVER, EXPLICIT_CAP_EXEMPT | "J1 waiver"; "Cap Exempt" |
-| Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | ? | 72d | EXPLICIT_H1B | "H1b sponsorship" |
-| Presbyterian Healthcare Services | Pediatric Oncologist MD/DO - Hematology and Oncolo | ? | 74d | EXPLICIT_H1B | "H1b sponsorship" |
-| Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | ? | 80d | EXPLICIT_H1B | "H1b sponsorship" |
-| University of Maryland Medical System | Nephrologist - Physician | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
-| University of Maryland Medical System | Gastroenterologist | MD | 24d | EXPLICIT_J1_WAIVER | "J1 waiver" |
+| Employer | Title | State | Labels | Quote |
+|----------|-------|-------|--------|-------|
+| Sanford Health | Physician - Orthopedic Spine Surgery | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Psychiatry | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Anesthesiology | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Orthopedic Surgery | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - General Surgery | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Pulmonology & Critical Care | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Radiology, Interventional | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Family Medicine | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Emergency Medicine | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Emergency Medicine (Nights) | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Ophthalmology - Retina | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Medical Oncology | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Obstetrics & Gynecology Laborist | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Ophthalmology | WI | EXPLICIT_H1B | "Visas Accepted H1B" |
+| Sanford Health | Physician - Neurology - Stroke Non-Interventional | SD | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Sanford Health | Physician - Anesthesiology (J1) | WI | EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visas Accepted H1B"; "H1B or J1" |
+| Ochsner Health | Physician - Anesthesiologist - Academic | LA | EXPLICIT_VISA_SPONSORSHIP, EXPLICIT_H1B, EXPLICIT_J1_WAIVER | "Visa sponsorship"; "J1/H1B" |
+| Ochsner Health | Physician - PRN Interventional Cardiology | LA | EXPLICIT_J1_WAIVER | "Open to J-1 visa" |
+| Presbyterian Healthcare Services | MD - Internal Medicine - Santa Fe - St. Michaels | NM | EXPLICIT_J1_WAIVER, EXPLICIT_CAP_EXEMPT | "J1 waiver"; "Cap Exempt" |
+| Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | NM | EXPLICIT_H1B | "H1b sponsorship" |
+| Presbyterian Healthcare Services | Pediatric Oncologist MD/DO - Hematology and Oncology | NM | EXPLICIT_H1B | "H1b sponsorship" |
+| Presbyterian Healthcare Services | Pediatric Endocrinologist MD/DO | NM | EXPLICIT_H1B | "H1b sponsorship" |
+| University of Maryland Medical System | Nephrologist - Physician | MD | EXPLICIT_J1_WAIVER | "J1 waiver" |
+| University of Maryland Medical System | Gastroenterologist | MD | EXPLICIT_J1_WAIVER | "J1 waiver" |
 
 ## Known coverage gaps (iron-core employers not yet wired)
 These are DOL 7-year iron-core sponsors with no active connector:
@@ -103,3 +112,5 @@ These are DOL 7-year iron-core sponsors with no active connector:
 11. **AdventHealth Workday connector + batch NONPHYS hardening** — FIXED run 1943: workday-adventhealth connector added (adventhealth/wd12/AH_External_Career_Site). EMPLOYER_ALIAS "adventhealth"→"adventist health system sunbelt" (6yr/107pos). Five NONPHYS_TOKENS additions from scan: "arnp" (Cardiology ARNP = ARNP variant of APRN not caught by "aprn" substring), "app " (APP prefix = Advanced Practice Provider roles like "APP Hospitalist"), "physician relations" (Sr Physician Relations Specialist), "coder" (Physician Enterprise Coder — "physician coder" substring misses when "enterprise" intervenes), "physician informatics" (Physician Informatics Advocate — non-MD informaticist). D5 overrides updated. 6 clean SPONSOR_LEAD: OBGYN Physician, OB Hospitalist, Lead Hospitalist, Hematology Oncology Physician, Primary Care Physician, Physician Advisor.
 
 12. **Mass General Brigham Workday connector + "physican" PHYS_TOKEN** — FIXED run 0217: workday-mgb connector added (massgeneralbrigham/wd1/MGBExternal). 6yr/73pos iron-core; direct DOL normKey match ("mass general brigham"), no alias needed. "physican" (missing 'i') added to PHYS_TOKENS — MGB consistently uses this typo in ATS job titles (e.g. "Physican Urology", "Physican-Pediatrics"); 8-char substring ≠ 9-char "physician", so these were being silently dropped. 21 clean SPONSOR_LEAD surfaced (Physician Scientist, Physician Internal Medicine, Physician Urology, Infectious Disease Physician, Physican-Pediatrics, and 16 more attending-level roles). No new false-positives found in MGB sample.
+
+13. **Brown Health Workday connector + "physician liaison" NONPHYS_TOKEN + Workday "provider" facet fix** — FIXED run 0324: Three separate issues resolved. (A) workday-brownhealth connector added (brownhealth/wd12/External_Careers). Brown Health = formerly Lifespan Health System, rebranded ~2023. EMPLOYER_ALIAS "brown health" → "lifespan physician" (7yr/48pos iron-core; no normKey collision). (B) "physician liaison" added to NONPHYS_TOKENS — Brown Health uses "Sr. Physician Liaison" title for non-MD outreach/recruitment staff; this was a false positive. (C) Workday `physicianFacetIds()` had "provider" in its match terms — Brown Health exposes an "Advanced Practice Provider" job family with `d.includes("provider")` match. The facet probe selected it (54 NP/PA/APP jobs), used it as the filter, and returned 0 real physicians — keyword fallback never activated. Fix: removed "provider" from `physicianFacetIds` matching (audited all 14 active Workday connectors; none uses a "provider" job family for physician jobs — they all fall through to keyword+isPhysician filtering or use "faculty"/"physician" facets). 27 clean SPONSOR_LEAD surfaced: physician, Physician, MG Physician, Physician PD, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine, etc.
