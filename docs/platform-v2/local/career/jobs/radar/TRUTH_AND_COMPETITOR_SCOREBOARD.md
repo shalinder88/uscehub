@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-13-0421  |  Produced: 2026-06-13
+Run: 2026-06-13-0507  |  Produced: 2026-06-13
 
 ---
 
@@ -46,9 +46,9 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (307 jobs)
+### 1B. SPONSOR_LEAD tier (516 jobs)
 
-All 307 SPONSOR_LEAD jobs come from employers that:
+All 516 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
 - Have ≥3 years active in FY2019–FY2025 DOL data
 - Have ≥3 recent certified physician LCA positions (gate uses recentYearPositions ?? totalPositions)
@@ -71,10 +71,16 @@ All 307 SPONSOR_LEAD jobs come from employers that:
 | AdventHealth | 6 | 6yr (via alias → "adventist health system sunbelt") | 107 pos | IRON-CORE (new: workday-adventhealth run 1943) |
 | Memorial Sloan Kettering Cancer Center | 6 | 7yr | 52 pos | IRON-CORE |
 | Sanford Health | 1 | 7yr (via alias) | 28 pos | IRON-CORE |
+| University of Pittsburgh Physicians (UPMC) | 5 | 7yr | 89 pos | IRON-CORE (new: findly-upmc run 0500) |
+| University of Kentucky Healthcare | 204 | 7yr | 48 pos | IRON-CORE (new: atom-uky run 0507) |
 
 **Note:** These jobs have NO explicit visa language in their postings — that's why they're SPONSOR_LEAD, not PUBLISH. The DOL history is the only evidence cited, and the note in every job says exactly that: "Posting states no visa intent — surfaced as a lead, not confirmed sponsorship." This is truthful.
 
 **Emory expansion (run 1625):** 40 Emory University physician faculty jobs surfaced via new Jibe/iCIMS connector (`careers.emory.edu/api/jobs`). All are visa-silent → SPONSOR_LEAD. Emory is a 7yr/40pos iron-core sponsor; the lead is DOL-backed. **NOTE run 0421:** Emory dropped to 2 active (Spine Physician + General Urologist) — 36 jobs from run 0324 naturally closed. API still live (1,852 totalCount), but physician-titled postings reduced. Not a code regression.
+
+**UPMC expansion (run 0500):** 5 University of Pittsburgh Physicians jobs surfaced via new Findly/Google CTS connector (`findly-upmc`). UPMC careers site front-end is Findly CWS (Ceridian/Dayforce), backed by Google Cloud Talent Solution. Public JSONP endpoint at `jobsapi-google.m-cloud.io/api/job/search`; company ID `companies/4c0b87d3-a9b3-4243-b9c7-2ad12c533ab3` from `cws_opts.org_id` in page source; `customAttributeFilter=primary_category="Physicians"` narrows server-side to the Physicians category. 7yr/89pos iron-core; normKey "university of pittsburgh physicians" = direct DOL match (no alias). Physician titles: Transplant Nephrologist, Pediatric Neurologist, Family Medicine Physician, Molecular Genomic Pathologist, Hospitalist. Underlying ATS is Taleo (upmcjobs.taleo.net) — Findly surfaces only jobs explicitly categorized as Physicians, so this may underrepresent full UPMC physician openings.
+
+**UK Healthcare expansion (run 0507):** 204 University of Kentucky physician jobs surfaced via new PeopleAdmin Atom connector (`atom-uky`). ATS is PeopleAdmin at `ukjobs.uky.edu`; `/postings/all_jobs.atom` feed returns all open positions (805 total entries) with full HTML job descriptions in `<content>` element. Parsed with `fast-xml-parser`; HTML stripped via `stripHtml()` before isPhysician() filtering. 7yr/48pos iron-core; normKey "university of kentucky" = direct DOL match (no alias). Two explicit J-1 physician jobs confirmed in feed (Pediatric Radiologist, Vascular & Interventional Radiologist). All 204 physician-titled candidates → SPONSOR_LEAD via sponsorEnrich() (no explicit visa language in ATS postings).
 
 **Maimonides expansion (run 0421):** 6 Maimonides Medical Center physician jobs surfaced via new Jibe connector (`careers.maimo.org/api/jobs`). Confirmed: cid="maimo", jasession cookie, JSON content-type. 7yr/191pos iron-core; normKey "maimonides medical center" = direct DOL match. Physician titles: Director of Radiation Oncology, Psychiatrist, Attending Physician-Pediatric Endocrinology, Physician, Unit Director Psychiatry, Assistant Vice President of Psychiatry. Brooklyn NY. ALSO fixed two bugs in this run: (1) raw sourceId dedup — Jibe paginates duplicate physician jobs across pages; NO_VISA_MENTION jobs (REJECT-bucket) were not caught by canonical dedupe() pass → both copies promoted by sponsorEnrich(); fixed by first-wins dedup on raw candidates before buildRadarJobs(). (2) "nursing" NONPHYS_TOKEN added — "nurse" ≠ "nursing" substring; "Asst Director Nursing" slipped through on "pediatric" PHYS match.
 
@@ -88,7 +94,7 @@ All 307 SPONSOR_LEAD jobs come from employers that:
 
 **AdventHealth expansion (run 1943, +6 SL):** 6 AdventHealth physician jobs via new Workday connector (`adventhealth/wd12/AH_External_Career_Site`). EMPLOYER_ALIAS added: "adventhealth" → "adventist health system sunbelt" (rebranded from Adventist Health System 2019). 6yr/107pos iron-core. Connector hardened: "Cardiology ARNP" false positive removed by adding "arnp" to NONPHYS_TOKENS; "APP Hospitalist"/"APP Psychiatry"/"APP Family Medicine" blocked by "app " (prefix); "Sr Physician Relations Specialist" blocked by "physician relations"; "Physician Enterprise Coder - Cardiology" blocked by "coder"; "Physician Informatics Advocate" blocked by "physician informatics". Final 6 are all real MD positions (OBGYN, OB Hospitalist, Lead Hospitalist, Hematology Oncology, Primary Care, Physician Advisor).
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS. Run 1943: AdventHealth Workday connector added +6 SL; arnp + app + coder + physician relations + physician informatics added to NONPHYS_TOKENS. Run 0217: MGB Workday connector added +21 SL (6yr/73pos iron-core; massgeneralbrigham.wd1/MGBExternal; direct DOL normKey match); "physican" (MGB ATS typo of "physician") added to PHYS_TOKENS. Run 0257: MUSC Workday connector added +20 SL (7yr/49pos iron-core; musc.wd1/MUSC; exact DOL legal name used as employer — 1yr/0pos SPONSOR_DATA entry for bare "medical university of south carolina" would have blocked alias, so source.employer = full legal name "Medical University of South Carolina and Affiliates" for direct normKey match). MUSC faculty titles: Neurosurgery, Neurohospitalist, Anesthesiology, Pathology, Radiology, Neurology, General Internal Medicine. Run 0324: Brown Health Workday connector added +27 SL (7yr/48pos iron-core via alias "brown health" → "lifespan physician"; brownhealth.wd12/External_Careers; Brown Health = formerly Lifespan Health System, rebranded ~2023). Three fixes in this run: (1) workday-brownhealth connector, (2) "physician liaison" added to NONPHYS_TOKENS (Sr. Physician Liaison = non-MD outreach role), (3) Workday `physicianFacetIds()` "provider" match removed — Brown Health's "Advanced Practice Provider" facet (54 NP/PA/APP jobs) was selected instead of keyword search, producing 0 real physicians. All 14 active Workday connectors audited: none uses a "provider" job family for physician jobs. Brown Health physician titles: physician, Physician, MG Physician, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine. Run 0421: Maimonides Jibe connector added +6 SL (7yr/191pos iron-core; careers.maimo.org/api/jobs; direct normKey match). Raw sourceId dedup fixed in run.ts (Jibe pagination dedup bug). "nursing" NONPHYS_TOKEN added. Emory down to 2 SL (natural job closings). Net: 307 SL (was 337; Emory -36, Maimonides +6).
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS. Run 1943: AdventHealth Workday connector added +6 SL; arnp + app + coder + physician relations + physician informatics added to NONPHYS_TOKENS. Run 0217: MGB Workday connector added +21 SL (6yr/73pos iron-core; massgeneralbrigham.wd1/MGBExternal; direct DOL normKey match); "physican" (MGB ATS typo of "physician") added to PHYS_TOKENS. Run 0257: MUSC Workday connector added +20 SL (7yr/49pos iron-core; musc.wd1/MUSC; exact DOL legal name used as employer — 1yr/0pos SPONSOR_DATA entry for bare "medical university of south carolina" would have blocked alias, so source.employer = full legal name "Medical University of South Carolina and Affiliates" for direct normKey match). MUSC faculty titles: Neurosurgery, Neurohospitalist, Anesthesiology, Pathology, Radiology, Neurology, General Internal Medicine. Run 0324: Brown Health Workday connector added +27 SL (7yr/48pos iron-core via alias "brown health" → "lifespan physician"; brownhealth.wd12/External_Careers; Brown Health = formerly Lifespan Health System, rebranded ~2023). Three fixes in this run: (1) workday-brownhealth connector, (2) "physician liaison" added to NONPHYS_TOKENS (Sr. Physician Liaison = non-MD outreach role), (3) Workday `physicianFacetIds()` "provider" match removed — Brown Health's "Advanced Practice Provider" facet (54 NP/PA/APP jobs) was selected instead of keyword search, producing 0 real physicians. All 14 active Workday connectors audited: none uses a "provider" job family for physician jobs. Brown Health physician titles: physician, Physician, MG Physician, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine. Run 0421: Maimonides Jibe connector added +6 SL (7yr/191pos iron-core; careers.maimo.org/api/jobs; direct normKey match). Raw sourceId dedup fixed in run.ts (Jibe pagination dedup bug). "nursing" NONPHYS_TOKEN added. Emory down to 2 SL (natural job closings). Net: 307 SL (was 337; Emory -36, Maimonides +6). Run 0500: findly-upmc added +5 SL (UPMC, 7yr/89pos iron-core; Findly/Google CTS connector; direct normKey "university of pittsburgh physicians"). Run 0507: atom-uky added +204 SL (UK Healthcare, 7yr/48pos iron-core; PeopleAdmin Atom feed; direct normKey "university of kentucky"). Net: 516 SL.
 
 ---
 
@@ -122,7 +128,10 @@ Our `normEmployer()` strips punctuation and lowercases. Some PUBLISH employers' 
 
 | Maimonides Medical Center | "maimonides medical center" | Direct match — no alias needed; normEmployer("Maimonides Medical Center") = "maimonides medical center" = exact DOL normKey (7yr, 191 pos FY2025). | 6 SPONSOR_LEAD now surfaced (run 0421) |
 
-**Status:** All employer aliases working correctly as of run 0421. MGB, MUSC, and Maimonides (runs 0217, 0257, 0421) are direct normKey matches — no aliases required.
+| University of Pittsburgh Physicians (UPMC) | "university of pittsburgh physicians" | Direct match — no alias needed; normEmployer("University of Pittsburgh Physicians") = "university of pittsburgh physicians" = exact DOL normKey (7yr, 89 pos FY2025). | 5 SPONSOR_LEAD now surfaced (run 0500) |
+| University of Kentucky Healthcare | "university of kentucky" | Direct match — no alias needed; normEmployer("University of Kentucky") = "university of kentucky" = exact DOL normKey (7yr, 48 pos FY2025). | 204 SPONSOR_LEAD now surfaced (run 0507) |
+
+**Status:** All employer aliases working correctly as of run 0507. MGB, MUSC, Maimonides, UPMC, and University of Kentucky (runs 0217, 0257, 0421, 0500, 0507) are direct normKey matches — no aliases required.
 
 ---
 
@@ -132,7 +141,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (24): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (307): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (516): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -288,9 +297,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-13-0324 final state:**
-- 24 PUBLISH + 337 SPONSOR_LEAD = 361 total surfaced (non-fixture PUBLISH)
-- Fetch volume: 540 candidates (14 active connectors; VUMC + Mercy disabled)
-- NOT_PHYSICIAN rejects: 4 (all correct: gold NP fixture, gold Therapist fixture, UMMS Sr Physician Asst I x2)
+**Run 2026-06-13-0507 final state:**
+- 29 PUBLISH + 516 SPONSOR_LEAD = 545 total surfaced (non-fixture PUBLISH)
+- Fetch volume: 716 candidates (18 active connectors; VUMC + Mercy disabled)
+- NOT_PHYSICIAN rejects: 3
 - Audit D1-D7: **ALL PASS / CLEAN**
-- Session net vs run 0257: +27 SPONSOR_LEAD from Brown Health Workday connector (7yr/48pos iron-core via Lifespan Physician alias, RI); +8 Sanford new postings (PUBLISH); +5 Montefiore new postings; +8 Presbyterian new SL. Root cause for Brown Health 0→27: Workday "provider" facet false-selection + missing EMPLOYER_ALIAS + missing "physician liaison" NONPHYS_TOKEN — all three fixed in run 0324.
+- Session net vs run 0421: +5 SPONSOR_LEAD from UPMC findly connector (run 0500; 7yr/89pos, PA); +204 SPONSOR_LEAD from UK Healthcare atom connector (run 0507; 7yr/48pos, KY). Two new connector types added: fetchFindly() (Google CTS proxy/JSONP) and fetchAtom() (PeopleAdmin XML feed).
