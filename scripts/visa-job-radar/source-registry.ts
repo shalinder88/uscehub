@@ -301,6 +301,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 19 certified positions). ATS = Phenom (tenant WHWWHSUS). Search page is a React SPA; fetchJsonLd falls back to sitemap enumeration. careers.wellstar.org/sitemap.xml → sitemap_index.xml (3 sub-sitemaps) → sitemap2.xml (384 job URLs) + sitemap3.xml (86 job URLs), ~66 physician-slug matches pre-filter. Verified 2026-06-13: /job/JR-53304/Physician-Primary-Care-Lake-Oconee-Greene-County returns @type:JobPosting, employer='5000 Wellstar Medical Group, LLC', occupationalCategory=Providers, full HTML description (pipeline UA confirmed). employer field set to 'Wellstar Medical Group' so normEmployer → 'wellstar medical' = DOL PI normKey directly. GA-based regional health system (Kennestone, Cobb, MCG Health).",
   },
   {
+    id: "jsonld-miami",
+    tier: 1,
+    connector: "jsonld",
+    label: "University of Miami / UHealth — physicians (Phenom)",
+    handle: "https://careers.miami.edu/us/en/search-results?keywords=physician",
+    employer: "University of Miami",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 36 certified positions). ATS = Phenom (tenant UOMUOMUS), hosted at careers.miami.edu. careers.miami.edu/sitemap.xml → sitemapindex with 4 sub-sitemaps (sitemap1-4.xml, 526+500+500+487 total job URLs = 2013 total, ~380 physician-slug pre-filter across 4 sitemaps). Verified 2026-06-13: /us/en/job/R100091492/UMMG-Staff-Physician-Diagnostic-Radiology-Nuclear-Medicine returns @type:JobPosting, hiringOrganization.name='UOMUOMUS', occupationalCategory='Faculty & Physicians', location=Miami FL. EMPLOYER_ALIAS 'uomuomus'→'university of miami' required (Phenom org code, not a readable name). Backend ATS is Workday (umiami tenant, per job description 'log in to Workday'). UMMG = University of Miami Medical Group. FL-based academic medical center (Jackson Memorial Hospital, UHealth Tower, Bascom Palmer Eye).",
+  },
+  {
     id: "jsonld-uabmedicine",
     tier: 1,
     connector: "jsonld",

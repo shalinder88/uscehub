@@ -308,6 +308,10 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // (it is not a CORP_SUFFIX), producing "5000 wellstar medical" instead of "wellstar medical".
   // Alias routes it to the correct DOL normKey (7yr/19pos FY2025).
   "5000 wellstar medical": "wellstar medical",
+  // University of Miami Phenom tenant code "UOMUOMUS" is set as hiringOrganization.name
+  // in all JSON-LD job postings. normEmployer("UOMUOMUS") → "uomuomus" (no CORP_SUFFIX tokens).
+  // DOL LCA filer is "University of Miami" (7yr/36pos FY2025, normKey "university of miami").
+  "uomuomus": "university of miami",
   // Allegheny Health Network (ATS, public-facing name) = Allegheny Clinic (DOL filer, 7yr/31pos).
   // normEmployer("Allegheny Health Network") → "allegheny health network"; DOL normKey → "allegheny clinic".
   // "allegheny health network medical education consortium" is a separate 1yr/1pos PI entry and not a collision risk.
