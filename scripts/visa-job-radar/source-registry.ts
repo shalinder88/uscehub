@@ -341,6 +341,17 @@ export const SOURCES: SourceDef[] = [
     note: "Mass General Brigham (formerly Partners Healthcare; includes MGH, Brigham & Women's, etc.). DOL iron-core: mass general brigham (6yr active, 73 recentYearPositions FY2025). normEmployer('Mass General Brigham') → 'mass general brigham' — direct DOL match, no alias needed. CXS endpoint confirmed 2026-06-13: massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal, HTTP 200, 1036 'physician' keyword hits. Physician density ~55% in first 20 (11 physician attending + 9 PA/other). PHYS_TOKENS: 'physican' (MGB ATS typo of 'physician') added to engine.ts to catch 'Physican Urology', 'Physican-Pediatrics' etc. No employer-specific false positives identified in sample scan.",
   },
   {
+    id: "workday-musc",
+    tier: 1,
+    connector: "workday",
+    label: "MUSC — physicians (Workday)",
+    handle: "musc/wd1/MUSC",
+    employer: "Medical University of South Carolina and Affiliates",
+    enabled: true,
+    needsVerification: true,
+    note: "MUSC (Medical University of South Carolina and Affiliates). DOL iron-core: 7yr active, 49 recentYearPositions FY2025. Exact DOL legal name used as employer → normEmployer('Medical University of South Carolina and Affiliates') = 'medical university of south carolina and affiliates' = direct DOL normKey (no alias needed). A separate 1yr/0pos entry with normKey 'medical university of south carolina' (SPONSOR_DATA) would have blocked an alias. CXS endpoint confirmed 2026-06-13: musc.wd1.myworkdayjobs.com/MUSC, HTTP 200, 932 'physician' keyword hits. Physician density ~25% (5/20 in first page: Neurosurgery Physician, Urology Physician, Anesthesia Physician, ENT Physician, UNIV Open Rank Physician). Remaining 75% are NP/PA ('Nurse Practitioner or Physician Assistant') blocked by existing NONPHYS_TOKENS. No sponsorship denial fields in CXS or job detail HTML. Job detail HTML: employer org 'C018 MUSC Community Physicians (MCP)' in structured data — use source.employer from registry for normEmployer lookup.",
+  },
+  {
     id: "jibe-emory",
     tier: 1,
     connector: "jibe",

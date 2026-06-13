@@ -1,5 +1,5 @@
 # Visa Job Radar — Truth Verification & Competitor Comparison
-Run: 2026-06-13-0217  |  Produced: 2026-06-13
+Run: 2026-06-13-0257  |  Produced: 2026-06-13
 
 ---
 
@@ -38,9 +38,9 @@ Every PUBLISH job must have: (a) verbatim employer-stated visa phrase, (b) char-
 
 ---
 
-### 1B. SPONSOR_LEAD tier (275 jobs)
+### 1B. SPONSOR_LEAD tier (295 jobs)
 
-All 275 SPONSOR_LEAD jobs come from employers that:
+All 295 SPONSOR_LEAD jobs come from employers that:
 - Appear in the DOL LCA H-1B physician sponsor index
 - Have ≥3 years active in FY2019–FY2025 DOL data
 - Have ≥3 recent certified physician LCA positions (gate uses recentYearPositions ?? totalPositions)
@@ -57,6 +57,7 @@ All 275 SPONSOR_LEAD jobs come from employers that:
 | Montefiore Medical Center | 15 | 7yr | 51 pos | IRON-CORE |
 | University of Kansas Medical Center | 11 | 7yr | 18 pos | IRON-CORE (new: workday kumc-jobs) |
 | Mass General Brigham | 21 | 6yr | 73 pos | IRON-CORE (new: workday-mgb run 0217) |
+| MUSC (Medical University of South Carolina and Affiliates) | 20 | 7yr | 49 pos | IRON-CORE (new: workday-musc run 0257) |
 | AdventHealth | 6 | 6yr (via alias → "adventist health system sunbelt") | 107 pos | IRON-CORE (new: workday-adventhealth run 1943) |
 | Memorial Sloan Kettering Cancer Center | 6 | 7yr | 52 pos | IRON-CORE |
 | Sanford Health | 1 | 7yr (via alias) | 28 pos | IRON-CORE |
@@ -75,7 +76,7 @@ All 275 SPONSOR_LEAD jobs come from employers that:
 
 **AdventHealth expansion (run 1943, +6 SL):** 6 AdventHealth physician jobs via new Workday connector (`adventhealth/wd12/AH_External_Career_Site`). EMPLOYER_ALIAS added: "adventhealth" → "adventist health system sunbelt" (rebranded from Adventist Health System 2019). 6yr/107pos iron-core. Connector hardened: "Cardiology ARNP" false positive removed by adding "arnp" to NONPHYS_TOKENS; "APP Hospitalist"/"APP Psychiatry"/"APP Family Medicine" blocked by "app " (prefix); "Sr Physician Relations Specialist" blocked by "physician relations"; "Physician Enterprise Coder - Cardiology" blocked by "coder"; "Physician Informatics Advocate" blocked by "physician informatics". Final 6 are all real MD positions (OBGYN, OB Hospitalist, Lead Hospitalist, Hematology Oncology, Primary Care, Physician Advisor).
 
-**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS. Run 1943: AdventHealth Workday connector added +6 SL; arnp + app + coder + physician relations + physician informatics added to NONPHYS_TOKENS. Run 0217: MGB Workday connector added +21 SL (6yr/73pos iron-core; massgeneralbrigham.wd1/MGBExternal; direct DOL normKey match); "physican" (MGB ATS typo of "physician") added to PHYS_TOKENS.
+**History:** Before run 1407, One Medical false signal fixed by quality threshold. Run 1419: Ochsner + Sanford aliases added. Run 1625: Emory Jibe connector added +40 SPONSOR_LEAD. Run 1648: KUMC Workday added +11 SPONSOR_LEAD. Run 1747: UMMS gate fix +39 SPONSOR_LEAD. Run 1759: Jefferson alias fix +40 SPONSOR_LEAD. Run 1814: Geisinger Workday added +40 SPONSOR_LEAD (7yr/78pos iron-core, PA). Run 1840: VUMC + Mercy disabled (no MD/DO attending jobs on their ATS portals); sonographer + radiologist assistant added to NONPHYS_TOKENS. Run 1849: 7 batch NONPHYS fixes (DDS, PMHNP, psychologist, 3x radiology ops directors, corporate director, software engineer). Run 1901: physician asst + optometry added to NONPHYS_TOKENS. Run 1943: AdventHealth Workday connector added +6 SL; arnp + app + coder + physician relations + physician informatics added to NONPHYS_TOKENS. Run 0217: MGB Workday connector added +21 SL (6yr/73pos iron-core; massgeneralbrigham.wd1/MGBExternal; direct DOL normKey match); "physican" (MGB ATS typo of "physician") added to PHYS_TOKENS. Run 0257: MUSC Workday connector added +20 SL (7yr/49pos iron-core; musc.wd1/MUSC; exact DOL legal name used as employer — 1yr/0pos SPONSOR_DATA entry for bare "medical university of south carolina" would have blocked alias, so source.employer = full legal name "Medical University of South Carolina and Affiliates" for direct normKey match). MUSC faculty titles: Neurosurgery, Neurohospitalist, Anesthesiology, Pathology, Radiology, Neurology, General Internal Medicine.
 
 ---
 
@@ -102,10 +103,11 @@ Our `normEmployer()` strips punctuation and lowercases. Some PUBLISH employers' 
 | Thomas Jefferson University Hospitals | "thomas jefferson university hospitals" | "thomas jefferson university hospital" (4yr, recentYearPos=28); singular/plural mismatch — alias added run 1759 | 40 SPONSOR_LEAD now surfaced |
 | AdventHealth | "adventhealth" | "adventist health system sunbelt" (6yr, recentYearPos=107); rebranded from Adventist Health System 2019 — alias added run 1943 | 6 SPONSOR_LEAD now surfaced |
 | Mass General Brigham | "mass general brigham" | Direct match — no alias needed; MGB rebranded from Partners Healthcare 2019; normEmployer("Mass General Brigham") = "mass general brigham" = exact DOL normKey | 21 SPONSOR_LEAD now surfaced (run 0217) |
+| MUSC (Medical University of South Carolina and Affiliates) | "medical university of south carolina and affiliates" | Direct match — no alias needed; source.employer set to full DOL legal name. Bare "Medical University of South Carolina" would normalize to "medical university of south carolina" which conflicts with a 1yr/0pos SPONSOR_DATA entry; full legal name bypasses the conflict. | 20 SPONSOR_LEAD now surfaced (run 0257) |
 
 **Impact:** Sanford and Ochsner aliases were added in run 1419. UMMS alias added in run 1648 but gate failed until run 1747 (SPONSOR_DATA p=2 stale; persistence recentYearPositions=5 now used).
 
-**Status:** All five employer aliases working correctly as of run 1943. MGB (run 0217) is a direct normKey match — no alias required.
+**Status:** All five employer aliases working correctly as of run 1943. MGB and MUSC (run 0217, 0257) are direct normKey matches — no aliases required.
 
 ---
 
@@ -115,7 +117,7 @@ The VISA_SIGNAL_ONLY federal jobs (78) are NOT H1B or J1 — they're 38 U.S.C. 7
 
 Summary check:
 - PUBLISH (14): all have explicit H1B or J1 language from employer ATS ✅
-- SPONSOR_LEAD (275): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
+- SPONSOR_LEAD (295): all DOL H1B sponsors (≥3yr, ≥3 recent pos) — LEAD, not confirmed ✅
 - VISA_SIGNAL_ONLY (79): federal appointment authority or Conrad waiver — correctly held ✅
 - REJECT: dropped; never surfaces ✅
 
@@ -195,6 +197,7 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | C11 | Sanford "Physician - Optometry Opportunity" false-positive — Sanford uses "Physician -" prefix for OD roles | FIXED | ✅ Done run 1901 | "optometry" added to NONPHYS_TOKENS; "ophthalmol" (different substring) still correctly passes |
 | C12 | AdventHealth batch: "Cardiology ARNP" (arnp variant of aprn), APP-prefix roles ("APP Hospitalist", "APP Psychiatry"), "Sr Physician Relations Specialist", "Physician Enterprise Coder - Cardiology", "Senior Physician Informatics Advocate" | FIXED | ✅ Done run 1943 | 5 NONPHYS_TOKEN additions: arnp, "app " (prefix), "physician relations", coder, "physician informatics". D5 overrides updated for app + physician informatics + physician relations + coder patterns. |
 | C13 | MGB ATS typo — "Physican" (missing 'i') used consistently in MGB job titles (e.g. "Physican Urology", "Physican-Pediatrics"). Not a substring of "physician" (8 chars ≠ 9). isPhysician() returned false → MGB physician jobs would have been silently dropped. | FIXED | ✅ Done run 0217 | "physican" added to PHYS_TOKENS in engine.ts. Confirmed: 21 MGB jobs now classified as physicians; no false-positives found in MGB sample (all were attending-level: Physician Scientist, Physician Internal Medicine, Physician Urology, Infectious Disease Physician, Physican-Pediatrics, etc.). |
+| C14 | MUSC employer normKey conflict — source.employer = "Medical University of South Carolina" normalizes to "medical university of south carolina" which collides with a pre-existing 1yr/0pos SPONSOR_DATA entry; alias was blocked by `!m.has(atsKey)` guard in sponsorHistoryIndex(). All 20 MUSC physician jobs classified as NO_VISA_MENTION/REJECT — never promoted to SPONSOR_LEAD. | FIXED | ✅ Done run 0257 | source.employer changed to exact DOL legal name "Medical University of South Carolina and Affiliates" → normKey "medical university of south carolina and affiliates" = direct iron-core match (7yr/49pos). No alias needed. 20 MUSC SPONSOR_LEAD now surfaced (all UNIV-prefix faculty: Neurosurgery, Neurohospitalist, Anesthesiology, Pathology, Radiology, Neurology, General Internal Medicine). |
 
 ### High (signal coverage)
 
@@ -237,6 +240,19 @@ We consume USAJobs as a pipeline source (0602 series, VHA) and capture Conrad me
 | Baystate Health | Workday `baystatehealth/wd12/External_Careers` — 390 jobs, zero physician titles | 7yr, 9 pos (low volume — likely recruits physicians via referral) |
 | Vanderbilt University Medical Center | vumccareers Workday — 244 "physician" keyword hits, all NP/PA/support staff; no attending/faculty MD postings; faculty likely in Vanderbilt University academic HR | 7yr, 9 pos |
 | Mercy Health | careers.mercy.com Phenom — 1,163 sitemap URLs, zero MD/DO attending titles; "physician" slug matches are all support staff or department name context | 7yr, 138 pos |
+| Brookdale Hospital Medical Center | Website ECONNREFUSED; likely closed/rebranded as One Brooklyn Health ~2022; no accessible ATS | 7yr, 162 pos (historical) |
+| Rochester Regional Health / Rochester General Hospital | Workday `rrhs/wd5/RRH` accessible (HTTP 200, 1248 results), but ALL nursing/CNA/LPN/support staff — zero MD attending roles in full physician-keyword corpus; attendings recruited via separate academic channel | 7yr, 110 pos |
+| IU Health | iuhealth.org returns empty body; jobs.iuhealth.org ECONNREFUSED; JavaScript SPA with bot protection | 5yr, 106 pos |
+| Cook County Health | Taleo `cookcountyil.taleo.net` — REST API returns 405; SSO-gated | 6yr, 73 pos |
+| PAGNY (Physician Affiliate Group of NY) | Custom internal portal pagny.org/careers/ — 279 listings, no standard ATS API; custom HTML scraper would be required | 6yr, 66 pos |
+| SUNY Upstate Medical University | PageUp People ATS (`careers.upstate.edu/dc4.pageuppeople.com`) — no accessible JSON API | 6yr, 64 pos |
+| Yale New Haven Health | careers.ynhh.org — SSL certificate expired; page inaccessible | 6yr, 62 pos |
+| Beth Israel Deaconess / BILH | BILH custom portal `jobs.bilh.org` with iCIMS backend; tenant IDs `jobs-bilh.icims.com` and `jobs-bidmc.icims.com` both 404; iCIMS tenant not discoverable | 5yr, 62 pos |
+| Stanford Health Care | Workday `stanfordmedicine/wd115/shc_external_career_site` — 149 keyword hits, all NP/PA/APP/support staff; zero MD attending roles (physicians are Stanford University academic faculty, separate ATS) | Stanford alias exists (→ leland stanford jr university), no physician content on this surface |
+| Roswell Park Cancer Institute | Workday `roswellpark/wd5/ExternalCareers` — 42 keyword hits, all APP/nursing/pharmacy/support staff; zero MD attending roles (oncologists are SUNY academic faculty) | 7yr, 45 pos |
+| BronxCare Health System | ECONNREFUSED on all URLs (bronxcare.org, www.bronxcare.org) — website unreachable | 7yr, 118 pos (historical) |
+| Marshfield Clinic | Merged into Sanford Health; careers via sanfordcareers.com/marshfield-clinic using Sanford Workday (`sanford/wd5/SanfordHealth`) — already captured by existing workday-sanford connector (employer = "Sanford Health") | 7yr, 54 pos (now under Sanford umbrella) |
+| USACS Medical Group | Greenhouse board `boards.greenhouse.io/usacs` → 404 (board inactive); website careers page shows loading filters (JavaScript SPA); no accessible ATS API found | 7yr, 91 pos |
 
 These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + Johns Hopkins together likely have 50+ open physician positions at any time. OSF (29 pos) and Henry Ford (27 pos) are now confirmed inaccessible via API.
 
@@ -254,9 +270,9 @@ These gaps represent the largest untapped pool. Mount Sinai + Mayo Clinic + John
 
 SPONSOR_LEAD jobs explicitly disclaim: "surfaced as a lead, not confirmed sponsorship." That's accurate. The tier is honest.
 
-**Run 2026-06-13-0217 final state:**
-- 16 PUBLISH + 275 SPONSOR_LEAD = 291 total surfaced (non-fixture PUBLISH)
-- Fetch volume: 465 candidates (12 active connectors; VUMC + Mercy disabled)
-- NOT_PHYSICIAN rejects: 5 (all correct: gold NP fixture, gold Therapist fixture, UMMS Sr Physician Asst I x3)
+**Run 2026-06-13-0257 final state:**
+- 16 PUBLISH + 295 SPONSOR_LEAD = 311 total surfaced (non-fixture PUBLISH)
+- Fetch volume: 486 candidates (13 active connectors; VUMC + Mercy disabled)
+- NOT_PHYSICIAN rejects: 4 (all correct: gold NP fixture, gold Therapist fixture, UMMS Sr Physician Asst I x2)
 - Audit D1-D7: **ALL PASS / CLEAN**
-- Session net vs run 1943: +21 SPONSOR_LEAD (Mass General Brigham Workday connector, 6yr/73pos iron-core, MA/multi-state); "physican" PHYS_TOKEN added (MGB ATS typo)
+- Session net vs run 0217: +20 SPONSOR_LEAD (MUSC Workday connector, 7yr/49pos iron-core, SC; all UNIV-prefix faculty positions)

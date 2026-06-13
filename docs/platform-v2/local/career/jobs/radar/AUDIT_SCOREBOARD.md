@@ -1,13 +1,13 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0217  |  Audited: 2026-06-13
+Run: 2026-06-13-0257  |  Audited: 2026-06-13
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 16 |
-| SPONSOR_LEAD | 275 |
-| Total surfaced (PUBLISH + SL) | 291 |
-| REJECT | 90 |
+| SPONSOR_LEAD | 295 |
+| Total surfaced (PUBLISH + SL) | 311 |
+| REJECT | 91 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 22 quotes verified, 0 mismatches
@@ -31,6 +31,7 @@ Run: 2026-06-13-0217  |  Audited: 2026-06-13
 | workday-mgb | 0 | 21 | 21 |
 | workday-montefiore | 0 | 14 | 14 |
 | workday-msk | 0 | 6 | 6 |
+| workday-musc | 0 | 20 | 20 |
 | workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 27 | 31 |
 | workday-sanford | 8 | 0 | 8 |
@@ -100,3 +101,5 @@ These are DOL 7-year iron-core sponsors with no active connector:
 9. **Mercy Health** — DISABLED run 1814: careers.mercy.com posts no MD/DO attending jobs. Full sitemap scan (1,163 URLs) found zero physician attending titles; every "physician" URL slug is support staff or a department name. DOL iron-core (7yr/138pos) is real but this ATS surface doesn't carry physician openings.
 10. **VUMC false SPONSOR_LEAD + disable** — FIXED run 1829: "Pediatric Cardiac Sonographer II" was classified as physician (false positive on "pediatric" PHYS token). Root cause: "sonographer" missing from NONPHYS_TOKENS. Fixed in engine.ts. Separately: full scan shows vumccareers Workday has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff); connector disabled. DOL iron-core (7yr) — VUMC physician faculty likely recruited via Vanderbilt University academic HR portal.
 11. **AdventHealth Workday connector + batch NONPHYS hardening** — FIXED run 1943: workday-adventhealth connector added (adventhealth/wd12/AH_External_Career_Site). EMPLOYER_ALIAS "adventhealth"→"adventist health system sunbelt" (6yr/107pos). Five NONPHYS_TOKENS additions from scan: "arnp" (Cardiology ARNP = ARNP variant of APRN not caught by "aprn" substring), "app " (APP prefix = Advanced Practice Provider roles like "APP Hospitalist"), "physician relations" (Sr Physician Relations Specialist), "coder" (Physician Enterprise Coder — "physician coder" substring misses when "enterprise" intervenes), "physician informatics" (Physician Informatics Advocate — non-MD informaticist). D5 overrides updated. 6 clean SPONSOR_LEAD: OBGYN Physician, OB Hospitalist, Lead Hospitalist, Hematology Oncology Physician, Primary Care Physician, Physician Advisor.
+
+12. **Mass General Brigham Workday connector + "physican" PHYS_TOKEN** — FIXED run 0217: workday-mgb connector added (massgeneralbrigham/wd1/MGBExternal). 6yr/73pos iron-core; direct DOL normKey match ("mass general brigham"), no alias needed. "physican" (missing 'i') added to PHYS_TOKENS — MGB consistently uses this typo in ATS job titles (e.g. "Physican Urology", "Physican-Pediatrics"); 8-char substring ≠ 9-char "physician", so these were being silently dropped. 21 clean SPONSOR_LEAD surfaced (Physician Scientist, Physician Internal Medicine, Physician Urology, Infectious Disease Physician, Physican-Pediatrics, and 16 more attending-level roles). No new false-positives found in MGB sample.
