@@ -1,17 +1,17 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0725  |  Audited: 2026-06-13
+Run: 2026-06-13-0806  |  Audited: 2026-06-13
 Note: Workday CDN degraded since ~0605 — wd1/wd5 returning HTML instead of JSON.
-Run 0725 = degraded run + new connectors (jibe-ynhhs, jibe-osf, workday-mcw).
-Expected SPONSOR_LEAD when Workday recovers: 607 (534 baseline + 3 YNHHS + 39 OSF + 31 MCW).
+Run 0806 = degraded run + all connectors including new jsonld-wellstar.
+Expected SPONSOR_LEAD when Workday recovers: 645 (534 baseline + 3 YNHHS + 39 OSF + 31 MCW + 38 Wellstar).
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
-| PUBLISH (non-fixture) | 24 |
-| SPONSOR_LEAD (full-run expected) | 607 |
-| SPONSOR_LEAD (degraded run 0725) | 378 |
-| Total surfaced (PUBLISH + SL) | 631 |
-| REJECT | 92 |
+| PUBLISH (non-fixture) | 10 |
+| SPONSOR_LEAD (full-run expected) | 645 |
+| SPONSOR_LEAD (degraded run 0806) | 416 |
+| Total surfaced (PUBLISH + SL) | 655 |
+| REJECT | 55 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 38 quotes verified, 0 mismatches
@@ -47,6 +47,7 @@ Expected SPONSOR_LEAD when Workday recovers: 607 (534 baseline + 3 YNHHS + 39 OS
 | jibe-ynhhs | 0 | 3 | 3 |
 | jibe-osf | 0 | 39 | 39 |
 | workday-mcw | 0 | 31 | 31 |
+| jsonld-wellstar | 2 | 37 | 39 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -141,10 +142,12 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Penn Medicine / UPHS | Workday wd1 tenant `uphs` confirmed (browse URL returns 500 WD error page, NOT 404 — tenant exists). Site path unverified: `uphs/wd1/External` and `uphs/wd1/UPHS` both return 500. CDN degraded — re-probe when wd1 recovers. DOL entity: University of Pennsylvania Health System. | 6yr, 45+ pos est |
 | Allegheny Health Network (AHN) | **In registry** as `workday-ahn` (handle `highmarkhealth/wd1/highmark`), DISABLED pending wd1 CDN recovery. Handle confirmed 2026-06-13 from ahn.org/careers redirect to careers.highmarkhealth.org (Highmark Health parent). EMPLOYER_ALIAS added: "allegheny health network" → "allegheny clinic". | 7yr, 31 pos |
 | Medical College of Wisconsin / Froedtert | **ACTIVE** as `workday-mcw` (wd503, LIVE). 31 SPONSOR_LEAD confirmed run 0725. wd503 is a new functional Workday DC. Also covers MCW Affiliated Hospitals (7yr/21pos) via same portal. | 6yr, 39 pos |
-| USACS Medical Group | Workday tenant `usacs` confirmed on wd12 and wd108 (422, not 404). Site path unverified. iCIMS SSO portal also present at usacs.icims.com. Re-probe when CDN stabilizes; confirm site path from page source. | 7yr, 91 pos |
-| Sound Physicians | Workday tenant `soundphysicians` confirmed on wd1, wd5, wd12, wd108 (all 422). Site path unverified. Broad family of LLCs (South Sound Inpatient, Sound Physicians of IL, etc.) — combined iron-core 7yr. Re-probe when CDN stabilizes. | 7yr, 38+ pos combined |
+| USACS Medical Group | ATS is Herefish (physician recruitment CRM) + usacs.com/api/v2/careers (self-hosted). iCIMS portal (usacs.icims.com) is decommissioned (410 Gone). Workday tenant `usacs` exists on wd12/wd108 but is back-office HR only; physician recruiting is NOT on Workday. NOT WIREBLE. | 7yr, 91 pos |
+| Sound Physicians | TalentBrew SPA (tbcdn.talentbrew.com confirmed from careers.soundphysicians.com 2026-06-13) — same architecture as Mayo Clinic. No public JSON API. NOT WIREBLE. | 7yr, 38+ pos combined |
 | Children's National Medical Center | Workday tenant `childrensnational` confirmed on wd5, wd12 (422). Site path unverified (tried: External, Public_Careers, CNMC, CNMCCareers, ChildrensNational, PublicCareers). Static careers page doesn't expose Workday URL. Re-probe when CDN stabilizes. | 7yr, 28 pos |
-| PAGNY (Physician Affiliate Group of NY) | Custom CMS job board at pagny.org/careers/specialties/[specialty] — no standard JSON API. No Workday/Jibe/iCIMS ATS markers. Specialty pages are static or server-rendered HTML with embedded job listings. No accessible connector path. | 6yr, 66 pos |
+| PAGNY (Physician Affiliate Group of NY) | Custom CMS job board at pagny.org/careers/specialties/[specialty] — no standard JSON API. No Workday/Jibe/iCIMS ATS markers. Specialty pages are static or server-rendered HTML with embedded job listings. No accessible connector path. NYC H+H physician staffing org. | 6yr, 66 pos |
+| NYC Health + Hospitals | Radware WAF bot-block on nychealthandhospitals.org (HTTP 403 → perfdrive.com CAPTCHA). jobs.nychealthandhospitals.org returns Chrome SSL error. cityjobs.nyc.gov dataset (DCAS "Jobs NYC Postings") only covers City agencies, NOT H+H (public benefit corporation). No accessible path. | 7yr, 132+ pos |
+| BronxCare Health System | TIMEOUT on bronxcare.org/careers (heavy page). Likely Infor CloudSuite or custom ATS. Re-probe with Chrome MCP when needed. | 7yr, 118 pos |
 | One Brooklyn Health / Brookdale Hospital | Jibe portal at careers.onebrooklynhealth.org confirmed — severely pinned (183 results at all keywords; first titles are RN/admin). tags=Physicians=0. Workday tenant `brookdalehospital` also confirmed on wd12 (422, site path unknown). | 7yr, 162 pos |
 | INTEGRIS Health | Workday tenant `integris` confirmed on wd12 (422). Site path unverified (tried: INTEGRIS, External, Careers, INTEGRISCareers, etc.). Main careers page 403. Re-probe from page source when accessible. | 7yr, 30 pos |
 | CHI Health / Alegent Creighton Clinic | Workday tenant `chihealth` confirmed on wd12 (422). Site path unverified (tried: CHIHealth, External, Careers, CHI, etc.). Main careers page fetch failed. Re-probe from page source when accessible. | 7yr, 29 pos |
@@ -178,6 +181,8 @@ These are DOL 7-year iron-core sponsors with no active connector:
 18. **Yale New Haven Health System Jibe connector + 6 NONPHYS_TOKEN fixes** — FIXED runs post-0532: `jibe-ynhhs` connector added (`jobs.ynhhs.org/api/jobs`). YNHHS is 7yr/62pos iron-core DOL sponsor. ATS = Jibe (iCIMS wrapper; ng-app="jibeapply" confirmed). careers.ynhh.org has expired SSL; jobs.ynhhs.org is the accessible public API. Default keyword=physician returns pinned top results; only 3 genuine physician titles across all offsets (OBGYN Physician, OB/GYN Per Diem Greenwich, Hospice Physician). source.employer="Yale-New Haven Hospital" → normKey "yale new haven hospital" = direct persistence_index match. 6 NONPHYS_TOKENS added to fix false positives from YNHHS Jibe scan: " lpc " (Licensed Professional Counselor), " lmsw " (Licensed Master Social Worker), " mgr " (Manager abbreviation), "radiology tech" (Radiology Tech abbreviated), "polysomnograph" (Polysomnographic Tech), " huc " (Health Unit Coordinator). All 6 also added to audit.ts NOT_PHYSICIAN_OVERRIDES. Gold self-check still 15/15 after additions. Net: 3 clean SPONSOR_LEAD per run (CT-based; Yale YSM academic faculty recruited separately).
 
 20. **New disabled connectors + probe sweep (2026-06-13)**: Six new disabled entries added to registry: `workday-urmc` (rochester/wd5/UR_Staff, 35pos + Unity Hospital 24pos), `workday-rochestergeneral` (rrhs/wd5/RRH, 110pos), `workday-roswellpark` (roswellpark/wd5/ExternalCareers, 45pos), `workday-bostonmedical` (bmc/wd1/BMC, 24pos), `jibe-ufhealth` (pinned, 90pos), `jibe-medstar` (pinned, 115pos combined). All four Workday entries disabled pending CDN recovery; Jibe entries disabled (pinned, no physician category). Penn Medicine (`uphs/wd1`) tenant confirmed — site path unverified pending wd1 recovery. Broad iron-core ATS sweep (25+ employers): Mayo/Henry Ford/IU Health/SUNY Upstate/Northwell/UAB all blocked (Infor/Phenom/iCIMS); OHSU/MedStar Jibe portals pinned; Oracle HCM blocks Guthrie/WellSpan/Mount Sinai; no new enabled connectors added this sweep.
+
+22. **Wellstar Medical Group Phenom JSON-LD connector + "5000" prefix alias** — FIXED run 0806: `jsonld-wellstar` connector added (`careers.wellstar.org`, Phenom tenant WHWWHSUS). Sitemap enumeration fallback; sitemap_index.xml → 3 sub-sitemaps (sitemap2.xml: 384 jobs, sitemap3.xml: 86 jobs, ~66 physician-slug matches). Root cause of sponsorEnrich miss: Phenom sets `hiringOrganization.name = "5000 Wellstar Medical Group, LLC"` (cost-center prefix). `normEmployer` strips "llc" and "group" (both CORP_SUFFIXES) but not "5000" → produces "5000 wellstar medical" ≠ PI normKey "wellstar medical". Fixed with `EMPLOYER_ALIAS "5000 wellstar medical" → "wellstar medical"` in sponsor-universe.ts. Run results: 37 SPONSOR_LEAD + 2 PUBLISH (39 total). GA-based regional health system. Expected 37–39 SPONSOR_LEAD per run. Total pipeline SL: 416 (degraded run) / 645 (expected full Workday recovery). ATS probe sweep 2026-06-13: USACS = Herefish physician CRM + internal API (not Workday-facing); Cook County Health = Taleo classic; INTEGRIS = Cloudflare 403; CHI Health = wd12 tenant confirmed but site path unresolved (SPA); Sound Physicians = TalentBrew SPA; BronxCare = timeout; NYC H+H = Radware WAF bot-block; PAGNY = custom CMS; One Brooklyn = Jibe pinned (confirmed prior); NYU Grossman/MetroHealth/St. Barnabas = all ERR/ECONNREFUSED.
 
 21. **Medical College of Wisconsin Workday connector (wd503)** — FIXED run 0725: `workday-mcw` connector added (`mcw/wd503/ExternalCareers`). MCW = academic AMC in Milwaukee, WI; part of Froedtert & the Medical College of Wisconsin Health Network (Froedtert itself is blocked via Infor CloudSuite). New Workday DC `wd503` discovered and confirmed functional (HTTP 200 JSON). DOL iron-core: 'medical college of wisconsin' 6yr/39pos FY2025 = direct normKey match; also covers 'medical college of wisconsin affiliated hospitals' 7yr/21pos under same portal. jobFamilyGroup facets: Faculty (165 jobs) selected by physicianFacetIds() via d.includes('faculty'). Run results: 31 SPONSOR_LEAD, 0 false positives, 0 rejected — all physician faculty titles (Glaucoma Specialist, Cardiothoracic Surgeon, Cardiologist, Gastroenterologist, Endocrinologist, Orthopedic Surgeon, Pediatric Pathologist, Oncologist, etc.). WI-based; many positions at Froedtert-MCW hospital network sites (Froedtert campus + community sites). Expected SPONSOR_LEAD: 30-35 per run.
 
