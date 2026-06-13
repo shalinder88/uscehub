@@ -303,6 +303,11 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Brown Health") → "brown health"; DOL normKey → "lifespan physician".
   // "brown health" is not a standalone key in persistence_index so no collision guard fires.
   "brown health": "lifespan physician",
+  // Wellstar Phenom JSON-LD sets hiringOrganization.name = "5000 Wellstar Medical Group, LLC"
+  // for all physician jobs. The numeric cost-center prefix "5000" survives normEmployer
+  // (it is not a CORP_SUFFIX), producing "5000 wellstar medical" instead of "wellstar medical".
+  // Alias routes it to the correct DOL normKey (7yr/19pos FY2025).
+  "5000 wellstar medical": "wellstar medical",
   // Allegheny Health Network (ATS, public-facing name) = Allegheny Clinic (DOL filer, 7yr/31pos).
   // normEmployer("Allegheny Health Network") → "allegheny health network"; DOL normKey → "allegheny clinic".
   // "allegheny health network medical education consortium" is a separate 1yr/1pos PI entry and not a collision risk.

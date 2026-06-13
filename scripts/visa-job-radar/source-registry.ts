@@ -290,6 +290,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years). ATS = Phenom; search page is a React SPA so fetchJsonLd uses the sitemap fallback (sitemap_index.xml → 3 sub-sitemaps → 1496 /job/ URLs, ~104 physician-slug matches). Verified 2026-06-12: Neurohospitalist posting returns @type:JobPosting, org=UMMS, 6KB description. MD state system.",
   },
   {
+    id: "jsonld-wellstar",
+    tier: 1,
+    connector: "jsonld",
+    label: "Wellstar Medical Group — physicians (Phenom)",
+    handle: "https://careers.wellstar.org/us/en/search-results?keywords=physician",
+    employer: "Wellstar Medical Group",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 19 certified positions). ATS = Phenom (tenant WHWWHSUS). Search page is a React SPA; fetchJsonLd falls back to sitemap enumeration. careers.wellstar.org/sitemap.xml → sitemap_index.xml (3 sub-sitemaps) → sitemap2.xml (384 job URLs) + sitemap3.xml (86 job URLs), ~66 physician-slug matches pre-filter. Verified 2026-06-13: /job/JR-53304/Physician-Primary-Care-Lake-Oconee-Greene-County returns @type:JobPosting, employer='5000 Wellstar Medical Group, LLC', occupationalCategory=Providers, full HTML description (pipeline UA confirmed). employer field set to 'Wellstar Medical Group' so normEmployer → 'wellstar medical' = DOL PI normKey directly. GA-based regional health system (Kennestone, Cobb, MCG Health).",
+  },
+  {
     id: "jsonld-uabmedicine",
     tier: 1,
     connector: "jsonld",
