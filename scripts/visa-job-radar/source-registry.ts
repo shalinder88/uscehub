@@ -409,6 +409,17 @@ export const SOURCES: SourceDef[] = [
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 48 recentYearPositions FY2025). normKey 'university of kentucky' matches persistence_index directly — no alias needed. ATS = PeopleAdmin at ukjobs.uky.edu; all_jobs.atom feed confirmed 2026-06-13 (805 total entries, ~146 physician-titled). Feed includes full HTML job descriptions in <content> element. Two explicit J-1 physician jobs confirmed in feed (Pediatric Radiologist, Vascular & Interventional Radiologist). Remaining physician postings will be promoted via sponsorEnrich(). ukjobs.uky.edu handles all UK positions including UK Healthcare (hospital and academic).",
   },
   {
+    id: "workday-lvhn",
+    tier: 1,
+    connector: "workday",
+    label: "Lehigh Valley Health Network — physicians (Workday)",
+    handle: "lvhn/wd1/LVHN",
+    employer: "Lehigh Valley Hospital",
+    enabled: true,
+    needsVerification: true,
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 33 recentYearPositions FY2025). ATS = Workday at lvhn.wd1.myworkdayjobs.com/LVHN (confirmed 2026-06-13, 715 physician-keyword hits). source.employer='Lehigh Valley Hospital' → normKey 'lehigh valley hospital' = direct persistence_index match (DOL legal name: Lehigh Valley Hospital INC.; 'inc' stripped by normEmployer). No jobFamilyGroup facet labels exposed (8 facets, all empty value strings) → keyword+isPhysician fallback. ~40 physician-titled jobs expected per run. PA-based network (Allentown, Stroudsburg, Hazleton service area).",
+  },
+  {
     id: "jsonld-guthrie",
     tier: 1,
     connector: "jsonld",

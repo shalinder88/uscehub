@@ -1,12 +1,12 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0421  |  Audited: 2026-06-13
+Run: 2026-06-13-0532  |  Audited: 2026-06-13
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 24 |
-| SPONSOR_LEAD | 307 |
-| Total surfaced (PUBLISH + SL) | 331 |
+| SPONSOR_LEAD | 534 |
+| Total surfaced (PUBLISH + SL) | 558 |
 | REJECT | 92 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -37,6 +37,9 @@ Run: 2026-06-13-0421  |  Audited: 2026-06-13
 | workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 35 | 39 |
 | workday-sanford | 16 | 2 | 18 |
+| findly-upmc | 0 | 5 | 5 |
+| atom-uky | 0 | 204 | 204 |
+| workday-lvhn | 0 | 18 | 18 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -97,11 +100,17 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Froedtert Health | Infor CloudSuite 403 | No bypass |
 | Mercy Health | careers.mercy.com has no MD/DO attending jobs (only support staff) | Disabled — revisit if physician portal added |
 | Vanderbilt University Medical Center | vumccareers Workday portal has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff only) | Disabled — VUMC physician faculty likely recruited via Vanderbilt University academic HR |
+| Boston Children's Hospital | Phenom People SPA (`jobs.bostonchildrens.org`, `_XC_CONFIG={org:"bostonchildrens"}`) — no public JSON API | No bypass |
+| Corewell Health | Phenom People SPA (careers.corewellhealth.org) — no public JSON API | No bypass |
+| MetroHealth | Infor CloudSuite SPA — no accessible API | No bypass |
+| Henry Ford Health | ATS unknown; Workday wd1 tenant maintenance; iCIMS probes 404; no API accessible | 7yr, 27 pos |
+| WellSpan Health | Oracle HCM (joinwellspan.org marketing site; "Log into Oracle" link confirms backend) — inaccessible without SSO | 7yr, 22 pos |
+| Dartmouth Health | Prolucent/LiquidCompass SPA (`careers.dartmouth-health.org`; backend `partner-tenants.ats.liquidcompass.com/dartmouth-health/`) — all API endpoints return 404 HTML | 7yr, 18 pos |
 
 ## What to fix next (priority order)
 
 1. **Bare quotes** — CLEAN — all 22 PUBLISH quotes are RICH (H1B/J1/waiver/cap-exempt)
-2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; UPMC (findly) + UK Healthcare (atom) added runs 0500/0507; Northwell/Mount Sinai/Hopkins/Mayo/BCH/UCHealth all blocked
+2. **Iron-core coverage** — probe remaining blocked employers; Emory (jibe) + KUMC (workday) added run 1648; UPMC (findly) + UK Healthcare (atom) added runs 0500/0507; LVHN (workday) added run 0532; BCH/Corewell/MetroHealth/Henry Ford/WellSpan/Dartmouth all blocked
 3. **iCIMS / Jibe portals** — UAB Medicine iCIMS is SSO-gated; Maimonides portal unknown; OHSU iCIMS 403; no bypass for any
 4. **State distribution** — current PUBLISH is WI/NM/MD/LA/GA; TX/CA/FL/IL/NY under-represented; blocked by bot-protection on major NY/TX employers
 5. **Stanford Health Care** — FIXED: alias "stanford health care" → "leland stanford jr university" (6yr/44pos DOL) added; 3 prior Stanford keyword-match results were isPhysician false positives (NP/PA, Nursing Professional, Quality Consultant) — also fixed via new NONPHYS_TOKENS. Real physician postings will promote to SPONSOR_LEAD when they appear.
@@ -119,5 +128,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 15. **UPMC Findly/Google CTS connector** — FIXED run 0500: `findly-upmc` connector added using new `fetchFindly()` function. UPMC careers front-end is Findly CWS (Ceridian/Dayforce), backed by Google Cloud Talent Solution (CTS). Public JSONP endpoint at `jobsapi-google.m-cloud.io/api/job/search`; company ID `companies/4c0b87d3-a9b3-4243-b9c7-2ad12c533ab3` sourced from `cws_opts.org_id` in page JS; `customAttributeFilter=primary_category="Physicians"` narrows server-side to ~7 jobs. JSONP response stripped by slicing `{`…`}`. DOL iron-core 7yr/89pos; normKey "university of pittsburgh physicians" = direct match. 5 clean SPONSOR_LEAD: Transplant Nephrologist, Pediatric Neurologist, Family Medicine Physician, Molecular Genomic Pathologist, Hospitalist. Medical Director and Certified Nurse Midwife correctly rejected (no PHYS_TOKEN / NONPHYS_TOKEN "nurse"). Underlying ATS is Taleo — Findly only surfaces jobs explicitly categorized as "Physicians" so full UPMC volume may be higher.
 
 16. **University of Kentucky PeopleAdmin Atom connector** — FIXED run 0507: `atom-uky` connector added using new `fetchAtom()` function. ATS is PeopleAdmin at `ukjobs.uky.edu`; `/postings/all_jobs.atom` returns all 805 open positions (no auth, no pagination cap). XML parsed with `fast-xml-parser`; full HTML job descriptions in `<content>` element stripped via `stripHtml()` before isPhysician() filtering. DOL iron-core 7yr/48pos; normKey "university of kentucky" = direct match. 204 physician candidates → all SPONSOR_LEAD (no explicit visa language in ATS postings). Two J-1 explicit jobs confirmed in feed (Pediatric Radiologist, Vascular & Interventional Radiologist).
+
+17. **Lehigh Valley Health Network Workday connector** — FIXED run 0532: `workday-lvhn` connector added (`lvhn.wd1.myworkdayjobs.com/LVHN`). Workday CXS API (`wday/cxs/lvhn/wd1/LVHN/jobs`), confirmed via curl 200 (715 total physician-keyword results). No jobFamilyGroup facets exposed (8 facets, all empty value strings) → keyword+isPhysician fallback. DOL iron-core 7yr/33pos FY2025; source.employer="Lehigh Valley Hospital" → normKey "lehigh valley hospital" = direct persistence_index match (DOL legal name "Lehigh Valley Hospital INC."; "inc" stripped by normEmployer). All 18 candidates are clean attending physician titles (Endocrinologist, Gastroenterologist, Family Medicine Physician x10, Hospice Medicine Physician, Sports Medicine Physician, Occupational Medicine Physician, Physiatry, Pediatric Sleep Medicine). PA-based (Allentown, Stroudsburg, Hazleton service area). Zero false positives confirmed.
 
 13. **Brown Health Workday connector + "physician liaison" NONPHYS_TOKEN + Workday "provider" facet fix** — FIXED run 0324: Three separate issues resolved. (A) workday-brownhealth connector added (brownhealth/wd12/External_Careers). Brown Health = formerly Lifespan Health System, rebranded ~2023. EMPLOYER_ALIAS "brown health" → "lifespan physician" (7yr/48pos iron-core; no normKey collision). (B) "physician liaison" added to NONPHYS_TOKENS — Brown Health uses "Sr. Physician Liaison" title for non-MD outreach/recruitment staff; this was a false positive. (C) Workday `physicianFacetIds()` had "provider" in its match terms — Brown Health exposes an "Advanced Practice Provider" job family with `d.includes("provider")` match. The facet probe selected it (54 NP/PA/APP jobs), used it as the filter, and returned 0 real physicians — keyword fallback never activated. Fix: removed "provider" from `physicianFacetIds` matching (audited all 14 active Workday connectors; none uses a "provider" job family for physician jobs — they all fall through to keyword+isPhysician filtering or use "faculty"/"physician" facets). 27 clean SPONSOR_LEAD surfaced: physician, Physician, MG Physician, Physician PD, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine, etc.
