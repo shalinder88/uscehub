@@ -102,7 +102,7 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
         );
       } else if (src.connector === "jibe") {
         candidates.push(
-          ...(await fetchJibe(src.handle, src.employer ?? src.label, src.id)),
+          ...(await fetchJibe(src.handle, src.employer ?? src.label, src.id, src.jibeQuery)),
         );
       } else if (src.connector === "findly") {
         candidates.push(

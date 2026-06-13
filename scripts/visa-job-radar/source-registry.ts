@@ -32,6 +32,8 @@ export interface SourceDef {
   enabled: boolean;
   needsVerification: boolean;
   note: string;
+  // Jibe connectors only: replaces default "keyword=physician" query string
+  jibeQuery?: string;
 }
 
 export const SOURCES: SourceDef[] = [
@@ -396,6 +398,18 @@ export const SOURCES: SourceDef[] = [
     enabled: true,
     needsVerification: true,
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 62 recentYearPositions FY2025). source.employer='Yale-New Haven Hospital' → normKey 'yale new haven hospital' = direct persistence_index match. ATS = Jibe (iCIMS wrapper) at jobs.ynhhs.org (HTTP 200 confirmed 2026-06-13; careers.ynhh.org has self-signed SSL — use jobs.ynhhs.org instead). external-ynhhs.icims.com/jobs has loginOnly=1 but jobs.ynhhs.org/api/jobs is public JSON API. Low physician density (~3/1516 keyword results = OBGYN Physician, OB/GYN Per Diem, Hospice Physician); Jibe pagination returns same 3 jobs at all offsets (pinned top results). Expect 3 SPONSOR_LEAD per run — Yale YSM academic faculty recruited separately. CT-based (New Haven, Bridgeport, Greenwich hospitals).",
+  },
+  {
+    id: "jibe-osf",
+    tier: 1,
+    connector: "jibe",
+    label: "OSF HealthCare — physicians (Jibe/iCIMS, Physicians tag)",
+    handle: "https://www.osfcareers.org",
+    employer: "OSF Multi-Specialty Group",
+    enabled: true,
+    needsVerification: true,
+    jibeQuery: "keyword=&tags=Physicians",
+    note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 69 recentYearPositions FY2025). source.employer='OSF Multi-Specialty Group' → normKey 'osf multi-specialty group' = direct persistence_index match (7yr/69pos). Also covers normKey 'osf healthcare system' (6yr/29pos). ATS = Jibe (iCIMS wrapper) at osfcareers.org (ng-app=jibeapply confirmed 2026-06-13). Default keyword=physician returns all-staff pinned results (no physician titles); tags=Physicians filter required — osfcareers.org exposes a Physicians category that returns genuine attending titles (Neurohospitalist, Psychiatry Physician, Vascular Surgeon, Cardiologist, Oncologist, etc.). totalCount=194 physician-tagged jobs; pagination pins at offset=100 (Jibe limit) → 100 accessible per run. IL-based system (Peoria, Rockford, Bloomington, Ottawa, Galesburg service areas). 'Physician Informatics Specialist' correctly rejected by 'physician informatics' NONPHYS token. applyphysicians-osfhealthcare.icims.com is the iCIMS backend but the Jibe public API is used here.",
   },
   {
     id: "findly-upmc",

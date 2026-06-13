@@ -832,6 +832,7 @@ export async function fetchJibe(
   baseUrl: string,
   employer: string,
   sourceIdBase: string,
+  query = "keyword=physician",
 ): Promise<RawCandidate[]> {
   const fetchedAt = new Date().toISOString();
   const out: RawCandidate[] = [];
@@ -842,7 +843,9 @@ export async function fetchJibe(
     try {
       const url =
         baseUrl +
-        "/api/jobs?keyword=physician&limit=" +
+        "/api/jobs?" +
+        query +
+        "&limit=" +
         JIBE_PAGE_SIZE +
         "&offset=" +
         offset;
