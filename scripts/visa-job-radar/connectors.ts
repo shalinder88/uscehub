@@ -893,3 +893,109 @@ export async function fetchJibe(
 
   return out;
 }
+
+// ── Avature RSS feed ─────────────────────────────────────────────────────────
+//
+// Avature is a CRM-based ATS used by large health systems for physician recruiting.
+// Physician portals (e.g. clinicianjobs.advocatehealth.org) expose an RSS feed at
+//   /careers/SearchJobs/feed/?jobRecordsPerPage=N
+// Job detail pages are JS-rendered so rawText is derived from the URL slug —
+// sponsorEnrich() provides SPONSOR_LEAD signal via DOL history for all jobs.
+// handle = full RSS feed URL.
+
+const AVATURE_RSS_TIMEOUT_MS = 20_000;
+
+interface AvatureRssItem {
+  title?: string;
+  link?: string;
+  guid?: string | { "#text"?: string; "@_isPermaLink"?: string };
+  pubDate?: string;
+}
+
+interface AvatureRssFeed {
+  rss?: {
+    channel?: {
+      item?: AvatureRssItem | AvatureRssItem[];
+    };
+  };
+}
+
+export async function fetchAvatureRss(
+  feedUrl: string,
+  employer: string,
+  sourceIdBase: string,
+): Promise<RawCandidate[]> {
+  const fetchedAt = new Date().toISOString();
+  const out: RawCandidate[] = [];
+
+  let raw: string;
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), AVATURE_RSS_TIMEOUT_MS);
+    const res = await fetch(feedUrl, { signal: ctrl.signal });
+    clearTimeout(t);
+    if (!res.ok) return out;
+    raw = await res.text();
+  } catch {
+    return out;
+  }
+
+  let feed: AvatureRssFeed;
+  try {
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "@_",
+      textNodeName: "#text",
+    });
+    feed = parser.parse(raw) as AvatureRssFeed;
+  } catch {
+    return out;
+  }
+
+  const items = feed.rss?.channel?.item;
+  if (!items) return out;
+  const list: AvatureRssItem[] = Array.isArray(items) ? items : [items];
+
+  for (const item of list) {
+    const href =
+      typeof item.guid === "string"
+        ? item.guid
+        : typeof item.guid === "object" && item.guid !== null
+          ? ((item.guid as { "#text"?: string })["#text"] ?? "")
+          : typeof item.link === "string"
+            ? item.link
+            : "";
+    if (!href) continue;
+
+    // URL: /careers/JobDetail/<specialty-slug>/<id>
+    const m = href.match(/\/JobDetail\/([^/?#]+)\/(\d+)/);
+    if (!m) continue;
+    const slug = m[1].split("-").join(" ");
+    const jobId = m[2];
+
+    if (!isPhysician(slug)) continue;
+
+    const rssTitle =
+      typeof item.title === "string" ? item.title.trim() : "";
+
+    let postedDate: string | undefined;
+    if (typeof item.pubDate === "string") {
+      const d = new Date(item.pubDate);
+      if (!Number.isNaN(d.getTime())) postedDate = d.toISOString().slice(0, 10);
+    }
+
+    out.push({
+      sourceId: sourceIdBase + "-" + jobId,
+      sourceTier: 1,
+      sourceUrl: href,
+      fetchedAt,
+      title: slug,
+      employer,
+      postedDate,
+      rawText: [rssTitle, slug].filter((s) => s.length > 0).join(". "),
+      isFixture: false,
+    });
+  }
+
+  return out;
+}

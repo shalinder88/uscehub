@@ -316,6 +316,17 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Allegheny Health Network") → "allegheny health network"; DOL normKey → "allegheny clinic".
   // "allegheny health network medical education consortium" is a separate 1yr/1pos PI entry and not a collision risk.
   "allegheny health network": "allegheny clinic",
+  // Advocate Aurora Health (merged IL/WI system, rebranded 2022) maps to legacy Aurora Medical (DOL filer,
+  // 7yr/33pos FY2025, WI). normEmployer("Advocate Aurora Health") → "advocate aurora health" (no CORP_SUFFIX tokens).
+  // DOL also has "advocate health and hospitals" (5yr/13pos, IL); routing to aurora medical captures the stronger entity.
+  "advocate aurora health": "aurora medical",
+  // Banner Health (ATS public name, AZ-based system) = Banner Medical (DOL filer, 7yr/44pos FY2025, AZ).
+  // normEmployer("Banner Health") → "banner health"; DOL has "banner health" only at 2yr/0pos (inactive).
+  // "banner university medical" (7yr/60pos) is a separate GME/academic entity — use "banner medical" for general physician jobs.
+  "banner health": "banner medical",
+  // Novant Health (ATS public name, NC/SC/VA system) = Novant Medical (DOL filer, 7yr/11pos FY2025, NC).
+  // normEmployer("Novant Health") → "novant health"; DOL normKey is "novant medical".
+  "novant health": "novant medical",
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
@@ -325,7 +336,11 @@ export function sponsorHistoryIndex(): Map<string, SponsorUniverseEntry> {
   const m = new Map<string, SponsorUniverseEntry>();
   for (const e of buildSponsorUniverse()) m.set(e.normKey, e);
   for (const [atsKey, dolKey] of Object.entries(EMPLOYER_ALIASES)) {
-    if (!m.has(atsKey)) {
+    // Allow override when the existing DOL entry is weak (yearsActive < 3), so a
+    // strong alias can replace a shell entity that happens to share the ATS display name.
+    // E.g. DOL has "banner health" at 2yr/0pos, but the real filer is "banner medical" (7yr/44pos).
+    const existing = m.get(atsKey);
+    if (!existing || (existing.yearsActive ?? 0) < 3) {
       const target = m.get(dolKey);
       if (target) m.set(atsKey, target);
     }

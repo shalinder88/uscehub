@@ -1,6 +1,6 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-1702  |  Audited: 2026-06-13
-Note: Full-CDN run. 27 active connectors. workday-stanfordhealth disabled (shc_external_career_site
+Run: 2026-06-13-1833  |  Audited: 2026-06-13
+Note: Full-CDN run. 30 active connectors. workday-stanfordhealth disabled (shc_external_career_site
 has no MD/DO physician postings — all allied health/NP/PA; same pattern as VUMC). workday-roswellpark
 enabled but 0 physician postings active today. Gold: 15/15 pass.
 
@@ -8,8 +8,8 @@ enabled but 0 physician postings active today. Gold: 15/15 pass.
 | Bucket | Count |
 |--------|-------|
 | PUBLISH (non-fixture) | 45 |
-| SPONSOR_LEAD | 778 |
-| Total surfaced (PUBLISH + SL) | 823 |
+| SPONSOR_LEAD | 838 |
+| Total surfaced (PUBLISH + SL) | 883 |
 | REJECT | 95 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
@@ -21,13 +21,15 @@ enabled but 0 physician postings active today. Gold: 15/15 pass.
 ## Dimension 3 — SPONSOR_LEAD denial-language leakage
 **✅ PASS**
 
-## Dimension 4 — Coverage per connector (run 2026-06-13-1702, full CDN, 27 connectors)
+## Dimension 4 — Coverage per connector (run 2026-06-13-1833, full CDN, 30 connectors)
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
 | atom-uky | 0 | 200 | 200 |
+| avature-rss (AAH) | 0 | 20 | 20 |
 | findly-upmc | 0 | 5 | 5 |
 | jibe-emory | 0 | 2 | 2 |
 | jibe-maimonides | 0 | 6 | 6 |
+| jibe-novanthealth | 0 | 40 | 40 |
 | jibe-osf | 1 | 39 | 40 |
 | jibe-ynhhs | 0 | 3 | 3 |
 | jsonld-miami | 0 | 40 | 40 |
@@ -36,6 +38,7 @@ enabled but 0 physician postings active today. Gold: 15/15 pass.
 | workday-adventhealth | 0 | 6 | 6 |
 | workday-ahn | 3 | 17 | 20 |
 | workday-altamed | 0 | 24 | 24 |
+| workday-bannerhealth | 0 | 7 | 7 |
 | workday-bostonmedical | 0 | 28 | 28 |
 | workday-brownhealth | 0 | 27 | 27 |
 | workday-geisinger | 0 | 40 | 40 |
@@ -113,7 +116,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Mercy Health | careers.mercy.com has no MD/DO attending jobs (only support staff) | Disabled — revisit if physician portal added |
 | Vanderbilt University Medical Center | vumccareers Workday portal has no attending/faculty physician postings (244 keyword hits = NP/PA + support staff only) | Disabled — VUMC physician faculty likely recruited via Vanderbilt University academic HR |
 | Boston Children's Hospital | Phenom People SPA (`jobs.bostonchildrens.org`, `_XC_CONFIG={org:"bostonchildrens"}`) — no public JSON API | No bypass |
-| Corewell Health | Phenom People SPA (careers.corewellhealth.org) — no public JSON API | No bypass |
+| Corewell Health | Phenom People SPA (careers.corewellhealth.org) embedded in Gatsby SPA (Phenom tenant SPHEUS). Sitemaps return HTTP 200 but body is 0 bytes — Gatsby serves same SPA shell for any path. NOT wireble. | No bypass |
 | MetroHealth | Infor CloudSuite SPA — no accessible API | No bypass |
 | Henry Ford Health | Infor CloudSuite HCM (confirmed 2026-06-13 from page source, same architecture as MetroHealth) — no accessible API | 7yr, 71 pos |
 | WellSpan Health | Oracle HCM (joinwellspan.org marketing site; "Log into Oracle" link confirms backend) — inaccessible without SSO | 7yr, 22 pos |
@@ -123,8 +126,10 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | Bassett Healthcare Network | Custom KontactIntelligence HTML portal (`careers.bassett.org`; no JSON API; all API-like endpoints return same HTML; physician jobs listed as anchor links on home page) | 7yr, 34 pos |
 | URMC / University of Rochester | **In registry** as `workday-urmc` (handle `rochester/wd5/UR_Staff`), DISABLED pending wd5 CDN recovery. Handle confirmed from urmc.rochester.edu page source. Also covers Unity Hospital of Rochester (7yr/24pos). | 6yr, 35 pos |
 | Baystate Health | Workday confirmed (`baystatehealthjobs.com`); Workday CDN degraded 2026-06-13 — retry when Workday recovers | 7yr, 49 pos |
-| UW Medicine | Workday confirmed (uwmedicine.org/jobs page source); Workday CDN degraded 2026-06-13 — retry when Workday recovers | 7yr, 33 pos |
-| Advocate Aurora Health | Workday confirmed (`careers.aah.org`); Workday CDN degraded 2026-06-13 — retry. Aurora Medical Group (WI) 7yr/33pos DOL entity. | 7yr, 33 pos |
+| UW Medicine | Workday wd1 confirmed (uwmedicine.org/jobs page source shows `uwmedicine.wd1.myworkdayjobs.com`). Workday wd1 CDN returns HTTP 403 for wd1 tenant paths — CDN bot-block, not tenant-absence. Retry when wd1 recovers. DOL: "uwmedicine" 7yr/33pos. | 7yr, 33 pos |
+| Advocate Aurora Health | **WIRED 2026-06-13** via Avature RSS (`avature-rss-aah`). Detail pages are JS-rendered (SPA); RSS feed at `clinicianjobs.advocatehealth.org/careers/SearchJobs/feed/` is bot-accessible. URL slug used for isPhysician() + display title; internal RSS titles (abbreviations) in rawText only. 20 SPONSOR_LEAD/run via "aurora medical" alias (7yr/33pos). | 7yr, 33 pos |
+| Hackensack Meridian Health | iCIMS embedded in custom PHP/Apache portal — Jibe/custom-branded iCIMS wrapper. Jibe API (`careersathackensackmeridian.jibeapply.com`) severely pinned: same NP/admin jobs at all offsets, no physician category filter. NOT wireble with current Jibe connector. | 7yr, 42 pos |
+| Essentia Health | Workday wd1 (`essentiahealth/wd1/Essentia_Health`), 212 physician jobs in Physicians family. ZERO DOL H-1B LCA history (FY2019–FY2025) — rural MN system relies on J-1 Conrad 30 waivers only. Not wired (all jobs would REJECT without DOL enrichment). | 0 DOL pos |
 | Eastern Maine Medical Center / MaineHealth | Infor CloudSuite (mainehealth.org/careers-job-opportunities) — same architecture as MetroHealth | 7yr, 48 pos |
 | UVM Health Network Medical Group | Infor CloudSuite (`uvmhealthcareers.org`) — same architecture as MetroHealth | 7yr, 34 pos |
 | University of Utah Health | Infor CloudSuite (`employment.utah.edu/organization/university-of-utah-health`) — same architecture as MetroHealth | 5yr, 41 pos |
@@ -196,5 +201,7 @@ These are DOL 7-year iron-core sponsors with no active connector:
 23. **University of Miami Phenom JSON-LD connector + UOMUOMUS alias + probe sweep 2026-06-13 (session 2)** — FIXED: `jsonld-miami` connector added (`careers.miami.edu`, Phenom tenant UOMUOMUS). sitemapindex with 4 sub-sitemaps (~380 physician-slug matches pre-filter, JSONLD_MAX_POSTINGS=40 cap). JSON-LD `@type:JobPosting` confirmed server-side for bot UA (same mechanism as Wellstar). EMPLOYER_ALIAS `"uomuomus"→"university of miami"` required (Phenom sets `hiringOrganization.name` to internal org code). DOL 7yr/36pos iron-core FL. Probe sweep findings: INTEGRIS = Oracle HCM (`ertr.fa.us2.oraclecloud.com`, sitemap 479 jobs, no JSON-LD server-side, NOT wireble); CHI Health physician portal = TalentBrew SPA + iCIMS backend via CommonSpirit providers.commonspirit.careers (868 system-wide, no public API, NOT wireble); Piedmont Healthcare = iCIMS + Appcast CPC WordPress overlay, NOT wireble; PeaceHealth = Talemetry/Jobvite with Cloudflare bot-block, NOT wireble; Northeast Medical Group = YNHHS subsidiary via jibe-ynhhs (severely pinned, no separate fix); VCU Health = Phenom-hosted flat sitemap but no physician-slug job titles posted; ECU Health = Phenom-hosted flat sitemap, CMS pages only (no `/job/` URLs); University of Miami = WIREBLE (this item). **Key ATS architecture insight**: Northwell/BCH Phenom are WordPress embeds (client-side SPA widget, no bot JSON-LD); Wellstar/Miami Phenom are Phenom-hosted platforms (server-side JSON-LD served to bots). The hosting model — not the ATS — determines wireability.
 
 19. **OSF HealthCare Jibe connector (tags=Physicians filter)** — FIXED run 0631: `jibe-osf` connector added (`osfcareers.org/api/jobs?keyword=&tags=Physicians`). OSF Multi-Specialty Group 7yr/69pos iron-core (also OSF Healthcare System 6yr/29pos). ATS = Jibe (iCIMS wrapper; ng-app="jibeapply"; client_code="osfhealthcare"). Discovery: default keyword=physician search returns all-staff pinned results (same RN/CNA results at every offset — Jibe pin behavior). Key insight: Jibe API accepts `tags=Physicians` filter parameter that routes to the Physicians category directly. Added optional `query` parameter to `fetchJibe()` (default "keyword=physician") and `jibeQuery` field to `SourceDef` to support per-connector query overrides. totalCount=194 physician-tagged; pagination pins at offset=100 → 40 accessible per run (JIBE_MAX_PHYSICIAN cap). source.employer="OSF Multi-Specialty Group" → normKey "osf multi-specialty group" = direct persistence_index match (no alias). All 40 titles verified clean: Neurohospitalist, Psychiatry Physician, Otolaryngology Physician, Headache Neurologist, PRN Interventional/Telehealth Cardiologist, PRN Radiation Oncologist, Vascular/Breast/General/Colorectal Surgeon, Allergy/Asthma/Immunology Physician, Occupational Medicine, Neurocritical Care, Family Medicine/Primary Care (IL), Internal Medicine (IL), Hematology/Oncology, Emergency Medicine Nocturnist, Pulmonary Critical Care, UICOMP-Peoria academic faculty (Pediatrics, Ophthalmology, Pulmonology, Nephrology), and more. IL-based system (Peoria, Rockford, Bloomington, Galesburg, Ottawa). "Physician Informatics Specialist" correctly rejected by "physician informatics" NONPHYS token. "Attending Hospital Dentist" does not trigger isPhysician() — "attending" is not a PHYS_TOKEN. Zero false positives. Net: 39 SPONSOR_LEAD per run (1 raw dedup dropped). Previously listed in Known Gaps as "iCIMS SPA-blocked" — the osfhealthcare.icims.com portal requires SSO, but the Jibe public API at osfcareers.org is accessible without auth.
+
+24. **Avature RSS connector + Novant Jibe `categories=Physicians` + Banner alias guard fix + probe sweep 2026-06-13 (session 3)** — Three new connectors added; net +47 SL (791→838). (A) `avature-rss-aah`: Advocate Aurora Health uses Avature CRM-based ATS. Detail pages are JS-rendered SPA (curl returns empty body); RSS feed at `clinicianjobs.advocatehealth.org/careers/SearchJobs/feed/?jobRecordsPerPage=200` is bot-accessible. Built `fetchAvatureRss()`: parse XML, extract href from `<guid>` (primary) or `<link>` (fallback), match `/JobDetail/<slug>/<id>` pattern, run `isPhysician(slug)` (URL slug = public-facing specialty title; internal RSS CDATA titles use abbreviations like "IM-", "MFM", "REI" that don't match PHYS_TOKENS). DOL alias `"advocate aurora health" → "aurora medical"` (WI, 7yr/33pos). 20 SPONSOR_LEAD/run. (B) `jibe-novanthealth`: Novant Health Jibe portal (`novanthealth.jibeapply.com`). Discovery: `category=Physicians` (singular) returns all 1634 jobs; `tags=Physicians` returns 0; correct param is `categories=Physicians` (plural) which server-side filters to 183 physician jobs. DOL alias `"novant health" → "novant medical"` (NC, 7yr/11pos) added. 40 SPONSOR_LEAD/run (JIBE_MAX_PHYSICIAN cap hit). (C) `workday-bannerhealth`: Banner Health Workday (`bannerhealth/wd108/Careers`). Bug found: DOL persistence_index had "banner health" at 2yr/0pos (shell entity); old `sponsorHistoryIndex()` alias guard `if (!m.has(atsKey))` saw truthy and skipped insertion of `"banner health" → "banner medical"` alias, causing all Banner jobs to land in REJECT. Fix: changed guard to `if (!existing || (existing.yearsActive ?? 0) < 3)` — allows weak entries (< 3 years active) to be overridden by explicit aliases. Result: 7 SPONSOR_LEAD via "banner medical" alias (AZ, 7yr/44pos). **Not wireble this sweep**: Hackensack Meridian (Jibe severely pinned, no physician category); Essentia Health (Workday confirmed wd1, 212 physician jobs, but ZERO DOL H-1B LCA history — rural MN J-1 Conrad 30 system, not wiring without DOL enrichment); Corewell Health (Phenom-Gatsby embed — sitemaps return 200 but body 0 bytes); Novant previously blocked (now wired).
 
 13. **Brown Health Workday connector + "physician liaison" NONPHYS_TOKEN + Workday "provider" facet fix** — FIXED run 0324: Three separate issues resolved. (A) workday-brownhealth connector added (brownhealth/wd12/External_Careers). Brown Health = formerly Lifespan Health System, rebranded ~2023. EMPLOYER_ALIAS "brown health" → "lifespan physician" (7yr/48pos iron-core; no normKey collision). (B) "physician liaison" added to NONPHYS_TOKENS — Brown Health uses "Sr. Physician Liaison" title for non-MD outreach/recruitment staff; this was a false positive. (C) Workday `physicianFacetIds()` had "provider" in its match terms — Brown Health exposes an "Advanced Practice Provider" job family with `d.includes("provider")` match. The facet probe selected it (54 NP/PA/APP jobs), used it as the filter, and returned 0 real physicians — keyword fallback never activated. Fix: removed "provider" from `physicianFacetIds` matching (audited all 14 active Workday connectors; none uses a "provider" job family for physician jobs — they all fall through to keyword+isPhysician filtering or use "faculty"/"physician" facets). 27 clean SPONSOR_LEAD surfaced: physician, Physician, MG Physician, Physician PD, Staff Physician, Hospitalist, Pediatrician, Physician Gen Cardiology, Physician - Primary Care, Staff Physician Emergency Medicine, etc.

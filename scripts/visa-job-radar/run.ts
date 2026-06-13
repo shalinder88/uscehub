@@ -20,6 +20,7 @@ import {
 } from "./engine";
 import {
   fetchAtom,
+  fetchAvatureRss,
   fetchFindly,
   fetchGreenhouse,
   fetchJibe,
@@ -111,6 +112,10 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
       } else if (src.connector === "atom") {
         candidates.push(
           ...(await fetchAtom(src.handle, src.employer ?? src.label, src.id)),
+        );
+      } else if (src.connector === "avature-rss") {
+        candidates.push(
+          ...(await fetchAvatureRss(src.handle, src.employer ?? src.label, src.id)),
         );
       }
     } catch (err) {

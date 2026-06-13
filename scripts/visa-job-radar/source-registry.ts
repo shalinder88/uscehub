@@ -19,6 +19,7 @@ export type Connector =
   | "jibe"
   | "findly"
   | "atom"
+  | "avature-rss"
   | "none";
 
 export interface SourceDef {
@@ -564,6 +565,40 @@ export const SOURCES: SourceDef[] = [
     enabled: false,
     needsVerification: true,
     note: "DOL iron-core sponsor (7/7 years FY2019-FY2025, 12 certified positions) under 'Guthrie Medical Group, P.C.'. ATS = Oracle HCM (detected via scale-sponsors.ts probe 2026-06-12). fetchJsonLd SPA fallback will attempt sitemap enumeration for /job/ URLs. DISABLED pending manual verification that sitemap at careers.guthrie.org includes physician job URLs with JSON-LD. PA/NY regional health system.",
+  },
+  {
+    id: "jibe-novanthealth",
+    tier: 1,
+    connector: "jibe",
+    label: "Novant Health — physicians (Jibe)",
+    handle: "https://novanthealth.jibeapply.com",
+    employer: "Novant Health",
+    enabled: true,
+    needsVerification: true,
+    jibeQuery: "keyword=&categories=Physicians",
+    note: "Novant Health (NC/SC/VA system, 40+ hospitals). Jibe ATS confirmed 2026-06-13 at novanthealth.jibeapply.com. Physician category filter: 'categories=Physicians' returns exactly 183 physician jobs (vs 1634 total for keyword=physician). NOT 'tags=Physicians' (returns 0). DOL iron-core: 'novant medical' 7yr/11pos FY2025 (NC). EMPLOYER_ALIAS 'novant health' → 'novant medical' added to sponsor-universe.ts. All 183 physician-category jobs expected SPONSOR_LEAD via sponsorEnrich(). Apply URLs via iCIMS (external-novanthealth.icims.com).",
+  },
+  {
+    id: "workday-bannerhealth",
+    tier: 1,
+    connector: "workday",
+    label: "Banner Health — physicians (Workday)",
+    handle: "bannerhealth/wd108/Careers",
+    employer: "Banner Health",
+    enabled: true,
+    needsVerification: true,
+    note: "Confirmed wd108 tenant 2026-06-13 via www.bannerhealth.com/careers link to bannerhealth.wd108.myworkdayjobs.com/Careers (HTTP 200). DOL iron-core: 'banner medical' 7yr/44pos FY2025 (AZ); 'banner university medical' 7yr/60pos (AZ, GME/academic). EMPLOYER_ALIAS 'banner health' → 'banner medical' added to sponsor-universe.ts. CXS probe: only 3 jobs in 'Physicians' job family (below 5-threshold) so pipeline uses keyword-search fallback. Expect low yield on a given day but will capture openings as they post. Large AZ/CO/WY/NV/NE health system.",
+  },
+  {
+    id: "avature-rss-aah",
+    tier: 1,
+    connector: "avature-rss",
+    label: "Advocate Aurora Health — physicians (Avature RSS)",
+    handle: "https://clinicianjobs.advocatehealth.org/careers/SearchJobs/feed/?jobRecordsPerPage=200",
+    employer: "Advocate Aurora Health",
+    enabled: true,
+    needsVerification: true,
+    note: "Advocate Aurora Health (merged 2022, IL+WI) physician recruiting portal at clinicianjobs.advocatehealth.org powered by Avature (advocateaurorahealth.avature.net). Job detail pages are JS-rendered; only RSS feed is bot-accessible. Feed URL confirmed 2026-06-13: HTTP 200, 20 physician jobs (Internal Medicine, Family Medicine, Neurology, GYN-ONC, Psychiatry, Anesthesiologist, REI, MFM, Rheumatology, OB/GYN, Emergency Medicine, Pediatric Radiology). URL slug used for isPhysician() check and display title; internal RSS title in rawText. DOL iron-core: 'aurora medical' 7yr/33pos FY2025 (WI legacy entity). EMPLOYER_ALIAS 'advocate aurora health' → 'aurora medical' added to sponsor-universe.ts. All 20 jobs expected SPONSOR_LEAD via sponsorEnrich().",
   },
   {
     id: "tier3-practicelink",
