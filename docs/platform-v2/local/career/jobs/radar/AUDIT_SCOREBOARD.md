@@ -1,17 +1,15 @@
 # Visa Job Radar — Audit Scoreboard
-Run: 2026-06-13-0806  |  Audited: 2026-06-13
-Note: Workday CDN degraded since ~0605 — wd1/wd5 returning HTML instead of JSON.
-Run 0806 = degraded run + all connectors including new jsonld-wellstar.
-Expected SPONSOR_LEAD when Workday recovers: 645 (534 baseline + 3 YNHHS + 39 OSF + 31 MCW + 38 Wellstar).
+Run: 2026-06-13-1610  |  Audited: 2026-06-13
+Note: Full-CDN run. wd1 + wd5 CDN recovered. 23 active connectors (22 prior + jsonld-miami).
+Gold: 15/15 pass. Next tier: enable 5 disabled connectors (urmc/rochestergeneral/roswellpark/ahn/bostonmedical) when ready.
 
 ## Overall counts
 | Bucket | Count |
 |--------|-------|
-| PUBLISH (non-fixture) | 10 |
-| SPONSOR_LEAD (full-run expected) | 645 |
-| SPONSOR_LEAD (degraded run 0806) | 416 |
-| Total surfaced (PUBLISH + SL) | 655 |
-| REJECT | 55 |
+| PUBLISH (non-fixture) | 26 |
+| SPONSOR_LEAD | 681 |
+| Total surfaced (PUBLISH + SL) | 707 |
+| REJECT | 93 |
 
 ## Dimension 1 — Quote accuracy (verbatim char-offset)
 **✅ PASS** — 38 quotes verified, 0 mismatches
@@ -22,18 +20,26 @@ Expected SPONSOR_LEAD when Workday recovers: 645 (534 baseline + 3 YNHHS + 39 OS
 ## Dimension 3 — SPONSOR_LEAD denial-language leakage
 **✅ PASS**
 
-## Dimension 4 — Coverage per connector
+## Dimension 4 — Coverage per connector (run 2026-06-13-1610, full CDN)
 | Source | PUBLISH | SPONSOR_LEAD | Total |
 |--------|---------|--------------|-------|
+| atom-uky | 0 | 200 | 200 |
+| findly-upmc | 0 | 5 | 5 |
 | jibe-emory | 0 | 2 | 2 |
 | jibe-maimonides | 0 | 6 | 6 |
-| jsonld-umms | 2 | 35 | 37 |
+| jibe-osf | 1 | 39 | 40 |
+| jibe-ynhhs | 0 | 3 | 3 |
+| jsonld-miami | 0 | 40 | 40 |
+| jsonld-umms | 1 | 38 | 39 |
+| jsonld-wellstar | 2 | 37 | 39 |
 | workday-adventhealth | 0 | 6 | 6 |
 | workday-altamed | 0 | 24 | 24 |
 | workday-brownhealth | 0 | 27 | 27 |
 | workday-geisinger | 0 | 40 | 40 |
 | workday-jeffersonhealth | 0 | 40 | 40 |
 | workday-kumc | 0 | 11 | 11 |
+| workday-lvhn | 0 | 18 | 18 |
+| workday-mcw | 0 | 30 | 30 |
 | workday-mgb | 0 | 21 | 21 |
 | workday-montefiore | 0 | 19 | 19 |
 | workday-msk | 0 | 6 | 6 |
@@ -41,13 +47,6 @@ Expected SPONSOR_LEAD when Workday recovers: 645 (534 baseline + 3 YNHHS + 39 OS
 | workday-ochsner | 2 | 13 | 15 |
 | workday-presbyterianhealthcare | 4 | 35 | 39 |
 | workday-sanford | 16 | 2 | 18 |
-| findly-upmc | 0 | 5 | 5 |
-| atom-uky | 0 | 204 | 204 |
-| workday-lvhn | 0 | 18 | 18 |
-| jibe-ynhhs | 0 | 3 | 3 |
-| jibe-osf | 0 | 39 | 39 |
-| workday-mcw | 0 | 31 | 31 |
-| jsonld-wellstar | 2 | 37 | 39 |
 
 ## Dimension 5 — NOT_PHYSICIAN gate false-filter scan
 **✅ CLEAN** — physician-keyword titles rejected by gate
@@ -149,10 +148,13 @@ These are DOL 7-year iron-core sponsors with no active connector:
 | NYC Health + Hospitals | Radware WAF bot-block on nychealthandhospitals.org (HTTP 403 → perfdrive.com CAPTCHA). jobs.nychealthandhospitals.org returns Chrome SSL error. cityjobs.nyc.gov dataset (DCAS "Jobs NYC Postings") only covers City agencies, NOT H+H (public benefit corporation). No accessible path. | 7yr, 132+ pos |
 | BronxCare Health System | TIMEOUT on bronxcare.org/careers (heavy page). Likely Infor CloudSuite or custom ATS. Re-probe with Chrome MCP when needed. | 7yr, 118 pos |
 | One Brooklyn Health / Brookdale Hospital | Jibe portal at careers.onebrooklynhealth.org confirmed — severely pinned (183 results at all keywords; first titles are RN/admin). tags=Physicians=0. Workday tenant `brookdalehospital` also confirmed on wd12 (422, site path unknown). | 7yr, 162 pos |
-| INTEGRIS Health | Workday tenant `integris` confirmed on wd12 (422). Site path unverified (tried: INTEGRIS, External, Careers, INTEGRISCareers, etc.). Main careers page 403. Re-probe from page source when accessible. | 7yr, 30 pos |
-| CHI Health / Alegent Creighton Clinic | Workday tenant `chihealth` confirmed on wd12 (422). Site path unverified (tried: CHIHealth, External, Careers, CHI, etc.). Main careers page fetch failed. Re-probe from page source when accessible. | 7yr, 29 pos |
-| University of Miami / UHealth | Phenom People SPA (`careers.miami.edu/us/en`, `_XC_CONFIG` confirmed) — same architecture as BCH/Corewell/Northwell | 7yr, 36 pos |
-| VIDANT Medical Group / ECU Health | Phenom People SPA (`careers.ecuhealth.org/us/en`, confirmed 2026-06-13 — Vidant rebranded to ECU Health) | 7yr, 32 pos |
+| INTEGRIS Health | Oracle HCM (`ertr.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3001`, confirmed 2026-06-13 via Chrome MCP). Pure SPA — no JSON-LD served server-side (og:meta only). 479 total jobs, ~52 physician openings on the site UI. Sitemap public at `/sitemaps/jobpostings` (479 numeric-ID-only URLs, no title slugs — no server-side filter possible). Individual job pages return og:title + 80-char og:description only; no structured fields. Not wireble with current connector types. Workday tenant `integris` on wd12 likely back-office HR only (same pattern as USACS). NOT WIREBLE. | 7yr, 30 pos |
+| CHI Health / Alegent Creighton Clinic | Physician recruiting via CommonSpirit Health provider portal (`providers.commonspirit.careers`, confirmed 2026-06-13). ATS = TalentBrew SPA (tbcdn.talentbrew.com, company 35300) + iCIMS backend (`providers-commonspirit.icims.com`). 868 system-wide positions across all CommonSpirit ministries (CHI NE/IA is subset). TalentBrew API 404 on all known endpoints. NOT WIREBLE — same architecture as Sound Physicians + Mayo Clinic. Workday tenant `chihealth` on wd12 likely back-office HR only. NOT WIREBLE. | 7yr, 29 pos |
+| University of Miami / UHealth | **WIRED 2026-06-13** as `jsonld-miami`. Phenom-hosted ATS (`careers.miami.edu`, tenant UOMUOMUS). Sitemap at `careers.miami.edu/sitemap.xml` → sitemapindex with 4 sub-sitemaps (2013 total job URLs, ~380 physician-slug pre-filter). Individual job pages serve `@type:JobPosting` JSON-LD server-side to pipeline UA (same as Wellstar). EMPLOYER_ALIAS `"uomuomus"→"university of miami"` added. DOL 7yr/36pos; occupationalCategory=`Faculty & Physicians`. Backend ATS is Workday (umiami tenant per job description). | 7yr, 36 pos |
+| VIDANT Medical Group / ECU Health | Phenom People SPA (`careers.ecuhealth.org/us/en`, confirmed 2026-06-13 — Vidant rebranded to ECU Health). Flat sitemap (168KB, 379 URLs) contains informational CMS pages only, no `/job/` URLs. Actual job data served via Phenom client-side JS only. NOT wireble. | 7yr, 32 pos |
+| VCU Health System | Phenom-hosted (`careers.vcuhealth.org/us/en`). Flat sitemap (103KB) has 335 job URLs (e.g. `/us/en/job/R42363/...`) but no physician-title slugs — all titles are RN, coordinator, technician, support staff. Physician jobs either have non-physician slugs or are not posted on this portal. NOT wireble via slug filter. | 6yr, 36 pos |
+| Piedmont Healthcare | iCIMS backend (`employees-piedmont.icims.com` — employee/SSO portal) + Appcast CPC WordPress overlay at `piedmontcareers.org`. Physician physician search at `piedmontcareers.org/careers/physicians-app/` uses `refreshJobs()` JS function with iCIMS Appcast integration; no public REST API accessible. NOT wireble. | 7yr, 37 pos (Piedmont Athens) |
+| PeaceHealth | Talemetry career site (`careers.peacehealth.org/pack/talemetry_careersites/`) with Jobvite backend (`apply.app.jobvite.com`). Public `/api/jobs` endpoint exists but Cloudflare managed challenge blocks all non-browser UAs. RSS/sitemap return 403. Jobvite API key `Ltrd3Uxsy0nzWT8kGrIIGc` embedded in config but `api.jobvite.com` returns 401 (API key = write key, not public read). NOT wireble. | 7yr, 27 pos |
 
 ## What to fix next (priority order)
 
@@ -185,6 +187,8 @@ These are DOL 7-year iron-core sponsors with no active connector:
 22. **Wellstar Medical Group Phenom JSON-LD connector + "5000" prefix alias** — FIXED run 0806: `jsonld-wellstar` connector added (`careers.wellstar.org`, Phenom tenant WHWWHSUS). Sitemap enumeration fallback; sitemap_index.xml → 3 sub-sitemaps (sitemap2.xml: 384 jobs, sitemap3.xml: 86 jobs, ~66 physician-slug matches). Root cause of sponsorEnrich miss: Phenom sets `hiringOrganization.name = "5000 Wellstar Medical Group, LLC"` (cost-center prefix). `normEmployer` strips "llc" and "group" (both CORP_SUFFIXES) but not "5000" → produces "5000 wellstar medical" ≠ PI normKey "wellstar medical". Fixed with `EMPLOYER_ALIAS "5000 wellstar medical" → "wellstar medical"` in sponsor-universe.ts. Run results: 37 SPONSOR_LEAD + 2 PUBLISH (39 total). GA-based regional health system. Expected 37–39 SPONSOR_LEAD per run. Total pipeline SL: 416 (degraded run) / 645 (expected full Workday recovery). ATS probe sweep 2026-06-13: USACS = Herefish physician CRM + internal API (not Workday-facing); Cook County Health = Taleo classic; INTEGRIS = Cloudflare 403; CHI Health = wd12 tenant confirmed but site path unresolved (SPA); Sound Physicians = TalentBrew SPA; BronxCare = timeout; NYC H+H = Radware WAF bot-block; PAGNY = custom CMS; One Brooklyn = Jibe pinned (confirmed prior); NYU Grossman/MetroHealth/St. Barnabas = all ERR/ECONNREFUSED.
 
 21. **Medical College of Wisconsin Workday connector (wd503)** — FIXED run 0725: `workday-mcw` connector added (`mcw/wd503/ExternalCareers`). MCW = academic AMC in Milwaukee, WI; part of Froedtert & the Medical College of Wisconsin Health Network (Froedtert itself is blocked via Infor CloudSuite). New Workday DC `wd503` discovered and confirmed functional (HTTP 200 JSON). DOL iron-core: 'medical college of wisconsin' 6yr/39pos FY2025 = direct normKey match; also covers 'medical college of wisconsin affiliated hospitals' 7yr/21pos under same portal. jobFamilyGroup facets: Faculty (165 jobs) selected by physicianFacetIds() via d.includes('faculty'). Run results: 31 SPONSOR_LEAD, 0 false positives, 0 rejected — all physician faculty titles (Glaucoma Specialist, Cardiothoracic Surgeon, Cardiologist, Gastroenterologist, Endocrinologist, Orthopedic Surgeon, Pediatric Pathologist, Oncologist, etc.). WI-based; many positions at Froedtert-MCW hospital network sites (Froedtert campus + community sites). Expected SPONSOR_LEAD: 30-35 per run.
+
+23. **University of Miami Phenom JSON-LD connector + UOMUOMUS alias + probe sweep 2026-06-13 (session 2)** — FIXED: `jsonld-miami` connector added (`careers.miami.edu`, Phenom tenant UOMUOMUS). sitemapindex with 4 sub-sitemaps (~380 physician-slug matches pre-filter, JSONLD_MAX_POSTINGS=40 cap). JSON-LD `@type:JobPosting` confirmed server-side for bot UA (same mechanism as Wellstar). EMPLOYER_ALIAS `"uomuomus"→"university of miami"` required (Phenom sets `hiringOrganization.name` to internal org code). DOL 7yr/36pos iron-core FL. Probe sweep findings: INTEGRIS = Oracle HCM (`ertr.fa.us2.oraclecloud.com`, sitemap 479 jobs, no JSON-LD server-side, NOT wireble); CHI Health physician portal = TalentBrew SPA + iCIMS backend via CommonSpirit providers.commonspirit.careers (868 system-wide, no public API, NOT wireble); Piedmont Healthcare = iCIMS + Appcast CPC WordPress overlay, NOT wireble; PeaceHealth = Talemetry/Jobvite with Cloudflare bot-block, NOT wireble; Northeast Medical Group = YNHHS subsidiary via jibe-ynhhs (severely pinned, no separate fix); VCU Health = Phenom-hosted flat sitemap but no physician-slug job titles posted; ECU Health = Phenom-hosted flat sitemap, CMS pages only (no `/job/` URLs); University of Miami = WIREBLE (this item). **Key ATS architecture insight**: Northwell/BCH Phenom are WordPress embeds (client-side SPA widget, no bot JSON-LD); Wellstar/Miami Phenom are Phenom-hosted platforms (server-side JSON-LD served to bots). The hosting model — not the ATS — determines wireability.
 
 19. **OSF HealthCare Jibe connector (tags=Physicians filter)** — FIXED run 0631: `jibe-osf` connector added (`osfcareers.org/api/jobs?keyword=&tags=Physicians`). OSF Multi-Specialty Group 7yr/69pos iron-core (also OSF Healthcare System 6yr/29pos). ATS = Jibe (iCIMS wrapper; ng-app="jibeapply"; client_code="osfhealthcare"). Discovery: default keyword=physician search returns all-staff pinned results (same RN/CNA results at every offset — Jibe pin behavior). Key insight: Jibe API accepts `tags=Physicians` filter parameter that routes to the Physicians category directly. Added optional `query` parameter to `fetchJibe()` (default "keyword=physician") and `jibeQuery` field to `SourceDef` to support per-connector query overrides. totalCount=194 physician-tagged; pagination pins at offset=100 → 40 accessible per run (JIBE_MAX_PHYSICIAN cap). source.employer="OSF Multi-Specialty Group" → normKey "osf multi-specialty group" = direct persistence_index match (no alias). All 40 titles verified clean: Neurohospitalist, Psychiatry Physician, Otolaryngology Physician, Headache Neurologist, PRN Interventional/Telehealth Cardiologist, PRN Radiation Oncologist, Vascular/Breast/General/Colorectal Surgeon, Allergy/Asthma/Immunology Physician, Occupational Medicine, Neurocritical Care, Family Medicine/Primary Care (IL), Internal Medicine (IL), Hematology/Oncology, Emergency Medicine Nocturnist, Pulmonary Critical Care, UICOMP-Peoria academic faculty (Pediatrics, Ophthalmology, Pulmonology, Nephrology), and more. IL-based system (Peoria, Rockford, Bloomington, Galesburg, Ottawa). "Physician Informatics Specialist" correctly rejected by "physician informatics" NONPHYS token. "Attending Hospital Dentist" does not trigger isPhysician() — "attending" is not a PHYS_TOKEN. Zero false positives. Net: 39 SPONSOR_LEAD per run (1 raw dedup dropped). Previously listed in Known Gaps as "iCIMS SPA-blocked" — the osfhealthcare.icims.com portal requires SSO, but the Jibe public API at osfcareers.org is accessible without auth.
 
