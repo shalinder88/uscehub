@@ -1,11 +1,27 @@
 # Sponsor truth — fused per-employer evidence
 
-Generated 2026-06-14T00:55:35.211Z · 5870 employers
+Generated 2026-06-14T01:11:36.840Z · 5870 employers
 
-- With LIVE physician LCA-notice activity: 2
+- With LIVE physician LCA-notice activity: 4
 - With current employer-direct openings (latest run 2026-06-13-1833): 22
 
 ## Top 25 (live activity → openings → history score)
+
+### University of Arkansas for Medical Sciences (AR) — score 88
+
+DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 6 physician LCA notice(s) on the employer's own site (latest 2026-06-14). Caveat: employer-level history does not guarantee any specific role sponsors.
+- LIVE filing: Fellow Physician — $68,720 — 07/01/2026 – 06/30/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf)
+- LIVE filing: Fellow Physician — $68,720.00 — 07/01/2026 – 06/23/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf)
+- LIVE filing: Resident/Fellow Physician — $63396.00 — 6/17/2026 - 06/16/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26126-878193.pdf)
+
+### Emory University (GA) — score 88
+
+DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 4 physician LCA notice(s) on the employer's own site (latest 2026-06-14). 2 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 2 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf)
+- LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf)
+- LIVE filing: Assistant Professor SOM Pathology and Laboratory Medicine — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029.pdf)
+- Opening [SPONSOR_LEAD]: Assistant Professor - EJCH General Urologist (Georgia)
+- Opening [SPONSOR_LEAD]: Spine Physician (Georgia)
 
 ### THE UNIVERSITY OF KANSAS MEDICAL CENTER (KS) — score 80
 
@@ -153,12 +169,6 @@ DOL history: 62 certified physician position(s) across 2 specialties. 3 current 
 - Opening [SPONSOR_LEAD]: On‑Call OB/GYN Physician (Per Diem) – Greenwich Hospital (Connecticut)
 - Opening [SPONSOR_LEAD]: Hospice Physician (Connecticut)
 
-### Emory University (GA) — score 88
-
-DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. 2 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 2 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [SPONSOR_LEAD]: Assistant Professor - EJCH General Urologist (Georgia)
-- Opening [SPONSOR_LEAD]: Spine Physician (Georgia)
-
 ### Wellstar Medical Group, LLC (GA) — score 73
 
 DOL history: 7 certified physician position(s) across 16 specialties; J-1-relevant. 1 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 1 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
@@ -167,7 +177,3 @@ DOL history: 7 certified physician position(s) across 16 specialties; J-1-releva
 ### Cleveland Clinic  (OH) — score 100
 
 DOL history: 16 certified physician position(s) across 26 specialties; cap-exempt; J-1-relevant. Caveat: employer-level history does not guarantee any specific role sponsors.
-
-### The Brookdale Hospital Medical Center  (NY) — score 92
-
-DOL history: 24 certified physician position(s) across 15 specialties; J-1-relevant. Caveat: employer-level history does not guarantee any specific role sponsors.

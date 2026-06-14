@@ -1,12 +1,14 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-06-14T00:55:30.760Z
-- Notices tracked (all time): 3 (2 physician)
-- This poll: 0 new, 3 still posted
+- Last poll: 2026-06-14T01:11:25.962Z
+- Notices tracked (all time): 13 (12 physician)
+- This poll: 4 new, 9 still posted
 
 ## Poll log
 - lca-kumc: 2 notice link(s) on page
 - lca-pitt: 1 physician notice link(s) on page
+- lca-uams: 6 physician notice link(s) on page
+- lca-emory: 4 physician notice link(s) on page
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
@@ -18,3 +20,13 @@
 |---|---|---|---|---|---|
 | University of Kansas Medical Center | Pulmonary and Critical Care Nocturnist Physician/Faculty | $435,000 | from 13 Jul 2026 to 12 Jul 2029 | 2026-06-11 | KBGOVI07995-2 |
 | University of Pittsburgh | Assistant Professor - Adult Cardiology | $156.25 per hour | from 9/1/2026 to 8/31/2029 | 2026-06-11 | uncased-Assistant Professor - Adult Cardiology |
+| University of Arkansas for Medical Sciences | Fellow Physician | $68,720 | 07/01/2026 – 06/30/2029 | 2026-06-14 | I-200-26057-666396 |
+| University of Arkansas for Medical Sciences | Fellow Physician | $68,720.00 | 07/01/2026 – 06/23/2029 | 2026-06-14 | I-200-26064-681539 |
+| University of Arkansas for Medical Sciences | Resident/Fellow Physician | $63396.00 | 6/17/2026 - 06/16/2029 | 2026-06-14 | I-200-26126-878193 |
+| University of Arkansas for Medical Sciences | Resident/Fellow Physician | $63,396.00 | 6/17/2026 - 6/16/2029 | 2026-06-14 | I-200-26142-941577 |
+| University of Arkansas for Medical Sciences | Physician | $175/hr | 7/1/2026 - 6/30/2028 | 2026-06-14 | I-200-26146-947183 |
+| University of Arkansas for Medical Sciences | Fellow Physician | $77,210.00 | 7/3/2026 - 7/2/2029 | 2026-06-14 | I-200-26162-004440 |
+| Emory University | Assistant Professor SOM Radiology | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026 |
+| Emory University | Assistant Professor SOM Radiology | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029 |
+| Emory University | Assistant Professor SOM Pathology and Laboratory Medicine | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029 |
+| Emory University | Assistant Professor SOM Surgery | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029 |

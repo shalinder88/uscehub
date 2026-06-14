@@ -119,7 +119,7 @@ for (const e of liveEntries) {
   out.push(`    notices: [`);
   for (const n of e.notices) {
     out.push(
-      `      { role: ${JSON.stringify(n.role)}, salaryText: ${JSON.stringify(n.salaryText)}, noticeUrl: ${JSON.stringify(n.noticeUrl)}, periodText: ${JSON.stringify(n.periodText)}, firstSeenAt: ${JSON.stringify(n.firstSeenAt)} },`
+      `      { role: ${JSON.stringify(n.role)}, salaryText: ${JSON.stringify(n.salaryText ?? "")}, noticeUrl: ${JSON.stringify(n.noticeUrl)}, periodText: ${JSON.stringify(n.periodText ?? "")}, firstSeenAt: ${JSON.stringify(n.firstSeenAt)} },`
     );
   }
   out.push(`    ],`);

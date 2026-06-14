@@ -64,6 +64,22 @@ export const LCA_NOTICE_SOURCES: LcaNoticeSource[] = [
     note: "Verified 2026-06-11: public LCA Postings page (Office of International Services), one notice PDF per filing under /sites/default/files/docs/ with the JOB TITLE as the filename (no 'lca'/'notice' token in the URL → needs all-pdf-titled). Top physician sponsor via UPMC / Univ. of Pittsburgh Physicians (UPP). Notice template differs from KUMC ('for the position of', 'salary ... is $X per hour', 'validity dates from'); the parser handles both. Title carries the dept in a trailing paren ('(Ophthalmology)') so the dept is stripped before the physician gate to avoid postdoc/research false positives. First physician notice: Assistant Professor - Adult Cardiology, $156.25/hr.",
   },
   {
+    id: "lca-uams",
+    employer: "University of Arkansas for Medical Sciences",
+    pageUrl: "https://hr.uams.edu/immigration-services/h-1b-notice-of-intent-to-hire-h-1b-e-3-employees/",
+    enabled: true,
+    linkStrategy: "all-pdf-titled",
+    note: "Verified 2026-06-13: public 'Notice of Intent to Hire H-1B/E-3' page (HR Immigration Services). One PDF per filing under wp-content/uploads/sites/9/; the JOB TITLE is the filename (e.g. 'Fellow-Physician-I-...'). Dedicated academic medical center — physician-heavy. DOL iron-core: UAMS 7yr/52pos. NOTE: UAMS Workday postings carry 'Sponsorship Available: No' (HR default) — but these are FILED LCAs (actual sponsorship activity), a stronger and independent signal.",
+  },
+  {
+    id: "lca-emory",
+    employer: "Emory University",
+    pageUrl: "https://hr.emory.edu/eu/career/lca-notices/index.html",
+    enabled: true,
+    linkStrategy: "all-pdf-titled",
+    note: "Verified 2026-06-13: public LCA-notices page. One PDF per filing; filename encodes title+dept+dates (e.g. 'Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf'). School of Medicine faculty (Radiology/Pathology/Surgery) mixed with research. DOL iron-core sponsor.",
+  },
+  {
     id: "lca-upenn",
     employer: "University of Pennsylvania",
     pageUrl: "https://global.upenn.edu/isss/LCA-notifications/",
@@ -312,6 +328,27 @@ function stripTrailingParenthetical(s: string): string {
   return t.slice(0, open).trim();
 }
 
+// A body-parsed role is only usable for display if it carries real letters and
+// isn't a blank form line. Emory's notice is a fillable form whose values render
+// ABOVE their labels, so "Position title: ____" parses to underscores — reject
+// those and fall back to the (clean) filename title.
+export function sanitizeRole(r?: string): string | undefined {
+  if (!r) return undefined;
+  const t = r.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+  const letters = (t.match(/[A-Za-z]/g) ?? []).length;
+  return letters >= 3 ? t : undefined;
+}
+
+// Display cleanup for a filename-derived title: separators → spaces, and strip a
+// trailing ETA LCA number ("...-I-200-26057-666396") or date range
+// ("...-7.1.2026-6.30.2029") that some employers append to the notice filename.
+export function cleanFilenameTitle(s: string): string {
+  let t = s.replace(/_+/g, " ");
+  t = t.replace(/[-\s][A-Za-z]-?\d{2,3}-\d{4,5}-\d{5,7}\s*$/, "");
+  t = t.replace(/[-\s]\d{1,2}\.\d{1,2}\.\d{2,4}([-–\s]\d{1,2}\.\d{1,2}\.\d{2,4})?\s*$/, "");
+  return t.replace(/-/g, " ").replace(/\s+/g, " ").trim();
+}
+
 // For "all-pdf-titled" sources, the job title IS the PDF filename. Decode it,
 // drop the extension + re-post suffix + trailing department paren.
 export function deriveTitleFromHref(href: string): string {
@@ -344,6 +381,13 @@ export function parseNoticeText(text: string): {
     const close = open >= 0 ? text.indexOf("]", open) : -1;
     if (open >= 0 && close > open && close - open < 40) caseNumber = text.slice(open + 1, close).trim();
   }
+  // Label template (UAMS): "LCA Number:" → ETA case token (e.g. I-200-26057-666396).
+  if (!caseNumber) {
+    const ln = valueAfter(text, "lca number", 48);
+    const tok = ln?.replace(/[^A-Za-z0-9-]+/g, " ").trim().split(" ")
+      .find((t) => /^[A-Za-z]-?\d{2,3}-\d{4,5}-\d{5,7}$/.test(t));
+    if (tok) caseNumber = tok;
+  }
   const cutAt = (v: string | undefined, stops: string[]): string | undefined => {
     if (!v) return v;
     let out = v;
@@ -357,8 +401,10 @@ export function parseNoticeText(text: string): {
   let role = cutAt(
     valueAfter(text, "being sought as a", 160) ??
       valueAfter(text, "being sought as", 160) ??
-      valueAfter(text, "for the position of", 160),
-    [" through the filing", " with validity", " with the following"],
+      valueAfter(text, "for the position of", 160) ??
+      valueAfter(text, "position title", 120),
+    [" through the filing", " with validity", " with the following",
+      " lca number", " location", " annual salary", " emory hiring", " som:"],
   );
   if (role) role = stripLeadingPunct(role);
 
@@ -366,17 +412,28 @@ export function parseNoticeText(text: string): {
     valueAfter(text, "salary of", 80) ??
       valueAfter(text, "wage of", 80) ??
       valueAfter(text, "wage rate of", 80) ??
-      valueAfter(text, "salary for this position is", 80),
-    [" is being", " will be", " the employment", " the labor"],
+      valueAfter(text, "salary for this position is", 80) ??
+      valueAfter(text, "annual salary", 60) ??
+      valueAfter(text, "salary:", 60),
+    [" is being", " will be", " the employment", " the labor", " period of"],
   );
-  if (salaryText) salaryText = stripTrailingPunct(salaryText);
+  if (salaryText) salaryText = stripTrailingPunct(stripLeadingPunct(salaryText));
+  // Emory's fillable-form notice renders values ABOVE their labels, so a forward
+  // anchor ("salary of" even matches inside "salary offered") captures the blank
+  // form line — underscores, sometimes trailed by the SOC code's digits. Reject
+  // any value carrying a blank-field underscore, and require a real digit.
+  if (salaryText && (salaryText.includes("_") || !/[0-9]/.test(salaryText))) salaryText = undefined;
 
-  const periodText = cutAt(
+  let periodText = cutAt(
     valueAfter(text, "period of employment for which this worker is sought is", 90) ??
       valueAfter(text, "period of employment", 90) ??
       valueAfter(text, "validity dates", 90),
-    [" the employment", " the salary"],
+    [" the employment", " the salary", " the university", " in compliance", " the labor"],
   );
+  if (periodText) periodText = stripLeadingPunct(periodText);
+  // Same form-overlay artifact as salary: Emory's "Period of employment/LCA
+  // validity period: ___" anchor captures the blank mm/dd/yyyy template. Drop it.
+  if (periodText && periodText.includes("_")) periodText = undefined;
 
   return {
     caseNumber,
@@ -518,9 +575,14 @@ async function main(): Promise<void> {
         continue;
       }
       const parsed = parseNoticeText(text);
-      // all-pdf-titled: the title is the filename (already physician-gated).
-      // filename-token: the role is parsed from the body and gated here.
-      const role = link.titleHint ?? parsed.role;
+      // all-pdf-titled: physician verdict comes from the pre-fetch filename gate.
+      // For DISPLAY prefer the body's labeled role (clean, e.g. UAMS "Fellow
+      // Physician") and fall back to a cleaned filename when the body role is a
+      // blank form line (Emory). filename-token: role is parsed + gated here.
+      const bodyRole = sanitizeRole(parsed.role);
+      const role = link.titleHint
+        ? (bodyRole ?? cleanFilenameTitle(link.titleHint))
+        : parsed.role;
       const isPhysicianRole = link.titleHint
         ? true
         : parsed.role
