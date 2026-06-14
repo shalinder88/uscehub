@@ -314,6 +314,7 @@ const WORKDAY_PAGE_SIZE = 20;
 const WORKDAY_MAX_PAGES = 25; // list-scan ceiling per site
 const WORKDAY_MAX_DETAILS = 40; // detail-GET ceiling per site
 const WORKDAY_DELAY_MS = 150; // between every network call
+const WORKDAY_TIMEOUT_MS = 20_000; // per-request hard timeout
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -325,6 +326,7 @@ export async function fetchWorkday(
   handle: string,
   employer: string,
   sourceIdBase: string,
+  facetIdsOverride?: string[],
 ): Promise<RawCandidate[]> {
   const parts = handle.split("/");
   if (parts.length !== 3) return [];
@@ -342,24 +344,31 @@ export async function fetchWorkday(
     // real reqs. Fall back to keyword only if the tenant exposes no such facet.
     let appliedFacets: Record<string, string[]> = {};
     let searchText = "physician";
-    const probe = await fetch(base + "/jobs", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ appliedFacets: {}, limit: 1, offset: 0, searchText: "" }),
-    });
-    if (probe.ok) {
-      const pdata = (await probe.json()) as WorkdayListResponse;
-      const { ids, totalCount } = physicianFacetIds(pdata.facets);
-      // Only use the facet if it returns a meaningful number of jobs. Some tenants
-      // (e.g. Cleveland Clinic) classify most physician jobs outside the standard
-      // "Physician" job-family facet — when the facet count is very low, keyword
-      // search finds far more relevant postings.
-      if (ids.length > 0 && totalCount >= 5) {
-        appliedFacets = { jobFamilyGroup: ids };
-        searchText = "";
+    if (facetIdsOverride && facetIdsOverride.length > 0) {
+      // Registry-provided override: skip auto-discovery entirely
+      appliedFacets = { jobFamilyGroup: facetIdsOverride };
+      searchText = "";
+    } else {
+      const probe = await fetch(base + "/jobs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ appliedFacets: {}, limit: 1, offset: 0, searchText: "" }),
+        signal: AbortSignal.timeout(WORKDAY_TIMEOUT_MS),
+      });
+      if (probe.ok) {
+        const pdata = (await probe.json()) as WorkdayListResponse;
+        const { ids, totalCount } = physicianFacetIds(pdata.facets);
+        // Only use the facet if it returns a meaningful number of jobs. Some tenants
+        // (e.g. Cleveland Clinic) classify most physician jobs outside the standard
+        // "Physician" job-family facet — when the facet count is very low, keyword
+        // search finds far more relevant postings.
+        if (ids.length > 0 && totalCount >= 5) {
+          appliedFacets = { jobFamilyGroup: ids };
+          searchText = "";
+        }
       }
+      await delay(WORKDAY_DELAY_MS);
     }
-    await delay(WORKDAY_DELAY_MS);
 
     for (let page = 0; page < WORKDAY_MAX_PAGES; page++) {
       const res = await fetch(base + "/jobs", {
@@ -371,6 +380,7 @@ export async function fetchWorkday(
           offset: page * WORKDAY_PAGE_SIZE,
           searchText,
         }),
+        signal: AbortSignal.timeout(WORKDAY_TIMEOUT_MS),
       });
       if (!res.ok) break;
       const data = (await res.json()) as WorkdayListResponse;
@@ -396,7 +406,10 @@ export async function fetchWorkday(
   for (const path of detailPaths) {
     await delay(WORKDAY_DELAY_MS);
     try {
-      const res = await fetch(base + path, { headers: { Accept: "application/json" } });
+      const res = await fetch(base + path, {
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(WORKDAY_TIMEOUT_MS),
+      });
       if (!res.ok) continue;
       const detail = (await res.json()) as WorkdayDetailResponse;
       const cand = parseWorkdayDetail(detail, sourceIdBase, employer, fetchedAt);
@@ -765,6 +778,7 @@ export async function fetchFindly(
   companyId: string,
   employer: string,
   sourceIdBase: string,
+  categoryFilter?: string,
 ): Promise<RawCandidate[]> {
   const fetchedAt = new Date().toISOString();
   const out: RawCandidate[] = [];
@@ -775,7 +789,7 @@ export async function fetchFindly(
     try {
       const params = new URLSearchParams({
         companyName: companyId,
-        customAttributeFilter: 'primary_category="Physicians"',
+        customAttributeFilter: categoryFilter ?? 'primary_category="Physicians"',
         pageSize: String(FINDLY_PAGE_SIZE),
         offset: String(offset),
         callback: "cb",

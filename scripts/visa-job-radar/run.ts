@@ -95,7 +95,7 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
         candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
       } else if (src.connector === "workday") {
         candidates.push(
-          ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id)),
+          ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id, src.wdFacetIds)),
         );
       } else if (src.connector === "jsonld") {
         candidates.push(
@@ -107,7 +107,7 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
         );
       } else if (src.connector === "findly") {
         candidates.push(
-          ...(await fetchFindly(src.handle, src.employer ?? src.label, src.id)),
+          ...(await fetchFindly(src.handle, src.employer ?? src.label, src.id, src.findlyCategoryFilter)),
         );
       } else if (src.connector === "atom") {
         candidates.push(

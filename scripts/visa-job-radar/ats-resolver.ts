@@ -95,7 +95,8 @@ export function detectAts(html: string, finalUrl: string): AtsDetection {
 // single objects, arrays, and @graph wrappers — the three shapes ATSs emit.
 export function extractJobPostingJsonLd(html: string): Array<Record<string, unknown>> {
   const out: Array<Record<string, unknown>> = [];
-  const re = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  // Matches application/ld+json with literal + or HTML-encoded &#x2B; / &#43;
+  const re = /<script[^>]+type=["']application\/ld(?:\+|&#x2[Bb];|&#43;)json["'][^>]*>([\s\S]*?)<\/script>/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(html)) !== null) {
     let parsed: unknown;
@@ -260,6 +261,10 @@ function isJobDetailPath(path: string): boolean {
   if (/jobdetail\.ftl/.test(p)) return true;
   // SuccessFactors / Avature / Phenom alternate: /career-detail, /job-invite/{id}, /job/{id}
   if (/career-detail/.test(p) || /\/job-invite\/\d+/.test(p) || /\/job\/\d+$/.test(p)) return true;
+  // TalentBrew: /job/{city}/{slug}/{company_id}/{job_id} — last two segments are numeric
+  if (/\/job\/[^/]+\/[^/]+\/\d+\/\d+$/.test(p)) return true;
+  // Custom CMS with req_ requisition IDs: /career-opportunities/req_{id}/{slug}/
+  if (/\/career-opportunities\/req_/.test(p)) return true;
   return false;
 }
 

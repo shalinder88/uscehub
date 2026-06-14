@@ -327,6 +327,59 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // Novant Health (ATS public name, NC/SC/VA system) = Novant Medical (DOL filer, 7yr/11pos FY2025, NC).
   // normEmployer("Novant Health") → "novant health"; DOL normKey is "novant medical".
   "novant health": "novant medical",
+  // Nebraska Medicine (clinical brand of UNMC + The Nebraska Medical Center, Omaha) — its Workday tenant
+  // (nebraskamed) posts the physician jobs, but the DOL physician filer is "UNMC Physicians" (the faculty
+  // practice plan, 7yr/23pos NE). normEmployer("Nebraska Medicine") → "nebraska medicine".
+  "nebraska medicine": "unmc physicians",
+  // UofL Health = University of Louisville Health (KY). Workday tenant posts as "UofL Health";
+  // DOL iron-core is "university of louisville physicians" (7yr/21pos). "health" is a CORP_SUFFIX
+  // so normEmployer("UofL Health") → "uofl" which doesn't match the DOL key.
+  "uofl health": "university of louisville physicians",
+  // UMass Memorial Health = parent of UMass Memorial Medical Center (Worcester MA). Workday tenant
+  // posts as "UMass Memorial Health"; DOL iron-core is "umass memorial medical" (7yr/22pos).
+  "umass memorial health": "umass memorial medical",
+  // UVA Health = University of Virginia Health System (Charlottesville VA). Phenom tenant posts as
+  // "UVA Health"; DOL iron-core is "university of virginia health services foundation" (7yr/11pos VA).
+  "uva health": "university of virginia health services foundation",
+  // UTHealth Houston = UT Health Science Center at Houston (TX). Phenom tenant posts as
+  // "UTHealth Houston"; DOL iron-core is "university of texas health science center at houston" (7yr/21pos TX).
+  "uthealth houston": "university of texas health science center at houston",
+  // UVM Health Network = parent system of University of Vermont Medical Center (Burlington VT).
+  // Workday tenant posts as "UVM Health Network"; DOL iron-core is "university of vermont health
+  // network medical" (7yr/34pos VT). normEmployer("UVM Health Network") → "uvm health network".
+  "uvm health network": "university of vermont health network medical",
+
+  // Phenom tenant posts as "Duke Health"; DOL iron-core is "duke university health system"
+  // (7yr/26pos NC, 17 specialties). normEmployer("Duke Health") → "duke health".
+  "duke health": "duke university health system",
+
+  // TalentBrew (jobs.nm.org) posts as "Northwestern Medicine"; JSON-LD org is "Regional Medical
+  // Group" but connector employer field overrides. DOL iron-core is "northwestern medical faculty
+  // foundation" (6yr/8pos IL). normEmployer("Northwestern Medicine") → "northwestern medicine".
+  "northwestern medicine": "northwestern medical faculty foundation",
+
+  // Workday posts as "Geisinger"; DOL iron-core primary entity is "geisinger clinic" (7yr/78pos PA).
+  // normEmployer("Geisinger") → "geisinger". Secondary: "geisinger medical center" (7yr/31pos PA).
+  "geisinger": "geisinger clinic",
+
+  // Workday posts as "Houston Methodist"; DOL is "houston methodist specialty physicians" (1yr/10pos TX).
+  // Thin but present. normEmployer("Houston Methodist") → "houston methodist".
+  "houston methodist": "houston methodist specialty physicians",
+
+  // Phenom posts as "Corewell Health" (post-2022 Spectrum+Beaumont merger). No Corewell DOL entry yet.
+  // Best legacy iron-core: "william beaumont hospital" (7yr/23pos MI).
+  // normEmployer("Corewell Health") → "corewell health".
+  "corewell health": "william beaumont hospital",
+
+  // Workday posts as "Baystate Health"; DOL iron-core is "baystate medical practices" (7yr/49pos MA).
+  // normEmployer("Baystate Health") → "baystate health".
+  "baystate health": "baystate medical practices",
+
+  // RRH rebranded from Rochester General Hospital / Rochester Regional Health System in 2019.
+  // ATS employer is "Rochester Regional Health"; DOL iron-core is "rochester general hospital" (7yr/110pos NY).
+  // normEmployer("Rochester Regional Health") → "rochester regional health".
+  "rochester regional health": "rochester general hospital",
+
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
