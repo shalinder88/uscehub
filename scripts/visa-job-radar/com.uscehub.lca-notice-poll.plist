@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LCA-notice radar daily poll — launchd agent.
+
+  Replaces the old Claude scheduled-task skill (lca-notice-radar-poll), which
+  only fired when the Claude desktop app was open at 8:05am and silently missed
+  2026-06-12/13. This OS-level agent runs the deterministic wrapper regardless
+  of whether any app is open. Models com.uscehub.p102-research-cron exactly.
+
+  Install:
+    cp scripts/visa-job-radar/com.uscehub.lca-notice-poll.plist \
+       ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist
+    launchctl load ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist
+
+  Uninstall:
+    launchctl unload ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist
+    rm             ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist
+
+  Schedule: 08:05 local daily. `-l` sources the login profile so node/npx are
+  on PATH. The wrapper exits 0 on any step failure so launchd does not retry-storm.
+  The wrapper commits LOCAL only and never pushes.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.uscehub.lca-notice-poll</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>exec /Users/shelly/usmle-platform/scripts/visa-job-radar/lca-poll-cron.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shelly/usmle-platform</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>8</integer>
+    <key>Minute</key><integer>5</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shelly/Library/Logs/uscehub-lca-poll.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shelly/Library/Logs/uscehub-lca-poll.err.log</string>
+</dict>
+</plist>
