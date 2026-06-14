@@ -380,6 +380,37 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Rochester Regional Health") → "rochester regional health".
   "rochester regional health": "rochester general hospital",
 
+  // Avera Health is a unified SD/MN/IA health system. Workday posts under "Avera Health"; DOL iron-core is
+  // "avera mckennan" (7yr/16pos SD). normEmployer("Avera Health") → "avera health".
+  "avera health": "avera mckennan",
+
+  // Sentara Health posts on Workday as "Sentara"; DOL iron-core is "sentara medical" (7yr/15pos VA).
+  // normEmployer("Sentara") → "sentara".
+  "sentara": "sentara medical",
+
+  // Prisma Health posts on Workday as "Prisma Health"; DOL iron-core is "prisma health medical midlands" (6yr/18pos SC).
+  // normEmployer("Prisma Health") → "prisma health".
+  "prisma health": "prisma health medical midlands",
+
+  // Mercy (MO/AR/OK/KS Catholic system) posts on Workday as "Mercy"; DOL iron-core is "mercy clinic east communities"
+  // (7yr/27pos MO). Also covers "mercy clinic fort smith communities" (21pos AR) and "mercy clinic springfield
+  // communities" (18pos MO). normEmployer("Mercy") → "mercy". Separate from Mercy Health Ohio (Bon Secours Mercy).
+  "mercy": "mercy clinic east communities",
+
+  // Beth Israel Lahey Health (BILH) formed 2019 merger of Beth Israel Deaconess + Lahey. Posts on Workday as
+  // "Beth Israel Lahey Health"; primary DOL filer is "beth israel deaconess medical center" (5yr/62pos MA).
+  // normEmployer("Beth Israel Lahey Health") → "beth israel lahey health".
+  "beth israel lahey health": "beth israel deaconess medical center",
+
+  // AdventHealth rebranded from Adventist Health System in 2019; DOL primary filer remains
+  // "adventist health system sunbelt" (7yr/107pos FL). normEmployer("AdventHealth") → "adventhealth".
+  "adventhealth": "adventist health system sunbelt",
+
+  // Jackson Health System (Miami FL) public-sector Phenom board posts as "Jackson Health".
+  // DOL iron-core filer is "public health trust of dade county florida" (5yr/16pos FL).
+  // normEmployer("Jackson Health") → "jackson health" (no CORP_SUFFIX tokens removed).
+  "jackson health": "public health trust of dade county florida",
+
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
