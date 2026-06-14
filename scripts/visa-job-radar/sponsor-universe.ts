@@ -411,6 +411,11 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Jackson Health") → "jackson health" (no CORP_SUFFIX tokens removed).
   "jackson health": "public health trust of dade county florida",
 
+  // Medical College of Wisconsin (Milwaukee WI) Workday board posts under "Medical College of Wisconsin".
+  // DOL iron-core filer is "medical college of wisconsin affiliated hospitals" (7yr/21pos WI).
+  // normEmployer("Medical College of Wisconsin") → "medical college of wisconsin" (no CORP_SUFFIX removal).
+  "medical college of wisconsin": "medical college of wisconsin affiliated hospitals",
+
 };
 
 // normKey -> entry, for O(1) sponsor-history lookup during classification enrichment.
