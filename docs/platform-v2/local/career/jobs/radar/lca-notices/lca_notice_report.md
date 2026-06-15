@@ -1,12 +1,12 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-06-14T12:05:06.438Z
-- Notices tracked (all time): 13 (12 physician)
-- This poll: 0 new, 13 still posted
+- Last poll: 2026-06-15T12:05:05.762Z
+- Notices tracked (all time): 14 (13 physician)
+- This poll: 1 new, 13 still posted
 
 ## Poll log
 - lca-kumc: 2 notice link(s) on page
-- lca-pitt: 1 physician notice link(s) on page
+- lca-pitt: 2 physician notice link(s) on page
 - lca-uams: 6 physician notice link(s) on page
 - lca-emory: 4 physician notice link(s) on page
 - lca-upenn: disabled — DISABLED 2026-06-10
@@ -30,3 +30,4 @@
 | Emory University | Assistant Professor SOM Radiology | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029 |
 | Emory University | Assistant Professor SOM Pathology and Laboratory Medicine | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029 |
 | Emory University | Assistant Professor SOM Surgery | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029 |
+| University of Pittsburgh | Assistant Professor – Molecular Genomic Pathology | $125.00 per hour | from 8/1/2026 to 7/31/2029 | 2026-06-15 | uncased-Assistant Professor – Molecular Genomic Pathology |
