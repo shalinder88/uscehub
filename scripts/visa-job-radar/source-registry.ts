@@ -246,15 +246,15 @@ export const SOURCES: SourceDef[] = [
   // These are all DOL iron-core (7/7 years), so every opening is a sponsor-backed lead.
   // All start disabled; enable after verifying the URL returns physician postings.
   {
-    id: "jsonld-froedtert",
+    id: "jsonld-froedtert-infor-disabled",
     tier: 1,
     connector: "jsonld",
-    label: "Froedtert Health — physicians (Infor CloudSuite)",
+    label: "Froedtert Health — physicians (Infor CloudSuite) [DISABLED]",
     handle: "https://css-froedterthealth-prd.inforcloudsuite.com",
     employer: "Froedtert Health",
     enabled: false,
     needsVerification: true,
-    note: "DISABLED 2026-06-12: Step 2 probe mis-detected Phenom from careers.froedtert.com landing page — actual ATS is Infor CloudSuite HCM (css-froedterthealth-prd.inforcloudsuite.com). That domain returns HTTP 403 to a plain Node client (bot protection). Disabled — same posture as WVU. DOL iron-core (7/7 years). Revisit only via sanctioned feed.",
+    note: "DISABLED 2026-06-12: Step 2 probe mis-detected Phenom from careers.froedtert.com landing page — actual ATS is Infor CloudSuite HCM (css-froedterthealth-prd.inforcloudsuite.com). That domain returns HTTP 403 to a plain Node client (bot protection). Disabled — same posture as WVU. DOL iron-core (7/7 years). Revisit only via sanctioned feed. Renamed 2026-06-15 to avoid ID conflict with jsonld-froedtert (Phenom connector).",
   },
   {
     id: "jsonld-mercy",
