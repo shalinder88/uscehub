@@ -328,6 +328,7 @@ export async function fetchWorkday(
   sourceIdBase: string,
   facetIdsOverride?: string[],
   maxDetails?: number,
+  maxPages?: number,
 ): Promise<RawCandidate[]> {
   const parts = handle.split("/");
   if (parts.length !== 3) return [];
@@ -337,6 +338,7 @@ export async function fetchWorkday(
   const fetchedAt = new Date().toISOString();
   const out: RawCandidate[] = [];
   const cap = maxDetails ?? WORKDAY_MAX_DETAILS;
+  const pageCap = maxPages ?? WORKDAY_MAX_PAGES;
 
   const detailPaths: string[] = [];
   const seen = new Set<string>();
@@ -372,7 +374,7 @@ export async function fetchWorkday(
       await delay(WORKDAY_DELAY_MS);
     }
 
-    for (let page = 0; page < WORKDAY_MAX_PAGES; page++) {
+    for (let page = 0; page < pageCap; page++) {
       const res = await fetch(base + "/jobs", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -398,7 +400,11 @@ export async function fetchWorkday(
       }
       if (detailPaths.length >= cap) break;
       const total = data.total ?? 0;
-      if ((page + 1) * WORKDAY_PAGE_SIZE >= total) break;
+      // Guard: only use total as an early-exit hint when the API returns a
+      // positive value. Some tenants (e.g. MultiCare) return total=0 on all
+      // pages after the first even though there are more results — relying on
+      // total=0 would break after 40 results instead of scanning the full pool.
+      if (total > 0 && (page + 1) * WORKDAY_PAGE_SIZE >= total) break;
       await delay(WORKDAY_DELAY_MS);
     }
   } catch {

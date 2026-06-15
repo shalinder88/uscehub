@@ -402,10 +402,6 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // normEmployer("Beth Israel Lahey Health") → "beth israel lahey health".
   "beth israel lahey health": "beth israel deaconess medical center",
 
-  // AdventHealth rebranded from Adventist Health System in 2019; DOL primary filer remains
-  // "adventist health system sunbelt" (7yr/107pos FL). normEmployer("AdventHealth") → "adventhealth".
-  "adventhealth": "adventist health system sunbelt",
-
   // Jackson Health System (Miami FL) public-sector Phenom board posts as "Jackson Health".
   // DOL iron-core filer is "public health trust of dade county florida" (5yr/16pos FL).
   // normEmployer("Jackson Health") → "jackson health" (no CORP_SUFFIX tokens removed).

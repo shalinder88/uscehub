@@ -41,6 +41,8 @@ export interface SourceDef {
   wdFacetIds?: string[];
   // Workday connectors only: per-source detail-GET ceiling (overrides WORKDAY_MAX_DETAILS=40)
   wdMaxDetails?: number;
+  // Workday connectors only: per-source list-scan page ceiling (overrides WORKDAY_MAX_PAGES=25)
+  wdMaxPages?: number;
   // JSON-LD connectors only: per-source posting-fetch ceiling (overrides JSONLD_MAX_POSTINGS=40)
   jsonldMaxPostings?: number;
 }
@@ -973,7 +975,8 @@ export const SOURCES: SourceDef[] = [
     employer: "MultiCare Health System",
     enabled: true,
     needsVerification: true,
-    note: "DOL: 'multicare health system' WA 12 FY25pos. CXS 200 OK 700 physician hits on multicare.wd1.myworkdayjobs.com/multicare. 3 'visa sponsorship' hits (Physician-Gastroenterology Yakima WA x2, Physician-Neurology Spokane WA). Confirmed language: 'J1/H1-b Visa Sponsorship available' (bold text in job posting). 2 additional J-1 hits. ~3-5 PUBLISH expected. Yakima WA = rural/underserved, HPSA eligible.",
+    wdMaxPages: 35,
+    note: "DOL: 'multicare health system' WA 12 FY25pos. CXS 200 OK 700 physician hits on multicare.wd1.myworkdayjobs.com/multicare. 3 'visa sponsorship' hits (Physician-Gastroenterology Yakima WA x2, Physician-Neurology Spokane WA). Confirmed language: 'J1/H1-b Visa Sponsorship available' (bold text in job posting). 2 additional J-1 hits. ~3-5 PUBLISH expected. Yakima WA = rural/underserved, HPSA eligible. wdMaxPages=35 required: physician jobs spread across 700 mixed results; Gastroenterology Yakima jobs at offset 620+ (beyond default 25-page/500-result ceiling). CXS quirk: returns total=0 on page 2+ (only page 0 returns total=700); bug fix in connectors.ts line 401 handles this.",
   },
   {
     id: "workday-gundersen",
