@@ -331,6 +331,9 @@ const EMPLOYER_ALIASES: Record<string, string> = {
   // (nebraskamed) posts the physician jobs, but the DOL physician filer is "UNMC Physicians" (the faculty
   // practice plan, 7yr/23pos NE). normEmployer("Nebraska Medicine") → "nebraska medicine".
   "nebraska medicine": "unmc physicians",
+  // MedStar Health (ATS/Jibe brand name) = MedStar Medical II LLC (DOL filer, 7yr/60pos FY2025, MD).
+  // normEmployer("MedStar Health") → "medstar health"; DOL normKey is "medstar medical ii".
+  "medstar health": "medstar medical ii",
   // UofL Health = University of Louisville Health (KY). Workday tenant posts as "UofL Health";
   // DOL iron-core is "university of louisville physicians" (7yr/21pos). "health" is a CORP_SUFFIX
   // so normEmployer("UofL Health") → "uofl" which doesn't match the DOL key.

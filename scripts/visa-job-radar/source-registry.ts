@@ -184,7 +184,8 @@ export const SOURCES: SourceDef[] = [
     employer: "Ochsner Health",
     enabled: true,
     needsVerification: true,
-    note: "DOL sponsor universe → batch ATS-resolved (scale-sponsors.ts). Verified 2026-06-10: CXS HTTP 200, ~786 'physician' hits. Large LA/Gulf-South system, high J-1-waiver density.",
+    wdMaxDetails: 120,
+    note: "DOL sponsor universe → batch ATS-resolved (scale-sponsors.ts). Verified 2026-06-10: CXS HTTP 200, ~786 'physician' hits. Large LA/Gulf-South system, high J-1-waiver density. wdMaxDetails raised to 120: pool=103 physician-titled in 500 results, 15% visa rate.",
   },
   {
     id: "workday-vumc",
@@ -594,6 +595,17 @@ export const SOURCES: SourceDef[] = [
     note: "Carle Health (Urbana IL regional system). Jibe ATS confirmed 2026-06-13 at careers.carlehealth.org/api/jobs. 'categories=Physicians' narrows to 110 physician jobs (vs 739 total; 'tags=Physicians'=0, 'keywords=physician'=736 loose). Physician job descriptions explicitly mention H1B/visa/sponsorship — strong visa signal. DOL iron-core: 'carle health care' 7yr/22pos FY2025 (IL) — direct normKey match. Apply via careers2-carle.icims.com (login only; discovery layer is Jibe).",
   },
   {
+    id: "jibe-medstar",
+    tier: 1,
+    connector: "jibe",
+    label: "MedStar Health — physicians (Jibe)",
+    handle: "https://careers.medstarhealth.org",
+    employer: "MedStar Health",
+    enabled: true,
+    needsVerification: true,
+    note: "MedStar Health — largest healthcare provider in MD/DC metro (10 hospitals, 35,000 associates). Jibe ATS at careers.medstarhealth.org/api/jobs. No physician category filter available (categories=Physicians/tags=Physicians both return 0); keyword=physician returns 742 total, ~42 physician-titled in first 100. Sampled 8 physician descriptions: 1/8 has 'J1 Visa sponsorship is available to qualified candidates' — explicit J-1 affirmative. DOL filers: 'medstar medical ii' (MD, 7yr/60pos FY2025) + 'medstar georgetown medical center' (DC, 7yr/55pos). employer='MedStar Health' → EMPLOYER_ALIASES → 'medstar medical ii'. Verified 2026-06-15.",
+  },
+  {
     id: "workday-bannerhealth",
     tier: 1,
     connector: "workday",
@@ -942,7 +954,8 @@ export const SOURCES: SourceDef[] = [
     employer: "Mercy",
     enabled: true,
     needsVerification: true,
-    note: "DOL: 'mercy clinic east communities' MO 27 FY25pos 7yr (primary); also 'mercy clinic fort smith communities' AR 21pos, 'mercy clinic springfield communities' MO 18pos. CXS 200 OK 674 physician hits on mercy.wd1.myworkdayjobs.com/MercyCareers. Sample: 'Physician - Neurology Physician Lead with Mercy Hospital St Louis', 'Physician - Neurohospitalist - Springfield Missouri'. employer alias 'mercy'→'mercy clinic east communities' in EMPLOYER_ALIASES.",
+    wdMaxDetails: 200,
+    note: "DOL: 'mercy clinic east communities' MO 27 FY25pos 7yr (primary); also 'mercy clinic fort smith communities' AR 21pos, 'mercy clinic springfield communities' MO 18pos. CXS 200 OK 674 physician hits on mercy.wd1.myworkdayjobs.com/MercyCareers. Sample: 'Physician - Neurology Physician Lead with Mercy Hospital St Louis', 'Physician - Neurohospitalist - Springfield Missouri'. employer alias 'mercy'→'mercy clinic east communities' in EMPLOYER_ALIASES. wdMaxDetails raised to 200: pool=169 physician-titled in 500 results, 30% visa rate → est. ~51 PUBLISH.",
   },
   {
     id: "workday-allina",
@@ -1221,7 +1234,8 @@ export const SOURCES: SourceDef[] = [
     employer: "Spectrum Health Primary Care Partners",
     enabled: true,
     needsVerification: true,
-    note: "DOL: 'spectrum health primary care partners' MI 13 FY25pos 7yr. CXS 200 OK 717 physician hits on spectrumhealth.wd5.myworkdayjobs.com/CorewellHealthCareers (physician-focused Workday site). Sample: 'Physician - Gastroenterology - Royal Oak MI', 'Physician - Pediatric Pulmonary', 'Physician - Adolescent Medicine', 'Physician - Gastroenterology Program Director'. attending+hospitalist = 3: 'Physician - Pediatric Hospitalist - Grosse Pointe'. employer='Spectrum Health Primary Care Partners' → normEmployer → 'spectrum health primary care partners' = DOL normKey directly. Note: Spectrum Health merged with Beaumont to form Corewell Health (2022); board covers full Corewell system; Workday tenant retained spectrumhealth name. Corewell Health = Michigan's largest health system (~64 hospitals, 60,000+ employees). Verified 2026-06-14.",
+    wdMaxDetails: 200,
+    note: "DOL: 'spectrum health primary care partners' MI 13 FY25pos 7yr. CXS 200 OK 717 physician hits on spectrumhealth.wd5.myworkdayjobs.com/CorewellHealthCareers (physician-focused Workday site). Sample: 'Physician - Gastroenterology - Royal Oak MI', 'Physician - Pediatric Pulmonary', 'Physician - Adolescent Medicine', 'Physician - Gastroenterology Program Director'. attending+hospitalist = 3: 'Physician - Pediatric Hospitalist - Grosse Pointe'. employer='Spectrum Health Primary Care Partners' → normEmployer → 'spectrum health primary care partners' = DOL normKey directly. Note: Spectrum Health merged with Beaumont to form Corewell Health (2022); board covers full Corewell system; Workday tenant retained spectrumhealth name. Corewell Health = Michigan's largest health system (~64 hospitals, 60,000+ employees). Verified 2026-06-14. wdMaxDetails raised to 200: pool=165 physician-titled in 500 results, 15% visa rate → est. ~25 PUBLISH.",
   },
 ];
 
