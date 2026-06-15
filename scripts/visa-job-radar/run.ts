@@ -95,11 +95,11 @@ async function gather(live: boolean): Promise<RawCandidate[]> {
         candidates.push(...(await fetchGreenhouse(src.handle, src.employer ?? src.label)));
       } else if (src.connector === "workday") {
         candidates.push(
-          ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id, src.wdFacetIds)),
+          ...(await fetchWorkday(src.handle, src.employer ?? src.label, src.id, src.wdFacetIds, src.wdMaxDetails)),
         );
       } else if (src.connector === "jsonld") {
         candidates.push(
-          ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id)),
+          ...(await fetchJsonLd(src.handle, src.employer ?? src.label, src.id, src.jsonldMaxPostings)),
         );
       } else if (src.connector === "jibe") {
         candidates.push(

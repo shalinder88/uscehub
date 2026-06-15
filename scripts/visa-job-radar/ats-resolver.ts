@@ -270,7 +270,8 @@ function isJobDetailPath(path: string): boolean {
 
 // Extracts job detail hrefs from a search-results page. Stays same-origin;
 // strips query+hash for dedup so /jobs/123?apply and /jobs/123 count once.
-function extractJobHrefs(html: string, baseUrl: string): string[] {
+function extractJobHrefs(html: string, baseUrl: string, maxPostings?: number): string[] {
+  const cap = maxPostings ?? JSONLD_MAX_POSTINGS;
   let origin: string;
   try {
     origin = new URL(baseUrl).origin;
@@ -297,7 +298,7 @@ function extractJobHrefs(html: string, baseUrl: string): string[] {
     if (seen.has(resolved)) continue;
     seen.add(resolved);
     out.push(resolved);
-    if (out.length >= JSONLD_MAX_POSTINGS) break;
+    if (out.length >= cap) break;
   }
   return out;
 }
@@ -305,9 +306,27 @@ function extractJobHrefs(html: string, baseUrl: string): string[] {
 // Enumerate physician job posting URLs from a site's XML sitemap.
 // Handles both flat sitemaps and sitemap indexes (one level of nesting only).
 // Returns URLs whose slugs match PHYSICIAN_SLUG_RE, capped at JSONLD_MAX_POSTINGS.
-async function fetchSitemapJobUrls(origin: string): Promise<string[]> {
-  const sitemapUrl = origin + "/sitemap.xml";
-  const resp = await jsonldGet(sitemapUrl);
+// Tries sub-path sitemaps first (for Phenom sites with per-brand portals like
+// jobs.trinity-health.org/mercyone/), then falls back to origin-level sitemaps.
+// Also tries sitemap_index.xml when sitemap.xml is absent/blank.
+async function fetchSitemapJobUrls(finalUrl: string, maxPostings?: number): Promise<string[]> {
+  const effectiveCap = maxPostings ?? JSONLD_MAX_POSTINGS;
+  const base = finalUrl.endsWith("/") ? finalUrl : finalUrl + "/";
+  let origin: string;
+  try { origin = new URL(base).origin; } catch { return []; }
+  const isSubPath = base !== origin + "/";
+  const candidates = [
+    ...(isSubPath ? [base + "sitemap.xml", base + "sitemap_index.xml"] : []),
+    origin + "/sitemap.xml",
+    origin + "/sitemap_index.xml",
+  ];
+  let resp: Awaited<ReturnType<typeof jsonldGet>> = null;
+  for (const sitemapUrl of candidates) {
+    resp = await jsonldGet(sitemapUrl);
+    if (resp && /<(?:urlset|sitemapindex)/i.test(resp.html)) break;
+    resp = null;
+    await jsonldDelay(JSONLD_DELAY_MS);
+  }
   if (!resp) return [];
 
   const isIndex = /<sitemapindex/i.test(resp.html);
@@ -335,7 +354,7 @@ async function fetchSitemapJobUrls(origin: string): Promise<string[]> {
 
   return allJobUrls
     .filter((u) => PHYSICIAN_SLUG_RE.test(u) && !NONPHYS_SLUG_RE.test(u))
-    .slice(0, JSONLD_MAX_POSTINGS);
+    .slice(0, effectiveCap);
 }
 
 // Fetch a physician-filtered career search page, walk individual posting URLs,
@@ -347,6 +366,7 @@ export async function fetchJsonLd(
   searchUrl: string,
   employerName: string,
   sourceIdBase: string,
+  maxPostings?: number,
 ): Promise<RawCandidate[]> {
   const fetchedAt = new Date().toISOString();
   const out: RawCandidate[] = [];
@@ -358,19 +378,13 @@ export async function fetchJsonLd(
 
   // Step 2: extract individual posting URLs (works for iCIMS direct portals
   // that server-render job links; returns 0 for full SPA sites).
-  let postingUrls = extractJobHrefs(search.html, search.finalUrl)
+  let postingUrls = extractJobHrefs(search.html, search.finalUrl, maxPostings)
     .filter((u) => !NONPHYS_SLUG_RE.test(u));
 
   // Step 2b: SPA fallback — try sitemap enumeration when search page is a SPA.
   if (postingUrls.length === 0) {
-    let origin: string;
-    try {
-      origin = new URL(search.finalUrl).origin;
-    } catch {
-      return out;
-    }
     await jsonldDelay(JSONLD_DELAY_MS);
-    postingUrls = await fetchSitemapJobUrls(origin);
+    postingUrls = await fetchSitemapJobUrls(search.finalUrl, maxPostings);
   }
 
   if (postingUrls.length === 0) return out;

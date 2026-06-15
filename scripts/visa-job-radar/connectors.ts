@@ -327,6 +327,7 @@ export async function fetchWorkday(
   employer: string,
   sourceIdBase: string,
   facetIdsOverride?: string[],
+  maxDetails?: number,
 ): Promise<RawCandidate[]> {
   const parts = handle.split("/");
   if (parts.length !== 3) return [];
@@ -335,6 +336,7 @@ export async function fetchWorkday(
     "https://" + tenant + "." + dc + ".myworkdayjobs.com/wday/cxs/" + tenant + "/" + site;
   const fetchedAt = new Date().toISOString();
   const out: RawCandidate[] = [];
+  const cap = maxDetails ?? WORKDAY_MAX_DETAILS;
 
   const detailPaths: string[] = [];
   const seen = new Set<string>();
@@ -392,9 +394,9 @@ export async function fetchWorkday(
         if (!isPhysician(p.title)) continue;
         seen.add(p.externalPath);
         detailPaths.push(p.externalPath);
-        if (detailPaths.length >= WORKDAY_MAX_DETAILS) break;
+        if (detailPaths.length >= cap) break;
       }
-      if (detailPaths.length >= WORKDAY_MAX_DETAILS) break;
+      if (detailPaths.length >= cap) break;
       const total = data.total ?? 0;
       if ((page + 1) * WORKDAY_PAGE_SIZE >= total) break;
       await delay(WORKDAY_DELAY_MS);
