@@ -325,6 +325,20 @@ competitor has. This is the strategic moat.
   daily**, app-independent. It polls → re-fuses `sponsor_truth.json` → regenerates the overlay →
   **scoped local commit (never pushes).** Verify: `launchctl list | grep lca`; log at
   `~/Library/Logs/uscehub-lca-poll.log`. Confirmed firing 2026-06-16 (commit `96619c9`).
+- **CRITICAL — the launchd agent lives OUTSIDE the repo** (`~/Library/LaunchAgents/`), so a repo restore
+  alone does NOT revive the cron. The installed plist is byte-identical to the repo template
+  `scripts/visa-job-radar/com.uscehub.lca-notice-poll.plist` (verified at sign-out). To (re)install on a
+  fresh machine:
+  ```bash
+  cp /Users/shelly/usmle-platform/scripts/visa-job-radar/com.uscehub.lca-notice-poll.plist ~/Library/LaunchAgents/
+  launchctl unload ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist 2>/dev/null
+  launchctl load   ~/Library/LaunchAgents/com.uscehub.lca-notice-poll.plist
+  launchctl list | grep lca         # confirm loaded
+  ```
+  The plist hardcodes the repo path `/Users/shelly/usmle-platform` and `~/homebrew/bin` on PATH — edit
+  both if the repo or Homebrew prefix moves. A copy of the *installed* plist + the cron log is in the
+  T7 snapshot's `operational-state/` (see §17). The OLD Claude scheduled-task `lca-notice-radar-poll` is
+  intentionally DISABLED (it only fired when the desktop app was open — it silently missed days).
 - Most university HR LCA pages are 403, policy-only, inline-HTML, or posted physically — productive
   PDF-based physician-bearing pages are RARE. Widening this set (carefully, no bypass) is the #1 way to
   grow the moat.
@@ -444,10 +458,25 @@ Snapshot root: `/Volumes/T7Shield_Code/01_PROJECTS/Health_USMLE_Platform/02_DAIL
 - `usmle-platform/` — working-tree copy (excludes `node_modules` + `.next`, both regenerable via
   `npm install` / `next build`; **includes** `.git` and the gitignored `runs/`).
 - `SIGNOUT_2026-06-16_MASTER.md` — a copy of this file at the snapshot root for immediate visibility.
-- `claude-memory/` — a copy of the operator's `~/.claude` project memory (81 files + `MEMORY.md`) so a
+- `claude-memory/` — a copy of the operator's `~/.claude` project memory (84 files + `MEMORY.md`) so a
   future agent without `~/.claude` access can still read the full cross-project context. The VJ-specific
   memory is `project_vj_sponsor_truth.md`.
+- `operational-state/` — state that lives OUTSIDE the repo and would otherwise be lost: the *installed*
+  launchd plist (`com.uscehub.lca-notice-poll.plist`) and the cron run log (`uscehub-lca-poll.log`).
 - `RESTORE_README.md` — restore instructions (rsync/clone) at the snapshot root.
+
+**IN THE BUNDLE vs WORKING-TREE-COPY-ONLY** (matters for a bundle-only restore):
+- **In the git bundle** (committed): all `.ts` engine/connector code, all docs incl. this file + `HANDOFF.md`,
+  `job-leads-history.json`, the committed LCA notice PDFs, the DOL `by-year/FY20xx.json`,
+  **`by-year/persistence_index.json`** (the file `sponsorEnrich()` reads — it IS committed, so a clean
+  bundle restore reproduces SPONSOR_LEAD), `sponsor_universe.json`, `sponsor_truth.json`, the
+  `/career/sponsors` pages + `src/lib/sponsor-truth-overlay.ts`.
+- **Working-tree copy ONLY (gitignored — NOT in the bundle):** `.env` (508 B — contains the project's
+  API config/secrets; preserved in the working-tree copy so don't lose it, but it will NOT come back from
+  a bundle-only clone), the raw `scripts/lca-fy2024-q4.xlsx` (79 MB DOL source; the derived `by-year`
+  JSON is committed so this is only needed to re-derive), `prisma/dev.db` (local USCEHub dev DB), and the
+  `runs/` radar artifacts (regenerable via `run.ts --live`). Re-supply these from the working-tree copy
+  after a bundle-only restore if you need them.
 
 T7Shield_Code is **APFS** (the proper code drive). Do not confuse it with the ExFAT T7 (cold storage only).
 
