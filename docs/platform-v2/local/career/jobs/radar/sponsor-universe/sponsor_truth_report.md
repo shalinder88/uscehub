@@ -1,38 +1,38 @@
 # Sponsor truth — fused per-employer evidence
 
-Generated 2026-06-15T12:05:21.151Z · 5870 employers
+Generated 2026-06-16T12:05:18.144Z · 5870 employers
 
 - With LIVE physician LCA-notice activity: 4
-- With current employer-direct openings (latest run 2026-06-15-0709): 52
+- With current employer-direct openings (latest run 2026-06-15-1829): 52
 
 ## Top 25 (live activity → openings → history score)
 
 ### University of Arkansas for Medical Sciences (AR) — score 88
 
-DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 6 physician LCA notice(s) on the employer's own site (latest 2026-06-15). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 6 physician LCA notice(s) on the employer's own site (latest 2026-06-16). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Fellow Physician — $68,720 — 07/01/2026 – 06/30/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf)
 - LIVE filing: Fellow Physician — $68,720.00 — 07/01/2026 – 06/23/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf)
 - LIVE filing: Resident/Fellow Physician — $63396.00 — 6/17/2026 - 06/16/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26126-878193.pdf)
 
 ### Emory University (GA) — score 88
 
-DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 4 physician LCA notice(s) on the employer's own site (latest 2026-06-15). 7 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 7 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 4 physician LCA notice(s) on the employer's own site (latest 2026-06-16). 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf)
 - LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf)
 - LIVE filing: Assistant Professor SOM Pathology and Laboratory Medicine — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029.pdf)
+- Opening [SPONSOR_LEAD]: Radiology Assistant (Georgia)
 - Opening [SPONSOR_LEAD]: Physician - ESA (Georgia)
 - Opening [SPONSOR_LEAD]: Registry Physician, ESA (Georgia)
-- Opening [SPONSOR_LEAD]: Registry Physician - ESA (Georgia)
 
 ### University of Pittsburgh (PA) — score 38
 
-DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 2 physician LCA notice(s) on the employer's own site (latest 2026-06-15). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 2 physician LCA notice(s) on the employer's own site (latest 2026-06-16). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor - Adult Cardiology — $156.25 per hour — from 9/1/2026 to 8/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf)
 - LIVE filing: Assistant Professor – Molecular Genomic Pathology — $125.00 per hour — from 8/1/2026 to 7/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf)
 
 ### THE UNIVERSITY OF KANSAS MEDICAL CENTER (KS) — score 80
 
-DOL history: 18 certified physician position(s) across 19 specialties; cap-exempt. ACTIVELY sponsoring: 1 physician LCA notice(s) on the employer's own site (latest 2026-06-15). 109 current physician opening(s) employer-direct (10 affirmative-visa, 0 signal, 99 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 18 certified physician position(s) across 19 specialties; cap-exempt. ACTIVELY sponsoring: 1 physician LCA notice(s) on the employer's own site (latest 2026-06-16). 109 current physician opening(s) employer-direct (10 affirmative-visa, 0 signal, 99 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Pulmonary and Critical Care Nocturnist Physician/Faculty — $435,000 — from 13 Jul 2026 to 12 Jul 2029 — [notice](https://www.kumc.edu/documents/international/lca/NOTICE%20OF%20LCA%20FILING%20KBGOVI07995-2%20%282%29.pdf)
 - Opening [SPONSOR_LEAD]: Faculty - Pediatric Hematology/Oncology Physician (KS)
 - Opening [SPONSOR_LEAD]: Faculty - Emergency Medicine Residency Program (KS)
@@ -40,24 +40,31 @@ DOL history: 18 certified physician position(s) across 19 specialties; cap-exemp
 
 ### University Hospitals Medical Group, Inc. (OH) — score 76
 
-DOL history: 13 certified physician position(s) across 21 specialties; cap-exempt. 215 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 215 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 13 certified physician position(s) across 21 specialties; cap-exempt. 211 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 211 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - Opening [SPONSOR_LEAD]: Physician.OBGYN Hospitalist UHMG-92983 (OH)
 - Opening [SPONSOR_LEAD]: Fellow-Radiology-UHMG-89951 (OH)
 - Opening [SPONSOR_LEAD]: Physician. Medina Pediatrics UHMG-66611 (OH)
 
 ### University of Kentucky (KY) — score 85
 
-DOL history: 25 certified physician position(s) across 21 specialties; cap-exempt. 200 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 200 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 25 certified physician position(s) across 21 specialties; cap-exempt. 199 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 199 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- Opening [SPONSOR_LEAD]: Physician - Electrophysiology Cardiologist
+- Opening [SPONSOR_LEAD]: Physician - Emergency & Trauma Radiology
 - Opening [SPONSOR_LEAD]: Hematology Clinical Physician
-- Opening [SPONSOR_LEAD]: Physician - Obstetrician / Gynecologist (OB/GYN)
-- Opening [SPONSOR_LEAD]: Assistant, Associate, or Professor in Neurology
+
+### Spectrum Health Primary Care Partners (MI) — score 69
+
+DOL history: 4 certified physician position(s) across 16 specialties; J-1-relevant. 168 current physician opening(s) employer-direct (17 affirmative-visa, 0 signal, 151 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- Opening [PUBLISH]: Physician -  Gastroenterology -  Royal Oak, MI (MI)
+- Opening [PUBLISH]: Physician - Pediatric Pulmonary - Corewell Health Children's Hospital - Royal Oak, MI (MI)
+- Opening [SPONSOR_LEAD]: Physician - Adolescent Medicine - Corewell Health Children's Hospital -Troy, MI (MI)
 
 ### Trinity Health (ND) — score 59
 
-DOL history: 2 certified physician position(s) across 10 specialties; J-1-relevant. 91 current physician opening(s) employer-direct (27 affirmative-visa, 0 signal, 64 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [PUBLISH]: Dermatology - Physician - Davenport, IA - Lucrative Bonus (Iowa)
-- Opening [SPONSOR_LEAD]: OB Hospitalist- Mason City, Iowa- $550k compensation package! (Iowa)
-- Opening [SPONSOR_LEAD]: Cardiothoracic Surgery - Physician - Des Moines - Salary Up To $850,000 (Iowa)
+DOL history: 2 certified physician position(s) across 10 specialties; J-1-relevant. 96 current physician opening(s) employer-direct (28 affirmative-visa, 0 signal, 68 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- Opening [SPONSOR_LEAD]: Family Medicine with OB- Physician- Algona, Iowa- $250k bonus! (Iowa)
+- Opening [SPONSOR_LEAD]: Family Medicine- Physician- St. Ansgar, Iowa- $250,000 bonus package!! (Iowa)
+- Opening [SPONSOR_LEAD]: FM Faculty Physician $260K Plus $150K in Bonuses (Iowa)
 
 ### Presbyterian Healthcare Services (NM) — score 88
 
@@ -111,9 +118,9 @@ DOL history: 73 certified physician position(s) across 6 specialties. 40 current
 ### Medical College of Wisconsin, Inc. (WI) — score 75
 
 DOL history: 16 certified physician position(s) across 17 specialties; cap-exempt. 40 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 40 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- Opening [SPONSOR_LEAD]: General and Community Pediatrician, Faculty (Open Rank) (WI)
 - Opening [SPONSOR_LEAD]: Glaucoma Ophthalmology Specialist - Faculty (Open Rank) (WI)
 - Opening [SPONSOR_LEAD]: Cardiothoracic - Robotic Cardiac Surgeon - Assistant Professor (WI)
-- Opening [SPONSOR_LEAD]: MCS-ECMO-Cardiogenic Shock Surgeon - Assistant Professor (WI)
 
 ### Carle Health Care, Incorporated (IL) — score 75
 
@@ -157,19 +164,12 @@ DOL history: 33 certified physician position(s) across 10 specialties. 40 curren
 - Opening [SPONSOR_LEAD]: Endocrinology Physician (PA)
 - Opening [SPONSOR_LEAD]: Gastroenterology Physician (PA)
 
-### Spectrum Health Primary Care Partners (MI) — score 69
-
-DOL history: 4 certified physician position(s) across 16 specialties; J-1-relevant. 40 current physician opening(s) employer-direct (6 affirmative-visa, 0 signal, 34 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
-- Opening [PUBLISH]: Physician -  Gastroenterology -  Royal Oak, MI (MI)
-- Opening [PUBLISH]: Physician - Pediatric Pulmonary - Corewell Health Children's Hospital - Royal Oak, MI (MI)
-- Opening [SPONSOR_LEAD]: Physician - Adolescent Medicine - Corewell Health Children's Hospital -Troy, MI (MI)
-
 ### MultiCare Health System (WA) — score 68
 
 DOL history: 8 certified physician position(s) across 15 specialties; J-1-relevant. 40 current physician opening(s) employer-direct (1 affirmative-visa, 0 signal, 39 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+- Opening [SPONSOR_LEAD]: Non-Invasive Cardiologist, Adult Congenital Heart Disease
 - Opening [SPONSOR_LEAD]: Physician - Rheumatology
 - Opening [SPONSOR_LEAD]: Medical Oncologist-Puyallup
-- Opening [SPONSOR_LEAD]: Per Diem Pediatric Hospitalist
 
 ### Prisma Health Medical Group - Midlands (SC) — score 67
 
@@ -183,4 +183,4 @@ DOL history: 9 certified physician position(s) across 12 specialties; J-1-releva
 DOL history: 4 certified physician position(s) across 12 specialties; J-1-relevant. 40 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 40 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - Opening [SPONSOR_LEAD]: Physician
 - Opening [SPONSOR_LEAD]: Physician
-- Opening [SPONSOR_LEAD]: Physician - Dermatology
+- Opening [SPONSOR_LEAD]: Physician

@@ -35,7 +35,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["university of arkansas for medical sciences", {
     employer: "University of Arkansas for Medical Sciences",
     state: "AR",
-    latestNoticeAt: "2026-06-15T12:05:05.762Z",
+    latestNoticeAt: "2026-06-16T12:05:06.426Z",
     notices: [
       { role: "Fellow Physician", salaryText: "$68,720", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf", periodText: "07/01/2026 – 06/30/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
       { role: "Fellow Physician", salaryText: "$68,720.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf", periodText: "07/01/2026 – 06/23/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
@@ -48,7 +48,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["emory university", {
     employer: "Emory University",
     state: "GA",
-    latestNoticeAt: "2026-06-15T12:05:05.762Z",
+    latestNoticeAt: "2026-06-16T12:05:06.426Z",
     notices: [
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
@@ -59,7 +59,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["university of pittsburgh", {
     employer: "University of Pittsburgh",
     state: "PA",
-    latestNoticeAt: "2026-06-15T12:05:05.762Z",
+    latestNoticeAt: "2026-06-16T12:05:06.426Z",
     notices: [
       { role: "Assistant Professor - Adult Cardiology", salaryText: "$156.25 per hour", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf", periodText: "from 9/1/2026 to 8/31/2029", firstSeenAt: "2026-06-11T02:41:35.993Z" },
       { role: "Assistant Professor – Molecular Genomic Pathology", salaryText: "$125.00 per hour", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf", periodText: "from 8/1/2026 to 7/31/2029", firstSeenAt: "2026-06-15T12:05:05.762Z" },
@@ -68,7 +68,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["university of kansas medical center", {
     employer: "THE UNIVERSITY OF KANSAS MEDICAL CENTER",
     state: "KS",
-    latestNoticeAt: "2026-06-15T12:05:05.762Z",
+    latestNoticeAt: "2026-06-16T12:05:06.426Z",
     notices: [
       { role: "Pulmonary and Critical Care Nocturnist Physician/Faculty", salaryText: "$435,000", noticeUrl: "https://www.kumc.edu/documents/international/lca/NOTICE%20OF%20LCA%20FILING%20KBGOVI07995-2%20%282%29.pdf", periodText: "from 13 Jul 2026 to 12 Jul 2029", firstSeenAt: "2026-06-11T02:02:17.834Z" },
     ],
