@@ -1,6 +1,6 @@
 # Sponsor truth — fused per-employer evidence
 
-Generated 2026-06-16T12:05:18.144Z · 5870 employers
+Generated 2026-06-17T12:05:18.141Z · 5870 employers
 
 - With LIVE physician LCA-notice activity: 4
 - With current employer-direct openings (latest run 2026-06-15-1829): 52
@@ -9,14 +9,14 @@ Generated 2026-06-16T12:05:18.144Z · 5870 employers
 
 ### University of Arkansas for Medical Sciences (AR) — score 88
 
-DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 6 physician LCA notice(s) on the employer's own site (latest 2026-06-16). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 6 physician LCA notice(s) on the employer's own site (latest 2026-06-17). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Fellow Physician — $68,720 — 07/01/2026 – 06/30/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf)
 - LIVE filing: Fellow Physician — $68,720.00 — 07/01/2026 – 06/23/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf)
 - LIVE filing: Resident/Fellow Physician — $63396.00 — 6/17/2026 - 06/16/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26126-878193.pdf)
 
 ### Emory University (GA) — score 88
 
-DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 4 physician LCA notice(s) on the employer's own site (latest 2026-06-16). 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 4 physician LCA notice(s) on the employer's own site (latest 2026-06-17). 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf)
 - LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf)
 - LIVE filing: Assistant Professor SOM Pathology and Laboratory Medicine — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029.pdf)
@@ -26,7 +26,7 @@ DOL history: 40 certified physician position(s) across 23 specialties; cap-exemp
 
 ### University of Pittsburgh (PA) — score 38
 
-DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 2 physician LCA notice(s) on the employer's own site (latest 2026-06-16). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 2 physician LCA notice(s) on the employer's own site (latest 2026-06-17). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor - Adult Cardiology — $156.25 per hour — from 9/1/2026 to 8/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf)
 - LIVE filing: Assistant Professor – Molecular Genomic Pathology — $125.00 per hour — from 8/1/2026 to 7/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf)
 

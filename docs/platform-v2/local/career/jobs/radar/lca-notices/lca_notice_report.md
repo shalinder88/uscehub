@@ -1,24 +1,23 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-06-16T12:05:06.426Z
-- Notices tracked (all time): 14 (13 physician)
-- This poll: 0 new, 14 still posted
+- Last poll: 2026-06-17T12:05:06.273Z
+- Notices tracked (all time): 15 (13 physician)
+- This poll: 1 new, 12 still posted
 
 ## Poll log
-- lca-kumc: 2 notice link(s) on page
+- lca-kumc: 1 notice link(s) on page
 - lca-pitt: 2 physician notice link(s) on page
 - lca-uams: 6 physician notice link(s) on page
 - lca-emory: 4 physician notice link(s) on page
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
-- lca-umd: 1 notice(s) on page (html-row), 0 physician
+- lca-umd: 2 notice(s) on page (html-row), 0 physician
 
 ## Physician notices (sponsorship ACTIVITY — never open jobs)
 
 | Employer | Role | Salary | Period | First seen | Case |
 |---|---|---|---|---|---|
-| University of Kansas Medical Center | Pulmonary and Critical Care Nocturnist Physician/Faculty | $435,000 | from 13 Jul 2026 to 12 Jul 2029 | 2026-06-11 | KBGOVI07995-2 |
 | University of Pittsburgh | Assistant Professor - Adult Cardiology | $156.25 per hour | from 9/1/2026 to 8/31/2029 | 2026-06-11 | uncased-Assistant Professor - Adult Cardiology |
 | University of Arkansas for Medical Sciences | Fellow Physician | $68,720 | 07/01/2026 – 06/30/2029 | 2026-06-14 | I-200-26057-666396 |
 | University of Arkansas for Medical Sciences | Fellow Physician | $68,720.00 | 07/01/2026 – 06/23/2029 | 2026-06-14 | I-200-26064-681539 |
@@ -31,3 +30,4 @@
 | Emory University | Assistant Professor SOM Pathology and Laboratory Medicine | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029 |
 | Emory University | Assistant Professor SOM Surgery | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029 |
 | University of Pittsburgh | Assistant Professor – Molecular Genomic Pathology | $125.00 per hour | from 8/1/2026 to 7/31/2029 | 2026-06-15 | uncased-Assistant Professor – Molecular Genomic Pathology |
+| University of Kansas Medical Center | Pulmonary and Critical Care Nocturnist Physician/Faculty | $435,000 | from 13 Jul 2026 to 12 Jul 2029 | 2026-06-11 | KBGOVI07995-2 |
