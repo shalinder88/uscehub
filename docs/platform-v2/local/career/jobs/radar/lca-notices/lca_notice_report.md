@@ -1,14 +1,14 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-06-17T12:05:06.273Z
-- Notices tracked (all time): 15 (13 physician)
-- This poll: 1 new, 12 still posted
+- Last poll: 2026-06-18T12:05:05.643Z
+- Notices tracked (all time): 17 (15 physician)
+- This poll: 2 new, 13 still posted
 
 ## Poll log
 - lca-kumc: 1 notice link(s) on page
 - lca-pitt: 2 physician notice link(s) on page
 - lca-uams: 6 physician notice link(s) on page
-- lca-emory: 4 physician notice link(s) on page
+- lca-emory: 6 physician notice link(s) on page
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
@@ -30,4 +30,6 @@
 | Emory University | Assistant Professor SOM Pathology and Laboratory Medicine | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029 |
 | Emory University | Assistant Professor SOM Surgery | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029 |
 | University of Pittsburgh | Assistant Professor – Molecular Genomic Pathology | $125.00 per hour | from 8/1/2026 to 7/31/2029 | 2026-06-15 | uncased-Assistant Professor – Molecular Genomic Pathology |
+| Emory University | Assistant Professor SOM Anesthesiology | ? | ? | 2026-06-18 | uncased-Assistant-Professor-SOM-Anesthesiology-7.1.2026-6.30.2029 |
+| Emory University | Assistant Professor SOM Surgery 8.1.2026 7.31.20291 | ? | ? | 2026-06-18 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.20291 |
 | University of Kansas Medical Center | Pulmonary and Critical Care Nocturnist Physician/Faculty | $435,000 | from 13 Jul 2026 to 12 Jul 2029 | 2026-06-11 | KBGOVI07995-2 |
