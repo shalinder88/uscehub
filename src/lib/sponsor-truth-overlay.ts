@@ -35,7 +35,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["emory university", {
     employer: "Emory University",
     state: "GA",
-    latestNoticeAt: "2026-06-18T12:05:05.643Z",
+    latestNoticeAt: "2026-06-19T12:08:01.120Z",
     notices: [
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
@@ -43,25 +43,26 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
       { role: "Assistant Professor SOM Surgery", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Anesthesiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Anesthesiology-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-18T12:05:05.643Z" },
       { role: "Assistant Professor SOM Surgery 8.1.2026 7.31.20291", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Surgery-8.1.2026-7.31.20291.pdf", periodText: "", firstSeenAt: "2026-06-18T12:05:05.643Z" },
+      { role: "Medical House Staff Resident SOM Surgery", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Medical-House-Staff-Resident-SOM-Surgery-7.1.2026-6.30.2027.pdf", periodText: "", firstSeenAt: "2026-06-19T12:08:01.120Z" },
     ],
   }],
   ["university of arkansas for medical sciences", {
     employer: "University of Arkansas for Medical Sciences",
     state: "AR",
-    latestNoticeAt: "2026-06-18T12:05:05.643Z",
+    latestNoticeAt: "2026-06-19T12:08:01.120Z",
     notices: [
       { role: "Fellow Physician", salaryText: "$68,720", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf", periodText: "07/01/2026 – 06/30/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
       { role: "Fellow Physician", salaryText: "$68,720.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf", periodText: "07/01/2026 – 06/23/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
-      { role: "Resident/Fellow Physician", salaryText: "$63396.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26126-878193.pdf", periodText: "6/17/2026 - 06/16/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
-      { role: "Resident/Fellow Physician", salaryText: "$63,396.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26142-941577.pdf", periodText: "6/17/2026 - 6/16/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
       { role: "Physician", salaryText: "$175/hr", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Physician-I-200-26146-947183-1.pdf", periodText: "7/1/2026 - 6/30/2028", firstSeenAt: "2026-06-14T01:07:56.218Z" },
       { role: "Fellow Physician", salaryText: "$77,210.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/06/Fellow-Physician-I-200-26162-004440.pdf", periodText: "7/3/2026 - 7/2/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
+      { role: "Resident/Fellow Physician", salaryText: "$63396.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26126-878193.pdf", periodText: "6/17/2026 - 06/16/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
+      { role: "Resident/Fellow Physician", salaryText: "$63,396.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Resident-Fellow-Physician-I-200-26142-941577.pdf", periodText: "6/17/2026 - 6/16/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
     ],
   }],
   ["university of pittsburgh", {
     employer: "University of Pittsburgh",
     state: "PA",
-    latestNoticeAt: "2026-06-18T12:05:05.643Z",
+    latestNoticeAt: "2026-06-19T12:08:01.120Z",
     notices: [
       { role: "Assistant Professor - Adult Cardiology", salaryText: "$156.25 per hour", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf", periodText: "from 9/1/2026 to 8/31/2029", firstSeenAt: "2026-06-11T02:41:35.993Z" },
       { role: "Assistant Professor – Molecular Genomic Pathology", salaryText: "$125.00 per hour", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf", periodText: "from 8/1/2026 to 7/31/2029", firstSeenAt: "2026-06-15T12:05:05.762Z" },
