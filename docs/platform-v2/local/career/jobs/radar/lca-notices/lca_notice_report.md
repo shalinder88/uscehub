@@ -1,18 +1,18 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-06-24T12:05:05.651Z
-- Notices tracked (all time): 20 (18 physician)
-- This poll: 2 new, 10 still posted
+- Last poll: 2026-06-25T12:05:04.796Z
+- Notices tracked (all time): 22 (20 physician)
+- This poll: 2 new, 12 still posted
 
 ## Poll log
 - lca-kumc: 1 notice link(s) on page
 - lca-pitt: 2 physician notice link(s) on page
-- lca-uams: 4 physician notice link(s) on page
-- lca-emory: 5 physician notice link(s) on page
+- lca-uams: 5 physician notice link(s) on page
+- lca-emory: 6 physician notice link(s) on page
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
-- lca-umd: 6 notice(s) on page (html-row), 0 physician
+- lca-umd: 7 notice(s) on page (html-row), 0 physician
 
 ## Physician notices (sponsorship ACTIVITY — never open jobs)
 
@@ -29,6 +29,8 @@
 | University of Arkansas for Medical Sciences | Fellow Physician | $68,720 | 07/01/2026 – 06/30/2029 | 2026-06-14 | I-200-26057-666396 |
 | University of Pittsburgh | Assistant Professor – Cardiac Surgery | Period of Employment: DOL File No.: 9100 Babcock Boulevar | DOL File No.: 9100 Babcock Boulevard Pittsburgh PA 15237 $115.38/hour July 01, 2026 to | 2026-06-24 | uncased-Assistant Professor – Cardiac Surgery |
 | Emory University | Medical House Staff Resident SOM Surgery 7.1.2026 6.30.2027 updated | ? | ? | 2026-06-24 | uncased-Medical-House-Staff-Resident-SOM-Surgery-7.1.2026-6.30.2027_updated |
+| University of Arkansas for Medical Sciences | Resident/Fellow Physician | $63,640.00 | 9/1/2026 - 8/31/2029 | 2026-06-25 | I-200-26175-045359 |
+| Emory University | Assistant Academic Research Scientist Hematology Medical Oncology | ? | ? | 2026-06-25 | uncased-Assistant-Academic-Research-Scientist-Hematology-Medical-Oncology-7.9.2026-7.8.2027 |
 | Emory University | Assistant Professor SOM Pathology and Laboratory Medicine | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029 |
 | Emory University | Assistant Professor SOM Surgery | ? | ? | 2026-06-14 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029 |
 | Emory University | Medical House Staff Resident SOM Surgery | ? | ? | 2026-06-19 | uncased-Medical-House-Staff-Resident-SOM-Surgery-7.1.2026-6.30.2027 |
