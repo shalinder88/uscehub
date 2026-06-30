@@ -1,6 +1,6 @@
 # Sponsor truth — fused per-employer evidence
 
-Generated 2026-06-29T12:05:18.918Z · 5870 employers
+Generated 2026-06-30T12:05:22.796Z · 5870 employers
 
 - With LIVE physician LCA-notice activity: 4
 - With current employer-direct openings (latest run 2026-06-15-1829): 52
@@ -9,7 +9,7 @@ Generated 2026-06-29T12:05:18.918Z · 5870 employers
 
 ### Emory University (GA) — score 88
 
-DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 11 physician LCA notice(s) on the employer's own site (latest 2026-06-29). 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 40 certified physician position(s) across 23 specialties; cap-exempt. ACTIVELY sponsoring: 11 physician LCA notice(s) on the employer's own site (latest 2026-06-30). 6 current physician opening(s) employer-direct (0 affirmative-visa, 0 signal, 6 sponsor-lead). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor SOM Radiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf)
 - LIVE filing: Assistant Professor SOM Anesthesiology — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Anesthesiology-7.1.2026-6.30.2029.pdf)
 - LIVE filing: Assistant Professor SOM Surgery 8.1.2026 7.31.20291 — ? — ? — [notice](https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Surgery-8.1.2026-7.31.20291.pdf)
@@ -19,16 +19,16 @@ DOL history: 40 certified physician position(s) across 23 specialties; cap-exemp
 
 ### University of Arkansas for Medical Sciences (AR) — score 88
 
-DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 7 physician LCA notice(s) on the employer's own site (latest 2026-06-29). Caveat: employer-level history does not guarantee any specific role sponsors.
+DOL history: 52 certified physician position(s) across 24 specialties; cap-exempt. ACTIVELY sponsoring: 7 physician LCA notice(s) on the employer's own site (latest 2026-06-30). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Fellow Physician — $68,720.00 — 07/01/2026 – 06/23/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf)
 - LIVE filing: Physician — $175/hr — 7/1/2026 - 6/30/2028 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/05/Physician-I-200-26146-947183-1.pdf)
 - LIVE filing: Fellow Physician — $77,210.00 — 7/3/2026 - 7/2/2029 — [notice](https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/06/Fellow-Physician-I-200-26162-004440.pdf)
 
 ### University of Pittsburgh (PA) — score 38
 
-DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 3 physician LCA notice(s) on the employer's own site (latest 2026-06-29). Caveat: employer-level history does not guarantee any specific role sponsors.
-- LIVE filing: Assistant Professor – Molecular Genomic Pathology — $125.00 per hour — from 8/1/2026 to 7/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf)
+DOL history: 0 certified physician position(s) across 16 specialties; cap-exempt. ACTIVELY sponsoring: 3 physician LCA notice(s) on the employer's own site (latest 2026-06-30). Caveat: employer-level history does not guarantee any specific role sponsors.
 - LIVE filing: Assistant Professor – Cardiac Surgery — Period of Employment: DOL File No.: 9100 Babcock Boulevar — DOL File No.: 9100 Babcock Boulevard Pittsburgh PA 15237 $115.38/hour July 01, 2026 to — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Cardiac%20Surgery%20%28UPP%29.pdf)
+- LIVE filing: Assistant Professor – Molecular Genomic Pathology — $125.00 per hour — from 8/1/2026 to 7/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Molecular%20Genomic%20Pathology%20%28Medicine%29.pdf)
 - LIVE filing: Assistant Professor - Adult Cardiology — $156.25 per hour — from 9/1/2026 to 8/31/2029 — [notice](https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20-%20Adult%20Cardiology%20%28UPP%29.pdf)
 
 ### THE UNIVERSITY OF KANSAS MEDICAL CENTER (KS) — score 80
