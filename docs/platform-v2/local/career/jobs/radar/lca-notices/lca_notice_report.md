@@ -1,6 +1,6 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-07-01T12:05:05.659Z
+- Last poll: 2026-07-02T12:05:05.659Z
 - Notices tracked (all time): 24 (22 physician)
 - This poll: 0 new, 14 still posted
 
@@ -12,7 +12,7 @@
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
-- lca-umd: 11 notice(s) on page (html-row), 0 physician
+- lca-umd: 12 notice(s) on page (html-row), 0 physician
 
 ## Physician notices (sponsorship ACTIVITY — never open jobs)
 
