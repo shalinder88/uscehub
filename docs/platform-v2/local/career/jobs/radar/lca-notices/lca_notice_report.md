@@ -1,6 +1,6 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-07-11T12:06:40.980Z
+- Last poll: 2026-07-12T12:05:06.613Z
 - Notices tracked (all time): 26 (23 physician)
 - This poll: 0 new, 13 still posted
 
