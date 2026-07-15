@@ -1,7 +1,7 @@
 # LCA-notice radar — accumulated index
 
-- Last poll: 2026-07-14T12:05:05.528Z
-- Notices tracked (all time): 27 (24 physician)
+- Last poll: 2026-07-15T12:05:06.325Z
+- Notices tracked (all time): 28 (25 physician)
 - This poll: 1 new, 13 still posted
 
 ## Poll log
@@ -12,7 +12,7 @@
 - lca-upenn: disabled — DISABLED 2026-06-10
 - lca-umich: disabled — DISABLED 2026-06-10
 - lca-vanderbilt: disabled — DISABLED 2026-06-10
-- lca-umd: 1 notice(s) on page (html-row), 0 physician
+- lca-umd: 2 notice(s) on page (html-row), 0 physician
 
 ## Physician notices (sponsorship ACTIVITY — never open jobs)
 
@@ -23,7 +23,6 @@
 | Emory University | Assistant Professor SOM Surgery 8.1.2026 7.31.20291 | ? | ? | 2026-06-18 | uncased-Assistant-Professor-SOM-Surgery-8.1.2026-7.31.20291 |
 | University of Arkansas for Medical Sciences | Fellow Physician | $68,720.00 | 07/01/2026 – 06/23/2029 | 2026-06-14 | I-200-26064-681539 |
 | University of Arkansas for Medical Sciences | Fellow Physician | $68,720 | 07/01/2026 – 06/30/2029 | 2026-06-14 | I-200-26057-666396 |
-| University of Pittsburgh | Assistant Professor – Cardiac Surgery | Period of Employment: DOL File No.: 9100 Babcock Boulevar | DOL File No.: 9100 Babcock Boulevard Pittsburgh PA 15237 $115.38/hour July 01, 2026 to | 2026-06-24 | uncased-Assistant Professor – Cardiac Surgery |
 | Emory University | Medical House Staff Resident SOM Surgery 7.1.2026 6.30.2027 updated | ? | ? | 2026-06-24 | uncased-Medical-House-Staff-Resident-SOM-Surgery-7.1.2026-6.30.2027_updated |
 | University of Arkansas for Medical Sciences | Resident/Fellow Physician | $63,640.00 | 9/1/2026 - 8/31/2029 | 2026-06-25 | I-200-26175-045359 |
 | Emory University | Assistant Academic Research Scientist Hematology Medical Oncology | ? | ? | 2026-06-25 | uncased-Assistant-Academic-Research-Scientist-Hematology-Medical-Oncology-7.9.2026-7.8.2027 |
@@ -31,6 +30,8 @@
 | Emory University | Medical Physics Resident SOM Radiation Oncology | ? | ? | 2026-06-27 | uncased-Medical-Physics-Resident-SOM-Radiation-Oncology-7.15.2026-6.30.2029 |
 | Emory University | Assistant Scientist Bioinformatics Neurology | ? | ? | 2026-07-09 | uncased-Assistant-Scientist-Bioinformatics-Neurology-12.1.2026-11.30.2029 |
 | University of Arkansas for Medical Sciences | Fellow Physicians | $71,101.00 | 9/7/2026 - 9/6/2029 | 2026-07-14 | I-200-26194-095376 |
+| University of Pittsburgh | Assistant Professor of Radiology | $72.11 per hour | from 7/1/2026 to 6/30/2029 | 2026-07-15 | uncased-Assistant Professor of Radiology |
+| University of Pittsburgh | Assistant Professor – Cardiac Surgery | Period of Employment: DOL File No.: 9100 Babcock Boulevar | DOL File No.: 9100 Babcock Boulevard Pittsburgh PA 15237 $115.38/hour July 01, 2026 to | 2026-06-24 | uncased-Assistant Professor – Cardiac Surgery |
 | University of Arkansas for Medical Sciences | Physician | $175/hr | 7/1/2026 - 6/30/2028 | 2026-06-14 | I-200-26146-947183 |
 | University of Arkansas for Medical Sciences | Fellow Physician | $77,210.00 | 7/3/2026 - 7/2/2029 | 2026-06-14 | I-200-26162-004440 |
 | University of Pittsburgh | Assistant Professor – Molecular Genomic Pathology | $125.00 per hour | from 8/1/2026 to 7/31/2029 | 2026-06-15 | uncased-Assistant Professor – Molecular Genomic Pathology |
