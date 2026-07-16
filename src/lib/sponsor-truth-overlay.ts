@@ -35,8 +35,9 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["emory university", {
     employer: "Emory University",
     state: "GA",
-    latestNoticeAt: "2026-07-15T12:05:06.325Z",
+    latestNoticeAt: "2026-07-16T12:05:04.192Z",
     notices: [
+      { role: "Assistant Scientist Bioinformatics Neurology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Scientist-Bioinformatics-Neurology-12.1.2026-11.30.2029.pdf", periodText: "", firstSeenAt: "2026-07-09T12:05:05.882Z" },
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-6.10.2026-6.30.2026.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Anesthesiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Anesthesiology-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-18T12:05:05.643Z" },
       { role: "Assistant Professor SOM Surgery 8.1.2026 7.31.20291", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Surgery-8.1.2026-7.31.20291.pdf", periodText: "", firstSeenAt: "2026-06-18T12:05:05.643Z" },
@@ -44,7 +45,6 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
       { role: "Assistant Academic Research Scientist Hematology Medical Oncology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Academic-Research-Scientist-Hematology-Medical-Oncology-7.9.2026-7.8.2027.pdf", periodText: "", firstSeenAt: "2026-06-25T12:05:04.796Z" },
       { role: "Instructor SOM Pediatrics", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Instructor-SOM-Pediatrics-11.13.2026-9.17.2028.pdf", periodText: "", firstSeenAt: "2026-06-26T12:05:04.957Z" },
       { role: "Medical Physics Resident SOM Radiation Oncology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Medical-Physics-Resident-SOM-Radiation-Oncology-7.15.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-27T12:05:05.810Z" },
-      { role: "Assistant Scientist Bioinformatics Neurology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Scientist-Bioinformatics-Neurology-12.1.2026-11.30.2029.pdf", periodText: "", firstSeenAt: "2026-07-09T12:05:05.882Z" },
       { role: "Assistant Professor SOM Radiology", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Radiology-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Pathology and Laboratory Medicine", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Pathology-and-Laboratory-Medicine-7.1.2026-6.30.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
       { role: "Assistant Professor SOM Surgery", salaryText: "", noticeUrl: "https://hr.emory.edu/eu/career/lca-notices/../../_includes/documents/sections/lca-postings/Assistant-Professor-SOM-Surgery-8.1.2026-7.31.2029.pdf", periodText: "", firstSeenAt: "2026-06-14T01:11:25.962Z" },
@@ -54,7 +54,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["university of arkansas for medical sciences", {
     employer: "University of Arkansas for Medical Sciences",
     state: "AR",
-    latestNoticeAt: "2026-07-15T12:05:06.325Z",
+    latestNoticeAt: "2026-07-16T12:05:04.192Z",
     notices: [
       { role: "Fellow Physician", salaryText: "$68,720.00", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/03/Fellow-Physician-I-200-26064-681539.pdf", periodText: "07/01/2026 – 06/23/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
       { role: "Fellow Physician", salaryText: "$68,720", noticeUrl: "https://hr.uams.edu/immigration-services/wp-content/uploads/sites/9/2026/02/Fellow-Physician-I-200-26057-666396.pdf", periodText: "07/01/2026 – 06/30/2029", firstSeenAt: "2026-06-14T01:07:56.218Z" },
@@ -69,7 +69,7 @@ export const LIVE_NOTICE_EMPLOYERS = new Map<string, LiveNoticeEmployer>([
   ["university of pittsburgh", {
     employer: "University of Pittsburgh",
     state: "PA",
-    latestNoticeAt: "2026-07-15T12:05:06.325Z",
+    latestNoticeAt: "2026-07-16T12:05:04.192Z",
     notices: [
       { role: "Assistant Professor of Radiology", salaryText: "$72.11 per hour", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20of%20Radiology%20%28UPP%29.pdf", periodText: "from 7/1/2026 to 6/30/2029", firstSeenAt: "2026-07-15T12:05:06.325Z" },
       { role: "Assistant Professor – Cardiac Surgery", salaryText: "Period of Employment: DOL File No.: 9100 Babcock Boulevar", noticeUrl: "https://www.ois.pitt.edu/sites/default/files/docs/Assistant%20Professor%20%E2%80%93%20Cardiac%20Surgery%20%28UPP%29.pdf", periodText: "DOL File No.: 9100 Babcock Boulevard Pittsburgh PA 15237 $115.38/hour July 01, 2026 to", firstSeenAt: "2026-06-24T12:05:05.651Z" },
