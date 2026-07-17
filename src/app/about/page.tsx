@@ -7,7 +7,7 @@ import { BreadcrumbSchema } from "@/components/seo/breadcrumb-schema";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Built by an intensivist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
+    "Built by an intensivist and a hospitalist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
   alternates: {
     canonical: "https://uscehub.com/about",
   },
@@ -18,7 +18,7 @@ const jsonLd = {
   "@type": "AboutPage",
   name: "About USCEHub",
   description:
-    "Built by an intensivist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
+    "Built by an intensivist and a hospitalist who lived the IMG journey. USCEHub is an independent, source-linked, free directory of U.S. clinical experience opportunities for International Medical Graduates.",
   url: "https://uscehub.com/about",
   mainEntity: {
     "@type": "Organization",
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 fontStyle: "italic",
               }}
             >
-              Built by an Intensivist.
+              Built by an Intensivist and a Hospitalist.
             </p>
           </div>
         </section>
