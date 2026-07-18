@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
+import { canManageListing } from "@/lib/institution";
 
 export async function PATCH(
   request: NextRequest,
@@ -22,7 +23,7 @@ export async function PATCH(
       where: { id },
       include: {
         listing: {
-          select: { posterId: true },
+          select: { id: true, posterId: true },
         },
       },
     });
@@ -34,17 +35,22 @@ export async function PATCH(
       );
     }
 
-    // Only the listing poster or admin can update application status
-    const isPoster = application.listing.posterId === session.user.id;
+    // The listing poster, an admin, or an OWNER/COORDINATOR of the listing's
+    // organization can update status; applicants can only withdraw their own.
     const isAdmin = session.user.role === "ADMIN";
     const isApplicant = application.applicantId === session.user.id;
+    const isManager = await canManageListing(
+      session.user.id,
+      application.listing.id,
+      isAdmin,
+    );
 
-    if (!isPoster && !isAdmin && !isApplicant) {
+    if (!isManager && !isApplicant) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
     // Applicants can only withdraw
-    if (isApplicant && !isPoster && !isAdmin && status !== "WITHDRAWN") {
+    if (isApplicant && !isManager && status !== "WITHDRAWN") {
       return Response.json(
         { error: "Applicants can only withdraw their applications" },
         { status: 403 }
