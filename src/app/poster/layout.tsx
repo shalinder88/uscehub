@@ -17,11 +17,13 @@ import {
   FileText,
   Settings,
   MessageSquare,
+  Users,
 } from "lucide-react";
 
 const sidebarLinks = [
   { href: "/poster", label: "Overview", icon: LayoutDashboard },
   { href: "/poster/organization", label: "Organization", icon: Building2 },
+  { href: "/poster/team", label: "Team", icon: Users },
   { href: "/poster/verification", label: "Verification", icon: ShieldCheck },
   { href: "/poster/listings", label: "My Listings", icon: List },
   { href: "/poster/applications", label: "Applications", icon: FileText },
