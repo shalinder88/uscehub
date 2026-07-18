@@ -18,10 +18,12 @@ import {
   Flag,
   ScrollText,
   Inbox,
+  Building2,
 } from "lucide-react";
 
 const sidebarLinks = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard },
+  { href: "/admin/claims", label: "Institution Claims", icon: Building2 },
   { href: "/admin/posters", label: "Pending Posters", icon: ShieldCheck },
   { href: "/admin/listings", label: "Pending Listings", icon: List },
   { href: "/admin/messages", label: "User Messages", icon: Inbox },
