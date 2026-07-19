@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
-import { resolveInstitutionContext } from "@/lib/institution";
+import { resolveInstitutionContext, isPipelineActive } from "@/lib/institution";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -27,10 +27,18 @@ const sidebarLinks = [
   { href: "/poster/team", label: "Team", icon: Users },
   { href: "/poster/verification", label: "Verification", icon: ShieldCheck },
   { href: "/poster/listings", label: "My Listings", icon: List },
-  { href: "/poster/applications", label: "Applications", icon: FileText },
   { href: "/contact-admin", label: "Contact Admin", icon: MessageSquare },
   { href: "/poster/settings", label: "Settings", icon: Settings },
 ];
+
+// Shown only when in-platform applications are possible for this org --
+// otherwise it is a link to a page of permanent zeroes. The route itself
+// stays reachable, so nothing is lost if applications are enabled later.
+const APPLICATIONS_LINK = {
+  href: "/poster/applications",
+  label: "Applications",
+  icon: FileText,
+};
 
 export default async function PosterLayout({
   children,
@@ -48,11 +56,16 @@ export default async function PosterLayout({
   // their User.role is already POSTER in the database but their token still
   // says APPLICANT. Membership is the real authority for this surface, so fall
   // back to it rather than bouncing someone who legitimately belongs here.
-  if (session.user.role !== "POSTER" && session.user.role !== "ADMIN") {
-    const membership = await resolveInstitutionContext(session.user.id);
-    if (!membership) {
-      redirect("/dashboard");
-    }
+  const ctx = await resolveInstitutionContext(session.user.id);
+
+  if (session.user.role !== "POSTER" && session.user.role !== "ADMIN" && !ctx) {
+    redirect("/dashboard");
+  }
+
+  const links = [...sidebarLinks];
+  if (ctx && (await isPipelineActive(ctx.org.id))) {
+    // Slot Applications back in just after My Listings.
+    links.splice(5, 0, APPLICATIONS_LINK);
   }
 
   return (
@@ -80,7 +93,7 @@ export default async function PosterLayout({
           </div>
 
           <nav className="flex-1 space-y-1 px-4 pb-4">
-            {sidebarLinks.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

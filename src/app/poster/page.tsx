@@ -86,12 +86,35 @@ export default async function InstitutionOverview() {
   const verified = ctx.org.verificationStatus === "APPROVED";
   const maxFunnel = Math.max(...a.funnel.map((f) => f.value), 1);
 
-  const kpis = [
-    { label: "Active listings", value: a.totals.activeListings, sub: `${a.totals.totalListings} total`, icon: Building2 },
-    { label: "Total views", value: a.totals.views, sub: "across all listings", icon: Eye },
-    { label: "Applicants", value: a.totals.applications, sub: `${a.totals.saves} saved`, icon: FileText },
-    { label: "Accepted", value: a.totals.accepted, sub: `${pct(a.totals.accepted, a.totals.applications)}% of applicants`, icon: CheckCircle2 },
-  ];
+  // Where applicants actually go to apply, most-common first.
+  const applyRoutes = Object.entries(
+    a.listings.reduce<Record<string, number>>((acc, l) => {
+      const key = l.applicationMethod?.trim() || "not specified";
+      const label = key.length > 28 ? `${key.slice(0, 28)}…` : key;
+      acc[label] = (acc[label] ?? 0) + 1;
+      return acc;
+    }, {}),
+  )
+    .map(([method, count]) => ({ method, count }))
+    .sort((x, y) => y.count - x.count)
+    .slice(0, 5);
+
+  // Only surface applicant metrics when applications can actually land here.
+  // Otherwise show what genuinely moves: reach, saved interest, and how
+  // current the source links are.
+  const kpis = a.pipelineActive
+    ? [
+        { label: "Active listings", value: a.totals.activeListings, sub: `${a.totals.totalListings} total`, icon: Building2 },
+        { label: "Total views", value: a.totals.views, sub: "across all listings", icon: Eye },
+        { label: "Applicants", value: a.totals.applications, sub: `${a.totals.saves} saved`, icon: FileText },
+        { label: "Accepted", value: a.totals.accepted, sub: `${pct(a.totals.accepted, a.totals.applications)}% of applicants`, icon: CheckCircle2 },
+      ]
+    : [
+        { label: "Active listings", value: a.totals.activeListings, sub: `${a.totals.totalListings} total`, icon: Building2 },
+        { label: "Total views", value: a.totals.views, sub: "across all listings", icon: Eye },
+        { label: "Saved by applicants", value: a.totals.saves, sub: `${pct(a.totals.saves, a.totals.views)}% of viewers`, icon: Bookmark },
+        { label: "Source verified", value: a.freshness.verified, sub: a.freshness.unverified > 0 ? `${a.freshness.unverified} need a check` : "all links current", icon: ShieldCheck },
+      ];
 
   return (
     <div className="space-y-8">
@@ -161,10 +184,12 @@ export default async function InstitutionOverview() {
           style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
         >
           <h2 className="text-lg" style={{ fontFamily: "var(--font-serif)", color: "var(--ink)" }}>
-            Candidate funnel
+            {a.pipelineActive ? "Candidate funnel" : "Interest"}
           </h2>
           <p className="mt-0.5 text-xs" style={{ color: "var(--text-muted)" }}>
-            How interest converts into accepted candidates.
+            {a.pipelineActive
+              ? "How interest converts into accepted candidates."
+              : "How many people find your programs and save them for later."}
           </p>
           <div className="mt-5 space-y-4">
             {a.funnel.map((step, i) => {
@@ -198,37 +223,70 @@ export default async function InstitutionOverview() {
           </div>
         </section>
 
-        {/* Pipeline snapshot */}
-        <section
-          className="rounded-2xl p-6 lg:col-span-2"
-          style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
-        >
-          <div className="flex items-center justify-between">
+        {/* Pipeline snapshot — only when applications can actually arrive here.
+            Otherwise show how applicants really reach this institution. */}
+        {a.pipelineActive ? (
+          <section
+            className="rounded-2xl p-6 lg:col-span-2"
+            style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
+          >
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg" style={{ fontFamily: "var(--font-serif)", color: "var(--ink)" }}>
+                Pipeline
+              </h2>
+              <Link
+                href="/poster/applications"
+                className="flex items-center gap-1 text-xs font-medium"
+                style={{ color: "var(--teal)" }}
+              >
+                Review <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+            <div className="mt-4 space-y-2.5">
+              {PIPELINE_STAGES.map((s) => (
+                <div key={s.key} className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-soft)" }}>{s.label}</span>
+                  <span
+                    className="min-w-[2rem] rounded-md px-2 py-0.5 text-center text-sm font-semibold tabular-nums"
+                    style={{ background: "var(--paper-soft)", border: "1px solid var(--line)", color: "var(--ink)" }}
+                  >
+                    {n(a.pipeline[s.key] ?? 0)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <section
+            className="rounded-2xl p-6 lg:col-span-2"
+            style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
+          >
             <h2 className="text-lg" style={{ fontFamily: "var(--font-serif)", color: "var(--ink)" }}>
-              Pipeline
+              How applicants reach you
             </h2>
-            <Link
-              href="/poster/applications"
-              className="flex items-center gap-1 text-xs font-medium"
-              style={{ color: "var(--teal)" }}
-            >
-              Review <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-          <div className="mt-4 space-y-2.5">
-            {PIPELINE_STAGES.map((s) => (
-              <div key={s.key} className="flex items-center justify-between">
-                <span className="text-sm" style={{ color: "var(--ink-soft)" }}>{s.label}</span>
-                <span
-                  className="min-w-[2rem] rounded-md px-2 py-0.5 text-center text-sm font-semibold tabular-nums"
-                  style={{ background: "var(--paper-soft)", border: "1px solid var(--line)", color: "var(--ink)" }}
-                >
-                  {n(a.pipeline[s.key] ?? 0)}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
+            <p className="mt-0.5 text-xs" style={{ color: "var(--text-muted)" }}>
+              Applications are made on your own site, not on USCEHub.
+            </p>
+            <div className="mt-4 space-y-2.5">
+              {applyRoutes.map((r) => (
+                <div key={r.method} className="flex items-center justify-between">
+                  <span className="text-sm" style={{ color: "var(--ink-soft)" }}>{r.method}</span>
+                  <span
+                    className="min-w-[2rem] rounded-md px-2 py-0.5 text-center text-sm font-semibold tabular-nums"
+                    style={{ background: "var(--paper-soft)", border: "1px solid var(--line)", color: "var(--ink)" }}
+                  >
+                    {n(r.count)}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs" style={{ color: "var(--text-muted)" }}>
+              Keeping these links current is the most valuable thing you can do
+              here — {n(a.freshness.verified)} of {n(a.totals.totalListings)} are
+              verified{a.freshness.lastCheckedAt ? `, last checked ${a.freshness.lastCheckedAt.slice(0, 10)}` : ""}.
+            </p>
+          </section>
+        )}
       </div>
 
       {/* Listings performance */}
@@ -257,8 +315,17 @@ export default async function InstitutionOverview() {
                   <th className="px-6 py-2 font-medium">Listing</th>
                   <th className="px-3 py-2 text-right font-medium">Views</th>
                   <th className="px-3 py-2 text-right font-medium">Saved</th>
-                  <th className="px-3 py-2 text-right font-medium">Applied</th>
-                  <th className="px-3 py-2 text-right font-medium">Accepted</th>
+                  {a.pipelineActive ? (
+                    <>
+                      <th className="px-3 py-2 text-right font-medium">Applied</th>
+                      <th className="px-3 py-2 text-right font-medium">Accepted</th>
+                    </>
+                  ) : (
+                    <>
+                      <th className="px-3 py-2 text-right font-medium">Apply via</th>
+                      <th className="px-3 py-2 text-right font-medium">Last checked</th>
+                    </>
+                  )}
                   <th className="px-6 py-2 text-right font-medium">Status</th>
                 </tr>
               </thead>
@@ -280,8 +347,19 @@ export default async function InstitutionOverview() {
                     </td>
                     <td className="px-3 py-3 text-right tabular-nums" style={{ color: "var(--ink-soft)" }}>{n(l.views)}</td>
                     <td className="px-3 py-3 text-right tabular-nums" style={{ color: "var(--ink-soft)" }}>{n(l.saves)}</td>
-                    <td className="px-3 py-3 text-right tabular-nums" style={{ color: "var(--ink-soft)" }}>{n(l.applications)}</td>
-                    <td className="px-3 py-3 text-right tabular-nums font-semibold" style={{ color: "var(--ink)" }}>{n(l.accepted)}</td>
+                    {a.pipelineActive ? (
+                      <>
+                        <td className="px-3 py-3 text-right tabular-nums" style={{ color: "var(--ink-soft)" }}>{n(l.applications)}</td>
+                        <td className="px-3 py-3 text-right tabular-nums font-semibold" style={{ color: "var(--ink)" }}>{n(l.accepted)}</td>
+                      </>
+                    ) : (
+                      <>
+                        <td className="px-3 py-3 text-right" style={{ color: "var(--ink-soft)" }}>{l.applicationMethod || "—"}</td>
+                        <td className="px-3 py-3 text-right tabular-nums" style={{ color: l.lastVerifiedAt ? "var(--ink-soft)" : "var(--text-muted)" }}>
+                          {l.lastVerifiedAt ? l.lastVerifiedAt.slice(0, 10) : "never"}
+                        </td>
+                      </>
+                    )}
                     <td className="px-6 py-3 text-right">
                       <span className="inline-flex items-center gap-1.5 text-xs font-medium" style={{ color: STATUS_TONE[l.status] ?? "var(--ink-soft)" }}>
                         <span className="h-1.5 w-1.5 rounded-full" style={{ background: STATUS_TONE[l.status] ?? "var(--ink-soft)" }} />

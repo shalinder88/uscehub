@@ -86,6 +86,22 @@ export async function canManageListing(
   return !!membership;
 }
 
+/**
+ * Cheap check for whether the applicant pipeline is worth showing at all.
+ * Kept separate from getInstitutionAnalytics so the layout can gate nav
+ * without paying for the full analytics query on every page render.
+ */
+export async function isPipelineActive(orgId: string): Promise<boolean> {
+  const [apps, platformListing] = await Promise.all([
+    prisma.application.count({ where: { listing: { organizationId: orgId } } }),
+    prisma.listing.findFirst({
+      where: { organizationId: orgId, applicationMethod: "platform" },
+      select: { id: true },
+    }),
+  ]);
+  return apps > 0 || !!platformListing;
+}
+
 export interface ListingPerformance {
   id: string;
   title: string;
@@ -96,6 +112,9 @@ export interface ListingPerformance {
   saves: number;
   applications: number;
   accepted: number;
+  applicationMethod: string;
+  sourceVerified: boolean;
+  lastVerifiedAt: string | null;
 }
 
 export interface InstitutionAnalytics {
@@ -107,8 +126,29 @@ export interface InstitutionAnalytics {
     applications: number;
     accepted: number;
   };
+  /**
+   * Interest funnel (views -> saves). Always meaningful: every listing
+   * accrues views and saves regardless of how applicants actually apply.
+   */
   funnel: { label: string; value: number }[];
+  /**
+   * True only when in-platform applications are actually possible for this
+   * org -- either an application already exists, or a listing routes
+   * applications through USCEHub rather than off-site.
+   *
+   * Almost every listing today sends applicants to the institution's own
+   * site (external / VSLO / AAMC), so the applicant pipeline would render as
+   * permanent zeroes. We hide it rather than show a dead surface, and it
+   * lights up on its own the moment either condition becomes true.
+   */
+  pipelineActive: boolean;
   pipeline: Record<string, number>; // ApplicationStatus -> count
+  /** Source-link freshness -- the thing a coordinator can actually act on. */
+  freshness: {
+    verified: number;
+    unverified: number;
+    lastCheckedAt: string | null;
+  };
   listings: ListingPerformance[];
   team: { name: string; email: string; role: string; title: string | null }[];
 }
@@ -135,6 +175,8 @@ export async function getInstitutionAnalytics(
         status: true,
         linkVerified: true,
         views: true,
+        applicationMethod: true,
+        lastVerifiedAt: true,
         _count: { select: { applications: true, savedBy: true } },
       },
       orderBy: { createdAt: "desc" },
@@ -176,6 +218,9 @@ export async function getInstitutionAnalytics(
     saves: l._count.savedBy,
     applications: l._count.applications,
     accepted: acceptedByListing.get(l.id) ?? 0,
+    applicationMethod: l.applicationMethod,
+    sourceVerified: l.linkVerified,
+    lastVerifiedAt: l.lastVerifiedAt ? l.lastVerifiedAt.toISOString() : null,
   }));
 
   const totals = {
@@ -191,14 +236,39 @@ export async function getInstitutionAnalytics(
   for (const key of PIPELINE_ORDER) pipeline[key] = 0;
   for (const row of appByStatus) pipeline[row.status] = row._count._all;
 
+  const pipelineActive =
+    totals.applications > 0 ||
+    listings.some((l) => l.applicationMethod === "platform");
+
+  const verifiedDates = listings
+    .map((l) => l.lastVerifiedAt)
+    .filter((d): d is Date => !!d)
+    .sort((a, b) => b.getTime() - a.getTime());
+
+  const freshness = {
+    verified: listings.filter((l) => l.linkVerified).length,
+    unverified: listings.filter((l) => !l.linkVerified).length,
+    lastCheckedAt: verifiedDates[0] ? verifiedDates[0].toISOString() : null,
+  };
+
+  // The interest funnel stops at "Saved" unless applications can actually
+  // land here -- otherwise every institution sees Applied: 0 forever.
+  const funnel = [
+    { label: "Views", value: totals.views },
+    { label: "Saved", value: totals.saves },
+    ...(pipelineActive
+      ? [
+          { label: "Applied", value: totals.applications },
+          { label: "Accepted", value: totals.accepted },
+        ]
+      : []),
+  ];
+
   return {
     totals,
-    funnel: [
-      { label: "Views", value: totals.views },
-      { label: "Saved", value: totals.saves },
-      { label: "Applied", value: totals.applications },
-      { label: "Accepted", value: totals.accepted },
-    ],
+    funnel,
+    pipelineActive,
+    freshness,
     pipeline,
     listings: listingPerf,
     team: memberships.map((m) => ({
