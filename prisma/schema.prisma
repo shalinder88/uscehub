@@ -131,16 +131,20 @@ model User {
 
   applicantProfile  ApplicantProfile?
   posterProfile     PosterProfile?
-  organization      Organization?      @relation("OrganizationOwner")
+  organization      Organization?            @relation("OrganizationOwner")
   listings          Listing[]
   applications      Application[]
   savedListings     SavedListing[]
   comparedListings  ComparedListing[]
   reviews           Review[]
-  flagReports       FlagReport[]       @relation("FlagReporter")
+  flagReports       FlagReport[]             @relation("FlagReporter")
   adminActions      AdminActionLog[]
   communityPosts    CommunityPost[]
   communityComments CommunityComment[]
+  orgMemberships    OrganizationMembership[] @relation("OrgMembershipUser")
+  applicationNotes  ApplicationNote[]        @relation("AppNoteAuthor")
+  claims            OrganizationClaim[]      @relation("ClaimSubmitter")
+  sentInvites       OrganizationInvite[]     @relation("InviteSender")
 
   @@map("users")
 }
@@ -206,9 +210,90 @@ model Organization {
   createdAt          DateTime           @default(now())
   updatedAt          DateTime           @updatedAt
 
-  listings Listing[]
+  listings    Listing[]
+  memberships OrganizationMembership[]
+  claims      OrganizationClaim[]
+  invites     OrganizationInvite[]
 
   @@map("organizations")
+}
+
+enum OrgRole {
+  OWNER
+  COORDINATOR
+  VIEWER
+}
+
+enum ClaimStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum InviteStatus {
+  PENDING
+  ACCEPTED
+  REVOKED
+}
+
+model OrganizationInvite {
+  id             String       @id @default(cuid())
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  email          String
+  role           OrgRole      @default(COORDINATOR)
+  title          String?
+  token          String       @unique
+  status         InviteStatus @default(PENDING)
+  invitedById    String
+  invitedBy      User         @relation("InviteSender", fields: [invitedById], references: [id], onDelete: Cascade)
+  expiresAt      DateTime
+  acceptedAt     DateTime?
+  createdAt      DateTime     @default(now())
+
+  @@index([organizationId])
+  @@index([email])
+  @@map("organization_invites")
+}
+
+model OrganizationClaim {
+  id               String        @id @default(cuid())
+  listingId        String?
+  listing          Listing?      @relation(fields: [listingId], references: [id], onDelete: SetNull)
+  organizationId   String?
+  organization     Organization? @relation(fields: [organizationId], references: [id], onDelete: SetNull)
+  claimantId       String
+  claimant         User          @relation("ClaimSubmitter", fields: [claimantId], references: [id], onDelete: Cascade)
+  contactName      String
+  institutionName  String
+  institutionEmail String
+  title            String?
+  message          String?
+  domainMatch      Boolean       @default(false)
+  status           ClaimStatus   @default(PENDING)
+  reviewNotes      String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([status])
+  @@map("organization_claims")
+}
+
+model OrganizationMembership {
+  id             String       @id @default(cuid())
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User         @relation("OrgMembershipUser", fields: [userId], references: [id], onDelete: Cascade)
+  role           OrgRole      @default(COORDINATOR)
+  title          String?
+  invitedByEmail String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@unique([organizationId, userId])
+  @@index([userId])
+  @@map("organization_memberships")
 }
 
 model Listing {
@@ -276,6 +361,7 @@ model Listing {
   savedBy      SavedListing[]
   comparedBy   ComparedListing[]
   reviews      Review[]
+  claims       OrganizationClaim[]
 
   @@index([status, listingType])
   @@index([state])
@@ -318,8 +404,23 @@ model Application {
   createdAt   DateTime          @default(now())
   updatedAt   DateTime          @updatedAt
 
+  notes ApplicationNote[]
+
   @@unique([listingId, applicantId])
   @@map("applications")
+}
+
+model ApplicationNote {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  authorId      String
+  author        User        @relation("AppNoteAuthor", fields: [authorId], references: [id], onDelete: Cascade)
+  body          String
+  createdAt     DateTime    @default(now())
+
+  @@index([applicationId])
+  @@map("application_notes")
 }
 
 model Review {

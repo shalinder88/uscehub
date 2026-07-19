@@ -1602,6 +1602,16 @@ export default async function ListingPage({ params }: ListingPageProps) {
                 </div>
               )}
 
+              <div className="mt-3 text-sm">
+                <Link
+                  href={`/claim/${listing.id}`}
+                  className="hover:underline"
+                  style={{ color: "var(--teal)" }}
+                >
+                  Are you the coordinator? Claim this program →
+                </Link>
+              </div>
+
               {/* At a glance */}
               <div className="lv2-glance">
                 <div className="lv2-gh">
