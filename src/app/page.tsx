@@ -14,6 +14,7 @@ import { ProgramSpotlight } from "@/components/home/program-spotlight";
 import { MatchCounter } from "@/components/home/match-counter";
 import { LaneCards } from "@/components/home/lane-cards";
 import { LaneBanner } from "@/components/home/lane-banner";
+import { SHOW_VISA_JOBS_LANE } from "@/lib/lanes";
 
 export const metadata: Metadata = {
   title: "USCEHub — Verified U.S. Clinical Experience Programs",
@@ -170,8 +171,12 @@ export default async function HomePage() {
         }}
         stateCounts={stateCounts}
       />
-      <LaneBanner />
-      <LaneCards />
+      {SHOW_VISA_JOBS_LANE && (
+        <>
+          <LaneBanner />
+          <LaneCards />
+        </>
+      )}
       <ErasCountdown />
       <TrustSection />
       <FeaturedListings />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SHOW_VISA_JOBS_LANE } from "@/lib/lanes";
 import { HeartPulse, Globe } from "lucide-react";
 
 export function Footer() {
@@ -124,11 +125,13 @@ export function Footer() {
                   For Institutions
                 </Link>
               </li>
-              <li>
-                <Link href="/career" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
-                  Visa &amp; Jobs
-                </Link>
-              </li>
+              {SHOW_VISA_JOBS_LANE && (
+                <li>
+                  <Link href="/career" className="hover:underline" style={{ color: "var(--ink-soft)" }}>
+                    Visa &amp; Jobs
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
