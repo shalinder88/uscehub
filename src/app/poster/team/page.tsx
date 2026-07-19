@@ -5,7 +5,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { resolveInstitutionContext } from "@/lib/institution";
 import { TeamManager } from "./team-client";
-import type { TeamMember } from "./team-client";
+import type { TeamMember, PendingInvite } from "./team-client";
 
 export default async function TeamPage() {
   const session = await auth();
@@ -35,6 +35,19 @@ export default async function TeamPage() {
     title: m.title,
   }));
 
+  const inviteRows = await prisma.organizationInvite.findMany({
+    where: { organizationId: ctx.org.id, status: "PENDING" },
+    orderBy: { createdAt: "desc" },
+  });
+  const invites: PendingInvite[] = inviteRows
+    .filter((i) => i.expiresAt.getTime() > Date.now())
+    .map((i) => ({
+      id: i.id,
+      email: i.email,
+      role: i.role,
+      expiresAt: i.expiresAt.toISOString().slice(0, 10),
+    }));
+
   return (
     <div className="space-y-6">
       <header>
@@ -48,7 +61,7 @@ export default async function TeamPage() {
           Coordinators can manage listings and applicants. Viewers have read-only access.
         </p>
       </header>
-      <TeamManager members={members} isOwner={ctx.role === "OWNER"} />
+      <TeamManager members={members} invites={invites} isOwner={ctx.role === "OWNER"} />
     </div>
   );
 }

@@ -144,6 +144,7 @@ model User {
   orgMemberships    OrganizationMembership[] @relation("OrgMembershipUser")
   applicationNotes  ApplicationNote[]        @relation("AppNoteAuthor")
   claims            OrganizationClaim[]      @relation("ClaimSubmitter")
+  sentInvites       OrganizationInvite[]     @relation("InviteSender")
 
   @@map("users")
 }
@@ -212,6 +213,7 @@ model Organization {
   listings    Listing[]
   memberships OrganizationMembership[]
   claims      OrganizationClaim[]
+  invites     OrganizationInvite[]
 
   @@map("organizations")
 }
@@ -226,6 +228,32 @@ enum ClaimStatus {
   PENDING
   APPROVED
   REJECTED
+}
+
+enum InviteStatus {
+  PENDING
+  ACCEPTED
+  REVOKED
+}
+
+model OrganizationInvite {
+  id             String       @id @default(cuid())
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  email          String
+  role           OrgRole      @default(COORDINATOR)
+  title          String?
+  token          String       @unique
+  status         InviteStatus @default(PENDING)
+  invitedById    String
+  invitedBy      User         @relation("InviteSender", fields: [invitedById], references: [id], onDelete: Cascade)
+  expiresAt      DateTime
+  acceptedAt     DateTime?
+  createdAt      DateTime     @default(now())
+
+  @@index([organizationId])
+  @@index([email])
+  @@map("organization_invites")
 }
 
 model OrganizationClaim {

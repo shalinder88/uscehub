@@ -145,6 +145,77 @@ export async function sendAdminNotification(
   if (error) throw new Error(`Resend API error: ${error.message || JSON.stringify(error)}`);
 }
 
+// ---------------------------------------------------------------------------
+// Coordinator invitation — the only mail sent to a recipient supplied by a
+// user rather than to NOTIFY_TO. Only a verified organization owner can
+// trigger it, one address at a time, so it stays transactional (a person asked
+// a colleague to join their team) and never becomes bulk outreach.
+// ---------------------------------------------------------------------------
+export type CoordinatorInvitePayload = {
+  to: string;
+  organizationName: string;
+  inviterName: string;
+  roleLabel: string;
+  acceptUrl: string;
+};
+
+export async function sendCoordinatorInvite(
+  p: CoordinatorInvitePayload,
+): Promise<{ sent: boolean }> {
+  const client = getClient();
+  const { from } = getResendConfig();
+
+  if (!client) {
+    console.warn("[email] Resend not configured; invite created but not emailed");
+    return { sent: false };
+  }
+
+  const subject = `${p.inviterName} invited you to manage ${p.organizationName} on USCEHub`;
+
+  const text = [
+    `${p.inviterName} has invited you to help manage ${p.organizationName} on USCEHub.`,
+    ``,
+    `Your access level: ${p.roleLabel}`,
+    ``,
+    `Accept the invitation: ${p.acceptUrl}`,
+    ``,
+    `USCEHub is a free, independent directory of U.S. clinical experience`,
+    `programs. Managing a listing lets you keep its information accurate --`,
+    `it does not imply USCEHub endorses or accredits your program.`,
+    ``,
+    `If you weren't expecting this, you can ignore this email.`,
+  ].join("\n");
+
+  const html = `
+    <div style="font-family: -apple-system, Segoe UI, sans-serif; max-width: 560px; color:#14211f;">
+      <h2 style="margin:0 0 12px;font-weight:500;">You've been invited to ${escapeHtml(p.organizationName)}</h2>
+      <p style="font-size:15px;line-height:1.6;color:#46574f;">
+        ${escapeHtml(p.inviterName)} has invited you to help manage
+        <strong>${escapeHtml(p.organizationName)}</strong> on USCEHub as
+        <strong>${escapeHtml(p.roleLabel)}</strong>.
+      </p>
+      <p style="margin:22px 0;">
+        <a href="${p.acceptUrl}" style="display:inline-block;padding:11px 18px;background:#0f766e;color:#fff;text-decoration:none;border-radius:6px;font-weight:600;">Accept invitation</a>
+      </p>
+      <p style="color:#7d8b87;font-size:12.5px;line-height:1.6;">
+        USCEHub is a free, independent directory of U.S. clinical experience programs.
+        Managing a listing lets you keep its information accurate — it does not imply
+        USCEHub endorses or accredits your program.
+      </p>
+      <p style="color:#7d8b87;font-size:12.5px;">If you weren't expecting this, you can ignore this email.</p>
+    </div>
+  `;
+
+  const { error } = await client.emails.send({ from, to: p.to, subject, text, html });
+  if (error) {
+    // Never fail the invite because delivery failed — the owner can copy the
+    // link from the team page instead.
+    console.error("[email] invite send failed:", error.message || error);
+    return { sent: false };
+  }
+  return { sent: true };
+}
+
 function escapeHtml(s: string): string {
   return String(s)
     .replace(/&/g, "&amp;")
