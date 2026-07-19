@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
+import { resolveInstitutionContext } from "@/lib/institution";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -42,8 +43,16 @@ export default async function PosterLayout({
     redirect("/auth/signin");
   }
 
+  // The role on the session comes from a JWT minted at sign-in, so it is stale
+  // for anyone who just accepted a team invitation or had a claim approved --
+  // their User.role is already POSTER in the database but their token still
+  // says APPLICANT. Membership is the real authority for this surface, so fall
+  // back to it rather than bouncing someone who legitimately belongs here.
   if (session.user.role !== "POSTER" && session.user.role !== "ADMIN") {
-    redirect("/dashboard");
+    const membership = await resolveInstitutionContext(session.user.id);
+    if (!membership) {
+      redirect("/dashboard");
+    }
   }
 
   return (
